@@ -295,6 +295,7 @@ public final class AppletViewer implements ComponentListener {
                 if (field_36) {
                     var16 = method_13(var11, -1, method_20((byte)98, "browsercontrol_win_amd64_jar"));
                     var15 = method_17(var9, "browsercontrol64.dll", var14, var10, -89);
+                    System.out.printf("Attempting to validate %s", "browser");
                     var17 = (new class_13(var16)).method_33("browsercontrol64.dll", var0 ^ 83);
                     if (null == var17) {
                         var15 = null;

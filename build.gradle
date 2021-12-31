@@ -7,7 +7,6 @@ group 'com.open592'
 version '1.0-SNAPSHOT'
 
 application {
-    applicationDefaultJvmArgs = ["--add-exports", "java.base/sun.security.pkcs=ALL-UNNAMED"]
     mainClass = "com.open592.jagexappletviewer.jagexappletviewer"
 }
 
@@ -25,6 +24,14 @@ compileJava {
         options.compilerArgs = [
                 '--add-exports', 'java.base/sun.security.pkcs=ALL-UNNAMED'
         ]
+    }
+}
+
+jar {
+    manifest {
+        attributes(
+            'Main-Class': 'com.open592.jagexappletviewer.jagexappletviewer'
+        )
     }
 }
 

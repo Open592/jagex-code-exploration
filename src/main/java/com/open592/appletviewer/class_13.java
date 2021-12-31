@@ -26,20 +26,24 @@ final class class_13 {
    private PKCS7 field_68;
 
    // $FF: renamed from: a (java.lang.String, int) byte[]
-   final byte[] method_33(String var1, int var2) {
+   byte[] method_33(String var1, int var2) {
       int var19 = class_21.field_91;
 
+      System.out.println("Attempting to validate" + var1);
       try {
-         byte[] var3 = (byte[])((byte[])this.field_64.remove(var1));
+         byte[] var3 = (byte[]) this.field_64.remove(var1);
          if (var3 == null) {
+            System.out.println("Var 3 null");
             return null;
          } else {
             class_20 var4 = (class_20)this.field_65.get(var1);
             if (null == var4) {
+               System.out.println("Var 4 null");
                return null;
             } else {
                class_20 var5 = (class_20)this.field_66.get(var1);
                if (var5 == null) {
+                  System.out.println("Var 5 null");
                   return null;
                } else {
                   MessageDigest var6 = MessageDigest.getInstance("MD5");
@@ -47,63 +51,73 @@ final class class_13 {
                   var6.update(var3);
                   byte[] var7 = var6.digest();
                   if (var2 > -124) {
-                     this.field_66 = (Hashtable)null;
+                     this.field_66 = null;
                   }
 
-                  String var8 = class_7.method_6(0, var7);
+                  String var8 = class_7.byteArrayToBase64StringEntry(var7);
                   if (!var8.equals(var4.field_86)) {
+                     System.out.println("Var 8" + var8 + " Doesn't equal " + var4.field_86);
                      return null;
                   } else {
                      MessageDigest var9 = MessageDigest.getInstance("SHA");
                      var9.reset();
                      var9.update(var3);
                      byte[] var10 = var9.digest();
-                     String var11 = class_7.method_6(0, var10);
+                     String var11 = class_7.byteArrayToBase64StringEntry(var10);
                      if (!var11.equals(var4.field_88)) {
                         return null;
                      } else {
+                        System.out.println(var11 + " Equals: " + var4.field_88);
                         var6.reset();
                         var6.update(var4.field_85);
                         var7 = var6.digest();
-                        var8 = class_7.method_6(0, var7);
+                        var8 = class_7.byteArrayToBase64StringEntry(var7);
                         if (!var8.equals(var5.field_86)) {
                            return null;
                         } else {
+                           System.out.println(var8 + " Equals: " + var5.field_86);
                            var9.reset();
                            var9.update(var4.field_85);
                            var10 = var9.digest();
-                           var11 = class_7.method_6(0, var10);
+                           var11 = class_7.byteArrayToBase64StringEntry(var10);
                            if (!var11.equals(var5.field_88)) {
                               return null;
                            } else {
+                              System.out.println(var11 + " Equals: " + var5.field_88);
                               SignerInfo[] var12 = this.field_68.verify(this.field_67);
                               if (var12 != null && -1 != ~var12.length) {
-                                 ArrayList var13 = var12[0].getCertificateChain(this.field_68);
-                                 if (2 != var13.size()) {
+                                 ArrayList<X509Certificate> var13 = var12[0].getCertificateChain(this.field_68);
+                                 if (3 != var13.size()) {
                                     return null;
                                  } else {
                                     int var14 = 0;
 
                                     while(var14 < var13.size()) {
-                                       X509Certificate var15 = (X509Certificate)var13.get(var14);
+                                       X509Certificate var15 = var13.get(var14);
                                        String var16 = var15.getSerialNumber().toString();
                                        byte[] var17 = var15.getPublicKey().getEncoded();
-                                       String var18 = class_7.method_6(0, var17);
+                                       String var18 = class_7.byteArrayToBase64StringEntry(var17);
                                        if (-1 == ~var14) {
-                                          if (!var16.equals("105014014184937810784491209018632141624")) {
+                                          System.out.println("-1");
+                                          System.out.println(var16);
+                                          if (!var16.equals("42616207341001253724625765329114307230")) {
                                              return null;
                                           }
 
+                                          System.out.println(var18);
                                           if (!var18.equals("MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAxehHTKQFiy/+t7xlQ0UYmmpQyoohClLm5Gfcy9hqwSps8riRS4LH4F3Ii9XnPYYC85R0wMfsfFCQlqgPbHK4X2iuUNw/bAT8jVHeIAIHPrxBaBqIzq92CHfGmLDDWEMQh+R5EpKW6caR0HB38c/eNYce5Do8DwOIMI/tC0LTcfjkgSjB2G19pT38W/ra1XwFVZR3fL/vvUGPiNDdcCcQCniPjYE1wLI/y9iNDfPcEnL92rhq3g5WVYrZ/CAXHAdQ9wCGBRyRgtVM1AjWYranZI9fNj+h/KjRDa+Fsu+k5gKLiKRNz9PGk+mmrBFOWOWMCsjyOalnkkx+N1/Gh4KcRwIDAQAB")) {
                                              return null;
                                           }
                                        }
 
                                        if (~var14 == -2) {
+                                          System.out.println("-2");
+                                          System.out.println(var16);
                                           if (!var16.equals("10")) {
                                              return null;
                                           }
 
+                                          System.out.println(var18);
                                           if (!var18.equals("MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDGuLknYK8L45FpZdt+je2R5qrxvtXt/m3ULH/RcHf7JplXtN0/MLjcIepojYGS/C5LkTWEIPLaSrq0/ObaiPIgxSGSCUeVoAkcpnm+sUwd/PGKblTSaaHxTJM6Qf591GR7Y0X3YGAdMR2k6dMPi/tuJiSzqP/l5ZDUtMLcUGCuWQIDAQAB")) {
                                              return null;
                                           }
@@ -129,7 +143,7 @@ final class class_13 {
          }
       } catch (Exception var20) {
          var20.printStackTrace();
-         class_19.method_40((byte)47, AppletViewer.method_19("err_get_file", 0) + ":" + var1 + " [" + var20.toString() + "]");
+         class_19.method_40((byte)47, AppletViewer.method_19("err_get_file", 0) + ":" + var1 + " [" + var20 + "]");
          return null;
       }
    }
