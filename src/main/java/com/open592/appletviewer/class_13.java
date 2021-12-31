@@ -15,7 +15,7 @@ import sun.security.pkcs.SignerInfo;
 // $FF: renamed from: app.m
 final class class_13 {
    // $FF: renamed from: a java.util.Hashtable
-   private Hashtable<String, byte[]> field_64;
+   private Hashtable<String, byte[]> fileMap;
    // $FF: renamed from: b java.util.Hashtable
    private Hashtable<String, class_20> field_65;
    // $FF: renamed from: c java.util.Hashtable
@@ -23,7 +23,7 @@ final class class_13 {
    // $FF: renamed from: d byte[]
    private byte[] field_67;
    // $FF: renamed from: e sun.security.pkcs.PKCS7
-   private PKCS7 field_68;
+   private PKCS7 PKCS7Block;
 
    // $FF: renamed from: a (java.lang.String, int) byte[]
    byte[] validateFile(String filename, int var2) {
@@ -31,7 +31,7 @@ final class class_13 {
 
       System.out.println("Attempting to validate" + filename);
       try {
-         byte[] var3 = this.field_64.remove(filename);
+         byte[] var3 = this.fileMap.remove(filename);
          if (var3 == null) {
             System.out.println("Var 3 null");
             return null;
@@ -55,8 +55,8 @@ final class class_13 {
                   }
 
                   String var8 = class_7.byteArrayToBase64StringEntry(var7);
-                  if (!var8.equals(var4.field_86)) {
-                     System.out.println("Var 8" + var8 + " Doesn't equal " + var4.field_86);
+                  if (!var8.equals(var4.md5Digest)) {
+                     System.out.println("Var 8" + var8 + " Doesn't equal " + var4.md5Digest);
                      return null;
                   } else {
                      MessageDigest var9 = MessageDigest.getInstance("SHA");
@@ -64,61 +64,58 @@ final class class_13 {
                      var9.update(var3);
                      byte[] var10 = var9.digest();
                      String var11 = class_7.byteArrayToBase64StringEntry(var10);
-                     if (!var11.equals(var4.field_88)) {
+                     if (!var11.equals(var4.sha1Digest)) {
                         return null;
                      } else {
-                        System.out.println(var11 + " Equals: " + var4.field_88);
+                        System.out.println(var11 + " Equals: " + var4.sha1Digest);
                         var6.reset();
-                        var6.update(var4.field_85);
+                        var6.update(var4.buffer);
                         var7 = var6.digest();
                         var8 = class_7.byteArrayToBase64StringEntry(var7);
-                        if (!var8.equals(var5.field_86)) {
+                        if (!var8.equals(var5.md5Digest)) {
                            return null;
                         } else {
-                           System.out.println(var8 + " Equals: " + var5.field_86);
+                           System.out.println(var8 + " Equals: " + var5.md5Digest);
                            var9.reset();
-                           var9.update(var4.field_85);
+                           var9.update(var4.buffer);
                            var10 = var9.digest();
                            var11 = class_7.byteArrayToBase64StringEntry(var10);
-                           if (!var11.equals(var5.field_88)) {
+                           if (!var11.equals(var5.sha1Digest)) {
                               return null;
                            } else {
-                              System.out.println(var11 + " Equals: " + var5.field_88);
-                              SignerInfo[] var12 = this.field_68.verify(this.field_67);
+                              System.out.println(var11 + " Equals: " + var5.sha1Digest);
+                              SignerInfo[] var12 = this.PKCS7Block.verify(this.field_67);
                               if (var12 != null && -1 != ~var12.length) {
-                                 ArrayList<X509Certificate> var13 = var12[0].getCertificateChain(this.field_68);
-                                 if (3 != var13.size()) {
+                                 ArrayList<X509Certificate> certificateChains = var12[0].getCertificateChain(this.PKCS7Block);
+                                 // Originally this was 2
+                                 if (certificateChains.size() != 3) {
                                     return null;
                                  } else {
                                     int var14 = 0;
 
-                                    while(var14 < var13.size()) {
-                                       X509Certificate var15 = var13.get(var14);
-                                       String var16 = var15.getSerialNumber().toString();
-                                       byte[] var17 = var15.getPublicKey().getEncoded();
-                                       String var18 = class_7.byteArrayToBase64StringEntry(var17);
-                                       if (-1 == ~var14) {
-                                          System.out.println("-1");
-                                          System.out.println(var16);
-                                          if (!var16.equals("42616207341001253724625765329114307230")) {
+                                    while(var14 < certificateChains.size()) {
+                                       X509Certificate certificateChain = certificateChains.get(var14);
+                                       String serialNumber = certificateChain.getSerialNumber().toString();
+                                       byte[] publicKeyByteArray = certificateChain.getPublicKey().getEncoded();
+                                       String publicKeyString = class_7.byteArrayToBase64StringEntry(publicKeyByteArray);
+
+                                       if (var14 == 0) {
+                                          if (!serialNumber.equals("42616207341001253724625765329114307230")) {
                                              return null;
                                           }
 
-                                          System.out.println(var18);
-                                          if (!var18.equals("MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAxehHTKQFiy/+t7xlQ0UYmmpQyoohClLm5Gfcy9hqwSps8riRS4LH4F3Ii9XnPYYC85R0wMfsfFCQlqgPbHK4X2iuUNw/bAT8jVHeIAIHPrxBaBqIzq92CHfGmLDDWEMQh+R5EpKW6caR0HB38c/eNYce5Do8DwOIMI/tC0LTcfjkgSjB2G19pT38W/ra1XwFVZR3fL/vvUGPiNDdcCcQCniPjYE1wLI/y9iNDfPcEnL92rhq3g5WVYrZ/CAXHAdQ9wCGBRyRgtVM1AjWYranZI9fNj+h/KjRDa+Fsu+k5gKLiKRNz9PGk+mmrBFOWOWMCsjyOalnkkx+N1/Gh4KcRwIDAQAB")) {
+                                          System.out.println(publicKeyString);
+                                          if (!publicKeyString.equals("MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAxehHTKQFiy/+t7xlQ0UYmmpQyoohClLm5Gfcy9hqwSps8riRS4LH4F3Ii9XnPYYC85R0wMfsfFCQlqgPbHK4X2iuUNw/bAT8jVHeIAIHPrxBaBqIzq92CHfGmLDDWEMQh+R5EpKW6caR0HB38c/eNYce5Do8DwOIMI/tC0LTcfjkgSjB2G19pT38W/ra1XwFVZR3fL/vvUGPiNDdcCcQCniPjYE1wLI/y9iNDfPcEnL92rhq3g5WVYrZ/CAXHAdQ9wCGBRyRgtVM1AjWYranZI9fNj+h/KjRDa+Fsu+k5gKLiKRNz9PGk+mmrBFOWOWMCsjyOalnkkx+N1/Gh4KcRwIDAQAB")) {
                                              return null;
                                           }
                                        }
 
-                                       if (~var14 == -2) {
-                                          System.out.println("-2");
-                                          System.out.println(var16);
-                                          if (!var16.equals("10")) {
+                                       if (var14 == 1) {
+                                          if (!serialNumber.equals("10")) {
                                              return null;
                                           }
 
-                                          System.out.println(var18);
-                                          if (!var18.equals("MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDGuLknYK8L45FpZdt+je2R5qrxvtXt/m3ULH/RcHf7JplXtN0/MLjcIepojYGS/C5LkTWEIPLaSrq0/ObaiPIgxSGSCUeVoAkcpnm+sUwd/PGKblTSaaHxTJM6Qf591GR7Y0X3YGAdMR2k6dMPi/tuJiSzqP/l5ZDUtMLcUGCuWQIDAQAB")) {
+                                          if (!publicKeyString.equals("MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDGuLknYK8L45FpZdt+je2R5qrxvtXt/m3ULH/RcHf7JplXtN0/MLjcIepojYGS/C5LkTWEIPLaSrq0/ObaiPIgxSGSCUeVoAkcpnm+sUwd/PGKblTSaaHxTJM6Qf591GR7Y0X3YGAdMR2k6dMPi/tuJiSzqP/l5ZDUtMLcUGCuWQIDAQAB")) {
                                              return null;
                                           }
                                        }
@@ -150,7 +147,7 @@ final class class_13 {
 
    class_13(byte[] jarByteBuf) throws IOException {
       super();
-      this.field_64 = new Hashtable<>();
+      this.fileMap = new Hashtable<>();
       this.field_65 = new Hashtable<>();
       this.field_66 = new Hashtable<>();
       ZipInputStream jarInputStream = new ZipInputStream(new ByteArrayInputStream(jarByteBuf));
@@ -158,6 +155,7 @@ final class class_13 {
 
       do {
          ZipEntry entry = jarInputStream.getNextEntry();
+
          if (entry == null) {
             break;
          }
@@ -167,6 +165,7 @@ final class class_13 {
 
          do {
             int bytesRead = jarInputStream.read(var3, 0, 1000);
+
             if (bytesRead == -1) {
                break;
             }
@@ -175,14 +174,15 @@ final class class_13 {
          } while(true);
 
          byte[] outputStreamBytes = outputStream.toByteArray();
+
          if (!entryName.equals("META-INF/manifest.mf") && !entryName.equals("META-INF/zigbert.sf")) {
             if (!entryName.equals("META-INF/zigbert.rsa")) {
-               this.field_64.put(entryName, outputStreamBytes);
+               this.fileMap.put(entryName, outputStreamBytes);
 
                continue;
             }
 
-            this.field_68 = new PKCS7(outputStreamBytes);
+            this.PKCS7Block = new PKCS7(outputStreamBytes);
 
             continue;
          }
@@ -217,25 +217,25 @@ final class class_13 {
                var13 = -1 + var9[var10 - -1];
             }
 
-            var11.field_85 = new byte[-var12 + var13];
-            System.arraycopy(outputStreamBytes, var12, var11.field_85, 0, -var12 + var13);
+            var11.buffer = new byte[-var12 + var13];
+            System.arraycopy(outputStreamBytes, var12, var11.buffer, 0, -var12 + var13);
             int var14 = 0;
             int var15 = 0;
 
-            while(~var11.field_85.length < ~var15) {
-               if (~var11.field_85[var15] == -11 || ~var11.field_85[var15] == -14) {
-                  String var16 = (new String(var11.field_85, var14, -var14 + var15)).trim();
+            while(~var11.buffer.length < ~var15) {
+               if (~var11.buffer[var15] == -11 || ~var11.buffer[var15] == -14) {
+                  String var16 = (new String(var11.buffer, var14, -var14 + var15)).trim();
                   if (var16.startsWith("Name: ")) {
-                     var11.field_87 = var16.substring(6);
+                     var11.name = var16.substring(6);
                   }
 
                   if (var16.startsWith("MD5-Digest: ")) {
-                     var11.field_86 = var16.substring(12);
+                     var11.md5Digest = var16.substring(12);
                   }
 
                   var14 = var15 + 1;
                   if (var16.startsWith("SHA1-Digest: ")) {
-                     var11.field_88 = var16.substring(13);
+                     var11.sha1Digest = var16.substring(13);
                   }
                }
 
@@ -243,11 +243,11 @@ final class class_13 {
             }
 
             if (entryName.equalsIgnoreCase("META-INF/manifest.mf")) {
-               this.field_65.put(var11.field_87, var11);
+               this.field_65.put(var11.name, var11);
             }
 
             if (entryName.equalsIgnoreCase("META-INF/zigbert.sf")) {
-               this.field_66.put(var11.field_87, var11);
+               this.field_66.put(var11.name, var11);
             }
 
             ++var10;
@@ -257,6 +257,5 @@ final class class_13 {
             this.field_67 = outputStreamBytes;
          }
       } while(true);
-
    }
 }
