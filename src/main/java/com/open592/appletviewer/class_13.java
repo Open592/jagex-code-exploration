@@ -15,33 +15,33 @@ import sun.security.pkcs.SignerInfo;
 // $FF: renamed from: app.m
 final class class_13 {
    // $FF: renamed from: a java.util.Hashtable
-   private Hashtable field_64;
+   private Hashtable<String, byte[]> field_64;
    // $FF: renamed from: b java.util.Hashtable
-   private Hashtable field_65;
+   private Hashtable<String, class_20> field_65;
    // $FF: renamed from: c java.util.Hashtable
-   private Hashtable field_66;
+   private Hashtable<String, class_20> field_66;
    // $FF: renamed from: d byte[]
    private byte[] field_67;
    // $FF: renamed from: e sun.security.pkcs.PKCS7
    private PKCS7 field_68;
 
    // $FF: renamed from: a (java.lang.String, int) byte[]
-   byte[] method_33(String var1, int var2) {
+   byte[] validateFile(String filename, int var2) {
       int var19 = class_21.field_91;
 
-      System.out.println("Attempting to validate" + var1);
+      System.out.println("Attempting to validate" + filename);
       try {
-         byte[] var3 = (byte[]) this.field_64.remove(var1);
+         byte[] var3 = this.field_64.remove(filename);
          if (var3 == null) {
             System.out.println("Var 3 null");
             return null;
          } else {
-            class_20 var4 = (class_20)this.field_65.get(var1);
+            class_20 var4 = this.field_65.get(filename);
             if (null == var4) {
                System.out.println("Var 4 null");
                return null;
             } else {
-               class_20 var5 = (class_20)this.field_66.get(var1);
+               class_20 var5 = this.field_66.get(filename);
                if (var5 == null) {
                   System.out.println("Var 5 null");
                   return null;
@@ -143,66 +143,60 @@ final class class_13 {
          }
       } catch (Exception var20) {
          var20.printStackTrace();
-         class_19.method_40((byte)47, AppletViewer.method_19("err_get_file", 0) + ":" + var1 + " [" + var20 + "]");
+         class_19.method_40((byte)47, AppletViewer.method_19("err_get_file", 0) + ":" + filename + " [" + var20 + "]");
          return null;
       }
    }
 
-   class_13(byte[] var1) throws IOException {
+   class_13(byte[] jarByteBuf) throws IOException {
       super();
-      int var17 = class_21.field_91;
-      this.field_64 = new Hashtable();
-      this.field_65 = new Hashtable();
-      this.field_66 = new Hashtable();
-      ZipInputStream var2 = new ZipInputStream(new ByteArrayInputStream(var1));
+      this.field_64 = new Hashtable<>();
+      this.field_65 = new Hashtable<>();
+      this.field_66 = new Hashtable<>();
+      ZipInputStream jarInputStream = new ZipInputStream(new ByteArrayInputStream(jarByteBuf));
       byte[] var3 = new byte[1000];
 
       do {
-         ZipEntry var4 = var2.getNextEntry();
-         if (var4 == null) {
+         ZipEntry entry = jarInputStream.getNextEntry();
+         if (entry == null) {
             break;
          }
 
-         String var5 = var4.getName();
-         ByteArrayOutputStream var6 = new ByteArrayOutputStream();
+         String entryName = entry.getName();
+         ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
 
          do {
-            int var7 = var2.read(var3, 0, 1000);
-            if (0 == ~var7 && var17 == 0) {
+            int bytesRead = jarInputStream.read(var3, 0, 1000);
+            if (bytesRead == -1) {
                break;
             }
 
-            var6.write(var3, 0, var7);
-         } while(var17 == 0);
+            outputStream.write(var3, 0, bytesRead);
+         } while(true);
 
-         byte[] var18 = var6.toByteArray();
-         if (!var5.equals("META-INF/manifest.mf") && !var5.equals("META-INF/zigbert.sf")) {
-            if (!var5.equals("META-INF/zigbert.rsa")) {
-               this.field_64.put(var5, var18);
-               if (var17 == 0) {
-                  continue;
-               }
-            }
+         byte[] outputStreamBytes = outputStream.toByteArray();
+         if (!entryName.equals("META-INF/manifest.mf") && !entryName.equals("META-INF/zigbert.sf")) {
+            if (!entryName.equals("META-INF/zigbert.rsa")) {
+               this.field_64.put(entryName, outputStreamBytes);
 
-            this.field_68 = new PKCS7(var18);
-            if (var17 == 0) {
                continue;
             }
+
+            this.field_68 = new PKCS7(outputStreamBytes);
+
+            continue;
          }
 
          int var8 = 0;
          int[] var9 = new int[1000];
          int var10 = 0;
 
-         while(var10 < var18.length - 5) {
-            if (78 == var18[var10] && var18[1 + var10] == 97 && -110 == ~var18[2 + var10] && 101 == var18[var10 - -3] && 58 == var18[var10 + 4]) {
+         while(var10 < outputStreamBytes.length - 5) {
+            if (78 == outputStreamBytes[var10] && outputStreamBytes[1 + var10] == 97 && -110 == ~outputStreamBytes[2 + var10] && 101 == outputStreamBytes[var10 - -3] && 58 == outputStreamBytes[var10 + 4]) {
                var9[var8++] = var10;
             }
 
             ++var10;
-            if (var17 != 0) {
-               break;
-            }
          }
 
          var10 = 0;
@@ -215,17 +209,16 @@ final class class_13 {
                var11 = new class_20();
                var12 = var9[var10];
                if (var8 <= 1 + var10) {
-                  var13 = var18.length;
-                  if (var17 == 0) {
-                     break label76;
-                  }
+                  var13 = outputStreamBytes.length;
+
+                  break label76;
                }
 
                var13 = -1 + var9[var10 - -1];
             }
 
             var11.field_85 = new byte[-var12 + var13];
-            System.arraycopy(var18, var12, var11.field_85, 0, -var12 + var13);
+            System.arraycopy(outputStreamBytes, var12, var11.field_85, 0, -var12 + var13);
             int var14 = 0;
             int var15 = 0;
 
@@ -247,29 +240,23 @@ final class class_13 {
                }
 
                ++var15;
-               if (var17 != 0) {
-                  break;
-               }
             }
 
-            if (var5.equalsIgnoreCase("META-INF/manifest.mf")) {
+            if (entryName.equalsIgnoreCase("META-INF/manifest.mf")) {
                this.field_65.put(var11.field_87, var11);
             }
 
-            if (var5.equalsIgnoreCase("META-INF/zigbert.sf")) {
+            if (entryName.equalsIgnoreCase("META-INF/zigbert.sf")) {
                this.field_66.put(var11.field_87, var11);
             }
 
             ++var10;
-            if (var17 != 0) {
-               break;
-            }
          }
 
-         if (var5.equalsIgnoreCase("META-INF/zigbert.sf")) {
-            this.field_67 = var18;
+         if (entryName.equalsIgnoreCase("META-INF/zigbert.sf")) {
+            this.field_67 = outputStreamBytes;
          }
-      } while(var17 == 0);
+      } while(true);
 
    }
 }

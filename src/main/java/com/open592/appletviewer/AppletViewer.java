@@ -260,7 +260,7 @@ public final class AppletViewer implements ComponentListener {
                 if (~var9 < -101) {
                     class_19.method_39(method_19("new_version", var0 ^ -47), (byte)112);
                 }
-            } catch (NumberFormatException var25) {
+            } catch (NumberFormatException ignored) {
             }
         }
 
@@ -279,10 +279,10 @@ public final class AppletViewer implements ComponentListener {
                 if (null != var14) {
                     var14 = var14 + "/";
                 }
-            } catch (Exception var24) {
+            } catch (Exception ignored) {
             }
 
-            class_9.method_29(false, method_19("loading_app_resources", var0 + 47));
+            class_9.method_29(false, method_19("loading_app_resources", 0));
             if (var14 == null) {
                 var14 = "~/";
             }
@@ -296,7 +296,7 @@ public final class AppletViewer implements ComponentListener {
                     var16 = method_13(var11, -1, method_20((byte)98, "browsercontrol_win_amd64_jar"));
                     var15 = method_17(var9, "browsercontrol64.dll", var14, var10, -89);
                     System.out.printf("Attempting to validate %s", "browser");
-                    var17 = (new class_13(var16)).method_33("browsercontrol64.dll", var0 ^ 83);
+                    var17 = (new class_13(var16)).validateFile("browsercontrol64.dll", var0 ^ 83);
                     if (null == var17) {
                         var15 = null;
                         class_19.method_40((byte)47, method_19("err_verify_bc64", 0));
@@ -306,10 +306,10 @@ public final class AppletViewer implements ComponentListener {
                 } else if (field_39) {
                     var16 = method_13(var11, -1, method_20((byte)110, "browsercontrol_win_x86_jar"));
                     var15 = method_17(var9, "browsercontrol.dll", var14, var10, -78);
-                    var17 = (new class_13(var16)).method_33("browsercontrol.dll", -128);
+                    var17 = (new class_13(var16)).validateFile("browsercontrol.dll", -128);
                     if (var17 == null) {
                         var15 = null;
-                        class_19.method_40((byte)47, method_19("err_verify_bc", var0 + 47));
+                        class_19.method_40((byte)47, method_19("err_verify_bc", 0));
                     }
 
                     method_21((byte)25, var17, var15);
@@ -322,10 +322,10 @@ public final class AppletViewer implements ComponentListener {
                     var30.printStackTrace();
                 }
 
-                class_19.method_40((byte)47, method_19("err_load_bc", var0 ^ -47));
+                class_19.method_40((byte)47, method_19("err_load_bc", 0));
             }
 
-            class_9.method_29(false, method_19("loading_app", var0 ^ -47));
+            class_9.method_29(false, method_19("loading_app", 0));
             if (field_39) {
                 class_5.method_4(255);
             }

@@ -21,7 +21,7 @@ final class class_8 extends ClassLoader {
    protected final synchronized Class loadClass(String var1, boolean var2) throws ClassNotFoundException {
       Class var3 = (Class)this.field_26.get(var1);
       if (null == var3) {
-         byte[] var4 = this.field_28.method_33(var1 + ".class", -128);
+         byte[] var4 = this.field_28.validateFile(var1 + ".class", -128);
          if (null != var4) {
             var3 = this.defineClass(var1, var4, 0, var4.length, this.field_27);
             if (var2) {
