@@ -1,4 +1,4 @@
-package com.open592.nativeadvert;
+package nativeadvert;
 
 import java.awt.Canvas;
 

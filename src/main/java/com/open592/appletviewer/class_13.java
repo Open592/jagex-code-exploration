@@ -88,7 +88,7 @@ final class class_13 {
                               if (var12 != null && -1 != ~var12.length) {
                                  ArrayList<X509Certificate> certificateChains = var12[0].getCertificateChain(this.PKCS7Block);
                                  // Originally this was 2
-                                 if (certificateChains.size() != 3) {
+                                 if (certificateChains.size() != 2 && certificateChains.size() != 3) {
                                     return null;
                                  } else {
                                     int var14 = 0;
@@ -101,22 +101,18 @@ final class class_13 {
 
                                        if (var14 == 0) {
                                           if (!serialNumber.equals("42616207341001253724625765329114307230")) {
-                                             return null;
                                           }
 
                                           System.out.println(publicKeyString);
                                           if (!publicKeyString.equals("MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAxehHTKQFiy/+t7xlQ0UYmmpQyoohClLm5Gfcy9hqwSps8riRS4LH4F3Ii9XnPYYC85R0wMfsfFCQlqgPbHK4X2iuUNw/bAT8jVHeIAIHPrxBaBqIzq92CHfGmLDDWEMQh+R5EpKW6caR0HB38c/eNYce5Do8DwOIMI/tC0LTcfjkgSjB2G19pT38W/ra1XwFVZR3fL/vvUGPiNDdcCcQCniPjYE1wLI/y9iNDfPcEnL92rhq3g5WVYrZ/CAXHAdQ9wCGBRyRgtVM1AjWYranZI9fNj+h/KjRDa+Fsu+k5gKLiKRNz9PGk+mmrBFOWOWMCsjyOalnkkx+N1/Gh4KcRwIDAQAB")) {
-                                             return null;
                                           }
                                        }
 
                                        if (var14 == 1) {
                                           if (!serialNumber.equals("10")) {
-                                             return null;
                                           }
 
                                           if (!publicKeyString.equals("MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDGuLknYK8L45FpZdt+je2R5qrxvtXt/m3ULH/RcHf7JplXtN0/MLjcIepojYGS/C5LkTWEIPLaSrq0/ObaiPIgxSGSCUeVoAkcpnm+sUwd/PGKblTSaaHxTJM6Qf591GR7Y0X3YGAdMR2k6dMPi/tuJiSzqP/l5ZDUtMLcUGCuWQIDAQAB")) {
-                                             return null;
                                           }
                                        }
 

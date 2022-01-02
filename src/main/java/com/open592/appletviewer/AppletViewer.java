@@ -28,7 +28,7 @@ import java.util.Enumeration;
 import java.util.Hashtable;
 import java.util.Locale;
 
-import com.open592.nativeadvert.browsercontrol;
+import nativeadvert.browsercontrol;
 
 public final class AppletViewer implements ComponentListener {
     // $FF: renamed from: a app.j
@@ -331,9 +331,9 @@ public final class AppletViewer implements ComponentListener {
             }
 
             try {
-                var16 = method_13(var11, -1, method_20((byte)-92, "loader_jar"));
+                var16 = method_13(var11, -1, method_20((byte) -92, "loader_jar"));
                 class_8 var36 = new class_8(var16);
-                field_33 = (Applet)var36.loadClass("loader").newInstance();
+                field_33 = (Applet) var36.loadClass("loader").getDeclaredConstructor().newInstance();
                 if (field_40) {
                     System.out.println("loader_jar : " + var16.length);
                 }
