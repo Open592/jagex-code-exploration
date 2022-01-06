@@ -115,7 +115,7 @@ public final class AppletViewer implements ComponentListener {
     }
 
     // $FF: renamed from: a (byte, java.lang.String) void
-    public static void method_10(byte var0, String var1) {
+    public static void method_10(byte var0, String gameName) {
         int var23 = AppletViewerPreferences.field_91;
         isDebug = Boolean.getBoolean("com.jagex.debug");
         if (isDebug) {
@@ -129,7 +129,7 @@ public final class AppletViewer implements ComponentListener {
 
         String var2;
         int var3;
-        String country;
+        String javConfigURL;
         label275: {
             AppletViewerPreferences.readPreferencesFile();
             var2 = AppletViewerPreferences.getPreference("Language");
@@ -139,7 +139,7 @@ public final class AppletViewer implements ComponentListener {
                 label280: {
                     Locale defaultLocale = Locale.getDefault();
                     String lang = defaultLocale.getISO3Language();
-                    country = defaultLocale.getISO3Country();
+                    javConfigURL = defaultLocale.getISO3Country();
                     languageID = -1;
                     if (lang != null) {
                         if (lang.equals("eng")) {
@@ -164,20 +164,20 @@ public final class AppletViewer implements ComponentListener {
                         }
                     }
 
-                    if (null != country) {
-                        if (country.equals("GB") || country.equals("US")) {
+                    if (null != javConfigURL) {
+                        if (javConfigURL.equals("GB") || javConfigURL.equals("US")) {
                             languageID = 0;
                         }
 
-                        if (country.equals("DE")) {
+                        if (javConfigURL.equals("DE")) {
                             languageID = 1;
                         }
 
-                        if (country.equals("FR")) {
+                        if (javConfigURL.equals("FR")) {
                             languageID = 2;
                         }
 
-                        if (country.equals("BR")) {
+                        if (javConfigURL.equals("BR")) {
                             languageID = 3;
                         }
                     }
@@ -198,32 +198,32 @@ public final class AppletViewer implements ComponentListener {
 
         class_10.method_31(var3, true);
         field_35 = new Frame();
-        File var31 = new File((new File(System.getProperty("user.dir"))).getParentFile(), var1);
-        File var32 = new File(var31, "jagexappletviewer.png");
-        System.out.println("Trying to load icon file: " + var32.getAbsolutePath());
-        if (var32.exists()) {
-            Image var33 = Toolkit.getDefaultToolkit().getImage(var32.getAbsolutePath());
-            if (var33 != null) {
-                field_35.setIconImage(var33);
+        File gameDirectory = new File((new File(System.getProperty("user.dir"))).getParentFile(), gameName);
+        File iconFile = new File(gameDirectory, "jagexappletviewer.png");
+        System.out.println("Trying to load icon file: " + iconFile.getAbsolutePath());
+        if (iconFile.exists()) {
+            Image iconImage = Toolkit.getDefaultToolkit().getImage(iconFile.getAbsolutePath());
+            if (iconImage != null) {
+                field_35.setIconImage(iconImage);
             }
         }
 
         class_9.method_30(var0 ^ -367);
         class_9.method_26(var0 + 155);
         class_9.method_29(false, getLocaleString("loading_config", 0));
-        country = System.getProperty("com.jagex.config");
-        String var34 = System.getProperty("com.jagex.configfile");
-        if (null == country) {
-            if (null == var34) {
+        javConfigURL = System.getProperty("com.jagex.config");
+        String configFileName = System.getProperty("com.jagex.configfile");
+        if (null == javConfigURL) {
+            if (null == configFileName) {
                 class_19.method_40((byte)47, getLocaleString("err_missing_config", 0));
             }
 
-            field_46 = new File(var31, var34);
+            field_46 = new File(gameDirectory, configFileName);
         }
 
         while(true) {
-            if (country != null) {
-                field_50 = method_24(var0 + -44, country);
+            if (javConfigURL != null) {
+                field_50 = resolveConfigURLTemplate(javConfigURL);
                 System.out.println("Config URL is " + field_50);
             }
 
@@ -1115,7 +1115,7 @@ public final class AppletViewer implements ComponentListener {
             while(!field_34.isDisplayable() || !field_34.isShowing()) {
                 try {
                     Thread.sleep(100L);
-                } catch (Exception var1) {
+                } catch (Exception ignored) {
                 }
             }
 
@@ -1128,50 +1128,47 @@ public final class AppletViewer implements ComponentListener {
                 }
 
                 class_19.method_40((byte)47, getLocaleString("err_create_advertising", 0));
-                return;
             }
         }
 
     }
 
     // $FF: renamed from: b (int, java.lang.String) java.lang.String
-    private static final String method_24(int var0, String var1) {
-        int var9 = AppletViewerPreferences.field_91;
-        String var2 = var1;
-        if (var0 > -7) {
-            getParameter(-117, (String)null);
-        }
+    private static String resolveConfigURLTemplate(String template) {
+        String configURL = template;
 
         do {
-            int var3 = var2.indexOf("$(");
-            if (~var3 > -1) {
+            int templateStartPos = configURL.indexOf("$(");
+
+            if (templateStartPos == -1) {
                 break;
             }
 
-            int var4 = var2.indexOf(":", var3);
-            int var5 = var2.indexOf(")", var4);
-            if (-1 < ~var4 || 0 > var5 && var9 == 0) {
+            int variableSeparatorPos = configURL.indexOf(":", templateStartPos);
+            int variableEndPos = configURL.indexOf(")", variableSeparatorPos);
+
+            if (-1 < ~variableSeparatorPos || 0 > variableEndPos) {
                 break;
             }
 
-            String var6 = var2.substring(2 + var3, var4);
-            String var7 = var2.substring(1 + var4, var5);
-            String var8 = AppletViewerPreferences.getPreference(var6);
-            if (null != var8) {
-                var7 = var8;
+            String variableName = configURL.substring(2 + templateStartPos, variableSeparatorPos);
+            String defaultValue = configURL.substring(1 + variableSeparatorPos, variableEndPos);
+            String preferenceValue = AppletViewerPreferences.getPreference(variableName);
+
+            if (preferenceValue != null) {
+                defaultValue = preferenceValue;
             }
 
-            if (var5 < -1 + var2.length()) {
-                var2 = var2.substring(0, var3) + var7 + var2.substring(var5 - -1);
-                if (var9 == 0) {
-                    continue;
-                }
+            if (variableEndPos < -1 + configURL.length()) {
+                configURL = configURL.substring(0, templateStartPos) + defaultValue + configURL.substring(variableEndPos - -1);
+
+                continue;
             }
 
-            var2 = var2.substring(0, var3) + var7;
-        } while(var9 == 0);
+            configURL = configURL.substring(0, templateStartPos) + defaultValue;
+        } while(true);
 
-        return var2;
+        return configURL;
     }
 
     public final void componentShown(ComponentEvent var1) {
