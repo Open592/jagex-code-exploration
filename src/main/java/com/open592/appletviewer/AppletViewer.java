@@ -60,13 +60,13 @@ public final class AppletViewer implements ComponentListener {
     // $FF: renamed from: n java.util.Hashtable
     static Hashtable<String, String> localeStrings = new Hashtable<>();
     // $FF: renamed from: o java.lang.String[]
-    private static String[] field_43;
+    private static String[] localeStringList;
     // $FF: renamed from: p app.q[]
     private static ServerSettings[] field_44 = null;
     // $FF: renamed from: q int[]
-    private static int[] field_45;
+    private static int[] languageIDs;
     // $FF: renamed from: r java.io.File
-    private static File field_46 = null;
+    private static File javConfigFile = null;
     // $FF: renamed from: s app.q
     private static ServerSettings currentServerSettings = null;
     // $FF: renamed from: t float
@@ -74,7 +74,7 @@ public final class AppletViewer implements ComponentListener {
     // $FF: renamed from: u boolean
     private static boolean field_49 = true;
     // $FF: renamed from: v java.lang.String
-    private static String field_50 = null;
+    private static String javConfigURL = null;
     // $FF: renamed from: w float
     private static float field_51 = 0.0F;
     // $FF: renamed from: x boolean
@@ -93,12 +93,16 @@ public final class AppletViewer implements ComponentListener {
     }
 
     // $FF: renamed from: a (java.lang.String, int, java.io.File) java.io.BufferedReader
-    private static BufferedReader method_9(String var0, File var2) throws IOException {
-        if (var0 != null) {
-            return new BufferedReader(new InputStreamReader((new URL(var0)).openStream()));
+    private static BufferedReader fetchJavConfig(String URL, File file) throws IOException {
+        if (URL != null) {
+            return new BufferedReader(new InputStreamReader((new URL(URL)).openStream()));
         }
 
-        return var2 != null ? new BufferedReader(new FileReader(var2)) : null;
+        if (file != null) {
+            return new BufferedReader(new FileReader(file));
+        }
+
+        return null;
     }
 
     public static void removeadvert() {
@@ -218,16 +222,16 @@ public final class AppletViewer implements ComponentListener {
                 class_19.method_40((byte)47, getLocaleString("err_missing_config", 0));
             }
 
-            field_46 = new File(gameDirectory, configFileName);
+            javConfigFile = new File(gameDirectory, configFileName);
         }
 
         while(true) {
             if (javConfigURL != null) {
-                field_50 = resolveConfigURLTemplate(javConfigURL);
-                System.out.println("Config URL is " + field_50);
+                AppletViewer.javConfigURL = resolveConfigURLTemplate(javConfigURL);
+                System.out.println("Config URL is " + AppletViewer.javConfigURL);
             }
 
-            if (method_22(var3) && var23 == 0) {
+            if (readJavConfig(var3) && var23 == 0) {
                 break;
             }
 
@@ -583,7 +587,7 @@ public final class AppletViewer implements ComponentListener {
     // $FF: renamed from: a (int) void
     public static final void method_14(int var0) {
         if (var0 != 4443) {
-            field_45 = (int[])null;
+            languageIDs = (int[])null;
         }
 
         boolean var1 = false;
@@ -634,7 +638,7 @@ public final class AppletViewer implements ComponentListener {
             var3 = 0;
 
             try {
-                BufferedReader var4 = method_9(var1, (File)null);
+                BufferedReader var4 = fetchJavConfig(var1, (File)null);
 
                 label67:
                 do {
@@ -689,7 +693,7 @@ public final class AppletViewer implements ComponentListener {
         }
 
         field_29.method_35(true, var11);
-        var12 = field_29.method_36((byte)-57);
+        var12 = field_29.method_36();
         if (~var12 <= -1) {
             method_11(var2[var12], 21870);
         }
@@ -882,10 +886,10 @@ public final class AppletViewer implements ComponentListener {
     }
 
     // $FF: renamed from: a (byte, int) boolean
-    private static final boolean method_22(int var1) {
+    private static boolean readJavConfig(int var1) {
         int var14 = AppletViewerPreferences.field_91;
         params.clear();
-        int var2 = 0;
+        int langCount = 0;
         class_10.method_31(var1, true);
         configurationItems.clear();
         currentServerSettings = null;
@@ -893,22 +897,23 @@ public final class AppletViewer implements ComponentListener {
         int serverCount = 0;
         ServerSettings[] servers = new ServerSettings[50];
 
-        int configItem;
+        int equalPos;
         try {
-            BufferedReader var5 = method_9(field_50, field_46);
+            BufferedReader configReader = fetchJavConfig(javConfigURL, javConfigFile);
 
-            Hashtable params = AppletViewer.params;
-            Hashtable configValues = configurationItems;
-            Hashtable localeStrings = AppletViewer.localeStrings;
+            Hashtable<String, String> params = AppletViewer.params;
+            Hashtable<String, String> configValues = configurationItems;
+            Hashtable<String, String> localeStrings = AppletViewer.localeStrings;
 
-            label174:
+            parseFile:
             do {
                 String settingLine;
                 do {
                     do {
-                        settingLine = var5.readLine();
+                        settingLine = configReader.readLine();
+
                         if (settingLine == null) {
-                            break label174;
+                            break parseFile;
                         }
 
                         settingLine = settingLine.trim();
@@ -938,11 +943,12 @@ public final class AppletViewer implements ComponentListener {
                 String configValue;
                 if (!settingLine.startsWith("param=")) {
                     if (!settingLine.startsWith("msg=")) {
-                        configItem = settingLine.indexOf("=");
-                        if (configItem != -1) {
-                            configKey = settingLine.substring(0, configItem).trim().toLowerCase();
-                            configValue = settingLine.substring(1 + configItem).trim();
+                        equalPos = settingLine.indexOf("=");
+                        if (equalPos != -1) {
+                            configKey = settingLine.substring(0, equalPos).trim().toLowerCase();
+                            configValue = settingLine.substring(1 + equalPos).trim();
                             configValues.put(configKey, configValue);
+
                             if (isDebug) {
                                 System.out.println("Ourconfig - variable=" + configKey + " value=" + configValue);
                             }
@@ -954,19 +960,20 @@ public final class AppletViewer implements ComponentListener {
                     }
 
                     settingLine = settingLine.substring(4);
-                    configItem = settingLine.indexOf(61);
-                    if (~configItem != 0) {
-                        configKey = settingLine.substring(0, configItem).trim().toLowerCase();
-                        configValue = settingLine.substring(configItem - -1).trim();
+                    equalPos = settingLine.indexOf("=");
+                    if (~equalPos != 0) {
+                        configKey = settingLine.substring(0, equalPos).trim().toLowerCase();
+                        configValue = settingLine.substring(equalPos - -1).trim();
                         if (configKey.startsWith("lang")) {
                             try {
                                 Integer.parseInt(configKey.substring(4));
-                                ++var2;
+                                ++langCount;
                             } catch (NumberFormatException ignored) {
                             }
                         }
 
                         localeStrings.put(configKey, configValue);
+
                         if (isDebug) {
                             System.out.println("Message - name=" + configKey + " text=" + configValue);
                         }
@@ -978,10 +985,10 @@ public final class AppletViewer implements ComponentListener {
                 }
 
                 settingLine = settingLine.substring(6);
-                configItem = settingLine.indexOf(61);
-                if (-1 != configItem) {
-                    configKey = settingLine.substring(0, configItem).trim().toLowerCase();
-                    configValue = settingLine.substring(1 + configItem).trim();
+                equalPos = settingLine.indexOf("=");
+                if (equalPos != -1) {
+                    configKey = settingLine.substring(0, equalPos).trim().toLowerCase();
+                    configValue = settingLine.substring(1 + equalPos).trim();
                     params.put(configKey, configValue);
                     if (isDebug) {
                         System.out.println("Innerconfig - variable=" + configKey + " value=" + configValue);
@@ -989,84 +996,96 @@ public final class AppletViewer implements ComponentListener {
                 }
             } while(true);
 
-            var5.close();
-        } catch (IOException var17) {
+            configReader.close();
+        } catch (IOException e) {
             if (isDebug) {
-                var17.printStackTrace();
+                e.printStackTrace();
             }
 
             class_19.method_40((byte)47, getLocaleString("err_load_config", 0));
-        } catch (Exception var18) {
+        } catch (Exception e) {
             if (isDebug) {
-                var18.printStackTrace();
+                e.printStackTrace();
             }
 
             class_19.method_40((byte)47, getLocaleString("err_decode_config", 0));
         }
 
-        if (-1 > ~var2) {
-            field_45 = new int[var2];
-            field_43 = new String[var2];
-            int var19 = 0;
-            Enumeration var20 = localeStrings.keys();
+        if (langCount > 0) {
+            languageIDs = new int[langCount];
+            localeStringList = new String[langCount];
+            int i = 0;
+            Enumeration<String> localeStringKeys = localeStrings.keys();
 
             label136:
             do {
                 while(true) {
-                    if (!var20.hasMoreElements()) {
+                    if (!localeStringKeys.hasMoreElements()) {
                         break label136;
                     }
 
-                    String var21 = (String)var20.nextElement();
-                    if (!var21.startsWith("lang")) {
+                    String localeString = localeStringKeys.nextElement();
+                    if (!localeString.startsWith("lang")) {
                         break;
                     }
 
-                    int var22 = 0;
+                    int languageID;
 
                     try {
-                        var22 = Integer.parseInt(var21.substring(4));
+                        // Example of expected format of `localeString`: "lang0"
+                        languageID = Integer.parseInt(localeString.substring(4));
                     } catch (NumberFormatException var16) {
-                        if (var14 == 0) {
-                            continue;
-                        }
+                        continue;
                     }
 
-                    int var24 = 0;
+                    int index = 0;
 
-                    while(var19 >= var24) {
-                        if (~var19 == ~var24 || ~var22 > ~field_45[var24]) {
-                            configItem = var19;
+                    while(i >= index) {
+                        /**
+                         * Sort the arrays by language ID
+                         *
+                         * Given languageID == 0
+                         * and
+                         * languageIDs == [1,2,3,0] // [3] is uninitialized
+                         *
+                         * The resulting array should be: [0,1,2,3]
+                         *
+                         * and localeStringList should be modified to match
+                         */
+                        if (i == index || languageID < languageIDs[index]) {
+                            equalPos = i;
 
-                            while(~configItem < ~var24) {
-                                field_43[configItem] = field_43[-1 + configItem];
-                                field_45[configItem] = field_45[-1 + configItem];
-                                --configItem;
+                            while(equalPos > index) {
+                                localeStringList[equalPos] = localeStringList[equalPos - 1];
+                                languageIDs[equalPos] = languageIDs[equalPos - 1];
+
+                                --equalPos;
+
                                 if (var14 != 0) {
                                     break;
                                 }
                             }
 
-                            field_45[var24] = var22;
-                            field_43[var24] = getLocaleString(var21, 0);
+                            languageIDs[index] = languageID;
+                            localeStringList[index] = getLocaleString(localeString, 0);
                             if (var14 == 0) {
                                 break;
                             }
                         }
 
-                        ++var24;
+                        ++index;
                         if (var14 != 0) {
                             break;
                         }
                     }
 
-                    ++var19;
+                    ++i;
                     break;
                 }
             } while(true);
 
             field_30 = new class_16(getLocaleString("language", 0));
-            field_30.method_35(true, field_43);
+            field_30.method_35(true, localeStringList);
             if (~serverCount < -1) {
                 field_44 = new ServerSettings[serverCount];
                 System.arraycopy(servers, 0, field_44, 0, serverCount);
@@ -1074,7 +1093,7 @@ public final class AppletViewer implements ComponentListener {
             }
 
             if (AppletViewerPreferences.getPreference("Language") == null) {
-                return method_23(0) < 0;
+                return method_23() < 0;
             }
         }
 
@@ -1082,10 +1101,10 @@ public final class AppletViewer implements ComponentListener {
     }
 
     // $FF: renamed from: d (int) int
-    static final int method_23(int var0) {
-        int var1 = field_30.method_36((byte)-57);
-        if (var0 <= var1) {
-            AppletViewerPreferences.addPreference(Integer.toString(field_45[var1]), "Language");
+    static int method_23() {
+        int var1 = field_30.method_36();
+        if (0 <= var1) {
+            AppletViewerPreferences.addPreference(Integer.toString(languageIDs[var1]), "Language");
             AppletViewerPreferences.writePreferencesToFile();
             return var1;
         } else {
@@ -1130,7 +1149,6 @@ public final class AppletViewer implements ComponentListener {
                 class_19.method_40((byte)47, getLocaleString("err_create_advertising", 0));
             }
         }
-
     }
 
     // $FF: renamed from: b (int, java.lang.String) java.lang.String

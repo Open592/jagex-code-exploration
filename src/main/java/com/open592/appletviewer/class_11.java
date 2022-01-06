@@ -19,7 +19,7 @@ final class class_11 implements ActionListener {
             }
          }
 
-         if (-1 < ~AppletViewer.method_23(0)) {
+         if (-1 < ~AppletViewer.method_23()) {
             return;
          }
 

@@ -101,14 +101,10 @@ final class class_16 implements ActionListener, WindowListener {
    }
 
    // $FF: renamed from: a (byte) int
-   final int method_36(byte var1) {
-      if (var1 != -57) {
-         return 58;
-      } else {
-         this.field_80.setLocationRelativeTo(AppletViewer.field_35);
-         this.field_80.setVisible(true);
-         return this.field_78;
-      }
+   final int method_36() {
+      this.field_80.setLocationRelativeTo(AppletViewer.field_35);
+      this.field_80.setVisible(true);
+      return this.field_78;
    }
 
    // $FF: renamed from: a (int) void

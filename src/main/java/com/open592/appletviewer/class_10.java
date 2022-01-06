@@ -24,10 +24,6 @@ final class class_10 {
                         var2.put("loaderbox_initial", "Loading...");
                         var2.put("error", "Error");
                         var2.put("quit", "Quit");
-                        var2.put("lang0", "English");
-                        var2.put("lang1", "German");
-                        var2.put("lang2", "Français");
-                        var2.put("lang3", "Português");
                         if (var4 == 0) {
                            return;
                         }
