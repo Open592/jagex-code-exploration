@@ -32,7 +32,7 @@ final class class_16 implements ActionListener, WindowListener {
 
    class_16(String var1) {
       super();
-      int var6 = class_21.field_91;
+      int var6 = AppletViewerPreferences.field_91;
       Panel var2 = new Panel();
       this.field_79 = new List();
       var2.setLayout(new BorderLayout());
@@ -61,7 +61,7 @@ final class class_16 implements ActionListener, WindowListener {
    public final void actionPerformed(ActionEvent var1) {
       if (!var1.getActionCommand().equals("ok")) {
          this.method_37(2);
-         if (class_21.field_91 == 0) {
+         if (AppletViewerPreferences.field_91 == 0) {
             return;
          }
       }
@@ -72,7 +72,7 @@ final class class_16 implements ActionListener, WindowListener {
 
    // $FF: renamed from: a (boolean, java.lang.String[]) void
    final void method_35(boolean var1, String[] var2) {
-      int var5 = class_21.field_91;
+      int var5 = AppletViewerPreferences.field_91;
       this.field_79.removeAll();
       if (!var1) {
          this.method_37(34);

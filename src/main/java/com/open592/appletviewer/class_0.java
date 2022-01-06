@@ -35,7 +35,7 @@ final class class_0 extends Component implements MouseListener, MouseMotionListe
    }
 
    public final void mousePressed(MouseEvent var1) {
-      int var4 = class_21.field_91;
+      int var4 = AppletViewerPreferences.field_91;
       Point var2 = var1.getPoint();
       int var3 = 0;
 
@@ -56,7 +56,7 @@ final class class_0 extends Component implements MouseListener, MouseMotionListe
    }
 
    public final void paint(Graphics var1) {
-      int var15 = class_21.field_91;
+      int var15 = AppletViewerPreferences.field_91;
       int var2 = this.getWidth();
       FontMetrics var3 = var1.getFontMetrics();
       int var4 = var3.getHeight();
@@ -124,7 +124,7 @@ final class class_0 extends Component implements MouseListener, MouseMotionListe
    }
 
    public final void mouseMoved(MouseEvent var1) {
-      int var4 = class_21.field_91;
+      int var4 = AppletViewerPreferences.field_91;
       Point var2 = var1.getPoint();
       int var3 = 0;
 
@@ -145,7 +145,7 @@ final class class_0 extends Component implements MouseListener, MouseMotionListe
 
    // $FF: renamed from: a (byte, java.lang.String) void
    private final void method_0(byte var1, String var2) {
-      int var15 = class_21.field_91;
+      int var15 = AppletViewerPreferences.field_91;
       if (null != var2) {
          StringTokenizer var3 = new StringTokenizer(var2, "\\");
          int var4 = -94 / ((var1 - -11) / 55);
@@ -209,7 +209,7 @@ final class class_0 extends Component implements MouseListener, MouseMotionListe
 
    class_0(String var1) {
       super();
-      int var7 = class_21.field_91;
+      int var7 = AppletViewerPreferences.field_91;
       this.field_1 = (class_15[][])null;
       this.setBackground(field_0);
       this.addMouseListener(this);

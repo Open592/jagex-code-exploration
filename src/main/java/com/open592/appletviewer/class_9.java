@@ -82,7 +82,7 @@ final class class_9 extends Component {
       try {
          if (null == var1) {
             this.repaint();
-            if (class_21.field_91 == 0) {
+            if (AppletViewerPreferences.field_91 == 0) {
                return;
             }
          }

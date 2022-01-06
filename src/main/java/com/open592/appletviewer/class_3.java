@@ -21,7 +21,7 @@ final class class_3 implements Runnable {
    }
 
    public final void run() {
-      int var6 = class_21.field_91;
+      int var6 = AppletViewerPreferences.field_91;
 
       while(true) {
          String var1 = null;

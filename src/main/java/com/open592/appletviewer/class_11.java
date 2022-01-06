@@ -7,7 +7,7 @@ import java.awt.event.ActionListener;
 final class class_11 implements ActionListener {
    public final void actionPerformed(ActionEvent var1) {
       label30: {
-         int var4 = class_21.field_91;
+         int var4 = AppletViewerPreferences.field_91;
          int var2 = var1.getID();
          if (var2 != 0 || var4 != 0) {
             if (-2 != ~var2) {

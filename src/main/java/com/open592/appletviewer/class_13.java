@@ -27,7 +27,7 @@ final class class_13 {
 
    // $FF: renamed from: a (java.lang.String, int) byte[]
    byte[] validateFile(String filename, int var2) {
-      int var19 = class_21.field_91;
+      int var19 = AppletViewerPreferences.field_91;
 
       System.out.println("Attempting to validate: " + filename);
       try {

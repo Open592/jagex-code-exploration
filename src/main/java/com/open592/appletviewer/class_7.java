@@ -16,7 +16,7 @@ final class class_7 {
 
    // $FF: renamed from: a (boolean, byte[], int, int) java.lang.String
    private static final String byteArrayToBase64String(byte[] var1, int var2) {
-      int var9 = class_21.field_91;
+      int var9 = AppletViewerPreferences.field_91;
       StringBuilder var4 = new StringBuilder();
       int var5 = 0;
 

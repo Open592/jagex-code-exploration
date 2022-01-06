@@ -6,7 +6,7 @@ import java.util.Hashtable;
 final class class_10 {
    // $FF: renamed from: a (int, boolean) void
    static final void method_31(int var0, boolean var1) {
-      int var4 = class_21.field_91;
+      int var4 = AppletViewerPreferences.field_91;
       if (var1) {
          Hashtable var2;
          label49: {

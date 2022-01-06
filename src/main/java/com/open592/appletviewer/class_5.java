@@ -46,7 +46,7 @@ final class class_5 extends ClassLoader {
    }
 
    public final Class loadClass(String var1) throws ClassNotFoundException {
-      int var13 = class_21.field_91;
+      int var13 = AppletViewerPreferences.field_91;
       if ("netscape.javascript.JSObject".equals(var1)) {
          CodeSource var2 = new CodeSource((URL)null, (Certificate[])null);
          Permissions var3 = new Permissions();
