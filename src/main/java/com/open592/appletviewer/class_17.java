@@ -89,7 +89,7 @@ final class class_17 implements AppletStub, AppletContext {
 
    public final URL getDocumentBase() {
       try {
-         return new URL(AppletViewer.getConfigValue((byte)115, "codebase"));
+         return new URL(AppletViewer.getConfigValue("codebase"));
       } catch (MalformedURLException var2) {
          throw new InvalidParameterException();
       }
@@ -97,7 +97,7 @@ final class class_17 implements AppletStub, AppletContext {
 
    public final URL getCodeBase() {
       try {
-         return new URL(AppletViewer.getConfigValue((byte)-58, "codebase"));
+         return new URL(AppletViewer.getConfigValue("codebase"));
       } catch (MalformedURLException var2) {
          throw new InvalidParameterException();
       }

@@ -62,7 +62,7 @@ public final class AppletViewer implements ComponentListener {
     // $FF: renamed from: o java.lang.String[]
     private static String[] localeStringList;
     // $FF: renamed from: p app.q[]
-    private static ServerSettings[] field_44 = null;
+    private static ServerSettings[] serverSettingsList = null;
     // $FF: renamed from: q int[]
     private static int[] languageIDs;
     // $FF: renamed from: r java.io.File
@@ -245,7 +245,7 @@ public final class AppletViewer implements ComponentListener {
             }
         }
 
-        String var8 = getConfigValue((byte)-63, "viewerversion");
+        String var8 = getConfigValue("viewerversion");
         int var9;
         if (null != var8) {
             try {
@@ -258,8 +258,8 @@ public final class AppletViewer implements ComponentListener {
         }
 
         var9 = 32 + Integer.parseInt(getParameter(0, "modewhat"));
-        String var10 = getConfigValue((byte)-14, "cachesubdir");
-        String var11 = getConfigValue((byte)-90, "codebase");
+        String var10 = getConfigValue("cachesubdir");
+        String var11 = getConfigValue("codebase");
         if (var0 == -47) {
             String var12 = System.getProperty("os.name").toLowerCase();
             String var13 = System.getProperty("os.arch").toLowerCase();
@@ -286,7 +286,7 @@ public final class AppletViewer implements ComponentListener {
             try {
                 byte[] var17;
                 if (field_36) {
-                    var16 = method_13(var11, -1, getConfigValue((byte)98, "browsercontrol_win_amd64_jar"));
+                    var16 = method_13(var11, -1, getConfigValue("browsercontrol_win_amd64_jar"));
                     var15 = method_17(var9, "browsercontrol64.dll", var14, var10, -89);
                     System.out.printf("Attempting to validate %s", "browser");
                     var17 = (new class_13(var16)).validateFile("browsercontrol64.dll", var0 ^ 83);
@@ -297,7 +297,7 @@ public final class AppletViewer implements ComponentListener {
 
                     method_21((byte)-122, var17, var15);
                 } else if (field_39) {
-                    var16 = method_13(var11, -1, getConfigValue((byte)110, "browsercontrol_win_x86_jar"));
+                    var16 = method_13(var11, -1, getConfigValue("browsercontrol_win_x86_jar"));
                     var15 = method_17(var9, "browsercontrol.dll", var14, var10, -78);
                     var17 = (new class_13(var16)).validateFile("browsercontrol.dll", -128);
                     if (var17 == null) {
@@ -324,7 +324,7 @@ public final class AppletViewer implements ComponentListener {
             }
 
             try {
-                var16 = method_13(var11, -1, getConfigValue((byte) -92, "loader_jar"));
+                var16 = method_13(var11, -1, getConfigValue("loader_jar"));
                 class_8 var36 = new class_8(var16);
                 field_33 = (Applet) var36.loadClass("loader").getDeclaredConstructor().newInstance();
                 if (isDebug) {
@@ -340,10 +340,10 @@ public final class AppletViewer implements ComponentListener {
 
             class_9.method_28(true);
             class_3.method_1(true);
-            field_35.setTitle(getConfigValue((byte)109, "title"));
-            int var35 = field_39 ? Integer.parseInt(getConfigValue((byte)103, "advert_height")) : 0;
-            int var37 = Integer.parseInt(getConfigValue((byte)-53, "window_preferredwidth"));
-            int var18 = Integer.parseInt(getConfigValue((byte)-121, "window_preferredheight"));
+            field_35.setTitle(getConfigValue("title"));
+            int var35 = field_39 ? Integer.parseInt(getConfigValue("advert_height")) : 0;
+            int var37 = Integer.parseInt(getConfigValue("window_preferredwidth"));
+            int var18 = Integer.parseInt(getConfigValue("window_preferredheight"));
             byte var19 = 40;
             Insets var20 = field_35.getInsets();
             field_35.setSize(var20.right + var37 + var20.left, var20.bottom + var18 + (var35 + var20.top - -var19));
@@ -365,7 +365,7 @@ public final class AppletViewer implements ComponentListener {
             field_31.setBackground(Color.BLACK);
             field_31.setForeground(Color.GRAY);
             field_31.method_2(getLocaleString("language", var0 ^ -47), false);
-            if (null != field_44 && field_44.length > 1) {
+            if (null != serverSettingsList && serverSettingsList.length > 1) {
                 field_31.method_2(getLocaleString("switchserver", 0), false);
             }
 
@@ -400,7 +400,7 @@ public final class AppletViewer implements ComponentListener {
                 }
 
                 try {
-                    browsercontrol.create(field_34, getConfigValue((byte)120, "adverturl"));
+                    browsercontrol.create(field_34, getConfigValue("adverturl"));
                     browsercontrol.resize(field_34.getSize().width, field_34.getSize().height);
                 } catch (Throwable var27) {
                     if (isDebug) {
@@ -424,9 +424,9 @@ public final class AppletViewer implements ComponentListener {
     }
 
     // $FF: renamed from: a (app.q, int) void
-    private static final void method_11(ServerSettings var0, int var1) {
+    private static final void method_11(ServerSettings var0) {
         if (null != var0) {
-            class_9.method_29(false, getLocaleString("loading_app", var1 ^ 21870));
+            class_9.method_29(false, getLocaleString("loading_app", 0));
             class_9.method_25(0, (byte)101);
             class_9.method_26(109);
             class_9.method_27(-83);
@@ -449,12 +449,12 @@ public final class AppletViewer implements ComponentListener {
             class_9.method_25(50, (byte)-84);
             class_9.method_27(-73);
             if (field_39) {
-                class_5.method_4(var1 + -21615);
+                class_5.method_4(21870 + -21615);
             }
 
             try {
-                String var2 = getConfigValue((byte)105, "codebase");
-                byte[] var3 = method_13(var2, var1 + -21871, getConfigValue((byte)103, "loader_jar"));
+                String var2 = getConfigValue("codebase");
+                byte[] var3 = method_13(var2, 21870 + -21871, getConfigValue("loader_jar"));
                 class_9.method_25(75, (byte)-115);
                 class_9.method_27(-76);
                 class_8 var4 = new class_8(var3);
@@ -474,7 +474,7 @@ public final class AppletViewer implements ComponentListener {
             }
 
             field_37.add(field_33);
-            field_38 = new class_0(getLocaleString("tandc", var1 ^ var1));
+            field_38 = new class_0(getLocaleString("tandc", 0));
             field_37.add(field_38);
             field_49 = true;
             method_12((byte)95);
@@ -488,12 +488,12 @@ public final class AppletViewer implements ComponentListener {
     private static final void method_12(byte var0) {
         if (null != field_33) {
             int var1 = field_31.isVisible() ? 20 : 0;
-            int var2 = null == field_34 ? 0 : Integer.parseInt(getConfigValue((byte)98, "advert_height"));
+            int var2 = null == field_34 ? 0 : Integer.parseInt(getConfigValue("advert_height"));
             int var3 = !field_38.isVisible() ? 0 : 40;
-            int var4 = Integer.parseInt(getConfigValue((byte)124, "applet_minwidth"));
-            int var5 = Integer.parseInt(getConfigValue((byte)-123, "applet_minheight"));
-            int var6 = Integer.parseInt(getConfigValue((byte)-18, "applet_maxwidth"));
-            int var7 = Integer.parseInt(getConfigValue((byte)126, "applet_maxheight"));
+            int var4 = Integer.parseInt(getConfigValue("applet_minwidth"));
+            int var5 = Integer.parseInt(getConfigValue("applet_minheight"));
+            int var6 = Integer.parseInt(getConfigValue("applet_maxwidth"));
+            int var7 = Integer.parseInt(getConfigValue("applet_maxheight"));
             Dimension var8 = field_37.getSize();
             Insets var9 = field_37.getInsets();
             int var10 = -var9.right + var8.width - var9.left;
@@ -620,82 +620,80 @@ public final class AppletViewer implements ComponentListener {
             }
         }
 
+        System.out.println("Using root param for: " + name);
         return params.get(name);
     }
 
     // $FF: renamed from: b (int) void
-    static final void method_16(int var0) {
+    static void getAvailableServerList() {
         int var9 = AppletViewerPreferences.field_91;
-        String var1 = getConfigValue((byte)126, "serverlist");
-        ServerSettings[] var2 = field_44;
-        int var3 = field_44.length;
-        if (var0 != -14393) {
-            method_12((byte)-41);
-        }
+        String serverListURL = getConfigValue("serverlist");
+        ServerSettings[] enabledServers = serverSettingsList;
+        int enabledServerCount = serverSettingsList.length;
 
-        if (var1 != null) {
-            var2 = new ServerSettings[field_44.length];
-            var3 = 0;
+        /*
+         * If the server includes a server list param we will use it to determine which servers are available
+         * to show in the list
+         */
+        if (serverListURL != null) {
+            enabledServers = new ServerSettings[serverSettingsList.length];
+            enabledServerCount = 0;
 
             try {
-                BufferedReader var4 = fetchJavConfig(var1, (File)null);
+                BufferedReader serverList = fetchJavConfig(serverListURL, null);
 
                 label67:
                 do {
-                    String[] var6;
+                    // [SeverName, (Bool)isEnabled]
+                    String[] serverListPair;
                     do {
-                        String var5;
+                        String line;
                         do {
-                            var5 = var4.readLine();
-                            if (null == var5 && var9 == 0) {
+                            line = serverList.readLine();
+
+                            if (line == null) {
                                 break label67;
                             }
 
-                            var5 = var5.trim();
-                        } while(var5.startsWith("//"));
+                            line = line.trim();
+                        } while(line.startsWith("//"));
 
-                        var6 = var5.split(",");
-                    } while(~var6.length > -3);
+                        serverListPair = line.split(",");
+                    } while(serverListPair.length < 2);
 
-                    if (var6[1].trim().toLowerCase().equals("true")) {
-                        String var7 = var6[0].trim();
-                        int var8 = 0;
+                    if (serverListPair[1].trim().toLowerCase().equals("true")) {
+                        String serverName = serverListPair[0].trim();
+                        int index = 0;
 
-                        while(~field_44.length < ~var8) {
-                            if (field_44[var8].name.equals(var7)) {
-                                var2[var3++] = field_44[var8];
+                        while(serverSettingsList.length > index) {
+                            if (serverSettingsList[index].name.equals(serverName)) {
+                                enabledServers[enabledServerCount++] = serverSettingsList[index];
                             }
 
-                            ++var8;
-                            if (var9 != 0) {
-                                break;
-                            }
+                            ++index;
                         }
                     }
-                } while(var9 == 0);
+                } while(true);
 
-                var4.close();
+                serverList.close();
             } catch (IOException var10) {
-                var3 = field_44.length;
-                var2 = field_44;
+                enabledServerCount = serverSettingsList.length;
+                enabledServers = serverSettingsList;
             }
         }
 
-        String[] var11 = new String[var3];
-        int var12 = 0;
+        String[] serverNameList = new String[enabledServerCount];
+        int currentIndex = 0;
 
-        while(~var12 > ~var3) {
-            var11[var12] = (String)var2[var12].configValues.get("servername");
-            ++var12;
-            if (var9 != 0) {
-                break;
-            }
+        while(currentIndex < enabledServerCount) {
+            serverNameList[currentIndex] = enabledServers[currentIndex].configValues.get("servername");
+            ++currentIndex;
         }
 
-        field_29.method_35(true, var11);
-        var12 = field_29.method_36();
-        if (~var12 <= -1) {
-            method_11(var2[var12], 21870);
+        field_29.method_35(true, serverNameList);
+        currentIndex = field_29.method_36();
+        if (currentIndex > 0) {
+            method_11(enabledServers[currentIndex]);
         }
 
     }
@@ -817,7 +815,7 @@ public final class AppletViewer implements ComponentListener {
     // $FF: renamed from: c (int) void
     public static final void method_18(int var0) {
         boolean var1 = false;
-        if (null == field_44 && field_31.isVisible()) {
+        if (null == serverSettingsList && field_31.isVisible()) {
             field_31.setVisible(false);
             var1 = true;
         }
@@ -842,23 +840,23 @@ public final class AppletViewer implements ComponentListener {
                 return var2;
             }
 
-            System.out.println("Failed to find localeString for " + key);
         }
 
+        System.out.println("Using root locale string for: " + key);
         return var1 != 0 ? null : localeStrings.get(key);
     }
 
     // $FF: renamed from: b (byte, java.lang.String) java.lang.String
-    static String getConfigValue(byte var0, String name) {
+    static String getConfigValue(String name) {
         if (null != currentServerSettings) {
-            String var3 = currentServerSettings.configValues.get(name);
-            if (var3 != null) {
-                return var3;
-            }
+            String configValue = currentServerSettings.configValues.get(name);
 
-            System.out.println("Failed to find config value for " + name);
+            if (configValue != null) {
+                return configValue;
+            }
         }
 
+        System.out.println("Using root config item for: " + name);
         return configurationItems.get(name);
     }
 
@@ -893,8 +891,8 @@ public final class AppletViewer implements ComponentListener {
         class_10.method_31(var1, true);
         configurationItems.clear();
         currentServerSettings = null;
-        field_44 = null;
-        int serverCount = 0;
+        serverSettingsList = null;
+        int severSettingsCount = 0;
         ServerSettings[] servers = new ServerSettings[50];
 
         int equalPos;
@@ -927,13 +925,13 @@ public final class AppletViewer implements ComponentListener {
                         currentServerSettings = settings;
                     }
 
-                    if (serverCount >= servers.length) {
-                        ServerSettings[] resizedServers = new ServerSettings[10 + serverCount];
+                    if (severSettingsCount >= servers.length) {
+                        ServerSettings[] resizedServers = new ServerSettings[10 + severSettingsCount];
                         System.arraycopy(servers, 0, resizedServers, 0, servers.length);
                         servers = resizedServers;
                     }
 
-                    servers[serverCount++] = settings;
+                    servers[severSettingsCount++] = settings;
                     params = settings.parameters;
                     configValues = settings.configValues;
                     localeStrings = settings.localeStrings;
@@ -1086,9 +1084,9 @@ public final class AppletViewer implements ComponentListener {
 
             field_30 = new class_16(getLocaleString("language", 0));
             field_30.method_35(true, localeStringList);
-            if (~serverCount < -1) {
-                field_44 = new ServerSettings[serverCount];
-                System.arraycopy(servers, 0, field_44, 0, serverCount);
+            if (~severSettingsCount < -1) {
+                serverSettingsList = new ServerSettings[severSettingsCount];
+                System.arraycopy(servers, 0, serverSettingsList, 0, severSettingsCount);
                 field_29 = new class_16(getLocaleString("switchserver", 0));
             }
 
@@ -1139,7 +1137,7 @@ public final class AppletViewer implements ComponentListener {
             }
 
             try {
-                browsercontrol.create(field_34, getConfigValue((byte)-67, "adverturl"));
+                browsercontrol.create(field_34, getConfigValue("adverturl"));
                 browsercontrol.resize(field_34.getSize().width, field_34.getSize().height);
             } catch (Throwable var2) {
                 if (isDebug) {

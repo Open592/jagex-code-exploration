@@ -29,6 +29,6 @@ final class class_11 implements ActionListener {
          }
       }
 
-      AppletViewer.method_16(-14393);
+      AppletViewer.getAvailableServerList();
    }
 }
