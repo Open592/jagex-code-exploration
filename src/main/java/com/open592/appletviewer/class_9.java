@@ -107,7 +107,7 @@ final class class_9 extends Component {
 
    // $FF: renamed from: c (int) void
    static final void method_30(int var0) {
-      field_61 = new class_9(AppletViewer.method_19("loaderbox_initial", 0));
+      field_61 = new class_9(AppletViewer.getLocaleString("loaderbox_initial", 0));
       field_61.field_56 = new Font("Helvetica", 1, 13);
       field_61.field_62 = field_61.getFontMetrics(field_61.field_56);
       field_57 = new Dialog(AppletViewer.field_35, "Jagex Ltd.", false);

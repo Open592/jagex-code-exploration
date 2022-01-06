@@ -42,7 +42,7 @@ final class class_3 implements Runnable {
 
          try {
             if (null != var1 && var1.equals("_top") && (var2.endsWith("MAGICQUIT") || var2.indexOf("/quit.ws") != -1 || var2.indexOf(".ws") == -1 && var2.endsWith("/"))) {
-               AppletViewer.method_8((byte)-93);
+               AppletViewer.method_8();
             }
 
             if (!AppletViewer.field_39) {
@@ -69,14 +69,14 @@ final class class_3 implements Runnable {
 
             Runtime.getRuntime().exec("cmd /c start \"j\" \"" + var2 + "\"");
          } catch (Exception var10) {
-            if (AppletViewer.field_40) {
+            if (AppletViewer.isDebug) {
                var10.printStackTrace();
             }
 
             try {
                new class_6(var2);
             } catch (Exception var9) {
-               if (AppletViewer.field_40) {
+               if (AppletViewer.isDebug) {
                   var9.printStackTrace();
                }
             }

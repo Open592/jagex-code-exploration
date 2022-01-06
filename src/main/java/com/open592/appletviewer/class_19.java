@@ -72,7 +72,7 @@ final class class_19 {
 
    // $FF: renamed from: a (java.lang.String, byte) void
    static final void method_39(String var0, byte var1) {
-      method_38(AppletViewer.method_19("ok", 0), AppletViewer.method_19("message", 0), (byte)47, var0);
+      method_38(AppletViewer.getLocaleString("ok", 0), AppletViewer.getLocaleString("message", 0), (byte)47, var0);
       field_84.addActionListener(new class_2());
       int var2 = 108 / ((var1 - 54) / 58);
       field_83.setVisible(true);
@@ -81,7 +81,7 @@ final class class_19 {
    // $FF: renamed from: a (byte, java.lang.String) void
    static final void method_40(byte var0, String var1) {
       class_9.method_28(true);
-      method_38(AppletViewer.method_19("quit", 0), AppletViewer.method_19("error", 0), var0, var1);
+      method_38(AppletViewer.getLocaleString("quit", 0), AppletViewer.getLocaleString("error", 0), var0, var1);
       field_83.addWindowListener(class_12.method_32(17407));
       field_84.addActionListener(class_12.method_32(17407));
       field_83.setVisible(true);

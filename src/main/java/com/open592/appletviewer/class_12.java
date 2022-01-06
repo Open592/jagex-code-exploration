@@ -11,11 +11,11 @@ final class class_12 extends WindowAdapter implements ActionListener {
    private static class_12 field_63;
 
    public final void windowClosing(WindowEvent var1) {
-      AppletViewer.method_8((byte)-82);
+      AppletViewer.method_8();
    }
 
    public final void actionPerformed(ActionEvent var1) {
-      AppletViewer.method_8((byte)35);
+      AppletViewer.method_8();
    }
 
    private class_12() {

@@ -1,6 +1,5 @@
 package com.open592.appletviewer;
 
-import java.applet.Applet;
 import java.awt.BorderLayout;
 import java.awt.Button;
 import java.awt.Dialog;
@@ -41,10 +40,10 @@ final class class_16 implements ActionListener, WindowListener {
       Panel var3 = new Panel();
       var3.setLayout(new GridLayout(1, 2));
       var2.add(var3, "South");
-      Button var4 = new Button(AppletViewer.method_19("ok", 0));
+      Button var4 = new Button(AppletViewer.getLocaleString("ok", 0));
       var4.setActionCommand("ok");
       var4.addActionListener(this);
-      Button var5 = new Button(AppletViewer.method_19("cancel", 0));
+      Button var5 = new Button(AppletViewer.getLocaleString("cancel", 0));
       var5.setActionCommand("cancel");
       var5.addActionListener(this);
       var3.add(var4);

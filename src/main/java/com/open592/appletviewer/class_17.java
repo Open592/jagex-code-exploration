@@ -16,7 +16,7 @@ import java.util.Iterator;
 // $FF: renamed from: app.a
 final class class_17 implements AppletStub, AppletContext {
    public final void showDocument(URL var1) {
-      if (AppletViewer.field_40) {
+      if (AppletViewer.isDebug) {
          System.out.println("showdocument url:" + var1);
       }
 
@@ -48,8 +48,8 @@ final class class_17 implements AppletStub, AppletContext {
    }
 
    public final String getParameter(String var1) {
-      String var2 = AppletViewer.method_15(0, var1);
-      if (AppletViewer.field_40 && var2 == null) {
+      String var2 = AppletViewer.getParameter(0, var1);
+      if (AppletViewer.isDebug && var2 == null) {
          if ("force64mb".equals(var1)) {
             System.out.println("Returning false for force64mb");
             return "false";
@@ -66,7 +66,7 @@ final class class_17 implements AppletStub, AppletContext {
    }
 
    public final void showDocument(URL var1, String var2) {
-      if (AppletViewer.field_40) {
+      if (AppletViewer.isDebug) {
          System.out.println("showdocument url:" + var1 + " target:" + var2);
       }
 
@@ -89,7 +89,7 @@ final class class_17 implements AppletStub, AppletContext {
 
    public final URL getDocumentBase() {
       try {
-         return new URL(AppletViewer.method_20((byte)115, "codebase"));
+         return new URL(AppletViewer.getConfigValue((byte)115, "codebase"));
       } catch (MalformedURLException var2) {
          throw new InvalidParameterException();
       }
@@ -97,7 +97,7 @@ final class class_17 implements AppletStub, AppletContext {
 
    public final URL getCodeBase() {
       try {
-         return new URL(AppletViewer.method_20((byte)-58, "codebase"));
+         return new URL(AppletViewer.getConfigValue((byte)-58, "codebase"));
       } catch (MalformedURLException var2) {
          throw new InvalidParameterException();
       }

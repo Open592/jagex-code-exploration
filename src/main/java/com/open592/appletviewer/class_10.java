@@ -13,7 +13,7 @@ final class class_10 {
             label57: {
                label46: {
                   label55: {
-                     var2 = AppletViewer.field_42;
+                     var2 = AppletViewer.localeStrings;
                      var2.clear();
                      if (var0 == 0 && var4 == 0) {
                         var2.put("err_missing_config", "Missing com.jagex.config setting");
@@ -24,6 +24,10 @@ final class class_10 {
                         var2.put("loaderbox_initial", "Loading...");
                         var2.put("error", "Error");
                         var2.put("quit", "Quit");
+                        var2.put("lang0", "English");
+                        var2.put("lang1", "German");
+                        var2.put("lang2", "Français");
+                        var2.put("lang3", "Português");
                         if (var4 == 0) {
                            return;
                         }

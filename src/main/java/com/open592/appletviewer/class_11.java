@@ -23,7 +23,7 @@ final class class_11 implements ActionListener {
             return;
          }
 
-         class_19.method_39(AppletViewer.method_19("changes_on_restart", 0), (byte)-80);
+         class_19.method_39(AppletViewer.getLocaleString("changes_on_restart", 0), (byte)-80);
          if (var4 == 0) {
             return;
          }

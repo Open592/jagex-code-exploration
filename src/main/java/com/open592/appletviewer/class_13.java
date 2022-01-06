@@ -29,11 +29,10 @@ final class class_13 {
    byte[] validateFile(String filename, int var2) {
       int var19 = class_21.field_91;
 
-      System.out.println("Attempting to validate" + filename);
+      System.out.println("Attempting to validate: " + filename);
       try {
          byte[] var3 = this.fileMap.remove(filename);
          if (var3 == null) {
-            System.out.println("Var 3 null");
             return null;
          } else {
             class_20 var4 = this.field_65.get(filename);
@@ -136,7 +135,7 @@ final class class_13 {
          }
       } catch (Exception var20) {
          var20.printStackTrace();
-         class_19.method_40((byte)47, AppletViewer.method_19("err_get_file", 0) + ":" + filename + " [" + var20 + "]");
+         class_19.method_40((byte)47, AppletViewer.getLocaleString("err_get_file", 0) + ":" + filename + " [" + var20 + "]");
          return null;
       }
    }
