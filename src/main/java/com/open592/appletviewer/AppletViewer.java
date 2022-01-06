@@ -184,8 +184,8 @@ public final class AppletViewer implements ComponentListener {
                 }
 
                 if (languageID >= 0) {
-                    AppletViewerPreferences.addPreference(Integer.toString(languageID), (byte)120, "Language");
-                    AppletViewerPreferences.writePreferencesToFile(true);
+                    AppletViewerPreferences.addPreference(Integer.toString(languageID), "Language");
+                    AppletViewerPreferences.writePreferencesToFile();
                 }
 
                 if (var23 == 0) {
@@ -1085,8 +1085,8 @@ public final class AppletViewer implements ComponentListener {
     static final int method_23(int var0) {
         int var1 = field_30.method_36((byte)-57);
         if (var0 <= var1) {
-            AppletViewerPreferences.addPreference(Integer.toString(field_45[var1]), (byte)-90, "Language");
-            AppletViewerPreferences.writePreferencesToFile(true);
+            AppletViewerPreferences.addPreference(Integer.toString(field_45[var1]), "Language");
+            AppletViewerPreferences.writePreferencesToFile();
             return var1;
         } else {
             return -1;

@@ -14,7 +14,7 @@ public final class AppletViewerPreferences {
    // $FF: renamed from: a java.util.Hashtable
    private static Hashtable<String, String> preferences = new Hashtable<>();
    // $FF: renamed from: b java.io.File
-   private static File preferencesFile = new File("jagexappletviewer.preferences");
+   private static final File preferencesFile = new File("jagexappletviewer.preferences");
    // $FF: renamed from: c int
    public static int field_91;
 
@@ -45,12 +45,12 @@ public final class AppletViewerPreferences {
    }
 
    // $FF: renamed from: a (java.lang.String, byte, java.lang.String) void
-   public static void addPreference(String var0, byte var1, String var2) {
-      preferences.put(var2, var0);
+   public static void addPreference(String value, String name) {
+      preferences.put(name, value);
    }
 
    // $FF: renamed from: a (boolean) void
-   public static void writePreferencesToFile(boolean var0) {
+   public static void writePreferencesToFile() {
       int var6 = field_91;
 
       try (PrintStream filePrintStream = new PrintStream(new FileOutputStream(preferencesFile))) {
@@ -64,12 +64,8 @@ public final class AppletViewerPreferences {
                break;
             }
          }
-
-         if (!var0) {
-            preferencesFile = (File) null;
-         }
-      } catch (IOException var9) {
-         var9.printStackTrace();
+      } catch (IOException e) {
+         e.printStackTrace();
       }
 
    }
