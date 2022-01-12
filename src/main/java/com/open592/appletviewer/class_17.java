@@ -48,7 +48,7 @@ final class class_17 implements AppletStub, AppletContext {
    }
 
    public final String getParameter(String var1) {
-      String var2 = AppletViewer.getParameter(0, var1);
+      String var2 = AppletViewer.getParameter(var1);
       if (AppletViewer.isDebug && var2 == null) {
          if ("force64mb".equals(var1)) {
             System.out.println("Returning false for force64mb");

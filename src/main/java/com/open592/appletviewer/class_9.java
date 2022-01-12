@@ -43,7 +43,7 @@ final class class_9 extends Component {
          field_57 = (Dialog)null;
       }
 
-      field_57.setLocationRelativeTo(AppletViewer.field_35);
+      field_57.setLocationRelativeTo(AppletViewer.frame);
       field_57.setVisible(true);
    }
 
@@ -110,7 +110,7 @@ final class class_9 extends Component {
       field_61 = new class_9(AppletViewer.getLocaleString("loaderbox_initial", 0));
       field_61.field_56 = new Font("Helvetica", 1, 13);
       field_61.field_62 = field_61.getFontMetrics(field_61.field_56);
-      field_57 = new Dialog(AppletViewer.field_35, "Jagex Ltd.", false);
+      field_57 = new Dialog(AppletViewer.frame, "Jagex Ltd.", false);
       field_57.add(field_61);
       field_57.addWindowListener(class_12.method_32(var0 + 17087));
       field_57.setResizable(false);

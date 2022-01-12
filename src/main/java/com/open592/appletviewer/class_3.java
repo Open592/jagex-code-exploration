@@ -41,7 +41,7 @@ final class class_3 implements Runnable {
          }
 
          try {
-            if (null != var1 && var1.equals("_top") && (var2.endsWith("MAGICQUIT") || var2.indexOf("/quit.ws") != -1 || var2.indexOf(".ws") == -1 && var2.endsWith("/"))) {
+            if (null != var1 && var1.equals("_top") && (var2.endsWith("MAGICQUIT") || var2.contains("/quit.ws") || !var2.contains(".ws") && var2.endsWith("/"))) {
                AppletViewer.method_8();
             }
 

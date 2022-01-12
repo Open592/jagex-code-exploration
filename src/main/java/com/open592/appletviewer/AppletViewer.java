@@ -1,34 +1,16 @@
 package com.open592.appletviewer;
 
+import nativeadvert.browsercontrol;
+
 import java.applet.Applet;
-import java.awt.BorderLayout;
-import java.awt.Canvas;
-import java.awt.Color;
-import java.awt.Component;
-import java.awt.Dimension;
-import java.awt.Font;
-import java.awt.Frame;
-import java.awt.Image;
-import java.awt.Insets;
-import java.awt.LayoutManager;
-import java.awt.Panel;
-import java.awt.Toolkit;
+import java.awt.*;
 import java.awt.event.ComponentEvent;
 import java.awt.event.ComponentListener;
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileOutputStream;
-import java.io.FileReader;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.io.RandomAccessFile;
+import java.io.*;
 import java.net.URL;
 import java.util.Enumeration;
 import java.util.Hashtable;
-import java.util.Locale;
-
-import nativeadvert.browsercontrol;
+import java.util.Optional;
 
 public final class AppletViewer implements ComponentListener {
     // $FF: renamed from: a app.j
@@ -44,7 +26,7 @@ public final class AppletViewer implements ComponentListener {
     // $FF: renamed from: f java.awt.Canvas
     private static Canvas field_34;
     // $FF: renamed from: g java.awt.Frame
-    static Frame field_35;
+    static Frame frame;
     // $FF: renamed from: h boolean
     private static boolean field_36;
     // $FF: renamed from: i java.awt.Panel
@@ -69,8 +51,6 @@ public final class AppletViewer implements ComponentListener {
     private static File javConfigFile = null;
     // $FF: renamed from: s app.q
     private static ServerSettings currentServerSettings = null;
-    // $FF: renamed from: t float
-    private static float field_48 = 58988.0F;
     // $FF: renamed from: u boolean
     private static boolean field_49 = true;
     // $FF: renamed from: v java.lang.String
@@ -120,95 +100,42 @@ public final class AppletViewer implements ComponentListener {
 
     // $FF: renamed from: a (byte, java.lang.String) void
     public static void method_10(byte var0, String gameName) {
-        int var23 = AppletViewerPreferences.field_91;
         isDebug = Boolean.getBoolean("com.jagex.debug");
+
         if (isDebug) {
-            System.setErr(class_14.method_34("Jagex host console", -24134));
-            System.setOut(class_14.method_34("Jagex host console", -24134));
+            boolean showHostConsole = Boolean.getBoolean("com.jagex.hostConsole");
+
+            if (showHostConsole) {
+                System.setErr(class_14.method_34("Jagex host console", -24134));
+                System.setOut(class_14.method_34("Jagex host console", -24134));
+            }
+
             System.out.println("release #7");
             System.out.println("java.version = " + System.getProperty("java.version"));
             System.out.println("os.name = " + System.getProperty("os.name"));
             System.out.println("os.arch = " + System.getProperty("os.arch"));
         }
 
-        String var2;
-        int var3;
+        Language language = Language.resolveFromAppletViewerPreferences().orElseGet(() -> {
+            Language userLanguage = Language.resolveUserLanguage();
+
+            AppletViewerPreferences.addPreference(Integer.toString(userLanguage.getID()), "Language");
+            AppletViewerPreferences.writePreferencesToFile();
+
+            return userLanguage;
+        });
+
         String javConfigURL;
-        label275: {
-            AppletViewerPreferences.readPreferencesFile();
-            var2 = AppletViewerPreferences.getPreference("Language");
-            var3 = 0;
-            if (null == var2) {
-                byte languageID;
-                label280: {
-                    Locale defaultLocale = Locale.getDefault();
-                    String lang = defaultLocale.getISO3Language();
-                    javConfigURL = defaultLocale.getISO3Country();
-                    languageID = -1;
-                    if (lang != null) {
-                        if (lang.equals("eng")) {
-                            languageID = 0;
-                        }
 
-                        if (lang.equals("ger") || lang.equals("deu")) {
-                            languageID = 1;
-                        }
-
-                        if (lang.equals("fre") || lang.equals("fra")) {
-                            languageID = 2;
-                        }
-
-                        if (!lang.equals("por")) {
-                            break label280;
-                        }
-
-                        languageID = 3;
-                        if (var23 == 0) {
-                            break label280;
-                        }
-                    }
-
-                    if (null != javConfigURL) {
-                        if (javConfigURL.equals("GB") || javConfigURL.equals("US")) {
-                            languageID = 0;
-                        }
-
-                        if (javConfigURL.equals("DE")) {
-                            languageID = 1;
-                        }
-
-                        if (javConfigURL.equals("FR")) {
-                            languageID = 2;
-                        }
-
-                        if (javConfigURL.equals("BR")) {
-                            languageID = 3;
-                        }
-                    }
-                }
-
-                if (languageID >= 0) {
-                    AppletViewerPreferences.addPreference(Integer.toString(languageID), "Language");
-                    AppletViewerPreferences.writePreferencesToFile();
-                }
-
-                if (var23 == 0) {
-                    break label275;
-                }
-            }
-
-            var3 = Integer.parseInt(var2);
-        }
-
-        class_10.method_31(var3, true);
-        field_35 = new Frame();
+        InitialLocaleStrings.initialize(language);
+        frame = new Frame();
         File gameDirectory = new File((new File(System.getProperty("user.dir"))).getParentFile(), gameName);
         File iconFile = new File(gameDirectory, "jagexappletviewer.png");
         System.out.println("Trying to load icon file: " + iconFile.getAbsolutePath());
         if (iconFile.exists()) {
             Image iconImage = Toolkit.getDefaultToolkit().getImage(iconFile.getAbsolutePath());
             if (iconImage != null) {
-                field_35.setIconImage(iconImage);
+                frame.setIconImage(iconImage);
             }
         }
 
@@ -225,25 +152,12 @@ public final class AppletViewer implements ComponentListener {
             javConfigFile = new File(gameDirectory, configFileName);
         }
 
-        while(true) {
-            if (javConfigURL != null) {
-                AppletViewer.javConfigURL = resolveConfigURLTemplate(javConfigURL);
-                System.out.println("Config URL is " + AppletViewer.javConfigURL);
-            }
-
-            if (readJavConfig(var3) && var23 == 0) {
-                break;
-            }
-
-            var3 = 0;
-            var2 = AppletViewerPreferences.getPreference("Language");
-            if (var2 != null) {
-                var3 = Integer.parseInt(var2);
-                if (var23 != 0) {
-                    break;
-                }
-            }
+        if (javConfigURL != null) {
+            AppletViewer.javConfigURL = resolveConfigURLTemplate(javConfigURL);
+            System.out.println("Config URL is " + AppletViewer.javConfigURL);
         }
+
+        readJavConfig(language);
 
         String var8 = getConfigValue("viewerversion");
         int var9;
@@ -257,7 +171,7 @@ public final class AppletViewer implements ComponentListener {
             }
         }
 
-        var9 = 32 + Integer.parseInt(getParameter(0, "modewhat"));
+        var9 = 32 + Integer.parseInt(getParameter("modewhat"));
         String var10 = getConfigValue("cachesubdir");
         String var11 = getConfigValue("codebase");
         if (var0 == -47) {
@@ -286,23 +200,23 @@ public final class AppletViewer implements ComponentListener {
             try {
                 byte[] var17;
                 if (field_36) {
-                    var16 = method_13(var11, -1, getConfigValue("browsercontrol_win_amd64_jar"));
+                    var16 = method_13(var11, getConfigValue("browsercontrol_win_amd64_jar"));
                     var15 = method_17(var9, "browsercontrol64.dll", var14, var10, -89);
                     System.out.printf("Attempting to validate %s", "browser");
                     var17 = (new class_13(var16)).validateFile("browsercontrol64.dll", var0 ^ 83);
-                    if (null == var17) {
+                    if (null == var17 && !AppletViewer.isDebug) {
                         var15 = null;
                         class_19.method_40((byte)47, getLocaleString("err_verify_bc64", 0));
                     }
 
                     method_21((byte)-122, var17, var15);
                 } else if (field_39) {
-                    var16 = method_13(var11, -1, getConfigValue("browsercontrol_win_x86_jar"));
+                    var16 = method_13(var11, getConfigValue("browsercontrol_win_x86_jar"));
                     var15 = method_17(var9, "browsercontrol.dll", var14, var10, -78);
                     var17 = (new class_13(var16)).validateFile("browsercontrol.dll", -128);
-                    if (var17 == null) {
+                    if (var17 == null && !AppletViewer.isDebug) {
                         var15 = null;
-                        class_19.method_40((byte)47, getLocaleString("err_verify_bc", 0));
+                        class_19.method_40((byte) 47, getLocaleString("err_verify_bc", 0));
                     }
 
                     method_21((byte)25, var17, var15);
@@ -324,7 +238,7 @@ public final class AppletViewer implements ComponentListener {
             }
 
             try {
-                var16 = method_13(var11, -1, getConfigValue("loader_jar"));
+                var16 = method_13(var11, getConfigValue("loader_jar"));
                 class_8 var36 = new class_8(var16);
                 field_33 = (Applet) var36.loadClass("loader").getDeclaredConstructor().newInstance();
                 if (isDebug) {
@@ -335,27 +249,27 @@ public final class AppletViewer implements ComponentListener {
                     var29.printStackTrace();
                 }
 
-                class_19.method_40((byte)47, getLocaleString("err_target_applet", var0 + 47));
+                class_19.method_40((byte)47, getLocaleString("err_target_applet", 0));
             }
 
             class_9.method_28(true);
             class_3.method_1(true);
-            field_35.setTitle(getConfigValue("title"));
+            frame.setTitle(getConfigValue("title"));
             int var35 = field_39 ? Integer.parseInt(getConfigValue("advert_height")) : 0;
             int var37 = Integer.parseInt(getConfigValue("window_preferredwidth"));
             int var18 = Integer.parseInt(getConfigValue("window_preferredheight"));
             byte var19 = 40;
-            Insets var20 = field_35.getInsets();
-            field_35.setSize(var20.right + var37 + var20.left, var20.bottom + var18 + (var35 + var20.top - -var19));
-            field_35.setLocationRelativeTo((Component)null);
-            field_35.setVisible(true);
+            Insets var20 = frame.getInsets();
+            frame.setSize(var20.right + var37 + var20.left, var20.bottom + var18 + (var35 + var20.top - -var19));
+            frame.setLocationRelativeTo(null);
+            frame.setVisible(true);
             field_37 = new Panel();
             field_37.setBackground(Color.black);
-            field_37.setLayout((LayoutManager)null);
-            field_35.setLayout(new BorderLayout());
-            field_35.add(field_37, "Center");
-            boolean var21 = !"yes".equals(AppletViewerPreferences.getPreference("Member"));
-            if (field_39 && var21) {
+            field_37.setLayout(null);
+            frame.setLayout(new BorderLayout());
+            frame.add(field_37, "Center");
+            AppletViewerPreferences.getPreference("Member");
+            if (field_39) {
                 field_34 = new Canvas();
                 field_37.add(field_34);
             }
@@ -364,7 +278,7 @@ public final class AppletViewer implements ComponentListener {
             field_31 = new class_4(new class_11());
             field_31.setBackground(Color.BLACK);
             field_31.setForeground(Color.GRAY);
-            field_31.method_2(getLocaleString("language", var0 ^ -47), false);
+            field_31.method_2(getLocaleString("language", 0), false);
             if (null != serverSettingsList && serverSettingsList.length > 1) {
                 field_31.method_2(getLocaleString("switchserver", 0), false);
             }
@@ -373,7 +287,7 @@ public final class AppletViewer implements ComponentListener {
             field_37.add(field_31);
             field_38 = new class_0(getLocaleString("tandc", 0));
             field_37.add(field_38);
-            field_35.doLayout();
+            frame.doLayout();
             method_12((byte)69);
             if (field_39) {
                 try {
@@ -388,14 +302,11 @@ public final class AppletViewer implements ComponentListener {
                 }
             }
 
-            if (field_39 && var21) {
-                while(!field_34.isDisplayable() || !field_34.isShowing() || var23 != 0) {
+            if (field_39) {
+                while(!field_34.isDisplayable() || !field_34.isShowing()) {
                     try {
                         Thread.sleep(100L);
-                    } catch (Exception var28) {
-                        if (var23 != 0) {
-                            break;
-                        }
+                    } catch (Exception ignored) {
                     }
                 }
 
@@ -412,7 +323,7 @@ public final class AppletViewer implements ComponentListener {
                 }
             }
 
-            field_35.addWindowListener(class_12.method_32(17407));
+            frame.addWindowListener(class_12.method_32(17407));
             field_37.addComponentListener(new AppletViewer());
             field_33.setStub(new class_17());
             field_33.init();
@@ -420,11 +331,11 @@ public final class AppletViewer implements ComponentListener {
         }
     }
 
-    public final void componentHidden(ComponentEvent var1) {
+    public void componentHidden(ComponentEvent var1) {
     }
 
     // $FF: renamed from: a (app.q, int) void
-    private static final void method_11(ServerSettings var0) {
+    private static void method_11(ServerSettings var0) {
         if (null != var0) {
             class_9.method_29(false, getLocaleString("loading_app", 0));
             class_9.method_25(0, (byte)101);
@@ -449,12 +360,12 @@ public final class AppletViewer implements ComponentListener {
             class_9.method_25(50, (byte)-84);
             class_9.method_27(-73);
             if (field_39) {
-                class_5.method_4(21870 + -21615);
+                class_5.method_4(21870 - 21615);
             }
 
             try {
                 String var2 = getConfigValue("codebase");
-                byte[] var3 = method_13(var2, 21870 + -21871, getConfigValue("loader_jar"));
+                byte[] var3 = method_13(var2, getConfigValue("loader_jar"));
                 class_9.method_25(75, (byte)-115);
                 class_9.method_27(-76);
                 class_8 var4 = new class_8(var3);
@@ -519,15 +430,9 @@ public final class AppletViewer implements ComponentListener {
                 }
             }
 
-            int var15 = var10;
-            if (var4 > var10) {
-                var15 = var4;
-            }
+            int var15 = Math.max(var4, var10);
 
             field_31.setBounds((-var13 + var15) / 2, 0, var13, var1);
-            if (~var11 > ~(var5 + var2 - -var3 + var1)) {
-                int var16 = var1 + var3 + var2 + var5;
-            }
 
             if (field_34 != null) {
                 field_34.setBounds((-var13 + var15) / 2, var1, var13, var2);
@@ -539,16 +444,13 @@ public final class AppletViewer implements ComponentListener {
                 browsercontrol.resize(field_34.getSize().width, field_34.getSize().height);
             }
 
-            field_35.repaint();
+            frame.repaint();
         }
     }
 
     // $FF: renamed from: a (java.lang.String, int, java.lang.String) byte[]
-    private static final byte[] method_13(String var0, int var1, String var2) {
+    private static byte[] method_13(String var0, String var2) {
         int var7 = AppletViewerPreferences.field_91;
-        if (var1 != -1) {
-            field_29 = (class_16)null;
-        }
 
         byte[] var3 = new byte[300000];
         int var4 = 0;
@@ -564,6 +466,8 @@ public final class AppletViewer implements ComponentListener {
 
                 var4 += var6;
                 field_51 += (float)var6;
+                // $FF: renamed from: t float
+                float field_48 = 58988.0F;
                 class_9.method_25((int)(100.0F * (field_51 / field_48)), (byte)-90);
                 if (var7 != 0) {
                     break;
@@ -585,7 +489,7 @@ public final class AppletViewer implements ComponentListener {
     }
 
     // $FF: renamed from: a (int) void
-    public static final void method_14(int var0) {
+    public static void method_14(int var0) {
         if (var0 != 4443) {
             languageIDs = (int[])null;
         }
@@ -608,11 +512,7 @@ public final class AppletViewer implements ComponentListener {
     }
 
     // $FF: renamed from: a (int, java.lang.String) java.lang.String
-    static final String getParameter(int var0, String name) {
-        if (var0 != 0) {
-            field_37 = (Panel)null;
-        }
-
+    static String getParameter(String name) {
         if (currentServerSettings != null) {
             String var2 = currentServerSettings.parameters.get(name);
             if (var2 != null) {
@@ -661,7 +561,7 @@ public final class AppletViewer implements ComponentListener {
                         serverListPair = line.split(",");
                     } while(serverListPair.length < 2);
 
-                    if (serverListPair[1].trim().toLowerCase().equals("true")) {
+                    if (serverListPair[1].trim().equalsIgnoreCase("true")) {
                         String serverName = serverListPair[0].trim();
                         int index = 0;
 
@@ -781,7 +681,7 @@ public final class AppletViewer implements ComponentListener {
                                     var12.close();
                                     var12 = null;
                                 }
-                            } catch (Exception var17) {
+                            } catch (Exception ignored) {
                             }
                         }
 
@@ -812,26 +712,6 @@ public final class AppletViewer implements ComponentListener {
         }
     }
 
-    // $FF: renamed from: c (int) void
-    public static final void method_18(int var0) {
-        boolean var1 = false;
-        if (null == serverSettingsList && field_31.isVisible()) {
-            field_31.setVisible(false);
-            var1 = true;
-        }
-
-        if (field_38.isVisible()) {
-            var1 = true;
-            field_38.setVisible(false);
-        }
-
-        if (var1) {
-            method_12((byte)102);
-        }
-
-        int var2 = 65 / ((var0 - 72) / 48);
-    }
-
     // $FF: renamed from: a (java.lang.String, int) java.lang.String
     static String getLocaleString(String key, int var1) {
         if (null != currentServerSettings) {
@@ -860,35 +740,31 @@ public final class AppletViewer implements ComponentListener {
         return configurationItems.get(name);
     }
 
-    public final void componentResized(ComponentEvent var1) {
+    public void componentResized(ComponentEvent var1) {
         method_12((byte)2);
     }
 
     // $FF: renamed from: a (byte, byte[], java.io.File) boolean
-    private static final boolean method_21(byte var0, byte[] var1, File var2) {
-        int var3 = -97 / ((-72 - var0) / 50);
-
+    private static void method_21(byte var0, byte[] var1, File var2) {
         try {
             FileOutputStream var4 = new FileOutputStream(var2);
             var4.write(var1, 0, var1.length);
             var4.close();
-            return true;
         } catch (IOException var5) {
             if (isDebug) {
                 var5.printStackTrace();
             }
 
             class_19.method_40((byte)47, getLocaleString("err_save_file", 0));
-            return false;
         }
     }
 
     // $FF: renamed from: a (byte, int) boolean
-    private static boolean readJavConfig(int var1) {
+    private static void readJavConfig(Language language) {
         int var14 = AppletViewerPreferences.field_91;
         params.clear();
         int langCount = 0;
-        class_10.method_31(var1, true);
+        InitialLocaleStrings.initialize(language);
         configurationItems.clear();
         currentServerSettings = null;
         serverSettingsList = null;
@@ -1039,7 +915,7 @@ public final class AppletViewer implements ComponentListener {
                     int index = 0;
 
                     while(i >= index) {
-                        /**
+                        /*
                          * Sort the arrays by language ID
                          *
                          * Given languageID == 0
@@ -1090,12 +966,11 @@ public final class AppletViewer implements ComponentListener {
                 field_29 = new class_16(getLocaleString("switchserver", 0));
             }
 
-            if (AppletViewerPreferences.getPreference("Language") == null) {
-                return method_23() < 0;
+            if (!AppletViewerPreferences.getPreference("Language").isPresent()) {
+                method_23();
             }
         }
 
-        return true;
     }
 
     // $FF: renamed from: d (int) int
@@ -1169,10 +1044,10 @@ public final class AppletViewer implements ComponentListener {
 
             String variableName = configURL.substring(2 + templateStartPos, variableSeparatorPos);
             String defaultValue = configURL.substring(1 + variableSeparatorPos, variableEndPos);
-            String preferenceValue = AppletViewerPreferences.getPreference(variableName);
+            Optional<String> preferenceValue = AppletViewerPreferences.getPreference(variableName);
 
-            if (preferenceValue != null) {
-                defaultValue = preferenceValue;
+            if (preferenceValue.isPresent()) {
+                defaultValue = preferenceValue.get();
             }
 
             if (variableEndPos < -1 + configURL.length()) {

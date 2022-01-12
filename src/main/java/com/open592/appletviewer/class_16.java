@@ -48,7 +48,7 @@ final class class_16 implements ActionListener, WindowListener {
       var5.addActionListener(this);
       var3.add(var4);
       var3.add(var5);
-      this.field_80 = new Dialog(AppletViewer.field_35, var1, true);
+      this.field_80 = new Dialog(AppletViewer.frame, var1, true);
       this.field_80.addWindowListener(this);
       this.field_80.setSize(200, 150);
       this.field_80.add(var2);
@@ -102,7 +102,7 @@ final class class_16 implements ActionListener, WindowListener {
 
    // $FF: renamed from: a (byte) int
    final int method_36() {
-      this.field_80.setLocationRelativeTo(AppletViewer.field_35);
+      this.field_80.setLocationRelativeTo(AppletViewer.frame);
       this.field_80.setVisible(true);
       return this.field_78;
    }

@@ -17,7 +17,7 @@ final class class_19 {
    // $FF: renamed from: a (java.lang.String, java.lang.String, byte, java.lang.String) void
    private static final void method_38(String var0, String var1, byte var2, String var3) {
       int var10 = AppletViewerPreferences.field_91;
-      field_83 = new Dialog(AppletViewer.field_35, var1, true);
+      field_83 = new Dialog(AppletViewer.frame, var1, true);
       int var4 = 0;
       int var5 = -1;
 
@@ -66,7 +66,7 @@ final class class_19 {
       field_83.setResizable(false);
       if (var2 == 47) {
          field_83.setSize(500, 100);
-         field_83.setLocationRelativeTo(AppletViewer.field_35);
+         field_83.setLocationRelativeTo(AppletViewer.frame);
       }
    }
 
