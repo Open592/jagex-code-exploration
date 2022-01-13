@@ -135,7 +135,7 @@ final class class_13 {
          }
       } catch (Exception var20) {
          var20.printStackTrace();
-         class_19.method_40((byte)47, AppletViewer.getLocaleString("err_get_file", 0) + ":" + filename + " [" + var20 + "]");
+         ModalDialog.displayErrorMessage(AppletViewer.getLocaleString("err_get_file") + ":" + filename + " [" + var20 + "]");
          return null;
       }
    }

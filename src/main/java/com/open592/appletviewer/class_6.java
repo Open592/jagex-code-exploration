@@ -26,12 +26,12 @@ final class class_6 extends WindowAdapter implements ActionListener {
    class_6(String var1) {
       super();
       int var5 = AppletViewerPreferences.field_91;
-      this.field_22 = new Dialog(AppletViewer.frame, AppletViewer.getLocaleString("information", 0), true);
+      this.field_22 = new Dialog(AppletViewer.frame, AppletViewer.getLocaleString("information"), true);
       TextArea var2 = new TextArea();
-      var2.setText(AppletViewer.getLocaleString("copy_paste_url", 0) + ":\n" + var1);
+      var2.setText(AppletViewer.getLocaleString("copy_paste_url") + ":\n" + var1);
       var2.setEditable(false);
       this.field_22.add(var2);
-      Button var3 = new Button(AppletViewer.getLocaleString("ok", 0));
+      Button var3 = new Button(AppletViewer.getLocaleString("ok"));
       var3.addActionListener(this);
       Panel var4 = new Panel();
       var4.setLayout(new FlowLayout(1));

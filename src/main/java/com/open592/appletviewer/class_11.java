@@ -23,7 +23,7 @@ final class class_11 implements ActionListener {
             return;
          }
 
-         class_19.method_39(AppletViewer.getLocaleString("changes_on_restart", 0), (byte)-80);
+         ModalDialog.displayMessage(AppletViewer.getLocaleString("changes_on_restart"));
          if (var4 == 0) {
             return;
          }

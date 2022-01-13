@@ -10,7 +10,7 @@ final class class_2 implements ActionListener {
    private Dialog field_9;
 
    class_2() {
-      this.field_9 = class_19.field_83;
+      this.field_9 = ModalDialog.dialog;
    }
 
    public final void actionPerformed(ActionEvent var1) {

@@ -16,7 +16,7 @@ final class class_9 extends Component {
    // $FF: renamed from: c int
    private int field_58 = 0;
    // $FF: renamed from: d java.awt.Color
-   private Color field_59 = new Color(140, 11, 1);
+   private final Color field_59 = new Color(140, 11, 1);
    // $FF: renamed from: e java.lang.String
    private String field_60 = "Loading...";
    // $FF: renamed from: f app.i
@@ -25,14 +25,13 @@ final class class_9 extends Component {
    private FontMetrics field_62;
 
    // $FF: renamed from: a (int, byte) void
-   static final void method_25(int var0, byte var1) {
+   static final void method_25(int var0) {
       if (null != field_61) {
          if (-101 > ~var0) {
             var0 = 100;
          }
 
          field_61.field_58 = var0;
-         int var2 = 70 % ((-20 - var1) / 62);
          field_61.repaint();
       }
    }
@@ -48,24 +47,19 @@ final class class_9 extends Component {
    }
 
    // $FF: renamed from: b (int) void
-   static final void method_27(int var0) {
+   static void method_27(int var0) {
       if (var0 > -6) {
-         field_61 = (class_9)null;
+         field_61 = null;
       }
 
       field_61.paint(field_61.getGraphics());
    }
 
    // $FF: renamed from: a (boolean) void
-   static final void method_28(boolean var0) {
+   static void method_28() {
       if (null != field_57) {
          field_57.setVisible(false);
       }
-
-      if (!var0) {
-         method_29(false, (String)null);
-      }
-
    }
 
    // $FF: renamed from: a (boolean, java.lang.String) void
@@ -107,7 +101,7 @@ final class class_9 extends Component {
 
    // $FF: renamed from: c (int) void
    static final void method_30(int var0) {
-      field_61 = new class_9(AppletViewer.getLocaleString("loaderbox_initial", 0));
+      field_61 = new class_9(AppletViewer.getLocaleString("loaderbox_initial"));
       field_61.field_56 = new Font("Helvetica", 1, 13);
       field_61.field_62 = field_61.getFontMetrics(field_61.field_56);
       field_57 = new Dialog(AppletViewer.frame, "Jagex Ltd.", false);
