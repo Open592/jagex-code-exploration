@@ -16,6 +16,8 @@ final class InitialLocaleStrings {
                AppletViewer.localeStrings.put("loaderbox_initial", "Loading...");
                AppletViewer.localeStrings.put("error", "Error");
                AppletViewer.localeStrings.put("quit", "Quit");
+
+               break;
            }
            case FRENCH: {
                AppletViewer.localeStrings.put("err_missing_config", "Paramètre com.jagex.config manquant");
@@ -26,6 +28,8 @@ final class InitialLocaleStrings {
                AppletViewer.localeStrings.put("loaderbox_initial", "Chargement...");
                AppletViewer.localeStrings.put("error", "Erreur");
                AppletViewer.localeStrings.put("quit", "Quitter");
+
+               break;
            }
            case GERMAN: {
                AppletViewer.localeStrings.put("err_missing_config", "Einstellung com.jagex.config fehlt");
@@ -36,6 +40,8 @@ final class InitialLocaleStrings {
                AppletViewer.localeStrings.put("loaderbox_initial", "Lade...");
                AppletViewer.localeStrings.put("error", "Fehler");
                AppletViewer.localeStrings.put("quit", "Beenden");
+
+               break;
            }
            case BRAZILIAN_PORTUGUESE: {
                AppletViewer.localeStrings.put("err_missing_config", "Faltando configuração de com.jagex.config");
@@ -46,6 +52,8 @@ final class InitialLocaleStrings {
                AppletViewer.localeStrings.put("loaderbox_initial", "Carregando...");
                AppletViewer.localeStrings.put("error", "Erro");
                AppletViewer.localeStrings.put("quit", "Fechar");
+
+               break;
            }
        }
    }
