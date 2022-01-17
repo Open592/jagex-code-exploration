@@ -46,7 +46,6 @@ final class class_5 extends ClassLoader {
    }
 
    public final Class loadClass(String var1) throws ClassNotFoundException {
-      int var13 = AppletViewerPreferences.field_91;
       if ("netscape.javascript.JSObject".equals(var1)) {
          CodeSource var2 = new CodeSource((URL)null, (Certificate[])null);
          Permissions var3 = new Permissions();
@@ -62,24 +61,19 @@ final class class_5 extends ClassLoader {
 
             while(~var8.length < ~var9) {
                var9 += var7.read(var8, var9, -var9 + var8.length);
-               if (var13 != 0) {
-                  break;
-               }
             }
 
             int var10 = 0;
 
             while(var10 < var8.length) {
                int var11 = 255 & var8[var10];
-               if (var11 == "JSObject".charAt(0) || var13 != 0) {
+               if (var11 == "JSObject".charAt(0)) {
                   int var12 = 1;
 
                   while(var8.length > var12 + var10) {
                      if (~(-1 + "JSObject".length()) == ~var12) {
                         var8[var12 + var10] = (byte)"JSObject".charAt(var12);
-                        if (var13 == 0) {
-                           break;
-                        }
+                        break;
                      }
 
                      var11 = var8[var12 - -var10] & 255;
@@ -88,16 +82,10 @@ final class class_5 extends ClassLoader {
                      }
 
                      ++var12;
-                     if (var13 != 0) {
-                        break;
-                     }
                   }
                }
 
                ++var10;
-               if (var13 != 0) {
-                  break;
-               }
             }
 
             Class var16 = this.defineClass(var1, var8, 0, var8.length, var4);

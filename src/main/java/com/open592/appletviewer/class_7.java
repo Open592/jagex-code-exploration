@@ -16,7 +16,6 @@ final class class_7 {
 
    // $FF: renamed from: a (boolean, byte[], int, int) java.lang.String
    private static final String byteArrayToBase64String(byte[] var1, int var2) {
-      int var9 = AppletViewerPreferences.field_91;
       StringBuilder var4 = new StringBuilder();
       int var5 = 0;
 
@@ -31,26 +30,19 @@ final class class_7 {
                   if (-2 + var2 > var5) {
                      int var8 = 255 & var1[var5 + 2];
                      var4.append(field_23[(15 & var7) << 2 | var8 >>> 6]).append(field_23[63 & var8]);
-                     if (var9 == 0) {
-                        break label26;
-                     }
+                     break label26;
                   }
 
                   var4.append(field_23[60 & var7 << 2]).append("=");
                }
 
-               if (var9 == 0) {
-                  break label29;
-               }
+               break label29;
             }
 
             var4.append(field_23[(3 & var6) << 4]).append("==");
          }
 
          var5 += 3;
-         if (var9 != 0) {
-            break;
-         }
       }
 
       return var4.toString();

@@ -27,12 +27,11 @@ final class class_16 implements ActionListener, WindowListener {
    }
 
    public final void windowClosing(WindowEvent var1) {
-      this.method_37(2);
+      this.method_37();
    }
 
    class_16(String var1) {
       super();
-      int var6 = AppletViewerPreferences.field_91;
       Panel var2 = new Panel();
       this.field_79 = new List();
       var2.setLayout(new BorderLayout());
@@ -52,18 +51,12 @@ final class class_16 implements ActionListener, WindowListener {
       this.field_80.addWindowListener(this);
       this.field_80.setSize(200, 150);
       this.field_80.add(var2);
-      if (var6 != 0) {
-         AppletViewer.field_52 = !AppletViewer.field_52;
-      }
-
    }
 
    public final void actionPerformed(ActionEvent var1) {
       if (!var1.getActionCommand().equals("ok")) {
-         this.method_37(2);
-         if (AppletViewerPreferences.field_91 == 0) {
-            return;
-         }
+         this.method_37();
+         return;
       }
 
       this.field_78 = this.field_79.getSelectedIndex();
@@ -71,27 +64,19 @@ final class class_16 implements ActionListener, WindowListener {
    }
 
    // $FF: renamed from: a (boolean, java.lang.String[]) void
-   final void method_35(boolean var1, String[] var2) {
-      int var5 = AppletViewerPreferences.field_91;
+   final void method_35(String[] var2) {
       this.field_79.removeAll();
-      if (!var1) {
-         this.method_37(34);
-      }
 
       int var3 = 0;
 
       while(~var2.length < ~var3) {
          String var4 = var2[var3];
-         if (var4 != null || var5 != 0) {
+         if (var4 != null) {
             this.field_79.add(var4);
          }
 
          ++var3;
-         if (var5 != 0) {
-            break;
-         }
       }
-
    }
 
    public final void windowDeiconified(WindowEvent var1) {
@@ -108,11 +93,9 @@ final class class_16 implements ActionListener, WindowListener {
    }
 
    // $FF: renamed from: a (int) void
-   private final void method_37(int var1) {
-      if (var1 == 2) {
-         this.field_78 = -1;
-         this.field_80.setVisible(false);
-      }
+   private final void method_37() {
+      this.field_78 = -1;
+      this.field_80.setVisible(false);
    }
 
    public final void windowActivated(WindowEvent var1) {

@@ -35,19 +35,15 @@ final class class_0 extends Component implements MouseListener, MouseMotionListe
    }
 
    public final void mousePressed(MouseEvent var1) {
-      int var4 = AppletViewerPreferences.field_91;
       Point var2 = var1.getPoint();
       int var3 = 0;
 
       while(~this.field_4.length < ~var3) {
          if (this.field_4[var3].field_81.contains(var2)) {
-            class_3.showurl(this.field_4[var3].field_82, (String)null);
+            class_3.showurl(this.field_4[var3].field_82, null);
          }
 
          ++var3;
-         if (var4 != 0) {
-            break;
-         }
       }
 
    }
@@ -56,7 +52,6 @@ final class class_0 extends Component implements MouseListener, MouseMotionListe
    }
 
    public final void paint(Graphics var1) {
-      int var15 = AppletViewerPreferences.field_91;
       int var2 = this.getWidth();
       FontMetrics var3 = var1.getFontMetrics();
       int var4 = var3.getHeight();
@@ -72,9 +67,6 @@ final class class_0 extends Component implements MouseListener, MouseMotionListe
             while(var9 < var7.length) {
                var8 += var3.stringWidth(var7[var9].field_77);
                ++var9;
-               if (var15 != 0) {
-                  break;
-               }
             }
 
             var9 = (var2 + -var8) / 2;
@@ -89,9 +81,7 @@ final class class_0 extends Component implements MouseListener, MouseMotionListe
                   class_18 var13 = var11.field_76;
                   if (var13 == null) {
                      var1.setColor(field_2);
-                     if (var15 == 0) {
-                        break label32;
-                     }
+                     break label32;
                   }
 
                   var1.setColor(field_3);
@@ -105,18 +95,11 @@ final class class_0 extends Component implements MouseListener, MouseMotionListe
                var1.drawString(var11.field_77, var9, var5);
                var9 += var12;
                ++var10;
-               if (var15 != 0) {
-                  break;
-               }
             }
 
             var5 += var4;
             ++var6;
-            if (var15 != 0) {
-               break;
-            }
          }
-
       }
    }
 
@@ -124,28 +107,23 @@ final class class_0 extends Component implements MouseListener, MouseMotionListe
    }
 
    public final void mouseMoved(MouseEvent var1) {
-      int var4 = AppletViewerPreferences.field_91;
       Point var2 = var1.getPoint();
       int var3 = 0;
 
       while(~this.field_4.length < ~var3) {
          if (this.field_4[var3].field_81.contains(var2)) {
-            this.setCursor(Cursor.getPredefinedCursor(12));
+            this.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
             return;
          }
 
          ++var3;
-         if (var4 != 0) {
-            break;
-         }
       }
 
-      this.setCursor(Cursor.getPredefinedCursor(0));
+      this.setCursor(Cursor.getPredefinedCursor(Cursor.DEFAULT_CURSOR));
    }
 
    // $FF: renamed from: a (byte, java.lang.String) void
    private final void method_0(byte var1, String var2) {
-      int var15 = AppletViewerPreferences.field_91;
       if (null != var2) {
          StringTokenizer var3 = new StringTokenizer(var2, "\\");
          int var4 = -94 / ((var1 - -11) / 55);
@@ -161,9 +139,7 @@ final class class_0 extends Component implements MouseListener, MouseMotionListe
                int var9 = var8.indexOf(91);
                if (0 > var9) {
                   var5[var7++] = new class_15(var8);
-                  if (var15 == 0) {
-                     break;
-                  }
+                  break;
                }
 
                if (var9 > 0) {
@@ -182,7 +158,7 @@ final class class_0 extends Component implements MouseListener, MouseMotionListe
                }
 
                int var12 = var8.indexOf(93);
-               if (0 > var12 && var15 == 0) {
+               if (0 > var12) {
                   break;
                }
 
@@ -194,14 +170,11 @@ final class class_0 extends Component implements MouseListener, MouseMotionListe
                }
 
                var8 = var8.substring(var12 - -1);
-            } while(var15 == 0);
+            } while(true);
 
             this.field_1[var6] = new class_15[var7];
             System.arraycopy(var5, 0, this.field_1[var6], 0, var7);
             ++var6;
-            if (var15 != 0) {
-               break;
-            }
          }
 
       }
@@ -209,7 +182,6 @@ final class class_0 extends Component implements MouseListener, MouseMotionListe
 
    class_0(String var1) {
       super();
-      int var7 = AppletViewerPreferences.field_91;
       this.field_1 = (class_15[][])null;
       this.setBackground(field_0);
       this.addMouseListener(this);
@@ -229,15 +201,9 @@ final class class_0 extends Component implements MouseListener, MouseMotionListe
                }
 
                ++var5;
-               if (var7 != 0) {
-                  break;
-               }
             }
 
             ++var3;
-            if (var7 != 0) {
-               break;
-            }
          }
 
          this.field_4 = new class_18[var2];
@@ -254,17 +220,10 @@ final class class_0 extends Component implements MouseListener, MouseMotionListe
                }
 
                ++var6;
-               if (var7 != 0) {
-                  break;
-               }
             }
 
             ++var8;
-            if (var7 != 0) {
-               break;
-            }
          }
-
       }
    }
 }

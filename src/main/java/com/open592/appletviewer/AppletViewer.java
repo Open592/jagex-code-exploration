@@ -96,7 +96,7 @@ public final class AppletViewer implements ComponentListener {
     }
 
     // $FF: renamed from: a (byte, java.lang.String) void
-    public static void method_10(byte var0, String gameName) {
+    public static void method_10(String gameName) {
         isDebug = Boolean.getBoolean("com.jagex.debug");
 
         if (isDebug) {
@@ -136,9 +136,9 @@ public final class AppletViewer implements ComponentListener {
             }
         }
 
-        class_9.method_30(var0 ^ -367);
-        class_9.method_26(var0 + 155);
-        class_9.method_29(false, getLocaleString("loading_config"));
+        LoaderBox.initialize();
+        LoaderBox.setVisible();
+        LoaderBox.setLoadingText(getLocaleString("loading_config"));
         javConfigURL = System.getProperty("com.jagex.config");
         String configFileName = System.getProperty("com.jagex.configfile");
         if (null == javConfigURL) {
@@ -170,161 +170,159 @@ public final class AppletViewer implements ComponentListener {
         int modewhat = 32 + Integer.parseInt(getParameter("modewhat"));
         String cacheSubdir = getConfigValue("cachesubdir");
         String codebaseURL = getConfigValue("codebase");
-        if (var0 == -47) {
-            String osName = System.getProperty("os.name").toLowerCase();
-            String osArch = System.getProperty("os.arch").toLowerCase();
-            field_39 = osName.startsWith("win");
-            field_36 = field_39 && osArch.startsWith("amd64") || osArch.startsWith("x86_64");
-            String homeDirectory = null;
+        String osName = System.getProperty("os.name").toLowerCase();
+        String osArch = System.getProperty("os.arch").toLowerCase();
+        field_39 = osName.startsWith("win");
+        field_36 = field_39 && osArch.startsWith("amd64") || osArch.startsWith("x86_64");
+        String homeDirectory = null;
 
-            try {
-                homeDirectory = System.getProperty("user.home");
-                if (null != homeDirectory) {
-                    homeDirectory = homeDirectory + "/";
-                }
-            } catch (Exception ignored) {
+        try {
+            homeDirectory = System.getProperty("user.home");
+            if (null != homeDirectory) {
+                homeDirectory = homeDirectory + "/";
             }
-
-            class_9.method_29(false, getLocaleString("loading_app_resources"));
-            if (homeDirectory == null) {
-                homeDirectory = "~/";
-            }
-
-            File cacheFile = null;
-
-            byte[] remoteFileBytes;
-            try {
-                byte[] fileBytes;
-                if (field_36) {
-                    remoteFileBytes = fetchRemoteFile(codebaseURL, getConfigValue("browsercontrol_win_amd64_jar"));
-                    cacheFile = createCacheFile(modewhat, "browsercontrol64.dll", homeDirectory, cacheSubdir);
-                    System.out.printf("Attempting to validate %s", "browser");
-                    fileBytes = (new class_13(remoteFileBytes)).validateFile("browsercontrol64.dll", var0 ^ 83);
-                    if (null == fileBytes && !AppletViewer.isDebug) {
-                        cacheFile = null;
-                        ModalDialog.displayErrorMessage(getLocaleString("err_verify_bc64"));
-                    }
-
-                    writeBytesToCacheFile(fileBytes, cacheFile);
-                } else if (field_39) {
-                    remoteFileBytes = fetchRemoteFile(codebaseURL, getConfigValue("browsercontrol_win_x86_jar"));
-                    cacheFile = createCacheFile(modewhat, "browsercontrol.dll", homeDirectory, cacheSubdir);
-                    fileBytes = (new class_13(remoteFileBytes)).validateFile("browsercontrol.dll", -128);
-                    if (fileBytes == null && !AppletViewer.isDebug) {
-                        cacheFile = null;
-                        ModalDialog.displayErrorMessage(getLocaleString("err_verify_bc"));
-                    }
-
-                    writeBytesToCacheFile(fileBytes, cacheFile);
-                    if (isDebug) {
-                        System.out.println("dlldata : " + remoteFileBytes.length);
-                    }
-                }
-            } catch (Exception var30) {
-                if (isDebug) {
-                    var30.printStackTrace();
-                }
-
-                ModalDialog.displayErrorMessage(getLocaleString("err_load_bc"));
-            }
-
-            class_9.method_29(false, getLocaleString("loading_app"));
-            if (field_39) {
-                class_5.method_4(255);
-            }
-
-            try {
-                remoteFileBytes = fetchRemoteFile(codebaseURL, getConfigValue("loader_jar"));
-                class_8 var36 = new class_8(remoteFileBytes);
-                loaderApplet = (Applet) var36.loadClass("loader").getDeclaredConstructor().newInstance();
-                if (isDebug) {
-                    System.out.println("loader_jar : " + remoteFileBytes.length);
-                }
-            } catch (Exception var29) {
-                if (isDebug) {
-                    var29.printStackTrace();
-                }
-
-                ModalDialog.displayErrorMessage(getLocaleString("err_target_applet"));
-            }
-
-            class_9.method_28();
-            class_3.method_1(true);
-            frame.setTitle(getConfigValue("title"));
-            int var35 = field_39 ? Integer.parseInt(getConfigValue("advert_height")) : 0;
-            int var37 = Integer.parseInt(getConfigValue("window_preferredwidth"));
-            int var18 = Integer.parseInt(getConfigValue("window_preferredheight"));
-            byte var19 = 40;
-            Insets var20 = frame.getInsets();
-            frame.setSize(var20.right + var37 + var20.left, var20.bottom + var18 + (var35 + var20.top - -var19));
-            frame.setLocationRelativeTo(null);
-            frame.setVisible(true);
-            field_37 = new Panel();
-            field_37.setBackground(Color.black);
-            field_37.setLayout(null);
-            frame.setLayout(new BorderLayout());
-            frame.add(field_37, "Center");
-            AppletViewerPreferences.getPreference("Member");
-            if (field_39) {
-                field_34 = new Canvas();
-                field_37.add(field_34);
-            }
-
-            field_37.add(loaderApplet);
-            field_31 = new class_4(new class_11());
-            field_31.setBackground(Color.BLACK);
-            field_31.setForeground(Color.GRAY);
-            field_31.method_2(getLocaleString("language"), false);
-            if (null != serverSettingsList && serverSettingsList.length > 1) {
-                field_31.method_2(getLocaleString("switchserver"), false);
-            }
-
-            field_31.setFont(new Font("SansSerif", 0, 10));
-            field_37.add(field_31);
-            field_38 = new class_0(getLocaleString("tandc"));
-            field_37.add(field_38);
-            frame.doLayout();
-            method_12((byte)69);
-            if (field_39) {
-                try {
-                    System.load(cacheFile.toString());
-                } catch (Throwable var26) {
-                    if (isDebug) {
-                        var26.printStackTrace();
-                    }
-
-                    ModalDialog.displayErrorMessage(getLocaleString("err_create_advertising"));
-                    return;
-                }
-            }
-
-            if (field_39) {
-                while(!field_34.isDisplayable() || !field_34.isShowing()) {
-                    try {
-                        Thread.sleep(100L);
-                    } catch (Exception ignored) {
-                    }
-                }
-
-                try {
-                    browsercontrol.create(field_34, getConfigValue("adverturl"));
-                    browsercontrol.resize(field_34.getSize().width, field_34.getSize().height);
-                } catch (Throwable var27) {
-                    if (isDebug) {
-                        var27.printStackTrace();
-                    }
-
-                    ModalDialog.displayErrorMessage(getLocaleString("err_create_advertising"));
-                    return;
-                }
-            }
-
-            frame.addWindowListener(class_12.method_32(17407));
-            field_37.addComponentListener(new AppletViewer());
-            loaderApplet.setStub(new class_17());
-            loaderApplet.init();
-            loaderApplet.start();
+        } catch (Exception ignored) {
         }
+
+        LoaderBox.setLoadingText(getLocaleString("loading_app_resources"));
+        if (homeDirectory == null) {
+            homeDirectory = "~/";
+        }
+
+        File cacheFile = null;
+
+        byte[] remoteFileBytes;
+        try {
+            byte[] fileBytes;
+            if (field_36) {
+                remoteFileBytes = fetchRemoteFile(codebaseURL, getConfigValue("browsercontrol_win_amd64_jar"));
+                cacheFile = createCacheFile(modewhat, "browsercontrol64.dll", homeDirectory, cacheSubdir);
+                System.out.printf("Attempting to validate %s", "browser");
+                fileBytes = (new class_13(remoteFileBytes)).validateFile("browsercontrol64.dll");
+                if (null == fileBytes && !AppletViewer.isDebug) {
+                    cacheFile = null;
+                    ModalDialog.displayErrorMessage(getLocaleString("err_verify_bc64"));
+                }
+
+                writeBytesToCacheFile(fileBytes, cacheFile);
+            } else if (field_39) {
+                remoteFileBytes = fetchRemoteFile(codebaseURL, getConfigValue("browsercontrol_win_x86_jar"));
+                cacheFile = createCacheFile(modewhat, "browsercontrol.dll", homeDirectory, cacheSubdir);
+                fileBytes = (new class_13(remoteFileBytes)).validateFile("browsercontrol.dll");
+                if (fileBytes == null && !AppletViewer.isDebug) {
+                    cacheFile = null;
+                    ModalDialog.displayErrorMessage(getLocaleString("err_verify_bc"));
+                }
+
+                writeBytesToCacheFile(fileBytes, cacheFile);
+                if (isDebug) {
+                    System.out.println("dlldata : " + remoteFileBytes.length);
+                }
+            }
+        } catch (Exception var30) {
+            if (isDebug) {
+                var30.printStackTrace();
+            }
+
+            ModalDialog.displayErrorMessage(getLocaleString("err_load_bc"));
+        }
+
+        LoaderBox.setLoadingText(getLocaleString("loading_app"));
+        if (field_39) {
+            class_5.method_4(255);
+        }
+
+        try {
+            remoteFileBytes = fetchRemoteFile(codebaseURL, getConfigValue("loader_jar"));
+            class_8 var36 = new class_8(remoteFileBytes);
+            loaderApplet = (Applet) var36.loadClass("loader").getDeclaredConstructor().newInstance();
+            if (isDebug) {
+                System.out.println("loader_jar : " + remoteFileBytes.length);
+            }
+        } catch (Exception var29) {
+            if (isDebug) {
+                var29.printStackTrace();
+            }
+
+            ModalDialog.displayErrorMessage(getLocaleString("err_target_applet"));
+        }
+
+        LoaderBox.setHidden();
+        class_3.method_1(true);
+        frame.setTitle(getConfigValue("title"));
+        int var35 = field_39 ? Integer.parseInt(getConfigValue("advert_height")) : 0;
+        int var37 = Integer.parseInt(getConfigValue("window_preferredwidth"));
+        int var18 = Integer.parseInt(getConfigValue("window_preferredheight"));
+        byte var19 = 40;
+        Insets var20 = frame.getInsets();
+        frame.setSize(var20.right + var37 + var20.left, var20.bottom + var18 + (var35 + var20.top - -var19));
+        frame.setLocationRelativeTo(null);
+        frame.setVisible(true);
+        field_37 = new Panel();
+        field_37.setBackground(Color.black);
+        field_37.setLayout(null);
+        frame.setLayout(new BorderLayout());
+        frame.add(field_37, "Center");
+        AppletViewerPreferences.getPreference("Member");
+        if (field_39) {
+            field_34 = new Canvas();
+            field_37.add(field_34);
+        }
+
+        field_37.add(loaderApplet);
+        field_31 = new class_4(new class_11());
+        field_31.setBackground(Color.BLACK);
+        field_31.setForeground(Color.GRAY);
+        field_31.method_2(getLocaleString("language"));
+        if (null != serverSettingsList && serverSettingsList.length > 1) {
+            field_31.method_2(getLocaleString("switchserver"));
+        }
+
+        field_31.setFont(new Font("SansSerif", 0, 10));
+        field_37.add(field_31);
+        field_38 = new class_0(getLocaleString("tandc"));
+        field_37.add(field_38);
+        frame.doLayout();
+        method_12((byte)69);
+        if (field_39) {
+            try {
+                System.load(cacheFile.toString());
+            } catch (Throwable var26) {
+                if (isDebug) {
+                    var26.printStackTrace();
+                }
+
+                ModalDialog.displayErrorMessage(getLocaleString("err_create_advertising"));
+                return;
+            }
+        }
+
+        if (field_39) {
+            while(!field_34.isDisplayable() || !field_34.isShowing()) {
+                try {
+                    Thread.sleep(100L);
+                } catch (Exception ignored) {
+                }
+            }
+
+            try {
+                browsercontrol.create(field_34, getConfigValue("adverturl"));
+                browsercontrol.resize(field_34.getSize().width, field_34.getSize().height);
+            } catch (Throwable var27) {
+                if (isDebug) {
+                    var27.printStackTrace();
+                }
+
+                ModalDialog.displayErrorMessage(getLocaleString("err_create_advertising"));
+                return;
+            }
+        }
+
+        frame.addWindowListener(class_12.method_32());
+        field_37.addComponentListener(new AppletViewer());
+        loaderApplet.setStub(new class_17());
+        loaderApplet.init();
+        loaderApplet.start();
     }
 
     public void componentHidden(ComponentEvent var1) {
@@ -333,10 +331,10 @@ public final class AppletViewer implements ComponentListener {
     // $FF: renamed from: a (app.q, int) void
     private static void method_11(ServerSettings var0) {
         if (null != var0) {
-            class_9.method_29(false, getLocaleString("loading_app"));
-            class_9.method_25(0);
-            class_9.method_26(109);
-            class_9.method_27(-83);
+            LoaderBox.setLoadingText(getLocaleString("loading_app"));
+            LoaderBox.updateProgress(0);
+            LoaderBox.setVisible();
+            LoaderBox.paint();
             if (null != loaderApplet) {
                 if (field_38.isVisible()) {
                     field_38.setVisible(false);
@@ -344,8 +342,8 @@ public final class AppletViewer implements ComponentListener {
                 }
 
                 loaderApplet.stop();
-                class_9.method_25(25);
-                class_9.method_27(-40);
+                LoaderBox.updateProgress(25);
+                LoaderBox.paint();
                 loaderApplet.destroy();
                 field_37.remove(loaderApplet);
                 loaderApplet = null;
@@ -353,8 +351,8 @@ public final class AppletViewer implements ComponentListener {
             }
 
             currentServerSettings = var0;
-            class_9.method_25(50);
-            class_9.method_27(-73);
+            LoaderBox.updateProgress(50);
+            LoaderBox.paint();
             if (field_39) {
                 class_5.method_4(21870 - 21615);
             }
@@ -362,21 +360,21 @@ public final class AppletViewer implements ComponentListener {
             try {
                 String var2 = getConfigValue("codebase");
                 byte[] var3 = fetchRemoteFile(var2, getConfigValue("loader_jar"));
-                class_9.method_25(75);
-                class_9.method_27(-76);
+                LoaderBox.updateProgress(75);
+                LoaderBox.paint();
                 class_8 var4 = new class_8(var3);
                 loaderApplet = (Applet)var4.loadClass("loader").newInstance();
                 if (isDebug) {
                     System.out.println("loader_jar : " + var3.length);
                 }
 
-                class_9.method_28();
+                LoaderBox.setHidden();
             } catch (Exception var5) {
                 if (isDebug) {
                     var5.printStackTrace();
                 }
 
-                class_9.method_28();
+                LoaderBox.setHidden();
                 ModalDialog.displayErrorMessage(getLocaleString("err_target_applet"));
             }
 
@@ -445,31 +443,26 @@ public final class AppletViewer implements ComponentListener {
 
     // $FF: renamed from: a (java.lang.String, int, java.lang.String) byte[]
     private static byte[] fetchRemoteFile(String codebaseURL, String filename) {
-        int var7 = AppletViewerPreferences.field_91;
-
-        byte[] var3 = new byte[300000];
-        int var4 = 0;
+        byte[] buffer = new byte[300000];
+        int currentOffset = 0;
 
         try {
-            InputStream var5 = (new URL(codebaseURL + filename)).openStream();
+            InputStream inputStream = (new URL(codebaseURL + filename)).openStream();
 
-            while(~var4 > ~var3.length) {
-                int var6 = var5.read(var3, var4, -var4 + var3.length);
-                if (-1 < ~var6) {
+            while(currentOffset < buffer.length) {
+                int offset = inputStream.read(buffer, currentOffset, buffer.length - currentOffset);
+                if (offset < 0) {
                     break;
                 }
 
-                var4 += var6;
-                field_51 += (float)var6;
+                currentOffset += offset;
+                field_51 += (float)offset;
                 // $FF: renamed from: t float
                 float field_48 = 58988.0F;
-                class_9.method_25((int)(100.0F * (field_51 / field_48)));
-                if (var7 != 0) {
-                    break;
-                }
+                LoaderBox.updateProgress((int)(100.0F * (field_51 / field_48)));
             }
 
-            var5.close();
+            inputStream.close();
         } catch (Exception var8) {
             if (isDebug) {
                 var8.printStackTrace();
@@ -478,8 +471,8 @@ public final class AppletViewer implements ComponentListener {
             ModalDialog.displayErrorMessage(getLocaleString("err_downloading") + ": " + filename);
         }
 
-        byte[] var9 = new byte[var4];
-        System.arraycopy(var3, 0, var9, 0, var4);
+        byte[] var9 = new byte[currentOffset];
+        System.arraycopy(buffer, 0, var9, 0, currentOffset);
         return var9;
     }
 
@@ -561,7 +554,7 @@ public final class AppletViewer implements ComponentListener {
             ++currentIndex;
         }
 
-        field_29.method_35(true, serverNameList);
+        field_29.method_35(serverNameList);
         currentIndex = field_29.method_36();
         if (currentIndex > 0) {
             method_11(enabledServers[currentIndex]);
@@ -586,12 +579,12 @@ public final class AppletViewer implements ComponentListener {
                     {
                         startLogic:
                         {
-                            File var13;
+                            File file;
                             checkForExistingFile:
                             {
                                 try {
-                                    var13 = new File(fullFilePath);
-                                    if (cacheFindPass != 0 || var13.exists()) {
+                                    file = new File(fullFilePath);
+                                    if (cacheFindPass != 0 || file.exists()) {
                                         break checkForExistingFile;
                                     }
                                 } catch (Exception var20) {
@@ -620,13 +613,13 @@ public final class AppletViewer implements ComponentListener {
                                     (new File(potentialParentDirectory + potentialCacheDirectoryName + "/" + cacheSubdirName)).mkdir();
                                 }
 
-                                randomAccessFile = new RandomAccessFile(var13, "rw");
-                                int var15 = randomAccessFile.read();
+                                randomAccessFile = new RandomAccessFile(file, "rw");
+                                int singleFileDataByte = randomAccessFile.read();
                                 randomAccessFile.seek(0L);
-                                randomAccessFile.write(var15);
+                                randomAccessFile.write(singleFileDataByte);
                                 randomAccessFile.seek(0L);
                                 randomAccessFile.close();
-                                return var13;
+                                return file;
                             } catch (Exception ignored) {
                             }
                         }
@@ -702,7 +695,6 @@ public final class AppletViewer implements ComponentListener {
 
     // $FF: renamed from: a (byte, int) boolean
     private static void readJavConfig(Language language) {
-        int var14 = AppletViewerPreferences.field_91;
         params.clear();
         int langCount = 0;
         InitialLocaleStrings.initialize(language);
@@ -733,7 +725,7 @@ public final class AppletViewer implements ComponentListener {
 
                         settingLine = settingLine.trim();
                     } while(settingLine.startsWith("//"));
-                } while(settingLine.startsWith("#") && var14 == 0);
+                } while(settingLine.startsWith("#"));
 
                 if (settingLine.startsWith("[")) {
                     String serverName = settingLine.substring(1, settingLine.lastIndexOf("]"));
@@ -769,9 +761,7 @@ public final class AppletViewer implements ComponentListener {
                             }
                         }
 
-                        if (var14 == 0) {
-                            continue;
-                        }
+                        continue;
                     }
 
                     settingLine = settingLine.substring(4);
@@ -794,9 +784,7 @@ public final class AppletViewer implements ComponentListener {
                         }
                     }
 
-                    if (var14 == 0) {
-                        continue;
-                    }
+                    continue;
                 }
 
                 settingLine = settingLine.substring(6);
@@ -875,23 +863,14 @@ public final class AppletViewer implements ComponentListener {
                                 languageIDs[equalPos] = languageIDs[equalPos - 1];
 
                                 --equalPos;
-
-                                if (var14 != 0) {
-                                    break;
-                                }
                             }
 
                             languageIDs[index] = languageID;
                             localeStringList[index] = getLocaleString(localeString);
-                            if (var14 == 0) {
-                                break;
-                            }
+                            break;
                         }
 
                         ++index;
-                        if (var14 != 0) {
-                            break;
-                        }
                     }
 
                     ++i;
@@ -900,7 +879,7 @@ public final class AppletViewer implements ComponentListener {
             } while(true);
 
             field_30 = new class_16(getLocaleString("language"));
-            field_30.method_35(true, localeStringList);
+            field_30.method_35(localeStringList);
             if (~severSettingsCount < -1) {
                 serverSettingsList = new ServerSettings[severSettingsCount];
                 System.arraycopy(servers, 0, serverSettingsList, 0, severSettingsCount);

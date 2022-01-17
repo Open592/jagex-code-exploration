@@ -26,7 +26,6 @@ final class class_4 extends Canvas implements MouseListener, MouseMotionListener
    private int field_18 = -1;
 
    public final void mouseDragged(MouseEvent var1) {
-      int var4 = AppletViewerPreferences.field_91;
       this.field_13 = var1.getX();
       var1.getY();
       int var2 = this.field_18;
@@ -37,15 +36,10 @@ final class class_4 extends Canvas implements MouseListener, MouseMotionListener
          while(var3 < -1 + this.field_16.length) {
             if (this.field_16[var3] <= this.field_13 && ~(this.field_13 - -10) > ~this.field_16[1 + var3]) {
                this.field_18 = var3;
-               if (var4 == 0) {
-                  break;
-               }
+               break;
             }
 
             ++var3;
-            if (var4 != 0) {
-               break;
-            }
          }
 
          if (~this.field_18 != ~var2) {
@@ -56,7 +50,7 @@ final class class_4 extends Canvas implements MouseListener, MouseMotionListener
    }
 
    // $FF: renamed from: a (java.lang.String, boolean) void
-   final void method_2(String var1, boolean var2) {
+   final void method_2(String var1) {
       if (~this.field_17 <= ~this.field_15.length) {
          String[] var3 = new String[5 + this.field_15.length];
          System.arraycopy(this.field_15, 0, var3, 0, this.field_15.length);
@@ -64,14 +58,9 @@ final class class_4 extends Canvas implements MouseListener, MouseMotionListener
       }
 
       this.field_15[this.field_17++] = var1;
-      if (var2) {
-         this.mousePressed((MouseEvent)null);
-      }
-
    }
 
    public final void mouseReleased(MouseEvent var1) {
-      int var4 = AppletViewerPreferences.field_91;
       this.field_13 = var1.getX();
       var1.getY();
       int var2 = this.field_18;
@@ -82,22 +71,16 @@ final class class_4 extends Canvas implements MouseListener, MouseMotionListener
          while(-1 + this.field_16.length > var3) {
             if (this.field_16[var3] <= this.field_13 && ~this.field_16[1 + var3] < ~(this.field_13 + 10)) {
                this.field_18 = var3;
-               if (var4 == 0) {
-                  break;
-               }
+               break;
             }
 
             ++var3;
-            if (var4 != 0) {
-               break;
-            }
          }
 
          if (~var2 != ~this.field_18) {
             this.repaint();
          }
       }
-
    }
 
    public final void update(Graphics var1) {
@@ -105,7 +88,6 @@ final class class_4 extends Canvas implements MouseListener, MouseMotionListener
    }
 
    public final void mousePressed(MouseEvent var1) {
-      int var4 = AppletViewerPreferences.field_91;
       this.field_13 = var1.getX();
       var1.getY();
       int var2 = this.field_18;
@@ -115,19 +97,13 @@ final class class_4 extends Canvas implements MouseListener, MouseMotionListener
 
          while(-1 + this.field_16.length > var3) {
             if (~this.field_16[var3] >= ~this.field_13 && this.field_16[var3 + 1] > this.field_13 + 10) {
-               this.field_18 = -1;
                this.field_13 = 0;
                this.repaint();
                this.field_14.actionPerformed(new ActionEvent(this, var3, ""));
-               if (var4 == 0) {
-                  break;
-               }
+               break;
             }
 
             ++var3;
-            if (var4 != 0) {
-               break;
-            }
          }
 
          if (~this.field_18 != ~var2) {
@@ -147,7 +123,6 @@ final class class_4 extends Canvas implements MouseListener, MouseMotionListener
    }
 
    public final void paint(Graphics var1) {
-      int var9 = AppletViewerPreferences.field_91;
       int var2 = this.getWidth();
       int var3 = this.getHeight();
       var1.setColor(Color.BLACK);
@@ -170,9 +145,7 @@ final class class_4 extends Canvas implements MouseListener, MouseMotionListener
             var5 += var4.stringWidth(this.field_15[var7]);
             if (~this.field_13 > ~var8 || var5 <= this.field_13) {
                var1.setColor(this.getForeground());
-               if (var9 == 0) {
-                  break label38;
-               }
+               break label38;
             }
 
             var1.setColor(Color.YELLOW);
@@ -181,16 +154,12 @@ final class class_4 extends Canvas implements MouseListener, MouseMotionListener
          var1.drawString(this.field_15[var7], var8, var6);
          var5 += 10;
          ++var7;
-         if (var9 != 0) {
-            break;
-         }
       }
 
       this.field_16[this.field_17] = var5;
    }
 
    public final void mouseMoved(MouseEvent var1) {
-      int var4 = AppletViewerPreferences.field_91;
       this.field_13 = var1.getX();
       var1.getY();
       int var2 = this.field_18;
@@ -198,18 +167,13 @@ final class class_4 extends Canvas implements MouseListener, MouseMotionListener
          this.field_18 = -1;
          int var3 = 0;
 
-         while(~var3 > ~(this.field_16.length - 1)) {
+         while(~var3 > -this.field_16.length) {
             if (this.field_13 >= this.field_16[var3] && ~this.field_16[var3 - -1] < ~(10 + this.field_13)) {
                this.field_18 = var3;
-               if (var4 == 0) {
-                  break;
-               }
+               break;
             }
 
             ++var3;
-            if (var4 != 0) {
-               break;
-            }
          }
 
          if (this.field_18 != var2) {

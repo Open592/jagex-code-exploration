@@ -26,9 +26,7 @@ final class class_13 {
    private PKCS7 PKCS7Block;
 
    // $FF: renamed from: a (java.lang.String, int) byte[]
-   byte[] validateFile(String filename, int var2) {
-      int var19 = AppletViewerPreferences.field_91;
-
+   byte[] validateFile(String filename) {
       System.out.println("Attempting to validate: " + filename);
       try {
          byte[] var3 = this.fileMap.remove(filename);
@@ -49,9 +47,6 @@ final class class_13 {
                   var6.reset();
                   var6.update(var3);
                   byte[] var7 = var6.digest();
-                  if (var2 > -124) {
-                     this.field_66 = null;
-                  }
 
                   String var8 = class_7.byteArrayToBase64StringEntry(var7);
                   if (!var8.equals(var4.md5Digest)) {
@@ -116,9 +111,6 @@ final class class_13 {
                                        }
 
                                        ++var14;
-                                       if (var19 != 0) {
-                                          break;
-                                       }
                                     }
 
                                     return var3;

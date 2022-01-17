@@ -25,7 +25,6 @@ final class class_6 extends WindowAdapter implements ActionListener {
 
    class_6(String var1) {
       super();
-      int var5 = AppletViewerPreferences.field_91;
       this.field_22 = new Dialog(AppletViewer.frame, AppletViewer.getLocaleString("information"), true);
       TextArea var2 = new TextArea();
       var2.setText(AppletViewer.getLocaleString("copy_paste_url") + ":\n" + var1);
@@ -42,10 +41,6 @@ final class class_6 extends WindowAdapter implements ActionListener {
       this.field_22.setSize(400, 150);
       this.field_22.setLocationRelativeTo(AppletViewer.frame);
       this.field_22.setVisible(true);
-      if (AppletViewer.field_52) {
-         ++var5;
-         AppletViewerPreferences.field_91 = var5;
-      }
 
    }
 }

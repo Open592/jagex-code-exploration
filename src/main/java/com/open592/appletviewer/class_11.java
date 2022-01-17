@@ -5,30 +5,26 @@ import java.awt.event.ActionListener;
 
 // $FF: renamed from: app.g
 final class class_11 implements ActionListener {
-   public final void actionPerformed(ActionEvent var1) {
-      label30: {
-         int var4 = AppletViewerPreferences.field_91;
-         int var2 = var1.getID();
-         if (var2 != 0 || var4 != 0) {
-            if (-2 != ~var2) {
-               return;
+    public void actionPerformed(ActionEvent var1) {
+        label30: {
+            int var2 = var1.getID();
+            if (var2 != 0) {
+                if (-2 != ~var2) {
+                    return;
+                }
+
+                break label30;
             }
 
-            if (var4 == 0) {
-               break label30;
+            if (-1 < ~AppletViewer.method_23()) {
+                return;
             }
-         }
 
-         if (-1 < ~AppletViewer.method_23()) {
+            ModalDialog.displayMessage(AppletViewer.getLocaleString("changes_on_restart"));
+
             return;
-         }
+        }
 
-         ModalDialog.displayMessage(AppletViewer.getLocaleString("changes_on_restart"));
-         if (var4 == 0) {
-            return;
-         }
-      }
-
-      AppletViewer.getAvailableServerList();
-   }
+        AppletViewer.getAvailableServerList();
+    }
 }

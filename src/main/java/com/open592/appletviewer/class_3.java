@@ -21,8 +21,6 @@ final class class_3 implements Runnable {
    }
 
    public final void run() {
-      int var6 = AppletViewerPreferences.field_91;
-
       while(true) {
          String var1 = null;
          String var2 = null;
@@ -62,9 +60,6 @@ final class class_3 implements Runnable {
                }
 
                ++var4;
-               if (var6 != 0) {
-                  break;
-               }
             }
 
             Runtime.getRuntime().exec("cmd /c start \"j\" \"" + var2 + "\"");

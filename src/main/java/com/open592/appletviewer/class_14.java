@@ -68,9 +68,7 @@ final class class_14 extends OutputStream implements WindowListener {
             this.field_70.append("\n");
             this.field_69.append(this.field_70.toString());
             this.field_70 = new StringBuffer(1024);
-            if (AppletViewerPreferences.field_91 == 0) {
-               return;
-            }
+            return;
          }
 
          this.field_70.append(String.valueOf((char)var1));

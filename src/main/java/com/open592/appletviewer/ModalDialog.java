@@ -66,10 +66,10 @@ final class ModalDialog {
 
    // $FF: renamed from: a (byte, java.lang.String) void
    static void displayErrorMessage(String message) {
-      class_9.method_28();
+      LoaderBox.setHidden();
       display(AppletViewer.getLocaleString("quit"), AppletViewer.getLocaleString("error"), message);
-      dialog.addWindowListener(class_12.method_32(17407));
-      button.addActionListener(class_12.method_32(17407));
+      dialog.addWindowListener(class_12.method_32());
+      button.addActionListener(class_12.method_32());
       dialog.setVisible(true);
    }
 }

@@ -9,6 +9,6 @@ public class jagexappletviewer {
             System.exit(0);
         }
 
-        AppletViewer.method_10((byte)-47, var0[0]);
+        AppletViewer.method_10(var0[0]);
     }
 }

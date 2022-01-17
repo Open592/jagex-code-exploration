@@ -16,8 +16,6 @@ public final class AppletViewerPreferences {
    private static final Hashtable<String, String> preferences = new Hashtable<>();
    // $FF: renamed from: b java.io.File
    private static final File preferencesFile = new File("jagexappletviewer.preferences");
-   // $FF: renamed from: c int
-   public static int field_91;
 
    // $FF: renamed from: a (int) void
    static void readPreferencesFile() {

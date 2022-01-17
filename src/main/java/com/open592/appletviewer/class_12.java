@@ -22,11 +22,11 @@ final class class_12 extends WindowAdapter implements ActionListener {
    }
 
    // $FF: renamed from: a (int) app.f
-   static final class_12 method_32(int var0) {
+   static final class_12 method_32() {
       if (field_63 == null) {
          field_63 = new class_12();
       }
 
-      return var0 != 17407 ? (class_12)null : field_63;
+      return field_63;
    }
 }
