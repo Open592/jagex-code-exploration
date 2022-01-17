@@ -156,69 +156,68 @@ public final class AppletViewer implements ComponentListener {
 
         readJavConfig(language);
 
-        String var8 = getConfigValue("viewerversion");
-        int var9;
-        if (null != var8) {
+        String requiredAppletViewerVersionString = getConfigValue("viewerversion");
+        if (requiredAppletViewerVersionString != null) {
             try {
-                var9 = Integer.parseInt(var8);
-                if (~var9 < -101) {
+                int requiredAppletViewerVersion = Integer.parseInt(requiredAppletViewerVersionString);
+                if (requiredAppletViewerVersion > 100) {
                     ModalDialog.displayMessage(getLocaleString("new_version"));
                 }
             } catch (NumberFormatException ignored) {
             }
         }
 
-        var9 = 32 + Integer.parseInt(getParameter("modewhat"));
-        String var10 = getConfigValue("cachesubdir");
+        int modewhat = 32 + Integer.parseInt(getParameter("modewhat"));
+        String cacheSubdir = getConfigValue("cachesubdir");
         String codebaseURL = getConfigValue("codebase");
         if (var0 == -47) {
-            String var12 = System.getProperty("os.name").toLowerCase();
-            String var13 = System.getProperty("os.arch").toLowerCase();
-            field_39 = var12.startsWith("win");
-            field_36 = field_39 && var13.startsWith("amd64") || var13.startsWith("x86_64");
-            String var14 = null;
+            String osName = System.getProperty("os.name").toLowerCase();
+            String osArch = System.getProperty("os.arch").toLowerCase();
+            field_39 = osName.startsWith("win");
+            field_36 = field_39 && osArch.startsWith("amd64") || osArch.startsWith("x86_64");
+            String homeDirectory = null;
 
             try {
-                var14 = System.getProperty("user.home");
-                if (null != var14) {
-                    var14 = var14 + "/";
+                homeDirectory = System.getProperty("user.home");
+                if (null != homeDirectory) {
+                    homeDirectory = homeDirectory + "/";
                 }
             } catch (Exception ignored) {
             }
 
             class_9.method_29(false, getLocaleString("loading_app_resources"));
-            if (var14 == null) {
-                var14 = "~/";
+            if (homeDirectory == null) {
+                homeDirectory = "~/";
             }
 
-            File var15 = null;
+            File cacheFile = null;
 
-            byte[] var16;
+            byte[] remoteFileBytes;
             try {
-                byte[] var17;
+                byte[] fileBytes;
                 if (field_36) {
-                    var16 = fetchRemoteFile(codebaseURL, getConfigValue("browsercontrol_win_amd64_jar"));
-                    var15 = method_17(var9, "browsercontrol64.dll", var14, var10);
+                    remoteFileBytes = fetchRemoteFile(codebaseURL, getConfigValue("browsercontrol_win_amd64_jar"));
+                    cacheFile = createCacheFile(modewhat, "browsercontrol64.dll", homeDirectory, cacheSubdir);
                     System.out.printf("Attempting to validate %s", "browser");
-                    var17 = (new class_13(var16)).validateFile("browsercontrol64.dll", var0 ^ 83);
-                    if (null == var17 && !AppletViewer.isDebug) {
-                        var15 = null;
+                    fileBytes = (new class_13(remoteFileBytes)).validateFile("browsercontrol64.dll", var0 ^ 83);
+                    if (null == fileBytes && !AppletViewer.isDebug) {
+                        cacheFile = null;
                         ModalDialog.displayErrorMessage(getLocaleString("err_verify_bc64"));
                     }
 
-                    method_21((byte)-122, var17, var15);
+                    writeBytesToCacheFile(fileBytes, cacheFile);
                 } else if (field_39) {
-                    var16 = fetchRemoteFile(codebaseURL, getConfigValue("browsercontrol_win_x86_jar"));
-                    var15 = method_17(var9, "browsercontrol.dll", var14, var10);
-                    var17 = (new class_13(var16)).validateFile("browsercontrol.dll", -128);
-                    if (var17 == null && !AppletViewer.isDebug) {
-                        var15 = null;
+                    remoteFileBytes = fetchRemoteFile(codebaseURL, getConfigValue("browsercontrol_win_x86_jar"));
+                    cacheFile = createCacheFile(modewhat, "browsercontrol.dll", homeDirectory, cacheSubdir);
+                    fileBytes = (new class_13(remoteFileBytes)).validateFile("browsercontrol.dll", -128);
+                    if (fileBytes == null && !AppletViewer.isDebug) {
+                        cacheFile = null;
                         ModalDialog.displayErrorMessage(getLocaleString("err_verify_bc"));
                     }
 
-                    method_21((byte)25, var17, var15);
+                    writeBytesToCacheFile(fileBytes, cacheFile);
                     if (isDebug) {
-                        System.out.println("dlldata : " + var16.length);
+                        System.out.println("dlldata : " + remoteFileBytes.length);
                     }
                 }
             } catch (Exception var30) {
@@ -235,11 +234,11 @@ public final class AppletViewer implements ComponentListener {
             }
 
             try {
-                var16 = fetchRemoteFile(codebaseURL, getConfigValue("loader_jar"));
-                class_8 var36 = new class_8(var16);
+                remoteFileBytes = fetchRemoteFile(codebaseURL, getConfigValue("loader_jar"));
+                class_8 var36 = new class_8(remoteFileBytes);
                 loaderApplet = (Applet) var36.loadClass("loader").getDeclaredConstructor().newInstance();
                 if (isDebug) {
-                    System.out.println("loader_jar : " + var16.length);
+                    System.out.println("loader_jar : " + remoteFileBytes.length);
                 }
             } catch (Exception var29) {
                 if (isDebug) {
@@ -288,7 +287,7 @@ public final class AppletViewer implements ComponentListener {
             method_12((byte)69);
             if (field_39) {
                 try {
-                    System.load(var15.toString());
+                    System.load(cacheFile.toString());
                 } catch (Throwable var26) {
                     if (isDebug) {
                         var26.printStackTrace();
@@ -570,111 +569,87 @@ public final class AppletViewer implements ComponentListener {
     }
 
     // $FF: renamed from: a (int, java.lang.String, java.lang.String, java.lang.String, int) java.io.File
-    private static File method_17(int var0, String var1, String var2, String var3) {
-        int var16 = AppletViewerPreferences.field_91;
-        String[] var5 = new String[]{"c:/rscache/", "/rscache/", "c:/windows/", "c:/winnt/", "c:/", var2, "/tmp/", ""};
-        String[] var6 = new String[]{".jagex_cache_" + var0, ".file_store_" + var0};
-        int var8 = 0;
+    private static File createCacheFile(int modewhat, String fileName, String userHome, String cacheSubdirName) {
+        String[] potentialParentDirectories = new String[]{"c:/rscache/", "/rscache/", "c:/windows/", "c:/winnt/", "c:/", userHome, "/tmp/", ""};
+        String[] potentialCacheDirectoryNames = new String[]{".jagex_cache_" + modewhat, ".file_store_" + modewhat};
 
-        while(~var8 > -3) {
-            int var9 = 0;
+        // We need to complete two passes
+        // On the first pass we will attempt to find an existing file
+        // On the second pass we will attempt to find an available directory
+        for (int cacheFindPass = 0; cacheFindPass < 2; ++cacheFindPass) {
+            for (String potentialCacheDirectoryName : potentialCacheDirectoryNames) {
+                for (String potentialParentDirectory : potentialParentDirectories) {
+                    String fullFilePath = potentialParentDirectory + potentialCacheDirectoryName + "/" + (cacheSubdirName != null ? cacheSubdirName + "/" : "") + fileName;
+                    RandomAccessFile randomAccessFile = null;
 
-            label101:
-            while(~var9 > ~var6.length) {
-                int var10 = 0;
-
-                while(true) {
-                    if (var10 < var5.length) {
-                        String var11 = var5[var10] + var6[var9] + "/" + (var3 != null ? var3 + "/" : "") + var1;
-                        RandomAccessFile var12 = null;
-
-                        label111: {
-                            label112: {
-                                File var13;
-                                label92: {
-                                    try {
-                                        var13 = new File(var11);
-                                        if (var8 != 0 || var13.exists()) {
-                                            break label92;
-                                        }
-                                    } catch (Exception var20) {
-                                        break label112;
-                                    }
-
-                                    if (var16 == 0) {
-                                        break label111;
-                                    }
-                                }
-
-                                label84: {
-                                    try {
-                                        String var14 = var5[var10];
-                                        if (-2 != ~var8 || 0 >= var14.length() || (new File(var14)).exists()) {
-                                            break label84;
-                                        }
-                                    } catch (Exception var19) {
-                                        break label112;
-                                    }
-
-                                    if (var16 == 0) {
-                                        break label111;
-                                    }
-                                }
-
+                    root:
+                    {
+                        startLogic:
+                        {
+                            File var13;
+                            checkForExistingFile:
+                            {
                                 try {
-                                    (new File(var5[var10] + var6[var9])).mkdir();
-                                    if (var3 != null) {
-                                        (new File(var5[var10] + var6[var9] + "/" + var3)).mkdir();
+                                    var13 = new File(fullFilePath);
+                                    if (cacheFindPass != 0 || var13.exists()) {
+                                        break checkForExistingFile;
                                     }
-
-                                    var12 = new RandomAccessFile(var13, "rw");
-                                    int var15 = var12.read();
-                                    var12.seek(0L);
-                                    var12.write(var15);
-                                    var12.seek(0L);
-                                    var12.close();
-                                    return var13;
-                                } catch (Exception var18) {
+                                } catch (Exception var20) {
+                                    break startLogic;
                                 }
+
+                                break root;
                             }
 
-                            if (isDebug) {
-                                System.out.println("Unable to open/write: " + var11);
+                            checkForPossibleParentDirectory:
+                            {
+                                try {
+                                    if (cacheFindPass != 1 || 0 >= potentialParentDirectory.length() || (new File(potentialParentDirectory)).exists()) {
+                                        break checkForPossibleParentDirectory;
+                                    }
+                                } catch (Exception var19) {
+                                    break startLogic;
+                                }
+
+                                break root;
                             }
 
                             try {
-                                if (var12 != null) {
-                                    var12.close();
-                                    var12 = null;
+                                (new File(potentialParentDirectory + potentialCacheDirectoryName)).mkdir();
+                                if (cacheSubdirName != null) {
+                                    (new File(potentialParentDirectory + potentialCacheDirectoryName + "/" + cacheSubdirName)).mkdir();
                                 }
+
+                                randomAccessFile = new RandomAccessFile(var13, "rw");
+                                int var15 = randomAccessFile.read();
+                                randomAccessFile.seek(0L);
+                                randomAccessFile.write(var15);
+                                randomAccessFile.seek(0L);
+                                randomAccessFile.close();
+                                return var13;
                             } catch (Exception ignored) {
                             }
                         }
 
-                        ++var10;
-                        if (var16 == 0) {
-                            continue;
+                        if (isDebug) {
+                            System.out.println("Unable to open/write: " + fullFilePath);
+                        }
+
+                        try {
+                            if (randomAccessFile != null) {
+                                randomAccessFile.close();
+                            }
+                        } catch (Exception ignored) {
                         }
                     }
-
-                    ++var9;
-                    if (var16 == 0) {
-                        break;
-                    }
-                    break label101;
                 }
-            }
-
-            ++var8;
-            if (var16 != 0) {
-                break;
             }
         }
 
         if (!isDebug) {
             throw new RuntimeException();
         } else {
-            throw new RuntimeException("Fatal - could not find ANY location for file: " + var1);
+            throw new RuntimeException("Fatal - could not find ANY location for file: " + fileName);
         }
     }
 
@@ -711,14 +686,14 @@ public final class AppletViewer implements ComponentListener {
     }
 
     // $FF: renamed from: a (byte, byte[], java.io.File) boolean
-    private static void method_21(byte var0, byte[] var1, File var2) {
+    private static void writeBytesToCacheFile(byte[] bytes, File file) {
         try {
-            FileOutputStream var4 = new FileOutputStream(var2);
-            var4.write(var1, 0, var1.length);
-            var4.close();
-        } catch (IOException var5) {
+            FileOutputStream outputStream = new FileOutputStream(file);
+            outputStream.write(bytes, 0, bytes.length);
+            outputStream.close();
+        } catch (IOException exception) {
             if (isDebug) {
-                var5.printStackTrace();
+                exception.printStackTrace();
             }
 
             ModalDialog.displayErrorMessage(getLocaleString("err_save_file"));
