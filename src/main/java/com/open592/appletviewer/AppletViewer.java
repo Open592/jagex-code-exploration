@@ -280,7 +280,7 @@ public final class AppletViewer implements ComponentListener {
 
         field_31.setFont(new Font("SansSerif", 0, 10));
         field_37.add(field_31);
-        field_38 = new class_0(getLocaleString("tandc"));
+        field_38 = new TextAreaComponent(getLocaleString("tandc"));
         field_37.add(field_38);
         frame.doLayout();
         method_12((byte)69);
@@ -379,7 +379,7 @@ public final class AppletViewer implements ComponentListener {
             }
 
             field_37.add(loaderApplet);
-            field_38 = new class_0(getLocaleString("tandc"));
+            field_38 = new TextAreaComponent(getLocaleString("tandc"));
             field_37.add(field_38);
             field_49 = true;
             method_12((byte)95);
