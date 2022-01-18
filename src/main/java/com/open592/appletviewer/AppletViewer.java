@@ -28,13 +28,13 @@ public final class AppletViewer implements ComponentListener {
     // $FF: renamed from: g java.awt.Frame
     static Frame frame;
     // $FF: renamed from: h boolean
-    private static boolean field_36;
+    private static boolean is64Bit;
     // $FF: renamed from: i java.awt.Panel
     private static Panel field_37;
     // $FF: renamed from: j java.awt.Component
     private static Component field_38;
     // $FF: renamed from: k boolean
-    static boolean field_39;
+    static boolean isWindows;
     // $FF: renamed from: l boolean
     static boolean isDebug = false;
     // $FF: renamed from: m java.util.Hashtable
@@ -55,14 +55,12 @@ public final class AppletViewer implements ComponentListener {
     private static String javConfigURL = null;
     // $FF: renamed from: w float
     private static float field_51 = 0.0F;
-    // $FF: renamed from: x boolean
-    public static boolean field_52;
 
     public void componentMoved(ComponentEvent var1) {
     }
 
     // $FF: renamed from: a (byte) void
-    static void method_8() {
+    static void quit() {
         if (browsercontrol.iscreated()) {
             browsercontrol.destroy();
         }
@@ -172,8 +170,8 @@ public final class AppletViewer implements ComponentListener {
         String codebaseURL = getConfigValue("codebase");
         String osName = System.getProperty("os.name").toLowerCase();
         String osArch = System.getProperty("os.arch").toLowerCase();
-        field_39 = osName.startsWith("win");
-        field_36 = field_39 && osArch.startsWith("amd64") || osArch.startsWith("x86_64");
+        isWindows = osName.startsWith("win");
+        is64Bit = isWindows && osArch.startsWith("amd64") || osArch.startsWith("x86_64");
         String homeDirectory = null;
 
         try {
@@ -194,7 +192,7 @@ public final class AppletViewer implements ComponentListener {
         byte[] remoteFileBytes;
         try {
             byte[] fileBytes;
-            if (field_36) {
+            if (is64Bit) {
                 remoteFileBytes = fetchRemoteFile(codebaseURL, getConfigValue("browsercontrol_win_amd64_jar"));
                 cacheFile = createCacheFile(modewhat, "browsercontrol64.dll", homeDirectory, cacheSubdir);
                 System.out.printf("Attempting to validate %s", "browser");
@@ -205,7 +203,7 @@ public final class AppletViewer implements ComponentListener {
                 }
 
                 writeBytesToCacheFile(fileBytes, cacheFile);
-            } else if (field_39) {
+            } else if (isWindows) {
                 remoteFileBytes = fetchRemoteFile(codebaseURL, getConfigValue("browsercontrol_win_x86_jar"));
                 cacheFile = createCacheFile(modewhat, "browsercontrol.dll", homeDirectory, cacheSubdir);
                 fileBytes = (new class_13(remoteFileBytes)).validateFile("browsercontrol.dll");
@@ -228,8 +226,8 @@ public final class AppletViewer implements ComponentListener {
         }
 
         LoaderBox.setLoadingText(getLocaleString("loading_app"));
-        if (field_39) {
-            class_5.method_4(255);
+        if (isWindows) {
+            class_5.method_4();
         }
 
         try {
@@ -248,14 +246,14 @@ public final class AppletViewer implements ComponentListener {
         }
 
         LoaderBox.setHidden();
-        class_3.method_1(true);
+        URLViewer.initialize();
         frame.setTitle(getConfigValue("title"));
-        int var35 = field_39 ? Integer.parseInt(getConfigValue("advert_height")) : 0;
-        int var37 = Integer.parseInt(getConfigValue("window_preferredwidth"));
-        int var18 = Integer.parseInt(getConfigValue("window_preferredheight"));
+        int advertHeight = isWindows ? Integer.parseInt(getConfigValue("advert_height")) : 0;
+        int preferredWidth = Integer.parseInt(getConfigValue("window_preferredwidth"));
+        int preferredHeight = Integer.parseInt(getConfigValue("window_preferredheight"));
         byte var19 = 40;
-        Insets var20 = frame.getInsets();
-        frame.setSize(var20.right + var37 + var20.left, var20.bottom + var18 + (var35 + var20.top - -var19));
+        Insets frameInsets = frame.getInsets();
+        frame.setSize(frameInsets.right + preferredWidth + frameInsets.left, frameInsets.bottom + preferredHeight + (advertHeight + frameInsets.top - -var19));
         frame.setLocationRelativeTo(null);
         frame.setVisible(true);
         field_37 = new Panel();
@@ -263,8 +261,10 @@ public final class AppletViewer implements ComponentListener {
         field_37.setLayout(null);
         frame.setLayout(new BorderLayout());
         frame.add(field_37, "Center");
-        AppletViewerPreferences.getPreference("Member");
-        if (field_39) {
+
+        Optional<String> isMemberPreference = AppletViewerPreferences.getPreference("Member");
+        boolean isMember = isMemberPreference.isPresent() && isMemberPreference.get().equals("yes");
+        if (isWindows && !isMember) {
             field_34 = new Canvas();
             field_37.add(field_34);
         }
@@ -284,7 +284,7 @@ public final class AppletViewer implements ComponentListener {
         field_37.add(field_38);
         frame.doLayout();
         method_12((byte)69);
-        if (field_39) {
+        if (isWindows) {
             try {
                 System.load(cacheFile.toString());
             } catch (Throwable var26) {
@@ -297,7 +297,7 @@ public final class AppletViewer implements ComponentListener {
             }
         }
 
-        if (field_39) {
+        if (isWindows) {
             while(!field_34.isDisplayable() || !field_34.isShowing()) {
                 try {
                     Thread.sleep(100L);
@@ -320,7 +320,7 @@ public final class AppletViewer implements ComponentListener {
 
         frame.addWindowListener(class_12.method_32());
         field_37.addComponentListener(new AppletViewer());
-        loaderApplet.setStub(new class_17());
+        loaderApplet.setStub(new AppletEnvironment());
         loaderApplet.init();
         loaderApplet.start();
     }
@@ -353,8 +353,8 @@ public final class AppletViewer implements ComponentListener {
             currentServerSettings = var0;
             LoaderBox.updateProgress(50);
             LoaderBox.paint();
-            if (field_39) {
-                class_5.method_4(21870 - 21615);
+            if (isWindows) {
+                class_5.method_4();
             }
 
             try {
@@ -383,7 +383,7 @@ public final class AppletViewer implements ComponentListener {
             field_37.add(field_38);
             field_49 = true;
             method_12((byte)95);
-            loaderApplet.setStub(new class_17());
+            loaderApplet.setStub(new AppletEnvironment());
             loaderApplet.init();
             loaderApplet.start();
         }
@@ -919,7 +919,7 @@ public final class AppletViewer implements ComponentListener {
     }
 
     public static void readdadvert() {
-        if (field_39 && null == field_34) {
+        if (isWindows && null == field_34) {
             field_34 = new Canvas();
             field_37.add(field_34);
             method_12((byte)9);

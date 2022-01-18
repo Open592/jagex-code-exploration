@@ -4,8 +4,7 @@ import java.applet.Applet;
 import java.applet.AppletContext;
 import java.applet.AppletStub;
 import java.applet.AudioClip;
-import java.awt.Image;
-import java.io.IOException;
+import java.awt.*;
 import java.io.InputStream;
 import java.net.MalformedURLException;
 import java.net.URL;
@@ -14,80 +13,81 @@ import java.util.Enumeration;
 import java.util.Iterator;
 
 // $FF: renamed from: app.a
-final class class_17 implements AppletStub, AppletContext {
-   public final void showDocument(URL var1) {
+final class AppletEnvironment implements AppletStub, AppletContext {
+   public void showDocument(URL var1) {
       if (AppletViewer.isDebug) {
          System.out.println("showdocument url:" + var1);
       }
 
-      class_3.showurl(var1.toString(), (String)null);
+      URLViewer.showurl(var1.toString(), null);
    }
 
-   public final AudioClip getAudioClip(URL var1) {
+   public AudioClip getAudioClip(URL var1) {
       throw new UnsupportedOperationException();
    }
 
-   public final InputStream getStream(String var1) {
+   public InputStream getStream(String var1) {
       throw new UnsupportedOperationException();
    }
 
-   public final Iterator getStreamKeys() {
+   public Iterator getStreamKeys() {
       throw new UnsupportedOperationException();
    }
 
-   public final Image getImage(URL var1) {
+   public Image getImage(URL var1) {
       throw new UnsupportedOperationException();
    }
 
-   public final void setStream(String var1, InputStream var2) throws IOException {
+   public void setStream(String var1, InputStream var2) {
       throw new UnsupportedOperationException();
    }
 
-   public final boolean isActive() {
+   public boolean isActive() {
       return true;
    }
 
-   public final String getParameter(String var1) {
-      String var2 = AppletViewer.getParameter(var1);
-      if (AppletViewer.isDebug && var2 == null) {
-         if ("force64mb".equals(var1)) {
+   public String getParameter(String name) {
+      String result = AppletViewer.getParameter(name);
+
+      if (AppletViewer.isDebug && result == null) {
+         if ("force64mb".equals(name)) {
             System.out.println("Returning false for force64mb");
             return "false";
          }
 
-         System.out.println("Unavailable param:" + var1);
+         System.out.println("Unavailable param:" + name);
       }
 
-      return var2;
+      return result;
    }
 
-   public final Applet getApplet(String var1) {
+   public Applet getApplet(String var1) {
       throw new UnsupportedOperationException();
    }
 
-   public final void showDocument(URL var1, String var2) {
+   public void showDocument(URL url, String target) {
       if (AppletViewer.isDebug) {
-         System.out.println("showdocument url:" + var1 + " target:" + var2);
+         System.out.println("showdocument url:" + url + " target:" + target);
       }
 
-      class_3.showurl(var1.toString(), var2);
+      URLViewer.showurl(url.toString(), target);
    }
 
-   public final void showStatus(String var1) {
+   public void showStatus(String var1) {
       throw new UnsupportedOperationException();
    }
 
-   public final void appletResize(int var1, int var2) {
+   public void appletResize(int var1, int var2) {
    }
 
-   public final Enumeration getApplets() {
+   public Enumeration getApplets() {
       throw new UnsupportedOperationException();
    }
 
-   public class_17() {
+   public AppletEnvironment() {
    }
 
-   public final URL getDocumentBase() {
+   public URL getDocumentBase() {
       try {
          return new URL(AppletViewer.getConfigValue("codebase"));
       } catch (MalformedURLException var2) {
@@ -95,7 +95,7 @@ final class class_17 implements AppletStub, AppletContext {
       }
    }
 
-   public final URL getCodeBase() {
+   public URL getCodeBase() {
       try {
          return new URL(AppletViewer.getConfigValue("codebase"));
       } catch (MalformedURLException var2) {
@@ -103,7 +103,7 @@ final class class_17 implements AppletStub, AppletContext {
       }
    }
 
-   public final AppletContext getAppletContext() {
+   public AppletContext getAppletContext() {
       return this;
    }
 }

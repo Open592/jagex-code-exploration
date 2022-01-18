@@ -27,7 +27,6 @@ final class class_13 {
 
    // $FF: renamed from: a (java.lang.String, int) byte[]
    byte[] validateFile(String filename) {
-      System.out.println("Attempting to validate: " + filename);
       try {
          byte[] var3 = this.fileMap.remove(filename);
          if (var3 == null) {
@@ -43,6 +42,8 @@ final class class_13 {
                   System.out.println("Var 5 null");
                   return null;
                } else {
+                  System.out.println("Attempting to validate: " + filename);
+
                   MessageDigest var6 = MessageDigest.getInstance("MD5");
                   var6.reset();
                   var6.update(var3);

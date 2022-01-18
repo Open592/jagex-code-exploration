@@ -40,7 +40,7 @@ final class class_0 extends Component implements MouseListener, MouseMotionListe
 
       while(~this.field_4.length < ~var3) {
          if (this.field_4[var3].field_81.contains(var2)) {
-            class_3.showurl(this.field_4[var3].field_82, null);
+            URLViewer.showurl(this.field_4[var3].field_82, null);
          }
 
          ++var3;
