@@ -14,9 +14,9 @@ import java.util.Optional;
 
 public final class AppletViewer implements ComponentListener {
     // $FF: renamed from: a app.j
-    private static class_16 field_29;
+    private static DialogHandler field_29;
     // $FF: renamed from: b app.j
-    private static class_16 field_30;
+    private static DialogHandler field_30;
     // $FF: renamed from: c app.n
     private static class_4 field_31;
     // $FF: renamed from: d java.util.Hashtable
@@ -270,7 +270,7 @@ public final class AppletViewer implements ComponentListener {
         }
 
         field_37.add(loaderApplet);
-        field_31 = new class_4(new class_11());
+        field_31 = new class_4(new ToolbarButtonHandler());
         field_31.setBackground(Color.BLACK);
         field_31.setForeground(Color.GRAY);
         field_31.method_2(getLocaleString("language"));
@@ -318,7 +318,7 @@ public final class AppletViewer implements ComponentListener {
             }
         }
 
-        frame.addWindowListener(class_12.method_32());
+        frame.addWindowListener(TerminateHandler.initialize());
         field_37.addComponentListener(new AppletViewer());
         loaderApplet.setStub(new AppletEnvironment());
         loaderApplet.init();
@@ -490,7 +490,7 @@ public final class AppletViewer implements ComponentListener {
     }
 
     // $FF: renamed from: b (int) void
-    static void getAvailableServerList() {
+    static void selectPreferredServer() {
         String serverListURL = getConfigValue("serverlist");
         ServerSettings[] enabledServers = serverSettingsList;
         int enabledServerCount = serverSettingsList.length;
@@ -878,28 +878,29 @@ public final class AppletViewer implements ComponentListener {
                 }
             } while(true);
 
-            field_30 = new class_16(getLocaleString("language"));
+            field_30 = new DialogHandler(getLocaleString("language"));
             field_30.method_35(localeStringList);
             if (~severSettingsCount < -1) {
                 serverSettingsList = new ServerSettings[severSettingsCount];
                 System.arraycopy(servers, 0, serverSettingsList, 0, severSettingsCount);
-                field_29 = new class_16(getLocaleString("switchserver"));
+                field_29 = new DialogHandler(getLocaleString("switchserver"));
             }
 
             if (AppletViewerPreferences.getPreference("Language").isEmpty()) {
-                method_23();
+                selectPreferredLanguage();
             }
         }
 
     }
 
     // $FF: renamed from: d (int) int
-    static int method_23() {
-        int var1 = field_30.method_36();
-        if (0 <= var1) {
-            AppletViewerPreferences.addPreference(Integer.toString(languageIDs[var1]), "Language");
+    static int selectPreferredLanguage() {
+        int languageID = field_30.method_36();
+
+        if (languageID >= 0 && languageID < languageIDs.length) {
+            AppletViewerPreferences.addPreference(Integer.toString(languageIDs[languageID]), "Language");
             AppletViewerPreferences.writePreferencesToFile();
-            return var1;
+            return languageID;
         } else {
             return -1;
         }

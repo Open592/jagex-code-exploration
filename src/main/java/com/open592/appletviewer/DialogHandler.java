@@ -12,13 +12,13 @@ import java.awt.event.WindowEvent;
 import java.awt.event.WindowListener;
 
 // $FF: renamed from: app.j
-final class class_16 implements ActionListener, WindowListener {
+final class DialogHandler implements ActionListener, WindowListener {
    // $FF: renamed from: a int
    private int field_78;
    // $FF: renamed from: b java.awt.List
-   private List field_79;
+   private final List field_79;
    // $FF: renamed from: c java.awt.Dialog
-   private Dialog field_80;
+   private final Dialog field_80;
 
    public final void windowClosed(WindowEvent var1) {
    }
@@ -30,7 +30,7 @@ final class class_16 implements ActionListener, WindowListener {
       this.method_37();
    }
 
-   class_16(String var1) {
+   DialogHandler(String title) {
       super();
       Panel var2 = new Panel();
       this.field_79 = new List();
@@ -47,7 +47,7 @@ final class class_16 implements ActionListener, WindowListener {
       var5.addActionListener(this);
       var3.add(var4);
       var3.add(var5);
-      this.field_80 = new Dialog(AppletViewer.frame, var1, true);
+      this.field_80 = new Dialog(AppletViewer.frame, title, true);
       this.field_80.addWindowListener(this);
       this.field_80.setSize(200, 150);
       this.field_80.add(var2);

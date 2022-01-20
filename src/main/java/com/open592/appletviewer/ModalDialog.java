@@ -68,8 +68,8 @@ final class ModalDialog {
    static void displayErrorMessage(String message) {
       LoaderBox.setHidden();
       display(AppletViewer.getLocaleString("quit"), AppletViewer.getLocaleString("error"), message);
-      dialog.addWindowListener(class_12.method_32());
-      button.addActionListener(class_12.method_32());
+      dialog.addWindowListener(TerminateHandler.initialize());
+      button.addActionListener(TerminateHandler.initialize());
       dialog.setVisible(true);
    }
 }

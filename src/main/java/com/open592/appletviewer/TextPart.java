@@ -7,8 +7,8 @@ final class TextPart {
    // $FF: renamed from: b java.lang.String
    String title;
 
-   TextPart(String var1) {
-      this.title = var1;
+   TextPart(String title) {
+      this.title = title;
    }
 
    TextPart(String title, String URL) {

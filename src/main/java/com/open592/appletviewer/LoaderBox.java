@@ -94,7 +94,7 @@ final class LoaderBox extends Component {
       classInstance.loadingTextFontMetrics = classInstance.getFontMetrics(classInstance.loadingTextFont);
       loaderBoxDialog = new Dialog(AppletViewer.frame, "Jagex Ltd.", false);
       loaderBoxDialog.add(classInstance);
-      loaderBoxDialog.addWindowListener(class_12.method_32());
+      loaderBoxDialog.addWindowListener(TerminateHandler.initialize());
       loaderBoxDialog.setResizable(false);
       loaderBoxDialog.setSize(320, 100);
    }

@@ -23,7 +23,7 @@ final class TextAreaComponent extends Component implements MouseListener, MouseM
    // $FF: renamed from: d java.awt.Color
    private static final Color linkColor = new Color(16765440);
    // $FF: renamed from: e app.e[]
-   private TextURL[] links;
+   private TextURL[] urls;
 
    public final void mouseEntered(MouseEvent var1) {
    }
@@ -37,9 +37,9 @@ final class TextAreaComponent extends Component implements MouseListener, MouseM
    public final void mousePressed(MouseEvent event) {
       Point mousePOS = event.getPoint();
 
-      for (TextURL link : this.links) {
-         if (link.container.contains(mousePOS)) {
-            URLViewer.showurl(link.URL, null);
+      for (TextURL url : this.urls) {
+         if (url.container.contains(mousePOS)) {
+            URLViewer.showurl(url.URL, null);
          }
       }
    }
@@ -89,14 +89,14 @@ final class TextAreaComponent extends Component implements MouseListener, MouseM
       }
    }
 
-   public final void mouseClicked(MouseEvent var1) {
+   public void mouseClicked(MouseEvent var1) {
    }
 
-   public final void mouseMoved(MouseEvent event) {
+   public void mouseMoved(MouseEvent event) {
       Point mousePOS = event.getPoint();
 
-      for (TextURL link : this.links) {
-         if (link.container.contains(mousePOS)) {
+      for (TextURL url : this.urls) {
+         if (url.container.contains(mousePOS)) {
             this.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
 
             return;
@@ -190,7 +190,7 @@ final class TextAreaComponent extends Component implements MouseListener, MouseM
             ++var3;
          }
 
-         this.links = new TextURL[var2];
+         this.urls = new TextURL[var2];
          var3 = 0;
          int var8 = 0;
 
@@ -200,7 +200,7 @@ final class TextAreaComponent extends Component implements MouseListener, MouseM
 
             while(~var9.length < ~var6) {
                if (var9[var6].URL != null) {
-                  this.links[var3++] = var9[var6].URL;
+                  this.urls[var3++] = var9[var6].URL;
                }
 
                ++var6;
