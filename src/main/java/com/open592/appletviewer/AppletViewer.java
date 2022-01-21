@@ -18,21 +18,21 @@ public final class AppletViewer implements ComponentListener {
     // $FF: renamed from: b app.j
     private static DialogHandler field_30;
     // $FF: renamed from: c app.n
-    private static class_4 field_31;
+    private static ToolbarComponent toolbarComponent;
     // $FF: renamed from: d java.util.Hashtable
     private static final Hashtable<String, String> configurationItems = new Hashtable<>();
     // $FF: renamed from: e java.applet.Applet
     private static Applet loaderApplet;
     // $FF: renamed from: f java.awt.Canvas
-    private static Canvas field_34;
+    private static Canvas advertComponent;
     // $FF: renamed from: g java.awt.Frame
     static Frame frame;
     // $FF: renamed from: h boolean
     private static boolean is64Bit;
     // $FF: renamed from: i java.awt.Panel
-    private static Panel field_37;
+    private static Panel innerContainer;
     // $FF: renamed from: j java.awt.Component
-    private static Component field_38;
+    private static Component termsAndConditionsTextArea;
     // $FF: renamed from: k boolean
     static boolean isWindows;
     // $FF: renamed from: l boolean
@@ -53,8 +53,9 @@ public final class AppletViewer implements ComponentListener {
     private static boolean field_49 = true;
     // $FF: renamed from: v java.lang.String
     private static String javConfigURL = null;
+    private static final float TOTAL_EXPECTED_BYTES = 58988.0F;
     // $FF: renamed from: w float
-    private static float field_51 = 0.0F;
+    private static float totalReceivedBytes = 0.0F;
 
     public void componentMoved(ComponentEvent var1) {
     }
@@ -81,14 +82,14 @@ public final class AppletViewer implements ComponentListener {
     }
 
     public static void removeadvert() {
-        if (field_34 != null) {
+        if (advertComponent != null) {
             if (browsercontrol.iscreated()) {
                 browsercontrol.destroy();
             }
 
-            field_37.remove(field_34);
-            field_34 = null;
-            method_12((byte)80);
+            innerContainer.remove(advertComponent);
+            advertComponent = null;
+            method_12();
         }
 
     }
@@ -101,8 +102,8 @@ public final class AppletViewer implements ComponentListener {
             boolean showHostConsole = Boolean.getBoolean("com.jagex.hostConsole");
 
             if (showHostConsole) {
-                System.setErr(class_14.method_34("Jagex host console", -24134));
-                System.setOut(class_14.method_34("Jagex host console", -24134));
+                System.setErr(DebugOutputConsole.initialize());
+                System.setOut(DebugOutputConsole.initialize());
             }
 
             System.out.println("release #7");
@@ -134,9 +135,9 @@ public final class AppletViewer implements ComponentListener {
             }
         }
 
-        LoaderBox.initialize();
-        LoaderBox.setVisible();
-        LoaderBox.setLoadingText(getLocaleString("loading_config"));
+        LoaderBoxComponent.initialize();
+        LoaderBoxComponent.setVisible();
+        LoaderBoxComponent.setLoadingText(getLocaleString("loading_config"));
         javConfigURL = System.getProperty("com.jagex.config");
         String configFileName = System.getProperty("com.jagex.configfile");
         if (null == javConfigURL) {
@@ -182,39 +183,39 @@ public final class AppletViewer implements ComponentListener {
         } catch (Exception ignored) {
         }
 
-        LoaderBox.setLoadingText(getLocaleString("loading_app_resources"));
+        LoaderBoxComponent.setLoadingText(getLocaleString("loading_app_resources"));
         if (homeDirectory == null) {
             homeDirectory = "~/";
         }
 
-        File cacheFile = null;
+        File browserControlFile = null;
 
-        byte[] remoteFileBytes;
+        byte[] remoteFileBuffer;
         try {
             byte[] fileBytes;
             if (is64Bit) {
-                remoteFileBytes = fetchRemoteFile(codebaseURL, getConfigValue("browsercontrol_win_amd64_jar"));
-                cacheFile = createCacheFile(modewhat, "browsercontrol64.dll", homeDirectory, cacheSubdir);
+                remoteFileBuffer = fetchRemoteFileToBuffer(codebaseURL, getConfigValue("browsercontrol_win_amd64_jar"));
+                browserControlFile = locateFileLocation(modewhat, "browsercontrol64.dll", homeDirectory, cacheSubdir);
                 System.out.printf("Attempting to validate %s", "browser");
-                fileBytes = (new class_13(remoteFileBytes)).validateFile("browsercontrol64.dll");
+                fileBytes = (new class_13(remoteFileBuffer)).validateFile("browsercontrol64.dll");
                 if (null == fileBytes && !AppletViewer.isDebug) {
-                    cacheFile = null;
+                    browserControlFile = null;
                     ModalDialog.displayErrorMessage(getLocaleString("err_verify_bc64"));
                 }
 
-                writeBytesToCacheFile(fileBytes, cacheFile);
+                writeBytesToCacheFile(fileBytes, browserControlFile);
             } else if (isWindows) {
-                remoteFileBytes = fetchRemoteFile(codebaseURL, getConfigValue("browsercontrol_win_x86_jar"));
-                cacheFile = createCacheFile(modewhat, "browsercontrol.dll", homeDirectory, cacheSubdir);
-                fileBytes = (new class_13(remoteFileBytes)).validateFile("browsercontrol.dll");
+                remoteFileBuffer = fetchRemoteFileToBuffer(codebaseURL, getConfigValue("browsercontrol_win_x86_jar"));
+                browserControlFile = locateFileLocation(modewhat, "browsercontrol.dll", homeDirectory, cacheSubdir);
+                fileBytes = (new class_13(remoteFileBuffer)).validateFile("browsercontrol.dll");
                 if (fileBytes == null && !AppletViewer.isDebug) {
-                    cacheFile = null;
+                    browserControlFile = null;
                     ModalDialog.displayErrorMessage(getLocaleString("err_verify_bc"));
                 }
 
-                writeBytesToCacheFile(fileBytes, cacheFile);
+                writeBytesToCacheFile(fileBytes, browserControlFile);
                 if (isDebug) {
-                    System.out.println("dlldata : " + remoteFileBytes.length);
+                    System.out.println("dlldata : " + remoteFileBuffer.length);
                 }
             }
         } catch (Exception var30) {
@@ -225,17 +226,17 @@ public final class AppletViewer implements ComponentListener {
             ModalDialog.displayErrorMessage(getLocaleString("err_load_bc"));
         }
 
-        LoaderBox.setLoadingText(getLocaleString("loading_app"));
+        LoaderBoxComponent.setLoadingText(getLocaleString("loading_app"));
         if (isWindows) {
             class_5.method_4();
         }
 
         try {
-            remoteFileBytes = fetchRemoteFile(codebaseURL, getConfigValue("loader_jar"));
-            class_8 var36 = new class_8(remoteFileBytes);
+            remoteFileBuffer = fetchRemoteFileToBuffer(codebaseURL, getConfigValue("loader_jar"));
+            class_8 var36 = new class_8(remoteFileBuffer);
             loaderApplet = (Applet) var36.loadClass("loader").getDeclaredConstructor().newInstance();
             if (isDebug) {
-                System.out.println("loader_jar : " + remoteFileBytes.length);
+                System.out.println("loader_jar : " + remoteFileBuffer.length);
             }
         } catch (Exception var29) {
             if (isDebug) {
@@ -245,7 +246,7 @@ public final class AppletViewer implements ComponentListener {
             ModalDialog.displayErrorMessage(getLocaleString("err_target_applet"));
         }
 
-        LoaderBox.setHidden();
+        LoaderBoxComponent.setHidden();
         URLViewer.initialize();
         frame.setTitle(getConfigValue("title"));
         int advertHeight = isWindows ? Integer.parseInt(getConfigValue("advert_height")) : 0;
@@ -256,37 +257,37 @@ public final class AppletViewer implements ComponentListener {
         frame.setSize(frameInsets.right + preferredWidth + frameInsets.left, frameInsets.bottom + preferredHeight + (advertHeight + frameInsets.top - -var19));
         frame.setLocationRelativeTo(null);
         frame.setVisible(true);
-        field_37 = new Panel();
-        field_37.setBackground(Color.black);
-        field_37.setLayout(null);
+        innerContainer = new Panel();
+        innerContainer.setBackground(Color.black);
+        innerContainer.setLayout(null);
         frame.setLayout(new BorderLayout());
-        frame.add(field_37, "Center");
+        frame.add(innerContainer, "Center");
 
         Optional<String> isMemberPreference = AppletViewerPreferences.getPreference("Member");
         boolean isMember = isMemberPreference.isPresent() && isMemberPreference.get().equals("yes");
         if (isWindows && !isMember) {
-            field_34 = new Canvas();
-            field_37.add(field_34);
+            advertComponent = new Canvas();
+            innerContainer.add(advertComponent);
         }
 
-        field_37.add(loaderApplet);
-        field_31 = new class_4(new ToolbarButtonHandler());
-        field_31.setBackground(Color.BLACK);
-        field_31.setForeground(Color.GRAY);
-        field_31.method_2(getLocaleString("language"));
+        innerContainer.add(loaderApplet);
+        toolbarComponent = new ToolbarComponent(new ToolbarButtonHandler());
+        toolbarComponent.setBackground(Color.BLACK);
+        toolbarComponent.setForeground(Color.GRAY);
+        toolbarComponent.addButton(getLocaleString("language"));
         if (null != serverSettingsList && serverSettingsList.length > 1) {
-            field_31.method_2(getLocaleString("switchserver"));
+            toolbarComponent.addButton(getLocaleString("switchserver"));
         }
 
-        field_31.setFont(new Font("SansSerif", 0, 10));
-        field_37.add(field_31);
-        field_38 = new TextAreaComponent(getLocaleString("tandc"));
-        field_37.add(field_38);
+        toolbarComponent.setFont(new Font("SansSerif", Font.PLAIN, 10));
+        innerContainer.add(toolbarComponent);
+        termsAndConditionsTextArea = new TextAreaComponent(getLocaleString("tandc"));
+        innerContainer.add(termsAndConditionsTextArea);
         frame.doLayout();
-        method_12((byte)69);
+        method_12();
         if (isWindows) {
             try {
-                System.load(cacheFile.toString());
+                System.load(browserControlFile.toString());
             } catch (Throwable var26) {
                 if (isDebug) {
                     var26.printStackTrace();
@@ -298,7 +299,7 @@ public final class AppletViewer implements ComponentListener {
         }
 
         if (isWindows) {
-            while(!field_34.isDisplayable() || !field_34.isShowing()) {
+            while(!advertComponent.isDisplayable() || !advertComponent.isShowing()) {
                 try {
                     Thread.sleep(100L);
                 } catch (Exception ignored) {
@@ -306,8 +307,8 @@ public final class AppletViewer implements ComponentListener {
             }
 
             try {
-                browsercontrol.create(field_34, getConfigValue("adverturl"));
-                browsercontrol.resize(field_34.getSize().width, field_34.getSize().height);
+                browsercontrol.create(advertComponent, getConfigValue("adverturl"));
+                browsercontrol.resize(advertComponent.getSize().width, advertComponent.getSize().height);
             } catch (Throwable var27) {
                 if (isDebug) {
                     var27.printStackTrace();
@@ -319,7 +320,7 @@ public final class AppletViewer implements ComponentListener {
         }
 
         frame.addWindowListener(TerminateHandler.initialize());
-        field_37.addComponentListener(new AppletViewer());
+        innerContainer.addComponentListener(new AppletViewer());
         loaderApplet.setStub(new AppletEnvironment());
         loaderApplet.init();
         loaderApplet.start();
@@ -331,58 +332,58 @@ public final class AppletViewer implements ComponentListener {
     // $FF: renamed from: a (app.q, int) void
     private static void method_11(ServerSettings var0) {
         if (null != var0) {
-            LoaderBox.setLoadingText(getLocaleString("loading_app"));
-            LoaderBox.updateProgress(0);
-            LoaderBox.setVisible();
-            LoaderBox.paint();
+            LoaderBoxComponent.setLoadingText(getLocaleString("loading_app"));
+            LoaderBoxComponent.updateProgress(0);
+            LoaderBoxComponent.setVisible();
+            LoaderBoxComponent.paint();
             if (null != loaderApplet) {
-                if (field_38.isVisible()) {
-                    field_38.setVisible(false);
-                    method_12((byte)100);
+                if (termsAndConditionsTextArea.isVisible()) {
+                    termsAndConditionsTextArea.setVisible(false);
+                    method_12();
                 }
 
                 loaderApplet.stop();
-                LoaderBox.updateProgress(25);
-                LoaderBox.paint();
+                LoaderBoxComponent.updateProgress(25);
+                LoaderBoxComponent.paint();
                 loaderApplet.destroy();
-                field_37.remove(loaderApplet);
+                innerContainer.remove(loaderApplet);
                 loaderApplet = null;
-                field_37.remove(field_38);
+                innerContainer.remove(termsAndConditionsTextArea);
             }
 
             currentServerSettings = var0;
-            LoaderBox.updateProgress(50);
-            LoaderBox.paint();
+            LoaderBoxComponent.updateProgress(50);
+            LoaderBoxComponent.paint();
             if (isWindows) {
                 class_5.method_4();
             }
 
             try {
                 String var2 = getConfigValue("codebase");
-                byte[] var3 = fetchRemoteFile(var2, getConfigValue("loader_jar"));
-                LoaderBox.updateProgress(75);
-                LoaderBox.paint();
+                byte[] var3 = fetchRemoteFileToBuffer(var2, getConfigValue("loader_jar"));
+                LoaderBoxComponent.updateProgress(75);
+                LoaderBoxComponent.paint();
                 class_8 var4 = new class_8(var3);
                 loaderApplet = (Applet)var4.loadClass("loader").newInstance();
                 if (isDebug) {
                     System.out.println("loader_jar : " + var3.length);
                 }
 
-                LoaderBox.setHidden();
+                LoaderBoxComponent.setHidden();
             } catch (Exception var5) {
                 if (isDebug) {
                     var5.printStackTrace();
                 }
 
-                LoaderBox.setHidden();
+                LoaderBoxComponent.setHidden();
                 ModalDialog.displayErrorMessage(getLocaleString("err_target_applet"));
             }
 
-            field_37.add(loaderApplet);
-            field_38 = new TextAreaComponent(getLocaleString("tandc"));
-            field_37.add(field_38);
+            innerContainer.add(loaderApplet);
+            termsAndConditionsTextArea = new TextAreaComponent(getLocaleString("tandc"));
+            innerContainer.add(termsAndConditionsTextArea);
             field_49 = true;
-            method_12((byte)95);
+            method_12();
             loaderApplet.setStub(new AppletEnvironment());
             loaderApplet.init();
             loaderApplet.start();
@@ -390,17 +391,17 @@ public final class AppletViewer implements ComponentListener {
     }
 
     // $FF: renamed from: b (byte) void
-    private static void method_12(byte var0) {
+    private static void method_12() {
         if (null != loaderApplet) {
-            int var1 = field_31.isVisible() ? 20 : 0;
-            int var2 = null == field_34 ? 0 : Integer.parseInt(getConfigValue("advert_height"));
-            int var3 = !field_38.isVisible() ? 0 : 40;
+            int var1 = toolbarComponent.isVisible() ? 20 : 0;
+            int var2 = null == advertComponent ? 0 : Integer.parseInt(getConfigValue("advert_height"));
+            int var3 = !termsAndConditionsTextArea.isVisible() ? 0 : 40;
             int var4 = Integer.parseInt(getConfigValue("applet_minwidth"));
             int var5 = Integer.parseInt(getConfigValue("applet_minheight"));
             int var6 = Integer.parseInt(getConfigValue("applet_maxwidth"));
             int var7 = Integer.parseInt(getConfigValue("applet_maxheight"));
-            Dimension var8 = field_37.getSize();
-            Insets var9 = field_37.getInsets();
+            Dimension var8 = innerContainer.getSize();
+            Insets var9 = innerContainer.getInsets();
             int var10 = -var9.right + var8.width - var9.left;
             int var11 = -var9.top + var8.height + -var9.bottom;
             int var13 = var10;
@@ -425,16 +426,16 @@ public final class AppletViewer implements ComponentListener {
 
             int var15 = Math.max(var4, var10);
 
-            field_31.setBounds((-var13 + var15) / 2, 0, var13, var1);
+            toolbarComponent.setBounds((-var13 + var15) / 2, 0, var13, var1);
 
-            if (field_34 != null) {
-                field_34.setBounds((-var13 + var15) / 2, var1, var13, var2);
+            if (advertComponent != null) {
+                advertComponent.setBounds((-var13 + var15) / 2, var1, var13, var2);
             }
 
             loaderApplet.setBounds((var15 + -var13) / 2, var2 + var1, var13, var14);
-            field_38.setBounds((var15 - var13) / 2, var14 + var2 + var1, var13, var3);
-            if (null != field_34 && browsercontrol.iscreated()) {
-                browsercontrol.resize(field_34.getSize().width, field_34.getSize().height);
+            termsAndConditionsTextArea.setBounds((var15 - var13) / 2, var14 + var2 + var1, var13, var3);
+            if (null != advertComponent && browsercontrol.iscreated()) {
+                browsercontrol.resize(advertComponent.getSize().width, advertComponent.getSize().height);
             }
 
             frame.repaint();
@@ -442,38 +443,40 @@ public final class AppletViewer implements ComponentListener {
     }
 
     // $FF: renamed from: a (java.lang.String, int, java.lang.String) byte[]
-    private static byte[] fetchRemoteFile(String codebaseURL, String filename) {
+    private static byte[] fetchRemoteFileToBuffer(String codebaseURL, String filename) {
         byte[] buffer = new byte[300000];
-        int currentOffset = 0;
+        int currentBufferPOS = 0;
 
         try {
             InputStream inputStream = (new URL(codebaseURL + filename)).openStream();
 
-            while(currentOffset < buffer.length) {
-                int offset = inputStream.read(buffer, currentOffset, buffer.length - currentOffset);
-                if (offset < 0) {
+            while(currentBufferPOS < buffer.length) {
+                int bytesRead = inputStream.read(buffer, currentBufferPOS, buffer.length - currentBufferPOS);
+                if (bytesRead < 0) {
                     break;
                 }
 
-                currentOffset += offset;
-                field_51 += (float)offset;
-                // $FF: renamed from: t float
-                float field_48 = 58988.0F;
-                LoaderBox.updateProgress((int)(100.0F * (field_51 / field_48)));
+                currentBufferPOS += bytesRead;
+                totalReceivedBytes += (float)bytesRead;
+
+                int currentProgress = (int)(100.0F * (totalReceivedBytes / TOTAL_EXPECTED_BYTES));
+
+                LoaderBoxComponent.updateProgress(currentProgress);
             }
 
             inputStream.close();
-        } catch (Exception var8) {
+        } catch (Exception e) {
             if (isDebug) {
-                var8.printStackTrace();
+                e.printStackTrace();
             }
 
             ModalDialog.displayErrorMessage(getLocaleString("err_downloading") + ": " + filename);
         }
 
-        byte[] var9 = new byte[currentOffset];
-        System.arraycopy(buffer, 0, var9, 0, currentOffset);
-        return var9;
+        byte[] resultingBuffer = new byte[currentBufferPOS];
+        System.arraycopy(buffer, 0, resultingBuffer, 0, currentBufferPOS);
+
+        return resultingBuffer;
     }
 
     // $FF: renamed from: a (int, java.lang.String) java.lang.String
@@ -562,7 +565,7 @@ public final class AppletViewer implements ComponentListener {
     }
 
     // $FF: renamed from: a (int, java.lang.String, java.lang.String, java.lang.String, int) java.io.File
-    private static File createCacheFile(int modewhat, String fileName, String userHome, String cacheSubdirName) {
+    private static File locateFileLocation(int modewhat, String fileName, String userHome, String cacheSubdirName) {
         String[] potentialParentDirectories = new String[]{"c:/rscache/", "/rscache/", "c:/windows/", "c:/winnt/", "c:/", userHome, "/tmp/", ""};
         String[] potentialCacheDirectoryNames = new String[]{".jagex_cache_" + modewhat, ".file_store_" + modewhat};
 
@@ -671,11 +674,12 @@ public final class AppletViewer implements ComponentListener {
         }
 
         System.out.println("Using root config item for: " + name);
+
         return configurationItems.get(name);
     }
 
     public void componentResized(ComponentEvent var1) {
-        method_12((byte)2);
+        method_12();
     }
 
     // $FF: renamed from: a (byte, byte[], java.io.File) boolean
@@ -910,22 +914,22 @@ public final class AppletViewer implements ComponentListener {
         if (-1 != ~var0) {
             if (1 == var0 && field_49) {
                 field_49 = false;
-                method_12((byte)108);
+                method_12();
             }
         } else if (!field_49) {
             field_49 = true;
-            method_12((byte)104);
+            method_12();
         }
 
     }
 
     public static void readdadvert() {
-        if (isWindows && null == field_34) {
-            field_34 = new Canvas();
-            field_37.add(field_34);
-            method_12((byte)9);
+        if (isWindows && null == advertComponent) {
+            advertComponent = new Canvas();
+            innerContainer.add(advertComponent);
+            method_12();
 
-            while(!field_34.isDisplayable() || !field_34.isShowing()) {
+            while(!advertComponent.isDisplayable() || !advertComponent.isShowing()) {
                 try {
                     Thread.sleep(100L);
                 } catch (Exception ignored) {
@@ -933,8 +937,8 @@ public final class AppletViewer implements ComponentListener {
             }
 
             try {
-                browsercontrol.create(field_34, getConfigValue("adverturl"));
-                browsercontrol.resize(field_34.getSize().width, field_34.getSize().height);
+                browsercontrol.create(advertComponent, getConfigValue("adverturl"));
+                browsercontrol.resize(advertComponent.getSize().width, advertComponent.getSize().height);
             } catch (Throwable var2) {
                 if (isDebug) {
                     var2.printStackTrace();

@@ -8,7 +8,7 @@ import java.awt.FontMetrics;
 import java.awt.Graphics;
 
 // $FF: renamed from: app.i
-final class LoaderBox extends Component {
+final class LoaderBoxComponent extends Component {
    // $FF: renamed from: a java.awt.Font
    private Font loadingTextFont;
    // $FF: renamed from: b java.awt.Dialog
@@ -20,7 +20,7 @@ final class LoaderBox extends Component {
    // $FF: renamed from: e java.lang.String
    private String currentLoadingText;
    // $FF: renamed from: f app.i
-   private static LoaderBox classInstance;
+   private static LoaderBoxComponent classInstance;
    // $FF: renamed from: g java.awt.FontMetrics
    private FontMetrics loadingTextFontMetrics;
 
@@ -83,13 +83,13 @@ final class LoaderBox extends Component {
 
    }
 
-   private LoaderBox(String initialLoadingText) {
+   private LoaderBoxComponent(String initialLoadingText) {
       this.currentLoadingText = initialLoadingText;
    }
 
    // $FF: renamed from: c (int) void
    static void initialize() {
-      classInstance = new LoaderBox(AppletViewer.getLocaleString("loaderbox_initial"));
+      classInstance = new LoaderBoxComponent(AppletViewer.getLocaleString("loaderbox_initial"));
       classInstance.loadingTextFont = new Font("Helvetica", Font.BOLD, 13);
       classInstance.loadingTextFontMetrics = classInstance.getFontMetrics(classInstance.loadingTextFont);
       loaderBoxDialog = new Dialog(AppletViewer.frame, "Jagex Ltd.", false);

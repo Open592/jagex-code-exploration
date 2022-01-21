@@ -11,17 +11,17 @@ import java.awt.event.MouseListener;
 import java.awt.event.MouseMotionListener;
 
 // $FF: renamed from: app.n
-final class class_4 extends Canvas implements MouseListener, MouseMotionListener {
+final class ToolbarComponent extends Canvas implements MouseListener, MouseMotionListener {
    // $FF: renamed from: a int
    private int field_13 = 0;
    // $FF: renamed from: b java.awt.event.ActionListener
-   private ActionListener field_14;
+   private ActionListener buttonHandler;
    // $FF: renamed from: c java.lang.String[]
-   private String[] field_15 = new String[10];
+   private String[] buttons = new String[10];
    // $FF: renamed from: d int[]
    private int[] field_16 = null;
    // $FF: renamed from: e int
-   private int field_17 = 0;
+   private int buttonCount = 0;
    // $FF: renamed from: f int
    private int field_18 = -1;
 
@@ -50,14 +50,16 @@ final class class_4 extends Canvas implements MouseListener, MouseMotionListener
    }
 
    // $FF: renamed from: a (java.lang.String, boolean) void
-   final void method_2(String var1) {
-      if (~this.field_17 <= ~this.field_15.length) {
-         String[] var3 = new String[5 + this.field_15.length];
-         System.arraycopy(this.field_15, 0, var3, 0, this.field_15.length);
-         this.field_15 = var3;
+   void addButton(String title) {
+      if (this.buttonCount >= this.buttons.length) {
+         String[] resizedArray = new String[5 + this.buttons.length];
+
+         System.arraycopy(this.buttons, 0, resizedArray, 0, this.buttons.length);
+
+         this.buttons = resizedArray;
       }
 
-      this.field_15[this.field_17++] = var1;
+      this.buttons[this.buttonCount++] = title;
    }
 
    public final void mouseReleased(MouseEvent var1) {
@@ -99,7 +101,7 @@ final class class_4 extends Canvas implements MouseListener, MouseMotionListener
             if (~this.field_16[var3] >= ~this.field_13 && this.field_16[var3 + 1] > this.field_13 + 10) {
                this.field_13 = 0;
                this.repaint();
-               this.field_14.actionPerformed(new ActionEvent(this, var3, ""));
+               this.buttonHandler.actionPerformed(new ActionEvent(this, var3, ""));
                break;
             }
 
@@ -131,18 +133,18 @@ final class class_4 extends Canvas implements MouseListener, MouseMotionListener
       FontMetrics var4 = var1.getFontMetrics();
       int var5 = 10;
       int var6 = var4.getAscent() + (-var4.getHeight() + var3) / 2;
-      if (null == this.field_16 || ~(this.field_17 + 1) != ~this.field_16.length) {
-         this.field_16 = new int[1 + this.field_17];
+      if (null == this.field_16 || ~(this.buttonCount + 1) != ~this.field_16.length) {
+         this.field_16 = new int[1 + this.buttonCount];
       }
 
       int var7 = 0;
 
-      while(~var7 > ~this.field_17) {
+      while(~var7 > ~this.buttonCount) {
          int var8;
          label38: {
             var8 = var5;
             this.field_16[var7] = var5;
-            var5 += var4.stringWidth(this.field_15[var7]);
+            var5 += var4.stringWidth(this.buttons[var7]);
             if (~this.field_13 > ~var8 || var5 <= this.field_13) {
                var1.setColor(this.getForeground());
                break label38;
@@ -151,12 +153,12 @@ final class class_4 extends Canvas implements MouseListener, MouseMotionListener
             var1.setColor(Color.YELLOW);
          }
 
-         var1.drawString(this.field_15[var7], var8, var6);
+         var1.drawString(this.buttons[var7], var8, var6);
          var5 += 10;
          ++var7;
       }
 
-      this.field_16[this.field_17] = var5;
+      this.field_16[this.buttonCount] = var5;
    }
 
    public final void mouseMoved(MouseEvent var1) {
@@ -186,8 +188,8 @@ final class class_4 extends Canvas implements MouseListener, MouseMotionListener
    public final void mouseEntered(MouseEvent var1) {
    }
 
-   class_4(ActionListener var1) {
-      this.field_14 = var1;
+   ToolbarComponent(ActionListener toolbarButtonHandler) {
+      this.buttonHandler = toolbarButtonHandler;
       this.addMouseListener(this);
       this.addMouseMotionListener(this);
    }

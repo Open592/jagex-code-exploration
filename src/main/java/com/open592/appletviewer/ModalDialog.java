@@ -60,13 +60,13 @@ final class ModalDialog {
    // $FF: renamed from: a (java.lang.String, byte) void
    static void displayMessage(String message) {
       display(AppletViewer.getLocaleString("ok"), AppletViewer.getLocaleString("message"), message);
-      button.addActionListener(new class_2());
+      button.addActionListener(new ModalDialogCloseListener());
       dialog.setVisible(true);
    }
 
    // $FF: renamed from: a (byte, java.lang.String) void
    static void displayErrorMessage(String message) {
-      LoaderBox.setHidden();
+      LoaderBoxComponent.setHidden();
       display(AppletViewer.getLocaleString("quit"), AppletViewer.getLocaleString("error"), message);
       dialog.addWindowListener(TerminateHandler.initialize());
       button.addActionListener(TerminateHandler.initialize());
