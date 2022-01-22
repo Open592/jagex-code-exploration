@@ -13,15 +13,15 @@ import sun.security.pkcs.PKCS7;
 import sun.security.pkcs.SignerInfo;
 
 // $FF: renamed from: app.m
-final class class_13 {
+final class SignedFileValidator {
    // $FF: renamed from: a java.util.Hashtable
-   private Hashtable<String, byte[]> fileMap;
+   private final Hashtable<String, byte[]> fileMap;
    // $FF: renamed from: b java.util.Hashtable
-   private Hashtable<String, class_20> field_65;
+   private final Hashtable<String, FileMetadata> manifestFileMap;
    // $FF: renamed from: c java.util.Hashtable
-   private Hashtable<String, class_20> field_66;
+   private final Hashtable<String, FileMetadata> signatureFileMap;
    // $FF: renamed from: d byte[]
-   private byte[] field_67;
+   private byte[] signatureFileBytes;
    // $FF: renamed from: e sun.security.pkcs.PKCS7
    private PKCS7 PKCS7Block;
 
@@ -32,12 +32,12 @@ final class class_13 {
          if (var3 == null) {
             return null;
          } else {
-            class_20 var4 = this.field_65.get(filename);
+            FileMetadata var4 = this.manifestFileMap.get(filename);
             if (null == var4) {
                System.out.println("Var 4 null");
                return null;
             } else {
-               class_20 var5 = this.field_66.get(filename);
+               FileMetadata var5 = this.signatureFileMap.get(filename);
                if (var5 == null) {
                   System.out.println("Var 5 null");
                   return null;
@@ -64,7 +64,7 @@ final class class_13 {
                      } else {
                         System.out.println(var11 + " Equals: " + var4.sha1Digest);
                         var6.reset();
-                        var6.update(var4.buffer);
+                        var6.update(var4.bytes);
                         var7 = var6.digest();
                         var8 = class_7.byteArrayToBase64StringEntry(var7);
                         if (!var8.equals(var5.md5Digest)) {
@@ -72,14 +72,14 @@ final class class_13 {
                         } else {
                            System.out.println(var8 + " Equals: " + var5.md5Digest);
                            var9.reset();
-                           var9.update(var4.buffer);
+                           var9.update(var4.bytes);
                            var10 = var9.digest();
                            var11 = class_7.byteArrayToBase64StringEntry(var10);
                            if (!var11.equals(var5.sha1Digest)) {
                               return null;
                            } else {
                               System.out.println(var11 + " Equals: " + var5.sha1Digest);
-                              SignerInfo[] var12 = this.PKCS7Block.verify(this.field_67);
+                              SignerInfo[] var12 = this.PKCS7Block.verify(this.signatureFileBytes);
                               if (var12 != null && -1 != ~var12.length) {
                                  ArrayList<X509Certificate> certificateChains = var12[0].getCertificateChain(this.PKCS7Block);
                                  // Originally this was 2
@@ -133,13 +133,13 @@ final class class_13 {
       }
    }
 
-   class_13(byte[] jarByteBuf) throws IOException {
+   SignedFileValidator(byte[] fileBuffer) throws IOException {
       super();
       this.fileMap = new Hashtable<>();
-      this.field_65 = new Hashtable<>();
-      this.field_66 = new Hashtable<>();
-      ZipInputStream jarInputStream = new ZipInputStream(new ByteArrayInputStream(jarByteBuf));
-      byte[] var3 = new byte[1000];
+      this.manifestFileMap = new Hashtable<>();
+      this.signatureFileMap = new Hashtable<>();
+      ZipInputStream jarInputStream = new ZipInputStream(new ByteArrayInputStream(fileBuffer));
+      byte[] entryBuffer = new byte[1000];
 
       do {
          ZipEntry entry = jarInputStream.getNextEntry();
@@ -149,100 +149,97 @@ final class class_13 {
          }
 
          String entryName = entry.getName();
-         ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
+         ByteArrayOutputStream entryByteOutputStream = new ByteArrayOutputStream();
 
          do {
-            int bytesRead = jarInputStream.read(var3, 0, 1000);
+            int bytesRead = jarInputStream.read(entryBuffer, 0, 1000);
 
             if (bytesRead == -1) {
                break;
             }
 
-            outputStream.write(var3, 0, bytesRead);
+            entryByteOutputStream.write(entryBuffer, 0, bytesRead);
          } while(true);
 
-         byte[] outputStreamBytes = outputStream.toByteArray();
+         byte[] entryBytes = entryByteOutputStream.toByteArray();
 
          if (!entryName.equals("META-INF/manifest.mf") && !entryName.equals("META-INF/zigbert.sf")) {
             if (!entryName.equals("META-INF/zigbert.rsa")) {
-               this.fileMap.put(entryName, outputStreamBytes);
+               this.fileMap.put(entryName, entryBytes);
 
                continue;
             }
 
-            this.PKCS7Block = new PKCS7(outputStreamBytes);
+            this.PKCS7Block = new PKCS7(entryBytes);
 
             continue;
          }
 
-         int var8 = 0;
-         int[] var9 = new int[1000];
-         int var10 = 0;
+         int metadataCount = 0;
+         int[] metadataStartingIndexes = new int[1000];
+         int bufferPOS = 0;
 
-         while(var10 < outputStreamBytes.length - 5) {
-            if (78 == outputStreamBytes[var10] && outputStreamBytes[1 + var10] == 97 && -110 == ~outputStreamBytes[2 + var10] && 101 == outputStreamBytes[var10 - -3] && 58 == outputStreamBytes[var10 + 4]) {
-               var9[var8++] = var10;
+         while((bufferPOS + 5) < entryBytes.length) {
+            if (entryBytes[bufferPOS] == 78 && entryBytes[bufferPOS + 1] == 97 && 109 == entryBytes[bufferPOS + 2] && 101 == entryBytes[bufferPOS + 3] && 58 == entryBytes[bufferPOS + 4]) {
+               metadataStartingIndexes[metadataCount++] = bufferPOS;
             }
 
-            ++var10;
+            ++bufferPOS;
          }
 
-         var10 = 0;
+         int currentIndex = 0;
 
-         while(var8 > var10) {
-            class_20 var11;
-            int var12;
-            int var13;
-            label76: {
-               var11 = new class_20();
-               var12 = var9[var10];
-               if (var8 <= 1 + var10) {
-                  var13 = outputStreamBytes.length;
+         while(currentIndex < metadataCount) {
+            FileMetadata metadata = new FileMetadata();
+            int metadataStartingPOS = metadataStartingIndexes[currentIndex];
+            int metadataEndingPOS;
 
-                  break label76;
-               }
-
-               var13 = -1 + var9[var10 - -1];
+            if (metadataCount <= 1 + currentIndex) {
+               metadataEndingPOS = entryBytes.length;
+            } else {
+               metadataEndingPOS = metadataStartingIndexes[currentIndex + 1] - 1;
             }
 
-            var11.buffer = new byte[-var12 + var13];
-            System.arraycopy(outputStreamBytes, var12, var11.buffer, 0, -var12 + var13);
-            int var14 = 0;
-            int var15 = 0;
+            metadata.bytes = new byte[metadataEndingPOS - metadataStartingPOS];
+            System.arraycopy(entryBytes, metadataStartingPOS, metadata.bytes, 0, metadataEndingPOS - metadataStartingPOS);
 
-            while(~var11.buffer.length < ~var15) {
-               if (~var11.buffer[var15] == -11 || ~var11.buffer[var15] == -14) {
-                  String var16 = (new String(var11.buffer, var14, -var14 + var15)).trim();
-                  if (var16.startsWith("Name: ")) {
-                     var11.name = var16.substring(6);
+            int newlineStartingPOS = 0;
+            int currentSearchPOS = 0;
+
+            while (currentSearchPOS < metadata.bytes.length) {
+               if (metadata.bytes[currentSearchPOS] == 10 || metadata.bytes[currentSearchPOS] == 13) {
+                  String metadataLine = (new String(metadata.bytes, newlineStartingPOS, currentSearchPOS - newlineStartingPOS)).trim();
+                  if (metadataLine.startsWith("Name: ")) {
+                     metadata.name = metadataLine.substring(6);
                   }
 
-                  if (var16.startsWith("MD5-Digest: ")) {
-                     var11.md5Digest = var16.substring(12);
+                  if (metadataLine.startsWith("MD5-Digest: ")) {
+                     metadata.md5Digest = metadataLine.substring(12);
                   }
 
-                  var14 = var15 + 1;
-                  if (var16.startsWith("SHA1-Digest: ")) {
-                     var11.sha1Digest = var16.substring(13);
+                  if (metadataLine.startsWith("SHA1-Digest: ")) {
+                     metadata.sha1Digest = metadataLine.substring(13);
                   }
+
+                  newlineStartingPOS = currentSearchPOS + 1;
                }
 
-               ++var15;
+               ++currentSearchPOS;
             }
 
             if (entryName.equalsIgnoreCase("META-INF/manifest.mf")) {
-               this.field_65.put(var11.name, var11);
+               this.manifestFileMap.put(metadata.name, metadata);
             }
 
             if (entryName.equalsIgnoreCase("META-INF/zigbert.sf")) {
-               this.field_66.put(var11.name, var11);
+               this.signatureFileMap.put(metadata.name, metadata);
             }
 
-            ++var10;
+            ++currentIndex;
          }
 
          if (entryName.equalsIgnoreCase("META-INF/zigbert.sf")) {
-            this.field_67 = outputStreamBytes;
+            this.signatureFileBytes = entryBytes;
          }
       } while(true);
    }

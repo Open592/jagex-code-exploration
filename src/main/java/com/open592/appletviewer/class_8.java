@@ -16,7 +16,7 @@ final class class_8 extends ClassLoader {
    // $FF: renamed from: b java.security.ProtectionDomain
    private ProtectionDomain field_27;
    // $FF: renamed from: c app.m
-   private class_13 field_28;
+   private SignedFileValidator field_28;
 
    protected final synchronized Class loadClass(String var1, boolean var2) throws ClassNotFoundException {
       Class var3 = (Class)this.field_26.get(var1);
@@ -39,7 +39,7 @@ final class class_8 extends ClassLoader {
    }
 
    class_8(byte[] var1) throws IOException {
-      this.field_28 = new class_13(var1);
+      this.field_28 = new SignedFileValidator(var1);
       CodeSource var2 = new CodeSource((URL)null, (Certificate[])null);
       Permissions var3 = new Permissions();
       var3.add(new AllPermission());

@@ -197,7 +197,7 @@ public final class AppletViewer implements ComponentListener {
                 remoteFileBuffer = fetchRemoteFileToBuffer(codebaseURL, getConfigValue("browsercontrol_win_amd64_jar"));
                 browserControlFile = locateFileLocation(modewhat, "browsercontrol64.dll", homeDirectory, cacheSubdir);
                 System.out.printf("Attempting to validate %s", "browser");
-                fileBytes = (new class_13(remoteFileBuffer)).validateFile("browsercontrol64.dll");
+                fileBytes = (new SignedFileValidator(remoteFileBuffer)).validateFile("browsercontrol64.dll");
                 if (null == fileBytes && !AppletViewer.isDebug) {
                     browserControlFile = null;
                     ModalDialog.displayErrorMessage(getLocaleString("err_verify_bc64"));
@@ -207,7 +207,7 @@ public final class AppletViewer implements ComponentListener {
             } else if (isWindows) {
                 remoteFileBuffer = fetchRemoteFileToBuffer(codebaseURL, getConfigValue("browsercontrol_win_x86_jar"));
                 browserControlFile = locateFileLocation(modewhat, "browsercontrol.dll", homeDirectory, cacheSubdir);
-                fileBytes = (new class_13(remoteFileBuffer)).validateFile("browsercontrol.dll");
+                fileBytes = (new SignedFileValidator(remoteFileBuffer)).validateFile("browsercontrol.dll");
                 if (fileBytes == null && !AppletViewer.isDebug) {
                     browserControlFile = null;
                     ModalDialog.displayErrorMessage(getLocaleString("err_verify_bc"));
