@@ -28,93 +28,90 @@ final class SignedFileValidator {
    // $FF: renamed from: a (java.lang.String, int) byte[]
    byte[] validateFile(String filename) {
       try {
-         byte[] var3 = this.fileMap.remove(filename);
-         if (var3 == null) {
+         byte[] fileBytes = this.fileMap.remove(filename);
+         if (fileBytes == null) {
             return null;
          } else {
-            FileMetadata var4 = this.manifestFileMap.get(filename);
-            if (null == var4) {
-               System.out.println("Var 4 null");
+            FileMetadata manifestFile = this.manifestFileMap.get(filename);
+            if (null == manifestFile) {
                return null;
             } else {
-               FileMetadata var5 = this.signatureFileMap.get(filename);
-               if (var5 == null) {
-                  System.out.println("Var 5 null");
+               FileMetadata signatureFile = this.signatureFileMap.get(filename);
+
+               if (signatureFile == null) {
                   return null;
                } else {
-                  System.out.println("Attempting to validate: " + filename);
+                  MessageDigest md5 = MessageDigest.getInstance("MD5");
+                  md5.reset();
+                  md5.update(fileBytes);
+                  byte[] md5Digest = md5.digest();
 
-                  MessageDigest var6 = MessageDigest.getInstance("MD5");
-                  var6.reset();
-                  var6.update(var3);
-                  byte[] var7 = var6.digest();
-
-                  String var8 = class_7.byteArrayToBase64StringEntry(var7);
-                  if (!var8.equals(var4.md5Digest)) {
-                     System.out.println("Var 8" + var8 + " Doesn't equal " + var4.md5Digest);
+                  String md5DigestBase64 = class_7.byteArrayToBase64StringEntry(md5Digest);
+                  if (!md5DigestBase64.equals(manifestFile.md5Digest)) {
                      return null;
                   } else {
-                     MessageDigest var9 = MessageDigest.getInstance("SHA");
-                     var9.reset();
-                     var9.update(var3);
-                     byte[] var10 = var9.digest();
-                     String var11 = class_7.byteArrayToBase64StringEntry(var10);
-                     if (!var11.equals(var4.sha1Digest)) {
+                     MessageDigest sha = MessageDigest.getInstance("SHA");
+                     sha.reset();
+                     sha.update(fileBytes);
+
+                     byte[] sha1Digest = sha.digest();
+                     String sha1DigestBase64 = class_7.byteArrayToBase64StringEntry(sha1Digest);
+
+                     if (!sha1DigestBase64.equals(manifestFile.sha1Digest)) {
                         return null;
                      } else {
-                        System.out.println(var11 + " Equals: " + var4.sha1Digest);
-                        var6.reset();
-                        var6.update(var4.bytes);
-                        var7 = var6.digest();
-                        var8 = class_7.byteArrayToBase64StringEntry(var7);
-                        if (!var8.equals(var5.md5Digest)) {
+                        md5.reset();
+                        md5.update(manifestFile.bytes);
+
+                        md5Digest = md5.digest();
+                        md5DigestBase64 = class_7.byteArrayToBase64StringEntry(md5Digest);
+
+                        if (!md5DigestBase64.equals(signatureFile.md5Digest)) {
                            return null;
                         } else {
-                           System.out.println(var8 + " Equals: " + var5.md5Digest);
-                           var9.reset();
-                           var9.update(var4.bytes);
-                           var10 = var9.digest();
-                           var11 = class_7.byteArrayToBase64StringEntry(var10);
-                           if (!var11.equals(var5.sha1Digest)) {
+                           sha.reset();
+                           sha.update(manifestFile.bytes);
+
+                           sha1Digest = sha.digest();
+                           sha1DigestBase64 = class_7.byteArrayToBase64StringEntry(sha1Digest);
+
+                           if (!sha1DigestBase64.equals(signatureFile.sha1Digest)) {
                               return null;
                            } else {
-                              System.out.println(var11 + " Equals: " + var5.sha1Digest);
-                              SignerInfo[] var12 = this.PKCS7Block.verify(this.signatureFileBytes);
-                              if (var12 != null && -1 != ~var12.length) {
-                                 ArrayList<X509Certificate> certificateChains = var12[0].getCertificateChain(this.PKCS7Block);
+                              SignerInfo[] verifiedSignerInfoList = this.PKCS7Block.verify(this.signatureFileBytes);
+
+                              if (verifiedSignerInfoList != null && verifiedSignerInfoList.length != 0) {
+                                 ArrayList<X509Certificate> certificateChains = verifiedSignerInfoList[0].getCertificateChain(this.PKCS7Block);
                                  // Originally this was 2
                                  if (certificateChains.size() != 2 && certificateChains.size() != 3) {
                                     return null;
                                  } else {
-                                    int var14 = 0;
-
-                                    while(var14 < certificateChains.size()) {
-                                       X509Certificate certificateChain = certificateChains.get(var14);
-                                       String serialNumber = certificateChain.getSerialNumber().toString();
-                                       byte[] publicKeyByteArray = certificateChain.getPublicKey().getEncoded();
+                                    for (int i = 0; i < certificateChains.size(); ++i) {
+                                       X509Certificate cert = certificateChains.get(i);
+                                       String serialNumber = cert.getSerialNumber().toString();
+                                       byte[] publicKeyByteArray = cert.getPublicKey().getEncoded();
                                        String publicKeyString = class_7.byteArrayToBase64StringEntry(publicKeyByteArray);
 
-                                       if (var14 == 0) {
+                                       if (i == 0) {
                                           if (!serialNumber.equals("42616207341001253724625765329114307230")) {
                                           }
 
                                           System.out.println(publicKeyString);
+
                                           if (!publicKeyString.equals("MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAxehHTKQFiy/+t7xlQ0UYmmpQyoohClLm5Gfcy9hqwSps8riRS4LH4F3Ii9XnPYYC85R0wMfsfFCQlqgPbHK4X2iuUNw/bAT8jVHeIAIHPrxBaBqIzq92CHfGmLDDWEMQh+R5EpKW6caR0HB38c/eNYce5Do8DwOIMI/tC0LTcfjkgSjB2G19pT38W/ra1XwFVZR3fL/vvUGPiNDdcCcQCniPjYE1wLI/y9iNDfPcEnL92rhq3g5WVYrZ/CAXHAdQ9wCGBRyRgtVM1AjWYranZI9fNj+h/KjRDa+Fsu+k5gKLiKRNz9PGk+mmrBFOWOWMCsjyOalnkkx+N1/Gh4KcRwIDAQAB")) {
                                           }
                                        }
 
-                                       if (var14 == 1) {
+                                       if (i == 1) {
                                           if (!serialNumber.equals("10")) {
                                           }
 
                                           if (!publicKeyString.equals("MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDGuLknYK8L45FpZdt+je2R5qrxvtXt/m3ULH/RcHf7JplXtN0/MLjcIepojYGS/C5LkTWEIPLaSrq0/ObaiPIgxSGSCUeVoAkcpnm+sUwd/PGKblTSaaHxTJM6Qf591GR7Y0X3YGAdMR2k6dMPi/tuJiSzqP/l5ZDUtMLcUGCuWQIDAQAB")) {
                                           }
                                        }
-
-                                       ++var14;
                                     }
 
-                                    return var3;
+                                    return fileBytes;
                                  }
                               } else {
                                  return null;
@@ -126,9 +123,9 @@ final class SignedFileValidator {
                }
             }
          }
-      } catch (Exception var20) {
-         var20.printStackTrace();
-         ModalDialog.displayErrorMessage(AppletViewer.getLocaleString("err_get_file") + ":" + filename + " [" + var20 + "]");
+      } catch (Exception e) {
+         e.printStackTrace();
+         ModalDialog.displayErrorMessage(AppletViewer.getLocaleString("err_get_file") + ":" + filename + " [" + e + "]");
          return null;
       }
    }
