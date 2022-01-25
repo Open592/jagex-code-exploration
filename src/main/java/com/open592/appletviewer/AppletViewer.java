@@ -233,8 +233,8 @@ public final class AppletViewer implements ComponentListener {
 
         try {
             remoteFileBuffer = fetchRemoteFileToBuffer(codebaseURL, getConfigValue("loader_jar"));
-            class_8 var36 = new class_8(remoteFileBuffer);
-            applet = (Applet) var36.loadClass("loader").getDeclaredConstructor().newInstance();
+            RemoteClassLoader classLoader = new RemoteClassLoader(remoteFileBuffer);
+            applet = (Applet) classLoader.loadClass("loader").getDeclaredConstructor().newInstance();
             if (isDebug) {
                 System.out.println("loader_jar : " + remoteFileBuffer.length);
             }
@@ -360,13 +360,13 @@ public final class AppletViewer implements ComponentListener {
 
             try {
                 String var2 = getConfigValue("codebase");
-                byte[] var3 = fetchRemoteFileToBuffer(var2, getConfigValue("loader_jar"));
+                byte[] remoteFileBuffer = fetchRemoteFileToBuffer(var2, getConfigValue("loader_jar"));
                 LoaderBoxComponent.updateProgress(75);
                 LoaderBoxComponent.paint();
-                class_8 var4 = new class_8(var3);
-                applet = (Applet)var4.loadClass("loader").newInstance();
+                RemoteClassLoader classLoader = new RemoteClassLoader(remoteFileBuffer);
+                applet = (Applet)classLoader.loadClass("loader").getDeclaredConstructor().newInstance();
                 if (isDebug) {
-                    System.out.println("loader_jar : " + var3.length);
+                    System.out.println("loader_jar : " + remoteFileBuffer.length);
                 }
 
                 LoaderBoxComponent.setHidden();
@@ -392,7 +392,7 @@ public final class AppletViewer implements ComponentListener {
 
     // $FF: renamed from: b (byte) void
     private static void setComponentBounds() {
-        if (null != applet) {
+        if (applet != null) {
             int toolbarHeight = toolbarComponent.isVisible() ? ToolbarComponent.TOOLBAR_HEIGHT : 0;
             int advertHeight = advertComponent != null ? Integer.parseInt(getConfigValue("advert_height")) : 0;
             int termsAndConditionsHeight = termsAndConditionsTextArea.isVisible() ? 40 : 0;
@@ -484,7 +484,7 @@ public final class AppletViewer implements ComponentListener {
     }
 
     // $FF: renamed from: b (int) void
-    static void selectPreferredServer() {
+    static void selectPreferredServerHandler() {
         String serverListURL = getConfigValue("serverlist");
         ServerSettings[] enabledServers = serverSettingsList;
         int enabledServerCount = serverSettingsList.length;
@@ -882,14 +882,14 @@ public final class AppletViewer implements ComponentListener {
             }
 
             if (AppletViewerPreferences.getPreference("Language").isEmpty()) {
-                selectPreferredLanguage();
+                selectPreferredLanguageHandler();
             }
         }
 
     }
 
     // $FF: renamed from: d (int) int
-    static int selectPreferredLanguage() {
+    static int selectPreferredLanguageHandler() {
         int languageID = field_30.method_36();
 
         if (languageID >= 0 && languageID < languageIDs.length) {

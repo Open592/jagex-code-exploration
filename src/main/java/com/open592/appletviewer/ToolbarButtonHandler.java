@@ -1,6 +1,5 @@
 package com.open592.appletviewer;
 
-import java.applet.Applet;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -10,7 +9,7 @@ final class ToolbarButtonHandler implements ActionListener {
         int buttonID = event.getID();
 
         if (buttonID == 0) {
-            if (AppletViewer.selectPreferredLanguage() != -1) {
+            if (AppletViewer.selectPreferredLanguageHandler() != -1) {
                 ModalDialog.displayMessage(AppletViewer.getLocaleString("changes_on_restart"));
             }
 
@@ -18,7 +17,7 @@ final class ToolbarButtonHandler implements ActionListener {
         }
 
         if (buttonID == 1) {
-            AppletViewer.selectPreferredServer();
+            AppletViewer.selectPreferredServerHandler();
         }
     }
 }
