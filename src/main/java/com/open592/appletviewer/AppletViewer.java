@@ -22,7 +22,7 @@ public final class AppletViewer implements ComponentListener {
     // $FF: renamed from: d java.util.Hashtable
     private static final Hashtable<String, String> configurationItems = new Hashtable<>();
     // $FF: renamed from: e java.applet.Applet
-    private static Applet loaderApplet;
+    private static Applet applet;
     // $FF: renamed from: f java.awt.Canvas
     private static Canvas advertComponent;
     // $FF: renamed from: g java.awt.Frame
@@ -89,7 +89,7 @@ public final class AppletViewer implements ComponentListener {
 
             innerContainer.remove(advertComponent);
             advertComponent = null;
-            method_12();
+            setComponentBounds();
         }
 
     }
@@ -234,7 +234,7 @@ public final class AppletViewer implements ComponentListener {
         try {
             remoteFileBuffer = fetchRemoteFileToBuffer(codebaseURL, getConfigValue("loader_jar"));
             class_8 var36 = new class_8(remoteFileBuffer);
-            loaderApplet = (Applet) var36.loadClass("loader").getDeclaredConstructor().newInstance();
+            applet = (Applet) var36.loadClass("loader").getDeclaredConstructor().newInstance();
             if (isDebug) {
                 System.out.println("loader_jar : " + remoteFileBuffer.length);
             }
@@ -270,7 +270,7 @@ public final class AppletViewer implements ComponentListener {
             innerContainer.add(advertComponent);
         }
 
-        innerContainer.add(loaderApplet);
+        innerContainer.add(applet);
         toolbarComponent = new ToolbarComponent(new ToolbarButtonHandler());
         toolbarComponent.setBackground(Color.BLACK);
         toolbarComponent.setForeground(Color.GRAY);
@@ -284,7 +284,7 @@ public final class AppletViewer implements ComponentListener {
         termsAndConditionsTextArea = new TextAreaComponent(getLocaleString("tandc"));
         innerContainer.add(termsAndConditionsTextArea);
         frame.doLayout();
-        method_12();
+        setComponentBounds();
         if (isWindows) {
             try {
                 System.load(browserControlFile.toString());
@@ -321,9 +321,9 @@ public final class AppletViewer implements ComponentListener {
 
         frame.addWindowListener(TerminateHandler.initialize());
         innerContainer.addComponentListener(new AppletViewer());
-        loaderApplet.setStub(new AppletEnvironment());
-        loaderApplet.init();
-        loaderApplet.start();
+        applet.setStub(new AppletEnvironment());
+        applet.init();
+        applet.start();
     }
 
     public void componentHidden(ComponentEvent var1) {
@@ -336,18 +336,18 @@ public final class AppletViewer implements ComponentListener {
             LoaderBoxComponent.updateProgress(0);
             LoaderBoxComponent.setVisible();
             LoaderBoxComponent.paint();
-            if (null != loaderApplet) {
+            if (null != applet) {
                 if (termsAndConditionsTextArea.isVisible()) {
                     termsAndConditionsTextArea.setVisible(false);
-                    method_12();
+                    setComponentBounds();
                 }
 
-                loaderApplet.stop();
+                applet.stop();
                 LoaderBoxComponent.updateProgress(25);
                 LoaderBoxComponent.paint();
-                loaderApplet.destroy();
-                innerContainer.remove(loaderApplet);
-                loaderApplet = null;
+                applet.destroy();
+                innerContainer.remove(applet);
+                applet = null;
                 innerContainer.remove(termsAndConditionsTextArea);
             }
 
@@ -364,7 +364,7 @@ public final class AppletViewer implements ComponentListener {
                 LoaderBoxComponent.updateProgress(75);
                 LoaderBoxComponent.paint();
                 class_8 var4 = new class_8(var3);
-                loaderApplet = (Applet)var4.loadClass("loader").newInstance();
+                applet = (Applet)var4.loadClass("loader").newInstance();
                 if (isDebug) {
                     System.out.println("loader_jar : " + var3.length);
                 }
@@ -379,62 +379,53 @@ public final class AppletViewer implements ComponentListener {
                 ModalDialog.displayErrorMessage(getLocaleString("err_target_applet"));
             }
 
-            innerContainer.add(loaderApplet);
+            innerContainer.add(applet);
             termsAndConditionsTextArea = new TextAreaComponent(getLocaleString("tandc"));
             innerContainer.add(termsAndConditionsTextArea);
             field_49 = true;
-            method_12();
-            loaderApplet.setStub(new AppletEnvironment());
-            loaderApplet.init();
-            loaderApplet.start();
+            setComponentBounds();
+            applet.setStub(new AppletEnvironment());
+            applet.init();
+            applet.start();
         }
     }
 
     // $FF: renamed from: b (byte) void
-    private static void method_12() {
-        if (null != loaderApplet) {
-            int var1 = toolbarComponent.isVisible() ? 20 : 0;
-            int var2 = null == advertComponent ? 0 : Integer.parseInt(getConfigValue("advert_height"));
-            int var3 = !termsAndConditionsTextArea.isVisible() ? 0 : 40;
-            int var4 = Integer.parseInt(getConfigValue("applet_minwidth"));
-            int var5 = Integer.parseInt(getConfigValue("applet_minheight"));
-            int var6 = Integer.parseInt(getConfigValue("applet_maxwidth"));
-            int var7 = Integer.parseInt(getConfigValue("applet_maxheight"));
-            Dimension var8 = innerContainer.getSize();
-            Insets var9 = innerContainer.getInsets();
-            int var10 = -var9.right + var8.width - var9.left;
-            int var11 = -var9.top + var8.height + -var9.bottom;
-            int var13 = var10;
-            if (~var10 > ~var4) {
-                var13 = var4;
-            }
-
-            int var14 = -var3 + -var2 + var11 + -var1;
-            if (var5 > var14) {
-                var14 = var5;
-            }
+    private static void setComponentBounds() {
+        if (null != applet) {
+            int toolbarHeight = toolbarComponent.isVisible() ? ToolbarComponent.TOOLBAR_HEIGHT : 0;
+            int advertHeight = advertComponent != null ? Integer.parseInt(getConfigValue("advert_height")) : 0;
+            int termsAndConditionsHeight = termsAndConditionsTextArea.isVisible() ? 40 : 0;
+            int minWidth = Integer.parseInt(getConfigValue("applet_minwidth"));
+            int minHeight = Integer.parseInt(getConfigValue("applet_minheight"));
+            int maxWidth = Integer.parseInt(getConfigValue("applet_maxwidth"));
+            int maxHeight = Integer.parseInt(getConfigValue("applet_maxheight"));
+            Dimension innerContainerSize = innerContainer.getSize();
+            Insets innerContainerInsets = innerContainer.getInsets();
+            int innerWidth = innerContainerSize.width - (innerContainerInsets.right + innerContainerInsets.left);
+            int innerHeight = innerContainerSize.height - (innerContainerInsets.top + innerContainerInsets.bottom);
+            int appletContainerWidth = Math.max(innerWidth, minWidth);
+            int appletContainerHeight = innerHeight - (toolbarHeight + advertHeight + termsAndConditionsHeight);
+            appletContainerHeight = Math.max(minHeight, appletContainerHeight);
 
             if (field_49) {
-                if (var7 < var14) {
-                    var14 = var7;
-                }
-
-                if (var6 < var13) {
-                    var13 = var6;
-                }
+                appletContainerHeight = Math.min(maxHeight, appletContainerHeight);
+                appletContainerWidth = Math.min(maxWidth, appletContainerWidth);
             }
 
-            int var15 = Math.max(var4, var10);
+            int outerContainerWidth = Math.max(minWidth, innerWidth);
 
-            toolbarComponent.setBounds((-var13 + var15) / 2, 0, var13, var1);
+            toolbarComponent.setBounds((appletContainerWidth - outerContainerWidth) / 2, 0, appletContainerWidth, toolbarHeight);
 
             if (advertComponent != null) {
-                advertComponent.setBounds((-var13 + var15) / 2, var1, var13, var2);
+                advertComponent.setBounds((appletContainerWidth - outerContainerWidth) / 2, toolbarHeight, appletContainerWidth, advertHeight);
             }
 
-            loaderApplet.setBounds((var15 + -var13) / 2, var2 + var1, var13, var14);
-            termsAndConditionsTextArea.setBounds((var15 - var13) / 2, var14 + var2 + var1, var13, var3);
-            if (null != advertComponent && browsercontrol.iscreated()) {
+            applet.setBounds((outerContainerWidth - appletContainerWidth) / 2, advertHeight + toolbarHeight, appletContainerWidth, appletContainerHeight);
+
+            termsAndConditionsTextArea.setBounds((appletContainerWidth - outerContainerWidth) / 2, appletContainerHeight + advertHeight + toolbarHeight, appletContainerWidth, termsAndConditionsHeight);
+
+            if (advertComponent != null && browsercontrol.iscreated()) {
                 browsercontrol.resize(advertComponent.getSize().width, advertComponent.getSize().height);
             }
 
@@ -679,7 +670,7 @@ public final class AppletViewer implements ComponentListener {
     }
 
     public void componentResized(ComponentEvent var1) {
-        method_12();
+        setComponentBounds();
     }
 
     // $FF: renamed from: a (byte, byte[], java.io.File) boolean
@@ -914,11 +905,11 @@ public final class AppletViewer implements ComponentListener {
         if (-1 != ~var0) {
             if (1 == var0 && field_49) {
                 field_49 = false;
-                method_12();
+                setComponentBounds();
             }
         } else if (!field_49) {
             field_49 = true;
-            method_12();
+            setComponentBounds();
         }
 
     }
@@ -927,7 +918,7 @@ public final class AppletViewer implements ComponentListener {
         if (isWindows && null == advertComponent) {
             advertComponent = new Canvas();
             innerContainer.add(advertComponent);
-            method_12();
+            setComponentBounds();
 
             while(!advertComponent.isDisplayable() || !advertComponent.isShowing()) {
                 try {

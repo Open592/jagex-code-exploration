@@ -24,6 +24,7 @@ final class ToolbarComponent extends Canvas implements MouseListener, MouseMotio
    private int buttonCount = 0;
    // $FF: renamed from: f int
    private int field_18 = -1;
+   public static final int TOOLBAR_HEIGHT = 20;
 
    public final void mouseDragged(MouseEvent var1) {
       this.field_13 = var1.getX();
