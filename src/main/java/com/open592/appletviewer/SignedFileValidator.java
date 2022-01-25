@@ -46,7 +46,7 @@ final class SignedFileValidator {
                   md5.update(fileBytes);
                   byte[] md5Digest = md5.digest();
 
-                  String md5DigestBase64 = class_7.byteArrayToBase64StringEntry(md5Digest);
+                  String md5DigestBase64 = Utilities.byteArrayToBase64String(md5Digest);
                   if (!md5DigestBase64.equals(manifestFile.md5Digest)) {
                      return null;
                   } else {
@@ -55,7 +55,7 @@ final class SignedFileValidator {
                      sha.update(fileBytes);
 
                      byte[] sha1Digest = sha.digest();
-                     String sha1DigestBase64 = class_7.byteArrayToBase64StringEntry(sha1Digest);
+                     String sha1DigestBase64 = Utilities.byteArrayToBase64String(sha1Digest);
 
                      if (!sha1DigestBase64.equals(manifestFile.sha1Digest)) {
                         return null;
@@ -64,7 +64,7 @@ final class SignedFileValidator {
                         md5.update(manifestFile.bytes);
 
                         md5Digest = md5.digest();
-                        md5DigestBase64 = class_7.byteArrayToBase64StringEntry(md5Digest);
+                        md5DigestBase64 = Utilities.byteArrayToBase64String(md5Digest);
 
                         if (!md5DigestBase64.equals(signatureFile.md5Digest)) {
                            return null;
@@ -73,7 +73,7 @@ final class SignedFileValidator {
                            sha.update(manifestFile.bytes);
 
                            sha1Digest = sha.digest();
-                           sha1DigestBase64 = class_7.byteArrayToBase64StringEntry(sha1Digest);
+                           sha1DigestBase64 = Utilities.byteArrayToBase64String(sha1Digest);
 
                            if (!sha1DigestBase64.equals(signatureFile.sha1Digest)) {
                               return null;
@@ -90,7 +90,7 @@ final class SignedFileValidator {
                                        X509Certificate cert = certificateChains.get(i);
                                        String serialNumber = cert.getSerialNumber().toString();
                                        byte[] publicKeyByteArray = cert.getPublicKey().getEncoded();
-                                       String publicKeyString = class_7.byteArrayToBase64StringEntry(publicKeyByteArray);
+                                       String publicKeyString = Utilities.byteArrayToBase64String(publicKeyByteArray);
 
                                        if (i == 0) {
                                           if (!serialNumber.equals("42616207341001253724625765329114307230")) {
