@@ -14,9 +14,9 @@ import java.util.Optional;
 
 public final class AppletViewer implements ComponentListener {
     // $FF: renamed from: a app.j
-    private static DialogHandler field_29;
+    private static ListDialog serverSelectionDialog;
     // $FF: renamed from: b app.j
-    private static DialogHandler field_30;
+    private static ListDialog languageSelectionDialog;
     // $FF: renamed from: c app.n
     private static ToolbarComponent toolbarComponent;
     // $FF: renamed from: d java.util.Hashtable
@@ -548,9 +548,11 @@ public final class AppletViewer implements ComponentListener {
             ++currentIndex;
         }
 
-        field_29.method_35(serverNameList);
-        currentIndex = field_29.method_36();
-        if (currentIndex > -1) {
+        serverSelectionDialog.initializeList(serverNameList);
+
+        int selectedIndex = serverSelectionDialog.prompt();
+
+        if (selectedIndex > -1 && selectedIndex < enabledServers.length) {
             method_11(enabledServers[currentIndex]);
         }
     }
@@ -873,12 +875,12 @@ public final class AppletViewer implements ComponentListener {
                 }
             } while(true);
 
-            field_30 = new DialogHandler(getLocaleString("language"));
-            field_30.method_35(localeStringList);
+            languageSelectionDialog = new ListDialog(getLocaleString("language"));
+            languageSelectionDialog.initializeList(localeStringList);
             if (~severSettingsCount < -1) {
                 serverSettingsList = new ServerSettings[severSettingsCount];
                 System.arraycopy(servers, 0, serverSettingsList, 0, severSettingsCount);
-                field_29 = new DialogHandler(getLocaleString("switchserver"));
+                serverSelectionDialog = new ListDialog(getLocaleString("switchserver"));
             }
 
             if (AppletViewerPreferences.getPreference("Language").isEmpty()) {
@@ -890,7 +892,7 @@ public final class AppletViewer implements ComponentListener {
 
     // $FF: renamed from: d (int) int
     static int selectPreferredLanguageHandler() {
-        int languageID = field_30.method_36();
+        int languageID = languageSelectionDialog.prompt();
 
         if (languageID >= 0 && languageID < languageIDs.length) {
             AppletViewerPreferences.addPreference(Integer.toString(languageIDs[languageID]), "Language");
