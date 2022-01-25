@@ -396,34 +396,34 @@ public final class AppletViewer implements ComponentListener {
             int toolbarHeight = toolbarComponent.isVisible() ? ToolbarComponent.TOOLBAR_HEIGHT : 0;
             int advertHeight = advertComponent != null ? Integer.parseInt(getConfigValue("advert_height")) : 0;
             int termsAndConditionsHeight = termsAndConditionsTextArea.isVisible() ? 40 : 0;
-            int minWidth = Integer.parseInt(getConfigValue("applet_minwidth"));
-            int minHeight = Integer.parseInt(getConfigValue("applet_minheight"));
-            int maxWidth = Integer.parseInt(getConfigValue("applet_maxwidth"));
-            int maxHeight = Integer.parseInt(getConfigValue("applet_maxheight"));
-            Dimension innerContainerSize = innerContainer.getSize();
-            Insets innerContainerInsets = innerContainer.getInsets();
-            int innerWidth = innerContainerSize.width - (innerContainerInsets.right + innerContainerInsets.left);
-            int innerHeight = innerContainerSize.height - (innerContainerInsets.top + innerContainerInsets.bottom);
-            int appletContainerWidth = Math.max(innerWidth, minWidth);
-            int appletContainerHeight = innerHeight - (toolbarHeight + advertHeight + termsAndConditionsHeight);
-            appletContainerHeight = Math.max(minHeight, appletContainerHeight);
+            int appletMinWidth = Integer.parseInt(getConfigValue("applet_minwidth"));
+            int appletMinHeight = Integer.parseInt(getConfigValue("applet_minheight"));
+            int appletMaxWidth = Integer.parseInt(getConfigValue("applet_maxwidth"));
+            int appletMaxHeight = Integer.parseInt(getConfigValue("applet_maxheight"));
+            Dimension containerSize = innerContainer.getSize();
+            Insets containerInsets = innerContainer.getInsets();
+            int containerWidth = containerSize.width - (containerInsets.right + containerInsets.left);
+            int containerHeight = containerSize.height - (containerInsets.top + containerInsets.bottom);
+            int appletWidth = Math.max(containerWidth, appletMinWidth);
+            int appletHeight = containerHeight - (toolbarHeight + advertHeight + termsAndConditionsHeight);
+            appletHeight = Math.max(appletMinHeight, appletHeight);
 
             if (field_49) {
-                appletContainerHeight = Math.min(maxHeight, appletContainerHeight);
-                appletContainerWidth = Math.min(maxWidth, appletContainerWidth);
+                appletHeight = Math.min(appletMaxHeight, appletHeight);
+                appletWidth = Math.min(appletMaxWidth, appletWidth);
             }
 
-            int outerContainerWidth = Math.max(minWidth, innerWidth);
+            containerWidth = Math.max(appletMinWidth, containerWidth);
 
-            toolbarComponent.setBounds((appletContainerWidth - outerContainerWidth) / 2, 0, appletContainerWidth, toolbarHeight);
+            toolbarComponent.setBounds((containerWidth - appletWidth) / 2, 0, appletWidth, toolbarHeight);
 
             if (advertComponent != null) {
-                advertComponent.setBounds((appletContainerWidth - outerContainerWidth) / 2, toolbarHeight, appletContainerWidth, advertHeight);
+                advertComponent.setBounds((containerWidth - appletWidth) / 2, toolbarHeight, appletWidth, advertHeight);
             }
 
-            applet.setBounds((outerContainerWidth - appletContainerWidth) / 2, advertHeight + toolbarHeight, appletContainerWidth, appletContainerHeight);
+            applet.setBounds((containerWidth - appletWidth) / 2, advertHeight + toolbarHeight, appletWidth, appletHeight);
 
-            termsAndConditionsTextArea.setBounds((appletContainerWidth - outerContainerWidth) / 2, appletContainerHeight + advertHeight + toolbarHeight, appletContainerWidth, termsAndConditionsHeight);
+            termsAndConditionsTextArea.setBounds((containerWidth - appletWidth) / 2, appletHeight + advertHeight + toolbarHeight, appletWidth, termsAndConditionsHeight);
 
             if (advertComponent != null && browsercontrol.iscreated()) {
                 browsercontrol.resize(advertComponent.getSize().width, advertComponent.getSize().height);
