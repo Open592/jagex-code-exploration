@@ -550,7 +550,7 @@ public final class AppletViewer implements ComponentListener {
 
         field_29.method_35(serverNameList);
         currentIndex = field_29.method_36();
-        if (currentIndex > 0) {
+        if (currentIndex > -1) {
             method_11(enabledServers[currentIndex]);
         }
     }
