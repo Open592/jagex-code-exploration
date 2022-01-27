@@ -298,7 +298,7 @@ public final class AppletViewer implements ComponentListener {
             }
         }
 
-        if (isWindows) {
+        if (isWindows && !isMember) {
             while(!advertComponent.isDisplayable() || !advertComponent.isShowing()) {
                 try {
                     Thread.sleep(100L);
