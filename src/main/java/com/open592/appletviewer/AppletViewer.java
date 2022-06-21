@@ -95,7 +95,7 @@ public final class AppletViewer implements ComponentListener {
     }
 
     // $FF: renamed from: a (byte, java.lang.String) void
-    public static void method_10(String gameName) {
+    public static void start(String gameName) {
         isDebug = Boolean.getBoolean("com.jagex.debug");
 
         if (isDebug) {
@@ -252,9 +252,8 @@ public final class AppletViewer implements ComponentListener {
         int advertHeight = isWindows ? Integer.parseInt(getConfigValue("advert_height")) : 0;
         int preferredWidth = Integer.parseInt(getConfigValue("window_preferredwidth"));
         int preferredHeight = Integer.parseInt(getConfigValue("window_preferredheight"));
-        byte var19 = 40;
         Insets frameInsets = frame.getInsets();
-        frame.setSize(frameInsets.right + preferredWidth + frameInsets.left, frameInsets.bottom + preferredHeight + (advertHeight + frameInsets.top - -var19));
+        frame.setSize(frameInsets.right + preferredWidth + frameInsets.left, frameInsets.bottom + preferredHeight + (advertHeight + frameInsets.top + 40));
         frame.setLocationRelativeTo(null);
         frame.setVisible(true);
         innerContainer = new Panel();
@@ -639,6 +638,48 @@ public final class AppletViewer implements ComponentListener {
             throw new RuntimeException();
         } else {
             throw new RuntimeException("Fatal - could not find ANY location for file: " + fileName);
+        }
+    }
+
+    // $FF: renamed from: a (int) void
+    public static void showContainerElements() {
+        boolean shouldSetComponentBounds = false;
+
+        if (!toolbarComponent.isVisible()) {
+            shouldSetComponentBounds = true;
+
+            toolbarComponent.setVisible(true);
+        }
+
+        if (!termsAndConditionsTextArea.isVisible()) {
+            shouldSetComponentBounds = true;
+
+            termsAndConditionsTextArea.setVisible(true);
+        }
+
+        if (shouldSetComponentBounds) {
+            setComponentBounds();
+        }
+    }
+
+    // $FF: renamed from: c (int) void
+    public static void hideContainerElements() {
+        boolean shouldSetComponentBounds = false;
+
+        if (serverSettingsList == null && toolbarComponent.isVisible()) {
+            toolbarComponent.setVisible(false);
+
+            shouldSetComponentBounds = true;
+        }
+
+        if (termsAndConditionsTextArea.isVisible()) {
+            termsAndConditionsTextArea.setVisible(false);
+
+            shouldSetComponentBounds = true;
+        }
+
+        if (shouldSetComponentBounds) {
+            setComponentBounds();
         }
     }
 

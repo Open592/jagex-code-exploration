@@ -1,7 +1,7 @@
-package netscape.javascript;
+package com.open592.netscape.javascript;
 
-import app.appletviewer;
-import app.class_21;
+import com.open592.appletviewer.AppletViewer;
+import com.open592.appletviewer.AppletViewerPreferences;
 import java.applet.Applet;
 
 public class JSObjec_ {
@@ -14,28 +14,31 @@ public class JSObjec_ {
       return new JSObjec_();
    }
 
-   public Object call(String var1, Object[] var2) {
-      System.out.println("Received command: " + var1);
-      if ("zap".equals(var1)) {
-         class_21.method_43("yes", (byte)93, "Member");
-         class_21.method_44(true);
-         appletviewer.removeadvert();
-         appletviewer.method_18(123);
+   public Object call(String command, Object[] args) {
+      System.out.println("Received command: " + command);
+
+      if ("zap".equals(command)) {
+         AppletViewerPreferences.addPreference("yes", "Member");
+         AppletViewerPreferences.writePreferencesToFile();
+
+         AppletViewer.removeadvert();
+         AppletViewer.hideContainerElements();
       }
 
-      if ("unzap".equals(var1)) {
-         class_21.method_43("no", (byte)-79, "Member");
-         class_21.method_44(true);
-         appletviewer.readdadvert();
-         appletviewer.method_18(122);
+      if ("unzap".equals(command)) {
+         AppletViewerPreferences.addPreference("no", "Member");
+         AppletViewerPreferences.writePreferencesToFile();
+
+         AppletViewer.readdadvert();
+         AppletViewer.hideContainerElements();
       }
 
-      if ("loggedout".equals(var1)) {
-         appletviewer.method_14(4443);
+      if ("loggedout".equals(command)) {
+         AppletViewer.showContainerElements();
       }
 
-      if ("resizing".equals(var1) && var2 != null && var2.length > 0 && var2[0] instanceof Integer) {
-         appletviewer.doresize((Integer)var2[0]);
+      if ("resizing".equals(command) && args != null && args.length > 0 && args[0] instanceof Integer) {
+         AppletViewer.doresize((Integer)args[0]);
       }
 
       return null;
