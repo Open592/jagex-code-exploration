@@ -329,8 +329,8 @@ public final class AppletViewer implements ComponentListener {
     }
 
     // $FF: renamed from: a (app.q, int) void
-    private static void method_11(ServerSettings var0) {
-        if (null != var0) {
+    private static void restartWithNewServerSettings(ServerSettings serverSettings) {
+        if (serverSettings != null) {
             LoaderBoxComponent.setLoadingText(getLocaleString("loading_app"));
             LoaderBoxComponent.updateProgress(0);
             LoaderBoxComponent.setVisible();
@@ -350,7 +350,7 @@ public final class AppletViewer implements ComponentListener {
                 innerContainer.remove(termsAndConditionsTextArea);
             }
 
-            currentServerSettings = var0;
+            currentServerSettings = serverSettings;
             LoaderBoxComponent.updateProgress(50);
             LoaderBoxComponent.paint();
             if (isWindows) {
@@ -552,7 +552,7 @@ public final class AppletViewer implements ComponentListener {
         int selectedIndex = serverSelectionDialog.prompt();
 
         if (selectedIndex > -1 && selectedIndex < enabledServers.length) {
-            method_11(enabledServers[currentIndex]);
+            restartWithNewServerSettings(enabledServers[selectedIndex]);
         }
     }
 
