@@ -73,11 +73,11 @@ final class LoaderBoxComponent extends Component {
          graphics.fillRect(0, 0, this.getSize().width, this.getSize().height);
          graphics.setColor(this.redColor);
          graphics.drawRect(this.getSize().width / 2 - 152, this.getSize().height / 2 - 18, 303, 33);
-         graphics.fillRect(-152 + this.getSize().width / 2 - -2, -18 + (this.getSize().height / 2 + 2), this.currentProgress * 303 / 100 - 3, 30);
+         graphics.fillRect((this.getSize().width / 2) - 150, (this.getSize().height / 2) - 16, this.currentProgress * 300 / 100, 30);
          String loaderBoxContent = this.currentLoadingText + " - " + this.currentProgress + "%";
          graphics.setFont(this.loadingTextFont);
          graphics.setColor(Color.white);
-         graphics.drawString(loaderBoxContent, (this.getSize().width + -this.loadingTextFontMetrics.stringWidth(loaderBoxContent)) / 2, 4 + this.getSize().height / 2);
+         graphics.drawString(loaderBoxContent, (this.getSize().width - this.loadingTextFontMetrics.stringWidth(loaderBoxContent)) / 2, 4 + this.getSize().height / 2);
       } catch (Exception ignored) {
       }
 
