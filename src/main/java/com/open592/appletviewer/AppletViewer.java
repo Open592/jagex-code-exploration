@@ -50,7 +50,7 @@ public final class AppletViewer implements ComponentListener {
     // $FF: renamed from: s app.q
     private static ServerSettings currentServerSettings = null;
     // $FF: renamed from: u boolean
-    private static boolean field_49 = true;
+    private static boolean shouldRestrictAppletSize = true;
     // $FF: renamed from: v java.lang.String
     private static String javConfigURL = null;
     private static final float TOTAL_EXPECTED_BYTES = 58988.0F;
@@ -381,7 +381,7 @@ public final class AppletViewer implements ComponentListener {
             innerContainer.add(applet);
             termsAndConditionsTextArea = new TextAreaComponent(getLocaleString("tandc"));
             innerContainer.add(termsAndConditionsTextArea);
-            field_49 = true;
+            shouldRestrictAppletSize = true;
             setComponentBounds();
             applet.setStub(new AppletEnvironment());
             applet.init();
@@ -407,7 +407,7 @@ public final class AppletViewer implements ComponentListener {
             int appletHeight = containerHeight - (toolbarHeight + advertHeight + termsAndConditionsHeight);
             appletHeight = Math.max(appletMinHeight, appletHeight);
 
-            if (field_49) {
+            if (shouldRestrictAppletSize) {
                 appletHeight = Math.min(appletMaxHeight, appletHeight);
                 appletWidth = Math.min(appletMaxWidth, appletWidth);
             }
@@ -944,17 +944,27 @@ public final class AppletViewer implements ComponentListener {
         }
     }
 
-    public static void doresize(int var0) {
-        if (-1 != ~var0) {
-            if (1 == var0 && field_49) {
-                field_49 = false;
+    /**
+     * Set our internal flag specifying if we should respect the `applet_(max|min)size`
+     * settings.
+     *
+     * In the case that we update this flag, make a call to `setComponentBounds()`
+     * otherwise perform a no-op.
+     *
+     * @param shouldIgnoreAppletBounds Should we ignore the applet_(max|min)size settings?
+     */
+    public static void setShouldRestrictAppletSize(boolean shouldIgnoreAppletBounds) {
+        if (shouldIgnoreAppletBounds) {
+            if (shouldRestrictAppletSize) {
+                shouldRestrictAppletSize = false;
+
                 setComponentBounds();
             }
-        } else if (!field_49) {
-            field_49 = true;
+        } else if (!shouldRestrictAppletSize) {
+            shouldRestrictAppletSize = true;
+
             setComponentBounds();
         }
-
     }
 
     public static void readdadvert() {

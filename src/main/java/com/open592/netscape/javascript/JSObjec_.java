@@ -37,8 +37,24 @@ public class JSObjec_ {
          AppletViewer.showContainerElements();
       }
 
+      /**
+       * TODO: Find the caller of this command and verify this.
+       *
+       * This command is responsible for setting a flag in the appletviewer to specify
+       * if we should respect the `applet_(max|min)size` settings.
+       */
       if ("resizing".equals(command) && args != null && args.length > 0 && args[0] instanceof Integer) {
-         AppletViewer.doresize((Integer)args[0]);
+         int argValue = (Integer)args[0];
+
+         // We expect the arguments to be either 0 or 1 which represents boolean true/false. In case
+         // we receive an invalid value we ignore the call.
+         if (argValue != 0 && argValue != 1) {
+            return null;
+         }
+
+         boolean shouldIgnoreAppletBounds = argValue != 0;
+
+         AppletViewer.setShouldRestrictAppletSize(shouldIgnoreAppletBounds);
       }
 
       return null;
