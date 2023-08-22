@@ -330,63 +330,68 @@ public final class AppletViewer implements ComponentListener {
 
     // $FF: renamed from: a (app.q, int) void
     private static void restartWithNewServerSettings(ServerSettings serverSettings) {
-        if (serverSettings != null) {
-            LoaderBoxComponent.setLoadingText(getLocaleString("loading_app"));
-            LoaderBoxComponent.updateProgress(0);
-            LoaderBoxComponent.setVisible();
-            LoaderBoxComponent.paint();
-            if (null != applet) {
-                if (termsAndConditionsTextArea.isVisible()) {
-                    termsAndConditionsTextArea.setVisible(false);
-                    setComponentBounds();
-                }
-
-                applet.stop();
-                LoaderBoxComponent.updateProgress(25);
-                LoaderBoxComponent.paint();
-                applet.destroy();
-                innerContainer.remove(applet);
-                applet = null;
-                innerContainer.remove(termsAndConditionsTextArea);
-            }
-
-            currentServerSettings = serverSettings;
-            LoaderBoxComponent.updateProgress(50);
-            LoaderBoxComponent.paint();
-            if (isWindows) {
-                class_5.method_4();
-            }
-
-            try {
-                String var2 = getConfigValue("codebase");
-                byte[] remoteFileBuffer = fetchRemoteFileToBuffer(var2, getConfigValue("loader_jar"));
-                LoaderBoxComponent.updateProgress(75);
-                LoaderBoxComponent.paint();
-                RemoteClassLoader classLoader = new RemoteClassLoader(remoteFileBuffer);
-                applet = (Applet)classLoader.loadClass("loader").getDeclaredConstructor().newInstance();
-                if (isDebug) {
-                    System.out.println("loader_jar : " + remoteFileBuffer.length);
-                }
-
-                LoaderBoxComponent.setHidden();
-            } catch (Exception var5) {
-                if (isDebug) {
-                    var5.printStackTrace();
-                }
-
-                LoaderBoxComponent.setHidden();
-                ModalDialog.displayErrorMessage(getLocaleString("err_target_applet"));
-            }
-
-            innerContainer.add(applet);
-            termsAndConditionsTextArea = new TextAreaComponent(getLocaleString("tandc"));
-            innerContainer.add(termsAndConditionsTextArea);
-            shouldRestrictAppletSize = true;
-            setComponentBounds();
-            applet.setStub(new AppletEnvironment());
-            applet.init();
-            applet.start();
+        if (serverSettings == null) {
+            return;
         }
+
+        LoaderBoxComponent.setLoadingText(getLocaleString("loading_app"));
+        LoaderBoxComponent.updateProgress(0);
+        LoaderBoxComponent.setVisible();
+        LoaderBoxComponent.paint();
+
+        if (applet != null) {
+            if (termsAndConditionsTextArea.isVisible()) {
+                termsAndConditionsTextArea.setVisible(false);
+                setComponentBounds();
+            }
+
+            applet.stop();
+            LoaderBoxComponent.updateProgress(25);
+            LoaderBoxComponent.paint();
+            applet.destroy();
+            innerContainer.remove(applet);
+            applet = null;
+            innerContainer.remove(termsAndConditionsTextArea);
+        }
+
+        currentServerSettings = serverSettings;
+        LoaderBoxComponent.updateProgress(50);
+        LoaderBoxComponent.paint();
+
+        if (isWindows) {
+            class_5.method_4();
+        }
+
+        try {
+            String var2 = getConfigValue("codebase");
+            byte[] remoteFileBuffer = fetchRemoteFileToBuffer(var2, getConfigValue("loader_jar"));
+            LoaderBoxComponent.updateProgress(75);
+            LoaderBoxComponent.paint();
+            RemoteClassLoader classLoader = new RemoteClassLoader(remoteFileBuffer);
+            applet = (Applet)classLoader.loadClass("loader").getDeclaredConstructor().newInstance();
+
+            if (isDebug) {
+                System.out.println("loader_jar : " + remoteFileBuffer.length);
+            }
+
+            LoaderBoxComponent.setHidden();
+        } catch (Exception var5) {
+            if (isDebug) {
+                var5.printStackTrace();
+            }
+
+            LoaderBoxComponent.setHidden();
+            ModalDialog.displayErrorMessage(getLocaleString("err_target_applet"));
+        }
+
+        innerContainer.add(applet);
+        termsAndConditionsTextArea = new TextAreaComponent(getLocaleString("tandc"));
+        innerContainer.add(termsAndConditionsTextArea);
+        shouldRestrictAppletSize = true;
+        setComponentBounds();
+        applet.setStub(new AppletEnvironment());
+        applet.init();
+        applet.start();
     }
 
     // $FF: renamed from: b (byte) void
