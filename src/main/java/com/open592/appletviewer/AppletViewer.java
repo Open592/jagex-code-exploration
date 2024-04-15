@@ -227,8 +227,9 @@ public final class AppletViewer implements ComponentListener {
         }
 
         LoaderBoxComponent.setLoadingText(getLocaleString("loading_app"));
-        if (isWindows) {
-            class_5.method_4();
+
+        if (isWindows || isDebug) {
+            PatchedClassLoader.initialize();
         }
 
         try {
@@ -358,8 +359,8 @@ public final class AppletViewer implements ComponentListener {
         LoaderBoxComponent.updateProgress(50);
         LoaderBoxComponent.paint();
 
-        if (isWindows) {
-            class_5.method_4();
+        if (isWindows || isDebug) {
+            PatchedClassLoader.initialize();
         }
 
         try {
