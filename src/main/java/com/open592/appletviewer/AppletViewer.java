@@ -1,6 +1,7 @@
 package com.open592.appletviewer;
 
 import nativeadvert.browsercontrol;
+import com.open592.loader.loader;
 
 import java.applet.Applet;
 import java.awt.*;
@@ -235,7 +236,6 @@ public final class AppletViewer implements ComponentListener {
         try {
             remoteFileBuffer = fetchRemoteFileToBuffer(codebaseURL, getConfigValue("loader_jar"));
             RemoteClassLoader classLoader = new RemoteClassLoader(remoteFileBuffer);
-            applet = (Applet) classLoader.loadClass("loader").getDeclaredConstructor().newInstance();
             if (isDebug) {
                 System.out.println("loader_jar : " + remoteFileBuffer.length);
             }
@@ -246,6 +246,8 @@ public final class AppletViewer implements ComponentListener {
 
             ModalDialog.displayErrorMessage(getLocaleString("err_target_applet"));
         }
+
+        applet = new loader();
 
         LoaderBoxComponent.setHidden();
         URLViewer.initialize();
