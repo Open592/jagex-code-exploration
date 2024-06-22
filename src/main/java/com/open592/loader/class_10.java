@@ -28,15 +28,15 @@ public class class_10 implements Runnable {
    // $FF: renamed from: i rp[]
    public class_12[] field_46;
    // $FF: renamed from: u java.awt.EventQueue
-   public EventQueue field_47;
+   public EventQueue systemEventQueue;
    // $FF: renamed from: m java.lang.String
-   public static String field_48;
+   public static String systemOSVersion;
    // $FF: renamed from: c qt
    private class_4 field_49 = null;
    // $FF: renamed from: q java.lang.String
-   public static String field_50;
+   public static String javaVersion;
    // $FF: renamed from: s java.lang.String
-   public static String field_51;
+   public static String systemOSNameLowerCase;
    // $FF: renamed from: j java.applet.Applet
    public Applet field_52 = null;
    // $FF: renamed from: l qt
@@ -44,7 +44,7 @@ public class class_10 implements Runnable {
    // $FF: renamed from: n rp
    public class_12 field_54 = null;
    // $FF: renamed from: f java.lang.String
-   public static String field_55;
+   public static String systemOSName;
    // $FF: renamed from: a rp
    public class_12 field_56 = null;
    // $FF: renamed from: d boolean
@@ -54,9 +54,9 @@ public class class_10 implements Runnable {
    // $FF: renamed from: r int
    public static int field_59 = 1;
    // $FF: renamed from: g java.lang.String
-   private static String field_60;
+   private static String systemUserHome;
    // $FF: renamed from: h java.lang.String
-   public static String field_61;
+   public static String systemOSArch;
    // $FF: renamed from: v rp
    public class_12 field_62 = null;
    // $FF: renamed from: k int
@@ -66,7 +66,7 @@ public class class_10 implements Runnable {
    // $FF: renamed from: t g
    private class_8 field_65;
    // $FF: renamed from: p java.lang.String
-   public static String field_66;
+   public static String javaVendor;
    // $FF: renamed from: z qn
    private class_1 field_67;
    // $FF: renamed from: A f
@@ -100,7 +100,7 @@ public class class_10 implements Runnable {
 
             try {
                if (var2 != 117) {
-                  this.method_56((byte)-79, (String)null);
+                  this.method_56(null);
                }
 
                var6.wait();
@@ -136,26 +136,9 @@ public class class_10 implements Runnable {
       }
    }
 
-   // $FF: renamed from: a (int, int, int, boolean, int) qt
-   public final class_4 method_30(int var1, int var2, int var3, boolean var4, int var5) {
-      try {
-         if (!var4) {
-            field_66 = (String)null;
-         }
-
-         return this.method_32(6, (Object)null, (byte)99, var1 + (var5 << -149711472), var2 + (var3 << -695361872));
-      } catch (RuntimeException var7) {
-         throw var7;
-      }
-   }
-
    // $FF: renamed from: a (java.lang.String, boolean) java.io.File
    public final File method_31(String var1, boolean var2) {
-      try {
-         return var2 ? (File)null : method_48(var1, 0, this.field_63, this.field_64);
-      } catch (RuntimeException var4) {
-         throw var4;
-      }
+       return var2 ? (File)null : method_48(var1, 0, this.field_63, this.field_64);
    }
 
    // $FF: renamed from: a (int, java.lang.Object, byte, int, int) qt
@@ -213,11 +196,10 @@ public class class_10 implements Runnable {
    public final void method_35(Class var1, int var2) throws Exception {
       try {
          Class[] var3 = new Class[]{Class.forName("java.lang.Class"), Class.forName("java.lang.String")};
-         int var6 = -20 % ((49 - var2) / 34);
-         Runtime var4 = Runtime.getRuntime();
+          Runtime var4 = Runtime.getRuntime();
          Method var5 = Class.forName("java.lang.reflect.Method").getMethod("setAccessible", Boolean.TYPE);
          Method var7;
-         if (!field_51.startsWith("mac")) {
+         if (!systemOSNameLowerCase.startsWith("mac")) {
             var7 = Class.forName("java.lang.Runtime").getDeclaredMethod("loadLibrary0", var3);
             var5.invoke(var7, Boolean.TRUE);
             var7.invoke(var4, var1, "jawt");
@@ -226,7 +208,7 @@ public class class_10 implements Runnable {
 
          var7 = Class.forName("java.lang.Runtime").getDeclaredMethod("load0", var3);
          var5.invoke(var7, Boolean.TRUE);
-         if (field_51.startsWith("win")) {
+         if (systemOSNameLowerCase.startsWith("win")) {
             var7.invoke(var4, var1, this.method_31("sw3d.dll", false).toString());
             var5.invoke(var7, Boolean.FALSE);
          } else {
@@ -419,7 +401,7 @@ public class class_10 implements Runnable {
                                     this.field_68.method_16((int[])((int[])var3[1]), var1.field_7, (Component)var3[0], var1.field_13, (byte)109, (Point)var3[2]);
                                  } else if (16 == var2) {
                                     try {
-                                       if (!field_51.startsWith("win")) {
+                                       if (!systemOSNameLowerCase.startsWith("win")) {
                                           throw new Exception();
                                        }
 
@@ -452,8 +434,8 @@ public class class_10 implements Runnable {
                                        Runtime var4 = Runtime.getRuntime();
                                        Method var5 = Class.forName("java.lang.Runtime").getDeclaredMethod("load0", var18);
                                        var5.setAccessible(true);
-                                       if (field_51.startsWith("win")) {
-                                          if (!field_61.startsWith("amd64") && !field_61.startsWith("x86_64")) {
+                                       if (systemOSNameLowerCase.startsWith("win")) {
+                                          if (!systemOSArch.startsWith("amd64") && !systemOSArch.startsWith("x86_64")) {
                                              var5.invoke(var4, var1.field_9, this.method_31("jagmisc.dll", false).toString());
                                           } else {
                                              var5.invoke(var4, var1.field_9, this.method_31("jagmisc64.dll", false).toString());
@@ -534,7 +516,7 @@ public class class_10 implements Runnable {
             var4 = "jagex_" + var1 + "_preferences" + var0 + "_wip.dat";
          }
 
-         String[] var5 = new String[]{"c:/rscache/", "/rscache/", field_60, "c:/windows/", "c:/winnt/", "c:/", "/tmp/", ""};
+         String[] var5 = new String[]{"c:/rscache/", "/rscache/", systemUserHome, "c:/windows/", "c:/winnt/", "c:/", "/tmp/", ""};
 
          for(int var6 = var3; var5.length > var6; ++var6) {
             String var7 = var5[var6];
@@ -641,7 +623,7 @@ public class class_10 implements Runnable {
          if (null != var4) {
             return var4;
          } else {
-            String[] var5 = new String[]{"c:/rscache/", "/rscache/", "c:/windows/", "c:/winnt/", "c:/", field_60, "/tmp/", ""};
+            String[] var5 = new String[]{"c:/rscache/", "/rscache/", "c:/windows/", "c:/winnt/", "c:/", systemUserHome, "/tmp/", ""};
             String[] var6 = new String[]{".jagex_cache_" + var2, ".file_store_" + var2};
 
             for(int var7 = var1; ~var7 > -3; ++var7) {
@@ -759,15 +741,11 @@ public class class_10 implements Runnable {
 
    // $FF: renamed from: a (int) qn
    public final class_1 method_54(int var1) {
-      try {
-         if (var1 != 18) {
-            method_40((String)null, (String)null, -105, -1);
-         }
+       if (var1 != 18) {
+          method_40((String)null, (String)null, -105, -1);
+       }
 
-         return this.field_67;
-      } catch (RuntimeException var3) {
-         throw var3;
-      }
+       return this.field_67;
    }
 
    // $FF: renamed from: a (int, java.lang.String, int) qt
@@ -780,124 +758,116 @@ public class class_10 implements Runnable {
    }
 
    // $FF: renamed from: a (byte, java.lang.String) qt
-   public final class_4 method_56(byte var1, String var2) {
-      try {
-         return var1 > -43 ? (class_4)null : this.method_32(12, var2, (byte)99, 0, 0);
-      } catch (RuntimeException var4) {
-         throw var4;
-      }
+   public final void method_56(String var2) {
+       this.method_32(12, var2, (byte) 99, 0, 0);
    }
 
    public class_10(Applet var1, int var2, String var3, int var4) throws Exception {
-      try {
-         field_66 = "Unknown";
-         this.field_64 = var3;
-         this.field_63 = var2;
-         this.field_52 = var1;
-         field_50 = "1.1";
+       javaVendor = "Unknown";
+       this.field_64 = var3;
+       this.field_63 = var2;
+       this.field_52 = var1;
+       javaVersion = "1.1";
 
-         try {
-            field_66 = System.getProperty("java.vendor");
-            field_50 = System.getProperty("java.version");
-         } catch (Exception var18) {
-         }
+       try {
+          javaVendor = System.getProperty("java.vendor");
+          javaVersion = System.getProperty("java.version");
+       } catch (Exception ignored) {
+       }
 
-         try {
-            field_55 = System.getProperty("os.name");
-         } catch (Exception var17) {
-            field_55 = "Unknown";
-         }
+       try {
+          systemOSName = System.getProperty("os.name");
+       } catch (Exception e) {
+          systemOSName = "Unknown";
+       }
 
-         field_51 = field_55.toLowerCase();
+       systemOSNameLowerCase = systemOSName.toLowerCase();
 
-         try {
-            field_61 = System.getProperty("os.arch").toLowerCase();
-         } catch (Exception var16) {
-            field_61 = "";
-         }
+       try {
+          systemOSArch = System.getProperty("os.arch").toLowerCase();
+       } catch (Exception e) {
+          systemOSArch = "";
+       }
 
-         try {
-            field_48 = System.getProperty("os.version").toLowerCase();
-         } catch (Exception var15) {
-            field_48 = "";
-         }
+       try {
+          systemOSVersion = System.getProperty("os.version").toLowerCase();
+       } catch (Exception e) {
+          systemOSVersion = "";
+       }
 
-         try {
-            field_60 = System.getProperty("user.home");
-            if (null != field_60) {
-               field_60 = field_60 + "/";
-            }
-         } catch (Exception var14) {
-         }
+       try {
+          systemUserHome = System.getProperty("user.home");
+          if (systemUserHome != null) {
+             systemUserHome = systemUserHome + "/";
+          }
+       } catch (Exception ignored) {
+       }
 
-         if (field_60 == null) {
-            field_60 = "~/";
-         }
+       if (systemUserHome == null) {
+          systemUserHome = "~/";
+       }
 
-         try {
-            this.field_47 = Toolkit.getDefaultToolkit().getSystemEventQueue();
-         } catch (Throwable var13) {
-         }
+       try {
+          this.systemEventQueue = Toolkit.getDefaultToolkit().getSystemEventQueue();
+       } catch (Throwable ignored) {
+       }
 
-         try {
-            if (var1 == null) {
-               field_69 = Class.forName("java.awt.Component").getDeclaredMethod("setFocusTraversalKeysEnabled", Boolean.TYPE);
-            } else {
-               field_69 = var1.getClass().getMethod("setFocusTraversalKeysEnabled", Boolean.TYPE);
-            }
-         } catch (Exception var12) {
-         }
+       try {
+          if (var1 == null) {
+             field_69 = Class.forName("java.awt.Component").getDeclaredMethod("setFocusTraversalKeysEnabled", Boolean.TYPE);
+          } else {
+             field_69 = var1.getClass().getMethod("setFocusTraversalKeysEnabled", Boolean.TYPE);
+          }
+       } catch (Exception ignored) {
+       }
 
-         try {
-            if (null == var1) {
-               field_70 = Class.forName("java.awt.Container").getDeclaredMethod("setFocusCycleRoot", Boolean.TYPE);
-            } else {
-               field_70 = var1.getClass().getMethod("setFocusCycleRoot", Boolean.TYPE);
-            }
-         } catch (Exception var11) {
-         }
+       try {
+          if (null == var1) {
+             field_70 = Class.forName("java.awt.Container").getDeclaredMethod("setFocusCycleRoot", Boolean.TYPE);
+          } else {
+             field_70 = var1.getClass().getMethod("setFocusCycleRoot", Boolean.TYPE);
+          }
+       } catch (Exception ignored) {
+       }
 
-         this.field_54 = new class_12(method_48("random.dat", 0, this.field_63, (String)null), "rw", 25L);
-         this.field_62 = new class_12(this.method_31("main_file_cache.dat2", false), "rw", 209715200L);
-         this.field_56 = new class_12(this.method_31("main_file_cache.idx255", false), "rw", 1048576L);
-         this.field_46 = new class_12[var4];
+       this.field_54 = new class_12(method_48("random.dat", 0, this.field_63, null), "rw", 25L);
+       this.field_62 = new class_12(this.method_31("main_file_cache.dat2", false), "rw", 209715200L);
+       this.field_56 = new class_12(this.method_31("main_file_cache.idx255", false), "rw", 1048576L);
+       this.field_46 = new class_12[var4];
 
-         for(int var5 = 0; ~var4 < ~var5; ++var5) {
-            this.field_46[var5] = new class_12(this.method_31("main_file_cache.idx" + var5, false), "rw", 1048576L);
-         }
+       for(int var5 = 0; ~var4 < ~var5; ++var5) {
+          this.field_46[var5] = new class_12(this.method_31("main_file_cache.idx" + var5, false), "rw", 1048576L);
+       }
 
-         try {
-            this.field_65 = new class_8();
-         } catch (Throwable var10) {
-         }
+       try {
+          this.field_65 = new class_8();
+       } catch (Throwable ignored) {
+       }
 
-         try {
-            this.field_68 = new class_7();
-         } catch (Throwable var9) {
-         }
+       try {
+          this.field_68 = new class_7();
+       } catch (Throwable ignored) {
+       }
 
-         ThreadGroup var20 = Thread.currentThread().getThreadGroup();
+       ThreadGroup var20 = Thread.currentThread().getThreadGroup();
 
-         for(ThreadGroup var6 = var20.getParent(); var6 != null; var6 = var6.getParent()) {
-            var20 = var6;
-         }
+       for(ThreadGroup var6 = var20.getParent(); var6 != null; var6 = var6.getParent()) {
+          var20 = var6;
+       }
 
-         Thread[] var7 = new Thread[1000];
-         var20.enumerate(var7);
+       Thread[] var7 = new Thread[1000];
+       var20.enumerate(var7);
 
-         for(int var8 = 0; ~var8 > ~var7.length; ++var8) {
-            if (var7[var8] != null && var7[var8].getName().startsWith("AWT")) {
-               var7[var8].setPriority(1);
-            }
-         }
+       for(int var8 = 0; ~var8 > ~var7.length; ++var8) {
+          if (var7[var8] != null && var7[var8].getName().startsWith("AWT")) {
+             var7[var8].setPriority(1);
+          }
+       }
 
-         this.field_57 = false;
-         this.field_58 = new Thread(this);
-         this.field_58.setPriority(10);
-         this.field_58.setDaemon(true);
-         this.field_58.start();
-      } catch (RuntimeException var19) {
-         throw var19;
-      }
+       this.field_57 = false;
+       this.field_58 = new Thread(this);
+       this.field_58.setPriority(10);
+       this.field_58.setDaemon(true);
+       this.field_58.start();
    }
 }

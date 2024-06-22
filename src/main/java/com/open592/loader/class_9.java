@@ -26,7 +26,7 @@ public final class class_9 extends ClassLoader implements class_0 {
          }
 
       } catch (RuntimeException var5) {
-         throw class_5.method_10(var5, "h.A(" + (var1 != null ? "{...}" : "null") + ',' + var2 + ',' + (var3 != null ? "{...}" : "null") + ')');
+         throw LoaderRuntimeException.create(var5, "h.A(" + (var1 != null ? "{...}" : "null") + ',' + var2 + ',' + (var3 != null ? "{...}" : "null") + ')');
       }
    }
 
@@ -42,10 +42,10 @@ public final class class_9 extends ClassLoader implements class_0 {
          var3.add(new AllPermission());
          this.field_43 = new ProtectionDomain(var2, var3);
       } catch (RuntimeException var5) {
-         throw class_5.method_10(var5, "h.<init>(" + (unpacker != null ? "{...}" : "null") + ')');
+         throw LoaderRuntimeException.create(var5, "h.<init>(" + (unpacker != null ? "{...}" : "null") + ')');
       }
 
-      if (class_5.field_17 != 0) {
+      if (LoaderRuntimeException.field_17 != 0) {
          class_2.field_6 = !var4;
       }
 
@@ -71,7 +71,7 @@ public final class class_9 extends ClassLoader implements class_0 {
             }
          }
       } catch (RuntimeException var5) {
-         throw class_5.method_10(var5, "h.loadClass(" + (var1 != null ? "{...}" : "null") + ',' + var2 + ')');
+         throw LoaderRuntimeException.create(var5, "h.loadClass(" + (var1 != null ? "{...}" : "null") + ',' + var2 + ')');
       }
    }
 }

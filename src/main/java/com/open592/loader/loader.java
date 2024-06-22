@@ -27,7 +27,7 @@ public final class loader extends Applet implements Runnable {
    // $FF: renamed from: b int
    private static int field_30 = 0;
    // $FF: renamed from: c java.applet.Applet
-   private Applet field_31;
+   private Applet applet;
    // $FF: renamed from: d int
    private int field_32;
    // $FF: renamed from: e boolean
@@ -139,7 +139,7 @@ public final class loader extends Applet implements Runnable {
 
          return !this.method_19(var1, false, 3, var8) ? null : var8;
       } catch (RuntimeException var20) {
-         throw class_5.method_10(var20, "loader.D(" + (var1 != null ? "{...}" : "null") + ',' + var2 + ',' + var3 + ')');
+         throw LoaderRuntimeException.create(var20, "loader.D(" + (var1 != null ? "{...}" : "null") + ',' + var2 + ',' + var3 + ')');
       }
    }
 
@@ -156,11 +156,11 @@ public final class loader extends Applet implements Runnable {
             var4.close();
             return true;
          } catch (IOException var5) {
-            this.method_22("savefile", -9625);
+            this.method_22("savefile");
             return false;
          }
       } catch (RuntimeException var6) {
-         throw class_5.method_10(var6, "loader.B(" + var1 + ',' + (var2 != null ? "{...}" : "null") + ',' + (var3 != null ? "{...}" : "null") + ')');
+         throw LoaderRuntimeException.create(var6, "loader.B(" + var1 + ',' + (var2 != null ? "{...}" : "null") + ',' + (var3 != null ? "{...}" : "null") + ')');
       }
    }
 
@@ -195,13 +195,13 @@ public final class loader extends Applet implements Runnable {
                }
             }
          } catch (Exception var9) {
-            this.method_22("sha", -9625);
+            this.method_22("sha");
             return false;
          }
 
          return true;
       } catch (RuntimeException var10) {
-         throw class_5.method_10(var10, "loader.F(" + (var1 != null ? "{...}" : "null") + ',' + var2 + ',' + var3 + ',' + (var4 != null ? "{...}" : "null") + ')');
+         throw LoaderRuntimeException.create(var10, "loader.F(" + (var1 != null ? "{...}" : "null") + ',' + var2 + ',' + var3 + ',' + (var4 != null ? "{...}" : "null") + ')');
       }
    }
 
@@ -227,7 +227,7 @@ public final class loader extends Applet implements Runnable {
             return null;
          }
       } catch (RuntimeException var7) {
-         throw class_5.method_10(var7, "loader.E(" + (var1 != null ? "{...}" : "null") + ',' + var2 + ')');
+         throw LoaderRuntimeException.create(var7, "loader.E(" + (var1 != null ? "{...}" : "null") + ',' + var2 + ')');
       }
    }
 
@@ -235,12 +235,12 @@ public final class loader extends Applet implements Runnable {
       try {
          this.field_33 = true;
          this.field_35 = false;
-         if (this.field_31 != null) {
-            this.field_31.start();
+         if (this.applet != null) {
+            this.applet.start();
          }
 
       } catch (RuntimeException var2) {
-         throw class_5.method_10(var2, "loader.start()");
+         throw LoaderRuntimeException.create(var2, "loader.start()");
       }
    }
 
@@ -308,7 +308,7 @@ public final class loader extends Applet implements Runnable {
             try {
                var26 = new class_10(this, var4, class_6.field_25[var23], 30);
             } catch (Exception var17) {
-               this.method_22("nocache", -9625);
+               this.method_22("nocache");
                return;
             }
 
@@ -458,40 +458,40 @@ public final class loader extends Applet implements Runnable {
                   return;
                }
 
-               this.field_31 = (Applet)var32.newInstance();
+               this.applet = (Applet)var32.newInstance();
                var32.getMethod("providesignlink", var30).invoke((Object)null, var26);
-               this.field_31.init();
+               this.applet.init();
                if (this.field_33) {
-                  this.field_31.start();
+                  this.applet.start();
                }
 
                if (this.field_35) {
-                  this.field_31.stop();
+                  this.applet.stop();
                }
             }
          } catch (Exception var21) {
             label201: {
-               class_5.field_14 = -682932437;
+               LoaderRuntimeException.errorSourceVersion = -682932437;
                if (var21 instanceof InvocationTargetException) {
                   Throwable var2 = ((InvocationTargetException)var21).getTargetException();
                   if (var2 instanceof ThreadDeath) {
                      return;
                   }
 
-                  class_5.method_9(var2, var21.toString(), this, (byte)-98);
+                  LoaderRuntimeException.publishError(var2, var21.toString(), this);
                   if (!var13) {
                      break label201;
                   }
                }
 
-               class_5.method_9(var21, (String)null, this, (byte)-128);
+               LoaderRuntimeException.publishError(var21, (String)null, this);
             }
 
-            this.method_22("crash", -9625);
+            this.method_22("crash");
          }
 
       } catch (RuntimeException var22) {
-         throw class_5.method_10(var22, "loader.run()");
+         throw LoaderRuntimeException.create(var22, "loader.run()");
       }
    }
 
@@ -505,7 +505,7 @@ public final class loader extends Applet implements Runnable {
             try {
                var5 = var1.method_31(var2.field_3, false);
             } catch (Exception var7) {
-               this.method_22("nocache", -9625);
+               this.method_22("nocache");
                return null;
             }
 
@@ -517,7 +517,7 @@ public final class loader extends Applet implements Runnable {
                }
 
                if (var6 == null) {
-                  this.method_22("download", -9625);
+                  this.method_22("download");
                   return null;
                }
 
@@ -527,7 +527,7 @@ public final class loader extends Applet implements Runnable {
 
                var6 = this.method_20(var5, false);
                if (!this.method_19(var2, false, 3, var6)) {
-                  this.method_22("mismatch", -9625);
+                  this.method_22("mismatch");
                   return null;
                }
             }
@@ -535,18 +535,18 @@ public final class loader extends Applet implements Runnable {
             return var6;
          }
       } catch (RuntimeException var8) {
-         throw class_5.method_10(var8, "loader.A(" + (var1 != null ? "{...}" : "null") + ',' + (var2 != null ? "{...}" : "null") + ',' + var3 + ',' + var4 + ')');
+         throw LoaderRuntimeException.create(var8, "loader.A(" + (var1 != null ? "{...}" : "null") + ',' + (var2 != null ? "{...}" : "null") + ',' + var3 + ',' + var4 + ')');
       }
    }
 
    public final void update(Graphics var1) {
       try {
-         if (null != this.field_31) {
-            this.field_31.update(var1);
+         if (null != this.applet) {
+            this.applet.update(var1);
          }
 
       } catch (RuntimeException var3) {
-         throw class_5.method_10(var3, "loader.update(" + (var1 != null ? "{...}" : "null") + ')');
+         throw LoaderRuntimeException.create(var3, "loader.update(" + (var1 != null ? "{...}" : "null") + ')');
       }
    }
 
@@ -556,20 +556,17 @@ public final class loader extends Applet implements Runnable {
          Thread var1 = new Thread(this);
          var1.start();
       } catch (RuntimeException var2) {
-         throw class_5.method_10(var2, "loader.init()");
+         throw LoaderRuntimeException.create(var2, "loader.init()");
       }
    }
 
    // $FF: renamed from: a (java.lang.String, int) void
-   private final void method_22(String var1, int var2) {
+   private final void method_22(String var1) {
       try {
          if (!this.field_29) {
             this.field_29 = true;
-            if (var2 != -9625) {
-               this.field_33 = true;
-            }
 
-            try {
+             try {
                if (null != field_36) {
                   this.getAppletContext().showDocument(new URL(field_36 + "&s=" + var1), "_parent");
                   if (!class_2.field_6) {
@@ -578,12 +575,12 @@ public final class loader extends Applet implements Runnable {
                }
 
                this.getAppletContext().showDocument(new URL(this.getCodeBase(), "error_loader_" + var1 + ".ws"), "_top");
-            } catch (Exception var4) {
+            } catch (Exception ignored) {
             }
 
          }
-      } catch (RuntimeException var5) {
-         throw class_5.method_10(var5, "loader.C(" + (var1 != null ? "{...}" : "null") + ',' + var2 + ')');
+      } catch (RuntimeException e) {
+         throw LoaderRuntimeException.create(e, "loader.C(" + (var1 != null ? "{...}" : "null") + ',' + -9625 + ')');
       }
    }
 
@@ -591,23 +588,23 @@ public final class loader extends Applet implements Runnable {
       try {
          this.field_33 = false;
          this.field_35 = true;
-         if (null != this.field_31) {
-            this.field_31.stop();
+         if (null != this.applet) {
+            this.applet.stop();
          }
 
       } catch (RuntimeException var2) {
-         throw class_5.method_10(var2, "loader.stop()");
+         throw LoaderRuntimeException.create(var2, "loader.stop()");
       }
    }
 
    public final void paint(Graphics var1) {
       try {
-         if (null != this.field_31) {
-            this.field_31.paint(var1);
+         if (null != this.applet) {
+            this.applet.paint(var1);
          }
 
       } catch (RuntimeException var3) {
-         throw class_5.method_10(var3, "loader.paint(" + (var1 != null ? "{...}" : "null") + ')');
+         throw LoaderRuntimeException.create(var3, "loader.paint(" + (var1 != null ? "{...}" : "null") + ')');
       }
    }
 
@@ -615,13 +612,13 @@ public final class loader extends Applet implements Runnable {
       try {
          this.field_34 = true;
          this.field_33 = this.field_35 = false;
-         if (null != this.field_31) {
-            this.field_31.destroy();
+         if (null != this.applet) {
+            this.applet.destroy();
          }
 
-         this.field_31 = null;
+         this.applet = null;
       } catch (RuntimeException var2) {
-         throw class_5.method_10(var2, "loader.destroy()");
+         throw LoaderRuntimeException.create(var2, "loader.destroy()");
       }
    }
 }

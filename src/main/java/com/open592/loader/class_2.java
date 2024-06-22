@@ -26,7 +26,7 @@ public class class_2 {
          this.field_1 = var5;
          this.field_2 = var4;
       } catch (RuntimeException var8) {
-         throw class_5.method_10(var8, "b.<init>(" + (var1 != null ? "{...}" : "null") + ',' + (var2 != null ? "{...}" : "null") + ',' + (var3 != null ? "{...}" : "null") + ',' + var4 + ',' + var5 + ',' + (var6 != null ? "{...}" : "null") + ')');
+         throw LoaderRuntimeException.create(var8, "b.<init>(" + (var1 != null ? "{...}" : "null") + ',' + (var2 != null ? "{...}" : "null") + ',' + (var3 != null ? "{...}" : "null") + ',' + var4 + ',' + var5 + ',' + (var6 != null ? "{...}" : "null") + ')');
       }
    }
 }
