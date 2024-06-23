@@ -19,7 +19,7 @@ public class LoaderRuntimeException extends RuntimeException {
     private final Throwable throwable;
 
     // $FF: renamed from: a (java.lang.Throwable, java.lang.String, java.applet.Applet, byte) void
-    public static void publishError(Throwable throwable, String var1, Applet applet) {
+    public static void publishError(Throwable throwable, String parentExceptionMessage, Applet applet) {
         try {
             String stackTrace = "";
 
@@ -27,12 +27,12 @@ public class LoaderRuntimeException extends RuntimeException {
                 stackTrace = getStackTraceFromThrowable(throwable);
             }
 
-            if (var1 != null) {
+            if (parentExceptionMessage != null) {
                 if (throwable != null) {
                     stackTrace = stackTrace + " | ";
                 }
 
-                stackTrace = stackTrace + var1;
+                stackTrace = stackTrace + parentExceptionMessage;
             }
 
             printErrorToConsole(stackTrace);
@@ -91,42 +91,48 @@ public class LoaderRuntimeException extends RuntimeException {
         throwable.printStackTrace(printWriter);
         printWriter.close();
 
-        String var5 = stringWriter.toString();
-        BufferedReader var6 = new BufferedReader(new StringReader(var5));
-        String rootError = var6.readLine();
+        String stackTrace = stringWriter.toString();
+        BufferedReader stackTraceStream = new BufferedReader(new StringReader(stackTrace));
+        String exceptionMessage = stackTraceStream.readLine();
 
         while (true) {
-            String line = var6.readLine();
+            String stackFrame = stackTraceStream.readLine();
 
-            if (line == null) {
+            if (stackFrame == null) {
                 break;
             }
 
             int openingParenthesisPOS;
             int closingParenthesisPOS;
-            String var11;
-            label40:
+            String fullMethodPath;
+
+            resolveStackFrame:
             {
-                openingParenthesisPOS = line.indexOf('(');
-                closingParenthesisPOS = line.indexOf(')', openingParenthesisPOS + 1);
+                openingParenthesisPOS = stackFrame.indexOf('(');
+                closingParenthesisPOS = stackFrame.indexOf(')', openingParenthesisPOS + 1);
 
                 if (openingParenthesisPOS != -1) {
-                    var11 = line.substring(0, openingParenthesisPOS);
-                    break label40;
+                    fullMethodPath = stackFrame.substring(0, openingParenthesisPOS);
+                    break resolveStackFrame;
                 }
 
-                var11 = line;
+                fullMethodPath = stackFrame;
             }
 
-            var11 = var11.trim();
-            var11 = var11.substring(1 + var11.lastIndexOf(' '));
-            var11 = var11.substring(1 + var11.lastIndexOf('\t'));
+            fullMethodPath = fullMethodPath.trim();
+            fullMethodPath = fullMethodPath.substring(1 + fullMethodPath.lastIndexOf(' '));
+            fullMethodPath = fullMethodPath.substring(1 + fullMethodPath.lastIndexOf('\t'));
 
-            result.append(var11);
+            result.append(fullMethodPath);
+
             if (openingParenthesisPOS != -1 && closingParenthesisPOS != -1) {
-                int var12 = line.indexOf(".java:", openingParenthesisPOS);
-                if (var12 >= 0) {
-                    result.append(line, 5 + var12, closingParenthesisPOS);
+                // Given 	at java.base/jdk.internal.loader.BuiltinClassLoader.loadClass(BuiltinClassLoader.java:581)
+                // Find ":581)"
+                int lineNumberStartPOS = stackFrame.indexOf(".java:", openingParenthesisPOS);
+
+                if (lineNumberStartPOS >= 0) {
+                    // And extract substring "581"
+                    result.append(stackFrame, lineNumberStartPOS + 5, closingParenthesisPOS);
                 }
             }
 
@@ -134,7 +140,7 @@ public class LoaderRuntimeException extends RuntimeException {
         }
 
         return result.append("| ")
-                .append(rootError)
+                .append(exceptionMessage)
                 .toString();
     }
 
