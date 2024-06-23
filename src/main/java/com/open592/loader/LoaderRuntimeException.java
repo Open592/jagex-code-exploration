@@ -80,9 +80,9 @@ public class LoaderRuntimeException extends RuntimeException {
         StringBuilder result = new StringBuilder();
 
         if (throwable instanceof LoaderRuntimeException) {
-            LoaderRuntimeException var3 = (LoaderRuntimeException) throwable;
-            result.append(var3.message).append(" | ");
-            throwable = var3.throwable;
+            LoaderRuntimeException wrappingException = (LoaderRuntimeException) throwable;
+            result.append(wrappingException.message).append(" | ");
+            throwable = wrappingException.throwable;
         }
 
         StringWriter stringWriter = new StringWriter();

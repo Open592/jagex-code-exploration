@@ -37,21 +37,21 @@ public final class loader extends Applet implements Runnable {
     // $FF: renamed from: g boolean
     private boolean field_35 = false;
     // $FF: renamed from: h java.lang.String
-    private static String field_36;
+    private static String crashURL;
     // $FF: renamed from: i java.lang.String
-    private static String field_37;
+    private static String unsignedURL;
     // $FF: renamed from: j int
     private int field_38;
     // $FF: renamed from: k int
     private int field_39 = 0;
 
     // $FF: renamed from: a (b, byte, boolean) byte[]
-    private final byte[] method_17(class_2 var1, byte var2, boolean var3) {
+    private final byte[] method_17(GameAsset var1, byte var2, boolean var3) {
         try {
             Font var4 = new Font("Helvetica", 1, 13);
             FontMetrics var5 = this.getFontMetrics(var4);
-            Color var6 = new Color(class_6.field_26[field_30]);
-            Color var7 = new Color(class_6.field_24[field_30]);
+            Color var6 = new Color(GameAssets.field_26[field_30]);
+            Color var7 = new Color(GameAssets.field_24[field_30]);
             byte[] var8 = new byte[var1.field_1];
 
             try {
@@ -106,7 +106,7 @@ public final class loader extends Applet implements Runnable {
                                 var15.fillRect(0, 0, this.field_38, this.field_32);
                                 var15.setColor(var6);
                                 var15.drawRect(-152 + this.field_38 / 2, -18 + this.field_32 / 2, 303, 33);
-                                String var16 = var1.field_0[this.field_39] + " - " + var14 + "%";
+                                String var16 = var1.loadingStatusContent[this.field_39] + " - " + var14 + "%";
                                 var15.setFont(var4);
                                 var15.setColor(var7);
                                 var15.drawString(var16, (this.field_38 - var5.stringWidth(var16)) / 2, this.field_32 / 2 - -4);
@@ -157,7 +157,7 @@ public final class loader extends Applet implements Runnable {
     }
 
     // $FF: renamed from: a (b, boolean, int, byte[]) boolean
-    private final boolean method_19(class_2 var1, boolean var2, int var3, byte[] var4) {
+    private final boolean method_19(GameAsset var1, boolean var2, int var3, byte[] var4) {
         try {
             if (var3 != 3) {
                 this.method_18(false, (File) null, (byte[]) null);
@@ -175,7 +175,7 @@ public final class loader extends Applet implements Runnable {
                 int var7 = 0;
 
                 while (~var7 > -21) {
-                    if (var1.field_5[var7] != var6[var7]) {
+                    if (var1.sha1Hash[var7] != var6[var7]) {
                         return false;
                     }
 
@@ -234,8 +234,9 @@ public final class loader extends Applet implements Runnable {
     public final void run() {
         try {
             try {
-                field_37 = this.getParameter("unsignedurl");
-                if (field_37 != null) {
+                unsignedURL = this.getParameter("unsignedurl");
+
+                if (unsignedURL != null) {
                     try {
                         SecurityManager var1 = System.getSecurityManager();
                         if (null != var1) {
@@ -245,7 +246,7 @@ public final class loader extends Applet implements Runnable {
                         this.field_29 = true;
 
                         try {
-                            this.getAppletContext().showDocument(new URL(field_37), "_parent");
+                            this.getAppletContext().showDocument(new URL(unsignedURL), "_parent");
                         } catch (Exception var14) {
                         }
 
@@ -253,20 +254,22 @@ public final class loader extends Applet implements Runnable {
                     }
                 }
 
-                field_36 = this.getParameter("crashurl");
-                int var23 = 0;
-                String var24 = this.getParameter("cachesubdirid");
-                if (var24 != null) {
-                    var23 = Integer.parseInt(var24);
-                    if (0 > var23 || var23 >= class_6.field_25.length) {
-                        var23 = 0;
+                crashURL = this.getParameter("crashurl");
+
+                int cacheSubDirID = 0;
+                String cacheSubDirIDParameter = this.getParameter("cachesubdirid");
+
+                if (cacheSubDirIDParameter != null) {
+                    cacheSubDirID = Integer.parseInt(cacheSubDirIDParameter);
+                    if (0 > cacheSubDirID || cacheSubDirID >= GameAssets.gameNames.length) {
+                        cacheSubDirID = 0;
                     }
                 }
 
                 String var3 = this.getParameter("colourid");
                 if (var3 != null) {
                     field_30 = Integer.parseInt(var3);
-                    if (-1 < ~field_30 || class_6.field_26.length <= field_30) {
+                    if (-1 < ~field_30 || GameAssets.field_26.length <= field_30) {
                         field_30 = 0;
                     }
                 }
@@ -291,7 +294,7 @@ public final class loader extends Applet implements Runnable {
 
                 class_10 var26;
                 try {
-                    var26 = new class_10(this, var4, class_6.field_25[var23], 30);
+                    var26 = new class_10(this, var4, GameAssets.gameNames[cacheSubDirID], 30);
                 } catch (Exception var17) {
                     this.method_22("nocache");
                     return;
@@ -302,7 +305,7 @@ public final class loader extends Applet implements Runnable {
                 byte[] var7;
                 try {
                     Class.forName("java.util.jar.Pack200");
-                    var7 = this.method_21(var26, class_6.field_19, (byte) -122, false);
+                    var7 = this.method_21(var26, GameAssets.gameCodePack200, (byte) -122, false);
                     if (null == var7) {
                         return;
                     }
@@ -312,7 +315,7 @@ public final class loader extends Applet implements Runnable {
                 }
 
                 if (var6 == null) {
-                    var7 = this.method_21(var26, class_6.field_18, (byte) -123, false);
+                    var7 = this.method_21(var26, GameAssets.gameUnpacker, (byte) -123, false);
                     if (var7 == null) {
                         return;
                     }
@@ -322,7 +325,7 @@ public final class loader extends Applet implements Runnable {
                     Class var10 = Class.forName("unpack");
                     var9.method_0(var10.getName(), -29048, var10);
                     var10 = var9.loadClass("unpackclass");
-                    byte[] var11 = this.method_21(var26, class_6.field_20, (byte) -127, false);
+                    byte[] var11 = this.method_21(var26, GameAssets.gameCodeJS5, (byte) -127, false);
                     if (null == var11) {
                         return;
                     }
@@ -378,10 +381,10 @@ public final class loader extends Applet implements Runnable {
                 }
 
                 if (0 != ~var28) {
-                    this.method_21(var26, class_6.field_21[var28], (byte) -128, null != this.getParameter("suppress_sha"));
+                    this.method_21(var26, GameAssets.jaggl[var28], (byte) -128, null != this.getParameter("suppress_sha"));
                 }
 
-                if (class_6.field_22 != null) {
+                if (GameAssets.jagMisc != null) {
                     var28 = -1;
                     var29 = System.getProperty("os.name").toLowerCase();
                     var31 = System.getProperty("os.arch").toLowerCase();
@@ -398,11 +401,11 @@ public final class loader extends Applet implements Runnable {
                     }
 
                     if (var28 != -1) {
-                        this.method_21(var26, class_6.field_22[var28], (byte) -124, null != this.getParameter("suppress_sha"));
+                        this.method_21(var26, GameAssets.jagMisc[var28], (byte) -124, null != this.getParameter("suppress_sha"));
                     }
                 }
 
-                if (null != class_6.field_23) {
+                if (null != GameAssets.sw3d) {
                     var28 = -1;
                     var29 = System.getProperty("os.name").toLowerCase();
                     var31 = System.getProperty("os.arch").toLowerCase();
@@ -411,7 +414,7 @@ public final class loader extends Applet implements Runnable {
                     }
 
                     if (var28 != -1) {
-                        this.method_21(var26, class_6.field_23[var28], (byte) -124, null != this.getParameter("suppress_sha"));
+                        this.method_21(var26, GameAssets.sw3d[var28], (byte) -124, null != this.getParameter("suppress_sha"));
                     }
                 }
 
@@ -468,7 +471,7 @@ public final class loader extends Applet implements Runnable {
     }
 
     // $FF: renamed from: a (et, b, byte, boolean) byte[]
-    private final byte[] method_21(class_10 var1, class_2 var2, byte var3, boolean var4) {
+    private final byte[] method_21(class_10 var1, GameAsset var2, byte var3, boolean var4) {
         try {
             if (var3 > -121) {
                 return (byte[]) null;
@@ -539,8 +542,8 @@ public final class loader extends Applet implements Runnable {
                 this.field_29 = true;
 
                 try {
-                    if (null != field_36) {
-                        this.getAppletContext().showDocument(new URL(field_36 + "&s=" + var1), "_parent");
+                    if (null != crashURL) {
+                        this.getAppletContext().showDocument(new URL(crashURL + "&s=" + var1), "_parent");
 
                         return;
                     }
