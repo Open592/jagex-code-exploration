@@ -22,7 +22,7 @@ import java.util.Hashtable;
 import java.util.Vector;
 
 // $FF: renamed from: et
-public class class_10 implements Runnable {
+public class Cache implements Runnable {
     // $FF: renamed from: b java.util.Hashtable
     private static Hashtable field_45 = new Hashtable(16);
     // $FF: renamed from: i rp[]
@@ -762,7 +762,7 @@ public class class_10 implements Runnable {
         this.method_32(12, var2, (byte) 99, 0, 0);
     }
 
-    public class_10(Applet var1, int var2, String var3, int var4) throws Exception {
+    public Cache(Applet var1, int var2, String var3, int var4) throws Exception {
         javaVendor = "Unknown";
         this.field_64 = var3;
         this.field_63 = var2;

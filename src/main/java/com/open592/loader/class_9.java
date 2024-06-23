@@ -21,10 +21,6 @@ public final class class_9 extends ClassLoader implements class_0 {
     public void method_0(String var1, int var2, Class var3) {
         try {
             this.field_42.put(var1, var3);
-            if (var2 != -29048) {
-                this.method_0((String) null, 57, (Class) null);
-            }
-
         } catch (RuntimeException var5) {
             throw LoaderRuntimeException.create(var5, "h.A(" + (var1 != null ? "{...}" : "null") + ',' + var2 + ',' + (var3 != null ? "{...}" : "null") + ')');
         }

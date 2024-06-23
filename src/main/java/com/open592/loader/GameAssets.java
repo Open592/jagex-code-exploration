@@ -135,9 +135,9 @@ public class GameAssets {
             )
     };
     // $FF: renamed from: g int[]
-    public static int[] field_24 = new int[]{
-            16777215,
-            16777215
+    public static int[] loadingBoxForegroundColours = new int[]{
+            0xFFFFFF,
+            0xFFFFFF,
     };
     // $FF: renamed from: h java.lang.String[]
     public static String[] gameNames = new String[]{
@@ -145,8 +145,8 @@ public class GameAssets {
             "stellardawn"
     };
     // $FF: renamed from: i int[]
-    public static int[] field_26 = new int[]{
-            9179409,
-            16777215
+    public static int[] loadingBoxBackgroundColours = new int[]{
+            0x8c1111,
+            0xFFFFFF,
     };
 }

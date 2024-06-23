@@ -44,7 +44,7 @@ public class LoaderRuntimeException extends RuntimeException {
 
             URL url = new URL(
                     applet.getCodeBase(),
-                    "loadererror.ws?c=" + gameVersionIdentifier + "&v1=" + class_10.javaVendor + "&v2=" + class_10.javaVersion + "&e=" + stackTrace
+                    "loadererror.ws?c=" + gameVersionIdentifier + "&v1=" + Cache.javaVendor + "&v2=" + Cache.javaVersion + "&e=" + stackTrace
             );
 
             DataInputStream response = new DataInputStream(url.openStream());
