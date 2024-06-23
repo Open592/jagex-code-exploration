@@ -17,10 +17,8 @@ public class LoaderRuntimeException extends RuntimeException {
    private String message;
    // $FF: renamed from: c java.lang.Throwable
    private final Throwable throwable;
-   // $FF: renamed from: d int
-   public static int field_17;
 
-   // $FF: renamed from: a (java.lang.Throwable, java.lang.String, java.applet.Applet, byte) void
+    // $FF: renamed from: a (java.lang.Throwable, java.lang.String, java.applet.Applet, byte) void
    public static void publishError(Throwable throwable, String var1, Applet applet) {
        try {
            String stackTrace = "";
@@ -82,28 +80,20 @@ public class LoaderRuntimeException extends RuntimeException {
       boolean var13 = class_2.field_6;
 
       StringBuilder result = new StringBuilder();
-       label50: {
-          if (throwable instanceof LoaderRuntimeException) {
-             LoaderRuntimeException var3 = (LoaderRuntimeException)throwable;
-             result.append(var3.message).append(" | ");
-             throwable = var3.throwable;
-             if (!var13) {
-                break label50;
-             }
 
-             int var14 = field_17;
-             ++var14;
-             field_17 = var14;
-          }
-       }
+      if (throwable instanceof LoaderRuntimeException) {
+          LoaderRuntimeException var3 = (LoaderRuntimeException) throwable;
+          result.append(var3.message).append(" | ");
+          throwable = var3.throwable;
+      }
 
-       errorSourceVersion = -15;
+      errorSourceVersion = -15;
 
-       StringWriter stringWriter = new StringWriter();
-       PrintWriter printWriter = new PrintWriter(stringWriter);
+      StringWriter stringWriter = new StringWriter();
+      PrintWriter printWriter = new PrintWriter(stringWriter);
 
-       throwable.printStackTrace(printWriter);
-       printWriter.close();
+      throwable.printStackTrace(printWriter);
+      printWriter.close();
 
        String var5 = stringWriter.toString();
        BufferedReader var6 = new BufferedReader(new StringReader(var5));

@@ -32,7 +32,6 @@ public final class class_9 extends ClassLoader implements class_0 {
 
    public class_9(Unpack unpacker) {
       super();
-      boolean var4 = class_2.field_6;
       this.field_42 = new Hashtable();
 
       try {
@@ -44,11 +43,6 @@ public final class class_9 extends ClassLoader implements class_0 {
       } catch (RuntimeException var5) {
          throw LoaderRuntimeException.create(var5, "h.<init>(" + (unpacker != null ? "{...}" : "null") + ')');
       }
-
-      if (LoaderRuntimeException.field_17 != 0) {
-         class_2.field_6 = !var4;
-      }
-
    }
 
    public synchronized Class loadClass(String var1, boolean var2) throws ClassNotFoundException {
