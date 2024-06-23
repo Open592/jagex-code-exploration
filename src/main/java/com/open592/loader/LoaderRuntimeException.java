@@ -12,7 +12,7 @@ import java.net.URL;
 // $FF: renamed from: d
 public class LoaderRuntimeException extends RuntimeException {
     // $FF: renamed from: a int
-    public static int errorSourceVersion;
+    public static int gameVersionIdentifier;
     // $FF: renamed from: b java.lang.String
     private String message;
     // $FF: renamed from: c java.lang.Throwable
@@ -37,14 +37,14 @@ public class LoaderRuntimeException extends RuntimeException {
 
             printErrorToConsole(stackTrace);
 
-            stackTrace = replaceCharacter(":", "%3a", stackTrace);
-            stackTrace = replaceCharacter("@", "%40", stackTrace);
-            stackTrace = replaceCharacter("&", "%26", stackTrace);
-            stackTrace = replaceCharacter("#", "%23", stackTrace);
+            stackTrace = stackTrace.replace(":", "%3a");
+            stackTrace = stackTrace.replace("@", "%40");
+            stackTrace = stackTrace.replace("&", "%26");
+            stackTrace = stackTrace.replace("#", "%23");
 
             URL url = new URL(
                     applet.getCodeBase(),
-                    "loadererror.ws?c=" + errorSourceVersion + "&v1=" + class_10.javaVendor + "&v2=" + class_10.javaVersion + "&e=" + stackTrace
+                    "loadererror.ws?c=" + gameVersionIdentifier + "&v1=" + class_10.javaVendor + "&v2=" + class_10.javaVersion + "&e=" + stackTrace
             );
 
             DataInputStream response = new DataInputStream(url.openStream());
@@ -72,7 +72,7 @@ public class LoaderRuntimeException extends RuntimeException {
 
     // $FF: renamed from: a (int, java.lang.String) void
     private static void printErrorToConsole(String message) {
-        System.out.println("Error: " + replaceCharacter("%0a", "\n", message));
+        System.out.println("Error: " + message.replace("%0a", "\n"));
     }
 
     // $FF: renamed from: a (java.lang.Throwable, boolean) java.lang.String
@@ -85,8 +85,6 @@ public class LoaderRuntimeException extends RuntimeException {
             throwable = var3.throwable;
         }
 
-        errorSourceVersion = -15;
-
         StringWriter stringWriter = new StringWriter();
         PrintWriter printWriter = new PrintWriter(stringWriter);
 
@@ -97,7 +95,7 @@ public class LoaderRuntimeException extends RuntimeException {
         BufferedReader var6 = new BufferedReader(new StringReader(var5));
         String rootError = var6.readLine();
 
-        do {
+        while (true) {
             String line = var6.readLine();
 
             if (line == null) {
@@ -125,24 +123,19 @@ public class LoaderRuntimeException extends RuntimeException {
             var11 = var11.substring(1 + var11.lastIndexOf('\t'));
 
             result.append(var11);
-            if (~openingParenthesisPOS != 0 && ~closingParenthesisPOS != 0) {
+            if (openingParenthesisPOS != -1 && closingParenthesisPOS != -1) {
                 int var12 = line.indexOf(".java:", openingParenthesisPOS);
-                if (0 <= var12) {
+                if (var12 >= 0) {
                     result.append(line, 5 + var12, closingParenthesisPOS);
                 }
             }
 
             result.append(" ");
-        } while (true);
+        }
 
-        return result.append(" | ")
+        return result.append("| ")
                 .append(rootError)
                 .toString();
-    }
-
-    // $FF: renamed from: a (java.lang.String, java.lang.String, int, java.lang.String) java.lang.String
-    private static String replaceCharacter(String search, String replace, String string) {
-        return string.replace(search, replace);
     }
 
     private LoaderRuntimeException(Throwable throwable, String message) {

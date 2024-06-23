@@ -445,7 +445,7 @@ public final class loader extends Applet implements Runnable {
             } catch (Exception var21) {
                 label201:
                 {
-                    LoaderRuntimeException.errorSourceVersion = -682932437;
+                    LoaderRuntimeException.gameVersionIdentifier = -682932437;
                     if (var21 instanceof InvocationTargetException) {
                         Throwable var2 = ((InvocationTargetException) var21).getTargetException();
                         if (var2 instanceof ThreadDeath) {
