@@ -48,7 +48,7 @@ public final class loader extends Applet implements Runnable {
     // $FF: renamed from: a (b, byte, boolean) byte[]
     private byte[] method_17(GameAsset var1, byte var2, boolean var3) {
         try {
-            Font loadingBoxFont = new Font("Helvetica", 1, 13);
+            Font loadingBoxFont = new Font("Helvetica", java.awt.Font.BOLD, 13);
             FontMetrics loadingBoxFontMetrics = this.getFontMetrics(loadingBoxFont);
             Color loadingBoxBackgroundColour = new Color(GameAssets.loadingBoxBackgroundColours[colourID]);
             Color loadingBoxForegroundColour = new Color(GameAssets.loadingBoxForegroundColours[colourID]);

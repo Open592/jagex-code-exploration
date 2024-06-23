@@ -24,7 +24,7 @@ import java.util.Vector;
 // $FF: renamed from: et
 public class Cache implements Runnable {
     // $FF: renamed from: b java.util.Hashtable
-    private static Hashtable field_45 = new Hashtable(16);
+    private static final Hashtable field_45 = new Hashtable(16);
     // $FF: renamed from: i rp[]
     public class_12[] field_46;
     // $FF: renamed from: u java.awt.EventQueue
@@ -38,31 +38,29 @@ public class Cache implements Runnable {
     // $FF: renamed from: s java.lang.String
     public static String systemOSNameLowerCase;
     // $FF: renamed from: j java.applet.Applet
-    public Applet field_52 = null;
+    public Applet loader;
     // $FF: renamed from: l qt
     private class_4 field_53 = null;
     // $FF: renamed from: n rp
-    public class_12 field_54 = null;
+    public class_12 field_54;
     // $FF: renamed from: f java.lang.String
     public static String systemOSName;
     // $FF: renamed from: a rp
-    public class_12 field_56 = null;
+    public class_12 field_56;
     // $FF: renamed from: d boolean
-    private boolean field_57 = false;
+    private boolean field_57;
     // $FF: renamed from: e java.lang.Thread
-    private Thread field_58;
-    // $FF: renamed from: r int
-    public static int field_59 = 1;
+    private final Thread field_58;
     // $FF: renamed from: g java.lang.String
     private static String systemUserHome;
     // $FF: renamed from: h java.lang.String
     public static String systemOSArch;
     // $FF: renamed from: v rp
-    public class_12 field_62 = null;
+    public class_12 field_62;
     // $FF: renamed from: k int
-    private int field_63;
+    private int modewhat;
     // $FF: renamed from: o java.lang.String
-    private String field_64;
+    private final String gameName;
     // $FF: renamed from: t g
     private class_8 field_65;
     // $FF: renamed from: p java.lang.String
@@ -138,7 +136,7 @@ public class Cache implements Runnable {
 
     // $FF: renamed from: a (java.lang.String, boolean) java.io.File
     public final File method_31(String var1, boolean var2) {
-        return var2 ? (File) null : method_48(var1, 0, this.field_63, this.field_64);
+        return var2 ? (File) null : method_48(var1, 0, this.modewhat, this.gameName);
     }
 
     // $FF: renamed from: a (int, java.lang.Object, byte, int, int) qt
@@ -274,24 +272,16 @@ public class Cache implements Runnable {
 
     // $FF: renamed from: b (java.lang.String, int) qt
     public final class_4 method_37(String var1, int var2) {
-        try {
-            if (var2 != 14) {
-                this.field_62 = (class_12) null;
-            }
-
-            return this.method_32(16, var1, (byte) 99, 0, 0);
-        } catch (RuntimeException var4) {
-            throw var4;
+        if (var2 != 14) {
+            this.field_62 = null;
         }
+
+        return this.method_32(16, var1, (byte) 99, 0, 0);
     }
 
     // $FF: renamed from: a (java.lang.Class, boolean) qt
     public final class_4 method_38(Class var1, boolean var2) {
-        try {
-            return var2 ? (class_4) null : this.method_32(11, var1, (byte) 99, 0, 0);
-        } catch (RuntimeException var4) {
-            throw var4;
-        }
+        return var2 ? null : this.method_32(11, var1, (byte) 99, 0, 0);
     }
 
     public final void run() {
@@ -386,12 +376,12 @@ public class Cache implements Runnable {
 
                                                 var26.setAccessible(false);
                                             } else if (~var2 == -13) {
-                                                class_12 var24 = method_40((String) var1.field_9, this.field_64, this.field_63, 0);
+                                                class_12 var24 = method_40((String) var1.field_9, this.gameName, this.modewhat, 0);
                                                 var1.field_8 = var24;
                                             } else if (var2 == 14) {
                                                 int var22 = var1.field_7;
                                                 int var25 = var1.field_13;
-                                                this.field_68.method_14(var22, (byte) 75, var25);
+                                                this.field_68.method_14(var22, var25);
                                             } else if (-16 == ~var2) {
                                                 boolean var20 = var1.field_7 != 0;
                                                 Component var23 = (Component) var1.field_9;
@@ -729,7 +719,7 @@ public class Cache implements Runnable {
     public final byte[] method_53(String var1, int var2) {
         try {
             if (var2 != 14) {
-                this.field_63 = 80;
+                this.modewhat = 80;
             }
 
             class_4 var3 = this.method_27(0, (byte) 117, var1, 21, 0);
@@ -762,11 +752,12 @@ public class Cache implements Runnable {
         this.method_32(12, var2, (byte) 99, 0, 0);
     }
 
-    public Cache(Applet var1, int var2, String var3, int var4) throws Exception {
+    public Cache(Applet loader, int modewhat, String gameName, int var4) throws Exception {
+        this.loader = loader;
+        this.modewhat = modewhat;
+        this.gameName = gameName;
+
         javaVendor = "Unknown";
-        this.field_64 = var3;
-        this.field_63 = var2;
-        this.field_52 = var1;
         javaVersion = "1.1";
 
         try {
@@ -813,24 +804,24 @@ public class Cache implements Runnable {
         }
 
         try {
-            if (var1 == null) {
+            if (loader == null) {
                 field_69 = Class.forName("java.awt.Component").getDeclaredMethod("setFocusTraversalKeysEnabled", Boolean.TYPE);
             } else {
-                field_69 = var1.getClass().getMethod("setFocusTraversalKeysEnabled", Boolean.TYPE);
+                field_69 = loader.getClass().getMethod("setFocusTraversalKeysEnabled", Boolean.TYPE);
             }
         } catch (Exception ignored) {
         }
 
         try {
-            if (null == var1) {
+            if (null == loader) {
                 field_70 = Class.forName("java.awt.Container").getDeclaredMethod("setFocusCycleRoot", Boolean.TYPE);
             } else {
-                field_70 = var1.getClass().getMethod("setFocusCycleRoot", Boolean.TYPE);
+                field_70 = loader.getClass().getMethod("setFocusCycleRoot", Boolean.TYPE);
             }
         } catch (Exception ignored) {
         }
 
-        this.field_54 = new class_12(method_48("random.dat", 0, this.field_63, null), "rw", 25L);
+        this.field_54 = new class_12(method_48("random.dat", 0, this.modewhat, null), "rw", 25L);
         this.field_62 = new class_12(this.method_31("main_file_cache.dat2", false), "rw", 209715200L);
         this.field_56 = new class_12(this.method_31("main_file_cache.idx255", false), "rw", 1048576L);
         this.field_46 = new class_12[var4];
