@@ -14,8 +14,6 @@ public class class_2 {
     public String field_4;
     // $FF: renamed from: f int[]
     public int[] field_5 = new int[20];
-    // $FF: renamed from: g boolean
-    public static boolean field_6;
 
     public class_2(String var1, String var2, String[] var3, int var4, int var5, int[] var6) {
         try {

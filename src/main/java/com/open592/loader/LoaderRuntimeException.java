@@ -77,8 +77,6 @@ public class LoaderRuntimeException extends RuntimeException {
 
     // $FF: renamed from: a (java.lang.Throwable, boolean) java.lang.String
     public static String getStackTraceFromThrowable(Throwable throwable) throws IOException {
-        boolean var13 = class_2.field_6;
-
         StringBuilder result = new StringBuilder();
 
         if (throwable instanceof LoaderRuntimeException) {
@@ -113,11 +111,10 @@ public class LoaderRuntimeException extends RuntimeException {
             {
                 openingParenthesisPOS = line.indexOf('(');
                 closingParenthesisPOS = line.indexOf(')', openingParenthesisPOS + 1);
+
                 if (openingParenthesisPOS != -1) {
                     var11 = line.substring(0, openingParenthesisPOS);
-                    if (!var13) {
-                        break label40;
-                    }
+                    break label40;
                 }
 
                 var11 = line;
@@ -136,7 +133,7 @@ public class LoaderRuntimeException extends RuntimeException {
             }
 
             result.append(" ");
-        } while (!var13);
+        } while (true);
 
         return result.append(" | ")
                 .append(rootError)

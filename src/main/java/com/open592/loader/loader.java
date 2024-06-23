@@ -47,8 +47,6 @@ public final class loader extends Applet implements Runnable {
 
     // $FF: renamed from: a (b, byte, boolean) byte[]
     private final byte[] method_17(class_2 var1, byte var2, boolean var3) {
-        boolean var17 = class_2.field_6;
-
         try {
             Font var4 = new Font("Helvetica", 1, 13);
             FontMetrics var5 = this.getFontMetrics(var4);
@@ -62,9 +60,7 @@ public final class loader extends Applet implements Runnable {
                 {
                     if (!var3) {
                         var9 = (new URL(this.getCodeBase(), var1.field_4)).openStream();
-                        if (!var17) {
-                            break label61;
-                        }
+                        break label61;
                     }
 
                     URL var10 = this.getCodeBase();
@@ -103,9 +99,7 @@ public final class loader extends Applet implements Runnable {
                                 Graphics var15 = this.getGraphics();
                                 if (var15 == null) {
                                     this.repaint();
-                                    if (!var17) {
-                                        break label74;
-                                    }
+                                    break label74;
                                 }
 
                                 var15.setColor(Color.black);
@@ -120,10 +114,6 @@ public final class loader extends Applet implements Runnable {
                             }
                         } catch (Exception var18) {
                         }
-                    }
-
-                    if (var17) {
-                        break;
                     }
                 }
 
@@ -168,8 +158,6 @@ public final class loader extends Applet implements Runnable {
 
     // $FF: renamed from: a (b, boolean, int, byte[]) boolean
     private final boolean method_19(class_2 var1, boolean var2, int var3, byte[] var4) {
-        boolean var8 = class_2.field_6;
-
         try {
             if (var3 != 3) {
                 this.method_18(false, (File) null, (byte[]) null);
@@ -192,9 +180,6 @@ public final class loader extends Applet implements Runnable {
                     }
 
                     ++var7;
-                    if (var8) {
-                        break;
-                    }
                 }
             } catch (Exception var9) {
                 this.method_22("sha");
@@ -247,8 +232,6 @@ public final class loader extends Applet implements Runnable {
     }
 
     public final void run() {
-        boolean var13 = class_2.field_6;
-
         try {
             try {
                 field_37 = this.getParameter("unsignedurl");
@@ -360,15 +343,11 @@ public final class loader extends Applet implements Runnable {
                     if (var29.startsWith("win")) {
                         if (!var31.startsWith("amd64") && !var31.startsWith("x86_64")) {
                             var28 = 0;
-                            if (!var13) {
-                                break label283;
-                            }
+                            break label283;
                         }
 
                         var28 = 1;
-                        if (!var13) {
-                            break label283;
-                        }
+                        break label283;
                     }
 
                     if (!var29.startsWith("linux")) {
@@ -379,28 +358,20 @@ public final class loader extends Applet implements Runnable {
                         if (!var31.startsWith("ppc")) {
                             if (!var31.startsWith("x86_64")) {
                                 var28 = 7;
-                                if (!var13) {
-                                    break label283;
-                                }
+                                break label283;
                             }
 
                             var28 = 6;
-                            if (!var13) {
-                                break label283;
-                            }
+                            break label283;
                         }
 
                         var28 = 4;
-                        if (!var13) {
-                            break label283;
-                        }
+                        break label283;
                     }
 
                     if (var31.startsWith("amd64") || var31.startsWith("x86_64")) {
                         var28 = 3;
-                        if (!var13) {
-                            break label283;
-                        }
+                        break label283;
                     }
 
                     var28 = 2;
@@ -419,9 +390,7 @@ public final class loader extends Applet implements Runnable {
                         {
                             if (var31.startsWith("amd64") || var31.startsWith("x86_64")) {
                                 var28 = 2;
-                                if (!var13) {
-                                    break label284;
-                                }
+                                break label284;
                             }
 
                             var28 = 0;
@@ -484,9 +453,7 @@ public final class loader extends Applet implements Runnable {
                         }
 
                         LoaderRuntimeException.publishError(var2, var21.toString(), this);
-                        if (!var13) {
-                            break label201;
-                        }
+                        break label201;
                     }
 
                     LoaderRuntimeException.publishError(var21, (String) null, this);
@@ -574,9 +541,8 @@ public final class loader extends Applet implements Runnable {
                 try {
                     if (null != field_36) {
                         this.getAppletContext().showDocument(new URL(field_36 + "&s=" + var1), "_parent");
-                        if (!class_2.field_6) {
-                            return;
-                        }
+
+                        return;
                     }
 
                     this.getAppletContext().showDocument(new URL(this.getCodeBase(), "error_loader_" + var1 + ".ws"), "_top");
