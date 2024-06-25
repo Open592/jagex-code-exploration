@@ -80,42 +80,47 @@ public final class loader extends Applet implements Runnable {
                     this.paint((Graphics) null);
                 }
 
-                int var21 = -1;
-                int var22 = 0;
+                int previousPercentDownloaded = -1;
+                int totalBytesRead = 0;
 
-                while (~buffer.length < ~var22) {
-                    int var23 = -var22 + buffer.length;
-                    if (var23 > 1000) {
-                        var23 = 1000;
+                while (~buffer.length < ~totalBytesRead) {
+                    int bytesToRead = buffer.length - totalBytesRead;
+
+                    if (bytesToRead > 1000) {
+                        bytesToRead = 1000;
                     }
 
-                    int var13 = connectionStream.read(buffer, var22, var23);
+                    int bytesRead = connectionStream.read(buffer, totalBytesRead, bytesToRead);
 
-                    if (var13 < 0) {
+                    if (bytesRead < 0) {
                         throw new EOFException();
                     }
 
-                    var22 += var13;
-                    int var14 = var22 * 100 / buffer.length;
-                    if (~var14 != ~var21) {
+                    totalBytesRead += bytesRead;
+
+                    int newPercentDownloaded = totalBytesRead * 100 / buffer.length;
+
+                    if (newPercentDownloaded != previousPercentDownloaded) {
                         try {
-                            label74:
+                            updateLoaderBox:
                             {
-                                Graphics var15 = this.getGraphics();
-                                if (var15 == null) {
+                                Graphics graphics = this.getGraphics();
+
+                                if (graphics == null) {
                                     this.repaint();
-                                    break label74;
+
+                                    break updateLoaderBox;
                                 }
 
-                                var15.setColor(Color.black);
-                                var15.fillRect(0, 0, this.appletWidth, this.appletHeight);
-                                var15.setColor(loadingBoxBackgroundColour);
-                                var15.drawRect(-152 + this.appletWidth / 2, -18 + this.appletHeight / 2, 303, 33);
-                                String var16 = gameAsset.loadingStatusContent[this.langID] + " - " + var14 + "%";
-                                var15.setFont(loadingBoxFont);
-                                var15.setColor(loadingBoxForegroundColour);
-                                var15.drawString(var16, (this.appletWidth - loadingBoxFontMetrics.stringWidth(var16)) / 2, this.appletHeight / 2 + 4);
-                                var21 = var14;
+                                graphics.setColor(Color.black);
+                                graphics.fillRect(0, 0, this.appletWidth, this.appletHeight);
+                                graphics.setColor(loadingBoxBackgroundColour);
+                                graphics.drawRect(-152 + this.appletWidth / 2, -18 + this.appletHeight / 2, 303, 33);
+                                String loaderBoxContent = gameAsset.loadingStatusContent[this.langID] + " - " + newPercentDownloaded + "%";
+                                graphics.setFont(loadingBoxFont);
+                                graphics.setColor(loadingBoxForegroundColour);
+                                graphics.drawString(loaderBoxContent, (this.appletWidth - loadingBoxFontMetrics.stringWidth(loaderBoxContent)) / 2, this.appletHeight / 2 + 4);
+                                previousPercentDownloaded = newPercentDownloaded;
                             }
                         } catch (Exception ignored) {
                         }
@@ -472,7 +477,7 @@ public final class loader extends Applet implements Runnable {
     }
 
     // $FF: renamed from: a (et, b, byte, boolean) byte[]
-    private final byte[] method_21(Cache cache, GameAsset gameAsset, byte var3, boolean var4) {
+    private byte[] method_21(Cache cache, GameAsset gameAsset, byte var3, boolean var4) {
         try {
             if (var3 > -121) {
                 return null;
@@ -481,7 +486,7 @@ public final class loader extends Applet implements Runnable {
             File file;
             try {
                 file = cache.fetchCacheFile(gameAsset.localFilename);
-            } catch (Exception var7) {
+            } catch (Exception e) {
                 this.handleError("nocache");
                 return null;
             }
@@ -504,6 +509,7 @@ public final class loader extends Applet implements Runnable {
                 }
 
                 fileBytes = this.readFileToBytes(file);
+
                 if (!this.verifyGameAsset(gameAsset, false, fileBytes)) {
                     this.handleError("mismatch");
                     return null;
@@ -559,7 +565,7 @@ public final class loader extends Applet implements Runnable {
         }
     }
 
-    public final synchronized void stop() {
+    public synchronized void stop() {
         try {
             this.field_33 = false;
             this.field_35 = true;
@@ -572,7 +578,7 @@ public final class loader extends Applet implements Runnable {
         }
     }
 
-    public final void paint(Graphics var1) {
+    public void paint(Graphics var1) {
         try {
             if (null != this.applet) {
                 this.applet.paint(var1);
@@ -583,7 +589,7 @@ public final class loader extends Applet implements Runnable {
         }
     }
 
-    public final synchronized void destroy() {
+    public synchronized void destroy() {
         try {
             this.field_34 = true;
             this.field_33 = this.field_35 = false;
