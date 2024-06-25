@@ -136,23 +136,19 @@ public final class loader extends Applet implements Runnable {
     }
 
     // $FF: renamed from: a (boolean, java.io.File, byte[]) boolean
-    private boolean method_18(boolean var1, File var2, byte[] var3) {
+    private boolean saveFile(File file, byte[] bytes) {
         try {
             try {
-                if (!var1) {
-                    this.run();
-                }
-
-                FileOutputStream var4 = new FileOutputStream(var2);
-                var4.write(var3, 0, var3.length);
-                var4.close();
+                FileOutputStream sink = new FileOutputStream(file);
+                sink.write(bytes, 0, bytes.length);
+                sink.close();
                 return true;
             } catch (IOException var5) {
                 this.handleError("savefile");
                 return false;
             }
         } catch (RuntimeException var6) {
-            throw LoaderRuntimeException.create(var6, "loader.B(" + var1 + ',' + (var2 != null ? "{...}" : "null") + ',' + (var3 != null ? "{...}" : "null") + ')');
+            throw LoaderRuntimeException.create(var6, "loader.B(" + true + ',' + (file != null ? "{...}" : "null") + ',' + (bytes != null ? "{...}" : "null") + ')');
         }
     }
 
@@ -230,9 +226,9 @@ public final class loader extends Applet implements Runnable {
 
                 if (unsignedURL != null) {
                     try {
-                        SecurityManager var1 = System.getSecurityManager();
-                        if (var1 != null) {
-                            var1.checkExec("echo");
+                        SecurityManager securityManager = System.getSecurityManager();
+                        if (securityManager != null) {
+                            securityManager.checkExec("echo");
                         }
                     } catch (SecurityException var20) {
                         this.hasErrorOccured = true;
@@ -471,15 +467,15 @@ public final class loader extends Applet implements Runnable {
             if (var3 > -121) {
                 return (byte[]) null;
             } else {
-                File var5;
+                File file;
                 try {
-                    var5 = cache.method_31(gameAsset.localFilename, false);
+                    file = cache.fetchCacheFile(gameAsset.localFilename);
                 } catch (Exception var7) {
                     this.handleError("nocache");
                     return null;
                 }
 
-                byte[] var6 = this.method_20(var5);
+                byte[] var6 = this.method_20(file);
                 if (!this.verifyGameAsset(gameAsset, var4, var6)) {
                     var6 = this.method_17(gameAsset, (byte) -83, false);
                     if (var6 == null) {
@@ -491,11 +487,11 @@ public final class loader extends Applet implements Runnable {
                         return null;
                     }
 
-                    if (!this.method_18(true, var5, var6)) {
+                    if (!this.saveFile(file, var6)) {
                         return null;
                     }
 
-                    var6 = this.method_20(var5);
+                    var6 = this.method_20(file);
                     if (!this.verifyGameAsset(gameAsset, false, var6)) {
                         this.handleError("mismatch");
                         return null;
