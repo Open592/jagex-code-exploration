@@ -191,7 +191,7 @@ public class Cache implements Runnable {
         var7 = Class.forName("java.lang.Runtime").getDeclaredMethod("load0", var3);
         var5.invoke(var7, Boolean.TRUE);
         if (systemOSNameLowerCase.startsWith("win")) {
-            var7.invoke(var4, var1, this.fetchCacheFile("sw3d.dll").toString());
+            var7.invoke(var4, var1, this.resolveCacheFilePath("sw3d.dll").toString());
             var5.invoke(var7, Boolean.FALSE);
         } else {
             throw new Exception();
@@ -401,9 +401,9 @@ public class Cache implements Runnable {
                                                 var5.setAccessible(true);
                                                 if (systemOSNameLowerCase.startsWith("win")) {
                                                     if (!systemOSArch.startsWith("amd64") && !systemOSArch.startsWith("x86_64")) {
-                                                        var5.invoke(var4, var1.field_9, this.fetchCacheFile("jagmisc.dll").toString());
+                                                        var5.invoke(var4, var1.field_9, this.resolveCacheFilePath("jagmisc.dll").toString());
                                                     } else {
-                                                        var5.invoke(var4, var1.field_9, this.fetchCacheFile("jagmisc64.dll").toString());
+                                                        var5.invoke(var4, var1.field_9, this.resolveCacheFilePath("jagmisc64.dll").toString());
                                                     }
                                                 }
 
@@ -547,12 +547,12 @@ public class Cache implements Runnable {
     }
 
     // $FF: renamed from: a (java.lang.String, boolean) java.io.File
-    public final File fetchCacheFile(String filename) {
-        return fetchCacheFile(filename, this.modewhat, this.gameName);
+    public final File resolveCacheFilePath(String filename) {
+        return resolveCacheFilePath(filename, this.modewhat, this.gameName);
     }
 
     // $FF: renamed from: a (java.lang.String, int, int, java.lang.String) java.io.File
-    public File fetchCacheFile(String filename, int modewhat, String gameName) {
+    public File resolveCacheFilePath(String filename, int modewhat, String gameName) {
         File var4 = (File) field_45.get(filename);
         if (null != var4) {
             return var4;
@@ -761,13 +761,13 @@ public class Cache implements Runnable {
         } catch (Exception ignored) {
         }
 
-        this.field_54 = new class_12(fetchCacheFile("random.dat", this.modewhat, null), "rw", 25L);
-        this.field_62 = new class_12(this.fetchCacheFile("main_file_cache.dat2"), "rw", 209715200L);
-        this.field_56 = new class_12(this.fetchCacheFile("main_file_cache.idx255"), "rw", 1048576L);
+        this.field_54 = new class_12(resolveCacheFilePath("random.dat", this.modewhat, null), "rw", 25L);
+        this.field_62 = new class_12(this.resolveCacheFilePath("main_file_cache.dat2"), "rw", 209715200L);
+        this.field_56 = new class_12(this.resolveCacheFilePath("main_file_cache.idx255"), "rw", 1048576L);
         this.field_46 = new class_12[var4];
 
         for (int var5 = 0; ~var4 < ~var5; ++var5) {
-            this.field_46[var5] = new class_12(this.fetchCacheFile("main_file_cache.idx" + var5), "rw", 1048576L);
+            this.field_46[var5] = new class_12(this.resolveCacheFilePath("main_file_cache.idx" + var5), "rw", 1048576L);
         }
 
         try {

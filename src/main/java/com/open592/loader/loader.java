@@ -31,11 +31,11 @@ public final class loader extends Applet implements Runnable {
     // $FF: renamed from: d int
     private int appletHeight;
     // $FF: renamed from: e boolean
-    private boolean field_33 = false;
+    private boolean isStarting = false;
     // $FF: renamed from: f boolean
-    private boolean field_34 = false;
+    private boolean isDestroyed = false;
     // $FF: renamed from: g boolean
-    private boolean field_35 = false;
+    private boolean isDestroying = false;
     // $FF: renamed from: h java.lang.String
     private static String crashURL;
     // $FF: renamed from: i java.lang.String
@@ -77,7 +77,7 @@ public final class loader extends Applet implements Runnable {
                 }
 
                 if (var2 >= -77) {
-                    this.paint((Graphics) null);
+                    this.paint(null);
                 }
 
                 int previousPercentDownloaded = -1;
@@ -168,25 +168,26 @@ public final class loader extends Applet implements Runnable {
     }
 
     // $FF: renamed from: a (b, boolean, int, byte[]) boolean
-    private boolean verifyGameAsset(GameAsset var1, boolean var2, byte[] var4) {
+    private boolean verifyGameAsset(GameAsset gameAsset, boolean suppressSHA, byte[] fileBytes) {
+        if (suppressSHA) {
+            return true;
+        }
+
         try {
             try {
-                if (var4 == null) {
+                if (fileBytes == null) {
                     return false;
                 }
 
-                MessageDigest var5 = MessageDigest.getInstance("SHA");
-                var5.reset();
-                var5.update(var4);
-                byte[] var6 = var5.digest();
-                int var7 = 0;
+                MessageDigest SHAMessageDigest = MessageDigest.getInstance("SHA");
+                SHAMessageDigest.reset();
+                SHAMessageDigest.update(fileBytes);
+                byte[] hash = SHAMessageDigest.digest();
 
-                while (~var7 > -21) {
-                    if (var1.sha1Bytes[var7] != var6[var7]) {
+                for (int i = 0; i < 21; i++) {
+                    if (gameAsset.sha1Bytes[i] != hash[i]) {
                         return false;
                     }
-
-                    ++var7;
                 }
             } catch (Exception var9) {
                 this.handleError("sha");
@@ -194,8 +195,8 @@ public final class loader extends Applet implements Runnable {
             }
 
             return true;
-        } catch (RuntimeException var10) {
-            throw LoaderRuntimeException.create(var10, "loader.F(" + (var1 != null ? "{...}" : "null") + ',' + var2 + ',' + 3 + ',' + "{...}" + ')');
+        } catch (RuntimeException e) {
+            throw LoaderRuntimeException.create(e, "loader.F(" + (gameAsset != null ? "{...}" : "null") + ',' + suppressSHA + ',' + 3 + ',' + "{...}" + ')');
         }
     }
 
@@ -223,14 +224,15 @@ public final class loader extends Applet implements Runnable {
 
     public synchronized void start() {
         try {
-            this.field_33 = true;
-            this.field_35 = false;
+            this.isStarting = true;
+            this.isDestroying = false;
+
             if (this.applet != null) {
                 this.applet.start();
             }
 
-        } catch (RuntimeException var2) {
-            throw LoaderRuntimeException.create(var2, "loader.start()");
+        } catch (RuntimeException e) {
+            throw LoaderRuntimeException.create(e, "loader.start()");
         }
     }
 
@@ -245,7 +247,7 @@ public final class loader extends Applet implements Runnable {
                         if (securityManager != null) {
                             securityManager.checkExec("echo");
                         }
-                    } catch (SecurityException var20) {
+                    } catch (SecurityException e) {
                         this.hasErrorOccured = true;
 
                         try {
@@ -298,30 +300,30 @@ public final class loader extends Applet implements Runnable {
                 } catch (Exception ignored) {
                 }
 
-                Cache var26;
+                Cache cache;
                 try {
-                    var26 = new Cache(this, modewhat, GameAssets.gameNames[cacheSubDirID], 30);
-                } catch (Exception var17) {
+                    cache = new Cache(this, modewhat, GameAssets.gameNames[cacheSubDirID], 30);
+                } catch (Exception e) {
                     this.handleError("nocache");
                     return;
                 }
 
-                Unpack var6 = null;
+                Unpack unpack = null;
 
                 byte[] var7;
                 try {
                     Class.forName("java.util.jar.Pack200");
-                    var7 = this.method_21(var26, GameAssets.gameCodePack200, (byte) -122, false);
+                    var7 = this.method_21(cache, GameAssets.gameCodePack200, (byte) -122, false);
                     if (var7 == null) {
                         return;
                     }
 
-                    var6 = new class_3(var7);
+                    unpack = new class_3(var7);
                 } catch (Throwable ignored) {
                 }
 
-                if (var6 == null) {
-                    var7 = this.method_21(var26, GameAssets.gameUnpacker, (byte) -123, false);
+                if (unpack == null) {
+                    var7 = this.method_21(cache, GameAssets.gameUnpacker, (byte) -123, false);
                     if (var7 == null) {
                         return;
                     }
@@ -331,12 +333,12 @@ public final class loader extends Applet implements Runnable {
                     Class var10 = Class.forName("unpack");
                     var9.method_0(var10.getName(), -29048, var10);
                     var10 = var9.loadClass("unpackclass");
-                    byte[] var11 = this.method_21(var26, GameAssets.gameCodeJS5, (byte) -127, false);
+                    byte[] var11 = this.method_21(cache, GameAssets.gameCodeJS5, (byte) -127, false);
                     if (null == var11) {
                         return;
                     }
 
-                    var6 = (Unpack) var10.getConstructor(Class.forName("[B"), Boolean.TYPE).newInstance(var11, Boolean.TRUE);
+                    unpack = (Unpack) var10.getConstructor(Class.forName("[B"), Boolean.TYPE).newInstance(var11, Boolean.TRUE);
                 }
 
                 class_9 var27;
@@ -345,7 +347,7 @@ public final class loader extends Applet implements Runnable {
                 String osArch;
                 label283:
                 {
-                    var27 = new class_9(var6);
+                    var27 = new class_9(unpack);
                     var28 = -1;
                     osName = System.getProperty("os.name").toLowerCase();
                     osArch = System.getProperty("os.arch").toLowerCase();
@@ -387,7 +389,7 @@ public final class loader extends Applet implements Runnable {
                 }
 
                 if (0 != ~var28) {
-                    this.method_21(var26, GameAssets.jaggl[var28], (byte) -128, null != this.getParameter("suppress_sha"));
+                    this.method_21(cache, GameAssets.jaggl[var28], (byte) -128, null != this.getParameter("suppress_sha"));
                 }
 
                 if (GameAssets.jagMisc != null) {
@@ -407,7 +409,7 @@ public final class loader extends Applet implements Runnable {
                     }
 
                     if (var28 != -1) {
-                        this.method_21(var26, GameAssets.jagMisc[var28], (byte) -124, null != this.getParameter("suppress_sha"));
+                        this.method_21(cache, GameAssets.jagMisc[var28], (byte) -124, null != this.getParameter("suppress_sha"));
                     }
                 }
 
@@ -420,7 +422,7 @@ public final class loader extends Applet implements Runnable {
                     }
 
                     if (var28 != -1) {
-                        this.method_21(var26, GameAssets.sw3d[var28], (byte) -124, null != this.getParameter("suppress_sha"));
+                        this.method_21(cache, GameAssets.sw3d[var28], (byte) -124, null != this.getParameter("suppress_sha"));
                     }
                 }
 
@@ -436,18 +438,18 @@ public final class loader extends Applet implements Runnable {
                 var27.method_0(var32.getName(), -29048, var32);
                 var32 = var27.loadClass("client");
                 synchronized (this) {
-                    if (this.field_34) {
+                    if (this.isDestroyed) {
                         return;
                     }
 
                     this.applet = (Applet) var32.newInstance();
-                    var32.getMethod("providesignlink", var30).invoke((Object) null, var26);
+                    var32.getMethod("providesignlink", var30).invoke((Object) null, cache);
                     this.applet.init();
-                    if (this.field_33) {
+                    if (this.isStarting) {
                         this.applet.start();
                     }
 
-                    if (this.field_35) {
+                    if (this.isDestroying) {
                         this.applet.stop();
                     }
                 }
@@ -477,7 +479,7 @@ public final class loader extends Applet implements Runnable {
     }
 
     // $FF: renamed from: a (et, b, byte, boolean) byte[]
-    private byte[] method_21(Cache cache, GameAsset gameAsset, byte var3, boolean var4) {
+    private byte[] method_21(Cache cache, GameAsset gameAsset, byte var3, boolean suppressSHA) {
         try {
             if (var3 > -121) {
                 return null;
@@ -485,14 +487,14 @@ public final class loader extends Applet implements Runnable {
 
             File file;
             try {
-                file = cache.fetchCacheFile(gameAsset.localFilename);
+                file = cache.resolveCacheFilePath(gameAsset.localFilename);
             } catch (Exception e) {
                 this.handleError("nocache");
                 return null;
             }
 
             byte[] fileBytes = this.readFileToBytes(file);
-            if (!this.verifyGameAsset(gameAsset, var4, fileBytes)) {
+            if (!this.verifyGameAsset(gameAsset, suppressSHA, fileBytes)) {
                 fileBytes = this.fetchRemoteGameAsset(gameAsset, (byte) -83, false);
 
                 if (fileBytes == null) {
@@ -518,7 +520,7 @@ public final class loader extends Applet implements Runnable {
 
             return fileBytes;
         } catch (RuntimeException var8) {
-            throw LoaderRuntimeException.create(var8, "loader.A(" + (cache != null ? "{...}" : "null") + ',' + (gameAsset != null ? "{...}" : "null") + ',' + var3 + ',' + var4 + ')');
+            throw LoaderRuntimeException.create(var8, "loader.A(" + (cache != null ? "{...}" : "null") + ',' + (gameAsset != null ? "{...}" : "null") + ',' + var3 + ',' + suppressSHA + ')');
         }
     }
 
@@ -535,7 +537,7 @@ public final class loader extends Applet implements Runnable {
 
     public synchronized void init() {
         try {
-            this.field_34 = false;
+            this.isDestroyed = false;
             Thread thread = new Thread(this);
             thread.start();
         } catch (RuntimeException var2) {
@@ -567,8 +569,8 @@ public final class loader extends Applet implements Runnable {
 
     public synchronized void stop() {
         try {
-            this.field_33 = false;
-            this.field_35 = true;
+            this.isStarting = false;
+            this.isDestroying = true;
             if (null != this.applet) {
                 this.applet.stop();
             }
@@ -591,8 +593,8 @@ public final class loader extends Applet implements Runnable {
 
     public synchronized void destroy() {
         try {
-            this.field_34 = true;
-            this.field_33 = this.field_35 = false;
+            this.isDestroyed = true;
+            this.isStarting = this.isDestroying = false;
             if (null != this.applet) {
                 this.applet.destroy();
             }

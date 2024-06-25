@@ -1,6 +1,5 @@
 package com.open592.loader;
 
-import java.net.URL;
 import java.security.AllPermission;
 import java.security.CodeSource;
 import java.security.Permissions;
@@ -32,7 +31,7 @@ public final class class_9 extends ClassLoader implements class_0 {
 
         try {
             this.unpacker = unpacker;
-            CodeSource var2 = new CodeSource((URL) null, (Certificate[]) null);
+            CodeSource var2 = new CodeSource(null, (Certificate[]) null);
             Permissions var3 = new Permissions();
             var3.add(new AllPermission());
             this.field_43 = new ProtectionDomain(var2, var3);
