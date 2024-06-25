@@ -46,30 +46,34 @@ public final class loader extends Applet implements Runnable {
     private int langID = 0;
 
     // $FF: renamed from: a (b, byte, boolean) byte[]
-    private byte[] method_17(GameAsset var1, byte var2, boolean var3) {
+    private byte[] fetchRemoteGameAsset(GameAsset gameAsset, byte var2, boolean useJaggrab) {
         try {
             Font loadingBoxFont = new Font("Helvetica", java.awt.Font.BOLD, 13);
             FontMetrics loadingBoxFontMetrics = this.getFontMetrics(loadingBoxFont);
             Color loadingBoxBackgroundColour = new Color(GameAssets.loadingBoxBackgroundColours[colourID]);
             Color loadingBoxForegroundColour = new Color(GameAssets.loadingBoxForegroundColours[colourID]);
-            byte[] var8 = new byte[var1.compressedSize];
+            byte[] buffer = new byte[gameAsset.compressedSize];
 
             try {
-                InputStream var9;
-                label61:
+                InputStream connectionStream;
+
+                openConnection:
                 {
-                    if (!var3) {
-                        var9 = (new URL(this.getCodeBase(), var1.remoteFilename)).openStream();
-                        break label61;
+                    if (!useJaggrab) {
+                        connectionStream = (new URL(this.getCodeBase(), gameAsset.remoteFilename)).openStream();
+
+                        break openConnection;
                     }
 
-                    URL var10 = this.getCodeBase();
-                    Socket var11 = new Socket(InetAddress.getByName(var10.getHost()), 443);
-                    var11.setSoTimeout(10000);
-                    OutputStream var12 = var11.getOutputStream();
-                    var12.write(17);
-                    var12.write(("JAGGRAB " + var10.getFile() + var1.remoteFilename + "\n\n").getBytes());
-                    var9 = var11.getInputStream();
+                    URL baseURL = this.getCodeBase();
+                    Socket socket = new Socket(InetAddress.getByName(baseURL.getHost()), 443);
+                    socket.setSoTimeout(10000);
+
+                    OutputStream sink = socket.getOutputStream();
+                    sink.write(17);
+                    sink.write(("JAGGRAB " + baseURL.getFile() + gameAsset.remoteFilename + "\n\n").getBytes());
+
+                    connectionStream = socket.getInputStream();
                 }
 
                 if (var2 >= -77) {
@@ -79,19 +83,20 @@ public final class loader extends Applet implements Runnable {
                 int var21 = -1;
                 int var22 = 0;
 
-                while (~var8.length < ~var22) {
-                    int var23 = -var22 + var8.length;
+                while (~buffer.length < ~var22) {
+                    int var23 = -var22 + buffer.length;
                     if (var23 > 1000) {
                         var23 = 1000;
                     }
 
-                    int var13 = var9.read(var8, var22, var23);
-                    if (-1 < ~var13) {
+                    int var13 = connectionStream.read(buffer, var22, var23);
+
+                    if (var13 < 0) {
                         throw new EOFException();
                     }
 
                     var22 += var13;
-                    int var14 = var22 * 100 / var8.length;
+                    int var14 = var22 * 100 / buffer.length;
                     if (~var14 != ~var21) {
                         try {
                             label74:
@@ -106,7 +111,7 @@ public final class loader extends Applet implements Runnable {
                                 var15.fillRect(0, 0, this.appletWidth, this.appletHeight);
                                 var15.setColor(loadingBoxBackgroundColour);
                                 var15.drawRect(-152 + this.appletWidth / 2, -18 + this.appletHeight / 2, 303, 33);
-                                String var16 = var1.loadingStatusContent[this.langID] + " - " + var14 + "%";
+                                String var16 = gameAsset.loadingStatusContent[this.langID] + " - " + var14 + "%";
                                 var15.setFont(loadingBoxFont);
                                 var15.setColor(loadingBoxForegroundColour);
                                 var15.drawString(var16, (this.appletWidth - loadingBoxFontMetrics.stringWidth(var16)) / 2, this.appletHeight / 2 + 4);
@@ -117,21 +122,26 @@ public final class loader extends Applet implements Runnable {
                     }
                 }
 
-                var9.close();
-                if (~var1.compressedSize != ~var1.uncompressedSize) {
-                    byte[] var24 = new byte[var1.uncompressedSize];
-                    Inflater var25 = new Inflater(true);
-                    var25.setInput(var8);
-                    var8 = var24;
-                    var25.inflate(var24);
+                connectionStream.close();
+                if (gameAsset.uncompressedSize != gameAsset.compressedSize) {
+                    byte[] uncompressedBuffer = new byte[gameAsset.uncompressedSize];
+                    Inflater inflater = new Inflater(true);
+
+                    inflater.setInput(buffer);
+                    buffer = uncompressedBuffer;
+                    inflater.inflate(uncompressedBuffer);
                 }
-            } catch (Exception var19) {
+            } catch (Exception e) {
                 return null;
             }
 
-            return !this.verifyGameAsset(var1, false, var8) ? null : var8;
+            if (this.verifyGameAsset(gameAsset, false, buffer)) {
+                return buffer;
+            } else {
+                return null;
+            }
         } catch (RuntimeException var20) {
-            throw LoaderRuntimeException.create(var20, "loader.D(" + (var1 != null ? "{...}" : "null") + ',' + var2 + ',' + var3 + ')');
+            throw LoaderRuntimeException.create(var20, "loader.D(" + (gameAsset != null ? "{...}" : "null") + ',' + var2 + ',' + useJaggrab + ')');
         }
     }
 
@@ -185,24 +195,24 @@ public final class loader extends Applet implements Runnable {
     }
 
     // $FF: renamed from: a (java.io.File, boolean) byte[]
-    private byte[] method_20(File var1) {
+    private byte[] readFileToBytes(File file) {
         try {
             try {
-                if (var1.exists()) {
-                    int var3 = (int) var1.length();
-                    DataInputStream var4 = new DataInputStream(new BufferedInputStream(new FileInputStream(var1)));
-                    byte[] var5 = new byte[var3];
-                    var4.readFully(var5, 0, var3);
-                    var4.close();
-                    return var5;
+                if (file.exists()) {
+                    int fileSize = (int) file.length();
+                    DataInputStream stream = new DataInputStream(new BufferedInputStream(new FileInputStream(file)));
+                    byte[] buffer = new byte[fileSize];
+                    stream.readFully(buffer, 0, fileSize);
+                    stream.close();
+                    return buffer;
                 } else {
                     return null;
                 }
-            } catch (IOException var6) {
+            } catch (IOException e) {
                 return null;
             }
-        } catch (RuntimeException var7) {
-            throw LoaderRuntimeException.create(var7, "loader.E(" + (var1 != null ? "{...}" : "null") + ',' + false + ')');
+        } catch (RuntimeException e) {
+            throw LoaderRuntimeException.create(e, "loader.E(" + (file != null ? "{...}" : "null") + ',' + false + ')');
         }
     }
 
@@ -465,62 +475,63 @@ public final class loader extends Applet implements Runnable {
     private final byte[] method_21(Cache cache, GameAsset gameAsset, byte var3, boolean var4) {
         try {
             if (var3 > -121) {
-                return (byte[]) null;
-            } else {
-                File file;
-                try {
-                    file = cache.fetchCacheFile(gameAsset.localFilename);
-                } catch (Exception var7) {
-                    this.handleError("nocache");
+                return null;
+            }
+
+            File file;
+            try {
+                file = cache.fetchCacheFile(gameAsset.localFilename);
+            } catch (Exception var7) {
+                this.handleError("nocache");
+                return null;
+            }
+
+            byte[] fileBytes = this.readFileToBytes(file);
+            if (!this.verifyGameAsset(gameAsset, var4, fileBytes)) {
+                fileBytes = this.fetchRemoteGameAsset(gameAsset, (byte) -83, false);
+
+                if (fileBytes == null) {
+                    fileBytes = this.fetchRemoteGameAsset(gameAsset, (byte) -98, true);
+                }
+
+                if (fileBytes == null) {
+                    this.handleError("download");
                     return null;
                 }
 
-                byte[] var6 = this.method_20(file);
-                if (!this.verifyGameAsset(gameAsset, var4, var6)) {
-                    var6 = this.method_17(gameAsset, (byte) -83, false);
-                    if (var6 == null) {
-                        var6 = this.method_17(gameAsset, (byte) -98, true);
-                    }
-
-                    if (var6 == null) {
-                        this.handleError("download");
-                        return null;
-                    }
-
-                    if (!this.saveFile(file, var6)) {
-                        return null;
-                    }
-
-                    var6 = this.method_20(file);
-                    if (!this.verifyGameAsset(gameAsset, false, var6)) {
-                        this.handleError("mismatch");
-                        return null;
-                    }
+                if (!this.saveFile(file, fileBytes)) {
+                    return null;
                 }
 
-                return var6;
+                fileBytes = this.readFileToBytes(file);
+                if (!this.verifyGameAsset(gameAsset, false, fileBytes)) {
+                    this.handleError("mismatch");
+                    return null;
+                }
             }
+
+            return fileBytes;
         } catch (RuntimeException var8) {
             throw LoaderRuntimeException.create(var8, "loader.A(" + (cache != null ? "{...}" : "null") + ',' + (gameAsset != null ? "{...}" : "null") + ',' + var3 + ',' + var4 + ')');
         }
     }
 
-    public void update(Graphics var1) {
+    public void update(Graphics graphics) {
         try {
             if (this.applet != null) {
-                this.applet.update(var1);
+                this.applet.update(graphics);
             }
 
-        } catch (RuntimeException var3) {
-            throw LoaderRuntimeException.create(var3, "loader.update(" + (var1 != null ? "{...}" : "null") + ')');
+        } catch (RuntimeException e) {
+            throw LoaderRuntimeException.create(e, "loader.update(" + (graphics != null ? "{...}" : "null") + ')');
         }
     }
 
     public synchronized void init() {
         try {
             this.field_34 = false;
-            Thread var1 = new Thread(this);
-            var1.start();
+            Thread thread = new Thread(this);
+            thread.start();
         } catch (RuntimeException var2) {
             throw LoaderRuntimeException.create(var2, "loader.init()");
         }
