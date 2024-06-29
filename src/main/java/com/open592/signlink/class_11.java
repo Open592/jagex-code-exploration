@@ -1,4 +1,4 @@
-package com.open592.loader;
+package com.open592.signlink;
 
 // $FF: renamed from: of
 public final class class_11 {
@@ -8,7 +8,7 @@ public final class class_11 {
     private static long field_73;
 
     // $FF: renamed from: a (int) long
-    public static final synchronized long method_57(int var0) {
+    public static synchronized long method_57(int var0) {
         try {
             long var1 = System.currentTimeMillis();
             if (~var1 > ~field_72) {

@@ -1,5 +1,7 @@
 package com.open592.loader;
 
+import com.open592.signlink.SignLink;
+
 import java.applet.Applet;
 import java.io.BufferedReader;
 import java.io.DataInputStream;
@@ -44,7 +46,7 @@ public class LoaderRuntimeException extends RuntimeException {
 
             URL url = new URL(
                     applet.getCodeBase(),
-                    "loadererror.ws?c=" + gameVersionIdentifier + "&v1=" + Cache.javaVendor + "&v2=" + Cache.javaVersion + "&e=" + stackTrace
+                    "loadererror.ws?c=" + gameVersionIdentifier + "&v1=" + SignLink.javaVendor + "&v2=" + SignLink.javaVersion + "&e=" + stackTrace
             );
 
             DataInputStream response = new DataInputStream(url.openStream());

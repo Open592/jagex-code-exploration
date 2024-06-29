@@ -1,4 +1,4 @@
-package com.open592.loader;
+package com.open592.signlink;
 
 import java.awt.Component;
 import java.awt.Point;
@@ -20,7 +20,7 @@ class class_7 {
     // $FF: renamed from: a (boolean, java.awt.Component, boolean) void
     void method_15(boolean var1, Component var2, boolean var3) {
         if (!var1) {
-            if (null == var2) {
+            if (var2 == null) {
                 throw new NullPointerException();
             }
         } else {

@@ -1,5 +1,7 @@
 package com.open592.loader;
 
+import com.open592.signlink.SignLink;
+
 import java.applet.Applet;
 import java.awt.Color;
 import java.awt.Font;
@@ -15,6 +17,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
 import java.net.InetAddress;
 import java.net.Socket;
 import java.net.URL;
@@ -83,7 +86,7 @@ public final class loader extends Applet implements Runnable {
                 int previousPercentDownloaded = -1;
                 int totalBytesRead = 0;
 
-                while (~buffer.length < ~totalBytesRead) {
+                while (totalBytesRead < buffer.length) {
                     int bytesToRead = buffer.length - totalBytesRead;
 
                     if (bytesToRead > 1000) {
@@ -184,7 +187,7 @@ public final class loader extends Applet implements Runnable {
                 SHAMessageDigest.update(fileBytes);
                 byte[] hash = SHAMessageDigest.digest();
 
-                for (int i = 0; i < 21; i++) {
+                for (int i = 0; i < 20; i++) {
                     if (gameAsset.sha1Bytes[i] != hash[i]) {
                         return false;
                     }
@@ -300,9 +303,9 @@ public final class loader extends Applet implements Runnable {
                 } catch (Exception ignored) {
                 }
 
-                Cache cache;
+                SignLink signLink;
                 try {
-                    cache = new Cache(this, modewhat, GameAssets.gameNames[cacheSubDirID], 30);
+                    signLink = new SignLink(this, modewhat, GameAssets.gameNames[cacheSubDirID], 30);
                 } catch (Exception e) {
                     this.handleError("nocache");
                     return;
@@ -313,7 +316,7 @@ public final class loader extends Applet implements Runnable {
                 byte[] var7;
                 try {
                     Class.forName("java.util.jar.Pack200");
-                    var7 = this.method_21(cache, GameAssets.gameCodePack200, (byte) -122, false);
+                    var7 = this.method_21(signLink, GameAssets.gameCodePack200, (byte) -122, false);
                     if (var7 == null) {
                         return;
                     }
@@ -323,7 +326,7 @@ public final class loader extends Applet implements Runnable {
                 }
 
                 if (unpack == null) {
-                    var7 = this.method_21(cache, GameAssets.gameUnpacker, (byte) -123, false);
+                    var7 = this.method_21(signLink, GameAssets.gameUnpacker, (byte) -123, false);
                     if (var7 == null) {
                         return;
                     }
@@ -333,7 +336,7 @@ public final class loader extends Applet implements Runnable {
                     Class var10 = Class.forName("unpack");
                     var9.method_0(var10.getName(), -29048, var10);
                     var10 = var9.loadClass("unpackclass");
-                    byte[] var11 = this.method_21(cache, GameAssets.gameCodeJS5, (byte) -127, false);
+                    byte[] var11 = this.method_21(signLink, GameAssets.gameCodeJS5, (byte) -127, false);
                     if (null == var11) {
                         return;
                     }
@@ -389,7 +392,7 @@ public final class loader extends Applet implements Runnable {
                 }
 
                 if (0 != ~var28) {
-                    this.method_21(cache, GameAssets.jaggl[var28], (byte) -128, null != this.getParameter("suppress_sha"));
+                    this.method_21(signLink, GameAssets.jaggl[var28], (byte) -128, null != this.getParameter("suppress_sha"));
                 }
 
                 if (GameAssets.jagMisc != null) {
@@ -409,7 +412,7 @@ public final class loader extends Applet implements Runnable {
                     }
 
                     if (var28 != -1) {
-                        this.method_21(cache, GameAssets.jagMisc[var28], (byte) -124, null != this.getParameter("suppress_sha"));
+                        this.method_21(signLink, GameAssets.jagMisc[var28], (byte) -124, null != this.getParameter("suppress_sha"));
                     }
                 }
 
@@ -422,19 +425,19 @@ public final class loader extends Applet implements Runnable {
                     }
 
                     if (var28 != -1) {
-                        this.method_21(cache, GameAssets.sw3d[var28], (byte) -124, null != this.getParameter("suppress_sha"));
+                        this.method_21(signLink, GameAssets.sw3d[var28], (byte) -124, null != this.getParameter("suppress_sha"));
                     }
                 }
 
-                Class var32 = Class.forName("rp");
+                Class var32 = Class.forName("com.open592.signlink.class_12");
                 var27.method_0(var32.getName(), -29048, var32);
-                Class var30 = Class.forName("et");
+                Class var30 = Class.forName("com.open592.signlink.SignLink");
                 var27.method_0(var30.getName(), -29048, var30);
-                var32 = Class.forName("qt");
+                var32 = Class.forName("com.open592.signlink.class_4");
                 var27.method_0(var32.getName(), -29048, var32);
-                var32 = Class.forName("of");
+                var32 = Class.forName("com.open592.signlink.class_11");
                 var27.method_0(var32.getName(), -29048, var32);
-                var32 = Class.forName("qn");
+                var32 = Class.forName("com.open592.signlink.class_1");
                 var27.method_0(var32.getName(), -29048, var32);
                 var32 = var27.loadClass("client");
                 synchronized (this) {
@@ -443,7 +446,8 @@ public final class loader extends Applet implements Runnable {
                     }
 
                     this.applet = (Applet) var32.newInstance();
-                    var32.getMethod("providesignlink", var30).invoke((Object) null, cache);
+                    Method method = var32.getMethod("providesignlink", var30);
+                    method.invoke((Object) null, signLink);
                     this.applet.init();
                     if (this.isStarting) {
                         this.applet.start();
@@ -479,7 +483,7 @@ public final class loader extends Applet implements Runnable {
     }
 
     // $FF: renamed from: a (et, b, byte, boolean) byte[]
-    private byte[] method_21(Cache cache, GameAsset gameAsset, byte var3, boolean suppressSHA) {
+    private byte[] method_21(SignLink signLink, GameAsset gameAsset, byte var3, boolean suppressSHA) {
         try {
             if (var3 > -121) {
                 return null;
@@ -487,7 +491,7 @@ public final class loader extends Applet implements Runnable {
 
             File file;
             try {
-                file = cache.resolveCacheFilePath(gameAsset.localFilename);
+                file = signLink.resolveCacheFilePath(gameAsset.localFilename);
             } catch (Exception e) {
                 this.handleError("nocache");
                 return null;
@@ -520,7 +524,7 @@ public final class loader extends Applet implements Runnable {
 
             return fileBytes;
         } catch (RuntimeException var8) {
-            throw LoaderRuntimeException.create(var8, "loader.A(" + (cache != null ? "{...}" : "null") + ',' + (gameAsset != null ? "{...}" : "null") + ',' + var3 + ',' + suppressSHA + ')');
+            throw LoaderRuntimeException.create(var8, "loader.A(" + (signLink != null ? "{...}" : "null") + ',' + (gameAsset != null ? "{...}" : "null") + ',' + var3 + ',' + suppressSHA + ')');
         }
     }
 

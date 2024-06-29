@@ -1,4 +1,4 @@
-package com.open592.loader;
+package com.open592.signlink;
 
 import java.applet.Applet;
 import java.awt.Component;
@@ -7,7 +7,6 @@ import java.awt.Frame;
 import java.awt.Point;
 import java.awt.Toolkit;
 import java.awt.datatransfer.Clipboard;
-import java.awt.datatransfer.ClipboardOwner;
 import java.awt.datatransfer.Transferable;
 import java.io.DataInputStream;
 import java.io.File;
@@ -22,7 +21,7 @@ import java.util.Hashtable;
 import java.util.Vector;
 
 // $FF: renamed from: et
-public class Cache implements Runnable {
+public class SignLink implements Runnable {
     // $FF: renamed from: b java.util.Hashtable
     private static final Hashtable field_45 = new Hashtable(16);
     // $FF: renamed from: i rp[]
@@ -78,60 +77,48 @@ public class Cache implements Runnable {
 
     // $FF: renamed from: a (int, byte, java.lang.Object, int, int) qt
     private final class_4 method_27(int var1, byte var2, Object var3, int var4, int var5) {
-        try {
-            class_4 var6 = new class_4();
-            synchronized (var6) {
-                var6.field_7 = var5;
-                var6.field_10 = var4;
-                var6.field_9 = var3;
-                var6.field_13 = var1;
-                synchronized (this) {
-                    if (null != this.field_49) {
-                        this.field_49.field_11 = var6;
-                        this.field_49 = var6;
-                    } else {
-                        this.field_49 = this.field_53 = var6;
-                    }
-
-                    this.notify();
+        class_4 var6 = new class_4();
+        synchronized (var6) {
+            var6.field_7 = var5;
+            var6.field_10 = var4;
+            var6.field_9 = var3;
+            var6.field_13 = var1;
+            synchronized (this) {
+                if (null != this.field_49) {
+                    this.field_49.field_11 = var6;
+                    this.field_49 = var6;
+                } else {
+                    this.field_49 = this.field_53 = var6;
                 }
 
-                try {
-                    if (var2 != 117) {
-                        this.method_56(null);
-                    }
-
-                    var6.wait();
-                } catch (InterruptedException ignored) {
-                }
+                this.notify();
             }
 
-            return var6;
-        } catch (RuntimeException var14) {
-            throw var14;
+            try {
+                if (var2 != 117) {
+                    this.method_56(null);
+                }
+
+                var6.wait();
+            } catch (InterruptedException ignored) {
+            }
         }
+
+        return var6;
     }
 
     // $FF: renamed from: a (byte) qt
     public final class_4 method_28(byte var1) {
-        try {
-            if (var1 != -128) {
-                this.field_54 = (class_12) null;
-            }
-
-            return this.method_32(18, (Object) null, 0, 0);
-        } catch (RuntimeException var3) {
-            throw var3;
+        if (var1 != -128) {
+            this.field_54 = null;
         }
+
+        return this.method_32(18, null, 0, 0);
     }
 
     // $FF: renamed from: a (java.awt.datatransfer.Transferable, byte) qt
     public final class_4 method_29(Transferable var1, byte var2) {
-        try {
-            return var2 != 87 ? (class_4) null : this.method_32(19, var1, 0, 0);
-        } catch (RuntimeException var4) {
-            throw var4;
-        }
+        return var2 != 87 ? null : this.method_32(19, var1, 0, 0);
     }
 
     // $FF: renamed from: a (int, java.lang.Object, byte, int, int) qt
@@ -210,20 +197,20 @@ public class Cache implements Runnable {
             if (var1 >= -51) {
                 this.method_38((Class) null, false);
             }
-        } catch (InterruptedException var8) {
+        } catch (InterruptedException ignored) {
         }
 
         if (null != this.field_62) {
             try {
                 this.field_62.method_59(-1);
-            } catch (IOException var7) {
+            } catch (IOException ignored) {
             }
         }
 
         if (this.field_56 != null) {
             try {
                 this.field_56.method_59(-1);
-            } catch (IOException var6) {
+            } catch (IOException ignored) {
             }
         }
 
@@ -232,7 +219,7 @@ public class Cache implements Runnable {
                 if (this.field_46[var2] != null) {
                     try {
                         this.field_46[var2].method_59(-1);
-                    } catch (IOException var5) {
+                    } catch (IOException ignored) {
                     }
                 }
             }
@@ -241,7 +228,7 @@ public class Cache implements Runnable {
         if (null != this.field_54) {
             try {
                 this.field_54.method_59(-1);
-            } catch (IOException var4) {
+            } catch (IOException ignored) {
             }
         }
     }
@@ -280,7 +267,7 @@ public class Cache implements Runnable {
 
                     try {
                         this.wait();
-                    } catch (InterruptedException var11) {
+                    } catch (InterruptedException ignored) {
                     }
                 }
             }
@@ -297,7 +284,7 @@ public class Cache implements Runnable {
                     } else if (var2 != 4) {
                         Object[] var3;
                         if (var2 == 8) {
-                            var3 = (Object[]) ((Object[]) var1.field_9);
+                            var3 = (Object[]) var1.field_9;
                             if (null == ((Class) var3[0]).getClassLoader()) {
                                 throw new SecurityException();
                             }
@@ -310,7 +297,7 @@ public class Cache implements Runnable {
                             } else if (~var2 == -20) {
                                 Transferable var31 = (Transferable) var1.field_9;
                                 Clipboard var29 = Toolkit.getDefaultToolkit().getSystemClipboard();
-                                var29.setContents(var31, (ClipboardOwner) null);
+                                var29.setContents(var31, null);
                             } else {
                                 String var19;
                                 if (~var2 == -4) {
@@ -345,7 +332,7 @@ public class Cache implements Runnable {
                                                 var7.setAccessible(false);
                                                 Field var8 = var6.getClass().getDeclaredField("handle");
                                                 var8.setAccessible(true);
-                                                var8.set(var6, new Integer(0));
+                                                var8.set(var6, 0);
                                                 var8.setAccessible(false);
                                             }
 
@@ -362,8 +349,8 @@ public class Cache implements Runnable {
                                             Component var23 = (Component) var1.field_9;
                                             this.field_68.method_15(var20, var23, false);
                                         } else if (var2 == 17) {
-                                            var3 = (Object[]) ((Object[]) var1.field_9);
-                                            this.field_68.method_16((int[]) ((int[]) var3[1]), var1.field_7, (Component) var3[0], var1.field_13, (byte) 109, (Point) var3[2]);
+                                            var3 = (Object[]) var1.field_9;
+                                            this.field_68.method_16((int[]) var3[1], var1.field_7, (Component) var3[0], var1.field_13, (byte) 109, (Point) var3[2]);
                                         } else if (16 == var2) {
                                             try {
                                                 if (!systemOSNameLowerCase.startsWith("win")) {
@@ -422,7 +409,7 @@ public class Cache implements Runnable {
                                 }
                             }
                         } else {
-                            var3 = (Object[]) ((Object[]) var1.field_9);
+                            var3 = (Object[]) var1.field_9;
                             if (((Class) var3[0]).getClassLoader() == null) {
                                 throw new SecurityException();
                             }
@@ -459,11 +446,11 @@ public class Cache implements Runnable {
 
     // $FF: renamed from: a (int, java.lang.Class, java.lang.String) qt
     public final class_4 method_39(int var1, Class var2, String var3) {
-        return var1 >= -77 ? (class_4) null : this.method_32(9, new Object[]{var2, var3}, 0, 0);
+        return var1 >= -77 ? null : this.method_32(9, new Object[]{var2, var3}, 0, 0);
     }
 
     // $FF: renamed from: a (java.lang.String, java.lang.String, int, int) rp
-    private static final class_12 method_40(String var0, String var1, int var2, int var3) {
+    private static class_12 method_40(String var0, String var1, int var2, int var3) {
         String var4;
         if (var2 == 33) {
             var4 = "jagex_" + var1 + "_preferences" + var0 + "_rc.dat";
@@ -481,7 +468,7 @@ public class Cache implements Runnable {
                 try {
                     class_12 var8 = new class_12(new File(var7, var4), "rw", 10000L);
                     return var8;
-                } catch (Exception var9) {
+                } catch (Exception ignored) {
                 }
             }
         }
@@ -492,7 +479,7 @@ public class Cache implements Runnable {
     // $FF: renamed from: a (java.awt.Point, java.awt.Component, int, int[], int, int) qt
     public final class_4 method_41(Point var1, Component var2, int var3, int[] var4, int var5, int var6) {
         if (var6 != -23853) {
-            this.field_53 = (class_4) null;
+            this.field_53 = null;
         }
 
         return this.method_32(17, new Object[]{var2, var4, var1}, var3, var5);
@@ -509,18 +496,14 @@ public class Cache implements Runnable {
 
     // $FF: renamed from: a (int, int, java.lang.Runnable) qt
     public final class_4 method_43(int var1, int var2, Runnable var3) {
-        try {
-            int var4 = 89 % ((var1 - 20) / 51);
-            return this.method_32(2, var3, var2, 0);
-        } catch (RuntimeException var5) {
-            throw var5;
-        }
+        int var4 = 89 % ((var1 - 20) / 51);
+        return this.method_32(2, var3, var2, 0);
     }
 
     // $FF: renamed from: c (java.lang.String, int) qt
     public final class_4 method_44(String var1, int var2) {
         if (var2 <= 71) {
-            this.field_68 = (class_7) null;
+            this.field_68 = null;
         }
 
         return this.method_32(21, var1, 0, 0);
@@ -543,7 +526,7 @@ public class Cache implements Runnable {
 
     // $FF: renamed from: a (byte, java.awt.Frame) qt
     public final class_4 method_47(byte var1, Frame var2) {
-        return var1 != -64 ? (class_4) null : this.method_32(7, var2, 0, 0);
+        return var1 != -64 ? null : this.method_32(7, var2, 0, 0);
     }
 
     // $FF: renamed from: a (java.lang.String, boolean) java.io.File
@@ -554,7 +537,7 @@ public class Cache implements Runnable {
     // $FF: renamed from: a (java.lang.String, int, int, java.lang.String) java.io.File
     public File resolveCacheFilePath(String filename, int modewhat, String gameName) {
         File var4 = (File) field_45.get(filename);
-        if (null != var4) {
+        if (var4 != null) {
             return var4;
         } else {
             String[] var5 = new String[]{"c:/rscache/", "/rscache/", "c:/windows/", "c:/winnt/", "c:/", systemUserHome, "/tmp/", ""};
@@ -591,7 +574,7 @@ public class Cache implements Runnable {
                                 if (var11 != null) {
                                     var11.close();
                                 }
-                            } catch (Exception var15) {
+                            } catch (Exception ignored) {
                             }
                         }
                     }
@@ -604,75 +587,54 @@ public class Cache implements Runnable {
 
     // $FF: renamed from: c (byte) qt
     public final class_4 method_49(byte var1) {
-        try {
-            if (var1 != -80) {
-                this.field_54 = (class_12) null;
-            }
-
-            return this.method_32(5, (Object) null, 0, 0);
-        } catch (RuntimeException var3) {
-            throw var3;
+        if (var1 != -80) {
+            this.field_54 = null;
         }
+
+        return this.method_32(5, null, 0, 0);
     }
 
     // $FF: renamed from: a (java.lang.Class[], java.lang.String, java.lang.Class, int) qt
     public final class_4 method_50(Class[] var1, String var2, Class var3, int var4) {
-        try {
-            if (var4 != 2) {
-                method_40((String) null, (String) null, 62, -116);
-            }
-
-            return this.method_32(8, new Object[]{var3, var2, var1}, 0, 0);
-        } catch (RuntimeException var6) {
-            throw var6;
+        if (var4 != 2) {
+            method_40(null, null, 62, -116);
         }
+
+        return this.method_32(8, new Object[]{var3, var2, var1}, 0, 0);
     }
 
     // $FF: renamed from: a (java.awt.Component, boolean, int, int) qt
     public final class_4 method_51(Component var1, boolean var2, int var3, int var4) {
-        try {
-            Point var5 = var1.getLocationOnScreen();
-            if (var2) {
-                this.method_38((Class) null, false);
-            }
-
-            return this.method_32(14, (Object) null, var3 - -var5.x, var5.y + var4);
-        } catch (RuntimeException var6) {
-            throw var6;
+        Point var5 = var1.getLocationOnScreen();
+        if (var2) {
+            this.method_38(null, false);
         }
+
+        return this.method_32(14, null, var3 + var5.x, var5.y + var4);
     }
 
     // $FF: renamed from: d (byte) void
     public final void method_52(byte var1) {
-        try {
-            field_71 = class_11.method_57(var1 + -133) + 5000L;
-            if (var1 != 62) {
-                field_70 = (Method) null;
-            }
-
-        } catch (RuntimeException var3) {
-            throw var3;
+        field_71 = class_11.method_57(var1 + -133) + 5000L;
+        if (var1 != 62) {
+            field_70 = null;
         }
     }
 
     // $FF: renamed from: a (java.lang.String, int) byte[]
     public final byte[] method_53(String var1, int var2) {
-        try {
-            if (var2 != 14) {
-                this.modewhat = 80;
-            }
-
-            class_4 var3 = this.method_27(0, (byte) 117, var1, 21, 0);
-            return (byte[]) ((byte[]) var3.field_8);
-        } catch (RuntimeException var4) {
-            throw var4;
+        if (var2 != 14) {
+            this.modewhat = 80;
         }
+
+        class_4 var3 = this.method_27(0, (byte) 117, var1, 21, 0);
+        return (byte[]) var3.field_8;
     }
 
     // $FF: renamed from: a (int) qn
     public final class_1 method_54(int var1) {
         if (var1 != 18) {
-            method_40((String) null, (String) null, -105, -1);
+            method_40(null, null, -105, -1);
         }
 
         return this.field_67;
@@ -680,11 +642,7 @@ public class Cache implements Runnable {
 
     // $FF: renamed from: a (int, java.lang.String, int) qt
     public final class_4 method_55(int var1, String var2, int var3) {
-        try {
-            return var1 != 0 ? null : this.method_32(1, var2, var3, 0);
-        } catch (RuntimeException var5) {
-            throw var5;
-        }
+        return var1 != 0 ? null : this.method_32(1, var2, var3, 0);
     }
 
     // $FF: renamed from: a (byte, java.lang.String) qt
@@ -692,7 +650,7 @@ public class Cache implements Runnable {
         this.method_32(12, var2, 0, 0);
     }
 
-    public Cache(Applet loader, int modewhat, String gameName, int var4) throws Exception {
+    public SignLink(Applet loader, int modewhat, String gameName, int var4) throws Exception {
         this.loader = loader;
         this.modewhat = modewhat;
         this.gameName = gameName;

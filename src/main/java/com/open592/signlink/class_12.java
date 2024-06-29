@@ -1,4 +1,4 @@
-package com.open592.loader;
+package com.open592.signlink;
 
 import java.io.File;
 import java.io.IOException;
@@ -13,10 +13,10 @@ public final class class_12 {
     // $FF: renamed from: d long
     private long field_76;
     // $FF: renamed from: b java.io.File
-    private File field_77;
+    private final File field_77;
 
     // $FF: renamed from: a (int, int, byte[], byte) int
-    public final int method_58(int var1, int var2, byte[] var3, byte var4) throws IOException {
+    public int method_58(int var1, int var2, byte[] var3, byte var4) throws IOException {
         if (var4 > -88) {
             this.field_74 = -96L;
         }
@@ -30,7 +30,7 @@ public final class class_12 {
     }
 
     // $FF: renamed from: a (int) void
-    public final void method_59(int var1) throws IOException {
+    public void method_59(int var1) throws IOException {
         try {
             if (null != this.field_75) {
                 this.field_75.close();
@@ -47,7 +47,7 @@ public final class class_12 {
     }
 
     // $FF: renamed from: a (long, int) void
-    public final void method_60(long var1, int var3) throws IOException {
+    public void method_60(long var1, int var3) throws IOException {
         if (var3 != 0) {
             this.field_76 = -60L;
         }
@@ -57,7 +57,7 @@ public final class class_12 {
     }
 
     // $FF: renamed from: b (int) java.io.File
-    public final File method_61(int var1) {
+    public File method_61(int var1) {
         if (var1 >= -9) {
             this.field_76 = -10L;
         }
@@ -66,7 +66,7 @@ public final class class_12 {
     }
 
     // $FF: renamed from: a (int, int, byte[], int) void
-    public final void method_62(int var1, int var2, byte[] var3, int var4) throws IOException {
+    public void method_62(int var1, int var2, byte[] var3, int var4) throws IOException {
         if (this.field_74 + (long) var2 <= this.field_76) {
             if (var4 == 1) {
                 this.field_75.write(var3, var1, var2);
@@ -88,7 +88,7 @@ public final class class_12 {
     }
 
     // $FF: renamed from: c (int) long
-    public final long method_63(int var1) throws IOException {
+    public long method_63(int var1) throws IOException {
         if (var1 != 74) {
             this.method_61(27);
         }

@@ -1,4 +1,4 @@
-package com.open592.loader;
+package com.open592.signlink;
 
 // $FF: renamed from: qt
 public class class_4 {
