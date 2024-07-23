@@ -238,6 +238,9 @@ public final class AppletViewer implements ComponentListener {
             RemoteClassLoader classLoader = new RemoteClassLoader(remoteFileBuffer);
             if (isDebug) {
                 System.out.println("loader_jar : " + remoteFileBuffer.length);
+                applet = new loader();
+            } else {
+                applet = (Applet) classLoader.loadClass("loader").getDeclaredConstructor().newInstance();
             }
         } catch (Exception var29) {
             if (isDebug) {
@@ -246,8 +249,6 @@ public final class AppletViewer implements ComponentListener {
 
             ModalDialog.displayErrorMessage(getLocaleString("err_target_applet"));
         }
-
-        applet = new loader();
 
         LoaderBoxComponent.setHidden();
         URLViewer.initialize();
