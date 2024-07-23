@@ -45,6 +45,8 @@ tasks.withType<JavaCompile> {
     val compilerArgs = options.compilerArgs
 
     compilerArgs.add("--add-exports=java.base/sun.security.pkcs=ALL-UNNAMED")
+
+    options.encoding = "UTF-8"
 }
 
 tasks.test {
