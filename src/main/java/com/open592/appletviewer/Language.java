@@ -14,33 +14,39 @@ public enum Language {
     }
 
     public static Optional<Language> fromLanguageID(int languageID) {
-        return switch (languageID) {
-            case 0 -> Optional.of(ENGLISH);
-            case 1 -> Optional.of(GERMAN);
-            case 2 -> Optional.of(FRENCH);
-            case 3 -> Optional.of(BRAZILIAN_PORTUGUESE);
-            default -> Optional.empty();
-        };
+        switch (languageID) {
+            case 0: return Optional.of(ENGLISH);
+            case 1: return Optional.of(GERMAN);
+            case 2: return Optional.of(FRENCH);
+            case 3: return Optional.of(BRAZILIAN_PORTUGUESE);
+            default: return Optional.empty();
+        }
     }
 
     public static Optional<Language> fromISO3LanguageID(String languageID) {
-        return switch (languageID) {
-            case "eng" -> Optional.of(ENGLISH);
-            case "ger", "deu" -> Optional.of(GERMAN);
-            case "fre", "fra" -> Optional.of(FRENCH);
-            case "por" -> Optional.of(BRAZILIAN_PORTUGUESE);
-            default -> Optional.empty();
-        };
+        switch (languageID) {
+            case "eng": return Optional.of(ENGLISH);
+            case "deu":
+            case "ger":
+                return Optional.of(GERMAN);
+            case "fra":
+            case "fre":
+                return Optional.of(FRENCH);
+            case "por": return Optional.of(BRAZILIAN_PORTUGUESE);
+            default: return Optional.empty();
+        }
     }
 
     public static Optional<Language> fromISO3CountryID(String countryID) {
-        return switch (countryID) {
-            case "GB", "US" -> Optional.of(ENGLISH);
-            case "DE" -> Optional.of(GERMAN);
-            case "FR" -> Optional.of(FRENCH);
-            case "BR" -> Optional.of(BRAZILIAN_PORTUGUESE);
-            default -> Optional.empty();
-        };
+        switch (countryID) {
+            case "GB":
+            case "US":
+                return Optional.of(ENGLISH);
+            case "DE": return Optional.of(GERMAN);
+            case "FR": return Optional.of(FRENCH);
+            case "BR": return Optional.of(BRAZILIAN_PORTUGUESE);
+            default: return Optional.empty();
+        }
     }
 
     public static Language resolveUserLanguage() {
