@@ -3,11 +3,11 @@ plugins {
     id("application")
 }
 
-group = "com.open592"
+group = "com.jagex"
 version = "1.0-SNAPSHOT"
 
 application {
-    mainClass.set("com.open592.jagexappletviewer.jagexappletviewer")
+    mainClass.set("com.jagex.cmd.jagexappletviewer")
 
     applicationDefaultJvmArgs = listOf(
         "--add-opens=java.base/sun.security.pkcs=ALL-UNNAMED",
@@ -37,7 +37,7 @@ dependencies {
 
 tasks.withType<Jar> {
     manifest {
-        attributes["Main-Class"] = "com.open592.jagexappletviewer.jagexappletviewer"
+        attributes["Main-Class"] = "com.jagex.cmd.jagexappletviewer"
     }
 }
 
