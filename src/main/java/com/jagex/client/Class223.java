@@ -18,7 +18,7 @@ public final class Class223 {
 	public final int anInt6400;
 
 	@OriginalMember(owner = "client!sv", name = "<init>", descriptor = "(Lclient!jk;ILclient!fs;)V")
-	public Class223(@OriginalArg(0) Class121 arg0, @OriginalArg(1) int arg1, @OriginalArg(2) Class76 arg2) {
+	public Class223(@OriginalArg(0) GameDetails arg0, @OriginalArg(1) int arg1, @OriginalArg(2) Class76 arg2) {
 		this.aClass76_86 = arg2;
 		if (this.aClass76_86 == null) {
 			this.anInt6400 = 0;

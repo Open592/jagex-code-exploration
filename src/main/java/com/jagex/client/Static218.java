@@ -102,7 +102,7 @@ public final class Static218 {
 			return;
 		}
 		if (Static51.anInt883 != 0) {
-			Static436.method5519(true, Static439.aClass83_148.method2267(Static178.anInt3423) + "<br>(100%)", Static207.aClass46_9);
+			Static436.method5519(true, Static439.aClass83_148.method2267(Static178.langID) + "<br>(100%)", Static207.aClass46_9);
 		}
 		Static159.method2701();
 		Static409.method5485();

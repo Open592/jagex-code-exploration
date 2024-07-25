@@ -18,7 +18,7 @@ public final class Static385 {
 	public static final short[] aShortArray232 = new short[] { 58, 13, 10, 12, 5, 57, 17, 20 };
 
 	@OriginalMember(owner = "client!tl", name = "q", descriptor = "Z")
-	public static boolean aBoolean591 = false;
+	public static boolean hasJS = false;
 
 	@OriginalMember(owner = "client!tl", name = "c", descriptor = "(I)V")
 	public static void method5082() {

@@ -17,5 +17,5 @@ public final class Static168 {
 	public static int anInt3258 = 0;
 
 	@OriginalMember(owner = "client!im", name = "G", descriptor = "I")
-	public static int anInt3259 = 0;
+	public static int affiliateID = 0;
 }

@@ -37,7 +37,7 @@ public final class Static179 {
 		local30.method2531(local8[0]);
 		local30.method2518(arg2);
 		local30.method2531(local8[1]);
-		local30.method2524(Static168.anInt3259);
+		local30.method2524(Static168.affiliateID);
 		local30.method2551(arg9);
 		local30.method2551(arg0);
 		local30.method2531(local8[2]);

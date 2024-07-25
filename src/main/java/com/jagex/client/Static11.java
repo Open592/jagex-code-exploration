@@ -7,7 +7,7 @@ import org.openrs2.deob.annotation.Pc;
 public final class Static11 {
 
 	@OriginalMember(owner = "client!aj", name = "j", descriptor = "I")
-	public static int anInt154;
+	public static int HTTPPort;
 
 	@OriginalMember(owner = "client!aj", name = "k", descriptor = "[I")
 	public static final int[] anIntArray10 = new int[] { 16, 32, 64, 128 };

@@ -7,7 +7,7 @@ import org.openrs2.deob.annotation.Pc;
 public final class Static317 {
 
 	@OriginalMember(owner = "client!pv", name = "p", descriptor = "Lclient!jk;")
-	public static final Class121 aClass121_2 = new Class121("stellardawn", 1);
+	public static final GameDetails stellardawnGameDetails = new GameDetails("stellardawn", 1);
 
 	@OriginalMember(owner = "client!pv", name = "w", descriptor = "I")
 	public static int anInt5521 = 13156520;

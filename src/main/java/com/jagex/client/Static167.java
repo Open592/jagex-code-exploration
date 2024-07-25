@@ -118,7 +118,7 @@ public final class Static167 {
 		Static222.method3355();
 		Static251.aBoolean429 = true;
 		Static252.aShortArray151 = Static330.aShortArray196 = Static78.aShortArray46 = Static166.aShortArray97 = new short[256];
-		aString35 = Static190.aClass83_76.method2267(Static178.anInt3423);
+		aString35 = Static190.aClass83_76.method2267(Static178.langID);
 		Static183.anInt3512 = 0;
 		Static323.aClass50_Sub1_1.aBoolean308 = false;
 		Static323.aClass50_Sub1_1.aBoolean309 = false;
@@ -205,9 +205,9 @@ public final class Static167 {
 	public static void method2740() {
 		Static64.method1241();
 		Static420.method5385(Static323.aClass50_Sub1_1.aBoolean291);
-		Static424.aClass49_2 = Static380.method5016(0, Static206.aSignLink_4, 22050, Static273.aCanvas5);
+		Static424.aClass49_2 = Static380.method5016(0, Static206.signLink, 22050, Static273.aCanvas5);
 		Static424.aClass49_2.method2070(Static363.aClass4_Sub15_Sub1_3);
-		Static291.aClass49_1 = Static380.method5016(1, Static206.aSignLink_4, 2048, Static273.aCanvas5);
+		Static291.aClass49_1 = Static380.method5016(1, Static206.signLink, 2048, Static273.aCanvas5);
 		Static291.aClass49_1.method2070(Static360.aClass4_Sub15_Sub2_2);
 	}
 }

@@ -55,7 +55,7 @@ public final class Static425 {
 				Static64.anInt1366 = 0;
 			}
 			if (Static238.anInt4506 == 1) {
-				Static36.aClass199_3 = Static206.aSignLink_4.method1728(Static321.aString54, Static407.anInt6723);
+				Static36.aClass199_3 = Static206.signLink.method1728(Static321.aString54, Static407.anInt6723);
 				Static238.anInt4506 = 2;
 			}
 			@Pc(112) int local112;
@@ -66,7 +66,7 @@ public final class Static425 {
 				if (Static36.aClass199_3.anInt5760 != 1) {
 					return;
 				}
-				Static125.aClass11_5 = new Class11((Socket) Static36.aClass199_3.anObject29, Static206.aSignLink_4);
+				Static125.aClass11_5 = new Class11((Socket) Static36.aClass199_3.anObject29, Static206.signLink);
 				Static36.aClass199_3 = null;
 				@Pc(102) long local102 = Static286.aLong174 = Static96.method1684(Static2.aString1);
 				Static3.aClass4_Sub12_Sub1_5.anInt2997 = 0;
@@ -118,8 +118,8 @@ public final class Static425 {
 				Static3.aClass4_Sub12_Sub1_5.method2524(Static302.anInt5346);
 				Static3.aClass4_Sub12_Sub1_5.method2551(Static323.aClass50_Sub1_1.anInt3440);
 				Static82.method1471(Static3.aClass4_Sub12_Sub1_5);
-				Static3.aClass4_Sub12_Sub1_5.method2518(Static34.aString13);
-				Static3.aClass4_Sub12_Sub1_5.method2531(Static168.anInt3259);
+				Static3.aClass4_Sub12_Sub1_5.method2518(Static34.settings);
+				Static3.aClass4_Sub12_Sub1_5.method2531(Static168.affiliateID);
 				@Pc(323) Class4_Sub12 local323 = Static323.aClass50_Sub1_1.method2863();
 				Static3.aClass4_Sub12_Sub1_5.method2551(local323.anInt2997);
 				Static3.aClass4_Sub12_Sub1_5.method2519(local323.aByteArray36, local323.anInt2997);
@@ -232,24 +232,24 @@ public final class Static425 {
 					Static329.aClass240_1.method5230(Static325.aBoolean506);
 					if (Static109.aBoolean628 && !Static436.aBoolean668 || Static246.aBoolean423) {
 						try {
-							Static458.method2593(Static206.aSignLink_4.loader, "zap");
+							Static458.callJavaScriptMethod(Static206.signLink.loaderApplet, "zap");
 						} catch (@Pc(880) Throwable local880) {
-							if (Static306.aBoolean484) {
+							if (Static306.hasAdvert) {
 								try {
-									Static206.aSignLink_4.loader.getAppletContext().showDocument(new URL(Static206.aSignLink_4.loader.getCodeBase(), "blank.ws"), "tbi");
+									Static206.signLink.loaderApplet.getAppletContext().showDocument(new URL(Static206.signLink.loaderApplet.getCodeBase(), "blank.ws"), "tbi");
 								} catch (@Pc(896) Exception local896) {
 								}
 							}
 						}
 					} else {
 						try {
-							Static458.method2593(Static206.aSignLink_4.loader, "unzap");
+							Static458.callJavaScriptMethod(Static206.signLink.loaderApplet, "unzap");
 						} catch (@Pc(870) Throwable local870) {
 						}
 					}
-					if (Static373.aClass219_6 == Static104.aClass219_2) {
+					if (Static373.liveModeWhere == Static104.modewhere) {
 						try {
-							Static458.method2593(Static206.aSignLink_4.loader, "loggedin");
+							Static458.callJavaScriptMethod(Static206.signLink.loaderApplet, "loggedin");
 						} catch (@Pc(908) Throwable local908) {
 						}
 					}

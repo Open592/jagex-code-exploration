@@ -36,7 +36,7 @@ public final class Static231 {
 		if (local28) {
 			Static194.anInt3685 = 1;
 		}
-		if (Static434.aBoolean692 && Static384.aClass244_1.method5489(81) && Static407.anInt6710 > 2) {
+		if (Static434.isShiftClickEnabled && Static384.aClass244_1.method5489(81) && Static407.anInt6710 > 2) {
 			if (local28) {
 				Static413.aClass4_Sub39_2 = (Class4_Sub39) Static206.aClass183_28.aClass4_207.aClass4_261.aClass4_261;
 			} else {

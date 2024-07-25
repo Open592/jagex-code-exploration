@@ -60,7 +60,7 @@ public final class Static79 {
 		if (Static4.aClass19_34 == null) {
 			@Pc(28) Canvas local28 = new Canvas();
 			local28.setSize(36, 32);
-			Static4.aClass19_34 = Static455.method4241(Static80.anInterface7_3, 0, local28, 0, Static206.aSignLink_4);
+			Static4.aClass19_34 = Static455.method4241(Static80.anInterface7_3, 0, local28, 0, Static206.signLink);
 			Static22.aClass46_4 = Static4.aClass19_34.method4275(Static239.method3546(Static177.anInt2985, Static209.aClass76_48), Static456.method327(Static293.aClass76_60, Static177.anInt2985));
 		}
 		for (local58 = (Class4_Sub17) Static379.aClass183_45.method4140(); local58 != null; local58 = (Class4_Sub17) Static379.aClass183_45.method4144()) {

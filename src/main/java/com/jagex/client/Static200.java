@@ -17,7 +17,7 @@ public final class Static200 {
 
 	@OriginalMember(owner = "client!kc", name = "a", descriptor = "(ILclient!qm;)Ljava/lang/String;")
 	public static String method3166(@OriginalArg(1) Class4_Sub39 arg0) {
-		return arg0.aString56 == null || arg0.aString56.length() <= 0 ? arg0.aString55 : arg0.aString55 + Static146.aClass83_10.method2267(Static178.anInt3423) + arg0.aString56;
+		return arg0.aString56 == null || arg0.aString56.length() <= 0 ? arg0.aString55 : arg0.aString55 + Static146.aClass83_10.method2267(Static178.langID) + arg0.aString56;
 	}
 
 	@OriginalMember(owner = "client!kc", name = "a", descriptor = "(IZIIII)V")

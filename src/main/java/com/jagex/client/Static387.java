@@ -46,7 +46,7 @@ public final class Static387 {
 				Static119.anInt2524++;
 			}
 			if (Static354.anInt6183 == 1) {
-				Static36.aClass199_3 = Static206.aSignLink_4.method1728(Static321.aString54, Static407.anInt6723);
+				Static36.aClass199_3 = Static206.signLink.method1728(Static321.aString54, Static407.anInt6723);
 				Static354.anInt6183 = 2;
 			}
 			@Pc(120) int local120;
@@ -57,7 +57,7 @@ public final class Static387 {
 				if (Static36.aClass199_3.anInt5760 != 1) {
 					return;
 				}
-				Static125.aClass11_5 = new Class11((Socket) Static36.aClass199_3.anObject29, Static206.aSignLink_4);
+				Static125.aClass11_5 = new Class11((Socket) Static36.aClass199_3.anObject29, Static206.signLink);
 				Static36.aClass199_3 = null;
 				Static125.aClass11_5.method142(Static3.aClass4_Sub12_Sub1_5.anInt2997, Static3.aClass4_Sub12_Sub1_5.aByteArray36);
 				Static329.method4427();

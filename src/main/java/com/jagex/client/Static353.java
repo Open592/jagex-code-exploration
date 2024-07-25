@@ -54,7 +54,7 @@ public final class Static353 {
 			return false;
 		} else {
 			Static323.aClass50_Sub1_1.aBoolean300 = arg0;
-			Static323.aClass50_Sub1_1.method2856(Static206.aSignLink_4);
+			Static323.aClass50_Sub1_1.method2856(Static206.signLink);
 			return true;
 		}
 	}

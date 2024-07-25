@@ -18,7 +18,7 @@ public final class Static400 {
 
 	@OriginalMember(owner = "client!ue", name = "a", descriptor = "(Ljava/lang/String;ZI)V")
 	public static void method5186(@OriginalArg(0) String arg0, @OriginalArg(1) boolean arg1) {
-		if (Static104.aClass219_2 == Static373.aClass219_6 && Static104.anInt2252 < 2) {
+		if (Static104.modewhere == Static373.liveModeWhere && Static104.anInt2252 < 2) {
 			return;
 		}
 		if (arg0.equalsIgnoreCase("errortest")) {
@@ -29,12 +29,12 @@ public final class Static400 {
 		}
 		try {
 			if (arg0.equalsIgnoreCase("fpson")) {
-				Static325.aBoolean507 = true;
+				Static325.isNotRunningInLive = true;
 				Static441.method5568("fps debug enabled");
 				return;
 			}
 			if (arg0.equalsIgnoreCase("fpsoff")) {
-				Static325.aBoolean507 = false;
+				Static325.isNotRunningInLive = false;
 				Static441.method5568("fps debug disabled");
 				return;
 			}
@@ -112,7 +112,7 @@ public final class Static400 {
 				return;
 			}
 			if (arg0.equalsIgnoreCase("breakcon")) {
-				Static206.aSignLink_4.method1753();
+				Static206.signLink.method1753();
 				Static125.aClass11_5.method132();
 				Static261.aClass255_2.method5466();
 				Static441.method5568("Breaking new connections for 5 seconds");
@@ -156,7 +156,7 @@ public final class Static400 {
 				if (Static177.anInt2973 == 0) {
 					Static441.method5568("Entered tk0");
 					Static323.aClass50_Sub1_1.anInt3445 = 0;
-					Static323.aClass50_Sub1_1.method2856(Static206.aSignLink_4);
+					Static323.aClass50_Sub1_1.method2856(Static206.signLink);
 					Static249.aBoolean425 = false;
 					return;
 				}
@@ -171,7 +171,7 @@ public final class Static400 {
 				}
 				Static441.method5568("Entered tk1");
 				Static323.aClass50_Sub1_1.anInt3445 = 1;
-				Static323.aClass50_Sub1_1.method2856(Static206.aSignLink_4);
+				Static323.aClass50_Sub1_1.method2856(Static206.signLink);
 				Static249.aBoolean425 = false;
 				return;
 			}
@@ -180,7 +180,7 @@ public final class Static400 {
 				if (Static177.anInt2973 == 2) {
 					Static441.method5568("Entered tk2");
 					Static323.aClass50_Sub1_1.anInt3445 = 2;
-					Static323.aClass50_Sub1_1.method2856(Static206.aSignLink_4);
+					Static323.aClass50_Sub1_1.method2856(Static206.signLink);
 					Static249.aBoolean425 = false;
 					return;
 				}
@@ -198,7 +198,7 @@ public final class Static400 {
 			}
 			if (arg0.equalsIgnoreCase("ot")) {
 				Static323.aClass50_Sub1_1.aBoolean293 = !Static323.aClass50_Sub1_1.aBoolean293;
-				Static323.aClass50_Sub1_1.method2856(Static206.aSignLink_4);
+				Static323.aClass50_Sub1_1.method2856(Static206.signLink);
 				Static249.aBoolean425 = false;
 				Static335.method4744();
 				Static441.method5568("ot=" + Static323.aClass50_Sub1_1.aBoolean293);
@@ -206,7 +206,7 @@ public final class Static400 {
 			}
 			if (arg0.equalsIgnoreCase("gb")) {
 				Static323.aClass50_Sub1_1.aBoolean289 = !Static323.aClass50_Sub1_1.aBoolean289;
-				Static323.aClass50_Sub1_1.method2856(Static206.aSignLink_4);
+				Static323.aClass50_Sub1_1.method2856(Static206.signLink);
 				Static249.aBoolean425 = false;
 				Static335.method4744();
 				Static441.method5568("gb=" + Static323.aClass50_Sub1_1.aBoolean289);
@@ -222,7 +222,7 @@ public final class Static400 {
 				local568 = Static88.method1590(local558) ? Static198.method3113(local558) : -1;
 				if (local568 >= 0 && local568 <= 2) {
 					Static323.aClass50_Sub1_1.method2852(Static177.anInt2973, local568);
-					Static323.aClass50_Sub1_1.method2856(Static206.aSignLink_4);
+					Static323.aClass50_Sub1_1.method2856(Static206.signLink);
 					Static249.aBoolean425 = false;
 					Static335.method4744();
 					Static441.method5568("shadows=" + local568);
@@ -233,7 +233,7 @@ public final class Static400 {
 			}
 			if (arg0.startsWith("textures")) {
 				Static323.aClass50_Sub1_1.aBoolean307 = !Static323.aClass50_Sub1_1.aBoolean307;
-				Static323.aClass50_Sub1_1.method2856(Static206.aSignLink_4);
+				Static323.aClass50_Sub1_1.method2856(Static206.signLink);
 				Static249.aBoolean425 = false;
 				Static119.method2149();
 				Static335.method4744();
@@ -248,7 +248,7 @@ public final class Static400 {
 				local106 = Static198.method3113(arg0.substring(6));
 				if (local106 >= 0 && local106 <= Static53.method898(Static70.anInt1503)) {
 					Static323.aClass50_Sub1_1.anInt3434 = local106;
-					Static323.aClass50_Sub1_1.method2856(Static206.aSignLink_4);
+					Static323.aClass50_Sub1_1.method2856(Static206.signLink);
 					Static249.aBoolean425 = false;
 					Static441.method5568("maxbuildarea=" + Static323.aClass50_Sub1_1.anInt3434);
 					return;
@@ -262,7 +262,7 @@ public final class Static400 {
 					return;
 				}
 				Static157.method2673(Static198.method3113(arg0.substring(13)));
-				Static323.aClass50_Sub1_1.method2856(Static206.aSignLink_4);
+				Static323.aClass50_Sub1_1.method2856(Static206.signLink);
 				Static249.aBoolean425 = false;
 				Static441.method5568("particles=" + Static218.method3279());
 				return;
@@ -310,13 +310,13 @@ public final class Static400 {
 				return;
 			}
 			if (arg0.equalsIgnoreCase("shiftclick")) {
-				if (!Static434.aBoolean692) {
+				if (!Static434.isShiftClickEnabled) {
 					Static441.method5568("Shift-click ENABLED!");
-					Static434.aBoolean692 = true;
+					Static434.isShiftClickEnabled = true;
 					return;
 				}
 				Static441.method5568("Shift-click disabled.");
-				Static434.aBoolean692 = false;
+				Static434.isShiftClickEnabled = false;
 				return;
 			}
 			if (arg0.equalsIgnoreCase("getcgcoord")) {
@@ -384,9 +384,9 @@ public final class Static400 {
 				return;
 			}
 			if (arg0.equals("performancetest")) {
-				Static441.method5568("Java toolkit: " + Static424.method5410(Static206.aSignLink_4));
-				Static441.method5568("GL toolkit:   " + Static424.method5410(Static206.aSignLink_4));
-				Static441.method5568("SSE toolkit:  " + Static424.method5410(Static206.aSignLink_4));
+				Static441.method5568("Java toolkit: " + Static424.method5410(Static206.signLink));
+				Static441.method5568("GL toolkit:   " + Static424.method5410(Static206.signLink));
+				Static441.method5568("SSE toolkit:  " + Static424.method5410(Static206.signLink));
 				return;
 			}
 			if (arg0.equals("nonpcs")) {
@@ -497,7 +497,7 @@ public final class Static400 {
 				Static3.aClass4_Sub12_Sub1_5.method2551(arg1 ? 1 : 0);
 				Static3.aClass4_Sub12_Sub1_5.method2518(arg0);
 			}
-			if (arg0.startsWith("fps ") && Static373.aClass219_6 != Static104.aClass219_2) {
+			if (arg0.startsWith("fps ") && Static373.liveModeWhere != Static104.modewhere) {
 				Static13.method136(Static198.method3113(arg0.substring(4)));
 				return;
 			}
@@ -511,9 +511,9 @@ public final class Static400 {
 
 	@OriginalMember(owner = "client!ue", name = "d", descriptor = "(I)Z")
 	public static boolean method5187() {
-		if (Static385.aBoolean591) {
+		if (Static385.hasJS) {
 			try {
-				Static458.method2593(Static206.aSignLink_4.loader, "showVideoAd");
+				Static458.callJavaScriptMethod(Static206.signLink.loaderApplet, "showVideoAd");
 				return true;
 			} catch (@Pc(19) Throwable local19) {
 			}

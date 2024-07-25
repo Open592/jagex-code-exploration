@@ -15,7 +15,7 @@ public final class Static420 {
 	public static final Class21 aClass21_16 = new Class21(8, 3);
 
 	@OriginalMember(owner = "client!vf", name = "q", descriptor = "Lclient!sp;")
-	public static final Class219 aClass219_7 = new Class219("WTWIP", 3);
+	public static final ModeWhere WTWIPModeWhere = new ModeWhere("WTWIP", 3);
 
 	@OriginalMember(owner = "client!vf", name = "y", descriptor = "Z")
 	public static final boolean aBoolean646 = false;

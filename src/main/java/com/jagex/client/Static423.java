@@ -25,6 +25,6 @@ public final class Static423 {
 
 	@OriginalMember(owner = "client!vi", name = "b", descriptor = "(Z)Z")
 	public static boolean method5406() {
-		return Static373.aClass219_6 != Static104.aClass219_2 || Static104.anInt2252 >= 2;
+		return Static373.liveModeWhere != Static104.modewhere || Static104.anInt2252 >= 2;
 	}
 }

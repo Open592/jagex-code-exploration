@@ -5,14 +5,24 @@ import org.openrs2.deob.annotation.OriginalClass;
 import org.openrs2.deob.annotation.OriginalMember;
 
 @OriginalClass("client!sp")
-public final class Class219 {
+public final class ModeWhere {
 
 	@OriginalMember(owner = "client!sp", name = "a", descriptor = "I")
-	public final int anInt6322;
+	public final int id;
+	public final String name;
 
 	@OriginalMember(owner = "client!sp", name = "<init>", descriptor = "(Ljava/lang/String;I)V")
-	public Class219(@OriginalArg(0) String arg0, @OriginalArg(1) int arg1) {
-		this.anInt6322 = arg1;
+	public ModeWhere(@OriginalArg(0) String name, @OriginalArg(1) int id) {
+		this.name = name;
+		this.id = id;
+	}
+
+	public String getName() {
+		return this.name;
+	}
+
+	public int getID() {
+		return this.id;
 	}
 
 	@OriginalMember(owner = "client!sp", name = "toString", descriptor = "()Ljava/lang/String;")

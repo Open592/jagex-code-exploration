@@ -49,8 +49,8 @@ public final class Static15 {
 	}
 
 	@OriginalMember(owner = "client!an", name = "d", descriptor = "(I)[Lclient!sp;")
-	public static Class219[] method157() {
-		return new Class219[] { Static373.aClass219_6, Static53.aClass219_1, Static217.aClass219_3, Static420.aClass219_7, Static286.aClass219_5, Static229.aClass219_4 };
+	public static ModeWhere[] getValidEnvironment() {
+		return new ModeWhere[] { Static373.liveModeWhere, Static53.WTRCModeWhere, Static217.WTQAModeWhere, Static420.WTWIPModeWhere, Static286.localModeWhere, Static229.WTIModeWhere};
 	}
 
 	@OriginalMember(owner = "client!an", name = "a", descriptor = "(IBI)I")

@@ -22,7 +22,7 @@ public final class Static316 {
 	public static void method4216() {
 		@Pc(7) Class207 local7 = null;
 		try {
-			@Pc(16) Class199 local16 = Static206.aSignLink_4.method1738("2");
+			@Pc(16) Class199 local16 = Static206.signLink.method1738("2");
 			while (local16.anInt5760 == 0) {
 				Static435.method5503(1L);
 			}
@@ -70,14 +70,13 @@ public final class Static316 {
 	}
 
 	@OriginalMember(owner = "client!pu", name = "a", descriptor = "(IZ)Lclient!sp;")
-	public static Class219 method4222(@OriginalArg(0) int arg0) {
-		@Pc(8) Class219[] local8 = Static15.method157();
-		for (@Pc(10) int local10 = 0; local10 < local8.length; local10++) {
-			@Pc(16) Class219 local16 = local8[local10];
-			if (arg0 == local16.anInt6322) {
-				return local16;
+	public static ModeWhere resolveModeWhereFromID(@OriginalArg(0) int id) {
+		for (ModeWhere modeWhere : Static15.getValidEnvironment()) {
+			if (id == modeWhere.getID()) {
+				return modeWhere;
 			}
 		}
+
 		return null;
 	}
 }

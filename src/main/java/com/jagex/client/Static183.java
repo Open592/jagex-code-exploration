@@ -9,7 +9,7 @@ public final class Static183 {
 	public static Class223 aClass223_1;
 
 	@OriginalMember(owner = "client!je", name = "H", descriptor = "Lclient!jc;")
-	public static final Class117 aClass117_4 = new Class117("LIVE", 0);
+	public static final ModeWhat liveModeWhat = new ModeWhat("LIVE", 0);
 
 	@OriginalMember(owner = "client!je", name = "M", descriptor = "Lclient!bf;")
 	public static final Class21 aClass21_11 = new Class21(5, 14);

@@ -14,5 +14,5 @@ public final class Static345 {
 	public static final Class22 aClass22_278 = new Class22(76, 7);
 
 	@OriginalMember(owner = "client!rk", name = "E", descriptor = "I")
-	public static int anInt5940 = 0;
+	public static int colourID = 0;
 }

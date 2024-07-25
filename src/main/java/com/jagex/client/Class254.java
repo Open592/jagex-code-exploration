@@ -23,8 +23,8 @@ public final class Class254 implements Runnable {
 	private Thread aThread2;
 
 	@OriginalMember(owner = "client!vl", name = "<init>", descriptor = "(Lclient!et;)V")
-	public Class254(@OriginalArg(0) SignLink arg0) {
-		@Pc(20) Class199 local20 = arg0.method1741(5, this);
+	public Class254(@OriginalArg(0) SignLink signLink) {
+		@Pc(20) Class199 local20 = signLink.method1741(5, this);
 		while (local20.anInt5760 == 0) {
 			Static435.method5503(10L);
 		}

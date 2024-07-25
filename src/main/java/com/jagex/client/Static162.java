@@ -38,14 +38,14 @@ public final class Static162 {
 			return false;
 		} else if (SignLink.anInt1987 == 3) {
 			@Pc(39) String local39 = "";
-			if (Static373.aClass219_6 != Static104.aClass219_2) {
+			if (Static373.liveModeWhere != Static104.modewhere) {
 				local39 = ":" + (local7.anInt3881 + 7000);
 			}
 			@Pc(55) String local55 = "";
-			if (Static34.aString13 != null) {
-				local55 = "/p=" + Static34.aString13;
+			if (Static34.settings != null) {
+				local55 = "/p=" + Static34.settings;
 			}
-			@Pc(104) String local104 = "http://" + local7.aString38 + local39 + "/l=" + Static178.anInt3423 + "/a=" + Static168.anInt3259 + local55 + "/j" + (Static385.aBoolean591 ? "1" : "0") + ",o" + (aBoolean607 ? "1" : "0") + ",a2";
+			@Pc(104) String local104 = "http://" + local7.aString38 + local39 + "/l=" + Static178.langID + "/a=" + Static168.affiliateID + local55 + "/j" + (Static385.hasJS ? "1" : "0") + ",o" + (aBoolean607 ? "1" : "0") + ",a2";
 			try {
 				Static6.aClient1.getAppletContext().showDocument(new URL(local104), "_self");
 				return true;
@@ -55,7 +55,7 @@ public final class Static162 {
 		} else {
 			Static56.anInt1028 = local7.anInt3881;
 			Static321.aString54 = local7.aString38;
-			if (Static104.aClass219_2 != Static373.aClass219_6) {
+			if (Static104.modewhere != Static373.liveModeWhere) {
 				Static97.anInt1949 = Static56.anInt1028 + 50000;
 				Static313.anInt5436 = Static56.anInt1028 + 40000;
 				Static407.anInt6723 = Static313.anInt5436;

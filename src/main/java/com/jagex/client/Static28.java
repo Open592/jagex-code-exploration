@@ -21,10 +21,10 @@ public final class Static28 {
 			Static50.anInt862 = 0;
 			return arg0;
 		}
-		if (Static133.anInt2755 == Static313.anInt5435) {
-			Static313.anInt5435 = Static11.anInt154;
+		if (Static133.JAGGRABPort == Static313.anInt5435) {
+			Static313.anInt5435 = Static11.HTTPPort;
 		} else {
-			Static313.anInt5435 = Static133.anInt2755;
+			Static313.anInt5435 = Static133.JAGGRABPort;
 		}
 		Static50.anInt862 = 0;
 		return -1;

@@ -7,7 +7,7 @@ import org.openrs2.deob.annotation.Pc;
 public final class Static53 {
 
 	@OriginalMember(owner = "client!client", name = "fb", descriptor = "Lclient!sp;")
-	public static final Class219 aClass219_1 = new Class219("WTRC", 1);
+	public static final ModeWhere WTRCModeWhere = new ModeWhere("WTRC", 1);
 
 	@OriginalMember(owner = "client!client", name = "mb", descriptor = "Lclient!pn;")
 	public static final Class186 aClass186_4 = new Class186("", 11);
@@ -320,8 +320,8 @@ public final class Static53 {
 											}
 											continue;
 										}
-										if (Static393.aClass121_3 == Static317.aClass121_2) {
-											Static380.method5017(59, false, 1L, local775, "", true, Static218.aClass83_83.method2267(Static178.anInt3423), local783, -1, -1);
+										if (Static393.currentGameDetails == Static317.stellardawnGameDetails) {
+											Static380.method5017(59, false, 1L, local775, "", true, Static218.aClass83_83.method2267(Static178.langID), local783, -1, -1);
 										}
 										Static380.method5017(44, false, 1L, local775, "", true, Static167.aString35, local783, -1, Static220.anInt4097);
 										continue;
@@ -643,7 +643,7 @@ public final class Static53 {
 								}
 								@Pc(2073) Class4_Sub43 local2073 = (Class4_Sub43) Static325.aClass102_29.method2700((long) local6.anInt6809);
 								if (local2073 != null) {
-									if (Static393.aClass121_3 == Static196.aClass121_1 && local2073.anInt6981 == 0 && !Static234.aBoolean411 && local204 && !Static415.aBoolean626) {
+									if (Static393.currentGameDetails == Static196.runescapeGameDetails && local2073.anInt6981 == 0 && !Static234.aBoolean411 && local204 && !Static415.aBoolean626) {
 										Static314.method4198();
 									}
 									Static59.method988(local28, local22, local32, local2073.anInt6979, local30, local17, local34, arg9, arg8);

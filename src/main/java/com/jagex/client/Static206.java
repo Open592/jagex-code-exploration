@@ -13,7 +13,7 @@ public final class Static206 {
 	public static int anInt3920;
 
 	@OriginalMember(owner = "client!ki", name = "k", descriptor = "Lclient!et;")
-	public static SignLink aSignLink_4;
+	public static SignLink signLink;
 
 	@OriginalMember(owner = "client!ki", name = "a", descriptor = "Lclient!pk;")
 	public static final Class183 aClass183_28 = new Class183();

@@ -42,7 +42,7 @@ public final class SignLink implements Runnable {
 	public Class207 aClass207_1 = null;
 
 	@OriginalMember(owner = "client!et", name = "j", descriptor = "Ljava/applet/Applet;")
-	public Applet loader = null;
+	public Applet loaderApplet = null;
 
 	@OriginalMember(owner = "client!et", name = "o", descriptor = "Z")
 	private boolean aBoolean185 = false;
@@ -102,8 +102,8 @@ public final class SignLink implements Runnable {
 	public static volatile long aLong70 = 0L;
 
 	@OriginalMember(owner = "client!et", name = "<init>", descriptor = "(Ljava/applet/Applet;ILjava/lang/String;I)V")
-	public SignLink(@OriginalArg(0) Applet loader, @OriginalArg(1) int modewhat, @OriginalArg(2) String gameName, @OriginalArg(3) int arg3) throws Exception {
-		this.loader = loader;
+	public SignLink(@OriginalArg(0) Applet loaderApplet, @OriginalArg(1) int modewhat, @OriginalArg(2) String gameName, @OriginalArg(3) int arg3) throws Exception {
+		this.loaderApplet = loaderApplet;
 		this.gameName = gameName;
 		javaVersion = "1.1";
 		this.modewhat = modewhat;
@@ -144,18 +144,18 @@ public final class SignLink implements Runnable {
 		} catch (@Pc(95) Throwable local95) {
 		}
 		try {
-			if (loader == null) {
+			if (loaderApplet == null) {
 				aMethod1 = Class.forName("java.awt.Component").getDeclaredMethod("setFocusTraversalKeysEnabled", Boolean.TYPE);
 			} else {
-				aMethod1 = loader.getClass().getMethod("setFocusTraversalKeysEnabled", Boolean.TYPE);
+				aMethod1 = loaderApplet.getClass().getMethod("setFocusTraversalKeysEnabled", Boolean.TYPE);
 			}
 		} catch (@Pc(122) Exception local122) {
 		}
 		try {
-			if (loader == null) {
+			if (loaderApplet == null) {
 				aMethod2 = Class.forName("java.awt.Container").getDeclaredMethod("setFocusCycleRoot", Boolean.TYPE);
 			} else {
-				aMethod2 = loader.getClass().getMethod("setFocusCycleRoot", Boolean.TYPE);
+				aMethod2 = loaderApplet.getClass().getMethod("setFocusCycleRoot", Boolean.TYPE);
 			}
 		} catch (@Pc(149) Exception local149) {
 		}

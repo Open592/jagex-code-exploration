@@ -7,7 +7,7 @@ import org.openrs2.deob.annotation.Pc;
 public final class Static104 {
 
 	@OriginalMember(owner = "client!fd", name = "Rd", descriptor = "Lclient!sp;")
-	public static Class219 aClass219_2;
+	public static ModeWhere modewhere;
 
 	@OriginalMember(owner = "client!fd", name = "Ec", descriptor = "Lclient!sl;")
 	public static final Class215 aClass215_25 = new Class215(2, -1);

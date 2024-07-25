@@ -14,7 +14,7 @@ public final class Static107 {
 	public static final Class83 aClass83_40 = new Class83("Allocating memory", "Speicher wird zugewiesen.", "Mémoire en cours d'attribution", "Alocando memória");
 
 	@OriginalMember(owner = "client!fg", name = "e", descriptor = "I")
-	public static int anInt2335 = 1;
+	public static int worldID = 1;
 
 	@OriginalMember(owner = "client!fg", name = "a", descriptor = "(B)Lclient!cn;")
 	public static Class4_Sub1_Sub5 method1990() {

@@ -23,7 +23,7 @@ public final class Static320 {
 	public static int method4409() {
 		if (Static281.aClass247_12 == null) {
 			if (!Static234.aBoolean411 && Static407.anInt6710 > 0) {
-				if (Static434.aBoolean692 && Static384.aClass244_1.method5489(81) && Static407.anInt6710 > 2) {
+				if (Static434.isShiftClickEnabled && Static384.aClass244_1.method5489(81) && Static407.anInt6710 > 2) {
 					return ((Class4_Sub39) Static206.aClass183_28.aClass4_207.aClass4_261.aClass4_261).anInt5698;
 				}
 				return ((Class4_Sub39) Static206.aClass183_28.aClass4_207.aClass4_261).anInt5698;

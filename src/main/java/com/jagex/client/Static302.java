@@ -818,9 +818,9 @@ public final class Static302 {
 
 	@OriginalMember(owner = "client!pf", name = "a", descriptor = "(I)Z")
 	public static boolean method4105() {
-		if (Static385.aBoolean591) {
+		if (Static385.hasJS) {
 			try {
-				if ((Boolean) Static458.method2593(Static206.aSignLink_4.loader, "showingVideoAd")) {
+				if ((Boolean) Static458.callJavaScriptMethod(Static206.signLink.loaderApplet, "showingVideoAd")) {
 					return false;
 				}
 				return true;

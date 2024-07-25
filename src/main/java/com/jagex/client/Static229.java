@@ -9,7 +9,7 @@ public final class Static229 {
 	public static Class57 aClass57_18;
 
 	@OriginalMember(owner = "client!lp", name = "l", descriptor = "Lclient!sp;")
-	public static final Class219 aClass219_4 = new Class219("WTI", 5);
+	public static final ModeWhere WTIModeWhere = new ModeWhere("WTI", 5);
 
 	@OriginalMember(owner = "client!lp", name = "o", descriptor = "I")
 	public static int anInt4407 = 0;

@@ -30,7 +30,7 @@ public final class Static293 {
 		arg0.method4293(local7, local11, local9, -10660793, local13);
 		arg0.method4293(local7 + 1, local11 - 2, local9 + 1, -16777216, 16);
 		arg0.method4295(local7 + 1, -16777216, -19 + local13, local11 - 2, local9 + 18);
-		Static331.aClass46_10.method5058(-1, -10660793, Static391.aClass83_133.method2267(Static178.anInt3423), local9 + 14, local7 + 3);
+		Static331.aClass46_10.method5058(-1, -10660793, Static391.aClass83_133.method2267(Static178.langID), local9 + 14, local7 + 3);
 		@Pc(77) int local77 = Static420.aClass80_1.method2234();
 		@Pc(81) int local81 = Static420.aClass80_1.method2230();
 		@Pc(83) int local83 = 0;

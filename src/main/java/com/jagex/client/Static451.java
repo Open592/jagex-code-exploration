@@ -6,7 +6,7 @@ import org.openrs2.deob.annotation.OriginalMember;
 public final class Static451 {
 
 	@OriginalMember(owner = "client!ws", name = "a", descriptor = "Lclient!jc;")
-	public static Class117 aClass117_9;
+	public static ModeWhat modewhat;
 
 	@OriginalMember(owner = "client!ws", name = "b", descriptor = "(Z)V")
 	public static void method5011() {

@@ -25,7 +25,7 @@ public final class Class172 {
 	}
 
 	@OriginalMember(owner = "client!ok", name = "<init>", descriptor = "(Lclient!jk;ILclient!fs;Lclient!fs;)V")
-	public Class172(@OriginalArg(0) Class121 arg0, @OriginalArg(1) int arg1, @OriginalArg(2) Class76 arg2, @OriginalArg(3) Class76 arg3) {
+	public Class172(@OriginalArg(0) GameDetails arg0, @OriginalArg(1) int arg1, @OriginalArg(2) Class76 arg2, @OriginalArg(3) Class76 arg3) {
 		this.aClass76_59 = arg3;
 		this.aClass76_58 = arg2;
 		this.aClass76_58.method2108(33);

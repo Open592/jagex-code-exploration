@@ -28,14 +28,14 @@ public final class Static377 {
 						local89 = false;
 					}
 				}
-				@Pc(176) String local176 = Static317.aClass121_2 == Static393.aClass121_3 ? Static4.aClass83_121.method2267(Static178.anInt3423) : Static320.aClass83_118.method2267(Static178.anInt3423);
+				@Pc(176) String local176 = Static317.stellardawnGameDetails == Static393.currentGameDetails ? Static4.aClass83_121.method2267(Static178.langID) : Static320.aClass83_118.method2267(Static178.langID);
 				if (arg1.anInt4345 >= arg1.anInt4332) {
 					local85 = arg1.method3428() + (local89 ? Static272.method3907(Static1.aClass16_Sub1_Sub5_Sub1_1.anInt4345, arg1.anInt4345) : "<col=ffffff>") + " (" + local176 + arg1.anInt4345 + ")";
 				} else {
 					local85 = arg1.method3428() + (local89 ? Static272.method3907(Static1.aClass16_Sub1_Sub5_Sub1_1.anInt4345, arg1.anInt4345) : "<col=ffffff>") + " (" + local176 + arg1.anInt4345 + "+" + (arg1.anInt4332 - arg1.anInt4345) + ")";
 				}
 			} else {
-				local85 = arg1.method3428() + " (" + Static126.aClass83_49.method2267(Static178.anInt3423) + arg1.anInt4336 + ")";
+				local85 = arg1.method3428() + " (" + Static126.aClass83_49.method2267(Static178.langID) + arg1.anInt4336 + ")";
 			}
 			if (Static341.aBoolean599) {
 				if (!arg0 && (Static434.anInt7378 & 0x8) != 0) {
@@ -47,7 +47,7 @@ public final class Static377 {
 				for (@Pc(282) int local282 = 7; local282 >= 0; local282--) {
 					if (Static349.aStringArray29[local282] != null) {
 						@Pc(290) short local290 = 0;
-						if (Static393.aClass121_3 == Static196.aClass121_1 && Static349.aStringArray29[local282].equalsIgnoreCase(Static81.aClass83_33.method2267(Static178.anInt3423))) {
+						if (Static393.currentGameDetails == Static196.runescapeGameDetails && Static349.aStringArray29[local282].equalsIgnoreCase(Static81.aClass83_33.method2267(Static178.langID))) {
 							if (arg1.anInt4345 > Static1.aClass16_Sub1_Sub5_Sub1_1.anInt4345) {
 								local290 = 2000;
 							}
@@ -76,7 +76,7 @@ public final class Static377 {
 				}
 			}
 		} else if (Static341.aBoolean599 && (Static434.anInt7378 & 0x10) != 0) {
-			Static380.method5017(8, false, 0L, 0, Static49.aString28 + " -> <col=ffffff>" + Static223.aClass83_91.method2267(Static178.anInt3423), true, Static388.aString62, 0, -1, Static273.anInt5120);
+			Static380.method5017(8, false, 0L, 0, Static49.aString28 + " -> <col=ffffff>" + Static223.aClass83_91.method2267(Static178.langID), true, Static388.aString62, 0, -1, Static273.anInt5120);
 		}
 	}
 

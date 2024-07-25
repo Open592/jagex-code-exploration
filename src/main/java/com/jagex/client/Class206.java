@@ -48,7 +48,7 @@ public final class Class206 {
 	private final String[] aStringArray30;
 
 	@OriginalMember(owner = "client!ro", name = "<init>", descriptor = "(Lclient!jk;IZLclient!ph;Lclient!fs;Lclient!fs;)V")
-	public Class206(@OriginalArg(0) Class121 arg0, @OriginalArg(1) int arg1, @OriginalArg(2) boolean arg2, @OriginalArg(3) Class180 arg3, @OriginalArg(4) Class76 arg4, @OriginalArg(5) Class76 arg5) {
+	public Class206(@OriginalArg(0) GameDetails arg0, @OriginalArg(1) int arg1, @OriginalArg(2) boolean arg2, @OriginalArg(3) Class180 arg3, @OriginalArg(4) Class76 arg4, @OriginalArg(5) Class76 arg5) {
 		this.aClass180_2 = arg3;
 		this.aClass76_77 = arg5;
 		this.aClass76_78 = arg4;

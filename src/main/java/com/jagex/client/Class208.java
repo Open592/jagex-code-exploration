@@ -15,7 +15,7 @@ public final class Class208 {
 	private final Class76 aClass76_80;
 
 	@OriginalMember(owner = "client!rq", name = "<init>", descriptor = "(Lclient!jk;ILclient!fs;)V")
-	public Class208(@OriginalArg(0) Class121 arg0, @OriginalArg(1) int arg1, @OriginalArg(2) Class76 arg2) {
+	public Class208(@OriginalArg(0) GameDetails arg0, @OriginalArg(1) int arg1, @OriginalArg(2) Class76 arg2) {
 		this.aClass76_80 = arg2;
 		if (this.aClass76_80 != null) {
 			this.aClass76_80.method2108(35);

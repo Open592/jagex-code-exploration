@@ -17,7 +17,7 @@ public final class Static240 {
 	@OriginalMember(owner = "client!md", name = "b", descriptor = "(Z)[Lclient!ic;")
 	public static Class103[] method5675() {
 		if (Static287.aClass103Array1 == null) {
-			@Pc(16) Class103[] local16 = Static204.method3184(Static206.aSignLink_4);
+			@Pc(16) Class103[] local16 = Static204.method3184(Static206.signLink);
 			@Pc(20) Class103[] local20 = new Class103[local16.length];
 			@Pc(22) int local22 = 0;
 			@Pc(66) int local66;

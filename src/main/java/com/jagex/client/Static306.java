@@ -19,7 +19,7 @@ public final class Static306 {
 	public static int[] anIntArray360 = new int[2];
 
 	@OriginalMember(owner = "client!pk", name = "o", descriptor = "Z")
-	public static boolean aBoolean484 = false;
+	public static boolean hasAdvert = false;
 
 	@OriginalMember(owner = "client!pk", name = "w", descriptor = "[Lclient!vh;")
 	public static final Class253[] aClass253Array1 = new Class253[2048];

@@ -17,7 +17,7 @@ public final class Static268 {
 	public static int anInt5006 = 1;
 
 	@OriginalMember(owner = "client!nm", name = "b", descriptor = "(B)[Lclient!jc;")
-	public static Class117[] method3834() {
-		return new Class117[] { Static183.aClass117_4, Static346.aClass117_6, Static65.aClass117_1 };
+	public static ModeWhat[] method3834() {
+		return new ModeWhat[] { Static183.liveModeWhat, Static346.RCModeWhat, Static65.WIPModeWhat};
 	}
 }

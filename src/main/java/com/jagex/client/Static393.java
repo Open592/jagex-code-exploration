@@ -9,7 +9,7 @@ public final class Static393 {
 	public static int[] anIntArray501;
 
 	@OriginalMember(owner = "client!tt", name = "v", descriptor = "Lclient!jk;")
-	public static Class121 aClass121_3 = null;
+	public static GameDetails currentGameDetails = null;
 
 	@OriginalMember(owner = "client!tt", name = "A", descriptor = "[I")
 	public static final int[] anIntArray500 = new int[32];

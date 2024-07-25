@@ -69,8 +69,8 @@ public final class Static94 {
 			local7 = Static437.method4044("%40", "@", local7);
 			local7 = Static437.method4044("%26", "&", local7);
 			local7 = Static437.method4044("%23", "#", local7);
-			if (Static386.aSignLink_5.loader != null) {
-				@Pc(99) Class199 local99 = Static386.aSignLink_5.method1751(new URL(Static386.aSignLink_5.loader.getCodeBase(), "clienterror.ws?c=" + Static13.anInt178 + "&u=" + Static286.aLong174 + "&v1=" + SignLink.javaVendor + "&v2=" + SignLink.javaVersion + "&e=" + local7));
+			if (Static386.aSignLink_5.loaderApplet != null) {
+				@Pc(99) Class199 local99 = Static386.aSignLink_5.method1751(new URL(Static386.aSignLink_5.loaderApplet.getCodeBase(), "clienterror.ws?c=" + Static13.anInt178 + "&u=" + Static286.aLong174 + "&v1=" + SignLink.javaVendor + "&v2=" + SignLink.javaVersion + "&e=" + local7));
 				while (local99.anInt5760 == 0) {
 					Static435.method5503(1L);
 				}

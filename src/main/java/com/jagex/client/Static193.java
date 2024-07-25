@@ -14,7 +14,7 @@ public final class Static193 {
 	}
 
 	@OriginalMember(owner = "client!jp", name = "a", descriptor = "(Lclient!sp;B)Z")
-	public static boolean method3034(@OriginalArg(0) Class219 arg0) {
-		return Static53.aClass219_1 == arg0 || arg0 == Static217.aClass219_3 || arg0 == Static420.aClass219_7 || arg0 == Static229.aClass219_4;
+	public static boolean isStagingEnvironment(@OriginalArg(0) ModeWhere modewhere) {
+		return Static53.WTRCModeWhere == modewhere || modewhere == Static217.WTQAModeWhere || modewhere == Static420.WTWIPModeWhere || modewhere == Static229.WTIModeWhere;
 	}
 }

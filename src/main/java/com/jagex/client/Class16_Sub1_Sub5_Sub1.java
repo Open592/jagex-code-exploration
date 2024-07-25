@@ -492,7 +492,7 @@ public final class Class16_Sub1_Sub5_Sub1 extends Class16_Sub1_Sub5 {
 			Static343.method743();
 		}
 		@Pc(177) int local177;
-		if (Static373.aClass219_6 != Static104.aClass219_2 && local148 < 50) {
+		if (Static373.liveModeWhere != Static104.modewhere && local148 < 50) {
 			local177 = 50 - local148;
 			while (Static102.anInt2043 < local177) {
 				Static392.aByteArrayArray28[Static102.anInt2043] = new byte[102400];
@@ -502,7 +502,7 @@ public final class Class16_Sub1_Sub5_Sub1 extends Class16_Sub1_Sub5 {
 				Static102.anInt2043--;
 				Static392.aByteArrayArray28[Static102.anInt2043] = null;
 			}
-		} else if (Static373.aClass219_6 != Static104.aClass219_2) {
+		} else if (Static373.liveModeWhere != Static104.modewhere) {
 			Static392.aByteArrayArray28 = new byte[50][];
 			Static102.anInt2043 = 0;
 		}

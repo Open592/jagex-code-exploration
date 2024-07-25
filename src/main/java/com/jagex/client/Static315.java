@@ -24,9 +24,9 @@ public final class Static315 {
 			local33 = arg1 / 2 + arg0;
 			arg3.O(arg0, arg5, arg1, arg4, -16777216, 0);
 			local52 = arg5 + arg4 / 2 - 18 - 20;
-			arg3.method4312(local33 - 152, local52, 304, 34, Static164.aColorArray6[Static345.anInt5940].getRGB(), 0);
-			arg3.O(local33 - 150, local52 + 2, Static69.anInt3429 * 3, 30, Static64.aColorArray3[Static345.anInt5940].getRGB(), 0);
-			Static331.aClass46_10.method5056(local33, Static171.aColorArray5[Static345.anInt5940].getRGB(), local52 + 20, -1, Static96.aClass83_38.method2267(Static178.anInt3423));
+			arg3.method4312(local33 - 152, local52, 304, 34, Static164.aColorArray6[Static345.colourID].getRGB(), 0);
+			arg3.O(local33 - 150, local52 + 2, Static69.anInt3429 * 3, 30, Static64.aColorArray3[Static345.colourID].getRGB(), 0);
+			Static331.aClass46_10.method5056(local33, Static171.aColorArray5[Static345.colourID].getRGB(), local52 + 20, -1, Static96.aClass83_38.method2267(Static178.langID));
 			return;
 		}
 		@Pc(108) int local108 = Static314.anInt5471 - (int) ((float) arg1 / Static148.aFloat178);
@@ -48,7 +48,7 @@ public final class Static315 {
 				Static140.anInt2835--;
 			}
 		}
-		if (!Static325.aBoolean507) {
+		if (!Static325.isNotRunningInLive) {
 			return;
 		}
 		@Pc(232) int local232 = arg1 + arg0 - 5;

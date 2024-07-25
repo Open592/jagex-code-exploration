@@ -9,7 +9,7 @@ import org.openrs2.deob.annotation.Pc;
 public final class Static226 {
 
 	@OriginalMember(owner = "client!ll", name = "b", descriptor = "I")
-	public static int anInt4373;
+	public static int countryID;
 
 	@OriginalMember(owner = "client!ll", name = "h", descriptor = "F")
 	public static float aFloat136;

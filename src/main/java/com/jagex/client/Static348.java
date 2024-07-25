@@ -52,7 +52,7 @@ public final class Static348 {
 		try {
 			@Pc(49) Container local49;
 			if (Static226.aFrame1 == null) {
-				local49 = Static206.aSignLink_4.loader;
+				local49 = Static206.signLink.loaderApplet;
 			} else {
 				local49 = Static226.aFrame1;
 			}

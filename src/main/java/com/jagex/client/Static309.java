@@ -45,8 +45,9 @@ public final class Static309 {
 	}
 
 	@OriginalMember(owner = "client!pn", name = "a", descriptor = "(Ljava/lang/String;B)V")
-	public static void method4159(@OriginalArg(0) String arg0) {
-		System.out.println("Bad " + arg0 + ", Usage: worldid, <live/rc/wip>, <english/german>, <game0/game1>");
+	public static void handleInvalidCommandArguments(@OriginalArg(0) String error) {
+		System.out.println("Bad " + error + ", Usage: worldid, <live/rc/wip>, <english/german>, <game0/game1>");
+
 		System.exit(1);
 	}
 

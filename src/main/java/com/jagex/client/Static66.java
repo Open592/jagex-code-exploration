@@ -40,7 +40,7 @@ public final class Static66 {
 		@Pc(149) int local149 = Static188.anInt5352 * local35 / Static148.anInt5729 + local64;
 		@Pc(163) int local163 = local37 + local73 - local133 - Static455.anInt5537 * local37 / Static148.anInt5733;
 		@Pc(165) int local165 = -1996554240;
-		if (Static317.aClass121_2 == Static393.aClass121_3) {
+		if (Static317.stellardawnGameDetails == Static393.currentGameDetails) {
 			local165 = -1996488705;
 		}
 		arg1.O(local149, local163, local127, local133, local165, 1);

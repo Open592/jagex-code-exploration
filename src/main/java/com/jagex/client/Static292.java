@@ -34,15 +34,15 @@ public final class Static292 {
 	@OriginalMember(owner = "client!op", name = "a", descriptor = "(IIBIZI)V")
 	public static void method4020(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(3) int arg2, @OriginalArg(4) boolean arg3, @OriginalArg(5) int arg4) {
 		if (Static320.aFrame3 != null && (arg0 != 3 || arg2 != Static323.aClass50_Sub1_1.anInt3431 || Static323.aClass50_Sub1_1.anInt3450 != arg4)) {
-			Static446.method5620(Static206.aSignLink_4, Static320.aFrame3);
+			Static446.method5620(Static206.signLink, Static320.aFrame3);
 			Static320.aFrame3 = null;
 		}
 		if (arg0 == 3 && Static320.aFrame3 == null) {
-			Static320.aFrame3 = Static8.method86(arg2, Static206.aSignLink_4, arg4, 0);
+			Static320.aFrame3 = Static8.method86(arg2, Static206.signLink, arg4, 0);
 			if (Static320.aFrame3 != null) {
 				Static323.aClass50_Sub1_1.anInt3431 = arg2;
 				Static323.aClass50_Sub1_1.anInt3450 = arg4;
-				Static323.aClass50_Sub1_1.method2856(Static206.aSignLink_4);
+				Static323.aClass50_Sub1_1.method2856(Static206.signLink);
 			}
 		}
 		if (arg0 == 3 && Static320.aFrame3 == null) {
@@ -56,7 +56,7 @@ public final class Static292 {
 			local78 = Static320.aFrame3;
 			Static425.anInt7000 = arg2;
 		} else if (Static226.aFrame1 == null) {
-			local78 = Static206.aSignLink_4.loader;
+			local78 = Static206.signLink.loaderApplet;
 			Static425.anInt7000 = local78.getSize().width;
 			Static17.anInt222 = local78.getSize().height;
 		} else {
@@ -85,7 +85,7 @@ public final class Static292 {
 			Static302.anInt5346 = Static17.anInt222;
 			Static230.anInt4424 = 0;
 		}
-		if (Static104.aClass219_2 != Static373.aClass219_6) {
+		if (Static104.modewhere != Static373.liveModeWhere) {
 			@Pc(196) boolean local196;
 			if (Static141.anInt2881 < 1024 && Static302.anInt5346 < 768) {
 				local196 = true;

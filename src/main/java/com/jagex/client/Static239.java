@@ -10,7 +10,7 @@ public final class Static239 {
 	public static Class212 aClass212_5;
 
 	@OriginalMember(owner = "client!mc", name = "j", descriptor = "I")
-	public static int anInt4519;
+	public static int randomSeed;
 
 	@OriginalMember(owner = "client!mc", name = "i", descriptor = "I")
 	public static int anInt4518 = 0;

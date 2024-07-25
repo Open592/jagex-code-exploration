@@ -114,7 +114,7 @@ public final class Static112 {
 				if (Static162.aLong210 > Static282.method3962() - 5000L) {
 					return 0;
 				}
-				Static292.aClass199_8 = Static206.aSignLink_4.method1728(Static13.aString4, Static313.anInt5435);
+				Static292.aClass199_8 = Static206.signLink.method1728(Static13.host, Static313.anInt5435);
 				Static18.aLong14 = Static282.method3962();
 				Static50.anInt862 = 1;
 			}
@@ -130,7 +130,7 @@ public final class Static112 {
 				if (Static292.aClass199_8.anInt5760 != 1) {
 					return -1;
 				}
-				Static125.aClass11_5 = new Class11((Socket) Static292.aClass199_8.anObject29, Static206.aSignLink_4);
+				Static125.aClass11_5 = new Class11((Socket) Static292.aClass199_8.anObject29, Static206.signLink);
 				Static292.aClass199_8 = null;
 				local78 = 0;
 				if (Static94.aBoolean176) {

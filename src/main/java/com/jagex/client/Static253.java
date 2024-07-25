@@ -15,7 +15,7 @@ public final class Static253 {
 	public static final Class215 aClass215_57 = new Class215(51, 4);
 
 	@OriginalMember(owner = "client!mr", name = "M", descriptor = "Ljava/util/Calendar;")
-	public static final Calendar aCalendar1 = Calendar.getInstance(TimeZone.getTimeZone("GMT"));
+	public static final Calendar GMTCalendar = Calendar.getInstance(TimeZone.getTimeZone("GMT"));
 
 	@OriginalMember(owner = "client!mr", name = "b", descriptor = "(Z)V")
 	public static void method3676() {

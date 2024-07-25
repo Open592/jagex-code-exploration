@@ -25,7 +25,7 @@ public final class Static95 {
 
 	@OriginalMember(owner = "client!ep", name = "a", descriptor = "(III)V")
 	public static void method1664(@OriginalArg(0) int arg0, @OriginalArg(2) int arg1) {
-		if (Static393.aClass121_3 == Static317.aClass121_2) {
+		if (Static393.currentGameDetails == Static317.stellardawnGameDetails) {
 			if (!Static166.method2734(0, arg1, arg0, 1, false, 1, 0, -2)) {
 				Static166.method2734(0, arg1, arg0, 1, false, 1, 0, -3);
 			}

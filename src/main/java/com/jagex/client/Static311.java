@@ -28,7 +28,7 @@ public final class Static311 {
 		} else {
 			Static187.method2932(25);
 		}
-		Static436.method5519(true, Static439.aClass83_148.method2267(Static178.anInt3423), Static207.aClass46_9);
+		Static436.method5519(true, Static439.aClass83_148.method2267(Static178.langID), Static207.aClass46_9);
 		@Pc(59) int local59 = Static180.anInt3453;
 		Static180.anInt3453 = (Static169.anInt3265 - (Static326.anInt5666 >> 4)) * 8;
 		@Pc(70) int local70 = Static86.anInt1771;

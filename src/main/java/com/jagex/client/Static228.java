@@ -22,7 +22,7 @@ public final class Static228 {
 	public static void method2068() {
 		@Pc(11) Class207 local11 = null;
 		try {
-			@Pc(16) Class199 local16 = Static206.aSignLink_4.method1738("2");
+			@Pc(16) Class199 local16 = Static206.signLink.method1738("2");
 			while (local16.anInt5760 == 0) {
 				Static435.method5503(1L);
 			}

@@ -14,5 +14,5 @@ public final class Static34 {
 	public static final Class102 aClass102_4 = new Class102(16);
 
 	@OriginalMember(owner = "client!bn", name = "G", descriptor = "Ljava/lang/String;")
-	public static String aString13 = null;
+	public static String settings = null;
 }

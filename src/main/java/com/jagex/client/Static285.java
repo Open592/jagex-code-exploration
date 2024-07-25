@@ -27,17 +27,17 @@ public final class Static285 {
 					Static405.anInt6682 = 0;
 					return;
 				}
-				if (Static313.anInt5435 == Static133.anInt2755) {
-					Static313.anInt5435 = Static11.anInt154;
+				if (Static313.anInt5435 == Static133.JAGGRABPort) {
+					Static313.anInt5435 = Static11.HTTPPort;
 				} else {
-					Static313.anInt5435 = Static133.anInt2755;
+					Static313.anInt5435 = Static133.JAGGRABPort;
 				}
 				Static239.anInt4518++;
 				Static276.anInt970 = 0;
 				Static405.anInt6682 = 1;
 			}
 			if (Static405.anInt6682 == 1) {
-				Static36.aClass199_3 = Static206.aSignLink_4.method1728(Static13.aString4, Static313.anInt5435);
+				Static36.aClass199_3 = Static206.signLink.method1728(Static13.host, Static313.anInt5435);
 				Static405.anInt6682 = 2;
 			}
 			@Pc(118) int local118;
@@ -48,7 +48,7 @@ public final class Static285 {
 				if (Static36.aClass199_3.anInt5760 != 1) {
 					return;
 				}
-				Static125.aClass11_5 = new Class11((Socket) Static36.aClass199_3.anObject29, Static206.aSignLink_4);
+				Static125.aClass11_5 = new Class11((Socket) Static36.aClass199_3.anObject29, Static206.signLink);
 				Static36.aClass199_3 = null;
 				Static125.aClass11_5.method142(Static3.aClass4_Sub12_Sub1_5.anInt2997, Static3.aClass4_Sub12_Sub1_5.aByteArray36);
 				Static329.method4427();
@@ -90,10 +90,10 @@ public final class Static285 {
 				Static405.anInt6682 = 1;
 				Static276.anInt970 = 0;
 				Static239.anInt4518++;
-				if (Static133.anInt2755 == Static313.anInt5435) {
-					Static313.anInt5435 = Static11.anInt154;
+				if (Static133.JAGGRABPort == Static313.anInt5435) {
+					Static313.anInt5435 = Static11.HTTPPort;
 				} else {
-					Static313.anInt5435 = Static133.anInt2755;
+					Static313.anInt5435 = Static133.JAGGRABPort;
 				}
 			}
 		}

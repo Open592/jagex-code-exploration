@@ -23,7 +23,7 @@ public final class Static46 {
 		}
 		@Pc(13) Container local13;
 		if (Static226.aFrame1 == null) {
-			local13 = Static206.aSignLink_4.loader;
+			local13 = Static206.signLink.loaderApplet;
 		} else {
 			local13 = Static226.aFrame1;
 		}
@@ -53,7 +53,7 @@ public final class Static46 {
 			Static303.anInt5363 = 0;
 			Static230.anInt4424 = 0;
 		}
-		if (Static104.aClass219_2 != Static373.aClass219_6) {
+		if (Static104.modewhere != Static373.liveModeWhere) {
 			@Pc(132) boolean local132;
 			if (Static141.anInt2881 < 1024 && Static302.anInt5346 < 768) {
 				local132 = true;

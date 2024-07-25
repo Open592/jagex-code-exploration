@@ -27,7 +27,7 @@ public final class Static214 {
 			return;
 		}
 		Static302.method4103(Static310.anInt5424, Static112.anInt2392, Static173.anInt3370, Static172.anInt3367);
-		@Pc(57) int local57 = Static118.aClass89_5.method2340(Static391.aClass83_133.method2267(Static178.anInt3423));
+		@Pc(57) int local57 = Static118.aClass89_5.method2340(Static391.aClass83_133.method2267(Static178.langID));
 		for (@Pc(62) Class4_Sub39 local62 = (Class4_Sub39) Static206.aClass183_28.method4140(); local62 != null; local62 = (Class4_Sub39) Static206.aClass183_28.method4144()) {
 			@Pc(68) int local68 = Static210.method3197(local62);
 			if (local57 < local68) {

@@ -29,9 +29,9 @@ public final class Static343 {
 
 	@OriginalMember(owner = "client!ri", name = "b", descriptor = "(B)V")
 	public static void method744() {
-		if (Static104.aClass219_2 != Static286.aClass219_5) {
+		if (Static104.modewhere != Static286.localModeWhere) {
 			try {
-				Static458.method2593(Static6.aClient1, "tbrefresh");
+				Static458.callJavaScriptMethod(Static6.aClient1, "tbrefresh");
 			} catch (@Pc(19) Throwable local19) {
 			}
 		}

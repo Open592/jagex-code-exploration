@@ -179,12 +179,12 @@ public final class Static147 {
 								continue;
 							}
 							if (Static281.anInt5183 == local23.anInt6842) {
-								if (!Static325.aBoolean507 && !Static437.aBoolean477) {
+								if (!Static325.isNotRunningInLive && !Static437.aBoolean477) {
 									continue;
 								}
 								local244 = local90 + local23.anInt6833;
 								local249 = local95 + 15;
-								if (Static325.aBoolean507) {
+								if (Static325.isNotRunningInLive) {
 									Static207.aClass46_9.method5059("Fps:" + Static213.anInt3956, local249, -256, local244);
 									local249 += 15;
 									@Pc(495) Runtime local495 = Runtime.getRuntime();
@@ -276,7 +276,7 @@ public final class Static147 {
 										}
 									}
 									if (Static304.aClass247_16 == local23) {
-										local975 = Static154.aClass83_26.method2267(Static178.anInt3423);
+										local975 = Static154.aClass83_26.method2267(Static178.langID);
 										local249 = local23.anInt6772;
 									}
 									if (Static449.aBoolean688) {

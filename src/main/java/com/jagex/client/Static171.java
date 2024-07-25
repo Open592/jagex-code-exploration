@@ -1,6 +1,7 @@
 package com.jagex.client;
 
 import java.awt.Color;
+import java.util.Calendar;
 import java.util.Date;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalMember;
@@ -32,15 +33,31 @@ public final class Static171 {
 	}
 
 	@OriginalMember(owner = "client!ip", name = "a", descriptor = "(JI)Ljava/lang/String;")
-	public static String method2805(@OriginalArg(0) long arg0) {
-		Static253.aCalendar1.setTime(new Date(arg0));
-		@Pc(18) int local18 = Static253.aCalendar1.get(7);
-		@Pc(22) int local22 = Static253.aCalendar1.get(5);
-		@Pc(26) int local26 = Static253.aCalendar1.get(2);
-		@Pc(30) int local30 = Static253.aCalendar1.get(1);
-		@Pc(34) int local34 = Static253.aCalendar1.get(11);
-		@Pc(38) int local38 = Static253.aCalendar1.get(12);
-		@Pc(42) int local42 = Static253.aCalendar1.get(13);
-		return Static37.aStringArray5[local18 - 1] + ", " + local22 / 10 + local22 % 10 + "-" + Static280.aStringArray24[local26] + "-" + local30 + " " + local34 / 10 + local34 % 10 + ":" + local38 / 10 + local38 % 10 + ":" + local42 / 10 + local42 % 10 + " GMT";
+	public static String timestampToDateString(@OriginalArg(0) long timestamp) {
+		Static253.GMTCalendar.setTime(new Date(timestamp));
+
+		@Pc(18) int dayOfWeek = Static253.GMTCalendar.get(Calendar.DAY_OF_WEEK);
+		@Pc(22) int dayOfMonth = Static253.GMTCalendar.get(Calendar.DAY_OF_MONTH);
+		@Pc(26) int monthString = Static253.GMTCalendar.get(Calendar.MONTH);
+		@Pc(30) int year = Static253.GMTCalendar.get(Calendar.YEAR);
+		@Pc(34) int hour = Static253.GMTCalendar.get(Calendar.HOUR_OF_DAY);
+		@Pc(38) int minute = Static253.GMTCalendar.get(Calendar.MINUTE);
+		@Pc(42) int second = Static253.GMTCalendar.get(Calendar.SECOND);
+
+		// Thu, 06-Jan-2011 18:45:20 GMT
+        return Static37.DAYS_OF_WEEK[dayOfWeek - 1] +
+                ", " +
+                (dayOfMonth / 10 + dayOfMonth % 10) +
+                "-" +
+                Static280.SHORT_MONTH_NAMES[monthString] +
+                "-" +
+                year +
+                " " +
+                (hour / 10 + hour % 10) +
+                ":" +
+                (minute / 10 + minute % 10) +
+                ":" +
+                (second / 10 + second % 10) +
+                " GMT";
 	}
 }

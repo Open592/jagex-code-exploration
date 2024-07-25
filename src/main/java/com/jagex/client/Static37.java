@@ -11,7 +11,7 @@ public final class Static37 {
 	public static int anInt649;
 
 	@OriginalMember(owner = "client!br", name = "w", descriptor = "[Ljava/lang/String;")
-	public static final String[] aStringArray5 = new String[] { "Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat" };
+	public static final String[] DAYS_OF_WEEK = new String[] { "Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat" };
 
 	@OriginalMember(owner = "client!br", name = "a", descriptor = "(Lclient!fs;I)V")
 	public static void method664(@OriginalArg(0) Class76 arg0) {

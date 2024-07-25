@@ -146,7 +146,7 @@ public final class Static407 {
 			}
 			if (Static439.aBoolean676) {
 				Static122.aClass19_16.method4293(local119, local113, local117, -16777216, local115);
-				Static436.method5519(false, Static439.aClass83_148.method2267(Static178.anInt3423), Static207.aClass46_9);
+				Static436.method5519(false, Static439.aClass83_148.method2267(Static178.langID), Static207.aClass46_9);
 			}
 		} else {
 			Static122.aClass19_16.method4293(arg0, arg1, arg3, -16777216, arg4);

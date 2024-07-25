@@ -13,11 +13,13 @@ public final class Static282 {
 
 	@OriginalMember(owner = "client!of", name = "a", descriptor = "(I)J")
 	public static synchronized long method3962() {
-		@Pc(1) long local1 = System.currentTimeMillis();
-		if (aLong173 > local1) {
-			aLong172 += aLong173 - local1;
+		@Pc(1) long currentTimeMillis = System.currentTimeMillis();
+
+		if (aLong173 > currentTimeMillis) {
+			aLong172 += aLong173 - currentTimeMillis;
 		}
-		aLong173 = local1;
-		return aLong172 + local1;
+
+		aLong173 = currentTimeMillis;
+		return aLong172 + currentTimeMillis;
 	}
 }

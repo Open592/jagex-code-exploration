@@ -7,7 +7,7 @@ import org.openrs2.deob.annotation.Pc;
 public final class Static65 {
 
 	@OriginalMember(owner = "client!de", name = "c", descriptor = "Lclient!jc;")
-	public static final Class117 aClass117_1 = new Class117("WIP", 2);
+	public static final ModeWhat WIPModeWhat = new ModeWhat("WIP", 2);
 
 	@OriginalMember(owner = "client!de", name = "e", descriptor = "[Z")
 	public static final boolean[] aBooleanArray9 = new boolean[100];

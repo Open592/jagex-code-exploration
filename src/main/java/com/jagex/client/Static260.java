@@ -47,7 +47,7 @@ public final class Static260 {
 			Static400.aClass57_23.method5534((Static141.anInt2881 - Static400.aClass57_23.j()) / 2, (Static302.anInt5346 - Static400.aClass57_23.T()) / 2);
 			Static83.aClass57_10.method5534((Static141.anInt2881 - Static83.aClass57_10.j()) / 2, 18);
 		}
-		arg4.method5056(Static141.anInt2881 / 2, arg3, Static302.anInt5346 / 2 - 26, -1, (Static196.aClass121_1 == Static393.aClass121_3 ? Static268.aClass83_104 : Static374.aClass83_129).method2267(Static178.anInt3423));
+		arg4.method5056(Static141.anInt2881 / 2, arg3, Static302.anInt5346 / 2 - 26, -1, (Static196.runescapeGameDetails == Static393.currentGameDetails ? Static268.aClass83_104 : Static374.aClass83_129).method2267(Static178.langID));
 		@Pc(64) int local64 = Static302.anInt5346 / 2 - 18;
 		arg5.method4312(Static141.anInt2881 / 2 - 152, local64, 304, 34, arg0, 0);
 		arg5.method4312(Static141.anInt2881 / 2 - 151, local64 - -1, 302, 32, 0, 0);

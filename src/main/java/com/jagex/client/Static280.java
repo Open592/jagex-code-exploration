@@ -23,7 +23,7 @@ public final class Static280 {
 	public static final int[] anIntArray340 = new int[] { 0, 2, 2, 2, 1, 1, 3, 3, 1, 3, 3, 4, 4 };
 
 	@OriginalMember(owner = "client!od", name = "K", descriptor = "[Ljava/lang/String;")
-	public static final String[] aStringArray24 = new String[] { "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec" };
+	public static final String[] SHORT_MONTH_NAMES = new String[] { "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec" };
 
 	@OriginalMember(owner = "client!od", name = "a", descriptor = "()V")
 	public static void method3958() {

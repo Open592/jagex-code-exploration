@@ -80,22 +80,26 @@ public final class Static439 {
 	}
 
 	@OriginalMember(owner = "client!wd", name = "a", descriptor = "(BLjava/lang/String;)V")
-	public static void method5553(@OriginalArg(1) String arg0) {
-		Static34.aString13 = arg0;
-		if (Static206.aSignLink_4.loader == null) {
+	public static void dropSettingsCookie(@OriginalArg(1) String settings) {
+		Static34.settings = settings;
+
+		if (Static206.signLink.loaderApplet == null) {
 			return;
 		}
+
 		try {
-			@Pc(18) String local18 = Static206.aSignLink_4.loader.getParameter("cookieprefix");
-			@Pc(23) String local23 = Static206.aSignLink_4.loader.getParameter("cookiehost");
-			@Pc(38) String local38 = local18 + "settings=" + arg0 + "; version=1; path=/; domain=" + local23;
-			if (arg0.length() == 0) {
-				local38 = local38 + "; Expires=Thu, 01-Jan-1970 00:00:00 GMT; Max-Age=0";
+			@Pc(18) String cookiePrefix = Static206.signLink.loaderApplet.getParameter("cookieprefix");
+			@Pc(23) String cookieHost = Static206.signLink.loaderApplet.getParameter("cookiehost");
+			@Pc(38) String cookieString = cookiePrefix + "settings=" + settings + "; version=1; path=/; domain=" + cookieHost;
+
+			if (settings.isEmpty()) {
+				cookieString = cookieString + "; Expires=Thu, 01-Jan-1970 00:00:00 GMT; Max-Age=0";
 			} else {
-				local38 = local38 + "; Expires=" + Static171.method2805(Static282.method3962() + 94608000000L) + "; Max-Age=" + 94608000L;
+				cookieString = cookieString + "; Expires=" + Static171.timestampToDateString(Static282.method3962() + 94608000000L) + "; Max-Age=" + 94608000L;
 			}
-			Static458.method2592("document.cookie=\"" + local38 + "\"", Static206.aSignLink_4.loader);
-		} catch (@Pc(87) Throwable local87) {
+
+			Static458.evaluateJavaScript("document.cookie=\"" + cookieString + "\"", Static206.signLink.loaderApplet);
+		} catch (@Pc(87) Throwable ignored) {
 		}
 	}
 
