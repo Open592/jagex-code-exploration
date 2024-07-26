@@ -7,15 +7,35 @@ import java.io.RandomAccessFile;
 
 public final class FileOnDisk {
 
-	private File file;
+	private final File file;
 
 	private RandomAccessFile buffer;
 
 	private long currentPOS;
 
-	private long aLong201;
+	private final long maxLength;
 
-	private FileOnDisk() {
+	public FileOnDisk(File file, String mode, long maxLenth) throws IOException {
+		if (maxLenth == -1) {
+			maxLenth = Long.MAX_VALUE;
+		}
+
+		if (file.length() > maxLenth) {
+			file.delete();
+		}
+
+		this.buffer = new RandomAccessFile(file, mode);
+		this.maxLength = maxLenth;
+		this.file = file;
+		this.currentPOS = 0L;
+
+		int firstByte = this.buffer.read();
+		if (firstByte != -1 && !mode.equals("r")) {
+			this.buffer.seek(0L);
+			this.buffer.write(firstByte);
+		}
+
+		this.buffer.seek(0L);
 	}
 
 	public void close() throws IOException {
@@ -29,13 +49,14 @@ public final class FileOnDisk {
     protected void finalize() throws Throwable {
 		if (this.buffer != null) {
 			System.out.println("Warning! fileondisk " + this.file + " not closed correctly using close(). Auto-closing instead. ");
+
 			this.close();
 		}
 	}
 
 	public void write(int offset, int length, byte[] buffer) throws IOException {
-		if (this.currentPOS + (long) length > this.aLong201) {
-			this.buffer.seek(this.aLong201);
+		if (this.currentPOS + length > this.maxLength) {
+			this.buffer.seek(this.maxLength);
 			this.buffer.write(1);
 			throw new EOFException();
 		} else {
