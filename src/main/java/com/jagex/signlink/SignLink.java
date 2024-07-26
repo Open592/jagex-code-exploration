@@ -30,9 +30,9 @@ public final class SignLink implements Runnable {
 
 	public Class207 aClass207_1 = null;
 
-	public Applet loaderApplet = null;
+	public Applet hostApplet = null;
 
-	private boolean aBoolean185 = false;
+	private boolean isShuttingDown = false;
 
 	public Class207 aClass207_2 = null;
 
@@ -70,8 +70,8 @@ public final class SignLink implements Runnable {
 
 	public static volatile long aLong70 = 0L;
 
-	public SignLink(Applet loaderApplet, int modewhat, String gameName, int arg3) throws Exception {
-		this.loaderApplet = loaderApplet;
+	public SignLink(Applet hostApplet, int modewhat, String gameName, int arg3) throws Exception {
+		this.hostApplet = hostApplet;
 		this.gameName = gameName;
 		javaVersion = "1.1";
 		this.modewhat = modewhat;
@@ -112,22 +112,22 @@ public final class SignLink implements Runnable {
 		} catch (Throwable local95) {
 		}
 		try {
-			if (loaderApplet == null) {
+			if (hostApplet == null) {
 				aMethod1 = Class.forName("java.awt.Component").getDeclaredMethod("setFocusTraversalKeysEnabled", Boolean.TYPE);
 			} else {
-				aMethod1 = loaderApplet.getClass().getMethod("setFocusTraversalKeysEnabled", Boolean.TYPE);
+				aMethod1 = hostApplet.getClass().getMethod("setFocusTraversalKeysEnabled", Boolean.TYPE);
 			}
 		} catch (Exception local122) {
 		}
 		try {
-			if (loaderApplet == null) {
+			if (hostApplet == null) {
 				aMethod2 = Class.forName("java.awt.Container").getDeclaredMethod("setFocusCycleRoot", Boolean.TYPE);
 			} else {
-				aMethod2 = loaderApplet.getClass().getMethod("setFocusCycleRoot", Boolean.TYPE);
+				aMethod2 = hostApplet.getClass().getMethod("setFocusCycleRoot", Boolean.TYPE);
 			}
 		} catch (Exception local149) {
 		}
-		this.aBoolean185 = false;
+		this.isShuttingDown = false;
 		this.aThread1 = new Thread(this);
 		this.aThread1.setPriority(10);
 		this.aThread1.setDaemon(true);
@@ -162,9 +162,9 @@ public final class SignLink implements Runnable {
 		return arg0 == -128 ? this.method1737(0, 0, null, arg0 + 128, 18) : null;
 	}
 
-	public void method1732() {
+	public void shutdown() {
 		synchronized (this) {
-			this.aBoolean185 = true;
+			this.isShuttingDown = true;
 			this.notifyAll();
 		}
 		try {
@@ -173,13 +173,13 @@ public final class SignLink implements Runnable {
 		}
 		if (this.aClass207_3 != null) {
 			try {
-				this.aClass207_3.method4713();
+				this.aClass207_3.closeFile();
 			} catch (IOException local28) {
 			}
 		}
 		if (this.aClass207_1 != null) {
 			try {
-				this.aClass207_1.method4713();
+				this.aClass207_1.closeFile();
 			} catch (IOException local38) {
 			}
 		}
@@ -187,7 +187,7 @@ public final class SignLink implements Runnable {
 			for (int local44 = 0; local44 < this.aClass207Array1.length; local44++) {
 				if (this.aClass207Array1[local44] != null) {
 					try {
-						this.aClass207Array1[local44].method4713();
+						this.aClass207Array1[local44].closeFile();
 					} catch (IOException local58) {
 					}
 				}
@@ -195,7 +195,7 @@ public final class SignLink implements Runnable {
 		}
 		if (this.aClass207_2 != null) {
 			try {
-				this.aClass207_2.method4713();
+				this.aClass207_2.closeFile();
 			} catch (IOException local82) {
 			}
 		}
@@ -349,7 +349,7 @@ public final class SignLink implements Runnable {
 			Class199 local15;
 			synchronized (this) {
 				while (true) {
-					if (this.aBoolean185) {
+					if (this.isShuttingDown) {
 						return;
 					}
 					if (this.aClass199_4 != null) {

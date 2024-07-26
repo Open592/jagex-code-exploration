@@ -7,7 +7,7 @@ import org.openrs2.deob.annotation.Pc;
 public final class Static141 {
 
 	@OriginalMember(owner = "client!hc", name = "C", descriptor = "I")
-	public static int anInt2881;
+	public static int width;
 
 	@OriginalMember(owner = "client!hc", name = "D", descriptor = "[Ljava/lang/String;")
 	public static final String[] aStringArray11 = new String[100];

@@ -13,7 +13,7 @@ public final class Static353 {
 	public static final String[] aStringArray32 = new String[100];
 
 	@OriginalMember(owner = "client!ru", name = "i", descriptor = "I")
-	public static int anInt6121 = 765;
+	public static int width = 765;
 
 	@OriginalMember(owner = "client!ru", name = "a", descriptor = "(IIIFLclient!ge;FF[BIIFIFZ)V")
 	public static void method4771(@OriginalArg(3) float arg0, @OriginalArg(4) Class79 arg1, @OriginalArg(5) float arg2, @OriginalArg(6) float arg3, @OriginalArg(7) byte[] arg4, @OriginalArg(9) int arg5, @OriginalArg(10) float arg6, @OriginalArg(11) int arg7, @OriginalArg(12) float arg8) {

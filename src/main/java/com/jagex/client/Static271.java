@@ -3899,7 +3899,7 @@ public final class Static271 {
 					}
 					if (arg0 == 5430) {
 						try {
-							Static458.callJavaScriptMethod(Static206.signLink.loaderApplet, "accountcreated");
+							Static458.callJavaScriptMethod(Static206.signLink.hostApplet, "accountcreated");
 							return;
 						} catch (@Pc(3639) Throwable local3639) {
 							return;

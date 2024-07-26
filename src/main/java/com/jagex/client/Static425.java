@@ -114,8 +114,8 @@ public final class Static425 {
 				Static3.aClass4_Sub12_Sub1_5.method2531(592);
 				Static3.aClass4_Sub12_Sub1_5.method2551(Static161.anInt3177);
 				Static3.aClass4_Sub12_Sub1_5.method2551(Static450.method5664());
-				Static3.aClass4_Sub12_Sub1_5.method2524(Static141.anInt2881);
-				Static3.aClass4_Sub12_Sub1_5.method2524(Static302.anInt5346);
+				Static3.aClass4_Sub12_Sub1_5.method2524(Static141.width);
+				Static3.aClass4_Sub12_Sub1_5.method2524(Static302.height);
 				Static3.aClass4_Sub12_Sub1_5.method2551(Static323.aClass50_Sub1_1.anInt3440);
 				Static82.method1471(Static3.aClass4_Sub12_Sub1_5);
 				Static3.aClass4_Sub12_Sub1_5.method2518(Static34.settings);
@@ -232,24 +232,24 @@ public final class Static425 {
 					Static329.aClass240_1.method5230(Static325.aBoolean506);
 					if (Static109.aBoolean628 && !Static436.aBoolean668 || Static246.aBoolean423) {
 						try {
-							Static458.callJavaScriptMethod(Static206.signLink.loaderApplet, "zap");
+							Static458.callJavaScriptMethod(Static206.signLink.hostApplet, "zap");
 						} catch (@Pc(880) Throwable local880) {
 							if (Static306.hasAdvert) {
 								try {
-									Static206.signLink.loaderApplet.getAppletContext().showDocument(new URL(Static206.signLink.loaderApplet.getCodeBase(), "blank.ws"), "tbi");
+									Static206.signLink.hostApplet.getAppletContext().showDocument(new URL(Static206.signLink.hostApplet.getCodeBase(), "blank.ws"), "tbi");
 								} catch (@Pc(896) Exception local896) {
 								}
 							}
 						}
 					} else {
 						try {
-							Static458.callJavaScriptMethod(Static206.signLink.loaderApplet, "unzap");
+							Static458.callJavaScriptMethod(Static206.signLink.hostApplet, "unzap");
 						} catch (@Pc(870) Throwable local870) {
 						}
 					}
 					if (Static373.liveModeWhere == Static104.modewhere) {
 						try {
-							Static458.callJavaScriptMethod(Static206.signLink.loaderApplet, "loggedin");
+							Static458.callJavaScriptMethod(Static206.signLink.hostApplet, "loggedin");
 						} catch (@Pc(908) Throwable local908) {
 						}
 					}

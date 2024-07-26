@@ -26,8 +26,8 @@ public final class Static275 {
 		@Pc(29) String local29;
 		if (SignLink.systemOSName.startsWith("win") && SignLink.anInt1987 != 3) {
 			local29 = null;
-			if (arg0.loaderApplet != null) {
-				local29 = arg0.loaderApplet.getParameter("haveie6");
+			if (arg0.hostApplet != null) {
+				local29 = arg0.hostApplet.getParameter("haveie6");
 			}
 			if (local29 == null || !local29.equals("1")) {
 				@Pc(49) Class199 local49 = Static197.method3110(arg0, 0, arg1);
@@ -39,8 +39,8 @@ public final class Static275 {
 		}
 		if (SignLink.systemOSName.startsWith("mac")) {
 			local29 = null;
-			if (arg0.loaderApplet != null) {
-				local29 = arg0.loaderApplet.getParameter("havefirefox");
+			if (arg0.hostApplet != null) {
+				local29 = arg0.hostApplet.getParameter("havefirefox");
 			}
 			if (local29 != null && local29.equals("1") && arg2) {
 				Static197.method3110(arg0, 1, arg1);

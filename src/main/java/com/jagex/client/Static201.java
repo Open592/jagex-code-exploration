@@ -35,7 +35,7 @@ public final class Static201 {
 			}
 			if (arg4) {
 				local6.setColor(Color.black);
-				local6.fillRect(0, 0, Static141.anInt2881, Static302.anInt5346);
+				local6.fillRect(0, 0, Static141.width, Static302.height);
 			}
 			if (arg2 == null) {
 				arg2 = new Color(140, 17, 17);
@@ -61,10 +61,10 @@ public final class Static201 {
 				local63.setFont(Static381.aFont1);
 				local63.setColor(arg0);
 				local63.drawString(arg5, (304 - arg5.length() * 6) / 2, 22);
-				local6.drawImage(Static253.anImage2, Static141.anInt2881 / 2 - 152, Static302.anInt5346 / 2 + -18, null);
+				local6.drawImage(Static253.anImage2, Static141.width / 2 - 152, Static302.height / 2 + -18, null);
 			} catch (@Pc(149) Exception local149) {
-				@Pc(155) int local155 = Static141.anInt2881 / 2 - 152;
-				@Pc(161) int local161 = Static302.anInt5346 / 2 - 18;
+				@Pc(155) int local155 = Static141.width / 2 - 152;
+				@Pc(161) int local161 = Static302.height / 2 - 18;
 				local6.setColor(arg1);
 				local6.drawRect(0, 0, 303, 33);
 				local6.setColor(arg2);
@@ -79,7 +79,7 @@ public final class Static201 {
 			if (Static129.aString30 != null) {
 				local6.setFont(Static381.aFont1);
 				local6.setColor(arg0);
-				local6.drawString(Static129.aString30, Static141.anInt2881 / 2 - Static129.aString30.length() * 6 / 2, Static302.anInt5346 / 2 + -26);
+				local6.drawString(Static129.aString30, Static141.width / 2 - Static129.aString30.length() * 6 / 2, Static302.height / 2 + -26);
 			}
 		} catch (@Pc(268) Exception local268) {
 			Static273.aCanvas5.repaint();

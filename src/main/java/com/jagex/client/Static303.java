@@ -13,7 +13,7 @@ public final class Static303 {
 	public static int anInt5361 = -1;
 
 	@OriginalMember(owner = "client!pg", name = "w", descriptor = "I")
-	public static int anInt5363 = 0;
+	public static int yPOS = 0;
 
 	@OriginalMember(owner = "client!pg", name = "x", descriptor = "I")
 	public static final int anInt5364 = 328;

@@ -10,7 +10,7 @@ import org.openrs2.deob.annotation.Pc;
 public final class Static386 {
 
 	@OriginalMember(owner = "client!tm", name = "n", descriptor = "Lclient!et;")
-	public static SignLink aSignLink_5;
+	public static SignLink signLink;
 
 	@OriginalMember(owner = "client!tm", name = "s", descriptor = "[[B")
 	public static byte[][] aByteArrayArray15;

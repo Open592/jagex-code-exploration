@@ -90,7 +90,7 @@ public final class Static164 {
 			local17 = local28.method518();
 			local23 = local28.method519();
 		}
-		Static59.method988(0, 0, Static141.anInt2881, Static334.anInt5766, 0, 0, Static302.anInt5346, local23, local17);
+		Static59.method988(0, 0, Static141.width, Static334.anInt5766, 0, 0, Static302.height, local23, local17);
 		if (Static81.aClass247_2 != null) {
 			Static308.method4154(local17, local23);
 		}

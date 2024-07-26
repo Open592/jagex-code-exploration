@@ -73,7 +73,7 @@ public final class Static251 {
 		Static242.method3557();
 		Static374.method4994(true);
 		try {
-			Static458.callJavaScriptMethod(Static206.signLink.loaderApplet, "loggedout");
+			Static458.callJavaScriptMethod(Static206.signLink.hostApplet, "loggedout");
 		} catch (@Pc(136) Throwable local136) {
 		}
 		Static178.aClass4_Sub42_2 = null;

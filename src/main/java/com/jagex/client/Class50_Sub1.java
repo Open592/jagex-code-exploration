@@ -95,7 +95,7 @@ public final class Class50_Sub1 extends Class50 {
 		}
 		try {
 			if (local129 != null) {
-				local129.method4713();
+				local129.closeFile();
 			}
 		} catch (@Pc(203) Exception local203) {
 		}
@@ -118,7 +118,7 @@ public final class Class50_Sub1 extends Class50 {
 		}
 		try {
 			if (local7 != null) {
-				local7.method4713();
+				local7.closeFile();
 			}
 		} catch (@Pc(57) Exception local57) {
 		}

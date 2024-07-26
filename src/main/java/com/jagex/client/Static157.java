@@ -19,7 +19,7 @@ public final class Static157 {
 	public static int anInt3147 = -1;
 
 	@OriginalMember(owner = "client!hu", name = "n", descriptor = "I")
-	public static int anInt3148 = 503;
+	public static int height = 503;
 
 	@OriginalMember(owner = "client!hu", name = "a", descriptor = "(Lclient!iv;II)V")
 	public static void method2669(@OriginalArg(0) Class4_Sub12 arg0, @OriginalArg(2) int arg1) {

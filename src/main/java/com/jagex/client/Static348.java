@@ -42,17 +42,17 @@ public final class Static348 {
 		if (Static320.aFrame3 != null) {
 			return;
 		}
-		@Pc(16) int local16 = Static230.anInt4424;
-		@Pc(18) int local18 = Static303.anInt5363;
-		@Pc(25) int local25 = Static425.anInt7000 - Static141.anInt2881 - local16;
-		@Pc(33) int local33 = Static17.anInt222 - local18 - Static302.anInt5346;
+		@Pc(16) int local16 = Static230.xPOS;
+		@Pc(18) int local18 = Static303.yPOS;
+		@Pc(25) int local25 = Static425.anInt7000 - Static141.width - local16;
+		@Pc(33) int local33 = Static17.anInt222 - local18 - Static302.height;
 		if (local16 <= 0 && local25 <= 0 && local18 <= 0 && local33 <= 0) {
 			return;
 		}
 		try {
 			@Pc(49) Container local49;
 			if (Static226.aFrame1 == null) {
-				local49 = Static206.signLink.loaderApplet;
+				local49 = Static206.signLink.hostApplet;
 			} else {
 				local49 = Static226.aFrame1;
 			}

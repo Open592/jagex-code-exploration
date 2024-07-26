@@ -38,6 +38,6 @@ public final class Static327 {
 
 	@OriginalMember(owner = "client!qj", name = "a", descriptor = "(BZ)V")
 	public static void method4422(@OriginalArg(1) boolean arg0) {
-		Static395.method5164(arg0, Static302.anInt5346, Static334.anInt5766, Static141.anInt2881);
+		Static395.method5164(arg0, Static302.height, Static334.anInt5766, Static141.width);
 	}
 }

@@ -48,9 +48,9 @@ public final class Static443 {
 		}
 		arg0.p(0);
 		Static400.aClass57_23 = arg0.method4308(Static456.method328(arg1, Static338.anInt5846));
-		Static400.aClass57_23.method5534((Static141.anInt2881 - Static400.aClass57_23.j()) / 2, (Static302.anInt5346 - Static400.aClass57_23.T()) / 2);
+		Static400.aClass57_23.method5534((Static141.width - Static400.aClass57_23.j()) / 2, (Static302.height - Static400.aClass57_23.T()) / 2);
 		Static83.aClass57_10 = arg0.method4308(Static456.method328(arg1, Static367.anInt6320));
-		Static83.aClass57_10.method5534((Static141.anInt2881 - Static83.aClass57_10.j()) / 2, 18);
+		Static83.aClass57_10.method5534((Static141.width - Static83.aClass57_10.j()) / 2, 18);
 		Static326.aBoolean509 = true;
 	}
 

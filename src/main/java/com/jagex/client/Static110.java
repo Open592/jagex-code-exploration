@@ -40,8 +40,8 @@ public final class Static110 {
 		@Pc(17) int local17;
 		@Pc(15) int local15;
 		if (local11 == null) {
-			local15 = Static302.anInt5346;
-			local17 = Static141.anInt2881;
+			local15 = Static302.height;
+			local17 = Static141.width;
 		} else {
 			local17 = local11.anInt6833;
 			local15 = local11.anInt6805;

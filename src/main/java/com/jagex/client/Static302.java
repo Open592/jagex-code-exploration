@@ -8,7 +8,7 @@ import org.openrs2.deob.annotation.Pc;
 public final class Static302 {
 
 	@OriginalMember(owner = "client!pf", name = "l", descriptor = "I")
-	public static int anInt5346;
+	public static int height;
 
 	@OriginalMember(owner = "client!pf", name = "i", descriptor = "Lclient!bg;")
 	public static final Class22 aClass22_247 = new Class22(22, 9);
@@ -820,7 +820,7 @@ public final class Static302 {
 	public static boolean method4105() {
 		if (Static385.hasJS) {
 			try {
-				if ((Boolean) Static458.callJavaScriptMethod(Static206.signLink.loaderApplet, "showingVideoAd")) {
+				if ((Boolean) Static458.callJavaScriptMethod(Static206.signLink.hostApplet, "showingVideoAd")) {
 					return false;
 				}
 				return true;

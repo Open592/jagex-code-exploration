@@ -114,8 +114,8 @@ public final class Static1 {
 	public static void method5() {
 		Static429.method5476(Static351.aClass215_81);
 		Static3.aClass4_Sub12_Sub1_5.method2551(Static450.method5664());
-		Static3.aClass4_Sub12_Sub1_5.method2524(Static141.anInt2881);
-		Static3.aClass4_Sub12_Sub1_5.method2524(Static302.anInt5346);
+		Static3.aClass4_Sub12_Sub1_5.method2524(Static141.width);
+		Static3.aClass4_Sub12_Sub1_5.method2524(Static302.height);
 		Static3.aClass4_Sub12_Sub1_5.method2551(Static323.aClass50_Sub1_1.anInt3440);
 	}
 }

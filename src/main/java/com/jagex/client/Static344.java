@@ -50,15 +50,15 @@ public final class Static344 {
 		local13 += 8;
 		local24 = Static407.anInt6710 * 16 + 21;
 		@Pc(54) int local54 = arg1 - local13 / 2;
-		if (Static141.anInt2881 < local13 + local54) {
-			local54 = Static141.anInt2881 - local13;
+		if (Static141.width < local13 + local54) {
+			local54 = Static141.width - local13;
 		}
 		if (local54 < 0) {
 			local54 = 0;
 		}
 		@Pc(73) int local73 = arg0;
-		if (Static302.anInt5346 < arg0 + local24) {
-			local73 = Static302.anInt5346 - local24;
+		if (Static302.height < arg0 + local24) {
+			local73 = Static302.height - local24;
 		}
 		Static310.anInt5424 = local54;
 		if (local73 < 0) {

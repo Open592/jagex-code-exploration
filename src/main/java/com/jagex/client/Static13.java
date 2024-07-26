@@ -10,7 +10,7 @@ public final class Static13 {
 	public static String host;
 
 	@OriginalMember(owner = "client!al", name = "m", descriptor = "I")
-	public static int anInt178;
+	public static int gameVersion;
 
 	@OriginalMember(owner = "client!al", name = "a", descriptor = "(IIII)I")
 	public static int method135(@OriginalArg(0) int arg0, @OriginalArg(2) int arg1, @OriginalArg(3) int arg2) {

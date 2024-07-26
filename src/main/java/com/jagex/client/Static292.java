@@ -56,7 +56,7 @@ public final class Static292 {
 			local78 = Static320.aFrame3;
 			Static425.anInt7000 = arg2;
 		} else if (Static226.aFrame1 == null) {
-			local78 = Static206.signLink.loaderApplet;
+			local78 = Static206.signLink.hostApplet;
 			Static425.anInt7000 = local78.getSize().width;
 			Static17.anInt222 = local78.getSize().height;
 		} else {
@@ -68,26 +68,26 @@ public final class Static292 {
 		}
 		@Pc(166) int local166;
 		if (arg0 == 1) {
-			Static303.anInt5363 = 0;
-			Static302.anInt5346 = Static157.anInt3148;
-			Static230.anInt4424 = (Static425.anInt7000 - Static353.anInt6121) / 2;
-			Static141.anInt2881 = Static353.anInt6121;
+			Static303.yPOS = 0;
+			Static302.height = Static157.height;
+			Static230.xPOS = (Static425.anInt7000 - Static353.width) / 2;
+			Static141.width = Static353.width;
 		} else if (Static70.anInt1503 < 96 && Static177.anInt2973 == 0) {
 			local166 = Static425.anInt7000 > 1024 ? 1024 : Static425.anInt7000;
 			@Pc(173) int local173 = Static17.anInt222 > 768 ? 768 : Static17.anInt222;
-			Static230.anInt4424 = (Static425.anInt7000 - local166) / 2;
-			Static141.anInt2881 = local166;
-			Static302.anInt5346 = local173;
-			Static303.anInt5363 = 0;
+			Static230.xPOS = (Static425.anInt7000 - local166) / 2;
+			Static141.width = local166;
+			Static302.height = local173;
+			Static303.yPOS = 0;
 		} else {
-			Static141.anInt2881 = Static425.anInt7000;
-			Static303.anInt5363 = 0;
-			Static302.anInt5346 = Static17.anInt222;
-			Static230.anInt4424 = 0;
+			Static141.width = Static425.anInt7000;
+			Static303.yPOS = 0;
+			Static302.height = Static17.anInt222;
+			Static230.xPOS = 0;
 		}
 		if (Static104.modewhere != Static373.liveModeWhere) {
 			@Pc(196) boolean local196;
-			if (Static141.anInt2881 < 1024 && Static302.anInt5346 < 768) {
+			if (Static141.width < 1024 && Static302.height < 768) {
 				local196 = true;
 			} else {
 				local196 = false;
@@ -96,13 +96,13 @@ public final class Static292 {
 		if (arg3) {
 			Static349.method4711();
 		} else {
-			Static273.aCanvas5.setSize(Static141.anInt2881, Static302.anInt5346);
+			Static273.aCanvas5.setSize(Static141.width, Static302.height);
 			Static122.aClass19_16.method4272(Static273.aCanvas5);
 			if (local78 == Static226.aFrame1) {
 				local91 = Static226.aFrame1.getInsets();
-				Static273.aCanvas5.setLocation(local91.left + Static230.anInt4424, local91.top - -Static303.anInt5363);
+				Static273.aCanvas5.setLocation(local91.left + Static230.xPOS, local91.top - -Static303.yPOS);
 			} else {
-				Static273.aCanvas5.setLocation(Static230.anInt4424, Static303.anInt5363);
+				Static273.aCanvas5.setLocation(Static230.xPOS, Static303.yPOS);
 			}
 		}
 		if (arg0 >= 2) {

@@ -33,23 +33,26 @@ public abstract class Applet_Sub1 extends Applet implements Runnable, FocusListe
 
 	@OriginalMember(owner = "client!o", name = "a", descriptor = "(I)Z")
 	protected final boolean isValidHost() {
-		@Pc(16) String local16 = this.getDocumentBase().getHost().toLowerCase();
-		if (local16.equals("jagex.com") || local16.endsWith(".jagex.com")) {
+		@Pc(16) String host = this.getDocumentBase().getHost().toLowerCase();
+
+		if (host.equals("jagex.com") || host.endsWith(".jagex.com")) {
 			return true;
-		} else if (local16.equals("runescape.com") || local16.endsWith(".runescape.com")) {
+		} else if (host.equals("runescape.com") || host.endsWith(".runescape.com")) {
 			return true;
-		} else if (local16.equals("stellardawn.com") || local16.endsWith(".stellardawn.com")) {
+		} else if (host.equals("stellardawn.com") || host.endsWith(".stellardawn.com")) {
 			return true;
-		} else if (local16.endsWith("127.0.0.1")) {
+		} else if (host.endsWith("127.0.0.1")) {
 			return true;
 		} else {
-			while (local16.length() > 0 && local16.charAt(local16.length() - 1) >= '0' && local16.charAt(local16.length() - 1) <= '9') {
-				local16 = local16.substring(0, local16.length() - 1);
+			while (!host.isEmpty() && host.charAt(host.length() - 1) >= '0' && host.charAt(host.length() - 1) <= '9') {
+				host = host.substring(0, host.length() - 1);
 			}
-			if (local16.endsWith("192.168.1.")) {
+
+			if (host.endsWith("192.168.1.")) {
 				return true;
 			} else {
 				this.handleGameError("invalidhost");
+
 				return false;
 			}
 		}
@@ -88,7 +91,7 @@ public abstract class Applet_Sub1 extends Applet implements Runnable, FocusListe
 		this.aBoolean88 = true;
 		System.out.println("error_game_" + arg0);
 		try {
-			Static458.callJavaScriptMethod(Static206.signLink.loaderApplet, "loggedout");
+			Static458.callJavaScriptMethod(Static206.signLink.hostApplet, "loggedout");
 		} catch (@Pc(31) Throwable local31) {
 		}
 		try {
@@ -112,7 +115,7 @@ public abstract class Applet_Sub1 extends Applet implements Runnable, FocusListe
 	@Override
 	public final AppletContext getAppletContext() {
 		if (Static226.aFrame1 == null) {
-			return Static206.signLink == null || Static206.signLink.loaderApplet == this ? super.getAppletContext() : Static206.signLink.loaderApplet.getAppletContext();
+			return Static206.signLink == null || Static206.signLink.hostApplet == this ? super.getAppletContext() : Static206.signLink.hostApplet.getAppletContext();
 		} else {
 			return null;
 		}
@@ -131,20 +134,20 @@ public abstract class Applet_Sub1 extends Applet implements Runnable, FocusListe
 		if (Static320.aFrame3 != null) {
 			local18 = Static320.aFrame3;
 		} else if (Static226.aFrame1 == null) {
-			local18 = Static206.signLink.loaderApplet;
+			local18 = Static206.signLink.hostApplet;
 		} else {
 			local18 = Static226.aFrame1;
 		}
 		local18.setLayout(null);
 		Static273.aCanvas5 = new Canvas_Sub1(this);
 		local18.add(Static273.aCanvas5);
-		Static273.aCanvas5.setSize(Static141.anInt2881, Static302.anInt5346);
+		Static273.aCanvas5.setSize(Static141.width, Static302.height);
 		Static273.aCanvas5.setVisible(true);
 		if (local18 == Static226.aFrame1) {
 			@Pc(60) Insets local60 = Static226.aFrame1.getInsets();
-			Static273.aCanvas5.setLocation(Static230.anInt4424 + local60.left, local60.top + Static303.anInt5363);
+			Static273.aCanvas5.setLocation(Static230.xPOS + local60.left, local60.top + Static303.yPOS);
 		} else {
-			Static273.aCanvas5.setLocation(Static230.anInt4424, Static303.anInt5363);
+			Static273.aCanvas5.setLocation(Static230.xPOS, Static303.yPOS);
 		}
 		Static273.aCanvas5.addFocusListener(this);
 		Static273.aCanvas5.requestFocus();
@@ -174,7 +177,7 @@ public abstract class Applet_Sub1 extends Applet implements Runnable, FocusListe
 	@Override
 	public final String getParameter(@OriginalArg(0) String arg0) {
 		if (Static226.aFrame1 == null) {
-			return Static206.signLink == null || Static206.signLink.loaderApplet == this ? super.getParameter(arg0) : Static206.signLink.loaderApplet.getParameter(arg0);
+			return Static206.signLink == null || Static206.signLink.hostApplet == this ? super.getParameter(arg0) : Static206.signLink.hostApplet.getParameter(arg0);
 		} else {
 			return null;
 		}
@@ -212,8 +215,8 @@ public abstract class Applet_Sub1 extends Applet implements Runnable, FocusListe
 			}
 			Static438.aBoolean675 = true;
 		}
-		if (Static206.signLink.loaderApplet != null) {
-			Static206.signLink.loaderApplet.destroy();
+		if (Static206.signLink.hostApplet != null) {
+			Static206.signLink.hostApplet.destroy();
 		}
 		try {
 			this.method886();
@@ -239,7 +242,7 @@ public abstract class Applet_Sub1 extends Applet implements Runnable, FocusListe
 		}
 		if (Static206.signLink != null) {
 			try {
-				Static206.signLink.method1732();
+				Static206.signLink.shutdown();
 			} catch (@Pc(83) Exception local83) {
 			}
 		}
@@ -279,7 +282,7 @@ public abstract class Applet_Sub1 extends Applet implements Runnable, FocusListe
 		if (Static437.anApplet_Sub1_2 == this && !Static438.aBoolean675) {
 			Static173.aLong118 = Static282.method3962();
 			Static435.method5503(5000L);
-			Static386.aSignLink_5 = null;
+			Static386.signLink = null;
 			this.method876(false);
 		}
 	}
@@ -294,19 +297,19 @@ public abstract class Applet_Sub1 extends Applet implements Runnable, FocusListe
 	protected abstract void method880();
 
 	@OriginalMember(owner = "client!o", name = "a", descriptor = "(IIIIB)V")
-	protected final void method881(@OriginalArg(1) int arg0, @OriginalArg(2) int arg1, @OriginalArg(3) int arg2) {
+	protected final void method881(@OriginalArg(1) int modewhat, @OriginalArg(2) int height, @OriginalArg(3) int width) {
 		try {
 			if (Static437.anApplet_Sub1_2 == null) {
-				Static303.anInt5363 = 0;
-				Static230.anInt4424 = 0;
+				Static303.yPOS = 0;
+				Static230.xPOS = 0;
 				Static437.anApplet_Sub1_2 = this;
-				Static302.anInt5346 = arg1;
-				Static17.anInt222 = arg1;
-				Static13.anInt178 = 592;
-				Static141.anInt2881 = arg2;
-				Static425.anInt7000 = arg2;
+				Static302.height = height;
+				Static17.anInt222 = height;
+				Static13.gameVersion = 592;
+				Static141.width = width;
+				Static425.anInt7000 = width;
 				if (Static206.signLink == null) {
-					Static386.aSignLink_5 = Static206.signLink = new SignLink(this, arg0, null, 0);
+					Static386.signLink = Static206.signLink = new SignLink(this, modewhat, null, 0);
 				}
 				@Pc(67) Class199 local67 = Static206.signLink.method1741(1, this);
 				while (local67.anInt5760 == 0) {
@@ -368,11 +371,11 @@ public abstract class Applet_Sub1 extends Applet implements Runnable, FocusListe
 						Static263.aBoolean455 = true;
 					}
 				}
-				if (Static206.signLink.loaderApplet != null) {
+				if (Static206.signLink.hostApplet != null) {
 					@Pc(114) Method local114 = SignLink.aMethod2;
 					if (local114 != null) {
 						try {
-							local114.invoke(Static206.signLink.loaderApplet, Boolean.TRUE);
+							local114.invoke(Static206.signLink.hostApplet, Boolean.TRUE);
 						} catch (@Pc(129) Throwable local129) {
 						}
 					}
@@ -402,12 +405,12 @@ public abstract class Applet_Sub1 extends Applet implements Runnable, FocusListe
 	@OriginalMember(owner = "client!o", name = "a", descriptor = "(IZIIILjava/lang/String;II)V")
 	protected final void method885(@OriginalArg(5) String arg0, @OriginalArg(7) int arg1) {
 		try {
-			Static141.anInt2881 = 1024;
+			Static141.width = 1024;
 			Static425.anInt7000 = 1024;
-			Static303.anInt5363 = 0;
-			Static230.anInt4424 = 0;
-			Static13.anInt178 = 592;
-			Static302.anInt5346 = 768;
+			Static303.yPOS = 0;
+			Static230.xPOS = 0;
+			Static13.gameVersion = 592;
+			Static302.height = 768;
 			Static17.anInt222 = 768;
 			Static437.anApplet_Sub1_2 = this;
 			Static226.aFrame1 = new Frame();
@@ -418,7 +421,7 @@ public abstract class Applet_Sub1 extends Applet implements Runnable, FocusListe
 			Static226.aFrame1.toFront();
 			@Pc(38) Insets local38 = Static226.aFrame1.getInsets();
 			Static226.aFrame1.setSize(local38.right + Static425.anInt7000 + local38.left, local38.bottom + Static17.anInt222 + local38.top);
-			Static386.aSignLink_5 = Static206.signLink = new SignLink(null, arg1, arg0, 30);
+			Static386.signLink = Static206.signLink = new SignLink(null, arg1, arg0, 30);
 			@Pc(70) Class199 local70 = Static206.signLink.method1741(1, this);
 			while (local70.anInt5760 == 0) {
 				Static435.method5503(10L);
@@ -445,7 +448,7 @@ public abstract class Applet_Sub1 extends Applet implements Runnable, FocusListe
 	@Override
 	public final URL getDocumentBase() {
 		if (Static226.aFrame1 == null) {
-			return Static206.signLink == null || Static206.signLink.loaderApplet == this ? super.getDocumentBase() : Static206.signLink.loaderApplet.getDocumentBase();
+			return Static206.signLink == null || Static206.signLink.hostApplet == this ? super.getDocumentBase() : Static206.signLink.hostApplet.getDocumentBase();
 		} else {
 			return null;
 		}
@@ -466,7 +469,7 @@ public abstract class Applet_Sub1 extends Applet implements Runnable, FocusListe
 	@Override
 	public final URL getCodeBase() {
 		if (Static226.aFrame1 == null) {
-			return Static206.signLink == null || Static206.signLink.loaderApplet == this ? super.getCodeBase() : Static206.signLink.loaderApplet.getCodeBase();
+			return Static206.signLink == null || Static206.signLink.hostApplet == this ? super.getCodeBase() : Static206.signLink.hostApplet.getCodeBase();
 		} else {
 			return null;
 		}
@@ -493,13 +496,13 @@ public abstract class Applet_Sub1 extends Applet implements Runnable, FocusListe
 		if (Static452.anInt7357++ > 50) {
 			Static452.anInt7357 -= 50;
 			Static100.aBoolean189 = true;
-			Static273.aCanvas5.setSize(Static141.anInt2881, Static302.anInt5346);
+			Static273.aCanvas5.setSize(Static141.width, Static302.height);
 			Static273.aCanvas5.setVisible(true);
 			if (Static226.aFrame1 != null && Static320.aFrame3 == null) {
 				@Pc(86) Insets local86 = Static226.aFrame1.getInsets();
-				Static273.aCanvas5.setLocation(Static230.anInt4424 + local86.left, local86.top - -Static303.anInt5363);
+				Static273.aCanvas5.setLocation(Static230.xPOS + local86.left, local86.top - -Static303.yPOS);
 			} else {
-				Static273.aCanvas5.setLocation(Static230.anInt4424, Static303.anInt5363);
+				Static273.aCanvas5.setLocation(Static230.xPOS, Static303.yPOS);
 			}
 		}
 		this.method891();

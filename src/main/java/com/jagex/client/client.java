@@ -73,7 +73,7 @@ public final class client extends Applet_Sub1 {
 	@OriginalMember(owner = "client!o", name = "providesignlink", descriptor = "(Lclient!et;)V")
 	public static void providesignlink(@OriginalArg(0) SignLink arg0) {
 		Static206.signLink = arg0;
-		Static386.aSignLink_5 = arg0;
+		Static386.signLink = arg0;
 	}
 
 	@OriginalMember(owner = "client!client", name = "i", descriptor = "(I)V")
@@ -216,7 +216,7 @@ public final class client extends Applet_Sub1 {
 		if (Static320.aFrame3 == null) {
 			@Pc(89) Container local89;
 			if (Static226.aFrame1 == null) {
-				local89 = Static206.signLink.loaderApplet;
+				local89 = Static206.signLink.hostApplet;
 			} else {
 				local89 = Static226.aFrame1;
 			}
@@ -347,7 +347,7 @@ public final class client extends Applet_Sub1 {
 			if (Static1.aClass16_Sub1_Sub5_Sub1_1 != null) {
 				local5 = local5 + "2)" + Static263.anInt4963 + "," + (Static180.anInt3453 + Static1.aClass16_Sub1_Sub5_Sub1_1.anIntArray426[0]) + "," + (Static1.aClass16_Sub1_Sub5_Sub1_1.anIntArray427[0] + Static86.anInt1771) + "|";
 			}
-			local5 = local5 + "3)" + Static177.anInt2973 + "|4)" + Static323.aClass50_Sub1_1.anInt3440 + "|5)" + Static450.method5664() + "|6)" + Static141.anInt2881 + "," + Static302.anInt5346 + "|";
+			local5 = local5 + "3)" + Static177.anInt2973 + "|4)" + Static323.aClass50_Sub1_1.anInt3440 + "|5)" + Static450.method5664() + "|6)" + Static141.width + "," + Static302.height + "|";
 			local5 = local5 + "7)" + Static323.aClass50_Sub1_1.method2854(Static177.anInt2973) + "|";
 			local5 = local5 + "8)" + Static323.aClass50_Sub1_1.method2850(Static177.anInt2973) + "|";
 			local5 = local5 + "9)" + Static323.aClass50_Sub1_1.aBoolean294 + "|";
@@ -647,14 +647,14 @@ public final class client extends Applet_Sub1 {
 		Static6.aClient1 = this;
 
 		if (Static196.runescapeGameDetails == Static393.currentGameDetails) {
-			Static353.anInt6121 = 765;
-			Static157.anInt3148 = 503;
+			Static353.width = 765;
+			Static157.height = 503;
 		} else if (Static317.stellardawnGameDetails == Static393.currentGameDetails) {
-			Static157.anInt3148 = 480;
-			Static353.anInt6121 = 640;
+			Static157.height = 480;
+			Static353.width = 640;
 		}
 
-		this.method881(Static451.modewhat.getID() + 32, Static157.anInt3148, Static353.anInt6121);
+		this.method881(Static451.modewhat.getID() + 32, Static157.height, Static353.width);
 	}
 
 	@OriginalMember(owner = "client!client", name = "g", descriptor = "(I)V")

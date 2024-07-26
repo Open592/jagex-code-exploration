@@ -27,7 +27,7 @@ public final class Static197 {
 		@Pc(44) Class199 local44;
 		if (arg1 == 1) {
 			try {
-				Static458.callJavaScriptMethod(arg0.loaderApplet, "openjs", new Object[] { (new URL(arg0.loaderApplet.getCodeBase(), arg2)).toString() });
+				Static458.callJavaScriptMethod(arg0.hostApplet, "openjs", new Object[] { (new URL(arg0.hostApplet.getCodeBase(), arg2)).toString() });
 				local44 = new Class199();
 				local44.anInt5760 = 1;
 				return local44;
@@ -38,7 +38,7 @@ public final class Static197 {
 			}
 		} else if (arg1 == 2) {
 			try {
-				arg0.loaderApplet.getAppletContext().showDocument(new URL(arg0.loaderApplet.getCodeBase(), arg2), "_blank");
+				arg0.hostApplet.getAppletContext().showDocument(new URL(arg0.hostApplet.getCodeBase(), arg2), "_blank");
 				local44 = new Class199();
 				local44.anInt5760 = 1;
 				return local44;
@@ -49,11 +49,11 @@ public final class Static197 {
 			}
 		} else if (arg1 == 3) {
 			try {
-				Static458.callJavaScriptMethod(arg0.loaderApplet, "loggedout");
+				Static458.callJavaScriptMethod(arg0.hostApplet, "loggedout");
 			} catch (@Pc(106) Throwable local106) {
 			}
 			try {
-				arg0.loaderApplet.getAppletContext().showDocument(new URL(arg0.loaderApplet.getCodeBase(), arg2), "_top");
+				arg0.hostApplet.getAppletContext().showDocument(new URL(arg0.hostApplet.getCodeBase(), arg2), "_top");
 				local44 = new Class199();
 				local44.anInt5760 = 1;
 				return local44;

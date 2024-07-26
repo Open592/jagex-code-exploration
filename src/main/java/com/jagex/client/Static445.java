@@ -18,9 +18,9 @@ public final class Static445 {
 	@OriginalMember(owner = "client!wk", name = "b", descriptor = "(I)V")
 	public static void method5615() {
 		Static166.aClass247Array1 = null;
-		Static11.method123(0, -1, 0, Static141.anInt2881, Static334.anInt5766, Static302.anInt5346, 0, 0);
+		Static11.method123(0, -1, 0, Static141.width, Static334.anInt5766, Static302.height, 0, 0);
 		if (Static166.aClass247Array1 != null) {
-			Static147.method2460(0, Static141.anInt2881, Static258.anInt4823, Static57.aClass247_1.anInt6852, Static166.aClass247Array1, 0, -1412584499, Static302.anInt5346, Static151.anInt3054);
+			Static147.method2460(0, Static141.width, Static258.anInt4823, Static57.aClass247_1.anInt6852, Static166.aClass247Array1, 0, -1412584499, Static302.height, Static151.anInt3054);
 			Static166.aClass247Array1 = null;
 		}
 	}

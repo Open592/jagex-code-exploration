@@ -20,8 +20,8 @@ public final class Static433 {
 
 	@OriginalMember(owner = "client!vt", name = "a", descriptor = "(Lclient!ya;I)V")
 	public static void method5498(@OriginalArg(0) Class19 arg0) {
-		arg0.OA(0, 0, Static141.anInt2881, 350);
-		arg0.O(0, 0, Static141.anInt2881, 350, Static259.anInt4882 << 24 | 0x332277, 1);
+		arg0.OA(0, 0, Static141.width, 350);
+		arg0.O(0, 0, Static141.width, 350, Static259.anInt4882 << 24 | 0x332277, 1);
 		@Pc(33) int local33 = 350 / Static181.anInt3464;
 		@Pc(45) int local45;
 		if (Static93.anInt1881 > 0) {
@@ -31,10 +31,10 @@ public final class Static433 {
 			if (Static93.anInt1881 > 1) {
 				local57 = (Static93.anInt1881 - Static167.anInt3231 - 1) * (-local55 + local45) / (Static93.anInt1881 - 1) + 4;
 			}
-			arg0.O(Static141.anInt2881 - 16, local57, 12, local55, Static259.anInt4882 << 24 | 0x332277, 2);
+			arg0.O(Static141.width - 16, local57, 12, local55, Static259.anInt4882 << 24 | 0x332277, 2);
 			for (@Pc(96) int local96 = Static167.anInt3231; local96 < Static167.anInt3231 + local33 && local96 < Static93.anInt1881; local96++) {
 				@Pc(105) String[] local105 = Static113.method2058(Static102.aStringArray8[local96], '\b');
-				@Pc(112) int local112 = (Static141.anInt2881 - 24) / local105.length;
+				@Pc(112) int local112 = (Static141.width - 24) / local105.length;
 				for (@Pc(114) int local114 = 0; local114 < local105.length; local114++) {
 					@Pc(122) int local122 = local114 * local112 + 8;
 					arg0.OA(local122, 0, local122 + local112 - 8, 350);
@@ -42,8 +42,8 @@ public final class Static433 {
 				}
 			}
 		}
-		arg0.OA(0, 0, Static141.anInt2881, 350);
-		arg0.method4256(Static141.anInt2881, 350 - Static363.anInt6275, 0, -1);
+		arg0.OA(0, 0, Static141.width, 350);
+		arg0.method4256(Static141.width, 350 - Static363.anInt6275, 0, -1);
 		Static331.aClass46_10.method5058(-16777216, -1, "--> " + Static117.aString29, 350 - Static118.aClass89_5.anInt2778 - 1, 10);
 		local45 = -1;
 		if (Static24.anInt5323 % 30 > 15) {

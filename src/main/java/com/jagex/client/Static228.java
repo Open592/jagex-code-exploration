@@ -42,7 +42,7 @@ public final class Static228 {
 		}
 		try {
 			if (local11 != null) {
-				local11.method4713();
+				local11.closeFile();
 			}
 		} catch (@Pc(89) Exception local89) {
 		}

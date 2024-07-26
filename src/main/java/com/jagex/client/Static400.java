@@ -513,7 +513,7 @@ public final class Static400 {
 	public static boolean method5187() {
 		if (Static385.hasJS) {
 			try {
-				Static458.callJavaScriptMethod(Static206.signLink.loaderApplet, "showVideoAd");
+				Static458.callJavaScriptMethod(Static206.signLink.hostApplet, "showVideoAd");
 				return true;
 			} catch (@Pc(19) Throwable local19) {
 			}

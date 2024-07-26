@@ -83,13 +83,13 @@ public final class Static439 {
 	public static void dropSettingsCookie(@OriginalArg(1) String settings) {
 		Static34.settings = settings;
 
-		if (Static206.signLink.loaderApplet == null) {
+		if (Static206.signLink.hostApplet == null) {
 			return;
 		}
 
 		try {
-			@Pc(18) String cookiePrefix = Static206.signLink.loaderApplet.getParameter("cookieprefix");
-			@Pc(23) String cookieHost = Static206.signLink.loaderApplet.getParameter("cookiehost");
+			@Pc(18) String cookiePrefix = Static206.signLink.hostApplet.getParameter("cookieprefix");
+			@Pc(23) String cookieHost = Static206.signLink.hostApplet.getParameter("cookiehost");
 			@Pc(38) String cookieString = cookiePrefix + "settings=" + settings + "; version=1; path=/; domain=" + cookieHost;
 
 			if (settings.isEmpty()) {
@@ -98,7 +98,7 @@ public final class Static439 {
 				cookieString = cookieString + "; Expires=" + Static171.timestampToDateString(Static282.method3962() + 94608000000L) + "; Max-Age=" + 94608000L;
 			}
 
-			Static458.evaluateJavaScript("document.cookie=\"" + cookieString + "\"", Static206.signLink.loaderApplet);
+			Static458.evaluateJavaScript("document.cookie=\"" + cookieString + "\"", Static206.signLink.hostApplet);
 		} catch (@Pc(87) Throwable ignored) {
 		}
 	}

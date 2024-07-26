@@ -13,7 +13,7 @@ public final class Static230 {
 	public static final Class22 aClass22_194 = new Class22(8, -2);
 
 	@OriginalMember(owner = "client!lq", name = "p", descriptor = "I")
-	public static int anInt4424 = 0;
+	public static int xPOS = 0;
 
 	@OriginalMember(owner = "client!lq", name = "a", descriptor = "(Lclient!ga;ILclient!ya;)V")
 	public static void method3465(@OriginalArg(0) Interface7 arg0, @OriginalArg(2) Class19 arg1) {

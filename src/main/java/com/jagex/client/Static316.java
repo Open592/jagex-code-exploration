@@ -43,7 +43,7 @@ public final class Static316 {
 		}
 		try {
 			if (local7 != null) {
-				local7.method4713();
+				local7.closeFile();
 			}
 		} catch (@Pc(93) Exception local93) {
 		}
