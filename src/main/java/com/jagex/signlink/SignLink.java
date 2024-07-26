@@ -22,21 +22,21 @@ public final class SignLink implements Runnable {
 
 	private Interface10 anInterface10_1;
 
-	public Class207[] aClass207Array1;
+	public FileOnDisk[] aFileOnDiskArray1;
 
 	private Class199 aClass199_4 = null;
 
 	private Class199 aClass199_5 = null;
 
-	public Class207 aClass207_1 = null;
+	public FileOnDisk aFileOnDisk_1 = null;
 
 	public Applet hostApplet = null;
 
 	private boolean isShuttingDown = false;
 
-	public Class207 aClass207_2 = null;
+	public FileOnDisk aFileOnDisk_2 = null;
 
-	public Class207 aClass207_3 = null;
+	public FileOnDisk aFileOnDisk_3 = null;
 
 	private final String gameName;
 
@@ -68,7 +68,7 @@ public final class SignLink implements Runnable {
 
 	public static final int anInt1987 = 3;
 
-	public static volatile long aLong70 = 0L;
+	public static volatile long refuseConnectionsUntilTimestamp = 0L;
 
 	public SignLink(Applet hostApplet, int modewhat, String gameName, int arg3) throws Exception {
 		this.hostApplet = hostApplet;
@@ -171,31 +171,31 @@ public final class SignLink implements Runnable {
 			this.aThread1.join();
 		} catch (InterruptedException local19) {
 		}
-		if (this.aClass207_3 != null) {
+		if (this.aFileOnDisk_3 != null) {
 			try {
-				this.aClass207_3.closeFile();
+				this.aFileOnDisk_3.close();
 			} catch (IOException local28) {
 			}
 		}
-		if (this.aClass207_1 != null) {
+		if (this.aFileOnDisk_1 != null) {
 			try {
-				this.aClass207_1.closeFile();
+				this.aFileOnDisk_1.close();
 			} catch (IOException local38) {
 			}
 		}
-		if (this.aClass207Array1 != null) {
-			for (int local44 = 0; local44 < this.aClass207Array1.length; local44++) {
-				if (this.aClass207Array1[local44] != null) {
+		if (this.aFileOnDiskArray1 != null) {
+			for (int local44 = 0; local44 < this.aFileOnDiskArray1.length; local44++) {
+				if (this.aFileOnDiskArray1[local44] != null) {
 					try {
-						this.aClass207Array1[local44].closeFile();
+						this.aFileOnDiskArray1[local44].close();
 					} catch (IOException local58) {
 					}
 				}
 			}
 		}
-		if (this.aClass207_2 != null) {
+		if (this.aFileOnDisk_2 != null) {
 			try {
-				this.aClass207_2.closeFile();
+				this.aFileOnDisk_2.close();
 			} catch (IOException local82) {
 			}
 		}
@@ -211,7 +211,7 @@ public final class SignLink implements Runnable {
 
 	private Class199 method1735(int arg0, Component arg1, boolean arg2) {
 		if (arg0 != -23993) {
-			this.method1753();
+			this.refuseConnectionForFiveSeconds();
 		}
 
 		return this.method1737(arg2 ? 1 : 0, 0, arg1, 0, 15);
@@ -339,8 +339,8 @@ public final class SignLink implements Runnable {
 		return this.method1737(0, 0, arg0, 0, 21);
 	}
 
-	public void method1753() {
-		aLong70 = Static282.method3962() + 5000L;
+	public void refuseConnectionForFiveSeconds() {
+		refuseConnectionsUntilTimestamp = MonotonicClock.getCurrentTimeInMilliseconds() + 5000L;
 	}
 
 	@Override
@@ -369,7 +369,7 @@ public final class SignLink implements Runnable {
 			try {
 				int local41 = local15.anInt5759;
 				if (local41 == 1) {
-					if (aLong70 > Static282.method3962()) {
+					if (refuseConnectionsUntilTimestamp > MonotonicClock.getCurrentTimeInMilliseconds()) {
 						throw new IOException();
 					}
 					local15.anObject29 = new Socket(InetAddress.getByName((String) local15.anObject28), local15.anInt5758);
@@ -380,7 +380,7 @@ public final class SignLink implements Runnable {
 					local181.setPriority(local15.anInt5758);
 					local15.anObject29 = local181;
 				} else if (local41 == 4) {
-					if (aLong70 > Static282.method3962()) {
+					if (refuseConnectionsUntilTimestamp > MonotonicClock.getCurrentTimeInMilliseconds()) {
 						throw new IOException();
 					}
 					local15.anObject29 = new DataInputStream(((URL) local15.anObject28).openStream());

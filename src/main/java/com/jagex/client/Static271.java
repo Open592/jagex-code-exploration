@@ -1,7 +1,7 @@
 package com.jagex.client;
 
 import com.jagex.client.jagex3.jagmisc.jagmisc;
-import com.jagex.signlink.Static282;
+import com.jagex.signlink.MonotonicClock;
 import com.jagex.signlink.SignLink;
 import java.util.Calendar;
 import java.util.Date;
@@ -4585,11 +4585,11 @@ public final class Static271 {
 					}
 				} else if (arg0 < 6400) {
 					if (arg0 == 6300) {
-						anIntArray330[anInt5095++] = (int) (Static282.method3962() / 60000L);
+						anIntArray330[anInt5095++] = (int) (MonotonicClock.getCurrentTimeInMilliseconds() / 60000L);
 						return;
 					}
 					if (arg0 == 6301) {
-						anIntArray330[anInt5095++] = (int) (Static282.method3962() / 86400000L) - 11745;
+						anIntArray330[anInt5095++] = (int) (MonotonicClock.getCurrentTimeInMilliseconds() / 86400000L) - 11745;
 						return;
 					}
 					if (arg0 == 6302) {
@@ -4605,7 +4605,7 @@ public final class Static271 {
 					}
 					if (arg0 == 6303) {
 						aCalendar2.clear();
-						aCalendar2.setTime(new Date(Static282.method3962()));
+						aCalendar2.setTime(new Date(MonotonicClock.getCurrentTimeInMilliseconds()));
 						anIntArray330[anInt5095++] = aCalendar2.get(1);
 						return;
 					}

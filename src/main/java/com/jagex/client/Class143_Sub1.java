@@ -1,6 +1,6 @@
 package com.jagex.client;
 
-import com.jagex.signlink.Static282;
+import com.jagex.signlink.MonotonicClock;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalClass;
 import org.openrs2.deob.annotation.OriginalMember;
@@ -306,7 +306,7 @@ public final class Class143_Sub1 extends Class143 {
 				this.aClass183_31 = null;
 			}
 		}
-		if (!this.aBoolean414 || this.aLong149 > Static282.method3962()) {
+		if (!this.aBoolean414 || this.aLong149 > MonotonicClock.getCurrentTimeInMilliseconds()) {
 			return;
 		}
 		for (@Pc(325) Class4_Sub1_Sub6 local325 = (Class4_Sub1_Sub6) this.aClass102_20.method2705(); local325 != null; local325 = (Class4_Sub1_Sub6) this.aClass102_20.method2704()) {
@@ -321,7 +321,7 @@ public final class Class143_Sub1 extends Class143 {
 				}
 			}
 		}
-		this.aLong149 = Static282.method3962() + 1000L;
+		this.aLong149 = MonotonicClock.getCurrentTimeInMilliseconds() + 1000L;
 	}
 
 	@OriginalMember(owner = "client!lv", name = "a", descriptor = "(Z)I")

@@ -5,7 +5,7 @@ import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.awt.event.MouseMotionListener;
 
-import com.jagex.signlink.Static282;
+import com.jagex.signlink.MonotonicClock;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalClass;
 import org.openrs2.deob.annotation.OriginalMember;
@@ -151,7 +151,7 @@ public final class Class80_Sub1 extends Class80 implements MouseListener, MouseM
 		local7.anInt449 = arg0;
 		local7.anInt455 = arg1;
 		local7.anInt451 = arg2;
-		local7.aLong23 = Static282.method3962();
+		local7.aLong23 = MonotonicClock.getCurrentTimeInMilliseconds();
 		this.aClass183_17.method4137(local7);
 	}
 

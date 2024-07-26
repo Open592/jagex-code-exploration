@@ -1,6 +1,6 @@
 package com.jagex.client;
 
-import com.jagex.signlink.Static282;
+import com.jagex.signlink.MonotonicClock;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;
@@ -33,14 +33,14 @@ public final class Static70 {
 		Static272.anInt5116 = Static435.anInt7099;
 		Static275.anInt5137 = 0;
 		Static435.anInt7099 = 0;
-		@Pc(18) long local18 = Static282.method3962();
+		@Pc(18) long local18 = MonotonicClock.getCurrentTimeInMilliseconds();
 		for (@Pc(23) Class3_Sub2 local23 = (Class3_Sub2) Static384.aClass84_8.method2312(); local23 != null; local23 = (Class3_Sub2) Static384.aClass84_8.method2309()) {
 			if (local23.method172(arg1, arg0)) {
 				Static275.anInt5137++;
 			}
 		}
 		if (Static30.aBoolean53 && arg0 % 100L == 0L) {
-			System.out.println("Particle system count: " + Static384.aClass84_8.method2307() + ", running: " + Static275.anInt5137 + ". Particles: " + Static435.anInt7099 + ". Time taken: " + (Static282.method3962() - local18) + "ms");
+			System.out.println("Particle system count: " + Static384.aClass84_8.method2307() + ", running: " + Static275.anInt5137 + ". Particles: " + Static435.anInt7099 + ". Time taken: " + (MonotonicClock.getCurrentTimeInMilliseconds() - local18) + "ms");
 		}
 	}
 }

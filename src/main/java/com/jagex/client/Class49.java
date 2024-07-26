@@ -2,7 +2,7 @@ package com.jagex.client;
 
 import java.awt.Component;
 
-import com.jagex.signlink.Static282;
+import com.jagex.signlink.MonotonicClock;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalClass;
 import org.openrs2.deob.annotation.OriginalMember;
@@ -33,7 +33,7 @@ public class Class49 {
 	private boolean aBoolean226 = false;
 
 	@OriginalMember(owner = "client!ln", name = "h", descriptor = "J")
-	private long aLong78 = Static282.method3962();
+	private long aLong78 = MonotonicClock.getCurrentTimeInMilliseconds();
 
 	@OriginalMember(owner = "client!ln", name = "w", descriptor = "I")
 	private int anInt2442 = 0;
@@ -80,7 +80,7 @@ public class Class49 {
 			this.method2072();
 		} catch (@Pc(10) Exception local10) {
 			this.method2071();
-			this.aLong80 = Static282.method3962() + 2000L;
+			this.aLong80 = MonotonicClock.getCurrentTimeInMilliseconds() + 2000L;
 		}
 	}
 
@@ -102,7 +102,7 @@ public class Class49 {
 		if (this.aBoolean226) {
 			return;
 		}
-		@Pc(14) long local14 = Static282.method3962();
+		@Pc(14) long local14 = MonotonicClock.getCurrentTimeInMilliseconds();
 		try {
 			if (local14 > this.aLong78 + 500000L) {
 				this.aLong78 = local14 - 500000L;
@@ -323,7 +323,7 @@ public class Class49 {
 		if (this.aClass4_Sub15_5 != null) {
 			this.aClass4_Sub15_5.method4855(arg0, 0, 256);
 		}
-		this.aLong78 = Static282.method3962();
+		this.aLong78 = MonotonicClock.getCurrentTimeInMilliseconds();
 	}
 
 	@OriginalMember(owner = "client!ln", name = "c", descriptor = "(B)V")

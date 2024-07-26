@@ -1,6 +1,6 @@
 package com.jagex.client;
 
-import com.jagex.signlink.Static282;
+import com.jagex.signlink.MonotonicClock;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalClass;
 import org.openrs2.deob.annotation.OriginalMember;
@@ -35,7 +35,7 @@ public final class Class36_Sub2 extends Class36 {
 
 	@OriginalMember(owner = "client!ef", name = "d", descriptor = "(B)J")
 	private long method1557() {
-		@Pc(4) long local4 = Static282.method3962() * 1000000L;
+		@Pc(4) long local4 = MonotonicClock.getCurrentTimeInMilliseconds() * 1000000L;
 		@Pc(10) long local10 = local4 - this.aLong64;
 		this.aLong64 = local4;
 		if (local10 > -5000000000L && local10 < 5000000000L) {

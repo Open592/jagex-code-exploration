@@ -1,6 +1,6 @@
 package com.jagex.client;
 
-import com.jagex.signlink.Static282;
+import com.jagex.signlink.MonotonicClock;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;
@@ -31,7 +31,7 @@ public final class Static92 {
 			if (local12 == null) {
 				return null;
 			}
-			if (local12.method2611() > Static282.method3962()) {
+			if (local12.method2611() > MonotonicClock.getCurrentTimeInMilliseconds()) {
 				return null;
 			}
 			local12.method5684();

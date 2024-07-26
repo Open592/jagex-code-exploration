@@ -2,7 +2,7 @@ package com.jagex.client;
 
 import java.io.IOException;
 
-import com.jagex.signlink.Static282;
+import com.jagex.signlink.MonotonicClock;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;
@@ -91,14 +91,14 @@ public final class Static437 {
 		}
 		Static321.method4336(Static251.aClass215_54.method4926(), Static3.aClass4_Sub12_Sub1_5);
 		if (Static178.aClass4_Sub42_2 == null) {
-			if (Static419.aLong212 <= Static282.method3962()) {
+			if (Static419.aLong212 <= MonotonicClock.getCurrentTimeInMilliseconds()) {
 				Static178.aClass4_Sub42_2 = Static402.aClass256_1.method5479(Static321.aString54);
 			}
 		} else if (Static178.aClass4_Sub42_2.anInt6883 != -1) {
 			Static429.method5476(Static27.aClass215_7);
 			Static3.aClass4_Sub12_Sub1_5.method2524(Static178.aClass4_Sub42_2.anInt6883);
 			Static178.aClass4_Sub42_2 = null;
-			Static419.aLong212 = Static282.method3962() + 30000L;
+			Static419.aLong212 = MonotonicClock.getCurrentTimeInMilliseconds() + 30000L;
 		}
 		@Pc(99) Class4_Sub5 local99 = (Class4_Sub5) Static413.aClass183_47.method4140();
 		@Pc(119) int local119;
@@ -108,7 +108,7 @@ public final class Static437 {
 		@Pc(227) int local227;
 		@Pc(234) int local234;
 		@Pc(246) int local246;
-		if (local99 != null || Static282.method3962() - 2000L > Static292.aLong177) {
+		if (local99 != null || MonotonicClock.getCurrentTimeInMilliseconds() - 2000L > Static292.aLong177) {
 			@Pc(116) boolean local116 = false;
 			local119 = Static3.aClass4_Sub12_Sub1_5.anInt2997;
 			for (@Pc(124) Class4_Sub5 local124 = (Class4_Sub5) Static348.aClass183_42.method4140(); local124 != null && Static3.aClass4_Sub12_Sub1_5.anInt2997 - local119 < 240; local124 = (Class4_Sub5) Static348.aClass183_42.method4144()) {
@@ -479,7 +479,7 @@ public final class Static437 {
 											for (local416 = 0; local416 < 5; local416++) {
 												@Pc(1675) int local1675 = Static390.anIntArray486[local416]++;
 											}
-											if (Static135.aBoolean256 && Static174.aLong119 < Static282.method3962() - 60000L) {
+											if (Static135.aBoolean256 && Static174.aLong119 < MonotonicClock.getCurrentTimeInMilliseconds() - 60000L) {
 												Static316.method4216();
 											}
 											Static200.anInt3873++;

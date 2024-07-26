@@ -1,6 +1,6 @@
 package com.jagex.client;
 
-import com.jagex.signlink.Static282;
+import com.jagex.signlink.MonotonicClock;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;
@@ -95,7 +95,7 @@ public final class Static439 {
 			if (settings.isEmpty()) {
 				cookieString = cookieString + "; Expires=Thu, 01-Jan-1970 00:00:00 GMT; Max-Age=0";
 			} else {
-				cookieString = cookieString + "; Expires=" + Static171.timestampToDateString(Static282.method3962() + 94608000000L) + "; Max-Age=" + 94608000L;
+				cookieString = cookieString + "; Expires=" + Static171.timestampToDateString(MonotonicClock.getCurrentTimeInMilliseconds() + 94608000000L) + "; Max-Age=" + 94608000L;
 			}
 
 			Static458.evaluateJavaScript("document.cookie=\"" + cookieString + "\"", Static206.signLink.hostApplet);

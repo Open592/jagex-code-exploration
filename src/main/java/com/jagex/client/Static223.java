@@ -1,6 +1,6 @@
 package com.jagex.client;
 
-import com.jagex.signlink.Static282;
+import com.jagex.signlink.MonotonicClock;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalMember;
 
@@ -37,7 +37,7 @@ public final class Static223 {
 			return;
 		}
 		Static419.aClass155_2 = arg0;
-		Static442.aLong219 = Static282.method3962();
+		Static442.aLong219 = MonotonicClock.getCurrentTimeInMilliseconds();
 		Static168.anInt3253 = arg1;
 		Static392.anInt6542 = arg1;
 		if (Static392.anInt6542 != 0) {

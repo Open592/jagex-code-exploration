@@ -4,7 +4,7 @@ import java.io.EOFException;
 import java.io.File;
 import java.io.IOException;
 
-import com.jagex.signlink.Class207;
+import com.jagex.signlink.FileOnDisk;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalClass;
 import org.openrs2.deob.annotation.OriginalMember;
@@ -29,7 +29,7 @@ public final class Class139 {
 	private long aLong146 = -1L;
 
 	@OriginalMember(owner = "client!lq", name = "g", descriptor = "Lclient!rp;")
-	private final Class207 aClass207_4;
+	private final FileOnDisk aFileOnDisk_4;
 
 	@OriginalMember(owner = "client!lq", name = "j", descriptor = "J")
 	private long aLong145;
@@ -51,9 +51,9 @@ public final class Class139 {
 	}
 
 	@OriginalMember(owner = "client!lq", name = "<init>", descriptor = "(Lclient!rp;II)V")
-	public Class139(@OriginalArg(0) Class207 arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2) throws IOException {
-		this.aClass207_4 = arg0;
-		this.aLong147 = this.aLong145 = arg0.method4717();
+	public Class139(@OriginalArg(0) FileOnDisk arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2) throws IOException {
+		this.aFileOnDisk_4 = arg0;
+		this.aLong147 = this.aLong145 = arg0.bufferLength();
 		this.aLong142 = 0L;
 		this.aByteArray54 = new byte[arg2];
 		this.aByteArray55 = new byte[arg1];
@@ -89,10 +89,10 @@ public final class Class139 {
 			}
 			if (arg2 > this.aByteArray54.length) {
 				if (this.aLong144 != this.aLong142) {
-					this.aClass207_4.method4718(this.aLong142);
+					this.aFileOnDisk_4.seek(this.aLong142);
 					this.aLong144 = this.aLong142;
 				}
-				this.aClass207_4.method4714(arg0, arg2, arg1);
+				this.aFileOnDisk_4.write(arg0, arg2, arg1);
 				this.aLong144 += arg2;
 				if (this.aLong144 > this.aLong145) {
 					this.aLong145 = this.aLong144;
@@ -142,7 +142,7 @@ public final class Class139 {
 	private void method3467() throws IOException {
 		this.anInt4428 = 0;
 		if (this.aLong142 != this.aLong144) {
-			this.aClass207_4.method4718(this.aLong142);
+			this.aFileOnDisk_4.seek(this.aLong142);
 			this.aLong144 = this.aLong142;
 		}
 		this.aLong146 = this.aLong142;
@@ -151,7 +151,7 @@ public final class Class139 {
 			if (local40 > 200000000) {
 				local40 = 200000000;
 			}
-			@Pc(55) int local55 = this.aClass207_4.method4715(this.anInt4428, local40, this.aByteArray55);
+			@Pc(55) int local55 = this.aFileOnDisk_4.read(this.anInt4428, local40, this.aByteArray55);
 			if (local55 == -1) {
 				break;
 			}
@@ -185,10 +185,10 @@ public final class Class139 {
 				this.aLong142 += local124;
 			}
 			if (this.aByteArray55.length < arg0) {
-				this.aClass207_4.method4718(this.aLong142);
+				this.aFileOnDisk_4.seek(this.aLong142);
 				this.aLong144 = this.aLong142;
 				while (arg0 > 0) {
-					local124 = this.aClass207_4.method4715(arg2, arg0, arg1);
+					local124 = this.aFileOnDisk_4.read(arg2, arg0, arg1);
 					if (local124 == -1) {
 						break;
 					}
@@ -256,10 +256,10 @@ public final class Class139 {
 			return;
 		}
 		if (this.aLong143 != this.aLong144) {
-			this.aClass207_4.method4718(this.aLong143);
+			this.aFileOnDisk_4.seek(this.aLong143);
 			this.aLong144 = this.aLong143;
 		}
-		this.aClass207_4.method4714(0, this.anInt4426, this.aByteArray54);
+		this.aFileOnDisk_4.write(0, this.anInt4426, this.aByteArray54);
 		this.aLong144 += this.anInt4426;
 		if (this.aLong145 < this.aLong144) {
 			this.aLong145 = this.aLong144;
@@ -286,6 +286,6 @@ public final class Class139 {
 
 	@OriginalMember(owner = "client!lq", name = "c", descriptor = "(I)Ljava/io/File;")
 	private File method3473() {
-		return this.aClass207_4.method4716();
+		return this.aFileOnDisk_4.getFile();
 	}
 }

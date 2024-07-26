@@ -2,7 +2,7 @@ package com.jagex.client;
 
 import java.awt.Canvas;
 
-import com.jagex.signlink.Static282;
+import com.jagex.signlink.MonotonicClock;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;
@@ -25,11 +25,11 @@ public final class Static371 {
 			local7 = Static455.method4241(null, 0, local15, 0, null);
 			local9 = true;
 		}
-		@Pc(32) long local32 = Static282.method3962();
+		@Pc(32) long local32 = MonotonicClock.getCurrentTimeInMilliseconds();
 		for (@Pc(34) int local34 = 0; local34 < 10000; local34++) {
 			local7.method4276();
 		}
-		@Pc(69) int local69 = (int) (Static282.method3962() - local32);
+		@Pc(69) int local69 = (int) (MonotonicClock.getCurrentTimeInMilliseconds() - local32);
 		local7.method4293(0, 100, 0, -16777216, 100);
 		if (local9) {
 			local7.method4267();

@@ -1,6 +1,6 @@
 package com.jagex.client;
 
-import com.jagex.signlink.Static282;
+import com.jagex.signlink.MonotonicClock;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalClass;
 import org.openrs2.deob.annotation.OriginalMember;
@@ -52,7 +52,7 @@ public final class Class114 implements Interface12 {
 			local24 = new Class4_Sub29(4611686018427387905L);
 			this.aClass102_16.method2703((long) arg0, local24);
 		} else if (local24.aLong153 != 4611686018427387905L) {
-			local24.aLong153 = Static282.method3962() + 500L | 0x4000000000000000L;
+			local24.aLong153 = MonotonicClock.getCurrentTimeInMilliseconds() + 500L | 0x4000000000000000L;
 			return;
 		}
 	}
@@ -62,10 +62,10 @@ public final class Class114 implements Interface12 {
 		this.anIntArray220[arg1] = arg0;
 		@Pc(23) Class4_Sub29 local23 = (Class4_Sub29) this.aClass102_16.method2700((long) arg1);
 		if (local23 == null) {
-			local23 = new Class4_Sub29(Static282.method3962() + 500L);
+			local23 = new Class4_Sub29(MonotonicClock.getCurrentTimeInMilliseconds() + 500L);
 			this.aClass102_16.method2703((long) arg1, local23);
 		} else {
-			local23.aLong153 = Static282.method3962() + 500L;
+			local23.aLong153 = MonotonicClock.getCurrentTimeInMilliseconds() + 500L;
 		}
 	}
 
@@ -82,7 +82,7 @@ public final class Class114 implements Interface12 {
 
 	@OriginalMember(owner = "client!it", name = "a", descriptor = "(ZI)I")
 	public int method2832(@OriginalArg(0) boolean arg0) {
-		@Pc(8) long local8 = Static282.method3962();
+		@Pc(8) long local8 = MonotonicClock.getCurrentTimeInMilliseconds();
 		for (@Pc(22) Class4_Sub29 local22 = arg0 ? (Class4_Sub29) this.aClass102_16.method2705() : (Class4_Sub29) this.aClass102_16.method2704(); local22 != null; local22 = (Class4_Sub29) this.aClass102_16.method2704()) {
 			if ((local22.aLong153 & 0x3FFFFFFFFFFFFFFFL) < local8) {
 				if ((local22.aLong153 & 0x4000000000000000L) != 0L) {

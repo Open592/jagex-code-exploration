@@ -429,13 +429,13 @@ public final class loader extends Applet implements Runnable {
                     }
                 }
 
-                Class var32 = Class.forName("com.jagex.signlink.Class207");
+                Class var32 = Class.forName("com.jagex.signlink.FileOnDisk");
                 var27.method_0(var32.getName(), -29048, var32);
                 Class var30 = Class.forName("com.jagex.signlink.SignLink");
                 var27.method_0(var30.getName(), -29048, var30);
                 var32 = Class.forName("com.jagex.signlink.Class199");
                 var27.method_0(var32.getName(), -29048, var32);
-                var32 = Class.forName("com.jagex.signlink.Static282");
+                var32 = Class.forName("com.jagex.signlink.MonotonicClock");
                 var27.method_0(var32.getName(), -29048, var32);
                 var32 = Class.forName("com.jagex.signlink.Interface10");
                 var27.method_0(var32.getName(), -29048, var32);

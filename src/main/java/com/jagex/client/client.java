@@ -1,7 +1,7 @@
 package com.jagex.client;
 
 import com.jagex.client.jagex3.jagmisc.jagmisc;
-import com.jagex.signlink.Static282;
+import com.jagex.signlink.MonotonicClock;
 import com.jagex.signlink.SignLink;
 import java.awt.Container;
 import java.awt.Frame;
@@ -136,7 +136,7 @@ public final class client extends Applet_Sub1 {
 				local194.method2531(592);
 				Static240.aClass11_14.method142(5, local194.aByteArray36);
 				Static78.anInt1567++;
-				Static327.aLong189 = Static282.method3962();
+				Static327.aLong189 = MonotonicClock.getCurrentTimeInMilliseconds();
 			}
 			if (Static78.anInt1567 == 3) {
 				if (Static403.anInt6667 == 0 || Static403.anInt6667 == 5 || Static240.aClass11_14.method133() > 0) {
@@ -146,7 +146,7 @@ public final class client extends Applet_Sub1 {
 						return;
 					}
 					Static78.anInt1567++;
-				} else if (Static282.method3962() - Static327.aLong189 > 30000L) {
+				} else if (MonotonicClock.getCurrentTimeInMilliseconds() - Static327.aLong189 > 30000L) {
 					this.method903(1001);
 					return;
 				}
@@ -205,7 +205,7 @@ public final class client extends Applet_Sub1 {
 			Static424.aClass49_2.method2064();
 		}
 		if (Static403.anInt6667 == 30 || Static403.anInt6667 == 10) {
-			if (Static453.aLong223 != 0L && Static282.method3962() > Static453.aLong223) {
+			if (Static453.aLong223 != 0L && MonotonicClock.getCurrentTimeInMilliseconds() > Static453.aLong223) {
 				Static188.method4107(Static450.method5664(), Static323.aClass50_Sub1_1.anInt3450, Static323.aClass50_Sub1_1.anInt3431, false);
 			} else if (!Static122.aClass19_16.method4258() && Static84.aBoolean383) {
 				Static349.method4711();
@@ -234,7 +234,7 @@ public final class client extends Applet_Sub1 {
 					Static17.anInt222 = local102;
 					Static425.anInt7000 = local98;
 				}
-				Static453.aLong223 = Static282.method3962() + 500L;
+				Static453.aLong223 = MonotonicClock.getCurrentTimeInMilliseconds() + 500L;
 			}
 		}
 		if (Static320.aFrame3 != null && !Static265.aBoolean457 && (Static403.anInt6667 == 30 || Static403.anInt6667 == 10)) {
@@ -448,7 +448,7 @@ public final class client extends Applet_Sub1 {
 												Static343.method744();
 											}
 											Static375.method4999();
-											if (Static135.aBoolean256 && Static282.method3962() - 60000L > Static174.aLong119) {
+											if (Static135.aBoolean256 && MonotonicClock.getCurrentTimeInMilliseconds() - 60000L > Static174.aLong119) {
 												Static316.method4216();
 												return;
 											}
@@ -511,7 +511,7 @@ public final class client extends Applet_Sub1 {
 			Static430.anInt3862 = local85;
 		}
 		if (Static122.aClass19_16 != null) {
-			Static122.aClass19_16.method4246((int) Static282.method3962());
+			Static122.aClass19_16.method4246((int) MonotonicClock.getCurrentTimeInMilliseconds());
 		}
 		Static201.method4605();
 		Static190.anInt3602 = 0;
@@ -742,18 +742,18 @@ public final class client extends Applet_Sub1 {
 		}
 		Static96.anInt1932 = SignLink.anInt1987;
 		try {
-			if (Static206.signLink.aClass207_3 != null) {
-				Static88.aClass139_1 = new Class139(Static206.signLink.aClass207_3, 5200, 0);
+			if (Static206.signLink.aFileOnDisk_3 != null) {
+				Static88.aClass139_1 = new Class139(Static206.signLink.aFileOnDisk_3, 5200, 0);
 				for (@Pc(169) int local169 = 0; local169 < 30; local169++) {
-					Static86.aClass139Array1[local169] = new Class139(Static206.signLink.aClass207Array1[local169], 6000, 0);
+					Static86.aClass139Array1[local169] = new Class139(Static206.signLink.aFileOnDiskArray1[local169], 6000, 0);
 				}
-				Static425.aClass139_5 = new Class139(Static206.signLink.aClass207_1, 6000, 0);
+				Static425.aClass139_5 = new Class139(Static206.signLink.aFileOnDisk_1, 6000, 0);
 				Static225.aClass222_2 = new Class222(255, Static88.aClass139_1, Static425.aClass139_5, 500000);
-				Static394.aClass139_4 = new Class139(Static206.signLink.aClass207_2, 24, 0);
-				Static206.signLink.aClass207_1 = null;
-				Static206.signLink.aClass207_2 = null;
-				Static206.signLink.aClass207_3 = null;
-				Static206.signLink.aClass207Array1 = null;
+				Static394.aClass139_4 = new Class139(Static206.signLink.aFileOnDisk_2, 24, 0);
+				Static206.signLink.aFileOnDisk_1 = null;
+				Static206.signLink.aFileOnDisk_2 = null;
+				Static206.signLink.aFileOnDisk_3 = null;
+				Static206.signLink.aFileOnDiskArray1 = null;
 			}
 		} catch (@Pc(227) IOException local227) {
 			Static394.aClass139_4 = null;
@@ -831,7 +831,7 @@ public final class client extends Applet_Sub1 {
 		if (Static1.anInt5 == 0) {
 			@Pc(47) Runtime local47 = Runtime.getRuntime();
 			local57 = (int) ((local47.totalMemory() - local47.freeMemory()) / 1024L);
-			@Pc(60) long local60 = Static282.method3962();
+			@Pc(60) long local60 = MonotonicClock.getCurrentTimeInMilliseconds();
 			if (Static22.aLong17 == 0L) {
 				Static22.aLong17 = local60;
 			}

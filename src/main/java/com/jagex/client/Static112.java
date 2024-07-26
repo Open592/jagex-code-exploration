@@ -4,7 +4,7 @@ import java.io.IOException;
 import java.lang.reflect.Method;
 import java.net.Socket;
 
-import com.jagex.signlink.Static282;
+import com.jagex.signlink.MonotonicClock;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;
@@ -111,14 +111,14 @@ public final class Static112 {
 	public static int method2035() {
 		try {
 			if (Static50.anInt862 == 0) {
-				if (Static162.aLong210 > Static282.method3962() - 5000L) {
+				if (Static162.aLong210 > MonotonicClock.getCurrentTimeInMilliseconds() - 5000L) {
 					return 0;
 				}
 				Static292.aClass199_8 = Static206.signLink.method1728(Static13.host, Static313.anInt5435);
-				Static18.aLong14 = Static282.method3962();
+				Static18.aLong14 = MonotonicClock.getCurrentTimeInMilliseconds();
 				Static50.anInt862 = 1;
 			}
-			if (Static282.method3962() > Static18.aLong14 + 30000L) {
+			if (MonotonicClock.getCurrentTimeInMilliseconds() > Static18.aLong14 + 30000L) {
 				return Static28.method526(1000);
 			}
 			@Pc(78) int local78;
@@ -189,7 +189,7 @@ public final class Static112 {
 				Static273.aByteArray64 = null;
 				Static274.anInt5132 = 0;
 				Static50.anInt862 = 0;
-				Static162.aLong210 = Static282.method3962();
+				Static162.aLong210 = MonotonicClock.getCurrentTimeInMilliseconds();
 				return 0;
 			} else {
 				return Static28.method526(1002);

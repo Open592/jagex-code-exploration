@@ -8,7 +8,7 @@ import java.awt.event.KeyListener;
 import java.lang.reflect.Method;
 
 import com.jagex.signlink.SignLink;
-import com.jagex.signlink.Static282;
+import com.jagex.signlink.MonotonicClock;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalClass;
 import org.openrs2.deob.annotation.OriginalMember;
@@ -48,7 +48,7 @@ public final class Class244_Sub1 extends Class244 implements KeyListener, FocusL
 		local15.anInt781 = arg2;
 		local15.anInt782 = arg0;
 		local15.aChar1 = arg1;
-		local15.aLong29 = Static282.method3962();
+		local15.aLong29 = MonotonicClock.getCurrentTimeInMilliseconds();
 		if (this.aClass30_Sub1_3 == null) {
 			this.aClass30_Sub1_2 = local15;
 		} else {

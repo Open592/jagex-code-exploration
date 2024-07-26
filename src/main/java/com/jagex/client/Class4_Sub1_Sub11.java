@@ -1,6 +1,6 @@
 package com.jagex.client;
 
-import com.jagex.signlink.Static282;
+import com.jagex.signlink.MonotonicClock;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalClass;
 import org.openrs2.deob.annotation.OriginalMember;
@@ -51,7 +51,7 @@ public final class Class4_Sub1_Sub11 extends Class4_Sub1 {
 
 	@OriginalMember(owner = "client!hp", name = "f", descriptor = "(B)V")
 	public void method2608() {
-		super.aLong198 = Static282.method3962() + 500L | Long.MIN_VALUE & super.aLong198;
+		super.aLong198 = MonotonicClock.getCurrentTimeInMilliseconds() + 500L | Long.MIN_VALUE & super.aLong198;
 		Static250.aClass229_4.method5088(this);
 	}
 

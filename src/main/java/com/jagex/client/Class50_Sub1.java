@@ -1,7 +1,7 @@
 package com.jagex.client;
 
 import com.jagex.signlink.Class199;
-import com.jagex.signlink.Class207;
+import com.jagex.signlink.FileOnDisk;
 import com.jagex.signlink.SignLink;
 import com.jagex.client.jagex3.jagmisc.jagmisc;
 import java.io.IOException;
@@ -73,18 +73,18 @@ public final class Class50_Sub1 extends Class50 {
 		super.anInt3437 = Static249.anInt4622 == 1 ? 2 : 4;
 		super.anInt3428 = 0;
 		super.aBoolean300 = false;
-		@Pc(129) Class207 local129 = null;
+		@Pc(129) FileOnDisk local129 = null;
 		try {
 			@Pc(134) Class199 local134 = arg0.method1738("");
 			while (local134.anInt5760 == 0) {
 				Static435.method5503(1L);
 			}
 			if (local134.anInt5760 == 1) {
-				local129 = (Class207) local134.anObject29;
-				@Pc(156) byte[] local156 = new byte[(int) local129.method4717()];
+				local129 = (FileOnDisk) local134.anObject29;
+				@Pc(156) byte[] local156 = new byte[(int) local129.bufferLength()];
 				@Pc(171) int local171;
 				for (@Pc(158) int local158 = 0; local158 < local156.length; local158 += local171) {
-					local171 = local129.method4715(local158, local156.length - local158, local156);
+					local171 = local129.read(local158, local156.length - local158, local156);
 					if (local171 == -1) {
 						throw new IOException("EOF");
 					}
@@ -95,7 +95,7 @@ public final class Class50_Sub1 extends Class50 {
 		}
 		try {
 			if (local129 != null) {
-				local129.closeFile();
+				local129.close();
 			}
 		} catch (@Pc(203) Exception local203) {
 		}
@@ -103,22 +103,22 @@ public final class Class50_Sub1 extends Class50 {
 
 	@OriginalMember(owner = "client!jb", name = "a", descriptor = "(Lclient!et;B)V")
 	public void method2856(@OriginalArg(0) SignLink arg0) {
-		@Pc(7) Class207 local7 = null;
+		@Pc(7) FileOnDisk local7 = null;
 		try {
 			@Pc(20) Class199 local20 = arg0.method1738("");
 			while (local20.anInt5760 == 0) {
 				Static435.method5503(1L);
 			}
 			if (local20.anInt5760 == 1) {
-				local7 = (Class207) local20.anObject29;
+				local7 = (FileOnDisk) local20.anObject29;
 				@Pc(40) Class4_Sub12 local40 = this.method2863();
-				local7.method4714(0, local40.anInt2997, local40.aByteArray36);
+				local7.write(0, local40.anInt2997, local40.aByteArray36);
 			}
 		} catch (@Pc(50) Exception local50) {
 		}
 		try {
 			if (local7 != null) {
-				local7.closeFile();
+				local7.close();
 			}
 		} catch (@Pc(57) Exception local57) {
 		}

@@ -1,8 +1,8 @@
 package com.jagex.client;
 
 import com.jagex.signlink.Class199;
-import com.jagex.signlink.Class207;
-import com.jagex.signlink.Static282;
+import com.jagex.signlink.FileOnDisk;
+import com.jagex.signlink.MonotonicClock;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;
@@ -20,14 +20,14 @@ public final class Static316 {
 
 	@OriginalMember(owner = "client!pu", name = "a", descriptor = "(I)V")
 	public static void method4216() {
-		@Pc(7) Class207 local7 = null;
+		@Pc(7) FileOnDisk local7 = null;
 		try {
 			@Pc(16) Class199 local16 = Static206.signLink.method1738("2");
 			while (local16.anInt5760 == 0) {
 				Static435.method5503(1L);
 			}
 			if (local16.anInt5760 == 1) {
-				local7 = (Class207) local16.anObject29;
+				local7 = (FileOnDisk) local16.anObject29;
 				@Pc(41) Class4_Sub12 local41 = new Class4_Sub12(Static268.anInt4998 * 6 + 3);
 				local41.method2551(1);
 				local41.method2524(Static268.anInt4998);
@@ -37,17 +37,17 @@ public final class Static316 {
 						local41.method2531(Static165.anIntArray210[local53]);
 					}
 				}
-				local7.method4714(0, local41.anInt2997, local41.aByteArray36);
+				local7.write(0, local41.anInt2997, local41.aByteArray36);
 			}
 		} catch (@Pc(84) Exception local84) {
 		}
 		try {
 			if (local7 != null) {
-				local7.closeFile();
+				local7.close();
 			}
 		} catch (@Pc(93) Exception local93) {
 		}
-		Static174.aLong119 = Static282.method3962();
+		Static174.aLong119 = MonotonicClock.getCurrentTimeInMilliseconds();
 		Static135.aBoolean256 = false;
 	}
 

@@ -5,7 +5,7 @@ import com.jagex.client.jaggl.memory.NativeBuffer;
 import com.jagex.client.jaggl.memory.NativeHeap;
 import com.jagex.client.jaggl.memory.NativeStream;
 import com.jagex.signlink.SignLink;
-import com.jagex.signlink.Static282;
+import com.jagex.signlink.MonotonicClock;
 import java.awt.Canvas;
 import java.awt.Dimension;
 import java.awt.Rectangle;
@@ -1544,9 +1544,9 @@ public final class Class19_Sub2 extends Class19 {
 			OpenGL.glDeleteLists((int) local19.aLong224, local19.anInt5426);
 		}
 		this.aClass59_1.method1545();
-		if (this.IA() > 100663296 && Static282.method3962() > this.aLong74 + 60000L) {
+		if (this.IA() > 100663296 && MonotonicClock.getCurrentTimeInMilliseconds() > this.aLong74 + 60000L) {
 			System.gc();
-			this.aLong74 = Static282.method3962();
+			this.aLong74 = MonotonicClock.getCurrentTimeInMilliseconds();
 		}
 		this.anInt2274 = local9;
 	}

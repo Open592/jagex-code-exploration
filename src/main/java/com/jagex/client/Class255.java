@@ -2,7 +2,7 @@ package com.jagex.client;
 
 import java.io.IOException;
 
-import com.jagex.signlink.Static282;
+import com.jagex.signlink.MonotonicClock;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalClass;
 import org.openrs2.deob.annotation.OriginalMember;
@@ -98,7 +98,7 @@ public final class Class255 {
 							}
 						}
 						this.anInt7061 = 0;
-						this.aLong217 = Static282.method3962();
+						this.aLong217 = MonotonicClock.getCurrentTimeInMilliseconds();
 						return;
 					}
 					this.aClass229_9.method5088(local40);
@@ -214,7 +214,7 @@ public final class Class255 {
 	public boolean method5468() {
 		@Pc(18) int local18;
 		if (this.aClass11_13 != null) {
-			@Pc(11) long local11 = Static282.method3962();
+			@Pc(11) long local11 = MonotonicClock.getCurrentTimeInMilliseconds();
 			local18 = (int) (local11 - this.aLong217);
 			this.aLong217 = local11;
 			if (local18 > 200) {
