@@ -60,13 +60,13 @@ public final class Static425 {
 			}
 			@Pc(112) int local112;
 			if (Static238.anInt4506 == 2) {
-				if (Static36.aClass199_3.anInt5760 == 2) {
+				if (Static36.aClass199_3.status == 2) {
 					throw new IOException();
 				}
-				if (Static36.aClass199_3.anInt5760 != 1) {
+				if (Static36.aClass199_3.status != 1) {
 					return;
 				}
-				Static125.aClass11_5 = new Class11((Socket) Static36.aClass199_3.anObject29, Static206.signLink);
+				Static125.aClass11_5 = new Class11((Socket) Static36.aClass199_3.output, Static206.signLink);
 				Static36.aClass199_3 = null;
 				@Pc(102) long local102 = Static286.aLong174 = Static96.method1684(Static2.aString1);
 				Static3.aClass4_Sub12_Sub1_5.anInt2997 = 0;

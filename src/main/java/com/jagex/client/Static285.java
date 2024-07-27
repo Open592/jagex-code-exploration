@@ -42,13 +42,13 @@ public final class Static285 {
 			}
 			@Pc(118) int local118;
 			if (Static405.anInt6682 == 2) {
-				if (Static36.aClass199_3.anInt5760 == 2) {
+				if (Static36.aClass199_3.status == 2) {
 					throw new IOException();
 				}
-				if (Static36.aClass199_3.anInt5760 != 1) {
+				if (Static36.aClass199_3.status != 1) {
 					return;
 				}
-				Static125.aClass11_5 = new Class11((Socket) Static36.aClass199_3.anObject29, Static206.signLink);
+				Static125.aClass11_5 = new Class11((Socket) Static36.aClass199_3.output, Static206.signLink);
 				Static36.aClass199_3 = null;
 				Static125.aClass11_5.method142(Static3.aClass4_Sub12_Sub1_5.anInt2997, Static3.aClass4_Sub12_Sub1_5.aByteArray36);
 				Static329.method4427();

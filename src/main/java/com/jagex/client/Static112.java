@@ -124,13 +124,13 @@ public final class Static112 {
 			@Pc(78) int local78;
 			@Pc(110) int local110;
 			if (Static50.anInt862 == 1) {
-				if (Static292.aClass199_8.anInt5760 == 2) {
+				if (Static292.aClass199_8.status == 2) {
 					return Static28.method526(1001);
 				}
-				if (Static292.aClass199_8.anInt5760 != 1) {
+				if (Static292.aClass199_8.status != 1) {
 					return -1;
 				}
-				Static125.aClass11_5 = new Class11((Socket) Static292.aClass199_8.anObject29, Static206.signLink);
+				Static125.aClass11_5 = new Class11((Socket) Static292.aClass199_8.output, Static206.signLink);
 				Static292.aClass199_8 = null;
 				local78 = 0;
 				if (Static94.aBoolean176) {

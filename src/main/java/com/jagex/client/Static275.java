@@ -1,6 +1,6 @@
 package com.jagex.client;
 
-import com.jagex.signlink.Class199;
+import com.jagex.signlink.Message;
 import com.jagex.signlink.SignLink;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalMember;
@@ -30,7 +30,7 @@ public final class Static275 {
 				local29 = arg0.hostApplet.getParameter("haveie6");
 			}
 			if (local29 == null || !local29.equals("1")) {
-				@Pc(49) Class199 local49 = Static197.method3110(arg0, 0, arg1);
+				@Pc(49) Message local49 = Static197.method3110(arg0, 0, arg1);
 				Static333.aString57 = arg1;
 				Static142.aClass199_6 = local49;
 				Static248.aSignLink_6 = arg0;

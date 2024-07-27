@@ -433,13 +433,14 @@ public final class loader extends Applet implements Runnable {
                 var27.method_0(var32.getName(), -29048, var32);
                 Class var30 = Class.forName("com.jagex.signlink.SignLink");
                 var27.method_0(var30.getName(), -29048, var30);
-                var32 = Class.forName("com.jagex.signlink.Class199");
+                var32 = Class.forName("com.jagex.signlink.Message");
                 var27.method_0(var32.getName(), -29048, var32);
                 var32 = Class.forName("com.jagex.signlink.MonotonicClock");
                 var27.method_0(var32.getName(), -29048, var32);
                 var32 = Class.forName("com.jagex.signlink.Interface10");
                 var27.method_0(var32.getName(), -29048, var32);
                 var32 = var27.loadClass("com.jagex.client.client");
+
                 synchronized (this) {
                     if (this.isDestroyed) {
                         return;
@@ -449,6 +450,7 @@ public final class loader extends Applet implements Runnable {
                     Method method = var32.getMethod("providesignlink", var30);
                     method.invoke((Object) null, signLink);
                     this.applet.init();
+
                     if (this.isStarting) {
                         this.applet.start();
                     }
@@ -461,6 +463,7 @@ public final class loader extends Applet implements Runnable {
                 label201:
                 {
                     LoaderRuntimeException.gameVersionIdentifier = -682932437;
+
                     if (var21 instanceof InvocationTargetException) {
                         Throwable var2 = ((InvocationTargetException) var21).getTargetException();
                         if (var2 instanceof ThreadDeath) {

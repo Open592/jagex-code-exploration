@@ -2,7 +2,7 @@ package com.jagex.client;
 
 import java.awt.Frame;
 
-import com.jagex.signlink.Class199;
+import com.jagex.signlink.Message;
 import com.jagex.signlink.SignLink;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalMember;
@@ -22,11 +22,11 @@ public final class Static446 {
 	@OriginalMember(owner = "client!wl", name = "a", descriptor = "(Lclient!et;BLjava/awt/Frame;)V")
 	public static void method5620(@OriginalArg(0) SignLink arg0, @OriginalArg(2) Frame arg1) {
 		while (true) {
-			@Pc(6) Class199 local6 = arg0.method1727(arg1);
-			while (local6.anInt5760 == 0) {
+			@Pc(6) Message local6 = arg0.method1727(arg1);
+			while (local6.status == 0) {
 				Static435.method5503(10L);
 			}
-			if (local6.anInt5760 == 1) {
+			if (local6.status == 1) {
 				arg1.setVisible(false);
 				arg1.dispose();
 				return;

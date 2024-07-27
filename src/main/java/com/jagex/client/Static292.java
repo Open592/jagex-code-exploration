@@ -3,7 +3,7 @@ package com.jagex.client;
 import java.awt.Container;
 import java.awt.Insets;
 
-import com.jagex.signlink.Class199;
+import com.jagex.signlink.Message;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;
@@ -20,7 +20,7 @@ public final class Static292 {
 	public static long aLong177 = -1L;
 
 	@OriginalMember(owner = "client!op", name = "x", descriptor = "Lclient!qt;")
-	public static Class199 aClass199_8 = null;
+	public static Message aClass199_8 = null;
 
 	@OriginalMember(owner = "client!op", name = "B", descriptor = "[I")
 	public static final int[] anIntArray343 = new int[] { 1, 2, 4, 8 };

@@ -24,9 +24,9 @@ public final class SignLink implements Runnable {
 
 	public FileOnDisk[] aFileOnDiskArray1;
 
-	private Class199 aClass199_4 = null;
+	private Message aClass199_4 = null;
 
-	private Class199 aClass199_5 = null;
+	private Message aClass199_5 = null;
 
 	public FileOnDisk aFileOnDisk_1 = null;
 
@@ -44,7 +44,7 @@ public final class SignLink implements Runnable {
 
 	public EventQueue systemEventQueue;
 
-	private final Thread aThread1;
+	private final Thread thread;
 
 	public static String systemUserHome;
 
@@ -60,9 +60,9 @@ public final class SignLink implements Runnable {
 
 	public static String systemOSNameLowerCase;
 
-	public static Method aMethod1;
+	public static Method setFocusTraversalKeysEnabled;
 
-	public static Method aMethod2;
+	public static Method setFocusCycleRoot;
 
 	public static Hashtable aHashtable1 = new Hashtable(16);
 
@@ -76,89 +76,100 @@ public final class SignLink implements Runnable {
 		javaVersion = "1.1";
 		this.modewhat = modewhat;
 		javaVendor = "Unknown";
+
 		try {
 			javaVendor = System.getProperty("java.vendor");
 			javaVersion = System.getProperty("java.version");
-		} catch (Exception local43) {
+		} catch (Exception ignored) {
 		}
+
 		try {
 			systemOSName = System.getProperty("os.name");
 		} catch (Exception local48) {
 			systemOSName = "Unknown";
 		}
+
 		systemOSNameLowerCase = systemOSName.toLowerCase();
+
 		try {
 			systemOSArch = System.getProperty("os.arch").toLowerCase();
 		} catch (Exception local59) {
 			systemOSArch = "";
 		}
+
 		try {
 			systemOSVersion = System.getProperty("os.version").toLowerCase();
 		} catch (Exception local67) {
 			systemOSVersion = "";
 		}
+
 		try {
 			systemUserHome = System.getProperty("user.home");
 			if (systemUserHome != null) {
 				systemUserHome = systemUserHome + "/";
 			}
-		} catch (Exception local85) {
+		} catch (Exception ignored) {
 		}
+
 		if (systemUserHome == null) {
 			systemUserHome = "~/";
 		}
+
 		try {
 			this.systemEventQueue = Toolkit.getDefaultToolkit().getSystemEventQueue();
-		} catch (Throwable local95) {
+		} catch (Throwable ignored) {
 		}
+
 		try {
 			if (hostApplet == null) {
-				aMethod1 = Class.forName("java.awt.Component").getDeclaredMethod("setFocusTraversalKeysEnabled", Boolean.TYPE);
+				setFocusTraversalKeysEnabled = Class.forName("java.awt.Component").getDeclaredMethod("setFocusTraversalKeysEnabled", Boolean.TYPE);
 			} else {
-				aMethod1 = hostApplet.getClass().getMethod("setFocusTraversalKeysEnabled", Boolean.TYPE);
+				setFocusTraversalKeysEnabled = hostApplet.getClass().getMethod("setFocusTraversalKeysEnabled", Boolean.TYPE);
 			}
-		} catch (Exception local122) {
+		} catch (Exception ignored) {
 		}
+
 		try {
 			if (hostApplet == null) {
-				aMethod2 = Class.forName("java.awt.Container").getDeclaredMethod("setFocusCycleRoot", Boolean.TYPE);
+				setFocusCycleRoot = Class.forName("java.awt.Container").getDeclaredMethod("setFocusCycleRoot", Boolean.TYPE);
 			} else {
-				aMethod2 = hostApplet.getClass().getMethod("setFocusCycleRoot", Boolean.TYPE);
+				setFocusCycleRoot = hostApplet.getClass().getMethod("setFocusCycleRoot", Boolean.TYPE);
 			}
-		} catch (Exception local149) {
+		} catch (Exception ignored) {
 		}
+
 		this.isShuttingDown = false;
-		this.aThread1 = new Thread(this);
-		this.aThread1.setPriority(10);
-		this.aThread1.setDaemon(true);
-		this.aThread1.start();
+		this.thread = new Thread(this);
+		this.thread.setPriority(10);
+		this.thread.setDaemon(true);
+		this.thread.start();
 	}
 
-	public Class199 method1726(int arg0, int arg1, int arg2) {
+	public Message method1726(int arg0, int arg1, int arg2) {
 		return this.method1737((arg2 << 16) + arg0, arg1 << 16, null, 0, 6);
 	}
 
-	public Class199 method1727(Frame arg0) {
+	public Message method1727(Frame arg0) {
 		return this.method1737(0, 0, arg0, 0, 7);
 	}
 
-	public Class199 method1728(String arg0, int arg1) {
+	public Message method1728(String arg0, int arg1) {
 		return this.method1737(arg1, 0, arg0, 0, 1);
 	}
 
 	private byte[] method1729(String arg0, int arg1) {
-		Class199 local7 = this.method1749(arg0, 0, 0, 21);
+		Message local7 = this.method1749(arg0, 0, 0, 21);
 		if (arg1 != 14) {
 			this.resolveCacheFilePath(null);
 		}
-		return (byte[]) local7.anObject29;
+		return (byte[]) local7.output;
 	}
 
-	public Class199 method1730(Class[] arg0, String arg1, Class arg2) {
+	public Message method1730(Class[] arg0, String arg1, Class arg2) {
 		return this.method1737(0, 0, new Object[] { arg2, arg1, arg0 }, 0, 8);
 	}
 
-	private Class199 method1731(byte arg0) {
+	private Message method1731(byte arg0) {
 		return arg0 == -128 ? this.method1737(0, 0, null, arg0 + 128, 18) : null;
 	}
 
@@ -168,7 +179,7 @@ public final class SignLink implements Runnable {
 			this.notifyAll();
 		}
 		try {
-			this.aThread1.join();
+			this.thread.join();
 		} catch (InterruptedException local19) {
 		}
 		if (this.aFileOnDisk_3 != null) {
@@ -209,7 +220,7 @@ public final class SignLink implements Runnable {
 		return this.anInterface10_1;
 	}
 
-	private Class199 method1735(int arg0, Component arg1, boolean arg2) {
+	private Message method1735(int arg0, Component arg1, boolean arg2) {
 		if (arg0 != -23993) {
 			this.refuseConnectionForFiveSeconds();
 		}
@@ -217,32 +228,36 @@ public final class SignLink implements Runnable {
 		return this.method1737(arg2 ? 1 : 0, 0, arg1, 0, 15);
 	}
 
-	public Class199 method1736(Class arg0) {
+	public Message method1736(Class arg0) {
 		return this.method1737(0, 0, arg0, 0, 20);
 	}
 
-	private Class199 method1737(int port, int arg1, Object arg2, int arg3, int arg4) {
-		Class199 local3 = new Class199();
-		local3.anInt5758 = port;
-		local3.anObject28 = arg2;
-		local3.anInt5759 = arg4;
+	private Message method1737(int integerInput, int arg1, Object genericInput, int arg3, int messageType) {
+		Message message = new Message();
+
+		message.integerInput = integerInput;
+		message.genericInput = genericInput;
+		message.type = messageType;
+
 		synchronized (this) {
 			if (this.aClass199_5 == null) {
-				this.aClass199_5 = this.aClass199_4 = local3;
+				this.aClass199_5 = this.aClass199_4 = message;
 			} else {
-				this.aClass199_5.aClass199_9 = local3;
-				this.aClass199_5 = local3;
+				this.aClass199_5.aClass199_9 = message;
+				this.aClass199_5 = message;
 			}
+
 			this.notify();
-			return local3;
+
+			return message;
 		}
 	}
 
-	public Class199 method1738(String arg0) {
+	public Message method1738(String arg0) {
 		return this.method1737(0, 0, arg0, 0, 12);
 	}
 
-	public Class199 method1739(int arg0) {
+	public Message method1739(int arg0) {
 		return this.method1737(arg0, 0, null, 0, 3);
 	}
 
@@ -251,46 +266,50 @@ public final class SignLink implements Runnable {
 		Runtime local14 = Runtime.getRuntime();
 		Method local25 = Class.forName("java.lang.reflect.Method").getMethod("setAccessible", Boolean.TYPE);
 		Method local35;
+
 		if (!systemOSNameLowerCase.startsWith("mac")) {
 			local35 = Class.forName("java.lang.Runtime").getDeclaredMethod("loadLibrary0", local12);
 			local25.invoke(local35, Boolean.TRUE);
 			local35.invoke(local14, arg0, "jawt");
 			local25.invoke(local35, Boolean.FALSE);
 		}
+
 		local35 = Class.forName("java.lang.Runtime").getDeclaredMethod("load0", local12);
 		local25.invoke(local35, Boolean.TRUE);
+
 		if (!systemOSNameLowerCase.startsWith("win")) {
 			throw new Exception();
 		}
+
 		local35.invoke(local14, arg0, this.resolveCacheFilePath("sw3d.dll").toString());
 		local25.invoke(local35, Boolean.FALSE);
 	}
 
-	public Class199 method1741(int arg0, Runnable arg1) {
+	public Message method1741(int arg0, Runnable arg1) {
 		return this.method1737(arg0, 0, arg1, 0, 2);
 	}
 
-	private Class199 method1742(Transferable arg0, byte arg1) {
+	private Message method1742(Transferable arg0, byte arg1) {
 		return arg1 == 87 ? this.method1737(0, 0, arg0, 0, 19) : null;
 	}
 
-	public Class199 method1743(Point arg0, Component arg1, int arg2, int[] arg3, int arg4) {
+	public Message method1743(Point arg0, Component arg1, int arg2, int[] arg3, int arg4) {
 		return this.method1737(arg2, arg4, new Object[] { arg1, arg3, arg0 }, 0, 17);
 	}
 
-	public Class199 method1744(String arg0) {
+	public Message method1744(String arg0) {
 		return this.method1737(0, 0, arg0, 0, 16);
 	}
 
-	public Class199 method1745() {
+	public Message method1745() {
 		return this.method1737(0, 0, null, 0, 5);
 	}
 
-	public Class199 method1746(Class arg0) {
+	public Message method1746(Class arg0) {
 		return this.method1737(0, 0, arg0, 0, 11);
 	}
 
-	private Class199 method1747(Component arg0, boolean arg1, int arg2, int arg3) {
+	private Message method1747(Component arg0, boolean arg1, int arg2, int arg3) {
 		if (arg1) {
 			aHashtable1 = null;
 		}
@@ -298,41 +317,47 @@ public final class SignLink implements Runnable {
 		return this.method1737(arg2 + local7.x, local7.y + arg3, null, 0, 14);
 	}
 
-	private Class199 method1749(Object arg0, int arg1, int arg2, int arg3) {
-		Class199 local3 = new Class199();
-		synchronized (local3) {
-			local3.anInt5759 = arg3;
-			local3.anInt5758 = arg2;
-			local3.anObject28 = arg0;
+	private Message method1749(Object genericInput, int arg1, int integerInput, int messageType) {
+		Message message = new Message();
+
+		synchronized (message) {
+			message.type = messageType;
+			message.integerInput = integerInput;
+			message.genericInput = genericInput;
+
 			synchronized (this) {
 				if (arg1 != 0) {
 					return null;
 				}
+
 				if (this.aClass199_5 == null) {
-					this.aClass199_5 = this.aClass199_4 = local3;
+					this.aClass199_5 = this.aClass199_4 = message;
 				} else {
-					this.aClass199_5.aClass199_9 = local3;
-					this.aClass199_5 = local3;
+					this.aClass199_5.aClass199_9 = message;
+					this.aClass199_5 = message;
 				}
+
 				this.notify();
 			}
+
 			try {
-				local3.wait();
-			} catch (InterruptedException local59) {
+				message.wait();
+			} catch (InterruptedException ignored) {
 			}
-			return local3;
+
+			return message;
 		}
 	}
 
-	public Class199 method1750(Class arg0, String arg1) {
+	public Message method1750(Class arg0, String arg1) {
 		return this.method1737(0, 0, new Object[] { arg0, arg1 }, 0, 9);
 	}
 
-	public Class199 method1751(URL arg0) {
+	public Message method1751(URL arg0) {
 		return this.method1737(0, 0, arg0, 0, 4);
 	}
 
-	private Class199 method1752(String arg0, int arg1) {
+	private Message method1752(String arg0, int arg1) {
 		if (arg1 <= 71) {
 			this.method1747(null, true, 35, 67);
 		}
@@ -346,7 +371,7 @@ public final class SignLink implements Runnable {
 	@Override
 	public void run() {
 		while (true) {
-			Class199 local15;
+			Message local15;
 			synchronized (this) {
 				while (true) {
 					if (this.isShuttingDown) {
@@ -367,47 +392,47 @@ public final class SignLink implements Runnable {
 				}
 			}
 			try {
-				int local41 = local15.anInt5759;
-				if (local41 == 1) {
+				int messageType = local15.type;
+				if (messageType == 1) {
 					if (refuseConnectionsUntilTimestamp > MonotonicClock.getCurrentTimeInMilliseconds()) {
 						throw new IOException();
 					}
-					local15.anObject29 = new Socket(InetAddress.getByName((String) local15.anObject28), local15.anInt5758);
-				} else if (local41 == 2) {
-					Thread local181 = new Thread((Runnable) local15.anObject28);
+					local15.output = new Socket(InetAddress.getByName((String) local15.genericInput), local15.integerInput);
+				} else if (messageType == 2) {
+					Thread local181 = new Thread((Runnable) local15.genericInput);
 					local181.setDaemon(true);
 					local181.start();
-					local181.setPriority(local15.anInt5758);
-					local15.anObject29 = local181;
-				} else if (local41 == 4) {
+					local181.setPriority(local15.integerInput);
+					local15.output = local181;
+				} else if (messageType == 4) {
 					if (refuseConnectionsUntilTimestamp > MonotonicClock.getCurrentTimeInMilliseconds()) {
 						throw new IOException();
 					}
-					local15.anObject29 = new DataInputStream(((URL) local15.anObject28).openStream());
+					local15.output = new DataInputStream(((URL) local15.genericInput).openStream());
 				} else {
 					Object[] local107;
-					if (local41 == 8) {
-						local107 = (Object[]) local15.anObject28;
-						local15.anObject29 = ((Class) local107[0]).getDeclaredMethod((String) local107[1], (Class[]) local107[2]);
-					} else if (local41 == 9) {
-						local107 = (Object[]) local15.anObject28;
-						local15.anObject29 = ((Class) local107[0]).getDeclaredField((String) local107[1]);
-					} else if (local41 == 18) {
+					if (messageType == 8) {
+						local107 = (Object[]) local15.genericInput;
+						local15.output = ((Class) local107[0]).getDeclaredMethod((String) local107[1], (Class[]) local107[2]);
+					} else if (messageType == 9) {
+						local107 = (Object[]) local15.genericInput;
+						local15.output = ((Class) local107[0]).getDeclaredField((String) local107[1]);
+					} else if (messageType == 18) {
 						Clipboard local168 = Toolkit.getDefaultToolkit().getSystemClipboard();
-						local15.anObject29 = local168.getContents(null);
-					} else if (local41 == 19) {
-						Transferable local152 = (Transferable) local15.anObject28;
+						local15.output = local168.getContents(null);
+					} else if (messageType == 19) {
+						Transferable local152 = (Transferable) local15.genericInput;
 						Clipboard local155 = Toolkit.getDefaultToolkit().getSystemClipboard();
 						local155.setContents(local152, null);
 					} else {
 						throw new Exception("");
 					}
 				}
-				local15.anInt5760 = 1;
+				local15.status = 1;
 			} catch (ThreadDeath local198) {
 				throw local198;
 			} catch (Throwable local201) {
-				local15.anInt5760 = 2;
+				local15.status = 2;
 			}
 			synchronized (local15) {
 				local15.notify();

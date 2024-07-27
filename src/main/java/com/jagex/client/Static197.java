@@ -2,7 +2,7 @@ package com.jagex.client;
 
 import java.net.URL;
 
-import com.jagex.signlink.Class199;
+import com.jagex.signlink.Message;
 import com.jagex.signlink.SignLink;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalMember;
@@ -20,31 +20,31 @@ public final class Static197 {
 	public static final Class215 aClass215_39 = new Class215(32, -1);
 
 	@OriginalMember(owner = "client!ju", name = "a", descriptor = "(Lclient!et;ILjava/lang/String;I)Lclient!qt;")
-	public static Class199 method3110(@OriginalArg(0) SignLink arg0, @OriginalArg(1) int arg1, @OriginalArg(2) String arg2) {
+	public static Message method3110(@OriginalArg(0) SignLink arg0, @OriginalArg(1) int arg1, @OriginalArg(2) String arg2) {
 		if (arg1 == 0) {
 			return arg0.method1744(arg2);
 		}
-		@Pc(44) Class199 local44;
+		@Pc(44) Message local44;
 		if (arg1 == 1) {
 			try {
 				Static458.callJavaScriptMethod(arg0.hostApplet, "openjs", new Object[] { (new URL(arg0.hostApplet.getCodeBase(), arg2)).toString() });
-				local44 = new Class199();
-				local44.anInt5760 = 1;
+				local44 = new Message();
+				local44.status = 1;
 				return local44;
 			} catch (@Pc(50) Throwable local50) {
-				local44 = new Class199();
-				local44.anInt5760 = 2;
+				local44 = new Message();
+				local44.status = 2;
 				return local44;
 			}
 		} else if (arg1 == 2) {
 			try {
 				arg0.hostApplet.getAppletContext().showDocument(new URL(arg0.hostApplet.getCodeBase(), arg2), "_blank");
-				local44 = new Class199();
-				local44.anInt5760 = 1;
+				local44 = new Message();
+				local44.status = 1;
 				return local44;
 			} catch (@Pc(86) Exception local86) {
-				local44 = new Class199();
-				local44.anInt5760 = 2;
+				local44 = new Message();
+				local44.status = 2;
 				return local44;
 			}
 		} else if (arg1 == 3) {
@@ -54,12 +54,12 @@ public final class Static197 {
 			}
 			try {
 				arg0.hostApplet.getAppletContext().showDocument(new URL(arg0.hostApplet.getCodeBase(), arg2), "_top");
-				local44 = new Class199();
-				local44.anInt5760 = 1;
+				local44 = new Message();
+				local44.status = 1;
 				return local44;
 			} catch (@Pc(128) Exception local128) {
-				local44 = new Class199();
-				local44.anInt5760 = 2;
+				local44 = new Message();
+				local44.status = 2;
 				return local44;
 			}
 		} else {

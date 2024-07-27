@@ -101,7 +101,7 @@ public final class Static208 {
 			Static309.anIntArray373[223] = 28;
 			return;
 		}
-		if (SignLink.aMethod1 == null) {
+		if (SignLink.setFocusTraversalKeysEnabled == null) {
 			Static309.anIntArray373[222] = 59;
 			Static309.anIntArray373[192] = 58;
 		} else {

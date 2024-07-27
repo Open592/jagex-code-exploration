@@ -3,7 +3,7 @@ package com.jagex.client;
 import java.io.DataInputStream;
 import java.net.URL;
 
-import com.jagex.signlink.Class199;
+import com.jagex.signlink.Message;
 import com.jagex.signlink.SignLink;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalMember;
@@ -70,12 +70,12 @@ public final class Static94 {
 			local7 = Static437.method4044("%26", "&", local7);
 			local7 = Static437.method4044("%23", "#", local7);
 			if (Static386.signLink.hostApplet != null) {
-				@Pc(99) Class199 local99 = Static386.signLink.method1751(new URL(Static386.signLink.hostApplet.getCodeBase(), "clienterror.ws?c=" + Static13.gameVersion + "&u=" + Static286.aLong174 + "&v1=" + SignLink.javaVendor + "&v2=" + SignLink.javaVersion + "&e=" + local7));
-				while (local99.anInt5760 == 0) {
+				@Pc(99) Message local99 = Static386.signLink.method1751(new URL(Static386.signLink.hostApplet.getCodeBase(), "clienterror.ws?c=" + Static13.gameVersion + "&u=" + Static286.aLong174 + "&v1=" + SignLink.javaVendor + "&v2=" + SignLink.javaVersion + "&e=" + local7));
+				while (local99.status == 0) {
 					Static435.method5503(1L);
 				}
-				if (local99.anInt5760 == 1) {
-					@Pc(125) DataInputStream local125 = (DataInputStream) local99.anObject29;
+				if (local99.status == 1) {
+					@Pc(125) DataInputStream local125 = (DataInputStream) local99.output;
 					local125.read();
 					local125.close();
 				}

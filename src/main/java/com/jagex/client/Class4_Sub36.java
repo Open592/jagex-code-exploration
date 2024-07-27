@@ -1,6 +1,6 @@
 package com.jagex.client;
 
-import com.jagex.signlink.Class199;
+import com.jagex.signlink.Message;
 import org.openrs2.deob.annotation.OriginalClass;
 import org.openrs2.deob.annotation.OriginalMember;
 
@@ -11,7 +11,7 @@ public final class Class4_Sub36 extends Class4 {
 	public byte[][][] aByteArrayArrayArray4;
 
 	@OriginalMember(owner = "client!ov", name = "n", descriptor = "[Lclient!qt;")
-	public Class199[] aClass199Array1;
+	public Message[] aClass199Array1;
 
 	@OriginalMember(owner = "client!ov", name = "p", descriptor = "I")
 	public int anInt5309;
@@ -26,7 +26,7 @@ public final class Class4_Sub36 extends Class4 {
 	public int anInt5310;
 
 	@OriginalMember(owner = "client!ov", name = "t", descriptor = "[Lclient!qt;")
-	public Class199[] aClass199Array2;
+	public Message[] aClass199Array2;
 
 	@OriginalMember(owner = "client!ov", name = "w", descriptor = "[I")
 	public int[] anIntArray351;

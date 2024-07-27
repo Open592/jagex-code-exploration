@@ -2,7 +2,7 @@ package com.jagex.client;
 
 import java.util.Random;
 
-import com.jagex.signlink.Class199;
+import com.jagex.signlink.Message;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;
@@ -10,7 +10,7 @@ import org.openrs2.deob.annotation.Pc;
 public final class Static36 {
 
 	@OriginalMember(owner = "client!bp", name = "a", descriptor = "Lclient!qt;")
-	public static Class199 aClass199_3;
+	public static Message aClass199_3;
 
 	@OriginalMember(owner = "client!bp", name = "e", descriptor = "[Lclient!pt;")
 	public static final Class4_Sub1_Sub17[] aClass4_Sub1_Sub17Array4 = new Class4_Sub1_Sub17[14];

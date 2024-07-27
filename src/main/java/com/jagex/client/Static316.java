@@ -1,6 +1,6 @@
 package com.jagex.client;
 
-import com.jagex.signlink.Class199;
+import com.jagex.signlink.Message;
 import com.jagex.signlink.FileOnDisk;
 import com.jagex.signlink.MonotonicClock;
 import org.openrs2.deob.annotation.OriginalArg;
@@ -22,12 +22,12 @@ public final class Static316 {
 	public static void method4216() {
 		@Pc(7) FileOnDisk local7 = null;
 		try {
-			@Pc(16) Class199 local16 = Static206.signLink.method1738("2");
-			while (local16.anInt5760 == 0) {
+			@Pc(16) Message local16 = Static206.signLink.method1738("2");
+			while (local16.status == 0) {
 				Static435.method5503(1L);
 			}
-			if (local16.anInt5760 == 1) {
-				local7 = (FileOnDisk) local16.anObject29;
+			if (local16.status == 1) {
+				local7 = (FileOnDisk) local16.output;
 				@Pc(41) Class4_Sub12 local41 = new Class4_Sub12(Static268.anInt4998 * 6 + 3);
 				local41.method2551(1);
 				local41.method2524(Static268.anInt4998);

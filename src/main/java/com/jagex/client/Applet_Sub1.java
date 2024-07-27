@@ -1,6 +1,6 @@
 package com.jagex.client;
 
-import com.jagex.signlink.Class199;
+import com.jagex.signlink.Message;
 import com.jagex.signlink.SignLink;
 import com.jagex.signlink.MonotonicClock;
 import com.jagex.client.jagex3.jagmisc.jagmisc;
@@ -229,8 +229,8 @@ public abstract class Applet_Sub1 extends Applet implements Runnable, FocusListe
 			}
 			this.aBoolean89 = false;
 		}
-		@Pc(48) Class199 local48 = Static206.signLink.method1746(Static437.anApplet_Sub1_2.getClass());
-		while (local48.anInt5760 == 0) {
+		@Pc(48) Message local48 = Static206.signLink.method1746(Static437.anApplet_Sub1_2.getClass());
+		while (local48.status == 0) {
 			Static435.method5503(100L);
 		}
 		if (Static273.aCanvas5 != null) {
@@ -262,12 +262,12 @@ public abstract class Applet_Sub1 extends Applet implements Runnable, FocusListe
 			return;
 		}
 		try {
-			@Pc(22) Class199 local22 = Static206.signLink.method1736(Static437.anApplet_Sub1_2.getClass());
-			while (local22.anInt5760 == 0) {
+			@Pc(22) Message local22 = Static206.signLink.method1736(Static437.anApplet_Sub1_2.getClass());
+			while (local22.status == 0) {
 				Static435.method5503(100L);
 			}
-			if (local22.anObject29 != null) {
-				throw (Throwable) local22.anObject29;
+			if (local22.output != null) {
+				throw (Throwable) local22.output;
 			}
 			jagmisc.init();
 			this.aBoolean89 = true;
@@ -311,8 +311,8 @@ public abstract class Applet_Sub1 extends Applet implements Runnable, FocusListe
 				if (Static206.signLink == null) {
 					Static386.signLink = Static206.signLink = new SignLink(this, modewhat, null, 0);
 				}
-				@Pc(67) Class199 local67 = Static206.signLink.method1741(1, this);
-				while (local67.anInt5760 == 0) {
+				@Pc(67) Message local67 = Static206.signLink.method1741(1, this);
+				while (local67.status == 0) {
 					Static435.method5503(10L);
 				}
 			} else {
@@ -372,7 +372,7 @@ public abstract class Applet_Sub1 extends Applet implements Runnable, FocusListe
 					}
 				}
 				if (Static206.signLink.hostApplet != null) {
-					@Pc(114) Method local114 = SignLink.aMethod2;
+					@Pc(114) Method local114 = SignLink.setFocusCycleRoot;
 					if (local114 != null) {
 						try {
 							local114.invoke(Static206.signLink.hostApplet, Boolean.TRUE);
@@ -422,8 +422,8 @@ public abstract class Applet_Sub1 extends Applet implements Runnable, FocusListe
 			@Pc(38) Insets local38 = Static226.aFrame1.getInsets();
 			Static226.aFrame1.setSize(local38.right + Static425.anInt7000 + local38.left, local38.bottom + Static17.anInt222 + local38.top);
 			Static386.signLink = Static206.signLink = new SignLink(null, arg1, arg0, 30);
-			@Pc(70) Class199 local70 = Static206.signLink.method1741(1, this);
-			while (local70.anInt5760 == 0) {
+			@Pc(70) Message local70 = Static206.signLink.method1741(1, this);
+			while (local70.status == 0) {
 				Static435.method5503(10L);
 			}
 		} catch (@Pc(83) Exception local83) {

@@ -91,11 +91,11 @@ public final class Static201 {
 		if (Static142.aClass199_6 == null) {
 			return;
 		}
-		if (Static142.aClass199_6.anInt5760 == 1) {
+		if (Static142.aClass199_6.status == 1) {
 			Static142.aClass199_6 = null;
 			return;
 		}
-		if (Static142.aClass199_6.anInt5760 == 2) {
+		if (Static142.aClass199_6.status == 2) {
 			Static197.method3110(Static248.aSignLink_6, 2, Static333.aString57);
 			Static142.aClass199_6 = null;
 			return;

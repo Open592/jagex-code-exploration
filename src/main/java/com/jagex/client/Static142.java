@@ -2,7 +2,7 @@ package com.jagex.client;
 
 import java.awt.Color;
 
-import com.jagex.signlink.Class199;
+import com.jagex.signlink.Message;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;
@@ -10,7 +10,7 @@ import org.openrs2.deob.annotation.Pc;
 public final class Static142 {
 
 	@OriginalMember(owner = "client!hd", name = "i", descriptor = "Lclient!qt;")
-	public static Class199 aClass199_6;
+	public static Message aClass199_6;
 
 	@OriginalMember(owner = "client!hd", name = "g", descriptor = "[J")
 	public static final long[] aLongArray6 = new long[32];

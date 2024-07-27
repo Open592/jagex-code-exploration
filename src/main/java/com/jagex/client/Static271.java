@@ -3795,10 +3795,10 @@ public final class Static271 {
 					if (arg0 == 5419) {
 						local75 = "";
 						if (Static216.aClass199_7 != null) {
-							if (Static216.aClass199_7.anObject29 == null) {
-								local75 = Static273.method3913(Static216.aClass199_7.anInt5758);
+							if (Static216.aClass199_7.output == null) {
+								local75 = Static273.method3913(Static216.aClass199_7.integerInput);
 							} else {
-								local75 = (String) Static216.aClass199_7.anObject29;
+								local75 = (String) Static216.aClass199_7.output;
 							}
 						}
 						aStringArray21[anInt5092++] = local75;

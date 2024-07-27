@@ -1,6 +1,6 @@
 package com.jagex.client;
 
-import com.jagex.signlink.Class199;
+import com.jagex.signlink.Message;
 import com.jagex.signlink.SignLink;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalClass;
@@ -24,14 +24,14 @@ public final class Class254 implements Runnable {
 
 	@OriginalMember(owner = "client!vl", name = "<init>", descriptor = "(Lclient!et;)V")
 	public Class254(@OriginalArg(0) SignLink signLink) {
-		@Pc(20) Class199 local20 = signLink.method1741(5, this);
-		while (local20.anInt5760 == 0) {
+		@Pc(20) Message local20 = signLink.method1741(5, this);
+		while (local20.status == 0) {
 			Static435.method5503(10L);
 		}
-		if (local20.anInt5760 == 2) {
+		if (local20.status == 2) {
 			throw new RuntimeException();
 		}
-		this.aThread2 = (Thread) local20.anObject29;
+		this.aThread2 = (Thread) local20.output;
 	}
 
 	@OriginalMember(owner = "client!vl", name = "a", descriptor = "(ILclient!st;I)Lclient!lf;")

@@ -121,16 +121,16 @@ public final class client extends Applet_Sub1 {
 				Static78.anInt1567++;
 			}
 			if (Static78.anInt1567 == 1) {
-				if (Static30.aClass199_2.anInt5760 == 2) {
+				if (Static30.aClass199_2.status == 2) {
 					this.method903(1000);
 					return;
 				}
-				if (Static30.aClass199_2.anInt5760 == 1) {
+				if (Static30.aClass199_2.status == 1) {
 					Static78.anInt1567++;
 				}
 			}
 			if (Static78.anInt1567 == 2) {
-				Static240.aClass11_14 = new Class11((Socket) Static30.aClass199_2.anObject29, Static206.signLink);
+				Static240.aClass11_14 = new Class11((Socket) Static30.aClass199_2.output, Static206.signLink);
 				@Pc(194) Class4_Sub12 local194 = new Class4_Sub12(5);
 				local194.method2551(Static153.aClass60_2.anInt1812);
 				local194.method2531(592);

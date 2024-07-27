@@ -6,7 +6,7 @@ import java.io.InputStream;
 import java.io.OutputStream;
 import java.net.Socket;
 
-import com.jagex.signlink.Class199;
+import com.jagex.signlink.Message;
 import com.jagex.signlink.SignLink;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalClass;
@@ -20,7 +20,7 @@ public final class Class11 implements Runnable {
 	private byte[] aByteArray3;
 
 	@OriginalMember(owner = "client!al", name = "n", descriptor = "Lclient!qt;")
-	private Class199 aClass199_1;
+	private Message aClass199_1;
 
 	@OriginalMember(owner = "client!al", name = "s", descriptor = "Z")
 	private boolean aBoolean19 = false;
@@ -100,12 +100,12 @@ public final class Class11 implements Runnable {
 			this.notifyAll();
 		}
 		if (this.aClass199_1 != null) {
-			while (this.aClass199_1.anInt5760 == 0) {
+			while (this.aClass199_1.status == 0) {
 				Static435.method5503(1L);
 			}
-			if (this.aClass199_1.anInt5760 == 1) {
+			if (this.aClass199_1.status == 1) {
 				try {
-					((Thread) this.aClass199_1.anObject29).join();
+					((Thread) this.aClass199_1.output).join();
 				} catch (@Pc(56) InterruptedException local56) {
 				}
 			}

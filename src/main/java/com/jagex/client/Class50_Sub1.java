@@ -1,6 +1,6 @@
 package com.jagex.client;
 
-import com.jagex.signlink.Class199;
+import com.jagex.signlink.Message;
 import com.jagex.signlink.FileOnDisk;
 import com.jagex.signlink.SignLink;
 import com.jagex.client.jagex3.jagmisc.jagmisc;
@@ -75,12 +75,12 @@ public final class Class50_Sub1 extends Class50 {
 		super.aBoolean300 = false;
 		@Pc(129) FileOnDisk local129 = null;
 		try {
-			@Pc(134) Class199 local134 = arg0.method1738("");
-			while (local134.anInt5760 == 0) {
+			@Pc(134) Message local134 = arg0.method1738("");
+			while (local134.status == 0) {
 				Static435.method5503(1L);
 			}
-			if (local134.anInt5760 == 1) {
-				local129 = (FileOnDisk) local134.anObject29;
+			if (local134.status == 1) {
+				local129 = (FileOnDisk) local134.output;
 				@Pc(156) byte[] local156 = new byte[(int) local129.bufferLength()];
 				@Pc(171) int local171;
 				for (@Pc(158) int local158 = 0; local158 < local156.length; local158 += local171) {
@@ -105,12 +105,12 @@ public final class Class50_Sub1 extends Class50 {
 	public void method2856(@OriginalArg(0) SignLink arg0) {
 		@Pc(7) FileOnDisk local7 = null;
 		try {
-			@Pc(20) Class199 local20 = arg0.method1738("");
-			while (local20.anInt5760 == 0) {
+			@Pc(20) Message local20 = arg0.method1738("");
+			while (local20.status == 0) {
 				Static435.method5503(1L);
 			}
-			if (local20.anInt5760 == 1) {
-				local7 = (FileOnDisk) local20.anObject29;
+			if (local20.status == 1) {
+				local7 = (FileOnDisk) local20.output;
 				@Pc(40) Class4_Sub12 local40 = this.method2863();
 				local7.write(0, local40.anInt2997, local40.aByteArray36);
 			}

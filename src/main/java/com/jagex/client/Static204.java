@@ -1,6 +1,6 @@
 package com.jagex.client;
 
-import com.jagex.signlink.Class199;
+import com.jagex.signlink.Message;
 import com.jagex.signlink.SignLink;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalMember;
@@ -19,14 +19,14 @@ public final class Static204 {
 		if (!arg0.method1754()) {
 			return new Class103[0];
 		}
-		@Pc(16) Class199 local16 = arg0.method1745();
-		while (local16.anInt5760 == 0) {
+		@Pc(16) Message local16 = arg0.method1745();
+		while (local16.status == 0) {
 			Static435.method5503(10L);
 		}
-		if (local16.anInt5760 == 2) {
+		if (local16.status == 2) {
 			return new Class103[0];
 		}
-		@Pc(40) int[] local40 = (int[]) local16.anObject29;
+		@Pc(40) int[] local40 = (int[]) local16.output;
 		@Pc(46) Class103[] local46 = new Class103[local40.length >> 2];
 		for (@Pc(48) int local48 = 0; local48 < local46.length; local48++) {
 			@Pc(54) Class103 local54 = new Class103();

@@ -1,6 +1,6 @@
 package com.jagex.client;
 
-import com.jagex.signlink.Class199;
+import com.jagex.signlink.Message;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;
@@ -8,7 +8,7 @@ import org.openrs2.deob.annotation.Pc;
 public final class Static30 {
 
 	@OriginalMember(owner = "client!bi", name = "B", descriptor = "Lclient!qt;")
-	public static Class199 aClass199_2;
+	public static Message aClass199_2;
 
 	@OriginalMember(owner = "client!bi", name = "J", descriptor = "[[Lclient!uu;")
 	public static Class247[][] aClass247ArrayArray1;

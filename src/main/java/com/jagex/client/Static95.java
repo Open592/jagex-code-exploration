@@ -1,6 +1,6 @@
 package com.jagex.client;
 
-import com.jagex.signlink.Class199;
+import com.jagex.signlink.Message;
 import com.jagex.signlink.SignLink;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalMember;
@@ -40,9 +40,9 @@ public final class Static95 {
 		local13.anInt5309 = arg0.method2490();
 		local13.anInt5310 = arg0.method2529();
 		local13.aByteArrayArrayArray4 = new byte[local13.anInt5309][][];
-		local13.aClass199Array2 = new Class199[local13.anInt5309];
+		local13.aClass199Array2 = new Message[local13.anInt5309];
 		local13.anIntArray349 = new int[local13.anInt5309];
-		local13.aClass199Array1 = new Class199[local13.anInt5309];
+		local13.aClass199Array1 = new Message[local13.anInt5309];
 		local13.anIntArray351 = new int[local13.anInt5309];
 		local13.anIntArray350 = new int[local13.anInt5309];
 		for (@Pc(55) int local55 = 0; local55 < local13.anInt5309; local55++) {

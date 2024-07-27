@@ -2,7 +2,7 @@ package com.jagex.client;
 
 import java.io.IOException;
 
-import com.jagex.signlink.Class199;
+import com.jagex.signlink.Message;
 import com.jagex.signlink.FileOnDisk;
 import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;
@@ -22,12 +22,12 @@ public final class Static228 {
 	public static void method2068() {
 		@Pc(11) FileOnDisk local11 = null;
 		try {
-			@Pc(16) Class199 local16 = Static206.signLink.method1738("2");
-			while (local16.anInt5760 == 0) {
+			@Pc(16) Message local16 = Static206.signLink.method1738("2");
+			while (local16.status == 0) {
 				Static435.method5503(1L);
 			}
-			if (local16.anInt5760 == 1) {
-				local11 = (FileOnDisk) local16.anObject29;
+			if (local16.status == 1) {
+				local11 = (FileOnDisk) local16.output;
 				@Pc(38) byte[] local38 = new byte[(int) local11.bufferLength()];
 				@Pc(53) int local53;
 				for (@Pc(40) int local40 = 0; local40 < local38.length; local40 += local53) {
