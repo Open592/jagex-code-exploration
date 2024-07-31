@@ -24,7 +24,7 @@ public final class Static212 {
 		local7.aString71 = arg6;
 		local7.anInt7366 = arg3;
 		local7.anInt7375 = arg5;
-		Static276.aClass84_4.method2305(local7);
+		Applet_Sub1.aClass84_4.method2305(local7);
 	}
 
 	@OriginalMember(owner = "client!ko", name = "a", descriptor = "(IB)Lclient!sb;")

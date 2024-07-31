@@ -24,14 +24,14 @@ public final class Static446 {
 		while (true) {
 			@Pc(6) Message local6 = arg0.method1727(arg1);
 			while (local6.status == 0) {
-				Static435.method5503(10L);
+				Static435.sleepFor(10L);
 			}
 			if (local6.status == 1) {
 				arg1.setVisible(false);
 				arg1.dispose();
 				return;
 			}
-			Static435.method5503(100L);
+			Static435.sleepFor(100L);
 		}
 	}
 

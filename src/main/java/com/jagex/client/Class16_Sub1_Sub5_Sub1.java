@@ -439,7 +439,7 @@ public final class Class16_Sub1_Sub5_Sub1 extends Class16_Sub1_Sub5 {
 			if (local58.aChar4 == 's') {
 				local15 = local15 + local58.method4538(this.aByte45 & 0xFF);
 			} else {
-				Static94.method1654(new Throwable(), "gdn1");
+				Static94.handleClientError(new Throwable(), "gdn1");
 				local37[this.aByte44] = -1;
 			}
 		}

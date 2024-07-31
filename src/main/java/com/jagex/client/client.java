@@ -62,18 +62,12 @@ public final class client extends Applet_Sub1 {
 			Static168.affiliateID = 0;
 			Static345.colourID = Static393.currentGameDetails.id;
 			@Pc(130) client local130 = new client();
-			Static6.aClient1 = local130;
+			Static6.client = local130;
 			local130.method885(Static393.currentGameDetails.name, Static451.modewhat.getID() + 32);
 			Static226.aFrame1.setLocation(40, 40);
 		} catch (@Pc(153) Exception local153) {
-			Static94.method1654(local153, null);
+			Static94.handleClientError(local153, null);
 		}
-	}
-
-	@OriginalMember(owner = "client!o", name = "providesignlink", descriptor = "(Lclient!et;)V")
-	public static void providesignlink(@OriginalArg(0) SignLink arg0) {
-		Static206.signLink = arg0;
-		Static386.signLink = arg0;
 	}
 
 	@OriginalMember(owner = "client!client", name = "i", descriptor = "(I)V")
@@ -177,7 +171,7 @@ public final class client extends Applet_Sub1 {
 			Static320.aFrame3 = null;
 		}
 		if (Static125.aClass11_5 != null) {
-			Static125.aClass11_5.method138();
+			Static125.aClass11_5.shutdown();
 			Static125.aClass11_5 = null;
 		}
 		if (Static223.aClass14_1 != null) {
@@ -307,13 +301,13 @@ public final class client extends Applet_Sub1 {
 			}
 		}
 		if (Static323.aClass50_Sub1_1.anInt3437 == 0) {
-			Static435.method5503(15L);
+			Static435.sleepFor(15L);
 		} else if (Static323.aClass50_Sub1_1.anInt3437 == 1) {
-			Static435.method5503(10L);
+			Static435.sleepFor(10L);
 		} else if (Static323.aClass50_Sub1_1.anInt3437 == 2) {
-			Static435.method5503(5L);
+			Static435.sleepFor(5L);
 		} else if (Static323.aClass50_Sub1_1.anInt3437 == 3) {
-			Static435.method5503(2L);
+			Static435.sleepFor(2L);
 		}
 		if (Static9.aBoolean10) {
 			Static198.method3117();
@@ -334,7 +328,7 @@ public final class client extends Applet_Sub1 {
 				throw local14;
 			}
 			Static239.method3551(0);
-			Static94.method1654(local14, local14.getMessage() + " (Recovered) " + this.method887());
+			Static94.handleClientError(local14, local14.getMessage() + " (Recovered) " + this.method887());
 		}
 	}
 
@@ -644,7 +638,7 @@ public final class client extends Applet_Sub1 {
 			Static246.aBoolean423 = true;
 		}
 
-		Static6.aClient1 = this;
+		Static6.client = this;
 
 		if (Static196.runescapeGameDetails == Static393.currentGameDetails) {
 			Static353.width = 765;
@@ -654,7 +648,7 @@ public final class client extends Applet_Sub1 {
 			Static353.width = 640;
 		}
 
-		this.method881(Static451.modewhat.getID() + 32, Static157.height, Static353.width);
+		this.load(Static451.modewhat.getID() + 32, Static157.height, Static353.width);
 	}
 
 	@OriginalMember(owner = "client!client", name = "g", descriptor = "(I)V")
@@ -667,7 +661,7 @@ public final class client extends Applet_Sub1 {
 				throw local13;
 			}
 			Static239.method3551(0);
-			Static94.method1654(local13, local13.getMessage() + " (Recovered) " + this.method887());
+			Static94.handleClientError(local13, local13.getMessage() + " (Recovered) " + this.method887());
 		}
 	}
 
@@ -761,9 +755,11 @@ public final class client extends Applet_Sub1 {
 			Static225.aClass222_2 = null;
 			Static425.aClass139_5 = null;
 		}
+
 		if (Static373.liveModeWhere != Static104.modewhere) {
 			Static325.isNotRunningInLive = true;
 		}
+
 		Static129.aString30 = (Static196.runescapeGameDetails == Static393.currentGameDetails ? Static268.aClass83_104 : Static374.aClass83_129).method2267(Static178.langID);
 	}
 

@@ -24,7 +24,7 @@ public final class Static316 {
 		try {
 			@Pc(16) Message local16 = Static206.signLink.method1738("2");
 			while (local16.status == 0) {
-				Static435.method5503(1L);
+				Static435.sleepFor(1L);
 			}
 			if (local16.status == 1) {
 				local7 = (FileOnDisk) local16.output;

@@ -206,7 +206,7 @@ public class Class49 {
 			if (local15) {
 				Static62.aClass227_1.aBoolean589 = true;
 				while (Static62.aClass227_1.aBoolean590) {
-					Static435.method5503(50L);
+					Static435.sleepFor(50L);
 				}
 				Static62.aClass227_1 = null;
 			}

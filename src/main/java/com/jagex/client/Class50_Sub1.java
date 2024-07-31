@@ -77,7 +77,7 @@ public final class Class50_Sub1 extends Class50 {
 		try {
 			@Pc(134) Message local134 = arg0.method1738("");
 			while (local134.status == 0) {
-				Static435.method5503(1L);
+				Static435.sleepFor(1L);
 			}
 			if (local134.status == 1) {
 				local129 = (FileOnDisk) local134.output;
@@ -107,7 +107,7 @@ public final class Class50_Sub1 extends Class50 {
 		try {
 			@Pc(20) Message local20 = arg0.method1738("");
 			while (local20.status == 0) {
-				Static435.method5503(1L);
+				Static435.sleepFor(1L);
 			}
 			if (local20.status == 1) {
 				local7 = (FileOnDisk) local20.output;

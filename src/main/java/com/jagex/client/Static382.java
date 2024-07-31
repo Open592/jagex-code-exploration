@@ -59,7 +59,7 @@ public final class Static382 {
 		} else if (arg0 == 1001) {
 			Static271.method3899(Static210.aClass186_11, arg2, arg1);
 		} else if (arg0 == 1006) {
-			Static271.method3899(Static276.aClass186_3, arg2, arg1);
+			Static271.method3899(Applet_Sub1.aClass186_3, arg2, arg1);
 		}
 	}
 

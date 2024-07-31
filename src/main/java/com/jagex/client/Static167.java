@@ -18,7 +18,7 @@ public final class Static167 {
 	@OriginalMember(owner = "client!il", name = "a", descriptor = "(I)V")
 	public static void method2736() {
 		Static74.aClass76_20.anInt2476 = 1;
-		Static6.aClient1.method877();
+		Static6.client.method877();
 		Static265.aBoolean457 = true;
 		Static41.aBoolean74 = true;
 		Static111.method2023();
@@ -56,7 +56,7 @@ public final class Static167 {
 		}
 		Static27.aClass183_2.method4138();
 		Static292.aClass183_36.method4138();
-		Static276.aClass84_4.method2310();
+		Applet_Sub1.aClass84_4.method2310();
 		Static440.aClass102_40.method2699();
 		Static115.aClass183_15 = new Class183();
 		Static49.anInt2346 = 0;
@@ -106,7 +106,7 @@ public final class Static167 {
 		}
 		Static221.aString39 = null;
 		Static290.anInt6410 = 0;
-		Static276.aClass15Array2 = null;
+		Applet_Sub1.aClass15Array2 = null;
 		for (@Pc(5862) int local5862 = 0; local5862 < 6; local5862++) {
 			Static408.aClass28Array1[local5862] = new Class28();
 		}

@@ -45,7 +45,7 @@ public final class Static445 {
 			Static296.anInt5302 = 3;
 		} else if (Static56.anInt1028 == -1) {
 			Static296.anInt5302 = -3;
-			Static276.anInt970 = 0;
+			Applet_Sub1.anInt970 = 0;
 			Static405.anInt6682 = 1;
 			Static239.anInt4518 = 0;
 			@Pc(40) Class4_Sub12 local40 = new Class4_Sub12(128);

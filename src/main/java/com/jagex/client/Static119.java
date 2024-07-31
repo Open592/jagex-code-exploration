@@ -91,7 +91,7 @@ public final class Static119 {
 		Static444.aClass206_3.method4712(local5);
 		Static329.aClass240_1.method5225(local5);
 		Static352.aClass194_2.method4417(local5);
-		Static276.method889(local5);
+		Applet_Sub1.method889(local5);
 		Static150.method2574(local5);
 		Static191.method2233(local5);
 		Static22.method296(local5);

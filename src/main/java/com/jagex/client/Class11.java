@@ -17,13 +17,13 @@ import org.openrs2.deob.annotation.Pc;
 public final class Class11 implements Runnable {
 
 	@OriginalMember(owner = "client!al", name = "b", descriptor = "[B")
-	private byte[] aByteArray3;
+	private byte[] buffer;
 
 	@OriginalMember(owner = "client!al", name = "n", descriptor = "Lclient!qt;")
 	private Message aClass199_1;
 
 	@OriginalMember(owner = "client!al", name = "s", descriptor = "Z")
-	private boolean aBoolean19 = false;
+	private boolean isShuttingDown = false;
 
 	@OriginalMember(owner = "client!al", name = "x", descriptor = "Z")
 	private boolean aBoolean20 = false;
@@ -35,87 +35,94 @@ public final class Class11 implements Runnable {
 	private int anInt183 = 0;
 
 	@OriginalMember(owner = "client!al", name = "w", descriptor = "Ljava/net/Socket;")
-	private final Socket aSocket1;
+	private final Socket connection;
 
 	@OriginalMember(owner = "client!al", name = "f", descriptor = "Lclient!et;")
-	private final SignLink aSignLink_1;
+	private final SignLink signLink;
 
 	@OriginalMember(owner = "client!al", name = "u", descriptor = "Ljava/io/InputStream;")
-	private InputStream anInputStream1;
+	private InputStream inputStream;
 
 	@OriginalMember(owner = "client!al", name = "a", descriptor = "Ljava/io/OutputStream;")
-	private OutputStream anOutputStream1;
+	private OutputStream outputStream;
 
 	@OriginalMember(owner = "client!al", name = "<init>", descriptor = "(Ljava/net/Socket;Lclient!et;)V")
-	public Class11(@OriginalArg(0) Socket arg0, @OriginalArg(1) SignLink arg1) throws IOException {
-		this.aSocket1 = arg0;
-		this.aSignLink_1 = arg1;
-		this.aSocket1.setSoTimeout(30000);
-		this.aSocket1.setTcpNoDelay(true);
-		this.anInputStream1 = this.aSocket1.getInputStream();
-		this.anOutputStream1 = this.aSocket1.getOutputStream();
+	public Class11(@OriginalArg(0) Socket connection, @OriginalArg(1) SignLink signLink) throws IOException {
+		this.connection = connection;
+		this.signLink = signLink;
+		this.connection.setSoTimeout(30000);
+		this.connection.setTcpNoDelay(true);
+		this.inputStream = this.connection.getInputStream();
+		this.outputStream = this.connection.getOutputStream();
 	}
 
 	@OriginalMember(owner = "client!al", name = "finalize", descriptor = "()V")
 	@Override
-	public void finalize() {
-		this.method138();
+    protected void finalize() {
+		this.shutdown();
 	}
 
 	@OriginalMember(owner = "client!al", name = "a", descriptor = "(IBI[B)V")
 	public void method131(@OriginalArg(0) int arg0, @OriginalArg(2) int arg1, @OriginalArg(3) byte[] arg2) throws IOException {
-		if (this.aBoolean19) {
+		if (this.isShuttingDown) {
 			return;
 		}
+
 		while (arg1 > 0) {
-			@Pc(23) int local23 = this.anInputStream1.read(arg2, arg0, arg1);
-			if (local23 <= 0) {
+			@Pc(23) int bytesRead = this.inputStream.read(arg2, arg0, arg1);
+
+			if (bytesRead <= 0) {
 				throw new EOFException();
 			}
-			arg1 -= local23;
-			arg0 += local23;
+
+			arg1 -= bytesRead;
+			arg0 += bytesRead;
 		}
 	}
 
 	@OriginalMember(owner = "client!al", name = "a", descriptor = "(I)V")
 	public void method132() {
-		if (!this.aBoolean19) {
-			this.anInputStream1 = new InputStream_Sub1();
-			this.anOutputStream1 = new OutputStream_Sub1();
+		if (!this.isShuttingDown) {
+			this.inputStream = new InputStream_Sub1();
+			this.outputStream = new OutputStream_Sub1();
 		}
 	}
 
 	@OriginalMember(owner = "client!al", name = "b", descriptor = "(I)I")
 	public int method133() throws IOException {
-		return this.aBoolean19 ? 0 : this.anInputStream1.available();
+		return this.isShuttingDown ? 0 : this.inputStream.available();
 	}
 
 	@OriginalMember(owner = "client!al", name = "a", descriptor = "(Z)V")
-	public void method138() {
-		if (this.aBoolean19) {
+	public void shutdown() {
+		if (this.isShuttingDown) {
 			return;
 		}
+
 		synchronized (this) {
-			this.aBoolean19 = true;
+			this.isShuttingDown = true;
 			this.notifyAll();
 		}
+
 		if (this.aClass199_1 != null) {
 			while (this.aClass199_1.status == 0) {
-				Static435.method5503(1L);
+				Static435.sleepFor(1L);
 			}
+
 			if (this.aClass199_1.status == 1) {
 				try {
 					((Thread) this.aClass199_1.output).join();
-				} catch (@Pc(56) InterruptedException local56) {
+				} catch (@Pc(56) InterruptedException ignored) {
 				}
 			}
 		}
+
 		this.aClass199_1 = null;
 	}
 
 	@OriginalMember(owner = "client!al", name = "d", descriptor = "(I)I")
 	public int method139() throws IOException {
-		return this.aBoolean19 ? 0 : this.anInputStream1.read();
+		return this.isShuttingDown ? 0 : this.inputStream.read();
 	}
 
 	@OriginalMember(owner = "client!al", name = "run", descriptor = "()V")
@@ -126,64 +133,78 @@ public final class Class11 implements Runnable {
 				label80: {
 					@Pc(40) int local40;
 					@Pc(28) int local28;
+
 					synchronized (this) {
 						if (this.anInt183 == this.anInt170) {
-							if (this.aBoolean19) {
+							if (this.isShuttingDown) {
 								break label80;
 							}
+
 							try {
 								this.wait();
-							} catch (@Pc(24) InterruptedException local24) {
+							} catch (@Pc(24) InterruptedException ignored) {
 							}
 						}
+
 						local28 = this.anInt170;
+
 						if (this.anInt170 <= this.anInt183) {
 							local40 = this.anInt183 - this.anInt170;
 						} else {
 							local40 = 5000 - this.anInt170;
 						}
 					}
+
 					if (local40 <= 0) {
 						continue;
 					}
+
 					try {
-						this.anOutputStream1.write(this.aByteArray3, local28, local40);
+						this.outputStream.write(this.buffer, local28, local40);
 					} catch (@Pc(65) IOException local65) {
 						this.aBoolean20 = true;
 					}
+
 					this.anInt170 = (local40 + this.anInt170) % 5000;
+
 					try {
 						if (this.anInt183 == this.anInt170) {
-							this.anOutputStream1.flush();
+							this.outputStream.flush();
 						}
 					} catch (@Pc(86) IOException local86) {
 						this.aBoolean20 = true;
 					}
+
 					continue;
 				}
+
 				try {
-					if (this.anInputStream1 != null) {
-						this.anInputStream1.close();
+					if (this.inputStream != null) {
+						this.inputStream.close();
 					}
-					if (this.anOutputStream1 != null) {
-						this.anOutputStream1.close();
+
+					if (this.outputStream != null) {
+						this.outputStream.close();
 					}
-					if (this.aSocket1 != null) {
-						this.aSocket1.close();
+
+					if (this.connection != null) {
+						this.connection.close();
 					}
-				} catch (@Pc(110) IOException local110) {
+				} catch (@Pc(110) IOException ignored) {
 				}
-				this.aByteArray3 = null;
+
+				this.buffer = null;
+
 				break;
 			}
-		} catch (@Pc(115) Exception local115) {
-			Static94.method1654(local115, null);
+		} catch (@Pc(115) Exception e) {
+			Static94.handleClientError(e, null);
 		}
 	}
 
 	@OriginalMember(owner = "client!al", name = "e", descriptor = "(I)V")
 	public void method141() throws IOException {
-		if (!this.aBoolean19 && this.aBoolean20) {
+		if (!this.isShuttingDown && this.aBoolean20) {
 			this.aBoolean20 = false;
 			throw new IOException();
 		}
@@ -191,27 +212,32 @@ public final class Class11 implements Runnable {
 
 	@OriginalMember(owner = "client!al", name = "a", descriptor = "(II[BI)V")
 	public void method142(@OriginalArg(0) int arg0, @OriginalArg(2) byte[] arg1) throws IOException {
-		if (this.aBoolean19) {
+		if (this.isShuttingDown) {
 			return;
 		}
+
 		if (this.aBoolean20) {
 			this.aBoolean20 = false;
 			throw new IOException();
 		}
-		if (this.aByteArray3 == null) {
-			this.aByteArray3 = new byte[5000];
+
+		if (this.buffer == null) {
+			this.buffer = new byte[5000];
 		}
+
 		synchronized (this) {
-			for (@Pc(38) int local38 = 0; local38 < arg0; local38++) {
-				this.aByteArray3[this.anInt183] = arg1[local38];
+			for (@Pc(38) int i = 0; i < arg0; i++) {
+				this.buffer[this.anInt183] = arg1[i];
 				this.anInt183 = (this.anInt183 + 1) % 5000;
 				if (this.anInt183 == (this.anInt170 + 4900) % 5000) {
 					throw new IOException();
 				}
 			}
+
 			if (this.aClass199_1 == null) {
-				this.aClass199_1 = this.aSignLink_1.method1741(3, this);
+				this.aClass199_1 = this.signLink.method1741(3, this);
 			}
+
 			this.notifyAll();
 		}
 	}

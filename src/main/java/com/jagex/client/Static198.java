@@ -13,7 +13,7 @@ public final class Static198 {
 	public static final int[] anIntArray258 = new int[25];
 
 	@OriginalMember(owner = "client!jv", name = "Y", descriptor = "Z")
-	public static volatile boolean aBoolean359 = true;
+	public static volatile boolean isFocused = true;
 
 	@OriginalMember(owner = "client!jv", name = "vb", descriptor = "Lclient!uu;")
 	public static Class247 aClass247_7 = null;

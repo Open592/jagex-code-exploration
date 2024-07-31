@@ -58,7 +58,7 @@ public final class Static207 {
 			for (@Pc(79) int local79 = 0; local79 < Static454.anInt4075 && local79 < 50; local79++) {
 				local77 = local77 + Static146.aClass4_Sub12_Sub1_3.aByteArray36[local79] + ",";
 			}
-			Static94.method1654(local19, local77);
+			Static94.handleClientError(local19, local77);
 			Static251.method3639();
 			return true;
 		}

@@ -40,7 +40,7 @@ public final class Static8 {
 		}
 		@Pc(94) Message local94 = arg1.method1726(arg2, arg3, arg0);
 		while (local94.status == 0) {
-			Static435.method5503(10L);
+			Static435.sleepFor(10L);
 		}
 		@Pc(116) Frame local116 = (Frame) local94.output;
 		if (local116 == null) {

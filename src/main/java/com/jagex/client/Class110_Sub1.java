@@ -596,13 +596,13 @@ public final class Class110_Sub1 extends Class110 {
 						local1569 = (float) arg1.anIntArray252[local1147] / 256.0F;
 						if (local1523 == 1) {
 							local1580 = (float) arg1.anIntArray250[local1147] / 1024.0F;
-							Static276.method875(arg1.anIntArray251[local1530], local1569, local1548, arg1.anIntArray242[local1530], local1556, arg1.anIntArray244[local1530], local1544, local1580, local1561, local1552);
+							Applet_Sub1.method875(arg1.anIntArray251[local1530], local1569, local1548, arg1.anIntArray242[local1530], local1556, arg1.anIntArray244[local1530], local1544, local1580, local1561, local1552);
 							local1476 = Static244.aFloat102;
 							local1474 = Static403.aFloat211;
-							Static276.method875(arg1.anIntArray251[local1535], local1569, local1548, arg1.anIntArray242[local1535], local1556, arg1.anIntArray244[local1535], local1544, local1580, local1561, local1552);
+							Applet_Sub1.method875(arg1.anIntArray251[local1535], local1569, local1548, arg1.anIntArray242[local1535], local1556, arg1.anIntArray244[local1535], local1544, local1580, local1561, local1552);
 							local1478 = Static403.aFloat211;
 							local991 = Static244.aFloat102;
-							Static276.method875(arg1.anIntArray251[local1540], local1569, local1548, arg1.anIntArray242[local1540], local1556, arg1.anIntArray244[local1540], local1544, local1580, local1561, local1552);
+							Applet_Sub1.method875(arg1.anIntArray251[local1540], local1569, local1548, arg1.anIntArray242[local1540], local1556, arg1.anIntArray244[local1540], local1544, local1580, local1561, local1552);
 							local987 = Static403.aFloat211;
 							local993 = Static244.aFloat102;
 							local1659 = local1580 / 2.0F;
@@ -1775,7 +1775,7 @@ public final class Class110_Sub1 extends Class110 {
 		@Pc(33) float local33 = local12.aFloat209 + local8.aFloat205 * local12.aFloat207 + local8.aFloat209 * local12.aFloat202 + local8.aFloat198 * local12.aFloat208;
 		@Pc(54) float local54 = local12.aFloat200 * local8.aFloat209 + local12.aFloat204 * local8.aFloat205 + local12.aFloat201 * local8.aFloat198 + local12.aFloat205;
 		Static415.aFloat213 = local8.aFloat199 * local12.aFloat201 + local8.aFloat201 * local12.aFloat204 + local12.aFloat200 * local8.aFloat208;
-		Static276.aFloat30 = local8.aFloat204 * local12.aFloat207 + local8.aFloat207 * local12.aFloat202 + local8.aFloat203 * local12.aFloat208;
+		Applet_Sub1.aFloat30 = local8.aFloat204 * local12.aFloat207 + local8.aFloat207 * local12.aFloat202 + local8.aFloat203 * local12.aFloat208;
 		Static203.aFloat126 = local12.aFloat206 * local8.aFloat208 + local8.aFloat201 * local12.aFloat203 + local8.aFloat199 * local12.aFloat199;
 		Static69.aFloat113 = local8.aFloat201 * local12.aFloat207 + local12.aFloat202 * local8.aFloat208 + local12.aFloat208 * local8.aFloat199;
 		Static360.aFloat189 = local8.aFloat204 * local12.aFloat203 + local8.aFloat207 * local12.aFloat206 + local8.aFloat203 * local12.aFloat199;
@@ -1830,7 +1830,7 @@ public final class Class110_Sub1 extends Class110 {
 			local400 = Static20.anIntArray13[local383];
 			local414 = Static203.aFloat126 * local400 + local395 * Static452.aFloat227 + Static360.aFloat189 * local390 + local183;
 			local428 = local390 * Static287.aFloat163 + Static344.aFloat184 * local395 + local400 * Static415.aFloat213 + local54;
-			local442 = local33 + local390 * Static276.aFloat30 + Static234.aFloat140 * local395 + Static69.aFloat113 * local400;
+			local442 = local33 + local390 * Applet_Sub1.aFloat30 + Static234.aFloat140 * local395 + Static69.aFloat113 * local400;
 			if (local414 >= (float) this.aClass19_Sub2_21.anInt2290) {
 				@Pc(461) float local461 = (float) this.aClass19_Sub2_21.anInt2295 + local442 * (float) local251 / local414;
 				if (local461 < local241) {
@@ -1862,7 +1862,7 @@ public final class Class110_Sub1 extends Class110 {
 				local395 = this.anIntArray212[local546];
 				local390 = this.anIntArray216[local546];
 				local400 = this.anIntArray213[local546];
-				local442 = local33 + local390 * Static276.aFloat30 + Static234.aFloat140 * local395 + Static69.aFloat113 * local400;
+				local442 = local33 + local390 * Applet_Sub1.aFloat30 + Static234.aFloat140 * local395 + Static69.aFloat113 * local400;
 				local414 = local183 + Static203.aFloat126 * local400 + local390 * Static360.aFloat189 + local395 * Static452.aFloat227;
 				local428 = local54 + Static415.aFloat213 * local400 + Static344.aFloat184 * local395 + local390 * Static287.aFloat163;
 				@Pc(641) int local641;
@@ -2393,7 +2393,7 @@ public final class Class110_Sub1 extends Class110 {
 				@Pc(91) float local91 = (float) (this.anIntArray212[local58.anInt3417] + this.anIntArray212[local58.anInt3422] + this.anIntArray212[local58.anInt3420]) * 0.3333333F;
 				@Pc(112) float local112 = (float) (this.anIntArray216[local58.anInt3417] + this.anIntArray216[local58.anInt3422] + this.anIntArray216[local58.anInt3420]) * 0.3333333F;
 				@Pc(134) float local134 = (float) (this.anIntArray213[local58.anInt3422] + this.anIntArray213[local58.anInt3420] + this.anIntArray213[local58.anInt3417]) * 0.3333333F;
-				@Pc(148) float local148 = Static445.aFloat222 + local112 * Static276.aFloat30 + Static234.aFloat140 * local91 + Static69.aFloat113 * local134;
+				@Pc(148) float local148 = Static445.aFloat222 + local112 * Applet_Sub1.aFloat30 + Static234.aFloat140 * local91 + Static69.aFloat113 * local134;
 				@Pc(162) float local162 = local134 * Static415.aFloat213 + Static344.aFloat184 * local91 + local112 * Static287.aFloat163 + Static102.aFloat56;
 				@Pc(176) float local176 = Static444.aFloat223 + local134 * Static203.aFloat126 + local91 * Static452.aFloat227 + Static360.aFloat189 * local112;
 				local16.method5159(local63.anInt2745, local63.anInt2741 * local58.aShort34 >> 7, (float) local63.anInt2746 - local162, local58.aShort33 * local63.anInt2748 >> 7, (float) local63.anInt2749 + local148, -local176);
@@ -2439,10 +2439,10 @@ public final class Class110_Sub1 extends Class110 {
 		if (local93 >= this.aClass19_Sub2_21.aFloat77 || local87 <= (float) this.aClass19_Sub2_21.anInt2290) {
 			return;
 		}
-		Static276.aFloat30 = local13.aFloat202 * local22.aFloat207 + local22.aFloat204 * local13.aFloat207 + local13.aFloat208 * local22.aFloat203;
+		Applet_Sub1.aFloat30 = local13.aFloat202 * local22.aFloat207 + local22.aFloat204 * local13.aFloat207 + local13.aFloat208 * local22.aFloat203;
 		Static445.aFloat222 = local13.aFloat209 + local22.aFloat198 * local13.aFloat208 + local13.aFloat207 * local22.aFloat205 + local22.aFloat209 * local13.aFloat202;
-		@Pc(170) float local170 = Static445.aFloat222 + (float) this.lb * Static276.aFloat30;
-		@Pc(178) float local178 = Static276.aFloat30 * (float) this.aShort28 + Static445.aFloat222;
+		@Pc(170) float local170 = Static445.aFloat222 + (float) this.lb * Applet_Sub1.aFloat30;
+		@Pc(178) float local178 = Applet_Sub1.aFloat30 * (float) this.aShort28 + Static445.aFloat222;
 		@Pc(204) float local204;
 		@Pc(193) float local193;
 		if (local178 < local170) {
@@ -2482,10 +2482,10 @@ public final class Class110_Sub1 extends Class110 {
 		if (arg1 != null) {
 			@Pc(498) int local498 = this.aShort31 + this.aShort29 >> 1;
 			@Pc(507) int local507 = this.aShort27 + this.aShort25 >> 1;
-			@Pc(526) int local526 = (int) (Static69.aFloat113 * (float) local507 + (float) this.lb * Static276.aFloat30 + (float) local498 * Static234.aFloat140 + Static445.aFloat222);
+			@Pc(526) int local526 = (int) (Static69.aFloat113 * (float) local507 + (float) this.lb * Applet_Sub1.aFloat30 + (float) local498 * Static234.aFloat140 + Static445.aFloat222);
 			@Pc(545) int local545 = (int) ((float) local498 * Static344.aFloat184 + Static102.aFloat56 + Static287.aFloat163 * (float) this.lb + Static415.aFloat213 * (float) local507);
 			@Pc(564) int local564 = (int) ((float) local507 * Static203.aFloat126 + (float) local498 * Static452.aFloat227 + Static444.aFloat223 + Static360.aFloat189 * (float) this.lb);
-			@Pc(583) int local583 = (int) ((float) local507 * Static69.aFloat113 + (float) local498 * Static234.aFloat140 + Static445.aFloat222 + (float) this.aShort28 * Static276.aFloat30);
+			@Pc(583) int local583 = (int) ((float) local507 * Static69.aFloat113 + (float) local498 * Static234.aFloat140 + Static445.aFloat222 + (float) this.aShort28 * Applet_Sub1.aFloat30);
 			@Pc(602) int local602 = (int) (Static102.aFloat56 + Static344.aFloat184 * (float) local498 + Static287.aFloat163 * (float) this.aShort28 + (float) local507 * Static415.aFloat213);
 			arg1.anInt4542 = this.aClass19_Sub2_21.anInt2309 * local526 / arg2 + this.aClass19_Sub2_21.anInt2295;
 			arg1.anInt4540 = local545 * this.aClass19_Sub2_21.anInt2294 / arg2 + this.aClass19_Sub2_21.anInt2297;
@@ -3475,9 +3475,9 @@ public final class Class110_Sub1 extends Class110 {
 			return;
 		}
 		Static445.aFloat222 = local13.aFloat202 * local16.aFloat209 + local13.aFloat207 * local16.aFloat205 + local16.aFloat198 * local13.aFloat208 + local13.aFloat209;
-		Static276.aFloat30 = local16.aFloat203 * local13.aFloat208 + local16.aFloat204 * local13.aFloat207 + local13.aFloat202 * local16.aFloat207;
-		@Pc(174) float local174 = Static276.aFloat30 * (float) this.lb + Static445.aFloat222;
-		@Pc(182) float local182 = Static276.aFloat30 * (float) this.aShort28 + Static445.aFloat222;
+		Applet_Sub1.aFloat30 = local16.aFloat203 * local13.aFloat208 + local16.aFloat204 * local13.aFloat207 + local13.aFloat202 * local16.aFloat207;
+		@Pc(174) float local174 = Applet_Sub1.aFloat30 * (float) this.lb + Static445.aFloat222;
+		@Pc(182) float local182 = Applet_Sub1.aFloat30 * (float) this.aShort28 + Static445.aFloat222;
 		@Pc(198) float local198;
 		@Pc(209) float local209;
 		if (local174 > local182) {
@@ -3519,7 +3519,7 @@ public final class Class110_Sub1 extends Class110 {
 			@Pc(495) boolean local495 = true;
 			@Pc(503) int local503 = this.aShort29 + this.aShort31 >> 1;
 			@Pc(511) int local511 = this.aShort25 + this.aShort27 >> 1;
-			@Pc(530) int local530 = (int) (Static69.aFloat113 * (float) local511 + Static234.aFloat140 * (float) local503 + Static445.aFloat222 + Static276.aFloat30 * (float) this.lb);
+			@Pc(530) int local530 = (int) (Static69.aFloat113 * (float) local511 + Static234.aFloat140 * (float) local503 + Static445.aFloat222 + Applet_Sub1.aFloat30 * (float) this.lb);
 			@Pc(549) int local549 = (int) (Static415.aFloat213 * (float) local511 + Static287.aFloat163 * (float) this.lb + Static102.aFloat56 + (float) local503 * Static344.aFloat184);
 			@Pc(568) int local568 = (int) ((float) this.lb * Static360.aFloat189 + (float) local503 * Static452.aFloat227 + Static444.aFloat223 + Static203.aFloat126 * (float) local511);
 			if (local568 < this.aClass19_Sub2_21.anInt2290) {
@@ -3528,7 +3528,7 @@ public final class Class110_Sub1 extends Class110 {
 				arg1.anInt4542 = this.aClass19_Sub2_21.anInt2295 + this.aClass19_Sub2_21.anInt2309 * local530 / local568;
 				arg1.anInt4540 = local549 * this.aClass19_Sub2_21.anInt2294 / local568 + this.aClass19_Sub2_21.anInt2297;
 			}
-			@Pc(627) int local627 = (int) ((float) local511 * Static69.aFloat113 + Static445.aFloat222 + Static234.aFloat140 * (float) local503 + Static276.aFloat30 * (float) this.aShort28);
+			@Pc(627) int local627 = (int) ((float) local511 * Static69.aFloat113 + Static445.aFloat222 + Static234.aFloat140 * (float) local503 + Applet_Sub1.aFloat30 * (float) this.aShort28);
 			@Pc(646) int local646 = (int) ((float) local511 * Static415.aFloat213 + Static287.aFloat163 * (float) this.aShort28 + Static102.aFloat56 + (float) local503 * Static344.aFloat184);
 			@Pc(665) int local665 = (int) (Static452.aFloat227 * (float) local503 + Static444.aFloat223 + (float) this.aShort28 * Static360.aFloat189 + (float) local511 * Static203.aFloat126);
 			if (this.aClass19_Sub2_21.anInt2290 <= local665) {

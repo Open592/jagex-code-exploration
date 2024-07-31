@@ -64,7 +64,7 @@ public final class Class255 {
 	public void method5461(@OriginalArg(1) Class11 arg0, @OriginalArg(2) boolean arg1) {
 		if (this.aClass11_13 != null) {
 			try {
-				this.aClass11_13.method138();
+				this.aClass11_13.shutdown();
 			} catch (@Pc(14) Exception local14) {
 			}
 			this.aClass11_13 = null;
@@ -89,7 +89,7 @@ public final class Class255 {
 								this.aClass11_13.method142(4, this.aClass4_Sub12_8.aByteArray36);
 							} catch (@Pc(102) IOException local102) {
 								try {
-									this.aClass11_13.method138();
+									this.aClass11_13.shutdown();
 								} catch (@Pc(108) Exception local108) {
 								}
 								this.anInt7063 = -2;
@@ -120,7 +120,7 @@ public final class Class255 {
 			this.aClass11_13.method142(4, this.aClass4_Sub12_8.aByteArray36);
 		} catch (@Pc(38) IOException local38) {
 			try {
-				this.aClass11_13.method138();
+				this.aClass11_13.shutdown();
 			} catch (@Pc(44) Exception local44) {
 			}
 			this.aClass11_13 = null;
@@ -141,7 +141,7 @@ public final class Class255 {
 			this.aClass11_13.method142(4, this.aClass4_Sub12_8.aByteArray36);
 		} catch (@Pc(41) IOException local41) {
 			try {
-				this.aClass11_13.method138();
+				this.aClass11_13.shutdown();
 			} catch (@Pc(47) Exception local47) {
 			}
 			this.anInt7063 = -2;
@@ -153,7 +153,7 @@ public final class Class255 {
 	@OriginalMember(owner = "client!vn", name = "c", descriptor = "(B)V")
 	public void method5464() {
 		try {
-			this.aClass11_13.method138();
+			this.aClass11_13.shutdown();
 		} catch (@Pc(9) Exception local9) {
 		}
 		this.aClass11_13 = null;
@@ -201,7 +201,7 @@ public final class Class255 {
 			this.aClass11_13.method142(4, this.aClass4_Sub12_8.aByteArray36);
 		} catch (@Pc(32) IOException local32) {
 			try {
-				this.aClass11_13.method138();
+				this.aClass11_13.shutdown();
 			} catch (@Pc(38) Exception local38) {
 			}
 			this.anInt7063 = -2;
@@ -223,7 +223,7 @@ public final class Class255 {
 			this.anInt7061 += local18;
 			if (this.anInt7061 > 30000) {
 				try {
-					this.aClass11_13.method138();
+					this.aClass11_13.shutdown();
 				} catch (@Pc(42) Exception local42) {
 				}
 				this.aClass11_13 = null;
@@ -344,7 +344,7 @@ public final class Class255 {
 			return true;
 		} catch (@Pc(627) IOException local627) {
 			try {
-				this.aClass11_13.method138();
+				this.aClass11_13.shutdown();
 			} catch (@Pc(633) Exception local633) {
 			}
 			this.anInt7062++;
@@ -367,7 +367,7 @@ public final class Class255 {
 	@OriginalMember(owner = "client!vn", name = "e", descriptor = "(I)V")
 	public void method5474() {
 		if (this.aClass11_13 != null) {
-			this.aClass11_13.method138();
+			this.aClass11_13.shutdown();
 		}
 	}
 }

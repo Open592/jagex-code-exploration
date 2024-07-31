@@ -25,7 +25,7 @@ public final class Static406 {
 	public static final Class68 aClass68_51 = new Class68(8);
 
 	@OriginalMember(owner = "client!ul", name = "G", descriptor = "I")
-	public static int anInt6704 = 0;
+	public static int loadAttempts = 0;
 
 	@OriginalMember(owner = "client!ul", name = "a", descriptor = "(IIIBII)V")
 	public static void method5242(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(4) int arg3, @OriginalArg(5) int arg4) {

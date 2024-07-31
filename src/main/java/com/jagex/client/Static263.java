@@ -29,7 +29,7 @@ public final class Static263 {
 		Static69.aBoolean292 = true;
 		Static259.anInt4882 = 0;
 		try {
-			Static348.aClipboard1 = Static6.aClient1.getToolkit().getSystemClipboard();
+			Static348.aClipboard1 = Static6.client.getToolkit().getSystemClipboard();
 		} catch (@Pc(16) Exception local16) {
 		}
 	}

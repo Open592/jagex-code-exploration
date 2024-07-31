@@ -31,7 +31,7 @@ public final class Static343 {
 	public static void method744() {
 		if (Static104.modewhere != Static286.localModeWhere) {
 			try {
-				Static458.callJavaScriptMethod(Static6.aClient1, "tbrefresh");
+				Static458.callJavaScriptMethod(Static6.client, "tbrefresh");
 			} catch (@Pc(19) Throwable local19) {
 			}
 		}

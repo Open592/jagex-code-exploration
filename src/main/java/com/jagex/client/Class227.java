@@ -32,11 +32,11 @@ public final class Class227 implements Runnable {
 						local19.method2069();
 					}
 				}
-				Static435.method5503(10L);
+				Static435.sleepFor(10L);
 				Static441.method5566(this.aSignLink_7, null);
 			}
 		} catch (@Pc(43) Exception local43) {
-			Static94.method1654(local43, null);
+			Static94.handleClientError(local43, null);
 		} finally {
 			@Pc(53) Object local53 = null;
 			this.aBoolean590 = false;

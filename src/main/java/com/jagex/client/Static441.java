@@ -18,7 +18,7 @@ public final class Static441 {
 			return;
 		}
 		for (@Pc(16) int local16 = 0; local16 < 50 && arg0.systemEventQueue.peekEvent() != null; local16++) {
-			Static435.method5503(1L);
+			Static435.sleepFor(1L);
 		}
 		if (arg1 != null) {
 			arg0.systemEventQueue.postEvent(new ActionEvent(arg1, 1001, "dummy"));

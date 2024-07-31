@@ -687,7 +687,7 @@ public final class Class19_Sub2 extends Class19 {
 					if (local376++ > 5) {
 						throw new RuntimeException("");
 					}
-					Static435.method5503(100L);
+					Static435.sleepFor(100L);
 				}
 			}
 			OpenGL.glClear(16384);
@@ -705,7 +705,7 @@ public final class Class19_Sub2 extends Class19 {
 			if (local7++ > 5) {
 				throw new RuntimeException("");
 			}
-			Static435.method5503(1000L);
+			Static435.sleepFor(1000L);
 		}
 	}
 

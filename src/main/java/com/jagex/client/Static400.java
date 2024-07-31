@@ -52,7 +52,7 @@ public final class Static400 {
 				return;
 			}
 			if (arg0.equalsIgnoreCase("cleartext")) {
-				Static276.aClass84_4.method2310();
+				Applet_Sub1.aClass84_4.method2310();
 				Static441.method5568("Text coords cleared");
 				return;
 			}

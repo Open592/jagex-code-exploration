@@ -52,35 +52,37 @@ public final class Static94 {
 	}
 
 	@OriginalMember(owner = "client!eo", name = "a", descriptor = "(Ljava/lang/Throwable;Ljava/lang/String;I)V")
-	public static void method1654(@OriginalArg(0) Throwable arg0, @OriginalArg(1) String arg1) {
+	public static void handleClientError(@OriginalArg(0) Throwable error, @OriginalArg(1) String context) {
 		try {
-			@Pc(7) String local7 = "";
-			if (arg0 != null) {
-				local7 = Static329.method4429(arg0);
+			@Pc(7) String errorMessage = "";
+			if (error != null) {
+				errorMessage = Static329.method4429(error);
 			}
-			if (arg1 != null) {
-				if (arg0 != null) {
-					local7 = local7 + " | ";
+			if (context != null) {
+				if (error != null) {
+					errorMessage = errorMessage + " | ";
 				}
-				local7 = local7 + arg1;
+				errorMessage = errorMessage + context;
 			}
-			Static13.method140(local7);
-			local7 = Static437.method4044("%3a", ":", local7);
-			local7 = Static437.method4044("%40", "@", local7);
-			local7 = Static437.method4044("%26", "&", local7);
-			local7 = Static437.method4044("%23", "#", local7);
+			Static13.method140(errorMessage);
+			errorMessage = Static437.method4044("%3a", ":", errorMessage);
+			errorMessage = Static437.method4044("%40", "@", errorMessage);
+			errorMessage = Static437.method4044("%26", "&", errorMessage);
+			errorMessage = Static437.method4044("%23", "#", errorMessage);
 			if (Static386.signLink.hostApplet != null) {
-				@Pc(99) Message local99 = Static386.signLink.method1751(new URL(Static386.signLink.hostApplet.getCodeBase(), "clienterror.ws?c=" + Static13.gameVersion + "&u=" + Static286.aLong174 + "&v1=" + SignLink.javaVendor + "&v2=" + SignLink.javaVersion + "&e=" + local7));
-				while (local99.status == 0) {
-					Static435.method5503(1L);
+				@Pc(99) Message message = Static386.signLink.openConnection(new URL(Static386.signLink.hostApplet.getCodeBase(), "clienterror.ws?c=" + Static13.gameVersion + "&u=" + Static286.aLong174 + "&v1=" + SignLink.javaVendor + "&v2=" + SignLink.javaVersion + "&e=" + errorMessage));
+
+				while (message.status == 0) {
+					Static435.sleepFor(1L);
 				}
-				if (local99.status == 1) {
-					@Pc(125) DataInputStream local125 = (DataInputStream) local99.output;
-					local125.read();
-					local125.close();
+
+				if (message.status == 1) {
+					@Pc(125) DataInputStream responseStream = (DataInputStream) message.output;
+					responseStream.read();
+					responseStream.close();
 				}
 			}
-		} catch (@Pc(132) Exception local132) {
+		} catch (@Pc(132) Exception ignored) {
 		}
 	}
 }

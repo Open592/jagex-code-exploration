@@ -21,7 +21,7 @@ public final class Static204 {
 		}
 		@Pc(16) Message local16 = arg0.method1745();
 		while (local16.status == 0) {
-			Static435.method5503(10L);
+			Static435.sleepFor(10L);
 		}
 		if (local16.status == 2) {
 			return new Class103[0];

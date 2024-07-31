@@ -291,7 +291,7 @@ public final class Static437 {
 			return;
 		}
 		Static229.method3458();
-		Static276.method884();
+		Applet_Sub1.method884();
 		Static108.method2009();
 		for (local489 = Static257.aClass114_1.method2832(true); local489 != -1; local489 = Static257.aClass114_1.method2832(false)) {
 			Static277.method3934(local489);

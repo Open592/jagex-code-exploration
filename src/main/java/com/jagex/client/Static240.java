@@ -164,7 +164,7 @@ public final class Static240 {
 			}
 			return;
 		}
-		Static94.method1654(null, "RC: " + local136 + "," + local140 + " " + local145 + "," + local150 + " " + Static180.anInt3453 + "," + Static86.anInt1771);
+		Static94.handleClientError(null, "RC: " + local136 + "," + local140 + " " + local145 + "," + local150 + " " + Static180.anInt3453 + "," + Static86.anInt1771);
 		return;
 	}
 }

@@ -1565,7 +1565,7 @@ public final class Static271 {
 									if (arg0 == 3613) {
 										local13 = anIntArray330[--anInt5095];
 										if (Static221.aString39 != null && local13 < Static290.anInt6410) {
-											aStringArray21[anInt5092++] = Static276.aClass15Array2[local13].aString8;
+											aStringArray21[anInt5092++] = Applet_Sub1.aClass15Array2[local13].aString8;
 											return;
 										}
 										aStringArray21[anInt5092++] = "";
@@ -1574,7 +1574,7 @@ public final class Static271 {
 									if (arg0 == 3614) {
 										local13 = anIntArray330[--anInt5095];
 										if (Static221.aString39 != null && local13 < Static290.anInt6410) {
-											anIntArray330[anInt5095++] = Static276.aClass15Array2[local13].anInt272;
+											anIntArray330[anInt5095++] = Applet_Sub1.aClass15Array2[local13].anInt272;
 											return;
 										}
 										anIntArray330[anInt5095++] = 0;
@@ -1583,7 +1583,7 @@ public final class Static271 {
 									if (arg0 == 3615) {
 										local13 = anIntArray330[--anInt5095];
 										if (Static221.aString39 != null && local13 < Static290.anInt6410) {
-											anIntArray330[anInt5095++] = Static276.aClass15Array2[local13].aByte1;
+											anIntArray330[anInt5095++] = Applet_Sub1.aClass15Array2[local13].aByte1;
 											return;
 										}
 										anIntArray330[anInt5095++] = 0;
@@ -1644,7 +1644,7 @@ public final class Static271 {
 									}
 									if (arg0 == 3624) {
 										local13 = anIntArray330[--anInt5095];
-										if (Static276.aClass15Array2 != null && local13 < Static290.anInt6410 && Static276.aClass15Array2[local13].aString7.equalsIgnoreCase(Static1.aClass16_Sub1_Sub5_Sub1_1.aString44)) {
+										if (Applet_Sub1.aClass15Array2 != null && local13 < Static290.anInt6410 && Applet_Sub1.aClass15Array2[local13].aString7.equalsIgnoreCase(Static1.aClass16_Sub1_Sub5_Sub1_1.aString44)) {
 											anIntArray330[anInt5095++] = 1;
 											return;
 										}
@@ -1662,7 +1662,7 @@ public final class Static271 {
 									if (arg0 == 3626) {
 										local13 = anIntArray330[--anInt5095];
 										if (Static221.aString39 != null && local13 < Static290.anInt6410) {
-											aStringArray21[anInt5092++] = Static276.aClass15Array2[local13].aString5;
+											aStringArray21[anInt5092++] = Applet_Sub1.aClass15Array2[local13].aString5;
 											return;
 										}
 										aStringArray21[anInt5092++] = "";
@@ -1702,7 +1702,7 @@ public final class Static271 {
 									if (arg0 == 3632) {
 										local13 = anIntArray330[--anInt5095];
 										if (Static221.aString39 != null && local13 < Static290.anInt6410) {
-											aStringArray21[anInt5092++] = Static276.aClass15Array2[local13].aString7;
+											aStringArray21[anInt5092++] = Applet_Sub1.aClass15Array2[local13].aString7;
 											return;
 										}
 										aStringArray21[anInt5092++] = "";
@@ -2910,7 +2910,7 @@ public final class Static271 {
 					local855.append("v: ").append(aClass17Array1[local603].aClass4_Sub1_Sub1_1.aLong224).append(" ");
 				}
 				local855.append("op: ").append(local13);
-				Static94.method1654(local837, local855.toString());
+				Static94.handleClientError(local837, local855.toString());
 			} else {
 				Static415.method5323("Clientscript error in: " + arg0.aString2);
 				local855 = new StringBuffer(30);
@@ -2923,7 +2923,7 @@ public final class Static271 {
 				if (local895 != null && local895.length() > 0) {
 					local855.append("Message: ").append(local895).append("\n");
 				}
-				Static94.method1654(local837, local855.toString());
+				Static94.handleClientError(local837, local855.toString());
 				Static441.method5568(local855.toString());
 			}
 		}
@@ -4568,7 +4568,7 @@ public final class Static271 {
 						return;
 					}
 					if (arg0 == 6203) {
-						Static276.method878(0, Static198.aClass247_7.anInt6833, 0, false, Static198.aClass247_7.anInt6805);
+						Applet_Sub1.method878(0, Static198.aClass247_7.anInt6833, 0, false, Static198.aClass247_7.anInt6805);
 						anIntArray330[anInt5095++] = Static329.anInt5685;
 						anIntArray330[anInt5095++] = Static119.anInt2527;
 						return;

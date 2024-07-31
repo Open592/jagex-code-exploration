@@ -37,7 +37,7 @@ public final class Static425 {
 		try {
 			if (++Static64.anInt1366 > 2000) {
 				if (Static125.aClass11_5 != null) {
-					Static125.aClass11_5.method138();
+					Static125.aClass11_5.shutdown();
 					Static125.aClass11_5 = null;
 				}
 				if (Static212.anInt3932 >= 1) {
@@ -80,7 +80,7 @@ public final class Static425 {
 				if (local134 != 0) {
 					Static238.anInt4506 = 0;
 					Static296.anInt5302 = local134;
-					Static125.aClass11_5.method138();
+					Static125.aClass11_5.shutdown();
 					Static125.aClass11_5 = null;
 					return;
 				}
@@ -187,13 +187,13 @@ public final class Static425 {
 					Static64.anInt1366 = 0;
 					Static238.anInt4506 = 1;
 					Static212.anInt3932++;
-					Static125.aClass11_5.method138();
+					Static125.aClass11_5.shutdown();
 					Static125.aClass11_5 = null;
 					return;
 				} else {
 					Static238.anInt4506 = 0;
 					Static296.anInt5302 = local585;
-					Static125.aClass11_5.method138();
+					Static125.aClass11_5.shutdown();
 					Static125.aClass11_5 = null;
 					return;
 				}
@@ -208,7 +208,7 @@ public final class Static425 {
 					Static175.anInt3398 = (Static125.aClass11_5.method139() + 3) * 60;
 					Static296.anInt5302 = 21;
 					Static238.anInt4506 = 0;
-					Static125.aClass11_5.method138();
+					Static125.aClass11_5.shutdown();
 					Static125.aClass11_5 = null;
 				}
 			} else if (Static238.anInt4506 != 11) {
@@ -310,12 +310,12 @@ public final class Static425 {
 				Static299.anInt5328 = Static125.aClass11_5.method139();
 				Static238.anInt4506 = 0;
 				Static296.anInt5302 = 29;
-				Static125.aClass11_5.method138();
+				Static125.aClass11_5.shutdown();
 				Static125.aClass11_5 = null;
 			}
 		} catch (@Pc(1095) IOException local1095) {
 			if (Static125.aClass11_5 != null) {
-				Static125.aClass11_5.method138();
+				Static125.aClass11_5.shutdown();
 				Static125.aClass11_5 = null;
 			}
 			if (Static212.anInt3932 >= 1) {

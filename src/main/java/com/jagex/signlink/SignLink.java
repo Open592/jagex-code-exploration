@@ -178,36 +178,41 @@ public final class SignLink implements Runnable {
 			this.isShuttingDown = true;
 			this.notifyAll();
 		}
+
 		try {
 			this.thread.join();
-		} catch (InterruptedException local19) {
+		} catch (InterruptedException ignored) {
 		}
+
 		if (this.aFileOnDisk_3 != null) {
 			try {
 				this.aFileOnDisk_3.close();
-			} catch (IOException local28) {
+			} catch (IOException ignored) {
 			}
 		}
+
 		if (this.aFileOnDisk_1 != null) {
 			try {
 				this.aFileOnDisk_1.close();
-			} catch (IOException local38) {
+			} catch (IOException ignored) {
 			}
 		}
+
 		if (this.aFileOnDiskArray1 != null) {
-			for (int local44 = 0; local44 < this.aFileOnDiskArray1.length; local44++) {
-				if (this.aFileOnDiskArray1[local44] != null) {
-					try {
-						this.aFileOnDiskArray1[local44].close();
-					} catch (IOException local58) {
-					}
-				}
-			}
+            for (FileOnDisk fileOnDisk : this.aFileOnDiskArray1) {
+                if (fileOnDisk != null) {
+                    try {
+                        fileOnDisk.close();
+                    } catch (IOException ignored) {
+                    }
+                }
+            }
 		}
+
 		if (this.aFileOnDisk_2 != null) {
 			try {
 				this.aFileOnDisk_2.close();
-			} catch (IOException local82) {
+			} catch (IOException ignored) {
 			}
 		}
 	}
@@ -353,7 +358,7 @@ public final class SignLink implements Runnable {
 		return this.method1737(0, 0, new Object[] { arg0, arg1 }, 0, 9);
 	}
 
-	public Message method1751(URL arg0) {
+	public Message openConnection(URL arg0) {
 		return this.method1737(0, 0, arg0, 0, 4);
 	}
 
@@ -387,7 +392,7 @@ public final class SignLink implements Runnable {
 					}
 					try {
 						this.wait();
-					} catch (InterruptedException local31) {
+					} catch (InterruptedException ignored) {
 					}
 				}
 			}

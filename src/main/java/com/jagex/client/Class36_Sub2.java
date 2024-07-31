@@ -58,7 +58,7 @@ public final class Class36_Sub2 extends Class36 {
 		@Pc(4) long local4 = (long) arg0 * 1000000L;
 		this.aLong63 += this.method1557();
 		if (this.aLong63 < this.aLong65) {
-			Static435.method5503((this.aLong65 - this.aLong63) / 1000000L);
+			Static435.sleepFor((this.aLong65 - this.aLong63) / 1000000L);
 			this.aLong64 += this.aLong65 - this.aLong63;
 			this.aLong63 += this.aLong65 - this.aLong63;
 			this.aLong65 += local4;

@@ -26,7 +26,7 @@ public final class Class254 implements Runnable {
 	public Class254(@OriginalArg(0) SignLink signLink) {
 		@Pc(20) Message local20 = signLink.method1741(5, this);
 		while (local20.status == 0) {
-			Static435.method5503(10L);
+			Static435.sleepFor(10L);
 		}
 		if (local20.status == 2) {
 			throw new RuntimeException();
@@ -108,7 +108,7 @@ public final class Class254 implements Runnable {
 					local18.aByteArray50 = local18.aClass222_1.method4981((int) local18.aLong198);
 				}
 			} catch (@Pc(74) Exception local74) {
-				Static94.method1654(local74, null);
+				Static94.handleClientError(local74, null);
 			}
 			local18.aBoolean381 = false;
 		}

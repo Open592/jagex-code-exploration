@@ -28,7 +28,7 @@ public final class Static387 {
 		try {
 			if (++Static348.anInt5976 > 2000) {
 				if (Static125.aClass11_5 != null) {
-					Static125.aClass11_5.method138();
+					Static125.aClass11_5.shutdown();
 					Static125.aClass11_5 = null;
 				}
 				if (Static119.anInt2524 >= 1) {
@@ -66,7 +66,7 @@ public final class Static387 {
 				if (local120 != 21) {
 					Static249.anInt4623 = local120;
 					Static354.anInt6183 = 0;
-					Static125.aClass11_5.method138();
+					Static125.aClass11_5.shutdown();
 					Static125.aClass11_5 = null;
 					return;
 				}
@@ -87,12 +87,12 @@ public final class Static387 {
 				}
 				Static249.anInt4623 = 21;
 				Static354.anInt6183 = 0;
-				Static125.aClass11_5.method138();
+				Static125.aClass11_5.shutdown();
 				Static125.aClass11_5 = null;
 			}
 		} catch (@Pc(214) IOException local214) {
 			if (Static125.aClass11_5 != null) {
-				Static125.aClass11_5.method138();
+				Static125.aClass11_5.shutdown();
 				Static125.aClass11_5 = null;
 			}
 			if (Static119.anInt2524 >= 1) {

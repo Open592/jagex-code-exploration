@@ -346,7 +346,7 @@ public final class Static244 {
 					Static27.aClass183_2.method4137(new Class4_Sub1_Sub7(local309));
 				}
 			} else {
-				Static94.method1654(null, "T3 - " + arg0);
+				Static94.handleClientError(null, "T3 - " + arg0);
 				Static251.method3639();
 			}
 		}

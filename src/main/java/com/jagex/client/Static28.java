@@ -12,7 +12,7 @@ public final class Static28 {
 	@OriginalMember(owner = "client!bg", name = "a", descriptor = "(ZI)I")
 	public static int method526(@OriginalArg(1) int arg0) {
 		if (Static125.aClass11_5 != null) {
-			Static125.aClass11_5.method138();
+			Static125.aClass11_5.shutdown();
 			Static125.aClass11_5 = null;
 		}
 		Static274.anInt5132++;

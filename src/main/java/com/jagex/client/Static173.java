@@ -13,7 +13,7 @@ public final class Static173 {
 	public static final Class215 aClass215_38 = new Class215(22, 4);
 
 	@OriginalMember(owner = "client!ir", name = "c", descriptor = "J")
-	public static long aLong118 = 0L;
+	public static long timeToShutdown = 0L;
 
 	@OriginalMember(owner = "client!ir", name = "e", descriptor = "[I")
 	public static int[] anIntArray219 = new int[1];

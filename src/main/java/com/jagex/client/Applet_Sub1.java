@@ -25,11 +25,180 @@ import org.openrs2.deob.annotation.Pc;
 @OriginalClass("client!o")
 public abstract class Applet_Sub1 extends Applet implements Runnable, FocusListener, WindowListener {
 
+	@OriginalMember(owner = "client!o", name = "x", descriptor = "Lclient!gn;")
+	public static final Class84 aClass84_4 = new Class84();
+
+	@OriginalMember(owner = "client!o", name = "N", descriptor = "Lclient!pn;")
+	public static final Class186 aClass186_3 = new Class186("", 14);
+
+	@OriginalMember(owner = "client!o", name = "O", descriptor = "[Lclient!at;")
+	public static Class15[] aClass15Array2;
+
+	@OriginalMember(owner = "client!o", name = "Q", descriptor = "F")
+	public static float aFloat30;
+
+	@OriginalMember(owner = "client!o", name = "P", descriptor = "I")
+	public static int anInt970 = 0;
+
+	@OriginalMember(owner = "client!o", name = "S", descriptor = "I")
+	private static int anInt972;
+
+	@OriginalMember(owner = "client!o", name = "T", descriptor = "I")
+	private static int anInt973;
+
+	@OriginalMember(owner = "client!o", name = "U", descriptor = "Z")
+	private static boolean aBoolean90;
+
+	@OriginalMember(owner = "client!o", name = "V", descriptor = "Z")
+	private static boolean aBoolean91;
+
 	@OriginalMember(owner = "client!o", name = "a", descriptor = "Z")
-	private boolean aBoolean88 = false;
+	private boolean handledGameError = false;
 
 	@OriginalMember(owner = "client!o", name = "f", descriptor = "Z")
 	private boolean aBoolean89 = false;
+
+	@OriginalMember(owner = "client!o", name = "providesignlink", descriptor = "(Lclient!et;)V")
+	public static void providesignlink(@OriginalArg(0) SignLink arg0) {
+		Static206.signLink = arg0;
+		Static386.signLink = arg0;
+	}
+
+	@OriginalMember(owner = "client!o", name = "a", descriptor = "()V")
+	public static void method873() {
+		for (@Pc(1) int local1 = 0; local1 < Static1.anInt6; local1++) {
+			@Pc(6) Class16_Sub1 local6 = Static427.aClass16_Sub1Array3[local1];
+			Static190.method2978(local6);
+			Static427.aClass16_Sub1Array3[local1] = null;
+		}
+		Static1.anInt6 = 0;
+	}
+
+	@OriginalMember(owner = "client!o", name = "a", descriptor = "(IFIII[FIIFII)V")
+	public static void method875(@OriginalArg(0) int arg0, @OriginalArg(1) float arg1, @OriginalArg(2) int arg2, @OriginalArg(4) int arg3, @OriginalArg(5) float[] arg4, @OriginalArg(6) int arg5, @OriginalArg(7) int arg6, @OriginalArg(8) float arg7, @OriginalArg(9) int arg8, @OriginalArg(10) int arg9) {
+		@Pc(5) int local5 = arg3 - arg2;
+		@Pc(13) int local13 = arg5 - arg6;
+		@Pc(17) int local17 = arg0 - arg9;
+		@Pc(38) float local38 = (float) local17 * arg4[2] + (float) local5 * arg4[1] + arg4[0] * (float) local13;
+		@Pc(59) float local59 = arg4[3] * (float) local13 + (float) local5 * arg4[4] + arg4[5] * (float) local17;
+		@Pc(80) float local80 = arg4[7] * (float) local5 + (float) local13 * arg4[6] + arg4[8] * (float) local17;
+		@Pc(91) float local91 = (float) Math.atan2((double) local38, (double) local80) / 6.2831855F + 0.5F;
+		if (arg7 != 1.0F) {
+			local91 *= arg7;
+		}
+		@Pc(105) float local105 = arg1 + local59 + 0.5F;
+		@Pc(112) float local112;
+		if (arg8 == 1) {
+			local112 = local91;
+			local91 = -local105;
+			local105 = local112;
+		} else if (arg8 == 2) {
+			local91 = -local91;
+			local105 = -local105;
+		} else if (arg8 == 3) {
+			local112 = local91;
+			local91 = local105;
+			local105 = -local112;
+		}
+		Static244.aFloat102 = local105;
+		Static403.aFloat211 = local91;
+	}
+
+	@OriginalMember(owner = "client!o", name = "a", descriptor = "(IIBIZI)V")
+	public static void method878(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(3) int arg2, @OriginalArg(4) boolean arg3, @OriginalArg(5) int arg4) {
+		if (arg1 < 1) {
+			arg1 = 1;
+		}
+		if (arg4 < 1) {
+			arg4 = 1;
+		}
+		@Pc(21) int local21 = arg4 - 334;
+		if (local21 < 0) {
+			local21 = 0;
+		} else if (local21 > 100) {
+			local21 = 100;
+		}
+		@Pc(43) int local43 = (Static128.aShort24 - Static298.aShort67) * local21 / 100 + Static298.aShort67;
+		if (Static291.aShort66 > local43) {
+			local43 = Static291.aShort66;
+		} else if (local43 > Static110.aShort18) {
+			local43 = Static110.aShort18;
+		}
+		@Pc(69) int local69 = arg4 * 512 * local43 / (arg1 * 334);
+		@Pc(106) int local106;
+		@Pc(112) int local112;
+		@Pc(81) short local81;
+		if (Static113.aShort19 > local69) {
+			local81 = Static113.aShort19;
+			local43 = arg1 * local81 * 334 / (arg4 * 512);
+			if (local43 > Static110.aShort18) {
+				local43 = Static110.aShort18;
+				local106 = arg4 * local43 * 512 / (local81 * 334);
+				local112 = (arg1 - local106) / 2;
+				if (arg3) {
+					Static122.aClass19_16.e();
+					Static122.aClass19_16.method4293(arg2, local112, arg0, -16777216, arg4);
+					Static122.aClass19_16.method4293(arg2 + arg1 - local112, local112, arg0, -16777216, arg4);
+				}
+				arg2 += local112;
+				arg1 -= local112 * 2;
+			}
+		} else if (Static409.aShort100 < local69) {
+			local81 = Static409.aShort100;
+			local43 = local81 * 334 * arg1 / (arg4 * 512);
+			if (local43 < Static291.aShort66) {
+				local43 = Static291.aShort66;
+				local106 = local81 * 334 * arg1 / (local43 * 512);
+				local112 = (arg4 - local106) / 2;
+				if (arg3) {
+					Static122.aClass19_16.e();
+					Static122.aClass19_16.method4293(arg2, arg1, arg0, -16777216, local112);
+					Static122.aClass19_16.method4293(arg2, arg1, arg4 + arg0 - local112, -16777216, local112);
+				}
+				arg4 -= local112 * 2;
+				arg0 += local112;
+			}
+		}
+		Static219.anInt6458 = local43 * arg4 / 334;
+		Static120.anInt2574 = arg0;
+		Static119.anInt2527 = (short) arg4;
+		Static329.anInt5685 = (short) arg1;
+		Static120.anInt2600 = arg2;
+	}
+
+	@OriginalMember(owner = "client!o", name = "a", descriptor = "(BI[B)I")
+	public static int method879(@OriginalArg(1) int arg0, @OriginalArg(2) byte[] arg1) {
+		return Static179.method2846(0, arg1, arg0);
+	}
+
+	@OriginalMember(owner = "client!o", name = "c", descriptor = "(I)V")
+	public static void method882(@OriginalArg(0) int arg0) {
+		Static358.anInt6251 = arg0;
+		for (@Pc(3) int local3 = 0; local3 < Static422.anInt6945; local3++) {
+			for (@Pc(6) int local6 = 0; local6 < Static171.anInt3361; local6++) {
+				if (Static202.aClass164ArrayArrayArray5[arg0][local3][local6] == null) {
+					Static202.aClass164ArrayArrayArray5[arg0][local3][local6] = new Class164(arg0, local3, local6);
+				}
+			}
+		}
+	}
+
+	@OriginalMember(owner = "client!o", name = "d", descriptor = "(B)V")
+	public static void method884() {
+		for (@Pc(11) int local11 = 0; local11 < Static12.anInt163; local11++) {
+			@Pc(17) int local17 = Static342.anIntArray412[local11];
+			@Pc(21) Class16_Sub1_Sub5_Sub2 local21 = Static143.aClass16_Sub1_Sub5_Sub2Array1[local17];
+			if (local21 != null) {
+				Static44.method761(local21.aClass264_1.anInt7201, local21);
+			}
+		}
+	}
+
+	@OriginalMember(owner = "client!o", name = "a", descriptor = "(IB)V")
+	public static void method889(@OriginalArg(0) int arg0) {
+		Static314.anInt5475 = arg0;
+		Static182.aClass68_19.method1777();
+	}
 
 	@OriginalMember(owner = "client!o", name = "a", descriptor = "(I)Z")
 	protected final boolean isValidHost() {
@@ -71,7 +240,7 @@ public abstract class Applet_Sub1 extends Applet implements Runnable, FocusListe
 		}
 		Static21.anInt290 = Static21.anInt290 + 1 & 0x1F;
 		synchronized (this) {
-			Static265.aBoolean457 = Static198.aBoolean359;
+			Static265.aBoolean457 = Static198.isFocused;
 		}
 		this.method872();
 	}
@@ -79,24 +248,28 @@ public abstract class Applet_Sub1 extends Applet implements Runnable, FocusListe
 	@OriginalMember(owner = "client!o", name = "focusGained", descriptor = "(Ljava/awt/event/FocusEvent;)V")
 	@Override
 	public final void focusGained(@OriginalArg(0) FocusEvent arg0) {
-		Static198.aBoolean359 = true;
+		Static198.isFocused = true;
 		Static100.aBoolean189 = true;
 	}
 
 	@OriginalMember(owner = "client!o", name = "a", descriptor = "(ILjava/lang/String;)V")
 	protected final void handleGameError(@OriginalArg(1) String arg0) {
-		if (this.aBoolean88) {
+		if (this.handledGameError) {
 			return;
 		}
-		this.aBoolean88 = true;
+
+		this.handledGameError = true;
+
 		System.out.println("error_game_" + arg0);
+
 		try {
 			Static458.callJavaScriptMethod(Static206.signLink.hostApplet, "loggedout");
-		} catch (@Pc(31) Throwable local31) {
+		} catch (@Pc(31) Throwable ignored) {
 		}
+
 		try {
 			this.getAppletContext().showDocument(new URL(this.getCodeBase(), "error_game_" + arg0 + ".ws"), "_top");
-		} catch (@Pc(51) Exception local51) {
+		} catch (@Pc(51) Exception ignored) {
 		}
 	}
 
@@ -107,7 +280,7 @@ public abstract class Applet_Sub1 extends Applet implements Runnable, FocusListe
 	@Override
 	public final void start() {
 		if (Static437.anApplet_Sub1_2 == this && !Static438.aBoolean675) {
-			Static173.aLong118 = 0L;
+			Static173.timeToShutdown = 0L;
 		}
 	}
 
@@ -151,7 +324,7 @@ public abstract class Applet_Sub1 extends Applet implements Runnable, FocusListe
 		}
 		Static273.aCanvas5.addFocusListener(this);
 		Static273.aCanvas5.requestFocus();
-		Static198.aBoolean359 = true;
+		Static198.isFocused = true;
 		Static265.aBoolean457 = true;
 		Static100.aBoolean189 = true;
 		Static84.aBoolean383 = false;
@@ -187,7 +360,7 @@ public abstract class Applet_Sub1 extends Applet implements Runnable, FocusListe
 	@Override
 	public final void stop() {
 		if (Static437.anApplet_Sub1_2 == this && !Static438.aBoolean675) {
-			Static173.aLong118 = MonotonicClock.getCurrentTimeInMilliseconds() + 4000L;
+			Static173.timeToShutdown = MonotonicClock.getCurrentTimeInMilliseconds() + 4000L;
 		}
 	}
 
@@ -208,7 +381,7 @@ public abstract class Applet_Sub1 extends Applet implements Runnable, FocusListe
 	}
 
 	@OriginalMember(owner = "client!o", name = "a", descriptor = "(ZZ)V")
-	private void method876(@OriginalArg(1) boolean arg0) {
+	private void shutdown(@OriginalArg(1) boolean clean) {
 		synchronized (this) {
 			if (Static438.aBoolean675) {
 				return;
@@ -231,7 +404,7 @@ public abstract class Applet_Sub1 extends Applet implements Runnable, FocusListe
 		}
 		@Pc(48) Message local48 = Static206.signLink.method1746(Static437.anApplet_Sub1_2.getClass());
 		while (local48.status == 0) {
-			Static435.method5503(100L);
+			Static435.sleepFor(100L);
 		}
 		if (Static273.aCanvas5 != null) {
 			try {
@@ -253,7 +426,7 @@ public abstract class Applet_Sub1 extends Applet implements Runnable, FocusListe
 			} catch (@Pc(93) Throwable local93) {
 			}
 		}
-		System.out.println("Shutdown complete - clean:" + arg0);
+		System.out.println("Shutdown complete - clean:" + clean);
 	}
 
 	@OriginalMember(owner = "client!o", name = "c", descriptor = "(B)V")
@@ -264,7 +437,7 @@ public abstract class Applet_Sub1 extends Applet implements Runnable, FocusListe
 		try {
 			@Pc(22) Message local22 = Static206.signLink.method1736(Static437.anApplet_Sub1_2.getClass());
 			while (local22.status == 0) {
-				Static435.method5503(100L);
+				Static435.sleepFor(100L);
 			}
 			if (local22.output != null) {
 				throw (Throwable) local22.output;
@@ -280,24 +453,24 @@ public abstract class Applet_Sub1 extends Applet implements Runnable, FocusListe
 	@Override
 	public final void destroy() {
 		if (Static437.anApplet_Sub1_2 == this && !Static438.aBoolean675) {
-			Static173.aLong118 = MonotonicClock.getCurrentTimeInMilliseconds();
-			Static435.method5503(5000L);
+			Static173.timeToShutdown = MonotonicClock.getCurrentTimeInMilliseconds();
+			Static435.sleepFor(5000L);
 			Static386.signLink = null;
-			this.method876(false);
+			this.shutdown(false);
 		}
 	}
 
 	@OriginalMember(owner = "client!o", name = "focusLost", descriptor = "(Ljava/awt/event/FocusEvent;)V")
 	@Override
 	public final void focusLost(@OriginalArg(0) FocusEvent arg0) {
-		Static198.aBoolean359 = false;
+		Static198.isFocused = false;
 	}
 
 	@OriginalMember(owner = "client!o", name = "a", descriptor = "(Z)V")
 	protected abstract void method880();
 
 	@OriginalMember(owner = "client!o", name = "a", descriptor = "(IIIIB)V")
-	protected final void method881(@OriginalArg(1) int modewhat, @OriginalArg(2) int height, @OriginalArg(3) int width) {
+	protected final void load(@OriginalArg(1) int modewhat, @OriginalArg(2) int height, @OriginalArg(3) int width) {
 		try {
 			if (Static437.anApplet_Sub1_2 == null) {
 				Static303.yPOS = 0;
@@ -313,18 +486,18 @@ public abstract class Applet_Sub1 extends Applet implements Runnable, FocusListe
 				}
 				@Pc(67) Message local67 = Static206.signLink.method1741(1, this);
 				while (local67.status == 0) {
-					Static435.method5503(10L);
+					Static435.sleepFor(10L);
 				}
 			} else {
-				Static406.anInt6704++;
-				if (Static406.anInt6704 >= 3) {
+				Static406.loadAttempts++;
+				if (Static406.loadAttempts >= 3) {
 					this.handleGameError("alreadyloaded");
 				} else {
 					this.getAppletContext().showDocument(this.getDocumentBase(), "_self");
 				}
 			}
 		} catch (@Pc(80) Throwable local80) {
-			Static94.method1654(local80, null);
+			Static94.handleClientError(local80, null);
 			this.handleGameError("crash");
 		}
 	}
@@ -343,14 +516,14 @@ public abstract class Applet_Sub1 extends Applet implements Runnable, FocusListe
 		try {
 			label107: {
 				if (SignLink.javaVendor != null) {
-					@Pc(10) String local10 = SignLink.javaVendor.toLowerCase();
-					if (local10.indexOf("sun") != -1 || local10.indexOf("apple") != -1) {
+					@Pc(10) String javaVendorLowerCase = SignLink.javaVendor.toLowerCase();
+					if (javaVendorLowerCase.contains("sun") || javaVendorLowerCase.contains("apple")) {
 						@Pc(40) String local40 = SignLink.javaVersion;
 						if (local40.equals("1.1") || local40.startsWith("1.1.") || local40.equals("1.2") || local40.startsWith("1.2.")) {
 							this.handleGameError("wrongjava");
 							break label107;
 						}
-					} else if (local10.indexOf("ibm") != -1 && (SignLink.javaVersion == null || SignLink.javaVersion.equals("1.4.2"))) {
+					} else if (javaVendorLowerCase.contains("ibm") && (SignLink.javaVersion == null || SignLink.javaVersion.equals("1.4.2"))) {
 						this.handleGameError("wrongjava");
 						break label107;
 					}
@@ -386,7 +559,7 @@ public abstract class Applet_Sub1 extends Applet implements Runnable, FocusListe
 				this.method883();
 				Static63.aClass36_1 = Static337.method4580();
 				this.method877();
-				while (Static173.aLong118 == 0L || MonotonicClock.getCurrentTimeInMilliseconds() < Static173.aLong118) {
+				while (Static173.timeToShutdown == 0L || MonotonicClock.getCurrentTimeInMilliseconds() < Static173.timeToShutdown) {
 					Static411.anInt6741 = Static63.aClass36_1.method2253(Static243.anInt4535);
 					for (local70 = 0; local70 < Static411.anInt6741; local70++) {
 						this.method870();
@@ -396,10 +569,10 @@ public abstract class Applet_Sub1 extends Applet implements Runnable, FocusListe
 				}
 			}
 		} catch (@Pc(190) Throwable local190) {
-			Static94.method1654(local190, this.method887());
+			Static94.handleClientError(local190, this.method887());
 			this.handleGameError("crash");
 		}
-		this.method876(true);
+		this.shutdown(true);
 	}
 
 	@OriginalMember(owner = "client!o", name = "a", descriptor = "(IZIIILjava/lang/String;II)V")
@@ -424,10 +597,10 @@ public abstract class Applet_Sub1 extends Applet implements Runnable, FocusListe
 			Static386.signLink = Static206.signLink = new SignLink(null, arg1, arg0, 30);
 			@Pc(70) Message local70 = Static206.signLink.method1741(1, this);
 			while (local70.status == 0) {
-				Static435.method5503(10L);
+				Static435.sleepFor(10L);
 			}
 		} catch (@Pc(83) Exception local83) {
-			Static94.method1654(local83, null);
+			Static94.handleClientError(local83, null);
 		}
 	}
 

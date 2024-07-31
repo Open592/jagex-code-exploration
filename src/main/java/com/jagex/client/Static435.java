@@ -37,15 +37,15 @@ public final class Static435 {
 	}
 
 	@OriginalMember(owner = "client!vv", name = "a", descriptor = "(JI)V")
-	public static void method5503(@OriginalArg(0) long arg0) {
-		if (arg0 <= 0L) {
+	public static void sleepFor(@OriginalArg(0) long milliseconds) {
+		if (milliseconds <= 0L) {
 			return;
 		}
-		if (arg0 % 10L == 0L) {
-			Static389.method5115(arg0 - 1L);
-			Static389.method5115(1L);
+		if (milliseconds % 10L == 0L) {
+			sleepUninterrupted(milliseconds - 1L);
+			sleepUninterrupted(1L);
 		} else {
-			Static389.method5115(arg0);
+			sleepUninterrupted(milliseconds);
 		}
 	}
 
@@ -72,5 +72,13 @@ public final class Static435 {
 			}
 		}
 		return local14.toString();
+	}
+
+	@OriginalMember(owner = "client!tp", name = "a", descriptor = "(IJ)V")
+	private static void sleepUninterrupted(@OriginalArg(1) long milliseconds) {
+		try {
+			Thread.sleep(milliseconds);
+		} catch (@Pc(11) InterruptedException ignored) {
+		}
 	}
 }

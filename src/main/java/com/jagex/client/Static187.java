@@ -33,7 +33,7 @@ public final class Static187 {
 			Static445.method5617();
 		}
 		if (arg0 != 40 && Static169.aClass11_6 != null) {
-			Static169.aClass11_6.method138();
+			Static169.aClass11_6.shutdown();
 			Static169.aClass11_6 = null;
 		}
 		if (Static403.anInt6667 == 25 || Static403.anInt6667 == 28) {

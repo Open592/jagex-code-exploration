@@ -13,7 +13,7 @@ public final class Static269 {
 
 	@OriginalMember(owner = "client!no", name = "a", descriptor = "(Ljava/lang/String;B)V")
 	public static void method3853(@OriginalArg(0) String arg0) {
-		if (Static276.aClass15Array2 != null) {
+		if (Applet_Sub1.aClass15Array2 != null) {
 			Static429.method5476(Static438.aClass215_96);
 			Static3.aClass4_Sub12_Sub1_5.method2551(method3856(arg0));
 			Static3.aClass4_Sub12_Sub1_5.method2518(arg0);

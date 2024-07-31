@@ -107,7 +107,7 @@ public final class qa extends Class19 implements Interface4 {
 				}
 				return;
 			} catch (@Pc(44) Exception local44) {
-				Static435.method5503(200L);
+				Static435.sleepFor(200L);
 				local1++;
 			}
 		}
@@ -654,7 +654,7 @@ public final class qa extends Class19 implements Interface4 {
 					return;
 				}
 			} catch (@Pc(18) Exception local18) {
-				Static435.method5503(200L);
+				Static435.sleepFor(200L);
 				local1++;
 			}
 		}

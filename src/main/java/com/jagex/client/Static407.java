@@ -37,7 +37,7 @@ public final class Static407 {
 				Static96.method1683();
 			}
 			Static449.method5654();
-			Static276.method878(arg3, arg1, arg0, true, arg4);
+			Applet_Sub1.method878(arg3, arg1, arg0, true, arg4);
 			@Pc(113) int local113 = Static329.anInt5685;
 			@Pc(115) int local115 = Static119.anInt2527;
 			@Pc(117) int local117 = Static120.anInt2574;
@@ -135,7 +135,7 @@ public final class Static407 {
 				Static325.method4395(local117, local113, local115, local119);
 				Static309.method4157(local115, local113, local119, local117);
 			}
-			Static276.method873();
+			Applet_Sub1.method873();
 			Static163.anInt3197 = local127;
 			Static100.anInt2024 = local164;
 			Static145.anInt2906 = local276;

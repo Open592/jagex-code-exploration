@@ -20,47 +20,47 @@ public final class Static197 {
 	public static final Class215 aClass215_39 = new Class215(32, -1);
 
 	@OriginalMember(owner = "client!ju", name = "a", descriptor = "(Lclient!et;ILjava/lang/String;I)Lclient!qt;")
-	public static Message method3110(@OriginalArg(0) SignLink arg0, @OriginalArg(1) int arg1, @OriginalArg(2) String arg2) {
+	public static Message method3110(@OriginalArg(0) SignLink signLink, @OriginalArg(1) int arg1, @OriginalArg(2) String url) {
 		if (arg1 == 0) {
-			return arg0.method1744(arg2);
+			return signLink.method1744(url);
 		}
-		@Pc(44) Message local44;
+		@Pc(44) Message message;
 		if (arg1 == 1) {
 			try {
-				Static458.callJavaScriptMethod(arg0.hostApplet, "openjs", new Object[] { (new URL(arg0.hostApplet.getCodeBase(), arg2)).toString() });
-				local44 = new Message();
-				local44.status = 1;
-				return local44;
-			} catch (@Pc(50) Throwable local50) {
-				local44 = new Message();
-				local44.status = 2;
-				return local44;
+				Static458.callJavaScriptMethod(signLink.hostApplet, "openjs", new Object[] { (new URL(signLink.hostApplet.getCodeBase(), url)).toString() });
+				message = new Message();
+				message.status = 1;
+				return message;
+			} catch (@Pc(50) Throwable e) {
+				message = new Message();
+				message.status = 2;
+				return message;
 			}
 		} else if (arg1 == 2) {
 			try {
-				arg0.hostApplet.getAppletContext().showDocument(new URL(arg0.hostApplet.getCodeBase(), arg2), "_blank");
-				local44 = new Message();
-				local44.status = 1;
-				return local44;
+				signLink.hostApplet.getAppletContext().showDocument(new URL(signLink.hostApplet.getCodeBase(), url), "_blank");
+				message = new Message();
+				message.status = 1;
+				return message;
 			} catch (@Pc(86) Exception local86) {
-				local44 = new Message();
-				local44.status = 2;
-				return local44;
+				message = new Message();
+				message.status = 2;
+				return message;
 			}
 		} else if (arg1 == 3) {
 			try {
-				Static458.callJavaScriptMethod(arg0.hostApplet, "loggedout");
-			} catch (@Pc(106) Throwable local106) {
+				Static458.callJavaScriptMethod(signLink.hostApplet, "loggedout");
+			} catch (@Pc(106) Throwable ignored) {
 			}
 			try {
-				arg0.hostApplet.getAppletContext().showDocument(new URL(arg0.hostApplet.getCodeBase(), arg2), "_top");
-				local44 = new Message();
-				local44.status = 1;
-				return local44;
-			} catch (@Pc(128) Exception local128) {
-				local44 = new Message();
-				local44.status = 2;
-				return local44;
+				signLink.hostApplet.getAppletContext().showDocument(new URL(signLink.hostApplet.getCodeBase(), url), "_top");
+				message = new Message();
+				message.status = 1;
+				return message;
+			} catch (@Pc(128) Exception e) {
+				message = new Message();
+				message.status = 2;
+				return message;
 			}
 		} else {
 			throw new IllegalArgumentException();
