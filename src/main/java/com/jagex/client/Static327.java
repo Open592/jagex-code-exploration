@@ -8,7 +8,7 @@ import org.openrs2.deob.annotation.Pc;
 public final class Static327 {
 
 	@OriginalMember(owner = "client!qj", name = "m", descriptor = "J")
-	public static long aLong189;
+	public static long connectionInitializationTimestamp;
 
 	@OriginalMember(owner = "client!qj", name = "k", descriptor = "Lclient!sl;")
 	public static final Class215 aClass215_76 = new Class215(15, -1);

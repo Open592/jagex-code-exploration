@@ -54,11 +54,11 @@ public final class Static162 {
 			}
 		} else {
 			Static56.anInt1028 = local7.anInt3881;
-			Static321.aString54 = local7.aString38;
+			Static321.host = local7.aString38;
 			if (Static104.modewhere != Static373.liveModeWhere) {
 				Static97.anInt1949 = Static56.anInt1028 + 50000;
 				Static313.anInt5436 = Static56.anInt1028 + 40000;
-				Static407.anInt6723 = Static313.anInt5436;
+				Static407.port = Static313.anInt5436;
 			}
 			return true;
 		}

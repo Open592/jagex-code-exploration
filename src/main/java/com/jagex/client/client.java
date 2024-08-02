@@ -72,27 +72,27 @@ public final class client extends Applet_Sub1 {
 
 	@OriginalMember(owner = "client!client", name = "i", descriptor = "(I)V")
 	private void method893() {
-		if (Static261.aClass255_2.anInt7062 > Static316.anInt5505) {
-			Static392.anInt6543 = (Static261.aClass255_2.anInt7062 * 50 - 50) * 5;
-			if (Static407.anInt6723 == Static313.anInt5436) {
-				Static407.anInt6723 = Static97.anInt1949;
+		if (Static261.aClass255_2.clientInitializationAttemptCount > Static316.anInt5505) {
+			Static392.anInt6543 = (Static261.aClass255_2.clientInitializationAttemptCount * 50 - 50) * 5;
+			if (Static407.port == Static313.anInt5436) {
+				Static407.port = Static97.anInt1949;
 			} else {
-				Static407.anInt6723 = Static313.anInt5436;
+				Static407.port = Static313.anInt5436;
 			}
 			if (Static392.anInt6543 > 3000) {
 				Static392.anInt6543 = 3000;
 			}
-			if (Static261.aClass255_2.anInt7062 >= 2 && Static261.aClass255_2.anInt7063 == 6) {
+			if (Static261.aClass255_2.clientInitializationAttemptCount >= 2 && Static261.aClass255_2.anInt7063 == 6) {
 				this.handleGameError("js5connect_outofdate");
 				Static403.anInt6667 = 1000;
 				return;
 			}
-			if (Static261.aClass255_2.anInt7062 >= 4 && Static261.aClass255_2.anInt7063 == -1) {
+			if (Static261.aClass255_2.clientInitializationAttemptCount >= 4 && Static261.aClass255_2.anInt7063 == -1) {
 				this.handleGameError("js5crc");
 				Static403.anInt6667 = 1000;
 				return;
 			}
-			if (Static261.aClass255_2.anInt7062 >= 4 && (Static403.anInt6667 == 0 || Static403.anInt6667 == 5)) {
+			if (Static261.aClass255_2.clientInitializationAttemptCount >= 4 && (Static403.anInt6667 == 0 || Static403.anInt6667 == 5)) {
 				if (Static261.aClass255_2.anInt7063 == 7 || Static261.aClass255_2.anInt7063 == 9) {
 					this.handleGameError("js5connect_full");
 				} else if (Static261.aClass255_2.anInt7063 <= 0) {
@@ -104,52 +104,54 @@ public final class client extends Applet_Sub1 {
 				return;
 			}
 		}
-		Static316.anInt5505 = Static261.aClass255_2.anInt7062;
+		Static316.anInt5505 = Static261.aClass255_2.clientInitializationAttemptCount;
 		if (Static392.anInt6543 > 0) {
 			Static392.anInt6543--;
 			return;
 		}
 		try {
-			if (Static78.anInt1567 == 0) {
-				Static30.aClass199_2 = Static206.signLink.method1728(Static321.aString54, Static407.anInt6723);
-				Static78.anInt1567++;
+			if (Static78.clientInitializationStep == 0) {
+				Static30.connectionInitializationMessage = Static206.signLink.emitConnectionInitializationMessage(Static321.host, Static407.port);
+				Static78.clientInitializationStep++;
 			}
-			if (Static78.anInt1567 == 1) {
-				if (Static30.aClass199_2.status == 2) {
+			if (Static78.clientInitializationStep == 1) {
+				if (Static30.connectionInitializationMessage.status == 2) {
 					this.method903(1000);
 					return;
 				}
-				if (Static30.aClass199_2.status == 1) {
-					Static78.anInt1567++;
+				if (Static30.connectionInitializationMessage.status == 1) {
+					Static78.clientInitializationStep++;
 				}
 			}
-			if (Static78.anInt1567 == 2) {
-				Static240.aClass11_14 = new Class11((Socket) Static30.aClass199_2.output, Static206.signLink);
+			if (Static78.clientInitializationStep == 2) {
+				Static240.aClass11_14 = new Class11((Socket) Static30.connectionInitializationMessage.output, Static206.signLink);
 				@Pc(194) Class4_Sub12 local194 = new Class4_Sub12(5);
 				local194.method2551(Static153.aClass60_2.anInt1812);
 				local194.method2531(592);
 				Static240.aClass11_14.method142(5, local194.aByteArray36);
-				Static78.anInt1567++;
-				Static327.aLong189 = MonotonicClock.getCurrentTimeInMilliseconds();
+				Static78.clientInitializationStep++;
+				Static327.connectionInitializationTimestamp = MonotonicClock.getCurrentTimeInMilliseconds();
 			}
-			if (Static78.anInt1567 == 3) {
+			if (Static78.clientInitializationStep == 3) {
 				if (Static403.anInt6667 == 0 || Static403.anInt6667 == 5 || Static240.aClass11_14.method133() > 0) {
-					@Pc(259) int local259 = Static240.aClass11_14.method139();
-					if (local259 != 0) {
-						this.method903(local259);
+					@Pc(259) int bytesRead = Static240.aClass11_14.method139();
+
+					if (bytesRead != 0) {
+						this.method903(bytesRead);
 						return;
 					}
-					Static78.anInt1567++;
-				} else if (MonotonicClock.getCurrentTimeInMilliseconds() - Static327.aLong189 > 30000L) {
+
+					Static78.clientInitializationStep++;
+				} else if (MonotonicClock.getCurrentTimeInMilliseconds() - Static327.connectionInitializationTimestamp > 30000L) {
 					this.method903(1001);
 					return;
 				}
 			}
-			if (Static78.anInt1567 == 4) {
+			if (Static78.clientInitializationStep == 4) {
 				@Pc(293) boolean local293 = Static403.anInt6667 == 5 || Static403.anInt6667 == 10 || Static403.anInt6667 == 28;
 				Static261.aClass255_2.method5461(Static240.aClass11_14, !local293);
-				Static30.aClass199_2 = null;
-				Static78.anInt1567 = 0;
+				Static30.connectionInitializationMessage = null;
+				Static78.clientInitializationStep = 0;
 				Static240.aClass11_14 = null;
 			}
 		} catch (@Pc(312) IOException local312) {
@@ -673,10 +675,10 @@ public final class client extends Applet_Sub1 {
 	@OriginalMember(owner = "client!client", name = "a", descriptor = "(II)V")
 	private void method903(@OriginalArg(1) int arg0) {
 		Static240.aClass11_14 = null;
-		Static30.aClass199_2 = null;
-		Static261.aClass255_2.anInt7062++;
+		Static30.connectionInitializationMessage = null;
+		Static261.aClass255_2.clientInitializationAttemptCount++;
 		Static261.aClass255_2.anInt7063 = arg0;
-		Static78.anInt1567 = 0;
+		Static78.clientInitializationStep = 0;
 	}
 
 	@OriginalMember(owner = "client!client", name = "d", descriptor = "(I)V")
@@ -706,7 +708,7 @@ public final class client extends Applet_Sub1 {
 			Static11.HTTPPort = Static107.worldID + 50000;
 		}
 		Static313.anInt5435 = Static133.JAGGRABPort;
-		Static321.aString54 = Static13.host;
+		Static321.host = Static13.host;
 		Static97.anInt1949 = Static11.HTTPPort;
 		Static313.anInt5436 = Static133.JAGGRABPort;
 		if (SignLink.anInt1987 == 3) {
@@ -727,7 +729,7 @@ public final class client extends Applet_Sub1 {
 			Static434.aShortArray252 = Static293.aShortArray175;
 			Static299.aShortArray179 = Static354.aShortArray210;
 		}
-		Static407.anInt6723 = Static313.anInt5435;
+		Static407.port = Static313.anInt5435;
 		Static384.aClass244_1 = Static140.method2398(Static273.aCanvas5);
 		Static420.aClass80_1 = Static376.method4882(Static273.aCanvas5);
 		Static223.aClass14_1 = Static328.method4424();

@@ -16,7 +16,7 @@ public final class Static263 {
 	public static final boolean[] aBooleanArray15 = new boolean[100];
 
 	@OriginalMember(owner = "client!nh", name = "G", descriptor = "Z")
-	public static boolean aBoolean455 = false;
+	public static boolean isRunningModernJavaVersion = false;
 
 	@OriginalMember(owner = "client!nh", name = "f", descriptor = "(I)V")
 	public static void method3806() {

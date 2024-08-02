@@ -37,7 +37,7 @@ public final class Static285 {
 				Static405.anInt6682 = 1;
 			}
 			if (Static405.anInt6682 == 1) {
-				Static36.aClass199_3 = Static206.signLink.method1728(Static13.host, Static313.anInt5435);
+				Static36.aClass199_3 = Static206.signLink.emitConnectionInitializationMessage(Static13.host, Static313.anInt5435);
 				Static405.anInt6682 = 2;
 			}
 			@Pc(118) int local118;

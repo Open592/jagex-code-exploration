@@ -8,7 +8,7 @@ import org.openrs2.deob.annotation.Pc;
 public final class Static30 {
 
 	@OriginalMember(owner = "client!bi", name = "B", descriptor = "Lclient!qt;")
-	public static Message aClass199_2;
+	public static Message connectionInitializationMessage;
 
 	@OriginalMember(owner = "client!bi", name = "J", descriptor = "[[Lclient!uu;")
 	public static Class247[][] aClass247ArrayArray1;

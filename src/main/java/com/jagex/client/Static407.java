@@ -10,7 +10,7 @@ public final class Static407 {
 	public static Class78_Sub1[] aClass78_Sub1Array2;
 
 	@OriginalMember(owner = "client!un", name = "w", descriptor = "I")
-	public static int anInt6723;
+	public static int port;
 
 	@OriginalMember(owner = "client!un", name = "e", descriptor = "I")
 	public static int anInt6710 = 0;

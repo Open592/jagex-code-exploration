@@ -13,15 +13,17 @@ public final class Static441 {
 	public static int anInt7199 = 0;
 
 	@OriginalMember(owner = "client!wg", name = "a", descriptor = "(Lclient!et;ILjava/lang/Object;)V")
-	public static void method5566(@OriginalArg(0) SignLink arg0, @OriginalArg(2) Object arg1) {
-		if (arg0.systemEventQueue == null) {
+	public static void waitForSystemEventQueueToDrain(@OriginalArg(0) SignLink signLink, @OriginalArg(2) Object arg1) {
+		if (signLink.systemEventQueue == null) {
 			return;
 		}
-		for (@Pc(16) int local16 = 0; local16 < 50 && arg0.systemEventQueue.peekEvent() != null; local16++) {
+
+		for (@Pc(16) int i = 0; i < 50 && signLink.systemEventQueue.peekEvent() != null; i++) {
 			Static435.sleepFor(1L);
 		}
+
 		if (arg1 != null) {
-			arg0.systemEventQueue.postEvent(new ActionEvent(arg1, 1001, "dummy"));
+			signLink.systemEventQueue.postEvent(new ActionEvent(arg1, 1001, "dummy"));
 		}
 	}
 

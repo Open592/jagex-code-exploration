@@ -147,7 +147,7 @@ public final class Class143_Sub1 extends Class143 {
 				if (local188 != this.aClass209_2.anIntArray430[arg1]) {
 					throw new RuntimeException();
 				}
-				this.aClass255_1.anInt7062 = 0;
+				this.aClass255_1.clientInitializationAttemptCount = 0;
 				this.aClass255_1.anInt7063 = 0;
 			} catch (@Pc(213) RuntimeException local213) {
 				this.aClass255_1.method5464();

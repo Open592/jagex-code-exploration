@@ -92,7 +92,7 @@ public final class Static437 {
 		Static321.method4336(Static251.aClass215_54.method4926(), Static3.aClass4_Sub12_Sub1_5);
 		if (Static178.aClass4_Sub42_2 == null) {
 			if (Static419.aLong212 <= MonotonicClock.getCurrentTimeInMilliseconds()) {
-				Static178.aClass4_Sub42_2 = Static402.aClass256_1.method5479(Static321.aString54);
+				Static178.aClass4_Sub42_2 = Static402.aClass256_1.method5479(Static321.host);
 			}
 		} else if (Static178.aClass4_Sub42_2.anInt6883 != -1) {
 			Static429.method5476(Static27.aClass215_7);

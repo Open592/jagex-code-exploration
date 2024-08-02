@@ -338,7 +338,7 @@ public abstract class Applet_Sub1 extends Applet implements Runnable, FocusListe
 			return;
 		}
 		Static100.aBoolean189 = true;
-		if (Static263.aBoolean455 && MonotonicClock.getCurrentTimeInMilliseconds() - Static83.aLong59 > 1000L) {
+		if (Static263.isRunningModernJavaVersion && MonotonicClock.getCurrentTimeInMilliseconds() - Static83.aLong59 > 1000L) {
 			@Pc(24) Rectangle local24 = arg0.getClipBounds();
 			if (local24 == null || Static425.anInt7000 <= local24.width && Static17.anInt222 <= local24.height) {
 				Static84.aBoolean383 = true;
@@ -514,64 +514,81 @@ public abstract class Applet_Sub1 extends Applet implements Runnable, FocusListe
 	@Override
 	public final void run() {
 		try {
-			label107: {
+			verifyJavaVersion: {
 				if (SignLink.javaVendor != null) {
 					@Pc(10) String javaVendorLowerCase = SignLink.javaVendor.toLowerCase();
+
 					if (javaVendorLowerCase.contains("sun") || javaVendorLowerCase.contains("apple")) {
-						@Pc(40) String local40 = SignLink.javaVersion;
-						if (local40.equals("1.1") || local40.startsWith("1.1.") || local40.equals("1.2") || local40.startsWith("1.2.")) {
+						@Pc(40) String javaVersion = SignLink.javaVersion;
+
+						if (javaVersion.equals("1.1") || javaVersion.startsWith("1.1.") || javaVersion.equals("1.2") || javaVersion.startsWith("1.2.")) {
 							this.handleGameError("wrongjava");
-							break label107;
+
+							break verifyJavaVersion;
 						}
 					} else if (javaVendorLowerCase.contains("ibm") && (SignLink.javaVersion == null || SignLink.javaVersion.equals("1.4.2"))) {
 						this.handleGameError("wrongjava");
-						break label107;
+
+						break verifyJavaVersion;
 					}
 				}
-				@Pc(70) int local70;
+
 				if (SignLink.javaVersion != null && SignLink.javaVersion.startsWith("1.")) {
-					local70 = 2;
-					@Pc(72) int local72 = 0;
-					while (SignLink.javaVersion.length() > local70) {
-						@Pc(78) char local78 = SignLink.javaVersion.charAt(local70);
-						if (local78 < '0' || local78 > '9') {
+					int versionStringPOS = 2;
+					int javaOneMinorVersion = 0;
+
+					while (SignLink.javaVersion.length() > versionStringPOS) {
+						@Pc(78) char numChar = SignLink.javaVersion.charAt(versionStringPOS);
+
+						if (numChar < '0' || numChar > '9') {
 							break;
 						}
-						local72 = local72 * 10 + local78 - 48;
-						local70++;
+
+						javaOneMinorVersion = javaOneMinorVersion * 10 + numChar - 48;
+
+						versionStringPOS++;
 					}
-					if (local72 >= 5) {
-						Static263.aBoolean455 = true;
+
+					if (javaOneMinorVersion >= 5) {
+						Static263.isRunningModernJavaVersion = true;
 					}
 				}
+
 				if (Static206.signLink.hostApplet != null) {
-					@Pc(114) Method local114 = SignLink.setFocusCycleRoot;
-					if (local114 != null) {
+					@Pc(114) Method setFocusCycleRoot = SignLink.setFocusCycleRoot;
+
+					if (setFocusCycleRoot != null) {
 						try {
-							local114.invoke(Static206.signLink.hostApplet, Boolean.TRUE);
-						} catch (@Pc(129) Throwable local129) {
+							setFocusCycleRoot.invoke(Static206.signLink.hostApplet, Boolean.TRUE);
+						} catch (@Pc(129) Throwable ignored) {
 						}
 					}
 				}
+
 				Static324.method4384();
 				Static112.method2036();
 				this.method874();
 				this.method883();
 				Static63.aClass36_1 = Static337.method4580();
 				this.method877();
+
 				while (Static173.timeToShutdown == 0L || MonotonicClock.getCurrentTimeInMilliseconds() < Static173.timeToShutdown) {
 					Static411.anInt6741 = Static63.aClass36_1.method2253(Static243.anInt4535);
-					for (local70 = 0; local70 < Static411.anInt6741; local70++) {
+
+					for (int i = 0; i < Static411.anInt6741; i++) {
 						this.method870();
 					}
+
 					this.method892();
-					Static441.method5566(Static206.signLink, Static273.aCanvas5);
+
+					Static441.waitForSystemEventQueueToDrain(Static206.signLink, Static273.aCanvas5);
 				}
 			}
 		} catch (@Pc(190) Throwable local190) {
 			Static94.handleClientError(local190, this.method887());
 			this.handleGameError("crash");
 		}
+
 		this.shutdown(true);
 	}
 

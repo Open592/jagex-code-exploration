@@ -12,7 +12,7 @@ public final class Static78 {
 	public static short[] aShortArray46 = new short[256];
 
 	@OriginalMember(owner = "client!dt", name = "c", descriptor = "I")
-	public static int anInt1567 = 0;
+	public static int clientInitializationStep = 0;
 
 	@OriginalMember(owner = "client!dt", name = "a", descriptor = "(BLclient!iv;)Lclient!kg;")
 	public static Class27_Sub3 method1389(@OriginalArg(1) Class4_Sub12 arg0) {

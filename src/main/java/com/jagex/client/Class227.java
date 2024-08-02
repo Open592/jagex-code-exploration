@@ -33,7 +33,7 @@ public final class Class227 implements Runnable {
 					}
 				}
 				Static435.sleepFor(10L);
-				Static441.method5566(this.aSignLink_7, null);
+				Static441.waitForSystemEventQueueToDrain(this.aSignLink_7, null);
 			}
 		} catch (@Pc(43) Exception local43) {
 			Static94.handleClientError(local43, null);

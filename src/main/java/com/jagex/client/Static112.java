@@ -114,7 +114,7 @@ public final class Static112 {
 				if (Static162.aLong210 > MonotonicClock.getCurrentTimeInMilliseconds() - 5000L) {
 					return 0;
 				}
-				Static292.aClass199_8 = Static206.signLink.method1728(Static13.host, Static313.anInt5435);
+				Static292.aClass199_8 = Static206.signLink.emitConnectionInitializationMessage(Static13.host, Static313.anInt5435);
 				Static18.aLong14 = MonotonicClock.getCurrentTimeInMilliseconds();
 				Static50.anInt862 = 1;
 			}

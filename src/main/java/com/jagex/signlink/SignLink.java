@@ -146,15 +146,15 @@ public final class SignLink implements Runnable {
 	}
 
 	public Message method1726(int arg0, int arg1, int arg2) {
-		return this.method1737((arg2 << 16) + arg0, arg1 << 16, null, 0, 6);
+		return this.emitMessage((arg2 << 16) + arg0, arg1 << 16, null, 0, 6);
 	}
 
 	public Message method1727(Frame arg0) {
-		return this.method1737(0, 0, arg0, 0, 7);
+		return this.emitMessage(0, 0, arg0, 0, 7);
 	}
 
-	public Message method1728(String arg0, int arg1) {
-		return this.method1737(arg1, 0, arg0, 0, 1);
+	public Message emitConnectionInitializationMessage(String host, int port) {
+		return this.emitMessage(port, 0, host, 0, 1);
 	}
 
 	private byte[] method1729(String arg0, int arg1) {
@@ -166,11 +166,11 @@ public final class SignLink implements Runnable {
 	}
 
 	public Message method1730(Class[] arg0, String arg1, Class arg2) {
-		return this.method1737(0, 0, new Object[] { arg2, arg1, arg0 }, 0, 8);
+		return this.emitMessage(0, 0, new Object[] { arg2, arg1, arg0 }, 0, 8);
 	}
 
 	private Message method1731(byte arg0) {
-		return arg0 == -128 ? this.method1737(0, 0, null, arg0 + 128, 18) : null;
+		return arg0 == -128 ? this.emitMessage(0, 0, null, arg0 + 128, 18) : null;
 	}
 
 	public void shutdown() {
@@ -230,14 +230,14 @@ public final class SignLink implements Runnable {
 			this.refuseConnectionForFiveSeconds();
 		}
 
-		return this.method1737(arg2 ? 1 : 0, 0, arg1, 0, 15);
+		return this.emitMessage(arg2 ? 1 : 0, 0, arg1, 0, 15);
 	}
 
 	public Message method1736(Class arg0) {
-		return this.method1737(0, 0, arg0, 0, 20);
+		return this.emitMessage(0, 0, arg0, 0, 20);
 	}
 
-	private Message method1737(int integerInput, int arg1, Object genericInput, int arg3, int messageType) {
+	private Message emitMessage(int integerInput, int arg1, Object genericInput, int arg3, int messageType) {
 		Message message = new Message();
 
 		message.integerInput = integerInput;
@@ -259,59 +259,62 @@ public final class SignLink implements Runnable {
 	}
 
 	public Message method1738(String arg0) {
-		return this.method1737(0, 0, arg0, 0, 12);
+		return this.emitMessage(0, 0, arg0, 0, 12);
 	}
 
 	public Message method1739(int arg0) {
-		return this.method1737(arg0, 0, null, 0, 3);
+		return this.emitMessage(arg0, 0, null, 0, 3);
 	}
 
 	public void method1740(Class arg0) throws Exception {
-		Class[] local12 = new Class[] { Class.forName("java.lang.Class"), Class.forName("java.lang.String") };
-		Runtime local14 = Runtime.getRuntime();
-		Method local25 = Class.forName("java.lang.reflect.Method").getMethod("setAccessible", Boolean.TYPE);
-		Method local35;
+		Class[] parameterTypes = new Class[] {
+				Class.forName("java.lang.Class"),
+				Class.forName("java.lang.String")
+		};
+		Runtime runtime = Runtime.getRuntime();
+		Method setAccessible = Class.forName("java.lang.reflect.Method").getMethod("setAccessible", Boolean.TYPE);
+		Method loadMethod;
 
 		if (!systemOSNameLowerCase.startsWith("mac")) {
-			local35 = Class.forName("java.lang.Runtime").getDeclaredMethod("loadLibrary0", local12);
-			local25.invoke(local35, Boolean.TRUE);
-			local35.invoke(local14, arg0, "jawt");
-			local25.invoke(local35, Boolean.FALSE);
+			loadMethod = Class.forName("java.lang.Runtime").getDeclaredMethod("loadLibrary0", parameterTypes);
+			setAccessible.invoke(loadMethod, Boolean.TRUE);
+			loadMethod.invoke(runtime, arg0, "jawt");
+			setAccessible.invoke(loadMethod, Boolean.FALSE);
 		}
 
-		local35 = Class.forName("java.lang.Runtime").getDeclaredMethod("load0", local12);
-		local25.invoke(local35, Boolean.TRUE);
+		loadMethod = Class.forName("java.lang.Runtime").getDeclaredMethod("load0", parameterTypes);
+		setAccessible.invoke(loadMethod, Boolean.TRUE);
 
 		if (!systemOSNameLowerCase.startsWith("win")) {
 			throw new Exception();
 		}
 
-		local35.invoke(local14, arg0, this.resolveCacheFilePath("sw3d.dll").toString());
-		local25.invoke(local35, Boolean.FALSE);
+		loadMethod.invoke(runtime, arg0, this.resolveCacheFilePath("sw3d.dll").toString());
+		setAccessible.invoke(loadMethod, Boolean.FALSE);
 	}
 
 	public Message method1741(int arg0, Runnable arg1) {
-		return this.method1737(arg0, 0, arg1, 0, 2);
+		return this.emitMessage(arg0, 0, arg1, 0, 2);
 	}
 
 	private Message method1742(Transferable arg0, byte arg1) {
-		return arg1 == 87 ? this.method1737(0, 0, arg0, 0, 19) : null;
+		return arg1 == 87 ? this.emitMessage(0, 0, arg0, 0, 19) : null;
 	}
 
 	public Message method1743(Point arg0, Component arg1, int arg2, int[] arg3, int arg4) {
-		return this.method1737(arg2, arg4, new Object[] { arg1, arg3, arg0 }, 0, 17);
+		return this.emitMessage(arg2, arg4, new Object[] { arg1, arg3, arg0 }, 0, 17);
 	}
 
 	public Message method1744(String arg0) {
-		return this.method1737(0, 0, arg0, 0, 16);
+		return this.emitMessage(0, 0, arg0, 0, 16);
 	}
 
 	public Message method1745() {
-		return this.method1737(0, 0, null, 0, 5);
+		return this.emitMessage(0, 0, null, 0, 5);
 	}
 
 	public Message method1746(Class arg0) {
-		return this.method1737(0, 0, arg0, 0, 11);
+		return this.emitMessage(0, 0, arg0, 0, 11);
 	}
 
 	private Message method1747(Component arg0, boolean arg1, int arg2, int arg3) {
@@ -319,7 +322,7 @@ public final class SignLink implements Runnable {
 			aHashtable1 = null;
 		}
 		Point local7 = arg0.getLocationOnScreen();
-		return this.method1737(arg2 + local7.x, local7.y + arg3, null, 0, 14);
+		return this.emitMessage(arg2 + local7.x, local7.y + arg3, null, 0, 14);
 	}
 
 	private Message method1749(Object genericInput, int arg1, int integerInput, int messageType) {
@@ -355,18 +358,18 @@ public final class SignLink implements Runnable {
 	}
 
 	public Message method1750(Class arg0, String arg1) {
-		return this.method1737(0, 0, new Object[] { arg0, arg1 }, 0, 9);
+		return this.emitMessage(0, 0, new Object[] { arg0, arg1 }, 0, 9);
 	}
 
-	public Message openConnection(URL arg0) {
-		return this.method1737(0, 0, arg0, 0, 4);
+	public Message emitOpenURLConnectionMessage(URL url) {
+		return this.emitMessage(0, 0, url, 0, 4);
 	}
 
 	private Message method1752(String arg0, int arg1) {
 		if (arg1 <= 71) {
 			this.method1747(null, true, 35, 67);
 		}
-		return this.method1737(0, 0, arg0, 0, 21);
+		return this.emitMessage(0, 0, arg0, 0, 21);
 	}
 
 	public void refuseConnectionForFiveSeconds() {
@@ -447,45 +450,54 @@ public final class SignLink implements Runnable {
 
 	public static File resolveCacheFilePath(String filename, int modewhat, String gameName) {
 		File local4 = (File) aHashtable1.get(filename);
+
 		if (local4 != null) {
 			return local4;
 		}
+
 		String[] local43 = new String[] { "c:/rscache/", "/rscache/", "c:/windows/", "c:/winnt/", "c:/", systemUserHome, "/tmp/", "" };
 		String[] local66 = new String[] { ".jagex_cache_" + modewhat, ".file_store_" + modewhat };
+
 		for (int local68 = 0; local68 < 2; local68++) {
-			for (int local71 = 0; local71 < local66.length; local71++) {
-				for (int local74 = 0; local74 < local43.length; local74++) {
-					String local105 = local43[local74] + local66[local71] + "/" + (gameName == null ? "" : gameName + "/") + filename;
-					RandomAccessFile local107 = null;
-					try {
-						File local112 = new File(local105);
-						if (local68 != 0 || local112.exists()) {
-							String local121 = local43[local74];
-							if (local68 != 1 || local121.length() <= 0 || (new File(local121)).exists()) {
-								(new File(local43[local74] + local66[local71])).mkdir();
-								if (gameName != null) {
-									(new File(local43[local74] + local66[local71] + "/" + gameName)).mkdir();
-								}
-								local107 = new RandomAccessFile(local112, "rw");
-								int local185 = local107.read();
-								local107.seek(0L);
-								local107.write(local185);
-								local107.seek(0L);
-								local107.close();
-								aHashtable1.put(filename, local112);
-								return local112;
-							}
-						}
-					} catch (Exception local204) {
-						try {
-							if (local107 != null) {
-								local107.close();
-							}
-						} catch (Exception local212) {
-						}
-					}
-				}
-			}
+            for (String s : local66) {
+                for (String string : local43) {
+                    String local105 = string + s + "/" + (gameName == null ? "" : gameName + "/") + filename;
+                    RandomAccessFile local107 = null;
+
+                    try {
+                        File local112 = new File(local105);
+
+                        if (local68 != 0 || local112.exists()) {
+                            String local121 = string;
+
+                            if (local68 != 1 || local121.length() <= 0 || (new File(local121)).exists()) {
+                                (new File(string + s)).mkdir();
+
+                                if (gameName != null) {
+                                    (new File(string + s + "/" + gameName)).mkdir();
+                                }
+
+                                local107 = new RandomAccessFile(local112, "rw");
+                                int local185 = local107.read();
+                                local107.seek(0L);
+                                local107.write(local185);
+                                local107.seek(0L);
+                                local107.close();
+                                aHashtable1.put(filename, local112);
+
+                                return local112;
+                            }
+                        }
+                    } catch (Exception e) {
+                        try {
+                            if (local107 != null) {
+                                local107.close();
+                            }
+                        } catch (Exception ignored) {
+                        }
+                    }
+                }
+            }
 		}
 		throw new RuntimeException();
 	}

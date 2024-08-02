@@ -39,7 +39,7 @@ public final class Class255 {
 	private final Class4_Sub12 aClass4_Sub12_8 = new Class4_Sub12(4);
 
 	@OriginalMember(owner = "client!vn", name = "A", descriptor = "I")
-	public volatile int anInt7062 = 0;
+	public volatile int clientInitializationAttemptCount = 0;
 
 	@OriginalMember(owner = "client!vn", name = "B", descriptor = "B")
 	private byte aByte94 = 0;
@@ -93,7 +93,7 @@ public final class Class255 {
 								} catch (@Pc(108) Exception local108) {
 								}
 								this.anInt7063 = -2;
-								this.anInt7062++;
+								this.clientInitializationAttemptCount++;
 								this.aClass11_13 = null;
 							}
 						}
@@ -124,7 +124,7 @@ public final class Class255 {
 			} catch (@Pc(44) Exception local44) {
 			}
 			this.aClass11_13 = null;
-			this.anInt7062++;
+			this.clientInitializationAttemptCount++;
 			this.anInt7063 = -2;
 		}
 	}
@@ -146,7 +146,7 @@ public final class Class255 {
 			}
 			this.anInt7063 = -2;
 			this.aClass11_13 = null;
-			this.anInt7062++;
+			this.clientInitializationAttemptCount++;
 		}
 	}
 
@@ -159,7 +159,7 @@ public final class Class255 {
 		this.aClass11_13 = null;
 		this.anInt7063 = -1;
 		this.aByte94 = (byte) (Math.random() * 255.0D + 1.0D);
-		this.anInt7062++;
+		this.clientInitializationAttemptCount++;
 	}
 
 	@OriginalMember(owner = "client!vn", name = "a", descriptor = "(IBBZI)Lclient!je;")
@@ -206,7 +206,7 @@ public final class Class255 {
 			}
 			this.anInt7063 = -2;
 			this.aClass11_13 = null;
-			this.anInt7062++;
+			this.clientInitializationAttemptCount++;
 		}
 	}
 
@@ -347,7 +347,7 @@ public final class Class255 {
 				this.aClass11_13.shutdown();
 			} catch (@Pc(633) Exception local633) {
 			}
-			this.anInt7062++;
+			this.clientInitializationAttemptCount++;
 			this.anInt7063 = -2;
 			this.aClass11_13 = null;
 			return this.method5469() == 0 && this.method5459() == 0;
