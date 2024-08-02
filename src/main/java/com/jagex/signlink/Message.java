@@ -6,7 +6,7 @@ public final class Message {
 
 	public volatile Object output;
 
-	public Message aClass199_9;
+	public Message next;
 
 	public int integerInput;
 

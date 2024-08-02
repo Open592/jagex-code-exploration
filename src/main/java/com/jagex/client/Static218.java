@@ -205,9 +205,9 @@ public final class Static218 {
 			local729 = Static263.anInt4963 - 1;
 		}
 		if (Static323.aClass50_Sub1_1.method2861(Static177.anInt2973)) {
-			Applet_Sub1.method882(0);
+			GameShell.method882(0);
 		} else {
-			Applet_Sub1.method882(local729);
+			GameShell.method882(local729);
 		}
 		@Pc(766) int local766;
 		@Pc(770) int local770;

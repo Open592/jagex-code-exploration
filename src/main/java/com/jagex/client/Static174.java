@@ -1116,7 +1116,7 @@ public final class Static174 {
 													if (Static454.anInt4075 == 0) {
 														Static221.aString39 = null;
 														Static300.aClass22_246 = null;
-														Applet_Sub1.aClass15Array2 = null;
+														GameShell.aClass15Array2 = null;
 														Static290.anInt6410 = 0;
 														Static395.aString63 = null;
 														return true;
@@ -1169,7 +1169,7 @@ public final class Static174 {
 															break;
 														}
 													}
-													Applet_Sub1.aClass15Array2 = local4104;
+													GameShell.aClass15Array2 = local4104;
 													Static300.aClass22_246 = null;
 													return true;
 												} else if (Static406.aClass22_307 == Static300.aClass22_246) {
@@ -1415,15 +1415,15 @@ public final class Static174 {
 															Static300.aClass22_246 = null;
 															return true;
 														}
-														for (local2473 = 0; Static290.anInt6410 > local2473 && (!Applet_Sub1.aClass15Array2[local2473].aString7.equals(local210) || Applet_Sub1.aClass15Array2[local2473].anInt272 != local224); local2473++) {
+														for (local2473 = 0; Static290.anInt6410 > local2473 && (!GameShell.aClass15Array2[local2473].aString7.equals(local210) || GameShell.aClass15Array2[local2473].anInt272 != local224); local2473++) {
 														}
 														if (local2473 < Static290.anInt6410) {
 															while (local2473 < Static290.anInt6410 - 1) {
-																Applet_Sub1.aClass15Array2[local2473] = Applet_Sub1.aClass15Array2[local2473 + 1];
+																GameShell.aClass15Array2[local2473] = GameShell.aClass15Array2[local2473 + 1];
 																local2473++;
 															}
 															Static290.anInt6410--;
-															Applet_Sub1.aClass15Array2[Static290.anInt6410] = null;
+															GameShell.aClass15Array2[Static290.anInt6410] = null;
 														}
 													} else {
 														local251 = Static146.aClass4_Sub12_Sub1_3.method2537();
@@ -1435,11 +1435,11 @@ public final class Static174 {
 														local4235.anInt272 = local224;
 														local4235.aString5 = local251;
 														for (local1267 = Static290.anInt6410 - 1; local1267 >= 0; local1267--) {
-															local2494 = Applet_Sub1.aClass15Array2[local1267].aString6.compareTo(local4235.aString6);
+															local2494 = GameShell.aClass15Array2[local1267].aString6.compareTo(local4235.aString6);
 															if (local2494 == 0) {
-																Applet_Sub1.aClass15Array2[local1267].anInt272 = local224;
-																Applet_Sub1.aClass15Array2[local1267].aByte1 = local5040;
-																Applet_Sub1.aClass15Array2[local1267].aString5 = local251;
+																GameShell.aClass15Array2[local1267].anInt272 = local224;
+																GameShell.aClass15Array2[local1267].aByte1 = local5040;
+																GameShell.aClass15Array2[local1267].aString5 = local251;
 																if (local210.equals(Static1.aClass16_Sub1_Sub5_Sub1_1.aString44)) {
 																	Static160.aByte18 = local5040;
 																}
@@ -1451,17 +1451,17 @@ public final class Static174 {
 																break;
 															}
 														}
-														if (Static290.anInt6410 >= Applet_Sub1.aClass15Array2.length) {
+														if (Static290.anInt6410 >= GameShell.aClass15Array2.length) {
 															Static300.aClass22_246 = null;
 															return true;
 														}
 														for (local2494 = Static290.anInt6410 - 1; local2494 > local1267; local2494--) {
-															Applet_Sub1.aClass15Array2[local2494 + 1] = Applet_Sub1.aClass15Array2[local2494];
+															GameShell.aClass15Array2[local2494 + 1] = GameShell.aClass15Array2[local2494];
 														}
 														if (Static290.anInt6410 == 0) {
-															Applet_Sub1.aClass15Array2 = new Class15[100];
+															GameShell.aClass15Array2 = new Class15[100];
 														}
-														Applet_Sub1.aClass15Array2[local1267 + 1] = local4235;
+														GameShell.aClass15Array2[local1267 + 1] = local4235;
 														Static290.anInt6410++;
 														if (local210.equals(Static1.aClass16_Sub1_Sub5_Sub1_1.aString44)) {
 															Static160.aByte18 = local5040;

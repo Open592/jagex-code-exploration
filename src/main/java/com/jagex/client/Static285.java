@@ -17,7 +17,7 @@ public final class Static285 {
 			return;
 		}
 		try {
-			if (++Applet_Sub1.anInt970 > 1500) {
+			if (++GameShell.anInt970 > 1500) {
 				if (Static125.aClass11_5 != null) {
 					Static125.aClass11_5.shutdown();
 					Static125.aClass11_5 = null;
@@ -33,7 +33,7 @@ public final class Static285 {
 					Static313.anInt5435 = Static133.JAGGRABPort;
 				}
 				Static239.anInt4518++;
-				Applet_Sub1.anInt970 = 0;
+				GameShell.anInt970 = 0;
 				Static405.anInt6682 = 1;
 			}
 			if (Static405.anInt6682 == 1) {
@@ -88,7 +88,7 @@ public final class Static285 {
 				Static296.anInt5302 = -4;
 			} else {
 				Static405.anInt6682 = 1;
-				Applet_Sub1.anInt970 = 0;
+				GameShell.anInt970 = 0;
 				Static239.anInt4518++;
 				if (Static133.JAGGRABPort == Static313.anInt5435) {
 					Static313.anInt5435 = Static11.HTTPPort;

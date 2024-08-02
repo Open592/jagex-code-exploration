@@ -24,9 +24,9 @@ public final class SignLink implements Runnable {
 
 	public FileOnDisk[] aFileOnDiskArray1;
 
-	private Message aClass199_4 = null;
+	private Message headMessage = null;
 
-	private Message aClass199_5 = null;
+	private Message tailMessage = null;
 
 	public FileOnDisk aFileOnDisk_1 = null;
 
@@ -245,11 +245,11 @@ public final class SignLink implements Runnable {
 		message.type = messageType;
 
 		synchronized (this) {
-			if (this.aClass199_5 == null) {
-				this.aClass199_5 = this.aClass199_4 = message;
+			if (this.tailMessage == null) {
+				this.tailMessage = this.headMessage = message;
 			} else {
-				this.aClass199_5.aClass199_9 = message;
-				this.aClass199_5 = message;
+				this.tailMessage.next = message;
+				this.tailMessage = message;
 			}
 
 			this.notify();
@@ -293,8 +293,8 @@ public final class SignLink implements Runnable {
 		setAccessible.invoke(loadMethod, Boolean.FALSE);
 	}
 
-	public Message method1741(int arg0, Runnable arg1) {
-		return this.emitMessage(arg0, 0, arg1, 0, 2);
+	public Message emitThreadInitializationMessage(int arg0, Runnable target) {
+		return this.emitMessage(arg0, 0, target, 0, 2);
 	}
 
 	private Message method1742(Transferable arg0, byte arg1) {
@@ -338,11 +338,11 @@ public final class SignLink implements Runnable {
 					return null;
 				}
 
-				if (this.aClass199_5 == null) {
-					this.aClass199_5 = this.aClass199_4 = message;
+				if (this.tailMessage == null) {
+					this.tailMessage = this.headMessage = message;
 				} else {
-					this.aClass199_5.aClass199_9 = message;
-					this.aClass199_5 = message;
+					this.tailMessage.next = message;
+					this.tailMessage = message;
 				}
 
 				this.notify();
@@ -379,20 +379,25 @@ public final class SignLink implements Runnable {
 	@Override
 	public void run() {
 		while (true) {
-			Message local15;
+			Message message;
+
 			synchronized (this) {
 				while (true) {
 					if (this.isShuttingDown) {
 						return;
 					}
-					if (this.aClass199_4 != null) {
-						local15 = this.aClass199_4;
-						this.aClass199_4 = this.aClass199_4.aClass199_9;
-						if (this.aClass199_4 == null) {
-							this.aClass199_5 = null;
+
+					if (this.headMessage != null) {
+						message = this.headMessage;
+						this.headMessage = this.headMessage.next;
+
+						if (this.headMessage == null) {
+							this.tailMessage = null;
 						}
+
 						break;
 					}
+
 					try {
 						this.wait();
 					} catch (InterruptedException ignored) {
@@ -400,50 +405,59 @@ public final class SignLink implements Runnable {
 				}
 			}
 			try {
-				int messageType = local15.type;
+				int messageType = message.type;
+
 				if (messageType == 1) {
 					if (refuseConnectionsUntilTimestamp > MonotonicClock.getCurrentTimeInMilliseconds()) {
 						throw new IOException();
 					}
-					local15.output = new Socket(InetAddress.getByName((String) local15.genericInput), local15.integerInput);
+
+					message.output = new Socket(InetAddress.getByName((String) message.genericInput), message.integerInput);
 				} else if (messageType == 2) {
-					Thread local181 = new Thread((Runnable) local15.genericInput);
-					local181.setDaemon(true);
-					local181.start();
-					local181.setPriority(local15.integerInput);
-					local15.output = local181;
+					Thread thread = new Thread((Runnable) message.genericInput);
+
+					thread.setDaemon(true);
+					thread.start();
+					thread.setPriority(message.integerInput);
+
+					message.output = thread;
 				} else if (messageType == 4) {
 					if (refuseConnectionsUntilTimestamp > MonotonicClock.getCurrentTimeInMilliseconds()) {
 						throw new IOException();
 					}
-					local15.output = new DataInputStream(((URL) local15.genericInput).openStream());
+
+					message.output = new DataInputStream(((URL) message.genericInput).openStream());
 				} else {
 					Object[] local107;
+
 					if (messageType == 8) {
-						local107 = (Object[]) local15.genericInput;
-						local15.output = ((Class) local107[0]).getDeclaredMethod((String) local107[1], (Class[]) local107[2]);
+						local107 = (Object[]) message.genericInput;
+						message.output = ((Class) local107[0]).getDeclaredMethod((String) local107[1], (Class[]) local107[2]);
 					} else if (messageType == 9) {
-						local107 = (Object[]) local15.genericInput;
-						local15.output = ((Class) local107[0]).getDeclaredField((String) local107[1]);
+						local107 = (Object[]) message.genericInput;
+						message.output = ((Class) local107[0]).getDeclaredField((String) local107[1]);
 					} else if (messageType == 18) {
 						Clipboard local168 = Toolkit.getDefaultToolkit().getSystemClipboard();
-						local15.output = local168.getContents(null);
+
+						message.output = local168.getContents(null);
 					} else if (messageType == 19) {
-						Transferable local152 = (Transferable) local15.genericInput;
+						Transferable local152 = (Transferable) message.genericInput;
 						Clipboard local155 = Toolkit.getDefaultToolkit().getSystemClipboard();
+
 						local155.setContents(local152, null);
 					} else {
 						throw new Exception("");
 					}
 				}
-				local15.status = 1;
+
+				message.status = 1;
 			} catch (ThreadDeath local198) {
 				throw local198;
 			} catch (Throwable local201) {
-				local15.status = 2;
+				message.status = 2;
 			}
-			synchronized (local15) {
-				local15.notify();
+			synchronized (message) {
+				message.notify();
 			}
 		}
 	}

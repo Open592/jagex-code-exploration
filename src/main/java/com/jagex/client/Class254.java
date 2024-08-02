@@ -24,7 +24,7 @@ public final class Class254 implements Runnable {
 
 	@OriginalMember(owner = "client!vl", name = "<init>", descriptor = "(Lclient!et;)V")
 	public Class254(@OriginalArg(0) SignLink signLink) {
-		@Pc(20) Message local20 = signLink.method1741(5, this);
+		@Pc(20) Message local20 = signLink.emitThreadInitializationMessage(5, this);
 		while (local20.status == 0) {
 			Static435.sleepFor(10L);
 		}

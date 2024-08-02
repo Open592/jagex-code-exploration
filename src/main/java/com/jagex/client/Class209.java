@@ -52,7 +52,7 @@ public final class Class209 {
 
 	@OriginalMember(owner = "client!rt", name = "<init>", descriptor = "([BI)V")
 	public Class209(@OriginalArg(0) byte[] arg0, @OriginalArg(1) int arg1) {
-		this.anInt6111 = Applet_Sub1.method879(arg0.length, arg0);
+		this.anInt6111 = GameShell.method879(arg0.length, arg0);
 		if (this.anInt6111 != arg1) {
 			throw new RuntimeException();
 		}

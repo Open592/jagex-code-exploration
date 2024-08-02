@@ -17,7 +17,7 @@ import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;
 
 @OriginalClass("client!client")
-public final class client extends Applet_Sub1 {
+public final class client extends GameShell {
 
 	@OriginalMember(owner = "client!client", name = "main", descriptor = "([Ljava/lang/String;)V")
 	public static void main(@OriginalArg(0) String[] arguments) {
@@ -74,24 +74,29 @@ public final class client extends Applet_Sub1 {
 	private void method893() {
 		if (Static261.aClass255_2.clientInitializationAttemptCount > Static316.anInt5505) {
 			Static392.anInt6543 = (Static261.aClass255_2.clientInitializationAttemptCount * 50 - 50) * 5;
+
 			if (Static407.port == Static313.anInt5436) {
 				Static407.port = Static97.anInt1949;
 			} else {
 				Static407.port = Static313.anInt5436;
 			}
+
 			if (Static392.anInt6543 > 3000) {
 				Static392.anInt6543 = 3000;
 			}
+
 			if (Static261.aClass255_2.clientInitializationAttemptCount >= 2 && Static261.aClass255_2.anInt7063 == 6) {
 				this.handleGameError("js5connect_outofdate");
 				Static403.anInt6667 = 1000;
 				return;
 			}
+
 			if (Static261.aClass255_2.clientInitializationAttemptCount >= 4 && Static261.aClass255_2.anInt7063 == -1) {
 				this.handleGameError("js5crc");
 				Static403.anInt6667 = 1000;
 				return;
 			}
+
 			if (Static261.aClass255_2.clientInitializationAttemptCount >= 4 && (Static403.anInt6667 == 0 || Static403.anInt6667 == 5)) {
 				if (Static261.aClass255_2.anInt7063 == 7 || Static261.aClass255_2.anInt7063 == 9) {
 					this.handleGameError("js5connect_full");
@@ -100,20 +105,26 @@ public final class client extends Applet_Sub1 {
 				} else {
 					this.handleGameError("js5connect");
 				}
+
 				Static403.anInt6667 = 1000;
+
 				return;
 			}
 		}
+
 		Static316.anInt5505 = Static261.aClass255_2.clientInitializationAttemptCount;
+
 		if (Static392.anInt6543 > 0) {
 			Static392.anInt6543--;
 			return;
 		}
+
 		try {
 			if (Static78.clientInitializationStep == 0) {
 				Static30.connectionInitializationMessage = Static206.signLink.emitConnectionInitializationMessage(Static321.host, Static407.port);
 				Static78.clientInitializationStep++;
 			}
+
 			if (Static78.clientInitializationStep == 1) {
 				if (Static30.connectionInitializationMessage.status == 2) {
 					this.method903(1000);
@@ -123,6 +134,7 @@ public final class client extends Applet_Sub1 {
 					Static78.clientInitializationStep++;
 				}
 			}
+
 			if (Static78.clientInitializationStep == 2) {
 				Static240.aClass11_14 = new Class11((Socket) Static30.connectionInitializationMessage.output, Static206.signLink);
 				@Pc(194) Class4_Sub12 local194 = new Class4_Sub12(5);
@@ -132,6 +144,7 @@ public final class client extends Applet_Sub1 {
 				Static78.clientInitializationStep++;
 				Static327.connectionInitializationTimestamp = MonotonicClock.getCurrentTimeInMilliseconds();
 			}
+
 			if (Static78.clientInitializationStep == 3) {
 				if (Static403.anInt6667 == 0 || Static403.anInt6667 == 5 || Static240.aClass11_14.method133() > 0) {
 					@Pc(259) int bytesRead = Static240.aClass11_14.method139();
@@ -147,6 +160,7 @@ public final class client extends Applet_Sub1 {
 					return;
 				}
 			}
+
 			if (Static78.clientInitializationStep == 4) {
 				@Pc(293) boolean local293 = Static403.anInt6667 == 5 || Static403.anInt6667 == 10 || Static403.anInt6667 == 28;
 				Static261.aClass255_2.method5461(Static240.aClass11_14, !local293);

@@ -247,7 +247,7 @@ public final class Class76 {
 			try {
 				local149 = Static453.method5680(local122);
 			} catch (@Pc(151) RuntimeException local151) {
-				throw Static350.method4724(local151, "T3 - " + (arg2 != null) + "," + arg0 + "," + local122.length + "," + Applet_Sub1.method879(local122.length, local122) + "," + Applet_Sub1.method879(local122.length - 2, local122) + "," + this.aClass209_1.anIntArray430[arg0] + "," + this.aClass209_1.anInt6111);
+				throw Static350.method4724(local151, "T3 - " + (arg2 != null) + "," + arg0 + "," + local122.length + "," + GameShell.method879(local122.length, local122) + "," + GameShell.method879(local122.length - 2, local122) + "," + this.aClass209_1.anIntArray430[arg0] + "," + this.aClass209_1.anInt6111);
 			}
 			if (this.aBoolean230) {
 				this.anObjectArray3[arg0] = null;

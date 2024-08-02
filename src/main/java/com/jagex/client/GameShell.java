@@ -23,7 +23,7 @@ import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;
 
 @OriginalClass("client!o")
-public abstract class Applet_Sub1 extends Applet implements Runnable, FocusListener, WindowListener {
+public abstract class GameShell extends Applet implements Runnable, FocusListener, WindowListener {
 
 	@OriginalMember(owner = "client!o", name = "x", descriptor = "Lclient!gn;")
 	public static final Class84 aClass84_4 = new Class84();
@@ -279,7 +279,7 @@ public abstract class Applet_Sub1 extends Applet implements Runnable, FocusListe
 	@OriginalMember(owner = "client!o", name = "start", descriptor = "()V")
 	@Override
 	public final void start() {
-		if (Static437.anApplet_Sub1_2 == this && !Static438.aBoolean675) {
+		if (Static437.anGameShell_2 == this && !Static438.aBoolean675) {
 			Static173.timeToShutdown = 0L;
 		}
 	}
@@ -334,7 +334,7 @@ public abstract class Applet_Sub1 extends Applet implements Runnable, FocusListe
 	@OriginalMember(owner = "client!o", name = "paint", descriptor = "(Ljava/awt/Graphics;)V")
 	@Override
 	public final synchronized void paint(@OriginalArg(0) Graphics arg0) {
-		if (Static437.anApplet_Sub1_2 != this || Static438.aBoolean675) {
+		if (Static437.anGameShell_2 != this || Static438.aBoolean675) {
 			return;
 		}
 		Static100.aBoolean189 = true;
@@ -359,7 +359,7 @@ public abstract class Applet_Sub1 extends Applet implements Runnable, FocusListe
 	@OriginalMember(owner = "client!o", name = "stop", descriptor = "()V")
 	@Override
 	public final void stop() {
-		if (Static437.anApplet_Sub1_2 == this && !Static438.aBoolean675) {
+		if (Static437.anGameShell_2 == this && !Static438.aBoolean675) {
 			Static173.timeToShutdown = MonotonicClock.getCurrentTimeInMilliseconds() + 4000L;
 		}
 	}
@@ -402,7 +402,7 @@ public abstract class Applet_Sub1 extends Applet implements Runnable, FocusListe
 			}
 			this.aBoolean89 = false;
 		}
-		@Pc(48) Message local48 = Static206.signLink.method1746(Static437.anApplet_Sub1_2.getClass());
+		@Pc(48) Message local48 = Static206.signLink.method1746(Static437.anGameShell_2.getClass());
 		while (local48.status == 0) {
 			Static435.sleepFor(100L);
 		}
@@ -435,7 +435,7 @@ public abstract class Applet_Sub1 extends Applet implements Runnable, FocusListe
 			return;
 		}
 		try {
-			@Pc(22) Message local22 = Static206.signLink.method1736(Static437.anApplet_Sub1_2.getClass());
+			@Pc(22) Message local22 = Static206.signLink.method1736(Static437.anGameShell_2.getClass());
 			while (local22.status == 0) {
 				Static435.sleepFor(100L);
 			}
@@ -452,7 +452,7 @@ public abstract class Applet_Sub1 extends Applet implements Runnable, FocusListe
 	@OriginalMember(owner = "client!o", name = "destroy", descriptor = "()V")
 	@Override
 	public final void destroy() {
-		if (Static437.anApplet_Sub1_2 == this && !Static438.aBoolean675) {
+		if (Static437.anGameShell_2 == this && !Static438.aBoolean675) {
 			Static173.timeToShutdown = MonotonicClock.getCurrentTimeInMilliseconds();
 			Static435.sleepFor(5000L);
 			Static386.signLink = null;
@@ -472,20 +472,23 @@ public abstract class Applet_Sub1 extends Applet implements Runnable, FocusListe
 	@OriginalMember(owner = "client!o", name = "a", descriptor = "(IIIIB)V")
 	protected final void load(@OriginalArg(1) int modewhat, @OriginalArg(2) int height, @OriginalArg(3) int width) {
 		try {
-			if (Static437.anApplet_Sub1_2 == null) {
+			if (Static437.anGameShell_2 == null) {
 				Static303.yPOS = 0;
 				Static230.xPOS = 0;
-				Static437.anApplet_Sub1_2 = this;
+				Static437.anGameShell_2 = this;
 				Static302.height = height;
 				Static17.anInt222 = height;
 				Static13.gameVersion = 592;
 				Static141.width = width;
 				Static425.anInt7000 = width;
+
 				if (Static206.signLink == null) {
 					Static386.signLink = Static206.signLink = new SignLink(this, modewhat, null, 0);
 				}
-				@Pc(67) Message local67 = Static206.signLink.method1741(1, this);
-				while (local67.status == 0) {
+
+				@Pc(67) Message threadInitializationMessage = Static206.signLink.emitThreadInitializationMessage(1, this);
+
+				while (threadInitializationMessage.status == 0) {
 					Static435.sleepFor(10L);
 				}
 			} else {
@@ -496,8 +499,9 @@ public abstract class Applet_Sub1 extends Applet implements Runnable, FocusListe
 					this.getAppletContext().showDocument(this.getDocumentBase(), "_self");
 				}
 			}
-		} catch (@Pc(80) Throwable local80) {
-			Static94.handleClientError(local80, null);
+		} catch (@Pc(80) Throwable e) {
+			Static94.handleClientError(e, null);
+
 			this.handleGameError("crash");
 		}
 	}
@@ -584,8 +588,9 @@ public abstract class Applet_Sub1 extends Applet implements Runnable, FocusListe
 					Static441.waitForSystemEventQueueToDrain(Static206.signLink, Static273.aCanvas5);
 				}
 			}
-		} catch (@Pc(190) Throwable local190) {
-			Static94.handleClientError(local190, this.method887());
+		} catch (@Pc(190) Throwable e) {
+			Static94.handleClientError(e, this.method887());
+
 			this.handleGameError("crash");
 		}
 
@@ -602,7 +607,7 @@ public abstract class Applet_Sub1 extends Applet implements Runnable, FocusListe
 			Static13.gameVersion = 592;
 			Static302.height = 768;
 			Static17.anInt222 = 768;
-			Static437.anApplet_Sub1_2 = this;
+			Static437.anGameShell_2 = this;
 			Static226.aFrame1 = new Frame();
 			Static226.aFrame1.setTitle("Jagex");
 			Static226.aFrame1.setResizable(true);
@@ -612,7 +617,7 @@ public abstract class Applet_Sub1 extends Applet implements Runnable, FocusListe
 			@Pc(38) Insets local38 = Static226.aFrame1.getInsets();
 			Static226.aFrame1.setSize(local38.right + Static425.anInt7000 + local38.left, local38.bottom + Static17.anInt222 + local38.top);
 			Static386.signLink = Static206.signLink = new SignLink(null, arg1, arg0, 30);
-			@Pc(70) Message local70 = Static206.signLink.method1741(1, this);
+			@Pc(70) Message local70 = Static206.signLink.emitThreadInitializationMessage(1, this);
 			while (local70.status == 0) {
 				Static435.sleepFor(10L);
 			}

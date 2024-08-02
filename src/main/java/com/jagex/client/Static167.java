@@ -56,7 +56,7 @@ public final class Static167 {
 		}
 		Static27.aClass183_2.method4138();
 		Static292.aClass183_36.method4138();
-		Applet_Sub1.aClass84_4.method2310();
+		GameShell.aClass84_4.method2310();
 		Static440.aClass102_40.method2699();
 		Static115.aClass183_15 = new Class183();
 		Static49.anInt2346 = 0;
@@ -106,7 +106,7 @@ public final class Static167 {
 		}
 		Static221.aString39 = null;
 		Static290.anInt6410 = 0;
-		Applet_Sub1.aClass15Array2 = null;
+		GameShell.aClass15Array2 = null;
 		for (@Pc(5862) int local5862 = 0; local5862 < 6; local5862++) {
 			Static408.aClass28Array1[local5862] = new Class28();
 		}

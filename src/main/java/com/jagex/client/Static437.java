@@ -16,7 +16,7 @@ public final class Static437 {
 	public static boolean aBoolean477 = false;
 
 	@OriginalMember(owner = "client!wa", name = "f", descriptor = "Lclient!o;")
-	public static Applet_Sub1 anApplet_Sub1_2 = null;
+	public static GameShell anGameShell_2 = null;
 
 	@OriginalMember(owner = "client!wa", name = "g", descriptor = "[C")
 	public static final char[] aCharArray6 = new char[] { '[', ']', '#' };
@@ -291,7 +291,7 @@ public final class Static437 {
 			return;
 		}
 		Static229.method3458();
-		Applet_Sub1.method884();
+		GameShell.method884();
 		Static108.method2009();
 		for (local489 = Static257.aClass114_1.method2832(true); local489 != -1; local489 = Static257.aClass114_1.method2832(false)) {
 			Static277.method3934(local489);

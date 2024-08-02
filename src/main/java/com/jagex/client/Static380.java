@@ -33,7 +33,7 @@ public final class Static380 {
 			if (Static322.anInt5579 > 0 && Static62.aClass227_1 == null) {
 				Static62.aClass227_1 = new Class227();
 				Static62.aClass227_1.aSignLink_7 = arg1;
-				arg1.method1741(Static322.anInt5579, Static62.aClass227_1);
+				arg1.emitThreadInitializationMessage(Static322.anInt5579, Static62.aClass227_1);
 			}
 			if (Static62.aClass227_1 != null) {
 				if (Static62.aClass227_1.aClass49Array1[arg0] != null) {
@@ -53,7 +53,7 @@ public final class Static380 {
 				if (Static322.anInt5579 > 0 && Static62.aClass227_1 == null) {
 					Static62.aClass227_1 = new Class227();
 					Static62.aClass227_1.aSignLink_7 = arg1;
-					arg1.method1741(Static322.anInt5579, Static62.aClass227_1);
+					arg1.emitThreadInitializationMessage(Static322.anInt5579, Static62.aClass227_1);
 				}
 				if (Static62.aClass227_1 != null) {
 					if (Static62.aClass227_1.aClass49Array1[arg0] != null) {

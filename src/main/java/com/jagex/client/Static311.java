@@ -136,7 +136,7 @@ public final class Static311 {
 		Static277.method3932();
 		Static292.aClass183_36.method4138();
 		Static27.aClass183_2.method4138();
-		Applet_Sub1.aClass84_4.method2310();
+		GameShell.aClass84_4.method2310();
 		Static9.method90();
 	}
 

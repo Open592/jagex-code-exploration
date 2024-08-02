@@ -235,7 +235,7 @@ public final class Class11 implements Runnable {
 			}
 
 			if (this.aClass199_1 == null) {
-				this.aClass199_1 = this.signLink.method1741(3, this);
+				this.aClass199_1 = this.signLink.emitThreadInitializationMessage(3, this);
 			}
 
 			this.notifyAll();

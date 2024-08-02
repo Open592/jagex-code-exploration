@@ -108,7 +108,7 @@ public final class Static450 {
 				}
 				@Pc(539) boolean local539 = false;
 				for (@Pc(541) int local541 = 0; local541 < Static290.anInt6410; local541++) {
-					if (local471.aString44.equals(Applet_Sub1.aClass15Array2[local541].aString7)) {
+					if (local471.aString44.equals(GameShell.aClass15Array2[local541].aString7)) {
 						local539 = true;
 						break;
 					}

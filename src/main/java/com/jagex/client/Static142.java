@@ -73,7 +73,7 @@ public final class Static142 {
 
 	@OriginalMember(owner = "client!hd", name = "a", descriptor = "(IIIIIII)V")
 	public static void method2429(@OriginalArg(0) int arg0, @OriginalArg(4) int arg1, @OriginalArg(5) int arg2, @OriginalArg(6) int arg3) {
-		for (@Pc(6) Class3_Sub8 local6 = (Class3_Sub8) Applet_Sub1.aClass84_4.method2312(); local6 != null; local6 = (Class3_Sub8) Applet_Sub1.aClass84_4.method2309()) {
+		for (@Pc(6) Class3_Sub8 local6 = (Class3_Sub8) GameShell.aClass84_4.method2312(); local6 != null; local6 = (Class3_Sub8) GameShell.aClass84_4.method2309()) {
 			if (Static24.anInt5323 >= local6.anInt7367) {
 				local6.method5676();
 			} else {
