@@ -12,7 +12,7 @@ public final class Class159 {
 	private Class143_Sub1[] aClass143_Sub1Array2;
 
 	@OriginalMember(owner = "client!nj", name = "k", descriptor = "Lclient!iv;")
-	private Class4_Sub12 aClass4_Sub12_5;
+	private ByteBuffer aByteBuffer_5;
 
 	@OriginalMember(owner = "client!nj", name = "d", descriptor = "Lclient!vl;")
 	private final Class254 aClass254_2;
@@ -34,7 +34,7 @@ public final class Class159 {
 
 	@OriginalMember(owner = "client!nj", name = "a", descriptor = "(Z)Z")
 	public boolean method3814() {
-		if (this.aClass4_Sub12_5 != null) {
+		if (this.aByteBuffer_5 != null) {
 			return true;
 		}
 		if (this.aClass4_Sub1_Sub6_Sub1_1 == null) {
@@ -46,8 +46,8 @@ public final class Class159 {
 		if (this.aClass4_Sub1_Sub6_Sub1_1.aBoolean381) {
 			return false;
 		} else {
-			this.aClass4_Sub12_5 = new Class4_Sub12(this.aClass4_Sub1_Sub6_Sub1_1.method3343());
-			this.aClass143_Sub1Array2 = new Class143_Sub1[(this.aClass4_Sub12_5.aByteArray36.length - 5) / 8];
+			this.aByteBuffer_5 = new ByteBuffer(this.aClass4_Sub1_Sub6_Sub1_1.method3343());
+			this.aClass143_Sub1Array2 = new Class143_Sub1[(this.aByteBuffer_5.bytes.length - 5) / 8];
 			return true;
 		}
 	}
@@ -76,15 +76,15 @@ public final class Class159 {
 
 	@OriginalMember(owner = "client!nj", name = "a", descriptor = "(Lclient!st;ZBILclient!st;)Lclient!lv;")
 	private Class143_Sub1 method3821(@OriginalArg(0) Class222 arg0, @OriginalArg(3) int arg1, @OriginalArg(4) Class222 arg2) {
-		if (this.aClass4_Sub12_5 == null) {
+		if (this.aByteBuffer_5 == null) {
 			throw new RuntimeException();
 		}
-		this.aClass4_Sub12_5.anInt2997 = arg1 * 8 + 5;
-		if (this.aClass4_Sub12_5.aByteArray36.length <= this.aClass4_Sub12_5.anInt2997) {
+		this.aByteBuffer_5.position = arg1 * 8 + 5;
+		if (this.aByteBuffer_5.bytes.length <= this.aByteBuffer_5.position) {
 			throw new RuntimeException();
 		} else if (this.aClass143_Sub1Array2[arg1] == null) {
-			@Pc(45) int local45 = this.aClass4_Sub12_5.method2529();
-			@Pc(50) int local50 = this.aClass4_Sub12_5.method2529();
+			@Pc(45) int local45 = this.aByteBuffer_5.method2529();
+			@Pc(50) int local50 = this.aByteBuffer_5.method2529();
 			@Pc(64) Class143_Sub1 local64 = new Class143_Sub1(arg1, arg0, arg2, this.aClass255_3, this.aClass254_2, local45, local50, true);
 			this.aClass143_Sub1Array2[arg1] = local64;
 			return local64;

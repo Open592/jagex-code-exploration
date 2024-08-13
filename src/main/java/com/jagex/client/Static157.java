@@ -22,13 +22,13 @@ public final class Static157 {
 	public static int height = 503;
 
 	@OriginalMember(owner = "client!hu", name = "a", descriptor = "(Lclient!iv;II)V")
-	public static void method2669(@OriginalArg(0) Class4_Sub12 arg0, @OriginalArg(2) int arg1) {
+	public static void method2669(@OriginalArg(0) ByteBuffer arg0, @OriginalArg(2) int arg1) {
 		if (Static394.aClass139_4 == null) {
 			return;
 		}
 		try {
 			Static394.aClass139_4.method3466(0L);
-			Static394.aClass139_4.method3464(arg1, arg0.aByteArray36, 24);
+			Static394.aClass139_4.method3464(arg1, arg0.bytes, 24);
 		} catch (@Pc(18) Exception local18) {
 		}
 	}

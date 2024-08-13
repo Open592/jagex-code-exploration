@@ -31,7 +31,7 @@ public final class Static106 {
 	public static void method1983() {
 		Static33.anInt606 = 0;
 		for (@Pc(13) int local13 = 0; local13 < 2048; local13++) {
-			Static354.aClass4_Sub12Array1[local13] = null;
+			Static354.A_BYTE_BUFFER_ARRAY_1[local13] = null;
 			Static411.aByteArray95[local13] = 1;
 			Static306.aClass253Array1[local13] = null;
 		}

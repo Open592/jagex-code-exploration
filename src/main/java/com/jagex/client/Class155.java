@@ -66,8 +66,8 @@ public final class Class155 {
 	}
 
 	@OriginalMember(owner = "client!mu", name = "<init>", descriptor = "(Lclient!iv;)V")
-	public Class155(@OriginalArg(0) Class4_Sub12 arg0) {
-		@Pc(16) int local16 = arg0.method2490();
+	public Class155(@OriginalArg(0) ByteBuffer arg0) {
+		@Pc(16) int local16 = arg0.readByteIntoInt();
 		if (Static323.aClass50_Sub1_1.method2854(Static177.anInt2973) && Static57.aClass19_7.method4260() > 0) {
 			if ((local16 & 0x1) == 0) {
 				this.anInt4773 = Static65.anInt1369;
@@ -140,10 +140,10 @@ public final class Class155 {
 	}
 
 	@OriginalMember(owner = "client!mu", name = "a", descriptor = "(BLclient!iv;)V")
-	public void method3692(@OriginalArg(1) Class4_Sub12 arg0) {
-		this.aFloat148 = (float) (arg0.method2490() * 8) / 255.0F;
-		this.aFloat146 = (float) (arg0.method2490() * 8) / 255.0F;
-		this.aFloat147 = (float) (arg0.method2490() * 8) / 255.0F;
+	public void method3692(@OriginalArg(1) ByteBuffer arg0) {
+		this.aFloat148 = (float) (arg0.readByteIntoInt() * 8) / 255.0F;
+		this.aFloat146 = (float) (arg0.readByteIntoInt() * 8) / 255.0F;
+		this.aFloat147 = (float) (arg0.readByteIntoInt() * 8) / 255.0F;
 	}
 
 	@OriginalMember(owner = "client!mu", name = "a", descriptor = "(BLclient!mu;)Z")

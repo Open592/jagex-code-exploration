@@ -22,11 +22,11 @@ public final class Static167 {
 		Static265.aBoolean457 = true;
 		Static41.aBoolean74 = true;
 		Static111.method2023();
-		Static3.aClass4_Sub12_Sub1_5.anInt2997 = 0;
+		Static3.aClass4_Sub12_Sub1_5.position = 0;
 		Static316.aClass22_257 = null;
 		Static410.anInt6735 = 0;
 		Static300.aClass22_246 = null;
-		Static146.aClass4_Sub12_Sub1_3.anInt2997 = 0;
+		Static146.aClass4_Sub12_Sub1_3.position = 0;
 		Static95.anInt1910 = 0;
 		Static35.aClass22_42 = null;
 		Static380.aClass22_294 = null;

@@ -21,9 +21,9 @@ public final class Class74 {
 	private int anInt2423;
 
 	@OriginalMember(owner = "client!fn", name = "a", descriptor = "(Lclient!iv;I)V")
-	public void method2056(@OriginalArg(0) Class4_Sub12 arg0) {
+	public void method2056(@OriginalArg(0) ByteBuffer arg0) {
 		while (true) {
-			@Pc(5) int local5 = arg0.method2490();
+			@Pc(5) int local5 = arg0.readByteIntoInt();
 			if (local5 == 0) {
 				return;
 			}
@@ -32,12 +32,12 @@ public final class Class74 {
 	}
 
 	@OriginalMember(owner = "client!fn", name = "a", descriptor = "(IILclient!iv;)V")
-	private void method2060(@OriginalArg(1) int arg0, @OriginalArg(2) Class4_Sub12 arg1) {
+	private void method2060(@OriginalArg(1) int arg0, @OriginalArg(2) ByteBuffer arg1) {
 		if (arg0 == 1) {
 			this.anInt2423 = arg1.method2536();
 		} else if (arg0 == 2) {
-			this.anInt2420 = arg1.method2490();
-			this.anInt2419 = arg1.method2490();
+			this.anInt2420 = arg1.readByteIntoInt();
+			this.anInt2419 = arg1.readByteIntoInt();
 		}
 	}
 

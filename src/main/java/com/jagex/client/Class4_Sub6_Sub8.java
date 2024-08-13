@@ -80,11 +80,11 @@ public final class Class4_Sub6_Sub8 extends Class4_Sub6 {
 
 	@OriginalMember(owner = "client!er", name = "a", descriptor = "(IILclient!iv;)V")
 	@Override
-	public void method5518(@OriginalArg(1) int arg0, @OriginalArg(2) Class4_Sub12 arg1) {
+	public void method5518(@OriginalArg(1) int arg0, @OriginalArg(2) ByteBuffer arg1) {
 		if (arg0 == 0) {
-			this.aClass27Array1 = new Class27[arg1.method2490()];
+			this.aClass27Array1 = new Class27[arg1.readByteIntoInt()];
 			for (@Pc(41) int local41 = 0; local41 < this.aClass27Array1.length; local41++) {
-				@Pc(47) int local47 = arg1.method2490();
+				@Pc(47) int local47 = arg1.readByteIntoInt();
 				if (local47 == 0) {
 					this.aClass27Array1[local41] = Static61.method994(arg1);
 				} else if (local47 == 1) {
@@ -96,7 +96,7 @@ public final class Class4_Sub6_Sub8 extends Class4_Sub6 {
 				}
 			}
 		} else if (arg0 == 1) {
-			super.aBoolean665 = arg1.method2490() == 1;
+			super.aBoolean665 = arg1.readByteIntoInt() == 1;
 			return;
 		}
 	}

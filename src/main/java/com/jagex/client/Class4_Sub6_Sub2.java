@@ -154,12 +154,12 @@ public final class Class4_Sub6_Sub2 extends Class4_Sub6 {
 
 	@OriginalMember(owner = "client!bt", name = "a", descriptor = "(IILclient!iv;)V")
 	@Override
-	public void method5518(@OriginalArg(1) int arg0, @OriginalArg(2) Class4_Sub12 arg1) {
+	public void method5518(@OriginalArg(1) int arg0, @OriginalArg(2) ByteBuffer arg1) {
 		if (arg0 != 0) {
 			return;
 		}
-		this.anInt690 = arg1.method2490();
-		this.anIntArrayArray6 = new int[arg1.method2490()][2];
+		this.anInt690 = arg1.readByteIntoInt();
+		this.anIntArrayArray6 = new int[arg1.readByteIntoInt()][2];
 		for (@Pc(26) int local26 = 0; local26 < this.anIntArrayArray6.length; local26++) {
 			this.anIntArrayArray6[local26][0] = arg1.method2536();
 			this.anIntArrayArray6[local26][1] = arg1.method2536();

@@ -26,8 +26,8 @@ public final class Static189 {
 		if (Static449.aBoolean689) {
 			System.out.println("---endgpp---");
 		}
-		if (arg1 != arg0.anInt2997) {
-			throw new RuntimeException("gpi1 pos:" + arg0.anInt2997 + " psize:" + arg1);
+		if (arg1 != arg0.position) {
+			throw new RuntimeException("gpi1 pos:" + arg0.position + " psize:" + arg1);
 		}
 	}
 }

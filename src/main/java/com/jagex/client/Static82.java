@@ -79,7 +79,7 @@ public final class Static82 {
 	}
 
 	@OriginalMember(owner = "client!e", name = "a", descriptor = "(BLclient!iv;)V")
-	public static void method1471(@OriginalArg(1) Class4_Sub12 arg0) {
+	public static void method1471(@OriginalArg(1) ByteBuffer arg0) {
 		@Pc(13) byte[] local13 = new byte[24];
 		if (Static394.aClass139_4 != null) {
 			@Pc(25) int local25;

@@ -188,11 +188,11 @@ public final class Class4_Sub6_Sub10 extends Class4_Sub6 {
 
 	@OriginalMember(owner = "client!gl", name = "a", descriptor = "(IILclient!iv;)V")
 	@Override
-	public void method5518(@OriginalArg(1) int arg0, @OriginalArg(2) Class4_Sub12 arg1) {
+	public void method5518(@OriginalArg(1) int arg0, @OriginalArg(2) ByteBuffer arg1) {
 		if (arg0 == 0) {
-			this.aBoolean248 = arg1.method2490() == 1;
+			this.aBoolean248 = arg1.readByteIntoInt() == 1;
 		} else if (arg0 == 1) {
-			this.anInt2698 = arg1.method2490();
+			this.anInt2698 = arg1.readByteIntoInt();
 		} else if (arg0 == 2) {
 			this.anInt2702 = arg1.method2512();
 			if (this.anInt2702 < 0) {
@@ -202,13 +202,13 @@ public final class Class4_Sub6_Sub10 extends Class4_Sub6 {
 				}
 			}
 		} else if (arg0 == 3) {
-			this.anInt2699 = this.anInt2706 = arg1.method2490();
+			this.anInt2699 = this.anInt2706 = arg1.readByteIntoInt();
 		} else if (arg0 == 4) {
-			this.anInt2707 = arg1.method2490();
+			this.anInt2707 = arg1.readByteIntoInt();
 		} else if (arg0 == 5) {
-			this.anInt2699 = arg1.method2490();
+			this.anInt2699 = arg1.readByteIntoInt();
 		} else if (arg0 == 6) {
-			this.anInt2706 = arg1.method2490();
+			this.anInt2706 = arg1.readByteIntoInt();
 		}
 	}
 

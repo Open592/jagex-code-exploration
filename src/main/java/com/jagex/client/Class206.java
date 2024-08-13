@@ -159,7 +159,7 @@ public final class Class206 {
 		local18.aStringArray34 = new String[] { null, null, Static147.aClass83_57.method2267(this.anInt5988), null, null };
 		local18.aStringArray33 = new String[] { null, null, null, null, Static374.aClass83_128.method2267(this.anInt5988) };
 		if (local41 != null) {
-			local18.method4790(new Class4_Sub12(local41));
+			local18.method4790(new ByteBuffer(local41));
 		}
 		local18.method4791();
 		if (local18.anInt6175 != -1) {

@@ -72,8 +72,8 @@ public final class Class4_Sub16 extends Class4 {
 	@OriginalMember(owner = "client!dw", name = "a", descriptor = "([III)V")
 	public void method1462(@OriginalArg(0) int[] arg0, @OriginalArg(1) int arg1) {
 		@Pc(7) int local7 = 0;
-		@Pc(9) Class4_Sub12 local9 = Static383.aClass4_Sub12_7;
-		local9.anInt2997 = 0;
+		@Pc(9) ByteBuffer local9 = Static383.aByteBuffer_7;
+		local9.position = 0;
 		@Pc(36) short[] local36;
 		@Pc(30) int local30;
 		@Pc(41) int local41;
@@ -93,10 +93,10 @@ public final class Class4_Sub16 extends Class4 {
 							local52 += 3;
 						} else {
 							local7++;
-							local9.method2524(local36[local52++] & 0xFFFF);
+							local9.writeInt16BE(local36[local52++] & 0xFFFF);
 							local7++;
-							local9.method2524(local36[local52++] & 0xFFFF);
-							local9.method2524(local36[local52++] & 0xFFFF);
+							local9.writeInt16BE(local36[local52++] & 0xFFFF);
+							local9.writeInt16BE(local36[local52++] & 0xFFFF);
 							local7++;
 						}
 					}
@@ -128,7 +128,7 @@ public final class Class4_Sub16 extends Class4 {
 		if (local7 <= 0) {
 			return;
 		}
-		this.aClass64_Sub1_1.method3657(local9.aByteArray36, local9.anInt2997);
+		this.aClass64_Sub1_1.method3657(local9.bytes, local9.position);
 		this.aClass19_Sub2_11.method1934(this.aClass177_4, this.aClass65_Sub2_1.aClass177_16, this.aClass65_Sub2_1.aClass177_14, this.aClass65_Sub2_1.aClass177_15);
 		this.aClass19_Sub2_11.method1926((this.aClass65_Sub2_1.anInt5285 & 0x7) != 0, this.anInt1647, (this.aClass65_Sub2_1.anInt5285 & 0x8) != 0);
 		if (this.aClass19_Sub2_11.aBoolean192) {

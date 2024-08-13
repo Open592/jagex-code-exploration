@@ -36,13 +36,13 @@ public final class Class4_Sub6_Sub39 extends Class4_Sub6 {
 
 	@OriginalMember(owner = "client!w", name = "a", descriptor = "(IILclient!iv;)V")
 	@Override
-	public void method5518(@OriginalArg(1) int arg0, @OriginalArg(2) Class4_Sub12 arg1) {
+	public void method5518(@OriginalArg(1) int arg0, @OriginalArg(2) ByteBuffer arg1) {
 		if (arg0 == 0) {
-			this.anInt7120 = arg1.method2490();
+			this.anInt7120 = arg1.readByteIntoInt();
 		} else if (arg0 == 1) {
 			this.anInt7121 = arg1.method2536();
 		} else if (arg0 == 2) {
-			this.anInt7116 = arg1.method2490();
+			this.anInt7116 = arg1.readByteIntoInt();
 		}
 	}
 

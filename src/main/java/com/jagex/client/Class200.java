@@ -46,9 +46,9 @@ public final class Class200 {
 	}
 
 	@OriginalMember(owner = "client!qu", name = "a", descriptor = "(ILclient!iv;)V")
-	public void method4534(@OriginalArg(1) Class4_Sub12 arg0) {
+	public void method4534(@OriginalArg(1) ByteBuffer arg0) {
 		while (true) {
-			@Pc(5) int local5 = arg0.method2490();
+			@Pc(5) int local5 = arg0.readByteIntoInt();
 			if (local5 == 0) {
 				return;
 			}
@@ -85,13 +85,13 @@ public final class Class200 {
 	}
 
 	@OriginalMember(owner = "client!qu", name = "a", descriptor = "(Lclient!iv;II)V")
-	private void method4537(@OriginalArg(0) Class4_Sub12 arg0, @OriginalArg(1) int arg1) {
+	private void method4537(@OriginalArg(0) ByteBuffer arg0, @OriginalArg(1) int arg1) {
 		if (arg1 == 1) {
-			this.aChar3 = Static260.method3771(arg0.method2542());
+			this.aChar3 = Static260.method3771(arg0.readInt8());
 		} else if (arg1 == 2) {
-			this.aChar4 = Static260.method3771(arg0.method2542());
+			this.aChar4 = Static260.method3771(arg0.readInt8());
 		} else if (arg1 == 3) {
-			this.aString58 = arg0.method2537();
+			this.aString58 = arg0.readValidStringAtCurrentPosition();
 		} else if (arg1 == 4) {
 			this.anInt5767 = arg0.method2529();
 		} else if (arg1 == 5 || arg1 == 6) {
@@ -101,7 +101,7 @@ public final class Class200 {
 				@Pc(49) int local49 = arg0.method2529();
 				@Pc(61) Class4 local61;
 				if (arg1 == 5) {
-					local61 = new Class4_Sub7(arg0.method2537());
+					local61 = new Class4_Sub7(arg0.readValidStringAtCurrentPosition());
 				} else {
 					local61 = new Class4_Sub37(arg0.method2529());
 				}

@@ -1794,7 +1794,7 @@ public final class Class19_Sub2 extends Class19 {
 			local16.method2552(0.0F);
 			local16.method2552(0.0F);
 		}
-		this.anInterface11_2 = this.method1960(local16.anInt2997, local16.aByteArray36, false, 20);
+		this.anInterface11_2 = this.method1960(local16.position, local16.bytes, false, 20);
 		this.aClass177_6 = new Class177(this.anInterface11_2, 5126, 3, 0);
 		this.aClass177_5 = new Class177(this.anInterface11_2, 5126, 2, 12);
 		this.aClass40_1.method917(this);

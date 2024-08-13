@@ -50,9 +50,9 @@ public final class Static285 {
 				}
 				Static125.aClass11_5 = new Class11((Socket) Static36.aClass199_3.output, Static206.signLink);
 				Static36.aClass199_3 = null;
-				Static125.aClass11_5.method142(Static3.aClass4_Sub12_Sub1_5.anInt2997, Static3.aClass4_Sub12_Sub1_5.aByteArray36);
+				Static125.aClass11_5.method142(Static3.aClass4_Sub12_Sub1_5.position, Static3.aClass4_Sub12_Sub1_5.bytes);
 				Static329.method4427();
-				local118 = Static125.aClass11_5.method139();
+				local118 = Static125.aClass11_5.readByte();
 				Static329.method4427();
 				if (local118 != 101) {
 					Static296.anInt5302 = local118;
@@ -64,7 +64,7 @@ public final class Static285 {
 				Static405.anInt6682 = 3;
 			}
 			if (Static405.anInt6682 == 3 && Static125.aClass11_5.method133() >= 2) {
-				local118 = Static125.aClass11_5.method139() << 8 | Static125.aClass11_5.method139();
+				local118 = Static125.aClass11_5.readByte() << 8 | Static125.aClass11_5.readByte();
 				Static162.method5279(local118);
 				if (Static56.anInt1028 == -1) {
 					Static405.anInt6682 = 0;

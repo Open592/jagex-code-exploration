@@ -54,7 +54,7 @@ public final class Static259 {
 							@Pc(85) int local85 = (local69 / 8 << 8) + local75 / 8;
 							for (@Pc(87) int local87 = 0; local87 < Static308.anIntArray372.length; local87++) {
 								if (Static308.anIntArray372[local87] == local85 && arg1[local87] != null) {
-									@Pc(109) Class4_Sub12 local109 = new Class4_Sub12(arg1[local87]);
+									@Pc(109) ByteBuffer local109 = new ByteBuffer(arg1[local87]);
 									arg0.method5640(local63, local109, local49, Static175.aClass213Array1, local75, local18, local28 * 8, local24 * 8, local69);
 									arg0.method5647(local18, local28 * 8, local109, local16[0] == -1 ? local16 : null, Static122.aClass19_16, local75, local69, local63, local49, local24 * 8);
 									local32 = true;

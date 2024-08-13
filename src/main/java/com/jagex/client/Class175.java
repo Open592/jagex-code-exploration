@@ -30,7 +30,7 @@ public final class Class175 {
 	private int[] anIntArray348;
 
 	@OriginalMember(owner = "client!ot", name = "b", descriptor = "Lclient!iv;")
-	private final Class4_Sub12 aClass4_Sub12_6 = new Class4_Sub12(null);
+	private final ByteBuffer aByteBuffer_6 = new ByteBuffer(null);
 
 	@OriginalMember(owner = "client!ot", name = "<init>", descriptor = "()V")
 	public Class175() {
@@ -43,39 +43,39 @@ public final class Class175 {
 
 	@OriginalMember(owner = "client!ot", name = "a", descriptor = "()V")
 	public void method4045() {
-		this.aClass4_Sub12_6.anInt2997 = -1;
+		this.aByteBuffer_6.position = -1;
 	}
 
 	@OriginalMember(owner = "client!ot", name = "a", descriptor = "(I)I")
 	private int method4046(@OriginalArg(0) int arg0) {
-		@Pc(7) byte local7 = this.aClass4_Sub12_6.aByteArray36[this.aClass4_Sub12_6.anInt2997];
+		@Pc(7) byte local7 = this.aByteBuffer_6.bytes[this.aByteBuffer_6.position];
 		@Pc(13) int local13;
 		if (local7 < 0) {
 			local13 = local7 & 0xFF;
 			this.anIntArray348[arg0] = local13;
-			this.aClass4_Sub12_6.anInt2997++;
+			this.aByteBuffer_6.position++;
 		} else {
 			local13 = this.anIntArray348[arg0];
 		}
 		if (local13 != 240 && local13 != 247) {
 			return this.method4051(arg0, local13);
 		}
-		@Pc(42) int local42 = this.aClass4_Sub12_6.method2528();
+		@Pc(42) int local42 = this.aByteBuffer_6.method2528();
 		if (local13 == 247 && local42 > 0) {
-			@Pc(57) int local57 = this.aClass4_Sub12_6.aByteArray36[this.aClass4_Sub12_6.anInt2997] & 0xFF;
+			@Pc(57) int local57 = this.aByteBuffer_6.bytes[this.aByteBuffer_6.position] & 0xFF;
 			if (local57 >= 241 && local57 <= 243 || local57 == 246 || local57 == 248 || local57 >= 250 && local57 <= 252 || local57 == 254) {
-				this.aClass4_Sub12_6.anInt2997++;
+				this.aByteBuffer_6.position++;
 				this.anIntArray348[arg0] = local57;
 				return this.method4051(arg0, local57);
 			}
 		}
-		this.aClass4_Sub12_6.anInt2997 += local42;
+		this.aByteBuffer_6.position += local42;
 		return 0;
 	}
 
 	@OriginalMember(owner = "client!ot", name = "b", descriptor = "(I)V")
 	public void method4047(@OriginalArg(0) int arg0) {
-		this.anIntArray345[arg0] = this.aClass4_Sub12_6.anInt2997;
+		this.anIntArray345[arg0] = this.aByteBuffer_6.position;
 	}
 
 	@OriginalMember(owner = "client!ot", name = "c", descriptor = "(I)J")
@@ -85,7 +85,7 @@ public final class Class175 {
 
 	@OriginalMember(owner = "client!ot", name = "b", descriptor = "()V")
 	public void method4049() {
-		this.aClass4_Sub12_6.aByteArray36 = null;
+		this.aByteBuffer_6.bytes = null;
 		this.anIntArray346 = null;
 		this.anIntArray345 = null;
 		this.anIntArray347 = null;
@@ -94,7 +94,7 @@ public final class Class175 {
 
 	@OriginalMember(owner = "client!ot", name = "d", descriptor = "(I)V")
 	public void method4050(@OriginalArg(0) int arg0) {
-		@Pc(4) int local4 = this.aClass4_Sub12_6.method2528();
+		@Pc(4) int local4 = this.aByteBuffer_6.method2528();
 		this.anIntArray347[arg0] += local4;
 	}
 
@@ -105,28 +105,28 @@ public final class Class175 {
 			@Pc(78) byte local78 = Static295.aByteArray66[arg1 - 128];
 			local12 = arg1;
 			if (local78 >= 1) {
-				local12 = arg1 | this.aClass4_Sub12_6.method2490() << 8;
+				local12 = arg1 | this.aByteBuffer_6.readByteIntoInt() << 8;
 			}
 			if (local78 >= 2) {
-				local12 |= this.aClass4_Sub12_6.method2490() << 16;
+				local12 |= this.aByteBuffer_6.readByteIntoInt() << 16;
 			}
 			return local12;
 		}
-		@Pc(7) int local7 = this.aClass4_Sub12_6.method2490();
-		local12 = this.aClass4_Sub12_6.method2528();
+		@Pc(7) int local7 = this.aByteBuffer_6.readByteIntoInt();
+		local12 = this.aByteBuffer_6.method2528();
 		if (local7 == 47) {
-			this.aClass4_Sub12_6.anInt2997 += local12;
+			this.aByteBuffer_6.position += local12;
 			return 1;
 		} else if (local7 == 81) {
-			@Pc(32) int local32 = this.aClass4_Sub12_6.method2493();
+			@Pc(32) int local32 = this.aByteBuffer_6.method2493();
 			local12 -= 3;
 			@Pc(38) int local38 = this.anIntArray347[arg0];
 			this.aLong178 += (long) local38 * (long) (this.anInt5295 - local32);
 			this.anInt5295 = local32;
-			this.aClass4_Sub12_6.anInt2997 += local12;
+			this.aByteBuffer_6.position += local12;
 			return 2;
 		} else {
-			this.aClass4_Sub12_6.anInt2997 += local12;
+			this.aByteBuffer_6.position += local12;
 			return 3;
 		}
 	}
@@ -149,30 +149,30 @@ public final class Class175 {
 		for (@Pc(8) int local8 = 0; local8 < local6; local8++) {
 			this.anIntArray347[local8] = 0;
 			this.anIntArray348[local8] = 0;
-			this.aClass4_Sub12_6.anInt2997 = this.anIntArray346[local8];
+			this.aByteBuffer_6.position = this.anIntArray346[local8];
 			this.method4050(local8);
-			this.anIntArray345[local8] = this.aClass4_Sub12_6.anInt2997;
+			this.anIntArray345[local8] = this.aByteBuffer_6.position;
 		}
 	}
 
 	@OriginalMember(owner = "client!ot", name = "a", descriptor = "([B)V")
 	public void method4054(@OriginalArg(0) byte[] arg0) {
-		this.aClass4_Sub12_6.aByteArray36 = arg0;
-		this.aClass4_Sub12_6.anInt2997 = 10;
-		@Pc(12) int local12 = this.aClass4_Sub12_6.method2536();
-		this.anInt5296 = this.aClass4_Sub12_6.method2536();
+		this.aByteBuffer_6.bytes = arg0;
+		this.aByteBuffer_6.position = 10;
+		@Pc(12) int local12 = this.aByteBuffer_6.method2536();
+		this.anInt5296 = this.aByteBuffer_6.method2536();
 		this.anInt5295 = 500000;
 		this.anIntArray346 = new int[local12];
 		@Pc(27) int local27 = 0;
 		@Pc(33) int local33;
 		while (local27 < local12) {
-			local33 = this.aClass4_Sub12_6.method2529();
-			@Pc(38) int local38 = this.aClass4_Sub12_6.method2529();
+			local33 = this.aByteBuffer_6.method2529();
+			@Pc(38) int local38 = this.aByteBuffer_6.method2529();
 			if (local33 == 1297379947) {
-				this.anIntArray346[local27] = this.aClass4_Sub12_6.anInt2997;
+				this.anIntArray346[local27] = this.aByteBuffer_6.position;
 				local27++;
 			}
-			this.aClass4_Sub12_6.anInt2997 += local38;
+			this.aByteBuffer_6.position += local38;
 		}
 		this.aLong178 = 0L;
 		this.anIntArray345 = new int[local12];
@@ -199,12 +199,12 @@ public final class Class175 {
 
 	@OriginalMember(owner = "client!ot", name = "e", descriptor = "(I)V")
 	public void method4056(@OriginalArg(0) int arg0) {
-		this.aClass4_Sub12_6.anInt2997 = this.anIntArray345[arg0];
+		this.aByteBuffer_6.position = this.anIntArray345[arg0];
 	}
 
 	@OriginalMember(owner = "client!ot", name = "e", descriptor = "()Z")
 	public boolean method4057() {
-		return this.aClass4_Sub12_6.aByteArray36 != null;
+		return this.aByteBuffer_6.bytes != null;
 	}
 
 	@OriginalMember(owner = "client!ot", name = "f", descriptor = "(I)I")

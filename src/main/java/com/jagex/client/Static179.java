@@ -30,34 +30,34 @@ public final class Static179 {
 		for (@Pc(10) int local10 = 0; local10 < 3; local10++) {
 			local8[local10] = (int) (Math.random() * 9.9999999E7D);
 		}
-		@Pc(30) Class4_Sub12 local30 = new Class4_Sub12(128);
-		local30.method2551(10);
-		local30.method2524((arg3 ? 4 : 0) | (arg1 ? 2 : 0) | (arg4 ? 1 : 0));
+		@Pc(30) ByteBuffer local30 = new ByteBuffer(128);
+		local30.writeByte(10);
+		local30.writeInt16BE((arg3 ? 4 : 0) | (arg1 ? 2 : 0) | (arg4 ? 1 : 0));
 		local30.method2504(arg7);
-		local30.method2531(local8[0]);
-		local30.method2518(arg2);
-		local30.method2531(local8[1]);
-		local30.method2524(Static168.affiliateID);
-		local30.method2551(arg9);
-		local30.method2551(arg0);
-		local30.method2531(local8[2]);
-		local30.method2524(arg5);
-		local30.method2524(arg6);
-		local30.method2531(local8[3]);
+		local30.writeIntBE(local8[0]);
+		local30.writeString(arg2);
+		local30.writeIntBE(local8[1]);
+		local30.writeInt16BE(Static168.affiliateID);
+		local30.writeByte(arg9);
+		local30.writeByte(arg0);
+		local30.writeIntBE(local8[2]);
+		local30.writeInt16BE(arg5);
+		local30.writeInt16BE(arg6);
+		local30.writeIntBE(local8[3]);
 		local30.method2522(Static85.aBigInteger1, Static309.aBigInteger2);
-		@Pc(120) Class4_Sub12 local120 = new Class4_Sub12(350);
-		local120.method2518(arg8);
+		@Pc(120) ByteBuffer local120 = new ByteBuffer(350);
+		local120.writeString(arg8);
 		@Pc(134) int local134 = 8 - Static269.method3856(arg8) % 8;
 		for (@Pc(136) int local136 = 0; local136 < local134; local136++) {
-			local120.method2551((int) (Math.random() * 255.0D));
+			local120.writeByte((int) (Math.random() * 255.0D));
 		}
 		local120.method2540(local8);
-		Static3.aClass4_Sub12_Sub1_5.anInt2997 = 0;
-		Static3.aClass4_Sub12_Sub1_5.method2551(Static153.aClass60_8.anInt1812);
-		Static3.aClass4_Sub12_Sub1_5.method2524(local30.anInt2997 + local120.anInt2997 + 2);
-		Static3.aClass4_Sub12_Sub1_5.method2524(592);
-		Static3.aClass4_Sub12_Sub1_5.method2519(local30.aByteArray36, local30.anInt2997);
-		Static3.aClass4_Sub12_Sub1_5.method2519(local120.aByteArray36, local120.anInt2997);
+		Static3.aClass4_Sub12_Sub1_5.position = 0;
+		Static3.aClass4_Sub12_Sub1_5.writeByte(Static153.aClass60_8.anInt1812);
+		Static3.aClass4_Sub12_Sub1_5.writeInt16BE(local30.position + local120.position + 2);
+		Static3.aClass4_Sub12_Sub1_5.writeInt16BE(592);
+		Static3.aClass4_Sub12_Sub1_5.method2519(local30.bytes, local30.position);
+		Static3.aClass4_Sub12_Sub1_5.method2519(local120.bytes, local120.position);
 		Static348.anInt5976 = 0;
 		Static354.anInt6183 = 1;
 		Static119.anInt2524 = 0;

@@ -62,7 +62,7 @@ public final class Class125 {
 		if (local27 <= 0) {
 			this.aClass6_Sub1_6 = null;
 		} else {
-			@Pc(96) Class4_Sub12 local96 = new Class4_Sub12(local27 * 2);
+			@Pc(96) ByteBuffer local96 = new ByteBuffer(local27 * 2);
 			@Pc(115) int local115;
 			@Pc(123) short[] local123;
 			@Pc(127) int local127;
@@ -74,7 +74,7 @@ public final class Class125 {
 						local123 = arg2.aShortArrayArray9[local113++];
 						if (local123 != null) {
 							for (local127 = 0; local127 < local123.length; local127++) {
-								local96.method2524(local123[local127] & 0xFFFF);
+								local96.writeInt16BE(local123[local127] & 0xFFFF);
 							}
 						}
 					}
@@ -92,7 +92,7 @@ public final class Class125 {
 					}
 				}
 			}
-			this.anInterface1_4 = this.aClass19_Sub2_23.method1955(local96.anInt2997, false, local96.aByteArray36);
+			this.anInterface1_4 = this.aClass19_Sub2_23.method1955(local96.position, false, local96.bytes);
 			this.aClass64_Sub1_2 = new Class64_Sub1(this.aClass19_Sub2_23, 5123, null, 1);
 		}
 	}

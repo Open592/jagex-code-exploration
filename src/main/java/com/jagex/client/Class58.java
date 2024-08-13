@@ -33,7 +33,7 @@ public final class Class58 {
 	public int anInt1731 = 16777215;
 
 	@OriginalMember(owner = "client!eb", name = "a", descriptor = "(ILclient!iv;B)V")
-	private void method1508(@OriginalArg(0) int arg0, @OriginalArg(1) Class4_Sub12 arg1) {
+	private void method1508(@OriginalArg(0) int arg0, @OriginalArg(1) ByteBuffer arg1) {
 		if (arg0 == 1) {
 			this.anInt1730 = arg1.method2536();
 		} else if (arg0 == 2) {
@@ -43,7 +43,7 @@ public final class Class58 {
 			this.anInt1726 = arg1.method2512();
 			this.anInt1728 = arg1.method2512();
 		} else if (arg0 == 4) {
-			this.anInt1719 = arg1.method2490();
+			this.anInt1719 = arg1.readByteIntoInt();
 		} else if (arg0 == 5) {
 			this.anInt1723 = arg1.method2536();
 		} else if (arg0 == 6) {
@@ -52,9 +52,9 @@ public final class Class58 {
 	}
 
 	@OriginalMember(owner = "client!eb", name = "a", descriptor = "(Lclient!iv;B)V")
-	public void method1509(@OriginalArg(0) Class4_Sub12 arg0) {
+	public void method1509(@OriginalArg(0) ByteBuffer arg0) {
 		while (true) {
-			@Pc(5) int local5 = arg0.method2490();
+			@Pc(5) int local5 = arg0.readByteIntoInt();
 			if (local5 == 0) {
 				return;
 			}

@@ -17,7 +17,7 @@ public final class Class266_Sub1 extends Class266 {
 	}
 
 	@OriginalMember(owner = "client!wn", name = "a", descriptor = "(I[IILclient!ya;ILclient!iv;)V")
-	public void method5644(@OriginalArg(1) int[] arg0, @OriginalArg(2) int arg1, @OriginalArg(3) Class19 arg2, @OriginalArg(4) int arg3, @OriginalArg(5) Class4_Sub12 arg4) {
+	public void method5644(@OriginalArg(1) int[] arg0, @OriginalArg(2) int arg1, @OriginalArg(3) Class19 arg2, @OriginalArg(4) int arg3, @OriginalArg(5) ByteBuffer arg4) {
 		if (super.aBoolean687) {
 			return;
 		}
@@ -32,8 +32,8 @@ public final class Class266_Sub1 extends Class266 {
 			@Pc(95) int local95;
 			@Pc(99) int local99;
 			@Pc(492) int local492;
-			while (arg4.anInt2997 < arg4.aByteArray36.length) {
-				local24 = arg4.method2490();
+			while (arg4.position < arg4.bytes.length) {
+				local24 = arg4.readByteIntoInt();
 				if (local24 == 0) {
 					local19 = new Class155(arg4);
 				} else {
@@ -41,7 +41,7 @@ public final class Class266_Sub1 extends Class266 {
 					@Pc(380) int local380;
 					@Pc(101) int local101;
 					if (local24 == 1) {
-						local80 = arg4.method2490();
+						local80 = arg4.readByteIntoInt();
 						if (local80 > 0) {
 							for (local492 = 0; local492 < local80; local492++) {
 								@Pc(501) Class191 local501 = new Class191(arg2, arg4, 0);
@@ -78,7 +78,7 @@ public final class Class266_Sub1 extends Class266 {
 						}
 						local11 = true;
 						for (local80 = 0; local80 < 4; local80++) {
-							@Pc(86) byte local86 = arg4.method2542();
+							@Pc(86) byte local86 = arg4.readInt8();
 							if (local86 == 0 && super.aByteArrayArrayArray14[local80] != null) {
 								local95 = arg3;
 								local99 = arg3 + 64;
@@ -117,7 +117,7 @@ public final class Class266_Sub1 extends Class266 {
 								}
 								for (local95 = 0; local95 < 64; local95 += 4) {
 									for (local99 = 0; local99 < 64; local99 += 4) {
-										@Pc(369) byte local369 = arg4.method2542();
+										@Pc(369) byte local369 = arg4.readInt8();
 										for (local155 = local95 + arg3; local155 < arg3 + local95 + 4; local155++) {
 											for (local380 = arg1 + local99; local380 < local99 + arg1 + 4; local380++) {
 												if (local155 >= 0 && super.anInt7296 > local155 && local380 >= 0 && local380 < super.anInt7290) {
@@ -167,7 +167,7 @@ public final class Class266_Sub1 extends Class266 {
 							}
 						}
 					} else if (arg0 == null) {
-						arg4.anInt2997 += 10;
+						arg4.position += 10;
 					} else {
 						arg0[0] = arg4.method2536();
 						arg0[1] = arg4.method2512();
@@ -285,7 +285,7 @@ public final class Class266_Sub1 extends Class266 {
 
 	@OriginalMember(owner = "client!wn", name = "a", descriptor = "([Lclient!sd;I[BIILclient!ya;)V")
 	public void method5646(@OriginalArg(0) Class213[] arg0, @OriginalArg(1) int arg1, @OriginalArg(2) byte[] arg2, @OriginalArg(3) int arg3, @OriginalArg(5) Class19 arg4) {
-		@Pc(14) Class4_Sub12 local14 = new Class4_Sub12(arg2);
+		@Pc(14) ByteBuffer local14 = new ByteBuffer(arg2);
 		@Pc(16) int local16 = -1;
 		while (true) {
 			@Pc(20) int local20 = local14.method2499();
@@ -303,7 +303,7 @@ public final class Class266_Sub1 extends Class266 {
 				@Pc(44) int local44 = local28 & 0x3F;
 				@Pc(50) int local50 = local28 >> 6 & 0x3F;
 				@Pc(54) int local54 = local28 >> 12;
-				@Pc(58) int local58 = local14.method2490();
+				@Pc(58) int local58 = local14.readByteIntoInt();
 				@Pc(62) int local62 = local58 >> 2;
 				@Pc(66) int local66 = local58 & 0x3;
 				@Pc(70) int local70 = local50 + arg3;
@@ -326,7 +326,7 @@ public final class Class266_Sub1 extends Class266 {
 	}
 
 	@OriginalMember(owner = "client!wn", name = "a", descriptor = "(IILclient!iv;[ILclient!ya;IIIIII)V")
-	public void method5647(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) Class4_Sub12 arg2, @OriginalArg(3) int[] arg3, @OriginalArg(4) Class19 arg4, @OriginalArg(5) int arg5, @OriginalArg(6) int arg6, @OriginalArg(7) int arg7, @OriginalArg(9) int arg8, @OriginalArg(10) int arg9) {
+	public void method5647(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) ByteBuffer arg2, @OriginalArg(3) int[] arg3, @OriginalArg(4) Class19 arg4, @OriginalArg(5) int arg5, @OriginalArg(6) int arg6, @OriginalArg(7) int arg7, @OriginalArg(9) int arg8, @OriginalArg(10) int arg9) {
 		if (super.aBoolean687) {
 			return;
 		}
@@ -344,8 +344,8 @@ public final class Class266_Sub1 extends Class266 {
 						@Pc(73) int local73;
 						@Pc(407) int local407;
 						@Pc(109) int local109;
-						while (arg2.anInt2997 < arg2.aByteArray36.length) {
-							local38 = arg2.method2490();
+						while (arg2.position < arg2.bytes.length) {
+							local38 = arg2.readByteIntoInt();
 							if (local38 == 0) {
 								local13 = new Class155(arg2);
 							} else {
@@ -354,7 +354,7 @@ public final class Class266_Sub1 extends Class266 {
 								@Pc(128) int local128;
 								@Pc(163) int local163;
 								if (local38 == 1) {
-									local73 = arg2.method2490();
+									local73 = arg2.readByteIntoInt();
 									if (local73 > 0) {
 										for (local407 = 0; local407 < local73; local407++) {
 											@Pc(416) Class191 local416 = new Class191(arg4, arg2, 0);
@@ -394,7 +394,7 @@ public final class Class266_Sub1 extends Class266 {
 										super.aByteArrayArrayArray14 = new byte[4][][];
 									}
 									for (local73 = 0; local73 < 4; local73++) {
-										@Pc(79) byte local79 = arg2.method2542();
+										@Pc(79) byte local79 = arg2.readInt8();
 										@Pc(113) int local113;
 										if (local79 == 0 && super.aByteArrayArrayArray14[arg0] != null) {
 											if (local73 <= arg8) {
@@ -436,7 +436,7 @@ public final class Class266_Sub1 extends Class266 {
 											}
 											for (local109 = 0; local109 < 64; local109 += 4) {
 												for (local113 = 0; local113 < 64; local113 += 4) {
-													@Pc(119) byte local119 = arg2.method2542();
+													@Pc(119) byte local119 = arg2.readInt8();
 													if (local73 <= arg8) {
 														for (local124 = local109; local124 < local109 + 4; local124++) {
 															for (local128 = local113; local128 < local113 + 4; local128++) {
@@ -455,7 +455,7 @@ public final class Class266_Sub1 extends Class266 {
 										}
 									}
 								} else if (arg3 == null) {
-									arg2.anInt2997 += 10;
+									arg2.position += 10;
 								} else {
 									arg3[0] = arg2.method2536();
 									arg3[1] = arg2.method2512();
@@ -487,7 +487,7 @@ public final class Class266_Sub1 extends Class266 {
 
 	@OriginalMember(owner = "client!wn", name = "a", descriptor = "([BIIIIILclient!ya;I[Lclient!sd;IB)V")
 	public void method5648(@OriginalArg(0) byte[] arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4, @OriginalArg(5) int arg5, @OriginalArg(6) Class19 arg6, @OriginalArg(7) int arg7, @OriginalArg(8) Class213[] arg8, @OriginalArg(9) int arg9) {
-		@Pc(10) Class4_Sub12 local10 = new Class4_Sub12(arg0);
+		@Pc(10) ByteBuffer local10 = new ByteBuffer(arg0);
 		@Pc(16) int local16 = -1;
 		while (true) {
 			@Pc(20) int local20 = local10.method2499();
@@ -505,7 +505,7 @@ public final class Class266_Sub1 extends Class266 {
 				@Pc(47) int local47 = local31 & 0x3F;
 				@Pc(53) int local53 = local31 >> 6 & 0x3F;
 				@Pc(57) int local57 = local31 >> 12;
-				@Pc(61) int local61 = local10.method2490();
+				@Pc(61) int local61 = local10.readByteIntoInt();
 				@Pc(65) int local65 = local61 >> 2;
 				@Pc(69) int local69 = local61 & 0x3;
 				if (local57 == arg9 && arg2 <= local53 && arg2 + 8 > local53 && local47 >= arg7 && local47 < arg7 + 8) {

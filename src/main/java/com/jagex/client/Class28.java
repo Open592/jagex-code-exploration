@@ -30,8 +30,8 @@ public final class Class28 {
 	}
 
 	@OriginalMember(owner = "client!bs", name = "<init>", descriptor = "(Lclient!iv;)V")
-	public Class28(@OriginalArg(0) Class4_Sub12 arg0) {
-		this.aByte11 = arg0.method2542();
+	public Class28(@OriginalArg(0) ByteBuffer arg0) {
+		this.aByte11 = arg0.readInt8();
 		this.anInt660 = arg0.method2536();
 		this.anInt663 = arg0.method2529();
 		this.anInt664 = arg0.method2529();

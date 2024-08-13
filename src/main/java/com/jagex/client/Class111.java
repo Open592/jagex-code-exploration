@@ -12,9 +12,9 @@ public final class Class111 {
 	public int anInt3365 = 0;
 
 	@OriginalMember(owner = "client!iq", name = "a", descriptor = "(Lclient!iv;Z)V")
-	public void method2810(@OriginalArg(0) Class4_Sub12 arg0) {
+	public void method2810(@OriginalArg(0) ByteBuffer arg0) {
 		while (true) {
-			@Pc(13) int local13 = arg0.method2490();
+			@Pc(13) int local13 = arg0.readByteIntoInt();
 			if (local13 == 0) {
 				return;
 			}
@@ -23,7 +23,7 @@ public final class Class111 {
 	}
 
 	@OriginalMember(owner = "client!iq", name = "a", descriptor = "(Lclient!iv;II)V")
-	private void method2811(@OriginalArg(0) Class4_Sub12 arg0, @OriginalArg(1) int arg1) {
+	private void method2811(@OriginalArg(0) ByteBuffer arg0, @OriginalArg(1) int arg1) {
 		if (arg1 == 5) {
 			this.anInt3365 = arg0.method2536();
 		}

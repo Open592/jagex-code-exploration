@@ -138,7 +138,7 @@ public final class Class262 {
 		local20.aClass262_4 = this;
 		local20.anInt5823 = arg0;
 		if (local41 != null) {
-			local20.method4596(new Class4_Sub12(local41));
+			local20.method4596(new ByteBuffer(local41));
 		}
 		local20.method4581();
 		if (!this.aBoolean677 && local20.aBoolean532) {

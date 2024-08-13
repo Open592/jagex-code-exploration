@@ -79,7 +79,7 @@ public final class Class194 {
 		local22.anInt5005 = arg0;
 		local22.aClass194_1 = this;
 		if (local43 != null) {
-			local22.method3831(new Class4_Sub12(local43));
+			local22.method3831(new ByteBuffer(local43));
 		}
 		@Pc(65) Class68 local65 = this.aClass68_36;
 		synchronized (this.aClass68_36) {

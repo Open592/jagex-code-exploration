@@ -143,7 +143,7 @@ public class Class266 {
 	}
 
 	@OriginalMember(owner = "client!wj", name = "a", descriptor = "(IIILclient!iv;I[Lclient!sd;I)V")
-	public final void method5634(@OriginalArg(1) int arg0, @OriginalArg(2) int arg1, @OriginalArg(3) Class4_Sub12 arg2, @OriginalArg(4) int arg3, @OriginalArg(5) Class213[] arg4, @OriginalArg(6) int arg5) {
+	public final void method5634(@OriginalArg(1) int arg0, @OriginalArg(2) int arg1, @OriginalArg(3) ByteBuffer arg2, @OriginalArg(4) int arg3, @OriginalArg(5) Class213[] arg4, @OriginalArg(6) int arg5) {
 		@Pc(16) int local16;
 		@Pc(24) int local24;
 		@Pc(28) int local28;
@@ -326,7 +326,7 @@ public class Class266 {
 	}
 
 	@OriginalMember(owner = "client!wj", name = "a", descriptor = "(IIIIIZIIIILclient!iv;)V")
-	private void method5637(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4, @OriginalArg(5) boolean arg5, @OriginalArg(6) int arg6, @OriginalArg(7) int arg7, @OriginalArg(8) int arg8, @OriginalArg(10) Class4_Sub12 arg9) {
+	private void method5637(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4, @OriginalArg(5) boolean arg5, @OriginalArg(6) int arg6, @OriginalArg(7) int arg7, @OriginalArg(8) int arg8, @OriginalArg(10) ByteBuffer arg9) {
 		if (arg4 == 1) {
 			arg7 = 1;
 		} else if (arg4 == 2) {
@@ -338,16 +338,16 @@ public class Class266 {
 		@Pc(60) int local60;
 		if (arg2 < 0 || arg2 >= this.anInt7296 || arg0 < 0 || arg0 >= this.anInt7290) {
 			while (true) {
-				local60 = arg9.method2490();
+				local60 = arg9.readByteIntoInt();
 				if (local60 == 0) {
 					return;
 				}
 				if (local60 == 1) {
-					arg9.method2490();
+					arg9.readByteIntoInt();
 					return;
 				}
 				if (local60 <= 49) {
-					arg9.method2490();
+					arg9.readByteIntoInt();
 				}
 			}
 		}
@@ -355,7 +355,7 @@ public class Class266 {
 			Static79.aByteArrayArrayArray2[arg6][arg2][arg0] = 0;
 		}
 		while (true) {
-			local60 = arg9.method2490();
+			local60 = arg9.readByteIntoInt();
 			if (local60 == 0) {
 				if (this.aBoolean687) {
 					this.anIntArrayArrayArray15[0][arg2 + arg8][arg0 + arg7] = 0;
@@ -369,7 +369,7 @@ public class Class266 {
 				}
 			}
 			if (local60 == 1) {
-				@Pc(196) int local196 = arg9.method2490();
+				@Pc(196) int local196 = arg9.readByteIntoInt();
 				if (!this.aBoolean687) {
 					if (local196 == 1) {
 						local196 = 0;
@@ -386,9 +386,9 @@ public class Class266 {
 			}
 			if (local60 <= 49) {
 				if (arg5) {
-					arg9.method2490();
+					arg9.readByteIntoInt();
 				} else {
-					this.aByteArrayArrayArray15[arg6][arg2][arg0] = arg9.method2542();
+					this.aByteArrayArrayArray15[arg6][arg2][arg0] = arg9.readInt8();
 					this.aByteArrayArrayArray13[arg6][arg2][arg0] = (byte) ((local60 - 2) / 4);
 					this.aByteArrayArrayArray17[arg6][arg2][arg0] = (byte) (arg4 + local60 - 2 & 0x3);
 				}
@@ -1065,7 +1065,7 @@ public class Class266 {
 	}
 
 	@OriginalMember(owner = "client!wj", name = "a", descriptor = "(ILclient!iv;I[Lclient!sd;BIIIII)V")
-	public final void method5640(@OriginalArg(0) int arg0, @OriginalArg(1) Class4_Sub12 arg1, @OriginalArg(2) int arg2, @OriginalArg(3) Class213[] arg3, @OriginalArg(5) int arg4, @OriginalArg(6) int arg5, @OriginalArg(7) int arg6, @OriginalArg(8) int arg7, @OriginalArg(9) int arg8) {
+	public final void method5640(@OriginalArg(0) int arg0, @OriginalArg(1) ByteBuffer arg1, @OriginalArg(2) int arg2, @OriginalArg(3) Class213[] arg3, @OriginalArg(5) int arg4, @OriginalArg(6) int arg5, @OriginalArg(7) int arg6, @OriginalArg(8) int arg7, @OriginalArg(9) int arg8) {
 		@Pc(11) int local11 = (arg8 & 0x7) * 8;
 		@Pc(20) int local20;
 		@Pc(51) int local51;

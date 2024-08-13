@@ -15,7 +15,7 @@ public final class Static78 {
 	public static int clientInitializationStep = 0;
 
 	@OriginalMember(owner = "client!dt", name = "a", descriptor = "(BLclient!iv;)Lclient!kg;")
-	public static Class27_Sub3 method1389(@OriginalArg(1) Class4_Sub12 arg0) {
-		return new Class27_Sub3(arg0.method2512(), arg0.method2512(), arg0.method2512(), arg0.method2512(), arg0.method2493(), arg0.method2493(), arg0.method2490());
+	public static Class27_Sub3 method1389(@OriginalArg(1) ByteBuffer arg0) {
+		return new Class27_Sub3(arg0.method2512(), arg0.method2512(), arg0.method2512(), arg0.method2512(), arg0.method2493(), arg0.method2493(), arg0.readByteIntoInt());
 	}
 }

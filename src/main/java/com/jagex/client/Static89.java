@@ -23,8 +23,8 @@ public final class Static89 {
 	public static void method1601(@OriginalArg(0) String arg0) {
 		if (!arg0.equals("")) {
 			Static429.method5476(Static327.aClass215_76);
-			Static3.aClass4_Sub12_Sub1_5.method2551(Static269.method3856(arg0));
-			Static3.aClass4_Sub12_Sub1_5.method2518(arg0);
+			Static3.aClass4_Sub12_Sub1_5.writeByte(Static269.method3856(arg0));
+			Static3.aClass4_Sub12_Sub1_5.writeString(arg0);
 		}
 	}
 }

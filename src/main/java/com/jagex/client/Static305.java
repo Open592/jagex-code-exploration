@@ -185,10 +185,10 @@ public final class Static305 {
 			if (local29 != null && Static1.aClass16_Sub1_Sub5_Sub1_1 != local29 && local29.aString44 != null && local29.aString44.equalsIgnoreCase(arg0)) {
 				Static429.method5476(Static339.aClass215_80);
 				Static3.aClass4_Sub12_Sub1_5.method2513(Static408.anInt6726);
-				Static3.aClass4_Sub12_Sub1_5.method2496(local19[local21]);
-				Static3.aClass4_Sub12_Sub1_5.method2524(Static161.anInt3179);
-				Static3.aClass4_Sub12_Sub1_5.method2524(Static23.anInt350);
-				Static3.aClass4_Sub12_Sub1_5.method2495(0);
+				Static3.aClass4_Sub12_Sub1_5.writeUint16LE(local19[local21]);
+				Static3.aClass4_Sub12_Sub1_5.writeInt16BE(Static161.anInt3179);
+				Static3.aClass4_Sub12_Sub1_5.writeInt16BE(Static23.anInt350);
+				Static3.aClass4_Sub12_Sub1_5.writeUint8(0);
 				Static166.method2734(0, local29.anIntArray427[0], local29.anIntArray426[0], local29.method4751(), true, local29.method4751(), 0, -2);
 				local10 = true;
 				break;

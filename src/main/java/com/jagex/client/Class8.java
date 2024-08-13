@@ -51,9 +51,9 @@ public final class Class8 {
 	private boolean aBoolean9 = false;
 
 	@OriginalMember(owner = "client!ah", name = "a", descriptor = "(BLclient!iv;)V")
-	public void method89(@OriginalArg(1) Class4_Sub12 arg0) {
+	public void method89(@OriginalArg(1) ByteBuffer arg0) {
 		while (true) {
-			@Pc(5) int local5 = arg0.method2490();
+			@Pc(5) int local5 = arg0.readByteIntoInt();
 			if (local5 == 0) {
 				return;
 			}
@@ -82,20 +82,20 @@ public final class Class8 {
 	}
 
 	@OriginalMember(owner = "client!ah", name = "a", descriptor = "(ILclient!iv;Z)V")
-	private void method93(@OriginalArg(0) int arg0, @OriginalArg(1) Class4_Sub12 arg1) {
+	private void method93(@OriginalArg(0) int arg0, @OriginalArg(1) ByteBuffer arg1) {
 		if (arg0 == 1) {
 			this.anInt122 = arg1.method2536();
 		} else if (arg0 == 2) {
-			arg1.method2490();
+			arg1.readByteIntoInt();
 		} else if (arg0 == 3) {
 			this.anInt128 = arg1.method2529();
 			this.anInt125 = arg1.method2529();
 			this.anInt132 = arg1.method2529();
 		} else if (arg0 == 4) {
-			this.anInt133 = arg1.method2490();
+			this.anInt133 = arg1.readByteIntoInt();
 			this.anInt131 = arg1.method2529();
 		} else if (arg0 == 6) {
-			this.anInt121 = arg1.method2490();
+			this.anInt121 = arg1.readByteIntoInt();
 		} else if (arg0 == 8) {
 			this.anInt127 = 1;
 		} else if (arg0 == 9) {

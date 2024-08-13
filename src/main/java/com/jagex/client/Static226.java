@@ -23,17 +23,17 @@ public final class Static226 {
 	@OriginalMember(owner = "client!ll", name = "a", descriptor = "(B[B)Lclient!ae;")
 	public static Class4_Sub1_Sub1 method3441(@OriginalArg(1) byte[] arg0) {
 		@Pc(9) Class4_Sub1_Sub1 local9 = new Class4_Sub1_Sub1();
-		@Pc(14) Class4_Sub12 local14 = new Class4_Sub12(arg0);
-		local14.anInt2997 = local14.aByteArray36.length - 2;
+		@Pc(14) ByteBuffer local14 = new ByteBuffer(arg0);
+		local14.position = local14.bytes.length - 2;
 		@Pc(25) int local25 = local14.method2536();
-		@Pc(36) int local36 = local14.aByteArray36.length - local25 - 12 - 2;
-		local14.anInt2997 = local36;
+		@Pc(36) int local36 = local14.bytes.length - local25 - 12 - 2;
+		local14.position = local36;
 		@Pc(43) int local43 = local14.method2529();
 		local9.anInt55 = local14.method2536();
 		local9.anInt56 = local14.method2536();
 		local9.anInt54 = local14.method2536();
 		local9.anInt58 = local14.method2536();
-		@Pc(67) int local67 = local14.method2490();
+		@Pc(67) int local67 = local14.readByteIntoInt();
 		@Pc(84) int local84;
 		if (local67 > 0) {
 			local9.aClass102Array1 = new Class102[local67];
@@ -48,18 +48,18 @@ public final class Static226 {
 				}
 			}
 		}
-		local14.anInt2997 = 0;
-		local9.aString2 = local14.method2516();
+		local14.position = 0;
+		local9.aString2 = local14.readString();
 		local9.anIntArray5 = new int[local43];
 		local9.aStringArray1 = new String[local43];
 		local9.anIntArray6 = new int[local43];
 		local84 = 0;
-		while (local14.anInt2997 < local36) {
+		while (local14.position < local36) {
 			@Pc(162) int local162 = local14.method2536();
 			if (local162 == 3) {
-				local9.aStringArray1[local84] = local14.method2537().intern();
+				local9.aStringArray1[local84] = local14.readValidStringAtCurrentPosition().intern();
 			} else if (local162 >= 100 || local162 == 21 || local162 == 38 || local162 == 39) {
-				local9.anIntArray6[local84] = local14.method2490();
+				local9.anIntArray6[local84] = local14.readByteIntoInt();
 			} else {
 				local9.anIntArray6[local84] = local14.method2529();
 			}

@@ -137,20 +137,20 @@ public final class client extends GameShell {
 
 			if (Static78.clientInitializationStep == 2) {
 				Static240.aClass11_14 = new Class11((Socket) Static30.connectionInitializationMessage.output, Static206.signLink);
-				@Pc(194) Class4_Sub12 local194 = new Class4_Sub12(5);
-				local194.method2551(Static153.aClass60_2.anInt1812);
-				local194.method2531(592);
-				Static240.aClass11_14.method142(5, local194.aByteArray36);
+				@Pc(194) ByteBuffer local194 = new ByteBuffer(5);
+				local194.writeByte(Static153.aClass60_2.anInt1812);
+				local194.writeIntBE(592);
+				Static240.aClass11_14.method142(5, local194.bytes);
 				Static78.clientInitializationStep++;
 				Static327.connectionInitializationTimestamp = MonotonicClock.getCurrentTimeInMilliseconds();
 			}
 
 			if (Static78.clientInitializationStep == 3) {
 				if (Static403.anInt6667 == 0 || Static403.anInt6667 == 5 || Static240.aClass11_14.method133() > 0) {
-					@Pc(259) int bytesRead = Static240.aClass11_14.method139();
+					@Pc(259) int response = Static240.aClass11_14.readByte();
 
-					if (bytesRead != 0) {
-						this.method903(bytesRead);
+					if (response != 0) {
+						this.method903(response);
 						return;
 					}
 
@@ -781,7 +781,7 @@ public final class client extends GameShell {
 
 	@OriginalMember(owner = "client!client", name = "a", descriptor = "([BB)V")
 	private void method908(@OriginalArg(0) byte[] arg0) {
-		@Pc(10) Class4_Sub12 local10 = new Class4_Sub12(arg0);
+		@Pc(10) ByteBuffer local10 = new ByteBuffer(arg0);
 		while (true) {
 			@Pc(18) int local18;
 			@Pc(42) int local42;
@@ -789,7 +789,7 @@ public final class client extends GameShell {
 			label45: do {
 				while (true) {
 					while (true) {
-						local18 = local10.method2490();
+						local18 = local10.readByteIntoInt();
 						if (local18 == 0) {
 							return;
 						}
@@ -805,7 +805,7 @@ public final class client extends GameShell {
 							if (local18 != 4) {
 								continue label45;
 							}
-							local37 = local10.method2490();
+							local37 = local10.readByteIntoInt();
 							Static290.anIntArray490 = new int[local37];
 							for (local42 = 0; local42 < local37; local42++) {
 								Static290.anIntArray490[local42] = local10.method2536();
@@ -817,7 +817,7 @@ public final class client extends GameShell {
 					}
 				}
 			} while (local18 != 5);
-			local37 = local10.method2490();
+			local37 = local10.readByteIntoInt();
 			Static171.anIntArray217 = new int[local37];
 			for (local42 = 0; local42 < local37; local42++) {
 				Static171.anIntArray217[local42] = local10.method2536();

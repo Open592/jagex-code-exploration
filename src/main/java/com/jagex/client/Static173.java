@@ -23,12 +23,12 @@ public final class Static173 {
 		for (@Pc(3) int local3 = 0; local3 < Static441.anInt7199; local3++) {
 			@Pc(9) int local9 = Static388.anIntArray497[local3];
 			@Pc(13) Class16_Sub1_Sub5_Sub1 local13 = Static267.aClass16_Sub1_Sub5_Sub1Array1[local9];
-			@Pc(17) int local17 = arg0.method2490();
+			@Pc(17) int local17 = arg0.readByteIntoInt();
 			if ((local17 & 0x4) != 0) {
-				local17 += arg0.method2490() << 8;
+				local17 += arg0.readByteIntoInt() << 8;
 			}
 			if ((local17 & 0x2000) != 0) {
-				local17 += arg0.method2490() << 16;
+				local17 += arg0.readByteIntoInt() << 16;
 			}
 			Static41.method729(local17, arg0, local9, local13);
 		}

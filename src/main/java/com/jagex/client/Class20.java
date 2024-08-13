@@ -28,8 +28,8 @@ public final class Class20 {
 	}
 
 	@OriginalMember(owner = "client!bd", name = "a", descriptor = "(Lclient!iv;Lclient!ej;)V")
-	public void method497(@OriginalArg(0) Class4_Sub12 arg0, @OriginalArg(1) Class61 arg1) {
-		@Pc(3) int local3 = arg0.method2490();
+	public void method497(@OriginalArg(0) ByteBuffer arg0, @OriginalArg(1) Class61 arg1) {
+		@Pc(3) int local3 = arg0.readByteIntoInt();
 		this.anIntArray28[0] = local3 >> 4;
 		this.anIntArray28[1] = local3 & 0xF;
 		if (local3 == 0) {
@@ -38,7 +38,7 @@ public final class Class20 {
 		}
 		this.anIntArray27[0] = arg0.method2536();
 		this.anIntArray27[1] = arg0.method2536();
-		@Pc(37) int local37 = arg0.method2490();
+		@Pc(37) int local37 = arg0.readByteIntoInt();
 		@Pc(42) int local42;
 		for (@Pc(39) int local39 = 0; local39 < 2; local39++) {
 			for (local42 = 0; local42 < this.anIntArray28[local39]; local42++) {

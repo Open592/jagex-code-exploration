@@ -150,8 +150,8 @@ public final class Static409 {
 			@Pc(73) Class253 local73 = Static306.aClass253Array1[arg1];
 			@Pc(81) Class16_Sub1_Sub5_Sub1 local81 = Static267.aClass16_Sub1_Sub5_Sub1Array1[arg1] = new Class16_Sub1_Sub5_Sub1();
 			local81.anInt6037 = arg1;
-			if (Static354.aClass4_Sub12Array1[arg1] != null) {
-				local81.method3422(Static354.aClass4_Sub12Array1[arg1]);
+			if (Static354.A_BYTE_BUFFER_ARRAY_1[arg1] != null) {
+				local81.method3422(Static354.A_BYTE_BUFFER_ARRAY_1[arg1]);
 			}
 			local81.method4745(local73.anInt6947);
 			local81.anInt6034 = local73.anInt6946;

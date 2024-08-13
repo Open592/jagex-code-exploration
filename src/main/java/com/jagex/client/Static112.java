@@ -96,7 +96,7 @@ public final class Static112 {
 						if (local66[0] != -1) {
 							throw new IllegalStateException("if1");
 						}
-						local78.method5304(new Class4_Sub12(local66));
+						local78.method5304(new ByteBuffer(local66));
 					}
 				}
 			}
@@ -136,12 +136,12 @@ public final class Static112 {
 				if (Static94.aBoolean176) {
 					local78 = Static70.anInt1504;
 				}
-				Static3.aClass4_Sub12_Sub1_5.anInt2997 = 0;
-				Static3.aClass4_Sub12_Sub1_5.method2551(Static153.aClass60_9.anInt1812);
-				Static3.aClass4_Sub12_Sub1_5.method2531(local78);
-				Static125.aClass11_5.method142(Static3.aClass4_Sub12_Sub1_5.anInt2997, Static3.aClass4_Sub12_Sub1_5.aByteArray36);
+				Static3.aClass4_Sub12_Sub1_5.position = 0;
+				Static3.aClass4_Sub12_Sub1_5.writeByte(Static153.aClass60_9.anInt1812);
+				Static3.aClass4_Sub12_Sub1_5.writeIntBE(local78);
+				Static125.aClass11_5.method142(Static3.aClass4_Sub12_Sub1_5.position, Static3.aClass4_Sub12_Sub1_5.bytes);
 				Static329.method4427();
-				local110 = Static125.aClass11_5.method139();
+				local110 = Static125.aClass11_5.readByte();
 				Static329.method4427();
 				if (local110 != 0) {
 					return Static28.method526(local110);
@@ -152,9 +152,9 @@ public final class Static112 {
 				if (Static125.aClass11_5.method133() < 2) {
 					return -1;
 				}
-				Static422.anInt6950 = Static125.aClass11_5.method139();
+				Static422.anInt6950 = Static125.aClass11_5.readByte();
 				Static422.anInt6950 <<= 0x8;
-				Static422.anInt6950 += Static125.aClass11_5.method139();
+				Static422.anInt6950 += Static125.aClass11_5.readByte();
 				Static50.anInt862 = 3;
 				Static273.aByteArray64 = new byte[Static422.anInt6950];
 				Static215.anInt3980 = 0;

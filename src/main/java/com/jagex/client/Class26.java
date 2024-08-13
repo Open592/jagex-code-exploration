@@ -61,7 +61,7 @@ public final class Class26 {
 		@Pc(39) byte[] local39 = this.aClass76_6.method2104(Static269.method3851(arg0), Static212.method3206(arg0));
 		local16 = new Class126();
 		if (local39 != null) {
-			local16.method3191(new Class4_Sub12(local39));
+			local16.method3191(new ByteBuffer(local39));
 		}
 		@Pc(55) Class68 local55 = this.aClass68_3;
 		synchronized (this.aClass68_3) {

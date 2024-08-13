@@ -71,9 +71,9 @@ public final class Class101 {
 	}
 
 	@OriginalMember(owner = "client!hv", name = "a", descriptor = "(BLclient!iv;)V")
-	public void method2679(@OriginalArg(1) Class4_Sub12 arg0) {
+	public void method2679(@OriginalArg(1) ByteBuffer arg0) {
 		while (true) {
-			@Pc(5) int local5 = arg0.method2490();
+			@Pc(5) int local5 = arg0.readByteIntoInt();
 			if (local5 == 0) {
 				return;
 			}
@@ -82,7 +82,7 @@ public final class Class101 {
 	}
 
 	@OriginalMember(owner = "client!hv", name = "a", descriptor = "(Lclient!iv;II)V")
-	private void method2681(@OriginalArg(0) Class4_Sub12 arg0, @OriginalArg(1) int arg1) {
+	private void method2681(@OriginalArg(0) ByteBuffer arg0, @OriginalArg(1) int arg1) {
 		if (arg1 == 1) {
 			this.aString33 = arg0.method2497();
 		} else if (arg1 == 2) {
@@ -91,7 +91,7 @@ public final class Class101 {
 			@Pc(82) int local82;
 			@Pc(88) int local88;
 			if (arg1 == 3) {
-				local82 = arg0.method2490();
+				local82 = arg0.readByteIntoInt();
 				this.anIntArrayArray27 = new int[local82][3];
 				for (local88 = 0; local88 < local82; local88++) {
 					this.anIntArrayArray27[local88][0] = arg0.method2536();
@@ -99,7 +99,7 @@ public final class Class101 {
 					this.anIntArrayArray27[local88][2] = arg0.method2529();
 				}
 			} else if (arg1 == 4) {
-				local82 = arg0.method2490();
+				local82 = arg0.readByteIntoInt();
 				this.anIntArrayArray28 = new int[local82][3];
 				for (local88 = 0; local88 < local82; local88++) {
 					this.anIntArrayArray28[local88][0] = arg0.method2536();
@@ -109,17 +109,17 @@ public final class Class101 {
 			} else if (arg1 == 5) {
 				arg0.method2536();
 			} else if (arg1 == 6) {
-				arg0.method2490();
+				arg0.readByteIntoInt();
 			} else if (arg1 == 7) {
-				arg0.method2490();
+				arg0.readByteIntoInt();
 				return;
 			} else if (arg1 != 8) {
 				if (arg1 == 9) {
-					arg0.method2490();
+					arg0.readByteIntoInt();
 					return;
 				}
 				if (arg1 == 10) {
-					local82 = arg0.method2490();
+					local82 = arg0.readByteIntoInt();
 					this.anIntArray206 = new int[local82];
 					for (local88 = 0; local88 < local82; local88++) {
 						this.anIntArray206[local88] = arg0.method2529();
@@ -132,11 +132,11 @@ public final class Class101 {
 				}
 				if (arg1 != 13) {
 					if (arg1 == 14) {
-						local82 = arg0.method2490();
+						local82 = arg0.readByteIntoInt();
 						this.anIntArrayArray29 = new int[local82][2];
 						for (local88 = 0; local88 < local82; local88++) {
-							this.anIntArrayArray29[local88][0] = arg0.method2490();
-							this.anIntArrayArray29[local88][1] = arg0.method2490();
+							this.anIntArrayArray29[local88][0] = arg0.readByteIntoInt();
+							this.anIntArrayArray29[local88][1] = arg0.readByteIntoInt();
 						}
 						return;
 					}
@@ -150,7 +150,7 @@ public final class Class101 {
 					}
 					if (arg1 != 18) {
 						if (arg1 == 19) {
-							local82 = arg0.method2490();
+							local82 = arg0.readByteIntoInt();
 							this.anIntArray202 = new int[local82];
 							this.aStringArray13 = new String[local82];
 							this.anIntArray203 = new int[local82];
@@ -159,20 +159,20 @@ public final class Class101 {
 								this.anIntArray203[local88] = arg0.method2529();
 								this.anIntArray202[local88] = arg0.method2529();
 								this.anIntArray199[local88] = arg0.method2529();
-								this.aStringArray13[local88] = arg0.method2537();
+								this.aStringArray13[local88] = arg0.readValidStringAtCurrentPosition();
 							}
 						} else if (arg1 == 249) {
-							local82 = arg0.method2490();
+							local82 = arg0.readByteIntoInt();
 							if (this.aClass102_15 == null) {
 								local88 = Static370.method4949(local82);
 								this.aClass102_15 = new Class102(local88);
 							}
 							for (local88 = 0; local88 < local82; local88++) {
-								@Pc(222) boolean local222 = arg0.method2490() == 1;
+								@Pc(222) boolean local222 = arg0.readByteIntoInt() == 1;
 								@Pc(226) int local226 = arg0.method2493();
 								@Pc(235) Class4 local235;
 								if (local222) {
-									local235 = new Class4_Sub7(arg0.method2537());
+									local235 = new Class4_Sub7(arg0.readValidStringAtCurrentPosition());
 								} else {
 									local235 = new Class4_Sub37(arg0.method2529());
 								}
@@ -182,7 +182,7 @@ public final class Class101 {
 						}
 						return;
 					}
-					local82 = arg0.method2490();
+					local82 = arg0.readByteIntoInt();
 					this.anIntArray201 = new int[local82];
 					this.aStringArray12 = new String[local82];
 					this.anIntArray200 = new int[local82];
@@ -191,11 +191,11 @@ public final class Class101 {
 						this.anIntArray204[local88] = arg0.method2529();
 						this.anIntArray201[local88] = arg0.method2529();
 						this.anIntArray200[local88] = arg0.method2529();
-						this.aStringArray12[local88] = arg0.method2537();
+						this.aStringArray12[local88] = arg0.readValidStringAtCurrentPosition();
 					}
 					return;
 				}
-				local82 = arg0.method2490();
+				local82 = arg0.readByteIntoInt();
 				this.anIntArray205 = new int[local82];
 				for (local88 = 0; local88 < local82; local88++) {
 					this.anIntArray205[local88] = arg0.method2536();

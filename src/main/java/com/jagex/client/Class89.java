@@ -25,22 +25,22 @@ public final class Class89 {
 
 	@OriginalMember(owner = "client!gt", name = "<init>", descriptor = "([B)V")
 	public Class89(@OriginalArg(0) byte[] arg0) {
-		@Pc(8) Class4_Sub12 local8 = new Class4_Sub12(arg0);
-		@Pc(12) int local12 = local8.method2490();
+		@Pc(8) ByteBuffer local8 = new ByteBuffer(arg0);
+		@Pc(12) int local12 = local8.readByteIntoInt();
 		if (local12 != 0) {
 			throw new RuntimeException("");
 		}
-		@Pc(28) boolean local28 = local8.method2490() == 1;
+		@Pc(28) boolean local28 = local8.readByteIntoInt() == 1;
 		this.aByteArray29 = new byte[256];
 		local8.method2508(256, this.aByteArray29);
 		if (local28) {
 			@Pc(44) int[] local44 = new int[256];
 			for (@Pc(46) int local46 = 0; local46 < 256; local46++) {
-				local44[local46] = local8.method2490();
+				local44[local46] = local8.readByteIntoInt();
 			}
 			@Pc(63) int[] local63 = new int[256];
 			for (@Pc(65) int local65 = 0; local65 < 256; local65++) {
-				local63[local65] = local8.method2490();
+				local63[local65] = local8.readByteIntoInt();
 			}
 			@Pc(80) byte[][] local80 = new byte[256][];
 			@Pc(95) int local95;
@@ -48,7 +48,7 @@ public final class Class89 {
 				local80[local82] = new byte[local44[local82]];
 				@Pc(93) byte local93 = 0;
 				for (local95 = 0; local95 < local80[local82].length; local95++) {
-					local93 += local8.method2542();
+					local93 += local8.readInt8();
 					local80[local82][local95] = local93;
 				}
 			}
@@ -58,7 +58,7 @@ public final class Class89 {
 				local128[local95] = new byte[local44[local95]];
 				@Pc(141) byte local141 = 0;
 				for (local143 = 0; local143 < local128[local95].length; local143++) {
-					local141 += local8.method2542();
+					local141 += local8.readInt8();
 					local128[local95][local143] = local141;
 				}
 			}
@@ -74,12 +74,12 @@ public final class Class89 {
 			}
 			this.anInt2786 = local44[32] + local63[32];
 		} else {
-			this.anInt2786 = local8.method2490();
+			this.anInt2786 = local8.readByteIntoInt();
 		}
-		local8.method2490();
-		local8.method2490();
-		this.anInt2783 = local8.method2490();
-		this.anInt2778 = local8.method2490();
+		local8.readByteIntoInt();
+		local8.readByteIntoInt();
+		this.anInt2783 = local8.readByteIntoInt();
+		this.anInt2778 = local8.readByteIntoInt();
 	}
 
 	@OriginalMember(owner = "client!gt", name = "a", descriptor = "([Lclient!l;[IB[Ljava/lang/String;Ljava/lang/String;)I")

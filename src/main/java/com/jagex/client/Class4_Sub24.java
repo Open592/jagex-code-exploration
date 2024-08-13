@@ -45,7 +45,7 @@ public final class Class4_Sub24 extends Class4 {
 	private float[][] aFloatArrayArray2;
 
 	@OriginalMember(owner = "client!iu", name = "r", descriptor = "Lclient!iv;")
-	private Class4_Sub12 aClass4_Sub12_3;
+	private ByteBuffer aByteBuffer_3;
 
 	@OriginalMember(owner = "client!iu", name = "C", descriptor = "Lclient!hk;")
 	private Class4_Sub12_Sub2 aClass4_Sub12_Sub2_2;
@@ -128,7 +128,7 @@ public final class Class4_Sub24 extends Class4 {
 			}
 		}
 		if (local123 > 0) {
-			this.aClass4_Sub12_3 = new Class4_Sub12(local123 * 2);
+			this.aByteBuffer_3 = new ByteBuffer(local123 * 2);
 			this.aClass4_Sub12_Sub2_2 = new Class4_Sub12_Sub2(local123 * 16);
 			this.aClass102_17 = new Class102(Static370.method4949(local123));
 			local178 = 0;
@@ -173,8 +173,8 @@ public final class Class4_Sub24 extends Class4 {
 				}
 				local178++;
 			}
-			this.anInterface1_3 = this.aClass19_Sub2_22.method1955(this.aClass4_Sub12_3.anInt2997, false, this.aClass4_Sub12_3.aByteArray36);
-			this.anInterface11_5 = this.aClass19_Sub2_22.method1960(this.aClass4_Sub12_Sub2_2.anInt2997, this.aClass4_Sub12_Sub2_2.aByteArray36, false, 16);
+			this.anInterface1_3 = this.aClass19_Sub2_22.method1955(this.aByteBuffer_3.position, false, this.aByteBuffer_3.bytes);
+			this.anInterface11_5 = this.aClass19_Sub2_22.method1960(this.aClass4_Sub12_Sub2_2.position, this.aClass4_Sub12_Sub2_2.bytes, false, 16);
 			this.aClass177_12 = new Class177(this.anInterface11_5, 5126, 3, 0);
 			this.aClass177_11 = new Class177(this.anInterface11_5, 5121, 4, 12);
 		} else {
@@ -185,7 +185,7 @@ public final class Class4_Sub24 extends Class4 {
 		}
 		this.aClass102_17 = null;
 		this.aFloatArrayArray2 = this.aFloatArrayArray3 = this.aFloatArrayArray4 = null;
-		this.aClass4_Sub12_3 = null;
+		this.aByteBuffer_3 = null;
 		this.aClass4_Sub12_Sub2_2 = null;
 	}
 
@@ -296,19 +296,19 @@ public final class Class4_Sub24 extends Class4 {
 		if (local594 > 255) {
 			local594 = 255;
 		}
-		this.aClass4_Sub12_Sub2_2.method2551(local564);
-		this.aClass4_Sub12_Sub2_2.method2551(local581);
-		this.aClass4_Sub12_Sub2_2.method2551(local594);
-		this.aClass4_Sub12_Sub2_2.method2551(255);
+		this.aClass4_Sub12_Sub2_2.writeByte(local564);
+		this.aClass4_Sub12_Sub2_2.writeByte(local581);
+		this.aClass4_Sub12_Sub2_2.writeByte(local594);
+		this.aClass4_Sub12_Sub2_2.writeByte(255);
 		this.method2840(local84);
 	}
 
 	@OriginalMember(owner = "client!iu", name = "a", descriptor = "(BS)V")
 	private void method2840(@OriginalArg(1) short arg0) {
 		if (this.aClass19_Sub2_22.aBoolean215) {
-			this.aClass4_Sub12_3.method2524(arg0);
+			this.aByteBuffer_3.writeInt16BE(arg0);
 		} else {
-			this.aClass4_Sub12_3.method2541(arg0);
+			this.aByteBuffer_3.method2541(arg0);
 		}
 		this.anInt3408++;
 	}

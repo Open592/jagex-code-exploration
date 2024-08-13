@@ -59,7 +59,7 @@ public final class Class208 {
 		@Pc(33) byte[] local33 = this.aClass76_80.method2104(arg0, 35);
 		local16 = new Class101();
 		if (local33 != null) {
-			local16.method2679(new Class4_Sub12(local33));
+			local16.method2679(new ByteBuffer(local33));
 		}
 		local16.method2676();
 		@Pc(57) Class68 local57 = this.aClass68_42;

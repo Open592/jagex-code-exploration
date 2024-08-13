@@ -121,7 +121,7 @@ public final class Class11 implements Runnable {
 	}
 
 	@OriginalMember(owner = "client!al", name = "d", descriptor = "(I)I")
-	public int method139() throws IOException {
+	public int readByte() throws IOException {
 		return this.isShuttingDown ? 0 : this.inputStream.read();
 	}
 

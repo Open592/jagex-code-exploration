@@ -66,7 +66,7 @@ public final class Class138 {
 	public int anInt4410 = -1;
 
 	@OriginalMember(owner = "client!lp", name = "a", descriptor = "(Lclient!iv;II)V")
-	private void method3454(@OriginalArg(0) Class4_Sub12 arg0, @OriginalArg(1) int arg1) {
+	private void method3454(@OriginalArg(0) ByteBuffer arg0, @OriginalArg(1) int arg1) {
 		@Pc(31) int local31;
 		@Pc(33) int local33;
 		@Pc(149) int local149;
@@ -88,28 +88,28 @@ public final class Class138 {
 			this.anInt4405 = arg0.method2536();
 		} else if (arg1 == 3) {
 			this.aBooleanArray14 = new boolean[256];
-			local31 = arg0.method2490();
+			local31 = arg0.readByteIntoInt();
 			for (local33 = 0; local33 < local31; local33++) {
-				this.aBooleanArray14[arg0.method2490()] = true;
+				this.aBooleanArray14[arg0.readByteIntoInt()] = true;
 			}
 		} else if (arg1 == 4) {
 			this.aBoolean407 = true;
 		} else if (arg1 == 5) {
-			this.anInt4413 = arg0.method2490();
+			this.anInt4413 = arg0.readByteIntoInt();
 		} else if (arg1 == 6) {
 			this.anInt4408 = arg0.method2536();
 		} else if (arg1 == 7) {
 			this.anInt4415 = arg0.method2536();
 		} else if (arg1 == 8) {
-			this.anInt4412 = arg0.method2490();
+			this.anInt4412 = arg0.readByteIntoInt();
 		} else if (arg1 == 9) {
-			this.anInt4401 = arg0.method2490();
+			this.anInt4401 = arg0.readByteIntoInt();
 		} else if (arg1 == 10) {
-			this.anInt4410 = arg0.method2490();
+			this.anInt4410 = arg0.readByteIntoInt();
 		} else if (arg1 == 11) {
-			this.anInt4406 = arg0.method2490();
+			this.anInt4406 = arg0.readByteIntoInt();
 		} else if (arg1 == 12) {
-			local31 = arg0.method2490();
+			local31 = arg0.readByteIntoInt();
 			this.anIntArray297 = new int[local31];
 			for (local33 = 0; local33 < local31; local33++) {
 				this.anIntArray297[local33] = arg0.method2536();
@@ -121,7 +121,7 @@ public final class Class138 {
 			local31 = arg0.method2536();
 			this.anIntArrayArray36 = new int[local31][];
 			for (local33 = 0; local33 < local31; local33++) {
-				local149 = arg0.method2490();
+				local149 = arg0.readByteIntoInt();
 				if (local149 > 0) {
 					this.anIntArrayArray36[local33] = new int[local149];
 					this.anIntArrayArray36[local33][0] = arg0.method2493();
@@ -144,9 +144,9 @@ public final class Class138 {
 	}
 
 	@OriginalMember(owner = "client!lp", name = "a", descriptor = "(Lclient!iv;I)V")
-	public void method3455(@OriginalArg(0) Class4_Sub12 arg0) {
+	public void method3455(@OriginalArg(0) ByteBuffer arg0) {
 		while (true) {
-			@Pc(13) int local13 = arg0.method2490();
+			@Pc(13) int local13 = arg0.readByteIntoInt();
 			if (local13 == 0) {
 				return;
 			}

@@ -32,12 +32,12 @@ public final class Static386 {
 
 	@OriginalMember(owner = "client!tm", name = "a", descriptor = "(IIIII)V")
 	public static void method3233(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(4) int arg3) {
-		Static3.aClass4_Sub12_Sub1_5.anInt2997 = 0;
-		Static3.aClass4_Sub12_Sub1_5.method2551(Static153.aClass60_6.anInt1812);
-		Static3.aClass4_Sub12_Sub1_5.method2551(arg1);
-		Static3.aClass4_Sub12_Sub1_5.method2551(arg0);
-		Static3.aClass4_Sub12_Sub1_5.method2524(arg2);
-		Static3.aClass4_Sub12_Sub1_5.method2524(arg3);
+		Static3.aClass4_Sub12_Sub1_5.position = 0;
+		Static3.aClass4_Sub12_Sub1_5.writeByte(Static153.aClass60_6.anInt1812);
+		Static3.aClass4_Sub12_Sub1_5.writeByte(arg1);
+		Static3.aClass4_Sub12_Sub1_5.writeByte(arg0);
+		Static3.aClass4_Sub12_Sub1_5.writeInt16BE(arg2);
+		Static3.aClass4_Sub12_Sub1_5.writeInt16BE(arg3);
 		Static119.anInt2524 = 0;
 		Static348.anInt5976 = 0;
 		Static249.anInt4623 = -3;
@@ -50,8 +50,8 @@ public final class Static386 {
 	}
 
 	@OriginalMember(owner = "client!tm", name = "a", descriptor = "(ILclient!iv;)Lclient!ob;")
-	public static Class27_Sub4 method3235(@OriginalArg(1) Class4_Sub12 arg0) {
-		return new Class27_Sub4(arg0.method2512(), arg0.method2512(), arg0.method2512(), arg0.method2512(), arg0.method2493(), arg0.method2493(), arg0.method2490());
+	public static Class27_Sub4 method3235(@OriginalArg(1) ByteBuffer arg0) {
+		return new Class27_Sub4(arg0.method2512(), arg0.method2512(), arg0.method2512(), arg0.method2512(), arg0.method2493(), arg0.method2493(), arg0.readByteIntoInt());
 	}
 
 	@OriginalMember(owner = "client!tm", name = "a", descriptor = "(IIBIIIII)V")

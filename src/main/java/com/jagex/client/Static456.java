@@ -8,17 +8,17 @@ public final class Static456 {
 
 	@OriginalMember(owner = "client!bb", name = "a", descriptor = "([B)[Lclient!bb;")
 	private static Class18[] method315(@OriginalArg(0) byte[] arg0) {
-		@Pc(4) Class4_Sub12 local4 = new Class4_Sub12(arg0);
-		local4.anInt2997 = arg0.length - 2;
+		@Pc(4) ByteBuffer local4 = new ByteBuffer(arg0);
+		local4.position = arg0.length - 2;
 		@Pc(14) int local14 = local4.method2536();
 		@Pc(17) Class18[] local17 = new Class18[local14];
 		for (@Pc(19) int local19 = 0; local19 < local14; local19++) {
 			local17[local19] = new Class18();
 		}
-		local4.anInt2997 = arg0.length - local14 * 8 - 7;
+		local4.position = arg0.length - local14 * 8 - 7;
 		@Pc(44) int local44 = local4.method2536();
 		@Pc(48) int local48 = local4.method2536();
-		@Pc(56) int local56 = (local4.method2490() & 0xFF) + 1;
+		@Pc(56) int local56 = (local4.readByteIntoInt() & 0xFF) + 1;
 		for (@Pc(58) int local58 = 0; local58 < local14; local58++) {
 			local17[local58].anInt368 = local4.method2536();
 		}
@@ -36,7 +36,7 @@ public final class Static456 {
 			local119.anInt369 = local44 - local119.anInt367 - local119.anInt368;
 			local119.anInt371 = local48 - local119.anInt366 - local119.anInt370;
 		}
-		local4.anInt2997 = arg0.length - local14 * 8 - (local56 - 1) * 3 - 7;
+		local4.position = arg0.length - local14 * 8 - (local56 - 1) * 3 - 7;
 		@Pc(160) int[] local160 = new int[local56];
 		for (@Pc(162) int local162 = 1; local162 < local56; local162++) {
 			local160[local162] = local4.method2493();
@@ -47,23 +47,23 @@ public final class Static456 {
 		for (@Pc(183) int local183 = 0; local183 < local14; local183++) {
 			local17[local183].anIntArray25 = local160;
 		}
-		local4.anInt2997 = 0;
+		local4.position = 0;
 		for (@Pc(198) int local198 = 0; local198 < local14; local198++) {
 			@Pc(203) Class18 local203 = local17[local198];
 			@Pc(209) int local209 = local203.anInt367 * local203.anInt366;
 			local203.aByteArray4 = new byte[local209];
-			@Pc(217) int local217 = local4.method2490();
+			@Pc(217) int local217 = local4.readByteIntoInt();
 			@Pc(245) int local245;
 			if ((local217 & 0x2) == 0) {
 				@Pc(227) int local227;
 				if ((local217 & 0x1) == 0) {
 					for (local227 = 0; local227 < local209; local227++) {
-						local203.aByteArray4[local227] = local4.method2542();
+						local203.aByteArray4[local227] = local4.readInt8();
 					}
 				} else {
 					for (local227 = 0; local227 < local203.anInt367; local227++) {
 						for (local245 = 0; local245 < local203.anInt366; local245++) {
-							local203.aByteArray4[local227 + local245 * local203.anInt367] = local4.method2542();
+							local203.aByteArray4[local227 + local245 * local203.anInt367] = local4.readInt8();
 						}
 					}
 				}
@@ -73,21 +73,21 @@ public final class Static456 {
 				@Pc(295) int local295;
 				if ((local217 & 0x1) == 0) {
 					for (local245 = 0; local245 < local209; local245++) {
-						local203.aByteArray4[local245] = local4.method2542();
+						local203.aByteArray4[local245] = local4.readInt8();
 					}
 					for (local295 = 0; local295 < local209; local295++) {
-						@Pc(305) byte local305 = local203.aByteArray5[local295] = local4.method2542();
+						@Pc(305) byte local305 = local203.aByteArray5[local295] = local4.readInt8();
 						local271 |= local305 != -1;
 					}
 				} else {
 					for (local245 = 0; local245 < local203.anInt367; local245++) {
 						for (local295 = 0; local295 < local203.anInt366; local295++) {
-							local203.aByteArray4[local245 + local295 * local203.anInt367] = local4.method2542();
+							local203.aByteArray4[local245 + local295 * local203.anInt367] = local4.readInt8();
 						}
 					}
 					for (local295 = 0; local295 < local203.anInt367; local295++) {
 						for (@Pc(352) int local352 = 0; local352 < local203.anInt366; local352++) {
-							@Pc(367) byte local367 = local203.aByteArray5[local295 + local352 * local203.anInt367] = local4.method2542();
+							@Pc(367) byte local367 = local203.aByteArray5[local295 + local352 * local203.anInt367] = local4.readInt8();
 							local271 |= local367 != -1;
 						}
 					}

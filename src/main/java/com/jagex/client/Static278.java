@@ -25,8 +25,8 @@ public final class Static278 {
 
 	@OriginalMember(owner = "client!ob", name = "a", descriptor = "(JB)V")
 	public static void method3942(@OriginalArg(0) long arg0) {
-		Static3.aClass4_Sub12_Sub1_5.anInt2997 = 0;
-		Static3.aClass4_Sub12_Sub1_5.method2551(Static153.aClass60_7.anInt1812);
+		Static3.aClass4_Sub12_Sub1_5.position = 0;
+		Static3.aClass4_Sub12_Sub1_5.writeByte(Static153.aClass60_7.anInt1812);
 		Static3.aClass4_Sub12_Sub1_5.method2504(arg0);
 		Static348.anInt5976 = 0;
 		Static119.anInt2524 = 0;

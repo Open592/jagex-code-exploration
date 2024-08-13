@@ -240,10 +240,10 @@ public final class Class65_Sub2 extends Class65 {
 			this.aClass19_Sub2_30.method1914();
 		}
 		this.aClass19_Sub2_30.method1934(this.aClass177_13, this.aClass177_16, this.aClass177_14, this.aClass177_15);
-		if (Static383.aClass4_Sub12_7.aByteArray36.length < this.anInt5270 * 2) {
-			Static383.aClass4_Sub12_7 = new Class4_Sub12(this.anInt5270 * 2);
+		if (Static383.aByteBuffer_7.bytes.length < this.anInt5270 * 2) {
+			Static383.aByteBuffer_7 = new ByteBuffer(this.anInt5270 * 2);
 		} else {
-			Static383.aClass4_Sub12_7.anInt2997 = 0;
+			Static383.aByteBuffer_7.position = 0;
 		}
 		@Pc(305) int local305 = 0;
 		@Pc(311) int local311;
@@ -259,7 +259,7 @@ public final class Class65_Sub2 extends Class65 {
 						local342 = this.aShortArrayArray9[local321];
 						if (local342 != null) {
 							for (local346 = 0; local346 < local342.length; local346++) {
-								Static383.aClass4_Sub12_7.method2524(local342[local346] & 0xFFFF);
+								Static383.aByteBuffer_7.writeInt16BE(local342[local346] & 0xFFFF);
 								local305++;
 							}
 						}
@@ -276,7 +276,7 @@ public final class Class65_Sub2 extends Class65 {
 						if (local342 != null) {
 							for (local346 = 0; local346 < local342.length; local346++) {
 								local305++;
-								Static383.aClass4_Sub12_7.method2541(local342[local346] & 0xFFFF);
+								Static383.aByteBuffer_7.method2541(local342[local346] & 0xFFFF);
 							}
 						}
 					}
@@ -285,7 +285,7 @@ public final class Class65_Sub2 extends Class65 {
 			}
 		}
 		if (local305 > 0) {
-			@Pc(470) Class64_Sub1 local470 = new Class64_Sub1(this.aClass19_Sub2_30, 5123, Static383.aClass4_Sub12_7.aByteArray36, Static383.aClass4_Sub12_7.anInt2997);
+			@Pc(470) Class64_Sub1 local470 = new Class64_Sub1(this.aClass19_Sub2_30, 5123, Static383.aByteBuffer_7.bytes, Static383.aByteBuffer_7.position);
 			this.aClass19_Sub2_30.method1967(0, local305, local470);
 		}
 	}
@@ -832,8 +832,8 @@ public final class Class65_Sub2 extends Class65 {
 		if (local23 > Static192.anIntArray239.length) {
 			Static192.anIntArray239 = new int[local23];
 		}
-		if (Static383.aClass4_Sub12_7.aByteArray36.length < this.anInt5270 * 2) {
-			Static383.aClass4_Sub12_7 = new Class4_Sub12(this.anInt5270 * 2);
+		if (Static383.aByteBuffer_7.bytes.length < this.anInt5270 * 2) {
+			Static383.aByteBuffer_7 = new ByteBuffer(this.anInt5270 * 2);
 		}
 		@Pc(59) int local59 = arg0 - arg4;
 		@Pc(61) int local61 = local59;

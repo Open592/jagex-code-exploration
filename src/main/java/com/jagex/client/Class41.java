@@ -48,9 +48,9 @@ public final class Class41 {
 	}
 
 	@OriginalMember(owner = "client!co", name = "a", descriptor = "(Lclient!iv;I)V")
-	public void method938(@OriginalArg(0) Class4_Sub12 arg0) {
+	public void method938(@OriginalArg(0) ByteBuffer arg0) {
 		while (true) {
-			@Pc(17) int local17 = arg0.method2490();
+			@Pc(17) int local17 = arg0.readByteIntoInt();
 			if (local17 == 0) {
 				return;
 			}
@@ -59,7 +59,7 @@ public final class Class41 {
 	}
 
 	@OriginalMember(owner = "client!co", name = "a", descriptor = "(ILclient!iv;I)V")
-	private void method939(@OriginalArg(0) int arg0, @OriginalArg(1) Class4_Sub12 arg1) {
+	private void method939(@OriginalArg(0) int arg0, @OriginalArg(1) ByteBuffer arg1) {
 		if (arg0 == 1) {
 			this.anInt1024 = arg1.method2536();
 		} else if (arg0 == 2) {

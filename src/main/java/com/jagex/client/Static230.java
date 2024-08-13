@@ -174,12 +174,12 @@ public final class Static230 {
 	@OriginalMember(owner = "client!lq", name = "b", descriptor = "(Z)V")
 	public static void method3470() {
 		Static448.anInt7307 = 0;
-		@Pc(11) int local11 = Static146.aClass4_Sub12_Sub1_3.method2489();
+		@Pc(11) int local11 = Static146.aClass4_Sub12_Sub1_3.readUByteIntoInt();
 		@Pc(15) int local15 = Static146.aClass4_Sub12_Sub1_3.method2548();
 		@Pc(19) int local19 = Static146.aClass4_Sub12_Sub1_3.method2515();
-		@Pc(30) boolean local30 = Static146.aClass4_Sub12_Sub1_3.method2520() == 1;
+		@Pc(30) boolean local30 = Static146.aClass4_Sub12_Sub1_3.readUInt8() == 1;
 		Static263.method3809(local11);
-		@Pc(41) int local41 = (Static454.anInt4075 - Static146.aClass4_Sub12_Sub1_3.anInt2997) / 16;
+		@Pc(41) int local41 = (Static454.anInt4075 - Static146.aClass4_Sub12_Sub1_3.position) / 16;
 		Static376.anIntArrayArray50 = new int[local41][4];
 		@Pc(51) int local51;
 		for (@Pc(47) int local47 = 0; local47 < local41; local47++) {

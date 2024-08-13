@@ -561,32 +561,32 @@ public final class Class122 {
 
 	@OriginalMember(owner = "client!jq", name = "a", descriptor = "(I[B)V")
 	private void method3051(@OriginalArg(1) byte[] arg0) {
-		@Pc(10) Class4_Sub12 local10 = new Class4_Sub12(arg0);
-		@Pc(15) Class4_Sub12 local15 = new Class4_Sub12(arg0);
-		@Pc(20) Class4_Sub12 local20 = new Class4_Sub12(arg0);
-		@Pc(25) Class4_Sub12 local25 = new Class4_Sub12(arg0);
-		@Pc(30) Class4_Sub12 local30 = new Class4_Sub12(arg0);
-		@Pc(35) Class4_Sub12 local35 = new Class4_Sub12(arg0);
-		@Pc(40) Class4_Sub12 local40 = new Class4_Sub12(arg0);
-		local10.anInt2997 = arg0.length - 23;
+		@Pc(10) ByteBuffer local10 = new ByteBuffer(arg0);
+		@Pc(15) ByteBuffer local15 = new ByteBuffer(arg0);
+		@Pc(20) ByteBuffer local20 = new ByteBuffer(arg0);
+		@Pc(25) ByteBuffer local25 = new ByteBuffer(arg0);
+		@Pc(30) ByteBuffer local30 = new ByteBuffer(arg0);
+		@Pc(35) ByteBuffer local35 = new ByteBuffer(arg0);
+		@Pc(40) ByteBuffer local40 = new ByteBuffer(arg0);
+		local10.position = arg0.length - 23;
 		this.anInt3668 = local10.method2536();
 		this.anInt3686 = local10.method2536();
-		this.anInt3689 = local10.method2490();
-		@Pc(65) int local65 = local10.method2490();
+		this.anInt3689 = local10.readByteIntoInt();
+		@Pc(65) int local65 = local10.readByteIntoInt();
 		@Pc(76) boolean local76 = (local65 & 0x1) == 1;
 		@Pc(85) boolean local85 = (local65 & 0x2) == 2;
 		@Pc(94) boolean local94 = (local65 & 0x4) == 4;
 		@Pc(103) boolean local103 = (local65 & 0x8) == 8;
 		if (local103) {
-			local10.anInt2997 -= 7;
-			this.anInt3681 = local10.method2490();
-			local10.anInt2997 += 6;
+			local10.position -= 7;
+			this.anInt3681 = local10.readByteIntoInt();
+			local10.position += 6;
 		}
-		@Pc(126) int local126 = local10.method2490();
-		@Pc(130) int local130 = local10.method2490();
-		@Pc(134) int local134 = local10.method2490();
-		@Pc(138) int local138 = local10.method2490();
-		@Pc(142) int local142 = local10.method2490();
+		@Pc(126) int local126 = local10.readByteIntoInt();
+		@Pc(130) int local130 = local10.readByteIntoInt();
+		@Pc(134) int local134 = local10.readByteIntoInt();
+		@Pc(138) int local138 = local10.readByteIntoInt();
+		@Pc(142) int local142 = local10.readByteIntoInt();
 		@Pc(146) int local146 = local10.method2536();
 		@Pc(150) int local150 = local10.method2536();
 		@Pc(154) int local154 = local10.method2536();
@@ -597,10 +597,10 @@ public final class Class122 {
 		@Pc(168) int local168 = 0;
 		@Pc(181) int local181;
 		if (this.anInt3689 > 0) {
-			local10.anInt2997 = 0;
+			local10.position = 0;
 			this.aByteArray47 = new byte[this.anInt3689];
 			for (local181 = 0; local181 < this.anInt3689; local181++) {
-				@Pc(192) byte local192 = this.aByteArray47[local181] = local10.method2542();
+				@Pc(192) byte local192 = this.aByteArray47[local181] = local10.readInt8();
 				if (local192 == 2) {
 					local168++;
 				}
@@ -712,18 +712,18 @@ public final class Class122 {
 		if (local138 == 1 && this.anInt3689 > 0) {
 			this.aByteArray46 = new byte[this.anInt3686];
 		}
-		local10.anInt2997 = local222;
+		local10.position = local222;
 		this.anIntArray251 = new int[this.anInt3668];
-		local15.anInt2997 = local324;
-		local20.anInt2997 = local330;
-		local25.anInt2997 = local336;
-		local30.anInt2997 = local265;
+		local15.position = local324;
+		local20.position = local330;
+		local25.position = local336;
+		local30.position = local265;
 		@Pc(577) int local577 = 0;
 		@Pc(579) int local579 = 0;
 		@Pc(581) int local581 = 0;
 		@Pc(589) int local589;
 		for (@Pc(583) int local583 = 0; local583 < this.anInt3668; local583++) {
-			local589 = local10.method2490();
+			local589 = local10.readByteIntoInt();
 			@Pc(591) int local591 = 0;
 			if ((local589 & 0x1) != 0) {
 				local591 = local15.method2502();
@@ -743,29 +743,29 @@ public final class Class122 {
 			local579 = this.anIntArray242[local583];
 			local581 = this.anIntArray251[local583];
 			if (local142 == 1) {
-				this.anIntArray246[local583] = local30.method2490();
+				this.anIntArray246[local583] = local30.readByteIntoInt();
 			}
 		}
-		local10.anInt2997 = local315;
-		local15.anInt2997 = local229;
-		local20.anInt2997 = local245;
-		local25.anInt2997 = local277;
-		local30.anInt2997 = local255;
-		local35.anInt2997 = local295;
-		local40.anInt2997 = local309;
+		local10.position = local315;
+		local15.position = local229;
+		local20.position = local245;
+		local25.position = local277;
+		local30.position = local255;
+		local35.position = local295;
+		local40.position = local309;
 		for (local589 = 0; local589 < this.anInt3686; local589++) {
 			this.aShortArray123[local589] = (short) local10.method2536();
 			if (local76) {
-				this.aByteArray43[local589] = local15.method2542();
+				this.aByteArray43[local589] = local15.readInt8();
 			}
 			if (local126 == 255) {
-				this.aByteArray42[local589] = local20.method2542();
+				this.aByteArray42[local589] = local20.readInt8();
 			}
 			if (local130 == 1) {
-				this.aByteArray44[local589] = local25.method2542();
+				this.aByteArray44[local589] = local25.readInt8();
 			}
 			if (local134 == 1) {
-				this.anIntArray245[local589] = local30.method2490();
+				this.anIntArray245[local589] = local30.readByteIntoInt();
 			}
 			if (local138 == 1) {
 				this.aShortArray125[local589] = (short) (local35.method2536() - 1);
@@ -774,20 +774,20 @@ public final class Class122 {
 				if (this.aShortArray125[local589] == -1) {
 					this.aByteArray46[local589] = -1;
 				} else {
-					this.aByteArray46[local589] = (byte) (local40.method2490() - 1);
+					this.aByteArray46[local589] = (byte) (local40.readByteIntoInt() - 1);
 				}
 			}
 		}
 		this.anInt3677 = -1;
-		local10.anInt2997 = local289;
-		local15.anInt2997 = local238;
+		local10.position = local289;
+		local15.position = local238;
 		@Pc(812) short local812 = 0;
 		@Pc(814) short local814 = 0;
 		@Pc(816) short local816 = 0;
 		@Pc(818) short local818 = 0;
 		@Pc(826) int local826;
 		for (@Pc(820) int local820 = 0; local820 < this.anInt3686; local820++) {
-			local826 = local15.method2490();
+			local826 = local15.readByteIntoInt();
 			if (local826 == 1) {
 				local812 = (short) (local818 + local10.method2502());
 				local814 = (short) (local10.method2502() + local812);
@@ -842,13 +842,13 @@ public final class Class122 {
 				}
 			}
 		}
-		local10.anInt2997 = local342;
+		local10.position = local342;
 		this.anInt3677++;
-		local15.anInt2997 = local350;
-		local20.anInt2997 = local370;
-		local25.anInt2997 = local378;
-		local30.anInt2997 = local384;
-		local35.anInt2997 = local390;
+		local15.position = local350;
+		local20.position = local370;
+		local25.position = local378;
+		local30.position = local384;
+		local35.position = local390;
 		@Pc(1056) int local1056;
 		for (local826 = 0; local826 < this.anInt3689; local826++) {
 			local1056 = this.aByteArray47[local826] & 0xFF;
@@ -868,9 +868,9 @@ public final class Class122 {
 					this.anIntArray248[local826] = local20.method2493();
 				}
 				this.anIntArray250[local826] = local20.method2536();
-				this.aByteArray41[local826] = local25.method2542();
-				this.aByteArray45[local826] = local30.method2542();
-				this.anIntArray252[local826] = local35.method2542();
+				this.aByteArray41[local826] = local25.readInt8();
+				this.aByteArray45[local826] = local30.readInt8();
+				this.anIntArray252[local826] = local35.readInt8();
 			}
 			if (local1056 == 2) {
 				this.aShortArray118[local826] = (short) local15.method2536();
@@ -883,11 +883,11 @@ public final class Class122 {
 					this.anIntArray248[local826] = local20.method2493();
 				}
 				this.anIntArray250[local826] = local20.method2536();
-				this.aByteArray41[local826] = local25.method2542();
-				this.aByteArray45[local826] = local30.method2542();
-				this.anIntArray252[local826] = local35.method2542();
-				this.anIntArray243[local826] = local35.method2542();
-				this.anIntArray247[local826] = local35.method2542();
+				this.aByteArray41[local826] = local25.readInt8();
+				this.aByteArray45[local826] = local30.readInt8();
+				this.anIntArray252[local826] = local35.readInt8();
+				this.anIntArray243[local826] = local35.readInt8();
+				this.anIntArray247[local826] = local35.readInt8();
 			}
 			if (local1056 == 3) {
 				this.aShortArray118[local826] = (short) local15.method2536();
@@ -900,18 +900,18 @@ public final class Class122 {
 					this.anIntArray248[local826] = local20.method2493();
 				}
 				this.anIntArray250[local826] = local20.method2536();
-				this.aByteArray41[local826] = local25.method2542();
-				this.aByteArray45[local826] = local30.method2542();
-				this.anIntArray252[local826] = local35.method2542();
+				this.aByteArray41[local826] = local25.readInt8();
+				this.aByteArray45[local826] = local30.readInt8();
+				this.anIntArray252[local826] = local35.readInt8();
 			}
 		}
-		local10.anInt2997 = local181;
+		local10.position = local181;
 		@Pc(1371) int local1371;
 		@Pc(1377) int local1377;
 		@Pc(1381) int local1381;
 		@Pc(1443) int local1443;
 		if (local85) {
-			local1056 = local10.method2490();
+			local1056 = local10.readByteIntoInt();
 			if (local1056 > 0) {
 				this.aClass29Array3 = new Class29[local1056];
 				for (local1371 = 0; local1371 < local1056; local1371++) {
@@ -926,7 +926,7 @@ public final class Class122 {
 					this.aClass29Array3[local1371] = new Class29(local1377, this.aShortArray120[local1381], this.aShortArray119[local1381], this.aShortArray117[local1381], local1389);
 				}
 			}
-			local1371 = local10.method2490();
+			local1371 = local10.readByteIntoInt();
 			if (local1371 > 0) {
 				this.aClass179Array3 = new Class179[local1371];
 				for (local1377 = 0; local1377 < local1371; local1377++) {
@@ -939,7 +939,7 @@ public final class Class122 {
 		if (!local94) {
 			return;
 		}
-		local1056 = local10.method2490();
+		local1056 = local10.readByteIntoInt();
 		if (local1056 <= 0) {
 			return;
 		}
@@ -947,8 +947,8 @@ public final class Class122 {
 		for (local1371 = 0; local1371 < local1056; local1371++) {
 			local1377 = local10.method2536();
 			local1381 = local10.method2536();
-			local1443 = local10.method2490();
-			@Pc(1491) byte local1491 = local10.method2542();
+			local1443 = local10.readByteIntoInt();
+			@Pc(1491) byte local1491 = local10.readInt8();
 			this.aClass147Array1[local1371] = new Class147(local1377, local1381, local1443, local1491);
 		}
 		return;
@@ -994,20 +994,20 @@ public final class Class122 {
 	private void method3054(@OriginalArg(1) byte[] arg0) {
 		@Pc(7) boolean local7 = false;
 		@Pc(9) boolean local9 = false;
-		@Pc(14) Class4_Sub12 local14 = new Class4_Sub12(arg0);
-		@Pc(19) Class4_Sub12 local19 = new Class4_Sub12(arg0);
-		@Pc(24) Class4_Sub12 local24 = new Class4_Sub12(arg0);
-		@Pc(29) Class4_Sub12 local29 = new Class4_Sub12(arg0);
-		@Pc(34) Class4_Sub12 local34 = new Class4_Sub12(arg0);
-		local14.anInt2997 = arg0.length - 18;
+		@Pc(14) ByteBuffer local14 = new ByteBuffer(arg0);
+		@Pc(19) ByteBuffer local19 = new ByteBuffer(arg0);
+		@Pc(24) ByteBuffer local24 = new ByteBuffer(arg0);
+		@Pc(29) ByteBuffer local29 = new ByteBuffer(arg0);
+		@Pc(34) ByteBuffer local34 = new ByteBuffer(arg0);
+		local14.position = arg0.length - 18;
 		this.anInt3668 = local14.method2536();
 		this.anInt3686 = local14.method2536();
-		this.anInt3689 = local14.method2490();
-		@Pc(59) int local59 = local14.method2490();
-		@Pc(63) int local63 = local14.method2490();
-		@Pc(67) int local67 = local14.method2490();
-		@Pc(71) int local71 = local14.method2490();
-		@Pc(77) int local77 = local14.method2490();
+		this.anInt3689 = local14.readByteIntoInt();
+		@Pc(59) int local59 = local14.readByteIntoInt();
+		@Pc(63) int local63 = local14.readByteIntoInt();
+		@Pc(67) int local67 = local14.readByteIntoInt();
+		@Pc(71) int local71 = local14.readByteIntoInt();
+		@Pc(77) int local77 = local14.readByteIntoInt();
 		@Pc(81) int local81 = local14.method2536();
 		@Pc(85) int local85 = local14.method2536();
 		@Pc(89) int local89 = local14.method2536();
@@ -1063,7 +1063,7 @@ public final class Class122 {
 		this.aShortArray123 = new short[this.anInt3686];
 		this.aShortArray119 = new short[this.anInt3686];
 		this.anIntArray242 = new int[this.anInt3668];
-		local14.anInt2997 = 0;
+		local14.position = 0;
 		this.anIntArray244 = new int[this.anInt3668];
 		if (local71 == 1) {
 			this.anIntArray245 = new int[this.anInt3686];
@@ -1078,17 +1078,17 @@ public final class Class122 {
 		} else {
 			this.aByte27 = (byte) local63;
 		}
-		local19.anInt2997 = local193;
-		local24.anInt2997 = local199;
-		local29.anInt2997 = local102;
-		local34.anInt2997 = local149;
+		local19.position = local193;
+		local24.position = local199;
+		local29.position = local102;
+		local34.position = local149;
 		@Pc(351) int local351 = 0;
 		@Pc(353) int local353 = 0;
 		@Pc(355) int local355 = 0;
 		@Pc(365) int local365;
 		@Pc(367) int local367;
 		for (@Pc(357) int local357 = 0; local357 < this.anInt3668; local357++) {
-			local365 = local14.method2490();
+			local365 = local14.readByteIntoInt();
 			local367 = 0;
 			if ((local365 & 0x1) != 0) {
 				local367 = local19.method2502();
@@ -1108,18 +1108,18 @@ public final class Class122 {
 			local353 = this.anIntArray242[local357];
 			local355 = this.anIntArray251[local357];
 			if (local77 == 1) {
-				this.anIntArray246[local357] = local34.method2490();
+				this.anIntArray246[local357] = local34.readByteIntoInt();
 			}
 		}
-		local14.anInt2997 = local175;
-		local19.anInt2997 = local133;
-		local24.anInt2997 = local111;
-		local29.anInt2997 = local159;
-		local34.anInt2997 = local121;
+		local14.position = local175;
+		local19.position = local133;
+		local24.position = local111;
+		local29.position = local159;
+		local34.position = local121;
 		for (local365 = 0; local365 < this.anInt3686; local365++) {
 			this.aShortArray123[local365] = (short) local14.method2536();
 			if (local59 == 1) {
-				local367 = local19.method2490();
+				local367 = local19.readByteIntoInt();
 				if ((local367 & 0x1) == 1) {
 					local7 = true;
 					this.aByteArray43[local365] = 1;
@@ -1139,25 +1139,25 @@ public final class Class122 {
 				}
 			}
 			if (local63 == 255) {
-				this.aByteArray42[local365] = local24.method2542();
+				this.aByteArray42[local365] = local24.readInt8();
 			}
 			if (local67 == 1) {
-				this.aByteArray44[local365] = local29.method2542();
+				this.aByteArray44[local365] = local29.readInt8();
 			}
 			if (local71 == 1) {
-				this.anIntArray245[local365] = local34.method2490();
+				this.anIntArray245[local365] = local34.readByteIntoInt();
 			}
 		}
-		local14.anInt2997 = local169;
+		local14.position = local169;
 		this.anInt3677 = -1;
-		local19.anInt2997 = local104;
+		local19.position = local104;
 		@Pc(610) short local610 = 0;
 		@Pc(612) short local612 = 0;
 		@Pc(614) short local614 = 0;
 		@Pc(616) short local616 = 0;
 		@Pc(624) int local624;
 		for (@Pc(618) int local618 = 0; local618 < this.anInt3686; local618++) {
-			local624 = local19.method2490();
+			local624 = local19.readByteIntoInt();
 			if (local624 == 1) {
 				local610 = (short) (local14.method2502() + local616);
 				local612 = (short) (local14.method2502() + local610);
@@ -1212,7 +1212,7 @@ public final class Class122 {
 				}
 			}
 		}
-		local14.anInt2997 = local184;
+		local14.position = local184;
 		this.anInt3677++;
 		for (local624 = 0; local624 < this.anInt3689; local624++) {
 			this.aByteArray47[local624] = 0;

@@ -59,9 +59,9 @@ public final class Static387 {
 				}
 				Static125.aClass11_5 = new Class11((Socket) Static36.aClass199_3.output, Static206.signLink);
 				Static36.aClass199_3 = null;
-				Static125.aClass11_5.method142(Static3.aClass4_Sub12_Sub1_5.anInt2997, Static3.aClass4_Sub12_Sub1_5.aByteArray36);
+				Static125.aClass11_5.method142(Static3.aClass4_Sub12_Sub1_5.position, Static3.aClass4_Sub12_Sub1_5.bytes);
 				Static329.method4427();
-				local120 = Static125.aClass11_5.method139();
+				local120 = Static125.aClass11_5.readByte();
 				Static329.method4427();
 				if (local120 != 21) {
 					Static249.anInt4623 = local120;
@@ -76,12 +76,12 @@ public final class Static387 {
 				if (Static125.aClass11_5.method133() < 1) {
 					return;
 				}
-				Static206.aStringArray16 = new String[Static125.aClass11_5.method139()];
+				Static206.aStringArray16 = new String[Static125.aClass11_5.readByte()];
 				Static354.anInt6183 = 4;
 			}
 			if (Static354.anInt6183 == 4 && Static125.aClass11_5.method133() >= Static206.aStringArray16.length * 8) {
-				Static146.aClass4_Sub12_Sub1_3.anInt2997 = 0;
-				Static125.aClass11_5.method131(0, Static206.aStringArray16.length * 8, Static146.aClass4_Sub12_Sub1_3.aByteArray36);
+				Static146.aClass4_Sub12_Sub1_3.position = 0;
+				Static125.aClass11_5.method131(0, Static206.aStringArray16.length * 8, Static146.aClass4_Sub12_Sub1_3.bytes);
 				for (local120 = 0; local120 < Static206.aStringArray16.length; local120++) {
 					Static206.aStringArray16[local120] = Static44.method763(Static146.aClass4_Sub12_Sub1_3.method2501());
 				}

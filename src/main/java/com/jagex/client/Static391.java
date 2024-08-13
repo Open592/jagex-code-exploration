@@ -30,8 +30,8 @@ public final class Static391 {
 		local20.anIntArray427[0] = local51 - Static86.anInt1771;
 		local20.anInt6892 = (local20.anIntArray427[0] << 7) + (local20.method4751() << 6);
 		Static263.anInt4963 = local20.aByte82 = local33;
-		if (Static354.aClass4_Sub12Array1[local10] != null) {
-			local20.method3422(Static354.aClass4_Sub12Array1[local10]);
+		if (Static354.A_BYTE_BUFFER_ARRAY_1[local10] != null) {
+			local20.method3422(Static354.A_BYTE_BUFFER_ARRAY_1[local10]);
 		}
 		Static33.anInt606 = 0;
 		Static99.anIntArray157[Static33.anInt606++] = local10;

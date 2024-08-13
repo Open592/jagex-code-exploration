@@ -51,11 +51,11 @@ public final class Static90 {
 
 	@OriginalMember(owner = "client!ek", name = "a", descriptor = "(IILclient!fs;I)Lclient!cn;")
 	public static Class4_Sub1_Sub5 method1609(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) Class76 arg2) {
-		@Pc(16) Class4_Sub12 local16 = new Class4_Sub12(arg2.method2104(arg1, arg0));
-		@Pc(49) Class4_Sub1_Sub5 local49 = new Class4_Sub1_Sub5(arg1, local16.method2537(), local16.method2537(), local16.method2529(), local16.method2529(), local16.method2490() == 1, local16.method2490(), local16.method2490());
-		@Pc(53) int local53 = local16.method2490();
+		@Pc(16) ByteBuffer local16 = new ByteBuffer(arg2.method2104(arg1, arg0));
+		@Pc(49) Class4_Sub1_Sub5 local49 = new Class4_Sub1_Sub5(arg1, local16.readValidStringAtCurrentPosition(), local16.readValidStringAtCurrentPosition(), local16.method2529(), local16.method2529(), local16.readByteIntoInt() == 1, local16.readByteIntoInt(), local16.readByteIntoInt());
+		@Pc(53) int local53 = local16.readByteIntoInt();
 		for (@Pc(55) int local55 = 0; local55 < local53; local55++) {
-			local49.aClass183_4.method4137(new Class4_Sub41(local16.method2490(), local16.method2536(), local16.method2536(), local16.method2536(), local16.method2536(), local16.method2536(), local16.method2536(), local16.method2536(), local16.method2536()));
+			local49.aClass183_4.method4137(new Class4_Sub41(local16.readByteIntoInt(), local16.method2536(), local16.method2536(), local16.method2536(), local16.method2536(), local16.method2536(), local16.method2536(), local16.method2536(), local16.method2536()));
 		}
 		local49.method933();
 		return local49;

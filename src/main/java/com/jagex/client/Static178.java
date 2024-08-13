@@ -22,71 +22,77 @@ public final class Static178 {
 	public static final Class83 aClass83_72 = new Class83("M", "M", "M", "M");
 
 	@OriginalMember(owner = "client!j", name = "a", descriptor = "(Ljava/lang/String;IIII[B)I")
-	public static int method2843(@OriginalArg(0) String arg0, @OriginalArg(2) int arg1, @OriginalArg(3) int arg2, @OriginalArg(5) byte[] arg3) {
-		@Pc(10) int local10 = arg1;
-		for (@Pc(12) int local12 = 0; local12 < local10; local12++) {
-			@Pc(20) char local20 = arg0.charAt(local12);
-			if (local20 > '\u0000' && local20 < '\u0080' || !(local20 < ' ' || local20 > 'ÿ')) {
-				arg3[local12 + arg2] = (byte) local20;
-			} else if (local20 == '€') {
-				arg3[arg2 + local12] = -128;
-			} else if (local20 == '‚') {
-				arg3[local12 + arg2] = -126;
-			} else if (local20 == 'ƒ') {
-				arg3[local12 + arg2] = -125;
-			} else if (local20 == '„') {
-				arg3[arg2 + local12] = -124;
-			} else if (local20 == '…') {
-				arg3[local12 + arg2] = -123;
-			} else if (local20 == '†') {
-				arg3[arg2 + local12] = -122;
-			} else if (local20 == '‡') {
-				arg3[arg2 + local12] = -121;
-			} else if (local20 == 'ˆ') {
-				arg3[arg2 + local12] = -120;
-			} else if (local20 == '‰') {
-				arg3[arg2 + local12] = -119;
-			} else if (local20 == 'Š') {
-				arg3[arg2 + local12] = -118;
-			} else if (local20 == '‹') {
-				arg3[arg2 + local12] = -117;
-			} else if (local20 == 'Œ') {
-				arg3[local12 + arg2] = -116;
-			} else if (local20 == 'Ž') {
-				arg3[local12 + arg2] = -114;
-			} else if (local20 == '‘') {
-				arg3[local12 + arg2] = -111;
-			} else if (local20 == '’') {
-				arg3[arg2 + local12] = -110;
-			} else if (local20 == '“') {
-				arg3[local12 + arg2] = -109;
-			} else if (local20 == '”') {
-				arg3[local12 + arg2] = -108;
-			} else if (local20 == '•') {
-				arg3[arg2 + local12] = -107;
-			} else if (local20 == '–') {
-				arg3[local12 + arg2] = -106;
-			} else if (local20 == '—') {
-				arg3[arg2 + local12] = -105;
-			} else if (local20 == '˜') {
-				arg3[local12 + arg2] = -104;
-			} else if (local20 == '™') {
-				arg3[local12 + arg2] = -103;
-			} else if (local20 == 'š') {
-				arg3[local12 + arg2] = -102;
-			} else if (local20 == '›') {
-				arg3[local12 + arg2] = -101;
-			} else if (local20 == 'œ') {
-				arg3[arg2 + local12] = -100;
-			} else if (local20 == 'ž') {
-				arg3[local12 + arg2] = -98;
-			} else if (local20 == 'Ÿ') {
-				arg3[local12 + arg2] = -97;
+	public static int writeStringToByteBuffer(
+			@OriginalArg(0) String value,
+			@OriginalArg(2) int length,
+			@OriginalArg(3) int currentPosition,
+			@OriginalArg(5) byte[] buffer
+	) {
+		for (@Pc(12) int i = 0; i < length; i++) {
+			@Pc(20) char ch = value.charAt(i);
+
+			if (ch > '\u0000' && ch < '\u0080' || !(ch < ' ' || ch > 'ÿ')) {
+				buffer[i + currentPosition] = (byte) ch;
+			} else if (ch == '€') {
+				buffer[currentPosition + i] = -128;
+			} else if (ch == '‚') {
+				buffer[i + currentPosition] = -126;
+			} else if (ch == 'ƒ') {
+				buffer[i + currentPosition] = -125;
+			} else if (ch == '„') {
+				buffer[currentPosition + i] = -124;
+			} else if (ch == '…') {
+				buffer[i + currentPosition] = -123;
+			} else if (ch == '†') {
+				buffer[currentPosition + i] = -122;
+			} else if (ch == '‡') {
+				buffer[currentPosition + i] = -121;
+			} else if (ch == 'ˆ') {
+				buffer[currentPosition + i] = -120;
+			} else if (ch == '‰') {
+				buffer[currentPosition + i] = -119;
+			} else if (ch == 'Š') {
+				buffer[currentPosition + i] = -118;
+			} else if (ch == '‹') {
+				buffer[currentPosition + i] = -117;
+			} else if (ch == 'Œ') {
+				buffer[i + currentPosition] = -116;
+			} else if (ch == 'Ž') {
+				buffer[i + currentPosition] = -114;
+			} else if (ch == '‘') {
+				buffer[i + currentPosition] = -111;
+			} else if (ch == '’') {
+				buffer[currentPosition + i] = -110;
+			} else if (ch == '“') {
+				buffer[i + currentPosition] = -109;
+			} else if (ch == '”') {
+				buffer[i + currentPosition] = -108;
+			} else if (ch == '•') {
+				buffer[currentPosition + i] = -107;
+			} else if (ch == '–') {
+				buffer[i + currentPosition] = -106;
+			} else if (ch == '—') {
+				buffer[currentPosition + i] = -105;
+			} else if (ch == '˜') {
+				buffer[i + currentPosition] = -104;
+			} else if (ch == '™') {
+				buffer[i + currentPosition] = -103;
+			} else if (ch == 'š') {
+				buffer[i + currentPosition] = -102;
+			} else if (ch == '›') {
+				buffer[i + currentPosition] = -101;
+			} else if (ch == 'œ') {
+				buffer[currentPosition + i] = -100;
+			} else if (ch == 'ž') {
+				buffer[i + currentPosition] = -98;
+			} else if (ch == 'Ÿ') {
+				buffer[i + currentPosition] = -97;
 			} else {
-				arg3[local12 + arg2] = 63;
+				buffer[i + currentPosition] = 63;
 			}
 		}
-		return local10;
+
+		return length;
 	}
 
 	@OriginalMember(owner = "client!j", name = "a", descriptor = "(II)Z")

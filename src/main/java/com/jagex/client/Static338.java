@@ -58,9 +58,9 @@ public final class Static338 {
 			Static415.method5323(Static340.aClass83_119.method2267(Static178.langID));
 		} else {
 			Static429.method5476(Static81.aClass215_17);
-			Static3.aClass4_Sub12_Sub1_5.method2551(Static269.method3856(arg1) + 1);
-			Static3.aClass4_Sub12_Sub1_5.method2518(arg1);
-			Static3.aClass4_Sub12_Sub1_5.method2551(arg0 ? 1 : 0);
+			Static3.aClass4_Sub12_Sub1_5.writeByte(Static269.method3856(arg1) + 1);
+			Static3.aClass4_Sub12_Sub1_5.writeString(arg1);
+			Static3.aClass4_Sub12_Sub1_5.writeByte(arg0 ? 1 : 0);
 		}
 	}
 }

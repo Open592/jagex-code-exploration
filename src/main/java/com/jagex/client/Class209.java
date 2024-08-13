@@ -61,8 +61,8 @@ public final class Class209 {
 
 	@OriginalMember(owner = "client!rt", name = "a", descriptor = "([BI)V")
 	private void method4767(@OriginalArg(0) byte[] arg0) {
-		@Pc(12) Class4_Sub12 local12 = new Class4_Sub12(Static453.method5680(arg0));
-		@Pc(16) int local16 = local12.method2490();
+		@Pc(12) ByteBuffer local12 = new ByteBuffer(Static453.method5680(arg0));
+		@Pc(16) int local16 = local12.readByteIntoInt();
 		if (local16 != 5 && local16 != 6) {
 			throw new RuntimeException();
 		}
@@ -71,7 +71,7 @@ public final class Class209 {
 		} else {
 			this.anInt6113 = 0;
 		}
-		@Pc(45) int local45 = local12.method2490();
+		@Pc(45) int local45 = local12.readByteIntoInt();
 		this.anInt6109 = local12.method2536();
 		@Pc(52) int local52 = 0;
 		this.anIntArray431 = new int[this.anInt6109];

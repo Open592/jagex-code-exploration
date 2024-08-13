@@ -15,7 +15,7 @@ public final class Static61 {
 	public static final int[] anIntArray65 = new int[5];
 
 	@OriginalMember(owner = "client!cu", name = "a", descriptor = "(ILclient!iv;)Lclient!gu;")
-	public static Class27_Sub2 method994(@OriginalArg(1) Class4_Sub12 arg0) {
-		return new Class27_Sub2(arg0.method2512(), arg0.method2512(), arg0.method2512(), arg0.method2512(), arg0.method2493(), arg0.method2490());
+	public static Class27_Sub2 method994(@OriginalArg(1) ByteBuffer arg0) {
+		return new Class27_Sub2(arg0.method2512(), arg0.method2512(), arg0.method2512(), arg0.method2512(), arg0.method2493(), arg0.readByteIntoInt());
 	}
 }

@@ -78,30 +78,30 @@ public final class Class184 {
 	}
 
 	@OriginalMember(owner = "client!pl", name = "a", descriptor = "(Lclient!iv;)V")
-	public void method4150(@OriginalArg(0) Class4_Sub12 arg0) {
+	public void method4150(@OriginalArg(0) ByteBuffer arg0) {
 		this.aClass61_8 = new Class61();
 		this.aClass61_8.method1603(arg0);
 		this.aClass61_2 = new Class61();
 		this.aClass61_2.method1603(arg0);
-		@Pc(21) int local21 = arg0.method2490();
+		@Pc(21) int local21 = arg0.readByteIntoInt();
 		if (local21 != 0) {
-			arg0.anInt2997--;
+			arg0.position--;
 			this.aClass61_7 = new Class61();
 			this.aClass61_7.method1603(arg0);
 			this.aClass61_6 = new Class61();
 			this.aClass61_6.method1603(arg0);
 		}
-		local21 = arg0.method2490();
+		local21 = arg0.readByteIntoInt();
 		if (local21 != 0) {
-			arg0.anInt2997--;
+			arg0.position--;
 			this.aClass61_1 = new Class61();
 			this.aClass61_1.method1603(arg0);
 			this.aClass61_4 = new Class61();
 			this.aClass61_4.method1603(arg0);
 		}
-		local21 = arg0.method2490();
+		local21 = arg0.readByteIntoInt();
 		if (local21 != 0) {
-			arg0.anInt2997--;
+			arg0.position--;
 			this.aClass61_9 = new Class61();
 			this.aClass61_9.method1603(arg0);
 			this.aClass61_3 = new Class61();

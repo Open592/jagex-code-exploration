@@ -87,9 +87,9 @@ public final class Class16_Sub1_Sub5_Sub1 extends Class16_Sub1_Sub5 {
 	public int anInt4348 = 255;
 
 	@OriginalMember(owner = "client!lh", name = "a", descriptor = "(Lclient!iv;I)V")
-	public void method3422(@OriginalArg(0) Class4_Sub12 arg0) {
-		arg0.anInt2997 = 0;
-		@Pc(14) int local14 = arg0.method2490();
+	public void method3422(@OriginalArg(0) ByteBuffer arg0) {
+		arg0.position = 0;
+		@Pc(14) int local14 = arg0.readByteIntoInt();
 		this.aByte46 = (byte) (local14 & 0x1);
 		@Pc(31) boolean local31 = (local14 & 0x2) != 0;
 		@Pc(42) boolean local42 = (local14 & 0x4) != 0;
@@ -98,9 +98,9 @@ public final class Class16_Sub1_Sub5_Sub1 extends Class16_Sub1_Sub5 {
 		this.aByte44 = (byte) (local14 >> 6 & 0x3);
 		super.anInt6893 += this.method4751() - local46 << 6;
 		super.anInt6892 += this.method4751() - local46 << 6;
-		this.aByte45 = arg0.method2542();
-		this.anInt4339 = arg0.method2542();
-		this.anInt4346 = arg0.method2542();
+		this.aByte45 = arg0.readInt8();
+		this.anInt4339 = arg0.readInt8();
+		this.anInt4346 = arg0.readInt8();
 		@Pc(106) int local106 = -1;
 		this.anInt4328 = 0;
 		@Pc(112) int[] local112 = new int[12];
@@ -108,15 +108,15 @@ public final class Class16_Sub1_Sub5_Sub1 extends Class16_Sub1_Sub5 {
 		@Pc(141) int local141;
 		@Pc(180) int local180;
 		for (@Pc(114) int local114 = 0; local114 < 12; local114++) {
-			@Pc(122) int local122 = arg0.method2490();
+			@Pc(122) int local122 = arg0.readByteIntoInt();
 			if (local122 == 0) {
 				local112[local114] = 0;
 			} else {
-				local134 = arg0.method2490();
+				local134 = arg0.readByteIntoInt();
 				local141 = (local122 << 8) + local134;
 				if (local114 == 0 && local141 == 65535) {
 					local106 = arg0.method2536();
-					this.anInt4328 = arg0.method2490();
+					this.anInt4328 = arg0.readByteIntoInt();
 					break;
 				}
 				if (local141 >= 32768) {
@@ -133,34 +133,34 @@ public final class Class16_Sub1_Sub5_Sub1 extends Class16_Sub1_Sub5 {
 		}
 		@Pc(205) int[] local205 = new int[5];
 		for (local134 = 0; local134 < 5; local134++) {
-			local141 = arg0.method2490();
+			local141 = arg0.readByteIntoInt();
 			if (local141 < 0 || local141 >= Static26.aShortArrayArray2[local134].length) {
 				local141 = 0;
 			}
 			local205[local134] = local141;
 		}
 		this.anInt4324 = arg0.method2536();
-		this.aString43 = arg0.method2537();
+		this.aString43 = arg0.readValidStringAtCurrentPosition();
 		if (local31) {
-			this.aString44 = arg0.method2537();
+			this.aString44 = arg0.readValidStringAtCurrentPosition();
 		} else {
 			this.aString44 = this.aString43;
 		}
-		this.anInt4345 = arg0.method2490();
+		this.anInt4345 = arg0.readByteIntoInt();
 		if (local42) {
 			this.anInt4336 = arg0.method2536();
 			this.anInt4332 = this.anInt4345;
 			this.anInt4330 = -1;
 		} else {
 			this.anInt4336 = 0;
-			this.anInt4332 = arg0.method2490();
-			this.anInt4330 = arg0.method2490();
+			this.anInt4332 = arg0.readByteIntoInt();
+			this.anInt4330 = arg0.readByteIntoInt();
 			if (this.anInt4330 == 255) {
 				this.anInt4330 = -1;
 			}
 		}
 		local141 = this.anInt4334;
-		this.anInt4334 = arg0.method2490();
+		this.anInt4334 = arg0.readByteIntoInt();
 		@Pc(336) int local336;
 		if (this.anInt4334 == 0) {
 			Static349.method4705(this);
@@ -174,7 +174,7 @@ public final class Class16_Sub1_Sub5_Sub1 extends Class16_Sub1_Sub5 {
 			this.anInt4319 = arg0.method2536();
 			this.anInt4333 = arg0.method2536();
 			this.anInt4322 = arg0.method2536();
-			this.anInt4348 = arg0.method2490();
+			this.anInt4348 = arg0.readByteIntoInt();
 			if (local141 != this.anInt4334 || this.anInt4313 != local180 || this.anInt4319 != local333 || this.anInt4333 != local336 || local339 != this.anInt4322 || this.anInt4348 != local342) {
 				Static149.method2555(this);
 			}

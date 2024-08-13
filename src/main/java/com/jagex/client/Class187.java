@@ -22,15 +22,15 @@ public final class Class187 {
 	}
 
 	@OriginalMember(owner = "client!pp", name = "a", descriptor = "(B[BLclient!iv;)V")
-	public void method4171(@OriginalArg(1) byte[] arg0, @OriginalArg(2) Class4_Sub12 arg1) {
-		if (arg1.aByteArray36[arg1.anInt2997] != 31 || arg1.aByteArray36[arg1.anInt2997 + 1] != -117) {
+	public void method4171(@OriginalArg(1) byte[] arg0, @OriginalArg(2) ByteBuffer arg1) {
+		if (arg1.bytes[arg1.position] != 31 || arg1.bytes[arg1.position + 1] != -117) {
 			throw new RuntimeException("Invalid GZIP header!");
 		}
 		if (this.anInflater1 == null) {
 			this.anInflater1 = new Inflater(true);
 		}
 		try {
-			this.anInflater1.setInput(arg1.aByteArray36, arg1.anInt2997 + 10, -arg1.anInt2997 + -10 + -8 + arg1.aByteArray36.length);
+			this.anInflater1.setInput(arg1.bytes, arg1.position + 10, -arg1.position + -10 + -8 + arg1.bytes.length);
 			this.anInflater1.inflate(arg0);
 		} catch (@Pc(67) Exception local67) {
 			this.anInflater1.reset();

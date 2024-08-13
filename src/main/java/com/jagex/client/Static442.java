@@ -25,12 +25,12 @@ public final class Static442 {
 
 	@OriginalMember(owner = "client!wh", name = "a", descriptor = "(Z[B)Z")
 	public static boolean method5583(@OriginalArg(1) byte[] arg0) {
-		@Pc(20) Class4_Sub12 local20 = new Class4_Sub12(arg0);
-		@Pc(24) int local24 = local20.method2490();
+		@Pc(20) ByteBuffer local20 = new ByteBuffer(arg0);
+		@Pc(24) int local24 = local20.readByteIntoInt();
 		if (local24 != 1) {
 			return false;
 		}
-		@Pc(38) boolean local38 = local20.method2490() == 1;
+		@Pc(38) boolean local38 = local20.readByteIntoInt() == 1;
 		if (local38) {
 			Static142.method2425(local20);
 		}

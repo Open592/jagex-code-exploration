@@ -401,12 +401,12 @@ public final class Static400 {
 			}
 			if (arg0.startsWith("pc")) {
 				Static429.method5476(Static311.aClass215_69);
-				Static3.aClass4_Sub12_Sub1_5.method2551(0);
-				local106 = Static3.aClass4_Sub12_Sub1_5.anInt2997;
+				Static3.aClass4_Sub12_Sub1_5.writeByte(0);
+				local106 = Static3.aClass4_Sub12_Sub1_5.position;
 				local568 = arg0.indexOf(" ", 4);
-				Static3.aClass4_Sub12_Sub1_5.method2518(arg0.substring(3, local568));
+				Static3.aClass4_Sub12_Sub1_5.writeString(arg0.substring(3, local568));
 				Static417.method5359(arg0.substring(local568), Static3.aClass4_Sub12_Sub1_5);
-				Static3.aClass4_Sub12_Sub1_5.method2545(Static3.aClass4_Sub12_Sub1_5.anInt2997 - local106);
+				Static3.aClass4_Sub12_Sub1_5.method2545(Static3.aClass4_Sub12_Sub1_5.position - local106);
 				return;
 			}
 			if (arg0.equals("heap")) {
@@ -493,9 +493,9 @@ public final class Static400 {
 			}
 			if (Static403.anInt6667 == 30) {
 				Static429.method5476(Static106.aClass215_26);
-				Static3.aClass4_Sub12_Sub1_5.method2551(arg0.length() + 2);
-				Static3.aClass4_Sub12_Sub1_5.method2551(arg1 ? 1 : 0);
-				Static3.aClass4_Sub12_Sub1_5.method2518(arg0);
+				Static3.aClass4_Sub12_Sub1_5.writeByte(arg0.length() + 2);
+				Static3.aClass4_Sub12_Sub1_5.writeByte(arg1 ? 1 : 0);
+				Static3.aClass4_Sub12_Sub1_5.writeString(arg0);
 			}
 			if (arg0.startsWith("fps ") && Static373.liveModeWhere != Static104.modewhere) {
 				Static13.method136(Static198.method3113(arg0.substring(4)));

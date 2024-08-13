@@ -53,7 +53,7 @@ public final class Class265 {
 		local16 = new Class41();
 		local16.aClass265_1 = this;
 		if (local38 != null) {
-			local16.method938(new Class4_Sub12(local38));
+			local16.method938(new ByteBuffer(local38));
 		}
 		@Pc(57) Class68 local57 = this.aClass68_59;
 		synchronized (this.aClass68_59) {

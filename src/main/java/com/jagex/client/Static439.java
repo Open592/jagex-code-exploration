@@ -15,9 +15,9 @@ public final class Static439 {
 
 	@OriginalMember(owner = "client!wd", name = "a", descriptor = "(IIII)V")
 	public static void method5547(@OriginalArg(1) int arg0, @OriginalArg(2) int arg1, @OriginalArg(3) int arg2) {
-		Static3.aClass4_Sub12_Sub1_5.method2531(arg0);
-		Static3.aClass4_Sub12_Sub1_5.method2494(arg1);
-		Static3.aClass4_Sub12_Sub1_5.method2494(arg2);
+		Static3.aClass4_Sub12_Sub1_5.writeIntBE(arg0);
+		Static3.aClass4_Sub12_Sub1_5.writeInt16LE(arg1);
+		Static3.aClass4_Sub12_Sub1_5.writeInt16LE(arg2);
 	}
 
 	@OriginalMember(owner = "client!wd", name = "a", descriptor = "(IIIIIIB)V")
@@ -72,8 +72,8 @@ public final class Static439 {
 				}
 				Static244.anInt3027 = Static325.anInt5640;
 				Static429.method5476(Static85.aClass215_19);
-				Static3.aClass4_Sub12_Sub1_5.method2551(Static269.method3856(arg0));
-				Static3.aClass4_Sub12_Sub1_5.method2518(arg0);
+				Static3.aClass4_Sub12_Sub1_5.writeByte(Static269.method3856(arg0));
+				Static3.aClass4_Sub12_Sub1_5.writeString(arg0);
 				break;
 			}
 		}

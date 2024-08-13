@@ -40,14 +40,14 @@ public final class Static158 {
 	}
 
 	@OriginalMember(owner = "client!hv", name = "a", descriptor = "(Lclient!iv;B)Lclient!oc;")
-	public static Class4_Sub6 method2680(@OriginalArg(0) Class4_Sub12 arg0) {
-		arg0.method2490();
-		@Pc(21) int local21 = arg0.method2490();
+	public static Class4_Sub6 method2680(@OriginalArg(0) ByteBuffer arg0) {
+		arg0.readByteIntoInt();
+		@Pc(21) int local21 = arg0.readByteIntoInt();
 		@Pc(25) Class4_Sub6 local25 = Static11.method122(local21);
-		local25.anInt7106 = arg0.method2490();
-		@Pc(34) int local34 = arg0.method2490();
+		local25.anInt7106 = arg0.readByteIntoInt();
+		@Pc(34) int local34 = arg0.readByteIntoInt();
 		for (@Pc(36) int local36 = 0; local36 < local34; local36++) {
-			@Pc(42) int local42 = arg0.method2490();
+			@Pc(42) int local42 = arg0.readByteIntoInt();
 			local25.method5518(local42, arg0);
 		}
 		local25.method5509();

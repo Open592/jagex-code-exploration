@@ -139,21 +139,21 @@ public final class Class4_Sub6_Sub34 extends Class4_Sub6 {
 
 	@OriginalMember(owner = "client!tp", name = "a", descriptor = "(IILclient!iv;)V")
 	@Override
-	public void method5518(@OriginalArg(1) int arg0, @OriginalArg(2) Class4_Sub12 arg1) {
+	public void method5518(@OriginalArg(1) int arg0, @OriginalArg(2) ByteBuffer arg1) {
 		if (arg0 == 0) {
-			this.anInt6520 = this.anInt6525 = arg1.method2490();
+			this.anInt6520 = this.anInt6525 = arg1.readByteIntoInt();
 		} else if (arg0 == 1) {
-			this.anInt6519 = arg1.method2490();
+			this.anInt6519 = arg1.readByteIntoInt();
 		} else if (arg0 == 2) {
 			this.anInt6522 = arg1.method2536();
 		} else if (arg0 == 3) {
-			this.anInt6523 = arg1.method2490();
+			this.anInt6523 = arg1.readByteIntoInt();
 		} else if (arg0 == 4) {
-			this.anInt6524 = arg1.method2490();
+			this.anInt6524 = arg1.readByteIntoInt();
 		} else if (arg0 == 5) {
-			this.anInt6520 = arg1.method2490();
+			this.anInt6520 = arg1.readByteIntoInt();
 		} else if (arg0 == 6) {
-			this.anInt6525 = arg1.method2490();
+			this.anInt6525 = arg1.readByteIntoInt();
 		}
 	}
 }

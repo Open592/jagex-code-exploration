@@ -33,9 +33,9 @@ public final class Class126 {
 	}
 
 	@OriginalMember(owner = "client!ki", name = "a", descriptor = "(Lclient!iv;B)V")
-	public void method3191(@OriginalArg(0) Class4_Sub12 arg0) {
+	public void method3191(@OriginalArg(0) ByteBuffer arg0) {
 		while (true) {
-			@Pc(11) int local11 = arg0.method2490();
+			@Pc(11) int local11 = arg0.readByteIntoInt();
 			if (local11 == 0) {
 				return;
 			}
@@ -44,11 +44,11 @@ public final class Class126 {
 	}
 
 	@OriginalMember(owner = "client!ki", name = "a", descriptor = "(ILclient!iv;I)V")
-	private void method3194(@OriginalArg(0) int arg0, @OriginalArg(1) Class4_Sub12 arg1) {
+	private void method3194(@OriginalArg(0) int arg0, @OriginalArg(1) ByteBuffer arg1) {
 		if (arg0 == 1) {
 			this.anInt3914 = arg1.method2536();
-			this.anInt3919 = arg1.method2490();
-			this.anInt3915 = arg1.method2490();
+			this.anInt3919 = arg1.readByteIntoInt();
+			this.anInt3915 = arg1.readByteIntoInt();
 		}
 	}
 }

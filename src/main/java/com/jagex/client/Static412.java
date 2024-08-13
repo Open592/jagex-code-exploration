@@ -26,7 +26,7 @@ public final class Static412 {
 	}
 
 	@OriginalMember(owner = "client!ut", name = "a", descriptor = "(I[BII)Ljava/lang/String;")
-	public static String method5293(@OriginalArg(1) byte[] arg0, @OriginalArg(2) int arg1, @OriginalArg(3) int arg2) {
+	public static String resolveStringFromByteBuffer(@OriginalArg(1) byte[] arg0, @OriginalArg(2) int arg1, @OriginalArg(3) int arg2) {
 		@Pc(8) char[] local8 = new char[arg1];
 		@Pc(10) int local10 = 0;
 		for (@Pc(12) int local12 = 0; local12 < arg1; local12++) {

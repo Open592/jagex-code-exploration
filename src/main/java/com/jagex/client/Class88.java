@@ -45,21 +45,21 @@ public final class Class88 {
 	public Class88(@OriginalArg(0) byte[] arg0, @OriginalArg(1) Class4_Sub32 arg1) {
 		this.aClass4_Sub32_1 = arg1;
 		try {
-			@Pc(24) Class4_Sub12 local24 = new Class4_Sub12(arg0);
-			@Pc(29) Class4_Sub12 local29 = new Class4_Sub12(arg0);
-			local24.anInt2997 = 2;
-			@Pc(36) int local36 = local24.method2490();
+			@Pc(24) ByteBuffer local24 = new ByteBuffer(arg0);
+			@Pc(29) ByteBuffer local29 = new ByteBuffer(arg0);
+			local24.position = 2;
+			@Pc(36) int local36 = local24.readByteIntoInt();
 			@Pc(38) int local38 = 0;
 			@Pc(40) int local40 = -1;
 			@Pc(42) int local42 = -1;
-			local29.anInt2997 = local24.anInt2997 + local36;
+			local29.position = local24.position + local36;
 			@Pc(57) int local57;
 			for (@Pc(50) int local50 = 0; local50 < local36; local50++) {
 				local57 = this.aClass4_Sub32_1.anIntArray318[local50];
 				if (local57 == 0) {
 					local40 = local50;
 				}
-				@Pc(65) int local65 = local24.method2490();
+				@Pc(65) int local65 = local24.readByteIntoInt();
 				if (local65 > 0) {
 					if (local57 == 0) {
 						local42 = local50;
@@ -109,7 +109,7 @@ public final class Class88 {
 					local38++;
 				}
 			}
-			if (local29.anInt2997 != arg0.length) {
+			if (local29.position != arg0.length) {
 				throw new RuntimeException();
 			}
 			this.anInt2756 = local38;

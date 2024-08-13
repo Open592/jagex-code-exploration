@@ -38,11 +38,11 @@ public final class Static211 {
 
 	@OriginalMember(owner = "client!kn", name = "a", descriptor = "(I)V")
 	public static void method3203() {
-		Static448.anInt7307 = Static146.aClass4_Sub12_Sub1_3.method2490();
+		Static448.anInt7307 = Static146.aClass4_Sub12_Sub1_3.readByteIntoInt();
 		@Pc(20) int local20 = Static146.aClass4_Sub12_Sub1_3.method2515();
-		@Pc(29) boolean local29 = Static146.aClass4_Sub12_Sub1_3.method2489() == 1;
+		@Pc(29) boolean local29 = Static146.aClass4_Sub12_Sub1_3.readUByteIntoInt() == 1;
 		@Pc(35) int local35 = Static146.aClass4_Sub12_Sub1_3.method2548();
-		@Pc(39) int local39 = Static146.aClass4_Sub12_Sub1_3.method2489();
+		@Pc(39) int local39 = Static146.aClass4_Sub12_Sub1_3.readUByteIntoInt();
 		Static263.method3809(local39);
 		Static146.aClass4_Sub12_Sub1_3.method1136();
 		@Pc(51) int local51;
@@ -61,7 +61,7 @@ public final class Static211 {
 			}
 		}
 		Static146.aClass4_Sub12_Sub1_3.method1135();
-		local51 = (Static454.anInt4075 - Static146.aClass4_Sub12_Sub1_3.anInt2997) / 16;
+		local51 = (Static454.anInt4075 - Static146.aClass4_Sub12_Sub1_3.position) / 16;
 		Static376.anIntArrayArray50 = new int[local51][4];
 		for (local55 = 0; local55 < local51; local55++) {
 			for (local62 = 0; local62 < 4; local62++) {

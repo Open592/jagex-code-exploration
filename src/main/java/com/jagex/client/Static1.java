@@ -113,9 +113,9 @@ public final class Static1 {
 	@OriginalMember(owner = "client!a", name = "a", descriptor = "(B)V")
 	public static void method5() {
 		Static429.method5476(Static351.aClass215_81);
-		Static3.aClass4_Sub12_Sub1_5.method2551(Static450.method5664());
-		Static3.aClass4_Sub12_Sub1_5.method2524(Static141.width);
-		Static3.aClass4_Sub12_Sub1_5.method2524(Static302.height);
-		Static3.aClass4_Sub12_Sub1_5.method2551(Static323.aClass50_Sub1_1.anInt3440);
+		Static3.aClass4_Sub12_Sub1_5.writeByte(Static450.method5664());
+		Static3.aClass4_Sub12_Sub1_5.writeInt16BE(Static141.width);
+		Static3.aClass4_Sub12_Sub1_5.writeInt16BE(Static302.height);
+		Static3.aClass4_Sub12_Sub1_5.writeByte(Static323.aClass50_Sub1_1.anInt3440);
 	}
 }

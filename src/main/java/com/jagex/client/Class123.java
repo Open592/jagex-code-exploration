@@ -201,7 +201,7 @@ public final class Class123 {
 	private int anInt3824 = 100;
 
 	@OriginalMember(owner = "client!jv", name = "a", descriptor = "(ILclient!iv;I)V")
-	private void method3112(@OriginalArg(0) int arg0, @OriginalArg(1) Class4_Sub12 arg1) {
+	private void method3112(@OriginalArg(0) int arg0, @OriginalArg(1) ByteBuffer arg1) {
 		if (arg0 == 1) {
 			this.aShort42 = (short) arg1.method2536();
 			this.aShort41 = (short) arg1.method2536();
@@ -212,13 +212,13 @@ public final class Class123 {
 			this.aShort43 = (short) (this.aShort43 << 3);
 			this.aShort41 = (short) (this.aShort41 << 3);
 		} else if (arg0 == 2) {
-			arg1.method2490();
+			arg1.readByteIntoInt();
 		} else if (arg0 == 3) {
 			this.anInt3804 = arg1.method2529();
 			this.anInt3800 = arg1.method2529();
 		} else if (arg0 == 4) {
-			this.anInt3792 = arg1.method2490();
-			this.anInt3809 = arg1.method2542();
+			this.anInt3792 = arg1.readByteIntoInt();
+			this.anInt3809 = arg1.readInt8();
 		} else if (arg0 == 5) {
 			this.anInt3788 = this.anInt3816 = arg1.method2536() << 12 << 0;
 		} else if (arg0 == 6) {
@@ -234,48 +234,48 @@ public final class Class123 {
 			@Pc(290) int local290;
 			@Pc(296) int local296;
 			if (arg0 == 9) {
-				local290 = arg1.method2490();
+				local290 = arg1.readByteIntoInt();
 				this.anIntArray256 = new int[local290];
 				for (local296 = 0; local296 < local290; local296++) {
 					this.anIntArray256[local296] = arg1.method2536();
 				}
 			} else if (arg0 == 10) {
-				local290 = arg1.method2490();
+				local290 = arg1.readByteIntoInt();
 				this.anIntArray257 = new int[local290];
 				for (local296 = 0; local296 < local290; local296++) {
 					this.anIntArray257[local296] = arg1.method2536();
 				}
 			} else if (arg0 == 12) {
-				this.anInt3790 = arg1.method2542();
+				this.anInt3790 = arg1.readInt8();
 			} else if (arg0 == 13) {
-				this.anInt3808 = arg1.method2542();
+				this.anInt3808 = arg1.readInt8();
 			} else if (arg0 == 14) {
 				this.anInt3789 = arg1.method2536();
 			} else if (arg0 == 15) {
 				this.anInt3777 = arg1.method2536();
 			} else if (arg0 == 16) {
-				this.aBoolean355 = arg1.method2490() == 1;
+				this.aBoolean355 = arg1.readByteIntoInt() == 1;
 				this.lb = arg1.method2536();
 				this.anInt3810 = arg1.method2536();
-				this.aBoolean353 = arg1.method2490() == 1;
+				this.aBoolean353 = arg1.readByteIntoInt() == 1;
 			} else if (arg0 == 17) {
 				this.anInt3807 = arg1.method2536();
 			} else if (arg0 == 18) {
 				this.anInt3782 = arg1.method2529();
 			} else if (arg0 == 19) {
-				this.anInt3798 = arg1.method2490();
+				this.anInt3798 = arg1.readByteIntoInt();
 			} else if (arg0 == 20) {
-				this.anInt3824 = arg1.method2490();
+				this.anInt3824 = arg1.readByteIntoInt();
 			} else if (arg0 == 21) {
-				this.anInt3781 = arg1.method2490();
+				this.anInt3781 = arg1.readByteIntoInt();
 			} else if (arg0 == 22) {
 				this.anInt3796 = arg1.method2529();
 			} else if (arg0 == 23) {
-				this.anInt3772 = arg1.method2490();
+				this.anInt3772 = arg1.readByteIntoInt();
 			} else if (arg0 == 24) {
 				this.aBoolean360 = false;
 			} else if (arg0 == 25) {
-				local290 = arg1.method2490();
+				local290 = arg1.readByteIntoInt();
 				this.anIntArray255 = new int[local290];
 				for (local296 = 0; local296 < local290; local296++) {
 					this.anIntArray255[local296] = arg1.method2536();
@@ -285,7 +285,7 @@ public final class Class123 {
 			} else if (arg0 == 27) {
 				this.anInt3806 = arg1.method2536() << 12 << 0;
 			} else if (arg0 == 28) {
-				this.anInt3815 = arg1.method2490();
+				this.anInt3815 = arg1.readByteIntoInt();
 			} else if (arg0 == 29) {
 				arg1.method2512();
 			} else if (arg0 == 30) {
@@ -301,9 +301,9 @@ public final class Class123 {
 	}
 
 	@OriginalMember(owner = "client!jv", name = "a", descriptor = "(Lclient!iv;I)V")
-	public void method3114(@OriginalArg(0) Class4_Sub12 arg0) {
+	public void method3114(@OriginalArg(0) ByteBuffer arg0) {
 		while (true) {
-			@Pc(9) int local9 = arg0.method2490();
+			@Pc(9) int local9 = arg0.readByteIntoInt();
 			if (local9 == 0) {
 				return;
 			}

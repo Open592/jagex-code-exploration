@@ -39,8 +39,8 @@ public final class Static299 {
 		if (!Static22.aBoolean38 && Static125.aClass11_5 != null) {
 			Static429.method5476(Static14.aClass215_2);
 			try {
-				Static125.aClass11_5.method142(Static3.aClass4_Sub12_Sub1_5.anInt2997, Static3.aClass4_Sub12_Sub1_5.aByteArray36);
-				Static3.aClass4_Sub12_Sub1_5.anInt2997 = 0;
+				Static125.aClass11_5.method142(Static3.aClass4_Sub12_Sub1_5.position, Static3.aClass4_Sub12_Sub1_5.bytes);
+				Static3.aClass4_Sub12_Sub1_5.position = 0;
 			} catch (@Pc(56) IOException local56) {
 				Static22.aBoolean38 = true;
 			}

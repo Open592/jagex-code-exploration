@@ -94,7 +94,7 @@ public final class Class55 {
 		local16.anInt4411 = arg0;
 		local16.aClass55_2 = this;
 		if (local37 != null) {
-			local16.method3455(new Class4_Sub12(local37));
+			local16.method3455(new ByteBuffer(local37));
 		}
 		local16.method3460();
 		@Pc(68) Class68 local68 = this.aClass68_5;

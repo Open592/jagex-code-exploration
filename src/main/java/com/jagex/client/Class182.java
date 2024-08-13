@@ -42,7 +42,7 @@ public final class Class182 {
 		local21.anInt4914 = arg0;
 		local21.aClass182_2 = this;
 		if (local40 != null) {
-			local21.method3784(new Class4_Sub12(local40));
+			local21.method3784(new ByteBuffer(local40));
 		}
 		local21.method3781();
 		@Pc(67) Class68 local67 = this.aClass68_33;

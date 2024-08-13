@@ -240,8 +240,8 @@ public final class Class76 {
 				local122 = Static366.method4930(false, this.anObjectArray3[arg0]);
 			} else {
 				local122 = Static366.method4930(true, this.anObjectArray3[arg0]);
-				@Pc(127) Class4_Sub12 local127 = new Class4_Sub12(local122);
-				local127.method2544(local127.aByteArray36.length, arg2);
+				@Pc(127) ByteBuffer local127 = new ByteBuffer(local122);
+				local127.method2544(local127.bytes.length, arg2);
 			}
 			@Pc(149) byte[] local149;
 			try {
@@ -255,7 +255,7 @@ public final class Class76 {
 			@Pc(228) int local228;
 			if (local25 > 1) {
 				@Pc(235) int local235;
-				@Pc(248) Class4_Sub12 local248;
+				@Pc(248) ByteBuffer local248;
 				@Pc(252) int local252;
 				@Pc(257) int local257;
 				@Pc(261) int local261;
@@ -268,10 +268,10 @@ public final class Class76 {
 					@Pc(230) int local230 = local228 - 1;
 					local235 = local149[local230] & 0xFF;
 					@Pc(243) int local243 = local230 - local25 * local235 * 4;
-					local248 = new Class4_Sub12(local149);
+					local248 = new ByteBuffer(local149);
 					@Pc(250) int local250 = 0;
 					local252 = 0;
-					local248.anInt2997 = local243;
+					local248.position = local243;
 					for (local257 = 0; local257 < local235; local257++) {
 						local261 = 0;
 						for (local263 = 0; local263 < local25; local263++) {
@@ -291,7 +291,7 @@ public final class Class76 {
 						return true;
 					}
 					@Pc(312) byte[] local312 = new byte[local250];
-					local248.anInt2997 = local243;
+					local248.position = local243;
 					local250 = 0;
 					local263 = 0;
 					for (local275 = 0; local275 < local235; local275++) {
@@ -317,9 +317,9 @@ public final class Class76 {
 					local228--;
 					local235 = local149[local228] & 0xFF;
 					local228 -= local25 * local235 * 4;
-					local248 = new Class4_Sub12(local149);
+					local248 = new ByteBuffer(local149);
 					@Pc(410) int[] local410 = new int[local25];
-					local248.anInt2997 = local228;
+					local248.position = local228;
 					for (local252 = 0; local252 < local235; local252++) {
 						local257 = 0;
 						for (local261 = 0; local261 < local25; local261++) {
@@ -332,7 +332,7 @@ public final class Class76 {
 						local451[local261] = new byte[local410[local261]];
 						local410[local261] = 0;
 					}
-					local248.anInt2997 = local228;
+					local248.position = local228;
 					local263 = 0;
 					for (local275 = 0; local275 < local235; local275++) {
 						local325 = 0;

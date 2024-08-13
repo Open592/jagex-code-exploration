@@ -50,18 +50,18 @@ public final class Class191 {
 	}
 
 	@OriginalMember(owner = "client!qc", name = "<init>", descriptor = "(Lclient!ya;Lclient!iv;I)V")
-	public Class191(@OriginalArg(0) Class19 arg0, @OriginalArg(1) Class4_Sub12 arg1, @OriginalArg(2) int arg2) {
+	public Class191(@OriginalArg(0) Class19 arg0, @OriginalArg(1) ByteBuffer arg1, @OriginalArg(2) int arg2) {
 		if (Static119.anIntArray169 == null) {
 			Static244.method2568();
 		}
-		this.anInt5570 = arg1.method2490();
+		this.anInt5570 = arg1.readByteIntoInt();
 		this.aBoolean499 = (this.anInt5570 & 0x8) != 0;
 		this.aBoolean500 = (this.anInt5570 & 0x10) != 0;
 		this.anInt5570 &= 0x7;
 		@Pc(50) int local50 = arg1.method2536() << arg2;
 		@Pc(56) int local56 = arg1.method2536() << arg2;
 		@Pc(62) int local62 = arg1.method2536() << arg2;
-		@Pc(66) int local66 = arg1.method2490();
+		@Pc(66) int local66 = arg1.readByteIntoInt();
 		@Pc(72) int local72 = local66 * 2 + 1;
 		this.aShortArray189 = new short[local72];
 		@Pc(89) int local89;
@@ -79,7 +79,7 @@ public final class Class191 {
 		}
 		local66 = (local66 << Static231.anInt4434) + Static333.anInt5747;
 		@Pc(160) int local160 = Static72.anIntArray115 == null ? Static335.anIntArray423[Static82.method1470(arg1.method2536()) & 0xFFFF] : Static72.anIntArray115[arg1.method2536()];
-		local89 = arg1.method2490();
+		local89 = arg1.readByteIntoInt();
 		this.anInt5562 = local89 & 0x1F;
 		this.anInt5566 = (local89 & 0xE0) << 3;
 		if (this.anInt5562 != 31) {
