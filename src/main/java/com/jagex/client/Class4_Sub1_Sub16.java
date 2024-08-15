@@ -65,7 +65,7 @@ public final class Class4_Sub1_Sub16 extends Class4_Sub1 {
 	}
 
 	@OriginalMember(owner = "client!np", name = "a", descriptor = "(Lclient!iv;II)V")
-	private void method3872(@OriginalArg(0) ByteBuffer arg0, @OriginalArg(2) int arg1) {
+	private void method3872(@OriginalArg(0) Packet arg0, @OriginalArg(2) int arg1) {
 		if (arg1 == 1) {
 			this.aString49 = arg0.readValidStringAtCurrentPosition();
 			return;
@@ -74,30 +74,30 @@ public final class Class4_Sub1_Sub16 extends Class4_Sub1 {
 		@Pc(23) int local23;
 		@Pc(36) byte local36;
 		if (arg1 == 2) {
-			local13 = arg0.readByteIntoInt();
+			local13 = arg0.g1();
 			this.aCharArray3 = new char[local13];
 			this.anIntArray326 = new int[local13];
 			for (local23 = 0; local23 < local13; local23++) {
 				this.anIntArray326[local23] = arg0.method2536();
-				local36 = arg0.readInt8();
+				local36 = arg0.g1b();
 				this.aCharArray3[local23] = local36 == 0 ? 0 : Static260.method3771(local36);
 			}
 		} else if (arg1 == 3) {
-			local13 = arg0.readByteIntoInt();
+			local13 = arg0.g1();
 			this.aCharArray4 = new char[local13];
 			this.anIntArray325 = new int[local13];
 			for (local23 = 0; local23 < local13; local23++) {
 				this.anIntArray325[local23] = arg0.method2536();
-				local36 = arg0.readInt8();
+				local36 = arg0.g1b();
 				this.aCharArray4[local23] = local36 == 0 ? 0 : Static260.method3771(local36);
 			}
 		}
 	}
 
 	@OriginalMember(owner = "client!np", name = "a", descriptor = "(Lclient!iv;I)V")
-	public void method3873(@OriginalArg(0) ByteBuffer arg0) {
+	public void method3873(@OriginalArg(0) Packet arg0) {
 		while (true) {
-			@Pc(5) int local5 = arg0.readByteIntoInt();
+			@Pc(5) int local5 = arg0.g1();
 			if (local5 == 0) {
 				return;
 			}

@@ -26,9 +26,9 @@ public final class Class133 {
 	}
 
 	@OriginalMember(owner = "client!lg", name = "a", descriptor = "(ILclient!iv;I)V")
-	private void method3352(@OriginalArg(1) ByteBuffer arg0, @OriginalArg(2) int arg1) {
+	private void method3352(@OriginalArg(1) Packet arg0, @OriginalArg(2) int arg1) {
 		if (arg1 == 1) {
-			this.aChar2 = Static260.method3771(arg0.readInt8());
+			this.aChar2 = Static260.method3771(arg0.g1b());
 		} else if (arg1 == 2) {
 			this.anInt4123 = arg0.method2529();
 		} else if (arg1 == 4) {
@@ -39,9 +39,9 @@ public final class Class133 {
 	}
 
 	@OriginalMember(owner = "client!lg", name = "a", descriptor = "(Lclient!iv;B)V")
-	public void method3354(@OriginalArg(0) ByteBuffer arg0) {
+	public void method3354(@OriginalArg(0) Packet arg0) {
 		while (true) {
-			@Pc(15) int local15 = arg0.readByteIntoInt();
+			@Pc(15) int local15 = arg0.g1();
 			if (local15 == 0) {
 				return;
 			}

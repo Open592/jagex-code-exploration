@@ -21,13 +21,13 @@ public final class Class4_Sub6_Sub29 extends Class4_Sub6 {
 
 	@OriginalMember(owner = "client!rc", name = "a", descriptor = "(IILclient!iv;)V")
 	@Override
-	public void method5518(@OriginalArg(1) int arg0, @OriginalArg(2) ByteBuffer arg1) {
+	public void method5518(@OriginalArg(1) int arg0, @OriginalArg(2) Packet arg1) {
 		if (arg0 == 0) {
-			this.anInt5800 = arg1.readByteIntoInt();
+			this.anInt5800 = arg1.g1();
 		} else if (arg0 == 1) {
-			this.anInt5795 = arg1.readByteIntoInt();
+			this.anInt5795 = arg1.g1();
 		} else if (arg0 == 2) {
-			super.aBoolean665 = arg1.readByteIntoInt() == 1;
+			super.aBoolean665 = arg1.g1() == 1;
 		}
 	}
 

@@ -74,7 +74,7 @@ public final class Static374 {
 	@OriginalMember(owner = "client!su", name = "b", descriptor = "(B)V")
 	public static void method4996() {
 		Static429.method5476(Static352.aClass215_82);
-		Static3.aClass4_Sub12_Sub1_5.writeInt16BE(Static183.anInt3512);
+		Static3.aClass4_Sub12_Sub1_5.p2(Static183.anInt3512);
 	}
 
 	@OriginalMember(owner = "client!su", name = "a", descriptor = "(Lclient!uu;IZ)V")

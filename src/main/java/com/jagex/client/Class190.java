@@ -25,9 +25,9 @@ public final class Class190 {
 	}
 
 	@OriginalMember(owner = "client!pu", name = "a", descriptor = "(ZLclient!iv;)V")
-	public void method4218(@OriginalArg(1) ByteBuffer arg0) {
+	public void method4218(@OriginalArg(1) Packet arg0) {
 		while (true) {
-			@Pc(5) int local5 = arg0.readByteIntoInt();
+			@Pc(5) int local5 = arg0.g1();
 			if (local5 == 0) {
 				return;
 			}
@@ -36,9 +36,9 @@ public final class Class190 {
 	}
 
 	@OriginalMember(owner = "client!pu", name = "a", descriptor = "(IBLclient!iv;)V")
-	private void method4220(@OriginalArg(0) int arg0, @OriginalArg(2) ByteBuffer arg1) {
+	private void method4220(@OriginalArg(0) int arg0, @OriginalArg(2) Packet arg1) {
 		if (arg0 == 1) {
-			this.anInt5502 = arg1.readByteIntoInt();
+			this.anInt5502 = arg1.g1();
 		} else if (arg0 == 2) {
 			this.anInt5506 = arg1.method2536();
 		} else if (arg0 == 3) {

@@ -111,13 +111,13 @@ public final class Class4_Sub6_Sub28 extends Class4_Sub6 {
 
 	@OriginalMember(owner = "client!qf", name = "a", descriptor = "(IILclient!iv;)V")
 	@Override
-	public void method5518(@OriginalArg(1) int arg0, @OriginalArg(2) ByteBuffer arg1) {
+	public void method5518(@OriginalArg(1) int arg0, @OriginalArg(2) Packet arg1) {
 		if (arg0 == 0) {
-			this.anInt5613 = arg1.readByteIntoInt();
+			this.anInt5613 = arg1.g1();
 		} else if (arg0 == 1) {
 			this.anInt5615 = arg1.method2536();
 		} else if (arg0 == 2) {
-			this.anInt5614 = arg1.readByteIntoInt();
+			this.anInt5614 = arg1.g1();
 		} else if (arg0 == 3) {
 			this.anInt5617 = arg1.method2536();
 		} else if (arg0 == 4) {

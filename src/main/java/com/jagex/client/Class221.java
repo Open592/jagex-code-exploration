@@ -94,9 +94,9 @@ public final class Class221 {
 	}
 
 	@OriginalMember(owner = "client!sr", name = "a", descriptor = "(ILclient!iv;)V")
-	public void method4960(@OriginalArg(1) ByteBuffer arg0) {
+	public void method4960(@OriginalArg(1) Packet arg0) {
 		while (true) {
-			@Pc(17) int local17 = arg0.readByteIntoInt();
+			@Pc(17) int local17 = arg0.g1();
 			if (local17 == 0) {
 				return;
 			}
@@ -105,7 +105,7 @@ public final class Class221 {
 	}
 
 	@OriginalMember(owner = "client!sr", name = "a", descriptor = "(Lclient!iv;II)V")
-	private void method4961(@OriginalArg(0) ByteBuffer arg0, @OriginalArg(1) int arg1) {
+	private void method4961(@OriginalArg(0) Packet arg0, @OriginalArg(1) int arg1) {
 		if (arg1 == 1) {
 			this.anInt6347 = arg0.method2493();
 			this.method4956(this.anInt6347);

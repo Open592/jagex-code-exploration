@@ -12,18 +12,18 @@ public final class Class4_Sub1_Sub18 extends Class4_Sub1 {
 	private Class102 aClass102_35;
 
 	@OriginalMember(owner = "client!rk", name = "a", descriptor = "(Lclient!iv;II)V")
-	private void method4667(@OriginalArg(0) ByteBuffer arg0, @OriginalArg(1) int arg1) {
+	private void method4667(@OriginalArg(0) Packet arg0, @OriginalArg(1) int arg1) {
 		if (arg1 != 249) {
 			return;
 		}
-		@Pc(14) int local14 = arg0.readByteIntoInt();
+		@Pc(14) int local14 = arg0.g1();
 		@Pc(23) int local23;
 		if (this.aClass102_35 == null) {
 			local23 = Static370.method4949(local14);
 			this.aClass102_35 = new Class102(local23);
 		}
 		for (local23 = 0; local23 < local14; local23++) {
-			@Pc(42) boolean local42 = arg0.readByteIntoInt() == 1;
+			@Pc(42) boolean local42 = arg0.g1() == 1;
 			@Pc(46) int local46 = arg0.method2493();
 			@Pc(55) Class4 local55;
 			if (local42) {
@@ -36,9 +36,9 @@ public final class Class4_Sub1_Sub18 extends Class4_Sub1 {
 	}
 
 	@OriginalMember(owner = "client!rk", name = "a", descriptor = "(ILclient!iv;)V")
-	public void method4668(@OriginalArg(1) ByteBuffer arg0) {
+	public void method4668(@OriginalArg(1) Packet arg0) {
 		while (true) {
-			@Pc(12) int local12 = arg0.readByteIntoInt();
+			@Pc(12) int local12 = arg0.g1();
 			if (local12 == 0) {
 				return;
 			}

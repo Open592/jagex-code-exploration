@@ -30,8 +30,8 @@ public final class Static124 {
 				Static143.aClass16_Sub1_Sub5_Sub2Array1[local33] = null;
 			}
 		}
-		if (Static146.aClass4_Sub12_Sub1_3.position != Static454.anInt4075) {
-			throw new RuntimeException("gnp1 pos:" + Static146.aClass4_Sub12_Sub1_3.position + " psize:" + Static454.anInt4075);
+		if (Static146.aClass4_Sub12_Sub1_3.pos != Static454.anInt4075) {
+			throw new RuntimeException("gnp1 pos:" + Static146.aClass4_Sub12_Sub1_3.pos + " psize:" + Static454.anInt4075);
 		}
 		for (local33 = 0; local33 < Static12.anInt163; local33++) {
 			if (Static143.aClass16_Sub1_Sub5_Sub2Array1[Static342.anIntArray412[local33]] == null) {

@@ -54,7 +54,7 @@ public final class Class4_Sub13 extends Class4 {
 
 	@OriginalMember(owner = "client!di", name = "b", descriptor = "([B)V")
 	private void method1321(@OriginalArg(0) byte[] arg0) {
-		@Pc(4) ByteBuffer local4 = new ByteBuffer(arg0);
+		@Pc(4) Packet local4 = new Packet(arg0);
 		this.anInt1467 = local4.method2529();
 		this.anInt1465 = local4.method2529();
 		this.anInt1462 = local4.method2529();
@@ -69,7 +69,7 @@ public final class Class4_Sub13 extends Class4 {
 			@Pc(49) int local49 = 0;
 			@Pc(53) int local53;
 			do {
-				local53 = local4.readByteIntoInt();
+				local53 = local4.g1();
 				local49 += local53;
 			} while (local53 >= 255);
 			@Pc(64) byte[] local64 = new byte[local49];

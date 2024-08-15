@@ -36,7 +36,7 @@ public final class Static228 {
 						throw new IOException("EOF");
 					}
 				}
-				Static360.method4864(new ByteBuffer(local38));
+				Static360.method4864(new Packet(local38));
 			}
 		} catch (@Pc(82) Exception local82) {
 		}

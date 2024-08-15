@@ -28,7 +28,7 @@ public final class Static419 {
 	public static final char[] aCharArray7 = new char[] { '€', '\u0000', '‚', 'ƒ', '„', '…', '†', '‡', 'ˆ', '‰', 'Š', '‹', 'Œ', '\u0000', 'Ž', '\u0000', '\u0000', '‘', '’', '“', '”', '•', '–', '—', '˜', '™', 'š', '›', 'œ', '\u0000', 'ž', 'Ÿ' };
 
 	@OriginalMember(owner = "client!ve", name = "a", descriptor = "(Lclient!iv;B)Lclient!vq;")
-	public static Class257 method5378(@OriginalArg(0) ByteBuffer arg0) {
+	public static Class257 method5378(@OriginalArg(0) Packet arg0) {
 		@Pc(15) Class257 local15 = new Class257();
 		local15.anInt7070 = arg0.method2536();
 		local15.aClass4_Sub1_Sub3_1 = Static445.aClass81_2.method2258(local15.anInt7070);
@@ -57,9 +57,9 @@ public final class Static419 {
 		if (arg1 == 1) {
 			Static429.method5476(Static88.aClass215_20);
 		}
-		Static3.aClass4_Sub12_Sub1_5.writeByte(Static384.aClass244_1.method5489(82) ? 1 : 0);
-		Static3.aClass4_Sub12_Sub1_5.writeInt16BE(arg0 + Static180.anInt3453);
-		Static3.aClass4_Sub12_Sub1_5.writeInt16BE(arg2 + Static86.anInt1771);
+		Static3.aClass4_Sub12_Sub1_5.p1(Static384.aClass244_1.method5489(82) ? 1 : 0);
+		Static3.aClass4_Sub12_Sub1_5.p2(arg0 + Static180.anInt3453);
+		Static3.aClass4_Sub12_Sub1_5.p2(arg2 + Static86.anInt1771);
 		Static60.anInt1094 = arg2;
 		Static343.anInt771 = arg0;
 		Static350.aBoolean556 = false;

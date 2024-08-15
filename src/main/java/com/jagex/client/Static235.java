@@ -61,7 +61,7 @@ public final class Static235 {
 		for (@Pc(17) int local17 = 0; local17 < local15; local17++) {
 			@Pc(23) byte[] local23 = arg1[local17];
 			if (local23 != null) {
-				@Pc(30) ByteBuffer local30 = new ByteBuffer(local23);
+				@Pc(30) Packet local30 = new Packet(local23);
 				local36 = Static308.anIntArray372[local17] >> 8;
 				@Pc(42) int local42 = Static308.anIntArray372[local17] & 0xFF;
 				@Pc(49) int local49 = local36 * 64 - Static180.anInt3453;

@@ -84,7 +84,7 @@ public final class Class4_Sub6_Sub35 extends Class4_Sub6 {
 
 	@OriginalMember(owner = "client!ug", name = "a", descriptor = "(IILclient!iv;)V")
 	@Override
-	public void method5518(@OriginalArg(1) int arg0, @OriginalArg(2) ByteBuffer arg1) {
+	public void method5518(@OriginalArg(1) int arg0, @OriginalArg(2) Packet arg1) {
 		if (arg0 == 0) {
 			this.anInt6657 = arg1.method2536();
 		} else if (arg0 == 1) {

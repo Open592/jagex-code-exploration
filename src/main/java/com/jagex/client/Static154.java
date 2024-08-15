@@ -17,7 +17,7 @@ public final class Static154 {
 	public static final Class22 aClass22_51 = new Class22(78, 2);
 
 	@OriginalMember(owner = "client!hq", name = "b", descriptor = "Lclient!iv;")
-	public static final ByteBuffer A_BYTE_BUFFER___2 = new ByteBuffer(new byte[5000]);
+	public static final Packet A_BYTE_BUFFER___2 = new Packet(new byte[5000]);
 
 	@OriginalMember(owner = "client!hq", name = "d", descriptor = "Lclient!gk;")
 	public static final Class83 aClass83_26 = new Class83("Please wait...", "Bitte warte...", "Veuillez patienter...", "Aguarde...");

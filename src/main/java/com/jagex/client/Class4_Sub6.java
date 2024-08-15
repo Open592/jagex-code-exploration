@@ -90,6 +90,6 @@ public abstract class Class4_Sub6 extends Class4 {
 	}
 
 	@OriginalMember(owner = "client!oc", name = "a", descriptor = "(IILclient!iv;)V")
-	public void method5518(@OriginalArg(1) int arg0, @OriginalArg(2) ByteBuffer arg1) {
+	public void method5518(@OriginalArg(1) int arg0, @OriginalArg(2) Packet arg1) {
 	}
 }

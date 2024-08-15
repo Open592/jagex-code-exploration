@@ -19,7 +19,7 @@ public final class Static87 {
 		local16 = new Class8();
 		local16.anInt130 = arg0;
 		if (local26 != null) {
-			local16.method89(new ByteBuffer(local26));
+			local16.method89(new Packet(local26));
 		}
 		local16.method91();
 		if (local16.anInt121 == 2 && Static18.aClass102_2.method2700((long) arg0) == null) {

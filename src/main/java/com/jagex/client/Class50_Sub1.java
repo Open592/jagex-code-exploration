@@ -89,7 +89,7 @@ public final class Class50_Sub1 extends Class50 {
 						throw new IOException("EOF");
 					}
 				}
-				this.method2862(new ByteBuffer(local156));
+				this.method2862(new Packet(local156));
 			}
 		} catch (@Pc(196) Exception local196) {
 		}
@@ -111,8 +111,8 @@ public final class Class50_Sub1 extends Class50 {
 			}
 			if (local20.status == 1) {
 				local7 = (FileOnDisk) local20.output;
-				@Pc(40) ByteBuffer local40 = this.method2863();
-				local7.write(0, local40.position, local40.bytes);
+				@Pc(40) Packet local40 = this.method2863();
+				local7.write(0, local40.pos, local40.data);
 			}
 		} catch (@Pc(50) Exception local50) {
 		}
@@ -154,11 +154,11 @@ public final class Class50_Sub1 extends Class50 {
 	}
 
 	@OriginalMember(owner = "client!jb", name = "a", descriptor = "(Lclient!iv;I)V")
-	private void method2862(@OriginalArg(0) ByteBuffer arg0) {
-		if (arg0.bytes.length - arg0.position < 1) {
+	private void method2862(@OriginalArg(0) Packet arg0) {
+		if (arg0.data.length - arg0.pos < 1) {
 			return;
 		}
-		@Pc(21) int local21 = arg0.readByteIntoInt();
+		@Pc(21) int local21 = arg0.g1();
 		if (local21 < 0 || local21 > 17) {
 			return;
 		}
@@ -200,53 +200,53 @@ public final class Class50_Sub1 extends Class50 {
 		} else {
 			local42 = 19;
 		}
-		if (arg0.bytes.length - arg0.position < local42) {
+		if (arg0.data.length - arg0.pos < local42) {
 			return;
 		}
-		super.anInt3436 = arg0.readByteIntoInt();
+		super.anInt3436 = arg0.g1();
 		if (super.anInt3436 < 1) {
 			super.anInt3436 = 1;
 		} else if (super.anInt3436 > 4) {
 			super.anInt3436 = 4;
 		}
-		this.method2859(arg0.readByteIntoInt() == 1);
-		super.aBoolean306 = arg0.readByteIntoInt() == 1;
-		super.aBoolean305 = arg0.readByteIntoInt() == 1;
-		super.aBoolean296 = arg0.readByteIntoInt() == 1;
-		super.anInt3433 = arg0.readByteIntoInt() == 1 ? 1 : 0;
-		super.aBoolean295 = arg0.readByteIntoInt() == 1;
-		super.aBoolean293 = arg0.readByteIntoInt() == 1;
-		super.aBoolean302 = arg0.readByteIntoInt() == 1;
-		super.anInt3435 = arg0.readByteIntoInt();
+		this.method2859(arg0.g1() == 1);
+		super.aBoolean306 = arg0.g1() == 1;
+		super.aBoolean305 = arg0.g1() == 1;
+		super.aBoolean296 = arg0.g1() == 1;
+		super.anInt3433 = arg0.g1() == 1 ? 1 : 0;
+		super.aBoolean295 = arg0.g1() == 1;
+		super.aBoolean293 = arg0.g1() == 1;
+		super.aBoolean302 = arg0.g1() == 1;
+		super.anInt3435 = arg0.g1();
 		if (super.anInt3435 > 2) {
 			super.anInt3435 = 2;
 		}
 		if (local21 >= 17) {
-			super.anInt3430 = arg0.readByteIntoInt();
+			super.anInt3430 = arg0.g1();
 		}
 		if (local21 < 2) {
-			super.aBoolean299 = arg0.readByteIntoInt() == 1;
-			arg0.readByteIntoInt();
+			super.aBoolean299 = arg0.g1() == 1;
+			arg0.g1();
 		} else {
-			super.aBoolean299 = arg0.readByteIntoInt() == 1;
+			super.aBoolean299 = arg0.g1() == 1;
 			if (local21 >= 17) {
-				super.aBoolean301 = arg0.readByteIntoInt() == 1;
+				super.aBoolean301 = arg0.g1() == 1;
 			}
 		}
-		super.aBoolean294 = arg0.readByteIntoInt() == 1;
-		super.aBoolean298 = arg0.readByteIntoInt() == 1;
-		super.anInt3442 = arg0.readByteIntoInt();
+		super.aBoolean294 = arg0.g1() == 1;
+		super.aBoolean298 = arg0.g1() == 1;
+		super.anInt3442 = arg0.g1();
 		if (super.anInt3442 > 2) {
 			super.anInt3442 = 2;
 		}
 		super.anInt3440 = super.anInt3442;
-		super.aBoolean291 = arg0.readByteIntoInt() == 1;
-		super.anInt3448 = arg0.readByteIntoInt();
+		super.aBoolean291 = arg0.g1() == 1;
+		super.anInt3448 = arg0.g1();
 		if (super.anInt3448 > 127) {
 			super.anInt3448 = 127;
 		}
-		super.anInt3439 = arg0.readByteIntoInt();
-		super.anInt3449 = arg0.readByteIntoInt();
+		super.anInt3439 = arg0.g1();
+		super.anInt3449 = arg0.g1();
 		if (super.anInt3449 > 127) {
 			super.anInt3449 = 127;
 		}
@@ -255,11 +255,11 @@ public final class Class50_Sub1 extends Class50 {
 			super.anInt3450 = arg0.method2536();
 		}
 		if (local21 >= 3 && local21 < 6) {
-			arg0.readByteIntoInt();
+			arg0.g1();
 		}
 		@Pc(474) int local474;
 		if (local21 >= 4) {
-			local474 = arg0.readByteIntoInt();
+			local474 = arg0.g1();
 			if (local474 < 0 || local474 > 2) {
 				local474 = 0;
 			}
@@ -273,40 +273,40 @@ public final class Class50_Sub1 extends Class50 {
 		}
 		local474 = 0;
 		if (local21 >= 6) {
-			super.anInt3447 = local474 = arg0.readByteIntoInt();
+			super.anInt3447 = local474 = arg0.g1();
 		}
 		if (super.anInt3447 != 1 && super.anInt3447 != 2) {
 			super.anInt3447 = 2;
 		}
 		if (local21 >= 7) {
-			super.aBoolean297 = arg0.readByteIntoInt() == 1;
+			super.aBoolean297 = arg0.g1() == 1;
 		}
 		if (local21 >= 8) {
-			super.aBoolean303 = arg0.readByteIntoInt() == 1;
+			super.aBoolean303 = arg0.g1() == 1;
 		}
 		if (local21 >= 9) {
-			super.anInt3434 = arg0.readByteIntoInt();
+			super.anInt3434 = arg0.g1();
 		}
 		if (super.anInt3434 < 0 || super.anInt3434 > Static53.method898(Static70.anInt1503)) {
 			super.anInt3434 = 0;
 		}
 		if (local21 >= 10) {
-			super.aBoolean300 = arg0.readByteIntoInt() != 0;
+			super.aBoolean300 = arg0.g1() != 0;
 		}
 		if (local21 >= 11) {
-			super.aBoolean304 = arg0.readByteIntoInt() != 0;
+			super.aBoolean304 = arg0.g1() != 0;
 		}
 		if (local21 >= 12) {
-			super.anInt3433 = arg0.readByteIntoInt();
+			super.anInt3433 = arg0.g1();
 		}
 		if (super.anInt3433 < 0 || super.anInt3433 > 2) {
 			super.anInt3433 = 1;
 		}
 		if (local21 >= 13) {
-			super.aBoolean289 = arg0.readByteIntoInt() == 1;
+			super.aBoolean289 = arg0.g1() == 1;
 		}
 		if (local21 >= 14) {
-			super.anInt3445 = arg0.readByteIntoInt();
+			super.anInt3445 = arg0.g1();
 		} else if (local474 == 0) {
 			super.anInt3445 = 2;
 		} else {
@@ -316,13 +316,13 @@ public final class Class50_Sub1 extends Class50 {
 			super.anInt3445 = 2;
 		}
 		if (local21 >= 15) {
-			super.anInt3437 = arg0.readByteIntoInt();
+			super.anInt3437 = arg0.g1();
 			if (super.anInt3437 < 0 || super.anInt3437 > 4) {
 				super.anInt3437 = Static249.anInt4622 == 1 ? 2 : 4;
 			}
 		}
 		if (local21 >= 16) {
-			super.aBoolean307 = arg0.readByteIntoInt() == 1;
+			super.aBoolean307 = arg0.g1() == 1;
 			try {
 				if (jagmisc.getTotalPhysicalMemory() <= 268435456L) {
 					super.aBoolean307 = false;
@@ -336,44 +336,44 @@ public final class Class50_Sub1 extends Class50 {
 	}
 
 	@OriginalMember(owner = "client!jb", name = "a", descriptor = "(I)Lclient!iv;")
-	public ByteBuffer method2863() {
-		@Pc(8) ByteBuffer local8 = new ByteBuffer(41);
-		local8.writeByte(17);
-		local8.writeByte(super.anInt3436);
-		local8.writeByte(super.aBoolean290 ? 1 : 0);
-		local8.writeByte(super.aBoolean306 ? 1 : 0);
-		local8.writeByte(super.aBoolean305 ? 1 : 0);
-		local8.writeByte(super.aBoolean296 ? 1 : 0);
-		local8.writeByte(0);
-		local8.writeByte(super.aBoolean295 ? 1 : 0);
-		local8.writeByte(super.aBoolean293 ? 1 : 0);
-		local8.writeByte(super.aBoolean302 ? 1 : 0);
-		local8.writeByte(super.anInt3435);
-		local8.writeByte(super.anInt3430);
-		local8.writeByte(super.aBoolean299 ? 1 : 0);
-		local8.writeByte(super.aBoolean301 ? 1 : 0);
-		local8.writeByte(super.aBoolean294 ? 1 : 0);
-		local8.writeByte(super.aBoolean298 ? 1 : 0);
-		local8.writeByte(super.anInt3442);
-		local8.writeByte(super.aBoolean291 ? 1 : 0);
-		local8.writeByte(super.anInt3448);
-		local8.writeByte(super.anInt3439);
-		local8.writeByte(super.anInt3449);
-		local8.writeInt16BE(super.anInt3431);
-		local8.writeInt16BE(super.anInt3450);
-		local8.writeByte(Static218.method3279());
-		local8.writeIntBE(super.anInt3428);
-		local8.writeByte(super.anInt3447);
-		local8.writeByte(super.aBoolean297 ? 1 : 0);
-		local8.writeByte(super.aBoolean303 ? 1 : 0);
-		local8.writeByte(super.anInt3434);
-		local8.writeByte(super.aBoolean300 ? 1 : 0);
-		local8.writeByte(super.aBoolean304 ? 1 : 0);
-		local8.writeByte(super.anInt3433);
-		local8.writeByte(super.aBoolean289 ? 1 : 0);
-		local8.writeByte(super.anInt3445);
-		local8.writeByte(super.anInt3437);
-		local8.writeByte(super.aBoolean307 ? 1 : 0);
+	public Packet method2863() {
+		@Pc(8) Packet local8 = new Packet(41);
+		local8.p1(17);
+		local8.p1(super.anInt3436);
+		local8.p1(super.aBoolean290 ? 1 : 0);
+		local8.p1(super.aBoolean306 ? 1 : 0);
+		local8.p1(super.aBoolean305 ? 1 : 0);
+		local8.p1(super.aBoolean296 ? 1 : 0);
+		local8.p1(0);
+		local8.p1(super.aBoolean295 ? 1 : 0);
+		local8.p1(super.aBoolean293 ? 1 : 0);
+		local8.p1(super.aBoolean302 ? 1 : 0);
+		local8.p1(super.anInt3435);
+		local8.p1(super.anInt3430);
+		local8.p1(super.aBoolean299 ? 1 : 0);
+		local8.p1(super.aBoolean301 ? 1 : 0);
+		local8.p1(super.aBoolean294 ? 1 : 0);
+		local8.p1(super.aBoolean298 ? 1 : 0);
+		local8.p1(super.anInt3442);
+		local8.p1(super.aBoolean291 ? 1 : 0);
+		local8.p1(super.anInt3448);
+		local8.p1(super.anInt3439);
+		local8.p1(super.anInt3449);
+		local8.p2(super.anInt3431);
+		local8.p2(super.anInt3450);
+		local8.p1(Static218.method3279());
+		local8.p4(super.anInt3428);
+		local8.p1(super.anInt3447);
+		local8.p1(super.aBoolean297 ? 1 : 0);
+		local8.p1(super.aBoolean303 ? 1 : 0);
+		local8.p1(super.anInt3434);
+		local8.p1(super.aBoolean300 ? 1 : 0);
+		local8.p1(super.aBoolean304 ? 1 : 0);
+		local8.p1(super.anInt3433);
+		local8.p1(super.aBoolean289 ? 1 : 0);
+		local8.p1(super.anInt3445);
+		local8.p1(super.anInt3437);
+		local8.p1(super.aBoolean307 ? 1 : 0);
 		return local8;
 	}
 }

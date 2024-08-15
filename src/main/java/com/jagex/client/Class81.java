@@ -65,7 +65,7 @@ public final class Class81 {
 		local11 = new Class4_Sub1_Sub3();
 		local11.aClass81_1 = this;
 		if (local36 != null) {
-			local11.method232(new ByteBuffer(local36));
+			local11.method232(new Packet(local36));
 		}
 		if (arg0 >= 32768) {
 			local11.method228();

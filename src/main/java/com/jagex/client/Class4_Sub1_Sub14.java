@@ -40,8 +40,8 @@ public final class Class4_Sub1_Sub14 extends Class4_Sub1 {
 	}
 
 	@OriginalMember(owner = "client!kv", name = "<init>", descriptor = "(Lclient!iv;)V")
-	public Class4_Sub1_Sub14(@OriginalArg(0) ByteBuffer arg0) {
-		@Pc(7) int local7 = arg0.readByteIntoInt();
+	public Class4_Sub1_Sub14(@OriginalArg(0) Packet arg0) {
+		@Pc(7) int local7 = arg0.g1();
 		@Pc(9) int local9 = 0;
 		@Pc(11) int local11 = 0;
 		@Pc(14) int[][] local14 = new int[local7][];
@@ -58,7 +58,7 @@ public final class Class4_Sub1_Sub14 extends Class4_Sub1 {
 			@Pc(43) int local43 = local26.aClass4_Sub6Array42.length;
 			local14[local20] = new int[local43];
 			for (local50 = 0; local50 < local43; local50++) {
-				local14[local20][local50] = arg0.readByteIntoInt();
+				local14[local20][local50] = arg0.g1();
 			}
 			this.aClass4_Sub6Array23[local20] = local26;
 		}
@@ -82,9 +82,9 @@ public final class Class4_Sub1_Sub14 extends Class4_Sub1 {
 			}
 			local14[local91] = null;
 		}
-		this.aClass4_Sub6_2 = this.aClass4_Sub6Array23[arg0.readByteIntoInt()];
-		this.aClass4_Sub6_3 = this.aClass4_Sub6Array23[arg0.readByteIntoInt()];
-		this.aClass4_Sub6_1 = this.aClass4_Sub6Array23[arg0.readByteIntoInt()];
+		this.aClass4_Sub6_2 = this.aClass4_Sub6Array23[arg0.g1()];
+		this.aClass4_Sub6_3 = this.aClass4_Sub6Array23[arg0.g1()];
+		this.aClass4_Sub6_1 = this.aClass4_Sub6Array23[arg0.g1()];
 	}
 
 	@OriginalMember(owner = "client!kv", name = "a", descriptor = "(BLclient!fs;Lclient!ga;)Z")

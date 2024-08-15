@@ -191,7 +191,7 @@ public final class Class157 {
 	}
 
 	@OriginalMember(owner = "client!nf", name = "a", descriptor = "(Lclient!iv;BI)V")
-	private void method3783(@OriginalArg(0) ByteBuffer arg0, @OriginalArg(2) int arg1) {
+	private void method3783(@OriginalArg(0) Packet arg0, @OriginalArg(2) int arg1) {
 		if (arg1 == 1) {
 			this.anInt4930 = arg0.method2536();
 		} else if (arg1 == 2) {
@@ -203,12 +203,12 @@ public final class Class157 {
 		} else if (arg1 == 5) {
 			this.anInt4907 = arg0.method2493();
 		} else if (arg1 == 6) {
-			this.anInt4904 = arg0.readByteIntoInt();
+			this.anInt4904 = arg0.g1();
 		} else {
 			@Pc(189) int local189;
 			if (arg1 != 7) {
 				if (arg1 == 8) {
-					this.aBoolean451 = arg0.readByteIntoInt() == 1;
+					this.aBoolean451 = arg0.g1() == 1;
 					return;
 				}
 				if (arg1 == 9) {
@@ -254,13 +254,13 @@ public final class Class157 {
 									this.anInt4918 = arg0.method2529();
 									return;
 								} else if (arg1 == 249) {
-									local189 = arg0.readByteIntoInt();
+									local189 = arg0.g1();
 									if (this.aClass102_24 == null) {
 										local196 = Static370.method4949(local189);
 										this.aClass102_24 = new Class102(local196);
 									}
 									for (local196 = 0; local196 < local189; local196++) {
-										@Pc(215) boolean local215 = arg0.readByteIntoInt() == 1;
+										@Pc(215) boolean local215 = arg0.g1() == 1;
 										@Pc(219) int local219 = arg0.method2493();
 										@Pc(228) Class4 local228;
 										if (local215) {
@@ -283,7 +283,7 @@ public final class Class157 {
 					this.aBoolean448 = false;
 					return;
 				}
-				local189 = arg0.readByteIntoInt();
+				local189 = arg0.g1();
 				this.anIntArray317 = new int[local189 * 2];
 				for (local196 = 0; local196 < local189 * 2; local196++) {
 					this.anIntArray317[local196] = arg0.method2512();
@@ -292,7 +292,7 @@ public final class Class157 {
 				this.anInt4927 = arg0.method2529();
 				return;
 			}
-			local189 = arg0.readByteIntoInt();
+			local189 = arg0.g1();
 			if ((local189 & 0x1) == 0) {
 				this.aBoolean449 = false;
 			}
@@ -304,9 +304,9 @@ public final class Class157 {
 	}
 
 	@OriginalMember(owner = "client!nf", name = "a", descriptor = "(Lclient!iv;I)V")
-	public void method3784(@OriginalArg(0) ByteBuffer arg0) {
+	public void method3784(@OriginalArg(0) Packet arg0) {
 		while (true) {
-			@Pc(9) int local9 = arg0.readByteIntoInt();
+			@Pc(9) int local9 = arg0.g1();
 			if (local9 == 0) {
 				return;
 			}

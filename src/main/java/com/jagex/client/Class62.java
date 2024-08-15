@@ -43,7 +43,7 @@ public final class Class62 {
 		}
 		local19 = new Class4_Sub1_Sub16();
 		if (local33 != null) {
-			local19.method3873(new ByteBuffer(local33));
+			local19.method3873(new Packet(local33));
 		}
 		if (arg0 >= 32768) {
 			local19.method3870();

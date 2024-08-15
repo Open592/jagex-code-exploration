@@ -6,7 +6,7 @@ import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;
 
 @OriginalClass("client!cw")
-public final class Class4_Sub12_Sub1 extends ByteBuffer {
+public final class Class4_Sub12_Sub1 extends Packet {
 
 	@OriginalMember(owner = "client!cw", name = "Cb", descriptor = "Lclient!dp;")
 	private Class52 aClass52_1;
@@ -22,23 +22,23 @@ public final class Class4_Sub12_Sub1 extends ByteBuffer {
 	@OriginalMember(owner = "client!cw", name = "a", descriptor = "(III[B)V")
 	public void method1132(@OriginalArg(1) int arg0, @OriginalArg(3) byte[] arg1) {
 		for (@Pc(11) int local11 = 0; local11 < arg0; local11++) {
-			arg1[local11] = (byte) (super.bytes[super.position++] - this.aClass52_1.method1362());
+			arg1[local11] = (byte) (super.data[super.pos++] - this.aClass52_1.method1362());
 		}
 	}
 
 	@OriginalMember(owner = "client!cw", name = "m", descriptor = "(II)V")
 	public void method1133(@OriginalArg(0) int arg0) {
-		super.bytes[super.position++] = (byte) (arg0 + this.aClass52_1.method1362());
+		super.data[super.pos++] = (byte) (arg0 + this.aClass52_1.method1362());
 	}
 
 	@OriginalMember(owner = "client!cw", name = "n", descriptor = "(B)V")
 	public void method1135() {
-		super.position = (this.anInt1270 + 7) / 8;
+		super.pos = (this.anInt1270 + 7) / 8;
 	}
 
 	@OriginalMember(owner = "client!cw", name = "u", descriptor = "(I)V")
 	public void method1136() {
-		this.anInt1270 = super.position * 8;
+		this.anInt1270 = super.pos * 8;
 	}
 
 	@OriginalMember(owner = "client!cw", name = "n", descriptor = "(II)I")
@@ -53,13 +53,13 @@ public final class Class4_Sub12_Sub1 extends ByteBuffer {
 
 	@OriginalMember(owner = "client!cw", name = "v", descriptor = "(I)I")
 	public int method1140() {
-		@Pc(21) int local21 = super.bytes[super.position++] - this.aClass52_1.method1362() & 0xFF;
-		return local21 < 128 ? local21 : (super.bytes[super.position++] - this.aClass52_1.method1362() & 0xFF) + (local21 - 128 << 8);
+		@Pc(21) int local21 = super.data[super.pos++] - this.aClass52_1.method1362() & 0xFF;
+		return local21 < 128 ? local21 : (super.data[super.pos++] - this.aClass52_1.method1362() & 0xFF) + (local21 - 128 << 8);
 	}
 
 	@OriginalMember(owner = "client!cw", name = "w", descriptor = "(I)Z")
 	public boolean method1141() {
-		@Pc(23) int local23 = super.bytes[super.position] - this.aClass52_1.method1364() & 0xFF;
+		@Pc(23) int local23 = super.data[super.pos] - this.aClass52_1.method1364() & 0xFF;
 		return local23 >= 128;
 	}
 
@@ -70,14 +70,14 @@ public final class Class4_Sub12_Sub1 extends ByteBuffer {
 		@Pc(20) int local20 = 0;
 		this.anInt1270 += arg0;
 		while (local18 < arg0) {
-			local20 += (super.bytes[local10++] & Static20.anIntArray14[local18]) << arg0 - local18;
+			local20 += (super.data[local10++] & Static20.anIntArray14[local18]) << arg0 - local18;
 			arg0 -= local18;
 			local18 = 8;
 		}
 		if (arg0 == local18) {
-			local20 += super.bytes[local10] & Static20.anIntArray14[local18];
+			local20 += super.data[local10] & Static20.anIntArray14[local18];
 		} else {
-			local20 += super.bytes[local10] >> local18 - arg0 & Static20.anIntArray14[arg0];
+			local20 += super.data[local10] >> local18 - arg0 & Static20.anIntArray14[arg0];
 		}
 		return local20;
 	}

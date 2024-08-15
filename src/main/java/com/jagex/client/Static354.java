@@ -13,7 +13,7 @@ public final class Static354 {
 	public static final Class215 aClass215_83 = new Class215(13, 3);
 
 	@OriginalMember(owner = "client!rv", name = "m", descriptor = "[Lclient!iv;")
-	public static final ByteBuffer[] A_BYTE_BUFFER_ARRAY_1 = new ByteBuffer[2048];
+	public static final Packet[] A_BYTE_BUFFER_ARRAY_1 = new Packet[2048];
 
 	@OriginalMember(owner = "client!rv", name = "Cb", descriptor = "I")
 	public static int anInt6183 = 0;

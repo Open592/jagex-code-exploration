@@ -16,14 +16,14 @@ public final class Static356 {
 	public static final Class68 aClass68_43 = new Class68(64);
 
 	@OriginalMember(owner = "client!sc", name = "a", descriptor = "(ILclient!iv;I)Ljava/lang/String;")
-	public static String method4831(@OriginalArg(1) ByteBuffer arg0) {
+	public static String method4831(@OriginalArg(1) Packet arg0) {
 		try {
 			@Pc(7) int local7 = arg0.method2506();
 			if (local7 > 32767) {
 				local7 = 32767;
 			}
 			@Pc(19) byte[] local19 = new byte[local7];
-			arg0.position += Static339.aClass119_1.method2933(arg0.bytes, 0, local19, local7, arg0.position);
+			arg0.pos += Static339.aClass119_1.method2933(arg0.data, 0, local19, local7, arg0.pos);
 			return Static412.resolveStringFromByteBuffer(local19, local7, 0);
 		} catch (@Pc(45) Exception local45) {
 			return "Cabbage";

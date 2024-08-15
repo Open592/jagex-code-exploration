@@ -58,8 +58,8 @@ public final class Static233 {
 			Static415.method5323(Static18.aClass83_8.method2267(Static178.langID));
 		} else {
 			Static429.method5476(Static211.aClass215_41);
-			Static3.aClass4_Sub12_Sub1_5.writeByte(Static269.method3856(arg0));
-			Static3.aClass4_Sub12_Sub1_5.writeString(arg0);
+			Static3.aClass4_Sub12_Sub1_5.p1(Static269.method3856(arg0));
+			Static3.aClass4_Sub12_Sub1_5.pjstr(arg0);
 		}
 	}
 

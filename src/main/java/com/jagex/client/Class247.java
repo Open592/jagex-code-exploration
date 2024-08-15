@@ -533,14 +533,14 @@ public final class Class247 {
 	}
 
 	@OriginalMember(owner = "client!uu", name = "a", descriptor = "(ILclient!iv;)[Ljava/lang/Object;")
-	private Object[] method5302(@OriginalArg(1) ByteBuffer arg0) {
-		@Pc(9) int local9 = arg0.readByteIntoInt();
+	private Object[] method5302(@OriginalArg(1) Packet arg0) {
+		@Pc(9) int local9 = arg0.g1();
 		if (local9 == 0) {
 			return null;
 		}
 		@Pc(19) Object[] local19 = new Object[local9];
 		for (@Pc(26) int local26 = 0; local26 < local9; local26++) {
-			@Pc(32) int local32 = arg0.readByteIntoInt();
+			@Pc(32) int local32 = arg0.g1();
 			if (local32 == 0) {
 				local19[local26] = Integer.valueOf(arg0.method2529());
 			} else if (local32 == 1) {
@@ -562,12 +562,12 @@ public final class Class247 {
 	}
 
 	@OriginalMember(owner = "client!uu", name = "a", descriptor = "(Lclient!iv;I)V")
-	public void method5304(@OriginalArg(0) ByteBuffer arg0) {
-		@Pc(9) int local9 = arg0.readByteIntoInt();
+	public void method5304(@OriginalArg(0) Packet arg0) {
+		@Pc(9) int local9 = arg0.g1();
 		if (local9 == 255) {
 			local9 = -1;
 		}
-		this.anInt6840 = arg0.readByteIntoInt();
+		this.anInt6840 = arg0.g1();
 		if ((this.anInt6840 & 0x80) != 0) {
 			this.anInt6840 &= 0x7F;
 			this.aString65 = arg0.readValidStringAtCurrentPosition();
@@ -577,17 +577,17 @@ public final class Class247 {
 		this.anInt6808 = arg0.method2512();
 		this.anInt6816 = arg0.method2536();
 		this.anInt6802 = arg0.method2536();
-		this.aByte80 = arg0.readInt8();
-		this.aByte78 = arg0.readInt8();
-		this.aByte79 = arg0.readInt8();
-		this.aByte81 = arg0.readInt8();
+		this.aByte80 = arg0.g1b();
+		this.aByte78 = arg0.g1b();
+		this.aByte79 = arg0.g1b();
+		this.aByte81 = arg0.g1b();
 		this.anInt6850 = arg0.method2536();
 		if (this.anInt6850 == 65535) {
 			this.anInt6850 = -1;
 		} else {
 			this.anInt6850 = (this.anInt6809 & 0xFFFF0000) + this.anInt6850;
 		}
-		@Pc(113) int local113 = arg0.readByteIntoInt();
+		@Pc(113) int local113 = arg0.g1();
 		if (local9 >= 0) {
 			this.aBoolean622 = (local113 & 0x2) != 0;
 		}
@@ -596,20 +596,20 @@ public final class Class247 {
 			this.anInt6821 = arg0.method2536();
 			this.anInt6834 = arg0.method2536();
 			if (local9 < 0) {
-				this.aBoolean622 = arg0.readByteIntoInt() == 1;
+				this.aBoolean622 = arg0.g1() == 1;
 			}
 		}
 		if (this.anInt6840 == 5) {
 			this.lb = arg0.method2529();
 			this.anInt6818 = arg0.method2536();
-			@Pc(181) int local181 = arg0.readByteIntoInt();
+			@Pc(181) int local181 = arg0.g1();
 			this.aBoolean621 = (local181 & 0x1) != 0;
 			this.aBoolean614 = (local181 & 0x2) != 0;
-			this.anInt6851 = arg0.readByteIntoInt();
-			this.anInt6831 = arg0.readByteIntoInt();
+			this.anInt6851 = arg0.g1();
+			this.anInt6831 = arg0.g1();
 			this.anInt6778 = arg0.method2529();
-			this.aBoolean609 = arg0.readByteIntoInt() == 1;
-			this.aBoolean623 = arg0.readByteIntoInt() == 1;
+			this.aBoolean609 = arg0.g1() == 1;
+			this.aBoolean623 = arg0.g1() == 1;
 			this.anInt6772 = arg0.method2529();
 		}
 		if (this.anInt6840 == 6) {
@@ -628,10 +628,10 @@ public final class Class247 {
 			if (this.anInt6788 == 65535) {
 				this.anInt6788 = -1;
 			}
-			this.aBoolean620 = arg0.readByteIntoInt() == 1;
+			this.aBoolean620 = arg0.g1() == 1;
 			this.anInt6862 = arg0.method2512();
 			this.anInt6782 = arg0.method2512();
-			this.aBoolean619 = arg0.readByteIntoInt() == 1;
+			this.aBoolean619 = arg0.g1() == 1;
 			if (this.aByte80 != 0) {
 				this.anInt6822 = arg0.method2536();
 			}
@@ -645,28 +645,28 @@ public final class Class247 {
 				this.anInt6791 = -1;
 			}
 			this.aString67 = arg0.readValidStringAtCurrentPosition();
-			this.anInt6853 = arg0.readByteIntoInt();
-			this.anInt6838 = arg0.readByteIntoInt();
-			this.anInt6803 = arg0.readByteIntoInt();
-			this.aBoolean615 = arg0.readByteIntoInt() == 1;
+			this.anInt6853 = arg0.g1();
+			this.anInt6838 = arg0.g1();
+			this.anInt6803 = arg0.g1();
+			this.aBoolean615 = arg0.g1() == 1;
 			this.anInt6772 = arg0.method2529();
-			this.anInt6851 = arg0.readByteIntoInt();
+			this.anInt6851 = arg0.g1();
 			if (local9 >= 0) {
-				this.anInt6817 = arg0.readByteIntoInt();
+				this.anInt6817 = arg0.g1();
 			}
 		}
 		if (this.anInt6840 == 3) {
 			this.anInt6772 = arg0.method2529();
-			this.aBoolean618 = arg0.readByteIntoInt() == 1;
-			this.anInt6851 = arg0.readByteIntoInt();
+			this.aBoolean618 = arg0.g1() == 1;
+			this.anInt6851 = arg0.g1();
 		}
 		if (this.anInt6840 == 9) {
-			this.anInt6794 = arg0.readByteIntoInt();
+			this.anInt6794 = arg0.g1();
 			this.anInt6772 = arg0.method2529();
-			this.aBoolean610 = arg0.readByteIntoInt() == 1;
+			this.aBoolean610 = arg0.g1() == 1;
 		}
 		@Pc(490) int local490 = arg0.method2493();
-		@Pc(494) int local494 = arg0.readByteIntoInt();
+		@Pc(494) int local494 = arg0.g1();
 		@Pc(516) int local516;
 		if (local494 != 0) {
 			this.anIntArray523 = new int[11];
@@ -674,24 +674,24 @@ public final class Class247 {
 			this.aByteArray97 = new byte[11];
 			while (local494 != 0) {
 				local516 = (local494 >> 4) - 1;
-				local494 = local494 << 8 | arg0.readByteIntoInt();
+				local494 = local494 << 8 | arg0.g1();
 				local494 &= 0xFFF;
 				if (local494 == 4095) {
 					local494 = -1;
 				}
-				@Pc(539) byte local539 = arg0.readInt8();
+				@Pc(539) byte local539 = arg0.g1b();
 				if (local539 != 0) {
 					this.aBoolean624 = true;
 				}
-				@Pc(548) byte local548 = arg0.readInt8();
+				@Pc(548) byte local548 = arg0.g1b();
 				this.anIntArray523[local516] = local494;
 				this.aByteArray96[local516] = local539;
 				this.aByteArray97[local516] = local548;
-				local494 = arg0.readByteIntoInt();
+				local494 = arg0.g1();
 			}
 		}
 		this.aString66 = arg0.readValidStringAtCurrentPosition();
-		local516 = arg0.readByteIntoInt();
+		local516 = arg0.g1();
 		@Pc(582) int local582 = local516 & 0xF;
 		@Pc(593) int local593;
 		if (local582 > 0) {
@@ -703,7 +703,7 @@ public final class Class247 {
 		@Pc(614) int local614 = local516 >> 4;
 		@Pc(628) int local628;
 		if (local614 > 0) {
-			local593 = arg0.readByteIntoInt();
+			local593 = arg0.g1();
 			this.anIntArray521 = new int[local593 + 1];
 			for (local628 = 0; local628 < this.anIntArray521.length; local628++) {
 				this.anIntArray521[local628] = -1;
@@ -711,16 +711,16 @@ public final class Class247 {
 			this.anIntArray521[local593] = arg0.method2536();
 		}
 		if (local614 > 1) {
-			local593 = arg0.readByteIntoInt();
+			local593 = arg0.g1();
 			this.anIntArray521[local593] = arg0.method2536();
 		}
 		this.aString64 = arg0.readValidStringAtCurrentPosition();
 		if (this.aString64.equals("")) {
 			this.aString64 = null;
 		}
-		this.anInt6795 = arg0.readByteIntoInt();
-		this.anInt6786 = arg0.readByteIntoInt();
-		this.anInt6777 = arg0.readByteIntoInt();
+		this.anInt6795 = arg0.g1();
+		this.anInt6786 = arg0.g1();
+		this.anInt6777 = arg0.g1();
 		this.aString68 = arg0.readValidStringAtCurrentPosition();
 		local593 = -1;
 		if (Static374.method4995(local490) != 0) {
@@ -745,7 +745,7 @@ public final class Class247 {
 		}
 		this.aClass4_Sub33_2 = new Class4_Sub33(local490, local593);
 		if (local9 >= 0) {
-			local628 = arg0.readByteIntoInt();
+			local628 = arg0.g1();
 			@Pc(786) int local786;
 			@Pc(790) int local790;
 			for (@Pc(780) int local780 = 0; local780 < local628; local780++) {
@@ -753,10 +753,10 @@ public final class Class247 {
 				local790 = arg0.method2529();
 				this.aClass102_39.method2703((long) local786, new Class4_Sub37(local790));
 			}
-			local786 = arg0.readByteIntoInt();
+			local786 = arg0.g1();
 			for (local790 = 0; local790 < local786; local790++) {
 				@Pc(816) int local816 = arg0.method2493();
-				@Pc(820) String local820 = arg0.method2497();
+				@Pc(820) String local820 = arg0.gjstr2();
 				this.aClass102_39.method2703((long) local816, new Class4_Sub7(local820));
 			}
 		}
@@ -805,8 +805,8 @@ public final class Class247 {
 	}
 
 	@OriginalMember(owner = "client!uu", name = "b", descriptor = "(Lclient!iv;I)[I")
-	private int[] method5306(@OriginalArg(0) ByteBuffer arg0) {
-		@Pc(15) int local15 = arg0.readByteIntoInt();
+	private int[] method5306(@OriginalArg(0) Packet arg0) {
+		@Pc(15) int local15 = arg0.g1();
 		if (local15 == 0) {
 			return null;
 		}

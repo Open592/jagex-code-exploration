@@ -30,9 +30,9 @@ public final class Class118 {
 	public boolean aBoolean323 = false;
 
 	@OriginalMember(owner = "client!jg", name = "a", descriptor = "(IILclient!iv;)V")
-	public void method2922(@OriginalArg(1) int arg0, @OriginalArg(2) ByteBuffer arg1) {
+	public void method2922(@OriginalArg(1) int arg0, @OriginalArg(2) Packet arg1) {
 		while (true) {
-			@Pc(9) int local9 = arg1.readByteIntoInt();
+			@Pc(9) int local9 = arg1.g1();
 			if (local9 == 0) {
 				return;
 			}
@@ -41,7 +41,7 @@ public final class Class118 {
 	}
 
 	@OriginalMember(owner = "client!jg", name = "a", descriptor = "(Lclient!iv;III)V")
-	private void method2923(@OriginalArg(0) ByteBuffer arg0, @OriginalArg(1) int arg1, @OriginalArg(3) int arg2) {
+	private void method2923(@OriginalArg(0) Packet arg0, @OriginalArg(1) int arg1, @OriginalArg(3) int arg2) {
 		if (arg1 == 1) {
 			this.anInt3536 = arg0.method2536();
 			if (this.anInt3536 == 65535) {
@@ -51,11 +51,11 @@ public final class Class118 {
 			this.anInt3538 = arg0.method2536() + 1;
 			this.anInt3543 = arg0.method2536() + 1;
 		} else if (arg1 == 3) {
-			arg0.readInt8();
+			arg0.g1b();
 		} else if (arg1 == 4) {
-			this.anInt3542 = arg0.readByteIntoInt();
+			this.anInt3542 = arg0.g1();
 		} else if (arg1 == 5) {
-			this.anInt3535 = arg0.readByteIntoInt();
+			this.anInt3535 = arg0.g1();
 		} else if (arg1 == 6) {
 			this.aBoolean323 = true;
 		} else if (arg1 == 7) {

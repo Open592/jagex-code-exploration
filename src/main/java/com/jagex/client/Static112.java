@@ -96,7 +96,7 @@ public final class Static112 {
 						if (local66[0] != -1) {
 							throw new IllegalStateException("if1");
 						}
-						local78.method5304(new ByteBuffer(local66));
+						local78.method5304(new Packet(local66));
 					}
 				}
 			}
@@ -136,10 +136,10 @@ public final class Static112 {
 				if (Static94.aBoolean176) {
 					local78 = Static70.anInt1504;
 				}
-				Static3.aClass4_Sub12_Sub1_5.position = 0;
-				Static3.aClass4_Sub12_Sub1_5.writeByte(Static153.aClass60_9.anInt1812);
-				Static3.aClass4_Sub12_Sub1_5.writeIntBE(local78);
-				Static125.aClass11_5.method142(Static3.aClass4_Sub12_Sub1_5.position, Static3.aClass4_Sub12_Sub1_5.bytes);
+				Static3.aClass4_Sub12_Sub1_5.pos = 0;
+				Static3.aClass4_Sub12_Sub1_5.p1(Static153.aClass60_9.anInt1812);
+				Static3.aClass4_Sub12_Sub1_5.p4(local78);
+				Static125.aClass11_5.method142(Static3.aClass4_Sub12_Sub1_5.pos, Static3.aClass4_Sub12_Sub1_5.data);
 				Static329.method4427();
 				local110 = Static125.aClass11_5.readByte();
 				Static329.method4427();

@@ -30,9 +30,9 @@ public final class Class178 {
 	private final int[] anIntArray355 = new int[] { -1, -1, -1, -1, -1 };
 
 	@OriginalMember(owner = "client!pd", name = "a", descriptor = "(ILclient!iv;)V")
-	public void method4091(@OriginalArg(1) ByteBuffer arg0) {
+	public void method4091(@OriginalArg(1) Packet arg0) {
 		while (true) {
-			@Pc(11) int local11 = arg0.readByteIntoInt();
+			@Pc(11) int local11 = arg0.g1();
 			if (local11 == 0) {
 				return;
 			}
@@ -117,22 +117,22 @@ public final class Class178 {
 	}
 
 	@OriginalMember(owner = "client!pd", name = "a", descriptor = "(IBLclient!iv;)V")
-	private void method4098(@OriginalArg(0) int arg0, @OriginalArg(2) ByteBuffer arg1) {
+	private void method4098(@OriginalArg(0) int arg0, @OriginalArg(2) Packet arg1) {
 		if (arg0 == 1) {
-			arg1.readByteIntoInt();
+			arg1.g1();
 			return;
 		}
 		@Pc(15) int local15;
 		@Pc(21) int local21;
 		if (arg0 == 2) {
-			local15 = arg1.readByteIntoInt();
+			local15 = arg1.g1();
 			this.anIntArray356 = new int[local15];
 			for (local21 = 0; local21 < local15; local21++) {
 				this.anIntArray356[local21] = arg1.method2536();
 			}
 		} else if (arg0 != 3) {
 			if (arg0 == 40) {
-				local15 = arg1.readByteIntoInt();
+				local15 = arg1.g1();
 				this.aShortArray181 = new short[local15];
 				this.aShortArray183 = new short[local15];
 				for (local21 = 0; local21 < local15; local21++) {
@@ -140,7 +140,7 @@ public final class Class178 {
 					this.aShortArray183[local21] = (short) arg1.method2536();
 				}
 			} else if (arg0 == 41) {
-				local15 = arg1.readByteIntoInt();
+				local15 = arg1.g1();
 				this.aShortArray180 = new short[local15];
 				this.aShortArray182 = new short[local15];
 				for (local21 = 0; local21 < local15; local21++) {

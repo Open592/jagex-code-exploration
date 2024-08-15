@@ -64,24 +64,24 @@ public final class Static443 {
 			if (local29 != null && Static1.aClass16_Sub1_Sub5_Sub1_1 != local29 && local29.aString44 != null && local29.aString44.equalsIgnoreCase(arg0)) {
 				if (arg1 == 1) {
 					Static429.method5476(Static111.aClass215_28);
-					Static3.aClass4_Sub12_Sub1_5.writeUint16BE(local17[local21]);
-					Static3.aClass4_Sub12_Sub1_5.writeByte(0);
+					Static3.aClass4_Sub12_Sub1_5.p2_alt2(local17[local21]);
+					Static3.aClass4_Sub12_Sub1_5.p1(0);
 				} else if (arg1 == 4) {
 					Static429.method5476(Static130.aClass215_34);
 					Static3.aClass4_Sub12_Sub1_5.writeInt8(0);
-					Static3.aClass4_Sub12_Sub1_5.writeUint16LE(local17[local21]);
+					Static3.aClass4_Sub12_Sub1_5.p2_alt3(local17[local21]);
 				} else if (arg1 == 5) {
 					Static429.method5476(Static82.aClass215_18);
-					Static3.aClass4_Sub12_Sub1_5.writeUint16LE(local17[local21]);
+					Static3.aClass4_Sub12_Sub1_5.p2_alt3(local17[local21]);
 					Static3.aClass4_Sub12_Sub1_5.writeInt8(0);
 				} else if (arg1 == 6) {
 					Static429.method5476(Static122.aClass215_32);
 					Static3.aClass4_Sub12_Sub1_5.writeInt8(0);
-					Static3.aClass4_Sub12_Sub1_5.writeUint16BE(local17[local21]);
+					Static3.aClass4_Sub12_Sub1_5.p2_alt2(local17[local21]);
 				} else if (arg1 == 7) {
 					Static429.method5476(Static247.aClass215_52);
-					Static3.aClass4_Sub12_Sub1_5.writeUint8(0);
-					Static3.aClass4_Sub12_Sub1_5.writeInt16BE(local17[local21]);
+					Static3.aClass4_Sub12_Sub1_5.p1_alt1(0);
+					Static3.aClass4_Sub12_Sub1_5.p2(local17[local21]);
 				}
 				local19 = true;
 				break;

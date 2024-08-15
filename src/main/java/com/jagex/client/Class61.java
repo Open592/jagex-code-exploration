@@ -59,8 +59,8 @@ public final class Class61 {
 	}
 
 	@OriginalMember(owner = "client!ej", name = "a", descriptor = "(Lclient!iv;)V")
-	public void method1603(@OriginalArg(0) ByteBuffer arg0) {
-		this.anInt1830 = arg0.readByteIntoInt();
+	public void method1603(@OriginalArg(0) Packet arg0) {
+		this.anInt1830 = arg0.g1();
 		this.anInt1831 = arg0.method2529();
 		this.anInt1832 = arg0.method2529();
 		this.method1605(arg0);
@@ -84,8 +84,8 @@ public final class Class61 {
 	}
 
 	@OriginalMember(owner = "client!ej", name = "b", descriptor = "(Lclient!iv;)V")
-	public void method1605(@OriginalArg(0) ByteBuffer arg0) {
-		this.anInt1833 = arg0.readByteIntoInt();
+	public void method1605(@OriginalArg(0) Packet arg0) {
+		this.anInt1833 = arg0.g1();
 		this.anIntArray148 = new int[this.anInt1833];
 		this.anIntArray149 = new int[this.anInt1833];
 		for (@Pc(16) int local16 = 0; local16 < this.anInt1833; local16++) {

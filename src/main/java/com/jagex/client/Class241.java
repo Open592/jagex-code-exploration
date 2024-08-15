@@ -18,11 +18,11 @@ public final class Class241 {
 	private int anInt6707;
 
 	@OriginalMember(owner = "client!um", name = "<init>", descriptor = "(Lclient!iv;)V")
-	public Class241(@OriginalArg(0) ByteBuffer arg0) {
+	public Class241(@OriginalArg(0) Packet arg0) {
 		for (@Pc(7) int local7 = 0; local7 < 10; local7++) {
-			@Pc(12) int local12 = arg0.readByteIntoInt();
+			@Pc(12) int local12 = arg0.g1();
 			if (local12 != 0) {
-				arg0.position--;
+				arg0.pos--;
 				this.aClass184Array1[local7] = new Class184();
 				this.aClass184Array1[local7].method4150(arg0);
 			}

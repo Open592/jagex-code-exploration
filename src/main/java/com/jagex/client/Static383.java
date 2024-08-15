@@ -7,7 +7,7 @@ import org.openrs2.deob.annotation.Pc;
 public final class Static383 {
 
 	@OriginalMember(owner = "client!tj", name = "d", descriptor = "Lclient!iv;")
-	public static ByteBuffer aByteBuffer_7 = new ByteBuffer(1);
+	public static Packet aPacket_7 = new Packet(1);
 
 	@OriginalMember(owner = "client!tj", name = "g", descriptor = "[I")
 	public static final int[] anIntArray496 = new int[] { 36064, 36065, 36066, 36067, 36068, 36069, 36070, 36071, 36096 };
@@ -42,8 +42,8 @@ public final class Static383 {
 				}
 				Static244.anInt3027 = Static325.anInt5640;
 				Static429.method5476(Static132.aClass215_36);
-				Static3.aClass4_Sub12_Sub1_5.writeByte(Static269.method3856(arg0));
-				Static3.aClass4_Sub12_Sub1_5.writeString(arg0);
+				Static3.aClass4_Sub12_Sub1_5.p1(Static269.method3856(arg0));
+				Static3.aClass4_Sub12_Sub1_5.pjstr(arg0);
 				return;
 			}
 		}

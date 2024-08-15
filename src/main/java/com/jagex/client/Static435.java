@@ -30,7 +30,7 @@ public final class Static435 {
 		@Pc(27) byte[] local27 = Static306.aClass76_65.method2104(arg0, 0);
 		local17 = new Class118();
 		if (local27 != null) {
-			local17.method2922(arg0, new ByteBuffer(local27));
+			local17.method2922(arg0, new Packet(local27));
 		}
 		Static436.aClass68_53.method1779((long) arg0, local17);
 		return local17;

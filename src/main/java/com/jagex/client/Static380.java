@@ -90,10 +90,10 @@ public final class Static380 {
 		@Pc(41) int local41 = 0;
 		while (true) {
 			while (local37.anInt5679 > local39) {
-				@Pc(55) ByteBuffer local55 = new ByteBuffer(arg0.method2104(local31[local41++], local18));
+				@Pc(55) Packet local55 = new Packet(arg0.method2104(local31[local41++], local18));
 				@Pc(59) int local59 = local55.method2529();
 				@Pc(63) int local63 = local55.method2536();
-				@Pc(67) int local67 = local55.readByteIntoInt();
+				@Pc(67) int local67 = local55.g1();
 				if (!arg2 && local67 == 1) {
 					local37.anInt5679--;
 				} else {

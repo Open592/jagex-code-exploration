@@ -303,9 +303,9 @@ public final class Class4_Sub6_Sub9 extends Class4_Sub6 {
 
 	@OriginalMember(owner = "client!ev", name = "a", descriptor = "(IILclient!iv;)V")
 	@Override
-	public void method5518(@OriginalArg(1) int arg0, @OriginalArg(2) ByteBuffer arg1) {
+	public void method5518(@OriginalArg(1) int arg0, @OriginalArg(2) Packet arg1) {
 		if (arg0 == 0) {
-			this.anInt2021 = arg1.readByteIntoInt();
+			this.anInt2021 = arg1.g1();
 		} else if (arg0 == 1) {
 			this.anInt2019 = arg1.method2536();
 		} else if (arg0 == 2) {
@@ -317,7 +317,7 @@ public final class Class4_Sub6_Sub9 extends Class4_Sub6 {
 		} else if (arg0 == 5) {
 			this.anInt2011 = arg1.method2536();
 		} else if (arg0 == 6) {
-			this.anInt2016 = arg1.readByteIntoInt();
+			this.anInt2016 = arg1.g1();
 		} else if (arg0 == 7) {
 			this.anInt2007 = arg1.method2536();
 		} else if (arg0 == 8) {

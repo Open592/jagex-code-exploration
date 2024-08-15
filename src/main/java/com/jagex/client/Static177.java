@@ -107,7 +107,7 @@ public final class Static177 {
 			Static436.aBoolean666 = false;
 		} else if (Static323.aClass50_Sub1_1.anInt3439 != 0 && Static62.anInt1117 != -1 && !Static109.method5336()) {
 			Static429.method5476(Static309.aClass215_67);
-			Static3.aClass4_Sub12_Sub1_5.writeIntBE(Static62.anInt1117);
+			Static3.aClass4_Sub12_Sub1_5.p4(Static62.anInt1117);
 			Static62.anInt1117 = -1;
 		}
 	}

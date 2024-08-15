@@ -226,7 +226,7 @@ public final class Static218 {
 		Static317.method4231();
 		if (Static226.aFrame1 != null && Static125.aClass11_5 != null && Static403.anInt6667 == 25) {
 			Static429.method5476(Static427.aClass215_94);
-			Static3.aClass4_Sub12_Sub1_5.writeIntBE(1057001181);
+			Static3.aClass4_Sub12_Sub1_5.p4(1057001181);
 		}
 		if (Static448.anInt7307 == 0) {
 			local766 = (Static169.anInt3265 - (Static326.anInt5666 >> 4)) / 8;

@@ -77,7 +77,7 @@ public final class Class4_Sub1_Sub3 extends Class4_Sub1 {
 	}
 
 	@OriginalMember(owner = "client!au", name = "a", descriptor = "(B[ILclient!iv;)V")
-	public void method231(@OriginalArg(1) int[] arg0, @OriginalArg(2) ByteBuffer arg1) {
+	public void method231(@OriginalArg(1) int[] arg0, @OriginalArg(2) Packet arg1) {
 		if (this.anIntArray18 == null) {
 			return;
 		}
@@ -93,9 +93,9 @@ public final class Class4_Sub1_Sub3 extends Class4_Sub1 {
 	}
 
 	@OriginalMember(owner = "client!au", name = "a", descriptor = "(Lclient!iv;I)V")
-	public void method232(@OriginalArg(0) ByteBuffer arg0) {
+	public void method232(@OriginalArg(0) Packet arg0) {
 		while (true) {
-			@Pc(9) int local9 = arg0.readByteIntoInt();
+			@Pc(9) int local9 = arg0.g1();
 			if (local9 == 0) {
 				return;
 			}
@@ -109,7 +109,7 @@ public final class Class4_Sub1_Sub3 extends Class4_Sub1 {
 	}
 
 	@OriginalMember(owner = "client!au", name = "b", descriptor = "(Lclient!iv;I)Ljava/lang/String;")
-	public String method234(@OriginalArg(0) ByteBuffer arg0) {
+	public String method234(@OriginalArg(0) Packet arg0) {
 		@Pc(17) StringBuffer local17 = new StringBuffer(80);
 		if (this.anIntArray18 != null) {
 			for (@Pc(22) int local22 = 0; local22 < this.anIntArray18.length; local22++) {
@@ -122,7 +122,7 @@ public final class Class4_Sub1_Sub3 extends Class4_Sub1 {
 	}
 
 	@OriginalMember(owner = "client!au", name = "a", descriptor = "(Lclient!iv;IZ)V")
-	private void method235(@OriginalArg(0) ByteBuffer arg0, @OriginalArg(1) int arg1) {
+	private void method235(@OriginalArg(0) Packet arg0, @OriginalArg(1) int arg1) {
 		if (arg1 == 1) {
 			this.aStringArray3 = Static113.method2058(arg0.readValidStringAtCurrentPosition(), '<');
 			return;
@@ -130,7 +130,7 @@ public final class Class4_Sub1_Sub3 extends Class4_Sub1 {
 		@Pc(22) int local22;
 		@Pc(28) int local28;
 		if (arg1 == 2) {
-			local22 = arg0.readByteIntoInt();
+			local22 = arg0.g1();
 			this.anIntArray16 = new int[local22];
 			for (local28 = 0; local28 < local22; local28++) {
 				this.anIntArray16[local28] = arg0.method2536();
@@ -138,7 +138,7 @@ public final class Class4_Sub1_Sub3 extends Class4_Sub1 {
 			return;
 		}
 		if (arg1 == 3) {
-			local22 = arg0.readByteIntoInt();
+			local22 = arg0.g1();
 			this.anIntArrayArray2 = new int[local22][];
 			this.anIntArray18 = new int[local22];
 			for (local28 = 0; local28 < local22; local28++) {

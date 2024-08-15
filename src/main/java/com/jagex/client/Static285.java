@@ -50,7 +50,7 @@ public final class Static285 {
 				}
 				Static125.aClass11_5 = new Class11((Socket) Static36.aClass199_3.output, Static206.signLink);
 				Static36.aClass199_3 = null;
-				Static125.aClass11_5.method142(Static3.aClass4_Sub12_Sub1_5.position, Static3.aClass4_Sub12_Sub1_5.bytes);
+				Static125.aClass11_5.method142(Static3.aClass4_Sub12_Sub1_5.pos, Static3.aClass4_Sub12_Sub1_5.data);
 				Static329.method4427();
 				local118 = Static125.aClass11_5.readByte();
 				Static329.method4427();

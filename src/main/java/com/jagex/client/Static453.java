@@ -40,8 +40,8 @@ public final class Static453 {
 
 	@OriginalMember(owner = "client!wu", name = "a", descriptor = "([BZ)[B")
 	public static byte[] method5680(@OriginalArg(0) byte[] arg0) {
-		@Pc(8) ByteBuffer local8 = new ByteBuffer(arg0);
-		@Pc(12) int local12 = local8.readByteIntoInt();
+		@Pc(8) Packet local8 = new Packet(arg0);
+		@Pc(12) int local12 = local8.g1();
 		@Pc(21) int local21 = local8.method2529();
 		if (local21 < 0 || Static422.anInt6952 != 0 && Static422.anInt6952 < local21) {
 			throw new RuntimeException();

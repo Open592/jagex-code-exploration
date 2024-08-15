@@ -59,11 +59,11 @@ public final class Class113 {
 	}
 
 	@OriginalMember(owner = "client!is", name = "a", descriptor = "(ILclient!iv;I)V")
-	private void method2819(@OriginalArg(1) ByteBuffer arg0, @OriginalArg(2) int arg1) {
+	private void method2819(@OriginalArg(1) Packet arg0, @OriginalArg(2) int arg1) {
 		if (arg1 == 1) {
 			this.anInt3381 = Static219.method5061(arg0.method2493());
 		} else if (arg1 == 2) {
-			this.anInt3378 = arg0.readByteIntoInt();
+			this.anInt3378 = arg0.g1();
 			return;
 		} else if (arg1 == 3) {
 			this.anInt3378 = arg0.method2536();
@@ -87,7 +87,7 @@ public final class Class113 {
 			this.aBoolean284 = false;
 			return;
 		} else if (arg1 == 11) {
-			this.anInt3373 = arg0.readByteIntoInt();
+			this.anInt3373 = arg0.g1();
 			return;
 		} else if (arg1 == 12) {
 			this.aBoolean283 = true;
@@ -97,7 +97,7 @@ public final class Class113 {
 			return;
 		} else {
 			if (arg1 == 14) {
-				this.anInt3383 = arg0.readByteIntoInt();
+				this.anInt3383 = arg0.g1();
 			} else if (arg1 == 15) {
 				this.anInt3375 = arg0.method2536();
 				if (this.anInt3375 == 65535) {
@@ -105,7 +105,7 @@ public final class Class113 {
 					return;
 				}
 			} else if (arg1 == 16) {
-				this.anInt3384 = arg0.readByteIntoInt();
+				this.anInt3384 = arg0.g1();
 				return;
 			} else {
 				return;
@@ -115,9 +115,9 @@ public final class Class113 {
 	}
 
 	@OriginalMember(owner = "client!is", name = "a", descriptor = "(ILclient!iv;)V")
-	public void method2822(@OriginalArg(1) ByteBuffer arg0) {
+	public void method2822(@OriginalArg(1) Packet arg0) {
 		while (true) {
-			@Pc(5) int local5 = arg0.readByteIntoInt();
+			@Pc(5) int local5 = arg0.g1();
 			if (local5 == 0) {
 				return;
 			}

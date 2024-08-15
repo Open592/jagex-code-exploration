@@ -45,7 +45,7 @@ public final class Class172 {
 		local16 = new Class74();
 		local16.aClass172_1 = this;
 		if (local41 != null) {
-			local16.method2056(new ByteBuffer(local41));
+			local16.method2056(new Packet(local41));
 		}
 		@Pc(60) Class68 local60 = this.aClass68_30;
 		synchronized (this.aClass68_30) {

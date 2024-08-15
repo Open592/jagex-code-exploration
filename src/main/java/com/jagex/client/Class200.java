@@ -46,9 +46,9 @@ public final class Class200 {
 	}
 
 	@OriginalMember(owner = "client!qu", name = "a", descriptor = "(ILclient!iv;)V")
-	public void method4534(@OriginalArg(1) ByteBuffer arg0) {
+	public void method4534(@OriginalArg(1) Packet arg0) {
 		while (true) {
-			@Pc(5) int local5 = arg0.readByteIntoInt();
+			@Pc(5) int local5 = arg0.g1();
 			if (local5 == 0) {
 				return;
 			}
@@ -85,11 +85,11 @@ public final class Class200 {
 	}
 
 	@OriginalMember(owner = "client!qu", name = "a", descriptor = "(Lclient!iv;II)V")
-	private void method4537(@OriginalArg(0) ByteBuffer arg0, @OriginalArg(1) int arg1) {
+	private void method4537(@OriginalArg(0) Packet arg0, @OriginalArg(1) int arg1) {
 		if (arg1 == 1) {
-			this.aChar3 = Static260.method3771(arg0.readInt8());
+			this.aChar3 = Static260.method3771(arg0.g1b());
 		} else if (arg1 == 2) {
-			this.aChar4 = Static260.method3771(arg0.readInt8());
+			this.aChar4 = Static260.method3771(arg0.g1b());
 		} else if (arg1 == 3) {
 			this.aString58 = arg0.readValidStringAtCurrentPosition();
 		} else if (arg1 == 4) {

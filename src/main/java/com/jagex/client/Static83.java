@@ -23,10 +23,10 @@ public final class Static83 {
 	@OriginalMember(owner = "client!eb", name = "a", descriptor = "(Lclient!uu;ZLclient!uu;)V")
 	public static void method1512(@OriginalArg(0) Class247 arg0, @OriginalArg(2) Class247 arg1) {
 		Static429.method5476(Static261.aClass215_59);
-		Static3.aClass4_Sub12_Sub1_5.writeIntBE(arg0.anInt6809);
-		Static3.aClass4_Sub12_Sub1_5.writeUint16LE(arg0.anInt6865);
-		Static3.aClass4_Sub12_Sub1_5.method2532(arg1.anInt6809);
-		Static3.aClass4_Sub12_Sub1_5.writeUint16LE(arg1.anInt6865);
+		Static3.aClass4_Sub12_Sub1_5.p4(arg0.anInt6809);
+		Static3.aClass4_Sub12_Sub1_5.p2_alt3(arg0.anInt6865);
+		Static3.aClass4_Sub12_Sub1_5.p4_alt2(arg1.anInt6809);
+		Static3.aClass4_Sub12_Sub1_5.p2_alt3(arg1.anInt6865);
 		Static3.aClass4_Sub12_Sub1_5.writeInt16LE(arg1.anInt6779);
 		Static3.aClass4_Sub12_Sub1_5.writeInt16LE(arg0.anInt6779);
 	}

@@ -35,9 +35,9 @@ public final class Static95 {
 	}
 
 	@OriginalMember(owner = "client!ep", name = "a", descriptor = "(Lclient!iv;ILclient!et;I)V")
-	public static void method1665(@OriginalArg(0) ByteBuffer arg0, @OriginalArg(1) int arg1, @OriginalArg(2) SignLink arg2) {
+	public static void method1665(@OriginalArg(0) Packet arg0, @OriginalArg(1) int arg1, @OriginalArg(2) SignLink arg2) {
 		@Pc(13) Class4_Sub36 local13 = new Class4_Sub36();
-		local13.anInt5309 = arg0.readByteIntoInt();
+		local13.anInt5309 = arg0.g1();
 		local13.anInt5310 = arg0.method2529();
 		local13.aByteArrayArrayArray4 = new byte[local13.anInt5309][][];
 		local13.aClass199Array2 = new Message[local13.anInt5309];
@@ -47,7 +47,7 @@ public final class Static95 {
 		local13.anIntArray350 = new int[local13.anInt5309];
 		for (@Pc(55) int local55 = 0; local55 < local13.anInt5309; local55++) {
 			try {
-				@Pc(61) int local61 = arg0.readByteIntoInt();
+				@Pc(61) int local61 = arg0.g1();
 				@Pc(76) String local76;
 				@Pc(80) String local80;
 				@Pc(82) int local82;
@@ -64,7 +64,7 @@ public final class Static95 {
 				} else if (local61 == 3 || local61 == 4) {
 					local76 = arg0.readValidStringAtCurrentPosition();
 					local80 = arg0.readValidStringAtCurrentPosition();
-					local82 = arg0.readByteIntoInt();
+					local82 = arg0.g1();
 					@Pc(135) String[] local135 = new String[local82];
 					for (@Pc(137) int local137 = 0; local137 < local82; local137++) {
 						local135[local137] = arg0.readValidStringAtCurrentPosition();

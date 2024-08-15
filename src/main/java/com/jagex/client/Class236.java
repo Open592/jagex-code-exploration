@@ -135,8 +135,8 @@ public final class Class236 {
 					local66 = 0;
 					local73 = local59 << this.anInt6636;
 					local75 = local59 + 1 << this.anInt6636;
-					@Pc(219) ByteBuffer local219 = Static383.aByteBuffer_7;
-					local219.position = 0;
+					@Pc(219) Packet local219 = Static383.aPacket_7;
+					local219.pos = 0;
 					for (@Pc(224) int local224 = local50; local224 < local57; local224++) {
 						if (local224 - arg1 >= -arg4 && arg4 >= local224 - arg1) {
 							@Pc(251) int local251 = local73 + this.aClass65_Sub2_3.anInt5262 * local224;
@@ -148,12 +148,12 @@ public final class Class236 {
 										if (this.aClass19_Sub2_38.aBoolean215) {
 											for (local305 = 0; local305 < local297.length; local305++) {
 												local66++;
-												local219.writeInt16BE(local297[local305] & 0xFFFF);
+												local219.p2(local297[local305] & 0xFFFF);
 											}
 										} else {
 											for (local305 = 0; local305 < local297.length; local305++) {
 												local66++;
-												local219.method2541(local297[local305] & 0xFFFF);
+												local219.p2_alt1(local297[local305] & 0xFFFF);
 											}
 										}
 									}
@@ -168,7 +168,7 @@ public final class Class236 {
 						OpenGL.glScalef(local39, local39, 1.0F);
 						OpenGL.glTranslatef((float) -local59 / local39, (float) -local43 / local39, 1.0F);
 						OpenGL.glMatrixMode(5888);
-						this.aClass125ArrayArray1[local59][local43].method3190(local219.bytes, local66);
+						this.aClass125ArrayArray1[local59][local43].method3190(local219.data, local66);
 					}
 				}
 			}

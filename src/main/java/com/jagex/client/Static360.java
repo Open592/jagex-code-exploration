@@ -19,16 +19,16 @@ public final class Static360 {
 	public static final Class22 aClass22_284 = new Class22(106, 10);
 
 	@OriginalMember(owner = "client!sg", name = "a", descriptor = "(ILclient!iv;)V")
-	public static void method4864(@OriginalArg(1) ByteBuffer arg0) {
-		if (arg0.bytes.length - arg0.position < 1) {
+	public static void method4864(@OriginalArg(1) Packet arg0) {
+		if (arg0.data.length - arg0.pos < 1) {
 			return;
 		}
-		@Pc(22) int local22 = arg0.readByteIntoInt();
-		if (local22 < 0 || local22 > 1 || arg0.bytes.length - arg0.position < 2) {
+		@Pc(22) int local22 = arg0.g1();
+		if (local22 < 0 || local22 > 1 || arg0.data.length - arg0.pos < 2) {
 			return;
 		}
 		@Pc(47) int local47 = arg0.method2536();
-		if (arg0.bytes.length - arg0.position != local47 * 6) {
+		if (arg0.data.length - arg0.pos != local47 * 6) {
 			return;
 		}
 		while (true) {
@@ -37,7 +37,7 @@ public final class Static360 {
 			do {
 				do {
 					do {
-						if (arg0.bytes.length <= arg0.position) {
+						if (arg0.data.length <= arg0.pos) {
 							return;
 						}
 						local67 = arg0.method2536();

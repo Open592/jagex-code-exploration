@@ -48,19 +48,19 @@ public final class Static445 {
 			GameShell.anInt970 = 0;
 			Static405.anInt6682 = 1;
 			Static239.anInt4518 = 0;
-			@Pc(40) ByteBuffer local40 = new ByteBuffer(128);
-			local40.writeByte(10);
-			local40.writeIntBE((int) (Math.random() * 9.9999999E7D));
-			local40.method2504(Static96.method1684(Static2.aString1));
-			local40.writeIntBE((int) (Math.random() * 9.9999999E7D));
-			local40.writeString(Static297.aString52);
-			local40.writeIntBE((int) (Math.random() * 9.9999999E7D));
+			@Pc(40) Packet local40 = new Packet(128);
+			local40.p1(10);
+			local40.p4((int) (Math.random() * 9.9999999E7D));
+			local40.p8(Static96.method1684(Static2.aString1));
+			local40.p4((int) (Math.random() * 9.9999999E7D));
+			local40.pjstr(Static297.aString52);
+			local40.p4((int) (Math.random() * 9.9999999E7D));
 			local40.method2522(Static85.aBigInteger1, Static309.aBigInteger2);
-			Static3.aClass4_Sub12_Sub1_5.position = 0;
-			Static3.aClass4_Sub12_Sub1_5.writeByte(Static153.aClass60_10.anInt1812);
-			Static3.aClass4_Sub12_Sub1_5.writeByte(local40.position + 2);
-			Static3.aClass4_Sub12_Sub1_5.writeInt16BE(592);
-			Static3.aClass4_Sub12_Sub1_5.method2519(local40.bytes, local40.position);
+			Static3.aClass4_Sub12_Sub1_5.pos = 0;
+			Static3.aClass4_Sub12_Sub1_5.p1(Static153.aClass60_10.anInt1812);
+			Static3.aClass4_Sub12_Sub1_5.p1(local40.pos + 2);
+			Static3.aClass4_Sub12_Sub1_5.p2(592);
+			Static3.aClass4_Sub12_Sub1_5.pArrayBuffer(local40.data, local40.pos);
 		} else {
 			method5617();
 		}

@@ -54,7 +54,7 @@ public final class Static274 {
 		@Pc(20) byte[] local20 = Static146.aClass76_4.method2104(arg0, 0);
 		local10 = new Class123();
 		if (local20 != null) {
-			local10.method3114(new ByteBuffer(local20));
+			local10.method3114(new Packet(local20));
 		}
 		local10.method3115();
 		Static356.aClass68_43.method1779((long) arg0, local10);

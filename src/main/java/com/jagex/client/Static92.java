@@ -43,7 +43,7 @@ public final class Static92 {
 	@OriginalMember(owner = "client!em", name = "a", descriptor = "(III)V")
 	public static void method1617(@OriginalArg(0) int arg0, @OriginalArg(2) int arg1) {
 		Static429.method5476(Static122.aClass215_33);
-		Static3.aClass4_Sub12_Sub1_5.writeUint16BE(arg1);
-		Static3.aClass4_Sub12_Sub1_5.writeIntBE(arg0);
+		Static3.aClass4_Sub12_Sub1_5.p2_alt2(arg1);
+		Static3.aClass4_Sub12_Sub1_5.p4(arg0);
 	}
 }

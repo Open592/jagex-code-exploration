@@ -28,16 +28,16 @@ public final class Static316 {
 			}
 			if (local16.status == 1) {
 				local7 = (FileOnDisk) local16.output;
-				@Pc(41) ByteBuffer local41 = new ByteBuffer(Static268.anInt4998 * 6 + 3);
-				local41.writeByte(1);
-				local41.writeInt16BE(Static268.anInt4998);
+				@Pc(41) Packet local41 = new Packet(Static268.anInt4998 * 6 + 3);
+				local41.p1(1);
+				local41.p2(Static268.anInt4998);
 				for (@Pc(53) int local53 = 0; local53 < Static165.anIntArray210.length; local53++) {
 					if (Static22.aBooleanArray3[local53]) {
-						local41.writeInt16BE(local53);
-						local41.writeIntBE(Static165.anIntArray210[local53]);
+						local41.p2(local53);
+						local41.p4(Static165.anIntArray210[local53]);
 					}
 				}
-				local7.write(0, local41.position, local41.bytes);
+				local7.write(0, local41.pos, local41.data);
 			}
 		} catch (@Pc(84) Exception local84) {
 		}

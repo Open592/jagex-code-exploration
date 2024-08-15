@@ -43,11 +43,11 @@ public final class Static417 {
 	}
 
 	@OriginalMember(owner = "client!vb", name = "a", descriptor = "(Ljava/lang/String;ILclient!iv;)I")
-	public static int method5359(@OriginalArg(0) String arg0, @OriginalArg(2) ByteBuffer arg1) {
-		@Pc(6) int local6 = arg1.position;
+	public static int method5359(@OriginalArg(0) String arg0, @OriginalArg(2) Packet arg1) {
+		@Pc(6) int local6 = arg1.pos;
 		@Pc(12) byte[] local12 = Static284.method3967(arg0);
-		arg1.method2543(local12.length);
-		arg1.position += Static339.aClass119_1.method2935(local12, arg1.position, 0, arg1.bytes, local12.length);
-		return arg1.position - local6;
+		arg1.pSmart1or2(local12.length);
+		arg1.pos += Static339.aClass119_1.method2935(local12, arg1.pos, 0, arg1.data, local12.length);
+		return arg1.pos - local6;
 	}
 }

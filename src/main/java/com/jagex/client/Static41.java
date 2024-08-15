@@ -66,13 +66,13 @@ public final class Static41 {
 			arg3.anInt6084 = 0;
 		}
 		if ((arg0 & 0x8000) != 0) {
-			arg3.anInt6043 = arg1.method2534();
-			arg3.anInt6052 = arg1.readInt8();
-			arg3.anInt6044 = arg1.method2534();
-			arg3.anInt6074 = arg1.readInt8();
+			arg3.anInt6043 = arg1.g1b_alt3();
+			arg3.anInt6052 = arg1.g1b();
+			arg3.anInt6044 = arg1.g1b_alt3();
+			arg3.anInt6074 = arg1.g1b();
 			arg3.anInt6018 = arg1.method2536() + Static24.anInt5323;
 			arg3.anInt6023 = arg1.method2548() + Static24.anInt5323;
-			arg3.lb = arg1.readUInt8();
+			arg3.lb = arg1.g1_alt1();
 			arg3.anInt6087 = 0;
 			if (arg3.aBoolean401) {
 				arg3.anInt6086 = 0;
@@ -91,14 +91,14 @@ public final class Static41 {
 		@Pc(243) int local243;
 		if ((arg0 & 0x800) != 0) {
 			local243 = arg1.method2548();
-			arg3.anInt6051 = arg1.readByteIntoInt();
-			arg3.anInt6054 = arg1.readUInt8();
+			arg3.anInt6051 = arg1.g1();
+			arg3.anInt6054 = arg1.g1_alt1();
 			arg3.aBoolean559 = (local243 & 0x8000) != 0;
 			arg3.anInt6041 = local243 & 0x7FFF;
 			arg3.anInt6035 = Static24.anInt5323 + arg3.anInt6041 + arg3.anInt6051;
 		}
 		if ((arg0 & 0x10000) != 0) {
-			local243 = arg1.readByteIntoInt();
+			local243 = arg1.g1();
 			@Pc(297) int[] local297 = new int[local243];
 			@Pc(300) int[] local300 = new int[local243];
 			@Pc(303) int[] local303 = new int[local243];
@@ -108,7 +108,7 @@ public final class Static41 {
 					local311 = -1;
 				}
 				local297[local305] = local311;
-				local300[local305] = arg1.readUByteIntoInt();
+				local300[local305] = arg1.g1_alt3();
 				local303[local305] = arg1.method2538();
 			}
 			Static375.method5000(local303, local300, arg3, local297);
@@ -121,11 +121,11 @@ public final class Static41 {
 				local243 = -1;
 			}
 			local363 = arg1.method2510();
-			local367 = arg1.readReverseInt8();
+			local367 = arg1.g1_alt2();
 			arg3.method4748(local367, local363, true, local243);
 		}
 		if ((arg0 & 0x1) != 0) {
-			Static411.aByteArray95[arg2] = arg1.readReverseByte();
+			Static411.aByteArray95[arg2] = arg1.g1b_alt2();
 		}
 		if ((arg0 & 0x2) != 0) {
 			local243 = arg1.method2515();
@@ -136,9 +136,9 @@ public final class Static41 {
 		}
 		if ((arg0 & 0x80) != 0) {
 			local243 = arg1.method2548();
-			local363 = arg1.readUInt8();
-			local367 = arg1.readUInt8();
-			@Pc(427) int local427 = arg1.position;
+			local363 = arg1.g1_alt1();
+			local367 = arg1.g1_alt1();
+			@Pc(427) int local427 = arg1.pos;
 			@Pc(435) boolean local435 = (local243 & 0x8000) != 0;
 			if (arg3.aString44 != null && arg3.aClass37_1 != null) {
 				@Pc(443) boolean local443 = false;
@@ -150,9 +150,9 @@ public final class Static41 {
 					}
 				}
 				if (!local443 && Static65.anInt1373 == 0) {
-					Static154.A_BYTE_BUFFER___2.position = 0;
-					arg1.method2508(local367, Static154.A_BYTE_BUFFER___2.bytes);
-					Static154.A_BYTE_BUFFER___2.position = 0;
+					Static154.A_BYTE_BUFFER___2.pos = 0;
+					arg1.method2508(local367, Static154.A_BYTE_BUFFER___2.data);
+					Static154.A_BYTE_BUFFER___2.pos = 0;
 					@Pc(489) int local489 = -1;
 					@Pc(508) String local508;
 					if (local435) {
@@ -182,7 +182,7 @@ public final class Static41 {
 					}
 				}
 			}
-			arg1.position = local367 + local427;
+			arg1.pos = local367 + local427;
 		}
 		if ((arg0 & 0x1000) != 0) {
 			local243 = arg1.method2538();
@@ -190,7 +190,7 @@ public final class Static41 {
 				local243 = -1;
 			}
 			local363 = arg1.method2529();
-			local367 = arg1.readUByteIntoInt();
+			local367 = arg1.g1_alt3();
 			arg3.method4748(local367, local363, false, local243);
 		}
 		if ((arg0 & 0x8) != 0) {
@@ -198,34 +198,34 @@ public final class Static41 {
 			if (local243 == 65535) {
 				local243 = -1;
 			}
-			local363 = arg1.readByteIntoInt();
+			local363 = arg1.g1();
 			Static18.method185(local363, arg3, local243);
 		}
 		if ((arg0 & 0x20000) != 0) {
-			arg3.aByte71 = arg1.readReverseByte();
-			arg3.aByte69 = arg1.method2534();
-			arg3.aByte70 = arg1.readInt8();
-			arg3.aByte68 = (byte) arg1.readUByteIntoInt();
+			arg3.aByte71 = arg1.g1b_alt2();
+			arg3.aByte69 = arg1.g1b_alt3();
+			arg3.aByte70 = arg1.g1b();
+			arg3.aByte68 = (byte) arg1.g1_alt3();
 			arg3.anInt6020 = Static24.anInt5323 + arg1.method2548();
 			arg3.anInt6068 = Static24.anInt5323 + arg1.method2538();
 		}
 		if ((arg0 & 0x200) != 0) {
-			local7 = arg1.readReverseByte();
+			local7 = arg1.g1b_alt2();
 		}
 		if ((arg0 & 0x10) != 0) {
 			local243 = arg1.method2506();
-			local363 = arg1.readUInt8();
+			local363 = arg1.g1_alt1();
 			arg3.method4746(local243, Static24.anInt5323, local363);
 			arg3.anInt6072 = Static24.anInt5323 + 300;
-			arg3.anInt6026 = arg1.readUInt8();
+			arg3.anInt6026 = arg1.g1_alt1();
 		}
 		if ((arg0 & 0x4000) != 0) {
-			arg3.aBoolean400 = arg1.readUInt8() == 1;
+			arg3.aBoolean400 = arg1.g1_alt1() == 1;
 		}
 		if ((arg0 & 0x20) != 0) {
-			local243 = arg1.readByteIntoInt();
+			local243 = arg1.g1();
 			@Pc(818) byte[] local818 = new byte[local243];
-			@Pc(823) ByteBuffer local823 = new ByteBuffer(local818);
+			@Pc(823) Packet local823 = new Packet(local818);
 			arg1.method2508(local243, local818);
 			Static354.A_BYTE_BUFFER_ARRAY_1[arg2] = local823;
 			arg3.method3422(local823);
@@ -233,7 +233,7 @@ public final class Static41 {
 		if ((arg0 & 0x100) != 0) {
 			local243 = Static24.anInt5323;
 			local363 = arg1.method2506();
-			local367 = arg1.readUByteIntoInt();
+			local367 = arg1.g1_alt3();
 			arg3.method4746(local363, local243, local367);
 		}
 		if (!arg3.aBoolean401) {

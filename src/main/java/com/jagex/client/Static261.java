@@ -42,7 +42,7 @@ public final class Static261 {
 	}
 
 	@OriginalMember(owner = "client!nf", name = "a", descriptor = "(ZLclient!iv;)Ljava/lang/String;")
-	public static String method3776(@OriginalArg(1) ByteBuffer arg0) {
+	public static String method3776(@OriginalArg(1) Packet arg0) {
 		return Static356.method4831(arg0);
 	}
 

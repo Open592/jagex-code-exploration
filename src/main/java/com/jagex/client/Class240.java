@@ -116,7 +116,7 @@ public final class Class240 {
 		local16.anInt7211 = arg0;
 		local16.aClass240_2 = this;
 		if (local37 != null) {
-			local16.method5581(new ByteBuffer(local37));
+			local16.method5581(new Packet(local37));
 		}
 		local16.method5576();
 		@Pc(62) Class68 local62 = this.aClass68_48;

@@ -45,7 +45,7 @@ public final class Class192 {
 		@Pc(33) byte[] local33 = this.aClass76_68.method2104(arg0, 1);
 		local16 = new Class221();
 		if (local33 != null) {
-			local16.method4960(new ByteBuffer(local33));
+			local16.method4960(new Packet(local33));
 		}
 		@Pc(55) Class68 local55 = this.aClass68_35;
 		synchronized (this.aClass68_35) {
