@@ -87,9 +87,9 @@ public final class Class200 {
 	@OriginalMember(owner = "client!qu", name = "a", descriptor = "(Lclient!iv;II)V")
 	private void method4537(@OriginalArg(0) Packet arg0, @OriginalArg(1) int arg1) {
 		if (arg1 == 1) {
-			this.aChar3 = Static260.method3771(arg0.g1b());
+			this.aChar3 = Static260.method3771(arg0.g1s());
 		} else if (arg1 == 2) {
-			this.aChar4 = Static260.method3771(arg0.g1b());
+			this.aChar4 = Static260.method3771(arg0.g1s());
 		} else if (arg1 == 3) {
 			this.aString58 = arg0.readValidStringAtCurrentPosition();
 		} else if (arg1 == 4) {

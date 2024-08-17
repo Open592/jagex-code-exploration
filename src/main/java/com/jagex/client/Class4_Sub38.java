@@ -51,7 +51,7 @@ public final class Class4_Sub38 extends Class4 {
 		}
 		@Pc(56) byte[] local56 = new byte[local38];
 		for (@Pc(58) int local58 = 0; local58 < local38; local58++) {
-			local56[local58] = local36.g1b();
+			local56[local58] = local36.g1s();
 		}
 		local38++;
 		local36.pos++;
@@ -62,7 +62,7 @@ public final class Class4_Sub38 extends Class4 {
 		}
 		@Pc(105) byte[] local105 = new byte[local88];
 		for (@Pc(107) int local107 = 0; local107 < local88; local107++) {
-			local105[local107] = local36.g1b();
+			local105[local107] = local36.g1s();
 		}
 		local36.pos++;
 		local88++;
@@ -73,7 +73,7 @@ public final class Class4_Sub38 extends Class4 {
 		}
 		@Pc(159) byte[] local159 = new byte[local141];
 		for (@Pc(161) int local161 = 0; local161 < local141; local161++) {
-			local159[local161] = local36.g1b();
+			local159[local161] = local36.g1s();
 		}
 		local36.pos++;
 		local141++;
@@ -122,7 +122,7 @@ public final class Class4_Sub38 extends Class4 {
 		}
 		@Pc(340) byte[] local340 = new byte[local323];
 		for (@Pc(342) int local342 = 0; local342 < local323; local342++) {
-			local340[local342] = local36.g1b();
+			local340[local342] = local36.g1s();
 		}
 		local323++;
 		local36.pos++;
@@ -226,24 +226,24 @@ public final class Class4_Sub38 extends Class4 {
 			@Pc(708) Class252 local708 = local241[local702];
 			if (local708.aByteArray100 != null) {
 				for (local713 = 1; local713 < local708.aByteArray100.length; local713 += 2) {
-					local708.aByteArray100[local713] = local36.g1b();
+					local708.aByteArray100[local713] = local36.g1s();
 				}
 			}
 			if (local708.aByteArray101 != null) {
 				for (local713 = 3; local713 < local708.aByteArray101.length - 2; local713 += 2) {
-					local708.aByteArray101[local713] = local36.g1b();
+					local708.aByteArray101[local713] = local36.g1s();
 				}
 			}
 		}
 		@Pc(758) int local758;
 		if (local308 != null) {
 			for (local758 = 1; local758 < local308.length; local758 += 2) {
-				local308[local758] = local36.g1b();
+				local308[local758] = local36.g1s();
 			}
 		}
 		if (local321 != null) {
 			for (local758 = 1; local758 < local321.length; local758 += 2) {
-				local321[local758] = local36.g1b();
+				local321[local758] = local36.g1s();
 			}
 		}
 		@Pc(807) int local807;

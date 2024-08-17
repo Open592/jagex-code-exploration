@@ -614,7 +614,7 @@ public final class Class264 {
 			local31 = arg0.g1();
 			this.aByteArray105 = new byte[local31];
 			for (local41 = 0; local41 < local31; local41++) {
-				this.aByteArray105[local41] = arg0.g1b();
+				this.aByteArray105[local41] = arg0.g1s();
 			}
 		} else if (arg1 == 60) {
 			local31 = arg0.g1();
@@ -633,9 +633,9 @@ public final class Class264 {
 		} else if (arg1 == 99) {
 			this.aBoolean681 = true;
 		} else if (arg1 == 100) {
-			this.anInt7228 = arg0.g1b();
+			this.anInt7228 = arg0.g1s();
 		} else if (arg1 == 101) {
-			this.anInt7232 = arg0.g1b() * 5;
+			this.anInt7232 = arg0.g1s() * 5;
 		} else if (arg1 == 102) {
 			this.anInt7205 = arg0.method2536();
 		} else if (arg1 == 103) {
@@ -677,29 +677,29 @@ public final class Class264 {
 				this.aShort102 = (short) arg0.method2536();
 				this.aShort101 = (short) arg0.method2536();
 			} else if (arg1 == 114) {
-				this.aByte98 = arg0.g1b();
-				this.aByte100 = arg0.g1b();
+				this.aByte98 = arg0.g1s();
+				this.aByte100 = arg0.g1s();
 			} else if (arg1 == 115) {
 				arg0.g1();
 				arg0.g1();
 			} else if (arg1 == 119) {
-				this.aByte99 = arg0.g1b();
+				this.aByte99 = arg0.g1s();
 			} else if (arg1 == 121) {
 				this.anIntArrayArray62 = new int[this.anIntArray545.length][];
 				local31 = arg0.g1();
 				for (local41 = 0; local41 < local31; local41++) {
 					local284 = arg0.g1();
 					@Pc(292) int[] local292 = this.anIntArrayArray62[local284] = new int[3];
-					local292[0] = arg0.g1b();
-					local292[1] = arg0.g1b();
-					local292[2] = arg0.g1b();
+					local292[0] = arg0.g1s();
+					local292[1] = arg0.g1s();
+					local292[2] = arg0.g1s();
 				}
 			} else if (arg1 == 122) {
 				this.anInt7204 = arg0.method2536();
 			} else if (arg1 == 123) {
 				this.anInt7234 = arg0.method2536();
 			} else if (arg1 == 125) {
-				this.aByte101 = arg0.g1b();
+				this.aByte101 = arg0.g1s();
 			} else if (arg1 == 127) {
 				this.anInt7241 = arg0.method2536();
 			} else if (arg1 == 128) {
@@ -748,10 +748,10 @@ public final class Class264 {
 					this.aStringArray41[arg1 - 150] = null;
 				}
 			} else if (arg1 == 155) {
-				this.aByte96 = arg0.g1b();
-				this.aByte97 = arg0.g1b();
-				this.aByte102 = arg0.g1b();
-				this.aByte95 = arg0.g1b();
+				this.aByte96 = arg0.g1s();
+				this.aByte97 = arg0.g1s();
+				this.aByte102 = arg0.g1s();
+				this.aByte95 = arg0.g1s();
 			} else if (arg1 == 160) {
 				local31 = arg0.g1();
 				this.anIntArray547 = new int[local31];

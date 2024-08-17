@@ -29,7 +29,7 @@ public final class Static316 {
 			if (local16.status == 1) {
 				local7 = (FileOnDisk) local16.output;
 				@Pc(41) Packet local41 = new Packet(Static268.anInt4998 * 6 + 3);
-				local41.p1(1);
+				local41.p1s(1);
 				local41.p2(Static268.anInt4998);
 				for (@Pc(53) int local53 = 0; local53 < Static165.anIntArray210.length; local53++) {
 					if (Static22.aBooleanArray3[local53]) {

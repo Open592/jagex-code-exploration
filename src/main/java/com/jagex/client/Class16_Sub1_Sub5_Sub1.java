@@ -98,9 +98,9 @@ public final class Class16_Sub1_Sub5_Sub1 extends Class16_Sub1_Sub5 {
 		this.aByte44 = (byte) (local14 >> 6 & 0x3);
 		super.anInt6893 += this.method4751() - local46 << 6;
 		super.anInt6892 += this.method4751() - local46 << 6;
-		this.aByte45 = arg0.g1b();
-		this.anInt4339 = arg0.g1b();
-		this.anInt4346 = arg0.g1b();
+		this.aByte45 = arg0.g1s();
+		this.anInt4339 = arg0.g1s();
+		this.anInt4346 = arg0.g1s();
 		@Pc(106) int local106 = -1;
 		this.anInt4328 = 0;
 		@Pc(112) int[] local112 = new int[12];

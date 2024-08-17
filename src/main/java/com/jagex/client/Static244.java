@@ -81,8 +81,8 @@ public final class Static244 {
 			@Pc(155) boolean local155 = (local12 & 0x80) != 0;
 			local40 = (local12 >> 3 & 0x7) + Static154.anInt813;
 			local49 = (local12 & 0x7) + Static385.anInt6487;
-			local55 = Static146.aClass4_Sub12_Sub1_3.g1b() + local40;
-			local126 = local49 + Static146.aClass4_Sub12_Sub1_3.g1b();
+			local55 = Static146.aClass4_Sub12_Sub1_3.g1s() + local40;
+			local126 = local49 + Static146.aClass4_Sub12_Sub1_3.g1s();
 			local186 = Static146.aClass4_Sub12_Sub1_3.method2512();
 			local190 = Static146.aClass4_Sub12_Sub1_3.method2536();
 			local196 = Static146.aClass4_Sub12_Sub1_3.g1() * 4;
@@ -127,19 +127,19 @@ public final class Static244 {
 			}
 		} else if (arg0 == Static183.aClass21_11) {
 			local12 = Static146.aClass4_Sub12_Sub1_3.method2548();
-			@Pc(453) byte local453 = Static146.aClass4_Sub12_Sub1_3.g1b_alt2();
+			@Pc(453) byte local453 = Static146.aClass4_Sub12_Sub1_3.g1s_alt2();
 			local40 = Static146.aClass4_Sub12_Sub1_3.g1_alt2();
 			local49 = local40 >> 2;
 			local55 = local40 & 0x3;
 			local126 = Static146.aClass4_Sub12_Sub1_3.g1_alt1();
 			local186 = Static154.anInt813 + (local126 >> 4 & 0x7);
 			local190 = (local126 & 0x7) + Static385.anInt6487;
-			@Pc(488) byte local488 = Static146.aClass4_Sub12_Sub1_3.g1b_alt1();
+			@Pc(488) byte local488 = Static146.aClass4_Sub12_Sub1_3.g1s_alt1();
 			local202 = Static146.aClass4_Sub12_Sub1_3.readInt16BE();
-			@Pc(496) byte local496 = Static146.aClass4_Sub12_Sub1_3.g1b_alt2();
+			@Pc(496) byte local496 = Static146.aClass4_Sub12_Sub1_3.g1s_alt2();
 			local210 = Static146.aClass4_Sub12_Sub1_3.method2515();
 			local214 = Static146.aClass4_Sub12_Sub1_3.method2515();
-			@Pc(508) byte local508 = Static146.aClass4_Sub12_Sub1_3.g1b_alt2();
+			@Pc(508) byte local508 = Static146.aClass4_Sub12_Sub1_3.g1s_alt2();
 			if (!Static122.aClass19_16.method4243()) {
 				Static208.method2249(local186, local12, local55, local496, local453, local202, local508, Static113.anInt2426, local488, local190, local214, local210, local49);
 			}
@@ -161,12 +161,12 @@ public final class Static244 {
 				local16 = Static154.anInt813 * 2 + (local12 >> 4 & 0xF);
 				local40 = Static385.anInt6487 * 2 + (local12 & 0xF);
 				local635 = Static146.aClass4_Sub12_Sub1_3.g1() != 0;
-				local55 = Static146.aClass4_Sub12_Sub1_3.g1b() + local16;
-				local126 = local40 + Static146.aClass4_Sub12_Sub1_3.g1b();
+				local55 = Static146.aClass4_Sub12_Sub1_3.g1s() + local16;
+				local126 = local40 + Static146.aClass4_Sub12_Sub1_3.g1s();
 				local186 = Static146.aClass4_Sub12_Sub1_3.method2512();
 				local190 = Static146.aClass4_Sub12_Sub1_3.method2512();
 				local196 = Static146.aClass4_Sub12_Sub1_3.method2536();
-				@Pc(664) byte local664 = Static146.aClass4_Sub12_Sub1_3.g1b();
+				@Pc(664) byte local664 = Static146.aClass4_Sub12_Sub1_3.g1s();
 				local206 = Static146.aClass4_Sub12_Sub1_3.g1() * 4;
 				local210 = Static146.aClass4_Sub12_Sub1_3.method2536();
 				local214 = Static146.aClass4_Sub12_Sub1_3.method2536();
@@ -321,8 +321,8 @@ public final class Static244 {
 				local16 = (local12 >> 4 & 0xF) + Static154.anInt813 * 2;
 				local40 = (local12 & 0xF) + Static385.anInt6487 * 2;
 				local635 = Static146.aClass4_Sub12_Sub1_3.g1() != 0;
-				local55 = Static146.aClass4_Sub12_Sub1_3.g1b() + local16;
-				local126 = Static146.aClass4_Sub12_Sub1_3.g1b() + local40;
+				local55 = Static146.aClass4_Sub12_Sub1_3.g1s() + local16;
+				local126 = Static146.aClass4_Sub12_Sub1_3.g1s() + local40;
 				local186 = Static146.aClass4_Sub12_Sub1_3.method2512();
 				local190 = Static146.aClass4_Sub12_Sub1_3.method2536();
 				local196 = Static146.aClass4_Sub12_Sub1_3.g1() * 4;

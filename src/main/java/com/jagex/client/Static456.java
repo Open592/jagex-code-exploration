@@ -58,12 +58,12 @@ public final class Static456 {
 				@Pc(227) int local227;
 				if ((local217 & 0x1) == 0) {
 					for (local227 = 0; local227 < local209; local227++) {
-						local203.aByteArray4[local227] = local4.g1b();
+						local203.aByteArray4[local227] = local4.g1s();
 					}
 				} else {
 					for (local227 = 0; local227 < local203.anInt367; local227++) {
 						for (local245 = 0; local245 < local203.anInt366; local245++) {
-							local203.aByteArray4[local227 + local245 * local203.anInt367] = local4.g1b();
+							local203.aByteArray4[local227 + local245 * local203.anInt367] = local4.g1s();
 						}
 					}
 				}
@@ -73,21 +73,21 @@ public final class Static456 {
 				@Pc(295) int local295;
 				if ((local217 & 0x1) == 0) {
 					for (local245 = 0; local245 < local209; local245++) {
-						local203.aByteArray4[local245] = local4.g1b();
+						local203.aByteArray4[local245] = local4.g1s();
 					}
 					for (local295 = 0; local295 < local209; local295++) {
-						@Pc(305) byte local305 = local203.aByteArray5[local295] = local4.g1b();
+						@Pc(305) byte local305 = local203.aByteArray5[local295] = local4.g1s();
 						local271 |= local305 != -1;
 					}
 				} else {
 					for (local245 = 0; local245 < local203.anInt367; local245++) {
 						for (local295 = 0; local295 < local203.anInt366; local295++) {
-							local203.aByteArray4[local245 + local295 * local203.anInt367] = local4.g1b();
+							local203.aByteArray4[local245 + local295 * local203.anInt367] = local4.g1s();
 						}
 					}
 					for (local295 = 0; local295 < local203.anInt367; local295++) {
 						for (@Pc(352) int local352 = 0; local352 < local203.anInt366; local352++) {
-							@Pc(367) byte local367 = local203.aByteArray5[local295 + local352 * local203.anInt367] = local4.g1b();
+							@Pc(367) byte local367 = local203.aByteArray5[local295 + local352 * local203.anInt367] = local4.g1s();
 							local271 |= local367 != -1;
 						}
 					}

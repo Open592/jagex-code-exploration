@@ -71,6 +71,6 @@ public final class Static361 {
 	@OriginalMember(owner = "client!sh", name = "a", descriptor = "(I)V")
 	public static void method4872() {
 		Static429.method5476(Static327.aClass215_76);
-		Static3.aClass4_Sub12_Sub1_5.p1(0);
+		Static3.aClass4_Sub12_Sub1_5.p1s(0);
 	}
 }

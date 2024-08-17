@@ -32,13 +32,8 @@ public class Packet extends Class4 {
 	}
 
 	@OriginalMember(owner = "client!iv", name = "i", descriptor = "(II)V")
-	public final void psize1(@OriginalArg(1) int length) {
+	public final void pSize1(@OriginalArg(1) int length) {
 		this.data[this.pos - length - 1] = (byte) length;
-	}
-
-	@OriginalMember(owner = "client!iv", name = "e", descriptor = "(II)V")
-	public final void writeInt8(@OriginalArg(1) int arg0) {
-		this.data[this.pos++] = (byte) (128 - arg0);
 	}
 
 	@OriginalMember(owner = "client!iv", name = "a", descriptor = "(I)I")
@@ -53,7 +48,7 @@ public class Packet extends Class4 {
 
 	@OriginalMember(owner = "client!iv", name = "m", descriptor = "(I)I")
 	public final int g1_alt2() {
-		return -this.g1();
+		return -this.data[this.pos++] & 0xFF;
 	}
 
 	@OriginalMember(owner = "client!iv", name = "c", descriptor = "(B)I")
@@ -62,28 +57,27 @@ public class Packet extends Class4 {
 	}
 
 	@OriginalMember(owner = "client!iv", name = "c", descriptor = "(Z)B")
-	public final byte g1b() {
+	public final byte g1s() {
 		return this.data[this.pos++];
 	}
 
 	@OriginalMember(owner = "client!iv", name = "s", descriptor = "(I)B")
-	public final byte g1b_alt1() {
+	public final byte g1s_alt1() {
 		return (byte) (this.data[this.pos++] - 128);
 	}
 
 	@OriginalMember(owner = "client!iv", name = "h", descriptor = "(I)B")
-	public final byte g1b_alt2() {
-		return (byte) -this.g1b();
+	public final byte g1s_alt2() {
+		return (byte) -this.g1s();
 	}
 
 	@OriginalMember(owner = "client!iv", name = "o", descriptor = "(I)B")
-	public final byte g1b_alt3() {
+	public final byte g1s_alt3() {
 		return (byte) (128 - this.data[this.pos++]);
 	}
 
-
 	@OriginalMember(owner = "client!iv", name = "l", descriptor = "(II)V")
-	public final void p1(@OriginalArg(1) int value) {
+	public final void p1s(@OriginalArg(1) int value) {
 		this.data[this.pos++] = (byte) value;
 	}
 
@@ -94,7 +88,12 @@ public class Packet extends Class4 {
 
 	@OriginalMember(owner = "client!iv", name = "h", descriptor = "(II)V")
 	public final void p1_alt2(@OriginalArg(0) int value) {
-		this.p1(-value);
+		this.p1s(-value);
+	}
+
+	@OriginalMember(owner = "client!iv", name = "e", descriptor = "(II)V")
+	public final void p1s_alt3(@OriginalArg(1) int arg0) {
+		this.data[this.pos++] = (byte) (128 - arg0);
 	}
 
 	@OriginalMember(owner = "client!iv", name = "a", descriptor = "(IB)V")
@@ -128,7 +127,7 @@ public class Packet extends Class4 {
 	}
 
 	@OriginalMember(owner = "client!iv", name = "j", descriptor = "(II)V")
-	public final void psize2(@OriginalArg(1) int length) {
+	public final void pSize2(@OriginalArg(1) int length) {
 		this.data[this.pos - length - 2] = (byte) (length >> 8);
 		this.data[this.pos - length - 1] = (byte) length;
 	}
@@ -173,7 +172,7 @@ public class Packet extends Class4 {
 	}
 
 	@OriginalMember(owner = "client!iv", name = "c", descriptor = "(II)V")
-	public final void p4size(@OriginalArg(1) int length) {
+	public final void pSize4(@OriginalArg(1) int length) {
 		this.data[this.pos - length - 4] = (byte) (length >> 24);
 		this.data[this.pos - length - 3] = (byte) (length >> 16);
 		this.data[this.pos - length - 2] = (byte) (length >> 8);
@@ -303,14 +302,14 @@ public class Packet extends Class4 {
 
 	@OriginalMember(owner = "client!iv", name = "g", descriptor = "(I)I")
 	public final int method2502() {
-		@Pc(16) int local16 = this.data[this.pos] & 0xFF;
-		return local16 < 128 ? this.g1() - 64 : this.method2536() - 49152;
+		@Pc(16) int value = this.data[this.pos] & 0xFF;
+		return value < 128 ? this.g1() - 64 : this.method2536() - 49152;
 	}
 
 	@OriginalMember(owner = "client!iv", name = "f", descriptor = "(B)I")
 	public final int method2506() {
-		@Pc(17) int local17 = this.data[this.pos] & 0xFF;
-		return local17 < 128 ? this.g1() : this.method2536() - 32768;
+		@Pc(17) int value = this.data[this.pos] & 0xFF;
+		return value < 128 ? this.g1() : this.method2536() - 32768;
 	}
 
 	@OriginalMember(owner = "client!iv", name = "a", descriptor = "(BII[B)V")
@@ -375,7 +374,7 @@ public class Packet extends Class4 {
 		@Pc(28) BigInteger local28 = local23.modPow(arg0, arg1);
 		@Pc(31) byte[] local31 = local28.toByteArray();
 		this.pos = 0;
-		this.p1(local31.length);
+		this.p1s(local31.length);
 		this.pArrayBuffer(local31, local31.length);
 	}
 
@@ -459,7 +458,7 @@ public class Packet extends Class4 {
 	@OriginalMember(owner = "client!iv", name = "f", descriptor = "(BI)V")
 	public final void pSmart1or2(@OriginalArg(1) int arg0) {
 		if (arg0 >= 0 && arg0 < 128) {
-			this.p1(arg0);
+			this.p1s(arg0);
 		} else if (arg0 >= 0 && arg0 < 32768) {
 			this.p2(arg0 + 32768);
 		} else {
@@ -495,15 +494,15 @@ public class Packet extends Class4 {
 			if ((arg0 & 0xFFFFC000) != 0) {
 				if ((arg0 & 0xFFE00000) != 0) {
 					if ((arg0 & 0xF0000000) != 0) {
-						this.p1(arg0 >>> 28 | 0x80);
+						this.p1s(arg0 >>> 28 | 0x80);
 					}
-					this.p1(arg0 >>> 21 | 0x80);
+					this.p1s(arg0 >>> 21 | 0x80);
 				}
-				this.p1(arg0 >>> 14 | 0x80);
+				this.p1s(arg0 >>> 14 | 0x80);
 			}
-			this.p1(arg0 >>> 7 | 0x80);
+			this.p1s(arg0 >>> 7 | 0x80);
 		}
-		this.p1(arg0 & 0x7F);
+		this.p1s(arg0 & 0x7F);
 	}
 
 	@OriginalMember(owner = "client!iv", name = "r", descriptor = "(I)I")

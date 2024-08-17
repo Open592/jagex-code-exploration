@@ -218,7 +218,7 @@ public final class Class123 {
 			this.anInt3800 = arg1.method2529();
 		} else if (arg0 == 4) {
 			this.anInt3792 = arg1.g1();
-			this.anInt3809 = arg1.g1b();
+			this.anInt3809 = arg1.g1s();
 		} else if (arg0 == 5) {
 			this.anInt3788 = this.anInt3816 = arg1.method2536() << 12 << 0;
 		} else if (arg0 == 6) {
@@ -246,9 +246,9 @@ public final class Class123 {
 					this.anIntArray257[local296] = arg1.method2536();
 				}
 			} else if (arg0 == 12) {
-				this.anInt3790 = arg1.g1b();
+				this.anInt3790 = arg1.g1s();
 			} else if (arg0 == 13) {
-				this.anInt3808 = arg1.g1b();
+				this.anInt3808 = arg1.g1s();
 			} else if (arg0 == 14) {
 				this.anInt3789 = arg1.method2536();
 			} else if (arg0 == 15) {

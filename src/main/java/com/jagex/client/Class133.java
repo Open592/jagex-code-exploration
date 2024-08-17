@@ -28,7 +28,7 @@ public final class Class133 {
 	@OriginalMember(owner = "client!lg", name = "a", descriptor = "(ILclient!iv;I)V")
 	private void method3352(@OriginalArg(1) Packet arg0, @OriginalArg(2) int arg1) {
 		if (arg1 == 1) {
-			this.aChar2 = Static260.method3771(arg0.g1b());
+			this.aChar2 = Static260.method3771(arg0.g1s());
 		} else if (arg1 == 2) {
 			this.anInt4123 = arg0.method2529();
 		} else if (arg1 == 4) {

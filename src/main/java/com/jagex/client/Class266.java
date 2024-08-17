@@ -388,7 +388,7 @@ public class Class266 {
 				if (arg5) {
 					arg9.g1();
 				} else {
-					this.aByteArrayArrayArray15[arg6][arg2][arg0] = arg9.g1b();
+					this.aByteArrayArrayArray15[arg6][arg2][arg0] = arg9.g1s();
 					this.aByteArrayArrayArray13[arg6][arg2][arg0] = (byte) ((local60 - 2) / 4);
 					this.aByteArrayArrayArray17[arg6][arg2][arg0] = (byte) (arg4 + local60 - 2 & 0x3);
 				}

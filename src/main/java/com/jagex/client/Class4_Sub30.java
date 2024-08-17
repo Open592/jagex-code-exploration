@@ -190,46 +190,46 @@ public final class Class4_Sub30 extends Class4 {
 					local564 = local580 & 0xF;
 					if (local580 == 7) {
 						if (local587) {
-							local499.p1(255);
+							local499.p1s(255);
 						}
-						local499.p1(47);
-						local499.p1(0);
-						local499.p4size(local499.pos - local562);
+						local499.p1s(47);
+						local499.p1s(0);
+						local499.pSize4(local499.pos - local562);
 						continue label220;
 					}
 					if (local580 == 23) {
 						if (local587) {
-							local499.p1(255);
+							local499.p1s(255);
 						}
-						local499.p1(81);
-						local499.p1(3);
-						local499.p1(arg0.data[local481++]);
-						local499.p1(arg0.data[local481++]);
-						local499.p1(arg0.data[local481++]);
+						local499.p1s(81);
+						local499.p1s(3);
+						local499.p1s(arg0.data[local481++]);
+						local499.p1s(arg0.data[local481++]);
+						local499.p1s(arg0.data[local481++]);
 					} else {
 						local529 ^= local580 >> 4;
 						if (local564 == 0) {
 							if (local587) {
-								local499.p1(local529 + 144);
+								local499.p1s(local529 + 144);
 							}
 							local531 += arg0.data[local360++];
 							local533 += arg0.data[local373++];
-							local499.p1(local531 & 0x7F);
-							local499.p1(local533 & 0x7F);
+							local499.p1s(local531 & 0x7F);
+							local499.p1s(local533 & 0x7F);
 						} else if (local564 == 1) {
 							if (local587) {
-								local499.p1(local529 + 128);
+								local499.p1s(local529 + 128);
 							}
 							local531 += arg0.data[local360++];
 							local535 += arg0.data[local391++];
-							local499.p1(local531 & 0x7F);
-							local499.p1(local535 & 0x7F);
+							local499.p1s(local531 & 0x7F);
+							local499.p1s(local535 & 0x7F);
 						} else if (local564 == 2) {
 							if (local587) {
-								local499.p1(local529 + 176);
+								local499.p1s(local529 + 176);
 							}
 							local202 = local202 + arg0.data[local176++] & 0x7F;
-							local499.p1(local202);
+							local499.p1s(local202);
 							@Pc(772) byte local772;
 							if (local202 == 0 || local202 == 32) {
 								local772 = arg0.data[local427++];
@@ -260,34 +260,34 @@ public final class Class4_Sub30 extends Class4 {
 							}
 							@Pc(907) int local907 = local772 + local544[local202];
 							local544[local202] = local907;
-							local499.p1(local907 & 0x7F);
+							local499.p1s(local907 & 0x7F);
 						} else if (local564 == 3) {
 							if (local587) {
-								local499.p1(local529 + 224);
+								local499.p1s(local529 + 224);
 							}
 							local537 += arg0.data[local436++];
 							local537 += arg0.data[local324++] << 7;
-							local499.p1(local537 & 0x7F);
-							local499.p1(local537 >> 7 & 0x7F);
+							local499.p1s(local537 & 0x7F);
+							local499.p1s(local537 >> 7 & 0x7F);
 						} else if (local564 == 4) {
 							if (local587) {
-								local499.p1(local529 + 208);
+								local499.p1s(local529 + 208);
 							}
 							local539 += arg0.data[local315++];
-							local499.p1(local539 & 0x7F);
+							local499.p1s(local539 & 0x7F);
 						} else if (local564 == 5) {
 							if (local587) {
-								local499.p1(local529 + 160);
+								local499.p1s(local529 + 160);
 							}
 							local531 += arg0.data[local360++];
 							local541 += arg0.data[local306++];
-							local499.p1(local531 & 0x7F);
-							local499.p1(local541 & 0x7F);
+							local499.p1s(local531 & 0x7F);
+							local499.p1s(local541 & 0x7F);
 						} else if (local564 == 6) {
 							if (local587) {
-								local499.p1(local529 + 192);
+								local499.p1s(local529 + 192);
 							}
-							local499.p1(arg0.data[local427++]);
+							local499.p1s(arg0.data[local427++]);
 						} else {
 							throw new RuntimeException();
 						}

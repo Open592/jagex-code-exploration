@@ -83,8 +83,8 @@ public final class Class255 {
 						if (this.aByte94 != 0) {
 							try {
 								this.aPacket_8.pos = 0;
-								this.aPacket_8.p1(4);
-								this.aPacket_8.p1(this.aByte94);
+								this.aPacket_8.p1s(4);
+								this.aPacket_8.p1s(this.aByte94);
 								this.aPacket_8.p2(0);
 								this.aClass11_13.method142(4, this.aPacket_8.data);
 							} catch (@Pc(102) IOException local102) {
@@ -115,7 +115,7 @@ public final class Class255 {
 		}
 		try {
 			this.aPacket_8.pos = 0;
-			this.aPacket_8.p1(6);
+			this.aPacket_8.p1s(6);
 			this.aPacket_8.p3(3);
 			this.aClass11_13.method142(4, this.aPacket_8.data);
 		} catch (@Pc(38) IOException local38) {
@@ -136,7 +136,7 @@ public final class Class255 {
 		}
 		try {
 			this.aPacket_8.pos = 0;
-			this.aPacket_8.p1(arg0 ? 2 : 3);
+			this.aPacket_8.p1s(arg0 ? 2 : 3);
 			this.aPacket_8.p3(0);
 			this.aClass11_13.method142(4, this.aPacket_8.data);
 		} catch (@Pc(41) IOException local41) {
@@ -196,7 +196,7 @@ public final class Class255 {
 		}
 		try {
 			this.aPacket_8.pos = 0;
-			this.aPacket_8.p1(7);
+			this.aPacket_8.p1s(7);
 			this.aPacket_8.p3(0);
 			this.aClass11_13.method142(4, this.aPacket_8.data);
 		} catch (@Pc(32) IOException local32) {
@@ -236,14 +236,14 @@ public final class Class255 {
 			this.aClass11_13.method141();
 			for (@Pc(76) Class4_Sub1_Sub6_Sub1 local76 = (Class4_Sub1_Sub6_Sub1) this.aClass229_7.method5089(); local76 != null; local76 = (Class4_Sub1_Sub6_Sub1) this.aClass229_7.method5092()) {
 				this.aPacket_8.pos = 0;
-				this.aPacket_8.p1(1);
+				this.aPacket_8.p1s(1);
 				this.aPacket_8.p3((int) local76.aLong198);
 				this.aClass11_13.method142(4, this.aPacket_8.data);
 				this.aClass229_8.method5088(local76);
 			}
 			for (@Pc(122) Class4_Sub1_Sub6_Sub1 local122 = (Class4_Sub1_Sub6_Sub1) this.aClass229_9.method5089(); local122 != null; local122 = (Class4_Sub1_Sub6_Sub1) this.aClass229_9.method5092()) {
 				this.aPacket_8.pos = 0;
-				this.aPacket_8.p1(0);
+				this.aPacket_8.p1s(0);
 				this.aPacket_8.p3((int) local122.aLong198);
 				this.aClass11_13.method142(4, this.aPacket_8.data);
 				this.aClass229_10.method5088(local122);
@@ -326,7 +326,7 @@ public final class Class255 {
 							@Pc(549) int local549 = local468 == 0 ? 5 : 9;
 							this.aClass4_Sub1_Sub6_Sub1_2 = local496;
 							this.aClass4_Sub1_Sub6_Sub1_2.aClass4_Sub12_4 = new Packet(local549 + local464 + this.aClass4_Sub1_Sub6_Sub1_2.aByte24);
-							this.aClass4_Sub1_Sub6_Sub1_2.aClass4_Sub12_4.p1(local468);
+							this.aClass4_Sub1_Sub6_Sub1_2.aClass4_Sub12_4.p1s(local468);
 							this.aClass4_Sub1_Sub6_Sub1_2.aClass4_Sub12_4.p4(local464);
 							this.aPacket_9.pos = 0;
 							this.aClass4_Sub1_Sub6_Sub1_2.anInt3510 = 8;

@@ -138,7 +138,7 @@ public final class client extends GameShell {
 			if (Static78.clientInitializationStep == 2) {
 				Static240.aClass11_14 = new Class11((Socket) Static30.connectionInitializationMessage.output, Static206.signLink);
 				@Pc(194) Packet local194 = new Packet(5);
-				local194.p1(Static153.aClass60_2.anInt1812);
+				local194.p1s(Static153.aClass60_2.anInt1812);
 				local194.p4(592);
 				Static240.aClass11_14.method142(5, local194.data);
 				Static78.clientInitializationStep++;

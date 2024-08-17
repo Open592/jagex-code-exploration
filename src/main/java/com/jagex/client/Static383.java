@@ -42,7 +42,7 @@ public final class Static383 {
 				}
 				Static244.anInt3027 = Static325.anInt5640;
 				Static429.method5476(Static132.aClass215_36);
-				Static3.aClass4_Sub12_Sub1_5.p1(Static269.method3856(arg0));
+				Static3.aClass4_Sub12_Sub1_5.p1s(Static269.method3856(arg0));
 				Static3.aClass4_Sub12_Sub1_5.pjstr(arg0);
 				return;
 			}

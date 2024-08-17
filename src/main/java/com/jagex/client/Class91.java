@@ -54,22 +54,22 @@ public final class Class91 implements Interface7 {
 		}
 		for (@Pc(170) int local170 = 0; local170 < local28; local170++) {
 			if (this.aClass251Array1[local170] != null) {
-				this.aClass251Array1[local170].aByte87 = local24.g1b();
+				this.aClass251Array1[local170].aByte87 = local24.g1s();
 			}
 		}
 		for (@Pc(191) int local191 = 0; local191 < local28; local191++) {
 			if (this.aClass251Array1[local191] != null) {
-				this.aClass251Array1[local191].aByte90 = local24.g1b();
+				this.aClass251Array1[local191].aByte90 = local24.g1s();
 			}
 		}
 		for (@Pc(216) int local216 = 0; local216 < local28; local216++) {
 			if (this.aClass251Array1[local216] != null) {
-				this.aClass251Array1[local216].aByte89 = local24.g1b();
+				this.aClass251Array1[local216].aByte89 = local24.g1s();
 			}
 		}
 		for (@Pc(241) int local241 = 0; local241 < local28; local241++) {
 			if (this.aClass251Array1[local241] != null) {
-				this.aClass251Array1[local241].aByte88 = local24.g1b();
+				this.aClass251Array1[local241].aByte88 = local24.g1s();
 			}
 		}
 		for (@Pc(266) int local266 = 0; local266 < local28; local266++) {
@@ -79,12 +79,12 @@ public final class Class91 implements Interface7 {
 		}
 		for (@Pc(292) int local292 = 0; local292 < local28; local292++) {
 			if (this.aClass251Array1[local292] != null) {
-				this.aClass251Array1[local292].aByte91 = local24.g1b();
+				this.aClass251Array1[local292].aByte91 = local24.g1s();
 			}
 		}
 		for (@Pc(313) int local313 = 0; local313 < local28; local313++) {
 			if (this.aClass251Array1[local313] != null) {
-				this.aClass251Array1[local313].aByte93 = local24.g1b();
+				this.aClass251Array1[local313].aByte93 = local24.g1s();
 			}
 		}
 		for (@Pc(338) int local338 = 0; local338 < local28; local338++) {
@@ -99,7 +99,7 @@ public final class Class91 implements Interface7 {
 		}
 		for (@Pc(392) int local392 = 0; local392 < local28; local392++) {
 			if (this.aClass251Array1[local392] != null) {
-				this.aClass251Array1[local392].aByte92 = local24.g1b();
+				this.aClass251Array1[local392].aByte92 = local24.g1s();
 			}
 		}
 		for (@Pc(417) int local417 = 0; local417 < local28; local417++) {

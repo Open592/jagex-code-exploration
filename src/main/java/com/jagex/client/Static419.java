@@ -57,7 +57,7 @@ public final class Static419 {
 		if (arg1 == 1) {
 			Static429.method5476(Static88.aClass215_20);
 		}
-		Static3.aClass4_Sub12_Sub1_5.p1(Static384.aClass244_1.method5489(82) ? 1 : 0);
+		Static3.aClass4_Sub12_Sub1_5.p1s(Static384.aClass244_1.method5489(82) ? 1 : 0);
 		Static3.aClass4_Sub12_Sub1_5.p2(arg0 + Static180.anInt3453);
 		Static3.aClass4_Sub12_Sub1_5.p2(arg2 + Static86.anInt1771);
 		Static60.anInt1094 = arg2;

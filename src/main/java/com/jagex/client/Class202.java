@@ -588,7 +588,7 @@ public final class Class202 {
 			this.anIntArrayArray45 = new int[local26][];
 			this.lb = new byte[local26];
 			for (local36 = 0; local36 < local26; local36++) {
-				this.lb[local36] = arg0.g1b();
+				this.lb[local36] = arg0.g1s();
 				local49 = arg0.g1();
 				this.anIntArrayArray45[local36] = new int[local49];
 				for (local57 = 0; local57 < local49; local57++) {
@@ -627,9 +627,9 @@ public final class Class202 {
 		} else if (arg1 == 28) {
 			this.anInt5815 = arg0.g1() << 0;
 		} else if (arg1 == 29) {
-			this.anInt5812 = arg0.g1b();
+			this.anInt5812 = arg0.g1s();
 		} else if (arg1 == 39) {
-			this.anInt5825 = arg0.g1b() * 5;
+			this.anInt5825 = arg0.g1s() * 5;
 		} else if (arg1 >= 30 && arg1 < 35) {
 			this.aStringArray28[arg1 - 30] = arg0.readValidStringAtCurrentPosition();
 		} else if (arg1 == 40) {
@@ -652,7 +652,7 @@ public final class Class202 {
 			local26 = arg0.g1();
 			this.aByteArray82 = new byte[local26];
 			for (local36 = 0; local36 < local26; local36++) {
-				this.aByteArray82[local36] = arg0.g1b();
+				this.aByteArray82[local36] = arg0.g1s();
 			}
 		} else if (arg1 == 62) {
 			this.aBoolean536 = true;
@@ -784,10 +784,10 @@ public final class Class202 {
 			this.aByte61 = 3;
 			this.anInt5838 = arg0.method2529();
 		} else if (arg1 == 163) {
-			this.aByte62 = arg0.g1b();
-			this.aByte58 = arg0.g1b();
-			this.aByte59 = arg0.g1b();
-			this.aByte60 = arg0.g1b();
+			this.aByte62 = arg0.g1s();
+			this.aByte58 = arg0.g1s();
+			this.aByte59 = arg0.g1s();
+			this.aByte60 = arg0.g1s();
 		} else if (arg1 == 249) {
 			local26 = arg0.g1();
 			if (this.aClass102_34 == null) {

@@ -51,7 +51,7 @@ public final class Class118 {
 			this.anInt3538 = arg0.method2536() + 1;
 			this.anInt3543 = arg0.method2536() + 1;
 		} else if (arg1 == 3) {
-			arg0.g1b();
+			arg0.g1s();
 		} else if (arg1 == 4) {
 			this.anInt3542 = arg0.g1();
 		} else if (arg1 == 5) {

@@ -621,7 +621,7 @@ public final class Static148 {
 				} else {
 					aByteArray77[arg4 + arg5 * anInt5729] = (byte) local21;
 					aByteArray78[arg4 + arg5 * anInt5729] = 0;
-					aByteArray76[arg4 + arg5 * anInt5729] = arg1.g1b();
+					aByteArray76[arg4 + arg5 * anInt5729] = arg1.g1s();
 				}
 			}
 			return;
@@ -650,14 +650,14 @@ public final class Static148 {
 				aByteArray78[arg4 + arg5 * anInt5729] = (byte) local127;
 				if (local139 == 1) {
 					aShortArray199[arg4 + arg5 * anInt5729] = (short) (arg1.method2536() + 1);
-					aByteArray80[arg4 + arg5 * anInt5729] = arg1.g1b();
+					aByteArray80[arg4 + arg5 * anInt5729] = arg1.g1s();
 				} else if (local139 > 1) {
 					aShortArray199[arg4 + arg5 * anInt5729] = -1;
 					local215 = new short[local139];
 					local218 = new byte[local139];
 					for (local220 = 0; local220 < local139; local220++) {
 						local215[local220] = (short) arg1.method2536();
-						local218[local220] = arg1.g1b();
+						local218[local220] = arg1.g1s();
 					}
 					aClass102_31.method2703((long) (arg4 << 16 | arg5), new Class4_Sub27(local215, local218));
 				}
@@ -669,7 +669,7 @@ public final class Static148 {
 					local218 = new byte[local139];
 					for (local220 = 0; local220 < local139; local220++) {
 						local215[local220] = (short) arg1.method2536();
-						local218[local220] = arg1.g1b();
+						local218[local220] = arg1.g1s();
 					}
 				}
 				if (aClass84ArrayArrayArray2[local118 - 1][arg2 - (anInt5732 >> 6)][arg3 - (anInt5724 >> 6)] == null) {

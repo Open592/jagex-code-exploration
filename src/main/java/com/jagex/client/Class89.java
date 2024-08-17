@@ -48,7 +48,7 @@ public final class Class89 {
 				local80[local82] = new byte[local44[local82]];
 				@Pc(93) byte local93 = 0;
 				for (local95 = 0; local95 < local80[local82].length; local95++) {
-					local93 += local8.g1b();
+					local93 += local8.g1s();
 					local80[local82][local95] = local93;
 				}
 			}
@@ -58,7 +58,7 @@ public final class Class89 {
 				local128[local95] = new byte[local44[local95]];
 				@Pc(141) byte local141 = 0;
 				for (local143 = 0; local143 < local128[local95].length; local143++) {
-					local141 += local8.g1b();
+					local141 += local8.g1s();
 					local128[local95][local143] = local141;
 				}
 			}

@@ -66,10 +66,10 @@ public final class Static41 {
 			arg3.anInt6084 = 0;
 		}
 		if ((arg0 & 0x8000) != 0) {
-			arg3.anInt6043 = arg1.g1b_alt3();
-			arg3.anInt6052 = arg1.g1b();
-			arg3.anInt6044 = arg1.g1b_alt3();
-			arg3.anInt6074 = arg1.g1b();
+			arg3.anInt6043 = arg1.g1s_alt3();
+			arg3.anInt6052 = arg1.g1s();
+			arg3.anInt6044 = arg1.g1s_alt3();
+			arg3.anInt6074 = arg1.g1s();
 			arg3.anInt6018 = arg1.method2536() + Static24.anInt5323;
 			arg3.anInt6023 = arg1.method2548() + Static24.anInt5323;
 			arg3.lb = arg1.g1_alt1();
@@ -125,7 +125,7 @@ public final class Static41 {
 			arg3.method4748(local367, local363, true, local243);
 		}
 		if ((arg0 & 0x1) != 0) {
-			Static411.aByteArray95[arg2] = arg1.g1b_alt2();
+			Static411.aByteArray95[arg2] = arg1.g1s_alt2();
 		}
 		if ((arg0 & 0x2) != 0) {
 			local243 = arg1.method2515();
@@ -202,15 +202,15 @@ public final class Static41 {
 			Static18.method185(local363, arg3, local243);
 		}
 		if ((arg0 & 0x20000) != 0) {
-			arg3.aByte71 = arg1.g1b_alt2();
-			arg3.aByte69 = arg1.g1b_alt3();
-			arg3.aByte70 = arg1.g1b();
+			arg3.aByte71 = arg1.g1s_alt2();
+			arg3.aByte69 = arg1.g1s_alt3();
+			arg3.aByte70 = arg1.g1s();
 			arg3.aByte68 = (byte) arg1.g1_alt3();
 			arg3.anInt6020 = Static24.anInt5323 + arg1.method2548();
 			arg3.anInt6068 = Static24.anInt5323 + arg1.method2538();
 		}
 		if ((arg0 & 0x200) != 0) {
-			local7 = arg1.g1b_alt2();
+			local7 = arg1.g1s_alt2();
 		}
 		if ((arg0 & 0x10) != 0) {
 			local243 = arg1.method2506();

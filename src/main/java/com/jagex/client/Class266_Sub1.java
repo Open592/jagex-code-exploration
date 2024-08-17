@@ -78,7 +78,7 @@ public final class Class266_Sub1 extends Class266 {
 						}
 						local11 = true;
 						for (local80 = 0; local80 < 4; local80++) {
-							@Pc(86) byte local86 = arg4.g1b();
+							@Pc(86) byte local86 = arg4.g1s();
 							if (local86 == 0 && super.aByteArrayArrayArray14[local80] != null) {
 								local95 = arg3;
 								local99 = arg3 + 64;
@@ -117,7 +117,7 @@ public final class Class266_Sub1 extends Class266 {
 								}
 								for (local95 = 0; local95 < 64; local95 += 4) {
 									for (local99 = 0; local99 < 64; local99 += 4) {
-										@Pc(369) byte local369 = arg4.g1b();
+										@Pc(369) byte local369 = arg4.g1s();
 										for (local155 = local95 + arg3; local155 < arg3 + local95 + 4; local155++) {
 											for (local380 = arg1 + local99; local380 < local99 + arg1 + 4; local380++) {
 												if (local155 >= 0 && super.anInt7296 > local155 && local380 >= 0 && local380 < super.anInt7290) {
@@ -394,7 +394,7 @@ public final class Class266_Sub1 extends Class266 {
 										super.aByteArrayArrayArray14 = new byte[4][][];
 									}
 									for (local73 = 0; local73 < 4; local73++) {
-										@Pc(79) byte local79 = arg2.g1b();
+										@Pc(79) byte local79 = arg2.g1s();
 										@Pc(113) int local113;
 										if (local79 == 0 && super.aByteArrayArrayArray14[arg0] != null) {
 											if (local73 <= arg8) {
@@ -436,7 +436,7 @@ public final class Class266_Sub1 extends Class266 {
 											}
 											for (local109 = 0; local109 < 64; local109 += 4) {
 												for (local113 = 0; local113 < 64; local113 += 4) {
-													@Pc(119) byte local119 = arg2.g1b();
+													@Pc(119) byte local119 = arg2.g1s();
 													if (local73 <= arg8) {
 														for (local124 = local109; local124 < local109 + 4; local124++) {
 															for (local128 = local113; local128 < local113 + 4; local128++) {

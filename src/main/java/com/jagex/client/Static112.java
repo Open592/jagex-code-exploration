@@ -137,7 +137,7 @@ public final class Static112 {
 					local78 = Static70.anInt1504;
 				}
 				Static3.aClass4_Sub12_Sub1_5.pos = 0;
-				Static3.aClass4_Sub12_Sub1_5.p1(Static153.aClass60_9.anInt1812);
+				Static3.aClass4_Sub12_Sub1_5.p1s(Static153.aClass60_9.anInt1812);
 				Static3.aClass4_Sub12_Sub1_5.p4(local78);
 				Static125.aClass11_5.method142(Static3.aClass4_Sub12_Sub1_5.pos, Static3.aClass4_Sub12_Sub1_5.data);
 				Static329.method4427();

@@ -53,10 +53,10 @@ public final class Static241 {
 				local17.anInt6095 = Static146.aClass4_Sub12_Sub1_3.method2538();
 			}
 			if ((local21 & 0x100) != 0) {
-				local17.anInt6043 = Static146.aClass4_Sub12_Sub1_3.g1b_alt3();
-				local17.anInt6052 = Static146.aClass4_Sub12_Sub1_3.g1b_alt3();
-				local17.anInt6044 = Static146.aClass4_Sub12_Sub1_3.g1b_alt2();
-				local17.anInt6074 = Static146.aClass4_Sub12_Sub1_3.g1b_alt3();
+				local17.anInt6043 = Static146.aClass4_Sub12_Sub1_3.g1s_alt3();
+				local17.anInt6052 = Static146.aClass4_Sub12_Sub1_3.g1s_alt3();
+				local17.anInt6044 = Static146.aClass4_Sub12_Sub1_3.g1s_alt2();
+				local17.anInt6074 = Static146.aClass4_Sub12_Sub1_3.g1s_alt3();
 				local17.anInt6018 = Static146.aClass4_Sub12_Sub1_3.method2536() + Static24.anInt5323;
 				local17.anInt6023 = Static146.aClass4_Sub12_Sub1_3.method2548() + Static24.anInt5323;
 				local17.lb = Static146.aClass4_Sub12_Sub1_3.g1_alt3();
@@ -86,9 +86,9 @@ public final class Static241 {
 				Static33.method632(local44, local162, local17);
 			}
 			if ((local21 & 0x2000) != 0) {
-				local17.aByte71 = Static146.aClass4_Sub12_Sub1_3.g1b_alt1();
-				local17.aByte69 = Static146.aClass4_Sub12_Sub1_3.g1b_alt1();
-				local17.aByte70 = Static146.aClass4_Sub12_Sub1_3.g1b_alt1();
+				local17.aByte71 = Static146.aClass4_Sub12_Sub1_3.g1s_alt1();
+				local17.aByte69 = Static146.aClass4_Sub12_Sub1_3.g1s_alt1();
+				local17.aByte70 = Static146.aClass4_Sub12_Sub1_3.g1s_alt1();
 				local17.aByte68 = (byte) Static146.aClass4_Sub12_Sub1_3.g1_alt2();
 				local17.anInt6020 = Static24.anInt5323 + Static146.aClass4_Sub12_Sub1_3.method2515();
 				local17.anInt6068 = Static24.anInt5323 + Static146.aClass4_Sub12_Sub1_3.method2536();

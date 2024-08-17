@@ -577,10 +577,10 @@ public final class Class247 {
 		this.anInt6808 = arg0.method2512();
 		this.anInt6816 = arg0.method2536();
 		this.anInt6802 = arg0.method2536();
-		this.aByte80 = arg0.g1b();
-		this.aByte78 = arg0.g1b();
-		this.aByte79 = arg0.g1b();
-		this.aByte81 = arg0.g1b();
+		this.aByte80 = arg0.g1s();
+		this.aByte78 = arg0.g1s();
+		this.aByte79 = arg0.g1s();
+		this.aByte81 = arg0.g1s();
 		this.anInt6850 = arg0.method2536();
 		if (this.anInt6850 == 65535) {
 			this.anInt6850 = -1;
@@ -679,11 +679,11 @@ public final class Class247 {
 				if (local494 == 4095) {
 					local494 = -1;
 				}
-				@Pc(539) byte local539 = arg0.g1b();
+				@Pc(539) byte local539 = arg0.g1s();
 				if (local539 != 0) {
 					this.aBoolean624 = true;
 				}
-				@Pc(548) byte local548 = arg0.g1b();
+				@Pc(548) byte local548 = arg0.g1s();
 				this.anIntArray523[local516] = local494;
 				this.aByteArray96[local516] = local539;
 				this.aByteArray97[local516] = local548;

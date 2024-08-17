@@ -296,10 +296,10 @@ public final class Class4_Sub24 extends Class4 {
 		if (local594 > 255) {
 			local594 = 255;
 		}
-		this.aClass4_Sub12_Sub2_2.p1(local564);
-		this.aClass4_Sub12_Sub2_2.p1(local581);
-		this.aClass4_Sub12_Sub2_2.p1(local594);
-		this.aClass4_Sub12_Sub2_2.p1(255);
+		this.aClass4_Sub12_Sub2_2.p1s(local564);
+		this.aClass4_Sub12_Sub2_2.p1s(local581);
+		this.aClass4_Sub12_Sub2_2.p1s(local594);
+		this.aClass4_Sub12_Sub2_2.p1s(255);
 		this.method2840(local84);
 	}
 

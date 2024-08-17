@@ -71,8 +71,8 @@ public final class Static425 {
 				@Pc(102) long local102 = Static286.aLong174 = Static96.method1684(Static2.aString1);
 				Static3.aClass4_Sub12_Sub1_5.pos = 0;
 				local112 = (int) (local102 >> 16 & 0x1FL);
-				Static3.aClass4_Sub12_Sub1_5.p1(Static153.aClass60_1.anInt1812);
-				Static3.aClass4_Sub12_Sub1_5.p1(local112);
+				Static3.aClass4_Sub12_Sub1_5.p1s(Static153.aClass60_1.anInt1812);
+				Static3.aClass4_Sub12_Sub1_5.p1s(local112);
 				Static125.aClass11_5.method142(2, Static3.aClass4_Sub12_Sub1_5.data);
 				Static329.method4427();
 				@Pc(134) int local134 = Static125.aClass11_5.readByte();
@@ -95,7 +95,7 @@ public final class Static425 {
 				Static309.aLong183 = Static146.aClass4_Sub12_Sub1_3.method2501();
 				@Pc(185) Packet local185 = new Packet(70);
 				@Pc(188) int[] local188 = new int[] { (int) (Math.random() * 9.9999999E7D), (int) (Math.random() * 9.9999999E7D), (int) (Static309.aLong183 >> 32), (int) Static309.aLong183 };
-				local185.p1(10);
+				local185.p1s(10);
 				local185.p4(local188[0]);
 				local185.p4(local188[1]);
 				local185.p4(local188[2]);
@@ -105,23 +105,23 @@ public final class Static425 {
 				local185.method2522(Static85.aBigInteger1, Static309.aBigInteger2);
 				Static3.aClass4_Sub12_Sub1_5.pos = 0;
 				if (Static403.anInt6667 == 40) {
-					Static3.aClass4_Sub12_Sub1_5.p1(Static153.aClass60_5.anInt1812);
+					Static3.aClass4_Sub12_Sub1_5.p1s(Static153.aClass60_5.anInt1812);
 				} else {
-					Static3.aClass4_Sub12_Sub1_5.p1(Static153.aClass60_3.anInt1812);
+					Static3.aClass4_Sub12_Sub1_5.p1s(Static153.aClass60_3.anInt1812);
 				}
 				Static3.aClass4_Sub12_Sub1_5.p2(0);
 				local112 = Static3.aClass4_Sub12_Sub1_5.pos;
 				Static3.aClass4_Sub12_Sub1_5.p4(592);
-				Static3.aClass4_Sub12_Sub1_5.p1(Static161.anInt3177);
-				Static3.aClass4_Sub12_Sub1_5.p1(Static450.method5664());
+				Static3.aClass4_Sub12_Sub1_5.p1s(Static161.anInt3177);
+				Static3.aClass4_Sub12_Sub1_5.p1s(Static450.method5664());
 				Static3.aClass4_Sub12_Sub1_5.p2(Static141.width);
 				Static3.aClass4_Sub12_Sub1_5.p2(Static302.height);
-				Static3.aClass4_Sub12_Sub1_5.p1(Static323.aClass50_Sub1_1.anInt3440);
+				Static3.aClass4_Sub12_Sub1_5.p1s(Static323.aClass50_Sub1_1.anInt3440);
 				Static82.method1471(Static3.aClass4_Sub12_Sub1_5);
 				Static3.aClass4_Sub12_Sub1_5.pjstr(Static34.settings);
 				Static3.aClass4_Sub12_Sub1_5.p4(Static168.affiliateID);
 				@Pc(323) Packet local323 = Static323.aClass50_Sub1_1.method2863();
-				Static3.aClass4_Sub12_Sub1_5.p1(local323.pos);
+				Static3.aClass4_Sub12_Sub1_5.p1s(local323.pos);
 				Static3.aClass4_Sub12_Sub1_5.pArrayBuffer(local323.data, local323.pos);
 				Static249.aBoolean425 = true;
 				Static3.aClass4_Sub12_Sub1_5.p2(Static183.anInt3512);
@@ -156,7 +156,7 @@ public final class Static425 {
 				Static3.aClass4_Sub12_Sub1_5.p4(Static19.aClass76_2.method2111());
 				Static3.aClass4_Sub12_Sub1_5.p4(Static366.aClass76_83.method2111());
 				Static3.aClass4_Sub12_Sub1_5.pArrayBuffer(local185.data, local185.pos);
-				Static3.aClass4_Sub12_Sub1_5.psize2(Static3.aClass4_Sub12_Sub1_5.pos - local112);
+				Static3.aClass4_Sub12_Sub1_5.pSize2(Static3.aClass4_Sub12_Sub1_5.pos - local112);
 				Static125.aClass11_5.method142(Static3.aClass4_Sub12_Sub1_5.pos, Static3.aClass4_Sub12_Sub1_5.data);
 				Static3.aClass4_Sub12_Sub1_5.method1139(local188);
 				for (@Pc(551) int local551 = 0; local551 < 4; local551++) {
