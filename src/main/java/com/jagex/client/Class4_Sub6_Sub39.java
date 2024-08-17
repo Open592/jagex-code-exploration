@@ -40,7 +40,7 @@ public final class Class4_Sub6_Sub39 extends Class4_Sub6 {
 		if (arg0 == 0) {
 			this.anInt7120 = arg1.g1();
 		} else if (arg0 == 1) {
-			this.anInt7121 = arg1.method2536();
+			this.anInt7121 = arg1.g2();
 		} else if (arg0 == 2) {
 			this.anInt7116 = arg1.g1();
 		}

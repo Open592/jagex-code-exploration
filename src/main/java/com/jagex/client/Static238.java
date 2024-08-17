@@ -87,7 +87,7 @@ public final class Static238 {
 	@OriginalMember(owner = "client!mb", name = "a", descriptor = "(Ljava/lang/String;II)V")
 	public static void method3544(@OriginalArg(0) String arg0, @OriginalArg(1) int arg1) {
 		Static429.method5476(Static416.aClass215_92);
-		Static3.aClass4_Sub12_Sub1_5.p1s(Static269.method3856(arg0) + 1);
+		Static3.aClass4_Sub12_Sub1_5.p1(Static269.method3856(arg0) + 1);
 		Static3.aClass4_Sub12_Sub1_5.p1s_alt3(arg1);
 		Static3.aClass4_Sub12_Sub1_5.pjstr(arg0);
 	}

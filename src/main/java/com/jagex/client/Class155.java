@@ -77,30 +77,30 @@ public final class Class155 {
 			if ((local16 & 0x2) == 0) {
 				this.aFloat150 = 1.1523438F;
 			} else {
-				this.aFloat150 = (float) arg0.method2536() / 256.0F;
+				this.aFloat150 = (float) arg0.g2() / 256.0F;
 			}
 			if ((local16 & 0x4) == 0) {
 				this.aFloat149 = 0.69921875F;
 			} else {
-				this.aFloat149 = (float) arg0.method2536() / 256.0F;
+				this.aFloat149 = (float) arg0.g2() / 256.0F;
 			}
 			if ((local16 & 0x8) == 0) {
 				this.aFloat151 = 1.2F;
 			} else {
-				this.aFloat151 = (float) arg0.method2536() / 256.0F;
+				this.aFloat151 = (float) arg0.g2() / 256.0F;
 			}
 		} else {
 			if ((local16 & 0x1) != 0) {
 				arg0.method2529();
 			}
 			if ((local16 & 0x2) != 0) {
-				arg0.method2536();
+				arg0.g2();
 			}
 			if ((local16 & 0x4) != 0) {
-				arg0.method2536();
+				arg0.g2();
 			}
 			if ((local16 & 0x8) != 0) {
-				arg0.method2536();
+				arg0.g2();
 			}
 			this.aFloat149 = 0.69921875F;
 			this.aFloat150 = 1.1523438F;
@@ -124,17 +124,17 @@ public final class Class155 {
 		if ((local16 & 0x40) == 0) {
 			this.anInt4777 = 0;
 		} else {
-			this.anInt4777 = arg0.method2536();
+			this.anInt4777 = arg0.g2();
 		}
 		if ((local16 & 0x80) == 0) {
 			this.aClass99_3 = Static265.aClass99_5;
 		} else {
-			@Pc(219) int local219 = arg0.method2536();
-			@Pc(223) int local223 = arg0.method2536();
-			@Pc(227) int local227 = arg0.method2536();
-			@Pc(231) int local231 = arg0.method2536();
-			@Pc(235) int local235 = arg0.method2536();
-			@Pc(239) int local239 = arg0.method2536();
+			@Pc(219) int local219 = arg0.g2();
+			@Pc(223) int local223 = arg0.g2();
+			@Pc(227) int local227 = arg0.g2();
+			@Pc(231) int local231 = arg0.g2();
+			@Pc(235) int local235 = arg0.g2();
+			@Pc(239) int local239 = arg0.g2();
 			this.aClass99_3 = Static204.method3186(local235, local227, local239, local219, local231, local223);
 		}
 	}

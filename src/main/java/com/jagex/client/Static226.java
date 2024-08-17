@@ -25,20 +25,20 @@ public final class Static226 {
 		@Pc(9) Class4_Sub1_Sub1 local9 = new Class4_Sub1_Sub1();
 		@Pc(14) Packet local14 = new Packet(arg0);
 		local14.pos = local14.data.length - 2;
-		@Pc(25) int local25 = local14.method2536();
+		@Pc(25) int local25 = local14.g2();
 		@Pc(36) int local36 = local14.data.length - local25 - 12 - 2;
 		local14.pos = local36;
 		@Pc(43) int local43 = local14.method2529();
-		local9.anInt55 = local14.method2536();
-		local9.anInt56 = local14.method2536();
-		local9.anInt54 = local14.method2536();
-		local9.anInt58 = local14.method2536();
+		local9.anInt55 = local14.g2();
+		local9.anInt56 = local14.g2();
+		local9.anInt54 = local14.g2();
+		local9.anInt58 = local14.g2();
 		@Pc(67) int local67 = local14.g1();
 		@Pc(84) int local84;
 		if (local67 > 0) {
 			local9.aClass102Array1 = new Class102[local67];
 			for (@Pc(78) int local78 = 0; local78 < local67; local78++) {
-				local84 = local14.method2536();
+				local84 = local14.g2();
 				@Pc(91) Class102 local91 = new Class102(Static370.method4949(local84));
 				local9.aClass102Array1[local78] = local91;
 				while (local84-- > 0) {
@@ -55,7 +55,7 @@ public final class Static226 {
 		local9.anIntArray6 = new int[local43];
 		local84 = 0;
 		while (local14.pos < local36) {
-			@Pc(162) int local162 = local14.method2536();
+			@Pc(162) int local162 = local14.g2();
 			if (local162 == 3) {
 				local9.aStringArray1[local84] = local14.readValidStringAtCurrentPosition().intern();
 			} else if (local162 >= 100 || local162 == 21 || local162 == 38 || local162 == 39) {

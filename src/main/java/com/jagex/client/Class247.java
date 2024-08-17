@@ -572,16 +572,16 @@ public final class Class247 {
 			this.anInt6840 &= 0x7F;
 			this.aString65 = arg0.readValidStringAtCurrentPosition();
 		}
-		this.anInt6842 = arg0.method2536();
+		this.anInt6842 = arg0.g2();
 		this.anInt6804 = arg0.method2512();
 		this.anInt6808 = arg0.method2512();
-		this.anInt6816 = arg0.method2536();
-		this.anInt6802 = arg0.method2536();
+		this.anInt6816 = arg0.g2();
+		this.anInt6802 = arg0.g2();
 		this.aByte80 = arg0.g1s();
 		this.aByte78 = arg0.g1s();
 		this.aByte79 = arg0.g1s();
 		this.aByte81 = arg0.g1s();
-		this.anInt6850 = arg0.method2536();
+		this.anInt6850 = arg0.g2();
 		if (this.anInt6850 == 65535) {
 			this.anInt6850 = -1;
 		} else {
@@ -593,15 +593,15 @@ public final class Class247 {
 		}
 		this.aBoolean616 = (local113 & 0x1) != 0;
 		if (this.anInt6840 == 0) {
-			this.anInt6821 = arg0.method2536();
-			this.anInt6834 = arg0.method2536();
+			this.anInt6821 = arg0.g2();
+			this.anInt6834 = arg0.g2();
 			if (local9 < 0) {
 				this.aBoolean622 = arg0.g1() == 1;
 			}
 		}
 		if (this.anInt6840 == 5) {
 			this.lb = arg0.method2529();
-			this.anInt6818 = arg0.method2536();
+			this.anInt6818 = arg0.g2();
 			@Pc(181) int local181 = arg0.g1();
 			this.aBoolean621 = (local181 & 0x1) != 0;
 			this.aBoolean614 = (local181 & 0x2) != 0;
@@ -614,17 +614,17 @@ public final class Class247 {
 		}
 		if (this.anInt6840 == 6) {
 			this.anInt6796 = 1;
-			this.anInt6781 = arg0.method2536();
+			this.anInt6781 = arg0.g2();
 			if (this.anInt6781 == 65535) {
 				this.anInt6781 = -1;
 			}
 			this.anInt6846 = arg0.method2512();
 			this.anInt6793 = arg0.method2512();
-			this.anInt6844 = arg0.method2536();
-			this.anInt6858 = arg0.method2536();
-			this.anInt6843 = arg0.method2536();
-			this.anInt6857 = arg0.method2536();
-			this.anInt6788 = arg0.method2536();
+			this.anInt6844 = arg0.g2();
+			this.anInt6858 = arg0.g2();
+			this.anInt6843 = arg0.g2();
+			this.anInt6857 = arg0.g2();
+			this.anInt6788 = arg0.g2();
 			if (this.anInt6788 == 65535) {
 				this.anInt6788 = -1;
 			}
@@ -633,14 +633,14 @@ public final class Class247 {
 			this.anInt6782 = arg0.method2512();
 			this.aBoolean619 = arg0.g1() == 1;
 			if (this.aByte80 != 0) {
-				this.anInt6822 = arg0.method2536();
+				this.anInt6822 = arg0.g2();
 			}
 			if (this.aByte78 != 0) {
-				this.anInt6792 = arg0.method2536();
+				this.anInt6792 = arg0.g2();
 			}
 		}
 		if (this.anInt6840 == 4) {
-			this.anInt6791 = arg0.method2536();
+			this.anInt6791 = arg0.g2();
 			if (this.anInt6791 == 65535) {
 				this.anInt6791 = -1;
 			}
@@ -708,11 +708,11 @@ public final class Class247 {
 			for (local628 = 0; local628 < this.anIntArray521.length; local628++) {
 				this.anIntArray521[local628] = -1;
 			}
-			this.anIntArray521[local593] = arg0.method2536();
+			this.anIntArray521[local593] = arg0.g2();
 		}
 		if (local614 > 1) {
 			local593 = arg0.g1();
-			this.anIntArray521[local593] = arg0.method2536();
+			this.anIntArray521[local593] = arg0.g2();
 		}
 		this.aString64 = arg0.readValidStringAtCurrentPosition();
 		if (this.aString64.equals("")) {
@@ -724,21 +724,21 @@ public final class Class247 {
 		this.aString68 = arg0.readValidStringAtCurrentPosition();
 		local593 = -1;
 		if (Static374.method4995(local490) != 0) {
-			local593 = arg0.method2536();
-			this.anInt6790 = arg0.method2536();
+			local593 = arg0.g2();
+			this.anInt6790 = arg0.g2();
 			if (local593 == 65535) {
 				local593 = -1;
 			}
 			if (this.anInt6790 == 65535) {
 				this.anInt6790 = -1;
 			}
-			this.anInt6773 = arg0.method2536();
+			this.anInt6773 = arg0.g2();
 			if (this.anInt6773 == 65535) {
 				this.anInt6773 = -1;
 			}
 		}
 		if (local9 >= 0) {
-			this.anInt6789 = arg0.method2536();
+			this.anInt6789 = arg0.g2();
 			if (this.anInt6789 == 65535) {
 				this.anInt6789 = -1;
 			}

@@ -47,7 +47,7 @@ public final class Static41 {
 	public static void method729(@OriginalArg(0) int arg0, @OriginalArg(1) Class4_Sub12_Sub1 arg1, @OriginalArg(2) int arg2, @OriginalArg(4) Class16_Sub1_Sub5_Sub1 arg3) {
 		@Pc(7) byte local7 = -1;
 		if ((arg0 & 0x40) != 0) {
-			arg3.anInt4323 = arg1.method2536();
+			arg3.anInt4323 = arg1.g2();
 			if (arg3.anInt6086 == 0) {
 				arg3.method4743(arg3.anInt4323);
 				arg3.anInt4323 = -1;
@@ -70,7 +70,7 @@ public final class Static41 {
 			arg3.anInt6052 = arg1.g1s();
 			arg3.anInt6044 = arg1.g1s_alt3();
 			arg3.anInt6074 = arg1.g1s();
-			arg3.anInt6018 = arg1.method2536() + Static24.anInt5323;
+			arg3.anInt6018 = arg1.g2() + Static24.anInt5323;
 			arg3.anInt6023 = arg1.method2548() + Static24.anInt5323;
 			arg3.lb = arg1.g1_alt1();
 			arg3.anInt6087 = 0;
@@ -103,7 +103,7 @@ public final class Static41 {
 			@Pc(300) int[] local300 = new int[local243];
 			@Pc(303) int[] local303 = new int[local243];
 			for (@Pc(305) int local305 = 0; local305 < local243; local305++) {
-				@Pc(311) int local311 = arg1.method2536();
+				@Pc(311) int local311 = arg1.g2();
 				if (local311 == 65535) {
 					local311 = -1;
 				}
@@ -194,7 +194,7 @@ public final class Static41 {
 			arg3.method4748(local367, local363, false, local243);
 		}
 		if ((arg0 & 0x8) != 0) {
-			local243 = arg1.method2536();
+			local243 = arg1.g2();
 			if (local243 == 65535) {
 				local243 = -1;
 			}
@@ -213,7 +213,7 @@ public final class Static41 {
 			local7 = arg1.g1s_alt2();
 		}
 		if ((arg0 & 0x10) != 0) {
-			local243 = arg1.method2506();
+			local243 = arg1.gSmart1Or2();
 			local363 = arg1.g1_alt1();
 			arg3.method4746(local243, Static24.anInt5323, local363);
 			arg3.anInt6072 = Static24.anInt5323 + 300;
@@ -232,7 +232,7 @@ public final class Static41 {
 		}
 		if ((arg0 & 0x100) != 0) {
 			local243 = Static24.anInt5323;
-			local363 = arg1.method2506();
+			local363 = arg1.gSmart1Or2();
 			local367 = arg1.g1_alt3();
 			arg3.method4746(local363, local243, local367);
 		}

@@ -108,18 +108,18 @@ public final class Class184 {
 			this.aClass61_3.method1603(arg0);
 		}
 		for (@Pc(109) int local109 = 0; local109 < 10; local109++) {
-			@Pc(114) int local114 = arg0.method2506();
+			@Pc(114) int local114 = arg0.gSmart1Or2();
 			if (local114 == 0) {
 				break;
 			}
 			this.anIntArray363[local109] = local114;
-			this.anIntArray361[local109] = arg0.method2502();
-			this.anIntArray364[local109] = arg0.method2506();
+			this.anIntArray361[local109] = arg0.gSmart1Or2s();
+			this.anIntArray364[local109] = arg0.gSmart1Or2();
 		}
-		this.anInt5407 = arg0.method2506();
-		this.anInt5409 = arg0.method2506();
-		this.anInt5406 = arg0.method2536();
-		this.anInt5408 = arg0.method2536();
+		this.anInt5407 = arg0.gSmart1Or2();
+		this.anInt5409 = arg0.gSmart1Or2();
+		this.anInt5406 = arg0.g2();
+		this.anInt5408 = arg0.g2();
 		this.aClass20_1 = new Class20();
 		this.aClass61_5 = new Class61();
 		this.aClass20_1.method497(arg0, this.aClass61_5);

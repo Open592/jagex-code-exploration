@@ -27,8 +27,8 @@ public final class Class241 {
 				this.aClass184Array1[local7].method4150(arg0);
 			}
 		}
-		this.anInt6706 = arg0.method2536();
-		this.anInt6707 = arg0.method2536();
+		this.anInt6706 = arg0.g2();
+		this.anInt6707 = arg0.g2();
 	}
 
 	@OriginalMember(owner = "client!um", name = "<init>", descriptor = "()V")

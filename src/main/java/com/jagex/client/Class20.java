@@ -36,14 +36,14 @@ public final class Class20 {
 			this.anIntArray27[0] = this.anIntArray27[1] = 0;
 			return;
 		}
-		this.anIntArray27[0] = arg0.method2536();
-		this.anIntArray27[1] = arg0.method2536();
+		this.anIntArray27[0] = arg0.g2();
+		this.anIntArray27[1] = arg0.g2();
 		@Pc(37) int local37 = arg0.g1();
 		@Pc(42) int local42;
 		for (@Pc(39) int local39 = 0; local39 < 2; local39++) {
 			for (local42 = 0; local42 < this.anIntArray28[local39]; local42++) {
-				this.anIntArrayArrayArray2[local39][0][local42] = arg0.method2536();
-				this.anIntArrayArrayArray1[local39][0][local42] = arg0.method2536();
+				this.anIntArrayArrayArray2[local39][0][local42] = arg0.g2();
+				this.anIntArrayArrayArray1[local39][0][local42] = arg0.g2();
 			}
 		}
 		for (local42 = 0; local42 < 2; local42++) {
@@ -52,8 +52,8 @@ public final class Class20 {
 					this.anIntArrayArrayArray2[local42][1][local81] = this.anIntArrayArrayArray2[local42][0][local81];
 					this.anIntArrayArrayArray1[local42][1][local81] = this.anIntArrayArrayArray1[local42][0][local81];
 				} else {
-					this.anIntArrayArrayArray2[local42][1][local81] = arg0.method2536();
-					this.anIntArrayArrayArray1[local42][1][local81] = arg0.method2536();
+					this.anIntArrayArrayArray2[local42][1][local81] = arg0.g2();
+					this.anIntArrayArrayArray1[local42][1][local81] = arg0.g2();
 				}
 			}
 		}

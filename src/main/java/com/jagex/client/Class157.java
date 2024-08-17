@@ -193,9 +193,9 @@ public final class Class157 {
 	@OriginalMember(owner = "client!nf", name = "a", descriptor = "(Lclient!iv;BI)V")
 	private void method3783(@OriginalArg(0) Packet arg0, @OriginalArg(2) int arg1) {
 		if (arg1 == 1) {
-			this.anInt4930 = arg0.method2536();
+			this.anInt4930 = arg0.g2();
 		} else if (arg1 == 2) {
-			this.anInt4913 = arg0.method2536();
+			this.anInt4913 = arg0.g2();
 		} else if (arg1 == 3) {
 			this.aString47 = arg0.readValidStringAtCurrentPosition();
 		} else if (arg1 == 4) {
@@ -212,11 +212,11 @@ public final class Class157 {
 					return;
 				}
 				if (arg1 == 9) {
-					this.anInt4935 = arg0.method2536();
+					this.anInt4935 = arg0.g2();
 					if (this.anInt4935 == 65535) {
 						this.anInt4935 = -1;
 					}
-					this.anInt4917 = arg0.method2536();
+					this.anInt4917 = arg0.g2();
 					if (this.anInt4917 == 65535) {
 						this.anInt4917 = -1;
 					}
@@ -234,13 +234,13 @@ public final class Class157 {
 						if (arg1 != 17) {
 							if (arg1 != 18) {
 								if (arg1 == 19) {
-									this.anInt4919 = arg0.method2536();
+									this.anInt4919 = arg0.g2();
 								} else if (arg1 == 20) {
-									this.anInt4909 = arg0.method2536();
+									this.anInt4909 = arg0.g2();
 									if (this.anInt4909 == 65535) {
 										this.anInt4909 = -1;
 									}
-									this.anInt4910 = arg0.method2536();
+									this.anInt4910 = arg0.g2();
 									if (this.anInt4910 == 65535) {
 										this.anInt4910 = -1;
 									}
@@ -274,7 +274,7 @@ public final class Class157 {
 								}
 								return;
 							}
-							this.anInt4912 = arg0.method2536();
+							this.anInt4912 = arg0.g2();
 							return;
 						}
 						this.aString48 = arg0.readValidStringAtCurrentPosition();

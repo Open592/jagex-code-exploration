@@ -161,8 +161,8 @@ public final class Class4_Sub6_Sub2 extends Class4_Sub6 {
 		this.anInt690 = arg1.g1();
 		this.anIntArrayArray6 = new int[arg1.g1()][2];
 		for (@Pc(26) int local26 = 0; local26 < this.anIntArrayArray6.length; local26++) {
-			this.anIntArrayArray6[local26][0] = arg1.method2536();
-			this.anIntArrayArray6[local26][1] = arg1.method2536();
+			this.anIntArrayArray6[local26][0] = arg1.g2();
+			this.anIntArrayArray6[local26][1] = arg1.g2();
 		}
 	}
 

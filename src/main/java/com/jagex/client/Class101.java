@@ -94,7 +94,7 @@ public final class Class101 {
 				local82 = arg0.g1();
 				this.anIntArrayArray27 = new int[local82][3];
 				for (local88 = 0; local88 < local82; local88++) {
-					this.anIntArrayArray27[local88][0] = arg0.method2536();
+					this.anIntArrayArray27[local88][0] = arg0.g2();
 					this.anIntArrayArray27[local88][1] = arg0.method2529();
 					this.anIntArrayArray27[local88][2] = arg0.method2529();
 				}
@@ -102,12 +102,12 @@ public final class Class101 {
 				local82 = arg0.g1();
 				this.anIntArrayArray28 = new int[local82][3];
 				for (local88 = 0; local88 < local82; local88++) {
-					this.anIntArrayArray28[local88][0] = arg0.method2536();
+					this.anIntArrayArray28[local88][0] = arg0.g2();
 					this.anIntArrayArray28[local88][1] = arg0.method2529();
 					this.anIntArrayArray28[local88][2] = arg0.method2529();
 				}
 			} else if (arg1 == 5) {
-				arg0.method2536();
+				arg0.g2();
 			} else if (arg1 == 6) {
 				arg0.g1();
 			} else if (arg1 == 7) {
@@ -141,11 +141,11 @@ public final class Class101 {
 						return;
 					}
 					if (arg1 == 15) {
-						arg0.method2536();
+						arg0.g2();
 						return;
 					}
 					if (arg1 == 17) {
-						this.anInt3153 = arg0.method2536();
+						this.anInt3153 = arg0.g2();
 						return;
 					}
 					if (arg1 != 18) {
@@ -198,7 +198,7 @@ public final class Class101 {
 				local82 = arg0.g1();
 				this.anIntArray205 = new int[local82];
 				for (local88 = 0; local88 < local82; local88++) {
-					this.anIntArray205[local88] = arg0.method2536();
+					this.anIntArray205[local88] = arg0.g2();
 				}
 				return;
 			}

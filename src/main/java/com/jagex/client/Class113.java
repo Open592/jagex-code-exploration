@@ -66,7 +66,7 @@ public final class Class113 {
 			this.anInt3378 = arg0.g1();
 			return;
 		} else if (arg1 == 3) {
-			this.anInt3378 = arg0.method2536();
+			this.anInt3378 = arg0.g2();
 			if (this.anInt3378 == 65535) {
 				this.anInt3378 = -1;
 				return;
@@ -81,7 +81,7 @@ public final class Class113 {
 			this.aClass124_4.anInt3849 = this.anInt3385;
 			return;
 		} else if (arg1 == 9) {
-			this.anInt3374 = arg0.method2536() << 0;
+			this.anInt3374 = arg0.g2() << 0;
 			return;
 		} else if (arg1 == 10) {
 			this.aBoolean284 = false;
@@ -99,7 +99,7 @@ public final class Class113 {
 			if (arg1 == 14) {
 				this.anInt3383 = arg0.g1();
 			} else if (arg1 == 15) {
-				this.anInt3375 = arg0.method2536();
+				this.anInt3375 = arg0.g2();
 				if (this.anInt3375 == 65535) {
 					this.anInt3375 = -1;
 					return;

@@ -18,7 +18,7 @@ public final class Static356 {
 	@OriginalMember(owner = "client!sc", name = "a", descriptor = "(ILclient!iv;I)Ljava/lang/String;")
 	public static String method4831(@OriginalArg(1) Packet arg0) {
 		try {
-			@Pc(7) int local7 = arg0.method2506();
+			@Pc(7) int local7 = arg0.gSmart1Or2();
 			if (local7 > 32767) {
 				local7 = 32767;
 			}

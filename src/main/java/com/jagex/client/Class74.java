@@ -34,7 +34,7 @@ public final class Class74 {
 	@OriginalMember(owner = "client!fn", name = "a", descriptor = "(IILclient!iv;)V")
 	private void method2060(@OriginalArg(1) int arg0, @OriginalArg(2) Packet arg1) {
 		if (arg0 == 1) {
-			this.anInt2423 = arg1.method2536();
+			this.anInt2423 = arg1.g2();
 		} else if (arg0 == 2) {
 			this.anInt2420 = arg1.g1();
 			this.anInt2419 = arg1.g1();

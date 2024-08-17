@@ -43,13 +43,13 @@ public final class Class118 {
 	@OriginalMember(owner = "client!jg", name = "a", descriptor = "(Lclient!iv;III)V")
 	private void method2923(@OriginalArg(0) Packet arg0, @OriginalArg(1) int arg1, @OriginalArg(3) int arg2) {
 		if (arg1 == 1) {
-			this.anInt3536 = arg0.method2536();
+			this.anInt3536 = arg0.g2();
 			if (this.anInt3536 == 65535) {
 				this.anInt3536 = -1;
 			}
 		} else if (arg1 == 2) {
-			this.anInt3538 = arg0.method2536() + 1;
-			this.anInt3543 = arg0.method2536() + 1;
+			this.anInt3538 = arg0.g2() + 1;
+			this.anInt3543 = arg0.g2() + 1;
 		} else if (arg1 == 3) {
 			arg0.g1s();
 		} else if (arg1 == 4) {

@@ -99,7 +99,7 @@ public final class Class4_Sub6_Sub6 extends Class4_Sub6 {
 		}
 		this.anIntArrayArray19 = new int[arg1.g1()][4];
 		for (@Pc(23) int local23 = 0; local23 < this.anIntArrayArray19.length; local23++) {
-			this.anIntArrayArray19[local23][0] = arg1.method2536();
+			this.anIntArrayArray19[local23][0] = arg1.g2();
 			this.anIntArrayArray19[local23][1] = arg1.g1() << 4;
 			this.anIntArrayArray19[local23][2] = arg1.g1() << 4;
 			this.anIntArrayArray19[local23][3] = arg1.g1() << 4;

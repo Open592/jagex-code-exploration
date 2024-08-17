@@ -40,9 +40,9 @@ public final class Class190 {
 		if (arg0 == 1) {
 			this.anInt5502 = arg1.g1();
 		} else if (arg0 == 2) {
-			this.anInt5506 = arg1.method2536();
+			this.anInt5506 = arg1.g2();
 		} else if (arg0 == 3) {
-			this.anInt5504 = arg1.method2536();
+			this.anInt5504 = arg1.g2();
 		} else if (arg0 == 4) {
 			this.anInt5500 = arg1.method2512();
 		}

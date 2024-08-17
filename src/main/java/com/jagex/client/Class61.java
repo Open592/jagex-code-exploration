@@ -89,8 +89,8 @@ public final class Class61 {
 		this.anIntArray148 = new int[this.anInt1833];
 		this.anIntArray149 = new int[this.anInt1833];
 		for (@Pc(16) int local16 = 0; local16 < this.anInt1833; local16++) {
-			this.anIntArray148[local16] = arg0.method2536();
-			this.anIntArray149[local16] = arg0.method2536();
+			this.anIntArray148[local16] = arg0.g2();
+			this.anIntArray149[local16] = arg0.g2();
 		}
 	}
 }

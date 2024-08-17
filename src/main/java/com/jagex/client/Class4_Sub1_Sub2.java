@@ -25,7 +25,7 @@ public final class Class4_Sub1_Sub2 extends Class4_Sub1 {
 	@OriginalMember(owner = "client!an", name = "a", descriptor = "(IILclient!iv;)V")
 	private void method159(@OriginalArg(0) int arg0, @OriginalArg(2) Packet arg1) {
 		if (arg0 == 2) {
-			this.anInt207 = arg1.method2536();
+			this.anInt207 = arg1.g2();
 		}
 	}
 }

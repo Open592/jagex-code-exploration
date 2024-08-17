@@ -68,17 +68,17 @@ public final class Class4_Sub6_Sub24 extends Class4_Sub6 {
 		} else if (arg0 == 1) {
 			this.anInt4811 = arg1.g1();
 		} else if (arg0 == 2) {
-			this.anInt4796 = arg1.method2536();
+			this.anInt4796 = arg1.g2();
 		} else if (arg0 == 3) {
-			this.anInt4805 = arg1.method2536();
+			this.anInt4805 = arg1.g2();
 		} else if (arg0 == 4) {
-			this.anInt4802 = arg1.method2536();
+			this.anInt4802 = arg1.g2();
 		} else if (arg0 == 5) {
-			this.anInt4809 = arg1.method2536();
+			this.anInt4809 = arg1.g2();
 		} else if (arg0 == 6) {
-			this.anInt4797 = arg1.method2536();
+			this.anInt4797 = arg1.g2();
 		} else if (arg0 == 7) {
-			this.anInt4807 = arg1.method2536();
+			this.anInt4807 = arg1.g2();
 		}
 	}
 

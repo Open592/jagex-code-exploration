@@ -25,7 +25,7 @@ public final class Class111 {
 	@OriginalMember(owner = "client!iq", name = "a", descriptor = "(Lclient!iv;II)V")
 	private void method2811(@OriginalArg(0) Packet arg0, @OriginalArg(1) int arg1) {
 		if (arg1 == 5) {
-			this.anInt3365 = arg0.method2536();
+			this.anInt3365 = arg0.g2();
 		}
 	}
 }

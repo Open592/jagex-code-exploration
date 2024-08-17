@@ -27,8 +27,8 @@ public final class Static340 {
 	@OriginalMember(owner = "client!rf", name = "a", descriptor = "(BLclient!iv;)V")
 	public static void method4615(@OriginalArg(1) Packet arg0) {
 		for (@Pc(3) int local3 = 0; local3 < Static33.anInt602; local3++) {
-			@Pc(9) int local9 = arg0.method2506();
-			@Pc(13) int local13 = arg0.method2536();
+			@Pc(9) int local9 = arg0.gSmart1Or2();
+			@Pc(13) int local13 = arg0.g2();
 			if (local13 == 65535) {
 				local13 = -1;
 			}

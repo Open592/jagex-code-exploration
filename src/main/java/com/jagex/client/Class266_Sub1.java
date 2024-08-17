@@ -46,7 +46,7 @@ public final class Class266_Sub1 extends Class266 {
 							for (local492 = 0; local492 < local80; local492++) {
 								@Pc(501) Class191 local501 = new Class191(arg2, arg4, 0);
 								if (local501.anInt5562 == 31) {
-									@Pc(514) Class190 local514 = Static405.aClass204_1.method4677(arg4.method2536());
+									@Pc(514) Class190 local514 = Static405.aClass204_1.method4677(arg4.g2());
 									local501.method4334(local514.anInt5502, local514.anInt5506, local514.anInt5504, local514.anInt5500);
 								}
 								if (arg2.method4260() > 0) {
@@ -169,11 +169,11 @@ public final class Class266_Sub1 extends Class266 {
 					} else if (arg0 == null) {
 						arg4.pos += 10;
 					} else {
-						arg0[0] = arg4.method2536();
+						arg0[0] = arg4.g2();
 						arg0[1] = arg4.method2512();
 						arg0[2] = arg4.method2512();
 						arg0[3] = arg4.method2512();
-						arg0[4] = arg4.method2536();
+						arg0[4] = arg4.g2();
 					}
 				}
 			}
@@ -295,7 +295,7 @@ public final class Class266_Sub1 extends Class266 {
 			local16 += local20;
 			@Pc(28) int local28 = 0;
 			while (true) {
-				@Pc(32) int local32 = local14.method2506();
+				@Pc(32) int local32 = local14.gSmart1Or2();
 				if (local32 == 0) {
 					break;
 				}
@@ -359,7 +359,7 @@ public final class Class266_Sub1 extends Class266 {
 										for (local407 = 0; local407 < local73; local407++) {
 											@Pc(416) Class191 local416 = new Class191(arg4, arg2, 0);
 											if (local416.anInt5562 == 31) {
-												@Pc(429) Class190 local429 = Static405.aClass204_1.method4677(arg2.method2536());
+												@Pc(429) Class190 local429 = Static405.aClass204_1.method4677(arg2.g2());
 												local416.method4334(local429.anInt5502, local429.anInt5506, local429.anInt5504, local429.anInt5500);
 											}
 											if (arg4.method4260() > 0) {
@@ -457,11 +457,11 @@ public final class Class266_Sub1 extends Class266 {
 								} else if (arg3 == null) {
 									arg2.pos += 10;
 								} else {
-									arg3[0] = arg2.method2536();
+									arg3[0] = arg2.g2();
 									arg3[1] = arg2.method2512();
 									arg3[2] = arg2.method2512();
 									arg3[3] = arg2.method2512();
-									arg3[4] = arg2.method2536();
+									arg3[4] = arg2.g2();
 								}
 							}
 						}
@@ -497,7 +497,7 @@ public final class Class266_Sub1 extends Class266 {
 			local16 += local20;
 			@Pc(31) int local31 = 0;
 			while (true) {
-				@Pc(35) int local35 = local10.method2506();
+				@Pc(35) int local35 = local10.gSmart1Or2();
 				if (local35 == 0) {
 					break;
 				}

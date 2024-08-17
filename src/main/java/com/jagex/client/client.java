@@ -138,7 +138,7 @@ public final class client extends GameShell {
 			if (Static78.clientInitializationStep == 2) {
 				Static240.aClass11_14 = new Class11((Socket) Static30.connectionInitializationMessage.output, Static206.signLink);
 				@Pc(194) Packet local194 = new Packet(5);
-				local194.p1s(Static153.aClass60_2.anInt1812);
+				local194.p1(Static153.aClass60_2.anInt1812);
 				local194.p4(592);
 				Static240.aClass11_14.method142(5, local194.data);
 				Static78.clientInitializationStep++;
@@ -795,12 +795,12 @@ public final class client extends GameShell {
 						}
 						if (local18 == 1) {
 							@Pc(106) int[] local106 = Static382.anIntArray491 = new int[6];
-							local106[0] = local10.method2536();
-							local106[1] = local10.method2536();
-							local106[2] = local10.method2536();
-							local106[3] = local10.method2536();
-							local106[4] = local10.method2536();
-							local106[5] = local10.method2536();
+							local106[0] = local10.g2();
+							local106[1] = local10.g2();
+							local106[2] = local10.g2();
+							local106[3] = local10.g2();
+							local106[4] = local10.g2();
+							local106[5] = local10.g2();
 						} else {
 							if (local18 != 4) {
 								continue label45;
@@ -808,7 +808,7 @@ public final class client extends GameShell {
 							local37 = local10.g1();
 							Static290.anIntArray490 = new int[local37];
 							for (local42 = 0; local42 < local37; local42++) {
-								Static290.anIntArray490[local42] = local10.method2536();
+								Static290.anIntArray490[local42] = local10.g2();
 								if (Static290.anIntArray490[local42] == 65535) {
 									Static290.anIntArray490[local42] = -1;
 								}
@@ -820,7 +820,7 @@ public final class client extends GameShell {
 			local37 = local10.g1();
 			Static171.anIntArray217 = new int[local37];
 			for (local42 = 0; local42 < local37; local42++) {
-				Static171.anIntArray217[local42] = local10.method2536();
+				Static171.anIntArray217[local42] = local10.g2();
 				if (Static171.anIntArray217[local42] == 65535) {
 					Static171.anIntArray217[local42] = -1;
 				}

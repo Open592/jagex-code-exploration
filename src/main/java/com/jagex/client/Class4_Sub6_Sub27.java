@@ -55,13 +55,13 @@ public final class Class4_Sub6_Sub27 extends Class4_Sub6 {
 	@Override
 	public void method5518(@OriginalArg(1) int arg0, @OriginalArg(2) Packet arg1) {
 		if (arg0 == 0) {
-			this.anInt5238 = arg1.method2536();
+			this.anInt5238 = arg1.g2();
 		} else if (arg0 == 1) {
-			this.anInt5240 = arg1.method2536();
+			this.anInt5240 = arg1.g2();
 		} else if (arg0 == 2) {
-			this.anInt5243 = arg1.method2536();
+			this.anInt5243 = arg1.g2();
 		} else if (arg0 == 3) {
-			this.anInt5239 = arg1.method2536();
+			this.anInt5239 = arg1.g2();
 		}
 	}
 }

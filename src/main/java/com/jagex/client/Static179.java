@@ -31,15 +31,15 @@ public final class Static179 {
 			local8[local10] = (int) (Math.random() * 9.9999999E7D);
 		}
 		@Pc(30) Packet local30 = new Packet(128);
-		local30.p1s(10);
+		local30.p1(10);
 		local30.p2((arg3 ? 4 : 0) | (arg1 ? 2 : 0) | (arg4 ? 1 : 0));
 		local30.p8(arg7);
 		local30.p4(local8[0]);
 		local30.pjstr(arg2);
 		local30.p4(local8[1]);
 		local30.p2(Static168.affiliateID);
-		local30.p1s(arg9);
-		local30.p1s(arg0);
+		local30.p1(arg9);
+		local30.p1(arg0);
 		local30.p4(local8[2]);
 		local30.p2(arg5);
 		local30.p2(arg6);
@@ -49,11 +49,11 @@ public final class Static179 {
 		local120.pjstr(arg8);
 		@Pc(134) int local134 = 8 - Static269.method3856(arg8) % 8;
 		for (@Pc(136) int local136 = 0; local136 < local134; local136++) {
-			local120.p1s((int) (Math.random() * 255.0D));
+			local120.p1((int) (Math.random() * 255.0D));
 		}
 		local120.method2540(local8);
 		Static3.aClass4_Sub12_Sub1_5.pos = 0;
-		Static3.aClass4_Sub12_Sub1_5.p1s(Static153.aClass60_8.anInt1812);
+		Static3.aClass4_Sub12_Sub1_5.p1(Static153.aClass60_8.anInt1812);
 		Static3.aClass4_Sub12_Sub1_5.p2(local30.pos + local120.pos + 2);
 		Static3.aClass4_Sub12_Sub1_5.p2(592);
 		Static3.aClass4_Sub12_Sub1_5.pArrayBuffer(local30.data, local30.pos);

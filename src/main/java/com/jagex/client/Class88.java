@@ -72,17 +72,17 @@ public final class Class88 {
 					if ((local65 & 0x1) == 0) {
 						Static134.aShortArray71[local38] = local78;
 					} else {
-						Static134.aShortArray71[local38] = (short) local29.method2502();
+						Static134.aShortArray71[local38] = (short) local29.gSmart1Or2s();
 					}
 					if ((local65 & 0x2) == 0) {
 						Static134.aShortArray74[local38] = local78;
 					} else {
-						Static134.aShortArray74[local38] = (short) local29.method2502();
+						Static134.aShortArray74[local38] = (short) local29.gSmart1Or2s();
 					}
 					if ((local65 & 0x4) == 0) {
 						Static134.aShortArray79[local38] = local78;
 					} else {
-						Static134.aShortArray79[local38] = (short) local29.method2502();
+						Static134.aShortArray79[local38] = (short) local29.gSmart1Or2s();
 					}
 					Static134.aByteArray27[local38] = (byte) (local65 >>> 3 & 0x3);
 					if (local57 == 2 || local57 == 9) {

@@ -27,7 +27,7 @@ public final class Static360 {
 		if (local22 < 0 || local22 > 1 || arg0.data.length - arg0.pos < 2) {
 			return;
 		}
-		@Pc(47) int local47 = arg0.method2536();
+		@Pc(47) int local47 = arg0.g2();
 		if (arg0.data.length - arg0.pos != local47 * 6) {
 			return;
 		}
@@ -40,7 +40,7 @@ public final class Static360 {
 						if (arg0.data.length <= arg0.pos) {
 							return;
 						}
-						local67 = arg0.method2536();
+						local67 = arg0.g2();
 						local71 = arg0.method2529();
 					} while (local67 >= Static165.anIntArray210.length);
 				} while (!Static22.aBooleanArray3[local67]);

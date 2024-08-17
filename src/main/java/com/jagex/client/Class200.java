@@ -95,7 +95,7 @@ public final class Class200 {
 		} else if (arg1 == 4) {
 			this.anInt5767 = arg0.method2529();
 		} else if (arg1 == 5 || arg1 == 6) {
-			@Pc(31) int local31 = arg0.method2536();
+			@Pc(31) int local31 = arg0.g2();
 			this.aClass102_32 = new Class102(Static370.method4949(local31));
 			for (@Pc(43) int local43 = 0; local43 < local31; local43++) {
 				@Pc(49) int local49 = arg0.method2529();

@@ -31,11 +31,11 @@ public final class Class170 {
 	@OriginalMember(owner = "client!oh", name = "a", descriptor = "(IILclient!iv;)V")
 	private void method3968(@OriginalArg(0) int arg0, @OriginalArg(2) Packet arg1) {
 		if (arg0 == 1) {
-			this.anInt5190 = arg1.method2536();
+			this.anInt5190 = arg1.g2();
 		} else if (arg0 == 2) {
 			this.anIntArray341 = new int[arg1.g1()];
 			for (@Pc(26) int local26 = 0; local26 < this.anIntArray341.length; local26++) {
-				this.anIntArray341[local26] = arg1.method2536();
+				this.anIntArray341[local26] = arg1.g2();
 			}
 		} else if (arg0 == 3) {
 			this.anInt5189 = arg1.g1();

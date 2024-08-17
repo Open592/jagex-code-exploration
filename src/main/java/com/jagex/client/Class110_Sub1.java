@@ -2130,10 +2130,10 @@ public final class Class110_Sub1 extends Class110 {
 						local682 = 255;
 					}
 					Static370.aClass4_Sub12_Sub2_3.pos = local534 * local106 + local110;
-					Static370.aClass4_Sub12_Sub2_3.p1s(local643);
-					Static370.aClass4_Sub12_Sub2_3.p1s(local648);
-					Static370.aClass4_Sub12_Sub2_3.p1s(local682);
-					Static370.aClass4_Sub12_Sub2_3.p1s(255 - (this.aByteArray38[local509] & 0xFF));
+					Static370.aClass4_Sub12_Sub2_3.p1(local643);
+					Static370.aClass4_Sub12_Sub2_3.p1(local648);
+					Static370.aClass4_Sub12_Sub2_3.p1(local682);
+					Static370.aClass4_Sub12_Sub2_3.p1(255 - (this.aByteArray38[local509] & 0xFF));
 					local534 = this.aShortArray105[local509];
 					local570 = local443[local534];
 					if (local570 == 0) {
@@ -2161,10 +2161,10 @@ public final class Class110_Sub1 extends Class110 {
 					} else if (local682 > 255) {
 						local682 = 255;
 					}
-					Static370.aClass4_Sub12_Sub2_3.p1s(local643);
-					Static370.aClass4_Sub12_Sub2_3.p1s(local648);
-					Static370.aClass4_Sub12_Sub2_3.p1s(local682);
-					Static370.aClass4_Sub12_Sub2_3.p1s(255 - (this.aByteArray38[local509] & 0xFF));
+					Static370.aClass4_Sub12_Sub2_3.p1(local643);
+					Static370.aClass4_Sub12_Sub2_3.p1(local648);
+					Static370.aClass4_Sub12_Sub2_3.p1(local682);
+					Static370.aClass4_Sub12_Sub2_3.p1(255 - (this.aByteArray38[local509] & 0xFF));
 					local534 = this.aShortArray106[local509];
 					local570 = local443[local534];
 					if (local570 == 0) {
@@ -2192,10 +2192,10 @@ public final class Class110_Sub1 extends Class110 {
 						local682 = 255;
 					}
 					Static370.aClass4_Sub12_Sub2_3.pos = local110 + local534 * local106;
-					Static370.aClass4_Sub12_Sub2_3.p1s(local643);
-					Static370.aClass4_Sub12_Sub2_3.p1s(local648);
-					Static370.aClass4_Sub12_Sub2_3.p1s(local682);
-					Static370.aClass4_Sub12_Sub2_3.p1s(255 - (this.aByteArray38[local509] & 0xFF));
+					Static370.aClass4_Sub12_Sub2_3.p1(local643);
+					Static370.aClass4_Sub12_Sub2_3.p1(local648);
+					Static370.aClass4_Sub12_Sub2_3.p1(local682);
+					Static370.aClass4_Sub12_Sub2_3.p1(255 - (this.aByteArray38[local509] & 0xFF));
 				}
 			} else {
 				for (local191 = 0; local191 < this.anInt3355; local191++) {

@@ -110,12 +110,12 @@ public final class Class221 {
 			this.anInt6347 = arg0.method2493();
 			this.method4956(this.anInt6347);
 		} else if (arg1 == 2) {
-			this.anInt6345 = arg0.method2536();
+			this.anInt6345 = arg0.g2();
 			if (this.anInt6345 == 65535) {
 				this.anInt6345 = -1;
 			}
 		} else if (arg1 == 3) {
-			this.anInt6353 = arg0.method2536() << 0;
+			this.anInt6353 = arg0.g2() << 0;
 		} else if (arg1 == 4) {
 			this.aBoolean579 = false;
 		}

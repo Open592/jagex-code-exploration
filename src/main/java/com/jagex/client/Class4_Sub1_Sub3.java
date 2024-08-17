@@ -133,7 +133,7 @@ public final class Class4_Sub1_Sub3 extends Class4_Sub1 {
 			local22 = arg0.g1();
 			this.anIntArray16 = new int[local22];
 			for (local28 = 0; local28 < local22; local28++) {
-				this.anIntArray16[local28] = arg0.method2536();
+				this.anIntArray16[local28] = arg0.g2();
 			}
 			return;
 		}
@@ -142,13 +142,13 @@ public final class Class4_Sub1_Sub3 extends Class4_Sub1 {
 			this.anIntArrayArray2 = new int[local22][];
 			this.anIntArray18 = new int[local22];
 			for (local28 = 0; local28 < local22; local28++) {
-				@Pc(67) int local67 = arg0.method2536();
+				@Pc(67) int local67 = arg0.g2();
 				@Pc(71) Class98 local71 = Static12.method128(local67);
 				if (local71 != null) {
 					this.anIntArray18[local28] = local67;
 					this.anIntArrayArray2[local28] = new int[local71.anInt3057];
 					for (@Pc(87) int local87 = 0; local87 < local71.anInt3057; local87++) {
-						this.anIntArrayArray2[local28][local87] = arg0.method2536();
+						this.anIntArrayArray2[local28][local87] = arg0.g2();
 					}
 				}
 			}

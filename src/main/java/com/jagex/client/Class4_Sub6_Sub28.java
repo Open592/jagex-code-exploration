@@ -115,13 +115,13 @@ public final class Class4_Sub6_Sub28 extends Class4_Sub6 {
 		if (arg0 == 0) {
 			this.anInt5613 = arg1.g1();
 		} else if (arg0 == 1) {
-			this.anInt5615 = arg1.method2536();
+			this.anInt5615 = arg1.g2();
 		} else if (arg0 == 2) {
 			this.anInt5614 = arg1.g1();
 		} else if (arg0 == 3) {
-			this.anInt5617 = arg1.method2536();
+			this.anInt5617 = arg1.g2();
 		} else if (arg0 == 4) {
-			this.anInt5623 = arg1.method2536();
+			this.anInt5623 = arg1.g2();
 		}
 	}
 }

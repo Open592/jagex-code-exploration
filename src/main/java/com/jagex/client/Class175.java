@@ -159,8 +159,8 @@ public final class Class175 {
 	public void method4054(@OriginalArg(0) byte[] arg0) {
 		this.aPacket_6.data = arg0;
 		this.aPacket_6.pos = 10;
-		@Pc(12) int local12 = this.aPacket_6.method2536();
-		this.anInt5296 = this.aPacket_6.method2536();
+		@Pc(12) int local12 = this.aPacket_6.g2();
+		this.anInt5296 = this.aPacket_6.g2();
 		this.anInt5295 = 500000;
 		this.anIntArray346 = new int[local12];
 		@Pc(27) int local27 = 0;

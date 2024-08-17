@@ -25,7 +25,7 @@ public final class Class91 implements Interface7 {
 		this.aClass76_34 = arg2;
 		this.aClass76_35 = arg1;
 		@Pc(24) Packet local24 = new Packet(arg0.method2104(0, 0));
-		@Pc(28) int local28 = local24.method2536();
+		@Pc(28) int local28 = local24.g2();
 		this.aClass251Array1 = new Class251[local28];
 		for (@Pc(34) int local34 = 0; local34 < local28; local34++) {
 			if (local24.g1() == 1) {
@@ -74,7 +74,7 @@ public final class Class91 implements Interface7 {
 		}
 		for (@Pc(266) int local266 = 0; local266 < local28; local266++) {
 			if (this.aClass251Array1[local266] != null) {
-				this.aClass251Array1[local266].aShort99 = (short) local24.method2536();
+				this.aClass251Array1[local266].aShort99 = (short) local24.g2();
 			}
 		}
 		for (@Pc(292) int local292 = 0; local292 < local28; local292++) {

@@ -86,13 +86,13 @@ public final class Class4_Sub6_Sub35 extends Class4_Sub6 {
 	@Override
 	public void method5518(@OriginalArg(1) int arg0, @OriginalArg(2) Packet arg1) {
 		if (arg0 == 0) {
-			this.anInt6657 = arg1.method2536();
+			this.anInt6657 = arg1.g2();
 		} else if (arg0 == 1) {
-			this.anInt6664 = arg1.method2536();
+			this.anInt6664 = arg1.g2();
 		} else if (arg0 == 2) {
-			this.anInt6663 = arg1.method2536();
+			this.anInt6663 = arg1.g2();
 		} else if (arg0 == 3) {
-			this.anInt6661 = arg1.method2536();
+			this.anInt6661 = arg1.g2();
 		} else if (arg0 == 4) {
 			@Pc(55) int local55 = arg1.method2493();
 			this.anIntArray506[1] = local55 >> 4 & 0xFF0;

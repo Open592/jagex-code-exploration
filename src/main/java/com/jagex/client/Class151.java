@@ -185,8 +185,8 @@ public final class Class151 {
 	@OriginalMember(owner = "client!mp", name = "a", descriptor = "(IILclient!iv;)V")
 	private void method3643(@OriginalArg(0) int arg0, @OriginalArg(2) Packet arg1) {
 		if (arg0 == 1) {
-			this.anInt4661 = arg1.method2536();
-			this.anInt4697 = arg1.method2536();
+			this.anInt4661 = arg1.g2();
+			this.anInt4697 = arg1.g2();
 			if (this.anInt4697 == 65535) {
 				this.anInt4697 = -1;
 			}
@@ -195,27 +195,27 @@ public final class Class151 {
 				return;
 			}
 		} else if (arg0 == 2) {
-			this.anInt4667 = arg1.method2536();
+			this.anInt4667 = arg1.g2();
 			return;
 		} else if (arg0 == 3) {
-			this.anInt4681 = arg1.method2536();
+			this.anInt4681 = arg1.g2();
 			return;
 		} else if (arg0 == 4) {
-			this.anInt4675 = arg1.method2536();
+			this.anInt4675 = arg1.g2();
 		} else if (arg0 == 5) {
-			this.anInt4688 = arg1.method2536();
+			this.anInt4688 = arg1.g2();
 			return;
 		} else if (arg0 == 6) {
-			this.anInt4669 = arg1.method2536();
+			this.anInt4669 = arg1.g2();
 			return;
 		} else if (arg0 == 7) {
-			this.anInt4656 = arg1.method2536();
+			this.anInt4656 = arg1.g2();
 			return;
 		} else if (arg0 == 8) {
-			this.anInt4686 = arg1.method2536();
+			this.anInt4686 = arg1.g2();
 			return;
 		} else if (arg0 == 9) {
-			this.anInt4665 = arg1.method2536();
+			this.anInt4665 = arg1.g2();
 			return;
 		} else if (arg0 == 26) {
 			this.anInt4662 = (short) (arg1.g1() * 4);
@@ -240,7 +240,7 @@ public final class Class151 {
 					return;
 				}
 				if (arg0 == 30) {
-					this.anInt4696 = arg1.method2536();
+					this.anInt4696 = arg1.g2();
 					return;
 				}
 				if (arg0 == 31) {
@@ -248,7 +248,7 @@ public final class Class151 {
 					return;
 				}
 				if (arg0 == 32) {
-					this.anInt4685 = arg1.method2536();
+					this.anInt4685 = arg1.g2();
 					return;
 				}
 				if (arg0 == 33) {
@@ -260,7 +260,7 @@ public final class Class151 {
 					return;
 				}
 				if (arg0 == 35) {
-					this.anInt4690 = arg1.method2536();
+					this.anInt4690 = arg1.g2();
 					return;
 				}
 				if (arg0 == 36) {
@@ -272,59 +272,59 @@ public final class Class151 {
 					return;
 				}
 				if (arg0 == 38) {
-					this.anInt4663 = arg1.method2536();
+					this.anInt4663 = arg1.g2();
 					return;
 				}
 				if (arg0 == 39) {
-					this.anInt4689 = arg1.method2536();
+					this.anInt4689 = arg1.g2();
 					return;
 				}
 				if (arg0 == 40) {
-					this.anInt4701 = arg1.method2536();
+					this.anInt4701 = arg1.g2();
 					return;
 				}
 				if (arg0 == 41) {
-					this.anInt4680 = arg1.method2536();
+					this.anInt4680 = arg1.g2();
 					return;
 				}
 				if (arg0 == 42) {
-					this.anInt4658 = arg1.method2536();
+					this.anInt4658 = arg1.g2();
 					return;
 				}
 				if (arg0 == 43) {
-					this.anInt4692 = arg1.method2536();
+					this.anInt4692 = arg1.g2();
 					return;
 				}
 				if (arg0 == 44) {
-					this.anInt4673 = arg1.method2536();
+					this.anInt4673 = arg1.g2();
 					return;
 				}
 				if (arg0 == 45) {
-					this.anInt4684 = arg1.method2536();
+					this.anInt4684 = arg1.g2();
 					return;
 				}
 				if (arg0 == 46) {
-					this.anInt4657 = arg1.method2536();
+					this.anInt4657 = arg1.g2();
 					return;
 				}
 				if (arg0 == 47) {
-					this.anInt4672 = arg1.method2536();
+					this.anInt4672 = arg1.g2();
 					return;
 				}
 				if (arg0 == 48) {
-					this.anInt4687 = arg1.method2536();
+					this.anInt4687 = arg1.g2();
 					return;
 				}
 				if (arg0 == 49) {
-					this.anInt4678 = arg1.method2536();
+					this.anInt4678 = arg1.g2();
 					return;
 				}
 				if (arg0 == 50) {
-					this.anInt4668 = arg1.method2536();
+					this.anInt4668 = arg1.g2();
 					return;
 				}
 				if (arg0 == 51) {
-					this.anInt4682 = arg1.method2536();
+					this.anInt4682 = arg1.g2();
 					return;
 				}
 				if (arg0 != 52) {
@@ -341,7 +341,7 @@ public final class Class151 {
 				this.anIntArray305 = new int[local103];
 				this.anIntArray304 = new int[local103];
 				for (local294 = 0; local294 < local103; local294++) {
-					this.anIntArray304[local294] = arg1.method2536();
+					this.anIntArray304[local294] = arg1.g2();
 					@Pc(307) int local307 = arg1.g1();
 					this.anIntArray305[local294] = local307;
 					this.anInt4691 += local307;

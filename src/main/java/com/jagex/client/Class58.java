@@ -35,7 +35,7 @@ public final class Class58 {
 	@OriginalMember(owner = "client!eb", name = "a", descriptor = "(ILclient!iv;B)V")
 	private void method1508(@OriginalArg(0) int arg0, @OriginalArg(1) Packet arg1) {
 		if (arg0 == 1) {
-			this.anInt1730 = arg1.method2536();
+			this.anInt1730 = arg1.g2();
 		} else if (arg0 == 2) {
 			this.aBoolean160 = true;
 		} else if (arg0 == 3) {
@@ -45,7 +45,7 @@ public final class Class58 {
 		} else if (arg0 == 4) {
 			this.anInt1719 = arg1.g1();
 		} else if (arg0 == 5) {
-			this.anInt1723 = arg1.method2536();
+			this.anInt1723 = arg1.g2();
 		} else if (arg0 == 6) {
 			this.anInt1731 = arg1.method2493();
 		}

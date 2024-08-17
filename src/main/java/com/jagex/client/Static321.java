@@ -62,7 +62,7 @@ public final class Static321 {
 				return;
 			}
 			arg1.method1133(arg0);
-			arg1.p1s(0);
+			arg1.p1(0);
 			@Pc(99) int local99 = arg1.pos;
 			arg1.p4(local15.anInt5310);
 			for (@Pc(106) int local106 = 0; local106 < local15.anInt5309; local106++) {
@@ -74,16 +74,16 @@ public final class Static321 {
 						if (local127 == 0) {
 							local139 = (Field) local15.aClass199Array1[local106].output;
 							local143 = local139.getInt(null);
-							arg1.p1s(0);
+							arg1.p1(0);
 							arg1.p4(local143);
 						} else if (local127 == 1) {
 							local139 = (Field) local15.aClass199Array1[local106].output;
 							local139.setInt(null, local15.anIntArray350[local106]);
-							arg1.p1s(0);
+							arg1.p1(0);
 						} else if (local127 == 2) {
 							local139 = (Field) local15.aClass199Array1[local106].output;
 							local143 = local139.getModifiers();
-							arg1.p1s(0);
+							arg1.p1(0);
 							arg1.p4(local143);
 						}
 						@Pc(207) Method local207;
@@ -97,49 +97,49 @@ public final class Static321 {
 							}
 							@Pc(245) Object local245 = local207.invoke(null, local216);
 							if (local245 == null) {
-								arg1.p1s(0);
+								arg1.p1(0);
 							} else if (local245 instanceof Number) {
-								arg1.p1s(1);
+								arg1.p1(1);
 								arg1.p8(((Number) local245).longValue());
 							} else if (local245 instanceof String) {
-								arg1.p1s(2);
+								arg1.p1(2);
 								arg1.pjstr((String) local245);
 							} else {
-								arg1.p1s(4);
+								arg1.p1(4);
 							}
 						} else if (local127 == 4) {
 							local207 = (Method) local15.aClass199Array2[local106].output;
 							local143 = local207.getModifiers();
-							arg1.p1s(0);
+							arg1.p1(0);
 							arg1.p4(local143);
 						}
 					} catch (@Pc(313) ClassNotFoundException local313) {
-						arg1.p1s(-10);
+						arg1.p1(-10);
 					} catch (@Pc(319) InvalidClassException local319) {
-						arg1.p1s(-11);
+						arg1.p1(-11);
 					} catch (@Pc(325) StreamCorruptedException local325) {
-						arg1.p1s(-12);
+						arg1.p1(-12);
 					} catch (@Pc(331) OptionalDataException local331) {
-						arg1.p1s(-13);
+						arg1.p1(-13);
 					} catch (@Pc(337) IllegalAccessException local337) {
-						arg1.p1s(-14);
+						arg1.p1(-14);
 					} catch (@Pc(343) IllegalArgumentException local343) {
-						arg1.p1s(-15);
+						arg1.p1(-15);
 					} catch (@Pc(349) InvocationTargetException local349) {
-						arg1.p1s(-16);
+						arg1.p1(-16);
 					} catch (@Pc(355) SecurityException local355) {
-						arg1.p1s(-17);
+						arg1.p1(-17);
 					} catch (@Pc(361) IOException local361) {
-						arg1.p1s(-18);
+						arg1.p1(-18);
 					} catch (@Pc(367) NullPointerException local367) {
-						arg1.p1s(-19);
+						arg1.p1(-19);
 					} catch (@Pc(373) Exception local373) {
-						arg1.p1s(-20);
+						arg1.p1(-20);
 					} catch (@Pc(379) Throwable local379) {
-						arg1.p1s(-21);
+						arg1.p1(-21);
 					}
 				} else {
-					arg1.p1s(local15.anIntArray351[local106]);
+					arg1.p1(local15.anIntArray351[local106]);
 				}
 			}
 			arg1.method2525(local99);

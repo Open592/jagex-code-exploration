@@ -17,19 +17,19 @@ public final class Static142 {
 
 	@OriginalMember(owner = "client!hd", name = "a", descriptor = "(Lclient!iv;B)V")
 	public static void method2425(@OriginalArg(0) Packet arg0) {
-		@Pc(9) int local9 = arg0.method2506();
+		@Pc(9) int local9 = arg0.gSmart1Or2();
 		Static136.aClass10Array1 = new Class10[local9];
 		for (@Pc(14) int local14 = 0; local14 < local9; local14++) {
 			Static136.aClass10Array1[local14] = new Class10();
-			Static136.aClass10Array1[local14].anInt169 = arg0.method2506();
+			Static136.aClass10Array1[local14].anInt169 = arg0.gSmart1Or2();
 			Static136.aClass10Array1[local14].aString3 = arg0.gjstr2();
 		}
-		Static396.anInt4816 = arg0.method2506();
-		Static339.anInt5874 = arg0.method2506();
-		Static33.anInt602 = arg0.method2506();
+		Static396.anInt4816 = arg0.gSmart1Or2();
+		Static339.anInt5874 = arg0.gSmart1Or2();
+		Static33.anInt602 = arg0.gSmart1Or2();
 		Static407.aClass78_Sub1Array2 = new Class78_Sub1[Static339.anInt5874 + 1 - Static396.anInt4816];
 		for (@Pc(67) int local67 = 0; local67 < Static33.anInt602; local67++) {
-			@Pc(73) int local73 = arg0.method2506();
+			@Pc(73) int local73 = arg0.gSmart1Or2();
 			@Pc(81) Class78_Sub1 local81 = Static407.aClass78_Sub1Array2[local73] = new Class78_Sub1();
 			local81.anInt3877 = arg0.g1();
 			local81.anInt3874 = arg0.method2529();

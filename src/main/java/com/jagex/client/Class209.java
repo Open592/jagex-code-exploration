@@ -72,12 +72,12 @@ public final class Class209 {
 			this.anInt6113 = 0;
 		}
 		@Pc(45) int local45 = local12.g1();
-		this.anInt6109 = local12.method2536();
+		this.anInt6109 = local12.g2();
 		@Pc(52) int local52 = 0;
 		this.anIntArray431 = new int[this.anInt6109];
 		@Pc(59) int local59 = -1;
 		for (@Pc(61) int local61 = 0; local61 < this.anInt6109; local61++) {
-			this.anIntArray431[local61] = local52 += local12.method2536();
+			this.anIntArray431[local61] = local52 += local12.g2();
 			if (local59 < this.anIntArray431[local61]) {
 				local59 = this.anIntArray431[local61];
 			}
@@ -107,7 +107,7 @@ public final class Class209 {
 			this.anIntArray429[this.anIntArray431[local151]] = local12.method2529();
 		}
 		for (@Pc(223) int local223 = 0; local223 < this.anInt6109; local223++) {
-			this.anIntArray428[this.anIntArray431[local223]] = local12.method2536();
+			this.anIntArray428[this.anIntArray431[local223]] = local12.g2();
 		}
 		@Pc(249) int local249;
 		@Pc(256) int local256;
@@ -121,7 +121,7 @@ public final class Class209 {
 			local258 = -1;
 			this.anIntArrayArray46[local249] = new int[local256];
 			for (local266 = 0; local266 < local256; local266++) {
-				local283 = this.anIntArrayArray46[local249][local266] = local52 += local12.method2536();
+				local283 = this.anIntArrayArray46[local249][local266] = local52 += local12.g2();
 				if (local258 < local283) {
 					local258 = local283;
 				}

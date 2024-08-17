@@ -10,26 +10,26 @@ public final class Static456 {
 	private static Class18[] method315(@OriginalArg(0) byte[] arg0) {
 		@Pc(4) Packet local4 = new Packet(arg0);
 		local4.pos = arg0.length - 2;
-		@Pc(14) int local14 = local4.method2536();
+		@Pc(14) int local14 = local4.g2();
 		@Pc(17) Class18[] local17 = new Class18[local14];
 		for (@Pc(19) int local19 = 0; local19 < local14; local19++) {
 			local17[local19] = new Class18();
 		}
 		local4.pos = arg0.length - local14 * 8 - 7;
-		@Pc(44) int local44 = local4.method2536();
-		@Pc(48) int local48 = local4.method2536();
+		@Pc(44) int local44 = local4.g2();
+		@Pc(48) int local48 = local4.g2();
 		@Pc(56) int local56 = (local4.g1() & 0xFF) + 1;
 		for (@Pc(58) int local58 = 0; local58 < local14; local58++) {
-			local17[local58].anInt368 = local4.method2536();
+			local17[local58].anInt368 = local4.g2();
 		}
 		for (@Pc(72) int local72 = 0; local72 < local14; local72++) {
-			local17[local72].anInt370 = local4.method2536();
+			local17[local72].anInt370 = local4.g2();
 		}
 		for (@Pc(86) int local86 = 0; local86 < local14; local86++) {
-			local17[local86].anInt367 = local4.method2536();
+			local17[local86].anInt367 = local4.g2();
 		}
 		for (@Pc(100) int local100 = 0; local100 < local14; local100++) {
-			local17[local100].anInt366 = local4.method2536();
+			local17[local100].anInt366 = local4.g2();
 		}
 		for (@Pc(114) int local114 = 0; local114 < local14; local114++) {
 			@Pc(119) Class18 local119 = local17[local114];

@@ -84,7 +84,7 @@ public final class Class8 {
 	@OriginalMember(owner = "client!ah", name = "a", descriptor = "(ILclient!iv;Z)V")
 	private void method93(@OriginalArg(0) int arg0, @OriginalArg(1) Packet arg1) {
 		if (arg0 == 1) {
-			this.anInt122 = arg1.method2536();
+			this.anInt122 = arg1.g2();
 		} else if (arg0 == 2) {
 			arg1.g1();
 		} else if (arg0 == 3) {

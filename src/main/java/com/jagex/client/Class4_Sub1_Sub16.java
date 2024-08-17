@@ -78,7 +78,7 @@ public final class Class4_Sub1_Sub16 extends Class4_Sub1 {
 			this.aCharArray3 = new char[local13];
 			this.anIntArray326 = new int[local13];
 			for (local23 = 0; local23 < local13; local23++) {
-				this.anIntArray326[local23] = arg0.method2536();
+				this.anIntArray326[local23] = arg0.g2();
 				local36 = arg0.g1s();
 				this.aCharArray3[local23] = local36 == 0 ? 0 : Static260.method3771(local36);
 			}
@@ -87,7 +87,7 @@ public final class Class4_Sub1_Sub16 extends Class4_Sub1 {
 			this.aCharArray4 = new char[local13];
 			this.anIntArray325 = new int[local13];
 			for (local23 = 0; local23 < local13; local23++) {
-				this.anIntArray325[local23] = arg0.method2536();
+				this.anIntArray325[local23] = arg0.g2();
 				local36 = arg0.g1s();
 				this.aCharArray4[local23] = local36 == 0 ? 0 : Static260.method3771(local36);
 			}

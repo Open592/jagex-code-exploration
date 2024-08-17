@@ -34,7 +34,7 @@ public final class Static244 {
 		@Pc(12) int local12;
 		@Pc(16) int local16;
 		if (Static435.aClass21_17 == arg0) {
-			local12 = Static146.aClass4_Sub12_Sub1_3.method2536();
+			local12 = Static146.aClass4_Sub12_Sub1_3.g2();
 			local16 = Static146.aClass4_Sub12_Sub1_3.g1();
 			Static267.aClass262_2.method5560(local12).method4590(local16);
 			return;
@@ -60,7 +60,7 @@ public final class Static244 {
 			local12 = Static146.aClass4_Sub12_Sub1_3.g1();
 			local16 = Static154.anInt813 + (local12 >> 4 & 0x7);
 			local40 = (local12 & 0x7) + Static385.anInt6487;
-			local49 = Static146.aClass4_Sub12_Sub1_3.method2536();
+			local49 = Static146.aClass4_Sub12_Sub1_3.g2();
 			local55 = Static146.aClass4_Sub12_Sub1_3.g1();
 			local126 = Static146.aClass4_Sub12_Sub1_3.method2493();
 			@Pc(130) String local130 = Static146.aClass4_Sub12_Sub1_3.readValidStringAtCurrentPosition();
@@ -84,11 +84,11 @@ public final class Static244 {
 			local55 = Static146.aClass4_Sub12_Sub1_3.g1s() + local40;
 			local126 = local49 + Static146.aClass4_Sub12_Sub1_3.g1s();
 			local186 = Static146.aClass4_Sub12_Sub1_3.method2512();
-			local190 = Static146.aClass4_Sub12_Sub1_3.method2536();
+			local190 = Static146.aClass4_Sub12_Sub1_3.g2();
 			local196 = Static146.aClass4_Sub12_Sub1_3.g1() * 4;
 			local202 = Static146.aClass4_Sub12_Sub1_3.g1() * 4;
-			local206 = Static146.aClass4_Sub12_Sub1_3.method2536();
-			local210 = Static146.aClass4_Sub12_Sub1_3.method2536();
+			local206 = Static146.aClass4_Sub12_Sub1_3.g2();
+			local210 = Static146.aClass4_Sub12_Sub1_3.g2();
 			local214 = Static146.aClass4_Sub12_Sub1_3.g1();
 			if (local214 == 255) {
 				local214 = -1;
@@ -165,11 +165,11 @@ public final class Static244 {
 				local126 = local40 + Static146.aClass4_Sub12_Sub1_3.g1s();
 				local186 = Static146.aClass4_Sub12_Sub1_3.method2512();
 				local190 = Static146.aClass4_Sub12_Sub1_3.method2512();
-				local196 = Static146.aClass4_Sub12_Sub1_3.method2536();
+				local196 = Static146.aClass4_Sub12_Sub1_3.g2();
 				@Pc(664) byte local664 = Static146.aClass4_Sub12_Sub1_3.g1s();
 				local206 = Static146.aClass4_Sub12_Sub1_3.g1() * 4;
-				local210 = Static146.aClass4_Sub12_Sub1_3.method2536();
-				local214 = Static146.aClass4_Sub12_Sub1_3.method2536();
+				local210 = Static146.aClass4_Sub12_Sub1_3.g2();
+				local214 = Static146.aClass4_Sub12_Sub1_3.g2();
 				local223 = Static146.aClass4_Sub12_Sub1_3.g1();
 				if (local223 == 255) {
 					local223 = -1;
@@ -226,7 +226,7 @@ public final class Static244 {
 				local12 = Static146.aClass4_Sub12_Sub1_3.g1();
 				local16 = (local12 >> 4 & 0x7) + Static154.anInt813;
 				local40 = Static385.anInt6487 + (local12 & 0x7);
-				local49 = Static146.aClass4_Sub12_Sub1_3.method2536();
+				local49 = Static146.aClass4_Sub12_Sub1_3.g2();
 				if (local49 == 65535) {
 					local49 = -1;
 				}
@@ -245,9 +245,9 @@ public final class Static244 {
 				local12 = Static146.aClass4_Sub12_Sub1_3.g1();
 				local16 = (local12 >> 4 & 0x7) + Static154.anInt813;
 				local40 = (local12 & 0x7) + Static385.anInt6487;
-				local49 = Static146.aClass4_Sub12_Sub1_3.method2536();
+				local49 = Static146.aClass4_Sub12_Sub1_3.g2();
 				local55 = Static146.aClass4_Sub12_Sub1_3.g1();
-				local126 = Static146.aClass4_Sub12_Sub1_3.method2536();
+				local126 = Static146.aClass4_Sub12_Sub1_3.g2();
 				local186 = Static146.aClass4_Sub12_Sub1_3.g1();
 				if (local16 >= 0 && local40 >= 0 && Static326.anInt5666 > local16 && Static283.anInt5187 > local40) {
 					local190 = local16 * 128 + 64;
@@ -263,9 +263,9 @@ public final class Static244 {
 				local12 = Static146.aClass4_Sub12_Sub1_3.g1();
 				local16 = (local12 >> 4 & 0x7) + Static154.anInt813;
 				local40 = Static385.anInt6487 + (local12 & 0x7);
-				local49 = Static146.aClass4_Sub12_Sub1_3.method2536();
-				local55 = Static146.aClass4_Sub12_Sub1_3.method2536();
-				local126 = Static146.aClass4_Sub12_Sub1_3.method2536();
+				local49 = Static146.aClass4_Sub12_Sub1_3.g2();
+				local55 = Static146.aClass4_Sub12_Sub1_3.g2();
+				local126 = Static146.aClass4_Sub12_Sub1_3.g2();
 				if (Static440.aClass102_40 != null && local16 >= 0 && local40 >= 0 && Static326.anInt5666 > local16 && local40 < Static283.anInt5187) {
 					@Pc(1265) Class4_Sub18 local1265 = (Class4_Sub18) Static440.aClass102_40.method2700((long) (local16 | local40 << 14 | Static113.anInt2426 << 28));
 					if (local1265 != null) {
@@ -293,7 +293,7 @@ public final class Static244 {
 					Static145.method2449(local186, local16, local55, local49, local190, Static113.anInt2426, local40);
 				}
 			} else if (arg0 == Static35.aClass21_5) {
-				local12 = Static146.aClass4_Sub12_Sub1_3.method2536();
+				local12 = Static146.aClass4_Sub12_Sub1_3.g2();
 				if (local12 == 65535) {
 					local12 = -1;
 				}
@@ -306,8 +306,8 @@ public final class Static244 {
 				local190 = Static201.anIntArray410[local126];
 				Static297.method4071(Static113.anInt2426, local186, local12, local190, local126, local40, local49);
 			} else if (Static410.aClass21_15 == arg0) {
-				local12 = Static146.aClass4_Sub12_Sub1_3.method2536();
-				local16 = Static146.aClass4_Sub12_Sub1_3.method2536();
+				local12 = Static146.aClass4_Sub12_Sub1_3.g2();
+				local16 = Static146.aClass4_Sub12_Sub1_3.g2();
 				local40 = Static146.aClass4_Sub12_Sub1_3.g1_alt3();
 				local49 = Static154.anInt813 + (local40 >> 4 & 0x7);
 				local55 = (local40 & 0x7) + Static385.anInt6487;
@@ -324,11 +324,11 @@ public final class Static244 {
 				local55 = Static146.aClass4_Sub12_Sub1_3.g1s() + local16;
 				local126 = Static146.aClass4_Sub12_Sub1_3.g1s() + local40;
 				local186 = Static146.aClass4_Sub12_Sub1_3.method2512();
-				local190 = Static146.aClass4_Sub12_Sub1_3.method2536();
+				local190 = Static146.aClass4_Sub12_Sub1_3.g2();
 				local196 = Static146.aClass4_Sub12_Sub1_3.g1() * 4;
 				local202 = Static146.aClass4_Sub12_Sub1_3.g1() * 4;
-				local206 = Static146.aClass4_Sub12_Sub1_3.method2536();
-				local210 = Static146.aClass4_Sub12_Sub1_3.method2536();
+				local206 = Static146.aClass4_Sub12_Sub1_3.g2();
+				local210 = Static146.aClass4_Sub12_Sub1_3.g2();
 				local214 = Static146.aClass4_Sub12_Sub1_3.g1();
 				if (local214 == 255) {
 					local214 = -1;

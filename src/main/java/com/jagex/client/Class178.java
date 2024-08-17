@@ -128,7 +128,7 @@ public final class Class178 {
 			local15 = arg1.g1();
 			this.anIntArray356 = new int[local15];
 			for (local21 = 0; local21 < local15; local21++) {
-				this.anIntArray356[local21] = arg1.method2536();
+				this.anIntArray356[local21] = arg1.g2();
 			}
 		} else if (arg0 != 3) {
 			if (arg0 == 40) {
@@ -136,19 +136,19 @@ public final class Class178 {
 				this.aShortArray181 = new short[local15];
 				this.aShortArray183 = new short[local15];
 				for (local21 = 0; local21 < local15; local21++) {
-					this.aShortArray181[local21] = (short) arg1.method2536();
-					this.aShortArray183[local21] = (short) arg1.method2536();
+					this.aShortArray181[local21] = (short) arg1.g2();
+					this.aShortArray183[local21] = (short) arg1.g2();
 				}
 			} else if (arg0 == 41) {
 				local15 = arg1.g1();
 				this.aShortArray180 = new short[local15];
 				this.aShortArray182 = new short[local15];
 				for (local21 = 0; local21 < local15; local21++) {
-					this.aShortArray182[local21] = (short) arg1.method2536();
-					this.aShortArray180[local21] = (short) arg1.method2536();
+					this.aShortArray182[local21] = (short) arg1.g2();
+					this.aShortArray180[local21] = (short) arg1.g2();
 				}
 			} else if (arg0 >= 60 && arg0 < 70) {
-				this.anIntArray355[arg0 - 60] = arg1.method2536();
+				this.anIntArray355[arg0 - 60] = arg1.g2();
 			}
 		}
 	}

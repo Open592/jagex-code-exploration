@@ -55,7 +55,7 @@ public final class Static90 {
 		@Pc(49) Class4_Sub1_Sub5 local49 = new Class4_Sub1_Sub5(arg1, local16.readValidStringAtCurrentPosition(), local16.readValidStringAtCurrentPosition(), local16.method2529(), local16.method2529(), local16.g1() == 1, local16.g1(), local16.g1());
 		@Pc(53) int local53 = local16.g1();
 		for (@Pc(55) int local55 = 0; local55 < local53; local55++) {
-			local49.aClass183_4.method4137(new Class4_Sub41(local16.g1(), local16.method2536(), local16.method2536(), local16.method2536(), local16.method2536(), local16.method2536(), local16.method2536(), local16.method2536(), local16.method2536()));
+			local49.aClass183_4.method4137(new Class4_Sub41(local16.g1(), local16.g2(), local16.g2(), local16.g2(), local16.g2(), local16.g2(), local16.g2(), local16.g2(), local16.g2()));
 		}
 		local49.method933();
 		return local49;

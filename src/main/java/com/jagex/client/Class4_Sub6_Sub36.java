@@ -20,7 +20,7 @@ public final class Class4_Sub6_Sub36 extends Class4_Sub6 {
 	@Override
 	public void method5518(@OriginalArg(1) int arg0, @OriginalArg(2) Packet arg1) {
 		if (arg0 == 0) {
-			this.anInt6968 = arg1.method2536();
+			this.anInt6968 = arg1.g2();
 		}
 	}
 

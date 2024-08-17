@@ -203,10 +203,10 @@ public final class Class123 {
 	@OriginalMember(owner = "client!jv", name = "a", descriptor = "(ILclient!iv;I)V")
 	private void method3112(@OriginalArg(0) int arg0, @OriginalArg(1) Packet arg1) {
 		if (arg0 == 1) {
-			this.aShort42 = (short) arg1.method2536();
-			this.aShort41 = (short) arg1.method2536();
-			this.aShort43 = (short) arg1.method2536();
-			this.aShort44 = (short) arg1.method2536();
+			this.aShort42 = (short) arg1.g2();
+			this.aShort41 = (short) arg1.g2();
+			this.aShort43 = (short) arg1.g2();
+			this.aShort44 = (short) arg1.g2();
 			this.aShort42 = (short) (this.aShort42 << 3);
 			this.aShort44 = (short) (this.aShort44 << 3);
 			this.aShort43 = (short) (this.aShort43 << 3);
@@ -220,16 +220,16 @@ public final class Class123 {
 			this.anInt3792 = arg1.g1();
 			this.anInt3809 = arg1.g1s();
 		} else if (arg0 == 5) {
-			this.anInt3788 = this.anInt3816 = arg1.method2536() << 12 << 0;
+			this.anInt3788 = this.anInt3816 = arg1.g2() << 12 << 0;
 		} else if (arg0 == 6) {
 			this.anInt3776 = arg1.method2529();
 			this.anInt3771 = arg1.method2529();
 		} else if (arg0 == 7) {
-			this.anInt3775 = arg1.method2536();
-			this.anInt3780 = arg1.method2536();
+			this.anInt3775 = arg1.g2();
+			this.anInt3780 = arg1.g2();
 		} else if (arg0 == 8) {
-			this.anInt3818 = arg1.method2536();
-			this.anInt3773 = arg1.method2536();
+			this.anInt3818 = arg1.g2();
+			this.anInt3773 = arg1.g2();
 		} else {
 			@Pc(290) int local290;
 			@Pc(296) int local296;
@@ -237,29 +237,29 @@ public final class Class123 {
 				local290 = arg1.g1();
 				this.anIntArray256 = new int[local290];
 				for (local296 = 0; local296 < local290; local296++) {
-					this.anIntArray256[local296] = arg1.method2536();
+					this.anIntArray256[local296] = arg1.g2();
 				}
 			} else if (arg0 == 10) {
 				local290 = arg1.g1();
 				this.anIntArray257 = new int[local290];
 				for (local296 = 0; local296 < local290; local296++) {
-					this.anIntArray257[local296] = arg1.method2536();
+					this.anIntArray257[local296] = arg1.g2();
 				}
 			} else if (arg0 == 12) {
 				this.anInt3790 = arg1.g1s();
 			} else if (arg0 == 13) {
 				this.anInt3808 = arg1.g1s();
 			} else if (arg0 == 14) {
-				this.anInt3789 = arg1.method2536();
+				this.anInt3789 = arg1.g2();
 			} else if (arg0 == 15) {
-				this.anInt3777 = arg1.method2536();
+				this.anInt3777 = arg1.g2();
 			} else if (arg0 == 16) {
 				this.aBoolean355 = arg1.g1() == 1;
-				this.lb = arg1.method2536();
-				this.anInt3810 = arg1.method2536();
+				this.lb = arg1.g2();
+				this.anInt3810 = arg1.g2();
 				this.aBoolean353 = arg1.g1() == 1;
 			} else if (arg0 == 17) {
-				this.anInt3807 = arg1.method2536();
+				this.anInt3807 = arg1.g2();
 			} else if (arg0 == 18) {
 				this.anInt3782 = arg1.method2529();
 			} else if (arg0 == 19) {
@@ -278,12 +278,12 @@ public final class Class123 {
 				local290 = arg1.g1();
 				this.anIntArray255 = new int[local290];
 				for (local296 = 0; local296 < local290; local296++) {
-					this.anIntArray255[local296] = arg1.method2536();
+					this.anIntArray255[local296] = arg1.g2();
 				}
 			} else if (arg0 == 26) {
 				this.aBoolean357 = false;
 			} else if (arg0 == 27) {
-				this.anInt3806 = arg1.method2536() << 12 << 0;
+				this.anInt3806 = arg1.g2() << 12 << 0;
 			} else if (arg0 == 28) {
 				this.anInt3815 = arg1.g1();
 			} else if (arg0 == 29) {
@@ -291,8 +291,8 @@ public final class Class123 {
 			} else if (arg0 == 30) {
 				this.aBoolean358 = true;
 			} else if (arg0 == 31) {
-				this.anInt3788 = arg1.method2536() << 12 << 0;
-				this.anInt3816 = arg1.method2536() << 12 << 0;
+				this.anInt3788 = arg1.g2() << 12 << 0;
+				this.anInt3816 = arg1.g2() << 12 << 0;
 			} else if (arg0 == 32) {
 				this.aBoolean354 = false;
 				return;

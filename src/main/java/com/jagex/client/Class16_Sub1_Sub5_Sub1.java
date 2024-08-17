@@ -115,7 +115,7 @@ public final class Class16_Sub1_Sub5_Sub1 extends Class16_Sub1_Sub5 {
 				local134 = arg0.g1();
 				local141 = (local122 << 8) + local134;
 				if (local114 == 0 && local141 == 65535) {
-					local106 = arg0.method2536();
+					local106 = arg0.g2();
 					this.anInt4328 = arg0.g1();
 					break;
 				}
@@ -139,7 +139,7 @@ public final class Class16_Sub1_Sub5_Sub1 extends Class16_Sub1_Sub5 {
 			}
 			local205[local134] = local141;
 		}
-		this.anInt4324 = arg0.method2536();
+		this.anInt4324 = arg0.g2();
 		this.aString43 = arg0.readValidStringAtCurrentPosition();
 		if (local31) {
 			this.aString44 = arg0.readValidStringAtCurrentPosition();
@@ -148,7 +148,7 @@ public final class Class16_Sub1_Sub5_Sub1 extends Class16_Sub1_Sub5 {
 		}
 		this.anInt4345 = arg0.g1();
 		if (local42) {
-			this.anInt4336 = arg0.method2536();
+			this.anInt4336 = arg0.g2();
 			this.anInt4332 = this.anInt4345;
 			this.anInt4330 = -1;
 		} else {
@@ -170,10 +170,10 @@ public final class Class16_Sub1_Sub5_Sub1 extends Class16_Sub1_Sub5 {
 			local336 = this.anInt4333;
 			@Pc(339) int local339 = this.anInt4322;
 			@Pc(342) int local342 = this.anInt4348;
-			this.anInt4313 = arg0.method2536();
-			this.anInt4319 = arg0.method2536();
-			this.anInt4333 = arg0.method2536();
-			this.anInt4322 = arg0.method2536();
+			this.anInt4313 = arg0.g2();
+			this.anInt4319 = arg0.g2();
+			this.anInt4333 = arg0.g2();
+			this.anInt4322 = arg0.g2();
 			this.anInt4348 = arg0.g1();
 			if (local141 != this.anInt4334 || this.anInt4313 != local180 || this.anInt4319 != local333 || this.anInt4333 != local336 || local339 != this.anInt4322 || this.anInt4348 != local342) {
 				Static149.method2555(this);

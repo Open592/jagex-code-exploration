@@ -42,7 +42,7 @@ public final class Class4_Sub32 extends Class4 {
 			this.aBooleanArray16[local54] = local11.g1() == 1;
 		}
 		for (@Pc(81) int local81 = 0; local81 < this.anInt4981; local81++) {
-			this.anIntArray320[local81] = local11.method2536();
+			this.anIntArray320[local81] = local11.g2();
 		}
 		for (@Pc(101) int local101 = 0; local101 < this.anInt4981; local101++) {
 			this.anIntArrayArray42[local101] = new int[local11.g1()];

@@ -46,7 +46,7 @@ public final class Class126 {
 	@OriginalMember(owner = "client!ki", name = "a", descriptor = "(ILclient!iv;I)V")
 	private void method3194(@OriginalArg(0) int arg0, @OriginalArg(1) Packet arg1) {
 		if (arg0 == 1) {
-			this.anInt3914 = arg1.method2536();
+			this.anInt3914 = arg1.g2();
 			this.anInt3919 = arg1.g1();
 			this.anInt3915 = arg1.g1();
 		}

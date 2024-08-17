@@ -80,15 +80,15 @@ public final class Class161 {
 	@OriginalMember(owner = "client!nm", name = "a", descriptor = "(BLclient!iv;I)V")
 	private void method3835(@OriginalArg(1) Packet arg0, @OriginalArg(2) int arg1) {
 		if (arg1 == 1) {
-			this.anInt4996 = arg0.method2536();
+			this.anInt4996 = arg0.g2();
 		} else if (arg1 == 2) {
-			this.anInt5002 = arg0.method2536();
+			this.anInt5002 = arg0.g2();
 		} else if (arg1 == 4) {
-			this.anInt4990 = arg0.method2536();
+			this.anInt4990 = arg0.g2();
 		} else if (arg1 == 5) {
-			this.anInt4989 = arg0.method2536();
+			this.anInt4989 = arg0.g2();
 		} else if (arg1 == 6) {
-			this.anInt4997 = arg0.method2536();
+			this.anInt4997 = arg0.g2();
 		} else if (arg1 == 7) {
 			this.anInt5000 = arg0.g1();
 		} else if (arg1 == 8) {
@@ -109,7 +109,7 @@ public final class Class161 {
 			this.anInt5004 = arg0.g1() * 256;
 		} else if (arg1 == 15) {
 			this.aByte47 = 3;
-			this.anInt5004 = arg0.method2536();
+			this.anInt5004 = arg0.g2();
 		} else if (arg1 == 16) {
 			this.aByte47 = 3;
 			this.anInt5004 = arg0.method2529();
@@ -122,8 +122,8 @@ public final class Class161 {
 				this.aShortArray166 = new short[local131];
 				this.aShortArray167 = new short[local131];
 				for (local141 = 0; local141 < local131; local141++) {
-					this.aShortArray167[local141] = (short) arg0.method2536();
-					this.aShortArray166[local141] = (short) arg0.method2536();
+					this.aShortArray167[local141] = (short) arg0.g2();
+					this.aShortArray166[local141] = (short) arg0.g2();
 				}
 				return;
 			}
@@ -132,8 +132,8 @@ public final class Class161 {
 				this.aShortArray165 = new short[local131];
 				this.aShortArray168 = new short[local131];
 				for (local141 = 0; local141 < local131; local141++) {
-					this.aShortArray165[local141] = (short) arg0.method2536();
-					this.aShortArray168[local141] = (short) arg0.method2536();
+					this.aShortArray165[local141] = (short) arg0.g2();
+					this.aShortArray168[local141] = (short) arg0.g2();
 				}
 				return;
 			}

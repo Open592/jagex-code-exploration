@@ -36,7 +36,7 @@ public final class Class4_Sub6_Sub17 extends Class4_Sub6 {
 	@Override
 	public void method5518(@OriginalArg(1) int arg0, @OriginalArg(2) Packet arg1) {
 		if (arg0 == 0) {
-			this.anInt3750 = arg1.method2536();
+			this.anInt3750 = arg1.g2();
 		}
 	}
 

@@ -64,19 +64,19 @@ public final class Class4_Sub6_Sub20 extends Class4_Sub6 {
 	@Override
 	public void method5518(@OriginalArg(1) int arg0, @OriginalArg(2) Packet arg1) {
 		if (arg0 == 0) {
-			this.anInt4005 = arg1.method2536();
+			this.anInt4005 = arg1.g2();
 		} else if (arg0 == 1) {
-			this.anInt4004 = arg1.method2536();
+			this.anInt4004 = arg1.g2();
 		} else if (arg0 == 2) {
-			this.anInt4007 = arg1.method2536();
+			this.anInt4007 = arg1.g2();
 		} else if (arg0 == 3) {
-			this.anInt4006 = arg1.method2536();
+			this.anInt4006 = arg1.g2();
 		} else if (arg0 == 4) {
-			this.anInt4009 = arg1.method2536();
+			this.anInt4009 = arg1.g2();
 		} else if (arg0 == 5) {
-			this.anInt4001 = arg1.method2536();
+			this.anInt4001 = arg1.g2();
 		} else if (arg0 == 6) {
-			this.anInt4010 = arg1.method2536();
+			this.anInt4010 = arg1.g2();
 		}
 	}
 

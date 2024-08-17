@@ -72,20 +72,20 @@ public final class Class138 {
 		@Pc(149) int local149;
 		@Pc(168) int local168;
 		if (arg1 == 1) {
-			local31 = arg0.method2536();
+			local31 = arg0.g2();
 			this.anIntArray296 = new int[local31];
 			for (local33 = 0; local33 < local31; local33++) {
-				this.anIntArray296[local33] = arg0.method2536();
+				this.anIntArray296[local33] = arg0.g2();
 			}
 			this.anIntArray295 = new int[local31];
 			for (local149 = 0; local149 < local31; local149++) {
-				this.anIntArray295[local149] = arg0.method2536();
+				this.anIntArray295[local149] = arg0.g2();
 			}
 			for (local168 = 0; local168 < local31; local168++) {
-				this.anIntArray295[local168] += arg0.method2536() << 16;
+				this.anIntArray295[local168] += arg0.g2() << 16;
 			}
 		} else if (arg1 == 2) {
-			this.anInt4405 = arg0.method2536();
+			this.anInt4405 = arg0.g2();
 		} else if (arg1 == 3) {
 			this.aBooleanArray14 = new boolean[256];
 			local31 = arg0.g1();
@@ -97,9 +97,9 @@ public final class Class138 {
 		} else if (arg1 == 5) {
 			this.anInt4413 = arg0.g1();
 		} else if (arg1 == 6) {
-			this.anInt4408 = arg0.method2536();
+			this.anInt4408 = arg0.g2();
 		} else if (arg1 == 7) {
-			this.anInt4415 = arg0.method2536();
+			this.anInt4415 = arg0.g2();
 		} else if (arg1 == 8) {
 			this.anInt4412 = arg0.g1();
 		} else if (arg1 == 9) {
@@ -112,13 +112,13 @@ public final class Class138 {
 			local31 = arg0.g1();
 			this.anIntArray297 = new int[local31];
 			for (local33 = 0; local33 < local31; local33++) {
-				this.anIntArray297[local33] = arg0.method2536();
+				this.anIntArray297[local33] = arg0.g2();
 			}
 			for (local149 = 0; local149 < local31; local149++) {
-				this.anIntArray297[local149] = (arg0.method2536() << 16) + this.anIntArray297[local149];
+				this.anIntArray297[local149] = (arg0.g2() << 16) + this.anIntArray297[local149];
 			}
 		} else if (arg1 == 13) {
-			local31 = arg0.method2536();
+			local31 = arg0.g2();
 			this.anIntArrayArray36 = new int[local31][];
 			for (local33 = 0; local33 < local31; local33++) {
 				local149 = arg0.g1();
@@ -126,7 +126,7 @@ public final class Class138 {
 					this.anIntArrayArray36[local33] = new int[local149];
 					this.anIntArrayArray36[local33][0] = arg0.method2493();
 					for (local168 = 1; local168 < local149; local168++) {
-						this.anIntArrayArray36[local33][local168] = arg0.method2536();
+						this.anIntArrayArray36[local33][local168] = arg0.g2();
 					}
 				}
 			}

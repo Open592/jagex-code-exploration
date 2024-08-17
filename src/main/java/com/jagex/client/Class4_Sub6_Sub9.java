@@ -307,21 +307,21 @@ public final class Class4_Sub6_Sub9 extends Class4_Sub6 {
 		if (arg0 == 0) {
 			this.anInt2021 = arg1.g1();
 		} else if (arg0 == 1) {
-			this.anInt2019 = arg1.method2536();
+			this.anInt2019 = arg1.g2();
 		} else if (arg0 == 2) {
-			this.anInt2010 = arg1.method2536();
+			this.anInt2010 = arg1.g2();
 		} else if (arg0 == 3) {
-			this.anInt2012 = arg1.method2536();
+			this.anInt2012 = arg1.g2();
 		} else if (arg0 == 4) {
-			this.anInt2017 = arg1.method2536();
+			this.anInt2017 = arg1.g2();
 		} else if (arg0 == 5) {
-			this.anInt2011 = arg1.method2536();
+			this.anInt2011 = arg1.g2();
 		} else if (arg0 == 6) {
 			this.anInt2016 = arg1.g1();
 		} else if (arg0 == 7) {
-			this.anInt2007 = arg1.method2536();
+			this.anInt2007 = arg1.g2();
 		} else if (arg0 == 8) {
-			this.anInt2008 = arg1.method2536();
+			this.anInt2008 = arg1.g2();
 		}
 	}
 }

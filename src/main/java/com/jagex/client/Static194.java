@@ -38,13 +38,13 @@ public final class Static194 {
 				@Pc(69) int local69 = 0;
 				while (local67.pos < Static34.aByteArrayArray1[local18].length && local69 < 511 && Static12.anInt163 < 1023) {
 					@Pc(90) int local90 = local26 | local69++ << 6;
-					@Pc(94) int local94 = local67.method2536();
+					@Pc(94) int local94 = local67.g2();
 					@Pc(98) int local98 = local94 >> 14;
 					@Pc(104) int local104 = local94 >> 7 & 0x3F;
 					@Pc(108) int local108 = local94 & 0x3F;
 					@Pc(121) int local121 = (Static308.anIntArray372[local18] >> 8) * 64 + local104 - Static180.anInt3453;
 					@Pc(135) int local135 = (Static308.anIntArray372[local18] & 0xFF) * 64 + local108 - Static86.anInt1771;
-					@Pc(142) Class264 local142 = Static329.aClass240_1.method5229(local67.method2536());
+					@Pc(142) Class264 local142 = Static329.aClass240_1.method5229(local67.g2());
 					if (Static143.aClass16_Sub1_Sub5_Sub2Array1[local90] == null && (local142.aByte99 & 0x1) > 0 && local98 == Static317.anInt5523 && local121 >= 0 && local121 + local142.anInt7201 < Static326.anInt5666 && local135 >= 0 && Static283.anInt5187 > local142.anInt7201 + local135) {
 						Static143.aClass16_Sub1_Sub5_Sub2Array1[local90] = new Class16_Sub1_Sub5_Sub2();
 						Static143.aClass16_Sub1_Sub5_Sub2Array1[local90].anInt6037 = local90;

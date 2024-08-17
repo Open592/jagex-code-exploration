@@ -569,8 +569,8 @@ public final class Class122 {
 		@Pc(35) Packet local35 = new Packet(arg0);
 		@Pc(40) Packet local40 = new Packet(arg0);
 		local10.pos = arg0.length - 23;
-		this.anInt3668 = local10.method2536();
-		this.anInt3686 = local10.method2536();
+		this.anInt3668 = local10.g2();
+		this.anInt3686 = local10.g2();
 		this.anInt3689 = local10.g1();
 		@Pc(65) int local65 = local10.g1();
 		@Pc(76) boolean local76 = (local65 & 0x1) == 1;
@@ -587,11 +587,11 @@ public final class Class122 {
 		@Pc(134) int local134 = local10.g1();
 		@Pc(138) int local138 = local10.g1();
 		@Pc(142) int local142 = local10.g1();
-		@Pc(146) int local146 = local10.method2536();
-		@Pc(150) int local150 = local10.method2536();
-		@Pc(154) int local154 = local10.method2536();
-		@Pc(158) int local158 = local10.method2536();
-		@Pc(162) int local162 = local10.method2536();
+		@Pc(146) int local146 = local10.g2();
+		@Pc(150) int local150 = local10.g2();
+		@Pc(154) int local154 = local10.g2();
+		@Pc(158) int local158 = local10.g2();
+		@Pc(162) int local162 = local10.g2();
 		@Pc(164) int local164 = 0;
 		@Pc(166) int local166 = 0;
 		@Pc(168) int local168 = 0;
@@ -726,15 +726,15 @@ public final class Class122 {
 			local589 = local10.g1();
 			@Pc(591) int local591 = 0;
 			if ((local589 & 0x1) != 0) {
-				local591 = local15.method2502();
+				local591 = local15.gSmart1Or2s();
 			}
 			@Pc(604) int local604 = 0;
 			if ((local589 & 0x2) != 0) {
-				local604 = local20.method2502();
+				local604 = local20.gSmart1Or2s();
 			}
 			@Pc(614) int local614 = 0;
 			if ((local589 & 0x4) != 0) {
-				local614 = local25.method2502();
+				local614 = local25.gSmart1Or2s();
 			}
 			this.anIntArray244[local583] = local591 + local577;
 			this.anIntArray242[local583] = local604 + local579;
@@ -754,7 +754,7 @@ public final class Class122 {
 		local35.pos = local295;
 		local40.pos = local309;
 		for (local589 = 0; local589 < this.anInt3686; local589++) {
-			this.aShortArray123[local589] = (short) local10.method2536();
+			this.aShortArray123[local589] = (short) local10.g2();
 			if (local76) {
 				this.aByteArray43[local589] = local15.g1s();
 			}
@@ -768,7 +768,7 @@ public final class Class122 {
 				this.anIntArray245[local589] = local30.g1();
 			}
 			if (local138 == 1) {
-				this.aShortArray125[local589] = (short) (local35.method2536() - 1);
+				this.aShortArray125[local589] = (short) (local35.g2() - 1);
 			}
 			if (this.aByteArray46 != null) {
 				if (this.aShortArray125[local589] == -1) {
@@ -789,9 +789,9 @@ public final class Class122 {
 		for (@Pc(820) int local820 = 0; local820 < this.anInt3686; local820++) {
 			local826 = local15.g1();
 			if (local826 == 1) {
-				local812 = (short) (local818 + local10.method2502());
-				local814 = (short) (local10.method2502() + local812);
-				local816 = (short) (local10.method2502() + local814);
+				local812 = (short) (local818 + local10.gSmart1Or2s());
+				local814 = (short) (local10.gSmart1Or2s() + local812);
+				local816 = (short) (local10.gSmart1Or2s() + local814);
 				this.aShortArray120[local820] = local812;
 				local818 = local816;
 				this.aShortArray119[local820] = local814;
@@ -808,7 +808,7 @@ public final class Class122 {
 			}
 			if (local826 == 2) {
 				local814 = local816;
-				local816 = (short) (local818 + local10.method2502());
+				local816 = (short) (local818 + local10.gSmart1Or2s());
 				this.aShortArray120[local820] = local812;
 				local818 = local816;
 				this.aShortArray119[local820] = local814;
@@ -819,7 +819,7 @@ public final class Class122 {
 			}
 			if (local826 == 3) {
 				local812 = local816;
-				local816 = (short) (local10.method2502() + local818);
+				local816 = (short) (local10.gSmart1Or2s() + local818);
 				local818 = local816;
 				this.aShortArray120[local820] = local812;
 				this.aShortArray119[local820] = local814;
@@ -832,7 +832,7 @@ public final class Class122 {
 				@Pc(981) short local981 = local812;
 				local812 = local814;
 				local814 = local981;
-				local816 = (short) (local818 + local10.method2502());
+				local816 = (short) (local818 + local10.gSmart1Or2s());
 				local818 = local816;
 				this.aShortArray120[local820] = local812;
 				this.aShortArray119[local820] = local981;
@@ -853,36 +853,36 @@ public final class Class122 {
 		for (local826 = 0; local826 < this.anInt3689; local826++) {
 			local1056 = this.aByteArray47[local826] & 0xFF;
 			if (local1056 == 0) {
-				this.aShortArray118[local826] = (short) local10.method2536();
-				this.aShortArray116[local826] = (short) local10.method2536();
-				this.aShortArray124[local826] = (short) local10.method2536();
+				this.aShortArray118[local826] = (short) local10.g2();
+				this.aShortArray116[local826] = (short) local10.g2();
+				this.aShortArray124[local826] = (short) local10.g2();
 			}
 			if (local1056 == 1) {
-				this.aShortArray118[local826] = (short) local15.method2536();
-				this.aShortArray116[local826] = (short) local15.method2536();
-				this.aShortArray124[local826] = (short) local15.method2536();
-				this.anIntArray249[local826] = local20.method2536();
+				this.aShortArray118[local826] = (short) local15.g2();
+				this.aShortArray116[local826] = (short) local15.g2();
+				this.aShortArray124[local826] = (short) local15.g2();
+				this.anIntArray249[local826] = local20.g2();
 				if (this.anInt3681 < 14) {
-					this.anIntArray248[local826] = local20.method2536();
+					this.anIntArray248[local826] = local20.g2();
 				} else {
 					this.anIntArray248[local826] = local20.method2493();
 				}
-				this.anIntArray250[local826] = local20.method2536();
+				this.anIntArray250[local826] = local20.g2();
 				this.aByteArray41[local826] = local25.g1s();
 				this.aByteArray45[local826] = local30.g1s();
 				this.anIntArray252[local826] = local35.g1s();
 			}
 			if (local1056 == 2) {
-				this.aShortArray118[local826] = (short) local15.method2536();
-				this.aShortArray116[local826] = (short) local15.method2536();
-				this.aShortArray124[local826] = (short) local15.method2536();
-				this.anIntArray249[local826] = local20.method2536();
+				this.aShortArray118[local826] = (short) local15.g2();
+				this.aShortArray116[local826] = (short) local15.g2();
+				this.aShortArray124[local826] = (short) local15.g2();
+				this.anIntArray249[local826] = local20.g2();
 				if (this.anInt3681 < 14) {
-					this.anIntArray248[local826] = local20.method2536();
+					this.anIntArray248[local826] = local20.g2();
 				} else {
 					this.anIntArray248[local826] = local20.method2493();
 				}
-				this.anIntArray250[local826] = local20.method2536();
+				this.anIntArray250[local826] = local20.g2();
 				this.aByteArray41[local826] = local25.g1s();
 				this.aByteArray45[local826] = local30.g1s();
 				this.anIntArray252[local826] = local35.g1s();
@@ -890,16 +890,16 @@ public final class Class122 {
 				this.anIntArray247[local826] = local35.g1s();
 			}
 			if (local1056 == 3) {
-				this.aShortArray118[local826] = (short) local15.method2536();
-				this.aShortArray116[local826] = (short) local15.method2536();
-				this.aShortArray124[local826] = (short) local15.method2536();
-				this.anIntArray249[local826] = local20.method2536();
+				this.aShortArray118[local826] = (short) local15.g2();
+				this.aShortArray116[local826] = (short) local15.g2();
+				this.aShortArray124[local826] = (short) local15.g2();
+				this.anIntArray249[local826] = local20.g2();
 				if (this.anInt3681 < 14) {
-					this.anIntArray248[local826] = local20.method2536();
+					this.anIntArray248[local826] = local20.g2();
 				} else {
 					this.anIntArray248[local826] = local20.method2493();
 				}
-				this.anIntArray250[local826] = local20.method2536();
+				this.anIntArray250[local826] = local20.g2();
 				this.aByteArray41[local826] = local25.g1s();
 				this.aByteArray45[local826] = local30.g1s();
 				this.anIntArray252[local826] = local35.g1s();
@@ -915,8 +915,8 @@ public final class Class122 {
 			if (local1056 > 0) {
 				this.aClass29Array3 = new Class29[local1056];
 				for (local1371 = 0; local1371 < local1056; local1371++) {
-					local1377 = local10.method2536();
-					local1381 = local10.method2536();
+					local1377 = local10.g2();
+					local1381 = local10.g2();
 					@Pc(1389) byte local1389;
 					if (local126 == 255) {
 						local1389 = this.aByteArray42[local1381];
@@ -930,8 +930,8 @@ public final class Class122 {
 			if (local1371 > 0) {
 				this.aClass179Array3 = new Class179[local1371];
 				for (local1377 = 0; local1377 < local1371; local1377++) {
-					local1381 = local10.method2536();
-					local1443 = local10.method2536();
+					local1381 = local10.g2();
+					local1443 = local10.g2();
 					this.aClass179Array3[local1377] = new Class179(local1381, local1443);
 				}
 			}
@@ -945,8 +945,8 @@ public final class Class122 {
 		}
 		this.aClass147Array1 = new Class147[local1056];
 		for (local1371 = 0; local1371 < local1056; local1371++) {
-			local1377 = local10.method2536();
-			local1381 = local10.method2536();
+			local1377 = local10.g2();
+			local1381 = local10.g2();
 			local1443 = local10.g1();
 			@Pc(1491) byte local1491 = local10.g1s();
 			this.aClass147Array1[local1371] = new Class147(local1377, local1381, local1443, local1491);
@@ -1000,18 +1000,18 @@ public final class Class122 {
 		@Pc(29) Packet local29 = new Packet(arg0);
 		@Pc(34) Packet local34 = new Packet(arg0);
 		local14.pos = arg0.length - 18;
-		this.anInt3668 = local14.method2536();
-		this.anInt3686 = local14.method2536();
+		this.anInt3668 = local14.g2();
+		this.anInt3686 = local14.g2();
 		this.anInt3689 = local14.g1();
 		@Pc(59) int local59 = local14.g1();
 		@Pc(63) int local63 = local14.g1();
 		@Pc(67) int local67 = local14.g1();
 		@Pc(71) int local71 = local14.g1();
 		@Pc(77) int local77 = local14.g1();
-		@Pc(81) int local81 = local14.method2536();
-		@Pc(85) int local85 = local14.method2536();
-		@Pc(89) int local89 = local14.method2536();
-		@Pc(93) int local93 = local14.method2536();
+		@Pc(81) int local81 = local14.g2();
+		@Pc(85) int local85 = local14.g2();
+		@Pc(89) int local89 = local14.g2();
+		@Pc(93) int local93 = local14.g2();
 		@Pc(102) int local102 = this.anInt3668;
 		@Pc(104) int local104 = local102;
 		local102 += this.anInt3686;
@@ -1091,15 +1091,15 @@ public final class Class122 {
 			local365 = local14.g1();
 			local367 = 0;
 			if ((local365 & 0x1) != 0) {
-				local367 = local19.method2502();
+				local367 = local19.gSmart1Or2s();
 			}
 			@Pc(377) int local377 = 0;
 			if ((local365 & 0x2) != 0) {
-				local377 = local24.method2502();
+				local377 = local24.gSmart1Or2s();
 			}
 			@Pc(390) int local390 = 0;
 			if ((local365 & 0x4) != 0) {
-				local390 = local29.method2502();
+				local390 = local29.gSmart1Or2s();
 			}
 			this.anIntArray244[local357] = local351 + local367;
 			this.anIntArray242[local357] = local353 + local377;
@@ -1117,7 +1117,7 @@ public final class Class122 {
 		local29.pos = local159;
 		local34.pos = local121;
 		for (local365 = 0; local365 < this.anInt3686; local365++) {
-			this.aShortArray123[local365] = (short) local14.method2536();
+			this.aShortArray123[local365] = (short) local14.g2();
 			if (local59 == 1) {
 				local367 = local19.g1();
 				if ((local367 & 0x1) == 1) {
@@ -1159,9 +1159,9 @@ public final class Class122 {
 		for (@Pc(618) int local618 = 0; local618 < this.anInt3686; local618++) {
 			local624 = local19.g1();
 			if (local624 == 1) {
-				local610 = (short) (local14.method2502() + local616);
-				local612 = (short) (local14.method2502() + local610);
-				local614 = (short) (local14.method2502() + local612);
+				local610 = (short) (local14.gSmart1Or2s() + local616);
+				local612 = (short) (local14.gSmart1Or2s() + local610);
+				local614 = (short) (local14.gSmart1Or2s() + local612);
 				this.aShortArray120[local618] = local610;
 				local616 = local614;
 				this.aShortArray119[local618] = local612;
@@ -1178,7 +1178,7 @@ public final class Class122 {
 			}
 			if (local624 == 2) {
 				local612 = local614;
-				local614 = (short) (local14.method2502() + local616);
+				local614 = (short) (local14.gSmart1Or2s() + local616);
 				local616 = local614;
 				this.aShortArray120[local618] = local610;
 				this.aShortArray119[local618] = local612;
@@ -1189,7 +1189,7 @@ public final class Class122 {
 			}
 			if (local624 == 3) {
 				local610 = local614;
-				local614 = (short) (local616 + local14.method2502());
+				local614 = (short) (local616 + local14.gSmart1Or2s());
 				local616 = local614;
 				this.aShortArray120[local618] = local610;
 				this.aShortArray119[local618] = local612;
@@ -1202,7 +1202,7 @@ public final class Class122 {
 				@Pc(783) short local783 = local610;
 				local610 = local612;
 				local612 = local783;
-				local614 = (short) (local14.method2502() + local616);
+				local614 = (short) (local14.gSmart1Or2s() + local616);
 				local616 = local614;
 				this.aShortArray120[local618] = local610;
 				this.aShortArray119[local618] = local783;
@@ -1216,9 +1216,9 @@ public final class Class122 {
 		this.anInt3677++;
 		for (local624 = 0; local624 < this.anInt3689; local624++) {
 			this.aByteArray47[local624] = 0;
-			this.aShortArray118[local624] = (short) local14.method2536();
-			this.aShortArray116[local624] = (short) local14.method2536();
-			this.aShortArray124[local624] = (short) local14.method2536();
+			this.aShortArray118[local624] = (short) local14.g2();
+			this.aShortArray116[local624] = (short) local14.g2();
+			this.aShortArray124[local624] = (short) local14.g2();
 		}
 		if (this.aByteArray46 != null) {
 			@Pc(881) boolean local881 = false;

@@ -58,15 +58,15 @@ public final class Class191 {
 		this.aBoolean499 = (this.anInt5570 & 0x8) != 0;
 		this.aBoolean500 = (this.anInt5570 & 0x10) != 0;
 		this.anInt5570 &= 0x7;
-		@Pc(50) int local50 = arg1.method2536() << arg2;
-		@Pc(56) int local56 = arg1.method2536() << arg2;
-		@Pc(62) int local62 = arg1.method2536() << arg2;
+		@Pc(50) int local50 = arg1.g2() << arg2;
+		@Pc(56) int local56 = arg1.g2() << arg2;
+		@Pc(62) int local62 = arg1.g2() << arg2;
 		@Pc(66) int local66 = arg1.g1();
 		@Pc(72) int local72 = local66 * 2 + 1;
 		this.aShortArray189 = new short[local72];
 		@Pc(89) int local89;
 		for (@Pc(78) int local78 = 0; local78 < this.aShortArray189.length; local78++) {
-			@Pc(85) short local85 = (short) arg1.method2536();
+			@Pc(85) short local85 = (short) arg1.g2();
 			local89 = local85 >>> 8;
 			@Pc(93) int local93 = local85 & 0xFF;
 			if (local72 <= local89) {
@@ -78,7 +78,7 @@ public final class Class191 {
 			this.aShortArray189[local78] = (short) (local93 | local89 << 8);
 		}
 		local66 = (local66 << Static231.anInt4434) + Static333.anInt5747;
-		@Pc(160) int local160 = Static72.anIntArray115 == null ? Static335.anIntArray423[Static82.method1470(arg1.method2536()) & 0xFFFF] : Static72.anIntArray115[arg1.method2536()];
+		@Pc(160) int local160 = Static72.anIntArray115 == null ? Static335.anIntArray423[Static82.method1470(arg1.g2()) & 0xFFFF] : Static72.anIntArray115[arg1.g2()];
 		local89 = arg1.g1();
 		this.anInt5562 = local89 & 0x1F;
 		this.anInt5566 = (local89 & 0xE0) << 3;

@@ -38,7 +38,7 @@ public final class Static361 {
 			while (true) {
 				@Pc(34) int local34;
 				while (!local28) {
-					local34 = local12.method2506();
+					local34 = local12.gSmart1Or2();
 					if (local34 == 0) {
 						continue label54;
 					}
@@ -59,7 +59,7 @@ public final class Static361 {
 						}
 					}
 				}
-				local34 = local12.method2506();
+				local34 = local12.gSmart1Or2();
 				if (local34 == 0) {
 					break;
 				}
@@ -71,6 +71,6 @@ public final class Static361 {
 	@OriginalMember(owner = "client!sh", name = "a", descriptor = "(I)V")
 	public static void method4872() {
 		Static429.method5476(Static327.aClass215_76);
-		Static3.aClass4_Sub12_Sub1_5.p1s(0);
+		Static3.aClass4_Sub12_Sub1_5.p1(0);
 	}
 }
