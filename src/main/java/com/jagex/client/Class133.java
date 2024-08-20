@@ -30,7 +30,7 @@ public final class Class133 {
 		if (arg1 == 1) {
 			this.aChar2 = Static260.method3771(arg0.g1s());
 		} else if (arg1 == 2) {
-			this.anInt4123 = arg0.method2529();
+			this.anInt4123 = arg0.g4();
 		} else if (arg1 == 4) {
 			this.aBoolean385 = false;
 		} else if (arg1 == 5) {

@@ -121,7 +121,7 @@ public final class Class4_Sub6_Sub38 extends Class4_Sub6 {
 	@Override
 	public void method5518(@OriginalArg(1) int arg0, @OriginalArg(2) Packet arg1) {
 		if (arg0 == 0) {
-			this.anInt7044 = arg1.method2512();
+			this.anInt7044 = arg1.g2s();
 		} else if (arg0 == 1) {
 			this.anInt7035 = (arg1.g1s() << 12) / 100;
 		} else if (arg0 == 2) {

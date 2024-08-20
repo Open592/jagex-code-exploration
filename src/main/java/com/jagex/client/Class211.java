@@ -524,7 +524,7 @@ public final class Class211 {
 		} else if (arg0 == 11) {
 			this.anInt6164 = 1;
 		} else if (arg0 == 12) {
-			this.anInt6165 = arg1.method2529();
+			this.anInt6165 = arg1.g4();
 		} else if (arg0 == 16) {
 			this.aBoolean565 = true;
 		} else if (arg0 == 23) {
@@ -648,7 +648,7 @@ public final class Class211 {
 					if (local517) {
 						local530 = new Class4_Sub7(arg1.readValidStringAtCurrentPosition());
 					} else {
-						local530 = new Class4_Sub37(arg1.method2529());
+						local530 = new Class4_Sub37(arg1.g4());
 					}
 					this.aClass102_36.method2703((long) local521, local530);
 				}

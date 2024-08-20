@@ -170,9 +170,9 @@ public final class Class266_Sub1 extends Class266 {
 						arg4.pos += 10;
 					} else {
 						arg0[0] = arg4.g2();
-						arg0[1] = arg4.method2512();
-						arg0[2] = arg4.method2512();
-						arg0[3] = arg4.method2512();
+						arg0[1] = arg4.g2s();
+						arg0[2] = arg4.g2s();
+						arg0[3] = arg4.g2s();
 						arg0[4] = arg4.g2();
 					}
 				}
@@ -458,9 +458,9 @@ public final class Class266_Sub1 extends Class266 {
 									arg2.pos += 10;
 								} else {
 									arg3[0] = arg2.g2();
-									arg3[1] = arg2.method2512();
-									arg3[2] = arg2.method2512();
-									arg3[3] = arg2.method2512();
+									arg3[1] = arg2.g2s();
+									arg3[2] = arg2.g2s();
+									arg3[3] = arg2.g2s();
 									arg3[4] = arg2.g2();
 								}
 							}

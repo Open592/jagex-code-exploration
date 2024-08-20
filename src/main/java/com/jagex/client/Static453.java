@@ -42,15 +42,15 @@ public final class Static453 {
 	public static byte[] method5680(@OriginalArg(0) byte[] arg0) {
 		@Pc(8) Packet local8 = new Packet(arg0);
 		@Pc(12) int local12 = local8.g1();
-		@Pc(21) int local21 = local8.method2529();
+		@Pc(21) int local21 = local8.g4();
 		if (local21 < 0 || Static422.anInt6952 != 0 && Static422.anInt6952 < local21) {
 			throw new RuntimeException();
 		} else if (local12 == 0) {
 			@Pc(88) byte[] local88 = new byte[local21];
-			local8.method2508(local21, local88);
+			local8.gArrayBuffer(local21, local88);
 			return local88;
 		} else {
-			@Pc(42) int local42 = local8.method2529();
+			@Pc(42) int local42 = local8.g4();
 			if (local42 < 0 || Static422.anInt6952 != 0 && Static422.anInt6952 < local42) {
 				throw new RuntimeException();
 			}

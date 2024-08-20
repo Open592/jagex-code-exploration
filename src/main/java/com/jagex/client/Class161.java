@@ -112,7 +112,7 @@ public final class Class161 {
 			this.anInt5004 = arg0.g2();
 		} else if (arg1 == 16) {
 			this.aByte47 = 3;
-			this.anInt5004 = arg0.method2529();
+			this.anInt5004 = arg0.g4();
 			return;
 		} else {
 			@Pc(131) int local131;

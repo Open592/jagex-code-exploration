@@ -166,8 +166,8 @@ public final class Class175 {
 		@Pc(27) int local27 = 0;
 		@Pc(33) int local33;
 		while (local27 < local12) {
-			local33 = this.aPacket_6.method2529();
-			@Pc(38) int local38 = this.aPacket_6.method2529();
+			local33 = this.aPacket_6.g4();
+			@Pc(38) int local38 = this.aPacket_6.g4();
 			if (local33 == 1297379947) {
 				this.anIntArray346[local27] = this.aPacket_6.pos;
 				local27++;

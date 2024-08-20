@@ -83,7 +83,7 @@ public final class Static244 {
 			local49 = (local12 & 0x7) + Static385.anInt6487;
 			local55 = Static146.aClass4_Sub12_Sub1_3.g1s() + local40;
 			local126 = local49 + Static146.aClass4_Sub12_Sub1_3.g1s();
-			local186 = Static146.aClass4_Sub12_Sub1_3.method2512();
+			local186 = Static146.aClass4_Sub12_Sub1_3.g2s();
 			local190 = Static146.aClass4_Sub12_Sub1_3.g2();
 			local196 = Static146.aClass4_Sub12_Sub1_3.g1() * 4;
 			local202 = Static146.aClass4_Sub12_Sub1_3.g1() * 4;
@@ -135,7 +135,7 @@ public final class Static244 {
 			local186 = Static154.anInt813 + (local126 >> 4 & 0x7);
 			local190 = (local126 & 0x7) + Static385.anInt6487;
 			@Pc(488) byte local488 = Static146.aClass4_Sub12_Sub1_3.g1s_alt1();
-			local202 = Static146.aClass4_Sub12_Sub1_3.readInt16BE();
+			local202 = Static146.aClass4_Sub12_Sub1_3.g2s_alt1();
 			@Pc(496) byte local496 = Static146.aClass4_Sub12_Sub1_3.g1s_alt2();
 			local210 = Static146.aClass4_Sub12_Sub1_3.method2515();
 			local214 = Static146.aClass4_Sub12_Sub1_3.method2515();
@@ -163,8 +163,8 @@ public final class Static244 {
 				local635 = Static146.aClass4_Sub12_Sub1_3.g1() != 0;
 				local55 = Static146.aClass4_Sub12_Sub1_3.g1s() + local16;
 				local126 = local40 + Static146.aClass4_Sub12_Sub1_3.g1s();
-				local186 = Static146.aClass4_Sub12_Sub1_3.method2512();
-				local190 = Static146.aClass4_Sub12_Sub1_3.method2512();
+				local186 = Static146.aClass4_Sub12_Sub1_3.g2s();
+				local190 = Static146.aClass4_Sub12_Sub1_3.g2s();
 				local196 = Static146.aClass4_Sub12_Sub1_3.g2();
 				@Pc(664) byte local664 = Static146.aClass4_Sub12_Sub1_3.g1s();
 				local206 = Static146.aClass4_Sub12_Sub1_3.g1() * 4;
@@ -323,7 +323,7 @@ public final class Static244 {
 				local635 = Static146.aClass4_Sub12_Sub1_3.g1() != 0;
 				local55 = Static146.aClass4_Sub12_Sub1_3.g1s() + local16;
 				local126 = Static146.aClass4_Sub12_Sub1_3.g1s() + local40;
-				local186 = Static146.aClass4_Sub12_Sub1_3.method2512();
+				local186 = Static146.aClass4_Sub12_Sub1_3.g2s();
 				local190 = Static146.aClass4_Sub12_Sub1_3.g2();
 				local196 = Static146.aClass4_Sub12_Sub1_3.g1() * 4;
 				local202 = Static146.aClass4_Sub12_Sub1_3.g1() * 4;

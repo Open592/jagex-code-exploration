@@ -220,8 +220,8 @@ public final class Class157 {
 					if (this.anInt4917 == 65535) {
 						this.anInt4917 = -1;
 					}
-					this.anInt4924 = arg0.method2529();
-					this.anInt4903 = arg0.method2529();
+					this.anInt4924 = arg0.g4();
+					this.anInt4903 = arg0.g4();
 					return;
 				}
 				if (arg1 >= 10 && arg1 <= 14) {
@@ -244,14 +244,14 @@ public final class Class157 {
 									if (this.anInt4910 == 65535) {
 										this.anInt4910 = -1;
 									}
-									this.anInt4929 = arg0.method2529();
-									this.anInt4916 = arg0.method2529();
+									this.anInt4929 = arg0.g4();
+									this.anInt4916 = arg0.g4();
 									return;
 								} else if (arg1 == 21) {
-									this.anInt4906 = arg0.method2529();
+									this.anInt4906 = arg0.g4();
 									return;
 								} else if (arg1 == 22) {
-									this.anInt4918 = arg0.method2529();
+									this.anInt4918 = arg0.g4();
 									return;
 								} else if (arg1 == 249) {
 									local189 = arg0.g1();
@@ -266,7 +266,7 @@ public final class Class157 {
 										if (local215) {
 											local228 = new Class4_Sub7(arg0.readValidStringAtCurrentPosition());
 										} else {
-											local228 = new Class4_Sub37(arg0.method2529());
+											local228 = new Class4_Sub37(arg0.g4());
 										}
 										this.aClass102_24.method2703((long) local219, local228);
 									}
@@ -286,10 +286,10 @@ public final class Class157 {
 				local189 = arg0.g1();
 				this.anIntArray317 = new int[local189 * 2];
 				for (local196 = 0; local196 < local189 * 2; local196++) {
-					this.anIntArray317[local196] = arg0.method2512();
+					this.anIntArray317[local196] = arg0.g2s();
 				}
-				this.anInt4908 = arg0.method2529();
-				this.anInt4927 = arg0.method2529();
+				this.anInt4908 = arg0.g4();
+				this.anInt4927 = arg0.g4();
 				return;
 			}
 			local189 = arg0.g1();

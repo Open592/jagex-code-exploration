@@ -65,7 +65,7 @@ public final class Static211 {
 		Static376.anIntArrayArray50 = new int[local51][4];
 		for (local55 = 0; local55 < local51; local55++) {
 			for (local62 = 0; local62 < 4; local62++) {
-				Static376.anIntArrayArray50[local55][local62] = Static146.aClass4_Sub12_Sub1_3.method2529();
+				Static376.anIntArrayArray50[local55][local62] = Static146.aClass4_Sub12_Sub1_3.g4();
 			}
 		}
 		Static175.anIntArray222 = null;

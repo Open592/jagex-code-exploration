@@ -91,7 +91,7 @@ public final class Static380 {
 		while (true) {
 			while (local37.anInt5679 > local39) {
 				@Pc(55) Packet local55 = new Packet(arg0.method2104(local31[local41++], local18));
-				@Pc(59) int local59 = local55.method2529();
+				@Pc(59) int local59 = local55.g4();
 				@Pc(63) int local63 = local55.g2();
 				@Pc(67) int local67 = local55.g1();
 				if (!arg2 && local67 == 1) {

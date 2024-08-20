@@ -41,7 +41,7 @@ public final class Static360 {
 							return;
 						}
 						local67 = arg0.g2();
-						local71 = arg0.method2529();
+						local71 = arg0.g4();
 					} while (local67 >= Static165.anIntArray210.length);
 				} while (!Static22.aBooleanArray3[local67]);
 			} while (Static43.aClass93_4.method2430(local67).aChar5 == '1' && (local71 < -1 || local71 > 1));

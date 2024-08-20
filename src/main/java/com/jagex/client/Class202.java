@@ -667,11 +667,11 @@ public final class Class202 {
 		} else if (arg1 == 69) {
 			this.anInt5834 = arg0.g1();
 		} else if (arg1 == 70) {
-			this.anInt5833 = arg0.method2512() << 0;
+			this.anInt5833 = arg0.g2s() << 0;
 		} else if (arg1 == 71) {
-			this.anInt5827 = arg0.method2512() << 0;
+			this.anInt5827 = arg0.g2s() << 0;
 		} else if (arg1 == 72) {
-			this.anInt5832 = arg0.method2512() << 0;
+			this.anInt5832 = arg0.g2s() << 0;
 		} else if (arg1 == 73) {
 			this.aBoolean539 = true;
 		} else if (arg1 == 74) {
@@ -782,7 +782,7 @@ public final class Class202 {
 			}
 		} else if (arg1 == 162) {
 			this.aByte61 = 3;
-			this.anInt5838 = arg0.method2529();
+			this.anInt5838 = arg0.g4();
 		} else if (arg1 == 163) {
 			this.aByte62 = arg0.g1s();
 			this.aByte58 = arg0.g1s();
@@ -801,7 +801,7 @@ public final class Class202 {
 				if (local753) {
 					local766 = new Class4_Sub7(arg0.readValidStringAtCurrentPosition());
 				} else {
-					local766 = new Class4_Sub37(arg0.method2529());
+					local766 = new Class4_Sub37(arg0.g4());
 				}
 				this.aClass102_34.method2703((long) local57, local766);
 			}

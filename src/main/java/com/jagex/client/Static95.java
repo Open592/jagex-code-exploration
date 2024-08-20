@@ -38,7 +38,7 @@ public final class Static95 {
 	public static void method1665(@OriginalArg(0) Packet arg0, @OriginalArg(1) int arg1, @OriginalArg(2) SignLink arg2) {
 		@Pc(13) Class4_Sub36 local13 = new Class4_Sub36();
 		local13.anInt5309 = arg0.g1();
-		local13.anInt5310 = arg0.method2529();
+		local13.anInt5310 = arg0.g4();
 		local13.aByteArrayArrayArray4 = new byte[local13.anInt5309][][];
 		local13.aClass199Array2 = new Message[local13.anInt5309];
 		local13.anIntArray349 = new int[local13.anInt5309];
@@ -56,7 +56,7 @@ public final class Static95 {
 					local80 = arg0.readValidStringAtCurrentPosition();
 					local82 = 0;
 					if (local61 == 1) {
-						local82 = arg0.method2529();
+						local82 = arg0.g4();
 					}
 					local13.anIntArray349[local55] = local61;
 					local13.anIntArray350[local55] = local82;
@@ -73,9 +73,9 @@ public final class Static95 {
 					@Pc(167) int local167;
 					if (local61 == 3) {
 						for (@Pc(161) int local161 = 0; local161 < local82; local161++) {
-							local167 = arg0.method2529();
+							local167 = arg0.g4();
 							local156[local161] = new byte[local167];
-							arg0.method2508(local167, local156[local161]);
+							arg0.gArrayBuffer(local167, local156[local161]);
 						}
 					}
 					local13.anIntArray349[local55] = local61;

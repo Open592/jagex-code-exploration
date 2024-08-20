@@ -194,11 +194,11 @@ public final class Class4_Sub6_Sub10 extends Class4_Sub6 {
 		} else if (arg0 == 1) {
 			this.anInt2698 = arg1.g1();
 		} else if (arg0 == 2) {
-			this.anInt2702 = arg1.method2512();
+			this.anInt2702 = arg1.g2s();
 			if (this.anInt2702 < 0) {
 				this.aShortArray68 = new short[this.anInt2698];
 				for (@Pc(73) int local73 = 0; local73 < this.anInt2698; local73++) {
-					this.aShortArray68[local73] = (short) arg1.method2512();
+					this.aShortArray68[local73] = (short) arg1.g2s();
 				}
 			}
 		} else if (arg0 == 3) {

@@ -95,16 +95,16 @@ public final class Class101 {
 				this.anIntArrayArray27 = new int[local82][3];
 				for (local88 = 0; local88 < local82; local88++) {
 					this.anIntArrayArray27[local88][0] = arg0.g2();
-					this.anIntArrayArray27[local88][1] = arg0.method2529();
-					this.anIntArrayArray27[local88][2] = arg0.method2529();
+					this.anIntArrayArray27[local88][1] = arg0.g4();
+					this.anIntArrayArray27[local88][2] = arg0.g4();
 				}
 			} else if (arg1 == 4) {
 				local82 = arg0.g1();
 				this.anIntArrayArray28 = new int[local82][3];
 				for (local88 = 0; local88 < local82; local88++) {
 					this.anIntArrayArray28[local88][0] = arg0.g2();
-					this.anIntArrayArray28[local88][1] = arg0.method2529();
-					this.anIntArrayArray28[local88][2] = arg0.method2529();
+					this.anIntArrayArray28[local88][1] = arg0.g4();
+					this.anIntArrayArray28[local88][2] = arg0.g4();
 				}
 			} else if (arg1 == 5) {
 				arg0.g2();
@@ -122,12 +122,12 @@ public final class Class101 {
 					local82 = arg0.g1();
 					this.anIntArray206 = new int[local82];
 					for (local88 = 0; local88 < local82; local88++) {
-						this.anIntArray206[local88] = arg0.method2529();
+						this.anIntArray206[local88] = arg0.g4();
 					}
 					return;
 				}
 				if (arg1 == 12) {
-					arg0.method2529();
+					arg0.g4();
 					return;
 				}
 				if (arg1 != 13) {
@@ -156,9 +156,9 @@ public final class Class101 {
 							this.anIntArray203 = new int[local82];
 							this.anIntArray199 = new int[local82];
 							for (local88 = 0; local88 < local82; local88++) {
-								this.anIntArray203[local88] = arg0.method2529();
-								this.anIntArray202[local88] = arg0.method2529();
-								this.anIntArray199[local88] = arg0.method2529();
+								this.anIntArray203[local88] = arg0.g4();
+								this.anIntArray202[local88] = arg0.g4();
+								this.anIntArray199[local88] = arg0.g4();
 								this.aStringArray13[local88] = arg0.readValidStringAtCurrentPosition();
 							}
 						} else if (arg1 == 249) {
@@ -174,7 +174,7 @@ public final class Class101 {
 								if (local222) {
 									local235 = new Class4_Sub7(arg0.readValidStringAtCurrentPosition());
 								} else {
-									local235 = new Class4_Sub37(arg0.method2529());
+									local235 = new Class4_Sub37(arg0.g4());
 								}
 								this.aClass102_15.method2703((long) local226, local235);
 							}
@@ -188,9 +188,9 @@ public final class Class101 {
 					this.anIntArray200 = new int[local82];
 					this.anIntArray204 = new int[local82];
 					for (local88 = 0; local88 < local82; local88++) {
-						this.anIntArray204[local88] = arg0.method2529();
-						this.anIntArray201[local88] = arg0.method2529();
-						this.anIntArray200[local88] = arg0.method2529();
+						this.anIntArray204[local88] = arg0.g4();
+						this.anIntArray201[local88] = arg0.g4();
+						this.anIntArray200[local88] = arg0.g4();
 						this.aStringArray12[local88] = arg0.readValidStringAtCurrentPosition();
 					}
 					return;

@@ -55,15 +55,15 @@ public final class Class4_Sub13 extends Class4 {
 	@OriginalMember(owner = "client!di", name = "b", descriptor = "([B)V")
 	private void method1321(@OriginalArg(0) byte[] arg0) {
 		@Pc(4) Packet local4 = new Packet(arg0);
-		this.anInt1467 = local4.method2529();
-		this.anInt1465 = local4.method2529();
-		this.anInt1462 = local4.method2529();
-		this.anInt1463 = local4.method2529();
+		this.anInt1467 = local4.g4();
+		this.anInt1465 = local4.g4();
+		this.anInt1462 = local4.g4();
+		this.anInt1463 = local4.g4();
 		if (this.anInt1463 < 0) {
 			this.anInt1463 = ~this.anInt1463;
 			this.aBoolean126 = true;
 		}
-		@Pc(40) int local40 = local4.method2529();
+		@Pc(40) int local40 = local4.g4();
 		this.aByteArrayArray4 = new byte[local40][];
 		for (@Pc(46) int local46 = 0; local46 < local40; local46++) {
 			@Pc(49) int local49 = 0;
@@ -73,7 +73,7 @@ public final class Class4_Sub13 extends Class4 {
 				local49 += local53;
 			} while (local53 >= 255);
 			@Pc(64) byte[] local64 = new byte[local49];
-			local4.method2508(local49, local64);
+			local4.gArrayBuffer(local49, local64);
 			this.aByteArrayArray4[local46] = local64;
 		}
 	}

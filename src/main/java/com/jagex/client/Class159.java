@@ -83,8 +83,8 @@ public final class Class159 {
 		if (this.aPacket_5.data.length <= this.aPacket_5.pos) {
 			throw new RuntimeException();
 		} else if (this.aClass143_Sub1Array2[arg1] == null) {
-			@Pc(45) int local45 = this.aPacket_5.method2529();
-			@Pc(50) int local50 = this.aPacket_5.method2529();
+			@Pc(45) int local45 = this.aPacket_5.g4();
+			@Pc(50) int local50 = this.aPacket_5.g4();
 			@Pc(64) Class143_Sub1 local64 = new Class143_Sub1(arg1, arg0, arg2, this.aClass255_3, this.aClass254_2, local45, local50, true);
 			this.aClass143_Sub1Array2[arg1] = local64;
 			return local64;

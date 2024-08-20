@@ -184,7 +184,7 @@ public final class Static230 {
 		@Pc(51) int local51;
 		for (@Pc(47) int local47 = 0; local47 < local41; local47++) {
 			for (local51 = 0; local51 < 4; local51++) {
-				Static376.anIntArrayArray50[local47][local51] = Static146.aClass4_Sub12_Sub1_3.method2529();
+				Static376.anIntArrayArray50[local47][local51] = Static146.aClass4_Sub12_Sub1_3.g4();
 			}
 		}
 		Static247.aByteArrayArray16 = new byte[local41][];

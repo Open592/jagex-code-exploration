@@ -120,7 +120,7 @@ public final class Static41 {
 			if (local243 == 65535) {
 				local243 = -1;
 			}
-			local363 = arg1.method2510();
+			local363 = arg1.g4_alt3();
 			local367 = arg1.g1_alt2();
 			arg3.method4748(local367, local363, true, local243);
 		}
@@ -151,7 +151,7 @@ public final class Static41 {
 				}
 				if (!local443 && Static65.anInt1373 == 0) {
 					Static154.A_BYTE_BUFFER___2.pos = 0;
-					arg1.method2508(local367, Static154.A_BYTE_BUFFER___2.data);
+					arg1.gArrayBuffer(local367, Static154.A_BYTE_BUFFER___2.data);
 					Static154.A_BYTE_BUFFER___2.pos = 0;
 					@Pc(489) int local489 = -1;
 					@Pc(508) String local508;
@@ -189,7 +189,7 @@ public final class Static41 {
 			if (local243 == 65535) {
 				local243 = -1;
 			}
-			local363 = arg1.method2529();
+			local363 = arg1.g4();
 			local367 = arg1.g1_alt3();
 			arg3.method4748(local367, local363, false, local243);
 		}
@@ -226,7 +226,7 @@ public final class Static41 {
 			local243 = arg1.g1();
 			@Pc(818) byte[] local818 = new byte[local243];
 			@Pc(823) Packet local823 = new Packet(local818);
-			arg1.method2508(local243, local818);
+			arg1.gArrayBuffer(local243, local818);
 			Static354.A_BYTE_BUFFER_ARRAY_1[arg2] = local823;
 			arg3.method3422(local823);
 		}

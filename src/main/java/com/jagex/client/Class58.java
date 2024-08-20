@@ -39,9 +39,9 @@ public final class Class58 {
 		} else if (arg0 == 2) {
 			this.aBoolean160 = true;
 		} else if (arg0 == 3) {
-			this.anInt1729 = arg1.method2512();
-			this.anInt1726 = arg1.method2512();
-			this.anInt1728 = arg1.method2512();
+			this.anInt1729 = arg1.g2s();
+			this.anInt1726 = arg1.g2s();
+			this.anInt1728 = arg1.g2s();
 		} else if (arg0 == 4) {
 			this.anInt1719 = arg1.g1();
 		} else if (arg0 == 5) {

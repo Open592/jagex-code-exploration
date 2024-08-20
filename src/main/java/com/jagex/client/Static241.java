@@ -70,7 +70,7 @@ public final class Static241 {
 			@Pc(294) int local294;
 			if ((local21 & 0x800) != 0) {
 				local44 = Static146.aClass4_Sub12_Sub1_3.g2();
-				local162 = Static146.aClass4_Sub12_Sub1_3.method2491();
+				local162 = Static146.aClass4_Sub12_Sub1_3.g4_alt2();
 				if (local44 == 65535) {
 					local44 = -1;
 				}
@@ -98,7 +98,7 @@ public final class Static241 {
 				if (local44 == 65535) {
 					local44 = -1;
 				}
-				local162 = Static146.aClass4_Sub12_Sub1_3.method2510();
+				local162 = Static146.aClass4_Sub12_Sub1_3.g4_alt3();
 				local294 = Static146.aClass4_Sub12_Sub1_3.g1_alt3();
 				local17.method4748(local294, local162, false, local44);
 			}

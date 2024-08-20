@@ -33,10 +33,10 @@ public final class Class28 {
 	public Class28(@OriginalArg(0) Packet arg0) {
 		this.aByte11 = arg0.g1s();
 		this.anInt660 = arg0.g2();
-		this.anInt663 = arg0.method2529();
-		this.anInt664 = arg0.method2529();
-		this.anInt658 = arg0.method2529();
-		this.anInt669 = arg0.method2529();
+		this.anInt663 = arg0.g4();
+		this.anInt664 = arg0.g4();
+		this.anInt658 = arg0.g4();
+		this.anInt669 = arg0.g4();
 	}
 
 	@OriginalMember(owner = "client!bs", name = "a", descriptor = "(B)I")

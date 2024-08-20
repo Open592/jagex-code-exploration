@@ -32,7 +32,7 @@ public final class Class89 {
 		}
 		@Pc(28) boolean local28 = local8.g1() == 1;
 		this.aByteArray29 = new byte[256];
-		local8.method2508(256, this.aByteArray29);
+		local8.gArrayBuffer(256, this.aByteArray29);
 		if (local28) {
 			@Pc(44) int[] local44 = new int[256];
 			for (@Pc(46) int local46 = 0; local46 < 256; local46++) {

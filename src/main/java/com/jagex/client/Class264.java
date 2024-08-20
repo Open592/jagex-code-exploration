@@ -771,7 +771,7 @@ public final class Class264 {
 					if (local485) {
 						local498 = new Class4_Sub7(arg0.readValidStringAtCurrentPosition());
 					} else {
-						local498 = new Class4_Sub37(arg0.method2529());
+						local498 = new Class4_Sub37(arg0.g4());
 					}
 					this.aClass102_41.method2703((long) local489, local498);
 				}

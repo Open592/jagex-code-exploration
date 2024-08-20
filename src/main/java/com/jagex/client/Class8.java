@@ -88,12 +88,12 @@ public final class Class8 {
 		} else if (arg0 == 2) {
 			arg1.g1();
 		} else if (arg0 == 3) {
-			this.anInt128 = arg1.method2529();
-			this.anInt125 = arg1.method2529();
-			this.anInt132 = arg1.method2529();
+			this.anInt128 = arg1.g4();
+			this.anInt125 = arg1.g4();
+			this.anInt132 = arg1.g4();
 		} else if (arg0 == 4) {
 			this.anInt133 = arg1.g1();
-			this.anInt131 = arg1.method2529();
+			this.anInt131 = arg1.g4();
 		} else if (arg0 == 6) {
 			this.anInt121 = arg1.g1();
 		} else if (arg0 == 8) {

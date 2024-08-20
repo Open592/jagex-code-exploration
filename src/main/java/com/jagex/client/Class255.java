@@ -308,7 +308,7 @@ public final class Class255 {
 							local226 = this.aPacket_9.g1();
 							local275 = this.aPacket_9.g2();
 							@Pc(459) int local459 = this.aPacket_9.g1();
-							@Pc(464) int local464 = this.aPacket_9.method2529();
+							@Pc(464) int local464 = this.aPacket_9.g4();
 							@Pc(468) int local468 = local459 & 0x7F;
 							@Pc(479) boolean local479 = (local459 & 0x80) != 0;
 							@Pc(486) long local486 = (long) ((local226 << 16) + local275);

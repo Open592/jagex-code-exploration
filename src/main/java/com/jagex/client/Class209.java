@@ -67,7 +67,7 @@ public final class Class209 {
 			throw new RuntimeException();
 		}
 		if (local16 >= 6) {
-			this.anInt6113 = local12.method2529();
+			this.anInt6113 = local12.g4();
 		} else {
 			this.anInt6113 = 0;
 		}
@@ -96,15 +96,15 @@ public final class Class209 {
 				this.anIntArray432[local133] = -1;
 			}
 			for (local151 = 0; local151 < this.anInt6109; local151++) {
-				this.anIntArray432[this.anIntArray431[local151]] = local12.method2529();
+				this.anIntArray432[this.anIntArray431[local151]] = local12.g4();
 			}
 			this.aClass235_1 = new Class235(this.anIntArray432);
 		}
 		for (local133 = 0; local133 < this.anInt6109; local133++) {
-			this.anIntArray430[this.anIntArray431[local133]] = local12.method2529();
+			this.anIntArray430[this.anIntArray431[local133]] = local12.g4();
 		}
 		for (local151 = 0; local151 < this.anInt6109; local151++) {
-			this.anIntArray429[this.anIntArray431[local151]] = local12.method2529();
+			this.anIntArray429[this.anIntArray431[local151]] = local12.g4();
 		}
 		for (@Pc(223) int local223 = 0; local223 < this.anInt6109; local223++) {
 			this.anIntArray428[this.anIntArray431[local223]] = local12.g2();
@@ -150,7 +150,7 @@ public final class Class209 {
 				} else {
 					local391 = this.anIntArrayArray46[local256][local283];
 				}
-				this.anIntArrayArray47[local256][local391] = local12.method2529();
+				this.anIntArrayArray47[local256][local391] = local12.g4();
 			}
 			this.aClass235Array1[local256] = new Class235(this.anIntArrayArray47[local256]);
 		}

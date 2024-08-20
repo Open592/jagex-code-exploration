@@ -252,7 +252,7 @@ public final class Class151 {
 					return;
 				}
 				if (arg0 == 33) {
-					this.anInt4674 = arg1.method2512();
+					this.anInt4674 = arg1.g2s();
 					return;
 				}
 				if (arg0 == 34) {
@@ -264,7 +264,7 @@ public final class Class151 {
 					return;
 				}
 				if (arg0 == 36) {
-					this.anInt4660 = arg1.method2512();
+					this.anInt4660 = arg1.g2s();
 					return;
 				}
 				if (arg0 == 37) {
@@ -354,7 +354,7 @@ public final class Class151 {
 			local103 = arg1.g1();
 			this.anIntArrayArray38[local103] = new int[6];
 			for (local294 = 0; local294 < 6; local294++) {
-				this.anIntArrayArray38[local103][local294] = arg1.method2512();
+				this.anIntArrayArray38[local103][local294] = arg1.g2s();
 			}
 			return;
 		}

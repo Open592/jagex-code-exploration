@@ -72,7 +72,7 @@ public final class Class155 {
 			if ((local16 & 0x1) == 0) {
 				this.anInt4773 = Static65.anInt1369;
 			} else {
-				this.anInt4773 = arg0.method2529();
+				this.anInt4773 = arg0.g4();
 			}
 			if ((local16 & 0x2) == 0) {
 				this.aFloat150 = 1.1523438F;
@@ -91,7 +91,7 @@ public final class Class155 {
 			}
 		} else {
 			if ((local16 & 0x1) != 0) {
-				arg0.method2529();
+				arg0.g4();
 			}
 			if ((local16 & 0x2) != 0) {
 				arg0.g2();
@@ -112,14 +112,14 @@ public final class Class155 {
 			this.anInt4770 = -50;
 			this.anInt4778 = -60;
 		} else {
-			this.anInt4770 = arg0.method2512();
-			this.anInt4778 = arg0.method2512();
-			this.anInt4775 = arg0.method2512();
+			this.anInt4770 = arg0.g2s();
+			this.anInt4778 = arg0.g2s();
+			this.anInt4775 = arg0.g2s();
 		}
 		if ((local16 & 0x20) == 0) {
 			this.anInt4774 = Static317.anInt5521;
 		} else {
-			this.anInt4774 = arg0.method2529();
+			this.anInt4774 = arg0.g4();
 		}
 		if ((local16 & 0x40) == 0) {
 			this.anInt4777 = 0;

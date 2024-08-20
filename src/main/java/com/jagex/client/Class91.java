@@ -124,7 +124,7 @@ public final class Class91 implements Interface7 {
 		}
 		for (@Pc(522) int local522 = 0; local522 < local28; local522++) {
 			if (this.aClass251Array1[local522] != null) {
-				this.aClass251Array1[local522].anInt6933 = local24.method2529();
+				this.aClass251Array1[local522].anInt6933 = local24.g4();
 			}
 		}
 	}

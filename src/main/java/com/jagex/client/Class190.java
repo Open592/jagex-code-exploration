@@ -44,7 +44,7 @@ public final class Class190 {
 		} else if (arg0 == 3) {
 			this.anInt5504 = arg1.g2();
 		} else if (arg0 == 4) {
-			this.anInt5500 = arg1.method2512();
+			this.anInt5500 = arg1.g2s();
 		}
 	}
 }

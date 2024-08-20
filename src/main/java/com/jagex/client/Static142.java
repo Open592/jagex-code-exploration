@@ -32,12 +32,12 @@ public final class Static142 {
 			@Pc(73) int local73 = arg0.gSmart1Or2();
 			@Pc(81) Class78_Sub1 local81 = Static407.aClass78_Sub1Array2[local73] = new Class78_Sub1();
 			local81.anInt3877 = arg0.g1();
-			local81.anInt3874 = arg0.method2529();
+			local81.anInt3874 = arg0.g4();
 			local81.anInt3881 = Static396.anInt4816 + local73;
 			local81.aString37 = arg0.gjstr2();
 			local81.aString38 = arg0.gjstr2();
 		}
-		Static70.anInt1504 = arg0.method2529();
+		Static70.anInt1504 = arg0.g4();
 		Static94.aBoolean176 = true;
 	}
 

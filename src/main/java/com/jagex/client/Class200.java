@@ -93,17 +93,17 @@ public final class Class200 {
 		} else if (arg1 == 3) {
 			this.aString58 = arg0.readValidStringAtCurrentPosition();
 		} else if (arg1 == 4) {
-			this.anInt5767 = arg0.method2529();
+			this.anInt5767 = arg0.g4();
 		} else if (arg1 == 5 || arg1 == 6) {
 			@Pc(31) int local31 = arg0.g2();
 			this.aClass102_32 = new Class102(Static370.method4949(local31));
 			for (@Pc(43) int local43 = 0; local43 < local31; local43++) {
-				@Pc(49) int local49 = arg0.method2529();
+				@Pc(49) int local49 = arg0.g4();
 				@Pc(61) Class4 local61;
 				if (arg1 == 5) {
 					local61 = new Class4_Sub7(arg0.readValidStringAtCurrentPosition());
 				} else {
-					local61 = new Class4_Sub37(arg0.method2529());
+					local61 = new Class4_Sub37(arg0.g4());
 				}
 				this.aClass102_32.method2703((long) local49, local61);
 			}

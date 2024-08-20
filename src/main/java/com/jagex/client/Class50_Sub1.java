@@ -269,7 +269,7 @@ public final class Class50_Sub1 extends Class50 {
 			Static157.method2673(local474);
 		}
 		if (local21 >= 5) {
-			super.anInt3428 = arg0.method2529();
+			super.anInt3428 = arg0.g4();
 		}
 		local474 = 0;
 		if (local21 >= 6) {

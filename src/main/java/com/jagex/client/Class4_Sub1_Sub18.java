@@ -29,7 +29,7 @@ public final class Class4_Sub1_Sub18 extends Class4_Sub1 {
 			if (local42) {
 				local55 = new Class4_Sub7(arg0.readValidStringAtCurrentPosition());
 			} else {
-				local55 = new Class4_Sub37(arg0.method2529());
+				local55 = new Class4_Sub37(arg0.g4());
 			}
 			this.aClass102_35.method2703((long) local46, local55);
 		}

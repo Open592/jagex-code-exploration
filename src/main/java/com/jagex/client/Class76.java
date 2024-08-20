@@ -275,7 +275,7 @@ public final class Class76 {
 					for (local257 = 0; local257 < local235; local257++) {
 						local261 = 0;
 						for (local263 = 0; local263 < local25; local263++) {
-							local261 += local248.method2529();
+							local261 += local248.g4();
 							if (local31 == null) {
 								local275 = local263;
 							} else {
@@ -297,7 +297,7 @@ public final class Class76 {
 					for (local275 = 0; local275 < local235; local275++) {
 						local325 = 0;
 						for (local327 = 0; local327 < local25; local327++) {
-							local325 += local248.method2529();
+							local325 += local248.g4();
 							@Pc(339) int local339;
 							if (local31 == null) {
 								local339 = local327;
@@ -323,7 +323,7 @@ public final class Class76 {
 					for (local252 = 0; local252 < local235; local252++) {
 						local257 = 0;
 						for (local261 = 0; local261 < local25; local261++) {
-							local257 += local248.method2529();
+							local257 += local248.g4();
 							local410[local261] += local257;
 						}
 					}
@@ -337,7 +337,7 @@ public final class Class76 {
 					for (local275 = 0; local275 < local235; local275++) {
 						local325 = 0;
 						for (local327 = 0; local327 < local25; local327++) {
-							local325 += local248.method2529();
+							local325 += local248.g4();
 							Static459.method3330(local149, local263, local451[local327], local410[local327], local325);
 							local263 += local325;
 							local410[local327] += local325;
