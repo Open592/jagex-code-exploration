@@ -62,7 +62,7 @@ public final class Static244 {
 			local40 = (local12 & 0x7) + Static385.anInt6487;
 			local49 = Static146.aClass4_Sub12_Sub1_3.g2();
 			local55 = Static146.aClass4_Sub12_Sub1_3.g1();
-			local126 = Static146.aClass4_Sub12_Sub1_3.method2493();
+			local126 = Static146.aClass4_Sub12_Sub1_3.g3();
 			@Pc(130) String local130 = Static146.aClass4_Sub12_Sub1_3.readValidStringAtCurrentPosition();
 			Static212.method3207(local126, local49, Static113.anInt2426, local16, local40, local55, local130);
 			return;

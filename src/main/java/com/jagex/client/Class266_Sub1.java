@@ -288,7 +288,7 @@ public final class Class266_Sub1 extends Class266 {
 		@Pc(14) Packet local14 = new Packet(arg2);
 		@Pc(16) int local16 = -1;
 		while (true) {
-			@Pc(20) int local20 = local14.method2499();
+			@Pc(20) int local20 = local14.gSmartsExtend();
 			if (local20 == 0) {
 				return;
 			}
@@ -490,7 +490,7 @@ public final class Class266_Sub1 extends Class266 {
 		@Pc(10) Packet local10 = new Packet(arg0);
 		@Pc(16) int local16 = -1;
 		while (true) {
-			@Pc(20) int local20 = local10.method2499();
+			@Pc(20) int local20 = local10.gSmartsExtend();
 			if (local20 == 0) {
 				return;
 			}

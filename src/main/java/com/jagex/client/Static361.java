@@ -28,7 +28,7 @@ public final class Static361 {
 		@Pc(12) Packet local12 = new Packet(arg3);
 		@Pc(14) int local14 = -1;
 		label54: while (true) {
-			@Pc(18) int local18 = local12.method2499();
+			@Pc(18) int local18 = local12.gSmartsExtend();
 			if (local18 == 0) {
 				return local7;
 			}

@@ -63,7 +63,7 @@ public final class Class41 {
 		if (arg0 == 1) {
 			this.anInt1024 = arg1.g2();
 		} else if (arg0 == 2) {
-			this.anInt1027 = arg1.method2493();
+			this.anInt1027 = arg1.g3();
 			return;
 		} else if (arg0 == 3) {
 			this.aBoolean96 = true;

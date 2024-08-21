@@ -69,7 +69,7 @@ public final class Class4_Sub30 extends Class4 {
 		local46 = arg0.pos;
 		local50 = local12 + local27 + local29 + local31 + local33 + local35 + local37 + local39 + local41;
 		for (@Pc(157) int local157 = 0; local157 < local50; local157++) {
-			arg0.method2528();
+			arg0.gVarInt();
 		}
 		local22 += arg0.pos - local46;
 		@Pc(176) int local176 = arg0.pos;
@@ -183,7 +183,7 @@ public final class Class4_Sub30 extends Class4 {
 			@Pc(564) int local564 = -1;
 			while (true) {
 				while (true) {
-					@Pc(568) int local568 = arg0.method2528();
+					@Pc(568) int local568 = arg0.gVarInt();
 					local499.pVarInt(local568);
 					@Pc(580) int local580 = arg0.data[local294++] & 0xFF;
 					@Pc(587) boolean local587 = local580 != local564;

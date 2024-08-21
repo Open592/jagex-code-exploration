@@ -51,7 +51,7 @@ public final class Static386 {
 
 	@OriginalMember(owner = "client!tm", name = "a", descriptor = "(ILclient!iv;)Lclient!ob;")
 	public static Class27_Sub4 method3235(@OriginalArg(1) Packet arg0) {
-		return new Class27_Sub4(arg0.g2s(), arg0.g2s(), arg0.g2s(), arg0.g2s(), arg0.method2493(), arg0.method2493(), arg0.g1());
+		return new Class27_Sub4(arg0.g2s(), arg0.g2s(), arg0.g2s(), arg0.g2s(), arg0.g3(), arg0.g3(), arg0.g1());
 	}
 
 	@OriginalMember(owner = "client!tm", name = "a", descriptor = "(IIBIIIII)V")

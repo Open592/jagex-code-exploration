@@ -47,7 +47,7 @@ public final class Class58 {
 		} else if (arg0 == 5) {
 			this.anInt1723 = arg1.g2();
 		} else if (arg0 == 6) {
-			this.anInt1731 = arg1.method2493();
+			this.anInt1731 = arg1.g3();
 		}
 	}
 

@@ -146,7 +146,7 @@ public final class Class4_Sub38 extends Class4 {
 				} else {
 					local418 = local340[local420++];
 				}
-				local422 = local36.method2528();
+				local422 = local36.gVarInt();
 			}
 			this.aShortArray192[local424] = (short) (this.aShortArray192[local424] + ((local422 - 1 & 0x2) << 14));
 			this.anIntArray393[local424] = local422;

@@ -94,7 +94,7 @@ public final class Class4_Sub6_Sub35 extends Class4_Sub6 {
 		} else if (arg0 == 3) {
 			this.anInt6661 = arg1.g2();
 		} else if (arg0 == 4) {
-			@Pc(55) int local55 = arg1.method2493();
+			@Pc(55) int local55 = arg1.g3();
 			this.anIntArray506[1] = local55 >> 4 & 0xFF0;
 			this.anIntArray506[0] = (local55 & 0xFF0000) << 4;
 			this.anIntArray506[2] = local55 >> 12 & 0x0;

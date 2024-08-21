@@ -199,9 +199,9 @@ public final class Class157 {
 		} else if (arg1 == 3) {
 			this.aString47 = arg0.readValidStringAtCurrentPosition();
 		} else if (arg1 == 4) {
-			this.anInt4926 = arg0.method2493();
+			this.anInt4926 = arg0.g3();
 		} else if (arg1 == 5) {
-			this.anInt4907 = arg0.method2493();
+			this.anInt4907 = arg0.g3();
 		} else if (arg1 == 6) {
 			this.anInt4904 = arg0.g1();
 		} else {
@@ -261,7 +261,7 @@ public final class Class157 {
 									}
 									for (local196 = 0; local196 < local189; local196++) {
 										@Pc(215) boolean local215 = arg0.g1() == 1;
-										@Pc(219) int local219 = arg0.method2493();
+										@Pc(219) int local219 = arg0.g3();
 										@Pc(228) Class4 local228;
 										if (local215) {
 											local228 = new Class4_Sub7(arg0.readValidStringAtCurrentPosition());

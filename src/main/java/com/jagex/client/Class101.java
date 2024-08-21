@@ -169,7 +169,7 @@ public final class Class101 {
 							}
 							for (local88 = 0; local88 < local82; local88++) {
 								@Pc(222) boolean local222 = arg0.g1() == 1;
-								@Pc(226) int local226 = arg0.method2493();
+								@Pc(226) int local226 = arg0.g3();
 								@Pc(235) Class4 local235;
 								if (local222) {
 									local235 = new Class4_Sub7(arg0.readValidStringAtCurrentPosition());

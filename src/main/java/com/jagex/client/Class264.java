@@ -766,7 +766,7 @@ public final class Class264 {
 				}
 				for (local41 = 0; local41 < local31; local41++) {
 					@Pc(485) boolean local485 = arg0.g1() == 1;
-					@Pc(489) int local489 = arg0.method2493();
+					@Pc(489) int local489 = arg0.g3();
 					@Pc(498) Class4 local498;
 					if (local485) {
 						local498 = new Class4_Sub7(arg0.readValidStringAtCurrentPosition());

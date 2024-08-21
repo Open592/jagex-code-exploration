@@ -87,7 +87,7 @@ public final class Class4_Sub1_Sub3 extends Class4_Sub1 {
 			}
 			@Pc(24) int local24 = this.method226(local16).anInt3056;
 			if (local24 > 0) {
-				arg1.method2526(local24, (long) arg0[local16]);
+				arg1.pVarLong(local24, (long) arg0[local16]);
 			}
 		}
 	}
@@ -114,7 +114,7 @@ public final class Class4_Sub1_Sub3 extends Class4_Sub1 {
 		if (this.anIntArray18 != null) {
 			for (@Pc(22) int local22 = 0; local22 < this.anIntArray18.length; local22++) {
 				local17.append(this.aStringArray3[local22]);
-				local17.append(this.aClass81_1.method2255(this.method226(local22), this.anIntArrayArray2[local22], arg0.method2492(Static12.method128(this.anIntArray18[local22]).anInt3058)));
+				local17.append(this.aClass81_1.method2255(this.method226(local22), this.anIntArrayArray2[local22], arg0.gVarLong(Static12.method128(this.anIntArray18[local22]).anInt3058)));
 			}
 		}
 		local17.append(this.aStringArray3[this.aStringArray3.length - 1]);

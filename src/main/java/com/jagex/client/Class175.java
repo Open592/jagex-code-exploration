@@ -60,7 +60,7 @@ public final class Class175 {
 		if (local13 != 240 && local13 != 247) {
 			return this.method4051(arg0, local13);
 		}
-		@Pc(42) int local42 = this.aPacket_6.method2528();
+		@Pc(42) int local42 = this.aPacket_6.gVarInt();
 		if (local13 == 247 && local42 > 0) {
 			@Pc(57) int local57 = this.aPacket_6.data[this.aPacket_6.pos] & 0xFF;
 			if (local57 >= 241 && local57 <= 243 || local57 == 246 || local57 == 248 || local57 >= 250 && local57 <= 252 || local57 == 254) {
@@ -94,7 +94,7 @@ public final class Class175 {
 
 	@OriginalMember(owner = "client!ot", name = "d", descriptor = "(I)V")
 	public void method4050(@OriginalArg(0) int arg0) {
-		@Pc(4) int local4 = this.aPacket_6.method2528();
+		@Pc(4) int local4 = this.aPacket_6.gVarInt();
 		this.anIntArray347[arg0] += local4;
 	}
 
@@ -113,12 +113,12 @@ public final class Class175 {
 			return local12;
 		}
 		@Pc(7) int local7 = this.aPacket_6.g1();
-		local12 = this.aPacket_6.method2528();
+		local12 = this.aPacket_6.gVarInt();
 		if (local7 == 47) {
 			this.aPacket_6.pos += local12;
 			return 1;
 		} else if (local7 == 81) {
-			@Pc(32) int local32 = this.aPacket_6.method2493();
+			@Pc(32) int local32 = this.aPacket_6.g3();
 			local12 -= 3;
 			@Pc(38) int local38 = this.anIntArray347[arg0];
 			this.aLong178 += (long) local38 * (long) (this.anInt5295 - local32);

@@ -92,7 +92,7 @@ public final class Static425 {
 				}
 				Static125.aClass11_5.method131(0, 8, Static146.aClass4_Sub12_Sub1_3.data);
 				Static146.aClass4_Sub12_Sub1_3.pos = 0;
-				Static309.aLong183 = Static146.aClass4_Sub12_Sub1_3.method2501();
+				Static309.aLong183 = Static146.aClass4_Sub12_Sub1_3.g8();
 				@Pc(185) Packet local185 = new Packet(70);
 				@Pc(188) int[] local188 = new int[] { (int) (Math.random() * 9.9999999E7D), (int) (Math.random() * 9.9999999E7D), (int) (Static309.aLong183 >> 32), (int) Static309.aLong183 };
 				local185.p1(10);

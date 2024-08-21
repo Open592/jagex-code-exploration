@@ -107,7 +107,7 @@ public final class Class221 {
 	@OriginalMember(owner = "client!sr", name = "a", descriptor = "(Lclient!iv;II)V")
 	private void method4961(@OriginalArg(0) Packet arg0, @OriginalArg(1) int arg1) {
 		if (arg1 == 1) {
-			this.anInt6347 = arg0.method2493();
+			this.anInt6347 = arg0.g3();
 			this.method4956(this.anInt6347);
 		} else if (arg1 == 2) {
 			this.anInt6345 = arg0.g2();

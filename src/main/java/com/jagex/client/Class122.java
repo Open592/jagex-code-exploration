@@ -865,7 +865,7 @@ public final class Class122 {
 				if (this.anInt3681 < 14) {
 					this.anIntArray248[local826] = local20.g2();
 				} else {
-					this.anIntArray248[local826] = local20.method2493();
+					this.anIntArray248[local826] = local20.g3();
 				}
 				this.anIntArray250[local826] = local20.g2();
 				this.aByteArray41[local826] = local25.g1s();
@@ -880,7 +880,7 @@ public final class Class122 {
 				if (this.anInt3681 < 14) {
 					this.anIntArray248[local826] = local20.g2();
 				} else {
-					this.anIntArray248[local826] = local20.method2493();
+					this.anIntArray248[local826] = local20.g3();
 				}
 				this.anIntArray250[local826] = local20.g2();
 				this.aByteArray41[local826] = local25.g1s();
@@ -897,7 +897,7 @@ public final class Class122 {
 				if (this.anInt3681 < 14) {
 					this.anIntArray248[local826] = local20.g2();
 				} else {
-					this.anIntArray248[local826] = local20.method2493();
+					this.anIntArray248[local826] = local20.g3();
 				}
 				this.anIntArray250[local826] = local20.g2();
 				this.aByteArray41[local826] = local25.g1s();

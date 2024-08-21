@@ -124,7 +124,7 @@ public final class Class138 {
 				local149 = arg0.g1();
 				if (local149 > 0) {
 					this.anIntArrayArray36[local33] = new int[local149];
-					this.anIntArrayArray36[local33][0] = arg0.method2493();
+					this.anIntArrayArray36[local33][0] = arg0.g3();
 					for (local168 = 1; local168 < local149; local168++) {
 						this.anIntArrayArray36[local33][local168] = arg0.g2();
 					}

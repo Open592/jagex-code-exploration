@@ -24,7 +24,7 @@ public final class Class4_Sub1_Sub18 extends Class4_Sub1 {
 		}
 		for (local23 = 0; local23 < local14; local23++) {
 			@Pc(42) boolean local42 = arg0.g1() == 1;
-			@Pc(46) int local46 = arg0.method2493();
+			@Pc(46) int local46 = arg0.g3();
 			@Pc(55) Class4 local55;
 			if (local42) {
 				local55 = new Class4_Sub7(arg0.readValidStringAtCurrentPosition());

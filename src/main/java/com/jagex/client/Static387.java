@@ -83,7 +83,7 @@ public final class Static387 {
 				Static146.aClass4_Sub12_Sub1_3.pos = 0;
 				Static125.aClass11_5.method131(0, Static206.aStringArray16.length * 8, Static146.aClass4_Sub12_Sub1_3.data);
 				for (local120 = 0; local120 < Static206.aStringArray16.length; local120++) {
-					Static206.aStringArray16[local120] = Static44.method763(Static146.aClass4_Sub12_Sub1_3.method2501());
+					Static206.aStringArray16[local120] = Static44.method763(Static146.aClass4_Sub12_Sub1_3.g8());
 				}
 				Static249.anInt4623 = 21;
 				Static354.anInt6183 = 0;

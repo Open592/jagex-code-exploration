@@ -665,7 +665,7 @@ public final class Class247 {
 			this.anInt6772 = arg0.g4();
 			this.aBoolean610 = arg0.g1() == 1;
 		}
-		@Pc(490) int local490 = arg0.method2493();
+		@Pc(490) int local490 = arg0.g3();
 		@Pc(494) int local494 = arg0.g1();
 		@Pc(516) int local516;
 		if (local494 != 0) {
@@ -749,13 +749,13 @@ public final class Class247 {
 			@Pc(786) int local786;
 			@Pc(790) int local790;
 			for (@Pc(780) int local780 = 0; local780 < local628; local780++) {
-				local786 = arg0.method2493();
+				local786 = arg0.g3();
 				local790 = arg0.g4();
 				this.aClass102_39.method2703((long) local786, new Class4_Sub37(local790));
 			}
 			local786 = arg0.g1();
 			for (local790 = 0; local790 < local786; local790++) {
-				@Pc(816) int local816 = arg0.method2493();
+				@Pc(816) int local816 = arg0.g3();
 				@Pc(820) String local820 = arg0.gjstr2();
 				this.aClass102_39.method2703((long) local816, new Class4_Sub7(local820));
 			}

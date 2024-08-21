@@ -61,7 +61,7 @@ public final class Class113 {
 	@OriginalMember(owner = "client!is", name = "a", descriptor = "(ILclient!iv;I)V")
 	private void method2819(@OriginalArg(1) Packet arg0, @OriginalArg(2) int arg1) {
 		if (arg1 == 1) {
-			this.anInt3381 = Static219.method5061(arg0.method2493());
+			this.anInt3381 = Static219.method5061(arg0.g3());
 		} else if (arg1 == 2) {
 			this.anInt3378 = arg0.g1();
 			return;
@@ -75,7 +75,7 @@ public final class Class113 {
 			this.aBoolean285 = false;
 			return;
 		} else if (arg1 == 7) {
-			this.anInt3372 = Static219.method5061(arg0.method2493());
+			this.anInt3372 = Static219.method5061(arg0.g3());
 			return;
 		} else if (arg1 == 8) {
 			this.aClass124_4.anInt3849 = this.anInt3385;
@@ -93,7 +93,7 @@ public final class Class113 {
 			this.aBoolean283 = true;
 			return;
 		} else if (arg1 == 13) {
-			this.anInt3376 = arg0.method2493();
+			this.anInt3376 = arg0.g3();
 			return;
 		} else {
 			if (arg1 == 14) {

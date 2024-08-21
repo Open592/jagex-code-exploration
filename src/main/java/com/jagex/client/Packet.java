@@ -217,7 +217,7 @@ public class Packet extends Class4 {
 	}
 
 	@OriginalMember(owner = "client!iv", name = "d", descriptor = "(B)I")
-	public final int method2493() {
+	public final int g3() {
 		this.pos += 3;
 
 		return (this.data[this.pos - 1] & 0xFF)
@@ -312,6 +312,14 @@ public class Packet extends Class4 {
 		this.data[this.pos - length - 1] = (byte) length;
 	}
 
+	@OriginalMember(owner = "client!iv", name = "b", descriptor = "(Z)J")
+	public final long g8() {
+		@Pc(10) long first = (long) this.g4() & 0xFFFFFFFFL;
+		@Pc(22) long second = (long) this.g4() & 0xFFFFFFFFL;
+
+		return (first << 32) + second;
+	}
+
 	@OriginalMember(owner = "client!iv", name = "a", descriptor = "(JB)V")
 	public final void p8(@OriginalArg(0) long value) {
 		this.data[this.pos++] = (byte) (value >> 56);
@@ -324,19 +332,104 @@ public class Packet extends Class4 {
 		this.data[this.pos++] = (byte) value;
 	}
 
+	@OriginalMember(owner = "client!iv", name = "j", descriptor = "(B)I")
+	public final int gVarInt() {
+		@Pc(16) byte currentByte = this.data[this.pos++];
+		@Pc(23) int result = 0;
+
+		while (currentByte < 0) {
+			result = (result | currentByte & 0x7F) << 7;
+			currentByte = this.data[this.pos++];
+		}
+
+		return result | currentByte;
+	}
+
+	@OriginalMember(owner = "client!iv", name = "a", descriptor = "(ZI)V")
+	public final void pVarInt(@OriginalArg(1) int value) {
+		if ((value & 0xFFFFFF80) != 0) {
+			if ((value & 0xFFFFC000) != 0) {
+				if ((value & 0xFFE00000) != 0) {
+					if ((value & 0xF0000000) != 0) {
+						this.p1(value >>> 28 | 0x80);
+					}
+					this.p1(value >>> 21 | 0x80);
+				}
+				this.p1(value >>> 14 | 0x80);
+			}
+			this.p1(value >>> 7 | 0x80);
+		}
+		this.p1(value & 0x7F);
+	}
+
 	@OriginalMember(owner = "client!iv", name = "a", descriptor = "(II)J")
-	public final long method2492(@OriginalArg(1) int arg0) {
-		@Pc(2) int local2 = arg0 - 1;
-		if (local2 < 0 || local2 > 7) {
+	public final long gVarLong(@OriginalArg(1) int size) {
+		@Pc(2) int shiftWidthMultiple = size - 1;
+
+		if (shiftWidthMultiple < 0 || shiftWidthMultiple > 7) {
 			throw new IllegalArgumentException();
 		}
-		@Pc(29) int local29 = local2 * 8;
-		@Pc(31) long local31 = 0L;
-		while (local29 >= 0) {
-			local31 |= ((long) this.data[this.pos++] & 0xFFL) << local29;
-			local29 -= 8;
+
+		@Pc(29) int shiftWidth = shiftWidthMultiple * 8;
+		@Pc(31) long result = 0L;
+
+		while (shiftWidth >= 0) {
+			result |= ((long) this.data[this.pos++] & 0xFFL) << shiftWidth;
+			shiftWidth -= 8;
 		}
-		return local31;
+
+		return result;
+	}
+
+	@OriginalMember(owner = "client!iv", name = "a", descriptor = "(IJB)V")
+	public final void pVarLong(@OriginalArg(0) int size, @OriginalArg(1) long value) {
+		@Pc(6) int shiftWidthMultiple = size - 1;
+
+		if (shiftWidthMultiple < 0 || shiftWidthMultiple > 7) {
+			throw new IllegalArgumentException();
+		}
+
+		for (@Pc(24) int i = shiftWidthMultiple * 8; i >= 0; i -= 8) {
+			this.data[this.pos++] = (byte) (value >> i);
+		}
+	}
+
+	@OriginalMember(owner = "client!iv", name = "f", descriptor = "(B)I")
+	public final int gSmart1Or2() {
+		@Pc(17) int value = this.data[this.pos] & 0xFF;
+
+		return value < 128 ? this.g1() : this.g2() - 32768;
+	}
+
+	@OriginalMember(owner = "client!iv", name = "g", descriptor = "(I)I")
+	public final int gSmart1Or2s() {
+		@Pc(16) int value = this.data[this.pos] & 0xFF;
+
+		return value < 128 ? this.g1() - 64 : this.g2() - 49152;
+	}
+
+	@OriginalMember(owner = "client!iv", name = "f", descriptor = "(BI)V")
+	public final void pSmart1or2(@OriginalArg(1) int value) {
+		if (value >= 0 && value < 128) {
+			this.p1(value);
+		} else if (value >= 0 && value < 32768) {
+			this.p2(value + 32768);
+		} else {
+			throw new IllegalArgumentException();
+		}
+	}
+
+	@OriginalMember(owner = "client!iv", name = "f", descriptor = "(I)I")
+	public final int gSmartsExtend() {
+		@Pc(7) int local7 = 0;
+		@Pc(11) int local11 = this.gSmart1Or2();
+
+		while (local11 == 32767) {
+			local11 = this.gSmart1Or2();
+			local7 += 32767;
+		}
+
+		return local7 + local11;
 	}
 
 	@OriginalMember(owner = "client!iv", name = "a", descriptor = "(ILjava/lang/String;)V")
@@ -369,36 +462,27 @@ public class Packet extends Class4 {
 		return length == 0 ? "" : Static412.resolveStringFromByteBuffer(this.data, length, endPos);
 	}
 
-	@OriginalMember(owner = "client!iv", name = "f", descriptor = "(I)I")
-	public final int method2499() {
-		@Pc(7) int local7 = 0;
-		@Pc(11) int local11 = this.gSmart1Or2();
-		while (local11 == 32767) {
-			local11 = this.gSmart1Or2();
-			local7 += 32767;
-		}
-		return local7 + local11;
-	}
-
 	@OriginalMember(owner = "client!iv", name = "a", descriptor = "(Z)Z")
 	public final boolean method2500() {
 		this.pos -= 4;
+
 		@Pc(17) int local17 = Static179.method2846(0, this.data, this.pos);
 		@Pc(21) int local21 = this.g4();
-		return local21 == local17;
-	}
 
-	@OriginalMember(owner = "client!iv", name = "b", descriptor = "(Z)J")
-	public final long method2501() {
-		@Pc(10) long local10 = (long) this.g4() & 0xFFFFFFFFL;
-		@Pc(22) long local22 = (long) this.g4() & 0xFFFFFFFFL;
-		return (local10 << 32) + local22;
+		return local21 == local17;
 	}
 
 	@OriginalMember(owner = "client!iv", name = "a", descriptor = "(BII[B)V")
 	public final void gArrayBuffer(@OriginalArg(1) int length, @OriginalArg(3) byte[] buffer) {
 		for (@Pc(3) int i = 0; i < length; i++) {
 			buffer[i] = this.data[this.pos++];
+		}
+	}
+
+	@OriginalMember(owner = "client!iv", name = "a", descriptor = "(IZ[BI)V")
+	public final void pArrayBuffer(@OriginalArg(2) byte[] arg0, @OriginalArg(3) int arg1) {
+		for (@Pc(5) int local5 = 0; local5 < arg1; local5++) {
+			this.data[this.pos++] = arg0[local5];
 		}
 	}
 
@@ -409,13 +493,6 @@ public class Packet extends Class4 {
 			return null;
 		} else {
 			return this.readValidStringAtCurrentPosition();
-		}
-	}
-
-	@OriginalMember(owner = "client!iv", name = "a", descriptor = "(IZ[BI)V")
-	public final void pArrayBuffer(@OriginalArg(2) byte[] arg0, @OriginalArg(3) int arg1) {
-		for (@Pc(5) int local5 = 0; local5 < arg1; local5++) {
-			this.data[this.pos++] = arg0[local5];
 		}
 	}
 
@@ -438,28 +515,6 @@ public class Packet extends Class4 {
 		@Pc(16) int local16 = Static179.method2846(arg0, this.data, this.pos);
 		this.p4(local16);
 		return local16;
-	}
-
-	@OriginalMember(owner = "client!iv", name = "a", descriptor = "(IJB)V")
-	public final void method2526(@OriginalArg(0) int arg0, @OriginalArg(1) long arg1) {
-		@Pc(6) int local6 = arg0 - 1;
-		if (local6 < 0 || local6 > 7) {
-			throw new IllegalArgumentException();
-		}
-		for (@Pc(24) int local24 = local6 * 8; local24 >= 0; local24 -= 8) {
-			this.data[this.pos++] = (byte) (arg1 >> local24);
-		}
-	}
-
-	@OriginalMember(owner = "client!iv", name = "j", descriptor = "(B)I")
-	public final int method2528() {
-		@Pc(16) byte local16 = this.data[this.pos++];
-		@Pc(23) int local23 = 0;
-		while (local16 < 0) {
-			local23 = (local23 | local16 & 0x7F) << 7;
-			local16 = this.data[this.pos++];
-		}
-		return local23 | local16;
 	}
 
 	@OriginalMember(owner = "client!iv", name = "a", descriptor = "([II)V")
@@ -502,47 +557,6 @@ public class Packet extends Class4 {
 			this.p4(local36);
 		}
 		this.pos = local8;
-	}
-
-	@OriginalMember(owner = "client!iv", name = "f", descriptor = "(B)I")
-	public final int gSmart1Or2() {
-		@Pc(17) int value = this.data[this.pos] & 0xFF;
-		return value < 128 ? this.g1() : this.g2() - 32768;
-	}
-
-	@OriginalMember(owner = "client!iv", name = "g", descriptor = "(I)I")
-	public final int gSmart1Or2s() {
-		@Pc(16) int value = this.data[this.pos] & 0xFF;
-
-		return value < 128 ? this.g1() - 64 : this.g2() - 49152;
-	}
-
-	@OriginalMember(owner = "client!iv", name = "f", descriptor = "(BI)V")
-	public final void pSmart1or2(@OriginalArg(1) int value) {
-		if (value >= 0 && value < 128) {
-			this.p1(value);
-		} else if (value >= 0 && value < 32768) {
-			this.p2(value + 32768);
-		} else {
-			throw new IllegalArgumentException();
-		}
-	}
-
-	@OriginalMember(owner = "client!iv", name = "a", descriptor = "(ZI)V")
-	public final void pVarInt(@OriginalArg(1) int value) {
-		if ((value & 0xFFFFFF80) != 0) {
-			if ((value & 0xFFFFC000) != 0) {
-				if ((value & 0xFFE00000) != 0) {
-					if ((value & 0xF0000000) != 0) {
-						this.p1(value >>> 28 | 0x80);
-					}
-					this.p1(value >>> 21 | 0x80);
-				}
-				this.p1(value >>> 14 | 0x80);
-			}
-			this.p1(value >>> 7 | 0x80);
-		}
-		this.p1(value & 0x7F);
 	}
 
 	@OriginalMember(owner = "client!iv", name = "m", descriptor = "(B)Ljava/lang/String;")
