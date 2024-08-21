@@ -39,9 +39,9 @@ public final class Static211 {
 	@OriginalMember(owner = "client!kn", name = "a", descriptor = "(I)V")
 	public static void method3203() {
 		Static448.anInt7307 = Static146.aClass4_Sub12_Sub1_3.g1();
-		@Pc(20) int local20 = Static146.aClass4_Sub12_Sub1_3.method2515();
+		@Pc(20) int local20 = Static146.aClass4_Sub12_Sub1_3.g2_alt3();
 		@Pc(29) boolean local29 = Static146.aClass4_Sub12_Sub1_3.g1_alt3() == 1;
-		@Pc(35) int local35 = Static146.aClass4_Sub12_Sub1_3.method2548();
+		@Pc(35) int local35 = Static146.aClass4_Sub12_Sub1_3.g2_alt2();
 		@Pc(39) int local39 = Static146.aClass4_Sub12_Sub1_3.g1_alt3();
 		Static263.method3809(local39);
 		Static146.aClass4_Sub12_Sub1_3.method1136();

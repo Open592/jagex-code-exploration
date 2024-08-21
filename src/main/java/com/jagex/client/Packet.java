@@ -100,27 +100,32 @@ public class Packet extends Class4 {
 	public final int g2() {
 		this.pos += 2;
 
-		return (this.data[this.pos - 1] & 0xFF) + ((this.data[this.pos - 2] & 0xFF) << 8);
+		return (this.data[this.pos - 1] & 0xFF)
+				+ ((this.data[this.pos - 2] & 0xFF) << 8);
 	}
 
 	@OriginalMember(owner = "client!iv", name = "q", descriptor = "(I)I")
-	public final int method2538() {
+	public final int g2_alt1() {
 		this.pos += 2;
 
-		return (this.data[this.pos - 2] & 0xFF) + ((this.data[this.pos - 1] & 0xFF) << 8);
+		return ((this.data[this.pos - 1] & 0xFF) << 8)
+				+ (this.data[this.pos - 2] & 0xFF);
 	}
 
 	@OriginalMember(owner = "client!iv", name = "r", descriptor = "(I)I")
-	public final int method2548() {
+	public final int g2_alt2() {
 		this.pos += 2;
 
-		return ((this.data[this.pos - 2] & 0xFF) << 8) + (this.data[this.pos - 1] - 128 & 0xFF);
+		return (this.data[this.pos - 1] - 128 & 0xFF)
+				+ ((this.data[this.pos - 2] & 0xFF) << 8);
 	}
 
 	@OriginalMember(owner = "client!iv", name = "i", descriptor = "(B)I")
-	public final int method2515() {
+	public final int g2_alt3() {
 		this.pos += 2;
-		return ((this.data[this.pos - 1] & 0xFF) << 8) + (this.data[this.pos - 2] - 128 & 0xFF);
+
+		return ((this.data[this.pos - 1] & 0xFF) << 8)
+				+ (this.data[this.pos - 2] - 128 & 0xFF);
 	}
 
 	@OriginalMember(owner = "client!iv", name = "h", descriptor = "(B)I")
@@ -214,7 +219,10 @@ public class Packet extends Class4 {
 	@OriginalMember(owner = "client!iv", name = "d", descriptor = "(B)I")
 	public final int method2493() {
 		this.pos += 3;
-		return ((this.data[this.pos - 2] & 0xFF) << 8) + (((this.data[this.pos - 3] & 0xFF) << 16) + (this.data[this.pos - 1] & 0xFF));
+
+		return (this.data[this.pos - 1] & 0xFF)
+				+ ((this.data[this.pos - 2] & 0xFF) << 8)
+				+ ((this.data[this.pos - 3] & 0xFF) << 16);
 	}
 
 	@OriginalMember(owner = "client!iv", name = "d", descriptor = "(II)V")

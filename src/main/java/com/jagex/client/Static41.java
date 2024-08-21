@@ -71,7 +71,7 @@ public final class Static41 {
 			arg3.anInt6044 = arg1.g1s_alt3();
 			arg3.anInt6074 = arg1.g1s();
 			arg3.anInt6018 = arg1.g2() + Static24.anInt5323;
-			arg3.anInt6023 = arg1.method2548() + Static24.anInt5323;
+			arg3.anInt6023 = arg1.g2_alt2() + Static24.anInt5323;
 			arg3.lb = arg1.g1_alt1();
 			arg3.anInt6087 = 0;
 			if (arg3.aBoolean401) {
@@ -90,7 +90,7 @@ public final class Static41 {
 		}
 		@Pc(243) int local243;
 		if ((arg0 & 0x800) != 0) {
-			local243 = arg1.method2548();
+			local243 = arg1.g2_alt2();
 			arg3.anInt6051 = arg1.g1();
 			arg3.anInt6054 = arg1.g1_alt1();
 			arg3.aBoolean559 = (local243 & 0x8000) != 0;
@@ -109,14 +109,14 @@ public final class Static41 {
 				}
 				local297[local305] = local311;
 				local300[local305] = arg1.g1_alt3();
-				local303[local305] = arg1.method2538();
+				local303[local305] = arg1.g2_alt1();
 			}
 			Static375.method5000(local303, local300, arg3, local297);
 		}
 		@Pc(363) int local363;
 		@Pc(367) int local367;
 		if ((arg0 & 0x40000) != 0) {
-			local243 = arg1.method2538();
+			local243 = arg1.g2_alt1();
 			if (local243 == 65535) {
 				local243 = -1;
 			}
@@ -128,14 +128,14 @@ public final class Static41 {
 			Static411.aByteArray95[arg2] = arg1.g1s_alt2();
 		}
 		if ((arg0 & 0x2) != 0) {
-			local243 = arg1.method2515();
+			local243 = arg1.g2_alt3();
 			if (local243 == 65535) {
 				local243 = -1;
 			}
 			arg3.anInt6034 = local243;
 		}
 		if ((arg0 & 0x80) != 0) {
-			local243 = arg1.method2548();
+			local243 = arg1.g2_alt2();
 			local363 = arg1.g1_alt1();
 			local367 = arg1.g1_alt1();
 			@Pc(427) int local427 = arg1.pos;
@@ -185,7 +185,7 @@ public final class Static41 {
 			arg1.pos = local367 + local427;
 		}
 		if ((arg0 & 0x1000) != 0) {
-			local243 = arg1.method2538();
+			local243 = arg1.g2_alt1();
 			if (local243 == 65535) {
 				local243 = -1;
 			}
@@ -206,8 +206,8 @@ public final class Static41 {
 			arg3.aByte69 = arg1.g1s_alt3();
 			arg3.aByte70 = arg1.g1s();
 			arg3.aByte68 = (byte) arg1.g1_alt3();
-			arg3.anInt6020 = Static24.anInt5323 + arg1.method2548();
-			arg3.anInt6068 = Static24.anInt5323 + arg1.method2538();
+			arg3.anInt6020 = Static24.anInt5323 + arg1.g2_alt2();
+			arg3.anInt6068 = Static24.anInt5323 + arg1.g2_alt1();
 		}
 		if ((arg0 & 0x200) != 0) {
 			local7 = arg1.g1s_alt2();

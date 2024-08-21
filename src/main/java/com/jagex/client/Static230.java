@@ -175,8 +175,8 @@ public final class Static230 {
 	public static void method3470() {
 		Static448.anInt7307 = 0;
 		@Pc(11) int local11 = Static146.aClass4_Sub12_Sub1_3.g1_alt3();
-		@Pc(15) int local15 = Static146.aClass4_Sub12_Sub1_3.method2548();
-		@Pc(19) int local19 = Static146.aClass4_Sub12_Sub1_3.method2515();
+		@Pc(15) int local15 = Static146.aClass4_Sub12_Sub1_3.g2_alt2();
+		@Pc(19) int local19 = Static146.aClass4_Sub12_Sub1_3.g2_alt3();
 		@Pc(30) boolean local30 = Static146.aClass4_Sub12_Sub1_3.g1_alt1() == 1;
 		Static263.method3809(local11);
 		@Pc(41) int local41 = (Static454.anInt4075 - Static146.aClass4_Sub12_Sub1_3.pos) / 16;
