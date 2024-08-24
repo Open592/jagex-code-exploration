@@ -51,7 +51,7 @@ public final class Static179 {
 		for (@Pc(136) int local136 = 0; local136 < local134; local136++) {
 			local120.p1((int) (Math.random() * 255.0D));
 		}
-		local120.method2540(local8);
+		local120.tinyKeyEncrypt(local8);
 		Static3.aClass4_Sub12_Sub1_5.pos = 0;
 		Static3.aClass4_Sub12_Sub1_5.p1(Static153.aClass60_8.anInt1812);
 		Static3.aClass4_Sub12_Sub1_5.p2(local30.pos + local120.pos + 2);

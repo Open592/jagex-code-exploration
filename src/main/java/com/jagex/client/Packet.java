@@ -518,45 +518,56 @@ public class Packet extends Class4 {
 	}
 
 	@OriginalMember(owner = "client!iv", name = "a", descriptor = "([II)V")
-	public final void method2540(@OriginalArg(0) int[] arg0) {
-		@Pc(10) int local10 = this.pos / 8;
+	public final void tinyKeyEncrypt(int[] key) {
+		int blocks = this.pos / 8;
+
 		this.pos = 0;
-		for (@Pc(19) int i = 0; i < local10; i++) {
-			@Pc(25) int local25 = this.g4();
-			@Pc(29) int local29 = this.g4();
-			@Pc(31) int local31 = 0;
-			@Pc(35) int local35 = 32;
-			while (local35-- > 0) {
-				local25 += arg0[local31 & 0x3] + local31 ^ local29 + (local29 << 4 ^ local29 >>> 5);
-				local31 += -1640531527;
-				local29 += arg0[local31 >>> 11 & 0xCB000003] + local31 ^ local25 + (local25 << 4 ^ local25 >>> 5);
+
+		for (int i = 0; i < blocks; i++) {
+			int v0 = this.g4();
+			int v1 = this.g4();
+			int sum = 0;
+			int delta = 0x9E3779B9;
+			int remainingRounds = 32;
+
+			while (remainingRounds-- > 0) {
+				sum += delta;
+				v0 += key[sum & 0x3] + sum ^ v1 + (v1 << 4 ^ v1 >>> 5);
+				v1 += key[sum >>> 11 & 0xCB000003] + sum ^ v0 + (v0 << 4 ^ v0 >>> 5);
 			}
+
 			this.pos -= 8;
-			this.p4(local25);
-			this.p4(local29);
+			this.p4(v0);
+			this.p4(v1);
 		}
 	}
 
 	@OriginalMember(owner = "client!iv", name = "a", descriptor = "(III[I)V")
-	public final void method2544(@OriginalArg(1) int arg0, @OriginalArg(3) int[] arg1) {
-		@Pc(8) int local8 = this.pos;
+	public final void tinyKeyDecrypt(int length, int[] key) {
+		int startingPosition = this.pos;
+		int blocks = (length - 5) / 8;
+
 		this.pos = 5;
-		@Pc(18) int local18 = (arg0 - 5) / 8;
-		for (@Pc(20) int local20 = 0; local20 < local18; local20++) {
-			@Pc(32) int local32 = this.g4();
-			@Pc(36) int local36 = this.g4();
-			@Pc(38) int local38 = -957401312;
-			@Pc(42) int local42 = 32;
-			while (local42-- > 0) {
-				local36 -= (local32 >>> 5 ^ local32 << 4) + local32 ^ local38 + arg1[local38 >>> 11 & 0x4C600003];
-				local38 -= -1640531527;
-				local32 -= local36 + (local36 << 4 ^ local36 >>> 5) ^ arg1[local38 & 0x3] + local38;
+
+		for (int i = 0; i < blocks; i++) {
+			int v0 = this.g4();
+			int v1 = this.g4();
+			int sum = -957401312;
+			int delta = 0x9E3779B9;
+			int remainingRounds = 32;
+
+			while (remainingRounds-- > 0) {
+				v1 -= (v0 >>> 5 ^ v0 << 4) + v0 ^ sum + key[sum >>> 11 & 0x4C600003];
+				v0 -= v1 + (v1 << 4 ^ v1 >>> 5) ^ key[sum & 0x3] + sum;
+				sum -= delta;
 			}
+
 			this.pos -= 8;
-			this.p4(local32);
-			this.p4(local36);
+			this.p4(v0);
+			this.p4(v1);
 		}
-		this.pos = local8;
+
+		this.pos = startingPosition;
 	}
 
 	@OriginalMember(owner = "client!iv", name = "m", descriptor = "(B)Ljava/lang/String;")

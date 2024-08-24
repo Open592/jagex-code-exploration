@@ -241,7 +241,7 @@ public final class Class76 {
 			} else {
 				local122 = Static366.method4930(true, this.anObjectArray3[arg0]);
 				@Pc(127) Packet local127 = new Packet(local122);
-				local127.method2544(local127.data.length, arg2);
+				local127.tinyKeyDecrypt(local127.data.length, arg2);
 			}
 			@Pc(149) byte[] local149;
 			try {
