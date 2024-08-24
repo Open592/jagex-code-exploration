@@ -55,7 +55,7 @@ public final class Static445 {
 			local40.p4((int) (Math.random() * 9.9999999E7D));
 			local40.pjstr(Static297.aString52);
 			local40.p4((int) (Math.random() * 9.9999999E7D));
-			local40.method2522(Static85.aBigInteger1, Static309.aBigInteger2);
+			local40.rsaEncrypt(Static85.aBigInteger1, Static309.aBigInteger2);
 			Static3.aClass4_Sub12_Sub1_5.pos = 0;
 			Static3.aClass4_Sub12_Sub1_5.p1(Static153.aClass60_10.anInt1812);
 			Static3.aClass4_Sub12_Sub1_5.p1(local40.pos + 2);

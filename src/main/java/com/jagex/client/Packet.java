@@ -462,6 +462,15 @@ public class Packet extends Class4 {
 		return length == 0 ? "" : Static412.resolveStringFromByteBuffer(this.data, length, endPos);
 	}
 
+	@OriginalMember(owner = "client!iv", name = "f", descriptor = "(II)I")
+	public final int method2525(@OriginalArg(0) int arg0) {
+		@Pc(16) int local16 = Static179.method2846(arg0, this.data, this.pos);
+
+		this.p4(local16);
+
+		return local16;
+	}
+
 	@OriginalMember(owner = "client!iv", name = "a", descriptor = "(Z)Z")
 	public final boolean method2500() {
 		this.pos -= 4;
@@ -497,24 +506,22 @@ public class Packet extends Class4 {
 	}
 
 	@OriginalMember(owner = "client!iv", name = "a", descriptor = "(Ljava/math/BigInteger;BLjava/math/BigInteger;)V")
-	public final void method2522(@OriginalArg(0) BigInteger arg0, @OriginalArg(2) BigInteger arg1) {
-		@Pc(6) int local6 = this.pos;
-		this.pos = 0;
-		@Pc(12) byte[] local12 = new byte[local6];
-		this.gArrayBuffer(local6, local12);
-		@Pc(23) BigInteger local23 = new BigInteger(local12);
-		@Pc(28) BigInteger local28 = local23.modPow(arg0, arg1);
-		@Pc(31) byte[] local31 = local28.toByteArray();
-		this.pos = 0;
-		this.p1(local31.length);
-		this.pArrayBuffer(local31, local31.length);
-	}
+	public final void rsaEncrypt(@OriginalArg(0) BigInteger e, @OriginalArg(2) BigInteger n) {
+		int size = this.pos;
 
-	@OriginalMember(owner = "client!iv", name = "f", descriptor = "(II)I")
-	public final int method2525(@OriginalArg(0) int arg0) {
-		@Pc(16) int local16 = Static179.method2846(arg0, this.data, this.pos);
-		this.p4(local16);
-		return local16;
+		this.pos = 0;
+
+		byte[] message = new byte[size];
+
+		this.gArrayBuffer(size, message);
+
+		BigInteger bi = new BigInteger(message);
+		BigInteger encrypted = bi.modPow(e, n);
+		byte[] data = encrypted.toByteArray();
+
+		this.pos = 0;
+		this.p1(data.length);
+		this.pArrayBuffer(data, data.length);
 	}
 
 	@OriginalMember(owner = "client!iv", name = "a", descriptor = "([II)V")

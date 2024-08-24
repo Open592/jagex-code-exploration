@@ -102,7 +102,7 @@ public final class Static425 {
 				local185.p4(local188[3]);
 				local185.p8(Static96.method1684(Static2.aString1));
 				local185.pjstr(Static297.aString52);
-				local185.method2522(Static85.aBigInteger1, Static309.aBigInteger2);
+				local185.rsaEncrypt(Static85.aBigInteger1, Static309.aBigInteger2);
 				Static3.aClass4_Sub12_Sub1_5.pos = 0;
 				if (Static403.anInt6667 == 40) {
 					Static3.aClass4_Sub12_Sub1_5.p1(Static153.aClass60_5.anInt1812);

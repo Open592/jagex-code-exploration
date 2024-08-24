@@ -18,9 +18,11 @@ public final class Static179 {
 	@OriginalMember(owner = "client!ja", name = "a", descriptor = "(IB[BI)I")
 	public static int method2846(@OriginalArg(0) int arg0, @OriginalArg(2) byte[] arg1, @OriginalArg(3) int arg2) {
 		@Pc(7) int local7 = -1;
+
 		for (@Pc(9) int local9 = arg0; local9 < arg2; local9++) {
 			local7 = Class152_Sub2.anIntArray505[(local7 ^ arg1[local9]) & 0xFF] ^ local7 >>> 8;
 		}
+
 		return ~local7;
 	}
 
@@ -44,7 +46,7 @@ public final class Static179 {
 		local30.p2(arg5);
 		local30.p2(arg6);
 		local30.p4(local8[3]);
-		local30.method2522(Static85.aBigInteger1, Static309.aBigInteger2);
+		local30.rsaEncrypt(Static85.aBigInteger1, Static309.aBigInteger2);
 		@Pc(120) Packet local120 = new Packet(350);
 		local120.pjstr(arg8);
 		@Pc(134) int local134 = 8 - Static269.method3856(arg8) % 8;
