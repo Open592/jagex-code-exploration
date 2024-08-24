@@ -224,7 +224,7 @@ public final class Static218 {
 		Static409.method5485();
 		Static199.aBoolean362 = false;
 		Static317.method4231();
-		if (Static226.aFrame1 != null && Static125.aClass11_5 != null && Static403.anInt6667 == 25) {
+		if (Static226.aFrame1 != null && Static125.aServerConnection_5 != null && Static403.anInt6667 == 25) {
 			Static429.method5476(Static427.aClass215_94);
 			Static3.aClass4_Sub12_Sub1_5.p4(1057001181);
 		}
@@ -246,7 +246,7 @@ public final class Static218 {
 			Static187.method2932(10);
 		} else {
 			Static187.method2932(30);
-			if (Static125.aClass11_5 != null) {
+			if (Static125.aServerConnection_5 != null) {
 				Static429.method5476(Static412.aClass215_90);
 			}
 		}

@@ -130,7 +130,7 @@ public final class Static112 {
 				if (Static292.aClass199_8.status != 1) {
 					return -1;
 				}
-				Static125.aClass11_5 = new Class11((Socket) Static292.aClass199_8.output, Static206.signLink);
+				Static125.aServerConnection_5 = new ServerConnection((Socket) Static292.aClass199_8.output, Static206.signLink);
 				Static292.aClass199_8 = null;
 				local78 = 0;
 				if (Static94.aBoolean176) {
@@ -139,9 +139,9 @@ public final class Static112 {
 				Static3.aClass4_Sub12_Sub1_5.pos = 0;
 				Static3.aClass4_Sub12_Sub1_5.p1(Static153.aClass60_9.anInt1812);
 				Static3.aClass4_Sub12_Sub1_5.p4(local78);
-				Static125.aClass11_5.method142(Static3.aClass4_Sub12_Sub1_5.pos, Static3.aClass4_Sub12_Sub1_5.data);
+				Static125.aServerConnection_5.queueClientMessage(Static3.aClass4_Sub12_Sub1_5.pos, Static3.aClass4_Sub12_Sub1_5.data);
 				Static329.method4427();
-				local110 = Static125.aClass11_5.readByte();
+				local110 = Static125.aServerConnection_5.readByte();
 				Static329.method4427();
 				if (local110 != 0) {
 					return Static28.method526(local110);
@@ -149,12 +149,12 @@ public final class Static112 {
 				Static50.anInt862 = 2;
 			}
 			if (Static50.anInt862 == 2) {
-				if (Static125.aClass11_5.method133() < 2) {
+				if (Static125.aServerConnection_5.method133() < 2) {
 					return -1;
 				}
-				Static422.anInt6950 = Static125.aClass11_5.readByte();
+				Static422.anInt6950 = Static125.aServerConnection_5.readByte();
 				Static422.anInt6950 <<= 0x8;
-				Static422.anInt6950 += Static125.aClass11_5.readByte();
+				Static422.anInt6950 += Static125.aServerConnection_5.readByte();
 				Static50.anInt862 = 3;
 				Static273.aByteArray64 = new byte[Static422.anInt6950];
 				Static215.anInt3980 = 0;
@@ -162,14 +162,14 @@ public final class Static112 {
 			if (Static50.anInt862 != 3) {
 				return -1;
 			}
-			local78 = Static125.aClass11_5.method133();
+			local78 = Static125.aServerConnection_5.method133();
 			if (local78 < 1) {
 				return -1;
 			}
 			if (local78 > Static422.anInt6950 - Static215.anInt3980) {
 				local78 = Static422.anInt6950 - Static215.anInt3980;
 			}
-			Static125.aClass11_5.method131(Static215.anInt3980, local78, Static273.aByteArray64);
+			Static125.aServerConnection_5.method131(Static215.anInt3980, local78, Static273.aByteArray64);
 			Static215.anInt3980 += local78;
 			if (Static422.anInt6950 > Static215.anInt3980) {
 				return -1;
@@ -184,8 +184,8 @@ public final class Static112 {
 				}
 				Static168.anInt3258 = 0;
 				Static7.aClass4_Sub42_3 = null;
-				Static125.aClass11_5.shutdown();
-				Static125.aClass11_5 = null;
+				Static125.aServerConnection_5.shutdown();
+				Static125.aServerConnection_5 = null;
 				Static273.aByteArray64 = null;
 				Static274.anInt5132 = 0;
 				Static50.anInt862 = 0;

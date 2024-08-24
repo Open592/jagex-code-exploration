@@ -113,7 +113,7 @@ public final class Static400 {
 			}
 			if (arg0.equalsIgnoreCase("breakcon")) {
 				Static206.signLink.refuseConnectionForFiveSeconds();
-				Static125.aClass11_5.method132();
+				Static125.aServerConnection_5.method132();
 				Static261.aClass255_2.method5466();
 				Static441.method5568("Breaking new connections for 5 seconds");
 				return;

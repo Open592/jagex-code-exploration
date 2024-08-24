@@ -10,7 +10,7 @@ import org.openrs2.deob.annotation.Pc;
 public final class Class152_Sub2 extends Class152 implements Interface11 {
 
 	@OriginalMember(owner = "client!ue", name = "z", descriptor = "[I")
-	public static final int[] anIntArray505 = new int[256];
+	public static final int[] CRCTable32 = new int[256];
 
 	@OriginalMember(owner = "client!ue", name = "x", descriptor = "I")
 	private int anInt6626;
@@ -25,7 +25,7 @@ public final class Class152_Sub2 extends Class152 implements Interface11 {
 					local7 >>>= 0x1;
 				}
 			}
-			anIntArray505[local4] = local7;
+			CRCTable32[local4] = local7;
 		}
 	}
 

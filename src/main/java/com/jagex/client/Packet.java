@@ -444,6 +444,18 @@ public class Packet extends Class4 {
 		this.data[this.pos++] = 0;
 	}
 
+	@OriginalMember(owner = "client!iv", name = "m", descriptor = "(B)Ljava/lang/String;")
+	protected final String readValidStringAtCurrentPosition() {
+		@Pc(6) int position = this.pos;
+
+		while (this.data[this.pos++] != 0) {
+		}
+
+		@Pc(31) int startingPosition = this.pos - position - 1;
+
+		return startingPosition == 0 ? "" : Static412.resolveStringFromByteBuffer(this.data, startingPosition, position);
+	}
+
 	@OriginalMember(owner = "client!iv", name = "d", descriptor = "(I)Ljava/lang/String;")
 	public final String gjstr2() {
 		@Pc(22) byte version = this.data[this.pos++];
@@ -575,17 +587,5 @@ public class Packet extends Class4 {
 		}
 
 		this.pos = startingPosition;
-	}
-
-	@OriginalMember(owner = "client!iv", name = "m", descriptor = "(B)Ljava/lang/String;")
-	protected final String readValidStringAtCurrentPosition() {
-		@Pc(6) int position = this.pos;
-
-		while (this.data[this.pos++] != 0) {
-		}
-
-		@Pc(31) int startingPosition = this.pos - position - 1;
-
-		return startingPosition == 0 ? "" : Static412.resolveStringFromByteBuffer(this.data, startingPosition, position);
 	}
 }

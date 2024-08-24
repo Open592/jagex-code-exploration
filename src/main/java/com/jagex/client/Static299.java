@@ -36,10 +36,10 @@ public final class Static299 {
 			return;
 		}
 		Static162.anInt6744 = 0;
-		if (!Static22.aBoolean38 && Static125.aClass11_5 != null) {
+		if (!Static22.aBoolean38 && Static125.aServerConnection_5 != null) {
 			Static429.method5476(Static14.aClass215_2);
 			try {
-				Static125.aClass11_5.method142(Static3.aClass4_Sub12_Sub1_5.pos, Static3.aClass4_Sub12_Sub1_5.data);
+				Static125.aServerConnection_5.queueClientMessage(Static3.aClass4_Sub12_Sub1_5.pos, Static3.aClass4_Sub12_Sub1_5.data);
 				Static3.aClass4_Sub12_Sub1_5.pos = 0;
 			} catch (@Pc(56) IOException local56) {
 				Static22.aBoolean38 = true;

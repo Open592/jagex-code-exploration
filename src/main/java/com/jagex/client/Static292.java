@@ -113,7 +113,7 @@ public final class Static292 {
 		if (Static334.anInt5766 != -1) {
 			Static327.method4422(true);
 		}
-		if (Static125.aClass11_5 != null && (Static403.anInt6667 == 30 || Static403.anInt6667 == 25)) {
+		if (Static125.aServerConnection_5 != null && (Static403.anInt6667 == 30 || Static403.anInt6667 == 25)) {
 			Static1.method5();
 		}
 		for (local166 = 0; local166 < 100; local166++) {

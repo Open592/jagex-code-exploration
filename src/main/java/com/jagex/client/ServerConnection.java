@@ -14,19 +14,19 @@ import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;
 
 @OriginalClass("client!al")
-public final class Class11 implements Runnable {
+public final class ServerConnection implements Runnable {
 
 	@OriginalMember(owner = "client!al", name = "b", descriptor = "[B")
 	private byte[] buffer;
 
 	@OriginalMember(owner = "client!al", name = "n", descriptor = "Lclient!qt;")
-	private Message aClass199_1;
+	private Message Js5NetThreadMessage;
 
 	@OriginalMember(owner = "client!al", name = "s", descriptor = "Z")
 	private boolean isShuttingDown = false;
 
 	@OriginalMember(owner = "client!al", name = "x", descriptor = "Z")
-	private boolean aBoolean20 = false;
+	private boolean connectionNotHealthy = false;
 
 	@OriginalMember(owner = "client!al", name = "c", descriptor = "I")
 	private int anInt170 = 0;
@@ -47,7 +47,7 @@ public final class Class11 implements Runnable {
 	private OutputStream outputStream;
 
 	@OriginalMember(owner = "client!al", name = "<init>", descriptor = "(Ljava/net/Socket;Lclient!et;)V")
-	public Class11(@OriginalArg(0) Socket connection, @OriginalArg(1) SignLink signLink) throws IOException {
+	public ServerConnection(@OriginalArg(0) Socket connection, @OriginalArg(1) SignLink signLink) throws IOException {
 		this.connection = connection;
 		this.signLink = signLink;
 		this.connection.setSoTimeout(30000);
@@ -104,20 +104,20 @@ public final class Class11 implements Runnable {
 			this.notifyAll();
 		}
 
-		if (this.aClass199_1 != null) {
-			while (this.aClass199_1.status == 0) {
+		if (this.Js5NetThreadMessage != null) {
+			while (this.Js5NetThreadMessage.status == 0) {
 				Static435.sleepFor(1L);
 			}
 
-			if (this.aClass199_1.status == 1) {
+			if (this.Js5NetThreadMessage.status == 1) {
 				try {
-					((Thread) this.aClass199_1.output).join();
+					((Thread) this.Js5NetThreadMessage.output).join();
 				} catch (@Pc(56) InterruptedException ignored) {
 				}
 			}
 		}
 
-		this.aClass199_1 = null;
+		this.Js5NetThreadMessage = null;
 	}
 
 	@OriginalMember(owner = "client!al", name = "d", descriptor = "(I)I")
@@ -161,8 +161,8 @@ public final class Class11 implements Runnable {
 
 					try {
 						this.outputStream.write(this.buffer, local28, local40);
-					} catch (@Pc(65) IOException local65) {
-						this.aBoolean20 = true;
+					} catch (@Pc(65) IOException e) {
+						this.connectionNotHealthy = true;
 					}
 
 					this.anInt170 = (local40 + this.anInt170) % 5000;
@@ -171,8 +171,8 @@ public final class Class11 implements Runnable {
 						if (this.anInt183 == this.anInt170) {
 							this.outputStream.flush();
 						}
-					} catch (@Pc(86) IOException local86) {
-						this.aBoolean20 = true;
+					} catch (@Pc(86) IOException e) {
+						this.connectionNotHealthy = true;
 					}
 
 					continue;
@@ -204,20 +204,20 @@ public final class Class11 implements Runnable {
 
 	@OriginalMember(owner = "client!al", name = "e", descriptor = "(I)V")
 	public void method141() throws IOException {
-		if (!this.isShuttingDown && this.aBoolean20) {
-			this.aBoolean20 = false;
+		if (!this.isShuttingDown && this.connectionNotHealthy) {
+			this.connectionNotHealthy = false;
 			throw new IOException();
 		}
 	}
 
 	@OriginalMember(owner = "client!al", name = "a", descriptor = "(II[BI)V")
-	public void method142(@OriginalArg(0) int arg0, @OriginalArg(2) byte[] arg1) throws IOException {
+	public void queueClientMessage(@OriginalArg(0) int length, @OriginalArg(2) byte[] bytes) throws IOException {
 		if (this.isShuttingDown) {
 			return;
 		}
 
-		if (this.aBoolean20) {
-			this.aBoolean20 = false;
+		if (this.connectionNotHealthy) {
+			this.connectionNotHealthy = false;
 			throw new IOException();
 		}
 
@@ -226,16 +226,16 @@ public final class Class11 implements Runnable {
 		}
 
 		synchronized (this) {
-			for (@Pc(38) int i = 0; i < arg0; i++) {
-				this.buffer[this.anInt183] = arg1[i];
+			for (@Pc(38) int i = 0; i < length; i++) {
+				this.buffer[this.anInt183] = bytes[i];
 				this.anInt183 = (this.anInt183 + 1) % 5000;
 				if (this.anInt183 == (this.anInt170 + 4900) % 5000) {
 					throw new IOException();
 				}
 			}
 
-			if (this.aClass199_1 == null) {
-				this.aClass199_1 = this.signLink.emitThreadInitializationMessage(3, this);
+			if (this.Js5NetThreadMessage == null) {
+				this.Js5NetThreadMessage = this.signLink.emitThreadInitializationMessage(3, this);
 			}
 
 			this.notifyAll();

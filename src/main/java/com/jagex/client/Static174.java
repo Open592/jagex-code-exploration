@@ -12,17 +12,17 @@ public final class Static174 {
 
 	@OriginalMember(owner = "client!is", name = "a", descriptor = "(I)Z")
 	public static boolean method2816() throws IOException {
-		if (Static125.aClass11_5 == null) {
+		if (Static125.aServerConnection_5 == null) {
 			return false;
 		}
-		@Pc(13) int local13 = Static125.aClass11_5.method133();
+		@Pc(13) int local13 = Static125.aServerConnection_5.method133();
 		if (local13 == 0) {
 			return false;
 		}
 		@Pc(70) int local70;
 		if (Static300.aClass22_246 == null) {
 			if (Static330.aBoolean513) {
-				Static125.aClass11_5.method131(0, 1, Static146.aClass4_Sub12_Sub1_3.data);
+				Static125.aServerConnection_5.method131(0, 1, Static146.aClass4_Sub12_Sub1_3.data);
 				local13--;
 				Static330.aBoolean513 = false;
 				Static138.anInt2826++;
@@ -33,7 +33,7 @@ public final class Static174 {
 					return false;
 				}
 				local13--;
-				Static125.aClass11_5.method131(1, 1, Static146.aClass4_Sub12_Sub1_3.data);
+				Static125.aServerConnection_5.method131(1, 1, Static146.aClass4_Sub12_Sub1_3.data);
 				Static138.anInt2826++;
 			}
 			Static330.aBoolean513 = true;
@@ -49,7 +49,7 @@ public final class Static174 {
 			if (local13 <= 0) {
 				return false;
 			}
-			Static125.aClass11_5.method131(0, 1, Static146.aClass4_Sub12_Sub1_3.data);
+			Static125.aServerConnection_5.method131(0, 1, Static146.aClass4_Sub12_Sub1_3.data);
 			local13--;
 			Static138.anInt2826++;
 			Static454.anInt4075 = Static146.aClass4_Sub12_Sub1_3.data[0] & 0xFF;
@@ -58,7 +58,7 @@ public final class Static174 {
 			if (local13 <= 1) {
 				return false;
 			}
-			Static125.aClass11_5.method131(0, 2, Static146.aClass4_Sub12_Sub1_3.data);
+			Static125.aServerConnection_5.method131(0, 2, Static146.aClass4_Sub12_Sub1_3.data);
 			Static146.aClass4_Sub12_Sub1_3.pos = 0;
 			local13 -= 2;
 			Static454.anInt4075 = Static146.aClass4_Sub12_Sub1_3.g2();
@@ -68,7 +68,7 @@ public final class Static174 {
 			return false;
 		}
 		Static146.aClass4_Sub12_Sub1_3.pos = 0;
-		Static125.aClass11_5.method131(0, Static454.anInt4075, Static146.aClass4_Sub12_Sub1_3.data);
+		Static125.aServerConnection_5.method131(0, Static454.anInt4075, Static146.aClass4_Sub12_Sub1_3.data);
 		Static316.aClass22_257 = Static380.aClass22_294;
 		Static138.anInt2826 += Static454.anInt4075;
 		Static410.anInt6735 = 0;

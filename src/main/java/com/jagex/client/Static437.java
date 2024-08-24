@@ -546,9 +546,9 @@ public final class Static437 {
 												Static83.aBoolean159 = false;
 											}
 											try {
-												if (Static125.aClass11_5 != null && Static3.aClass4_Sub12_Sub1_5.pos > 0) {
+												if (Static125.aServerConnection_5 != null && Static3.aClass4_Sub12_Sub1_5.pos > 0) {
 													Static60.anInt1097 += Static3.aClass4_Sub12_Sub1_5.pos;
-													Static125.aClass11_5.method142(Static3.aClass4_Sub12_Sub1_5.pos, Static3.aClass4_Sub12_Sub1_5.data);
+													Static125.aServerConnection_5.queueClientMessage(Static3.aClass4_Sub12_Sub1_5.pos, Static3.aClass4_Sub12_Sub1_5.data);
 													Static3.aClass4_Sub12_Sub1_5.pos = 0;
 													Static162.anInt6744 = 0;
 													return;

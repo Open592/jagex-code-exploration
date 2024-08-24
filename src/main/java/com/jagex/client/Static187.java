@@ -32,9 +32,9 @@ public final class Static187 {
 		if (arg0 == 40) {
 			Static445.method5617();
 		}
-		if (arg0 != 40 && Static169.aClass11_6 != null) {
-			Static169.aClass11_6.shutdown();
-			Static169.aClass11_6 = null;
+		if (arg0 != 40 && Static169.aServerConnection_6 != null) {
+			Static169.aServerConnection_6.shutdown();
+			Static169.aServerConnection_6 = null;
 		}
 		if (Static403.anInt6667 == 25 || Static403.anInt6667 == 28) {
 			Static74.aClass76_20.anInt2476 = 2;

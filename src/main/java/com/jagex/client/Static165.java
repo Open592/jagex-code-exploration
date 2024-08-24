@@ -21,8 +21,8 @@ public final class Static165 {
 		if (Static95.anInt1910 > 0) {
 			Static251.method3639();
 		} else {
-			Static169.aClass11_6 = Static125.aClass11_5;
-			Static125.aClass11_5 = null;
+			Static169.aServerConnection_6 = Static125.aServerConnection_5;
+			Static125.aServerConnection_5 = null;
 			Static187.method2932(40);
 		}
 	}

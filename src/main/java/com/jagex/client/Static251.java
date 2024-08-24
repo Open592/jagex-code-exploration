@@ -34,9 +34,9 @@ public final class Static251 {
 
 	@OriginalMember(owner = "client!mp", name = "a", descriptor = "(I)V")
 	public static void method3639() {
-		if (Static125.aClass11_5 != null) {
-			Static125.aClass11_5.shutdown();
-			Static125.aClass11_5 = null;
+		if (Static125.aServerConnection_5 != null) {
+			Static125.aServerConnection_5.shutdown();
+			Static125.aServerConnection_5 = null;
 		}
 		Static409.method5485();
 		Static85.method1541();

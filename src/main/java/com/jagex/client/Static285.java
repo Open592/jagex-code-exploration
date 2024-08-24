@@ -18,9 +18,9 @@ public final class Static285 {
 		}
 		try {
 			if (++GameShell.anInt970 > 1500) {
-				if (Static125.aClass11_5 != null) {
-					Static125.aClass11_5.shutdown();
-					Static125.aClass11_5 = null;
+				if (Static125.aServerConnection_5 != null) {
+					Static125.aServerConnection_5.shutdown();
+					Static125.aServerConnection_5 = null;
 				}
 				if (Static239.anInt4518 >= 1) {
 					Static296.anInt5302 = -5;
@@ -48,40 +48,40 @@ public final class Static285 {
 				if (Static36.aClass199_3.status != 1) {
 					return;
 				}
-				Static125.aClass11_5 = new Class11((Socket) Static36.aClass199_3.output, Static206.signLink);
+				Static125.aServerConnection_5 = new ServerConnection((Socket) Static36.aClass199_3.output, Static206.signLink);
 				Static36.aClass199_3 = null;
-				Static125.aClass11_5.method142(Static3.aClass4_Sub12_Sub1_5.pos, Static3.aClass4_Sub12_Sub1_5.data);
+				Static125.aServerConnection_5.queueClientMessage(Static3.aClass4_Sub12_Sub1_5.pos, Static3.aClass4_Sub12_Sub1_5.data);
 				Static329.method4427();
-				local118 = Static125.aClass11_5.readByte();
+				local118 = Static125.aServerConnection_5.readByte();
 				Static329.method4427();
 				if (local118 != 101) {
 					Static296.anInt5302 = local118;
 					Static405.anInt6682 = 0;
-					Static125.aClass11_5.shutdown();
-					Static125.aClass11_5 = null;
+					Static125.aServerConnection_5.shutdown();
+					Static125.aServerConnection_5 = null;
 					return;
 				}
 				Static405.anInt6682 = 3;
 			}
-			if (Static405.anInt6682 == 3 && Static125.aClass11_5.method133() >= 2) {
-				local118 = Static125.aClass11_5.readByte() << 8 | Static125.aClass11_5.readByte();
+			if (Static405.anInt6682 == 3 && Static125.aServerConnection_5.method133() >= 2) {
+				local118 = Static125.aServerConnection_5.readByte() << 8 | Static125.aServerConnection_5.readByte();
 				Static162.method5279(local118);
 				if (Static56.anInt1028 == -1) {
 					Static405.anInt6682 = 0;
 					Static296.anInt5302 = 6;
-					Static125.aClass11_5.shutdown();
-					Static125.aClass11_5 = null;
+					Static125.aServerConnection_5.shutdown();
+					Static125.aServerConnection_5 = null;
 				} else {
 					Static405.anInt6682 = 0;
-					Static125.aClass11_5.shutdown();
-					Static125.aClass11_5 = null;
+					Static125.aServerConnection_5.shutdown();
+					Static125.aServerConnection_5 = null;
 					Static445.method5617();
 				}
 			}
 		} catch (@Pc(188) IOException local188) {
-			if (Static125.aClass11_5 != null) {
-				Static125.aClass11_5.shutdown();
-				Static125.aClass11_5 = null;
+			if (Static125.aServerConnection_5 != null) {
+				Static125.aServerConnection_5.shutdown();
+				Static125.aServerConnection_5 = null;
 			}
 			if (Static239.anInt4518 >= 1) {
 				Static405.anInt6682 = 0;

@@ -20,7 +20,7 @@ public final class Static179 {
 		@Pc(7) int local7 = -1;
 
 		for (@Pc(9) int local9 = arg0; local9 < arg2; local9++) {
-			local7 = Class152_Sub2.anIntArray505[(local7 ^ arg1[local9]) & 0xFF] ^ local7 >>> 8;
+			local7 = Class152_Sub2.CRCTable32[(local7 ^ arg1[local9]) & 0xFF] ^ local7 >>> 8;
 		}
 
 		return ~local7;
