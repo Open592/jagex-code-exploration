@@ -544,7 +544,7 @@ public final class Class247 {
 			if (local32 == 0) {
 				local19[local26] = Integer.valueOf(arg0.g4());
 			} else if (local32 == 1) {
-				local19[local26] = arg0.readValidStringAtCurrentPosition();
+				local19[local26] = arg0.gStringCP1252ToUTF8();
 			}
 		}
 		this.aBoolean612 = true;
@@ -570,7 +570,7 @@ public final class Class247 {
 		this.anInt6840 = arg0.g1();
 		if ((this.anInt6840 & 0x80) != 0) {
 			this.anInt6840 &= 0x7F;
-			this.aString65 = arg0.readValidStringAtCurrentPosition();
+			this.aString65 = arg0.gStringCP1252ToUTF8();
 		}
 		this.anInt6842 = arg0.g2();
 		this.anInt6804 = arg0.g2s();
@@ -644,7 +644,7 @@ public final class Class247 {
 			if (this.anInt6791 == 65535) {
 				this.anInt6791 = -1;
 			}
-			this.aString67 = arg0.readValidStringAtCurrentPosition();
+			this.aString67 = arg0.gStringCP1252ToUTF8();
 			this.anInt6853 = arg0.g1();
 			this.anInt6838 = arg0.g1();
 			this.anInt6803 = arg0.g1();
@@ -690,14 +690,14 @@ public final class Class247 {
 				local494 = arg0.g1();
 			}
 		}
-		this.aString66 = arg0.readValidStringAtCurrentPosition();
+		this.aString66 = arg0.gStringCP1252ToUTF8();
 		local516 = arg0.g1();
 		@Pc(582) int local582 = local516 & 0xF;
 		@Pc(593) int local593;
 		if (local582 > 0) {
 			this.aStringArray37 = new String[local582];
 			for (local593 = 0; local593 < local582; local593++) {
-				this.aStringArray37[local593] = arg0.readValidStringAtCurrentPosition();
+				this.aStringArray37[local593] = arg0.gStringCP1252ToUTF8();
 			}
 		}
 		@Pc(614) int local614 = local516 >> 4;
@@ -714,14 +714,14 @@ public final class Class247 {
 			local593 = arg0.g1();
 			this.anIntArray521[local593] = arg0.g2();
 		}
-		this.aString64 = arg0.readValidStringAtCurrentPosition();
+		this.aString64 = arg0.gStringCP1252ToUTF8();
 		if (this.aString64.equals("")) {
 			this.aString64 = null;
 		}
 		this.anInt6795 = arg0.g1();
 		this.anInt6786 = arg0.g1();
 		this.anInt6777 = arg0.g1();
-		this.aString68 = arg0.readValidStringAtCurrentPosition();
+		this.aString68 = arg0.gStringCP1252ToUTF8();
 		local593 = -1;
 		if (Static374.method4995(local490) != 0) {
 			local593 = arg0.g2();

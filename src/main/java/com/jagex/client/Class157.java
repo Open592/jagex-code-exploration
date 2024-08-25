@@ -197,7 +197,7 @@ public final class Class157 {
 		} else if (arg1 == 2) {
 			this.anInt4913 = arg0.g2();
 		} else if (arg1 == 3) {
-			this.aString47 = arg0.readValidStringAtCurrentPosition();
+			this.aString47 = arg0.gStringCP1252ToUTF8();
 		} else if (arg1 == 4) {
 			this.anInt4926 = arg0.g3();
 		} else if (arg1 == 5) {
@@ -225,7 +225,7 @@ public final class Class157 {
 					return;
 				}
 				if (arg1 >= 10 && arg1 <= 14) {
-					this.aStringArray19[arg1 - 10] = arg0.readValidStringAtCurrentPosition();
+					this.aStringArray19[arg1 - 10] = arg0.gStringCP1252ToUTF8();
 					return;
 				}
 				@Pc(196) int local196;
@@ -264,7 +264,7 @@ public final class Class157 {
 										@Pc(219) int local219 = arg0.g3();
 										@Pc(228) Class4 local228;
 										if (local215) {
-											local228 = new Class4_Sub7(arg0.readValidStringAtCurrentPosition());
+											local228 = new Class4_Sub7(arg0.gStringCP1252ToUTF8());
 										} else {
 											local228 = new Class4_Sub37(arg0.g4());
 										}
@@ -277,7 +277,7 @@ public final class Class157 {
 							this.anInt4912 = arg0.g2();
 							return;
 						}
-						this.aString48 = arg0.readValidStringAtCurrentPosition();
+						this.aString48 = arg0.gStringCP1252ToUTF8();
 						return;
 					}
 					this.aBoolean448 = false;

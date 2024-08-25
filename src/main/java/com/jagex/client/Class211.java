@@ -502,7 +502,7 @@ public final class Class211 {
 		if (arg0 == 1) {
 			this.anInt6178 = arg1.g2();
 		} else if (arg0 == 2) {
-			this.aString61 = arg1.readValidStringAtCurrentPosition();
+			this.aString61 = arg1.gStringCP1252ToUTF8();
 		} else if (arg0 == 4) {
 			this.anInt6137 = arg1.g2();
 		} else if (arg0 == 5) {
@@ -536,9 +536,9 @@ public final class Class211 {
 		} else if (arg0 == 26) {
 			this.anInt6150 = arg1.g2();
 		} else if (arg0 >= 30 && arg0 < 35) {
-			this.aStringArray34[arg0 - 30] = arg1.readValidStringAtCurrentPosition();
+			this.aStringArray34[arg0 - 30] = arg1.gStringCP1252ToUTF8();
 		} else if (arg0 >= 35 && arg0 < 40) {
-			this.aStringArray33[arg0 - 35] = arg1.readValidStringAtCurrentPosition();
+			this.aStringArray33[arg0 - 35] = arg1.gStringCP1252ToUTF8();
 		} else {
 			@Pc(147) int local147;
 			@Pc(157) int local157;
@@ -646,7 +646,7 @@ public final class Class211 {
 					@Pc(521) int local521 = arg1.g3();
 					@Pc(530) Class4 local530;
 					if (local517) {
-						local530 = new Class4_Sub7(arg1.readValidStringAtCurrentPosition());
+						local530 = new Class4_Sub7(arg1.gStringCP1252ToUTF8());
 					} else {
 						local530 = new Class4_Sub37(arg1.g4());
 					}

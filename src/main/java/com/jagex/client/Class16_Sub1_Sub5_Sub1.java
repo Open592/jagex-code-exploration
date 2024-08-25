@@ -140,9 +140,9 @@ public final class Class16_Sub1_Sub5_Sub1 extends Class16_Sub1_Sub5 {
 			local205[local134] = local141;
 		}
 		this.anInt4324 = arg0.g2();
-		this.aString43 = arg0.readValidStringAtCurrentPosition();
+		this.aString43 = arg0.gStringCP1252ToUTF8();
 		if (local31) {
-			this.aString44 = arg0.readValidStringAtCurrentPosition();
+			this.aString44 = arg0.gStringCP1252ToUTF8();
 		} else {
 			this.aString44 = this.aString43;
 		}

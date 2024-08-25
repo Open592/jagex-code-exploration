@@ -67,7 +67,7 @@ public final class Class4_Sub1_Sub16 extends Class4_Sub1 {
 	@OriginalMember(owner = "client!np", name = "a", descriptor = "(Lclient!iv;II)V")
 	private void method3872(@OriginalArg(0) Packet arg0, @OriginalArg(2) int arg1) {
 		if (arg1 == 1) {
-			this.aString49 = arg0.readValidStringAtCurrentPosition();
+			this.aString49 = arg0.gStringCP1252ToUTF8();
 			return;
 		}
 		@Pc(13) int local13;
@@ -80,7 +80,7 @@ public final class Class4_Sub1_Sub16 extends Class4_Sub1 {
 			for (local23 = 0; local23 < local13; local23++) {
 				this.anIntArray326[local23] = arg0.g2();
 				local36 = arg0.g1s();
-				this.aCharArray3[local23] = local36 == 0 ? 0 : Static260.method3771(local36);
+				this.aCharArray3[local23] = local36 == 0 ? 0 : CP1252StringTools.CP1252ToUTF8(local36);
 			}
 		} else if (arg1 == 3) {
 			local13 = arg0.g1();
@@ -89,7 +89,7 @@ public final class Class4_Sub1_Sub16 extends Class4_Sub1 {
 			for (local23 = 0; local23 < local13; local23++) {
 				this.anIntArray325[local23] = arg0.g2();
 				local36 = arg0.g1s();
-				this.aCharArray4[local23] = local36 == 0 ? 0 : Static260.method3771(local36);
+				this.aCharArray4[local23] = local36 == 0 ? 0 : CP1252StringTools.CP1252ToUTF8(local36);
 			}
 		}
 	}

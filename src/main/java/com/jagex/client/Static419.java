@@ -24,9 +24,6 @@ public final class Static419 {
 	@OriginalMember(owner = "client!ve", name = "m", descriptor = "[B")
 	public static final byte[] aByteArray99 = new byte[] { 2, 0, 0, 2, 0, 0, 0, 4, 4 };
 
-	@OriginalMember(owner = "client!ve", name = "o", descriptor = "[C")
-	public static final char[] aCharArray7 = new char[] { '€', '\u0000', '‚', 'ƒ', '„', '…', '†', '‡', 'ˆ', '‰', 'Š', '‹', 'Œ', '\u0000', 'Ž', '\u0000', '\u0000', '‘', '’', '“', '”', '•', '–', '—', '˜', '™', 'š', '›', 'œ', '\u0000', 'ž', 'Ÿ' };
-
 	@OriginalMember(owner = "client!ve", name = "a", descriptor = "(Lclient!iv;B)Lclient!vq;")
 	public static Class257 method5378(@OriginalArg(0) Packet arg0) {
 		@Pc(15) Class257 local15 = new Class257();

@@ -18,22 +18,6 @@ public final class Static260 {
 	@OriginalMember(owner = "client!ne", name = "N", descriptor = "[S")
 	public static final short[] aShortArray161 = new short[] { 76, 8, 137, 4, 0, 1, 38, 2, 19 };
 
-	@OriginalMember(owner = "client!ne", name = "a", descriptor = "(IB)C")
-	public static char method3771(@OriginalArg(1) byte arg0) {
-		@Pc(7) int local7 = arg0 & 0xFF;
-		if (local7 == 0) {
-			throw new IllegalArgumentException("Non cp1252 character 0x" + Integer.toString(local7, 16) + " provided");
-		}
-		if (local7 >= 128 && local7 < 160) {
-			@Pc(41) char local41 = Static419.aCharArray7[local7 - 128];
-			if (local41 == '\u0000') {
-				local41 = '?';
-			}
-			local7 = local41;
-		}
-		return (char) local7;
-	}
-
 	@OriginalMember(owner = "client!ne", name = "e", descriptor = "(I)V")
 	public static void method3772() {
 		for (@Pc(8) Class3_Sub2 local8 = (Class3_Sub2) Static384.aClass84_8.method2312(); local8 != null; local8 = (Class3_Sub2) Static384.aClass84_8.method2309()) {

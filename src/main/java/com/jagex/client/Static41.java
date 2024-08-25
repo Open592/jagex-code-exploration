@@ -54,7 +54,7 @@ public final class Static41 {
 			}
 		}
 		if ((arg0 & 0x400) != 0) {
-			arg3.aString60 = arg1.readValidStringAtCurrentPosition();
+			arg3.aString60 = arg1.gStringCP1252ToUTF8();
 			if (arg3.aString60.charAt(0) == '~') {
 				arg3.aString60 = arg3.aString60.substring(1);
 				Static128.method2268(0, 2, arg3.aString60, arg3.method3428(), arg3.method3432());

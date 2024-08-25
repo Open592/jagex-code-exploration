@@ -117,7 +117,7 @@ public final class Static241 {
 				}
 			}
 			if ((local21 & 0x80) != 0) {
-				local17.aString60 = Static146.aClass4_Sub12_Sub1_3.readValidStringAtCurrentPosition();
+				local17.aString60 = Static146.aClass4_Sub12_Sub1_3.gStringCP1252ToUTF8();
 				local17.anInt6077 = 100;
 			}
 			if ((local21 & 0x20) != 0) {

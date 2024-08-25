@@ -28,13 +28,13 @@ public final class Class133 {
 	@OriginalMember(owner = "client!lg", name = "a", descriptor = "(ILclient!iv;I)V")
 	private void method3352(@OriginalArg(1) Packet arg0, @OriginalArg(2) int arg1) {
 		if (arg1 == 1) {
-			this.aChar2 = Static260.method3771(arg0.g1s());
+			this.aChar2 = CP1252StringTools.CP1252ToUTF8(arg0.g1s());
 		} else if (arg1 == 2) {
 			this.anInt4123 = arg0.g4();
 		} else if (arg1 == 4) {
 			this.aBoolean385 = false;
 		} else if (arg1 == 5) {
-			this.aString40 = arg0.readValidStringAtCurrentPosition();
+			this.aString40 = arg0.gStringCP1252ToUTF8();
 		}
 	}
 

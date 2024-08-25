@@ -432,20 +432,8 @@ public class Packet extends Class4 {
 		return local7 + local11;
 	}
 
-	@OriginalMember(owner = "client!iv", name = "a", descriptor = "(ILjava/lang/String;)V")
-	public final void pjstr(@OriginalArg(1) String value) {
-		@Pc(7) int nullCharLocation = value.indexOf(0);
-
-		if (nullCharLocation >= 0) {
-			throw new IllegalArgumentException("NUL character at " + nullCharLocation + " - cannot pjstr");
-		}
-
-		this.pos += Static178.writeStringToByteBuffer(value, value.length(), this.pos, this.data);
-		this.data[this.pos++] = 0;
-	}
-
 	@OriginalMember(owner = "client!iv", name = "m", descriptor = "(B)Ljava/lang/String;")
-	protected final String readValidStringAtCurrentPosition() {
+	protected final String gStringCP1252ToUTF8() {
 		@Pc(6) int position = this.pos;
 
 		while (this.data[this.pos++] != 0) {
@@ -453,7 +441,17 @@ public class Packet extends Class4 {
 
 		@Pc(31) int startingPosition = this.pos - position - 1;
 
-		return startingPosition == 0 ? "" : Static412.resolveStringFromByteBuffer(this.data, startingPosition, position);
+		return startingPosition == 0 ? "" : CP1252StringTools.CP1252ToUTF8(this.data, startingPosition, position);
+	}
+
+	@OriginalMember(owner = "client!iv", name = "k", descriptor = "(I)Ljava/lang/String;")
+	public final String readString() {
+		if (this.data[this.pos] == 0) {
+			this.pos++;
+			return null;
+		} else {
+			return this.gStringCP1252ToUTF8();
+		}
 	}
 
 	@OriginalMember(owner = "client!iv", name = "d", descriptor = "(I)Ljava/lang/String;")
@@ -471,7 +469,19 @@ public class Packet extends Class4 {
 
 		@Pc(58) int length = this.pos - endPos - 1;
 
-		return length == 0 ? "" : Static412.resolveStringFromByteBuffer(this.data, length, endPos);
+		return length == 0 ? "" : CP1252StringTools.CP1252ToUTF8(this.data, length, endPos);
+	}
+
+	@OriginalMember(owner = "client!iv", name = "a", descriptor = "(ILjava/lang/String;)V")
+	public final void pjstr(@OriginalArg(1) String value) {
+		@Pc(7) int nullCharLocation = value.indexOf(0);
+
+		if (nullCharLocation >= 0) {
+			throw new IllegalArgumentException("NUL character at " + nullCharLocation + " - cannot pjstr");
+		}
+
+		this.pos += CP1252StringTools.UTF8ToCP1252(value, value.length(), this.pos, this.data);
+		this.data[this.pos++] = 0;
 	}
 
 	@OriginalMember(owner = "client!iv", name = "f", descriptor = "(II)I")
@@ -504,16 +514,6 @@ public class Packet extends Class4 {
 	public final void pArrayBuffer(@OriginalArg(2) byte[] arg0, @OriginalArg(3) int arg1) {
 		for (@Pc(5) int local5 = 0; local5 < arg1; local5++) {
 			this.data[this.pos++] = arg0[local5];
-		}
-	}
-
-	@OriginalMember(owner = "client!iv", name = "k", descriptor = "(I)Ljava/lang/String;")
-	public final String readString() {
-		if (this.data[this.pos] == 0) {
-			this.pos++;
-			return null;
-		} else {
-			return this.readValidStringAtCurrentPosition();
 		}
 	}
 

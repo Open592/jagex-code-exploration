@@ -52,8 +52,8 @@ public final class Static95 {
 				@Pc(80) String local80;
 				@Pc(82) int local82;
 				if (local61 == 0 || local61 == 1 || local61 == 2) {
-					local76 = arg0.readValidStringAtCurrentPosition();
-					local80 = arg0.readValidStringAtCurrentPosition();
+					local76 = arg0.gStringCP1252ToUTF8();
+					local80 = arg0.gStringCP1252ToUTF8();
 					local82 = 0;
 					if (local61 == 1) {
 						local82 = arg0.g4();
@@ -62,12 +62,12 @@ public final class Static95 {
 					local13.anIntArray350[local55] = local82;
 					local13.aClass199Array1[local55] = arg2.method1750(Static323.method4383(local76), local80);
 				} else if (local61 == 3 || local61 == 4) {
-					local76 = arg0.readValidStringAtCurrentPosition();
-					local80 = arg0.readValidStringAtCurrentPosition();
+					local76 = arg0.gStringCP1252ToUTF8();
+					local80 = arg0.gStringCP1252ToUTF8();
 					local82 = arg0.g1();
 					@Pc(135) String[] local135 = new String[local82];
 					for (@Pc(137) int local137 = 0; local137 < local82; local137++) {
-						local135[local137] = arg0.readValidStringAtCurrentPosition();
+						local135[local137] = arg0.gStringCP1252ToUTF8();
 					}
 					@Pc(156) byte[][] local156 = new byte[local82][];
 					@Pc(167) int local167;

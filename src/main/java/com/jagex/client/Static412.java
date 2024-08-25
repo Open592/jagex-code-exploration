@@ -25,26 +25,6 @@ public final class Static412 {
 		}
 	}
 
-	@OriginalMember(owner = "client!ut", name = "a", descriptor = "(I[BII)Ljava/lang/String;")
-	public static String resolveStringFromByteBuffer(@OriginalArg(1) byte[] arg0, @OriginalArg(2) int arg1, @OriginalArg(3) int arg2) {
-		@Pc(8) char[] local8 = new char[arg1];
-		@Pc(10) int local10 = 0;
-		for (@Pc(12) int local12 = 0; local12 < arg1; local12++) {
-			@Pc(22) int local22 = arg0[local12 + arg2] & 0xFF;
-			if (local22 != 0) {
-				if (local22 >= 128 && local22 < 160) {
-					@Pc(38) char local38 = Static419.aCharArray7[local22 - 128];
-					if (local38 == '\u0000') {
-						local38 = '?';
-					}
-					local22 = local38;
-				}
-				local8[local10++] = (char) local22;
-			}
-		}
-		return new String(local8, 0, local10);
-	}
-
 	@OriginalMember(owner = "client!ut", name = "b", descriptor = "(B)V")
 	public static void method5294() {
 		for (@Pc(18) Class4_Sub23 local18 = (Class4_Sub23) Static298.aClass183_38.method4140(); local18 != null; local18 = (Class4_Sub23) Static298.aClass183_38.method4144()) {

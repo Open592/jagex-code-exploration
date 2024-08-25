@@ -24,7 +24,7 @@ public final class Static356 {
 			}
 			@Pc(19) byte[] local19 = new byte[local7];
 			arg0.pos += Static339.aClass119_1.method2933(arg0.data, 0, local19, local7, arg0.pos);
-			return Static412.resolveStringFromByteBuffer(local19, local7, 0);
+			return CP1252StringTools.CP1252ToUTF8(local19, local7, 0);
 		} catch (@Pc(45) Exception local45) {
 			return "Cabbage";
 		}

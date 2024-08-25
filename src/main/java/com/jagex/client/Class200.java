@@ -87,11 +87,11 @@ public final class Class200 {
 	@OriginalMember(owner = "client!qu", name = "a", descriptor = "(Lclient!iv;II)V")
 	private void method4537(@OriginalArg(0) Packet arg0, @OriginalArg(1) int arg1) {
 		if (arg1 == 1) {
-			this.aChar3 = Static260.method3771(arg0.g1s());
+			this.aChar3 = CP1252StringTools.CP1252ToUTF8(arg0.g1s());
 		} else if (arg1 == 2) {
-			this.aChar4 = Static260.method3771(arg0.g1s());
+			this.aChar4 = CP1252StringTools.CP1252ToUTF8(arg0.g1s());
 		} else if (arg1 == 3) {
-			this.aString58 = arg0.readValidStringAtCurrentPosition();
+			this.aString58 = arg0.gStringCP1252ToUTF8();
 		} else if (arg1 == 4) {
 			this.anInt5767 = arg0.g4();
 		} else if (arg1 == 5 || arg1 == 6) {
@@ -101,7 +101,7 @@ public final class Class200 {
 				@Pc(49) int local49 = arg0.g4();
 				@Pc(61) Class4 local61;
 				if (arg1 == 5) {
-					local61 = new Class4_Sub7(arg0.readValidStringAtCurrentPosition());
+					local61 = new Class4_Sub7(arg0.gStringCP1252ToUTF8());
 				} else {
 					local61 = new Class4_Sub37(arg0.g4());
 				}

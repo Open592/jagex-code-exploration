@@ -27,7 +27,7 @@ public final class Class4_Sub1_Sub18 extends Class4_Sub1 {
 			@Pc(46) int local46 = arg0.g3();
 			@Pc(55) Class4 local55;
 			if (local42) {
-				local55 = new Class4_Sub7(arg0.readValidStringAtCurrentPosition());
+				local55 = new Class4_Sub7(arg0.gStringCP1252ToUTF8());
 			} else {
 				local55 = new Class4_Sub37(arg0.g4());
 			}

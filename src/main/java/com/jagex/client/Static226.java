@@ -57,7 +57,7 @@ public final class Static226 {
 		while (local14.pos < local36) {
 			@Pc(162) int local162 = local14.g2();
 			if (local162 == 3) {
-				local9.aStringArray1[local84] = local14.readValidStringAtCurrentPosition().intern();
+				local9.aStringArray1[local84] = local14.gStringCP1252ToUTF8().intern();
 			} else if (local162 >= 100 || local162 == 21 || local162 == 38 || local162 == 39) {
 				local9.anIntArray6[local84] = local14.g1();
 			} else {

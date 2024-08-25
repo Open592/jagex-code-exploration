@@ -589,11 +589,11 @@ public final class Class264 {
 				}
 			}
 		} else if (arg1 == 2) {
-			this.aString70 = arg0.readValidStringAtCurrentPosition();
+			this.aString70 = arg0.gStringCP1252ToUTF8();
 		} else if (arg1 == 12) {
 			this.anInt7201 = arg0.g1();
 		} else if (arg1 >= 30 && arg1 < 35) {
-			this.aStringArray41[arg1 - 30] = arg0.readValidStringAtCurrentPosition();
+			this.aStringArray41[arg1 - 30] = arg0.gStringCP1252ToUTF8();
 		} else if (arg1 == 40) {
 			local31 = arg0.g1();
 			this.aShortArray248 = new short[local31];
@@ -743,7 +743,7 @@ public final class Class264 {
 			} else if (arg1 == 143) {
 				this.aBoolean680 = true;
 			} else if (arg1 >= 150 && arg1 < 155) {
-				this.aStringArray41[arg1 - 150] = arg0.readValidStringAtCurrentPosition();
+				this.aStringArray41[arg1 - 150] = arg0.gStringCP1252ToUTF8();
 				if (!this.aClass240_2.aBoolean604) {
 					this.aStringArray41[arg1 - 150] = null;
 				}
@@ -769,7 +769,7 @@ public final class Class264 {
 					@Pc(489) int local489 = arg0.g3();
 					@Pc(498) Class4 local498;
 					if (local485) {
-						local498 = new Class4_Sub7(arg0.readValidStringAtCurrentPosition());
+						local498 = new Class4_Sub7(arg0.gStringCP1252ToUTF8());
 					} else {
 						local498 = new Class4_Sub37(arg0.g4());
 					}

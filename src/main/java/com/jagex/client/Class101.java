@@ -159,7 +159,7 @@ public final class Class101 {
 								this.anIntArray203[local88] = arg0.g4();
 								this.anIntArray202[local88] = arg0.g4();
 								this.anIntArray199[local88] = arg0.g4();
-								this.aStringArray13[local88] = arg0.readValidStringAtCurrentPosition();
+								this.aStringArray13[local88] = arg0.gStringCP1252ToUTF8();
 							}
 						} else if (arg1 == 249) {
 							local82 = arg0.g1();
@@ -172,7 +172,7 @@ public final class Class101 {
 								@Pc(226) int local226 = arg0.g3();
 								@Pc(235) Class4 local235;
 								if (local222) {
-									local235 = new Class4_Sub7(arg0.readValidStringAtCurrentPosition());
+									local235 = new Class4_Sub7(arg0.gStringCP1252ToUTF8());
 								} else {
 									local235 = new Class4_Sub37(arg0.g4());
 								}
@@ -191,7 +191,7 @@ public final class Class101 {
 						this.anIntArray204[local88] = arg0.g4();
 						this.anIntArray201[local88] = arg0.g4();
 						this.anIntArray200[local88] = arg0.g4();
-						this.aStringArray12[local88] = arg0.readValidStringAtCurrentPosition();
+						this.aStringArray12[local88] = arg0.gStringCP1252ToUTF8();
 					}
 					return;
 				}

@@ -178,7 +178,7 @@ public final class Class244_Sub1 extends Class244 implements KeyListener, FocusL
 	@Override
 	public synchronized void keyTyped(@OriginalArg(0) KeyEvent arg0) {
 		@Pc(6) char local6 = arg0.getKeyChar();
-		if (local6 != '\u0000' && Static26.method521(local6)) {
+		if (local6 != '\u0000' && CP1252StringTools.isValidCP1252Character(local6)) {
 			this.method5492(2, local6, -1);
 			arg0.consume();
 		}

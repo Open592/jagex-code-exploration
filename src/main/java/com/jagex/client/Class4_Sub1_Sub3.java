@@ -124,7 +124,7 @@ public final class Class4_Sub1_Sub3 extends Class4_Sub1 {
 	@OriginalMember(owner = "client!au", name = "a", descriptor = "(Lclient!iv;IZ)V")
 	private void method235(@OriginalArg(0) Packet arg0, @OriginalArg(1) int arg1) {
 		if (arg1 == 1) {
-			this.aStringArray3 = Static113.method2058(arg0.readValidStringAtCurrentPosition(), '<');
+			this.aStringArray3 = Static113.method2058(arg0.gStringCP1252ToUTF8(), '<');
 			return;
 		}
 		@Pc(22) int local22;

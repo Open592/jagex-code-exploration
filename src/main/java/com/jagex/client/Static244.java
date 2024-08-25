@@ -63,7 +63,7 @@ public final class Static244 {
 			local49 = Static146.aClass4_Sub12_Sub1_3.g2();
 			local55 = Static146.aClass4_Sub12_Sub1_3.g1();
 			local126 = Static146.aClass4_Sub12_Sub1_3.g3();
-			@Pc(130) String local130 = Static146.aClass4_Sub12_Sub1_3.readValidStringAtCurrentPosition();
+			@Pc(130) String local130 = Static146.aClass4_Sub12_Sub1_3.gStringCP1252ToUTF8();
 			Static212.method3207(local126, local49, Static113.anInt2426, local16, local40, local55, local130);
 			return;
 		}

@@ -599,7 +599,7 @@ public final class Class202 {
 				this.method4587(arg0);
 			}
 		} else if (arg1 == 2) {
-			this.aString59 = arg0.readValidStringAtCurrentPosition();
+			this.aString59 = arg0.gStringCP1252ToUTF8();
 		} else if (arg1 == 14) {
 			this.anInt5816 = arg0.g1();
 		} else if (arg1 == 15) {
@@ -631,7 +631,7 @@ public final class Class202 {
 		} else if (arg1 == 39) {
 			this.anInt5825 = arg0.g1s() * 5;
 		} else if (arg1 >= 30 && arg1 < 35) {
-			this.aStringArray28[arg1 - 30] = arg0.readValidStringAtCurrentPosition();
+			this.aStringArray28[arg1 - 30] = arg0.gStringCP1252ToUTF8();
 		} else if (arg1 == 40) {
 			local26 = arg0.g1();
 			this.aShortArray204 = new short[local26];
@@ -770,7 +770,7 @@ public final class Class202 {
 		} else if (arg1 == 107) {
 			this.anInt5807 = arg0.g2();
 		} else if (arg1 >= 150 && arg1 < 155) {
-			this.aStringArray28[arg1 - 150] = arg0.readValidStringAtCurrentPosition();
+			this.aStringArray28[arg1 - 150] = arg0.gStringCP1252ToUTF8();
 			if (!this.aClass262_4.aBoolean677) {
 				this.aStringArray28[arg1 - 150] = null;
 			}
@@ -799,7 +799,7 @@ public final class Class202 {
 				local57 = arg0.g3();
 				@Pc(766) Class4 local766;
 				if (local753) {
-					local766 = new Class4_Sub7(arg0.readValidStringAtCurrentPosition());
+					local766 = new Class4_Sub7(arg0.gStringCP1252ToUTF8());
 				} else {
 					local766 = new Class4_Sub37(arg0.g4());
 				}
