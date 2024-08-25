@@ -15,17 +15,6 @@ public final class Static179 {
 	@OriginalMember(owner = "client!ja", name = "e", descriptor = "Ljava/lang/Boolean;")
 	public static Boolean aBoolean288 = Boolean.FALSE;
 
-	@OriginalMember(owner = "client!ja", name = "a", descriptor = "(IB[BI)I")
-	public static int method2846(@OriginalArg(0) int arg0, @OriginalArg(2) byte[] arg1, @OriginalArg(3) int arg2) {
-		@Pc(7) int local7 = -1;
-
-		for (@Pc(9) int local9 = arg0; local9 < arg2; local9++) {
-			local7 = Class152_Sub2.CRCTable32[(local7 ^ arg1[local9]) & 0xFF] ^ local7 >>> 8;
-		}
-
-		return ~local7;
-	}
-
 	@OriginalMember(owner = "client!ja", name = "a", descriptor = "(IIZLjava/lang/String;ZZIIJLjava/lang/String;I)V")
 	public static void method2848(@OriginalArg(1) int arg0, @OriginalArg(2) boolean arg1, @OriginalArg(3) String arg2, @OriginalArg(4) boolean arg3, @OriginalArg(5) boolean arg4, @OriginalArg(6) int arg5, @OriginalArg(7) int arg6, @OriginalArg(8) long arg7, @OriginalArg(9) String arg8, @OriginalArg(10) int arg9) {
 		@Pc(8) int[] local8 = new int[4];

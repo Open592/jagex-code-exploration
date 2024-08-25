@@ -6,7 +6,7 @@ import org.openrs2.deob.annotation.Pc;
 public final class Static240 {
 
 	@OriginalMember(owner = "client!md", name = "e", descriptor = "Lclient!al;")
-	public static ServerConnection aServerConnection_14;
+	public static ServerConnection serverConnection;
 
 	@OriginalMember(owner = "client!md", name = "a", descriptor = "[S")
 	public static final short[] aShortArray251 = new short[] { 960, 957, -21568, -21571, 22464 };

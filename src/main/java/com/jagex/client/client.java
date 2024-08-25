@@ -136,18 +136,18 @@ public final class client extends GameShell {
 			}
 
 			if (Static78.clientInitializationStep == 2) {
-				Static240.aServerConnection_14 = new ServerConnection((Socket) Static30.connectionInitializationMessage.output, Static206.signLink);
+				Static240.serverConnection = new ServerConnection((Socket) Static30.connectionInitializationMessage.output, Static206.signLink);
 				@Pc(194) Packet local194 = new Packet(5);
 				local194.p1(Static153.aClass60_2.anInt1812);
 				local194.p4(592);
-				Static240.aServerConnection_14.enqueueClientMessage(5, local194.data);
+				Static240.serverConnection.enqueueClientMessage(5, local194.data);
 				Static78.clientInitializationStep++;
 				Static327.connectionInitializationTimestamp = MonotonicClock.getCurrentTimeInMilliseconds();
 			}
 
 			if (Static78.clientInitializationStep == 3) {
-				if (Static403.anInt6667 == 0 || Static403.anInt6667 == 5 || Static240.aServerConnection_14.getEstimatedBytesAvailable() > 0) {
-					@Pc(259) int response = Static240.aServerConnection_14.readByteFromServer();
+				if (Static403.anInt6667 == 0 || Static403.anInt6667 == 5 || Static240.serverConnection.getEstimatedBytesAvailable() > 0) {
+					@Pc(259) int response = Static240.serverConnection.readByteFromServer();
 
 					if (response != 0) {
 						this.method903(response);
@@ -163,10 +163,10 @@ public final class client extends GameShell {
 
 			if (Static78.clientInitializationStep == 4) {
 				@Pc(293) boolean local293 = Static403.anInt6667 == 5 || Static403.anInt6667 == 10 || Static403.anInt6667 == 28;
-				Static261.aClass255_2.method5461(Static240.aServerConnection_14, !local293);
+				Static261.aClass255_2.method5461(Static240.serverConnection, !local293);
 				Static30.connectionInitializationMessage = null;
 				Static78.clientInitializationStep = 0;
-				Static240.aServerConnection_14 = null;
+				Static240.serverConnection = null;
 			}
 		} catch (@Pc(312) IOException local312) {
 			this.method903(1002);
@@ -688,7 +688,7 @@ public final class client extends GameShell {
 
 	@OriginalMember(owner = "client!client", name = "a", descriptor = "(II)V")
 	private void method903(@OriginalArg(1) int arg0) {
-		Static240.aServerConnection_14 = null;
+		Static240.serverConnection = null;
 		Static30.connectionInitializationMessage = null;
 		Static261.aClass255_2.clientInitializationAttemptCount++;
 		Static261.aClass255_2.anInt7063 = arg0;

@@ -486,7 +486,7 @@ public class Packet extends Class4 {
 
 	@OriginalMember(owner = "client!iv", name = "f", descriptor = "(II)I")
 	public final int method2525(@OriginalArg(0) int arg0) {
-		@Pc(16) int local16 = Static179.method2846(arg0, this.data, this.pos);
+		@Pc(16) int local16 = CRC32Checksum.calculateChecksum(this.data, this.pos, arg0);
 
 		this.p4(local16);
 
@@ -497,7 +497,7 @@ public class Packet extends Class4 {
 	public final boolean method2500() {
 		this.pos -= 4;
 
-		@Pc(17) int local17 = Static179.method2846(0, this.data, this.pos);
+		@Pc(17) int local17 = CRC32Checksum.calculateChecksum(this.data, this.pos, 0);
 		@Pc(21) int local21 = this.g4();
 
 		return local21 == local17;
