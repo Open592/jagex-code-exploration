@@ -59,9 +59,9 @@ public final class Static387 {
 				}
 				Static125.aServerConnection_5 = new ServerConnection((Socket) Static36.aClass199_3.output, Static206.signLink);
 				Static36.aClass199_3 = null;
-				Static125.aServerConnection_5.queueClientMessage(Static3.aClass4_Sub12_Sub1_5.pos, Static3.aClass4_Sub12_Sub1_5.data);
+				Static125.aServerConnection_5.enqueueClientMessage(Static3.aClass4_Sub12_Sub1_5.pos, Static3.aClass4_Sub12_Sub1_5.data);
 				Static329.method4427();
-				local120 = Static125.aServerConnection_5.readByte();
+				local120 = Static125.aServerConnection_5.readByteFromServer();
 				Static329.method4427();
 				if (local120 != 21) {
 					Static249.anInt4623 = local120;
@@ -73,15 +73,15 @@ public final class Static387 {
 				Static354.anInt6183 = 3;
 			}
 			if (Static354.anInt6183 == 3) {
-				if (Static125.aServerConnection_5.method133() < 1) {
+				if (Static125.aServerConnection_5.getEstimatedBytesAvailable() < 1) {
 					return;
 				}
-				Static206.aStringArray16 = new String[Static125.aServerConnection_5.readByte()];
+				Static206.aStringArray16 = new String[Static125.aServerConnection_5.readByteFromServer()];
 				Static354.anInt6183 = 4;
 			}
-			if (Static354.anInt6183 == 4 && Static125.aServerConnection_5.method133() >= Static206.aStringArray16.length * 8) {
+			if (Static354.anInt6183 == 4 && Static125.aServerConnection_5.getEstimatedBytesAvailable() >= Static206.aStringArray16.length * 8) {
 				Static146.aClass4_Sub12_Sub1_3.pos = 0;
-				Static125.aServerConnection_5.method131(0, Static206.aStringArray16.length * 8, Static146.aClass4_Sub12_Sub1_3.data);
+				Static125.aServerConnection_5.readBytesFromServer(0, Static206.aStringArray16.length * 8, Static146.aClass4_Sub12_Sub1_3.data);
 				for (local120 = 0; local120 < Static206.aStringArray16.length; local120++) {
 					Static206.aStringArray16[local120] = Static44.method763(Static146.aClass4_Sub12_Sub1_3.g8());
 				}

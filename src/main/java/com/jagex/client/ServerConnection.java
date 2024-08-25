@@ -29,10 +29,10 @@ public final class ServerConnection implements Runnable {
 	private boolean connectionNotHealthy = false;
 
 	@OriginalMember(owner = "client!al", name = "c", descriptor = "I")
-	private int anInt170 = 0;
+	private int writePointer = 0;
 
 	@OriginalMember(owner = "client!al", name = "t", descriptor = "I")
-	private int anInt183 = 0;
+	private int readPointer = 0;
 
 	@OriginalMember(owner = "client!al", name = "w", descriptor = "Ljava/net/Socket;")
 	private final Socket connection;
@@ -62,34 +62,39 @@ public final class ServerConnection implements Runnable {
 		this.shutdown();
 	}
 
+	@OriginalMember(owner = "client!al", name = "d", descriptor = "(I)I")
+	public int readByteFromServer() throws IOException {
+		return this.isShuttingDown ? 0 : this.inputStream.read();
+	}
+
 	@OriginalMember(owner = "client!al", name = "a", descriptor = "(IBI[B)V")
-	public void method131(@OriginalArg(0) int arg0, @OriginalArg(2) int arg1, @OriginalArg(3) byte[] arg2) throws IOException {
+	public void readBytesFromServer(@OriginalArg(0) int offset, @OriginalArg(2) int length, @OriginalArg(3) byte[] buffer) throws IOException {
 		if (this.isShuttingDown) {
 			return;
 		}
 
-		while (arg1 > 0) {
-			@Pc(23) int bytesRead = this.inputStream.read(arg2, arg0, arg1);
+		while (length > 0) {
+			@Pc(23) int bytesRead = this.inputStream.read(buffer, offset, length);
 
 			if (bytesRead <= 0) {
 				throw new EOFException();
 			}
 
-			arg1 -= bytesRead;
-			arg0 += bytesRead;
+			length -= bytesRead;
+			offset += bytesRead;
 		}
 	}
 
 	@OriginalMember(owner = "client!al", name = "a", descriptor = "(I)V")
-	public void method132() {
+	public void breakConnection() {
 		if (!this.isShuttingDown) {
-			this.inputStream = new InputStream_Sub1();
-			this.outputStream = new OutputStream_Sub1();
+			this.inputStream = new NOOPInputStream();
+			this.outputStream = new NOOPOutputStream();
 		}
 	}
 
 	@OriginalMember(owner = "client!al", name = "b", descriptor = "(I)I")
-	public int method133() throws IOException {
+	public int getEstimatedBytesAvailable() throws IOException {
 		return this.isShuttingDown ? 0 : this.inputStream.available();
 	}
 
@@ -120,24 +125,19 @@ public final class ServerConnection implements Runnable {
 		this.Js5NetThreadMessage = null;
 	}
 
-	@OriginalMember(owner = "client!al", name = "d", descriptor = "(I)I")
-	public int readByte() throws IOException {
-		return this.isShuttingDown ? 0 : this.inputStream.read();
-	}
-
 	@OriginalMember(owner = "client!al", name = "run", descriptor = "()V")
 	@Override
 	public void run() {
 		try {
 			while (true) {
-				label80: {
-					@Pc(40) int local40;
-					@Pc(28) int local28;
+				writeBytes: {
+					@Pc(40) int length;
+					@Pc(28) int offset;
 
 					synchronized (this) {
-						if (this.anInt183 == this.anInt170) {
+						if (this.readPointer == this.writePointer) {
 							if (this.isShuttingDown) {
-								break label80;
+								break writeBytes;
 							}
 
 							try {
@@ -146,29 +146,29 @@ public final class ServerConnection implements Runnable {
 							}
 						}
 
-						local28 = this.anInt170;
+						offset = this.writePointer;
 
-						if (this.anInt170 <= this.anInt183) {
-							local40 = this.anInt183 - this.anInt170;
+						if (this.writePointer <= this.readPointer) {
+							length = this.readPointer - this.writePointer;
 						} else {
-							local40 = 5000 - this.anInt170;
+							length = 5000 - this.writePointer;
 						}
 					}
 
-					if (local40 <= 0) {
+					if (length <= 0) {
 						continue;
 					}
 
 					try {
-						this.outputStream.write(this.buffer, local28, local40);
+						this.outputStream.write(this.buffer, offset, length);
 					} catch (@Pc(65) IOException e) {
 						this.connectionNotHealthy = true;
 					}
 
-					this.anInt170 = (local40 + this.anInt170) % 5000;
+					this.writePointer = (length + this.writePointer) % 5000;
 
 					try {
-						if (this.anInt183 == this.anInt170) {
+						if (this.readPointer == this.writePointer) {
 							this.outputStream.flush();
 						}
 					} catch (@Pc(86) IOException e) {
@@ -203,7 +203,7 @@ public final class ServerConnection implements Runnable {
 	}
 
 	@OriginalMember(owner = "client!al", name = "e", descriptor = "(I)V")
-	public void method141() throws IOException {
+	public void checkConnectionHealth() throws IOException {
 		if (!this.isShuttingDown && this.connectionNotHealthy) {
 			this.connectionNotHealthy = false;
 			throw new IOException();
@@ -211,7 +211,7 @@ public final class ServerConnection implements Runnable {
 	}
 
 	@OriginalMember(owner = "client!al", name = "a", descriptor = "(II[BI)V")
-	public void queueClientMessage(@OriginalArg(0) int length, @OriginalArg(2) byte[] bytes) throws IOException {
+	public void enqueueClientMessage(@OriginalArg(0) int length, @OriginalArg(2) byte[] bytes) throws IOException {
 		if (this.isShuttingDown) {
 			return;
 		}
@@ -227,9 +227,9 @@ public final class ServerConnection implements Runnable {
 
 		synchronized (this) {
 			for (@Pc(38) int i = 0; i < length; i++) {
-				this.buffer[this.anInt183] = bytes[i];
-				this.anInt183 = (this.anInt183 + 1) % 5000;
-				if (this.anInt183 == (this.anInt170 + 4900) % 5000) {
+				this.buffer[this.readPointer] = bytes[i];
+				this.readPointer = (this.readPointer + 1) % 5000;
+				if (this.readPointer == (this.writePointer + 4900) % 5000) {
 					throw new IOException();
 				}
 			}

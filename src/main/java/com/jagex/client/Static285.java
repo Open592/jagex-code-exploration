@@ -50,9 +50,9 @@ public final class Static285 {
 				}
 				Static125.aServerConnection_5 = new ServerConnection((Socket) Static36.aClass199_3.output, Static206.signLink);
 				Static36.aClass199_3 = null;
-				Static125.aServerConnection_5.queueClientMessage(Static3.aClass4_Sub12_Sub1_5.pos, Static3.aClass4_Sub12_Sub1_5.data);
+				Static125.aServerConnection_5.enqueueClientMessage(Static3.aClass4_Sub12_Sub1_5.pos, Static3.aClass4_Sub12_Sub1_5.data);
 				Static329.method4427();
-				local118 = Static125.aServerConnection_5.readByte();
+				local118 = Static125.aServerConnection_5.readByteFromServer();
 				Static329.method4427();
 				if (local118 != 101) {
 					Static296.anInt5302 = local118;
@@ -63,8 +63,8 @@ public final class Static285 {
 				}
 				Static405.anInt6682 = 3;
 			}
-			if (Static405.anInt6682 == 3 && Static125.aServerConnection_5.method133() >= 2) {
-				local118 = Static125.aServerConnection_5.readByte() << 8 | Static125.aServerConnection_5.readByte();
+			if (Static405.anInt6682 == 3 && Static125.aServerConnection_5.getEstimatedBytesAvailable() >= 2) {
+				local118 = Static125.aServerConnection_5.readByteFromServer() << 8 | Static125.aServerConnection_5.readByteFromServer();
 				Static162.method5279(local118);
 				if (Static56.anInt1028 == -1) {
 					Static405.anInt6682 = 0;

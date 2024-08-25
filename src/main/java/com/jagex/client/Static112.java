@@ -139,9 +139,9 @@ public final class Static112 {
 				Static3.aClass4_Sub12_Sub1_5.pos = 0;
 				Static3.aClass4_Sub12_Sub1_5.p1(Static153.aClass60_9.anInt1812);
 				Static3.aClass4_Sub12_Sub1_5.p4(local78);
-				Static125.aServerConnection_5.queueClientMessage(Static3.aClass4_Sub12_Sub1_5.pos, Static3.aClass4_Sub12_Sub1_5.data);
+				Static125.aServerConnection_5.enqueueClientMessage(Static3.aClass4_Sub12_Sub1_5.pos, Static3.aClass4_Sub12_Sub1_5.data);
 				Static329.method4427();
-				local110 = Static125.aServerConnection_5.readByte();
+				local110 = Static125.aServerConnection_5.readByteFromServer();
 				Static329.method4427();
 				if (local110 != 0) {
 					return Static28.method526(local110);
@@ -149,12 +149,12 @@ public final class Static112 {
 				Static50.anInt862 = 2;
 			}
 			if (Static50.anInt862 == 2) {
-				if (Static125.aServerConnection_5.method133() < 2) {
+				if (Static125.aServerConnection_5.getEstimatedBytesAvailable() < 2) {
 					return -1;
 				}
-				Static422.anInt6950 = Static125.aServerConnection_5.readByte();
+				Static422.anInt6950 = Static125.aServerConnection_5.readByteFromServer();
 				Static422.anInt6950 <<= 0x8;
-				Static422.anInt6950 += Static125.aServerConnection_5.readByte();
+				Static422.anInt6950 += Static125.aServerConnection_5.readByteFromServer();
 				Static50.anInt862 = 3;
 				Static273.aByteArray64 = new byte[Static422.anInt6950];
 				Static215.anInt3980 = 0;
@@ -162,14 +162,14 @@ public final class Static112 {
 			if (Static50.anInt862 != 3) {
 				return -1;
 			}
-			local78 = Static125.aServerConnection_5.method133();
+			local78 = Static125.aServerConnection_5.getEstimatedBytesAvailable();
 			if (local78 < 1) {
 				return -1;
 			}
 			if (local78 > Static422.anInt6950 - Static215.anInt3980) {
 				local78 = Static422.anInt6950 - Static215.anInt3980;
 			}
-			Static125.aServerConnection_5.method131(Static215.anInt3980, local78, Static273.aByteArray64);
+			Static125.aServerConnection_5.readBytesFromServer(Static215.anInt3980, local78, Static273.aByteArray64);
 			Static215.anInt3980 += local78;
 			if (Static422.anInt6950 > Static215.anInt3980) {
 				return -1;

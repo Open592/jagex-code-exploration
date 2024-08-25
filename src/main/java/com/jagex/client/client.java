@@ -140,14 +140,14 @@ public final class client extends GameShell {
 				@Pc(194) Packet local194 = new Packet(5);
 				local194.p1(Static153.aClass60_2.anInt1812);
 				local194.p4(592);
-				Static240.aServerConnection_14.queueClientMessage(5, local194.data);
+				Static240.aServerConnection_14.enqueueClientMessage(5, local194.data);
 				Static78.clientInitializationStep++;
 				Static327.connectionInitializationTimestamp = MonotonicClock.getCurrentTimeInMilliseconds();
 			}
 
 			if (Static78.clientInitializationStep == 3) {
-				if (Static403.anInt6667 == 0 || Static403.anInt6667 == 5 || Static240.aServerConnection_14.method133() > 0) {
-					@Pc(259) int response = Static240.aServerConnection_14.readByte();
+				if (Static403.anInt6667 == 0 || Static403.anInt6667 == 5 || Static240.aServerConnection_14.getEstimatedBytesAvailable() > 0) {
+					@Pc(259) int response = Static240.aServerConnection_14.readByteFromServer();
 
 					if (response != 0) {
 						this.method903(response);
