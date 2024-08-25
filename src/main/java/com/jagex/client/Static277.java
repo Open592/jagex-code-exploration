@@ -18,26 +18,6 @@ public final class Static277 {
 	@OriginalMember(owner = "client!oa", name = "h", descriptor = "[I")
 	public static final int[] anIntArray337 = new int[32];
 
-	@OriginalMember(owner = "client!oa", name = "a", descriptor = "(II)[B")
-	public static synchronized byte[] method3931(@OriginalArg(1) int arg0) {
-		@Pc(21) byte[] local21;
-		if (arg0 == 100 && Static442.anInt7240 > 0) {
-			local21 = Static386.aByteArrayArray14[--Static442.anInt7240];
-			Static386.aByteArrayArray14[Static442.anInt7240] = null;
-			return local21;
-		} else if (arg0 == 5000 && Static388.anInt6496 > 0) {
-			local21 = Static116.aByteArrayArray21[--Static388.anInt6496];
-			Static116.aByteArrayArray21[Static388.anInt6496] = null;
-			return local21;
-		} else if (arg0 == 30000 && Static352.anInt6108 > 0) {
-			local21 = Static251.aByteArrayArray17[--Static352.anInt6108];
-			Static251.aByteArrayArray17[Static352.anInt6108] = null;
-			return local21;
-		} else {
-			return new byte[arg0];
-		}
-	}
-
 	@OriginalMember(owner = "client!oa", name = "a", descriptor = "(I)V")
 	public static void method3932() {
 		Static228.aClass57_11 = null;

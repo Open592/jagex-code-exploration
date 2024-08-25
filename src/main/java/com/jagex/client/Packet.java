@@ -20,8 +20,8 @@ public class Packet extends Class4 {
 	}
 
 	@OriginalMember(owner = "client!iv", name = "<init>", descriptor = "(I)V")
-	public Packet(@OriginalArg(0) int arg0) {
-		this.data = Static277.method3931(arg0);
+	public Packet(@OriginalArg(0) int size) {
+		this.data = BufferPool.allocate(size);
 		this.pos = 0;
 	}
 

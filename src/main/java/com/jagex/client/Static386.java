@@ -18,9 +18,6 @@ public final class Static386 {
 	@OriginalMember(owner = "client!tm", name = "i", descriptor = "I")
 	public static int anInt3967 = -1;
 
-	@OriginalMember(owner = "client!tm", name = "k", descriptor = "[[B")
-	public static final byte[][] aByteArrayArray14 = new byte[1000][];
-
 	@OriginalMember(owner = "client!tm", name = "p", descriptor = "Lclient!gk;")
 	public static final Class83 aClass83_80 = new Class83("Your friend list is full. Max of 100 for free users, and 200 for members.", "Deine Freunde-Liste ist voll! Maximale Einträge: Mitglieder 200/freie Spieler 100", "Votre liste d'amis est pleine (100 noms maximum pour la version gratuite et 200 pour les abonnés).", "Sua lista de amigos está cheia. O limite é 100 para os usuários não pagantes e 200 para os membros.");
 

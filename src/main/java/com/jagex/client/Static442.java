@@ -12,9 +12,6 @@ public final class Static442 {
 	@OriginalMember(owner = "client!wh", name = "nb", descriptor = "J")
 	public static long aLong219 = 0L;
 
-	@OriginalMember(owner = "client!wh", name = "wb", descriptor = "I")
-	public static int anInt7240 = 0;
-
 	@OriginalMember(owner = "client!wh", name = "a", descriptor = "(III)V")
 	public static void method5573(@OriginalArg(1) int arg0, @OriginalArg(2) int arg1) {
 		@Pc(8) Class4_Sub1_Sub11 local8 = Static405.method5222(0, 15);
