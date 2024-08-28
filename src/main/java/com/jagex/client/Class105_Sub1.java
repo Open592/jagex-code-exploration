@@ -9,7 +9,7 @@ public final class Class105_Sub1 extends Class105 {
 
 	@OriginalMember(owner = "client!us", name = "a", descriptor = "(Lclient!mh;I)Lclient!mh;")
 	@Override
-	public Class4_Sub1_Sub9 method5276(@OriginalArg(0) Class4_Sub1_Sub9 arg0) {
-		return new Class4_Sub1_Sub9_Sub1(arg0.anInterface2_3, arg0.method2571(), arg0.anInt3025);
+	public Node_Sub1_Sub9 method5276(@OriginalArg(0) Node_Sub1_Sub9 arg0) {
+		return new Node_Sub1_Sub9_Sub1(arg0.anInterface2_3, arg0.method2571(), arg0.anInt3025);
 	}
 }

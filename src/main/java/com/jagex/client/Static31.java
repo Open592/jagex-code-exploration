@@ -10,7 +10,7 @@ public final class Static31 {
 	public static final int[] anIntArray35 = new int[1000];
 
 	@OriginalMember(owner = "client!bj", name = "a", descriptor = "(Lclient!cw;I)V")
-	public static void method617(@OriginalArg(0) Class4_Sub12_Sub1 arg0) {
+	public static void method617(@OriginalArg(0) Node_Sub12_Sub1 arg0) {
 		@Pc(7) int local7 = 0;
 		arg0.method1136();
 		@Pc(20) int local20;

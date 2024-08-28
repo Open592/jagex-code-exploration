@@ -60,9 +60,9 @@ public final class Static153 {
 	@OriginalMember(owner = "client!hp", name = "a", descriptor = "(IIIIIZ)V")
 	public static void method2603(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(3) int arg2, @OriginalArg(4) int arg3, @OriginalArg(5) boolean arg4) {
 		@Pc(19) long local19 = (long) (arg2 | (arg4 ? Integer.MIN_VALUE : 0));
-		@Pc(25) Class4_Sub25 local25 = (Class4_Sub25) Static208.aClass102_11.method2700(local19);
+		@Pc(25) Node_Sub25 local25 = (Node_Sub25) Static208.aClass102_11.method2700(local19);
 		if (local25 == null) {
-			local25 = new Class4_Sub25();
+			local25 = new Node_Sub25();
 			Static208.aClass102_11.method2703(local19, local25);
 		}
 		if (local25.anIntArray230.length <= arg0) {

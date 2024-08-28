@@ -29,13 +29,13 @@ public final class Static245 {
 	}
 
 	@OriginalMember(owner = "client!mj", name = "a", descriptor = "(Lclient!vu;Lclient!vu;I)V")
-	public static void method3597(@OriginalArg(0) Class4 arg0, @OriginalArg(1) Class4 arg1) {
-		if (arg1.aClass4_261 != null) {
+	public static void method3597(@OriginalArg(0) Node arg0, @OriginalArg(1) Node arg1) {
+		if (arg1.aNode_261 != null) {
 			arg1.method5684();
 		}
-		arg1.aClass4_261 = arg0.aClass4_261;
-		arg1.aClass4_262 = arg0;
-		arg1.aClass4_261.aClass4_262 = arg1;
-		arg1.aClass4_262.aClass4_261 = arg1;
+		arg1.aNode_261 = arg0.aNode_261;
+		arg1.aNode_262 = arg0;
+		arg1.aNode_261.aNode_262 = arg1;
+		arg1.aNode_262.aNode_261 = arg1;
 	}
 }

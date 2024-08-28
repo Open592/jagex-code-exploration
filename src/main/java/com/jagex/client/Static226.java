@@ -21,8 +21,8 @@ public final class Static226 {
 	public static final Class215 aClass215_47 = new Class215(49, 6);
 
 	@OriginalMember(owner = "client!ll", name = "a", descriptor = "(B[B)Lclient!ae;")
-	public static Class4_Sub1_Sub1 method3441(@OriginalArg(1) byte[] arg0) {
-		@Pc(9) Class4_Sub1_Sub1 local9 = new Class4_Sub1_Sub1();
+	public static Node_Sub1_Sub1 method3441(@OriginalArg(1) byte[] arg0) {
+		@Pc(9) Node_Sub1_Sub1 local9 = new Node_Sub1_Sub1();
 		@Pc(14) Packet local14 = new Packet(arg0);
 		local14.pos = local14.data.length - 2;
 		@Pc(25) int local25 = local14.g2();
@@ -44,7 +44,7 @@ public final class Static226 {
 				while (local84-- > 0) {
 					@Pc(102) int local102 = local14.g4();
 					@Pc(106) int local106 = local14.g4();
-					local91.method2703((long) local102, new Class4_Sub37(local106));
+					local91.method2703((long) local102, new Node_Sub37(local106));
 				}
 			}
 		}

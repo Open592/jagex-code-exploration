@@ -55,7 +55,7 @@ public final class Class37 {
 			local55 = arg6.anIntArray295[arg0];
 			local59 = local55 >>> 16;
 			@Pc(63) int local63 = local55 & 0xFFFF;
-			@Pc(68) Class4_Sub1_Sub17 local68 = arg9.method1391(local59);
+			@Pc(68) Node_Sub1_Sub17 local68 = arg9.method1391(local59);
 			if (local68 != null) {
 				local34 = local68.method4207(local63) | false;
 				local32 = local68.method4214(local63) | false;
@@ -66,7 +66,7 @@ public final class Class37 {
 				local119 = arg6.anIntArray295[arg1];
 				@Pc(123) int local123 = local119 >>> 16;
 				@Pc(127) int local127 = local119 & 0xFFFF;
-				@Pc(141) Class4_Sub1_Sub17 local141 = local59 == local123 ? local68 : arg9.method1391(local123);
+				@Pc(141) Node_Sub1_Sub17 local141 = local59 == local123 ? local68 : arg9.method1391(local123);
 				if (local141 != null) {
 					local34 |= local141.method4207(local127);
 					local32 |= local141.method4214(local127);
@@ -247,13 +247,13 @@ public final class Class37 {
 		@Pc(359) int local359 = -1;
 		local193 = -1;
 		local198 = 0;
-		@Pc(365) Class4_Sub1_Sub17 local365 = null;
-		@Pc(367) Class4_Sub1_Sub17 local367 = null;
+		@Pc(365) Node_Sub1_Sub17 local365 = null;
+		@Pc(367) Node_Sub1_Sub17 local367 = null;
 		@Pc(369) int local369 = -1;
 		@Pc(371) int local371 = -1;
 		@Pc(373) int local373 = 0;
-		@Pc(375) Class4_Sub1_Sub17 local375 = null;
-		@Pc(377) Class4_Sub1_Sub17 local377 = null;
+		@Pc(375) Node_Sub1_Sub17 local375 = null;
+		@Pc(377) Node_Sub1_Sub17 local377 = null;
 		if (local152) {
 			@Pc(390) int local390;
 			@Pc(450) int local450;
@@ -518,7 +518,7 @@ public final class Class37 {
 			@Pc(28) int local28 = arg0.anIntArray295[arg9];
 			local7 = 2080;
 			@Pc(38) int local38 = local28 >>> 16;
-			@Pc(43) Class4_Sub1_Sub17 local43 = arg1.method1391(local38);
+			@Pc(43) Node_Sub1_Sub17 local43 = arg1.method1391(local38);
 			@Pc(47) int local47 = local28 & 0xFFFF;
 			if (local43 != null) {
 				local13 = local43.method4207(local47) | false;
@@ -530,7 +530,7 @@ public final class Class37 {
 				local93 = arg0.anIntArray295[arg6];
 				@Pc(97) int local97 = local93 >>> 16;
 				@Pc(101) int local101 = local93 & 0xFFFF;
-				@Pc(115) Class4_Sub1_Sub17 local115;
+				@Pc(115) Node_Sub1_Sub17 local115;
 				if (local38 == local97) {
 					local115 = local43;
 				} else {

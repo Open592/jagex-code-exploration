@@ -206,11 +206,11 @@ public final class Static270 {
 						local218 = (local214 >> 14 & 0x3FFF) - Static180.anInt3453;
 						local274 = (local214 & 0x3FFF) - Static86.anInt1771;
 						if (local218 >= 0 && local218 < Static326.anInt5666 && local274 >= 0 && local274 < Static283.anInt5187) {
-							Static181.aClass183_25.method4137(new Class4_Sub37(local210));
+							Static181.aClass183_25.method4137(new Node_Sub37(local210));
 						} else {
 							@Pc(1041) Class157 local1041 = Static348.aClass182_4.method4124(Static292.aClass195_2.anIntArray396[local210]);
 							if (local1041.anIntArray317 != null && local1041.anInt4933 + local218 >= 0 && Static326.anInt5666 > local1041.anInt4936 + local218 && local1041.anInt4925 + local274 >= 0 && Static283.anInt5187 > local1041.anInt4915 + local274) {
-								Static181.aClass183_25.method4137(new Class4_Sub37(local210));
+								Static181.aClass183_25.method4137(new Node_Sub37(local210));
 							}
 						}
 					}

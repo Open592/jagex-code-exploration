@@ -100,7 +100,7 @@ public final class Static437 {
 			Static178.aClass4_Sub42_2 = null;
 			Static419.aLong212 = MonotonicClock.getCurrentTimeInMilliseconds() + 30000L;
 		}
-		@Pc(99) Class4_Sub5 local99 = (Class4_Sub5) Static413.aClass183_47.method4140();
+		@Pc(99) Node_Sub5 local99 = (Node_Sub5) Static413.aClass183_47.method4140();
 		@Pc(119) int local119;
 		@Pc(140) int local140;
 		@Pc(159) int local159;
@@ -111,7 +111,7 @@ public final class Static437 {
 		if (local99 != null || MonotonicClock.getCurrentTimeInMilliseconds() - 2000L > Static292.aLong177) {
 			@Pc(116) boolean local116 = false;
 			local119 = Static3.aClass4_Sub12_Sub1_5.pos;
-			for (@Pc(124) Class4_Sub5 local124 = (Class4_Sub5) Static348.aClass183_42.method4140(); local124 != null && Static3.aClass4_Sub12_Sub1_5.pos - local119 < 240; local124 = (Class4_Sub5) Static348.aClass183_42.method4144()) {
+			for (@Pc(124) Node_Sub5 local124 = (Node_Sub5) Static348.aClass183_42.method4140(); local124 != null && Static3.aClass4_Sub12_Sub1_5.pos - local119 < 240; local124 = (Node_Sub5) Static348.aClass183_42.method4144()) {
 				local124.method5684();
 				local140 = local124.method519();
 				if (local140 < 0) {
@@ -298,7 +298,7 @@ public final class Static437 {
 			Static8.anIntArray7[Static292.anInt5255++ & 0x1F] = local489;
 		}
 		@Pc(840) Class247 local840;
-		for (@Pc(815) Class4_Sub1_Sub11 local815 = Static92.method1614(); local815 != null; local815 = Static92.method1614()) {
+		for (@Pc(815) Node_Sub1_Sub11 local815 = Static92.method1614(); local815 != null; local815 = Static92.method1614()) {
 			local416 = local815.method2606();
 			local140 = local815.method2609();
 			if (local416 == 1) {
@@ -447,18 +447,18 @@ public final class Static437 {
 			Static219.aBoolean588 = false;
 		}
 		while (true) {
-			@Pc(1462) Class4_Sub34 local1462;
+			@Pc(1462) Node_Sub34 local1462;
 			@Pc(1467) Class247 local1467;
 			do {
-				local1462 = (Class4_Sub34) Static237.aClass183_52.method4136();
+				local1462 = (Node_Sub34) Static237.aClass183_52.method4136();
 				if (local1462 == null) {
 					while (true) {
 						do {
-							local1462 = (Class4_Sub34) Static39.aClass183_3.method4136();
+							local1462 = (Node_Sub34) Static39.aClass183_3.method4136();
 							if (local1462 == null) {
 								while (true) {
 									do {
-										local1462 = (Class4_Sub34) Static291.aClass183_35.method4136();
+										local1462 = (Node_Sub34) Static291.aClass183_35.method4136();
 										if (local1462 == null) {
 											if (Static81.aClass247_2 == null) {
 												Static64.anInt1367 = 0;

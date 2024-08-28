@@ -45,7 +45,7 @@ public final class Static365 {
 	@OriginalMember(owner = "client!sl", name = "a", descriptor = "(IIIIZBIFI)[[I")
 	public static int[][] method4927(@OriginalArg(7) float arg0) {
 		@Pc(14) int[][] local14 = new int[256][64];
-		@Pc(18) Class4_Sub6_Sub10 local18 = new Class4_Sub6_Sub10();
+		@Pc(18) Node_Sub6_Sub10 local18 = new Node_Sub6_Sub10();
 		local18.anInt2702 = (int) (arg0 * 4096.0F);
 		local18.aBoolean248 = false;
 		local18.anInt2698 = 3;

@@ -31,7 +31,7 @@ public final class Static122 {
 					if (local18.aClass247Array2 != null) {
 						method2212(local18.anInt6809, local18.aClass247Array2);
 					}
-					@Pc(56) Class4_Sub43 local56 = (Class4_Sub43) Static325.aClass102_29.method2700((long) local18.anInt6809);
+					@Pc(56) Node_Sub43 local56 = (Node_Sub43) Static325.aClass102_29.method2700((long) local18.anInt6809);
 					if (local56 != null) {
 						Static146.method208(local56.anInt6979);
 					}

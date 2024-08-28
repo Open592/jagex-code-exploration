@@ -165,9 +165,9 @@ public final class Static184 {
 					}
 				}
 				if (local373.aClass16_1 instanceof Class16_Sub3_Sub1) {
-					@Pc(1063) Class4_Sub18 local1063 = (Class4_Sub18) Static440.aClass102_40.method2700((long) (local373.anInt2384 | local373.anInt2381 << 28 | local373.anInt2383 << 14));
+					@Pc(1063) Node_Sub18 local1063 = (Node_Sub18) Static440.aClass102_40.method2700((long) (local373.anInt2384 | local373.anInt2381 << 28 | local373.anInt2383 << 14));
 					if (local1063 != null) {
-						for (@Pc(1071) Class4_Sub45 local1071 = (Class4_Sub45) local1063.aClass183_14.method4139(); local1071 != null; local1071 = (Class4_Sub45) local1063.aClass183_14.method4145()) {
+						for (@Pc(1071) Node_Sub45 local1071 = (Node_Sub45) local1063.aClass183_14.method4139(); local1071 != null; local1071 = (Node_Sub45) local1063.aClass183_14.method4145()) {
 							@Pc(1081) Class211 local1081 = Static444.aClass206_3.method4703(local1071.anInt7355);
 							if (!Static341.aBoolean599) {
 								if (Static1.aClass16_Sub1_Sub5_Sub1_1.aByte82 == local373.anInt2381) {

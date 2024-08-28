@@ -29,7 +29,7 @@ public final class Static417 {
 	@OriginalMember(owner = "client!vb", name = "a", descriptor = "(IZIIIFII)[I")
 	public static int[] method5356(@OriginalArg(5) float arg0) {
 		@Pc(11) int[] local11 = new int[2048];
-		@Pc(15) Class4_Sub6_Sub10 local15 = new Class4_Sub6_Sub10();
+		@Pc(15) Node_Sub6_Sub10 local15 = new Node_Sub6_Sub10();
 		local15.anInt2706 = 8;
 		local15.anInt2707 = 35;
 		local15.anInt2698 = 4;

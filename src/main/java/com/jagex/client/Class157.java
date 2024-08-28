@@ -115,7 +115,7 @@ public final class Class157 {
 		if (this.aClass102_24 == null) {
 			return arg0;
 		} else {
-			@Pc(23) Class4_Sub7 local23 = (Class4_Sub7) this.aClass102_24.method2700((long) arg1);
+			@Pc(23) Node_Sub7 local23 = (Node_Sub7) this.aClass102_24.method2700((long) arg1);
 			return local23 == null ? arg0 : local23.aString12;
 		}
 	}
@@ -151,7 +151,7 @@ public final class Class157 {
 		if (this.aClass102_24 == null) {
 			return arg0;
 		} else {
-			@Pc(16) Class4_Sub37 local16 = (Class4_Sub37) this.aClass102_24.method2700((long) arg1);
+			@Pc(16) Node_Sub37 local16 = (Node_Sub37) this.aClass102_24.method2700((long) arg1);
 			return local16 == null ? arg0 : local16.anInt5426;
 		}
 	}
@@ -262,11 +262,11 @@ public final class Class157 {
 									for (local196 = 0; local196 < local189; local196++) {
 										@Pc(215) boolean local215 = arg0.g1() == 1;
 										@Pc(219) int local219 = arg0.g3();
-										@Pc(228) Class4 local228;
+										@Pc(228) Node local228;
 										if (local215) {
-											local228 = new Class4_Sub7(arg0.gStringCP1252ToUTF8());
+											local228 = new Node_Sub7(arg0.gStringCP1252ToUTF8());
 										} else {
-											local228 = new Class4_Sub37(arg0.g4());
+											local228 = new Node_Sub37(arg0.g4());
 										}
 										this.aClass102_24.method2703((long) local219, local228);
 									}

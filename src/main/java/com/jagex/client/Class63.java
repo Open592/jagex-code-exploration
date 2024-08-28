@@ -9,7 +9,7 @@ import org.openrs2.deob.annotation.Pc;
 public final class Class63 {
 
 	@OriginalMember(owner = "client!em", name = "e", descriptor = "Lclient!vu;")
-	private Class4 aClass4_70;
+	private Node aNode_70;
 
 	@OriginalMember(owner = "client!em", name = "f", descriptor = "Lclient!pk;")
 	private Class183 aClass183_5;
@@ -24,25 +24,25 @@ public final class Class63 {
 	}
 
 	@OriginalMember(owner = "client!em", name = "a", descriptor = "(Z)Lclient!vu;")
-	public Class4 method1611() {
-		@Pc(13) Class4 local13 = this.aClass183_5.aClass4_207.aClass4_262;
-		if (local13 == this.aClass183_5.aClass4_207) {
-			this.aClass4_70 = null;
+	public Node method1611() {
+		@Pc(13) Node local13 = this.aClass183_5.aNode_207.aNode_262;
+		if (local13 == this.aClass183_5.aNode_207) {
+			this.aNode_70 = null;
 			return null;
 		} else {
-			this.aClass4_70 = local13.aClass4_262;
+			this.aNode_70 = local13.aNode_262;
 			return local13;
 		}
 	}
 
 	@OriginalMember(owner = "client!em", name = "a", descriptor = "(B)Lclient!vu;")
-	public Class4 method1612() {
-		@Pc(12) Class4 local12 = this.aClass4_70;
-		if (this.aClass183_5.aClass4_207 == local12) {
-			this.aClass4_70 = null;
+	public Node method1612() {
+		@Pc(12) Node local12 = this.aNode_70;
+		if (this.aClass183_5.aNode_207 == local12) {
+			this.aNode_70 = null;
 			return null;
 		} else {
-			this.aClass4_70 = local12.aClass4_262;
+			this.aNode_70 = local12.aNode_262;
 			return local12;
 		}
 	}

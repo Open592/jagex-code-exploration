@@ -49,14 +49,14 @@ public final class Class68 {
 
 	@OriginalMember(owner = "client!fa", name = "b", descriptor = "(I)Ljava/lang/Object;")
 	public Object method1782() {
-		@Pc(11) Class4_Sub1_Sub8 local11 = (Class4_Sub1_Sub8) this.aClass102_10.method2704();
+		@Pc(11) Node_Sub1_Sub8 local11 = (Node_Sub1_Sub8) this.aClass102_10.method2704();
 		while (local11 != null) {
 			@Pc(23) Object local23 = local11.method3885();
 			if (local23 != null) {
 				return local23;
 			}
-			@Pc(29) Class4_Sub1_Sub8 local29 = local11;
-			local11 = (Class4_Sub1_Sub8) this.aClass102_10.method2704();
+			@Pc(29) Node_Sub1_Sub8 local29 = local11;
+			local11 = (Node_Sub1_Sub8) this.aClass102_10.method2704();
 			local29.method5684();
 			local29.method4662();
 			this.anInt2034 += local11.anInt5084;
@@ -66,7 +66,7 @@ public final class Class68 {
 
 	@OriginalMember(owner = "client!fa", name = "a", descriptor = "(JI)V")
 	private void method1783(@OriginalArg(0) long arg0) {
-		@Pc(10) Class4_Sub1_Sub8 local10 = (Class4_Sub1_Sub8) this.aClass102_10.method2700(arg0);
+		@Pc(10) Node_Sub1_Sub8 local10 = (Node_Sub1_Sub8) this.aClass102_10.method2700(arg0);
 		this.method1792(local10);
 	}
 
@@ -78,7 +78,7 @@ public final class Class68 {
 	@OriginalMember(owner = "client!fa", name = "c", descriptor = "(B)I")
 	public int method1786() {
 		@Pc(7) int local7 = 0;
-		for (@Pc(13) Class4_Sub1_Sub8 local13 = (Class4_Sub1_Sub8) this.aClass229_2.method5089(); local13 != null; local13 = (Class4_Sub1_Sub8) this.aClass229_2.method5092()) {
+		for (@Pc(13) Node_Sub1_Sub8 local13 = (Node_Sub1_Sub8) this.aClass229_2.method5089(); local13 != null; local13 = (Node_Sub1_Sub8) this.aClass229_2.method5092()) {
 			if (!local13.method3883()) {
 				local7++;
 			}
@@ -88,7 +88,7 @@ public final class Class68 {
 
 	@OriginalMember(owner = "client!fa", name = "a", descriptor = "(JB)Ljava/lang/Object;")
 	public Object method1787(@OriginalArg(0) long arg0) {
-		@Pc(10) Class4_Sub1_Sub8 local10 = (Class4_Sub1_Sub8) this.aClass102_10.method2700(arg0);
+		@Pc(10) Node_Sub1_Sub8 local10 = (Node_Sub1_Sub8) this.aClass102_10.method2700(arg0);
 		if (local10 == null) {
 			return null;
 		}
@@ -100,7 +100,7 @@ public final class Class68 {
 			return null;
 		}
 		if (local10.method3883()) {
-			@Pc(51) Class4_Sub1_Sub8_Sub1 local51 = new Class4_Sub1_Sub8_Sub1(local18, local10.anInt5084);
+			@Pc(51) Node_Sub1_Sub8_Sub1 local51 = new Node_Sub1_Sub8_Sub1(local18, local10.anInt5084);
 			this.aClass102_10.method2703(local10.aLong224, local51);
 			this.aClass229_2.method5088(local51);
 			local51.aLong198 = 0L;
@@ -118,7 +118,7 @@ public final class Class68 {
 		if (Static293.aClass174_1 == null) {
 			return;
 		}
-		for (@Pc(13) Class4_Sub1_Sub8 local13 = (Class4_Sub1_Sub8) this.aClass229_2.method5089(); local13 != null; local13 = (Class4_Sub1_Sub8) this.aClass229_2.method5092()) {
+		for (@Pc(13) Node_Sub1_Sub8 local13 = (Node_Sub1_Sub8) this.aClass229_2.method5089(); local13 != null; local13 = (Node_Sub1_Sub8) this.aClass229_2.method5092()) {
 			if (local13.method3883()) {
 				if (local13.method3885() == null) {
 					local13.method5684();
@@ -126,7 +126,7 @@ public final class Class68 {
 					this.anInt2034++;
 				}
 			} else if (++local13.aLong198 > (long) arg0) {
-				@Pc(39) Class4_Sub1_Sub8 local39 = Static293.aClass174_1.method4040(local13);
+				@Pc(39) Node_Sub1_Sub8 local39 = Static293.aClass174_1.method4040(local13);
 				this.aClass102_10.method2703(local13.aLong224, local39);
 				Static222.method3353(local13, local39);
 				local13.method5684();
@@ -137,14 +137,14 @@ public final class Class68 {
 
 	@OriginalMember(owner = "client!fa", name = "d", descriptor = "(B)Ljava/lang/Object;")
 	public Object method1789() {
-		@Pc(16) Class4_Sub1_Sub8 local16 = (Class4_Sub1_Sub8) this.aClass102_10.method2705();
+		@Pc(16) Node_Sub1_Sub8 local16 = (Node_Sub1_Sub8) this.aClass102_10.method2705();
 		while (local16 != null) {
 			@Pc(22) Object local22 = local16.method3885();
 			if (local22 != null) {
 				return local22;
 			}
-			@Pc(26) Class4_Sub1_Sub8 local26 = local16;
-			local16 = (Class4_Sub1_Sub8) this.aClass102_10.method2704();
+			@Pc(26) Node_Sub1_Sub8 local26 = local16;
+			local16 = (Node_Sub1_Sub8) this.aClass102_10.method2704();
 			local26.method5684();
 			local26.method4662();
 			this.anInt2034 += local16.anInt5084;
@@ -160,10 +160,10 @@ public final class Class68 {
 		this.method1783(arg1);
 		this.anInt2034--;
 		while (this.anInt2034 < 0) {
-			@Pc(32) Class4_Sub1_Sub8 local32 = (Class4_Sub1_Sub8) this.aClass229_2.method5091();
+			@Pc(32) Node_Sub1_Sub8 local32 = (Node_Sub1_Sub8) this.aClass229_2.method5091();
 			this.method1792(local32);
 		}
-		@Pc(45) Class4_Sub1_Sub8_Sub1 local45 = new Class4_Sub1_Sub8_Sub1(arg0, 1);
+		@Pc(45) Node_Sub1_Sub8_Sub1 local45 = new Node_Sub1_Sub8_Sub1(arg0, 1);
 		this.aClass102_10.method2703(arg1, local45);
 		this.aClass229_2.method5088(local45);
 		local45.aLong198 = 0L;
@@ -171,7 +171,7 @@ public final class Class68 {
 
 	@OriginalMember(owner = "client!fa", name = "c", descriptor = "(I)V")
 	public void method1791() {
-		for (@Pc(7) Class4_Sub1_Sub8 local7 = (Class4_Sub1_Sub8) this.aClass229_2.method5089(); local7 != null; local7 = (Class4_Sub1_Sub8) this.aClass229_2.method5092()) {
+		for (@Pc(7) Node_Sub1_Sub8 local7 = (Node_Sub1_Sub8) this.aClass229_2.method5089(); local7 != null; local7 = (Node_Sub1_Sub8) this.aClass229_2.method5092()) {
 			if (local7.method3883()) {
 				local7.method5684();
 				local7.method4662();
@@ -181,7 +181,7 @@ public final class Class68 {
 	}
 
 	@OriginalMember(owner = "client!fa", name = "a", descriptor = "(Lclient!fq;I)V")
-	private void method1792(@OriginalArg(0) Class4_Sub1_Sub8 arg0) {
+	private void method1792(@OriginalArg(0) Node_Sub1_Sub8 arg0) {
 		if (arg0 != null) {
 			arg0.method5684();
 			arg0.method4662();

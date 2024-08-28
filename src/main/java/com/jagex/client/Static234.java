@@ -238,7 +238,7 @@ public final class Static234 {
 
 	@OriginalMember(owner = "client!lu", name = "a", descriptor = "(IB)V")
 	public static void method3502(@OriginalArg(0) int arg0) {
-		@Pc(8) Class4_Sub1_Sub11 local8 = Static405.method5222(arg0, 14);
+		@Pc(8) Node_Sub1_Sub11 local8 = Static405.method5222(arg0, 14);
 		local8.method2608();
 	}
 }

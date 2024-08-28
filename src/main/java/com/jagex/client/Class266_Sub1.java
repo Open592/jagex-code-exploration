@@ -50,7 +50,7 @@ public final class Class266_Sub1 extends Class266 {
 									local501.method4334(local514.anInt5502, local514.anInt5506, local514.anInt5504, local514.anInt5500);
 								}
 								if (arg2.method4260() > 0) {
-									@Pc(531) Class4_Sub21 local531 = local501.aClass4_Sub21_2;
+									@Pc(531) Node_Sub21 local531 = local501.aClass4_Sub21_2;
 									local101 = (arg3 << 7) + local531.method3160();
 									local155 = local531.method3164() + (arg1 << 7);
 									local380 = local101 >> 7;
@@ -363,7 +363,7 @@ public final class Class266_Sub1 extends Class266 {
 												local416.method4334(local429.anInt5502, local429.anInt5506, local429.anInt5504, local429.anInt5500);
 											}
 											if (arg4.method4260() > 0) {
-												@Pc(449) Class4_Sub21 local449 = local416.aClass4_Sub21_2;
+												@Pc(449) Node_Sub21 local449 = local416.aClass4_Sub21_2;
 												local242 = local449.method3160() >> 7;
 												local124 = local449.method3164() >> 7;
 												if (local416.anInt5570 == arg8 && local242 >= local25 && local242 < local25 + 8 && local124 >= local31 && local31 + 8 > local124) {

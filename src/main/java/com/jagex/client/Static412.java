@@ -27,7 +27,7 @@ public final class Static412 {
 
 	@OriginalMember(owner = "client!ut", name = "b", descriptor = "(B)V")
 	public static void method5294() {
-		for (@Pc(18) Class4_Sub23 local18 = (Class4_Sub23) Static298.aClass183_38.method4140(); local18 != null; local18 = (Class4_Sub23) Static298.aClass183_38.method4144()) {
+		for (@Pc(18) Node_Sub23 local18 = (Node_Sub23) Static298.aClass183_38.method4140(); local18 != null; local18 = (Node_Sub23) Static298.aClass183_38.method4144()) {
 			if (Static202.aClass164ArrayArrayArray5 == null) {
 				local18.method5684();
 			} else {

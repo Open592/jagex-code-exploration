@@ -99,10 +99,10 @@ public final class Static68 {
 	}
 
 	@OriginalMember(owner = "client!di", name = "a", descriptor = "(Lclient!fs;I)Lclient!di;")
-	public static Class4_Sub13 method1316(@OriginalArg(0) Class76 arg0, @OriginalArg(1) int arg1) {
+	public static Node_Sub13 method1316(@OriginalArg(0) Class76 arg0, @OriginalArg(1) int arg1) {
 		if (method1320(arg0)) {
 			@Pc(14) byte[] local14 = arg0.method2122(arg1);
-			return local14 == null ? null : new Class4_Sub13(local14);
+			return local14 == null ? null : new Node_Sub13(local14);
 		} else {
 			arg0.method2125(arg1);
 			return null;
@@ -119,10 +119,10 @@ public final class Static68 {
 	}
 
 	@OriginalMember(owner = "client!di", name = "a", descriptor = "(Lclient!fs;II)Lclient!di;")
-	public static Class4_Sub13 method1318(@OriginalArg(0) Class76 arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2) {
+	public static Node_Sub13 method1318(@OriginalArg(0) Class76 arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2) {
 		if (method1320(arg0)) {
 			@Pc(16) byte[] local16 = arg0.method2104(arg2, arg1);
-			return local16 == null ? null : new Class4_Sub13(local16);
+			return local16 == null ? null : new Node_Sub13(local16);
 		} else {
 			arg0.method2098(arg2, arg1);
 			return null;

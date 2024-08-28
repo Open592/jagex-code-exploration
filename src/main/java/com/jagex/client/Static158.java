@@ -11,8 +11,8 @@ public final class Static158 {
 
 	@OriginalMember(owner = "client!hv", name = "b", descriptor = "(B)Z")
 	public static boolean method2677() {
-		@Pc(8) Class4_Sub39 local8 = (Class4_Sub39) Static206.aClass183_28.aClass4_207.aClass4_261;
-		if (local8 == null || local8 == Static206.aClass183_28.aClass4_207) {
+		@Pc(8) Node_Sub39 local8 = (Node_Sub39) Static206.aClass183_28.aNode_207.aNode_261;
+		if (local8 == null || local8 == Static206.aClass183_28.aNode_207) {
 			return false;
 		} else {
 			if (local8.anInt5699 >= 2000) {
@@ -40,10 +40,10 @@ public final class Static158 {
 	}
 
 	@OriginalMember(owner = "client!hv", name = "a", descriptor = "(Lclient!iv;B)Lclient!oc;")
-	public static Class4_Sub6 method2680(@OriginalArg(0) Packet arg0) {
+	public static Node_Sub6 method2680(@OriginalArg(0) Packet arg0) {
 		arg0.g1();
 		@Pc(21) int local21 = arg0.g1();
-		@Pc(25) Class4_Sub6 local25 = Static11.method122(local21);
+		@Pc(25) Node_Sub6 local25 = Static11.method122(local21);
 		local25.anInt7106 = arg0.g1();
 		@Pc(34) int local34 = arg0.g1();
 		for (@Pc(36) int local36 = 0; local36 < local34; local36++) {

@@ -90,7 +90,7 @@ public abstract class Class16_Sub1_Sub5 extends Class16_Sub1 {
 	protected Class3_Sub2 aClass3_Sub2_7;
 
 	@OriginalMember(owner = "client!r", name = "pc", descriptor = "Lclient!ig;")
-	public Class4_Sub23 aClass4_Sub23_3;
+	public Node_Sub23 aClass4_Sub23_3;
 
 	@OriginalMember(owner = "client!r", name = "y", descriptor = "I")
 	public int anInt6012 = 0;

@@ -22,7 +22,7 @@ public final class Static80 {
 
 	@OriginalMember(owner = "client!dv", name = "c", descriptor = "(I)V")
 	public static void method1433() {
-		for (@Pc(16) Class4_Sub9 local16 = (Class4_Sub9) Static115.aClass183_15.method4140(); local16 != null; local16 = (Class4_Sub9) Static115.aClass183_15.method4144()) {
+		for (@Pc(16) Node_Sub9 local16 = (Node_Sub9) Static115.aClass183_15.method4140(); local16 != null; local16 = (Node_Sub9) Static115.aClass183_15.method4144()) {
 			if (local16.anInt796 > 0) {
 				local16.anInt796--;
 			}

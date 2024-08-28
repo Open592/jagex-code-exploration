@@ -101,7 +101,7 @@ public final class Static447 {
 
 	@OriginalMember(owner = "client!wm", name = "a", descriptor = "(IB)V")
 	public static void method5629(@OriginalArg(0) int arg0) {
-		for (@Pc(9) Class4 local9 = Static211.aClass102_18.method2705(); local9 != null; local9 = Static211.aClass102_18.method2704()) {
+		for (@Pc(9) Node local9 = Static211.aClass102_18.method2705(); local9 != null; local9 = Static211.aClass102_18.method2704()) {
 			if ((long) arg0 == (local9.aLong224 >> 48 & 0xFFFFL)) {
 				local9.method5684();
 			}

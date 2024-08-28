@@ -22,5 +22,5 @@ public class Class120 {
 	public final int[] anIntArray358 = new int[3];
 
 	@OriginalMember(owner = "client!jj", name = "g", descriptor = "[Lclient!vp;")
-	public final Class4_Sub21[] aClass4_Sub21Array3 = new Class4_Sub21[8];
+	public final Node_Sub21[] aClass4_Sub21Array3 = new Node_Sub21[8];
 }

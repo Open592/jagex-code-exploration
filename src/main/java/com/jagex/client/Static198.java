@@ -7,7 +7,7 @@ import org.openrs2.deob.annotation.Pc;
 public final class Static198 {
 
 	@OriginalMember(owner = "client!jv", name = "v", descriptor = "Lclient!qm;")
-	public static Class4_Sub39 aClass4_Sub39_1;
+	public static Node_Sub39 aClass4_Sub39_1;
 
 	@OriginalMember(owner = "client!jv", name = "S", descriptor = "[I")
 	public static final int[] anIntArray258 = new int[25];
@@ -61,7 +61,7 @@ public final class Static198 {
 		for (@Pc(1) int local1 = 0; local1 < Static43.anInt7322; local1++) {
 			if (!Static124.aBooleanArray12[local1]) {
 				@Pc(10) Class191 local10 = Static106.aClass191Array1[local1];
-				@Pc(13) Class4_Sub21 local13 = local10.aClass4_Sub21_2;
+				@Pc(13) Node_Sub21 local13 = local10.aClass4_Sub21_2;
 				@Pc(16) int local16 = local10.anInt5570;
 				@Pc(22) int local22 = local13.method3165() - Static333.anInt5747;
 				@Pc(30) int local30 = (local22 * 2 >> Static231.anInt4434) + 1;

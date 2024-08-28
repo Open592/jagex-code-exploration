@@ -36,7 +36,7 @@ public final class Static95 {
 
 	@OriginalMember(owner = "client!ep", name = "a", descriptor = "(Lclient!iv;ILclient!et;I)V")
 	public static void method1665(@OriginalArg(0) Packet arg0, @OriginalArg(1) int arg1, @OriginalArg(2) SignLink arg2) {
-		@Pc(13) Class4_Sub36 local13 = new Class4_Sub36();
+		@Pc(13) Node_Sub36 local13 = new Node_Sub36();
 		local13.anInt5309 = arg0.g1();
 		local13.anInt5310 = arg0.g4();
 		local13.aByteArrayArrayArray4 = new byte[local13.anInt5309][][];

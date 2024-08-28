@@ -11,7 +11,7 @@ import org.openrs2.deob.annotation.Pc;
 public final class Static197 {
 
 	@OriginalMember(owner = "client!ju", name = "H", descriptor = "Lclient!cn;")
-	public static Class4_Sub1_Sub5 aClass4_Sub1_Sub5_2;
+	public static Node_Sub1_Sub5 aClass4_Sub1_Sub5_2;
 
 	@OriginalMember(owner = "client!ju", name = "K", descriptor = "Lclient!fs;")
 	public static Class76 aClass76_45;
@@ -72,7 +72,7 @@ public final class Static197 {
 		if (Static43.anInt7322 >= 65535) {
 			return;
 		}
-		@Pc(6) Class4_Sub21 local6 = arg0.aClass4_Sub21_2;
+		@Pc(6) Node_Sub21 local6 = arg0.aClass4_Sub21_2;
 		Static106.aClass191Array1[Static43.anInt7322] = arg0;
 		Static124.aBooleanArray12[Static43.anInt7322] = false;
 		Static43.anInt7322++;

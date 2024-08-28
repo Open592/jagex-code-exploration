@@ -23,7 +23,7 @@ public final class Static203 {
 	@OriginalMember(owner = "client!kf", name = "a", descriptor = "(III)V")
 	public static void method3177(@OriginalArg(1) int arg0, @OriginalArg(2) int arg1) {
 		@Pc(10) Class102 local10 = new Class102(16);
-		for (@Pc(20) Class4_Sub18 local20 = (Class4_Sub18) Static440.aClass102_40.method2705(); local20 != null; local20 = (Class4_Sub18) Static440.aClass102_40.method2704()) {
+		for (@Pc(20) Node_Sub18 local20 = (Node_Sub18) Static440.aClass102_40.method2705(); local20 != null; local20 = (Node_Sub18) Static440.aClass102_40.method2704()) {
 			local20.method5684();
 			@Pc(31) int local31 = (int) (local20.aLong224 >> 28);
 			@Pc(41) int local41 = (int) (local20.aLong224 >> 14 & 0x3FFFL) - arg1;

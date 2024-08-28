@@ -177,7 +177,7 @@ public final class Class206 {
 			local18.aStringArray33 = this.aStringArray30;
 			if (local18.aClass102_36 != null) {
 				@Pc(200) boolean local200 = false;
-				for (@Pc(205) Class4 local205 = local18.aClass102_36.method2705(); local205 != null; local205 = local18.aClass102_36.method2704()) {
+				for (@Pc(205) Node local205 = local18.aClass102_36.method2705(); local205 != null; local205 = local18.aClass102_36.method2704()) {
 					@Pc(215) Class133 local215 = this.aClass180_2.method4121((int) local205.aLong224);
 					if (local215.aBoolean385) {
 						local205.method5684();

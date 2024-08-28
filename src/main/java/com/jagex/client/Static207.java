@@ -30,7 +30,7 @@ public final class Static207 {
 		if (arg0.anObjectArray17 != null) {
 			@Pc(14) Class247 local14 = Static378.method3230(Static408.anInt6726, Static23.anInt350);
 			if (local14 != null) {
-				@Pc(20) Class4_Sub34 local20 = new Class4_Sub34();
+				@Pc(20) Node_Sub34 local20 = new Node_Sub34();
 				local20.aClass247_14 = local14;
 				local20.aClass247_15 = arg0;
 				local20.anObjectArray4 = arg0.anObjectArray17;

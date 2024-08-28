@@ -36,7 +36,7 @@ public final class Class16_Sub1_Sub6 extends Class16_Sub1 implements Interface6 
 	public Class110 aClass110_7;
 
 	@OriginalMember(owner = "client!vb", name = "T", descriptor = "Lclient!ba;")
-	private Class4_Sub1_Sub4 aClass4_Sub1_Sub4_6;
+	private Node_Sub1_Sub4 aClass4_Sub1_Sub4_6;
 
 	@OriginalMember(owner = "client!vb", name = "<init>", descriptor = "(Lclient!ya;Lclient!rd;IIIIIZIIIIIIZ)V")
 	public Class16_Sub1_Sub6(@OriginalArg(0) Class19 arg0, @OriginalArg(1) Class202 arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4, @OriginalArg(5) int arg5, @OriginalArg(6) int arg6, @OriginalArg(7) boolean arg7, @OriginalArg(8) int arg8, @OriginalArg(9) int arg9, @OriginalArg(10) int arg10, @OriginalArg(11) int arg11, @OriginalArg(12) int arg12, @OriginalArg(13) int arg13, @OriginalArg(14) boolean arg14) {
@@ -180,7 +180,7 @@ public final class Class16_Sub1_Sub6 extends Class16_Sub1 implements Interface6 
 	@OriginalMember(owner = "client!vb", name = "a", descriptor = "(Lclient!ya;I)V")
 	@Override
 	public void method5348(@OriginalArg(0) Class19 arg0) {
-		@Pc(14) Class4_Sub1_Sub4 local14;
+		@Pc(14) Node_Sub1_Sub4 local14;
 		if (this.aClass4_Sub1_Sub4_6 == null && this.aBoolean633) {
 			@Pc(25) Class149 local25 = this.method5361(262144, arg0, true);
 			local14 = local25 == null ? null : local25.aClass4_Sub1_Sub4_4;
@@ -202,7 +202,7 @@ public final class Class16_Sub1_Sub6 extends Class16_Sub1 implements Interface6 
 	@OriginalMember(owner = "client!vb", name = "a", descriptor = "(ZLclient!ya;)V")
 	@Override
 	public void method5349(@OriginalArg(1) Class19 arg0) {
-		@Pc(14) Class4_Sub1_Sub4 local14;
+		@Pc(14) Node_Sub1_Sub4 local14;
 		if (this.aClass4_Sub1_Sub4_6 == null && this.aBoolean633) {
 			@Pc(25) Class149 local25 = this.method5361(262144, arg0, true);
 			local14 = local25 == null ? null : local25.aClass4_Sub1_Sub4_4;

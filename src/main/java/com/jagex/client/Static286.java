@@ -54,7 +54,7 @@ public final class Static286 {
 			return;
 		}
 		if (arg2.anObjectArray21 != null) {
-			@Pc(13) Class4_Sub34 local13 = new Class4_Sub34();
+			@Pc(13) Node_Sub34 local13 = new Node_Sub34();
 			local13.aClass247_15 = arg2;
 			local13.anObjectArray4 = arg2.anObjectArray21;
 			Static271.method3894(local13);

@@ -49,8 +49,8 @@ public final class Class236 {
 	}
 
 	@OriginalMember(owner = "client!uf", name = "a", descriptor = "(BLclient!ba;II)Z")
-	public boolean method5190(@OriginalArg(1) Class4_Sub1_Sub4 arg0, @OriginalArg(2) int arg1, @OriginalArg(3) int arg2) {
-		@Pc(6) Class4_Sub1_Sub4_Sub1 local6 = (Class4_Sub1_Sub4_Sub1) arg0;
+	public boolean method5190(@OriginalArg(1) Node_Sub1_Sub4 arg0, @OriginalArg(2) int arg1, @OriginalArg(3) int arg2) {
+		@Pc(6) Node_Sub1_Sub4_Sub1 local6 = (Node_Sub1_Sub4_Sub1) arg0;
 		arg2 += local6.anInt2727 + 1;
 		arg1 += local6.anInt2725 + 1;
 		@Pc(32) int local32 = this.anInt6634 * arg1 + arg2;
@@ -206,8 +206,8 @@ public final class Class236 {
 	}
 
 	@OriginalMember(owner = "client!uf", name = "a", descriptor = "(IILclient!ba;B)V")
-	public void method5194(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) Class4_Sub1_Sub4 arg2) {
-		@Pc(6) Class4_Sub1_Sub4_Sub1 local6 = (Class4_Sub1_Sub4_Sub1) arg2;
+	public void method5194(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) Node_Sub1_Sub4 arg2) {
+		@Pc(6) Node_Sub1_Sub4_Sub1 local6 = (Node_Sub1_Sub4_Sub1) arg2;
 		arg0 += local6.anInt2725 + 1;
 		arg1 += local6.anInt2727 + 1;
 		@Pc(27) int local27 = arg0 * this.anInt6634 + arg1;
@@ -250,8 +250,8 @@ public final class Class236 {
 	}
 
 	@OriginalMember(owner = "client!uf", name = "a", descriptor = "(IIILclient!ba;)V")
-	public void method5195(@OriginalArg(1) int arg0, @OriginalArg(2) int arg1, @OriginalArg(3) Class4_Sub1_Sub4 arg2) {
-		@Pc(6) Class4_Sub1_Sub4_Sub1 local6 = (Class4_Sub1_Sub4_Sub1) arg2;
+	public void method5195(@OriginalArg(1) int arg0, @OriginalArg(2) int arg1, @OriginalArg(3) Node_Sub1_Sub4 arg2) {
+		@Pc(6) Node_Sub1_Sub4_Sub1 local6 = (Node_Sub1_Sub4_Sub1) arg2;
 		arg1 += local6.anInt2727 + 1;
 		arg0 += local6.anInt2725 + 1;
 		@Pc(28) int local28 = arg1 + this.anInt6634 * arg0;

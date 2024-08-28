@@ -31,7 +31,7 @@ public final class Static14 {
 
 	@OriginalMember(owner = "client!am", name = "a", descriptor = "(IIB)V")
 	public static void method145(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1) {
-		@Pc(13) Class4_Sub1_Sub11 local13 = Static405.method5222(arg0, 6);
+		@Pc(13) Node_Sub1_Sub11 local13 = Static405.method5222(arg0, 6);
 		local13.method2604();
 		local13.anInt3083 = arg1;
 	}

@@ -29,7 +29,7 @@ public final class Static54 {
 
 	@OriginalMember(owner = "client!cm", name = "a", descriptor = "(IIIII)V")
 	public static void method914(@OriginalArg(0) int arg0, @OriginalArg(2) int arg1, @OriginalArg(3) int arg2, @OriginalArg(4) int arg3) {
-		@Pc(8) Class4_Sub1_Sub11 local8 = Static405.method5222(arg1, 4);
+		@Pc(8) Node_Sub1_Sub11 local8 = Static405.method5222(arg1, 4);
 		local8.method2604();
 		local8.anInt3083 = arg0;
 		local8.anInt3079 = arg3;

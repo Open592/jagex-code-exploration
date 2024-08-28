@@ -68,7 +68,7 @@ public final class Static377 {
 				}
 			}
 			if (!arg0) {
-				for (@Pc(440) Class4_Sub39 local440 = (Class4_Sub39) Static206.aClass183_28.method4140(); local440 != null; local440 = (Class4_Sub39) Static206.aClass183_28.method4144()) {
+				for (@Pc(440) Node_Sub39 local440 = (Node_Sub39) Static206.aClass183_28.method4140(); local440 != null; local440 = (Node_Sub39) Static206.aClass183_28.method4144()) {
 					if (local440.anInt5699 == 44) {
 						local440.aString56 = "<col=ffffff>" + local85;
 						return;

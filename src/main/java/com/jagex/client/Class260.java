@@ -13,13 +13,13 @@ public final class Class260 {
 	private boolean aBoolean669;
 
 	@OriginalMember(owner = "client!wb", name = "w", descriptor = "Lclient!io;")
-	private Class4_Sub1_Sub13 aClass4_Sub1_Sub13_1;
+	private Node_Sub1_Sub13 aClass4_Sub1_Sub13_1;
 
 	@OriginalMember(owner = "client!wb", name = "z", descriptor = "Lclient!af;")
 	private Class6_Sub1 aClass6_Sub1_7;
 
 	@OriginalMember(owner = "client!wb", name = "E", descriptor = "Lclient!io;")
-	private Class4_Sub1_Sub13 aClass4_Sub1_Sub13_2;
+	private Node_Sub1_Sub13 aClass4_Sub1_Sub13_2;
 
 	@OriginalMember(owner = "client!wb", name = "b", descriptor = "I")
 	private int anInt7127 = 1;
@@ -92,15 +92,15 @@ public final class Class260 {
 		this.aClass6_Sub1Array4 = null;
 		this.aClass4_Sub1_Sub13_1 = null;
 		if (!this.aClass183_50.method4147()) {
-			for (@Pc(42) Class4 local42 = this.aClass183_50.method4140(); local42 != this.aClass183_50.aClass4_207; local42 = local42.aClass4_262) {
-				((Class4_Sub10) local42).method2006();
+			for (@Pc(42) Node local42 = this.aClass183_50.method4140(); local42 != this.aClass183_50.aNode_207; local42 = local42.aNode_262) {
+				((Node_Sub10) local42).method2006();
 			}
 		}
 		this.anInt7128 = this.anInt7127 = 1;
 	}
 
 	@OriginalMember(owner = "client!wb", name = "a", descriptor = "(ILclient!cg;)Z")
-	public boolean method5525(@OriginalArg(1) Class4_Sub10 arg0) {
+	public boolean method5525(@OriginalArg(1) Node_Sub10 arg0) {
 		if (this.aClass150_5 != null) {
 			if (arg0.method2004() || arg0.method2005()) {
 				this.aClass183_50.method4137(arg0);
@@ -124,7 +124,7 @@ public final class Class260 {
 		@Pc(9) int local9 = 0;
 		@Pc(11) int local11 = 0;
 		@Pc(25) int local25;
-		for (@Pc(19) Class4_Sub10 local19 = (Class4_Sub10) this.aClass183_50.method4140(); local19 != null; local19 = (Class4_Sub10) this.aClass183_50.method4144()) {
+		for (@Pc(19) Node_Sub10 local19 = (Node_Sub10) this.aClass183_50.method4140(); local19 != null; local19 = (Node_Sub10) this.aClass183_50.method4144()) {
 			local25 = local19.method1999();
 			local11 += local19.method2001();
 			if (local25 > local9) {
@@ -167,12 +167,12 @@ public final class Class260 {
 				this.aClass6_Sub1_7 = null;
 			}
 			if (this.aClass150_6 != null) {
-				this.aClass4_Sub1_Sub13_2 = new Class4_Sub1_Sub13(this.aClass19_Sub2_42, 6402, this.anInt7128, this.anInt7127, this.aClass19_Sub2_42.anInt2272);
+				this.aClass4_Sub1_Sub13_2 = new Node_Sub1_Sub13(this.aClass19_Sub2_42, 6402, this.anInt7128, this.anInt7127, this.aClass19_Sub2_42.anInt2272);
 			}
 			if (this.aBoolean673) {
 				this.aClass6_Sub1_7 = new Class6_Sub1(this.aClass19_Sub2_42, 34037, 6402, this.anInt7128, this.anInt7127);
 			} else if (this.aClass4_Sub1_Sub13_2 == null) {
-				this.aClass4_Sub1_Sub13_2 = new Class4_Sub1_Sub13(this.aClass19_Sub2_42, 6402, this.anInt7128, this.anInt7127);
+				this.aClass4_Sub1_Sub13_2 = new Node_Sub1_Sub13(this.aClass19_Sub2_42, 6402, this.anInt7128, this.anInt7127);
 			}
 			this.aBoolean671 = true;
 			this.aBoolean670 = false;
@@ -192,7 +192,7 @@ public final class Class260 {
 				this.aClass6_Sub1Array4[1] = null;
 			}
 			if (this.aClass150_6 != null) {
-				this.aClass4_Sub1_Sub13_1 = new Class4_Sub1_Sub13(this.aClass19_Sub2_42, this.anInt7138, this.anInt7128, this.anInt7127, this.aClass19_Sub2_42.anInt2272);
+				this.aClass4_Sub1_Sub13_1 = new Node_Sub1_Sub13(this.aClass19_Sub2_42, this.anInt7138, this.anInt7128, this.anInt7127, this.aClass19_Sub2_42.anInt2272);
 			}
 			this.aClass6_Sub1Array4[0] = new Class6_Sub1(this.aClass19_Sub2_42, 34037, this.anInt7138, this.anInt7128, this.anInt7127);
 			this.aClass6_Sub1Array4[1] = this.anInt7137 <= 1 ? null : new Class6_Sub1(this.aClass19_Sub2_42, 34037, this.anInt7138, this.anInt7128, this.anInt7127);
@@ -248,7 +248,7 @@ public final class Class260 {
 	}
 
 	@OriginalMember(owner = "client!wb", name = "b", descriptor = "(ILclient!cg;)V")
-	public void method5529(@OriginalArg(1) Class4_Sub10 arg0) {
+	public void method5529(@OriginalArg(1) Node_Sub10 arg0) {
 		arg0.aBoolean220 = false;
 		arg0.method2006();
 		arg0.method5684();
@@ -263,8 +263,8 @@ public final class Class260 {
 		if (this.anInt7128 != arg1 || arg3 != this.anInt7127) {
 			this.anInt7127 = arg3;
 			this.anInt7128 = arg1;
-			for (@Pc(49) Class4 local49 = this.aClass183_50.method4140(); local49 != this.aClass183_50.aClass4_207; local49 = local49.aClass4_262) {
-				((Class4_Sub10) local49).method2007(this.anInt7127, this.anInt7128);
+			for (@Pc(49) Node local49 = this.aClass183_50.method4140(); local49 != this.aClass183_50.aNode_207; local49 = local49.aNode_262) {
+				((Node_Sub10) local49).method2007(this.anInt7127, this.anInt7128);
 			}
 			this.aBoolean674 = true;
 			this.aBoolean671 = true;
@@ -311,9 +311,9 @@ public final class Class260 {
 		this.aClass19_Sub2_42.e();
 		@Pc(101) int local101 = 0;
 		@Pc(103) int local103 = 1;
-		@Pc(117) Class4_Sub10 local117;
-		for (@Pc(109) Class4_Sub10 local109 = (Class4_Sub10) this.aClass183_50.method4140(); local109 != null; local109 = local117) {
-			local117 = (Class4_Sub10) this.aClass183_50.method4144();
+		@Pc(117) Node_Sub10 local117;
+		for (@Pc(109) Node_Sub10 local109 = (Node_Sub10) this.aClass183_50.method4140(); local109 != null; local109 = local117) {
+			local117 = (Node_Sub10) this.aClass183_50.method4144();
 			@Pc(121) int local121 = local109.method2001();
 			for (@Pc(123) int local123 = 0; local123 < local121; local123++) {
 				local109.method2000(local123, this.aClass6_Sub1Array4[local101], this.aClass6_Sub1_7);

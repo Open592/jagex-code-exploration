@@ -13,7 +13,7 @@ public final class Static132 {
 
 	@OriginalMember(owner = "client!go", name = "a", descriptor = "(I)V")
 	public static void method2315() {
-		Static198.aClass4_Sub39_1 = new Class4_Sub39(Static136.aClass83_53.method2267(Static178.langID), "", Static157.anInt3147, 1011, -1, (long) 0, 0, 0, true, false);
+		Static198.aClass4_Sub39_1 = new Node_Sub39(Static136.aClass83_53.method2267(Static178.langID), "", Static157.anInt3147, 1011, -1, (long) 0, 0, 0, true, false);
 	}
 
 	@OriginalMember(owner = "client!go", name = "a", descriptor = "(II)I")

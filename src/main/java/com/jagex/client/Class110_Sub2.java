@@ -4600,7 +4600,7 @@ public final class Class110_Sub2 extends Class110 {
 
 	@OriginalMember(owner = "client!sk", name = "fa", descriptor = "(Lclient!ba;)Lclient!ba;")
 	@Override
-	public Class4_Sub1_Sub4 fa(@OriginalArg(0) Class4_Sub1_Sub4 arg0) {
+	public Node_Sub1_Sub4 fa(@OriginalArg(0) Node_Sub1_Sub4 arg0) {
 		return null;
 	}
 

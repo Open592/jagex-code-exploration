@@ -9,10 +9,10 @@ import org.openrs2.deob.annotation.Pc;
 public final class Class229 {
 
 	@OriginalMember(owner = "client!tn", name = "k", descriptor = "Lclient!ac;")
-	private Class4_Sub1 aClass4_Sub1_58;
+	private Node_Sub1 aClass4_Sub1_58;
 
 	@OriginalMember(owner = "client!tn", name = "d", descriptor = "Lclient!ac;")
-	private final Class4_Sub1 aClass4_Sub1_57 = new Class4_Sub1();
+	private final Node_Sub1 aClass4_Sub1_57 = new Node_Sub1();
 
 	@OriginalMember(owner = "client!tn", name = "<init>", descriptor = "()V")
 	public Class229() {
@@ -23,7 +23,7 @@ public final class Class229 {
 	@OriginalMember(owner = "client!tn", name = "a", descriptor = "(B)V")
 	public void method5087() {
 		while (true) {
-			@Pc(5) Class4_Sub1 local5 = this.aClass4_Sub1_57.aClass4_Sub1_55;
+			@Pc(5) Node_Sub1 local5 = this.aClass4_Sub1_57.aClass4_Sub1_55;
 			if (this.aClass4_Sub1_57 == local5) {
 				this.aClass4_Sub1_58 = null;
 				return;
@@ -33,7 +33,7 @@ public final class Class229 {
 	}
 
 	@OriginalMember(owner = "client!tn", name = "a", descriptor = "(ILclient!ac;)V")
-	public void method5088(@OriginalArg(1) Class4_Sub1 arg0) {
+	public void method5088(@OriginalArg(1) Node_Sub1 arg0) {
 		if (arg0.aClass4_Sub1_56 != null) {
 			arg0.method4662();
 		}
@@ -44,8 +44,8 @@ public final class Class229 {
 	}
 
 	@OriginalMember(owner = "client!tn", name = "b", descriptor = "(B)Lclient!ac;")
-	public Class4_Sub1 method5089() {
-		@Pc(12) Class4_Sub1 local12 = this.aClass4_Sub1_57.aClass4_Sub1_55;
+	public Node_Sub1 method5089() {
+		@Pc(12) Node_Sub1 local12 = this.aClass4_Sub1_57.aClass4_Sub1_55;
 		if (local12 == this.aClass4_Sub1_57) {
 			this.aClass4_Sub1_58 = null;
 			return null;
@@ -56,8 +56,8 @@ public final class Class229 {
 	}
 
 	@OriginalMember(owner = "client!tn", name = "c", descriptor = "(B)Lclient!ac;")
-	public Class4_Sub1 method5091() {
-		@Pc(7) Class4_Sub1 local7 = this.aClass4_Sub1_57.aClass4_Sub1_55;
+	public Node_Sub1 method5091() {
+		@Pc(7) Node_Sub1 local7 = this.aClass4_Sub1_57.aClass4_Sub1_55;
 		if (this.aClass4_Sub1_57 == local7) {
 			return null;
 		} else {
@@ -67,8 +67,8 @@ public final class Class229 {
 	}
 
 	@OriginalMember(owner = "client!tn", name = "b", descriptor = "(Z)Lclient!ac;")
-	public Class4_Sub1 method5092() {
-		@Pc(11) Class4_Sub1 local11 = this.aClass4_Sub1_58;
+	public Node_Sub1 method5092() {
+		@Pc(11) Node_Sub1 local11 = this.aClass4_Sub1_58;
 		if (this.aClass4_Sub1_57 == local11) {
 			this.aClass4_Sub1_58 = null;
 			return null;
@@ -81,7 +81,7 @@ public final class Class229 {
 	@OriginalMember(owner = "client!tn", name = "c", descriptor = "(Z)I")
 	public int method5093() {
 		@Pc(13) int local13 = 0;
-		@Pc(17) Class4_Sub1 local17 = this.aClass4_Sub1_57.aClass4_Sub1_55;
+		@Pc(17) Node_Sub1 local17 = this.aClass4_Sub1_57.aClass4_Sub1_55;
 		while (local17 != this.aClass4_Sub1_57) {
 			local17 = local17.aClass4_Sub1_55;
 			local13++;

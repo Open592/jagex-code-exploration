@@ -537,7 +537,7 @@ public final class Static400 {
 
 	@OriginalMember(owner = "client!ue", name = "b", descriptor = "(IIII)V")
 	public static void method5189(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2) {
-		@Pc(13) Class4_Sub1_Sub11 local13 = Static405.method5222(arg0, 11);
+		@Pc(13) Node_Sub1_Sub11 local13 = Static405.method5222(arg0, 11);
 		local13.method2604();
 		local13.anInt3082 = arg2;
 		local13.anInt3083 = arg1;

@@ -9,7 +9,7 @@ import org.openrs2.deob.annotation.Pc;
 public final class Class142 {
 
 	@OriginalMember(owner = "client!lt", name = "f", descriptor = "Lclient!ac;")
-	private Class4_Sub1 aClass4_Sub1_42 = new Class4_Sub1();
+	private Node_Sub1 aClass4_Sub1_42 = new Node_Sub1();
 
 	@OriginalMember(owner = "client!lt", name = "j", descriptor = "Lclient!tn;")
 	private final Class229 aClass229_3 = new Class229();
@@ -34,9 +34,9 @@ public final class Class142 {
 	}
 
 	@OriginalMember(owner = "client!lt", name = "a", descriptor = "(JLclient!ac;I)V")
-	public void method3480(@OriginalArg(0) long arg0, @OriginalArg(1) Class4_Sub1 arg1) {
+	public void method3480(@OriginalArg(0) long arg0, @OriginalArg(1) Node_Sub1 arg1) {
 		if (this.anInt4441 == 0) {
-			@Pc(11) Class4_Sub1 local11 = this.aClass229_3.method5091();
+			@Pc(11) Node_Sub1 local11 = this.aClass229_3.method5091();
 			local11.method5684();
 			local11.method4662();
 			if (local11 == this.aClass4_Sub1_42) {
@@ -52,8 +52,8 @@ public final class Class142 {
 	}
 
 	@OriginalMember(owner = "client!lt", name = "a", descriptor = "(JB)Lclient!ac;")
-	public Class4_Sub1 method3483(@OriginalArg(0) long arg0) {
-		@Pc(10) Class4_Sub1 local10 = (Class4_Sub1) this.aClass102_19.method2700(arg0);
+	public Node_Sub1 method3483(@OriginalArg(0) long arg0) {
+		@Pc(10) Node_Sub1 local10 = (Node_Sub1) this.aClass102_19.method2700(arg0);
 		if (local10 != null) {
 			this.aClass229_3.method5088(local10);
 		}
@@ -64,7 +64,7 @@ public final class Class142 {
 	public void method3484() {
 		this.aClass229_3.method5087();
 		this.aClass102_19.method2699();
-		this.aClass4_Sub1_42 = new Class4_Sub1();
+		this.aClass4_Sub1_42 = new Node_Sub1();
 		this.anInt4441 = this.anInt4442;
 	}
 }

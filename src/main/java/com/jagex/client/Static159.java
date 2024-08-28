@@ -37,7 +37,7 @@ public final class Static159 {
 	}
 
 	@OriginalMember(owner = "client!ib", name = "a", descriptor = "(Lclient!cw;IB)V")
-	public static void method2702(@OriginalArg(0) Class4_Sub12_Sub1 arg0, @OriginalArg(1) int arg1) {
+	public static void method2702(@OriginalArg(0) Node_Sub12_Sub1 arg0, @OriginalArg(1) int arg1) {
 		@Pc(17) boolean local17 = arg0.method1143(1) == 1;
 		if (local17) {
 			Static388.anIntArray497[Static441.anInt7199++] = arg1;
