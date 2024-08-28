@@ -287,13 +287,13 @@ public final class Class264 {
 		@Pc(288) int local288 = -1;
 		local112 = -1;
 		local117 = 0;
-		@Pc(294) Node_Sub1_Sub17 local294 = null;
-		@Pc(296) Node_Sub1_Sub17 local296 = null;
+		@Pc(294) ListNode_Sub1_Sub17 local294 = null;
+		@Pc(296) ListNode_Sub1_Sub17 local296 = null;
 		@Pc(298) int local298 = -1;
 		@Pc(300) int local300 = -1;
 		@Pc(302) int local302 = 0;
-		@Pc(304) Node_Sub1_Sub17 local304 = null;
-		@Pc(306) Node_Sub1_Sub17 local306 = null;
+		@Pc(304) ListNode_Sub1_Sub17 local304 = null;
+		@Pc(306) ListNode_Sub1_Sub17 local306 = null;
 		@Pc(387) int local387;
 		if (local63) {
 			@Pc(319) int local319;
@@ -570,7 +570,7 @@ public final class Class264 {
 		if (this.aClass102_41 == null) {
 			return arg0;
 		} else {
-			@Pc(25) Node_Sub7 local25 = (Node_Sub7) this.aClass102_41.method2700((long) arg1);
+			@Pc(25) ListNode_Sub7 local25 = (ListNode_Sub7) this.aClass102_41.method2700((long) arg1);
 			return local25 == null ? arg0 : local25.aString12;
 		}
 	}
@@ -767,11 +767,11 @@ public final class Class264 {
 				for (local41 = 0; local41 < local31; local41++) {
 					@Pc(485) boolean local485 = arg0.g1() == 1;
 					@Pc(489) int local489 = arg0.g3();
-					@Pc(498) Node local498;
+					@Pc(498) ListNode local498;
 					if (local485) {
-						local498 = new Node_Sub7(arg0.gStringCP1252ToUTF8());
+						local498 = new ListNode_Sub7(arg0.gStringCP1252ToUTF8());
 					} else {
-						local498 = new Node_Sub37(arg0.g4());
+						local498 = new ListNode_Sub37(arg0.g4());
 					}
 					this.aClass102_41.method2703((long) local489, local498);
 				}
@@ -795,7 +795,7 @@ public final class Class264 {
 		if (this.aClass102_41 == null) {
 			return arg0;
 		} else {
-			@Pc(22) Node_Sub37 local22 = (Node_Sub37) this.aClass102_41.method2700((long) arg1);
+			@Pc(22) ListNode_Sub37 local22 = (ListNode_Sub37) this.aClass102_41.method2700((long) arg1);
 			return local22 == null ? arg0 : local22.anInt5426;
 		}
 	}

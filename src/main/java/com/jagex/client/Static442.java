@@ -14,7 +14,7 @@ public final class Static442 {
 
 	@OriginalMember(owner = "client!wh", name = "a", descriptor = "(III)V")
 	public static void method5573(@OriginalArg(1) int arg0, @OriginalArg(2) int arg1) {
-		@Pc(8) Node_Sub1_Sub11 local8 = Static405.method5222(0, 15);
+		@Pc(8) ListNode_Sub1_Sub11 local8 = Static405.method5222(0, 15);
 		local8.method2604();
 		local8.anInt3082 = arg1;
 		local8.anInt3083 = arg0;

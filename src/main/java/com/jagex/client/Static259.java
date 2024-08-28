@@ -31,7 +31,7 @@ public final class Static259 {
 	public static void method3755(@OriginalArg(1) Class247 arg0, @OriginalArg(2) Class19 arg1) {
 		@Pc(33) boolean local33 = Static444.aClass206_3.method4700(arg1, arg0.anInt6779, arg0.aBoolean613 ? Static1.aClass16_Sub1_Sub5_Sub1_1.aClass37_1 : null, arg0.anInt6828, arg0.anInt6832, arg0.anInt6831, arg0.anInt6778 | 0xFF000000) == null;
 		if (local33) {
-			Static379.aClass183_45.method4137(new Node_Sub17(arg0.anInt6779, arg0.anInt6832, arg0.anInt6831, arg0.anInt6778 | 0xFF000000, arg0.anInt6828, arg0.aBoolean613));
+			Static379.aClass183_45.method4137(new ListNode_Sub17(arg0.anInt6779, arg0.anInt6832, arg0.anInt6831, arg0.anInt6778 | 0xFF000000, arg0.anInt6828, arg0.aBoolean613));
 			Static63.method1142(arg0);
 		}
 	}

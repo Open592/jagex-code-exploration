@@ -25,14 +25,14 @@ public final class Static1 {
 
 	@OriginalMember(owner = "client!a", name = "a", descriptor = "(I)V")
 	public static void method1() {
-		for (@Pc(14) Node_Sub9 local14 = (Node_Sub9) Static115.aClass183_15.method4140(); local14 != null; local14 = (Node_Sub9) Static115.aClass183_15.method4144()) {
+		for (@Pc(14) ListNode_Sub9 local14 = (ListNode_Sub9) Static115.aClass183_15.method4140(); local14 != null; local14 = (ListNode_Sub9) Static115.aClass183_15.method4144()) {
 			if (local14.anInt796 == -1) {
 				local14.anInt799 = 0;
 				if (local14.anInt793 >= 0 && local14.anInt790 >= 0 && Static326.anInt5666 > local14.anInt793 && Static283.anInt5187 > local14.anInt790) {
 					Static20.method216(local14);
 				}
 			} else {
-				local14.method5684();
+				local14.popSelf();
 			}
 		}
 	}
@@ -65,7 +65,7 @@ public final class Static1 {
 			}
 			@Pc(110) int local110 = local32 + Static57.aClass247_1.anInt6825 - Static455.anInt5535;
 			@Pc(118) int local118 = Static57.aClass247_1.anInt6849 + local36 - Static373.anInt6383;
-			@Pc(172) Node_Sub34 local172;
+			@Pc(172) ListNode_Sub34 local172;
 			if (Static420.aClass80_1.method2228()) {
 				if (Static315.anInt5487 > Static281.aClass247_12.anInt6786) {
 					@Pc(130) int local130 = local32 - Static247.anInt4615;
@@ -75,7 +75,7 @@ public final class Static1 {
 					}
 				}
 				if (Static281.aClass247_12.anObjectArray26 != null && Static15.aBoolean22) {
-					local172 = new Node_Sub34();
+					local172 = new ListNode_Sub34();
 					local172.anObjectArray4 = Static281.aClass247_12.anObjectArray26;
 					local172.anInt5254 = local110;
 					local172.anInt5252 = local118;
@@ -87,7 +87,7 @@ public final class Static1 {
 				if (Static15.aBoolean22) {
 					Static336.method5139();
 					if (Static281.aClass247_12.anObjectArray16 != null) {
-						local172 = new Node_Sub34();
+						local172 = new ListNode_Sub34();
 						local172.anObjectArray4 = Static281.aClass247_12.anObjectArray16;
 						local172.anInt5252 = local118;
 						local172.aClass247_14 = Static232.aClass247_9;

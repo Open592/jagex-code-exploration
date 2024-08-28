@@ -28,23 +28,23 @@ public final class Static119 {
 	public static int anInt2527 = 0;
 
 	@OriginalMember(owner = "client!ft", name = "a", descriptor = "(IIILclient!pn;)Lclient!ae;")
-	public static Node_Sub1_Sub1 method2147(@OriginalArg(1) int arg0, @OriginalArg(2) int arg1, @OriginalArg(3) Class186 arg2) {
+	public static ListNode_Sub1_Sub1 method2147(@OriginalArg(1) int arg0, @OriginalArg(2) int arg1, @OriginalArg(3) Class186 arg2) {
 		@Pc(10) int local10 = arg2.anInt5418 | arg1 << 8;
-		@Pc(19) Node_Sub1_Sub1 local19 = (Node_Sub1_Sub1) Static48.aClass142_1.method3483((long) local10 << 16);
+		@Pc(19) ListNode_Sub1_Sub1 local19 = (ListNode_Sub1_Sub1) Static48.aClass142_1.method3483((long) local10 << 16);
 		if (local19 != null) {
 			return local19;
 		}
 		@Pc(33) byte[] local33 = Static197.aClass76_45.method2122(Static197.aClass76_45.method2117(local10));
 		if (local33 == null) {
 			local10 = arg2.anInt5418 | arg0 + 65536 << 8;
-			local19 = (Node_Sub1_Sub1) Static48.aClass142_1.method3483((long) local10 << 16);
+			local19 = (ListNode_Sub1_Sub1) Static48.aClass142_1.method3483((long) local10 << 16);
 			if (local19 != null) {
 				return local19;
 			}
 			local33 = Static197.aClass76_45.method2122(Static197.aClass76_45.method2117(local10));
 			if (local33 == null) {
 				local10 = arg2.anInt5418 | 0xFFFF00;
-				local19 = (Node_Sub1_Sub1) Static48.aClass142_1.method3483((long) local10 << 16);
+				local19 = (ListNode_Sub1_Sub1) Static48.aClass142_1.method3483((long) local10 << 16);
 				if (local19 != null) {
 					return local19;
 				}
@@ -104,7 +104,7 @@ public final class Static119 {
 
 	@OriginalMember(owner = "client!ft", name = "a", descriptor = "(IIII)V")
 	public static void method2150(@OriginalArg(1) int arg0, @OriginalArg(2) int arg1, @OriginalArg(3) int arg2) {
-		@Pc(16) Node_Sub1_Sub11 local16 = Static405.method5222(arg0, 9);
+		@Pc(16) ListNode_Sub1_Sub11 local16 = Static405.method5222(arg0, 9);
 		local16.method2604();
 		local16.anInt3083 = arg2;
 		local16.anInt3082 = arg1;

@@ -360,7 +360,7 @@ public final class Class19_Sub2 extends Class19 {
 	private int anInt2286;
 
 	@OriginalMember(owner = "client!fd", name = "wf", descriptor = "[Lclient!vp;")
-	private final Node_Sub21[] aClass4_Sub21Array1;
+	private final ListNode_Sub21[] aClass4_Sub21Array1;
 
 	@OriginalMember(owner = "client!fd", name = "sf", descriptor = "I")
 	public int anInt2293;
@@ -510,7 +510,7 @@ public final class Class19_Sub2 extends Class19 {
 	private final Class260 aClass260_1;
 
 	@OriginalMember(owner = "client!fd", name = "ke", descriptor = "Lclient!fh;")
-	private Node_Sub10_Sub1 aClass4_Sub10_Sub1_1;
+	private ListNode_Sub10_Sub1 aClass4_Sub10_Sub1_1;
 
 	@OriginalMember(owner = "client!fd", name = "fe", descriptor = "Lclient!uv;")
 	private final Class248 aClass248_1;
@@ -533,7 +533,7 @@ public final class Class19_Sub2 extends Class19 {
 		this.anInt2290 = 50;
 		this.anInt2296 = 0;
 		this.anInt2286 = -1;
-		this.aClass4_Sub21Array1 = new Node_Sub21[Static182.anInt3494];
+		this.aClass4_Sub21Array1 = new ListNode_Sub21[Static182.anInt3494];
 		this.anInt2293 = 0;
 		this.anInt2287 = -1;
 		this.anInt2292 = 0;
@@ -668,7 +668,7 @@ public final class Class19_Sub2 extends Class19 {
 			this.aClass47_1 = new Class47(this);
 			this.aClass260_1 = new Class260(this);
 			if (this.aClass260_1.method5531()) {
-				this.aClass4_Sub10_Sub1_1 = new Node_Sub10_Sub1(this);
+				this.aClass4_Sub10_Sub1_1 = new ListNode_Sub10_Sub1(this);
 				if (!this.aClass4_Sub10_Sub1_1.method2008()) {
 					this.aClass4_Sub10_Sub1_1.method2006();
 					this.aClass4_Sub10_Sub1_1 = null;
@@ -832,7 +832,7 @@ public final class Class19_Sub2 extends Class19 {
 	private void method1903() {
 		@Pc(7) int local7;
 		for (local7 = 0; local7 < this.anInt2291; local7++) {
-			@Pc(19) Node_Sub21 local19 = this.aClass4_Sub21Array1[local7];
+			@Pc(19) ListNode_Sub21 local19 = this.aClass4_Sub21Array1[local7];
 			@Pc(23) int local23 = local7 + 16386;
 			Static206.aFloatArray23[0] = local19.method3160();
 			Static206.aFloatArray23[1] = local19.method3161();
@@ -911,8 +911,8 @@ public final class Class19_Sub2 extends Class19 {
 
 	@OriginalMember(owner = "client!fd", name = "f", descriptor = "(I)Lclient!u;")
 	@Override
-	public Node_Sub2 method4284(@OriginalArg(0) int arg0) {
-		@Pc(8) Node_Sub2_Sub1 local8 = new Node_Sub2_Sub1(arg0);
+	public ListNode_Sub2 method4284(@OriginalArg(0) int arg0) {
+		@Pc(8) ListNode_Sub2_Sub1 local8 = new ListNode_Sub2_Sub1(arg0);
 		this.aClass183_6.method4137(local8);
 		return local8;
 	}
@@ -941,8 +941,8 @@ public final class Class19_Sub2 extends Class19 {
 
 	@OriginalMember(owner = "client!fd", name = "a", descriptor = "(IB)V")
 	public synchronized void method1908(@OriginalArg(0) int arg0) {
-		@Pc(13) Node local13 = new Node();
-		local13.aLong224 = arg0;
+		@Pc(13) ListNode local13 = new ListNode();
+		local13.id = arg0;
 		this.aClass183_12.method4137(local13);
 	}
 
@@ -990,8 +990,8 @@ public final class Class19_Sub2 extends Class19 {
 
 	@OriginalMember(owner = "client!fd", name = "a", descriptor = "(III)V")
 	public synchronized void method1910(@OriginalArg(1) int arg0, @OriginalArg(2) int arg1) {
-		@Pc(8) Node_Sub37 local8 = new Node_Sub37(arg0);
-		local8.aLong224 = arg1;
+		@Pc(8) ListNode_Sub37 local8 = new ListNode_Sub37(arg0);
+		local8.id = arg1;
 		this.aClass183_11.method4137(local8);
 	}
 
@@ -1475,10 +1475,10 @@ public final class Class19_Sub2 extends Class19 {
 	public synchronized void method4246(@OriginalArg(0) int arg0) {
 		@Pc(9) int local9 = arg0 & Integer.MAX_VALUE;
 		@Pc(11) int local11 = 0;
-		@Pc(19) Node_Sub37 local19;
+		@Pc(19) ListNode_Sub37 local19;
 		while (!this.aClass183_8.method4147()) {
-			local19 = (Node_Sub37) this.aClass183_8.method4136();
-			Static429.anIntArray537[local11++] = (int) local19.aLong224;
+			local19 = (ListNode_Sub37) this.aClass183_8.method4136();
+			Static429.anIntArray537[local11++] = (int) local19.id;
 			this.anInt2280 -= local19.anInt5426;
 			if (local11 == 1000) {
 				OpenGL.glDeleteBuffersARB(local11, Static429.anIntArray537, 0);
@@ -1490,8 +1490,8 @@ public final class Class19_Sub2 extends Class19 {
 			local11 = 0;
 		}
 		while (!this.aClass183_9.method4147()) {
-			local19 = (Node_Sub37) this.aClass183_9.method4136();
-			Static429.anIntArray537[local11++] = (int) local19.aLong224;
+			local19 = (ListNode_Sub37) this.aClass183_9.method4136();
+			Static429.anIntArray537[local11++] = (int) local19.id;
 			this.anInt2279 -= local19.anInt5426;
 			if (local11 == 1000) {
 				OpenGL.glDeleteTextures(local11, Static429.anIntArray537, 0);
@@ -1503,7 +1503,7 @@ public final class Class19_Sub2 extends Class19 {
 			local11 = 0;
 		}
 		while (!this.aClass183_10.method4147()) {
-			local19 = (Node_Sub37) this.aClass183_10.method4136();
+			local19 = (ListNode_Sub37) this.aClass183_10.method4136();
 			Static429.anIntArray537[local11++] = local19.anInt5426;
 			if (local11 == 1000) {
 				OpenGL.glDeleteFramebuffersEXT(local11, Static429.anIntArray537, 0);
@@ -1515,8 +1515,8 @@ public final class Class19_Sub2 extends Class19 {
 			local11 = 0;
 		}
 		while (!this.aClass183_11.method4147()) {
-			local19 = (Node_Sub37) this.aClass183_11.method4136();
-			Static429.anIntArray537[local11++] = (int) local19.aLong224;
+			local19 = (ListNode_Sub37) this.aClass183_11.method4136();
+			Static429.anIntArray537[local11++] = (int) local19.id;
 			this.anInt2281 -= local19.anInt5426;
 			if (local11 == 1000) {
 				OpenGL.glDeleteRenderbuffersEXT(local11, Static429.anIntArray537, 0);
@@ -1527,21 +1527,21 @@ public final class Class19_Sub2 extends Class19 {
 			OpenGL.glDeleteRenderbuffersEXT(local11, Static429.anIntArray537, 0);
 		}
 		while (!this.aClass183_7.method4147()) {
-			local19 = (Node_Sub37) this.aClass183_7.method4136();
-			OpenGL.glDeleteLists((int) local19.aLong224, local19.anInt5426);
+			local19 = (ListNode_Sub37) this.aClass183_7.method4136();
+			OpenGL.glDeleteLists((int) local19.id, local19.anInt5426);
 		}
-		@Pc(215) Node local215;
+		@Pc(215) ListNode local215;
 		while (!this.aClass183_12.method4147()) {
 			local215 = this.aClass183_12.method4136();
-			OpenGL.glDeleteProgramARB((int) local215.aLong224);
+			OpenGL.glDeleteProgramARB((int) local215.id);
 		}
 		while (!this.aClass183_13.method4147()) {
 			local215 = this.aClass183_13.method4136();
-			OpenGL.glDeleteObjectARB(local215.aLong224);
+			OpenGL.glDeleteObjectARB(local215.id);
 		}
 		while (!this.aClass183_7.method4147()) {
-			local19 = (Node_Sub37) this.aClass183_7.method4136();
-			OpenGL.glDeleteLists((int) local19.aLong224, local19.anInt5426);
+			local19 = (ListNode_Sub37) this.aClass183_7.method4136();
+			OpenGL.glDeleteLists((int) local19.id, local19.anInt5426);
 		}
 		this.aClass59_1.method1545();
 		if (this.IA() > 100663296 && MonotonicClock.getCurrentTimeInMilliseconds() > this.aLong74 + 60000L) {
@@ -1718,7 +1718,7 @@ public final class Class19_Sub2 extends Class19 {
 
 	@OriginalMember(owner = "client!fd", name = "a", descriptor = "(I[Lclient!vp;)V")
 	@Override
-	public void method4238(@OriginalArg(0) int arg0, @OriginalArg(1) Node_Sub21[] arg1) {
+	public void method4238(@OriginalArg(0) int arg0, @OriginalArg(1) ListNode_Sub21[] arg1) {
 		for (@Pc(7) int local7 = 0; local7 < arg0; local7++) {
 			this.aClass4_Sub21Array1[local7] = arg1[local7];
 		}
@@ -1745,12 +1745,12 @@ public final class Class19_Sub2 extends Class19 {
 
 	@OriginalMember(owner = "client!fd", name = "a", descriptor = "(Lclient!u;)V")
 	@Override
-	public void method4244(@OriginalArg(0) Node_Sub2 arg0) {
-		this.aNativeHeap2 = ((Node_Sub2_Sub1) arg0).aNativeHeap1;
+	public void method4244(@OriginalArg(0) ListNode_Sub2 arg0) {
+		this.aNativeHeap2 = ((ListNode_Sub2_Sub1) arg0).aNativeHeap1;
 		if (this.anInterface11_2 != null) {
 			return;
 		}
-		@Pc(16) Node_Sub12_Sub2 local16 = new Node_Sub12_Sub2(80);
+		@Pc(16) ListNode_Sub12_Sub2 local16 = new ListNode_Sub12_Sub2(80);
 		if (this.aBoolean215) {
 			local16.method2556(-1.0F);
 			local16.method2556(-1.0F);
@@ -1846,8 +1846,8 @@ public final class Class19_Sub2 extends Class19 {
 
 	@OriginalMember(owner = "client!fd", name = "c", descriptor = "(III)V")
 	public synchronized void method1939(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1) {
-		@Pc(12) Node_Sub37 local12 = new Node_Sub37(arg1);
-		local12.aLong224 = arg0;
+		@Pc(12) ListNode_Sub37 local12 = new ListNode_Sub37(arg1);
+		local12.id = arg0;
 		this.aClass183_8.method4137(local12);
 	}
 
@@ -1901,7 +1901,7 @@ public final class Class19_Sub2 extends Class19 {
 
 	@OriginalMember(owner = "client!fd", name = "c", descriptor = "(ZI)V")
 	public synchronized void method1941(@OriginalArg(1) int arg0) {
-		@Pc(12) Node_Sub37 local12 = new Node_Sub37(arg0);
+		@Pc(12) ListNode_Sub37 local12 = new ListNode_Sub37(arg0);
 		this.aClass183_10.method4137(local12);
 	}
 
@@ -2038,8 +2038,8 @@ public final class Class19_Sub2 extends Class19 {
 	@OriginalMember(owner = "client!fd", name = "c", descriptor = "()V")
 	@Override
 	protected void method4239() {
-		for (@Pc(6) Node local6 = this.aClass183_6.method4140(); local6 != null; local6 = this.aClass183_6.method4144()) {
-			((Node_Sub2_Sub1) local6).method104();
+		for (@Pc(6) ListNode local6 = this.aClass183_6.method4140(); local6 != null; local6 = this.aClass183_6.method4144()) {
+			((ListNode_Sub2_Sub1) local6).method104();
 		}
 		if (this.aClass260_1 != null) {
 			this.aClass260_1.method5524();
@@ -2558,8 +2558,8 @@ public final class Class19_Sub2 extends Class19 {
 
 	@OriginalMember(owner = "client!fd", name = "a", descriptor = "(IIIIIF)Lclient!vp;")
 	@Override
-	public Node_Sub21 method4310(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4, @OriginalArg(5) float arg5) {
-		return new Node_Sub21_Sub1(arg0, arg1, arg2, arg3, arg4, arg5);
+	public ListNode_Sub21 method4310(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4, @OriginalArg(5) float arg5) {
+		return new ListNode_Sub21_Sub1(arg0, arg1, arg2, arg3, arg4, arg5);
 	}
 
 	@OriginalMember(owner = "client!fd", name = "TA", descriptor = "(IIIII)V")
@@ -2820,8 +2820,8 @@ public final class Class19_Sub2 extends Class19 {
 
 	@OriginalMember(owner = "client!fd", name = "a", descriptor = "(IJ)V")
 	public synchronized void method1973(@OriginalArg(1) long arg0) {
-		@Pc(7) Node local7 = new Node();
-		local7.aLong224 = arg0;
+		@Pc(7) ListNode local7 = new ListNode();
+		local7.id = arg0;
 		this.aClass183_13.method4137(local7);
 	}
 
@@ -2995,8 +2995,8 @@ public final class Class19_Sub2 extends Class19 {
 
 	@OriginalMember(owner = "client!fd", name = "a", descriptor = "(IBI)V")
 	public synchronized void method1978(@OriginalArg(0) int arg0, @OriginalArg(2) int arg1) {
-		@Pc(8) Node_Sub37 local8 = new Node_Sub37(arg1);
-		local8.aLong224 = arg0;
+		@Pc(8) ListNode_Sub37 local8 = new ListNode_Sub37(arg1);
+		local8.id = arg0;
 		this.aClass183_9.method4137(local8);
 	}
 }

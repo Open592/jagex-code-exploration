@@ -16,8 +16,8 @@ public final class Static211 {
 	public static final Class102 aClass102_18 = new Class102(512);
 
 	@OriginalMember(owner = "client!kn", name = "a", descriptor = "(II)Lclient!ae;")
-	public static Node_Sub1_Sub1 method3200(@OriginalArg(0) int arg0) {
-		@Pc(10) Node_Sub1_Sub1 local10 = (Node_Sub1_Sub1) Static48.aClass142_1.method3483((long) arg0);
+	public static ListNode_Sub1_Sub1 method3200(@OriginalArg(0) int arg0) {
+		@Pc(10) ListNode_Sub1_Sub1 local10 = (ListNode_Sub1_Sub1) Static48.aClass142_1.method3483((long) arg0);
 		if (local10 != null) {
 			return local10;
 		}

@@ -21,7 +21,7 @@ public final class Static146 {
 	public static final Class22 aClass22_23 = new Class22(47, 20);
 
 	@OriginalMember(owner = "client!hh", name = "h", descriptor = "Lclient!cw;")
-	public static final Node_Sub12_Sub1 aClass4_Sub12_Sub1_3 = new Node_Sub12_Sub1(5000);
+	public static final ListNode_Sub12_Sub1 aClass4_Sub12_Sub1_3 = new ListNode_Sub12_Sub1(5000);
 
 	@OriginalMember(owner = "client!hh", name = "a", descriptor = "(BI)V")
 	public static void method208(@OriginalArg(1) int arg0) {

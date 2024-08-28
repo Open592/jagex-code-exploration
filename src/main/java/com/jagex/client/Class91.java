@@ -154,16 +154,16 @@ public final class Class91 implements Interface7 {
 	}
 
 	@OriginalMember(owner = "client!hb", name = "c", descriptor = "(II)Lclient!kv;")
-	private Node_Sub1_Sub14 method2397(@OriginalArg(0) int arg0) {
-		@Pc(10) Node_Sub1 local10 = this.aClass142_2.method3483((long) arg0);
+	private ListNode_Sub1_Sub14 method2397(@OriginalArg(0) int arg0) {
+		@Pc(10) ListNode_Sub1 local10 = this.aClass142_2.method3483((long) arg0);
 		if (local10 != null) {
-			return (Node_Sub1_Sub14) local10;
+			return (ListNode_Sub1_Sub14) local10;
 		}
 		@Pc(26) byte[] local26 = this.aClass76_35.method2122(arg0);
 		if (local26 == null) {
 			return null;
 		} else {
-			@Pc(38) Node_Sub1_Sub14 local38 = new Node_Sub1_Sub14(new Packet(local26));
+			@Pc(38) ListNode_Sub1_Sub14 local38 = new ListNode_Sub1_Sub14(new Packet(local26));
 			this.aClass142_2.method3480((long) arg0, local38);
 			return local38;
 		}
@@ -172,7 +172,7 @@ public final class Class91 implements Interface7 {
 	@OriginalMember(owner = "client!hb", name = "a", descriptor = "(II)Z")
 	@Override
 	public boolean method2392(@OriginalArg(0) int arg0) {
-		@Pc(15) Node_Sub1_Sub14 local15 = this.method2397(arg0);
+		@Pc(15) ListNode_Sub1_Sub14 local15 = this.method2397(arg0);
 		return local15 != null && local15.method3276(this.aClass76_34, this);
 	}
 }

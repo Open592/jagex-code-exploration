@@ -317,7 +317,7 @@ public final class qa extends Class19 implements Interface4 {
 	public native void OA(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3);
 
 	@OriginalMember(owner = "client!qa", name = "I", descriptor = "(Lclient!u;)V")
-	private native void I(@OriginalArg(0) Node_Sub2 arg0);
+	private native void I(@OriginalArg(0) ListNode_Sub2 arg0);
 
 	@OriginalMember(owner = "client!qa", name = "za", descriptor = "(I[I[F)V")
 	private native void za(@OriginalArg(0) int arg0, @OriginalArg(1) int[] arg1, @OriginalArg(2) float[] arg2);
@@ -534,7 +534,7 @@ public final class qa extends Class19 implements Interface4 {
 
 	@OriginalMember(owner = "client!qa", name = "a", descriptor = "(I[Lclient!vp;)V")
 	@Override
-	public void method4238(@OriginalArg(0) int arg0, @OriginalArg(1) Node_Sub21[] arg1) {
+	public void method4238(@OriginalArg(0) int arg0, @OriginalArg(1) ListNode_Sub21[] arg1) {
 		@Pc(1) int local1 = 0;
 		for (@Pc(3) int local3 = 0; local3 < arg0; local3++) {
 			Static319.anIntArray382[local1++] = arg1[local3].method3160();
@@ -630,8 +630,8 @@ public final class qa extends Class19 implements Interface4 {
 
 	@OriginalMember(owner = "client!qa", name = "a", descriptor = "(IIIIIF)Lclient!vp;")
 	@Override
-	public Node_Sub21 method4310(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4, @OriginalArg(5) float arg5) {
-		return new Node_Sub21_Sub2(arg0, arg1, arg2, arg3, arg4, arg5);
+	public ListNode_Sub21 method4310(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4, @OriginalArg(5) float arg5) {
+		return new ListNode_Sub21_Sub2(arg0, arg1, arg2, arg3, arg4, arg5);
 	}
 
 	@OriginalMember(owner = "client!qa", name = "ZA", descriptor = "()I")
@@ -743,7 +743,7 @@ public final class qa extends Class19 implements Interface4 {
 
 	@OriginalMember(owner = "client!qa", name = "f", descriptor = "(I)Lclient!u;")
 	@Override
-	public Node_Sub2 method4284(@OriginalArg(0) int arg0) {
+	public ListNode_Sub2 method4284(@OriginalArg(0) int arg0) {
 		@Pc(5) na local5 = new na(this, arg0);
 		this.aClass183_40.method4137(local5);
 		return local5;
@@ -769,7 +769,7 @@ public final class qa extends Class19 implements Interface4 {
 
 	@OriginalMember(owner = "client!qa", name = "a", descriptor = "(Lclient!u;)V")
 	@Override
-	public void method4244(@OriginalArg(0) Node_Sub2 arg0) {
+	public void method4244(@OriginalArg(0) ListNode_Sub2 arg0) {
 		this.aNa2 = (na) arg0;
 		this.I(arg0);
 	}
@@ -826,7 +826,7 @@ public final class qa extends Class19 implements Interface4 {
 		}
 		@Pc(15) za local15 = (za) this.aClass102_28.method2700((long) arg0.hashCode());
 		if (local15 != null) {
-			local15.method5684();
+			local15.popSelf();
 		}
 		local15.method5685();
 	}

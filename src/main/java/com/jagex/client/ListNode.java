@@ -7,26 +7,27 @@ import org.openrs2.deob.annotation.OriginalMember;
 public class ListNode {
 
 	@OriginalMember(owner = "client!vu", name = "b", descriptor = "Lclient!vu;")
-	public ListNode aListNode_261;
-
-	@OriginalMember(owner = "client!vu", name = "d", descriptor = "J")
-	public long aLong224;
+	public ListNode next;
 
 	@OriginalMember(owner = "client!vu", name = "h", descriptor = "Lclient!vu;")
-	public ListNode aListNode_262;
+	public ListNode previous;
+
+	@OriginalMember(owner = "client!vu", name = "d", descriptor = "J")
+	public long id;
 
 	@OriginalMember(owner = "client!vu", name = "b", descriptor = "(I)Z")
-	public final boolean method5683() {
-		return this.aListNode_261 != null;
+	public final boolean hasNext() {
+		return this.next != null;
 	}
 
 	@OriginalMember(owner = "client!vu", name = "b", descriptor = "(B)V")
-	public final void method5684() {
-		if (this.aListNode_261 != null) {
-			this.aListNode_261.aListNode_262 = this.aListNode_262;
-			this.aListNode_262.aListNode_261 = this.aListNode_261;
-			this.aListNode_262 = null;
-			this.aListNode_261 = null;
+	public final void popSelf() {
+		if (this.next != null) {
+			this.next.previous = this.previous;
+			this.previous.next = this.next;
+
+			this.previous = null;
+			this.next = null;
 		}
 	}
 }

@@ -9,9 +9,9 @@ public final class Static176 {
 	public static int anInt3414 = 0;
 
 	@OriginalMember(owner = "client!iu", name = "a", descriptor = "(ILclient!qm;)V")
-	public static void method2841(@OriginalArg(1) Node_Sub39 arg0) {
+	public static void method2841(@OriginalArg(1) ListNode_Sub39 arg0) {
 		if (!Static234.aBoolean411) {
-			arg0.method5684();
+			arg0.popSelf();
 			Static407.anInt6710--;
 		}
 	}

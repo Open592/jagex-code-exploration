@@ -15,7 +15,7 @@ public final class Class23 {
 	private int anInt533;
 
 	@OriginalMember(owner = "client!bi", name = "i", descriptor = "Lclient!ba;")
-	private Node_Sub1_Sub4 aClass4_Sub1_Sub4_2;
+	private ListNode_Sub1_Sub4 aClass4_Sub1_Sub4_2;
 
 	@OriginalMember(owner = "client!bi", name = "m", descriptor = "[Z")
 	private boolean[] aBooleanArray4;

@@ -24,9 +24,9 @@ public final class Static320 {
 		if (Static281.aClass247_12 == null) {
 			if (!Static234.aBoolean411 && Static407.anInt6710 > 0) {
 				if (Static434.isShiftClickEnabled && Static384.aClass244_1.method5489(81) && Static407.anInt6710 > 2) {
-					return ((Node_Sub39) Static206.aClass183_28.aNode_207.aNode_261.aNode_261).anInt5698;
+					return ((ListNode_Sub39) Static206.aClass183_28.aListNode_207.next.next).anInt5698;
 				}
-				return ((Node_Sub39) Static206.aClass183_28.aNode_207.aNode_261).anInt5698;
+				return ((ListNode_Sub39) Static206.aClass183_28.aListNode_207.next).anInt5698;
 			}
 			@Pc(20) int local20 = Static420.aClass80_1.method2234();
 			@Pc(24) int local24 = Static420.aClass80_1.method2230();
@@ -52,7 +52,7 @@ public final class Static320 {
 				if (local44 != -1) {
 					local64 = 0;
 					@Pc(133) Class63 local133 = new Class63(Static206.aClass183_28);
-					for (@Pc(138) Node_Sub39 local138 = (Node_Sub39) local133.method1611(); local138 != null; local138 = (Node_Sub39) local133.method1612()) {
+					for (@Pc(138) ListNode_Sub39 local138 = (ListNode_Sub39) local133.method1611(); local138 != null; local138 = (ListNode_Sub39) local133.method1612()) {
 						if (local64++ == local44) {
 							return local138.anInt5698;
 						}

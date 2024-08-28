@@ -37,7 +37,7 @@ public final class Class47 {
 			return false;
 		}
 		@Pc(15) Class150 local15 = this.aClass19_Sub2_8.aClass150_2;
-		@Pc(26) Node_Sub1_Sub13 local26 = new Node_Sub1_Sub13(this.aClass19_Sub2_8, 6408, arg2.anInt833, arg2.anInt841);
+		@Pc(26) ListNode_Sub1_Sub13 local26 = new ListNode_Sub1_Sub13(this.aClass19_Sub2_8, 6408, arg2.anInt833, arg2.anInt841);
 		this.aClass19_Sub2_8.method1922(local15);
 		@Pc(38) boolean local38 = false;
 		local15.method3614(local26, 0);

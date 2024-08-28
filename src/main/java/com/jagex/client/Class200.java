@@ -29,8 +29,8 @@ public final class Class200 {
 	@OriginalMember(owner = "client!qu", name = "a", descriptor = "(B)V")
 	private void method4532() {
 		this.aClass102_33 = new Class102(this.aClass102_32.method2706());
-		for (@Pc(26) Node_Sub7 local26 = (Node_Sub7) this.aClass102_32.method2705(); local26 != null; local26 = (Node_Sub7) this.aClass102_32.method2704()) {
-			@Pc(37) Node_Sub35 local37 = new Node_Sub35(local26.aString12, (int) local26.aLong224);
+		for (@Pc(26) ListNode_Sub7 local26 = (ListNode_Sub7) this.aClass102_32.method2705(); local26 != null; local26 = (ListNode_Sub7) this.aClass102_32.method2704()) {
+			@Pc(37) ListNode_Sub35 local37 = new ListNode_Sub35(local26.aString12, (int) local26.id);
 			this.aClass102_33.method2703(Static237.method5625(local26.aString12), local37);
 		}
 	}
@@ -40,7 +40,7 @@ public final class Class200 {
 		if (this.aClass102_32 == null) {
 			return this.anInt5767;
 		} else {
-			@Pc(25) Node_Sub37 local25 = (Node_Sub37) this.aClass102_32.method2700((long) arg0);
+			@Pc(25) ListNode_Sub37 local25 = (ListNode_Sub37) this.aClass102_32.method2700((long) arg0);
 			return local25 == null ? this.anInt5767 : local25.anInt5426;
 		}
 	}
@@ -64,7 +64,7 @@ public final class Class200 {
 		if (this.aClass102_33 == null) {
 			this.method4532();
 		}
-		for (@Pc(30) Node_Sub35 local30 = (Node_Sub35) this.aClass102_33.method2700(Static237.method5625(arg0)); local30 != null; local30 = (Node_Sub35) this.aClass102_33.method2697()) {
+		for (@Pc(30) ListNode_Sub35 local30 = (ListNode_Sub35) this.aClass102_33.method2700(Static237.method5625(arg0)); local30 != null; local30 = (ListNode_Sub35) this.aClass102_33.method2697()) {
 			if (local30.aString51.equals(arg0)) {
 				return true;
 			}
@@ -80,7 +80,7 @@ public final class Class200 {
 		if (this.aClass102_33 == null) {
 			this.method4539();
 		}
-		@Pc(22) Node_Sub37 local22 = (Node_Sub37) this.aClass102_33.method2700((long) arg0);
+		@Pc(22) ListNode_Sub37 local22 = (ListNode_Sub37) this.aClass102_33.method2700((long) arg0);
 		return local22 != null;
 	}
 
@@ -99,11 +99,11 @@ public final class Class200 {
 			this.aClass102_32 = new Class102(Static370.method4949(local31));
 			for (@Pc(43) int local43 = 0; local43 < local31; local43++) {
 				@Pc(49) int local49 = arg0.g4();
-				@Pc(61) Node local61;
+				@Pc(61) ListNode local61;
 				if (arg1 == 5) {
-					local61 = new Node_Sub7(arg0.gStringCP1252ToUTF8());
+					local61 = new ListNode_Sub7(arg0.gStringCP1252ToUTF8());
 				} else {
-					local61 = new Node_Sub37(arg0.g4());
+					local61 = new ListNode_Sub37(arg0.g4());
 				}
 				this.aClass102_32.method2703((long) local49, local61);
 			}
@@ -115,7 +115,7 @@ public final class Class200 {
 		if (this.aClass102_32 == null) {
 			return this.aString58;
 		} else {
-			@Pc(17) Node_Sub7 local17 = (Node_Sub7) this.aClass102_32.method2700((long) arg0);
+			@Pc(17) ListNode_Sub7 local17 = (ListNode_Sub7) this.aClass102_32.method2700((long) arg0);
 			return local17 == null ? this.aString58 : local17.aString12;
 		}
 	}
@@ -123,8 +123,8 @@ public final class Class200 {
 	@OriginalMember(owner = "client!qu", name = "a", descriptor = "(I)V")
 	private void method4539() {
 		this.aClass102_33 = new Class102(this.aClass102_32.method2706());
-		for (@Pc(24) Node_Sub37 local24 = (Node_Sub37) this.aClass102_32.method2705(); local24 != null; local24 = (Node_Sub37) this.aClass102_32.method2704()) {
-			@Pc(33) Node_Sub37 local33 = new Node_Sub37((int) local24.aLong224);
+		for (@Pc(24) ListNode_Sub37 local24 = (ListNode_Sub37) this.aClass102_32.method2705(); local24 != null; local24 = (ListNode_Sub37) this.aClass102_32.method2704()) {
+			@Pc(33) ListNode_Sub37 local33 = new ListNode_Sub37((int) local24.id);
 			this.aClass102_33.method2703((long) local24.anInt5426, local33);
 		}
 	}

@@ -40,7 +40,7 @@ public final class Static403 {
 	@OriginalMember(owner = "client!uh", name = "a", descriptor = "(IIIII)V")
 	public static void method5216(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(4) int arg3) {
 		for (@Pc(3) int local3 = 0; local3 < Static229.anInt4407; local3++) {
-			@Pc(9) Rectangle local9 = Node_Sub6_Sub23.aRectangleArray1[local3];
+			@Pc(9) Rectangle local9 = ListNode_Sub6_Sub23.aRectangleArray1[local3];
 			if (arg3 < local9.width + local9.x && arg0 + arg3 > local9.x && local9.height + local9.y > arg2 && arg1 + arg2 > local9.y) {
 				Static263.aBooleanArray15[local3] = true;
 			}
@@ -48,12 +48,12 @@ public final class Static403 {
 	}
 
 	@OriginalMember(owner = "client!uh", name = "a", descriptor = "(Z)Lclient!aq;")
-	public static Node_Sub3 method5217() {
+	public static ListNode_Sub3 method5217() {
 		if (Static148.aClass183_41 == null || Static308.aClass63_1 == null) {
 			return null;
 		}
 		Static308.aClass63_1.method1615(Static148.aClass183_41);
-		@Pc(18) Node_Sub3 local18 = (Node_Sub3) Static308.aClass63_1.method1611();
+		@Pc(18) ListNode_Sub3 local18 = (ListNode_Sub3) Static308.aClass63_1.method1611();
 		if (local18 == null) {
 			return null;
 		} else {

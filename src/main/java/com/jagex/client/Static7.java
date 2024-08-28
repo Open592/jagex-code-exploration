@@ -13,7 +13,7 @@ public final class Static7 {
 	public static int anInt5461 = 0;
 
 	@OriginalMember(owner = "client!af", name = "K", descriptor = "Lclient!va;")
-	public static Node_Sub42 aClass4_Sub42_3 = null;
+	public static ListNode_Sub42 aClass4_Sub42_3 = null;
 
 	@OriginalMember(owner = "client!af", name = "L", descriptor = "Lclient!sl;")
 	public static final Class215 aClass215_71 = new Class215(66, 8);

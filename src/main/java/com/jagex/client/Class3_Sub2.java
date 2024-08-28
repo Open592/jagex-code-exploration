@@ -75,7 +75,7 @@ public final class Class3_Sub2 extends Class3 {
 	@OriginalMember(owner = "client!ao", name = "b", descriptor = "()V")
 	public void method165() {
 		this.aBoolean24 = true;
-		for (@Pc(8) Node_Sub1_Sub12 local8 = (Node_Sub1_Sub12) this.aClass183_1.method4140(); local8 != null; local8 = (Node_Sub1_Sub12) this.aClass183_1.method4144()) {
+		for (@Pc(8) ListNode_Sub1_Sub12 local8 = (ListNode_Sub1_Sub12) this.aClass183_1.method4140(); local8 != null; local8 = (ListNode_Sub1_Sub12) this.aClass183_1.method4144()) {
 			if (local8.aClass8_1.anInt121 == 1) {
 				local8.method4662();
 			}
@@ -155,7 +155,7 @@ public final class Class3_Sub2 extends Class3 {
 			Static16.aBooleanArray1[local1] = false;
 		}
 		@Pc(21) int local21;
-		label68: for (@Pc(16) Node_Sub1_Sub12 local16 = (Node_Sub1_Sub12) this.aClass183_1.method4140(); local16 != null; local16 = (Node_Sub1_Sub12) this.aClass183_1.method4144()) {
+		label68: for (@Pc(16) ListNode_Sub1_Sub12 local16 = (ListNode_Sub1_Sub12) this.aClass183_1.method4140(); local16 != null; local16 = (ListNode_Sub1_Sub12) this.aClass183_1.method4144()) {
 			if (arg0 != null) {
 				for (local21 = 0; local21 < arg0.length; local21++) {
 					if (local16.aClass179_1 == arg0[local21] || local16.aClass179_1 == arg0[local21].aClass179_2) {
@@ -165,7 +165,7 @@ public final class Class3_Sub2 extends Class3 {
 					}
 				}
 			}
-			local16.method5684();
+			local16.popSelf();
 			this.anInt216--;
 			if (local16.method4666()) {
 				local16.method4662();
@@ -177,14 +177,14 @@ public final class Class3_Sub2 extends Class3 {
 		}
 		for (local21 = 0; local21 < arg0.length && this.anInt216 != 8; local21++) {
 			if (!Static16.aBooleanArray1[local21]) {
-				@Pc(93) Node_Sub1_Sub12 local93 = null;
+				@Pc(93) ListNode_Sub1_Sub12 local93 = null;
 				if (arg0[local21].method4106().anInt121 == 1 && Static246.anInt4588 < 32) {
-					local93 = new Node_Sub1_Sub12(arg0[local21], this);
+					local93 = new ListNode_Sub1_Sub12(arg0[local21], this);
 					Static166.aClass100_1.method2674(local93, (long) arg0[local21].anInt5339);
 					Static246.anInt4588++;
 				}
 				if (local93 == null) {
-					local93 = new Node_Sub1_Sub12(arg0[local21], this);
+					local93 = new ListNode_Sub1_Sub12(arg0[local21], this);
 				}
 				this.aClass183_1.method4137(local93);
 				this.anInt216++;

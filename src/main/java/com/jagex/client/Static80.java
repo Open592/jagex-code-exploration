@@ -22,7 +22,7 @@ public final class Static80 {
 
 	@OriginalMember(owner = "client!dv", name = "c", descriptor = "(I)V")
 	public static void method1433() {
-		for (@Pc(16) Node_Sub9 local16 = (Node_Sub9) Static115.aClass183_15.method4140(); local16 != null; local16 = (Node_Sub9) Static115.aClass183_15.method4144()) {
+		for (@Pc(16) ListNode_Sub9 local16 = (ListNode_Sub9) Static115.aClass183_15.method4140(); local16 != null; local16 = (ListNode_Sub9) Static115.aClass183_15.method4144()) {
 			if (local16.anInt796 > 0) {
 				local16.anInt796--;
 			}
@@ -34,14 +34,14 @@ public final class Static80 {
 					Static27.method524(local16.anInt800, local16.anInt793, local16.anInt801, -1, local16.anInt804, local16.anInt794, local16.anInt790, local16.anInt792);
 					local16.anInt799 = -1;
 					if (local16.anInt797 == local16.anInt794 && local16.anInt797 == -1) {
-						local16.method5684();
+						local16.popSelf();
 					} else if (local16.anInt797 == local16.anInt794 && local16.anInt804 == local16.anInt803 && local16.anInt801 == local16.anInt802) {
-						local16.method5684();
+						local16.popSelf();
 					}
 				}
 			} else if (local16.anInt797 < 0 || Static126.method2260(local16.anInt797, local16.anInt802)) {
 				Static27.method524(local16.anInt800, local16.anInt793, local16.anInt802, -1, local16.anInt803, local16.anInt797, local16.anInt790, local16.anInt792);
-				local16.method5684();
+				local16.popSelf();
 			}
 		}
 	}

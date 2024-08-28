@@ -16,11 +16,11 @@ public final class Static405 {
 	public static int anInt6682 = 0;
 
 	@OriginalMember(owner = "client!uk", name = "a", descriptor = "(IBI)Lclient!hp;")
-	public static Node_Sub1_Sub11 method5222(@OriginalArg(0) int arg0, @OriginalArg(2) int arg1) {
-		@Pc(20) Node_Sub1_Sub11 local20 = (Node_Sub1_Sub11) Static34.aClass102_4.method2700((long) arg1 << 32 | (long) arg0);
+	public static ListNode_Sub1_Sub11 method5222(@OriginalArg(0) int arg0, @OriginalArg(2) int arg1) {
+		@Pc(20) ListNode_Sub1_Sub11 local20 = (ListNode_Sub1_Sub11) Static34.aClass102_4.method2700((long) arg1 << 32 | (long) arg0);
 		if (local20 == null) {
-			local20 = new Node_Sub1_Sub11(arg1, arg0);
-			Static34.aClass102_4.method2703(local20.aLong224, local20);
+			local20 = new ListNode_Sub1_Sub11(arg1, arg0);
+			Static34.aClass102_4.method2703(local20.id, local20);
 		}
 		return local20;
 	}
@@ -50,7 +50,7 @@ public final class Static405 {
 
 	@OriginalMember(owner = "client!uk", name = "c", descriptor = "(II)V")
 	public static void method5228(@OriginalArg(1) int arg0) {
-		@Pc(1) Node_Sub1_Sub4 local1 = null;
+		@Pc(1) ListNode_Sub1_Sub4 local1 = null;
 		for (@Pc(3) int local3 = 1; local3 < arg0; local3++) {
 			@Pc(8) Class65 local8 = Static67.aClass65Array1[local3];
 			if (local8 != null) {

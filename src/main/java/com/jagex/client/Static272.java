@@ -43,7 +43,7 @@ public final class Static272 {
 	}
 
 	@OriginalMember(owner = "client!ns", name = "a", descriptor = "(Lclient!ya;BLclient!aq;Lclient!nf;II)Z")
-	public static boolean method3908(@OriginalArg(0) Class19 arg0, @OriginalArg(2) Node_Sub3 arg1, @OriginalArg(3) Class157 arg2) {
+	public static boolean method3908(@OriginalArg(0) Class19 arg0, @OriginalArg(2) ListNode_Sub3 arg1, @OriginalArg(3) Class157 arg2) {
 		@Pc(7) int local7 = Integer.MAX_VALUE;
 		@Pc(9) int local9 = Integer.MIN_VALUE;
 		@Pc(11) int local11 = Integer.MAX_VALUE;
@@ -170,7 +170,7 @@ public final class Static272 {
 			Static410.method5269(local217, arg1, local221, local219, local215, arg2, arg0);
 		}
 		if (arg2.anInt4930 != -1 || arg2.aString47 != null) {
-			@Pc(731) Node_Sub14 local731 = new Node_Sub14(arg1);
+			@Pc(731) ListNode_Sub14 local731 = new ListNode_Sub14(arg1);
 			local731.anInt1542 = local112;
 			local731.anInt1546 = local225;
 			local731.anInt1539 = local108;

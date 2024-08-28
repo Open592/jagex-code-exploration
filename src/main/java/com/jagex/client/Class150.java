@@ -102,7 +102,7 @@ public final class Class150 implements Interface3 {
 	}
 
 	@OriginalMember(owner = "client!ml", name = "a", descriptor = "(Lclient!io;IB)V")
-	public void method3614(@OriginalArg(0) Node_Sub1_Sub13 arg0, @OriginalArg(1) int arg1) {
+	public void method3614(@OriginalArg(0) ListNode_Sub1_Sub13 arg0, @OriginalArg(1) int arg1) {
 		if (this.anInt4609 == -1) {
 			throw new RuntimeException();
 		}

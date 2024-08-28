@@ -7,7 +7,7 @@ import org.openrs2.deob.annotation.Pc;
 public final class Static462 {
 
 	@OriginalMember(owner = "client!qo", name = "a", descriptor = "(I[B[IIIIIIIILclient!qo;)I")
-	public static int method4453(@OriginalArg(1) byte[] arg0, @OriginalArg(2) int[] arg1, @OriginalArg(3) int arg2, @OriginalArg(4) int arg3, @OriginalArg(5) int arg4, @OriginalArg(6) int arg5, @OriginalArg(8) int arg6, @OriginalArg(9) int arg7, @OriginalArg(10) Node_Sub15_Sub3 arg8) {
+	public static int method4453(@OriginalArg(1) byte[] arg0, @OriginalArg(2) int[] arg1, @OriginalArg(3) int arg2, @OriginalArg(4) int arg3, @OriginalArg(5) int arg4, @OriginalArg(6) int arg5, @OriginalArg(8) int arg6, @OriginalArg(9) int arg7, @OriginalArg(10) ListNode_Sub15_Sub3 arg8) {
 		arg2 >>= 0x8;
 		@Pc(7) int local7 = arg7 >> 8;
 		@Pc(11) int local11 = arg4 << 2;
@@ -60,7 +60,7 @@ public final class Static462 {
 	}
 
 	@OriginalMember(owner = "client!qo", name = "a", descriptor = "(II[B[IIIIIIIILclient!qo;II)I")
-	public static int method4455(@OriginalArg(2) byte[] arg0, @OriginalArg(3) int[] arg1, @OriginalArg(4) int arg2, @OriginalArg(5) int arg3, @OriginalArg(6) int arg4, @OriginalArg(7) int arg5, @OriginalArg(9) int arg6, @OriginalArg(10) int arg7, @OriginalArg(11) Node_Sub15_Sub3 arg8, @OriginalArg(12) int arg9, @OriginalArg(13) int arg10) {
+	public static int method4455(@OriginalArg(2) byte[] arg0, @OriginalArg(3) int[] arg1, @OriginalArg(4) int arg2, @OriginalArg(5) int arg3, @OriginalArg(6) int arg4, @OriginalArg(7) int arg5, @OriginalArg(9) int arg6, @OriginalArg(10) int arg7, @OriginalArg(11) ListNode_Sub15_Sub3 arg8, @OriginalArg(12) int arg9, @OriginalArg(13) int arg10) {
 		@Pc(14) int local14;
 		if (arg9 == 0 || (local14 = arg3 + (arg7 + arg9 - arg2 - 257) / arg9) > arg6) {
 			local14 = arg6;
@@ -103,7 +103,7 @@ public final class Static462 {
 	}
 
 	@OriginalMember(owner = "client!qo", name = "a", descriptor = "([B[IIIIIIIILclient!qo;)I")
-	public static int method4456(@OriginalArg(0) byte[] arg0, @OriginalArg(1) int[] arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4, @OriginalArg(5) int arg5, @OriginalArg(7) int arg6, @OriginalArg(8) int arg7, @OriginalArg(9) Node_Sub15_Sub3 arg8) {
+	public static int method4456(@OriginalArg(0) byte[] arg0, @OriginalArg(1) int[] arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4, @OriginalArg(5) int arg5, @OriginalArg(7) int arg6, @OriginalArg(8) int arg7, @OriginalArg(9) ListNode_Sub15_Sub3 arg8) {
 		arg2 >>= 0x8;
 		@Pc(7) int local7 = arg7 >> 8;
 		arg4 <<= 0x2;
@@ -150,7 +150,7 @@ public final class Static462 {
 	}
 
 	@OriginalMember(owner = "client!qo", name = "a", descriptor = "([B[IIIIIIILclient!qo;)I")
-	public static int method4457(@OriginalArg(0) byte[] arg0, @OriginalArg(1) int[] arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4, @OriginalArg(6) int arg5, @OriginalArg(7) int arg6, @OriginalArg(8) Node_Sub15_Sub3 arg7) {
+	public static int method4457(@OriginalArg(0) byte[] arg0, @OriginalArg(1) int[] arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4, @OriginalArg(6) int arg5, @OriginalArg(7) int arg6, @OriginalArg(8) ListNode_Sub15_Sub3 arg7) {
 		arg2 >>= 0x8;
 		@Pc(7) int local7 = arg6 >> 8;
 		@Pc(11) int local11 = arg4 << 2;
@@ -193,7 +193,7 @@ public final class Static462 {
 	}
 
 	@OriginalMember(owner = "client!qo", name = "b", descriptor = "(II[B[IIIIIIIILclient!qo;II)I")
-	public static int method4460(@OriginalArg(2) byte[] arg0, @OriginalArg(3) int[] arg1, @OriginalArg(4) int arg2, @OriginalArg(5) int arg3, @OriginalArg(6) int arg4, @OriginalArg(7) int arg5, @OriginalArg(9) int arg6, @OriginalArg(10) int arg7, @OriginalArg(11) Node_Sub15_Sub3 arg8, @OriginalArg(12) int arg9, @OriginalArg(13) int arg10) {
+	public static int method4460(@OriginalArg(2) byte[] arg0, @OriginalArg(3) int[] arg1, @OriginalArg(4) int arg2, @OriginalArg(5) int arg3, @OriginalArg(6) int arg4, @OriginalArg(7) int arg5, @OriginalArg(9) int arg6, @OriginalArg(10) int arg7, @OriginalArg(11) ListNode_Sub15_Sub3 arg8, @OriginalArg(12) int arg9, @OriginalArg(13) int arg10) {
 		arg8.anInt5717 -= arg8.anInt5710 * arg3;
 		arg8.anInt5718 -= arg8.anInt5705 * arg3;
 		@Pc(32) int local32;
@@ -226,7 +226,7 @@ public final class Static462 {
 	}
 
 	@OriginalMember(owner = "client!qo", name = "b", descriptor = "(I[B[IIIIIIIILclient!qo;)I")
-	public static int method4463(@OriginalArg(1) byte[] arg0, @OriginalArg(2) int[] arg1, @OriginalArg(3) int arg2, @OriginalArg(4) int arg3, @OriginalArg(5) int arg4, @OriginalArg(6) int arg5, @OriginalArg(8) int arg6, @OriginalArg(9) int arg7, @OriginalArg(10) Node_Sub15_Sub3 arg8) {
+	public static int method4463(@OriginalArg(1) byte[] arg0, @OriginalArg(2) int[] arg1, @OriginalArg(3) int arg2, @OriginalArg(4) int arg3, @OriginalArg(5) int arg4, @OriginalArg(6) int arg5, @OriginalArg(8) int arg6, @OriginalArg(9) int arg7, @OriginalArg(10) ListNode_Sub15_Sub3 arg8) {
 		arg2 >>= 0x8;
 		@Pc(7) int local7 = arg7 >> 8;
 		@Pc(11) int local11 = arg4 << 2;
@@ -279,7 +279,7 @@ public final class Static462 {
 	}
 
 	@OriginalMember(owner = "client!qo", name = "a", descriptor = "(I[B[IIIIIIIIIILclient!qo;)I")
-	public static int method4464(@OriginalArg(1) byte[] arg0, @OriginalArg(2) int[] arg1, @OriginalArg(3) int arg2, @OriginalArg(4) int arg3, @OriginalArg(5) int arg4, @OriginalArg(6) int arg5, @OriginalArg(7) int arg6, @OriginalArg(8) int arg7, @OriginalArg(10) int arg8, @OriginalArg(11) int arg9, @OriginalArg(12) Node_Sub15_Sub3 arg10) {
+	public static int method4464(@OriginalArg(1) byte[] arg0, @OriginalArg(2) int[] arg1, @OriginalArg(3) int arg2, @OriginalArg(4) int arg3, @OriginalArg(5) int arg4, @OriginalArg(6) int arg5, @OriginalArg(7) int arg6, @OriginalArg(8) int arg7, @OriginalArg(10) int arg8, @OriginalArg(11) int arg9, @OriginalArg(12) ListNode_Sub15_Sub3 arg10) {
 		arg2 >>= 0x8;
 		@Pc(7) int local7 = arg9 >> 8;
 		arg4 <<= 0x2;
@@ -347,7 +347,7 @@ public final class Static462 {
 	}
 
 	@OriginalMember(owner = "client!qo", name = "a", descriptor = "(II[B[IIIIIIILclient!qo;II)I")
-	public static int method4465(@OriginalArg(2) byte[] arg0, @OriginalArg(3) int[] arg1, @OriginalArg(4) int arg2, @OriginalArg(5) int arg3, @OriginalArg(6) int arg4, @OriginalArg(8) int arg5, @OriginalArg(9) int arg6, @OriginalArg(10) Node_Sub15_Sub3 arg7, @OriginalArg(11) int arg8, @OriginalArg(12) int arg9) {
+	public static int method4465(@OriginalArg(2) byte[] arg0, @OriginalArg(3) int[] arg1, @OriginalArg(4) int arg2, @OriginalArg(5) int arg3, @OriginalArg(6) int arg4, @OriginalArg(8) int arg5, @OriginalArg(9) int arg6, @OriginalArg(10) ListNode_Sub15_Sub3 arg7, @OriginalArg(11) int arg8, @OriginalArg(12) int arg9) {
 		@Pc(14) int local14;
 		if (arg8 == 0 || (local14 = arg3 + (arg6 + arg8 + 256 - arg2) / arg8) > arg5) {
 			local14 = arg5;
@@ -373,7 +373,7 @@ public final class Static462 {
 	}
 
 	@OriginalMember(owner = "client!qo", name = "c", descriptor = "(II[B[IIIIIIIILclient!qo;II)I")
-	public static int method4468(@OriginalArg(2) byte[] arg0, @OriginalArg(3) int[] arg1, @OriginalArg(4) int arg2, @OriginalArg(5) int arg3, @OriginalArg(6) int arg4, @OriginalArg(7) int arg5, @OriginalArg(9) int arg6, @OriginalArg(10) int arg7, @OriginalArg(11) Node_Sub15_Sub3 arg8, @OriginalArg(12) int arg9, @OriginalArg(13) int arg10) {
+	public static int method4468(@OriginalArg(2) byte[] arg0, @OriginalArg(3) int[] arg1, @OriginalArg(4) int arg2, @OriginalArg(5) int arg3, @OriginalArg(6) int arg4, @OriginalArg(7) int arg5, @OriginalArg(9) int arg6, @OriginalArg(10) int arg7, @OriginalArg(11) ListNode_Sub15_Sub3 arg8, @OriginalArg(12) int arg9, @OriginalArg(13) int arg10) {
 		@Pc(14) int local14;
 		if (arg9 == 0 || (local14 = arg3 + (arg7 + arg9 + 256 - arg2) / arg9) > arg6) {
 			local14 = arg6;
@@ -414,7 +414,7 @@ public final class Static462 {
 	}
 
 	@OriginalMember(owner = "client!qo", name = "a", descriptor = "(II[B[IIIIIIIIIILclient!qo;II)I")
-	public static int method4470(@OriginalArg(2) byte[] arg0, @OriginalArg(3) int[] arg1, @OriginalArg(4) int arg2, @OriginalArg(5) int arg3, @OriginalArg(6) int arg4, @OriginalArg(7) int arg5, @OriginalArg(8) int arg6, @OriginalArg(9) int arg7, @OriginalArg(11) int arg8, @OriginalArg(12) int arg9, @OriginalArg(13) Node_Sub15_Sub3 arg10, @OriginalArg(14) int arg11, @OriginalArg(15) int arg12) {
+	public static int method4470(@OriginalArg(2) byte[] arg0, @OriginalArg(3) int[] arg1, @OriginalArg(4) int arg2, @OriginalArg(5) int arg3, @OriginalArg(6) int arg4, @OriginalArg(7) int arg5, @OriginalArg(8) int arg6, @OriginalArg(9) int arg7, @OriginalArg(11) int arg8, @OriginalArg(12) int arg9, @OriginalArg(13) ListNode_Sub15_Sub3 arg10, @OriginalArg(14) int arg11, @OriginalArg(15) int arg12) {
 		arg10.anInt5708 -= arg10.anInt5715 * arg3;
 		@Pc(23) int local23;
 		if (arg11 == 0 || (local23 = arg3 + (arg9 + arg11 + 256 - arg2) / arg11) > arg8) {
@@ -464,7 +464,7 @@ public final class Static462 {
 	}
 
 	@OriginalMember(owner = "client!qo", name = "b", descriptor = "(II[B[IIIIIIIIIILclient!qo;II)I")
-	public static int method4471(@OriginalArg(2) byte[] arg0, @OriginalArg(3) int[] arg1, @OriginalArg(4) int arg2, @OriginalArg(5) int arg3, @OriginalArg(6) int arg4, @OriginalArg(7) int arg5, @OriginalArg(8) int arg6, @OriginalArg(9) int arg7, @OriginalArg(11) int arg8, @OriginalArg(12) int arg9, @OriginalArg(13) Node_Sub15_Sub3 arg10, @OriginalArg(14) int arg11, @OriginalArg(15) int arg12) {
+	public static int method4471(@OriginalArg(2) byte[] arg0, @OriginalArg(3) int[] arg1, @OriginalArg(4) int arg2, @OriginalArg(5) int arg3, @OriginalArg(6) int arg4, @OriginalArg(7) int arg5, @OriginalArg(8) int arg6, @OriginalArg(9) int arg7, @OriginalArg(11) int arg8, @OriginalArg(12) int arg9, @OriginalArg(13) ListNode_Sub15_Sub3 arg10, @OriginalArg(14) int arg11, @OriginalArg(15) int arg12) {
 		arg10.anInt5708 -= arg10.anInt5715 * arg3;
 		@Pc(23) int local23;
 		if (arg11 == 0 || (local23 = arg3 + (arg9 + arg11 - arg2 - 257) / arg11) > arg8) {
@@ -516,7 +516,7 @@ public final class Static462 {
 	}
 
 	@OriginalMember(owner = "client!qo", name = "b", descriptor = "([B[IIIIIIILclient!qo;)I")
-	public static int method4476(@OriginalArg(0) byte[] arg0, @OriginalArg(1) int[] arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4, @OriginalArg(6) int arg5, @OriginalArg(7) int arg6, @OriginalArg(8) Node_Sub15_Sub3 arg7) {
+	public static int method4476(@OriginalArg(0) byte[] arg0, @OriginalArg(1) int[] arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4, @OriginalArg(6) int arg5, @OriginalArg(7) int arg6, @OriginalArg(8) ListNode_Sub15_Sub3 arg7) {
 		arg2 >>= 0x8;
 		@Pc(7) int local7 = arg6 >> 8;
 		@Pc(11) int local11 = arg4 << 2;
@@ -554,7 +554,7 @@ public final class Static462 {
 	}
 
 	@OriginalMember(owner = "client!qo", name = "b", descriptor = "(II[B[IIIIIIILclient!qo;II)I")
-	public static int method4477(@OriginalArg(2) byte[] arg0, @OriginalArg(3) int[] arg1, @OriginalArg(4) int arg2, @OriginalArg(5) int arg3, @OriginalArg(6) int arg4, @OriginalArg(8) int arg5, @OriginalArg(9) int arg6, @OriginalArg(10) Node_Sub15_Sub3 arg7, @OriginalArg(11) int arg8, @OriginalArg(12) int arg9) {
+	public static int method4477(@OriginalArg(2) byte[] arg0, @OriginalArg(3) int[] arg1, @OriginalArg(4) int arg2, @OriginalArg(5) int arg3, @OriginalArg(6) int arg4, @OriginalArg(8) int arg5, @OriginalArg(9) int arg6, @OriginalArg(10) ListNode_Sub15_Sub3 arg7, @OriginalArg(11) int arg8, @OriginalArg(12) int arg9) {
 		@Pc(14) int local14;
 		if (arg8 == 0 || (local14 = arg3 + (arg6 + arg8 - arg2 - 257) / arg8) > arg5) {
 			local14 = arg5;
@@ -582,7 +582,7 @@ public final class Static462 {
 	}
 
 	@OriginalMember(owner = "client!qo", name = "d", descriptor = "(II[B[IIIIIIIILclient!qo;II)I")
-	public static int method4482(@OriginalArg(2) byte[] arg0, @OriginalArg(3) int[] arg1, @OriginalArg(4) int arg2, @OriginalArg(5) int arg3, @OriginalArg(6) int arg4, @OriginalArg(7) int arg5, @OriginalArg(9) int arg6, @OriginalArg(10) int arg7, @OriginalArg(11) Node_Sub15_Sub3 arg8, @OriginalArg(12) int arg9, @OriginalArg(13) int arg10) {
+	public static int method4482(@OriginalArg(2) byte[] arg0, @OriginalArg(3) int[] arg1, @OriginalArg(4) int arg2, @OriginalArg(5) int arg3, @OriginalArg(6) int arg4, @OriginalArg(7) int arg5, @OriginalArg(9) int arg6, @OriginalArg(10) int arg7, @OriginalArg(11) ListNode_Sub15_Sub3 arg8, @OriginalArg(12) int arg9, @OriginalArg(13) int arg10) {
 		arg8.anInt5717 -= arg8.anInt5710 * arg3;
 		arg8.anInt5718 -= arg8.anInt5705 * arg3;
 		@Pc(32) int local32;
@@ -617,7 +617,7 @@ public final class Static462 {
 	}
 
 	@OriginalMember(owner = "client!qo", name = "b", descriptor = "([B[IIIIIIIILclient!qo;)I")
-	public static int method4483(@OriginalArg(0) byte[] arg0, @OriginalArg(1) int[] arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4, @OriginalArg(5) int arg5, @OriginalArg(7) int arg6, @OriginalArg(8) int arg7, @OriginalArg(9) Node_Sub15_Sub3 arg8) {
+	public static int method4483(@OriginalArg(0) byte[] arg0, @OriginalArg(1) int[] arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4, @OriginalArg(5) int arg5, @OriginalArg(7) int arg6, @OriginalArg(8) int arg7, @OriginalArg(9) ListNode_Sub15_Sub3 arg8) {
 		arg2 >>= 0x8;
 		@Pc(7) int local7 = arg7 >> 8;
 		arg4 <<= 0x2;
@@ -669,17 +669,17 @@ public final class Static462 {
 	}
 
 	@OriginalMember(owner = "client!qo", name = "a", descriptor = "(Lclient!js;III)Lclient!qo;")
-	public static Node_Sub15_Sub3 method4486(@OriginalArg(0) Node_Sub4_Sub1 arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3) {
-		return arg0.aByteArray48 == null || arg0.aByteArray48.length == 0 ? null : new Node_Sub15_Sub3(arg0, arg1, arg2, arg3);
+	public static ListNode_Sub15_Sub3 method4486(@OriginalArg(0) ListNode_Sub4_Sub1 arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3) {
+		return arg0.aByteArray48 == null || arg0.aByteArray48.length == 0 ? null : new ListNode_Sub15_Sub3(arg0, arg1, arg2, arg3);
 	}
 
 	@OriginalMember(owner = "client!qo", name = "a", descriptor = "(Lclient!js;II)Lclient!qo;")
-	public static Node_Sub15_Sub3 method4489(@OriginalArg(0) Node_Sub4_Sub1 arg0, @OriginalArg(2) int arg1) {
-		return arg0.aByteArray48 == null || arg0.aByteArray48.length == 0 ? null : new Node_Sub15_Sub3(arg0, (int) ((long) arg0.anInt3727 * 256L * (long) 100 / (long) (Static261.anInt4928 * 100)), arg1 << 6);
+	public static ListNode_Sub15_Sub3 method4489(@OriginalArg(0) ListNode_Sub4_Sub1 arg0, @OriginalArg(2) int arg1) {
+		return arg0.aByteArray48 == null || arg0.aByteArray48.length == 0 ? null : new ListNode_Sub15_Sub3(arg0, (int) ((long) arg0.anInt3727 * 256L * (long) 100 / (long) (Static261.anInt4928 * 100)), arg1 << 6);
 	}
 
 	@OriginalMember(owner = "client!qo", name = "b", descriptor = "(I[B[IIIIIIIIIILclient!qo;)I")
-	public static int method4491(@OriginalArg(1) byte[] arg0, @OriginalArg(2) int[] arg1, @OriginalArg(3) int arg2, @OriginalArg(4) int arg3, @OriginalArg(5) int arg4, @OriginalArg(6) int arg5, @OriginalArg(7) int arg6, @OriginalArg(8) int arg7, @OriginalArg(10) int arg8, @OriginalArg(11) int arg9, @OriginalArg(12) Node_Sub15_Sub3 arg10) {
+	public static int method4491(@OriginalArg(1) byte[] arg0, @OriginalArg(2) int[] arg1, @OriginalArg(3) int arg2, @OriginalArg(4) int arg3, @OriginalArg(5) int arg4, @OriginalArg(6) int arg5, @OriginalArg(7) int arg6, @OriginalArg(8) int arg7, @OriginalArg(10) int arg8, @OriginalArg(11) int arg9, @OriginalArg(12) ListNode_Sub15_Sub3 arg10) {
 		arg2 >>= 0x8;
 		@Pc(7) int local7 = arg9 >> 8;
 		arg4 <<= 0x2;

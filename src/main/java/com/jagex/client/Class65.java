@@ -34,13 +34,13 @@ public abstract class Class65 {
 	public abstract int l(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1);
 
 	@OriginalMember(owner = "client!ta", name = "k", descriptor = "(IILclient!ba;)Lclient!ba;")
-	public abstract Node_Sub1_Sub4 k(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) Node_Sub1_Sub4 arg2);
+	public abstract ListNode_Sub1_Sub4 k(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) ListNode_Sub1_Sub4 arg2);
 
 	@OriginalMember(owner = "client!ta", name = "ca", descriptor = "()V")
 	public abstract void ca();
 
 	@OriginalMember(owner = "client!ta", name = "a", descriptor = "(Lclient!ba;IIIIZ)Z")
-	public abstract boolean method4022(@OriginalArg(0) Node_Sub1_Sub4 arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3);
+	public abstract boolean method4022(@OriginalArg(0) ListNode_Sub1_Sub4 arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3);
 
 	@OriginalMember(owner = "client!ta", name = "a", descriptor = "(II[I[I[I[I[I[I[I[I[I[I[IIIIZ)V")
 	public abstract void method4023(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int[] arg2, @OriginalArg(3) int[] arg3, @OriginalArg(4) int[] arg4, @OriginalArg(5) int[] arg5, @OriginalArg(6) int[] arg6, @OriginalArg(7) int[] arg7, @OriginalArg(8) int[] arg8, @OriginalArg(9) int[] arg9, @OriginalArg(10) int[] arg10, @OriginalArg(11) int[] arg11, @OriginalArg(12) int[] arg12, @OriginalArg(13) int arg13, @OriginalArg(14) int arg14, @OriginalArg(15) int arg15);
@@ -49,7 +49,7 @@ public abstract class Class65 {
 	public abstract int a(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1);
 
 	@OriginalMember(owner = "client!ta", name = "a", descriptor = "(Lclient!vp;[I)V")
-	public abstract void method4024(@OriginalArg(0) Node_Sub21 arg0, @OriginalArg(1) int[] arg1);
+	public abstract void method4024(@OriginalArg(0) ListNode_Sub21 arg0, @OriginalArg(1) int[] arg1);
 
 	@OriginalMember(owner = "client!ta", name = "i", descriptor = "(III)V")
 	public abstract void i(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2);
@@ -67,8 +67,8 @@ public abstract class Class65 {
 	public abstract void method4029(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) boolean[][] arg3, @OriginalArg(4) boolean arg4);
 
 	@OriginalMember(owner = "client!ta", name = "b", descriptor = "(Lclient!ba;IIIIZ)V")
-	public abstract void b(@OriginalArg(0) Node_Sub1_Sub4 arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4, @OriginalArg(5) boolean arg5);
+	public abstract void b(@OriginalArg(0) ListNode_Sub1_Sub4 arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4, @OriginalArg(5) boolean arg5);
 
 	@OriginalMember(owner = "client!ta", name = "p", descriptor = "(Lclient!ba;IIIIZ)V")
-	public abstract void p(@OriginalArg(0) Node_Sub1_Sub4 arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4, @OriginalArg(5) boolean arg5);
+	public abstract void p(@OriginalArg(0) ListNode_Sub1_Sub4 arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4, @OriginalArg(5) boolean arg5);
 }

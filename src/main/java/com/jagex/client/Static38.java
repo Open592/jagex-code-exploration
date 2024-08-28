@@ -24,7 +24,7 @@ public final class Static38 {
 
 	@OriginalMember(owner = "client!bs", name = "a", descriptor = "(II)V")
 	public static void method670(@OriginalArg(0) int arg0) {
-		@Pc(16) Node_Sub1_Sub11 local16 = Static405.method5222(arg0, 1);
+		@Pc(16) ListNode_Sub1_Sub11 local16 = Static405.method5222(arg0, 1);
 		local16.method2608();
 	}
 

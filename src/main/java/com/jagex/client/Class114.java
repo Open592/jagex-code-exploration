@@ -24,7 +24,7 @@ public final class Class114 implements Interface12 {
 		@Pc(13) int local13 = local10.anInt3914;
 		@Pc(16) int local16 = local10.anInt3919;
 		@Pc(19) int local19 = local10.anInt3915;
-		@Pc(26) int local26 = Node_Sub1_Sub3.anIntArray17[local19 - local16];
+		@Pc(26) int local26 = ListNode_Sub1_Sub3.anIntArray17[local19 - local16];
 		if (arg0 < 0 || local26 < arg0) {
 			arg0 = 0;
 		}
@@ -47,9 +47,9 @@ public final class Class114 implements Interface12 {
 	@OriginalMember(owner = "client!it", name = "b", descriptor = "(III)V")
 	public void method2830(@OriginalArg(1) int arg0, @OriginalArg(2) int arg1) {
 		this.anIntArray221[arg0] = arg1;
-		@Pc(24) Node_Sub29 local24 = (Node_Sub29) this.aClass102_16.method2700((long) arg0);
+		@Pc(24) ListNode_Sub29 local24 = (ListNode_Sub29) this.aClass102_16.method2700((long) arg0);
 		if (local24 == null) {
-			local24 = new Node_Sub29(4611686018427387905L);
+			local24 = new ListNode_Sub29(4611686018427387905L);
 			this.aClass102_16.method2703((long) arg0, local24);
 		} else if (local24.aLong153 != 4611686018427387905L) {
 			local24.aLong153 = MonotonicClock.getCurrentTimeInMilliseconds() + 500L | 0x4000000000000000L;
@@ -60,9 +60,9 @@ public final class Class114 implements Interface12 {
 	@OriginalMember(owner = "client!it", name = "c", descriptor = "(III)V")
 	public void method2831(@OriginalArg(1) int arg0, @OriginalArg(2) int arg1) {
 		this.anIntArray220[arg1] = arg0;
-		@Pc(23) Node_Sub29 local23 = (Node_Sub29) this.aClass102_16.method2700((long) arg1);
+		@Pc(23) ListNode_Sub29 local23 = (ListNode_Sub29) this.aClass102_16.method2700((long) arg1);
 		if (local23 == null) {
-			local23 = new Node_Sub29(MonotonicClock.getCurrentTimeInMilliseconds() + 500L);
+			local23 = new ListNode_Sub29(MonotonicClock.getCurrentTimeInMilliseconds() + 500L);
 			this.aClass102_16.method2703((long) arg1, local23);
 		} else {
 			local23.aLong153 = MonotonicClock.getCurrentTimeInMilliseconds() + 500L;
@@ -76,22 +76,22 @@ public final class Class114 implements Interface12 {
 		@Pc(18) int local18 = local15.anInt3914;
 		@Pc(21) int local21 = local15.anInt3919;
 		@Pc(24) int local24 = local15.anInt3915;
-		@Pc(30) int local30 = Node_Sub1_Sub3.anIntArray17[local24 - local21];
+		@Pc(30) int local30 = ListNode_Sub1_Sub3.anIntArray17[local24 - local21];
 		return this.anIntArray220[local18] >> local21 & local30;
 	}
 
 	@OriginalMember(owner = "client!it", name = "a", descriptor = "(ZI)I")
 	public int method2832(@OriginalArg(0) boolean arg0) {
 		@Pc(8) long local8 = MonotonicClock.getCurrentTimeInMilliseconds();
-		for (@Pc(22) Node_Sub29 local22 = arg0 ? (Node_Sub29) this.aClass102_16.method2705() : (Node_Sub29) this.aClass102_16.method2704(); local22 != null; local22 = (Node_Sub29) this.aClass102_16.method2704()) {
+		for (@Pc(22) ListNode_Sub29 local22 = arg0 ? (ListNode_Sub29) this.aClass102_16.method2705() : (ListNode_Sub29) this.aClass102_16.method2704(); local22 != null; local22 = (ListNode_Sub29) this.aClass102_16.method2704()) {
 			if ((local22.aLong153 & 0x3FFFFFFFFFFFFFFFL) < local8) {
 				if ((local22.aLong153 & 0x4000000000000000L) != 0L) {
-					@Pc(54) int local54 = (int) local22.aLong224;
+					@Pc(54) int local54 = (int) local22.id;
 					this.anIntArray220[local54] = this.anIntArray221[local54];
-					local22.method5684();
+					local22.popSelf();
 					return local54;
 				}
-				local22.method5684();
+				local22.popSelf();
 			}
 		}
 		return -1;
@@ -103,7 +103,7 @@ public final class Class114 implements Interface12 {
 		@Pc(19) int local19 = local16.anInt3914;
 		@Pc(22) int local22 = local16.anInt3919;
 		@Pc(25) int local25 = local16.anInt3915;
-		@Pc(32) int local32 = Node_Sub1_Sub3.anIntArray17[local25 - local22];
+		@Pc(32) int local32 = ListNode_Sub1_Sub3.anIntArray17[local25 - local22];
 		if (arg1 < 0 || arg1 > local32) {
 			arg1 = 0;
 		}

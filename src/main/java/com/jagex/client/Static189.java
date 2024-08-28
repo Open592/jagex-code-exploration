@@ -18,7 +18,7 @@ public final class Static189 {
 	public static int anInt3572 = 0;
 
 	@OriginalMember(owner = "client!jk", name = "a", descriptor = "(Lclient!cw;II)V")
-	public static void method2942(@OriginalArg(0) Node_Sub12_Sub1 arg0, @OriginalArg(2) int arg1) {
+	public static void method2942(@OriginalArg(0) ListNode_Sub12_Sub1 arg0, @OriginalArg(2) int arg1) {
 		Static449.aBoolean689 = false;
 		Static441.anInt7199 = 0;
 		Static31.method617(arg0);

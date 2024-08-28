@@ -32,7 +32,7 @@ public final class ListNode_Sub15_Sub2 extends ListNode_Sub15 {
 
 	@OriginalMember(owner = "client!jl", name = "b", descriptor = "(Lclient!ti;)V")
 	public synchronized void method2955(@OriginalArg(0) ListNode_Sub15 arg0) {
-		arg0.method5684();
+		arg0.popSelf();
 	}
 
 	@OriginalMember(owner = "client!jl", name = "b", descriptor = "()Lclient!ti;")
@@ -56,9 +56,9 @@ public final class ListNode_Sub15_Sub2 extends ListNode_Sub15 {
 
 	@OriginalMember(owner = "client!jl", name = "a", descriptor = "(Lclient!wr;)V")
 	private void method2957(@OriginalArg(0) ListNode_Sub44 arg0) {
-		arg0.method5684();
+		arg0.popSelf();
 		arg0.method5668();
-		@Pc(9) ListNode local9 = this.aClass183_27.aListNode_207.aListNode_262;
+		@Pc(9) ListNode local9 = this.aClass183_27.aListNode_207.previous;
 		if (local9 == this.aClass183_27.aListNode_207) {
 			this.anInt3580 = -1;
 		} else {
@@ -69,10 +69,10 @@ public final class ListNode_Sub15_Sub2 extends ListNode_Sub15 {
 	@OriginalMember(owner = "client!jl", name = "a", descriptor = "(Lclient!vu;Lclient!wr;)V")
 	private void method2958(@OriginalArg(0) ListNode arg0, @OriginalArg(1) ListNode_Sub44 arg1) {
 		while (arg0 != this.aClass183_27.aListNode_207 && ((ListNode_Sub44) arg0).anInt7350 <= arg1.anInt7350) {
-			arg0 = arg0.aListNode_262;
+			arg0 = arg0.previous;
 		}
 		Static245.method3597(arg0, arg1);
-		this.anInt3580 = ((ListNode_Sub44) this.aClass183_27.aListNode_207.aListNode_262).anInt7350;
+		this.anInt3580 = ((ListNode_Sub44) this.aClass183_27.aListNode_207.previous).anInt7350;
 	}
 
 	@OriginalMember(owner = "client!jl", name = "c", descriptor = "(I)V")
@@ -126,7 +126,7 @@ public final class ListNode_Sub15_Sub2 extends ListNode_Sub15 {
 					this.method2957(local50);
 				} else {
 					local50.anInt7350 = local58;
-					this.method2958(local50.aListNode_262, local50);
+					this.method2958(local50.previous, local50);
 				}
 			}
 		} while (arg0 != 0);
@@ -159,7 +159,7 @@ public final class ListNode_Sub15_Sub2 extends ListNode_Sub15 {
 					this.method2957(local60);
 				} else {
 					local60.anInt7350 = local68;
-					this.method2958(local60.aListNode_262, local60);
+					this.method2958(local60.previous, local60);
 				}
 			}
 		} while (arg2 != 0);

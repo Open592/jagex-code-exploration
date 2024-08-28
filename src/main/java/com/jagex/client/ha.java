@@ -25,7 +25,7 @@ public final class ha extends Class65 implements Interface4 {
 	}
 
 	@OriginalMember(owner = "client!ha", name = "b", descriptor = "(Lclient!ba;IIIIZ)V")
-	public native void b(@OriginalArg(0) Node_Sub1_Sub4 arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4, @OriginalArg(5) boolean arg5);
+	public native void b(@OriginalArg(0) ListNode_Sub1_Sub4 arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4, @OriginalArg(5) boolean arg5);
 
 	@OriginalMember(owner = "client!ha", name = "EA", descriptor = "()V")
 	public native void EA();
@@ -134,13 +134,13 @@ public final class ha extends Class65 implements Interface4 {
 
 	@OriginalMember(owner = "client!ha", name = "a", descriptor = "(Lclient!vp;[I)V")
 	@Override
-	public void method4024(@OriginalArg(0) Node_Sub21 arg0, @OriginalArg(1) int[] arg1) {
+	public void method4024(@OriginalArg(0) ListNode_Sub21 arg0, @OriginalArg(1) int[] arg1) {
 		this.aClass183_19.method4137(arg0);
 		this.G(arg0.hashCode(), arg0.method3160(), arg0.method3161(), arg0.method3164(), arg0.method3165(), arg0.method3162(), arg1);
 	}
 
 	@OriginalMember(owner = "client!ha", name = "p", descriptor = "(Lclient!ba;IIIIZ)V")
-	public native void p(@OriginalArg(0) Node_Sub1_Sub4 arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4, @OriginalArg(5) boolean arg5);
+	public native void p(@OriginalArg(0) ListNode_Sub1_Sub4 arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4, @OriginalArg(5) boolean arg5);
 
 	@OriginalMember(owner = "client!ha", name = "a", descriptor = "(II)I")
 	public native int a(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1);
@@ -153,7 +153,7 @@ public final class ha extends Class65 implements Interface4 {
 
 	@OriginalMember(owner = "client!ha", name = "a", descriptor = "(Lclient!ba;IIIIZ)Z")
 	@Override
-	public boolean method4022(@OriginalArg(0) Node_Sub1_Sub4 arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3) {
+	public boolean method4022(@OriginalArg(0) ListNode_Sub1_Sub4 arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3) {
 		return true;
 	}
 
@@ -168,7 +168,7 @@ public final class ha extends Class65 implements Interface4 {
 	public void method4029(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) boolean[][] arg3, @OriginalArg(4) boolean arg4) {
 		@Pc(1) int local1 = 0;
 		@Pc(7) float[] local7 = new float[this.aClass183_19.method4148()];
-		for (@Pc(13) Node_Sub21 local13 = (Node_Sub21) this.aClass183_19.method4140(); local13 != null; local13 = (Node_Sub21) this.aClass183_19.method4144()) {
+		for (@Pc(13) ListNode_Sub21 local13 = (ListNode_Sub21) this.aClass183_19.method4140(); local13 != null; local13 = (ListNode_Sub21) this.aClass183_19.method4144()) {
 			local7[local1++] = local13.method3159();
 		}
 		this.W(local7);
@@ -178,5 +178,5 @@ public final class ha extends Class65 implements Interface4 {
 	public native int l(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1);
 
 	@OriginalMember(owner = "client!ha", name = "k", descriptor = "(IILclient!ba;)Lclient!ba;")
-	public native Node_Sub1_Sub4 k(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) Node_Sub1_Sub4 arg2);
+	public native ListNode_Sub1_Sub4 k(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) ListNode_Sub1_Sub4 arg2);
 }

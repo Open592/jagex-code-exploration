@@ -9,7 +9,7 @@ import org.openrs2.deob.annotation.Pc;
 public final class Class25 {
 
 	@OriginalMember(owner = "client!bo", name = "g", descriptor = "Lclient!vu;")
-	private Node aNode_33;
+	private ListNode aListNode_33;
 
 	@OriginalMember(owner = "client!bo", name = "h", descriptor = "I")
 	private int anInt626 = 0;
@@ -23,17 +23,17 @@ public final class Class25 {
 	}
 
 	@OriginalMember(owner = "client!bo", name = "a", descriptor = "(Z)Lclient!vu;")
-	public Node method640() {
-		@Pc(30) Node local30;
-		if (this.anInt626 > 0 && this.aNode_33 != this.aClass102_5.aNodeArray1[this.anInt626 - 1]) {
-			local30 = this.aNode_33;
-			this.aNode_33 = local30.aNode_262;
+	public ListNode method640() {
+		@Pc(30) ListNode local30;
+		if (this.anInt626 > 0 && this.aListNode_33 != this.aClass102_5.aListNodeArray1[this.anInt626 - 1]) {
+			local30 = this.aListNode_33;
+			this.aListNode_33 = local30.previous;
 			return local30;
 		}
 		while (this.anInt626 < this.aClass102_5.anInt3159) {
-			local30 = this.aClass102_5.aNodeArray1[this.anInt626++].aNode_262;
-			if (this.aClass102_5.aNodeArray1[this.anInt626 - 1] != local30) {
-				this.aNode_33 = local30.aNode_262;
+			local30 = this.aClass102_5.aListNodeArray1[this.anInt626++].previous;
+			if (this.aClass102_5.aListNodeArray1[this.anInt626 - 1] != local30) {
+				this.aListNode_33 = local30.previous;
 				return local30;
 			}
 		}
@@ -41,7 +41,7 @@ public final class Class25 {
 	}
 
 	@OriginalMember(owner = "client!bo", name = "a", descriptor = "(I)Lclient!vu;")
-	public Node method641() {
+	public ListNode method641() {
 		this.anInt626 = 0;
 		return this.method640();
 	}

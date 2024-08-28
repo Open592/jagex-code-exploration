@@ -17,7 +17,7 @@ public final class Static402 {
 
 	@OriginalMember(owner = "client!ug", name = "a", descriptor = "(ZIZ)I")
 	public static int method5212(@OriginalArg(1) int arg0) {
-		@Pc(14) Node_Sub25 local14 = Static175.method2834(false, arg0);
+		@Pc(14) ListNode_Sub25 local14 = Static175.method2834(false, arg0);
 		if (local14 == null) {
 			return Static101.aClass75_1.method2079(arg0).anInt207;
 		}

@@ -33,9 +33,9 @@ public final class Static321 {
 	}
 
 	@OriginalMember(owner = "client!qc", name = "a", descriptor = "(ILclient!cw;I)V")
-	public static void method4336(@OriginalArg(0) int arg0, @OriginalArg(1) Node_Sub12_Sub1 arg1) {
+	public static void method4336(@OriginalArg(0) int arg0, @OriginalArg(1) ListNode_Sub12_Sub1 arg1) {
 		while (true) {
-			@Pc(15) Node_Sub36 local15 = (Node_Sub36) Static421.aClass183_48.method4140();
+			@Pc(15) ListNode_Sub36 local15 = (ListNode_Sub36) Static421.aClass183_48.method4140();
 			if (local15 == null) {
 				return;
 			}
@@ -144,7 +144,7 @@ public final class Static321 {
 			}
 			arg1.method2525(local99);
 			arg1.pSize1(arg1.pos - local99);
-			local15.method5684();
+			local15.popSelf();
 		}
 	}
 }

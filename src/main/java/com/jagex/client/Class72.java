@@ -45,17 +45,17 @@ public final class Class72 {
 	}
 
 	@OriginalMember(owner = "client!ff", name = "b", descriptor = "(II)Lclient!rk;")
-	public Node_Sub1_Sub18 method1988(@OriginalArg(0) int arg0) {
+	public ListNode_Sub1_Sub18 method1988(@OriginalArg(0) int arg0) {
 		@Pc(6) Class68 local6 = this.aClass68_10;
-		@Pc(16) Node_Sub1_Sub18 local16;
+		@Pc(16) ListNode_Sub1_Sub18 local16;
 		synchronized (this.aClass68_10) {
-			local16 = (Node_Sub1_Sub18) this.aClass68_10.method1787((long) arg0);
+			local16 = (ListNode_Sub1_Sub18) this.aClass68_10.method1787((long) arg0);
 		}
 		if (local16 != null) {
 			return local16;
 		}
 		@Pc(35) byte[] local35 = this.aClass76_26.method2104(arg0, 26);
-		local16 = new Node_Sub1_Sub18();
+		local16 = new ListNode_Sub1_Sub18();
 		if (local35 != null) {
 			local16.method4668(new Packet(local35));
 		}

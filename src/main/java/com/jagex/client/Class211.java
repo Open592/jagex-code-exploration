@@ -644,11 +644,11 @@ public final class Class211 {
 				for (local157 = 0; local157 < local147; local157++) {
 					@Pc(517) boolean local517 = arg1.g1() == 1;
 					@Pc(521) int local521 = arg1.g3();
-					@Pc(530) Node local530;
+					@Pc(530) ListNode local530;
 					if (local517) {
-						local530 = new Node_Sub7(arg1.gStringCP1252ToUTF8());
+						local530 = new ListNode_Sub7(arg1.gStringCP1252ToUTF8());
 					} else {
-						local530 = new Node_Sub37(arg1.g4());
+						local530 = new ListNode_Sub37(arg1.g4());
 					}
 					this.aClass102_36.method2703((long) local521, local530);
 				}
@@ -662,7 +662,7 @@ public final class Class211 {
 		if (this.aClass102_36 == null) {
 			return arg1;
 		} else {
-			@Pc(16) Node_Sub37 local16 = (Node_Sub37) this.aClass102_36.method2700((long) arg0);
+			@Pc(16) ListNode_Sub37 local16 = (ListNode_Sub37) this.aClass102_36.method2700((long) arg0);
 			return local16 == null ? arg1 : local16.anInt5426;
 		}
 	}
@@ -803,7 +803,7 @@ public final class Class211 {
 		if (this.aClass102_36 == null) {
 			return arg0;
 		} else {
-			@Pc(16) Node_Sub7 local16 = (Node_Sub7) this.aClass102_36.method2700((long) arg1);
+			@Pc(16) ListNode_Sub7 local16 = (ListNode_Sub7) this.aClass102_36.method2700((long) arg1);
 			return local16 == null ? arg0 : local16.aString12;
 		}
 	}

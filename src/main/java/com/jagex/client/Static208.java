@@ -53,7 +53,7 @@ public final class Static208 {
 		@Pc(104) int local104 = arg9 + (local59 + 1 >> 1);
 		@Pc(108) Class65 local108 = Static417.aClass65Array4[arg7];
 		@Pc(132) int local132 = local108.l(local73, local88) + local108.l(local82, local88) + local108.l(local73, local104) + local108.l(local82, local104) >> 2;
-		@Pc(136) Node_Sub23 local136 = new Node_Sub23();
+		@Pc(136) ListNode_Sub23 local136 = new ListNode_Sub23();
 		local136.anInt3191 = Static24.anInt5323 + arg11;
 		local136.anInt3195 = arg12;
 		local136.anInt3202 = Static24.anInt5323 + arg1;

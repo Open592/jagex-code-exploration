@@ -17,7 +17,7 @@ public final class Static349 {
 
 	@OriginalMember(owner = "client!ro", name = "a", descriptor = "(Lclient!lh;B)V")
 	public static void method4705(@OriginalArg(0) Class16_Sub1_Sub5_Sub1 arg0) {
-		@Pc(11) Node_Sub8 local11 = (Node_Sub8) Static341.aClass102_38.method2700((long) arg0.anInt6037);
+		@Pc(11) ListNode_Sub8 local11 = (ListNode_Sub8) Static341.aClass102_38.method2700((long) arg0.anInt6037);
 		if (local11 == null) {
 			return;
 		}
@@ -25,7 +25,7 @@ public final class Static349 {
 			Static360.aClass4_Sub15_Sub2_2.method2955(local11.aClass4_Sub15_Sub3_2);
 			local11.aClass4_Sub15_Sub3_2 = null;
 		}
-		local11.method5684();
+		local11.popSelf();
 	}
 
 	@OriginalMember(owner = "client!ro", name = "a", descriptor = "(IIIIIB)V")

@@ -9,132 +9,132 @@ import org.openrs2.deob.annotation.Pc;
 public final class Class183 {
 
 	@OriginalMember(owner = "client!pk", name = "r", descriptor = "Lclient!vu;")
-	private Node aNode_208;
+	private ListNode aListNode_208;
 
 	@OriginalMember(owner = "client!pk", name = "a", descriptor = "Lclient!vu;")
-	public final Node aNode_207 = new Node();
+	public final ListNode aListNode_207 = new ListNode();
 
 	@OriginalMember(owner = "client!pk", name = "<init>", descriptor = "()V")
 	public Class183() {
-		this.aNode_207.aNode_261 = this.aNode_207;
-		this.aNode_207.aNode_262 = this.aNode_207;
+		this.aListNode_207.next = this.aListNode_207;
+		this.aListNode_207.previous = this.aListNode_207;
 	}
 
 	@OriginalMember(owner = "client!pk", name = "a", descriptor = "(ILclient!vu;)V")
-	public void method4133(@OriginalArg(1) Node arg0) {
-		if (arg0.aNode_261 != null) {
-			arg0.method5684();
+	public void method4133(@OriginalArg(1) ListNode arg0) {
+		if (arg0.next != null) {
+			arg0.popSelf();
 		}
-		arg0.aNode_262 = this.aNode_207.aNode_262;
-		arg0.aNode_261 = this.aNode_207;
-		arg0.aNode_261.aNode_262 = arg0;
-		arg0.aNode_262.aNode_261 = arg0;
+		arg0.previous = this.aListNode_207.previous;
+		arg0.next = this.aListNode_207;
+		arg0.next.previous = arg0;
+		arg0.previous.next = arg0;
 	}
 
 	@OriginalMember(owner = "client!pk", name = "a", descriptor = "(I)Lclient!vu;")
-	public Node method4136() {
-		@Pc(7) Node local7 = this.aNode_207.aNode_262;
-		if (this.aNode_207 == local7) {
+	public ListNode method4136() {
+		@Pc(7) ListNode local7 = this.aListNode_207.previous;
+		if (this.aListNode_207 == local7) {
 			return null;
 		} else {
-			local7.method5684();
+			local7.popSelf();
 			return local7;
 		}
 	}
 
 	@OriginalMember(owner = "client!pk", name = "a", descriptor = "(ZLclient!vu;)V")
-	public void method4137(@OriginalArg(1) Node arg0) {
-		if (arg0.aNode_261 != null) {
-			arg0.method5684();
+	public void method4137(@OriginalArg(1) ListNode arg0) {
+		if (arg0.next != null) {
+			arg0.popSelf();
 		}
-		arg0.aNode_262 = this.aNode_207;
-		arg0.aNode_261 = this.aNode_207.aNode_261;
-		arg0.aNode_261.aNode_262 = arg0;
-		arg0.aNode_262.aNode_261 = arg0;
+		arg0.previous = this.aListNode_207;
+		arg0.next = this.aListNode_207.next;
+		arg0.next.previous = arg0;
+		arg0.previous.next = arg0;
 	}
 
 	@OriginalMember(owner = "client!pk", name = "b", descriptor = "(I)V")
 	public void method4138() {
 		while (true) {
-			@Pc(5) Node local5 = this.aNode_207.aNode_262;
-			if (this.aNode_207 == local5) {
-				this.aNode_208 = null;
+			@Pc(5) ListNode local5 = this.aListNode_207.previous;
+			if (this.aListNode_207 == local5) {
+				this.aListNode_208 = null;
 				return;
 			}
-			local5.method5684();
+			local5.popSelf();
 		}
 	}
 
 	@OriginalMember(owner = "client!pk", name = "c", descriptor = "(I)Lclient!vu;")
-	public Node method4139() {
-		@Pc(12) Node local12 = this.aNode_207.aNode_261;
-		if (this.aNode_207 == local12) {
-			this.aNode_208 = null;
+	public ListNode method4139() {
+		@Pc(12) ListNode local12 = this.aListNode_207.next;
+		if (this.aListNode_207 == local12) {
+			this.aListNode_208 = null;
 			return null;
 		} else {
-			this.aNode_208 = local12.aNode_261;
+			this.aListNode_208 = local12.next;
 			return local12;
 		}
 	}
 
 	@OriginalMember(owner = "client!pk", name = "d", descriptor = "(I)Lclient!vu;")
-	public Node method4140() {
-		@Pc(12) Node local12 = this.aNode_207.aNode_262;
-		if (this.aNode_207 == local12) {
-			this.aNode_208 = null;
+	public ListNode method4140() {
+		@Pc(12) ListNode local12 = this.aListNode_207.previous;
+		if (this.aListNode_207 == local12) {
+			this.aListNode_208 = null;
 			return null;
 		} else {
-			this.aNode_208 = local12.aNode_262;
+			this.aListNode_208 = local12.previous;
 			return local12;
 		}
 	}
 
 	@OriginalMember(owner = "client!pk", name = "a", descriptor = "(Lclient!vu;ZLclient!pk;)V")
-	private void method4141(@OriginalArg(0) Node arg0, @OriginalArg(2) Class183 arg1) {
-		@Pc(7) Node local7 = this.aNode_207.aNode_261;
-		this.aNode_207.aNode_261 = arg0.aNode_261;
-		arg0.aNode_261.aNode_262 = this.aNode_207;
-		if (arg0 != this.aNode_207) {
-			arg0.aNode_261 = arg1.aNode_207.aNode_261;
-			arg0.aNode_261.aNode_262 = arg0;
-			arg1.aNode_207.aNode_261 = local7;
-			local7.aNode_262 = arg1.aNode_207;
+	private void method4141(@OriginalArg(0) ListNode arg0, @OriginalArg(2) Class183 arg1) {
+		@Pc(7) ListNode local7 = this.aListNode_207.next;
+		this.aListNode_207.next = arg0.next;
+		arg0.next.previous = this.aListNode_207;
+		if (arg0 != this.aListNode_207) {
+			arg0.next = arg1.aListNode_207.next;
+			arg0.next.previous = arg0;
+			arg1.aListNode_207.next = local7;
+			local7.previous = arg1.aListNode_207;
 		}
 	}
 
 	@OriginalMember(owner = "client!pk", name = "b", descriptor = "(B)Lclient!vu;")
-	public Node method4144() {
-		@Pc(6) Node local6 = this.aNode_208;
-		if (this.aNode_207 == local6) {
-			this.aNode_208 = null;
+	public ListNode method4144() {
+		@Pc(6) ListNode local6 = this.aListNode_208;
+		if (this.aListNode_207 == local6) {
+			this.aListNode_208 = null;
 			return null;
 		} else {
-			this.aNode_208 = local6.aNode_262;
+			this.aListNode_208 = local6.previous;
 			return local6;
 		}
 	}
 
 	@OriginalMember(owner = "client!pk", name = "c", descriptor = "(B)Lclient!vu;")
-	public Node method4145() {
-		@Pc(6) Node local6 = this.aNode_208;
-		if (this.aNode_207 == local6) {
-			this.aNode_208 = null;
+	public ListNode method4145() {
+		@Pc(6) ListNode local6 = this.aListNode_208;
+		if (this.aListNode_207 == local6) {
+			this.aListNode_208 = null;
 			return null;
 		} else {
-			this.aNode_208 = local6.aNode_261;
+			this.aListNode_208 = local6.next;
 			return local6;
 		}
 	}
 
 	@OriginalMember(owner = "client!pk", name = "d", descriptor = "(B)Z")
 	public boolean method4147() {
-		return this.aNode_207.aNode_262 == this.aNode_207;
+		return this.aListNode_207.previous == this.aListNode_207;
 	}
 
 	@OriginalMember(owner = "client!pk", name = "e", descriptor = "(I)I")
 	public int method4148() {
 		@Pc(7) int local7 = 0;
-		for (@Pc(11) Node local11 = this.aNode_207.aNode_262; local11 != this.aNode_207; local11 = local11.aNode_262) {
+		for (@Pc(11) ListNode local11 = this.aListNode_207.previous; local11 != this.aListNode_207; local11 = local11.previous) {
 			local7++;
 		}
 		return local7;
@@ -142,6 +142,6 @@ public final class Class183 {
 
 	@OriginalMember(owner = "client!pk", name = "a", descriptor = "(Lclient!pk;B)V")
 	public void method4149(@OriginalArg(0) Class183 arg0) {
-		this.method4141(this.aNode_207.aNode_262, arg0);
+		this.method4141(this.aListNode_207.previous, arg0);
 	}
 }

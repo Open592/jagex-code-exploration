@@ -30,8 +30,8 @@ public final class Class62 {
 	}
 
 	@OriginalMember(owner = "client!ek", name = "a", descriptor = "(IB)Lclient!np;")
-	public Node_Sub1_Sub16 method1607(@OriginalArg(0) int arg0) {
-		@Pc(19) Node_Sub1_Sub16 local19 = (Node_Sub1_Sub16) this.aClass68_8.method1787((long) arg0);
+	public ListNode_Sub1_Sub16 method1607(@OriginalArg(0) int arg0) {
+		@Pc(19) ListNode_Sub1_Sub16 local19 = (ListNode_Sub1_Sub16) this.aClass68_8.method1787((long) arg0);
 		if (local19 != null) {
 			return local19;
 		}
@@ -41,7 +41,7 @@ public final class Class62 {
 		} else {
 			local33 = this.aClass76_24.method2104(arg0 & 0x7FFF, 0);
 		}
-		local19 = new Node_Sub1_Sub16();
+		local19 = new ListNode_Sub1_Sub16();
 		if (local33 != null) {
 			local19.method3873(new Packet(local33));
 		}

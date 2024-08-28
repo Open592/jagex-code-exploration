@@ -27,7 +27,7 @@ public final class Class256 implements Runnable {
 		if (this.aThread3 == null) {
 			return;
 		}
-		this.method5477(new Node());
+		this.method5477(new ListNode());
 		try {
 			this.aThread3.join();
 		} catch (@Pc(20) InterruptedException local20) {
@@ -36,7 +36,7 @@ public final class Class256 implements Runnable {
 	}
 
 	@OriginalMember(owner = "client!vo", name = "a", descriptor = "(ILclient!vu;)V")
-	private void method5477(@OriginalArg(1) Node arg0) {
+	private void method5477(@OriginalArg(1) ListNode arg0) {
 		@Pc(10) Class183 local10 = this.aClass183_49;
 		synchronized (this.aClass183_49) {
 			this.aClass183_49.method4137(arg0);
@@ -45,13 +45,13 @@ public final class Class256 implements Runnable {
 	}
 
 	@OriginalMember(owner = "client!vo", name = "a", descriptor = "(ILjava/lang/String;)Lclient!va;")
-	public Node_Sub42 method5479(@OriginalArg(1) String arg0) {
+	public ListNode_Sub42 method5479(@OriginalArg(1) String arg0) {
 		if (this.aThread3 == null) {
 			throw new IllegalStateException("");
 		} else if (arg0 == null) {
 			throw new IllegalArgumentException("");
 		} else {
-			@Pc(23) Node_Sub42 local23 = new Node_Sub42(arg0);
+			@Pc(23) ListNode_Sub42 local23 = new ListNode_Sub42(arg0);
 			this.method5477(local23);
 			return local23;
 		}
@@ -62,19 +62,19 @@ public final class Class256 implements Runnable {
 	public void run() {
 		while (true) {
 			@Pc(8) Class183 local8 = this.aClass183_49;
-			@Pc(38) Node_Sub42 local38;
+			@Pc(38) ListNode_Sub42 local38;
 			synchronized (this.aClass183_49) {
-				@Pc(15) Node local15;
+				@Pc(15) ListNode local15;
 				for (local15 = this.aClass183_49.method4136(); local15 == null; local15 = this.aClass183_49.method4136()) {
 					try {
 						this.aClass183_49.wait();
 					} catch (@Pc(22) InterruptedException local22) {
 					}
 				}
-				if (!(local15 instanceof Node_Sub42)) {
+				if (!(local15 instanceof ListNode_Sub42)) {
 					return;
 				}
-				local38 = (Node_Sub42) local15;
+				local38 = (ListNode_Sub42) local15;
 			}
 			@Pc(64) int local64;
 			try {

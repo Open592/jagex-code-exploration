@@ -23,7 +23,7 @@ public final class Static87 {
 		}
 		local16.method91();
 		if (local16.anInt121 == 2 && Static18.aClass102_2.method2700((long) arg0) == null) {
-			Static18.aClass102_2.method2703((long) arg0, new Node_Sub37(Static194.anInt3688));
+			Static18.aClass102_2.method2703((long) arg0, new ListNode_Sub37(Static194.anInt3688));
 			Static392.aClass8Array1[Static194.anInt3688++] = local16;
 		}
 		Static330.aClass68_38.method1779((long) arg0, local16);

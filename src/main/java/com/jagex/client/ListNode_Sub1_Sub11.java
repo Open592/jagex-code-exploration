@@ -33,7 +33,7 @@ public final class ListNode_Sub1_Sub11 extends ListNode_Sub1 {
 
 	@OriginalMember(owner = "client!hp", name = "<init>", descriptor = "(II)V")
 	public ListNode_Sub1_Sub11(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1) {
-		super.aLong224 = (long) arg0 << 32 | (long) arg1;
+		super.id = (long) arg0 << 32 | (long) arg1;
 	}
 
 	@OriginalMember(owner = "client!hp", name = "a", descriptor = "(I)V")
@@ -46,7 +46,7 @@ public final class ListNode_Sub1_Sub11 extends ListNode_Sub1 {
 
 	@OriginalMember(owner = "client!hp", name = "e", descriptor = "(B)I")
 	public int method2606() {
-		return (int) (super.aLong224 >>> 32 & 0xFFL);
+		return (int) (super.id >>> 32 & 0xFFL);
 	}
 
 	@OriginalMember(owner = "client!hp", name = "f", descriptor = "(B)V")
@@ -57,7 +57,7 @@ public final class ListNode_Sub1_Sub11 extends ListNode_Sub1 {
 
 	@OriginalMember(owner = "client!hp", name = "g", descriptor = "(B)I")
 	public int method2609() {
-		return (int) super.aLong224;
+		return (int) super.id;
 	}
 
 	@OriginalMember(owner = "client!hp", name = "e", descriptor = "(I)J")

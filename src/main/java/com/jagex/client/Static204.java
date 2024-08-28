@@ -41,7 +41,7 @@ public final class Static204 {
 
 	@OriginalMember(owner = "client!kg", name = "a", descriptor = "(ZZIIB)I")
 	public static int method3185(@OriginalArg(1) boolean arg0, @OriginalArg(2) int arg1, @OriginalArg(3) int arg2) {
-		@Pc(10) Node_Sub25 local10 = Static175.method2834(false, arg1);
+		@Pc(10) ListNode_Sub25 local10 = Static175.method2834(false, arg1);
 		if (local10 == null) {
 			return 0;
 		}

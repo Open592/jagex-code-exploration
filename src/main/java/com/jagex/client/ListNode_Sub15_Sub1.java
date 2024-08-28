@@ -121,7 +121,7 @@ public final class ListNode_Sub15_Sub1 extends ListNode_Sub15 {
 				if (local8.anInt4394 < 0) {
 					this.aClass4_Sub28ArrayArray1[local8.anInt4386][local8.anInt4384] = null;
 				}
-				local8.method5684();
+				local8.popSelf();
 			}
 		}
 	}
@@ -402,7 +402,7 @@ public final class ListNode_Sub15_Sub1 extends ListNode_Sub15 {
 			return false;
 		}
 		if (arg0.anInt4394 >= 0) {
-			arg0.method5684();
+			arg0.popSelf();
 			if (arg0.anInt4385 > 0 && this.aClass4_Sub28ArrayArray2[arg0.anInt4386][arg0.anInt4385] == arg0) {
 				this.aClass4_Sub28ArrayArray2[arg0.anInt4386][arg0.anInt4385] = null;
 			}
@@ -578,7 +578,7 @@ public final class ListNode_Sub15_Sub1 extends ListNode_Sub15 {
 	@OriginalMember(owner = "client!dv", name = "f", descriptor = "(B)V")
 	public synchronized void method1441() {
 		for (@Pc(15) ListNode_Sub38 local15 = (ListNode_Sub38) this.aClass102_8.method2705(); local15 != null; local15 = (ListNode_Sub38) this.aClass102_8.method2704()) {
-			local15.method5684();
+			local15.popSelf();
 		}
 	}
 
@@ -674,7 +674,7 @@ public final class ListNode_Sub15_Sub1 extends ListNode_Sub15 {
 		arg0.anInt4380 = Static261.anInt4928 / 100;
 		if (arg0.anInt4394 >= 0 && (arg0.aClass4_Sub15_Sub3_3 == null || arg0.aClass4_Sub15_Sub3_3.method4462())) {
 			arg0.method3453();
-			arg0.method5684();
+			arg0.popSelf();
 			if (arg0.anInt4385 > 0 && this.aClass4_Sub28ArrayArray2[arg0.anInt4386][arg0.anInt4385] == arg0) {
 				this.aClass4_Sub28ArrayArray2[arg0.anInt4386][arg0.anInt4385] = null;
 			}
@@ -745,7 +745,7 @@ public final class ListNode_Sub15_Sub1 extends ListNode_Sub15 {
 		}
 		arg0.method3453();
 		if (arg0.anInt4394 >= 0) {
-			arg0.method5684();
+			arg0.popSelf();
 			if (arg0.anInt4385 > 0 && arg0 == this.aClass4_Sub28ArrayArray2[arg0.anInt4386][arg0.anInt4385]) {
 				this.aClass4_Sub28ArrayArray2[arg0.anInt4386][arg0.anInt4385] = null;
 			}
@@ -846,7 +846,7 @@ public final class ListNode_Sub15_Sub1 extends ListNode_Sub15 {
 		@Pc(9) boolean local9 = true;
 		@Pc(20) int[] local20 = new int[] { 22050 };
 		for (@Pc(26) ListNode_Sub19 local26 = (ListNode_Sub19) arg2.aClass102_23.method2705(); local26 != null; local26 = (ListNode_Sub19) arg2.aClass102_23.method2704()) {
-			@Pc(32) int local32 = (int) local26.aLong224;
+			@Pc(32) int local32 = (int) local26.id;
 			@Pc(40) ListNode_Sub38 local40 = (ListNode_Sub38) this.aClass102_8.method2700((long) local32);
 			if (local40 == null) {
 				local40 = Static30.method577(local32, arg1);

@@ -222,7 +222,7 @@ public final class Class247 {
 	public int anInt6798 = -1;
 
 	@OriginalMember(owner = "client!uu", name = "Lb", descriptor = "Lclient!ns;")
-	public Node_Sub33 aClass4_Sub33_2 = Static75.aClass4_Sub33_1;
+	public ListNode_Sub33 aClass4_Sub33_2 = Static75.aClass4_Sub33_1;
 
 	@OriginalMember(owner = "client!uu", name = "o", descriptor = "I")
 	public int anInt6778 = 0;
@@ -456,12 +456,12 @@ public final class Class247 {
 	public void method5297(@OriginalArg(0) String arg0, @OriginalArg(1) int arg1) {
 		if (this.aClass102_39 == null) {
 			this.aClass102_39 = new Class102(16);
-			this.aClass102_39.method2703((long) arg1, new Node_Sub7(arg0));
+			this.aClass102_39.method2703((long) arg1, new ListNode_Sub7(arg0));
 			return;
 		}
-		@Pc(41) Node_Sub7 local41 = (Node_Sub7) this.aClass102_39.method2700((long) arg1);
+		@Pc(41) ListNode_Sub7 local41 = (ListNode_Sub7) this.aClass102_39.method2700((long) arg1);
 		if (local41 == null) {
-			this.aClass102_39.method2703((long) arg1, new Node_Sub7(arg0));
+			this.aClass102_39.method2703((long) arg1, new ListNode_Sub7(arg0));
 		} else {
 			local41.aString12 = arg0;
 		}
@@ -489,7 +489,7 @@ public final class Class247 {
 		if (this.aClass102_39 == null) {
 			return arg0;
 		} else {
-			@Pc(16) Node_Sub37 local16 = (Node_Sub37) this.aClass102_39.method2700((long) arg1);
+			@Pc(16) ListNode_Sub37 local16 = (ListNode_Sub37) this.aClass102_39.method2700((long) arg1);
 			return local16 == null ? arg0 : local16.anInt5426;
 		}
 	}
@@ -554,9 +554,9 @@ public final class Class247 {
 	@OriginalMember(owner = "client!uu", name = "a", descriptor = "(BI)V")
 	public void method5303(@OriginalArg(1) int arg0) {
 		if (this.aClass102_39 != null) {
-			@Pc(9) Node local9 = this.aClass102_39.method2700((long) arg0);
+			@Pc(9) ListNode local9 = this.aClass102_39.method2700((long) arg0);
 			if (local9 != null) {
-				local9.method5684();
+				local9.popSelf();
 			}
 		}
 	}
@@ -743,7 +743,7 @@ public final class Class247 {
 				this.anInt6789 = -1;
 			}
 		}
-		this.aClass4_Sub33_2 = new Node_Sub33(local490, local593);
+		this.aClass4_Sub33_2 = new ListNode_Sub33(local490, local593);
 		if (local9 >= 0) {
 			local628 = arg0.g1();
 			@Pc(786) int local786;
@@ -751,13 +751,13 @@ public final class Class247 {
 			for (@Pc(780) int local780 = 0; local780 < local628; local780++) {
 				local786 = arg0.g3();
 				local790 = arg0.g4();
-				this.aClass102_39.method2703((long) local786, new Node_Sub37(local790));
+				this.aClass102_39.method2703((long) local786, new ListNode_Sub37(local790));
 			}
 			local786 = arg0.g1();
 			for (local790 = 0; local790 < local786; local790++) {
 				@Pc(816) int local816 = arg0.g3();
 				@Pc(820) String local820 = arg0.gjstr2();
-				this.aClass102_39.method2703((long) local816, new Node_Sub7(local820));
+				this.aClass102_39.method2703((long) local816, new ListNode_Sub7(local820));
 			}
 		}
 		this.anObjectArray28 = this.method5302(arg0);
@@ -990,7 +990,7 @@ public final class Class247 {
 		if (this.aClass102_39 == null) {
 			return arg0;
 		} else {
-			@Pc(22) Node_Sub7 local22 = (Node_Sub7) this.aClass102_39.method2700((long) arg1);
+			@Pc(22) ListNode_Sub7 local22 = (ListNode_Sub7) this.aClass102_39.method2700((long) arg1);
 			return local22 == null ? arg0 : local22.aString12;
 		}
 	}
@@ -999,12 +999,12 @@ public final class Class247 {
 	public void method5315(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1) {
 		if (this.aClass102_39 == null) {
 			this.aClass102_39 = new Class102(16);
-			this.aClass102_39.method2703((long) arg0, new Node_Sub37(arg1));
+			this.aClass102_39.method2703((long) arg0, new ListNode_Sub37(arg1));
 			return;
 		}
-		@Pc(31) Node_Sub37 local31 = (Node_Sub37) this.aClass102_39.method2700((long) arg0);
+		@Pc(31) ListNode_Sub37 local31 = (ListNode_Sub37) this.aClass102_39.method2700((long) arg0);
 		if (local31 == null) {
-			this.aClass102_39.method2703((long) arg0, new Node_Sub37(arg1));
+			this.aClass102_39.method2703((long) arg0, new ListNode_Sub37(arg1));
 		} else {
 			local31.anInt5426 = arg1;
 		}

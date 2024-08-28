@@ -126,7 +126,7 @@ public final class ListNode_Sub15_Sub3 extends ListNode_Sub15 {
 				if (this.anInt5714 == Integer.MIN_VALUE) {
 					this.anInt5714 = 0;
 					this.anInt5708 = this.anInt5717 = this.anInt5718 = 0;
-					this.method5684();
+					this.popSelf();
 					arg0 = this.anInt5712;
 				}
 				this.anInt5712 = 0;
@@ -149,7 +149,7 @@ public final class ListNode_Sub15_Sub3 extends ListNode_Sub15 {
 		if (this.anInt5707 < 0) {
 			if (this.anInt5716 <= 0) {
 				this.method4466();
-				this.method5684();
+				this.popSelf();
 				return;
 			}
 			this.anInt5707 = 0;
@@ -157,7 +157,7 @@ public final class ListNode_Sub15_Sub3 extends ListNode_Sub15 {
 		if (this.anInt5707 >= local87) {
 			if (this.anInt5716 >= 0) {
 				this.method4466();
-				this.method5684();
+				this.popSelf();
 				return;
 			}
 			this.anInt5707 = local87 - 1;
@@ -225,13 +225,13 @@ public final class ListNode_Sub15_Sub3 extends ListNode_Sub15 {
 				if (this.anInt5707 < 0) {
 					this.anInt5707 = -1;
 					this.method4466();
-					this.method5684();
+					this.popSelf();
 					return;
 				}
 			} else if (this.anInt5707 >= local87) {
 				this.anInt5707 = local87;
 				this.method4466();
-				this.method5684();
+				this.popSelf();
 			}
 		} else if (this.aBoolean516) {
 			if (this.anInt5716 < 0) {
@@ -324,7 +324,7 @@ public final class ListNode_Sub15_Sub3 extends ListNode_Sub15 {
 		} else if (this.anInt5714 == Integer.MIN_VALUE) {
 			this.anInt5714 = 0;
 			this.anInt5708 = this.anInt5717 = this.anInt5718 = 0;
-			this.method5684();
+			this.popSelf();
 			return true;
 		} else {
 			this.method4472();
@@ -357,7 +357,7 @@ public final class ListNode_Sub15_Sub3 extends ListNode_Sub15 {
 		if (this.anInt5707 < 0) {
 			if (this.anInt5716 <= 0) {
 				this.method4466();
-				this.method5684();
+				this.popSelf();
 				return;
 			}
 			this.anInt5707 = 0;
@@ -365,7 +365,7 @@ public final class ListNode_Sub15_Sub3 extends ListNode_Sub15 {
 		if (this.anInt5707 >= local29) {
 			if (this.anInt5716 >= 0) {
 				this.method4466();
-				this.method5684();
+				this.popSelf();
 				return;
 			}
 			this.anInt5707 = local29 - 1;
@@ -443,7 +443,7 @@ public final class ListNode_Sub15_Sub3 extends ListNode_Sub15 {
 				if (this.anInt5707 < 0) {
 					this.anInt5707 = -1;
 					this.method4466();
-					this.method5684();
+					this.popSelf();
 					return;
 				}
 			} else {
@@ -451,7 +451,7 @@ public final class ListNode_Sub15_Sub3 extends ListNode_Sub15 {
 				if (this.anInt5707 >= local29) {
 					this.anInt5707 = local29;
 					this.method4466();
-					this.method5684();
+					this.popSelf();
 				}
 			}
 		} else if (this.aBoolean516) {
@@ -691,12 +691,12 @@ public final class ListNode_Sub15_Sub3 extends ListNode_Sub15 {
 	public synchronized void method4490(@OriginalArg(0) int arg0) {
 		if (arg0 == 0) {
 			this.method4488();
-			this.method5684();
+			this.popSelf();
 		} else if (this.anInt5717 == 0 && this.anInt5718 == 0) {
 			this.anInt5712 = 0;
 			this.anInt5714 = 0;
 			this.anInt5708 = 0;
-			this.method5684();
+			this.popSelf();
 		} else {
 			@Pc(31) int local31 = -this.anInt5708;
 			if (this.anInt5708 > local31) {

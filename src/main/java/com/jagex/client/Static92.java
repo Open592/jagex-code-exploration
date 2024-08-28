@@ -19,22 +19,22 @@ public final class Static92 {
 	}
 
 	@OriginalMember(owner = "client!em", name = "a", descriptor = "(I)Lclient!hp;")
-	public static Node_Sub1_Sub11 method1614() {
-		@Pc(12) Node_Sub1_Sub11 local12 = (Node_Sub1_Sub11) Static99.aClass229_1.method5089();
+	public static ListNode_Sub1_Sub11 method1614() {
+		@Pc(12) ListNode_Sub1_Sub11 local12 = (ListNode_Sub1_Sub11) Static99.aClass229_1.method5089();
 		if (local12 != null) {
-			local12.method5684();
+			local12.popSelf();
 			local12.method4662();
 			return local12;
 		}
 		do {
-			local12 = (Node_Sub1_Sub11) Static250.aClass229_4.method5089();
+			local12 = (ListNode_Sub1_Sub11) Static250.aClass229_4.method5089();
 			if (local12 == null) {
 				return null;
 			}
 			if (local12.method2611() > MonotonicClock.getCurrentTimeInMilliseconds()) {
 				return null;
 			}
-			local12.method5684();
+			local12.popSelf();
 			local12.method4662();
 		} while ((local12.aLong198 & Long.MIN_VALUE) == 0L);
 		return local12;

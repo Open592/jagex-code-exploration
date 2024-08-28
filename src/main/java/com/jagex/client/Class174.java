@@ -8,5 +8,5 @@ import org.openrs2.deob.annotation.OriginalMember;
 public abstract class Class174 {
 
 	@OriginalMember(owner = "client!wa", name = "a", descriptor = "(ILclient!fq;)Lclient!fq;")
-	public abstract Node_Sub1_Sub8 method4040(@OriginalArg(1) Node_Sub1_Sub8 arg0);
+	public abstract ListNode_Sub1_Sub8 method4040(@OriginalArg(1) ListNode_Sub1_Sub8 arg0);
 }

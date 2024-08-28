@@ -25,7 +25,7 @@ public final class Class40 {
 	private final float[] aFloatArray4 = new float[16];
 
 	@OriginalMember(owner = "client!cm", name = "h", descriptor = "Lclient!hk;")
-	private final Node_Sub12_Sub2 aClass4_Sub12_Sub2_1 = new Node_Sub12_Sub2(786336);
+	private final ListNode_Sub12_Sub2 aClass4_Sub12_Sub2_1 = new ListNode_Sub12_Sub2(786336);
 
 	@OriginalMember(owner = "client!cm", name = "n", descriptor = "I")
 	private final int anInt997 = Static329.method4426(1600);

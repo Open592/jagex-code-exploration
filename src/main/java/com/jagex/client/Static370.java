@@ -13,7 +13,7 @@ public final class Static370 {
 	public static final Class98 aClass98_16 = new Class98(7, 0, 1, 1);
 
 	@OriginalMember(owner = "client!sq", name = "s", descriptor = "Lclient!hk;")
-	public static Node_Sub12_Sub2 aClass4_Sub12_Sub2_3 = new Node_Sub12_Sub2(8192);
+	public static ListNode_Sub12_Sub2 aClass4_Sub12_Sub2_3 = new ListNode_Sub12_Sub2(8192);
 
 	@OriginalMember(owner = "client!sq", name = "a", descriptor = "(ILclient!fs;BI)Lclient!jq;")
 	public static Class122 method4948(@OriginalArg(1) Class76 arg0, @OriginalArg(3) int arg1) {

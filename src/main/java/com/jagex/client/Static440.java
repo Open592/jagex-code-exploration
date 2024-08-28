@@ -45,7 +45,7 @@ public final class Static440 {
 						local62 = jagmisc.getTotalPhysicalMemory() > 268435456L;
 					} catch (@Pc(72) Throwable local72) {
 					}
-					@Pc(78) Node_Sub2 local78;
+					@Pc(78) ListNode_Sub2 local78;
 					if (local62) {
 						local78 = Static122.aClass19_16.method4284(146800640);
 					} else {

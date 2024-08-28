@@ -102,11 +102,11 @@ public final class Static311 {
 			}
 		}
 		Static203.method3177(local92, local97);
-		for (@Pc(418) Node_Sub9 local418 = (Node_Sub9) Static115.aClass183_15.method4140(); local418 != null; local418 = (Node_Sub9) Static115.aClass183_15.method4144()) {
+		for (@Pc(418) ListNode_Sub9 local418 = (ListNode_Sub9) Static115.aClass183_15.method4140(); local418 != null; local418 = (ListNode_Sub9) Static115.aClass183_15.method4144()) {
 			local418.anInt790 -= local97;
 			local418.anInt793 -= local92;
 			if (Static448.anInt7307 != 3 && (local418.anInt793 < 0 || local418.anInt790 < 0 || local418.anInt793 >= Static326.anInt5666 || local418.anInt790 >= Static283.anInt5187)) {
-				local418.method5684();
+				local418.popSelf();
 			}
 		}
 		if (Static343.anInt771 != 0) {

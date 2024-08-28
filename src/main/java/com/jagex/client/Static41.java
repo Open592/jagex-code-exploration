@@ -44,7 +44,7 @@ public final class Static41 {
 	}
 
 	@OriginalMember(owner = "client!bv", name = "a", descriptor = "(ILclient!cw;IILclient!lh;)V")
-	public static void method729(@OriginalArg(0) int arg0, @OriginalArg(1) Node_Sub12_Sub1 arg1, @OriginalArg(2) int arg2, @OriginalArg(4) Class16_Sub1_Sub5_Sub1 arg3) {
+	public static void method729(@OriginalArg(0) int arg0, @OriginalArg(1) ListNode_Sub12_Sub1 arg1, @OriginalArg(2) int arg2, @OriginalArg(4) Class16_Sub1_Sub5_Sub1 arg3) {
 		@Pc(7) byte local7 = -1;
 		if ((arg0 & 0x40) != 0) {
 			arg3.anInt4323 = arg1.g2();
@@ -255,15 +255,15 @@ public final class Static41 {
 	@OriginalMember(owner = "client!bv", name = "a", descriptor = "(I)V")
 	public static void method730() {
 		Static304.aClass183_39.method4138();
-		for (@Pc(15) Node_Sub39 local15 = (Node_Sub39) Static206.aClass183_28.method4140(); local15 != null; local15 = (Node_Sub39) Static206.aClass183_28.method4144()) {
+		for (@Pc(15) ListNode_Sub39 local15 = (ListNode_Sub39) Static206.aClass183_28.method4140(); local15 != null; local15 = (ListNode_Sub39) Static206.aClass183_28.method4144()) {
 			if (local15.anInt5699 < 1000) {
-				local15.method5684();
+				local15.popSelf();
 				Static304.aClass183_39.method4137(local15);
 			}
 		}
 		Static304.aClass183_39.method4149(Static206.aClass183_28);
 		@Pc(43) int local43 = -1;
-		@Pc(48) Node_Sub5 local48 = (Node_Sub5) Static413.aClass183_47.method4140();
+		@Pc(48) ListNode_Sub5 local48 = (ListNode_Sub5) Static413.aClass183_47.method4140();
 		if (local48 != null) {
 			local43 = local48.method515();
 		}
@@ -324,7 +324,7 @@ public final class Static41 {
 		if (local200 != -1) {
 			local219 = 0;
 			@Pc(301) Class63 local301 = new Class63(Static206.aClass183_28);
-			for (@Pc(306) Node_Sub39 local306 = (Node_Sub39) local301.method1611(); local306 != null; local306 = (Node_Sub39) local301.method1612()) {
+			for (@Pc(306) ListNode_Sub39 local306 = (ListNode_Sub39) local301.method1611(); local306 != null; local306 = (ListNode_Sub39) local301.method1612()) {
 				if (local219 == local200) {
 					Static247.method3617(local198, local306, local194);
 				}

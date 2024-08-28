@@ -7,7 +7,7 @@ import org.openrs2.deob.annotation.Pc;
 public final class Static148 {
 
 	@OriginalMember(owner = "client!hj", name = "a", descriptor = "Lclient!cn;")
-	public static Node_Sub1_Sub5 aClass4_Sub1_Sub5_3;
+	public static ListNode_Sub1_Sub5 aClass4_Sub1_Sub5_3;
 
 	@OriginalMember(owner = "client!hj", name = "c", descriptor = "Lclient!pj;")
 	public static Class182 aClass182_3;
@@ -131,7 +131,7 @@ public final class Static148 {
 
 	@OriginalMember(owner = "client!hj", name = "a", descriptor = "(I)V")
 	public static void method4492(@OriginalArg(0) int arg0) {
-		aClass4_Sub1_Sub5_3 = (Node_Sub1_Sub5) aClass102_30.method2700((long) arg0);
+		aClass4_Sub1_Sub5_3 = (ListNode_Sub1_Sub5) aClass102_30.method2700((long) arg0);
 	}
 
 	@OriginalMember(owner = "client!hj", name = "a", descriptor = "(Lclient!ya;IIII)V")
@@ -197,7 +197,7 @@ public final class Static148 {
 							} else if (local179 <= 0) {
 								method4497(arg0, local28, local70, local44, local84, local175, local177, aByteArray78[local173], null, null, true);
 							} else if (local179 == 65535) {
-								@Pc(282) Node_Sub27 local282 = (Node_Sub27) aClass102_31.method2700((long) (local50 << 16 | local93));
+								@Pc(282) ListNode_Sub27 local282 = (ListNode_Sub27) aClass102_31.method2700((long) (local50 << 16 | local93));
 								if (local282 != null) {
 									method4497(arg0, local28, local70, local44, local84, local175, local177, aByteArray78[local173], local282.aShortArray140, local282.aByteArray49, true);
 								}
@@ -246,7 +246,7 @@ public final class Static148 {
 								if (local175 <= 0) {
 									method4504(arg0, local40, local80, local50, local93, null, null);
 								} else if (local175 == 65535) {
-									@Pc(459) Node_Sub27 local459 = (Node_Sub27) aClass102_31.method2700((long) (local57 << 16 | local173));
+									@Pc(459) ListNode_Sub27 local459 = (ListNode_Sub27) aClass102_31.method2700((long) (local57 << 16 | local173));
 									if (local459 != null) {
 										method4504(arg0, local40, local80, local50, local93, local459.aShortArray140, local459.aByteArray49);
 									}
@@ -323,8 +323,8 @@ public final class Static148 {
 	}
 
 	@OriginalMember(owner = "client!hj", name = "a", descriptor = "(II)Lclient!cn;")
-	public static Node_Sub1_Sub5 method4494(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1) {
-		for (@Pc(4) Node_Sub1_Sub5 local4 = (Node_Sub1_Sub5) aClass102_30.method2705(); local4 != null; local4 = (Node_Sub1_Sub5) aClass102_30.method2704()) {
+	public static ListNode_Sub1_Sub5 method4494(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1) {
+		for (@Pc(4) ListNode_Sub1_Sub5 local4 = (ListNode_Sub1_Sub5) aClass102_30.method2705(); local4 != null; local4 = (ListNode_Sub1_Sub5) aClass102_30.method2704()) {
 			if (local4.aBoolean95 && local4.method932(arg1, arg0)) {
 				return local4;
 			}
@@ -596,7 +596,7 @@ public final class Static148 {
 	}
 
 	@OriginalMember(owner = "client!hj", name = "a", descriptor = "(Lclient!ya;Lclient!aq;IIII)V")
-	private static void method4499(@OriginalArg(0) Class19 arg0, @OriginalArg(1) Node_Sub3 arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3) {
+	private static void method4499(@OriginalArg(0) Class19 arg0, @OriginalArg(1) ListNode_Sub3 arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3) {
 		arg1.anInt235 = anInt5723 + (arg2 * (arg1.anInt233 - anInt5726) >> 16);
 		arg1.anInt231 = anInt5730 - (arg3 * (arg1.anInt228 - anInt5725) >> 16);
 	}
@@ -659,7 +659,7 @@ public final class Static148 {
 						local215[local220] = (short) arg1.g2();
 						local218[local220] = arg1.g1s();
 					}
-					aClass102_31.method2703((long) (arg4 << 16 | arg5), new Node_Sub27(local215, local218));
+					aClass102_31.method2703((long) (arg4 << 16 | arg5), new ListNode_Sub27(local215, local218));
 				}
 			} else {
 				local215 = null;
@@ -708,7 +708,7 @@ public final class Static148 {
 		for (@Pc(4) int local4 = 0; local4 < aClass195_3.anInt5679; local4++) {
 			@Pc(32) boolean local32 = aClass4_Sub1_Sub5_3.method935(local2, aClass195_3.anIntArray397[local4] >> 28 & 0x3, aClass195_3.anIntArray397[local4] & 0x3FFF, aClass195_3.anIntArray397[local4] >> 14 & 0x3FFF);
 			if (local32) {
-				@Pc(42) Node_Sub3 local42 = new Node_Sub3(aClass195_3.anIntArray396[local4]);
+				@Pc(42) ListNode_Sub3 local42 = new ListNode_Sub3(aClass195_3.anIntArray396[local4]);
 				local42.anInt233 = local2[1] - anInt5732;
 				local42.anInt228 = local2[2] - anInt5724;
 				aClass183_41.method4137(local42);
@@ -764,7 +764,7 @@ public final class Static148 {
 				if (local15 != 0) {
 					@Pc(35) int local35;
 					if (local15 == 65535) {
-						@Pc(31) Node_Sub27 local31 = (Node_Sub27) aClass102_31.method2700((long) (local1 << 16 | local4));
+						@Pc(31) ListNode_Sub27 local31 = (ListNode_Sub27) aClass102_31.method2700((long) (local1 << 16 | local4));
 						if (local31 != null) {
 							for (local35 = 0; local35 < local31.aShortArray140.length; local35++) {
 								@Pc(46) Class202 local46 = aClass262_3.method5560(local31.aShortArray140[local35] & 0xFFFF);
@@ -776,7 +776,7 @@ public final class Static148 {
 									}
 								}
 								if (local49 != -1) {
-									@Pc(70) Node_Sub3 local70 = new Node_Sub3(local49);
+									@Pc(70) ListNode_Sub3 local70 = new ListNode_Sub3(local49);
 									local70.anInt233 = local1;
 									local70.anInt228 = local4;
 									aClass183_41.method4137(local70);
@@ -793,7 +793,7 @@ public final class Static148 {
 							}
 						}
 						if (local35 != -1) {
-							@Pc(118) Node_Sub3 local118 = new Node_Sub3(local35);
+							@Pc(118) ListNode_Sub3 local118 = new ListNode_Sub3(local35);
 							local118.anInt233 = local1;
 							local118.anInt228 = local4;
 							aClass183_41.method4137(local118);
@@ -819,7 +819,7 @@ public final class Static148 {
 										}
 									}
 									if (local180 != -1) {
-										@Pc(201) Node_Sub3 local201 = new Node_Sub3(local180);
+										@Pc(201) ListNode_Sub3 local201 = new ListNode_Sub3(local180);
 										local201.anInt233 = (local15 + (anInt5732 >> 6)) * 64 + local160.aByte74 - anInt5732;
 										local201.anInt228 = (local144 + (anInt5724 >> 6)) * 64 + local160.aByte73 - anInt5724;
 										aClass183_41.method4137(local201);
@@ -836,7 +836,7 @@ public final class Static148 {
 	@OriginalMember(owner = "client!hj", name = "b", descriptor = "(II)Lclient!tn;")
 	public static Class229 method4506(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1) {
 		@Pc(3) Class229 local3 = new Class229();
-		for (@Pc(8) Node_Sub1_Sub5 local8 = (Node_Sub1_Sub5) aClass102_30.method2705(); local8 != null; local8 = (Node_Sub1_Sub5) aClass102_30.method2704()) {
+		for (@Pc(8) ListNode_Sub1_Sub5 local8 = (ListNode_Sub1_Sub5) aClass102_30.method2705(); local8 != null; local8 = (ListNode_Sub1_Sub5) aClass102_30.method2704()) {
 			if (local8.aBoolean95 && local8.method932(arg1, arg0)) {
 				local3.method5088(local8);
 			}
@@ -846,7 +846,7 @@ public final class Static148 {
 
 	@OriginalMember(owner = "client!hj", name = "b", descriptor = "(Lclient!ya;IIII)Lclient!pk;")
 	private static Class183 method4507(@OriginalArg(0) Class19 arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2) {
-		for (@Pc(4) Node_Sub3 local4 = (Node_Sub3) aClass183_41.method4140(); local4 != null; local4 = (Node_Sub3) aClass183_41.method4144()) {
+		for (@Pc(4) ListNode_Sub3 local4 = (ListNode_Sub3) aClass183_41.method4140(); local4 != null; local4 = (ListNode_Sub3) aClass183_41.method4144()) {
 			method4499(arg0, local4, arg1, arg2);
 		}
 		return aClass183_41;
@@ -918,8 +918,8 @@ public final class Static148 {
 	}
 
 	@OriginalMember(owner = "client!hj", name = "b", descriptor = "(I)Lclient!cn;")
-	public static Node_Sub1_Sub5 method4511(@OriginalArg(0) int arg0) {
-		return (Node_Sub1_Sub5) aClass102_30.method2700((long) arg0);
+	public static ListNode_Sub1_Sub5 method4511(@OriginalArg(0) int arg0) {
+		return (ListNode_Sub1_Sub5) aClass102_30.method2700((long) arg0);
 	}
 
 	@OriginalMember(owner = "client!hj", name = "a", descriptor = "(Lclient!ga;II)V")
@@ -954,7 +954,7 @@ public final class Static148 {
 		@Pc(21) int local21 = aClass76_73.method2099("details");
 		@Pc(26) int[] local26 = aClass76_73.method2124(local21);
 		for (@Pc(28) int local28 = 0; local28 < local26.length; local28++) {
-			@Pc(37) Node_Sub1_Sub5 local37 = Static90.method1609(local21, local26[local28], aClass76_73);
+			@Pc(37) ListNode_Sub1_Sub5 local37 = Static90.method1609(local21, local26[local28], aClass76_73);
 			aClass102_30.method2703((long) local37.anInt1012, local37);
 		}
 		Static347.method4678(true, false);

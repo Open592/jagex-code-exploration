@@ -25,7 +25,7 @@ public final class Static410 {
 	public static final Class21 aClass21_15 = new Class21(1, 7);
 
 	@OriginalMember(owner = "client!uq", name = "a", descriptor = "(IBLclient!aq;IILclient!sb;Lclient!nf;Lclient!ya;)V")
-	public static void method5269(@OriginalArg(0) int arg0, @OriginalArg(2) Node_Sub3 arg1, @OriginalArg(3) int arg2, @OriginalArg(4) int arg3, @OriginalArg(5) Class212 arg4, @OriginalArg(6) Class157 arg5, @OriginalArg(7) Class19 arg6) {
+	public static void method5269(@OriginalArg(0) int arg0, @OriginalArg(2) ListNode_Sub3 arg1, @OriginalArg(3) int arg2, @OriginalArg(4) int arg3, @OriginalArg(5) Class212 arg4, @OriginalArg(6) Class157 arg5, @OriginalArg(7) Class19 arg6) {
 		@Pc(15) int local15 = arg1.anInt235 - arg2 / 2 - 5;
 		@Pc(19) int local19 = arg3 + 2;
 		if (arg5.anInt4918 != 0) {
@@ -55,7 +55,7 @@ public final class Static410 {
 
 	@OriginalMember(owner = "client!uq", name = "a", descriptor = "(II)V")
 	public static void method5271(@OriginalArg(1) int arg0) {
-		@Pc(8) Node_Sub1_Sub11 local8 = Static405.method5222(arg0, 6);
+		@Pc(8) ListNode_Sub1_Sub11 local8 = Static405.method5222(arg0, 6);
 		local8.method2608();
 	}
 }

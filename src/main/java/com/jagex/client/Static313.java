@@ -51,7 +51,7 @@ public final class Static313 {
 
 	@OriginalMember(owner = "client!pr", name = "a", descriptor = "(BI)V")
 	public static void method4176(@OriginalArg(1) int arg0) {
-		@Pc(13) Node_Sub1_Sub11 local13 = Static405.method5222(arg0, 12);
+		@Pc(13) ListNode_Sub1_Sub11 local13 = Static405.method5222(arg0, 12);
 		local13.method2608();
 	}
 }

@@ -11,9 +11,9 @@ public final class Static150 {
 
 	@OriginalMember(owner = "client!hl", name = "a", descriptor = "(IIZ)V")
 	public static void method2573(@OriginalArg(1) int arg0, @OriginalArg(2) boolean arg1) {
-		@Pc(8) Node_Sub25 local8 = Static175.method2834(arg1, arg0);
+		@Pc(8) ListNode_Sub25 local8 = Static175.method2834(arg1, arg0);
 		if (local8 != null) {
-			local8.method5684();
+			local8.popSelf();
 		}
 	}
 
