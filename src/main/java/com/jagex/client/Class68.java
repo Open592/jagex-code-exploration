@@ -18,7 +18,7 @@ public final class Class68 {
 	private final int anInt2029;
 
 	@OriginalMember(owner = "client!fa", name = "o", descriptor = "Lclient!ib;")
-	private final Class102 aClass102_10;
+	private final IterableHashMap aIterableHashMap_10;
 
 	@OriginalMember(owner = "client!fa", name = "<init>", descriptor = "(I)V")
 	public Class68(@OriginalArg(0) int arg0) {
@@ -27,13 +27,13 @@ public final class Class68 {
 		@Pc(14) int local14;
 		for (local14 = 1; arg0 > local14 + local14; local14 += local14) {
 		}
-		this.aClass102_10 = new Class102(local14);
+		this.aIterableHashMap_10 = new IterableHashMap(local14);
 	}
 
 	@OriginalMember(owner = "client!fa", name = "a", descriptor = "(Z)V")
 	public void method1777() {
 		this.aClass229_2.method5087();
-		this.aClass102_10.method2699();
+		this.aIterableHashMap_10.clear();
 		this.anInt2034 = this.anInt2029;
 	}
 
@@ -49,14 +49,14 @@ public final class Class68 {
 
 	@OriginalMember(owner = "client!fa", name = "b", descriptor = "(I)Ljava/lang/Object;")
 	public Object method1782() {
-		@Pc(11) ListNode_Sub1_Sub8 local11 = (ListNode_Sub1_Sub8) this.aClass102_10.method2704();
+		@Pc(11) ListNode_Sub1_Sub8 local11 = (ListNode_Sub1_Sub8) this.aIterableHashMap_10.next();
 		while (local11 != null) {
 			@Pc(23) Object local23 = local11.method3885();
 			if (local23 != null) {
 				return local23;
 			}
 			@Pc(29) ListNode_Sub1_Sub8 local29 = local11;
-			local11 = (ListNode_Sub1_Sub8) this.aClass102_10.method2704();
+			local11 = (ListNode_Sub1_Sub8) this.aIterableHashMap_10.next();
 			local29.popSelf();
 			local29.method4662();
 			this.anInt2034 += local11.anInt5084;
@@ -66,7 +66,7 @@ public final class Class68 {
 
 	@OriginalMember(owner = "client!fa", name = "a", descriptor = "(JI)V")
 	private void method1783(@OriginalArg(0) long arg0) {
-		@Pc(10) ListNode_Sub1_Sub8 local10 = (ListNode_Sub1_Sub8) this.aClass102_10.method2700(arg0);
+		@Pc(10) ListNode_Sub1_Sub8 local10 = (ListNode_Sub1_Sub8) this.aIterableHashMap_10.get(arg0);
 		this.method1792(local10);
 	}
 
@@ -88,7 +88,7 @@ public final class Class68 {
 
 	@OriginalMember(owner = "client!fa", name = "a", descriptor = "(JB)Ljava/lang/Object;")
 	public Object method1787(@OriginalArg(0) long arg0) {
-		@Pc(10) ListNode_Sub1_Sub8 local10 = (ListNode_Sub1_Sub8) this.aClass102_10.method2700(arg0);
+		@Pc(10) ListNode_Sub1_Sub8 local10 = (ListNode_Sub1_Sub8) this.aIterableHashMap_10.get(arg0);
 		if (local10 == null) {
 			return null;
 		}
@@ -101,7 +101,7 @@ public final class Class68 {
 		}
 		if (local10.method3883()) {
 			@Pc(51) ListNode_Sub1_Sub8_Sub1 local51 = new ListNode_Sub1_Sub8_Sub1(local18, local10.anInt5084);
-			this.aClass102_10.method2703(local10.id, local51);
+			this.aIterableHashMap_10.set(local10.id, local51);
 			this.aClass229_2.method5088(local51);
 			local51.aLong198 = 0L;
 			local10.popSelf();
@@ -127,7 +127,7 @@ public final class Class68 {
 				}
 			} else if (++local13.aLong198 > (long) arg0) {
 				@Pc(39) ListNode_Sub1_Sub8 local39 = Static293.aClass174_1.method4040(local13);
-				this.aClass102_10.method2703(local13.id, local39);
+				this.aIterableHashMap_10.set(local13.id, local39);
 				Static222.method3353(local13, local39);
 				local13.popSelf();
 				local13.method4662();
@@ -137,14 +137,14 @@ public final class Class68 {
 
 	@OriginalMember(owner = "client!fa", name = "d", descriptor = "(B)Ljava/lang/Object;")
 	public Object method1789() {
-		@Pc(16) ListNode_Sub1_Sub8 local16 = (ListNode_Sub1_Sub8) this.aClass102_10.method2705();
+		@Pc(16) ListNode_Sub1_Sub8 local16 = (ListNode_Sub1_Sub8) this.aIterableHashMap_10.head();
 		while (local16 != null) {
 			@Pc(22) Object local22 = local16.method3885();
 			if (local22 != null) {
 				return local22;
 			}
 			@Pc(26) ListNode_Sub1_Sub8 local26 = local16;
-			local16 = (ListNode_Sub1_Sub8) this.aClass102_10.method2704();
+			local16 = (ListNode_Sub1_Sub8) this.aIterableHashMap_10.next();
 			local26.popSelf();
 			local26.method4662();
 			this.anInt2034 += local16.anInt5084;
@@ -164,7 +164,7 @@ public final class Class68 {
 			this.method1792(local32);
 		}
 		@Pc(45) ListNode_Sub1_Sub8_Sub1 local45 = new ListNode_Sub1_Sub8_Sub1(arg0, 1);
-		this.aClass102_10.method2703(arg1, local45);
+		this.aIterableHashMap_10.set(arg1, local45);
 		this.aClass229_2.method5088(local45);
 		local45.aLong198 = 0L;
 	}

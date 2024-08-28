@@ -99,7 +99,7 @@ public final class ListNode_Sub15_Sub1 extends ListNode_Sub15 {
 	private final ListNode_Sub15_Sub4 aClass4_Sub15_Sub4_1 = new ListNode_Sub15_Sub4(this);
 
 	@OriginalMember(owner = "client!dv", name = "J", descriptor = "Lclient!ib;")
-	private final Class102 aClass102_8 = new Class102(128);
+	private final IterableHashMap aIterableHashMap_8 = new IterableHashMap(128);
 
 	@OriginalMember(owner = "client!dv", name = "<init>", descriptor = "()V")
 	public ListNode_Sub15_Sub1() {
@@ -303,7 +303,7 @@ public final class ListNode_Sub15_Sub1 extends ListNode_Sub15 {
 				}
 			}
 		}
-		@Pc(115) ListNode_Sub38 local115 = (ListNode_Sub38) this.aClass102_8.method2700((long) this.anIntArray122[arg0]);
+		@Pc(115) ListNode_Sub38 local115 = (ListNode_Sub38) this.aIterableHashMap_8.get((long) this.anIntArray122[arg0]);
 		if (local115 == null) {
 			return;
 		}
@@ -559,7 +559,7 @@ public final class ListNode_Sub15_Sub1 extends ListNode_Sub15 {
 
 	@OriginalMember(owner = "client!dv", name = "e", descriptor = "(B)V")
 	public synchronized void method1438() {
-		for (@Pc(15) ListNode_Sub38 local15 = (ListNode_Sub38) this.aClass102_8.method2705(); local15 != null; local15 = (ListNode_Sub38) this.aClass102_8.method2704()) {
+		for (@Pc(15) ListNode_Sub38 local15 = (ListNode_Sub38) this.aIterableHashMap_8.head(); local15 != null; local15 = (ListNode_Sub38) this.aIterableHashMap_8.next()) {
 			local15.method4393();
 		}
 	}
@@ -577,7 +577,7 @@ public final class ListNode_Sub15_Sub1 extends ListNode_Sub15 {
 
 	@OriginalMember(owner = "client!dv", name = "f", descriptor = "(B)V")
 	public synchronized void method1441() {
-		for (@Pc(15) ListNode_Sub38 local15 = (ListNode_Sub38) this.aClass102_8.method2705(); local15 != null; local15 = (ListNode_Sub38) this.aClass102_8.method2704()) {
+		for (@Pc(15) ListNode_Sub38 local15 = (ListNode_Sub38) this.aIterableHashMap_8.head(); local15 != null; local15 = (ListNode_Sub38) this.aIterableHashMap_8.next()) {
 			local15.popSelf();
 		}
 	}
@@ -845,16 +845,16 @@ public final class ListNode_Sub15_Sub1 extends ListNode_Sub15 {
 		arg2.method3726();
 		@Pc(9) boolean local9 = true;
 		@Pc(20) int[] local20 = new int[] { 22050 };
-		for (@Pc(26) ListNode_Sub19 local26 = (ListNode_Sub19) arg2.aClass102_23.method2705(); local26 != null; local26 = (ListNode_Sub19) arg2.aClass102_23.method2704()) {
+		for (@Pc(26) ListNode_Sub19 local26 = (ListNode_Sub19) arg2.aIterableHashMap_23.head(); local26 != null; local26 = (ListNode_Sub19) arg2.aIterableHashMap_23.next()) {
 			@Pc(32) int local32 = (int) local26.id;
-			@Pc(40) ListNode_Sub38 local40 = (ListNode_Sub38) this.aClass102_8.method2700((long) local32);
+			@Pc(40) ListNode_Sub38 local40 = (ListNode_Sub38) this.aIterableHashMap_8.get((long) local32);
 			if (local40 == null) {
 				local40 = Static30.method577(local32, arg1);
 				if (local40 == null) {
 					local9 = false;
 					continue;
 				}
-				this.aClass102_8.method2703((long) local32, local40);
+				this.aIterableHashMap_8.set((long) local32, local40);
 			}
 			if (!local40.method4398(arg0, local26.aByteArray24, local20)) {
 				local9 = false;

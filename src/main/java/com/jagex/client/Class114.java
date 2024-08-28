@@ -10,7 +10,7 @@ import org.openrs2.deob.annotation.Pc;
 public final class Class114 implements Interface12 {
 
 	@OriginalMember(owner = "client!it", name = "i", descriptor = "Lclient!ib;")
-	private Class102 aClass102_16 = new Class102(128);
+	private IterableHashMap aIterableHashMap_16 = new IterableHashMap(128);
 
 	@OriginalMember(owner = "client!it", name = "h", descriptor = "[I")
 	private final int[] anIntArray221 = new int[Static183.aClass223_1.anInt6400];
@@ -41,16 +41,16 @@ public final class Class114 implements Interface12 {
 				this.anIntArray220[local7] = 0;
 			}
 		}
-		this.aClass102_16 = new Class102(128);
+		this.aIterableHashMap_16 = new IterableHashMap(128);
 	}
 
 	@OriginalMember(owner = "client!it", name = "b", descriptor = "(III)V")
 	public void method2830(@OriginalArg(1) int arg0, @OriginalArg(2) int arg1) {
 		this.anIntArray221[arg0] = arg1;
-		@Pc(24) ListNode_Sub29 local24 = (ListNode_Sub29) this.aClass102_16.method2700((long) arg0);
+		@Pc(24) ListNode_Sub29 local24 = (ListNode_Sub29) this.aIterableHashMap_16.get((long) arg0);
 		if (local24 == null) {
 			local24 = new ListNode_Sub29(4611686018427387905L);
-			this.aClass102_16.method2703((long) arg0, local24);
+			this.aIterableHashMap_16.set((long) arg0, local24);
 		} else if (local24.aLong153 != 4611686018427387905L) {
 			local24.aLong153 = MonotonicClock.getCurrentTimeInMilliseconds() + 500L | 0x4000000000000000L;
 			return;
@@ -60,10 +60,10 @@ public final class Class114 implements Interface12 {
 	@OriginalMember(owner = "client!it", name = "c", descriptor = "(III)V")
 	public void method2831(@OriginalArg(1) int arg0, @OriginalArg(2) int arg1) {
 		this.anIntArray220[arg1] = arg0;
-		@Pc(23) ListNode_Sub29 local23 = (ListNode_Sub29) this.aClass102_16.method2700((long) arg1);
+		@Pc(23) ListNode_Sub29 local23 = (ListNode_Sub29) this.aIterableHashMap_16.get((long) arg1);
 		if (local23 == null) {
 			local23 = new ListNode_Sub29(MonotonicClock.getCurrentTimeInMilliseconds() + 500L);
-			this.aClass102_16.method2703((long) arg1, local23);
+			this.aIterableHashMap_16.set((long) arg1, local23);
 		} else {
 			local23.aLong153 = MonotonicClock.getCurrentTimeInMilliseconds() + 500L;
 		}
@@ -83,7 +83,7 @@ public final class Class114 implements Interface12 {
 	@OriginalMember(owner = "client!it", name = "a", descriptor = "(ZI)I")
 	public int method2832(@OriginalArg(0) boolean arg0) {
 		@Pc(8) long local8 = MonotonicClock.getCurrentTimeInMilliseconds();
-		for (@Pc(22) ListNode_Sub29 local22 = arg0 ? (ListNode_Sub29) this.aClass102_16.method2705() : (ListNode_Sub29) this.aClass102_16.method2704(); local22 != null; local22 = (ListNode_Sub29) this.aClass102_16.method2704()) {
+		for (@Pc(22) ListNode_Sub29 local22 = arg0 ? (ListNode_Sub29) this.aIterableHashMap_16.head() : (ListNode_Sub29) this.aIterableHashMap_16.next(); local22 != null; local22 = (ListNode_Sub29) this.aIterableHashMap_16.next()) {
 			if ((local22.aLong153 & 0x3FFFFFFFFFFFFFFFL) < local8) {
 				if ((local22.aLong153 & 0x4000000000000000L) != 0L) {
 					@Pc(54) int local54 = (int) local22.id;

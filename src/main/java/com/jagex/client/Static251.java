@@ -62,7 +62,7 @@ public final class Static251 {
 		for (@Pc(97) int local97 = 0; local97 < 32768; local97++) {
 			Static143.aClass16_Sub1_Sub5_Sub2Array1[local97] = null;
 		}
-		Static440.aClass102_40.method2699();
+		Static440.aIterableHashMap_40.clear();
 		Static54.method913();
 		Static183.anInt3512 = 0;
 		Static257.aClass114_1.method2829();

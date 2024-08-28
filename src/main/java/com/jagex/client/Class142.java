@@ -21,7 +21,7 @@ public final class Class142 {
 	private int anInt4441;
 
 	@OriginalMember(owner = "client!lt", name = "m", descriptor = "Lclient!ib;")
-	private final Class102 aClass102_19;
+	private final IterableHashMap aIterableHashMap_19;
 
 	@OriginalMember(owner = "client!lt", name = "<init>", descriptor = "(I)V")
 	public Class142(@OriginalArg(0) int arg0) {
@@ -30,7 +30,7 @@ public final class Class142 {
 		@Pc(19) int local19;
 		for (local19 = 1; arg0 > local19 + local19; local19 += local19) {
 		}
-		this.aClass102_19 = new Class102(local19);
+		this.aIterableHashMap_19 = new IterableHashMap(local19);
 	}
 
 	@OriginalMember(owner = "client!lt", name = "a", descriptor = "(JLclient!ac;I)V")
@@ -47,13 +47,13 @@ public final class Class142 {
 		} else {
 			this.anInt4441--;
 		}
-		this.aClass102_19.method2703(arg0, arg1);
+		this.aIterableHashMap_19.set(arg0, arg1);
 		this.aClass229_3.method5088(arg1);
 	}
 
 	@OriginalMember(owner = "client!lt", name = "a", descriptor = "(JB)Lclient!ac;")
 	public ListNode_Sub1 method3483(@OriginalArg(0) long arg0) {
-		@Pc(10) ListNode_Sub1 local10 = (ListNode_Sub1) this.aClass102_19.method2700(arg0);
+		@Pc(10) ListNode_Sub1 local10 = (ListNode_Sub1) this.aIterableHashMap_19.get(arg0);
 		if (local10 != null) {
 			this.aClass229_3.method5088(local10);
 		}
@@ -63,7 +63,7 @@ public final class Class142 {
 	@OriginalMember(owner = "client!lt", name = "a", descriptor = "(B)V")
 	public void method3484() {
 		this.aClass229_3.method5087();
-		this.aClass102_19.method2699();
+		this.aIterableHashMap_19.clear();
 		this.aClass4_Sub1_42 = new ListNode_Sub1();
 		this.anInt4441 = this.anInt4442;
 	}

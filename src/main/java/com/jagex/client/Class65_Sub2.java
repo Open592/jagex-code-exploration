@@ -99,7 +99,7 @@ public final class Class65_Sub2 extends Class65 {
 	public int[][][] anIntArrayArrayArray6;
 
 	@OriginalMember(owner = "client!oq", name = "eb", descriptor = "Lclient!ib;")
-	private Class102 aClass102_27;
+	private IterableHashMap aIterableHashMap_27;
 
 	@OriginalMember(owner = "client!oq", name = "E", descriptor = "Lclient!uf;")
 	private Class236 aClass236_2;
@@ -134,7 +134,7 @@ public final class Class65_Sub2 extends Class65 {
 				this.aFloatArrayArray8[local121][local117] = (float) local156 * local177;
 			}
 		}
-		this.aClass102_27 = new Class102(128);
+		this.aIterableHashMap_27 = new IterableHashMap(128);
 		if ((this.anInt5285 & 0x10) != 0) {
 			this.aClass236_2 = new Class236(this.aClass19_Sub2_30, this);
 		}
@@ -446,7 +446,7 @@ public final class Class65_Sub2 extends Class65 {
 		for (@Pc(90) int local90 = 0; local90 < arg6.length; local90++) {
 			@Pc(119) long local119 = (long) arg10 << 28 | (long) arg12 << 48 | (long) arg11 << 42 | (long) (arg9[local90] << 14) | (long) arg8[local90];
 			@Pc(125) ListNode local125;
-			for (local125 = this.aClass102_27.method2700(local119); local125 != null; local125 = this.aClass102_27.method2697()) {
+			for (local125 = this.aIterableHashMap_27.get(local119); local125 != null; local125 = this.aIterableHashMap_27.getNextHashCollision()) {
 				@Pc(130) ListNode_Sub16 local130 = (ListNode_Sub16) local125;
 				if (arg8[local90] == local130.anInt1647 && local130.aFloat46 == (float) arg9[local90] && local130.anInt1641 == arg10 && local130.anInt1640 == arg11 && local130.anInt1645 == arg12) {
 					break;
@@ -454,7 +454,7 @@ public final class Class65_Sub2 extends Class65 {
 			}
 			if (local125 == null) {
 				local88[local90] = new ListNode_Sub16(this, arg8[local90], arg9[local90], arg10, arg11, arg12);
-				this.aClass102_27.method2703(local119, local88[local90]);
+				this.aIterableHashMap_27.set(local119, local88[local90]);
 			} else {
 				local88[local90] = (ListNode_Sub16) local125;
 			}
@@ -496,8 +496,8 @@ public final class Class65_Sub2 extends Class65 {
 					local23[local25][local29] = (byte) ((this.aByteArrayArray23[local25 + 1][local29] >> 3) + (this.aByteArrayArray23[local25 - 1][local29] >> 2) + (this.aByteArrayArray23[local25][local29 - 1] >> 2) + (this.aByteArrayArray23[local25][local29 + 1] >> 3) + (this.aByteArrayArray23[local25][local29] >> 1));
 				}
 			}
-			this.aClass4_Sub16Array1 = new ListNode_Sub16[this.aClass102_27.method2698()];
-			this.aClass102_27.method2708(this.aClass4_Sub16Array1);
+			this.aClass4_Sub16Array1 = new ListNode_Sub16[this.aIterableHashMap_27.countNodes()];
+			this.aIterableHashMap_27.toArray(this.aClass4_Sub16Array1);
 			for (local29 = 0; local29 < this.aClass4_Sub16Array1.length; local29++) {
 				this.aClass4_Sub16Array1[local29].method1466(this.anInt5288);
 			}
@@ -515,7 +515,7 @@ public final class Class65_Sub2 extends Class65 {
 			if (local179 < 1) {
 				local179 = 1;
 			}
-			@Pc(189) Class102 local189 = new Class102(local179);
+			@Pc(189) IterableHashMap local189 = new IterableHashMap(local179);
 			@Pc(193) ListNode_Sub16[] local193 = new ListNode_Sub16[this.anInt5287];
 			@Pc(199) int local199;
 			for (@Pc(195) int local195 = 0; super.anInt5262 > local195; local195++) {
@@ -629,7 +629,7 @@ public final class Class65_Sub2 extends Class65 {
 							}
 							@Pc(861) ListNode local861 = null;
 							if ((this.anInt5275 - 1 & local487) == 0 && (local496 & this.anInt5275 - 1) == 0) {
-								local861 = local189.method2700(local540);
+								local861 = local189.get(local540);
 							}
 							@Pc(1229) int local1229;
 							@Pc(894) int local894;
@@ -713,7 +713,7 @@ public final class Class65_Sub2 extends Class65 {
 								if (local510 != -1) {
 									local172[local1229] = local215[local431];
 								}
-								local189.method2703(local540, new ListNode_Sub31(local473[local431]));
+								local189.set(local540, new ListNode_Sub31(local473[local431]));
 							} else {
 								local473[local431] = ((ListNode_Sub31) local861).aShort62;
 								local1229 = local473[local431] & 0xFFFF;
@@ -812,7 +812,7 @@ public final class Class65_Sub2 extends Class65 {
 		this.anIntArrayArrayArray8 = null;
 		this.anIntArrayArrayArray9 = null;
 		this.anIntArrayArrayArray10 = null;
-		this.aClass102_27 = null;
+		this.aIterableHashMap_27 = null;
 		this.aClass4_Sub16ArrayArrayArray1 = null;
 		this.aFloatArrayArray9 = this.aFloatArrayArray7 = this.aFloatArrayArray8 = null;
 		this.anIntArrayArrayArray6 = this.anIntArrayArrayArray7 = null;

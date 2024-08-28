@@ -57,7 +57,7 @@ public final class Static167 {
 		Static27.aClass183_2.method4138();
 		Static292.aClass183_36.method4138();
 		GameShell.aClass84_4.method2310();
-		Static440.aClass102_40.method2699();
+		Static440.aIterableHashMap_40.clear();
 		Static115.aClass183_15 = new Class183();
 		Static49.anInt2346 = 0;
 		Static376.anInt6277 = 0;
@@ -81,9 +81,9 @@ public final class Static167 {
 		if (Static334.anInt5766 != -1) {
 			Static201.method4602(Static334.anInt5766);
 		}
-		for (@Pc(5778) ListNode_Sub43 local5778 = (ListNode_Sub43) Static325.aClass102_29.method2705(); local5778 != null; local5778 = (ListNode_Sub43) Static325.aClass102_29.method2704()) {
+		for (@Pc(5778) ListNode_Sub43 local5778 = (ListNode_Sub43) Static325.aIterableHashMap_29.head(); local5778 != null; local5778 = (ListNode_Sub43) Static325.aIterableHashMap_29.next()) {
 			if (!local5778.hasNext()) {
-				local5778 = (ListNode_Sub43) Static325.aClass102_29.method2705();
+				local5778 = (ListNode_Sub43) Static325.aIterableHashMap_29.head();
 				if (local5778 == null) {
 					break;
 				}
@@ -91,7 +91,7 @@ public final class Static167 {
 			Static90.method1606(true, local5778, false);
 		}
 		Static334.anInt5766 = -1;
-		Static325.aClass102_29 = new Class102(8);
+		Static325.aIterableHashMap_29 = new IterableHashMap(8);
 		Static28.method529();
 		Static304.aClass247_16 = null;
 		for (@Pc(5818) int local5818 = 0; local5818 < 8; local5818++) {

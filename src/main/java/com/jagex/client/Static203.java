@@ -22,16 +22,16 @@ public final class Static203 {
 
 	@OriginalMember(owner = "client!kf", name = "a", descriptor = "(III)V")
 	public static void method3177(@OriginalArg(1) int arg0, @OriginalArg(2) int arg1) {
-		@Pc(10) Class102 local10 = new Class102(16);
-		for (@Pc(20) ListNode_Sub18 local20 = (ListNode_Sub18) Static440.aClass102_40.method2705(); local20 != null; local20 = (ListNode_Sub18) Static440.aClass102_40.method2704()) {
+		@Pc(10) IterableHashMap local10 = new IterableHashMap(16);
+		for (@Pc(20) ListNode_Sub18 local20 = (ListNode_Sub18) Static440.aIterableHashMap_40.head(); local20 != null; local20 = (ListNode_Sub18) Static440.aIterableHashMap_40.next()) {
 			local20.popSelf();
 			@Pc(31) int local31 = (int) (local20.id >> 28);
 			@Pc(41) int local41 = (int) (local20.id >> 14 & 0x3FFFL) - arg1;
 			@Pc(49) int local49 = (int) (local20.id & 0x3FFFL) - arg0;
 			if (local49 >= 0 && local41 >= 0 && local49 < Static326.anInt5666 && Static283.anInt5187 > local41) {
-				local10.method2703((long) (local31 << 28 | local41 << 14 | local49), local20);
+				local10.set((long) (local31 << 28 | local41 << 14 | local49), local20);
 			}
 		}
-		Static440.aClass102_40 = local10;
+		Static440.aIterableHashMap_40 = local10;
 	}
 }

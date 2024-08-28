@@ -18,29 +18,29 @@ public final class Class200 {
 	private int anInt5767;
 
 	@OriginalMember(owner = "client!qu", name = "k", descriptor = "Lclient!ib;")
-	public Class102 aClass102_32;
+	public IterableHashMap aIterableHashMap_32;
 
 	@OriginalMember(owner = "client!qu", name = "m", descriptor = "Lclient!ib;")
-	private Class102 aClass102_33;
+	private IterableHashMap aIterableHashMap_33;
 
 	@OriginalMember(owner = "client!qu", name = "h", descriptor = "Ljava/lang/String;")
 	private String aString58 = "null";
 
 	@OriginalMember(owner = "client!qu", name = "a", descriptor = "(B)V")
 	private void method4532() {
-		this.aClass102_33 = new Class102(this.aClass102_32.method2706());
-		for (@Pc(26) ListNode_Sub7 local26 = (ListNode_Sub7) this.aClass102_32.method2705(); local26 != null; local26 = (ListNode_Sub7) this.aClass102_32.method2704()) {
+		this.aIterableHashMap_33 = new IterableHashMap(this.aIterableHashMap_32.count());
+		for (@Pc(26) ListNode_Sub7 local26 = (ListNode_Sub7) this.aIterableHashMap_32.head(); local26 != null; local26 = (ListNode_Sub7) this.aIterableHashMap_32.next()) {
 			@Pc(37) ListNode_Sub35 local37 = new ListNode_Sub35(local26.aString12, (int) local26.id);
-			this.aClass102_33.method2703(Static237.method5625(local26.aString12), local37);
+			this.aIterableHashMap_33.set(Static237.method5625(local26.aString12), local37);
 		}
 	}
 
 	@OriginalMember(owner = "client!qu", name = "a", descriptor = "(II)I")
 	public int method4533(@OriginalArg(0) int arg0) {
-		if (this.aClass102_32 == null) {
+		if (this.aIterableHashMap_32 == null) {
 			return this.anInt5767;
 		} else {
-			@Pc(25) ListNode_Sub37 local25 = (ListNode_Sub37) this.aClass102_32.method2700((long) arg0);
+			@Pc(25) ListNode_Sub37 local25 = (ListNode_Sub37) this.aIterableHashMap_32.get((long) arg0);
 			return local25 == null ? this.anInt5767 : local25.anInt5426;
 		}
 	}
@@ -58,13 +58,13 @@ public final class Class200 {
 
 	@OriginalMember(owner = "client!qu", name = "a", descriptor = "(ILjava/lang/String;)Z")
 	public boolean method4535(@OriginalArg(1) String arg0) {
-		if (this.aClass102_32 == null) {
+		if (this.aIterableHashMap_32 == null) {
 			return false;
 		}
-		if (this.aClass102_33 == null) {
+		if (this.aIterableHashMap_33 == null) {
 			this.method4532();
 		}
-		for (@Pc(30) ListNode_Sub35 local30 = (ListNode_Sub35) this.aClass102_33.method2700(Static237.method5625(arg0)); local30 != null; local30 = (ListNode_Sub35) this.aClass102_33.method2697()) {
+		for (@Pc(30) ListNode_Sub35 local30 = (ListNode_Sub35) this.aIterableHashMap_33.get(Static237.method5625(arg0)); local30 != null; local30 = (ListNode_Sub35) this.aIterableHashMap_33.getNextHashCollision()) {
 			if (local30.aString51.equals(arg0)) {
 				return true;
 			}
@@ -74,13 +74,13 @@ public final class Class200 {
 
 	@OriginalMember(owner = "client!qu", name = "a", descriptor = "(ZI)Z")
 	public boolean method4536(@OriginalArg(1) int arg0) {
-		if (this.aClass102_32 == null) {
+		if (this.aIterableHashMap_32 == null) {
 			return false;
 		}
-		if (this.aClass102_33 == null) {
+		if (this.aIterableHashMap_33 == null) {
 			this.method4539();
 		}
-		@Pc(22) ListNode_Sub37 local22 = (ListNode_Sub37) this.aClass102_33.method2700((long) arg0);
+		@Pc(22) ListNode_Sub37 local22 = (ListNode_Sub37) this.aIterableHashMap_33.get((long) arg0);
 		return local22 != null;
 	}
 
@@ -96,7 +96,7 @@ public final class Class200 {
 			this.anInt5767 = arg0.g4();
 		} else if (arg1 == 5 || arg1 == 6) {
 			@Pc(31) int local31 = arg0.g2();
-			this.aClass102_32 = new Class102(Static370.method4949(local31));
+			this.aIterableHashMap_32 = new IterableHashMap(Static370.method4949(local31));
 			for (@Pc(43) int local43 = 0; local43 < local31; local43++) {
 				@Pc(49) int local49 = arg0.g4();
 				@Pc(61) ListNode local61;
@@ -105,27 +105,27 @@ public final class Class200 {
 				} else {
 					local61 = new ListNode_Sub37(arg0.g4());
 				}
-				this.aClass102_32.method2703((long) local49, local61);
+				this.aIterableHashMap_32.set((long) local49, local61);
 			}
 		}
 	}
 
 	@OriginalMember(owner = "client!qu", name = "b", descriptor = "(II)Ljava/lang/String;")
 	public String method4538(@OriginalArg(1) int arg0) {
-		if (this.aClass102_32 == null) {
+		if (this.aIterableHashMap_32 == null) {
 			return this.aString58;
 		} else {
-			@Pc(17) ListNode_Sub7 local17 = (ListNode_Sub7) this.aClass102_32.method2700((long) arg0);
+			@Pc(17) ListNode_Sub7 local17 = (ListNode_Sub7) this.aIterableHashMap_32.get((long) arg0);
 			return local17 == null ? this.aString58 : local17.aString12;
 		}
 	}
 
 	@OriginalMember(owner = "client!qu", name = "a", descriptor = "(I)V")
 	private void method4539() {
-		this.aClass102_33 = new Class102(this.aClass102_32.method2706());
-		for (@Pc(24) ListNode_Sub37 local24 = (ListNode_Sub37) this.aClass102_32.method2705(); local24 != null; local24 = (ListNode_Sub37) this.aClass102_32.method2704()) {
+		this.aIterableHashMap_33 = new IterableHashMap(this.aIterableHashMap_32.count());
+		for (@Pc(24) ListNode_Sub37 local24 = (ListNode_Sub37) this.aIterableHashMap_32.head(); local24 != null; local24 = (ListNode_Sub37) this.aIterableHashMap_32.next()) {
 			@Pc(33) ListNode_Sub37 local33 = new ListNode_Sub37((int) local24.id);
-			this.aClass102_33.method2703((long) local24.anInt5426, local33);
+			this.aIterableHashMap_33.set((long) local24.anInt5426, local33);
 		}
 	}
 }

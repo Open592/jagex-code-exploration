@@ -17,10 +17,10 @@ public final class Static405 {
 
 	@OriginalMember(owner = "client!uk", name = "a", descriptor = "(IBI)Lclient!hp;")
 	public static ListNode_Sub1_Sub11 method5222(@OriginalArg(0) int arg0, @OriginalArg(2) int arg1) {
-		@Pc(20) ListNode_Sub1_Sub11 local20 = (ListNode_Sub1_Sub11) Static34.aClass102_4.method2700((long) arg1 << 32 | (long) arg0);
+		@Pc(20) ListNode_Sub1_Sub11 local20 = (ListNode_Sub1_Sub11) Static34.A_ITERABLE_HASH_MAP___4.get((long) arg1 << 32 | (long) arg0);
 		if (local20 == null) {
 			local20 = new ListNode_Sub1_Sub11(arg1, arg0);
-			Static34.aClass102_4.method2703(local20.id, local20);
+			Static34.A_ITERABLE_HASH_MAP___4.set(local20.id, local20);
 		}
 		return local20;
 	}

@@ -51,7 +51,7 @@ public final class ListNode_Sub24 extends ListNode {
 	private ListNode_Sub12_Sub2 aClass4_Sub12_Sub2_2;
 
 	@OriginalMember(owner = "client!iu", name = "E", descriptor = "Lclient!ib;")
-	private Class102 aClass102_17;
+	private IterableHashMap aIterableHashMap_17;
 
 	@OriginalMember(owner = "client!iu", name = "u", descriptor = "Lclient!bk;")
 	private final Interface1 anInterface1_3;
@@ -130,7 +130,7 @@ public final class ListNode_Sub24 extends ListNode {
 		if (local123 > 0) {
 			this.aPacket_3 = new Packet(local123 * 2);
 			this.aClass4_Sub12_Sub2_2 = new ListNode_Sub12_Sub2(local123 * 16);
-			this.aClass102_17 = new Class102(Static370.method4949(local123));
+			this.aIterableHashMap_17 = new IterableHashMap(Static370.method4949(local123));
 			local178 = 0;
 			local141 = 0;
 			for (local193 = this.anInt3415; local193 <= this.anInt3409; local193++) {
@@ -183,7 +183,7 @@ public final class ListNode_Sub24 extends ListNode {
 			this.anInterface1_3 = null;
 			this.aClass177_12 = null;
 		}
-		this.aClass102_17 = null;
+		this.aIterableHashMap_17 = null;
 		this.aFloatArrayArray2 = this.aFloatArrayArray3 = this.aFloatArrayArray4 = null;
 		this.aPacket_3 = null;
 		this.aClass4_Sub12_Sub2_2 = null;
@@ -197,7 +197,7 @@ public final class ListNode_Sub24 extends ListNode {
 		@Pc(35) int local35 = this.aClass65_Sub2_2.a(local21, local29);
 		if ((arg0 & 0x7F) == 0 || (arg1 & 0x7F) == 0) {
 			local7 = (long) local21 & 0xFFFFL | (long) local29 << 16 & 0xFFFFL << 16;
-			@Pc(66) ListNode local66 = this.aClass102_17.method2700(local7);
+			@Pc(66) ListNode local66 = this.aIterableHashMap_17.get(local7);
 			if (local66 != null) {
 				this.method2840(((ListNode_Sub31) local66).aShort62);
 				return;
@@ -205,7 +205,7 @@ public final class ListNode_Sub24 extends ListNode {
 		}
 		@Pc(84) short local84 = (short) this.anInt3410++;
 		if (local7 != -1L) {
-			this.aClass102_17.method2703(local7, new ListNode_Sub31(local84));
+			this.aIterableHashMap_17.set(local7, new ListNode_Sub31(local84));
 		}
 		@Pc(313) float local313;
 		@Pc(287) float local287;

@@ -9,7 +9,7 @@ import org.openrs2.deob.annotation.Pc;
 public final class ListNode_Sub1_Sub18 extends ListNode_Sub1 {
 
 	@OriginalMember(owner = "client!rk", name = "y", descriptor = "Lclient!ib;")
-	private Class102 aClass102_35;
+	private IterableHashMap aIterableHashMap_35;
 
 	@OriginalMember(owner = "client!rk", name = "a", descriptor = "(Lclient!iv;II)V")
 	private void method4667(@OriginalArg(0) Packet arg0, @OriginalArg(1) int arg1) {
@@ -18,9 +18,9 @@ public final class ListNode_Sub1_Sub18 extends ListNode_Sub1 {
 		}
 		@Pc(14) int local14 = arg0.g1();
 		@Pc(23) int local23;
-		if (this.aClass102_35 == null) {
+		if (this.aIterableHashMap_35 == null) {
 			local23 = Static370.method4949(local14);
-			this.aClass102_35 = new Class102(local23);
+			this.aIterableHashMap_35 = new IterableHashMap(local23);
 		}
 		for (local23 = 0; local23 < local14; local23++) {
 			@Pc(42) boolean local42 = arg0.g1() == 1;
@@ -31,7 +31,7 @@ public final class ListNode_Sub1_Sub18 extends ListNode_Sub1 {
 			} else {
 				local55 = new ListNode_Sub37(arg0.g4());
 			}
-			this.aClass102_35.method2703((long) local46, local55);
+			this.aIterableHashMap_35.set((long) local46, local55);
 		}
 	}
 
@@ -48,20 +48,20 @@ public final class ListNode_Sub1_Sub18 extends ListNode_Sub1 {
 
 	@OriginalMember(owner = "client!rk", name = "a", descriptor = "(III)I")
 	public int method4670(@OriginalArg(0) int arg0, @OriginalArg(2) int arg1) {
-		if (this.aClass102_35 == null) {
+		if (this.aIterableHashMap_35 == null) {
 			return arg0;
 		} else {
-			@Pc(23) ListNode_Sub37 local23 = (ListNode_Sub37) this.aClass102_35.method2700((long) arg1);
+			@Pc(23) ListNode_Sub37 local23 = (ListNode_Sub37) this.aIterableHashMap_35.get((long) arg1);
 			return local23 == null ? arg0 : local23.anInt5426;
 		}
 	}
 
 	@OriginalMember(owner = "client!rk", name = "a", descriptor = "(ILjava/lang/String;I)Ljava/lang/String;")
 	public String method4671(@OriginalArg(1) String arg0, @OriginalArg(2) int arg1) {
-		if (this.aClass102_35 == null) {
+		if (this.aIterableHashMap_35 == null) {
 			return arg0;
 		} else {
-			@Pc(21) ListNode_Sub7 local21 = (ListNode_Sub7) this.aClass102_35.method2700((long) arg1);
+			@Pc(21) ListNode_Sub7 local21 = (ListNode_Sub7) this.aIterableHashMap_35.get((long) arg1);
 			return local21 == null ? arg0 : local21.aString12;
 		}
 	}

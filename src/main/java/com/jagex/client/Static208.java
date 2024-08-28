@@ -11,7 +11,7 @@ public final class Static208 {
 	public static Class76 aClass76_29;
 
 	@OriginalMember(owner = "client!kk", name = "c", descriptor = "Lclient!ib;")
-	public static final Class102 aClass102_11 = new Class102(32);
+	public static final IterableHashMap A_ITERABLE_HASH_MAP___11 = new IterableHashMap(32);
 
 	@OriginalMember(owner = "client!kk", name = "d", descriptor = "I")
 	public static int anInt2656 = 100;

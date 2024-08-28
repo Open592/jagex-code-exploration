@@ -33,10 +33,10 @@ public final class Static28 {
 	@OriginalMember(owner = "client!bg", name = "a", descriptor = "(Lclient!wt;IIBI)V")
 	public static void method528(@OriginalArg(0) ListNode_Sub45 arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(4) int arg3) {
 		@Pc(20) long local20 = (long) (arg1 | arg3 << 28 | arg2 << 14);
-		@Pc(26) ListNode_Sub18 local26 = (ListNode_Sub18) Static440.aClass102_40.method2700(local20);
+		@Pc(26) ListNode_Sub18 local26 = (ListNode_Sub18) Static440.aIterableHashMap_40.get(local20);
 		if (local26 == null) {
 			local26 = new ListNode_Sub18();
-			Static440.aClass102_40.method2703(local20, local26);
+			Static440.aIterableHashMap_40.set(local20, local26);
 			local26.aClass183_14.method4137(arg0);
 			return;
 		}

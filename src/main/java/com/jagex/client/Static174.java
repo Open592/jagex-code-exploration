@@ -465,7 +465,7 @@ public final class Static174 {
 							local335 = Static146.aClass4_Sub12_Sub1_3.g4();
 							local224 = Static146.aClass4_Sub12_Sub1_3.g2_alt1();
 							if (Static326.method4415(local70)) {
-								local1576 = (ListNode_Sub43) Static325.aClass102_29.method2700((long) local335);
+								local1576 = (ListNode_Sub43) Static325.aIterableHashMap_29.get((long) local335);
 								if (local1576 != null) {
 									Static90.method1606(local224 != local1576.anInt6979, local1576, false);
 								}
@@ -657,7 +657,7 @@ public final class Static174 {
 										if (Static326.method4415(local335)) {
 											for (local1190 = local327; local1190 <= local228; local1190++) {
 												local2311 = ((long) local224 << 32) + (long) local1190;
-												local2317 = (ListNode_Sub33) Static211.aClass102_18.method2700(local2311);
+												local2317 = (ListNode_Sub33) Static211.A_ITERABLE_HASH_MAP___18.get(local2311);
 												if (local2317 != null) {
 													local2329 = new ListNode_Sub33(local70, local2317.anInt5110);
 													local2317.popSelf();
@@ -666,7 +666,7 @@ public final class Static174 {
 												} else {
 													local2329 = new ListNode_Sub33(local70, -1);
 												}
-												Static211.aClass102_18.method2703(local2311, local2329);
+												Static211.A_ITERABLE_HASH_MAP___18.set(local2311, local2329);
 											}
 										}
 										Static300.aClass22_246 = null;
@@ -1493,7 +1493,7 @@ public final class Static174 {
 													if (Static326.method4415(local70)) {
 														for (local1190 = local228; local1190 <= local327; local1190++) {
 															local2311 = ((long) local335 << 32) + ((long) local1190);
-															local2317 = (ListNode_Sub33) Static211.aClass102_18.method2700(local2311);
+															local2317 = (ListNode_Sub33) Static211.A_ITERABLE_HASH_MAP___18.get(local2311);
 															if (local2317 != null) {
 																local2329 = new ListNode_Sub33(local2317.anInt5105, local224);
 																local2317.popSelf();
@@ -1502,7 +1502,7 @@ public final class Static174 {
 															} else {
 																local2329 = new ListNode_Sub33(0, local224);
 															}
-															Static211.aClass102_18.method2703(local2311, local2329);
+															Static211.A_ITERABLE_HASH_MAP___18.set(local2311, local2329);
 														}
 													}
 													Static300.aClass22_246 = null;
@@ -1524,7 +1524,7 @@ public final class Static174 {
 													Static113.anInt2426 = Static146.aClass4_Sub12_Sub1_3.g1_alt2();
 													Static154.anInt813 = Static146.aClass4_Sub12_Sub1_3.g1s_alt3() << 3;
 													Static385.anInt6487 = Static146.aClass4_Sub12_Sub1_3.g1s_alt2() << 3;
-													for (@Pc(5469) ListNode_Sub18 local5469 = (ListNode_Sub18) Static440.aClass102_40.method2705(); local5469 != null; local5469 = (ListNode_Sub18) Static440.aClass102_40.method2704()) {
+													for (@Pc(5469) ListNode_Sub18 local5469 = (ListNode_Sub18) Static440.aIterableHashMap_40.head(); local5469 != null; local5469 = (ListNode_Sub18) Static440.aIterableHashMap_40.next()) {
 														local70 = (int) (local5469.id & 0x3FFFL);
 														local335 = (int) (local5469.id >> 14 & 0x3FFFL);
 														local224 = (int) (local5469.id >> 28 & 0x3L);
@@ -1589,7 +1589,7 @@ public final class Static174 {
 													local327 = Static146.aClass4_Sub12_Sub1_3.g2();
 													local70 = Static146.aClass4_Sub12_Sub1_3.g4();
 													if (Static326.method4415(local327)) {
-														@Pc(5751) ListNode_Sub43 local5751 = (ListNode_Sub43) Static325.aClass102_29.method2700((long) local70);
+														@Pc(5751) ListNode_Sub43 local5751 = (ListNode_Sub43) Static325.aIterableHashMap_29.get((long) local70);
 														if (local5751 != null) {
 															Static90.method1606(true, local5751, false);
 														}
@@ -1694,14 +1694,14 @@ public final class Static174 {
 													local70 = Static146.aClass4_Sub12_Sub1_3.g4_alt3();
 													local335 = Static146.aClass4_Sub12_Sub1_3.g2_alt1();
 													if (Static326.method4415(local335)) {
-														@Pc(6126) ListNode_Sub43 local6126 = (ListNode_Sub43) Static325.aClass102_29.method2700((long) local70);
-														local1576 = (ListNode_Sub43) Static325.aClass102_29.method2700((long) local327);
+														@Pc(6126) ListNode_Sub43 local6126 = (ListNode_Sub43) Static325.aIterableHashMap_29.get((long) local70);
+														local1576 = (ListNode_Sub43) Static325.aIterableHashMap_29.get((long) local327);
 														if (local1576 != null) {
 															Static90.method1606(local6126 == null || local1576.anInt6979 != local6126.anInt6979, local1576, false);
 														}
 														if (local6126 != null) {
 															local6126.popSelf();
-															Static325.aClass102_29.method2703((long) local327, local6126);
+															Static325.aIterableHashMap_29.set((long) local327, local6126);
 														}
 														@Pc(6164) Class247 local6164 = Static392.method5121(local70);
 														if (local6164 != null) {

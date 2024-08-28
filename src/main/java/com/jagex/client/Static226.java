@@ -36,15 +36,15 @@ public final class Static226 {
 		@Pc(67) int local67 = local14.g1();
 		@Pc(84) int local84;
 		if (local67 > 0) {
-			local9.aClass102Array1 = new Class102[local67];
+			local9.aIterableHashMapArray1 = new IterableHashMap[local67];
 			for (@Pc(78) int local78 = 0; local78 < local67; local78++) {
 				local84 = local14.g2();
-				@Pc(91) Class102 local91 = new Class102(Static370.method4949(local84));
-				local9.aClass102Array1[local78] = local91;
+				@Pc(91) IterableHashMap local91 = new IterableHashMap(Static370.method4949(local84));
+				local9.aIterableHashMapArray1[local78] = local91;
 				while (local84-- > 0) {
 					@Pc(102) int local102 = local14.g4();
 					@Pc(106) int local106 = local14.g4();
-					local91.method2703((long) local102, new ListNode_Sub37(local106));
+					local91.set((long) local102, new ListNode_Sub37(local106));
 				}
 			}
 		}

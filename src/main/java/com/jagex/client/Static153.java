@@ -60,10 +60,10 @@ public final class Static153 {
 	@OriginalMember(owner = "client!hp", name = "a", descriptor = "(IIIIIZ)V")
 	public static void method2603(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(3) int arg2, @OriginalArg(4) int arg3, @OriginalArg(5) boolean arg4) {
 		@Pc(19) long local19 = (long) (arg2 | (arg4 ? Integer.MIN_VALUE : 0));
-		@Pc(25) ListNode_Sub25 local25 = (ListNode_Sub25) Static208.aClass102_11.method2700(local19);
+		@Pc(25) ListNode_Sub25 local25 = (ListNode_Sub25) Static208.A_ITERABLE_HASH_MAP___11.get(local19);
 		if (local25 == null) {
 			local25 = new ListNode_Sub25();
-			Static208.aClass102_11.method2703(local19, local25);
+			Static208.A_ITERABLE_HASH_MAP___11.set(local19, local25);
 		}
 		if (local25.anIntArray230.length <= arg0) {
 			@Pc(48) int[] local48 = new int[arg0 + 1];

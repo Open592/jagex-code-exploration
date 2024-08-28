@@ -36,7 +36,7 @@ public final class Class202 {
 	public int[] anIntArray407;
 
 	@OriginalMember(owner = "client!rd", name = "eb", descriptor = "Lclient!ib;")
-	private Class102 aClass102_34;
+	private IterableHashMap aIterableHashMap_34;
 
 	@OriginalMember(owner = "client!rd", name = "lb", descriptor = "[B")
 	private byte[] lb;
@@ -289,10 +289,10 @@ public final class Class202 {
 
 	@OriginalMember(owner = "client!rd", name = "a", descriptor = "(IBI)I")
 	public int method4585(@OriginalArg(0) int arg0, @OriginalArg(2) int arg1) {
-		if (this.aClass102_34 == null) {
+		if (this.aIterableHashMap_34 == null) {
 			return arg1;
 		} else {
-			@Pc(22) ListNode_Sub37 local22 = (ListNode_Sub37) this.aClass102_34.method2700((long) arg0);
+			@Pc(22) ListNode_Sub37 local22 = (ListNode_Sub37) this.aIterableHashMap_34.get((long) arg0);
 			return local22 == null ? arg1 : local22.anInt5426;
 		}
 	}
@@ -790,9 +790,9 @@ public final class Class202 {
 			this.aByte60 = arg0.g1s();
 		} else if (arg1 == 249) {
 			local26 = arg0.g1();
-			if (this.aClass102_34 == null) {
+			if (this.aIterableHashMap_34 == null) {
 				local36 = Static370.method4949(local26);
-				this.aClass102_34 = new Class102(local36);
+				this.aIterableHashMap_34 = new IterableHashMap(local36);
 			}
 			for (local36 = 0; local36 < local26; local36++) {
 				@Pc(753) boolean local753 = arg0.g1() == 1;
@@ -803,7 +803,7 @@ public final class Class202 {
 				} else {
 					local766 = new ListNode_Sub37(arg0.g4());
 				}
-				this.aClass102_34.method2703((long) local57, local766);
+				this.aIterableHashMap_34.set((long) local57, local766);
 			}
 		}
 	}
@@ -883,10 +883,10 @@ public final class Class202 {
 
 	@OriginalMember(owner = "client!rd", name = "a", descriptor = "(ILjava/lang/String;I)Ljava/lang/String;")
 	public String method4597(@OriginalArg(1) String arg0, @OriginalArg(2) int arg1) {
-		if (this.aClass102_34 == null) {
+		if (this.aIterableHashMap_34 == null) {
 			return arg0;
 		} else {
-			@Pc(21) ListNode_Sub7 local21 = (ListNode_Sub7) this.aClass102_34.method2700((long) arg1);
+			@Pc(21) ListNode_Sub7 local21 = (ListNode_Sub7) this.aIterableHashMap_34.get((long) arg1);
 			return local21 == null ? arg0 : local21.aString12;
 		}
 	}

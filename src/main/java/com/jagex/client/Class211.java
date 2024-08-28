@@ -48,7 +48,7 @@ public final class Class211 {
 	private int anInt6178;
 
 	@OriginalMember(owner = "client!rv", name = "xb", descriptor = "Lclient!ib;")
-	public Class102 aClass102_36;
+	public IterableHashMap aIterableHashMap_36;
 
 	@OriginalMember(owner = "client!rv", name = "a", descriptor = "I")
 	public int anInt6122 = 0;
@@ -480,7 +480,7 @@ public final class Class211 {
 		this.aByteArray85 = arg0.aByteArray85;
 		this.anInt6181 = arg0.anInt6181;
 		this.aShortArray212 = arg0.aShortArray212;
-		this.aClass102_36 = arg0.aClass102_36;
+		this.aIterableHashMap_36 = arg0.aIterableHashMap_36;
 		this.aBoolean565 = arg0.aBoolean565;
 		this.anInt6122 = arg1.anInt6122;
 		this.anInt6134 = arg0.anInt6134;
@@ -637,9 +637,9 @@ public final class Class211 {
 				}
 			} else if (arg0 == 249) {
 				local147 = arg1.g1();
-				if (this.aClass102_36 == null) {
+				if (this.aIterableHashMap_36 == null) {
 					local157 = Static370.method4949(local147);
-					this.aClass102_36 = new Class102(local157);
+					this.aIterableHashMap_36 = new IterableHashMap(local157);
 				}
 				for (local157 = 0; local157 < local147; local157++) {
 					@Pc(517) boolean local517 = arg1.g1() == 1;
@@ -650,7 +650,7 @@ public final class Class211 {
 					} else {
 						local530 = new ListNode_Sub37(arg1.g4());
 					}
-					this.aClass102_36.method2703((long) local521, local530);
+					this.aIterableHashMap_36.set((long) local521, local530);
 				}
 				return;
 			}
@@ -659,10 +659,10 @@ public final class Class211 {
 
 	@OriginalMember(owner = "client!rv", name = "b", descriptor = "(III)I")
 	public int method4781(@OriginalArg(0) int arg0, @OriginalArg(2) int arg1) {
-		if (this.aClass102_36 == null) {
+		if (this.aIterableHashMap_36 == null) {
 			return arg1;
 		} else {
-			@Pc(16) ListNode_Sub37 local16 = (ListNode_Sub37) this.aClass102_36.method2700((long) arg0);
+			@Pc(16) ListNode_Sub37 local16 = (ListNode_Sub37) this.aIterableHashMap_36.get((long) arg0);
 			return local16 == null ? arg1 : local16.anInt5426;
 		}
 	}
@@ -800,10 +800,10 @@ public final class Class211 {
 
 	@OriginalMember(owner = "client!rv", name = "a", descriptor = "(Ljava/lang/String;II)Ljava/lang/String;")
 	public String method4789(@OriginalArg(0) String arg0, @OriginalArg(2) int arg1) {
-		if (this.aClass102_36 == null) {
+		if (this.aIterableHashMap_36 == null) {
 			return arg0;
 		} else {
-			@Pc(16) ListNode_Sub7 local16 = (ListNode_Sub7) this.aClass102_36.method2700((long) arg1);
+			@Pc(16) ListNode_Sub7 local16 = (ListNode_Sub7) this.aIterableHashMap_36.get((long) arg1);
 			return local16 == null ? arg0 : local16.aString12;
 		}
 	}

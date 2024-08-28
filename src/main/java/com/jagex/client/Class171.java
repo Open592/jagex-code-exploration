@@ -9,10 +9,10 @@ import org.openrs2.deob.annotation.Pc;
 public final class Class171 {
 
 	@OriginalMember(owner = "client!oj", name = "j", descriptor = "Lclient!ib;")
-	private final Class102 aClass102_25 = new Class102(256);
+	private final IterableHashMap aIterableHashMap_25 = new IterableHashMap(256);
 
 	@OriginalMember(owner = "client!oj", name = "o", descriptor = "Lclient!ib;")
-	private final Class102 aClass102_26 = new Class102(256);
+	private final IterableHashMap aIterableHashMap_26 = new IterableHashMap(256);
 
 	@OriginalMember(owner = "client!oj", name = "b", descriptor = "Lclient!fs;")
 	private final Class76 aClass76_56;
@@ -31,7 +31,7 @@ public final class Class171 {
 		@Pc(15) int local15 = (arg0 << 4 & 0xFFF4 | arg0 >>> 12) ^ arg1;
 		@Pc(21) int local21 = local15 | arg0 << 16;
 		@Pc(24) long local24 = (long) local21;
-		@Pc(31) ListNode_Sub4_Sub1 local31 = (ListNode_Sub4_Sub1) this.aClass102_26.method2700(local24);
+		@Pc(31) ListNode_Sub4_Sub1 local31 = (ListNode_Sub4_Sub1) this.aIterableHashMap_26.get(local24);
 		if (local31 != null) {
 			return local31;
 		} else if (arg2 == null || arg2[0] > 0) {
@@ -40,7 +40,7 @@ public final class Class171 {
 				return null;
 			}
 			local31 = local54.method5245();
-			this.aClass102_26.method2703(local24, local31);
+			this.aIterableHashMap_26.set(local24, local31);
 			if (arg2 != null) {
 				arg2[0] -= local31.aByteArray48.length;
 			}
@@ -55,24 +55,24 @@ public final class Class171 {
 		@Pc(15) int local15 = arg2 ^ (arg0 << 4 & 0xFFF2 | arg0 >>> 12);
 		@Pc(26) int local26 = local15 | arg0 << 16;
 		@Pc(31) long local31 = (long) local26 ^ 0x100000000L;
-		@Pc(38) ListNode_Sub4_Sub1 local38 = (ListNode_Sub4_Sub1) this.aClass102_26.method2700(local31);
+		@Pc(38) ListNode_Sub4_Sub1 local38 = (ListNode_Sub4_Sub1) this.aIterableHashMap_26.get(local31);
 		if (local38 != null) {
 			return local38;
 		} else if (arg1 == null || arg1[0] > 0) {
-			@Pc(57) ListNode_Sub13 local57 = (ListNode_Sub13) this.aClass102_25.method2700(local31);
+			@Pc(57) ListNode_Sub13 local57 = (ListNode_Sub13) this.aIterableHashMap_25.get(local31);
 			if (local57 == null) {
 				local57 = Static68.method1318(this.aClass76_56, arg0, arg2);
 				if (local57 == null) {
 					return null;
 				}
-				this.aClass102_25.method2703(local31, local57);
+				this.aIterableHashMap_25.set(local31, local57);
 			}
 			local38 = local57.method1322(arg1);
 			if (local38 == null) {
 				return null;
 			} else {
 				local57.popSelf();
-				this.aClass102_26.method2703(local31, local38);
+				this.aIterableHashMap_26.set(local31, local38);
 				return local38;
 			}
 		} else {

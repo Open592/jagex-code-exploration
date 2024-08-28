@@ -519,7 +519,7 @@ public final class Class19_Sub2 extends Class19 {
 	public Class19_Sub2(@OriginalArg(0) int arg0, @OriginalArg(1) Canvas arg1, @OriginalArg(2) Interface7 arg2, @OriginalArg(3) int arg3, @OriginalArg(4) SignLink arg4) {
 		super(arg0, arg2);
 		new Class229();
-		new Class102(16);
+		new IterableHashMap(16);
 		this.aClass183_7 = new Class183();
 		this.aClass183_8 = new Class183();
 		this.aClass183_9 = new Class183();

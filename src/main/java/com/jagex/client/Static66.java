@@ -74,6 +74,6 @@ public final class Static66 {
 
 	@OriginalMember(owner = "client!df", name = "b", descriptor = "(I)V")
 	public static void method4403() {
-		Static208.aClass102_11.method2699();
+		Static208.A_ITERABLE_HASH_MAP___11.clear();
 	}
 }

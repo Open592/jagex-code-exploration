@@ -18,7 +18,7 @@ public final class Static423 {
 
 	@OriginalMember(owner = "client!vi", name = "g", descriptor = "(I)V")
 	public static void method5405() {
-		Static34.aClass102_4.method2699();
+		Static34.A_ITERABLE_HASH_MAP___4.clear();
 		Static250.aClass229_4.method5087();
 		Static99.aClass229_1.method5087();
 	}

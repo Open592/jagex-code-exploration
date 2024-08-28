@@ -67,7 +67,7 @@ public final class Static148 {
 	private static byte[] aByteArray77;
 
 	@OriginalMember(owner = "client!hj", name = "A", descriptor = "Lclient!ib;")
-	private static Class102 aClass102_31;
+	private static IterableHashMap aIterableHashMap_31;
 
 	@OriginalMember(owner = "client!hj", name = "B", descriptor = "I")
 	public static int anInt5725;
@@ -112,7 +112,7 @@ public final class Static148 {
 	private static Class84[][][] aClass84ArrayArrayArray2;
 
 	@OriginalMember(owner = "client!hj", name = "b", descriptor = "Lclient!ib;")
-	private static final Class102 aClass102_30 = new Class102(16);
+	private static final IterableHashMap A_ITERABLE_HASH_MAP___30 = new IterableHashMap(16);
 
 	@OriginalMember(owner = "client!hj", name = "j", descriptor = "I")
 	public static int anInt5719 = (int) (Math.random() * 11.0D) - 5;
@@ -131,7 +131,7 @@ public final class Static148 {
 
 	@OriginalMember(owner = "client!hj", name = "a", descriptor = "(I)V")
 	public static void method4492(@OriginalArg(0) int arg0) {
-		aClass4_Sub1_Sub5_3 = (ListNode_Sub1_Sub5) aClass102_30.method2700((long) arg0);
+		aClass4_Sub1_Sub5_3 = (ListNode_Sub1_Sub5) A_ITERABLE_HASH_MAP___30.get((long) arg0);
 	}
 
 	@OriginalMember(owner = "client!hj", name = "a", descriptor = "(Lclient!ya;IIII)V")
@@ -197,7 +197,7 @@ public final class Static148 {
 							} else if (local179 <= 0) {
 								method4497(arg0, local28, local70, local44, local84, local175, local177, aByteArray78[local173], null, null, true);
 							} else if (local179 == 65535) {
-								@Pc(282) ListNode_Sub27 local282 = (ListNode_Sub27) aClass102_31.method2700((long) (local50 << 16 | local93));
+								@Pc(282) ListNode_Sub27 local282 = (ListNode_Sub27) aIterableHashMap_31.get((long) (local50 << 16 | local93));
 								if (local282 != null) {
 									method4497(arg0, local28, local70, local44, local84, local175, local177, aByteArray78[local173], local282.aShortArray140, local282.aByteArray49, true);
 								}
@@ -246,7 +246,7 @@ public final class Static148 {
 								if (local175 <= 0) {
 									method4504(arg0, local40, local80, local50, local93, null, null);
 								} else if (local175 == 65535) {
-									@Pc(459) ListNode_Sub27 local459 = (ListNode_Sub27) aClass102_31.method2700((long) (local57 << 16 | local173));
+									@Pc(459) ListNode_Sub27 local459 = (ListNode_Sub27) aIterableHashMap_31.get((long) (local57 << 16 | local173));
 									if (local459 != null) {
 										method4504(arg0, local40, local80, local50, local93, local459.aShortArray140, local459.aByteArray49);
 									}
@@ -324,7 +324,7 @@ public final class Static148 {
 
 	@OriginalMember(owner = "client!hj", name = "a", descriptor = "(II)Lclient!cn;")
 	public static ListNode_Sub1_Sub5 method4494(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1) {
-		for (@Pc(4) ListNode_Sub1_Sub5 local4 = (ListNode_Sub1_Sub5) aClass102_30.method2705(); local4 != null; local4 = (ListNode_Sub1_Sub5) aClass102_30.method2704()) {
+		for (@Pc(4) ListNode_Sub1_Sub5 local4 = (ListNode_Sub1_Sub5) A_ITERABLE_HASH_MAP___30.head(); local4 != null; local4 = (ListNode_Sub1_Sub5) A_ITERABLE_HASH_MAP___30.next()) {
 			if (local4.aBoolean95 && local4.method932(arg1, arg0)) {
 				return local4;
 			}
@@ -659,7 +659,7 @@ public final class Static148 {
 						local215[local220] = (short) arg1.g2();
 						local218[local220] = arg1.g1s();
 					}
-					aClass102_31.method2703((long) (arg4 << 16 | arg5), new ListNode_Sub27(local215, local218));
+					aIterableHashMap_31.set((long) (arg4 << 16 | arg5), new ListNode_Sub27(local215, local218));
 				}
 			} else {
 				local215 = null;
@@ -697,7 +697,7 @@ public final class Static148 {
 		aByteArray78 = new byte[anInt5729 * anInt5733];
 		aShortArray199 = new short[anInt5729 * anInt5733];
 		aByteArray80 = new byte[anInt5729 * anInt5733];
-		aClass102_31 = new Class102(1024);
+		aIterableHashMap_31 = new IterableHashMap(1024);
 		aClass84ArrayArrayArray2 = new Class84[3][anInt5729 >> 6][anInt5733 >> 6];
 		anIntArray399 = new int[aClass124_5.anInt3845 + 1];
 	}
@@ -764,7 +764,7 @@ public final class Static148 {
 				if (local15 != 0) {
 					@Pc(35) int local35;
 					if (local15 == 65535) {
-						@Pc(31) ListNode_Sub27 local31 = (ListNode_Sub27) aClass102_31.method2700((long) (local1 << 16 | local4));
+						@Pc(31) ListNode_Sub27 local31 = (ListNode_Sub27) aIterableHashMap_31.get((long) (local1 << 16 | local4));
 						if (local31 != null) {
 							for (local35 = 0; local35 < local31.aShortArray140.length; local35++) {
 								@Pc(46) Class202 local46 = aClass262_3.method5560(local31.aShortArray140[local35] & 0xFFFF);
@@ -836,7 +836,7 @@ public final class Static148 {
 	@OriginalMember(owner = "client!hj", name = "b", descriptor = "(II)Lclient!tn;")
 	public static Class229 method4506(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1) {
 		@Pc(3) Class229 local3 = new Class229();
-		for (@Pc(8) ListNode_Sub1_Sub5 local8 = (ListNode_Sub1_Sub5) aClass102_30.method2705(); local8 != null; local8 = (ListNode_Sub1_Sub5) aClass102_30.method2704()) {
+		for (@Pc(8) ListNode_Sub1_Sub5 local8 = (ListNode_Sub1_Sub5) A_ITERABLE_HASH_MAP___30.head(); local8 != null; local8 = (ListNode_Sub1_Sub5) A_ITERABLE_HASH_MAP___30.next()) {
 			if (local8.aBoolean95 && local8.method932(arg1, arg0)) {
 				local3.method5088(local8);
 			}
@@ -912,14 +912,14 @@ public final class Static148 {
 		aByteArray78 = null;
 		aShortArray199 = null;
 		aByteArray80 = null;
-		aClass102_31 = null;
+		aIterableHashMap_31 = null;
 		aClass84ArrayArrayArray2 = null;
 		anIntArray399 = null;
 	}
 
 	@OriginalMember(owner = "client!hj", name = "b", descriptor = "(I)Lclient!cn;")
 	public static ListNode_Sub1_Sub5 method4511(@OriginalArg(0) int arg0) {
-		return (ListNode_Sub1_Sub5) aClass102_30.method2700((long) arg0);
+		return (ListNode_Sub1_Sub5) A_ITERABLE_HASH_MAP___30.get((long) arg0);
 	}
 
 	@OriginalMember(owner = "client!hj", name = "a", descriptor = "(Lclient!ga;II)V")
@@ -950,12 +950,12 @@ public final class Static148 {
 		aClass182_3 = arg4;
 		aClass265_4 = arg5;
 		anInterface12_2 = arg6;
-		aClass102_30.method2699();
+		A_ITERABLE_HASH_MAP___30.clear();
 		@Pc(21) int local21 = aClass76_73.method2099("details");
 		@Pc(26) int[] local26 = aClass76_73.method2124(local21);
 		for (@Pc(28) int local28 = 0; local28 < local26.length; local28++) {
 			@Pc(37) ListNode_Sub1_Sub5 local37 = Static90.method1609(local21, local26[local28], aClass76_73);
-			aClass102_30.method2703((long) local37.anInt1012, local37);
+			A_ITERABLE_HASH_MAP___30.set((long) local37.anInt1012, local37);
 		}
 		Static347.method4678(true, false);
 	}

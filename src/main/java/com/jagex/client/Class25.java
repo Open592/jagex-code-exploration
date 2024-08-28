@@ -15,24 +15,24 @@ public final class Class25 {
 	private int anInt626 = 0;
 
 	@OriginalMember(owner = "client!bo", name = "d", descriptor = "Lclient!ib;")
-	private final Class102 aClass102_5;
+	private final IterableHashMap aIterableHashMap_5;
 
 	@OriginalMember(owner = "client!bo", name = "<init>", descriptor = "(Lclient!ib;)V")
-	public Class25(@OriginalArg(0) Class102 arg0) {
-		this.aClass102_5 = arg0;
+	public Class25(@OriginalArg(0) IterableHashMap arg0) {
+		this.aIterableHashMap_5 = arg0;
 	}
 
 	@OriginalMember(owner = "client!bo", name = "a", descriptor = "(Z)Lclient!vu;")
 	public ListNode method640() {
 		@Pc(30) ListNode local30;
-		if (this.anInt626 > 0 && this.aListNode_33 != this.aClass102_5.aListNodeArray1[this.anInt626 - 1]) {
+		if (this.anInt626 > 0 && this.aListNode_33 != this.aIterableHashMap_5.buckets[this.anInt626 - 1]) {
 			local30 = this.aListNode_33;
 			this.aListNode_33 = local30.previous;
 			return local30;
 		}
-		while (this.anInt626 < this.aClass102_5.anInt3159) {
-			local30 = this.aClass102_5.aListNodeArray1[this.anInt626++].previous;
-			if (this.aClass102_5.aListNodeArray1[this.anInt626 - 1] != local30) {
+		while (this.anInt626 < this.aIterableHashMap_5.bucketCount) {
+			local30 = this.aIterableHashMap_5.buckets[this.anInt626++].previous;
+			if (this.aIterableHashMap_5.buckets[this.anInt626 - 1] != local30) {
 				this.aListNode_33 = local30.previous;
 				return local30;
 			}

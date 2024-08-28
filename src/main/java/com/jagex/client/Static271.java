@@ -999,7 +999,7 @@ public final class Static271 {
 								}
 								if (arg0 == 2702) {
 									local13 = anIntArray330[--anInt5095];
-									local3649 = (ListNode_Sub43) Static325.aClass102_29.method2700((long) local13);
+									local3649 = (ListNode_Sub43) Static325.aIterableHashMap_29.get((long) local13);
 									if (local3649 != null) {
 										anIntArray330[anInt5095++] = 1;
 										return;
@@ -1027,7 +1027,7 @@ public final class Static271 {
 									anInt5095 -= 2;
 									local13 = anIntArray330[anInt5095];
 									local19 = anIntArray330[anInt5095 + 1];
-									local3751 = (ListNode_Sub43) Static325.aClass102_29.method2700((long) local13);
+									local3751 = (ListNode_Sub43) Static325.aIterableHashMap_29.get((long) local13);
 									if (local3751 != null && local3751.anInt6979 == local19) {
 										anIntArray330[anInt5095++] = 1;
 										return;
@@ -1133,7 +1133,7 @@ public final class Static271 {
 										anInt5095 -= 2;
 										local13 = anIntArray330[anInt5095];
 										local19 = anIntArray330[anInt5095 + 1];
-										local3751 = (ListNode_Sub43) Static325.aClass102_29.method2700((long) local13);
+										local3751 = (ListNode_Sub43) Static325.aIterableHashMap_29.get((long) local13);
 										if (local3751 != null) {
 											Static90.method1606(local3751.anInt6979 != local19, local3751, true);
 										}
@@ -1143,7 +1143,7 @@ public final class Static271 {
 									if (arg0 == 3112) {
 										anInt5095--;
 										local13 = anIntArray330[anInt5095];
-										local3649 = (ListNode_Sub43) Static325.aClass102_29.method2700((long) local13);
+										local3649 = (ListNode_Sub43) Static325.aIterableHashMap_29.get((long) local13);
 										if (local3649 != null && local3649.anInt6981 == 3) {
 											Static90.method1606(true, local3649, true);
 										}
@@ -1454,7 +1454,7 @@ public final class Static271 {
 									if (arg0 == 3411) {
 										local13 = anIntArray330[--anInt5095];
 										@Pc(5450) Class200 local5450 = Static416.aClass158_1.method3790(local13);
-										anIntArray330[anInt5095++] = local5450.aClass102_32.method2698();
+										anIntArray330[anInt5095++] = local5450.aIterableHashMap_32.countNodes();
 										return;
 									}
 								} else if (arg0 < 3700) {
@@ -2892,8 +2892,8 @@ public final class Static271 {
 							Static265.aStringArray20[local54] = aStringArray21[--anInt5092];
 							Static250.method3629(local54);
 						} else if (local31 == 51) {
-							@Pc(774) Class102 local774 = arg0.aClass102Array1[local11[local5]];
-							@Pc(787) ListNode_Sub37 local787 = (ListNode_Sub37) local774.method2700((long) anIntArray330[--anInt5095]);
+							@Pc(774) IterableHashMap local774 = arg0.aIterableHashMapArray1[local11[local5]];
+							@Pc(787) ListNode_Sub37 local787 = (ListNode_Sub37) local774.get((long) anIntArray330[--anInt5095]);
 							if (local787 != null) {
 								local5 += local787.anInt5426;
 							}
@@ -3590,15 +3590,15 @@ public final class Static271 {
 					anInt5095 -= 2;
 					local157 = anIntArray330[anInt5095];
 					local1313 = anIntArray330[anInt5095 + 1] == 1;
-					if (Static11.aClass102_1 != null) {
-						local2483 = Static11.aClass102_1.method2700((long) local157);
+					if (Static11.A_ITERABLE_HASH_MAP___1 != null) {
+						local2483 = Static11.A_ITERABLE_HASH_MAP___1.get((long) local157);
 						if (local2483 != null && !local1313) {
 							local2483.popSelf();
 							return;
 						}
 						if (local2483 == null && local1313) {
 							local2483 = new ListNode();
-							Static11.aClass102_1.method2703((long) local157, local2483);
+							Static11.A_ITERABLE_HASH_MAP___1.set((long) local157, local2483);
 						}
 					}
 					return;
@@ -3606,8 +3606,8 @@ public final class Static271 {
 				@Pc(2525) ListNode local2525;
 				if (arg0 == 5232) {
 					local157 = anIntArray330[--anInt5095];
-					if (Static11.aClass102_1 != null) {
-						local2525 = Static11.aClass102_1.method2700((long) local157);
+					if (Static11.A_ITERABLE_HASH_MAP___1 != null) {
+						local2525 = Static11.A_ITERABLE_HASH_MAP___1.get((long) local157);
 						anIntArray330[anInt5095++] = local2525 == null ? 0 : 1;
 						return;
 					}
@@ -3618,23 +3618,23 @@ public final class Static271 {
 					anInt5095 -= 2;
 					local157 = anIntArray330[anInt5095];
 					local1313 = anIntArray330[anInt5095 + 1] == 1;
-					if (Static138.aClass102_12 != null) {
-						local2483 = Static138.aClass102_12.method2700((long) local157);
+					if (Static138.A_ITERABLE_HASH_MAP___12 != null) {
+						local2483 = Static138.A_ITERABLE_HASH_MAP___12.get((long) local157);
 						if (local2483 != null && !local1313) {
 							local2483.popSelf();
 							return;
 						}
 						if (local2483 == null && local1313) {
 							local2483 = new ListNode();
-							Static138.aClass102_12.method2703((long) local157, local2483);
+							Static138.A_ITERABLE_HASH_MAP___12.set((long) local157, local2483);
 						}
 					}
 					return;
 				}
 				if (arg0 == 5234) {
 					local157 = anIntArray330[--anInt5095];
-					if (Static138.aClass102_12 != null) {
-						local2525 = Static138.aClass102_12.method2700((long) local157);
+					if (Static138.A_ITERABLE_HASH_MAP___12 != null) {
+						local2525 = Static138.A_ITERABLE_HASH_MAP___12.get((long) local157);
 						anIntArray330[anInt5095++] = local2525 == null ? 0 : 1;
 						return;
 					}
@@ -4761,7 +4761,7 @@ public final class Static271 {
 					}
 				} else if (arg0 < 6800 && Static451.modewhat == Static65.WIPModeWhat) {
 					if (arg0 == 6700) {
-						local157 = Static325.aClass102_29.method2698();
+						local157 = Static325.aIterableHashMap_29.countNodes();
 						if (Static334.anInt5766 != -1) {
 							local157++;
 						}
@@ -4777,9 +4777,9 @@ public final class Static271 {
 							}
 							local157--;
 						}
-						@Pc(6786) ListNode_Sub43 local6786 = (ListNode_Sub43) Static325.aClass102_29.method2705();
+						@Pc(6786) ListNode_Sub43 local6786 = (ListNode_Sub43) Static325.aIterableHashMap_29.head();
 						while (local157-- > 0) {
-							local6786 = (ListNode_Sub43) Static325.aClass102_29.method2704();
+							local6786 = (ListNode_Sub43) Static325.aIterableHashMap_29.next();
 						}
 						anIntArray330[anInt5095++] = local6786.anInt6979;
 						return;

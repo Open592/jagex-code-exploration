@@ -22,7 +22,7 @@ public final class Class143_Sub1 extends Class143 {
 	private int anInt4482 = 0;
 
 	@OriginalMember(owner = "client!lv", name = "o", descriptor = "Lclient!ib;")
-	private final Class102 aClass102_20 = new Class102(16);
+	private final IterableHashMap aIterableHashMap_20 = new IterableHashMap(16);
 
 	@OriginalMember(owner = "client!lv", name = "J", descriptor = "I")
 	private int anInt4489 = 0;
@@ -94,7 +94,7 @@ public final class Class143_Sub1 extends Class143 {
 
 	@OriginalMember(owner = "client!lv", name = "a", descriptor = "(III)Lclient!ec;")
 	private ListNode_Sub1_Sub6 method3518(@OriginalArg(0) int arg0, @OriginalArg(2) int arg1) {
-		@Pc(13) ListNode_Sub1_Sub6 local13 = (ListNode_Sub1_Sub6) this.aClass102_20.method2700((long) arg1);
+		@Pc(13) ListNode_Sub1_Sub6 local13 = (ListNode_Sub1_Sub6) this.aIterableHashMap_20.get((long) arg1);
 		if (local13 != null && arg0 == 0 && !local13.aBoolean384 && local13.aBoolean381) {
 			local13.popSelf();
 			local13 = null;
@@ -128,7 +128,7 @@ public final class Class143_Sub1 extends Class143 {
 			} else {
 				throw new RuntimeException();
 			}
-			this.aClass102_20.method2703((long) arg1, local13);
+			this.aIterableHashMap_20.set((long) arg1, local13);
 		}
 		if (local13.aBoolean381) {
 			return null;
@@ -154,7 +154,7 @@ public final class Class143_Sub1 extends Class143 {
 				local13.popSelf();
 				if (local13.aBoolean384 && !this.aClass255_1.method5460()) {
 					local238 = this.aClass255_1.method5465(this.anInt4474, (byte) 2, true, arg1);
-					this.aClass102_20.method2703((long) arg1, local238);
+					this.aIterableHashMap_20.set((long) arg1, local238);
 				}
 				return null;
 			}
@@ -199,7 +199,7 @@ public final class Class143_Sub1 extends Class143 {
 			local13.popSelf();
 			if (local13.aBoolean384 && !this.aClass255_1.method5460()) {
 				local238 = this.aClass255_1.method5465(this.anInt4474, (byte) 2, true, arg1);
-				this.aClass102_20.method2703((long) arg1, local238);
+				this.aIterableHashMap_20.set((long) arg1, local238);
 			}
 			return null;
 		}
@@ -309,7 +309,7 @@ public final class Class143_Sub1 extends Class143 {
 		if (!this.aBoolean414 || this.aLong149 > MonotonicClock.getCurrentTimeInMilliseconds()) {
 			return;
 		}
-		for (@Pc(325) ListNode_Sub1_Sub6 local325 = (ListNode_Sub1_Sub6) this.aClass102_20.method2705(); local325 != null; local325 = (ListNode_Sub1_Sub6) this.aClass102_20.method2704()) {
+		for (@Pc(325) ListNode_Sub1_Sub6 local325 = (ListNode_Sub1_Sub6) this.aIterableHashMap_20.head(); local325 != null; local325 = (ListNode_Sub1_Sub6) this.aIterableHashMap_20.next()) {
 			if (!local325.aBoolean381) {
 				if (local325.aBoolean382) {
 					if (!local325.aBoolean384) {
@@ -339,7 +339,7 @@ public final class Class143_Sub1 extends Class143 {
 	@OriginalMember(owner = "client!lv", name = "a", descriptor = "(IB)I")
 	@Override
 	public int method3515(@OriginalArg(0) int arg0) {
-		@Pc(11) ListNode_Sub1_Sub6 local11 = (ListNode_Sub1_Sub6) this.aClass102_20.method2700((long) arg0);
+		@Pc(11) ListNode_Sub1_Sub6 local11 = (ListNode_Sub1_Sub6) this.aIterableHashMap_20.get((long) arg0);
 		return local11 == null ? 0 : local11.method3342();
 	}
 

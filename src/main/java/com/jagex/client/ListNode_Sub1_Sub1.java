@@ -31,7 +31,7 @@ public final class ListNode_Sub1_Sub1 extends ListNode_Sub1 {
 	public String aString2;
 
 	@OriginalMember(owner = "client!ae", name = "K", descriptor = "[Lclient!ib;")
-	public Class102[] aClass102Array1;
+	public IterableHashMap[] aIterableHashMapArray1;
 
 	@OriginalMember(owner = "client!ae", name = "N", descriptor = "Lclient!pn;")
 	public Class186 aClass186_1;

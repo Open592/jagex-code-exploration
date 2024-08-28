@@ -44,7 +44,7 @@ public final class Static388 {
 			}
 			local58.popSelf();
 		}
-		for (@Pc(85) ListNode_Sub8 local85 = (ListNode_Sub8) Static341.aClass102_38.method2705(); local85 != null; local85 = (ListNode_Sub8) Static341.aClass102_38.method2704()) {
+		for (@Pc(85) ListNode_Sub8 local85 = (ListNode_Sub8) Static341.A_ITERABLE_HASH_MAP___38.head(); local85 != null; local85 = (ListNode_Sub8) Static341.A_ITERABLE_HASH_MAP___38.next()) {
 			if (local85.aClass4_Sub15_Sub3_2 != null) {
 				Static360.aClass4_Sub15_Sub2_2.method2955(local85.aClass4_Sub15_Sub3_2);
 				local85.aClass4_Sub15_Sub3_2 = null;

@@ -26,7 +26,7 @@ public final class Static48 {
 					if (local14.aClass247Array2 != null) {
 						method790(arg0, local14.aClass247Array2);
 					}
-					@Pc(38) ListNode_Sub43 local38 = (ListNode_Sub43) Static325.aClass102_29.method2700((long) local14.anInt6809);
+					@Pc(38) ListNode_Sub43 local38 = (ListNode_Sub43) Static325.aIterableHashMap_29.get((long) local14.anInt6809);
 					if (local38 != null) {
 						Static310.method4165(local38.anInt6979, arg0);
 					}

@@ -85,7 +85,7 @@ public final class Static12 {
 			return Static392.method5121(arg0.anInt6850);
 		}
 		@Pc(20) int local20 = arg0.anInt6809 >>> 16;
-		@Pc(25) Class25 local25 = new Class25(Static325.aClass102_29);
+		@Pc(25) Class25 local25 = new Class25(Static325.aIterableHashMap_29);
 		for (@Pc(30) ListNode_Sub43 local30 = (ListNode_Sub43) local25.method641(); local30 != null; local30 = (ListNode_Sub43) local25.method640()) {
 			if (local30.anInt6979 == local20) {
 				return Static392.method5121((int) local30.id);

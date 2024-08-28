@@ -81,9 +81,9 @@ public final class Static449 {
 	@OriginalMember(owner = "client!wo", name = "a", descriptor = "(IZ)V")
 	public static void method5653() {
 		Static429.method5476(Static50.aClass215_11);
-		for (@Pc(22) ListNode_Sub43 local22 = (ListNode_Sub43) Static325.aClass102_29.method2705(); local22 != null; local22 = (ListNode_Sub43) Static325.aClass102_29.method2704()) {
+		for (@Pc(22) ListNode_Sub43 local22 = (ListNode_Sub43) Static325.aIterableHashMap_29.head(); local22 != null; local22 = (ListNode_Sub43) Static325.aIterableHashMap_29.next()) {
 			if (!local22.hasNext()) {
-				local22 = (ListNode_Sub43) Static325.aClass102_29.method2705();
+				local22 = (ListNode_Sub43) Static325.aIterableHashMap_29.head();
 				if (local22 == null) {
 					break;
 				}

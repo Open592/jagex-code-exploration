@@ -90,7 +90,7 @@ public final class Static126 {
 		local7.anInt616 = Static33.method631(arg2);
 		local7.anInt620 = arg2.anInt4348;
 		local7.anInt611 = arg2.anInt4334 << 7;
-		Static341.aClass102_38.method2703((long) arg2.anInt6037, local7);
+		Static341.A_ITERABLE_HASH_MAP___38.set((long) arg2.anInt6037, local7);
 		return;
 	}
 }

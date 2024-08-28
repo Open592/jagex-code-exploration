@@ -13,7 +13,7 @@ public final class Static18 {
 	public static long aLong14 = 0L;
 
 	@OriginalMember(owner = "client!aq", name = "x", descriptor = "Lclient!ib;")
-	public static final Class102 aClass102_2 = new Class102(16);
+	public static final IterableHashMap A_ITERABLE_HASH_MAP___2 = new IterableHashMap(16);
 
 	@OriginalMember(owner = "client!aq", name = "y", descriptor = "Lclient!gn;")
 	public static final Class84 aClass84_2 = new Class84();

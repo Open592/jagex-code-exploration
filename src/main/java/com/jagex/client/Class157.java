@@ -9,7 +9,7 @@ import org.openrs2.deob.annotation.Pc;
 public final class Class157 {
 
 	@OriginalMember(owner = "client!nf", name = "d", descriptor = "Lclient!ib;")
-	private Class102 aClass102_24;
+	private IterableHashMap aIterableHashMap_24;
 
 	@OriginalMember(owner = "client!nf", name = "e", descriptor = "I")
 	private int anInt4903;
@@ -112,10 +112,10 @@ public final class Class157 {
 
 	@OriginalMember(owner = "client!nf", name = "a", descriptor = "(ILjava/lang/String;I)Ljava/lang/String;")
 	public String method3777(@OriginalArg(1) String arg0, @OriginalArg(2) int arg1) {
-		if (this.aClass102_24 == null) {
+		if (this.aIterableHashMap_24 == null) {
 			return arg0;
 		} else {
-			@Pc(23) ListNode_Sub7 local23 = (ListNode_Sub7) this.aClass102_24.method2700((long) arg1);
+			@Pc(23) ListNode_Sub7 local23 = (ListNode_Sub7) this.aIterableHashMap_24.get((long) arg1);
 			return local23 == null ? arg0 : local23.aString12;
 		}
 	}
@@ -148,10 +148,10 @@ public final class Class157 {
 
 	@OriginalMember(owner = "client!nf", name = "a", descriptor = "(III)I")
 	public int method3779(@OriginalArg(1) int arg0, @OriginalArg(2) int arg1) {
-		if (this.aClass102_24 == null) {
+		if (this.aIterableHashMap_24 == null) {
 			return arg0;
 		} else {
-			@Pc(16) ListNode_Sub37 local16 = (ListNode_Sub37) this.aClass102_24.method2700((long) arg1);
+			@Pc(16) ListNode_Sub37 local16 = (ListNode_Sub37) this.aIterableHashMap_24.get((long) arg1);
 			return local16 == null ? arg0 : local16.anInt5426;
 		}
 	}
@@ -255,9 +255,9 @@ public final class Class157 {
 									return;
 								} else if (arg1 == 249) {
 									local189 = arg0.g1();
-									if (this.aClass102_24 == null) {
+									if (this.aIterableHashMap_24 == null) {
 										local196 = Static370.method4949(local189);
-										this.aClass102_24 = new Class102(local196);
+										this.aIterableHashMap_24 = new IterableHashMap(local196);
 									}
 									for (local196 = 0; local196 < local189; local196++) {
 										@Pc(215) boolean local215 = arg0.g1() == 1;
@@ -268,7 +268,7 @@ public final class Class157 {
 										} else {
 											local228 = new ListNode_Sub37(arg0.g4());
 										}
-										this.aClass102_24.method2703((long) local219, local228);
+										this.aIterableHashMap_24.set((long) local219, local228);
 									}
 									return;
 								}

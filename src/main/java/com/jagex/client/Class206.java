@@ -175,9 +175,9 @@ public final class Class206 {
 			local18.anIntArray435 = null;
 			local18.aBoolean564 = false;
 			local18.aStringArray33 = this.aStringArray30;
-			if (local18.aClass102_36 != null) {
+			if (local18.aIterableHashMap_36 != null) {
 				@Pc(200) boolean local200 = false;
-				for (@Pc(205) ListNode local205 = local18.aClass102_36.method2705(); local205 != null; local205 = local18.aClass102_36.method2704()) {
+				for (@Pc(205) ListNode local205 = local18.aIterableHashMap_36.head(); local205 != null; local205 = local18.aIterableHashMap_36.next()) {
 					@Pc(215) Class133 local215 = this.aClass180_2.method4121((int) local205.id);
 					if (local215.aBoolean385) {
 						local205.popSelf();
@@ -186,7 +186,7 @@ public final class Class206 {
 					}
 				}
 				if (!local200) {
-					local18.aClass102_36 = null;
+					local18.aIterableHashMap_36 = null;
 				}
 			}
 		}

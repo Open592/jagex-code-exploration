@@ -98,7 +98,7 @@ public final class Static443 {
 			return;
 		}
 		@Pc(19) long local19 = (long) (arg2 << 14 | arg0 << 28 | arg1);
-		@Pc(25) ListNode_Sub18 local25 = (ListNode_Sub18) Static440.aClass102_40.method2700(local19);
+		@Pc(25) ListNode_Sub18 local25 = (ListNode_Sub18) Static440.aIterableHashMap_40.get(local19);
 		if (local25 == null) {
 			Static411.method5275(arg0, arg1, arg2);
 			return;

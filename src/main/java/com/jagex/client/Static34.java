@@ -11,7 +11,7 @@ public final class Static34 {
 	public static Class89 aClass89_1;
 
 	@OriginalMember(owner = "client!bn", name = "s", descriptor = "Lclient!ib;")
-	public static final Class102 aClass102_4 = new Class102(16);
+	public static final IterableHashMap A_ITERABLE_HASH_MAP___4 = new IterableHashMap(16);
 
 	@OriginalMember(owner = "client!bn", name = "G", descriptor = "Ljava/lang/String;")
 	public static String settings = null;
