@@ -9,31 +9,31 @@ import org.openrs2.deob.annotation.Pc;
 public final class Class25 {
 
 	@OriginalMember(owner = "client!bo", name = "g", descriptor = "Lclient!vu;")
-	private ListNode aListNode_33;
+	private LinkedHashEntry aLinkedHashEntry_33;
 
 	@OriginalMember(owner = "client!bo", name = "h", descriptor = "I")
 	private int anInt626 = 0;
 
 	@OriginalMember(owner = "client!bo", name = "d", descriptor = "Lclient!ib;")
-	private final IterableHashMap aIterableHashMap_5;
+	private final LinkedHashMapIterator aLinkedHashMap_Iterator_5;
 
 	@OriginalMember(owner = "client!bo", name = "<init>", descriptor = "(Lclient!ib;)V")
-	public Class25(@OriginalArg(0) IterableHashMap arg0) {
-		this.aIterableHashMap_5 = arg0;
+	public Class25(@OriginalArg(0) LinkedHashMapIterator arg0) {
+		this.aLinkedHashMap_Iterator_5 = arg0;
 	}
 
 	@OriginalMember(owner = "client!bo", name = "a", descriptor = "(Z)Lclient!vu;")
-	public ListNode method640() {
-		@Pc(30) ListNode local30;
-		if (this.anInt626 > 0 && this.aListNode_33 != this.aIterableHashMap_5.buckets[this.anInt626 - 1]) {
-			local30 = this.aListNode_33;
-			this.aListNode_33 = local30.previous;
+	public LinkedHashEntry method640() {
+		@Pc(30) LinkedHashEntry local30;
+		if (this.anInt626 > 0 && this.aLinkedHashEntry_33 != this.aLinkedHashMap_Iterator_5.buckets[this.anInt626 - 1]) {
+			local30 = this.aLinkedHashEntry_33;
+			this.aLinkedHashEntry_33 = local30.previous;
 			return local30;
 		}
-		while (this.anInt626 < this.aIterableHashMap_5.bucketCount) {
-			local30 = this.aIterableHashMap_5.buckets[this.anInt626++].previous;
-			if (this.aIterableHashMap_5.buckets[this.anInt626 - 1] != local30) {
-				this.aListNode_33 = local30.previous;
+		while (this.anInt626 < this.aLinkedHashMap_Iterator_5.size) {
+			local30 = this.aLinkedHashMap_Iterator_5.buckets[this.anInt626++].previous;
+			if (this.aLinkedHashMap_Iterator_5.buckets[this.anInt626 - 1] != local30) {
+				this.aLinkedHashEntry_33 = local30.previous;
 				return local30;
 			}
 		}
@@ -41,7 +41,7 @@ public final class Class25 {
 	}
 
 	@OriginalMember(owner = "client!bo", name = "a", descriptor = "(I)Lclient!vu;")
-	public ListNode method641() {
+	public LinkedHashEntry method641() {
 		this.anInt626 = 0;
 		return this.method640();
 	}

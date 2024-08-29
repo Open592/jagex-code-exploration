@@ -89,7 +89,7 @@ public final class Static305 {
 		local92 = Static420.aClass80_1.method2230();
 		@Pc(172) int local172 = 0;
 		@Pc(196) int local196;
-		for (@Pc(179) ListNode_Sub39 local179 = (ListNode_Sub39) Static206.aClass183_28.method4140(); local179 != null; local179 = (ListNode_Sub39) Static206.aClass183_28.method4144()) {
+		for (@Pc(179) LinkedHashEntry_Sub39 local179 = (LinkedHashEntry_Sub39) Static206.aClass183_28.method4140(); local179 != null; local179 = (LinkedHashEntry_Sub39) Static206.aClass183_28.method4144()) {
 			local196 = (Static407.anInt6710 - local172 - 1) * 16 + local9 + 13 + 20;
 			local172++;
 			if (local7 < local90 && local7 + local11 > local90 && local196 - 13 < local92 && local92 < local196 + 4 && local179.aBoolean512) {
@@ -123,7 +123,7 @@ public final class Static305 {
 			Static132.aClass57_12.method5534(local11 + local7 - Static143.aClass57_15.la(), local9 + (local15 - Static143.aClass57_15.ma()));
 		}
 		local172 = 0;
-		for (@Pc(444) ListNode_Sub39 local444 = (ListNode_Sub39) Static206.aClass183_28.method4140(); local444 != null; local444 = (ListNode_Sub39) Static206.aClass183_28.method4144()) {
+		for (@Pc(444) LinkedHashEntry_Sub39 local444 = (LinkedHashEntry_Sub39) Static206.aClass183_28.method4140(); local444 != null; local444 = (LinkedHashEntry_Sub39) Static206.aClass183_28.method4144()) {
 			local335 = local9 + (Static407.anInt6710 + -1 + -local172) * 16 + 20 + 13;
 			local372 = Static111.anInt2387 | 0xFF000000;
 			if (local7 < local90 && local11 + local7 > local90 && local92 > local335 - 13 && local335 + 4 > local92 && local444.aBoolean512) {

@@ -14,7 +14,7 @@ public final class Static440 {
 	public static boolean[][] aBooleanArrayArray6;
 
 	@OriginalMember(owner = "client!wf", name = "p", descriptor = "Lclient!ib;")
-	public static IterableHashMap aIterableHashMap_40 = new IterableHashMap(64);
+	public static LinkedHashMapIterator aLinkedHashMap_Iterator_40 = new LinkedHashMapIterator(64);
 
 	@OriginalMember(owner = "client!wf", name = "q", descriptor = "[I")
 	public static final int[] anIntArray543 = new int[250];
@@ -45,7 +45,7 @@ public final class Static440 {
 						local62 = jagmisc.getTotalPhysicalMemory() > 268435456L;
 					} catch (@Pc(72) Throwable local72) {
 					}
-					@Pc(78) ListNode_Sub2 local78;
+					@Pc(78) LinkedHashEntry_Sub2 local78;
 					if (local62) {
 						local78 = Static122.aClass19_16.method4284(146800640);
 					} else {

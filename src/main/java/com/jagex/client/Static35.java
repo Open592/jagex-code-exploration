@@ -11,5 +11,5 @@ public final class Static35 {
 	public static final Class21 aClass21_5 = new Class21(6, 4);
 
 	@OriginalMember(owner = "client!bo", name = "f", descriptor = "[Lclient!pt;")
-	public static final ListNode_Sub1_Sub17[] aClass4_Sub1_Sub17Array3 = new ListNode_Sub1_Sub17[14];
+	public static final LinkedHashEntry_Sub1_Sub17[] aClass4_Sub1_Sub17Array3 = new LinkedHashEntry_Sub1_Sub17[14];
 }

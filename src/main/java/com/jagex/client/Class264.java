@@ -36,7 +36,7 @@ public final class Class264 {
 	private byte aByte96;
 
 	@OriginalMember(owner = "client!wh", name = "F", descriptor = "Lclient!ib;")
-	private IterableHashMap aIterableHashMap_41;
+	private LinkedHashMapIterator aLinkedHashMap_Iterator_41;
 
 	@OriginalMember(owner = "client!wh", name = "H", descriptor = "B")
 	private byte aByte97;
@@ -287,13 +287,13 @@ public final class Class264 {
 		@Pc(288) int local288 = -1;
 		local112 = -1;
 		local117 = 0;
-		@Pc(294) ListNode_Sub1_Sub17 local294 = null;
-		@Pc(296) ListNode_Sub1_Sub17 local296 = null;
+		@Pc(294) LinkedHashEntry_Sub1_Sub17 local294 = null;
+		@Pc(296) LinkedHashEntry_Sub1_Sub17 local296 = null;
 		@Pc(298) int local298 = -1;
 		@Pc(300) int local300 = -1;
 		@Pc(302) int local302 = 0;
-		@Pc(304) ListNode_Sub1_Sub17 local304 = null;
-		@Pc(306) ListNode_Sub1_Sub17 local306 = null;
+		@Pc(304) LinkedHashEntry_Sub1_Sub17 local304 = null;
+		@Pc(306) LinkedHashEntry_Sub1_Sub17 local306 = null;
 		@Pc(387) int local387;
 		if (local63) {
 			@Pc(319) int local319;
@@ -567,10 +567,10 @@ public final class Class264 {
 
 	@OriginalMember(owner = "client!wh", name = "a", descriptor = "(BLjava/lang/String;I)Ljava/lang/String;")
 	public String method5579(@OriginalArg(1) String arg0, @OriginalArg(2) int arg1) {
-		if (this.aIterableHashMap_41 == null) {
+		if (this.aLinkedHashMap_Iterator_41 == null) {
 			return arg0;
 		} else {
-			@Pc(25) ListNode_Sub7 local25 = (ListNode_Sub7) this.aIterableHashMap_41.get((long) arg1);
+			@Pc(25) LinkedHashEntry_Sub7 local25 = (LinkedHashEntry_Sub7) this.aLinkedHashMap_Iterator_41.get((long) arg1);
 			return local25 == null ? arg0 : local25.aString12;
 		}
 	}
@@ -760,20 +760,20 @@ public final class Class264 {
 				}
 			} else if (arg1 == 249) {
 				local31 = arg0.g1();
-				if (this.aIterableHashMap_41 == null) {
+				if (this.aLinkedHashMap_Iterator_41 == null) {
 					local41 = Static370.method4949(local31);
-					this.aIterableHashMap_41 = new IterableHashMap(local41);
+					this.aLinkedHashMap_Iterator_41 = new LinkedHashMapIterator(local41);
 				}
 				for (local41 = 0; local41 < local31; local41++) {
 					@Pc(485) boolean local485 = arg0.g1() == 1;
 					@Pc(489) int local489 = arg0.g3();
-					@Pc(498) ListNode local498;
+					@Pc(498) LinkedHashEntry local498;
 					if (local485) {
-						local498 = new ListNode_Sub7(arg0.gStringCP1252ToUTF8());
+						local498 = new LinkedHashEntry_Sub7(arg0.gStringCP1252ToUTF8());
 					} else {
-						local498 = new ListNode_Sub37(arg0.g4());
+						local498 = new LinkedHashEntry_Sub37(arg0.g4());
 					}
-					this.aIterableHashMap_41.set((long) local489, local498);
+					this.aLinkedHashMap_Iterator_41.set((long) local489, local498);
 				}
 			}
 		}
@@ -792,10 +792,10 @@ public final class Class264 {
 
 	@OriginalMember(owner = "client!wh", name = "b", descriptor = "(III)I")
 	public int method5582(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1) {
-		if (this.aIterableHashMap_41 == null) {
+		if (this.aLinkedHashMap_Iterator_41 == null) {
 			return arg0;
 		} else {
-			@Pc(22) ListNode_Sub37 local22 = (ListNode_Sub37) this.aIterableHashMap_41.get((long) arg1);
+			@Pc(22) LinkedHashEntry_Sub37 local22 = (LinkedHashEntry_Sub37) this.aLinkedHashMap_Iterator_41.get((long) arg1);
 			return local22 == null ? arg0 : local22.anInt5426;
 		}
 	}

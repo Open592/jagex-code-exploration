@@ -98,12 +98,12 @@ public final class Static443 {
 			return;
 		}
 		@Pc(19) long local19 = (long) (arg2 << 14 | arg0 << 28 | arg1);
-		@Pc(25) ListNode_Sub18 local25 = (ListNode_Sub18) Static440.aIterableHashMap_40.get(local19);
+		@Pc(25) LinkedHashEntry_Sub18 local25 = (LinkedHashEntry_Sub18) Static440.aLinkedHashMap_Iterator_40.get(local19);
 		if (local25 == null) {
 			Static411.method5275(arg0, arg1, arg2);
 			return;
 		}
-		@Pc(41) ListNode_Sub45 local41 = (ListNode_Sub45) local25.aClass183_14.method4140();
+		@Pc(41) LinkedHashEntry_Sub45 local41 = (LinkedHashEntry_Sub45) local25.aClass183_14.method4140();
 		if (local41 == null) {
 			Static411.method5275(arg0, arg1, arg2);
 			return;
@@ -117,7 +117,7 @@ public final class Static443 {
 		local63.anInt755 = local41.anInt7355;
 		local63.anInt756 = local41.anInt7356;
 		label44: while (true) {
-			@Pc(91) ListNode_Sub45 local91 = (ListNode_Sub45) local25.aClass183_14.method4144();
+			@Pc(91) LinkedHashEntry_Sub45 local91 = (LinkedHashEntry_Sub45) local25.aClass183_14.method4144();
 			if (local91 == null) {
 				break;
 			}
@@ -125,7 +125,7 @@ public final class Static443 {
 				local63.anInt758 = local91.anInt7355;
 				local63.anInt752 = local91.anInt7356;
 				while (true) {
-					@Pc(112) ListNode_Sub45 local112 = (ListNode_Sub45) local25.aClass183_14.method4144();
+					@Pc(112) LinkedHashEntry_Sub45 local112 = (LinkedHashEntry_Sub45) local25.aClass183_14.method4144();
 					if (local112 == null) {
 						break label44;
 					}

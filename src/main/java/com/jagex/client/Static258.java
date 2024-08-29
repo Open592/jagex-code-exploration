@@ -20,10 +20,10 @@ public final class Static258 {
 
 	@OriginalMember(owner = "client!nc", name = "a", descriptor = "(IIIIB)V")
 	public static void method3728(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3) {
-		for (@Pc(10) ListNode_Sub8 local10 = (ListNode_Sub8) Static281.aClass183_34.method4140(); local10 != null; local10 = (ListNode_Sub8) Static281.aClass183_34.method4144()) {
+		for (@Pc(10) LinkedHashEntry_Sub8 local10 = (LinkedHashEntry_Sub8) Static281.aClass183_34.method4140(); local10 != null; local10 = (LinkedHashEntry_Sub8) Static281.aClass183_34.method4144()) {
 			Static110.method2017(arg3, arg0, arg2, local10, arg1);
 		}
-		for (@Pc(31) ListNode_Sub8 local31 = (ListNode_Sub8) Static143.aClass183_20.method4140(); local31 != null; local31 = (ListNode_Sub8) Static143.aClass183_20.method4144()) {
+		for (@Pc(31) LinkedHashEntry_Sub8 local31 = (LinkedHashEntry_Sub8) Static143.aClass183_20.method4140(); local31 != null; local31 = (LinkedHashEntry_Sub8) Static143.aClass183_20.method4144()) {
 			@Pc(40) byte local40 = 1;
 			@Pc(45) Class151 local45 = local31.aClass16_Sub1_Sub5_Sub2_1.method4757();
 			if (local31.aClass16_Sub1_Sub5_Sub2_1.aBoolean562) {
@@ -50,7 +50,7 @@ public final class Static258 {
 			local31.anInt612 = local31.aClass16_Sub1_Sub5_Sub2_1.anInt6892 + (local31.aClass16_Sub1_Sub5_Sub2_1.method4751() << 6);
 			Static110.method2017(arg3, arg0, arg2, local31, arg1);
 		}
-		for (@Pc(202) ListNode_Sub8 local202 = (ListNode_Sub8) Static341.A_ITERABLE_HASH_MAP___38.head(); local202 != null; local202 = (ListNode_Sub8) Static341.A_ITERABLE_HASH_MAP___38.next()) {
+		for (@Pc(202) LinkedHashEntry_Sub8 local202 = (LinkedHashEntry_Sub8) Static341.A_ITERABLE_HASH_MAP___38.head(); local202 != null; local202 = (LinkedHashEntry_Sub8) Static341.A_ITERABLE_HASH_MAP___38.nextEntry()) {
 			@Pc(206) byte local206 = 1;
 			@Pc(211) Class151 local211 = local202.aClass16_Sub1_Sub5_Sub1_2.method4757();
 			if (local202.aClass16_Sub1_Sub5_Sub1_2.aBoolean562) {

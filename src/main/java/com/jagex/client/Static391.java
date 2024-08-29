@@ -16,7 +16,7 @@ public final class Static391 {
 	public static final Class83 aClass83_133 = new Class83("Choose Option", "Wähl eine Option", "Choisir une option", "Selecionar opção");
 
 	@OriginalMember(owner = "client!tr", name = "a", descriptor = "(ILclient!cw;)V")
-	public static void method5117(@OriginalArg(1) ListNode_Sub12_Sub1 arg0) {
+	public static void method5117(@OriginalArg(1) LinkedHashEntry_Sub12_Sub1 arg0) {
 		arg0.method1136();
 		@Pc(10) int local10 = Static207.anInt5452;
 		@Pc(20) Class16_Sub1_Sub5_Sub1 local20 = Static1.aClass16_Sub1_Sub5_Sub1_1 = Static267.aClass16_Sub1_Sub5_Sub1Array1[local10] = new Class16_Sub1_Sub5_Sub1();

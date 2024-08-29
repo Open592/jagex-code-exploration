@@ -127,7 +127,7 @@ public final class Static409 {
 	}
 
 	@OriginalMember(owner = "client!up", name = "a", descriptor = "(Lclient!cw;II)Z")
-	public static boolean method5490(@OriginalArg(0) ListNode_Sub12_Sub1 arg0, @OriginalArg(2) int arg1) {
+	public static boolean method5490(@OriginalArg(0) LinkedHashEntry_Sub12_Sub1 arg0, @OriginalArg(2) int arg1) {
 		@Pc(13) int local13 = arg0.method1143(2);
 		@Pc(33) int local33;
 		@Pc(38) int local38;

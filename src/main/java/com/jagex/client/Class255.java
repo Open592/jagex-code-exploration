@@ -21,7 +21,7 @@ public final class Class255 {
 	private int anInt7061;
 
 	@OriginalMember(owner = "client!vn", name = "D", descriptor = "Lclient!je;")
-	private ListNode_Sub1_Sub6_Sub1 aClass4_Sub1_Sub6_Sub1_2;
+	private LinkedHashEntry_Sub1_Sub6_Sub1 aClass4_Sub1_Sub6_Sub1_2;
 
 	@OriginalMember(owner = "client!vn", name = "j", descriptor = "Lclient!tn;")
 	private final Class229 aClass229_7 = new Class229();
@@ -77,10 +77,10 @@ public final class Class255 {
 		this.aClass4_Sub1_Sub6_Sub1_2 = null;
 
 		while (true) {
-			@Pc(40) ListNode_Sub1_Sub6_Sub1 local40 = (ListNode_Sub1_Sub6_Sub1) this.aClass229_8.method5091();
+			@Pc(40) LinkedHashEntry_Sub1_Sub6_Sub1 local40 = (LinkedHashEntry_Sub1_Sub6_Sub1) this.aClass229_8.method5091();
 			if (local40 == null) {
 				while (true) {
-					local40 = (ListNode_Sub1_Sub6_Sub1) this.aClass229_10.method5091();
+					local40 = (LinkedHashEntry_Sub1_Sub6_Sub1) this.aClass229_10.method5091();
 					if (local40 == null) {
 						if (this.aByte94 != 0) {
 							try {
@@ -165,9 +165,9 @@ public final class Class255 {
 	}
 
 	@OriginalMember(owner = "client!vn", name = "a", descriptor = "(IBBZI)Lclient!je;")
-	public ListNode_Sub1_Sub6_Sub1 method5465(@OriginalArg(0) int arg0, @OriginalArg(1) byte arg1, @OriginalArg(3) boolean arg2, @OriginalArg(4) int arg3) {
+	public LinkedHashEntry_Sub1_Sub6_Sub1 method5465(@OriginalArg(0) int arg0, @OriginalArg(1) byte arg1, @OriginalArg(3) boolean arg2, @OriginalArg(4) int arg3) {
 		@Pc(19) long local19 = (long) ((arg0 << 16) + arg3);
-		@Pc(23) ListNode_Sub1_Sub6_Sub1 local23 = new ListNode_Sub1_Sub6_Sub1();
+		@Pc(23) LinkedHashEntry_Sub1_Sub6_Sub1 local23 = new LinkedHashEntry_Sub1_Sub6_Sub1();
 		local23.aLong198 = local19;
 		local23.aBoolean384 = arg2;
 		local23.aByte24 = arg1;
@@ -236,14 +236,14 @@ public final class Class255 {
 		}
 		try {
 			this.serverConnection.checkConnectionHealth();
-			for (@Pc(76) ListNode_Sub1_Sub6_Sub1 local76 = (ListNode_Sub1_Sub6_Sub1) this.aClass229_7.method5089(); local76 != null; local76 = (ListNode_Sub1_Sub6_Sub1) this.aClass229_7.method5092()) {
+			for (@Pc(76) LinkedHashEntry_Sub1_Sub6_Sub1 local76 = (LinkedHashEntry_Sub1_Sub6_Sub1) this.aClass229_7.method5089(); local76 != null; local76 = (LinkedHashEntry_Sub1_Sub6_Sub1) this.aClass229_7.method5092()) {
 				this.aPacket_8.pos = 0;
 				this.aPacket_8.p1(1);
 				this.aPacket_8.p3((int) local76.aLong198);
 				this.serverConnection.enqueueClientMessage(4, this.aPacket_8.data);
 				this.aClass229_8.method5088(local76);
 			}
-			for (@Pc(122) ListNode_Sub1_Sub6_Sub1 local122 = (ListNode_Sub1_Sub6_Sub1) this.aClass229_9.method5089(); local122 != null; local122 = (ListNode_Sub1_Sub6_Sub1) this.aClass229_9.method5092()) {
+			for (@Pc(122) LinkedHashEntry_Sub1_Sub6_Sub1 local122 = (LinkedHashEntry_Sub1_Sub6_Sub1) this.aClass229_9.method5089(); local122 != null; local122 = (LinkedHashEntry_Sub1_Sub6_Sub1) this.aClass229_9.method5092()) {
 				this.aPacket_8.pos = 0;
 				this.aPacket_8.p1(0);
 				this.aPacket_8.p3((int) local122.aLong198);
@@ -314,12 +314,12 @@ public final class Class255 {
 							@Pc(468) int local468 = local459 & 0x7F;
 							@Pc(479) boolean local479 = (local459 & 0x80) != 0;
 							@Pc(486) long local486 = (long) ((local226 << 16) + local275);
-							@Pc(496) ListNode_Sub1_Sub6_Sub1 local496;
+							@Pc(496) LinkedHashEntry_Sub1_Sub6_Sub1 local496;
 							if (local479) {
-								for (local496 = (ListNode_Sub1_Sub6_Sub1) this.aClass229_10.method5089(); local496 != null && local496.aLong198 != local486; local496 = (ListNode_Sub1_Sub6_Sub1) this.aClass229_10.method5092()) {
+								for (local496 = (LinkedHashEntry_Sub1_Sub6_Sub1) this.aClass229_10.method5089(); local496 != null && local496.aLong198 != local486; local496 = (LinkedHashEntry_Sub1_Sub6_Sub1) this.aClass229_10.method5092()) {
 								}
 							} else {
-								for (local496 = (ListNode_Sub1_Sub6_Sub1) this.aClass229_8.method5089(); local496 != null && local496.aLong198 != local486; local496 = (ListNode_Sub1_Sub6_Sub1) this.aClass229_8.method5092()) {
+								for (local496 = (LinkedHashEntry_Sub1_Sub6_Sub1) this.aClass229_8.method5089(); local496 != null && local496.aLong198 != local486; local496 = (LinkedHashEntry_Sub1_Sub6_Sub1) this.aClass229_8.method5092()) {
 								}
 							}
 							if (local496 == null) {

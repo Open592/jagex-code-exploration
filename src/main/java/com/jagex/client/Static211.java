@@ -13,11 +13,11 @@ public final class Static211 {
 	public static final Class215 aClass215_41 = new Class215(50, -1);
 
 	@OriginalMember(owner = "client!kn", name = "e", descriptor = "Lclient!ib;")
-	public static final IterableHashMap A_ITERABLE_HASH_MAP___18 = new IterableHashMap(512);
+	public static final LinkedHashMapIterator A_ITERABLE_HASH_MAP___18 = new LinkedHashMapIterator(512);
 
 	@OriginalMember(owner = "client!kn", name = "a", descriptor = "(II)Lclient!ae;")
-	public static ListNode_Sub1_Sub1 method3200(@OriginalArg(0) int arg0) {
-		@Pc(10) ListNode_Sub1_Sub1 local10 = (ListNode_Sub1_Sub1) Static48.aClass142_1.method3483((long) arg0);
+	public static LinkedHashEntry_Sub1_Sub1 method3200(@OriginalArg(0) int arg0) {
+		@Pc(10) LinkedHashEntry_Sub1_Sub1 local10 = (LinkedHashEntry_Sub1_Sub1) Static48.aClass142_1.method3483((long) arg0);
 		if (local10 != null) {
 			return local10;
 		}

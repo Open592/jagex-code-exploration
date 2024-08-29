@@ -4,7 +4,7 @@ import org.openrs2.deob.annotation.OriginalClass;
 import org.openrs2.deob.annotation.OriginalMember;
 
 @OriginalClass("client!p")
-public final class p extends ListNode_Sub1_Sub4 implements Interface4 {
+public final class p extends LinkedHashEntry_Sub1_Sub4 implements Interface4 {
 
 	@OriginalMember(owner = "client!p", name = "nativeid", descriptor = "J")
 	private long nativeid;

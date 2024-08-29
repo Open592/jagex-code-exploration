@@ -1322,7 +1322,7 @@ public final class Class110_Sub1 extends Class110 {
 
 	@OriginalMember(owner = "client!ip", name = "fa", descriptor = "(Lclient!ba;)Lclient!ba;")
 	@Override
-	public ListNode_Sub1_Sub4 fa(@OriginalArg(0) ListNode_Sub1_Sub4 arg0) {
+	public LinkedHashEntry_Sub1_Sub4 fa(@OriginalArg(0) LinkedHashEntry_Sub1_Sub4 arg0) {
 		if (this.anInt3336 == 0) {
 			return null;
 		}
@@ -1349,13 +1349,13 @@ public final class Class110_Sub1 extends Class110 {
 		}
 		@Pc(172) int local172 = local57 + 1 - local40;
 		@Pc(179) int local179 = local131 + 1 - local114;
-		@Pc(182) ListNode_Sub1_Sub4_Sub1 local182 = (ListNode_Sub1_Sub4_Sub1) arg0;
-		@Pc(198) ListNode_Sub1_Sub4_Sub1 local198;
+		@Pc(182) LinkedHashEntry_Sub1_Sub4_Sub1 local182 = (LinkedHashEntry_Sub1_Sub4_Sub1) arg0;
+		@Pc(198) LinkedHashEntry_Sub1_Sub4_Sub1 local198;
 		if (local182 != null && local182.method2301(local172, local179)) {
 			local198 = local182;
 			local182.method2304();
 		} else {
-			local198 = new ListNode_Sub1_Sub4_Sub1(this.aClass19_Sub2_21, local172, local179);
+			local198 = new LinkedHashEntry_Sub1_Sub4_Sub1(this.aClass19_Sub2_21, local172, local179);
 		}
 		local198.method2299(local114, local40, local57, local131);
 		this.method2800(local198);
@@ -2024,7 +2024,7 @@ public final class Class110_Sub1 extends Class110 {
 		if (Static370.aClass4_Sub12_Sub2_3.data.length >= this.anInt3336 * local106) {
 			Static370.aClass4_Sub12_Sub2_3.pos = 0;
 		} else {
-			Static370.aClass4_Sub12_Sub2_3 = new ListNode_Sub12_Sub2(local106 * (this.anInt3336 + 100));
+			Static370.aClass4_Sub12_Sub2_3 = new LinkedHashEntry_Sub12_Sub2(local106 * (this.anInt3336 + 100));
 		}
 		@Pc(191) int local191;
 		@Pc(200) int local200;
@@ -2334,7 +2334,7 @@ public final class Class110_Sub1 extends Class110 {
 	}
 
 	@OriginalMember(owner = "client!ip", name = "a", descriptor = "(Lclient!gm;I)V")
-	private void method2800(@OriginalArg(0) ListNode_Sub1_Sub4_Sub1 arg0) {
+	private void method2800(@OriginalArg(0) LinkedHashEntry_Sub1_Sub4_Sub1 arg0) {
 		if (Static231.anIntArray298.length < this.anInt3336) {
 			Static231.anIntArray298 = new int[this.anInt3336];
 			Static173.anIntArray219 = new int[this.anInt3336];
@@ -3850,7 +3850,7 @@ public final class Class110_Sub1 extends Class110 {
 	@OriginalMember(owner = "client!ip", name = "a", descriptor = "(ZZ)V")
 	private void method2808(@OriginalArg(0) boolean arg0) {
 		if (this.anInt3301 * 6 > Static370.aClass4_Sub12_Sub2_3.data.length) {
-			Static370.aClass4_Sub12_Sub2_3 = new ListNode_Sub12_Sub2(this.anInt3301 * 6 + 600);
+			Static370.aClass4_Sub12_Sub2_3 = new LinkedHashEntry_Sub12_Sub2(this.anInt3301 * 6 + 600);
 		} else {
 			Static370.aClass4_Sub12_Sub2_3.pos = 0;
 		}

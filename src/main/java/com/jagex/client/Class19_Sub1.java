@@ -18,7 +18,7 @@ public final class Class19_Sub1 extends Class19 {
 	private int anInt400;
 
 	@OriginalMember(owner = "client!bc", name = "x", descriptor = "Lclient!kd;")
-	private ListNode_Sub22 aClass4_Sub22_1;
+	private LinkedHashEntry_Sub22 aClass4_Sub22_1;
 
 	@OriginalMember(owner = "client!bc", name = "y", descriptor = "I")
 	public int anInt401;
@@ -84,7 +84,7 @@ public final class Class19_Sub1 extends Class19 {
 	private boolean aBoolean42;
 
 	@OriginalMember(owner = "client!bc", name = "v", descriptor = "Lclient!ib;")
-	private IterableHashMap aIterableHashMap_3;
+	private LinkedHashMapIterator aLinkedHashMap_Iterator_3;
 
 	@OriginalMember(owner = "client!bc", name = "A", descriptor = "I")
 	public int anInt403;
@@ -166,7 +166,7 @@ public final class Class19_Sub1 extends Class19 {
 		super(arg0, arg1);
 		this.aBoolean41 = false;
 		this.aBoolean42 = false;
-		this.aIterableHashMap_3 = new IterableHashMap(4);
+		this.aLinkedHashMap_Iterator_3 = new LinkedHashMapIterator(4);
 		this.anInt403 = 3500;
 		this.anInt406 = 50;
 		this.anInt404 = 75518;
@@ -774,7 +774,7 @@ public final class Class19_Sub1 extends Class19 {
 
 	@OriginalMember(owner = "client!bc", name = "a", descriptor = "(IIIIIF)Lclient!vp;")
 	@Override
-	public ListNode_Sub21 method4310(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4, @OriginalArg(5) float arg5) {
+	public LinkedHashEntry_Sub21 method4310(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4, @OriginalArg(5) float arg5) {
 		return null;
 	}
 
@@ -901,16 +901,16 @@ public final class Class19_Sub1 extends Class19 {
 	@OriginalMember(owner = "client!bc", name = "k", descriptor = "(I)[I")
 	private int[] method487(@OriginalArg(0) int arg0) {
 		@Pc(2) Class68 local2 = this.aClass68_2;
-		@Pc(12) ListNode_Sub40 local12;
+		@Pc(12) LinkedHashEntry_Sub40 local12;
 		synchronized (this.aClass68_2) {
-			local12 = (ListNode_Sub40) this.aClass68_2.method1787((long) arg0);
+			local12 = (LinkedHashEntry_Sub40) this.aClass68_2.method1787((long) arg0);
 			if (local12 == null) {
 				if (!super.anInterface7_6.method2392(arg0)) {
 					return null;
 				}
 				@Pc(32) Class251 local32 = super.anInterface7_6.method2396(arg0);
 				@Pc(42) int local42 = local32.aBoolean637 || this.aBoolean45 ? 64 : 128;
-				local12 = new ListNode_Sub40(arg0, local42, super.anInterface7_6.method2395(arg0, 0.7F, local42, local42), local32.aBoolean641);
+				local12 = new LinkedHashEntry_Sub40(arg0, local42, super.anInterface7_6.method2395(arg0, 0.7F, local42, local42), local32.aBoolean641);
 				this.aClass68_2.method1779((long) arg0, local12);
 			}
 		}
@@ -973,7 +973,7 @@ public final class Class19_Sub1 extends Class19 {
 	public void method4246(@OriginalArg(0) int arg0) {
 		@Pc(4) int local4 = arg0 - this.anInt400;
 		for (@Pc(9) Object local9 = this.aClass68_2.method1789(); local9 != null; local9 = this.aClass68_2.method1782()) {
-			@Pc(13) ListNode_Sub40 local13 = (ListNode_Sub40) local9;
+			@Pc(13) LinkedHashEntry_Sub40 local13 = (LinkedHashEntry_Sub40) local9;
 			if (local13.aBoolean572) {
 				local13.anInt6274 += local4;
 				@Pc(27) int local27 = local13.anInt6274 / 20;
@@ -1002,7 +1002,7 @@ public final class Class19_Sub1 extends Class19 {
 
 	@OriginalMember(owner = "client!bc", name = "a", descriptor = "(Lclient!u;)V")
 	@Override
-	public void method4244(@OriginalArg(0) ListNode_Sub2 arg0) {
+	public void method4244(@OriginalArg(0) LinkedHashEntry_Sub2 arg0) {
 	}
 
 	@OriginalMember(owner = "client!bc", name = "a", descriptor = "([Lclient!t;Lclient!c;[Lclient!mi;I)V")
@@ -1209,10 +1209,10 @@ public final class Class19_Sub1 extends Class19 {
 	@OriginalMember(owner = "client!bc", name = "a", descriptor = "(Ljava/awt/Canvas;)V")
 	@Override
 	public void method4249(@OriginalArg(0) Canvas arg0) {
-		@Pc(8) ListNode_Sub22 local8 = (ListNode_Sub22) this.aIterableHashMap_3.get((long) arg0.hashCode());
+		@Pc(8) LinkedHashEntry_Sub22 local8 = (LinkedHashEntry_Sub22) this.aLinkedHashMap_Iterator_3.get((long) arg0.hashCode());
 		if (local8 == null) {
 			local8 = Static164.method3584(arg0);
-			this.aIterableHashMap_3.set((long) arg0.hashCode(), local8);
+			this.aLinkedHashMap_Iterator_3.set((long) arg0.hashCode(), local8);
 		}
 	}
 
@@ -1231,7 +1231,7 @@ public final class Class19_Sub1 extends Class19 {
 		}
 		this.aClass4_Sub22_1 = null;
 		this.aCanvas1 = null;
-		this.aIterableHashMap_3 = null;
+		this.aLinkedHashMap_Iterator_3 = null;
 		this.aBoolean41 = true;
 	}
 
@@ -1525,13 +1525,13 @@ public final class Class19_Sub1 extends Class19 {
 	@OriginalMember(owner = "client!bc", name = "d", descriptor = "(Ljava/awt/Canvas;)V")
 	@Override
 	public void method4272(@OriginalArg(0) Canvas arg0) {
-		@Pc(8) ListNode_Sub22 local8 = (ListNode_Sub22) this.aIterableHashMap_3.get((long) arg0.hashCode());
+		@Pc(8) LinkedHashEntry_Sub22 local8 = (LinkedHashEntry_Sub22) this.aLinkedHashMap_Iterator_3.get((long) arg0.hashCode());
 		if (local8 == null) {
 			return;
 		}
 		local8.popSelf();
 		local8 = Static164.method3584(arg0);
-		this.aIterableHashMap_3.set((long) arg0.hashCode(), local8);
+		this.aLinkedHashMap_Iterator_3.set((long) arg0.hashCode(), local8);
 		if (this.aCanvas1 != arg0 || this.aClass57_5 != null) {
 			return;
 		}
@@ -1544,7 +1544,7 @@ public final class Class19_Sub1 extends Class19 {
 
 	@OriginalMember(owner = "client!bc", name = "a", descriptor = "(I[Lclient!vp;)V")
 	@Override
-	public void method4238(@OriginalArg(0) int arg0, @OriginalArg(1) ListNode_Sub21[] arg1) {
+	public void method4238(@OriginalArg(0) int arg0, @OriginalArg(1) LinkedHashEntry_Sub21[] arg1) {
 	}
 
 	@OriginalMember(owner = "client!bc", name = "h", descriptor = "()V")
@@ -1667,7 +1667,7 @@ public final class Class19_Sub1 extends Class19 {
 		if (this.aCanvas1 == arg0) {
 			this.method4250(null);
 		}
-		@Pc(15) ListNode_Sub22 local15 = (ListNode_Sub22) this.aIterableHashMap_3.get((long) arg0.hashCode());
+		@Pc(15) LinkedHashEntry_Sub22 local15 = (LinkedHashEntry_Sub22) this.aLinkedHashMap_Iterator_3.get((long) arg0.hashCode());
 		if (local15 != null) {
 			local15.popSelf();
 		}
@@ -1886,16 +1886,16 @@ public final class Class19_Sub1 extends Class19 {
 	@OriginalMember(owner = "client!bc", name = "n", descriptor = "(I)[I")
 	public int[] method495(@OriginalArg(0) int arg0) {
 		@Pc(2) Class68 local2 = this.aClass68_2;
-		@Pc(12) ListNode_Sub40 local12;
+		@Pc(12) LinkedHashEntry_Sub40 local12;
 		synchronized (this.aClass68_2) {
-			local12 = (ListNode_Sub40) this.aClass68_2.method1787((long) arg0);
+			local12 = (LinkedHashEntry_Sub40) this.aClass68_2.method1787((long) arg0);
 			if (local12 == null) {
 				if (!super.anInterface7_6.method2392(arg0)) {
 					return null;
 				}
 				@Pc(32) Class251 local32 = super.anInterface7_6.method2396(arg0);
 				@Pc(42) int local42 = local32.aBoolean637 || this.aBoolean45 ? 64 : 128;
-				local12 = new ListNode_Sub40(arg0, local42, super.anInterface7_6.method2393(true, arg0, 0.7F, local42, local42), local32.aBoolean641);
+				local12 = new LinkedHashEntry_Sub40(arg0, local42, super.anInterface7_6.method2393(true, arg0, 0.7F, local42, local42), local32.aBoolean641);
 				this.aClass68_2.method1779((long) arg0, local12);
 			}
 		}
@@ -2004,7 +2004,7 @@ public final class Class19_Sub1 extends Class19 {
 			}
 			return;
 		}
-		@Pc(10) ListNode_Sub22 local10 = (ListNode_Sub22) this.aIterableHashMap_3.get((long) arg0.hashCode());
+		@Pc(10) LinkedHashEntry_Sub22 local10 = (LinkedHashEntry_Sub22) this.aLinkedHashMap_Iterator_3.get((long) arg0.hashCode());
 		if (local10 == null) {
 			return;
 		}
@@ -2022,7 +2022,7 @@ public final class Class19_Sub1 extends Class19 {
 
 	@OriginalMember(owner = "client!bc", name = "f", descriptor = "(I)Lclient!u;")
 	@Override
-	public ListNode_Sub2 method4284(@OriginalArg(0) int arg0) {
+	public LinkedHashEntry_Sub2 method4284(@OriginalArg(0) int arg0) {
 		return null;
 	}
 

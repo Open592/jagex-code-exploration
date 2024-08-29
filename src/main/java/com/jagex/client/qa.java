@@ -42,7 +42,7 @@ public final class qa extends Class19 implements Interface4 {
 	private final int anInt5538 = 4096;
 
 	@OriginalMember(owner = "client!qa", name = "L", descriptor = "Lclient!ib;")
-	private final IterableHashMap aIterableHashMap_28 = new IterableHashMap(4);
+	private final LinkedHashMapIterator aLinkedHashMap_Iterator_28 = new LinkedHashMapIterator(4);
 
 	@OriginalMember(owner = "client!qa", name = "N", descriptor = "Z")
 	private boolean aBoolean496 = false;
@@ -284,7 +284,7 @@ public final class qa extends Class19 implements Interface4 {
 	@OriginalMember(owner = "client!qa", name = "a", descriptor = "(Ljava/awt/Canvas;)V")
 	@Override
 	public void method4249(@OriginalArg(0) Canvas arg0) {
-		@Pc(8) za local8 = (za) this.aIterableHashMap_28.get((long) arg0.hashCode());
+		@Pc(8) za local8 = (za) this.aLinkedHashMap_Iterator_28.get((long) arg0.hashCode());
 		if (local8 != null) {
 			return;
 		}
@@ -295,7 +295,7 @@ public final class qa extends Class19 implements Interface4 {
 		} catch (@Pc(35) Exception local35) {
 		}
 		local8 = new za(this, arg0);
-		this.aIterableHashMap_28.set((long) arg0.hashCode(), local8);
+		this.aLinkedHashMap_Iterator_28.set((long) arg0.hashCode(), local8);
 	}
 
 	@OriginalMember(owner = "client!qa", name = "o", descriptor = "()I")
@@ -317,7 +317,7 @@ public final class qa extends Class19 implements Interface4 {
 	public native void OA(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3);
 
 	@OriginalMember(owner = "client!qa", name = "I", descriptor = "(Lclient!u;)V")
-	private native void I(@OriginalArg(0) ListNode_Sub2 arg0);
+	private native void I(@OriginalArg(0) LinkedHashEntry_Sub2 arg0);
 
 	@OriginalMember(owner = "client!qa", name = "za", descriptor = "(I[I[F)V")
 	private native void za(@OriginalArg(0) int arg0, @OriginalArg(1) int[] arg1, @OriginalArg(2) float[] arg2);
@@ -534,7 +534,7 @@ public final class qa extends Class19 implements Interface4 {
 
 	@OriginalMember(owner = "client!qa", name = "a", descriptor = "(I[Lclient!vp;)V")
 	@Override
-	public void method4238(@OriginalArg(0) int arg0, @OriginalArg(1) ListNode_Sub21[] arg1) {
+	public void method4238(@OriginalArg(0) int arg0, @OriginalArg(1) LinkedHashEntry_Sub21[] arg1) {
 		@Pc(1) int local1 = 0;
 		for (@Pc(3) int local3 = 0; local3 < arg0; local3++) {
 			Static319.anIntArray382[local1++] = arg1[local3].method3160();
@@ -568,7 +568,7 @@ public final class qa extends Class19 implements Interface4 {
 	@OriginalMember(owner = "client!qa", name = "d", descriptor = "(Ljava/awt/Canvas;)V")
 	@Override
 	public void method4272(@OriginalArg(0) Canvas arg0) {
-		@Pc(8) za local8 = (za) this.aIterableHashMap_28.get((long) arg0.hashCode());
+		@Pc(8) za local8 = (za) this.aLinkedHashMap_Iterator_28.get((long) arg0.hashCode());
 		@Pc(11) Dimension local11 = arg0.getSize();
 		local8.H(arg0, local11.width, local11.height);
 		if (arg0 != null && arg0 == this.aCanvas6) {
@@ -630,8 +630,8 @@ public final class qa extends Class19 implements Interface4 {
 
 	@OriginalMember(owner = "client!qa", name = "a", descriptor = "(IIIIIF)Lclient!vp;")
 	@Override
-	public ListNode_Sub21 method4310(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4, @OriginalArg(5) float arg5) {
-		return new ListNode_Sub21_Sub2(arg0, arg1, arg2, arg3, arg4, arg5);
+	public LinkedHashEntry_Sub21 method4310(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4, @OriginalArg(5) float arg5) {
+		return new LinkedHashEntry_Sub21_Sub2(arg0, arg1, arg2, arg3, arg4, arg5);
 	}
 
 	@OriginalMember(owner = "client!qa", name = "ZA", descriptor = "()I")
@@ -718,7 +718,7 @@ public final class qa extends Class19 implements Interface4 {
 			this.aZa1 = null;
 			this.PA(null);
 		} else {
-			@Pc(10) za local10 = (za) this.aIterableHashMap_28.get((long) arg0.hashCode());
+			@Pc(10) za local10 = (za) this.aLinkedHashMap_Iterator_28.get((long) arg0.hashCode());
 			this.aCanvas6 = arg0;
 			this.aZa1 = local10;
 			this.PA(local10);
@@ -743,7 +743,7 @@ public final class qa extends Class19 implements Interface4 {
 
 	@OriginalMember(owner = "client!qa", name = "f", descriptor = "(I)Lclient!u;")
 	@Override
-	public ListNode_Sub2 method4284(@OriginalArg(0) int arg0) {
+	public LinkedHashEntry_Sub2 method4284(@OriginalArg(0) int arg0) {
 		@Pc(5) na local5 = new na(this, arg0);
 		this.aClass183_40.method4137(local5);
 		return local5;
@@ -769,7 +769,7 @@ public final class qa extends Class19 implements Interface4 {
 
 	@OriginalMember(owner = "client!qa", name = "a", descriptor = "(Lclient!u;)V")
 	@Override
-	public void method4244(@OriginalArg(0) ListNode_Sub2 arg0) {
+	public void method4244(@OriginalArg(0) LinkedHashEntry_Sub2 arg0) {
 		this.aNa2 = (na) arg0;
 		this.I(arg0);
 	}
@@ -824,7 +824,7 @@ public final class qa extends Class19 implements Interface4 {
 		if (this.aCanvas6 == arg0) {
 			this.method4250(null);
 		}
-		@Pc(15) za local15 = (za) this.aIterableHashMap_28.get((long) arg0.hashCode());
+		@Pc(15) za local15 = (za) this.aLinkedHashMap_Iterator_28.get((long) arg0.hashCode());
 		if (local15 != null) {
 			local15.popSelf();
 		}

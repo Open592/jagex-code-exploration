@@ -21,7 +21,7 @@ public final class Class159 {
 	private final Class255 aClass255_3;
 
 	@OriginalMember(owner = "client!nj", name = "i", descriptor = "Lclient!je;")
-	private ListNode_Sub1_Sub6_Sub1 aClass4_Sub1_Sub6_Sub1_1;
+	private LinkedHashEntry_Sub1_Sub6_Sub1 aClass4_Sub1_Sub6_Sub1_1;
 
 	@OriginalMember(owner = "client!nj", name = "<init>", descriptor = "(Lclient!vn;Lclient!vl;)V")
 	public Class159(@OriginalArg(0) Class255 arg0, @OriginalArg(1) Class254 arg1) {

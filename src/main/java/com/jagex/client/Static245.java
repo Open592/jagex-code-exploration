@@ -29,7 +29,7 @@ public final class Static245 {
 	}
 
 	@OriginalMember(owner = "client!mj", name = "a", descriptor = "(Lclient!vu;Lclient!vu;I)V")
-	public static void method3597(@OriginalArg(0) ListNode arg0, @OriginalArg(1) ListNode arg1) {
+	public static void method3597(@OriginalArg(0) LinkedHashEntry arg0, @OriginalArg(1) LinkedHashEntry arg1) {
 		if (arg1.next != null) {
 			arg1.popSelf();
 		}

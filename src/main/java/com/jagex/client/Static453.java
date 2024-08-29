@@ -20,7 +20,7 @@ public final class Static453 {
 
 	@OriginalMember(owner = "client!wu", name = "a", descriptor = "(IIIZ)I")
 	public static int method5678(@OriginalArg(1) int arg0, @OriginalArg(2) int arg1, @OriginalArg(3) boolean arg2) {
-		@Pc(8) ListNode_Sub25 local8 = Static175.method2834(arg2, arg1);
+		@Pc(8) LinkedHashEntry_Sub25 local8 = Static175.method2834(arg2, arg1);
 		if (local8 == null) {
 			return 0;
 		} else if (arg0 >= 0 && local8.anIntArray229.length > arg0) {

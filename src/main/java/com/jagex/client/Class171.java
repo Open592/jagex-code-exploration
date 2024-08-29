@@ -9,10 +9,10 @@ import org.openrs2.deob.annotation.Pc;
 public final class Class171 {
 
 	@OriginalMember(owner = "client!oj", name = "j", descriptor = "Lclient!ib;")
-	private final IterableHashMap aIterableHashMap_25 = new IterableHashMap(256);
+	private final LinkedHashMapIterator aLinkedHashMap_Iterator_25 = new LinkedHashMapIterator(256);
 
 	@OriginalMember(owner = "client!oj", name = "o", descriptor = "Lclient!ib;")
-	private final IterableHashMap aIterableHashMap_26 = new IterableHashMap(256);
+	private final LinkedHashMapIterator aLinkedHashMap_Iterator_26 = new LinkedHashMapIterator(256);
 
 	@OriginalMember(owner = "client!oj", name = "b", descriptor = "Lclient!fs;")
 	private final Class76 aClass76_56;
@@ -27,11 +27,11 @@ public final class Class171 {
 	}
 
 	@OriginalMember(owner = "client!oj", name = "a", descriptor = "(III[I)Lclient!js;")
-	private ListNode_Sub4_Sub1 method3970(@OriginalArg(0) int arg0, @OriginalArg(2) int arg1, @OriginalArg(3) int[] arg2) {
+	private LinkedHashEntry_Sub4_Sub1 method3970(@OriginalArg(0) int arg0, @OriginalArg(2) int arg1, @OriginalArg(3) int[] arg2) {
 		@Pc(15) int local15 = (arg0 << 4 & 0xFFF4 | arg0 >>> 12) ^ arg1;
 		@Pc(21) int local21 = local15 | arg0 << 16;
 		@Pc(24) long local24 = (long) local21;
-		@Pc(31) ListNode_Sub4_Sub1 local31 = (ListNode_Sub4_Sub1) this.aIterableHashMap_26.get(local24);
+		@Pc(31) LinkedHashEntry_Sub4_Sub1 local31 = (LinkedHashEntry_Sub4_Sub1) this.aLinkedHashMap_Iterator_26.get(local24);
 		if (local31 != null) {
 			return local31;
 		} else if (arg2 == null || arg2[0] > 0) {
@@ -40,7 +40,7 @@ public final class Class171 {
 				return null;
 			}
 			local31 = local54.method5245();
-			this.aIterableHashMap_26.set(local24, local31);
+			this.aLinkedHashMap_Iterator_26.set(local24, local31);
 			if (arg2 != null) {
 				arg2[0] -= local31.aByteArray48.length;
 			}
@@ -51,28 +51,28 @@ public final class Class171 {
 	}
 
 	@OriginalMember(owner = "client!oj", name = "a", descriptor = "(I[IBI)Lclient!js;")
-	private ListNode_Sub4_Sub1 method3972(@OriginalArg(0) int arg0, @OriginalArg(1) int[] arg1, @OriginalArg(3) int arg2) {
+	private LinkedHashEntry_Sub4_Sub1 method3972(@OriginalArg(0) int arg0, @OriginalArg(1) int[] arg1, @OriginalArg(3) int arg2) {
 		@Pc(15) int local15 = arg2 ^ (arg0 << 4 & 0xFFF2 | arg0 >>> 12);
 		@Pc(26) int local26 = local15 | arg0 << 16;
 		@Pc(31) long local31 = (long) local26 ^ 0x100000000L;
-		@Pc(38) ListNode_Sub4_Sub1 local38 = (ListNode_Sub4_Sub1) this.aIterableHashMap_26.get(local31);
+		@Pc(38) LinkedHashEntry_Sub4_Sub1 local38 = (LinkedHashEntry_Sub4_Sub1) this.aLinkedHashMap_Iterator_26.get(local31);
 		if (local38 != null) {
 			return local38;
 		} else if (arg1 == null || arg1[0] > 0) {
-			@Pc(57) ListNode_Sub13 local57 = (ListNode_Sub13) this.aIterableHashMap_25.get(local31);
+			@Pc(57) LinkedHashEntry_Sub13 local57 = (LinkedHashEntry_Sub13) this.aLinkedHashMap_Iterator_25.get(local31);
 			if (local57 == null) {
 				local57 = Static68.method1318(this.aClass76_56, arg0, arg2);
 				if (local57 == null) {
 					return null;
 				}
-				this.aIterableHashMap_25.set(local31, local57);
+				this.aLinkedHashMap_Iterator_25.set(local31, local57);
 			}
 			local38 = local57.method1322(arg1);
 			if (local38 == null) {
 				return null;
 			} else {
 				local57.popSelf();
-				this.aIterableHashMap_26.set(local31, local38);
+				this.aLinkedHashMap_Iterator_26.set(local31, local38);
 				return local38;
 			}
 		} else {
@@ -81,7 +81,7 @@ public final class Class171 {
 	}
 
 	@OriginalMember(owner = "client!oj", name = "a", descriptor = "([III)Lclient!js;")
-	public ListNode_Sub4_Sub1 method3973(@OriginalArg(0) int[] arg0, @OriginalArg(1) int arg1) {
+	public LinkedHashEntry_Sub4_Sub1 method3973(@OriginalArg(0) int[] arg0, @OriginalArg(1) int arg1) {
 		if (this.aClass76_56.method2100() == 1) {
 			return this.method3972(0, arg0, arg1);
 		} else if (this.aClass76_56.method2108(arg1) == 1) {
@@ -92,7 +92,7 @@ public final class Class171 {
 	}
 
 	@OriginalMember(owner = "client!oj", name = "b", descriptor = "([III)Lclient!js;")
-	public ListNode_Sub4_Sub1 method3976(@OriginalArg(0) int[] arg0, @OriginalArg(2) int arg1) {
+	public LinkedHashEntry_Sub4_Sub1 method3976(@OriginalArg(0) int[] arg0, @OriginalArg(2) int arg1) {
 		if (this.aClass76_57.method2100() == 1) {
 			return this.method3970(0, arg1, arg0);
 		} else if (this.aClass76_57.method2108(arg1) == 1) {

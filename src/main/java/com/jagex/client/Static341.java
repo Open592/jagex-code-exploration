@@ -16,7 +16,7 @@ public final class Static341 {
 	public static final Class215 aClass215_87 = new Class215(56, -1);
 
 	@OriginalMember(owner = "client!rg", name = "l", descriptor = "Lclient!ib;")
-	public static final IterableHashMap A_ITERABLE_HASH_MAP___38 = new IterableHashMap(16);
+	public static final LinkedHashMapIterator A_ITERABLE_HASH_MAP___38 = new LinkedHashMapIterator(16);
 
 	@OriginalMember(owner = "client!rg", name = "m", descriptor = "I")
 	public static int anInt6617 = 999999;

@@ -26,14 +26,14 @@ public final class Static48 {
 					if (local14.aClass247Array2 != null) {
 						method790(arg0, local14.aClass247Array2);
 					}
-					@Pc(38) ListNode_Sub43 local38 = (ListNode_Sub43) Static325.aIterableHashMap_29.get((long) local14.anInt6809);
+					@Pc(38) LinkedHashEntry_Sub43 local38 = (LinkedHashEntry_Sub43) Static325.aLinkedHashMap_Iterator_29.get((long) local14.anInt6809);
 					if (local38 != null) {
 						Static310.method4165(local38.anInt6979, arg0);
 					}
 				}
-				@Pc(54) ListNode_Sub34 local54;
+				@Pc(54) LinkedHashEntry_Sub34 local54;
 				if (arg0 == 0 && local14.anObjectArray29 != null) {
-					local54 = new ListNode_Sub34();
+					local54 = new LinkedHashEntry_Sub34();
 					local54.anObjectArray4 = local14.anObjectArray29;
 					local54.aClass247_15 = local14;
 					Static271.method3894(local54);
@@ -45,7 +45,7 @@ public final class Static48 {
 							continue;
 						}
 					}
-					local54 = new ListNode_Sub34();
+					local54 = new LinkedHashEntry_Sub34();
 					local54.aClass247_15 = local14;
 					local54.anObjectArray4 = local14.anObjectArray10;
 					Static271.method3894(local54);

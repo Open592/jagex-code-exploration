@@ -43,7 +43,7 @@ public abstract class Class80 {
 	public abstract int method2230();
 
 	@OriginalMember(owner = "client!jn", name = "a", descriptor = "(B)Lclient!os;")
-	public abstract ListNode_Sub5 method2232();
+	public abstract LinkedHashEntry_Sub5 method2232();
 
 	@OriginalMember(owner = "client!jn", name = "b", descriptor = "(B)I")
 	public abstract int method2234();

@@ -11,7 +11,7 @@ public final class Static143 {
 	public static int anInt2891;
 
 	@OriginalMember(owner = "client!he", name = "j", descriptor = "Lclient!nb;")
-	public static ListNode_Sub30 aClass4_Sub30_2;
+	public static LinkedHashEntry_Sub30 aClass4_Sub30_2;
 
 	@OriginalMember(owner = "client!he", name = "l", descriptor = "Lclient!wn;")
 	public static Class266_Sub1 aClass266_Sub1_2;

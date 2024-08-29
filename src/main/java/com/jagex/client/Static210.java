@@ -19,7 +19,7 @@ public final class Static210 {
 	public static final int[] anIntArray261 = new int[13];
 
 	@OriginalMember(owner = "client!km", name = "a", descriptor = "(Lclient!qm;I)I")
-	public static int method3197(@OriginalArg(0) ListNode_Sub39 arg0) {
+	public static int method3197(@OriginalArg(0) LinkedHashEntry_Sub39 arg0) {
 		@Pc(14) String local14 = Static200.method3166(arg0);
 		@Pc(16) int[] local16 = null;
 		if (Static441.method5569(arg0.anInt5699)) {

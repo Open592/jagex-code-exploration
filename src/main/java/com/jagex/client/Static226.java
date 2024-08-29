@@ -21,8 +21,8 @@ public final class Static226 {
 	public static final Class215 aClass215_47 = new Class215(49, 6);
 
 	@OriginalMember(owner = "client!ll", name = "a", descriptor = "(B[B)Lclient!ae;")
-	public static ListNode_Sub1_Sub1 method3441(@OriginalArg(1) byte[] arg0) {
-		@Pc(9) ListNode_Sub1_Sub1 local9 = new ListNode_Sub1_Sub1();
+	public static LinkedHashEntry_Sub1_Sub1 method3441(@OriginalArg(1) byte[] arg0) {
+		@Pc(9) LinkedHashEntry_Sub1_Sub1 local9 = new LinkedHashEntry_Sub1_Sub1();
 		@Pc(14) Packet local14 = new Packet(arg0);
 		local14.pos = local14.data.length - 2;
 		@Pc(25) int local25 = local14.g2();
@@ -36,15 +36,15 @@ public final class Static226 {
 		@Pc(67) int local67 = local14.g1();
 		@Pc(84) int local84;
 		if (local67 > 0) {
-			local9.aIterableHashMapArray1 = new IterableHashMap[local67];
+			local9.aLinkedHashMapIteratorArray1 = new LinkedHashMapIterator[local67];
 			for (@Pc(78) int local78 = 0; local78 < local67; local78++) {
 				local84 = local14.g2();
-				@Pc(91) IterableHashMap local91 = new IterableHashMap(Static370.method4949(local84));
-				local9.aIterableHashMapArray1[local78] = local91;
+				@Pc(91) LinkedHashMapIterator local91 = new LinkedHashMapIterator(Static370.method4949(local84));
+				local9.aLinkedHashMapIteratorArray1[local78] = local91;
 				while (local84-- > 0) {
 					@Pc(102) int local102 = local14.g4();
 					@Pc(106) int local106 = local14.g4();
-					local91.set((long) local102, new ListNode_Sub37(local106));
+					local91.set((long) local102, new LinkedHashEntry_Sub37(local106));
 				}
 			}
 		}

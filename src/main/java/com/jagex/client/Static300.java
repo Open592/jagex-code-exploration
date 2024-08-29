@@ -10,11 +10,11 @@ public final class Static300 {
 	public static Class22 aClass22_246 = null;
 
 	@OriginalMember(owner = "client!pd", name = "a", descriptor = "(IIZBI)Lclient!vj;")
-	public static ListNode_Sub43 method4092(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) boolean arg2, @OriginalArg(4) int arg3) {
-		@Pc(7) ListNode_Sub43 local7 = new ListNode_Sub43();
+	public static LinkedHashEntry_Sub43 method4092(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) boolean arg2, @OriginalArg(4) int arg3) {
+		@Pc(7) LinkedHashEntry_Sub43 local7 = new LinkedHashEntry_Sub43();
 		local7.anInt6981 = arg1;
 		local7.anInt6979 = arg0;
-		Static325.aIterableHashMap_29.set((long) arg3, local7);
+		Static325.aLinkedHashMap_Iterator_29.set((long) arg3, local7);
 		Static426.method5439(arg0);
 		@Pc(26) Class247 local26 = Static392.method5121(arg3);
 		if (local26 != null) {

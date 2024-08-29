@@ -31,7 +31,7 @@ public final class Static149 {
 
 	@OriginalMember(owner = "client!hk", name = "a", descriptor = "(Lclient!lh;I)V")
 	public static void method2555(@OriginalArg(0) Class16_Sub1_Sub5_Sub1 arg0) {
-		@Pc(17) ListNode_Sub8 local17 = (ListNode_Sub8) Static341.A_ITERABLE_HASH_MAP___38.get((long) arg0.anInt6037);
+		@Pc(17) LinkedHashEntry_Sub8 local17 = (LinkedHashEntry_Sub8) Static341.A_ITERABLE_HASH_MAP___38.get((long) arg0.anInt6037);
 		if (local17 == null) {
 			Static126.method2264(arg0.anIntArray426[0], null, arg0, arg0.anIntArray427[0], 0, arg0.aByte82, null);
 		} else {

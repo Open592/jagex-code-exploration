@@ -19,7 +19,7 @@ public final class Static173 {
 	public static int[] anIntArray219 = new int[1];
 
 	@OriginalMember(owner = "client!ir", name = "a", descriptor = "(Lclient!cw;B)V")
-	public static void method2814(@OriginalArg(0) ListNode_Sub12_Sub1 arg0) {
+	public static void method2814(@OriginalArg(0) LinkedHashEntry_Sub12_Sub1 arg0) {
 		for (@Pc(3) int local3 = 0; local3 < Static441.anInt7199; local3++) {
 			@Pc(9) int local9 = Static388.anIntArray497[local3];
 			@Pc(13) Class16_Sub1_Sub5_Sub1 local13 = Static267.aClass16_Sub1_Sub5_Sub1Array1[local9];
