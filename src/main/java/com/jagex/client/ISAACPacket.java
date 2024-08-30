@@ -9,7 +9,7 @@ import org.openrs2.deob.annotation.Pc;
 public final class ISAACPacket extends Packet {
 
 	@OriginalMember(owner = "client!cw", name = "Cb", descriptor = "Lclient!dp;")
-	private Class52 aClass52_1;
+	private IsaacRandom aIsaacRandom_1;
 
 	@OriginalMember(owner = "client!cw", name = "Nb", descriptor = "I")
 	private int anInt1270;
@@ -22,13 +22,13 @@ public final class ISAACPacket extends Packet {
 	@OriginalMember(owner = "client!cw", name = "a", descriptor = "(III[B)V")
 	public void method1132(@OriginalArg(1) int arg0, @OriginalArg(3) byte[] arg1) {
 		for (@Pc(11) int local11 = 0; local11 < arg0; local11++) {
-			arg1[local11] = (byte) (super.data[super.pos++] - this.aClass52_1.method1362());
+			arg1[local11] = (byte) (super.data[super.pos++] - this.aIsaacRandom_1.next());
 		}
 	}
 
 	@OriginalMember(owner = "client!cw", name = "m", descriptor = "(II)V")
 	public void method1133(@OriginalArg(0) int arg0) {
-		super.data[super.pos++] = (byte) (arg0 + this.aClass52_1.method1362());
+		super.data[super.pos++] = (byte) (arg0 + this.aIsaacRandom_1.next());
 	}
 
 	@OriginalMember(owner = "client!cw", name = "n", descriptor = "(B)V")
@@ -48,18 +48,18 @@ public final class ISAACPacket extends Packet {
 
 	@OriginalMember(owner = "client!cw", name = "b", descriptor = "([II)V")
 	public void method1139(@OriginalArg(0) int[] arg0) {
-		this.aClass52_1 = new Class52(arg0);
+		this.aIsaacRandom_1 = new IsaacRandom(arg0);
 	}
 
 	@OriginalMember(owner = "client!cw", name = "v", descriptor = "(I)I")
 	public int method1140() {
-		@Pc(21) int local21 = super.data[super.pos++] - this.aClass52_1.method1362() & 0xFF;
-		return local21 < 128 ? local21 : (super.data[super.pos++] - this.aClass52_1.method1362() & 0xFF) + (local21 - 128 << 8);
+		@Pc(21) int local21 = super.data[super.pos++] - this.aIsaacRandom_1.next() & 0xFF;
+		return local21 < 128 ? local21 : (super.data[super.pos++] - this.aIsaacRandom_1.next() & 0xFF) + (local21 - 128 << 8);
 	}
 
 	@OriginalMember(owner = "client!cw", name = "w", descriptor = "(I)Z")
 	public boolean method1141() {
-		@Pc(23) int local23 = super.data[super.pos] - this.aClass52_1.method1364() & 0xFF;
+		@Pc(23) int local23 = super.data[super.pos] - this.aIsaacRandom_1.peek() & 0xFF;
 		return local23 >= 128;
 	}
 
