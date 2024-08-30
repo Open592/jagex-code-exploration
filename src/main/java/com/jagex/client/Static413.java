@@ -36,7 +36,7 @@ public final class Static413 {
 	}
 
 	@OriginalMember(owner = "client!uu", name = "a", descriptor = "(BLclient!cw;)I")
-	public static int method5308(@OriginalArg(1) LinkedHashEntry_Sub12_Sub1 arg0) {
+	public static int method5308(@OriginalArg(1) ISAACPacket arg0) {
 		@Pc(10) int local10 = arg0.method1143(2);
 		@Pc(27) int local27;
 		if (local10 == 0) {

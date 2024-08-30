@@ -33,7 +33,7 @@ public final class Static321 {
 	}
 
 	@OriginalMember(owner = "client!qc", name = "a", descriptor = "(ILclient!cw;I)V")
-	public static void method4336(@OriginalArg(0) int arg0, @OriginalArg(1) LinkedHashEntry_Sub12_Sub1 arg1) {
+	public static void method4336(@OriginalArg(0) int arg0, @OriginalArg(1) ISAACPacket arg1) {
 		while (true) {
 			@Pc(15) LinkedHashEntry_Sub36 local15 = (LinkedHashEntry_Sub36) Static421.aClass183_48.method4140();
 			if (local15 == null) {

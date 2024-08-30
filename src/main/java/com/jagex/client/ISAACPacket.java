@@ -6,7 +6,7 @@ import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;
 
 @OriginalClass("client!cw")
-public final class LinkedHashEntry_Sub12_Sub1 extends Packet {
+public final class ISAACPacket extends Packet {
 
 	@OriginalMember(owner = "client!cw", name = "Cb", descriptor = "Lclient!dp;")
 	private Class52 aClass52_1;
@@ -15,7 +15,7 @@ public final class LinkedHashEntry_Sub12_Sub1 extends Packet {
 	private int anInt1270;
 
 	@OriginalMember(owner = "client!cw", name = "<init>", descriptor = "(I)V")
-	public LinkedHashEntry_Sub12_Sub1(@OriginalArg(0) int arg0) {
+	public ISAACPacket(@OriginalArg(0) int arg0) {
 		super(arg0);
 	}
 

@@ -44,7 +44,7 @@ public final class Static41 {
 	}
 
 	@OriginalMember(owner = "client!bv", name = "a", descriptor = "(ILclient!cw;IILclient!lh;)V")
-	public static void method729(@OriginalArg(0) int arg0, @OriginalArg(1) LinkedHashEntry_Sub12_Sub1 arg1, @OriginalArg(2) int arg2, @OriginalArg(4) Class16_Sub1_Sub5_Sub1 arg3) {
+	public static void method729(@OriginalArg(0) int arg0, @OriginalArg(1) ISAACPacket arg1, @OriginalArg(2) int arg2, @OriginalArg(4) Class16_Sub1_Sub5_Sub1 arg3) {
 		@Pc(7) byte local7 = -1;
 		if ((arg0 & 0x40) != 0) {
 			arg3.anInt4323 = arg1.g2();
