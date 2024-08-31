@@ -158,11 +158,11 @@ public final class Static425 {
 				Static3.aClass4_Sub12_Sub1_5.pArrayBuffer(local185.data, local185.pos);
 				Static3.aClass4_Sub12_Sub1_5.pSize2(Static3.aClass4_Sub12_Sub1_5.pos - local112);
 				Static125.aServerConnection_5.enqueueClientMessage(Static3.aClass4_Sub12_Sub1_5.pos, Static3.aClass4_Sub12_Sub1_5.data);
-				Static3.aClass4_Sub12_Sub1_5.method1139(local188);
+				Static3.aClass4_Sub12_Sub1_5.initializeIsaacRandom(local188);
 				for (@Pc(551) int local551 = 0; local551 < 4; local551++) {
 					local188[local551] += 50;
 				}
-				Static146.aClass4_Sub12_Sub1_3.method1139(local188);
+				Static146.aClass4_Sub12_Sub1_3.initializeIsaacRandom(local188);
 				Static238.anInt4506 = 4;
 			}
 			if (Static238.anInt4506 == 4) {
