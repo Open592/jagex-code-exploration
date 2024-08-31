@@ -64,7 +64,7 @@ public final class Static316 {
 
 	@OriginalMember(owner = "client!pu", name = "a", descriptor = "(III)V")
 	public static void method4221(@OriginalArg(1) int arg0, @OriginalArg(2) int arg1) {
-		@Pc(8) LinkedHashEntry_Sub1_Sub11 local8 = Static405.method5222(arg0, 1);
+		@Pc(8) LinkedEntry_Sub1_Sub11 local8 = Static405.method5222(arg0, 1);
 		local8.method2604();
 		local8.anInt3083 = arg1;
 	}

@@ -12,34 +12,34 @@ public final class Class100 {
 	private long aLong110;
 
 	@OriginalMember(owner = "client!hu", name = "c", descriptor = "Lclient!ac;")
-	private LinkedHashEntry_Sub1 aClass4_Sub1_31;
+	private LinkedEntry_Sub1 aClass4_Sub1_31;
 
 	@OriginalMember(owner = "client!hu", name = "g", descriptor = "[Lclient!ac;")
-	private final LinkedHashEntry_Sub1[] aClass4_Sub1Array1;
+	private final LinkedEntry_Sub1[] aClass4_Sub1Array1;
 
 	@OriginalMember(owner = "client!hu", name = "i", descriptor = "I")
 	private final int anInt3143;
 
 	@OriginalMember(owner = "client!hu", name = "<init>", descriptor = "(I)V")
 	public Class100(@OriginalArg(0) int arg0) {
-		this.aClass4_Sub1Array1 = new LinkedHashEntry_Sub1[arg0];
+		this.aClass4_Sub1Array1 = new LinkedEntry_Sub1[arg0];
 		this.anInt3143 = arg0;
 		for (@Pc(10) int local10 = 0; local10 < arg0; local10++) {
-			@Pc(20) LinkedHashEntry_Sub1 local20 = this.aClass4_Sub1Array1[local10] = new LinkedHashEntry_Sub1();
+			@Pc(20) LinkedEntry_Sub1 local20 = this.aClass4_Sub1Array1[local10] = new LinkedEntry_Sub1();
 			local20.aClass4_Sub1_55 = local20;
 			local20.aClass4_Sub1_56 = local20;
 		}
 	}
 
 	@OriginalMember(owner = "client!hu", name = "a", descriptor = "(Z)Lclient!ac;")
-	public LinkedHashEntry_Sub1 method2670() {
+	public LinkedEntry_Sub1 method2670() {
 		if (this.aClass4_Sub1_31 == null) {
 			return null;
 		}
-		@Pc(23) LinkedHashEntry_Sub1 local23 = this.aClass4_Sub1Array1[(int) ((long) (this.anInt3143 - 1) & this.aLong110)];
+		@Pc(23) LinkedEntry_Sub1 local23 = this.aClass4_Sub1Array1[(int) ((long) (this.anInt3143 - 1) & this.aLong110)];
 		while (this.aClass4_Sub1_31 != local23) {
 			if (this.aClass4_Sub1_31.aLong198 == this.aLong110) {
-				@Pc(35) LinkedHashEntry_Sub1 local35 = this.aClass4_Sub1_31;
+				@Pc(35) LinkedEntry_Sub1 local35 = this.aClass4_Sub1_31;
 				this.aClass4_Sub1_31 = this.aClass4_Sub1_31.aClass4_Sub1_55;
 				return local35;
 			}
@@ -50,12 +50,12 @@ public final class Class100 {
 	}
 
 	@OriginalMember(owner = "client!hu", name = "a", descriptor = "(JI)Lclient!ac;")
-	public LinkedHashEntry_Sub1 method2671(@OriginalArg(0) long arg0) {
+	public LinkedEntry_Sub1 method2671(@OriginalArg(0) long arg0) {
 		this.aLong110 = arg0;
-		@Pc(20) LinkedHashEntry_Sub1 local20 = this.aClass4_Sub1Array1[(int) (arg0 & (long) (this.anInt3143 - 1))];
+		@Pc(20) LinkedEntry_Sub1 local20 = this.aClass4_Sub1Array1[(int) (arg0 & (long) (this.anInt3143 - 1))];
 		for (this.aClass4_Sub1_31 = local20.aClass4_Sub1_55; this.aClass4_Sub1_31 != local20; this.aClass4_Sub1_31 = this.aClass4_Sub1_31.aClass4_Sub1_55) {
 			if (this.aClass4_Sub1_31.aLong198 == arg0) {
-				@Pc(39) LinkedHashEntry_Sub1 local39 = this.aClass4_Sub1_31;
+				@Pc(39) LinkedEntry_Sub1 local39 = this.aClass4_Sub1_31;
 				this.aClass4_Sub1_31 = this.aClass4_Sub1_31.aClass4_Sub1_55;
 				return local39;
 			}
@@ -65,11 +65,11 @@ public final class Class100 {
 	}
 
 	@OriginalMember(owner = "client!hu", name = "a", descriptor = "(BLclient!ac;J)V")
-	public void method2674(@OriginalArg(1) LinkedHashEntry_Sub1 arg0, @OriginalArg(2) long arg1) {
+	public void method2674(@OriginalArg(1) LinkedEntry_Sub1 arg0, @OriginalArg(2) long arg1) {
 		if (arg0.aClass4_Sub1_56 != null) {
 			arg0.method4662();
 		}
-		@Pc(21) LinkedHashEntry_Sub1 local21 = this.aClass4_Sub1Array1[(int) (arg1 & (long) (this.anInt3143 - 1))];
+		@Pc(21) LinkedEntry_Sub1 local21 = this.aClass4_Sub1Array1[(int) (arg1 & (long) (this.anInt3143 - 1))];
 		arg0.aClass4_Sub1_55 = local21;
 		arg0.aClass4_Sub1_56 = local21.aClass4_Sub1_56;
 		arg0.aClass4_Sub1_56.aClass4_Sub1_55 = arg0;

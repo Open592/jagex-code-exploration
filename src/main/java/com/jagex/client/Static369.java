@@ -29,7 +29,7 @@ public final class Static369 {
 
 	@OriginalMember(owner = "client!sp", name = "a", descriptor = "(BI)V")
 	public static void method4942(@OriginalArg(1) int arg0) {
-		@Pc(13) LinkedHashEntry_Sub1_Sub11 local13 = Static405.method5222(arg0, 8);
+		@Pc(13) LinkedEntry_Sub1_Sub11 local13 = Static405.method5222(arg0, 8);
 		local13.method2608();
 	}
 }

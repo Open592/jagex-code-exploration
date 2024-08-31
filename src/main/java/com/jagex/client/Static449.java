@@ -81,9 +81,9 @@ public final class Static449 {
 	@OriginalMember(owner = "client!wo", name = "a", descriptor = "(IZ)V")
 	public static void method5653() {
 		Static429.method5476(Static50.aClass215_11);
-		for (@Pc(22) LinkedHashEntry_Sub43 local22 = (LinkedHashEntry_Sub43) Static325.aLinkedHashMap_Iterator_29.head(); local22 != null; local22 = (LinkedHashEntry_Sub43) Static325.aLinkedHashMap_Iterator_29.nextEntry()) {
+		for (@Pc(22) LinkedEntry_Sub43 local22 = (LinkedEntry_Sub43) Static325.aLinkedHashMap_Iterator_29.head(); local22 != null; local22 = (LinkedEntry_Sub43) Static325.aLinkedHashMap_Iterator_29.nextEntry()) {
 			if (!local22.hasNext()) {
-				local22 = (LinkedHashEntry_Sub43) Static325.aLinkedHashMap_Iterator_29.head();
+				local22 = (LinkedEntry_Sub43) Static325.aLinkedHashMap_Iterator_29.head();
 				if (local22 == null) {
 					break;
 				}
@@ -100,7 +100,7 @@ public final class Static449 {
 
 	@OriginalMember(owner = "client!wo", name = "a", descriptor = "(I)V")
 	public static void method5654() {
-		for (@Pc(16) LinkedHashEntry_Sub1_Sub10 local16 = (LinkedHashEntry_Sub1_Sub10) Static292.aClass183_36.method4140(); local16 != null; local16 = (LinkedHashEntry_Sub1_Sub10) Static292.aClass183_36.method4144()) {
+		for (@Pc(16) LinkedEntry_Sub1_Sub10 local16 = (LinkedEntry_Sub1_Sub10) Static292.aClass183_36.method4140(); local16 != null; local16 = (LinkedEntry_Sub1_Sub10) Static292.aClass183_36.method4144()) {
 			@Pc(21) Class16_Sub1_Sub2 local21 = local16.aClass16_Sub1_Sub2_1;
 			if (local21.aBoolean113) {
 				local16.popSelf();

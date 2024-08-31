@@ -76,7 +76,7 @@ public final class Static308 {
 		if (!Static423.aBoolean653 || Static378.aClass183_29 == null) {
 			return;
 		}
-		for (@Pc(177) LinkedHashEntry_Sub14 local177 = (LinkedHashEntry_Sub14) Static378.aClass183_29.method4140(); local177 != null; local177 = (LinkedHashEntry_Sub14) Static378.aClass183_29.method4144()) {
+		for (@Pc(177) LinkedEntry_Sub14 local177 = (LinkedEntry_Sub14) Static378.aClass183_29.method4140(); local177 != null; local177 = (LinkedEntry_Sub14) Static378.aClass183_29.method4144()) {
 			@Pc(186) Class157 local186 = Static148.aClass182_3.method4124(local177.aClass4_Sub3_1.anInt234);
 			if (local177.method1370(arg1, arg0)) {
 				if (local186.aStringArray19 != null) {

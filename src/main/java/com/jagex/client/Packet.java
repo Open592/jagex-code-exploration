@@ -7,7 +7,7 @@ import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;
 
 @OriginalClass("client!iv")
-public class Packet extends LinkedHashEntry {
+public class Packet extends LinkedEntry {
 
 	@OriginalMember(owner = "client!iv", name = "z", descriptor = "[B")
 	public byte[] data;

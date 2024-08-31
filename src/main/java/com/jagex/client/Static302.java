@@ -718,7 +718,7 @@ public final class Static302 {
 	}
 
 	@OriginalMember(owner = "client!pf", name = "a", descriptor = "(Lclient!nf;Lclient!aq;BLclient!ya;)V")
-	public static void method4102(@OriginalArg(0) Class157 arg0, @OriginalArg(1) LinkedHashEntry_Sub3 arg1, @OriginalArg(3) Class19 arg2) {
+	public static void method4102(@OriginalArg(0) Class157 arg0, @OriginalArg(1) LinkedEntry_Sub3 arg1, @OriginalArg(3) Class19 arg2) {
 		@Pc(10) Class57 local10 = arg0.method3780(arg2);
 		if (local10 == null) {
 			return;
@@ -793,7 +793,7 @@ public final class Static302 {
 		if (arg0.anInt4930 == -1 && arg0.aString47 == null) {
 			return;
 		}
-		@Pc(379) LinkedHashEntry_Sub14 local379 = new LinkedHashEntry_Sub14(arg1);
+		@Pc(379) LinkedEntry_Sub14 local379 = new LinkedEntry_Sub14(arg1);
 		local16 >>= 0x1;
 		local379.anInt1539 = local28 + local16;
 		local379.anInt1544 = local31 - local16;
@@ -809,7 +809,7 @@ public final class Static302 {
 	@OriginalMember(owner = "client!pf", name = "a", descriptor = "(IZIII)V")
 	public static void method4103(@OriginalArg(0) int arg0, @OriginalArg(2) int arg1, @OriginalArg(3) int arg2, @OriginalArg(4) int arg3) {
 		for (@Pc(1) int local1 = 0; local1 < Static229.anInt4407; local1++) {
-			@Pc(9) Rectangle local9 = LinkedHashEntry_Sub6_Sub23.aRectangleArray1[local1];
+			@Pc(9) Rectangle local9 = LinkedEntry_Sub6_Sub23.aRectangleArray1[local1];
 			if (arg0 < local9.width + local9.x && local9.x < arg2 + arg0 && arg3 < local9.height + local9.y && local9.y < arg1 + arg3) {
 				Static416.aBooleanArray21[local1] = true;
 			}

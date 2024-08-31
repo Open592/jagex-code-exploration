@@ -28,12 +28,12 @@ public final class Static52 {
 
 	@OriginalMember(owner = "client!ck", name = "a", descriptor = "(IZ)V")
 	public static void method842(@OriginalArg(0) int arg0) {
-		@Pc(13) LinkedHashEntry_Sub1_Sub11 local13 = Static405.method5222(arg0, 7);
+		@Pc(13) LinkedEntry_Sub1_Sub11 local13 = Static405.method5222(arg0, 7);
 		local13.method2608();
 	}
 
 	@OriginalMember(owner = "client!ck", name = "a", descriptor = "(Lclient!ba;III[Z)Z")
-	public static boolean method844(@OriginalArg(0) LinkedHashEntry_Sub1_Sub4 arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) boolean[] arg4) {
+	public static boolean method844(@OriginalArg(0) LinkedEntry_Sub1_Sub4 arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) boolean[] arg4) {
 		@Pc(1) boolean local1 = false;
 		if (Static417.aClass65Array4 != Static285.aClass65Array3) {
 			@Pc(11) int local11 = Static67.aClass65Array1[arg1].a(arg2, arg3);

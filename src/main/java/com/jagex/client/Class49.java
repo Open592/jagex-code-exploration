@@ -12,7 +12,7 @@ import org.openrs2.deob.annotation.Pc;
 public class Class49 {
 
 	@OriginalMember(owner = "client!ln", name = "c", descriptor = "Lclient!ti;")
-	private LinkedHashEntry_Sub15 aClass4_Sub15_5;
+	private LinkedEntry_Sub15 aClass4_Sub15_5;
 
 	@OriginalMember(owner = "client!ln", name = "q", descriptor = "[I")
 	public int[] anIntArray162;
@@ -39,7 +39,7 @@ public class Class49 {
 	private int anInt2442 = 0;
 
 	@OriginalMember(owner = "client!ln", name = "A", descriptor = "[Lclient!ti;")
-	private final LinkedHashEntry_Sub15[] aClass4_Sub15Array5 = new LinkedHashEntry_Sub15[8];
+	private final LinkedEntry_Sub15[] aClass4_Sub15Array5 = new LinkedEntry_Sub15[8];
 
 	@OriginalMember(owner = "client!ln", name = "C", descriptor = "J")
 	private long aLong79 = 0L;
@@ -54,7 +54,7 @@ public class Class49 {
 	private int anInt2447 = 0;
 
 	@OriginalMember(owner = "client!ln", name = "G", descriptor = "[Lclient!ti;")
-	private final LinkedHashEntry_Sub15[] aClass4_Sub15Array6 = new LinkedHashEntry_Sub15[8];
+	private final LinkedEntry_Sub15[] aClass4_Sub15Array6 = new LinkedEntry_Sub15[8];
 
 	@OriginalMember(owner = "client!ln", name = "F", descriptor = "J")
 	private long aLong80 = 0L;
@@ -175,7 +175,7 @@ public class Class49 {
 	}
 
 	@OriginalMember(owner = "client!ln", name = "a", descriptor = "(Lclient!ti;B)V")
-	public final synchronized void method2070(@OriginalArg(0) LinkedHashEntry_Sub15 arg0) {
+	public final synchronized void method2070(@OriginalArg(0) LinkedEntry_Sub15 arg0) {
 		this.aClass4_Sub15_5 = arg0;
 	}
 
@@ -217,9 +217,9 @@ public class Class49 {
 	}
 
 	@OriginalMember(owner = "client!ln", name = "a", descriptor = "(IILclient!ti;)V")
-	private void method2075(@OriginalArg(1) int arg0, @OriginalArg(2) LinkedHashEntry_Sub15 arg1) {
+	private void method2075(@OriginalArg(1) int arg0, @OriginalArg(2) LinkedEntry_Sub15 arg1) {
 		@Pc(7) int local7 = arg0 >> 5;
-		@Pc(12) LinkedHashEntry_Sub15 local12 = this.aClass4_Sub15Array5[local7];
+		@Pc(12) LinkedEntry_Sub15 local12 = this.aClass4_Sub15Array5[local7];
 		if (local12 == null) {
 			this.aClass4_Sub15Array6[local7] = arg1;
 		} else {
@@ -257,14 +257,14 @@ public class Class49 {
 				for (@Pc(72) int local72 = local47 >>> local56 & 0x11111111; local72 != 0; local72 >>>= 0x4) {
 					if ((local72 & 0x1) != 0) {
 						local47 &= ~(0x1 << local56);
-						@Pc(88) LinkedHashEntry_Sub15 local88 = null;
-						@Pc(93) LinkedHashEntry_Sub15 local93 = this.aClass4_Sub15Array6[local56];
+						@Pc(88) LinkedEntry_Sub15 local88 = null;
+						@Pc(93) LinkedEntry_Sub15 local93 = this.aClass4_Sub15Array6[local56];
 						label97: while (true) {
 							while (true) {
 								if (local93 == null) {
 									break label97;
 								}
-								@Pc(97) LinkedHashEntry_Sub4 local97 = local93.aClass4_Sub4_5;
+								@Pc(97) LinkedEntry_Sub4 local97 = local93.aClass4_Sub4_5;
 								if (local97 == null || local97.anInt3724 <= local61) {
 									local93.aBoolean569 = true;
 									@Pc(121) int local121 = local93.method4859();
@@ -275,7 +275,7 @@ public class Class49 {
 									if (local45 >= this.anInt2429) {
 										break label103;
 									}
-									@Pc(140) LinkedHashEntry_Sub15 local140 = local93.method4860();
+									@Pc(140) LinkedEntry_Sub15 local140 = local93.method4860();
 									if (local140 != null) {
 										@Pc(145) int local145 = local93.anInt6248;
 										while (local140 != null) {
@@ -283,7 +283,7 @@ public class Class49 {
 											local140 = local93.method4857();
 										}
 									}
-									@Pc(164) LinkedHashEntry_Sub15 local164 = local93.aClass4_Sub15_8;
+									@Pc(164) LinkedEntry_Sub15 local164 = local93.aClass4_Sub15_8;
 									local93.aClass4_Sub15_8 = null;
 									if (local88 == null) {
 										this.aClass4_Sub15Array6[local56] = local164;
@@ -308,10 +308,10 @@ public class Class49 {
 				local49--;
 			}
 			for (local56 = 0; local56 < 8; local56++) {
-				@Pc(207) LinkedHashEntry_Sub15 local207 = this.aClass4_Sub15Array6[local56];
+				@Pc(207) LinkedEntry_Sub15 local207 = this.aClass4_Sub15Array6[local56];
 				this.aClass4_Sub15Array6[local56] = this.aClass4_Sub15Array5[local56] = null;
 				while (local207 != null) {
-					@Pc(221) LinkedHashEntry_Sub15 local221 = local207.aClass4_Sub15_8;
+					@Pc(221) LinkedEntry_Sub15 local221 = local207.aClass4_Sub15_8;
 					local207.aClass4_Sub15_8 = null;
 					local207 = local221;
 				}

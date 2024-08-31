@@ -31,11 +31,11 @@ public final class Static28 {
 	}
 
 	@OriginalMember(owner = "client!bg", name = "a", descriptor = "(Lclient!wt;IIBI)V")
-	public static void method528(@OriginalArg(0) LinkedHashEntry_Sub45 arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(4) int arg3) {
+	public static void method528(@OriginalArg(0) LinkedEntry_Sub45 arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(4) int arg3) {
 		@Pc(20) long local20 = (long) (arg1 | arg3 << 28 | arg2 << 14);
-		@Pc(26) LinkedHashEntry_Sub18 local26 = (LinkedHashEntry_Sub18) Static440.aLinkedHashMap_Iterator_40.get(local20);
+		@Pc(26) LinkedEntry_Sub18 local26 = (LinkedEntry_Sub18) Static440.aLinkedHashMap_Iterator_40.get(local20);
 		if (local26 == null) {
-			local26 = new LinkedHashEntry_Sub18();
+			local26 = new LinkedEntry_Sub18();
 			Static440.aLinkedHashMap_Iterator_40.set(local20, local26);
 			local26.aClass183_14.method4137(arg0);
 			return;
@@ -45,7 +45,7 @@ public final class Static28 {
 		if (local49.anInt6164 == 1) {
 			local52 *= arg0.anInt7356 + 1;
 		}
-		for (@Pc(71) LinkedHashEntry_Sub45 local71 = (LinkedHashEntry_Sub45) local26.aClass183_14.method4140(); local71 != null; local71 = (LinkedHashEntry_Sub45) local26.aClass183_14.method4144()) {
+		for (@Pc(71) LinkedEntry_Sub45 local71 = (LinkedEntry_Sub45) local26.aClass183_14.method4140(); local71 != null; local71 = (LinkedEntry_Sub45) local26.aClass183_14.method4144()) {
 			local49 = Static444.aClass206_3.method4703(local71.anInt7355);
 			@Pc(82) int local82 = local49.anInt6165;
 			if (local49.anInt6164 == 1) {

@@ -33,7 +33,7 @@ public abstract class Class19 {
 	public abstract void method4237(@OriginalArg(0) boolean arg0);
 
 	@OriginalMember(owner = "client!ya", name = "a", descriptor = "(I[Lclient!vp;)V")
-	public abstract void method4238(@OriginalArg(0) int arg0, @OriginalArg(1) LinkedHashEntry_Sub21[] arg1);
+	public abstract void method4238(@OriginalArg(0) int arg0, @OriginalArg(1) LinkedEntry_Sub21[] arg1);
 
 	@OriginalMember(owner = "client!ya", name = "c", descriptor = "()V")
 	protected abstract void method4239();
@@ -56,7 +56,7 @@ public abstract class Class19 {
 	public abstract boolean method4243();
 
 	@OriginalMember(owner = "client!ya", name = "a", descriptor = "(Lclient!u;)V")
-	public abstract void method4244(@OriginalArg(0) LinkedHashEntry_Sub2 arg0);
+	public abstract void method4244(@OriginalArg(0) LinkedEntry_Sub2 arg0);
 
 	@OriginalMember(owner = "client!ya", name = "g", descriptor = "()Z")
 	public abstract boolean method4245();
@@ -226,7 +226,7 @@ public abstract class Class19 {
 	public abstract void method4283(@OriginalArg(0) int arg0);
 
 	@OriginalMember(owner = "client!ya", name = "f", descriptor = "(I)Lclient!u;")
-	public abstract LinkedHashEntry_Sub2 method4284(@OriginalArg(0) int arg0);
+	public abstract LinkedEntry_Sub2 method4284(@OriginalArg(0) int arg0);
 
 	@OriginalMember(owner = "client!ya", name = "a", descriptor = "(II[I[I)Lclient!ma;")
 	public abstract Class145 method4285(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int[] arg2, @OriginalArg(3) int[] arg3);
@@ -342,7 +342,7 @@ public abstract class Class19 {
 	public abstract void b(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4);
 
 	@OriginalMember(owner = "client!ya", name = "a", descriptor = "(IIIIIF)Lclient!vp;")
-	public abstract LinkedHashEntry_Sub21 method4310(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4, @OriginalArg(5) float arg5);
+	public abstract LinkedEntry_Sub21 method4310(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4, @OriginalArg(5) float arg5);
 
 	@OriginalMember(owner = "client!ya", name = "F", descriptor = "(IIII)[I")
 	public abstract int[] F(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3);

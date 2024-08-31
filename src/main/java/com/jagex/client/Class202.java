@@ -292,7 +292,7 @@ public final class Class202 {
 		if (this.aLinkedHashMap_Iterator_34 == null) {
 			return arg1;
 		} else {
-			@Pc(22) LinkedHashEntry_Sub37 local22 = (LinkedHashEntry_Sub37) this.aLinkedHashMap_Iterator_34.get((long) arg0);
+			@Pc(22) LinkedEntry_Sub37 local22 = (LinkedEntry_Sub37) this.aLinkedHashMap_Iterator_34.get((long) arg0);
 			return local22 == null ? arg1 : local22.anInt5426;
 		}
 	}
@@ -342,7 +342,7 @@ public final class Class202 {
 			local78 = (Class149) this.aClass262_4.aClass68_56.method1787(local31);
 		}
 		@Pc(91) Class110 local91 = local78 == null ? null : local78.aClass110_5;
-		@Pc(93) LinkedHashEntry_Sub1_Sub4 local93 = null;
+		@Pc(93) LinkedEntry_Sub1_Sub4 local93 = null;
 		if (local91 != null && arg0.method4269(local91.P(), local33) == 0) {
 			local91 = local78.aClass110_5;
 			local93 = local78.aClass4_Sub1_Sub4_4;
@@ -797,11 +797,11 @@ public final class Class202 {
 			for (local36 = 0; local36 < local26; local36++) {
 				@Pc(753) boolean local753 = arg0.g1() == 1;
 				local57 = arg0.g3();
-				@Pc(766) LinkedHashEntry local766;
+				@Pc(766) LinkedEntry local766;
 				if (local753) {
-					local766 = new LinkedHashEntry_Sub7(arg0.gStringCP1252ToUTF8());
+					local766 = new LinkedEntry_Sub7(arg0.gStringCP1252ToUTF8());
 				} else {
-					local766 = new LinkedHashEntry_Sub37(arg0.g4());
+					local766 = new LinkedEntry_Sub37(arg0.g4());
 				}
 				this.aLinkedHashMap_Iterator_34.set((long) local57, local766);
 			}
@@ -886,7 +886,7 @@ public final class Class202 {
 		if (this.aLinkedHashMap_Iterator_34 == null) {
 			return arg0;
 		} else {
-			@Pc(21) LinkedHashEntry_Sub7 local21 = (LinkedHashEntry_Sub7) this.aLinkedHashMap_Iterator_34.get((long) arg1);
+			@Pc(21) LinkedEntry_Sub7 local21 = (LinkedEntry_Sub7) this.aLinkedHashMap_Iterator_34.get((long) arg1);
 			return local21 == null ? arg0 : local21.aString12;
 		}
 	}

@@ -22,7 +22,7 @@ public final class Static20 {
 	}
 
 	@OriginalMember(owner = "client!at", name = "a", descriptor = "(ILclient!ca;)V")
-	public static void method216(@OriginalArg(1) LinkedHashEntry_Sub9 arg0) {
+	public static void method216(@OriginalArg(1) LinkedEntry_Sub9 arg0) {
 		if (Static202.aClass164ArrayArrayArray5 == null) {
 			return;
 		}

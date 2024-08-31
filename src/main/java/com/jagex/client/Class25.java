@@ -9,7 +9,7 @@ import org.openrs2.deob.annotation.Pc;
 public final class Class25 {
 
 	@OriginalMember(owner = "client!bo", name = "g", descriptor = "Lclient!vu;")
-	private LinkedHashEntry aLinkedHashEntry_33;
+	private LinkedEntry aLinkedEntry_33;
 
 	@OriginalMember(owner = "client!bo", name = "h", descriptor = "I")
 	private int anInt626 = 0;
@@ -23,17 +23,17 @@ public final class Class25 {
 	}
 
 	@OriginalMember(owner = "client!bo", name = "a", descriptor = "(Z)Lclient!vu;")
-	public LinkedHashEntry method640() {
-		@Pc(30) LinkedHashEntry local30;
-		if (this.anInt626 > 0 && this.aLinkedHashEntry_33 != this.aLinkedHashMap_Iterator_5.buckets[this.anInt626 - 1]) {
-			local30 = this.aLinkedHashEntry_33;
-			this.aLinkedHashEntry_33 = local30.previous;
+	public LinkedEntry method640() {
+		@Pc(30) LinkedEntry local30;
+		if (this.anInt626 > 0 && this.aLinkedEntry_33 != this.aLinkedHashMap_Iterator_5.buckets[this.anInt626 - 1]) {
+			local30 = this.aLinkedEntry_33;
+			this.aLinkedEntry_33 = local30.previous;
 			return local30;
 		}
 		while (this.anInt626 < this.aLinkedHashMap_Iterator_5.size) {
 			local30 = this.aLinkedHashMap_Iterator_5.buckets[this.anInt626++].previous;
 			if (this.aLinkedHashMap_Iterator_5.buckets[this.anInt626 - 1] != local30) {
-				this.aLinkedHashEntry_33 = local30.previous;
+				this.aLinkedEntry_33 = local30.previous;
 				return local30;
 			}
 		}
@@ -41,7 +41,7 @@ public final class Class25 {
 	}
 
 	@OriginalMember(owner = "client!bo", name = "a", descriptor = "(I)Lclient!vu;")
-	public LinkedHashEntry method641() {
+	public LinkedEntry method641() {
 		this.anInt626 = 0;
 		return this.method640();
 	}

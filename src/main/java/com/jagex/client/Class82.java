@@ -27,7 +27,7 @@ public final class Class82 {
 	private final int anInt2667;
 
 	@OriginalMember(owner = "client!gi", name = "i", descriptor = "[Lclient!cr;")
-	private LinkedHashEntry_Sub11[] aClass4_Sub11Array1;
+	private LinkedEntry_Sub11[] aClass4_Sub11Array1;
 
 	@OriginalMember(owner = "client!gi", name = "b", descriptor = "[[I")
 	private int[][] anIntArrayArray26;
@@ -36,7 +36,7 @@ public final class Class82 {
 	public Class82(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2) {
 		this.anInt2673 = arg1;
 		this.anInt2667 = arg0;
-		this.aClass4_Sub11Array1 = new LinkedHashEntry_Sub11[this.anInt2673];
+		this.aClass4_Sub11Array1 = new LinkedEntry_Sub11[this.anInt2673];
 		this.anIntArrayArray26 = new int[this.anInt2667][arg2];
 	}
 
@@ -73,15 +73,15 @@ public final class Class82 {
 			this.anInt2672 = arg0;
 			return this.anIntArrayArray26[0];
 		} else {
-			@Pc(24) LinkedHashEntry_Sub11 local24 = this.aClass4_Sub11Array1[arg0];
+			@Pc(24) LinkedEntry_Sub11 local24 = this.aClass4_Sub11Array1[arg0];
 			if (local24 == null) {
 				this.aBoolean243 = true;
 				if (this.anInt2667 > this.anInt2670) {
-					local24 = new LinkedHashEntry_Sub11(arg0, this.anInt2670);
+					local24 = new LinkedEntry_Sub11(arg0, this.anInt2670);
 					this.anInt2670++;
 				} else {
-					@Pc(59) LinkedHashEntry_Sub11 local59 = (LinkedHashEntry_Sub11) this.aClass183_18.method4139();
-					local24 = new LinkedHashEntry_Sub11(arg0, local59.anInt1037);
+					@Pc(59) LinkedEntry_Sub11 local59 = (LinkedEntry_Sub11) this.aClass183_18.method4139();
+					local24 = new LinkedEntry_Sub11(arg0, local59.anInt1037);
 					this.aClass4_Sub11Array1[local59.anInt1036] = null;
 					local59.popSelf();
 				}

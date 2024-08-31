@@ -147,7 +147,7 @@ public final class Class80_Sub1 extends Class80 implements MouseListener, MouseM
 
 	@OriginalMember(owner = "client!gf", name = "a", descriptor = "(IIBI)V")
 	private void method2243(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(3) int arg2) {
-		@Pc(7) LinkedHashEntry_Sub5_Sub1 local7 = new LinkedHashEntry_Sub5_Sub1();
+		@Pc(7) LinkedEntry_Sub5_Sub1 local7 = new LinkedEntry_Sub5_Sub1();
 		local7.anInt449 = arg0;
 		local7.anInt455 = arg1;
 		local7.anInt451 = arg2;
@@ -235,7 +235,7 @@ public final class Class80_Sub1 extends Class80 implements MouseListener, MouseM
 
 	@OriginalMember(owner = "client!gf", name = "a", descriptor = "(B)Lclient!os;")
 	@Override
-	public LinkedHashEntry_Sub5 method2232() {
-		return (LinkedHashEntry_Sub5) this.aClass183_16.method4136();
+	public LinkedEntry_Sub5 method2232() {
+		return (LinkedEntry_Sub5) this.aClass183_16.method4136();
 	}
 }

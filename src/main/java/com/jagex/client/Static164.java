@@ -85,7 +85,7 @@ public final class Static164 {
 		}
 		@Pc(17) int local17 = Static420.aClass80_1.method2234();
 		@Pc(23) int local23 = Static420.aClass80_1.method2230();
-		@Pc(28) LinkedHashEntry_Sub5 local28 = (LinkedHashEntry_Sub5) Static413.aClass183_47.method4140();
+		@Pc(28) LinkedEntry_Sub5 local28 = (LinkedEntry_Sub5) Static413.aClass183_47.method4140();
 		if (local28 != null) {
 			local17 = local28.method518();
 			local23 = local28.method519();
@@ -97,14 +97,14 @@ public final class Static164 {
 	}
 
 	@OriginalMember(owner = "client!ii", name = "a", descriptor = "(Ljava/awt/Canvas;I)Lclient!kd;")
-	public static LinkedHashEntry_Sub22 method3584(@OriginalArg(0) Canvas arg0) {
+	public static LinkedEntry_Sub22 method3584(@OriginalArg(0) Canvas arg0) {
 		try {
 			@Pc(6) Class local6 = Class.forName("Class4_Sub22_Sub1");
-			@Pc(10) LinkedHashEntry_Sub22 local10 = (LinkedHashEntry_Sub22) local6.getDeclaredConstructor().newInstance();
+			@Pc(10) LinkedEntry_Sub22 local10 = (LinkedEntry_Sub22) local6.getDeclaredConstructor().newInstance();
 			local10.method4606(arg0);
 			return local10;
 		} catch (@Pc(22) Throwable local22) {
-			@Pc(26) LinkedHashEntry_Sub22_Sub2 local26 = new LinkedHashEntry_Sub22_Sub2();
+			@Pc(26) LinkedEntry_Sub22_Sub2 local26 = new LinkedEntry_Sub22_Sub2();
 			local26.method4606(arg0);
 			return local26;
 		}
@@ -112,7 +112,7 @@ public final class Static164 {
 
 	@OriginalMember(owner = "client!ii", name = "a", descriptor = "(ZII)V")
 	public static void method3585(@OriginalArg(1) int arg0, @OriginalArg(2) int arg1) {
-		@Pc(8) LinkedHashEntry_Sub1_Sub11 local8 = Static405.method5222(arg1, 14);
+		@Pc(8) LinkedEntry_Sub1_Sub11 local8 = Static405.method5222(arg1, 14);
 		local8.method2604();
 		local8.anInt3083 = arg0;
 	}

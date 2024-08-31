@@ -19,7 +19,7 @@ public final class Static110 {
 	public static int anInt2374 = 0;
 
 	@OriginalMember(owner = "client!fj", name = "a", descriptor = "(Lclient!ba;III[Z)V")
-	public static void method2015(@OriginalArg(0) LinkedHashEntry_Sub1_Sub4 arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) boolean[] arg4) {
+	public static void method2015(@OriginalArg(0) LinkedEntry_Sub1_Sub4 arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) boolean[] arg4) {
 		if (Static417.aClass65Array4 == Static285.aClass65Array3) {
 			return;
 		}
@@ -51,7 +51,7 @@ public final class Static110 {
 	}
 
 	@OriginalMember(owner = "client!fj", name = "a", descriptor = "(ZIIILclient!bn;I)V")
-	public static void method2017(@OriginalArg(1) int arg0, @OriginalArg(2) int arg1, @OriginalArg(3) int arg2, @OriginalArg(4) LinkedHashEntry_Sub8 arg3, @OriginalArg(5) int arg4) {
+	public static void method2017(@OriginalArg(1) int arg0, @OriginalArg(2) int arg1, @OriginalArg(3) int arg2, @OriginalArg(4) LinkedEntry_Sub8 arg3, @OriginalArg(5) int arg4) {
 		if (arg3.anInt616 == -1 && arg3.anIntArray37 == null) {
 			return;
 		}
@@ -88,8 +88,8 @@ public final class Static110 {
 		} else if (arg3.anInt616 >= 0) {
 			@Pc(161) Class241 local161 = Static464.method5244(Static67.aClass76_19, arg3.anInt616, 0);
 			if (local161 != null) {
-				@Pc(168) LinkedHashEntry_Sub4_Sub1 local168 = local161.method5245().method3079(Static275.aClass261_1);
-				@Pc(173) LinkedHashEntry_Sub15_Sub3 local173 = Static462.method4489(local168, local149);
+				@Pc(168) LinkedEntry_Sub4_Sub1 local168 = local161.method5245().method3079(Static275.aClass261_1);
+				@Pc(173) LinkedEntry_Sub15_Sub3 local173 = Static462.method4489(local168, local149);
 				local173.method4461(-1);
 				Static360.aClass4_Sub15_Sub2_2.method2954(local173);
 				arg3.aClass4_Sub15_Sub3_2 = local173;
@@ -105,8 +105,8 @@ public final class Static110 {
 			@Pc(210) int local210 = (int) (Math.random() * (double) arg3.anIntArray37.length);
 			@Pc(218) Class241 local218 = Static464.method5244(Static67.aClass76_19, arg3.anIntArray37[local210], 0);
 			if (local218 != null) {
-				@Pc(225) LinkedHashEntry_Sub4_Sub1 local225 = local218.method5245().method3079(Static275.aClass261_1);
-				@Pc(230) LinkedHashEntry_Sub15_Sub3 local230 = Static462.method4489(local225, local149);
+				@Pc(225) LinkedEntry_Sub4_Sub1 local225 = local218.method5245().method3079(Static275.aClass261_1);
+				@Pc(230) LinkedEntry_Sub15_Sub3 local230 = Static462.method4489(local225, local149);
 				local230.method4461(0);
 				Static360.aClass4_Sub15_Sub2_2.method2954(local230);
 				arg3.anInt618 = (int) ((double) (arg3.anInt622 - arg3.anInt623) * Math.random()) + arg3.anInt623;

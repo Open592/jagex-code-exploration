@@ -27,7 +27,7 @@ public final class Static257 {
 
 	@OriginalMember(owner = "client!mv", name = "a", descriptor = "(ZZII)I")
 	public static int method3713(@OriginalArg(1) boolean arg0, @OriginalArg(2) int arg1, @OriginalArg(3) int arg2) {
-		@Pc(13) LinkedHashEntry_Sub25 local13 = Static175.method2834(arg0, arg2);
+		@Pc(13) LinkedEntry_Sub25 local13 = Static175.method2834(arg0, arg2);
 		if (local13 == null) {
 			return -1;
 		} else if (arg1 >= 0 && local13.anIntArray230.length > arg1) {

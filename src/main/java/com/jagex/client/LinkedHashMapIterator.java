@@ -7,30 +7,30 @@ import org.openrs2.deob.annotation.OriginalMember;
 public final class LinkedHashMapIterator {
 
 	@OriginalMember(owner = "client!ib", name = "m", descriptor = "Lclient!vu;")
-	private LinkedHashEntry nextFoundEntryPointer;
+	private LinkedEntry nextFoundEntryPointer;
 
 	@OriginalMember(owner = "client!ib", name = "n", descriptor = "J")
 	private long lastProvidedHashKey;
 
 	@OriginalMember(owner = "client!ib", name = "s", descriptor = "Lclient!vu;")
-	private LinkedHashEntry nextEntryPointer;
+	private LinkedEntry nextEntryPointer;
 
 	@OriginalMember(owner = "client!ib", name = "r", descriptor = "I")
 	private int currentBucketIndex = 0;
 
 	@OriginalMember(owner = "client!ib", name = "d", descriptor = "[Lclient!vu;")
-	public final LinkedHashEntry[] buckets;
+	public final LinkedEntry[] buckets;
 
 	@OriginalMember(owner = "client!ib", name = "a", descriptor = "I")
 	public final int size;
 
 	@OriginalMember(owner = "client!ib", name = "<init>", descriptor = "(I)V")
 	public LinkedHashMapIterator(int size) {
-		this.buckets = new LinkedHashEntry[size];
+		this.buckets = new LinkedEntry[size];
 		this.size = size;
 
 		for (int i = 0; i < size; i++) {
-			LinkedHashEntry sentinelEntry = this.buckets[i] = new LinkedHashEntry();
+			LinkedEntry sentinelEntry = this.buckets[i] = new LinkedEntry();
 
 			sentinelEntry.previous = sentinelEntry;
 			sentinelEntry.next = sentinelEntry;
@@ -38,16 +38,16 @@ public final class LinkedHashMapIterator {
 	}
 
 	@OriginalMember(owner = "client!ib", name = "a", descriptor = "(I)Lclient!vu;")
-	public LinkedHashEntry nextFoundEntry() {
+	public LinkedEntry nextFoundEntry() {
 		if (this.nextFoundEntryPointer == null) {
 			return null;
 		}
 
-		LinkedHashEntry sentinelEntry = this.buckets[(int) ((long) (this.size - 1) & this.lastProvidedHashKey)];
+		LinkedEntry sentinelEntry = this.buckets[(int) ((long) (this.size - 1) & this.lastProvidedHashKey)];
 
 		while (sentinelEntry != this.nextFoundEntryPointer) {
 			if (this.lastProvidedHashKey == this.nextFoundEntryPointer.hashKey) {
-				LinkedHashEntry ret = this.nextFoundEntryPointer;
+				LinkedEntry ret = this.nextFoundEntryPointer;
 
 				this.nextFoundEntryPointer = this.nextFoundEntryPointer.previous;
 
@@ -67,8 +67,8 @@ public final class LinkedHashMapIterator {
 		int count = 0;
 
 		for (int i = 0; i < this.size; i++) {
-			LinkedHashEntry sentinelEntry = this.buckets[i];
-			LinkedHashEntry currentEntry = sentinelEntry.previous;
+			LinkedEntry sentinelEntry = this.buckets[i];
+			LinkedEntry currentEntry = sentinelEntry.previous;
 
 			while (sentinelEntry != currentEntry) {
 				currentEntry = currentEntry.previous;
@@ -83,10 +83,10 @@ public final class LinkedHashMapIterator {
 	@OriginalMember(owner = "client!ib", name = "c", descriptor = "(I)V")
 	public void clear() {
 		for (int i = 0; i < this.size; i++) {
-			LinkedHashEntry sentinelEntry = this.buckets[i];
+			LinkedEntry sentinelEntry = this.buckets[i];
 
 			while (true) {
-				LinkedHashEntry currentEntry = sentinelEntry.previous;
+				LinkedEntry currentEntry = sentinelEntry.previous;
 
 				if (currentEntry == sentinelEntry) {
 					break;
@@ -101,10 +101,10 @@ public final class LinkedHashMapIterator {
 	}
 
 	@OriginalMember(owner = "client!ib", name = "a", descriptor = "(JI)Lclient!vu;")
-	public LinkedHashEntry get(long hashKey) {
+	public LinkedEntry get(long hashKey) {
 		this.lastProvidedHashKey = hashKey;
 
-		LinkedHashEntry sentinelEntry = this.buckets[(int) (hashKey & (long) (this.size - 1))];
+		LinkedEntry sentinelEntry = this.buckets[(int) (hashKey & (long) (this.size - 1))];
 
 		for (
 			this.nextFoundEntryPointer = sentinelEntry.previous;
@@ -112,7 +112,7 @@ public final class LinkedHashMapIterator {
 			this.nextFoundEntryPointer = this.nextFoundEntryPointer.previous
 		) {
 			if (hashKey == this.nextFoundEntryPointer.hashKey) {
-				LinkedHashEntry ret = this.nextFoundEntryPointer;
+				LinkedEntry ret = this.nextFoundEntryPointer;
 
 				this.nextFoundEntryPointer = this.nextFoundEntryPointer.previous;
 
@@ -126,12 +126,12 @@ public final class LinkedHashMapIterator {
 	}
 
 	@OriginalMember(owner = "client!ib", name = "a", descriptor = "(JILclient!vu;)V")
-	public void set(long hashKey, LinkedHashEntry entry) {
+	public void set(long hashKey, LinkedEntry entry) {
 		if (entry.next != null) {
 			entry.popSelf();
 		}
 
-		LinkedHashEntry sentinelEntry = this.buckets[(int) (hashKey & (long) (this.size - 1))];
+		LinkedEntry sentinelEntry = this.buckets[(int) (hashKey & (long) (this.size - 1))];
 
 		entry.previous = sentinelEntry;
 		entry.next = sentinelEntry.next;
@@ -141,8 +141,8 @@ public final class LinkedHashMapIterator {
 	}
 
 	@OriginalMember(owner = "client!ib", name = "b", descriptor = "(B)Lclient!vu;")
-	public LinkedHashEntry nextEntry() {
-		LinkedHashEntry ret;
+	public LinkedEntry nextEntry() {
+		LinkedEntry ret;
 
 		if (
 			this.currentBucketIndex > 0 &&
@@ -169,7 +169,7 @@ public final class LinkedHashMapIterator {
 	}
 
 	@OriginalMember(owner = "client!ib", name = "c", descriptor = "(B)Lclient!vu;")
-	public LinkedHashEntry head() {
+	public LinkedEntry head() {
 		this.currentBucketIndex = 0;
 
 		return this.nextEntry();
@@ -181,13 +181,13 @@ public final class LinkedHashMapIterator {
 	}
 
 	@OriginalMember(owner = "client!ib", name = "a", descriptor = "(I[Lclient!vu;)I")
-	public int toArray(LinkedHashEntry[] result) {
+	public int toArray(LinkedEntry[] result) {
 		int size = 0;
 
 		for (int i = 0; i < this.size; i++) {
-			LinkedHashEntry sentinelEntry = this.buckets[i];
+			LinkedEntry sentinelEntry = this.buckets[i];
 
-			for (LinkedHashEntry entry = sentinelEntry.previous; entry != sentinelEntry; entry = entry.previous) {
+			for (LinkedEntry entry = sentinelEntry.previous; entry != sentinelEntry; entry = entry.previous) {
 				result[size++] = entry;
 			}
 		}

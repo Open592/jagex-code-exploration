@@ -8,13 +8,13 @@ import org.openrs2.deob.annotation.OriginalMember;
 public final class Class269 {
 
 	@OriginalMember(owner = "client!wq", name = "b", descriptor = "Lclient!qo;")
-	public LinkedHashEntry_Sub15_Sub3 aClass4_Sub15_Sub3_4;
+	public LinkedEntry_Sub15_Sub3 aClass4_Sub15_Sub3_4;
 
 	@OriginalMember(owner = "client!wq", name = "c", descriptor = "Lclient!di;")
-	public LinkedHashEntry_Sub13 aClass4_Sub13_1;
+	public LinkedEntry_Sub13 aClass4_Sub13_1;
 
 	@OriginalMember(owner = "client!wq", name = "d", descriptor = "Lclient!js;")
-	public LinkedHashEntry_Sub4_Sub1 aClass4_Sub4_Sub1_2;
+	public LinkedEntry_Sub4_Sub1 aClass4_Sub4_Sub1_2;
 
 	@OriginalMember(owner = "client!wq", name = "f", descriptor = "Lclient!um;")
 	public Class241 aClass241_1;

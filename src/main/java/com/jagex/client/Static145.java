@@ -23,15 +23,15 @@ public final class Static145 {
 
 	@OriginalMember(owner = "client!hg", name = "a", descriptor = "(IIIIIIIIII)V")
 	public static void method2449(@OriginalArg(0) int arg0, @OriginalArg(2) int arg1, @OriginalArg(3) int arg2, @OriginalArg(4) int arg3, @OriginalArg(5) int arg4, @OriginalArg(7) int arg5, @OriginalArg(8) int arg6) {
-		@Pc(7) LinkedHashEntry_Sub9 local7 = null;
-		for (@Pc(12) LinkedHashEntry_Sub9 local12 = (LinkedHashEntry_Sub9) Static115.aClass183_15.method4140(); local12 != null; local12 = (LinkedHashEntry_Sub9) Static115.aClass183_15.method4144()) {
+		@Pc(7) LinkedEntry_Sub9 local7 = null;
+		for (@Pc(12) LinkedEntry_Sub9 local12 = (LinkedEntry_Sub9) Static115.aClass183_15.method4140(); local12 != null; local12 = (LinkedEntry_Sub9) Static115.aClass183_15.method4144()) {
 			if (arg5 == local12.anInt800 && arg0 == local12.anInt793 && arg4 == local12.anInt790 && arg3 == local12.anInt792) {
 				local7 = local12;
 				break;
 			}
 		}
 		if (local7 == null) {
-			local7 = new LinkedHashEntry_Sub9();
+			local7 = new LinkedEntry_Sub9();
 			local7.anInt793 = arg0;
 			local7.anInt790 = arg4;
 			local7.anInt792 = arg3;

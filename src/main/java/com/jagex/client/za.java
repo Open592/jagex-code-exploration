@@ -8,7 +8,7 @@ import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;
 
 @OriginalClass("client!za")
-public final class za extends LinkedHashEntry {
+public final class za extends LinkedEntry {
 
 	@OriginalMember(owner = "client!za", name = "nativeid", descriptor = "J")
 	private long nativeid;

@@ -9,7 +9,7 @@ public final class Static75 {
 	public static int anInt1532;
 
 	@OriginalMember(owner = "client!dq", name = "a", descriptor = "Lclient!ns;")
-	public static final LinkedHashEntry_Sub33 aClass4_Sub33_1 = new LinkedHashEntry_Sub33(0, -1);
+	public static final LinkedEntry_Sub33 aClass4_Sub33_1 = new LinkedEntry_Sub33(0, -1);
 
 	@OriginalMember(owner = "client!dq", name = "c", descriptor = "Lclient!bg;")
 	public static final Class22 aClass22_73 = new Class22(71, 6);
@@ -19,7 +19,7 @@ public final class Static75 {
 
 	@OriginalMember(owner = "client!dq", name = "a", descriptor = "(B)V")
 	public static void method1365() {
-		@Pc(8) LinkedHashEntry_Sub1_Sub11 local8 = Static405.method5222(0, 15);
+		@Pc(8) LinkedEntry_Sub1_Sub11 local8 = Static405.method5222(0, 15);
 		local8.method2608();
 	}
 }

@@ -66,7 +66,7 @@ public final class Static303 {
 		@Pc(19) int local19 = arg0 ? 32768 : 0;
 		@Pc(35) int local35 = local19 + (arg0 ? Static445.aClass81_2.anInt2663 : Static445.aClass81_2.anInt2661);
 		for (@Pc(37) int local37 = local19; local37 < local35; local37++) {
-			@Pc(44) LinkedHashEntry_Sub1_Sub3 local44 = Static445.aClass81_2.method2258(local37);
+			@Pc(44) LinkedEntry_Sub1_Sub3 local44 = Static445.aClass81_2.method2258(local37);
 			if (local44.aBoolean32 && local44.method229().toLowerCase().indexOf(local4) != -1) {
 				if (local13 >= 50) {
 					Static191.aShortArray66 = null;
@@ -95,7 +95,7 @@ public final class Static303 {
 
 	@OriginalMember(owner = "client!pg", name = "a", descriptor = "(III)V")
 	public static void method4114(@OriginalArg(1) int arg0, @OriginalArg(2) int arg1) {
-		@Pc(15) LinkedHashEntry_Sub1_Sub11 local15 = Static405.method5222(arg0, 13);
+		@Pc(15) LinkedEntry_Sub1_Sub11 local15 = Static405.method5222(arg0, 13);
 		local15.method2604();
 		local15.anInt3083 = arg1;
 	}

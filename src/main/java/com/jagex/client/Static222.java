@@ -26,7 +26,7 @@ public final class Static222 {
 	}
 
 	@OriginalMember(owner = "client!lg", name = "a", descriptor = "(ZLclient!ac;Lclient!ac;)V")
-	public static void method3353(@OriginalArg(1) LinkedHashEntry_Sub1 arg0, @OriginalArg(2) LinkedHashEntry_Sub1 arg1) {
+	public static void method3353(@OriginalArg(1) LinkedEntry_Sub1 arg0, @OriginalArg(2) LinkedEntry_Sub1 arg1) {
 		if (arg1.aClass4_Sub1_56 != null) {
 			arg1.method4662();
 		}

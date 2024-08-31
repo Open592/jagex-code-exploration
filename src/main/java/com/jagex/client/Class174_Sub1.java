@@ -9,7 +9,7 @@ public final class Class174_Sub1 extends Class174 {
 
 	@OriginalMember(owner = "client!or", name = "a", descriptor = "(ILclient!fq;)Lclient!fq;")
 	@Override
-	public LinkedHashEntry_Sub1_Sub8 method4040(@OriginalArg(1) LinkedHashEntry_Sub1_Sub8 arg0) {
-		return new LinkedHashEntry_Sub1_Sub8_Sub2(arg0.method3885(), arg0.anInt5084);
+	public LinkedEntry_Sub1_Sub8 method4040(@OriginalArg(1) LinkedEntry_Sub1_Sub8 arg0) {
+		return new LinkedEntry_Sub1_Sub8_Sub2(arg0.method3885(), arg0.anInt5084);
 	}
 }

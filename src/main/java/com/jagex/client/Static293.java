@@ -34,7 +34,7 @@ public final class Static293 {
 		@Pc(77) int local77 = Static420.aClass80_1.method2234();
 		@Pc(81) int local81 = Static420.aClass80_1.method2230();
 		@Pc(83) int local83 = 0;
-		for (@Pc(90) LinkedHashEntry_Sub39 local90 = (LinkedHashEntry_Sub39) Static206.aClass183_28.method4140(); local90 != null; local90 = (LinkedHashEntry_Sub39) Static206.aClass183_28.method4144()) {
+		for (@Pc(90) LinkedEntry_Sub39 local90 = (LinkedEntry_Sub39) Static206.aClass183_28.method4140(); local90 != null; local90 = (LinkedEntry_Sub39) Static206.aClass183_28.method4144()) {
 			@Pc(105) int local105 = (Static407.anInt6710 - local83 - 1) * 16 + local9 + 31;
 			@Pc(107) short local107 = -1;
 			if (local7 < local77 && local7 + local11 > local77 && local81 > local105 - 13 && local105 + 3 > local81 && local90.aBoolean512) {

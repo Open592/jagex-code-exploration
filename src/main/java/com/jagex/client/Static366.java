@@ -10,7 +10,7 @@ public final class Static366 {
 	public static Class76 aClass76_83;
 
 	@OriginalMember(owner = "client!sm", name = "c", descriptor = "Lclient!gd;")
-	public static final LinkedHashEntry_Sub20 aClass4_Sub20_1 = new LinkedHashEntry_Sub20(0, 0);
+	public static final LinkedEntry_Sub20 aClass4_Sub20_1 = new LinkedEntry_Sub20(0, 0);
 
 	@OriginalMember(owner = "client!sm", name = "a", descriptor = "(ZBLjava/lang/Object;)[B")
 	public static byte[] method4930(@OriginalArg(0) boolean arg0, @OriginalArg(2) Object arg1) {

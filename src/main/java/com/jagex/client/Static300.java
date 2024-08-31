@@ -10,8 +10,8 @@ public final class Static300 {
 	public static Class22 aClass22_246 = null;
 
 	@OriginalMember(owner = "client!pd", name = "a", descriptor = "(IIZBI)Lclient!vj;")
-	public static LinkedHashEntry_Sub43 method4092(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) boolean arg2, @OriginalArg(4) int arg3) {
-		@Pc(7) LinkedHashEntry_Sub43 local7 = new LinkedHashEntry_Sub43();
+	public static LinkedEntry_Sub43 method4092(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) boolean arg2, @OriginalArg(4) int arg3) {
+		@Pc(7) LinkedEntry_Sub43 local7 = new LinkedEntry_Sub43();
 		local7.anInt6981 = arg1;
 		local7.anInt6979 = arg0;
 		Static325.aLinkedHashMap_Iterator_29.set((long) arg3, local7);

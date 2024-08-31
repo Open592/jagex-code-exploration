@@ -222,7 +222,7 @@ public final class Class247 {
 	public int anInt6798 = -1;
 
 	@OriginalMember(owner = "client!uu", name = "Lb", descriptor = "Lclient!ns;")
-	public LinkedHashEntry_Sub33 aClass4_Sub33_2 = Static75.aClass4_Sub33_1;
+	public LinkedEntry_Sub33 aClass4_Sub33_2 = Static75.aClass4_Sub33_1;
 
 	@OriginalMember(owner = "client!uu", name = "o", descriptor = "I")
 	public int anInt6778 = 0;
@@ -456,12 +456,12 @@ public final class Class247 {
 	public void method5297(@OriginalArg(0) String arg0, @OriginalArg(1) int arg1) {
 		if (this.aLinkedHashMap_Iterator_39 == null) {
 			this.aLinkedHashMap_Iterator_39 = new LinkedHashMapIterator(16);
-			this.aLinkedHashMap_Iterator_39.set((long) arg1, new LinkedHashEntry_Sub7(arg0));
+			this.aLinkedHashMap_Iterator_39.set((long) arg1, new LinkedEntry_Sub7(arg0));
 			return;
 		}
-		@Pc(41) LinkedHashEntry_Sub7 local41 = (LinkedHashEntry_Sub7) this.aLinkedHashMap_Iterator_39.get((long) arg1);
+		@Pc(41) LinkedEntry_Sub7 local41 = (LinkedEntry_Sub7) this.aLinkedHashMap_Iterator_39.get((long) arg1);
 		if (local41 == null) {
-			this.aLinkedHashMap_Iterator_39.set((long) arg1, new LinkedHashEntry_Sub7(arg0));
+			this.aLinkedHashMap_Iterator_39.set((long) arg1, new LinkedEntry_Sub7(arg0));
 		} else {
 			local41.aString12 = arg0;
 		}
@@ -489,7 +489,7 @@ public final class Class247 {
 		if (this.aLinkedHashMap_Iterator_39 == null) {
 			return arg0;
 		} else {
-			@Pc(16) LinkedHashEntry_Sub37 local16 = (LinkedHashEntry_Sub37) this.aLinkedHashMap_Iterator_39.get((long) arg1);
+			@Pc(16) LinkedEntry_Sub37 local16 = (LinkedEntry_Sub37) this.aLinkedHashMap_Iterator_39.get((long) arg1);
 			return local16 == null ? arg0 : local16.anInt5426;
 		}
 	}
@@ -554,7 +554,7 @@ public final class Class247 {
 	@OriginalMember(owner = "client!uu", name = "a", descriptor = "(BI)V")
 	public void method5303(@OriginalArg(1) int arg0) {
 		if (this.aLinkedHashMap_Iterator_39 != null) {
-			@Pc(9) LinkedHashEntry local9 = this.aLinkedHashMap_Iterator_39.get((long) arg0);
+			@Pc(9) LinkedEntry local9 = this.aLinkedHashMap_Iterator_39.get((long) arg0);
 			if (local9 != null) {
 				local9.popSelf();
 			}
@@ -743,7 +743,7 @@ public final class Class247 {
 				this.anInt6789 = -1;
 			}
 		}
-		this.aClass4_Sub33_2 = new LinkedHashEntry_Sub33(local490, local593);
+		this.aClass4_Sub33_2 = new LinkedEntry_Sub33(local490, local593);
 		if (local9 >= 0) {
 			local628 = arg0.g1();
 			@Pc(786) int local786;
@@ -751,13 +751,13 @@ public final class Class247 {
 			for (@Pc(780) int local780 = 0; local780 < local628; local780++) {
 				local786 = arg0.g3();
 				local790 = arg0.g4();
-				this.aLinkedHashMap_Iterator_39.set((long) local786, new LinkedHashEntry_Sub37(local790));
+				this.aLinkedHashMap_Iterator_39.set((long) local786, new LinkedEntry_Sub37(local790));
 			}
 			local786 = arg0.g1();
 			for (local790 = 0; local790 < local786; local790++) {
 				@Pc(816) int local816 = arg0.g3();
 				@Pc(820) String local820 = arg0.gjstr2();
-				this.aLinkedHashMap_Iterator_39.set((long) local816, new LinkedHashEntry_Sub7(local820));
+				this.aLinkedHashMap_Iterator_39.set((long) local816, new LinkedEntry_Sub7(local820));
 			}
 		}
 		this.anObjectArray28 = this.method5302(arg0);
@@ -990,7 +990,7 @@ public final class Class247 {
 		if (this.aLinkedHashMap_Iterator_39 == null) {
 			return arg0;
 		} else {
-			@Pc(22) LinkedHashEntry_Sub7 local22 = (LinkedHashEntry_Sub7) this.aLinkedHashMap_Iterator_39.get((long) arg1);
+			@Pc(22) LinkedEntry_Sub7 local22 = (LinkedEntry_Sub7) this.aLinkedHashMap_Iterator_39.get((long) arg1);
 			return local22 == null ? arg0 : local22.aString12;
 		}
 	}
@@ -999,12 +999,12 @@ public final class Class247 {
 	public void method5315(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1) {
 		if (this.aLinkedHashMap_Iterator_39 == null) {
 			this.aLinkedHashMap_Iterator_39 = new LinkedHashMapIterator(16);
-			this.aLinkedHashMap_Iterator_39.set((long) arg0, new LinkedHashEntry_Sub37(arg1));
+			this.aLinkedHashMap_Iterator_39.set((long) arg0, new LinkedEntry_Sub37(arg1));
 			return;
 		}
-		@Pc(31) LinkedHashEntry_Sub37 local31 = (LinkedHashEntry_Sub37) this.aLinkedHashMap_Iterator_39.get((long) arg0);
+		@Pc(31) LinkedEntry_Sub37 local31 = (LinkedEntry_Sub37) this.aLinkedHashMap_Iterator_39.get((long) arg0);
 		if (local31 == null) {
-			this.aLinkedHashMap_Iterator_39.set((long) arg0, new LinkedHashEntry_Sub37(arg1));
+			this.aLinkedHashMap_Iterator_39.set((long) arg0, new LinkedEntry_Sub37(arg1));
 		} else {
 			local31.anInt5426 = arg1;
 		}

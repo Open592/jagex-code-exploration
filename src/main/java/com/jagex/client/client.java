@@ -290,7 +290,7 @@ public final class client extends GameShell {
 		}
 		if (Static293.anInt5286 == 3) {
 			for (local98 = 0; local98 < Static229.anInt4407; local98++) {
-				@Pc(394) Rectangle local394 = LinkedHashEntry_Sub6_Sub23.aRectangleArray1[local98];
+				@Pc(394) Rectangle local394 = LinkedEntry_Sub6_Sub23.aRectangleArray1[local98];
 				if (Static65.aBooleanArray9[local98]) {
 					Static122.aClass19_16.method4293(local394.x, local394.width, local394.y, -1996553985, local394.height);
 				} else if (Static263.aBooleanArray15[local98]) {
@@ -306,7 +306,7 @@ public final class client extends GameShell {
 			for (local102 = 0; local102 < Static229.anInt4407; local102++) {
 				if (Static263.aBooleanArray15[local102]) {
 					Static263.aBooleanArray15[local102] = false;
-					Static367.aRectangleArray2[local98++] = LinkedHashEntry_Sub6_Sub23.aRectangleArray1[local102];
+					Static367.aRectangleArray2[local98++] = LinkedEntry_Sub6_Sub23.aRectangleArray1[local102];
 				}
 			}
 			Static122.aClass19_16.method4290(Static367.aRectangleArray2, local98);
@@ -437,19 +437,19 @@ public final class client extends GameShell {
 			}
 		}
 		while (true) {
-			@Pc(311) LinkedHashEntry_Sub34 local311;
+			@Pc(311) LinkedEntry_Sub34 local311;
 			@Pc(316) Class247 local316;
 			@Pc(327) Class247 local327;
 			do {
-				local311 = (LinkedHashEntry_Sub34) Static237.aClass183_52.method4136();
+				local311 = (LinkedEntry_Sub34) Static237.aClass183_52.method4136();
 				if (local311 == null) {
 					while (true) {
 						do {
-							local311 = (LinkedHashEntry_Sub34) Static39.aClass183_3.method4136();
+							local311 = (LinkedEntry_Sub34) Static39.aClass183_3.method4136();
 							if (local311 == null) {
 								while (true) {
 									do {
-										local311 = (LinkedHashEntry_Sub34) Static291.aClass183_35.method4136();
+										local311 = (LinkedEntry_Sub34) Static291.aClass183_35.method4136();
 										if (local311 == null) {
 											if (Static281.aClass247_12 != null) {
 												Static1.method3();
@@ -538,7 +538,7 @@ public final class client extends GameShell {
 				}
 			}
 		}
-		for (@Pc(168) LinkedHashEntry_Sub5 local168 = Static420.aClass80_1.method2232(); local168 != null; local168 = Static420.aClass80_1.method2232()) {
+		for (@Pc(168) LinkedEntry_Sub5 local168 = Static420.aClass80_1.method2232(); local168 != null; local168 = Static420.aClass80_1.method2232()) {
 			@Pc(174) int local174 = local168.method515();
 			if (local174 == -1) {
 				Static348.aClass183_42.method4137(local168);

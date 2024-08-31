@@ -81,9 +81,9 @@ public final class Static167 {
 		if (Static334.anInt5766 != -1) {
 			Static201.method4602(Static334.anInt5766);
 		}
-		for (@Pc(5778) LinkedHashEntry_Sub43 local5778 = (LinkedHashEntry_Sub43) Static325.aLinkedHashMap_Iterator_29.head(); local5778 != null; local5778 = (LinkedHashEntry_Sub43) Static325.aLinkedHashMap_Iterator_29.nextEntry()) {
+		for (@Pc(5778) LinkedEntry_Sub43 local5778 = (LinkedEntry_Sub43) Static325.aLinkedHashMap_Iterator_29.head(); local5778 != null; local5778 = (LinkedEntry_Sub43) Static325.aLinkedHashMap_Iterator_29.nextEntry()) {
 			if (!local5778.hasNext()) {
-				local5778 = (LinkedHashEntry_Sub43) Static325.aLinkedHashMap_Iterator_29.head();
+				local5778 = (LinkedEntry_Sub43) Static325.aLinkedHashMap_Iterator_29.head();
 				if (local5778 == null) {
 					break;
 				}

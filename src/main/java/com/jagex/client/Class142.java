@@ -9,7 +9,7 @@ import org.openrs2.deob.annotation.Pc;
 public final class Class142 {
 
 	@OriginalMember(owner = "client!lt", name = "f", descriptor = "Lclient!ac;")
-	private LinkedHashEntry_Sub1 aClass4_Sub1_42 = new LinkedHashEntry_Sub1();
+	private LinkedEntry_Sub1 aClass4_Sub1_42 = new LinkedEntry_Sub1();
 
 	@OriginalMember(owner = "client!lt", name = "j", descriptor = "Lclient!tn;")
 	private final Class229 aClass229_3 = new Class229();
@@ -34,9 +34,9 @@ public final class Class142 {
 	}
 
 	@OriginalMember(owner = "client!lt", name = "a", descriptor = "(JLclient!ac;I)V")
-	public void method3480(@OriginalArg(0) long arg0, @OriginalArg(1) LinkedHashEntry_Sub1 arg1) {
+	public void method3480(@OriginalArg(0) long hashKey, @OriginalArg(1) LinkedEntry_Sub1 entry) {
 		if (this.anInt4441 == 0) {
-			@Pc(11) LinkedHashEntry_Sub1 local11 = this.aClass229_3.method5091();
+			@Pc(11) LinkedEntry_Sub1 local11 = this.aClass229_3.method5091();
 			local11.popSelf();
 			local11.method4662();
 			if (local11 == this.aClass4_Sub1_42) {
@@ -47,13 +47,13 @@ public final class Class142 {
 		} else {
 			this.anInt4441--;
 		}
-		this.aLinkedHashMap_Iterator_19.set(arg0, arg1);
-		this.aClass229_3.method5088(arg1);
+		this.aLinkedHashMap_Iterator_19.set(hashKey, entry);
+		this.aClass229_3.method5088(entry);
 	}
 
 	@OriginalMember(owner = "client!lt", name = "a", descriptor = "(JB)Lclient!ac;")
-	public LinkedHashEntry_Sub1 method3483(@OriginalArg(0) long arg0) {
-		@Pc(10) LinkedHashEntry_Sub1 local10 = (LinkedHashEntry_Sub1) this.aLinkedHashMap_Iterator_19.get(arg0);
+	public LinkedEntry_Sub1 method3483(@OriginalArg(0) long arg0) {
+		@Pc(10) LinkedEntry_Sub1 local10 = (LinkedEntry_Sub1) this.aLinkedHashMap_Iterator_19.get(arg0);
 		if (local10 != null) {
 			this.aClass229_3.method5088(local10);
 		}
@@ -64,7 +64,7 @@ public final class Class142 {
 	public void method3484() {
 		this.aClass229_3.method5087();
 		this.aLinkedHashMap_Iterator_19.clear();
-		this.aClass4_Sub1_42 = new LinkedHashEntry_Sub1();
+		this.aClass4_Sub1_42 = new LinkedEntry_Sub1();
 		this.anInt4441 = this.anInt4442;
 	}
 }

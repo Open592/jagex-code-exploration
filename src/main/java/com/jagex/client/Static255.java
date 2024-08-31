@@ -11,7 +11,7 @@ public final class Static255 {
 
 	@OriginalMember(owner = "client!mt", name = "a", descriptor = "(IIB)V")
 	public static void method3686(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1) {
-		@Pc(13) LinkedHashEntry_Sub1_Sub11 local13 = Static405.method5222(arg1, 7);
+		@Pc(13) LinkedEntry_Sub1_Sub11 local13 = Static405.method5222(arg1, 7);
 		local13.method2604();
 		local13.anInt3083 = arg0;
 	}

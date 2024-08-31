@@ -12,7 +12,7 @@ public final class Class88 {
 	public boolean aBoolean250 = false;
 
 	@OriginalMember(owner = "client!gr", name = "e", descriptor = "Lclient!nk;")
-	public LinkedHashEntry_Sub32 aClass4_Sub32_1 = null;
+	public LinkedEntry_Sub32 aClass4_Sub32_1 = null;
 
 	@OriginalMember(owner = "client!gr", name = "o", descriptor = "Z")
 	public boolean aBoolean251 = false;
@@ -42,7 +42,7 @@ public final class Class88 {
 	public byte[] aByteArray28;
 
 	@OriginalMember(owner = "client!gr", name = "<init>", descriptor = "([BLclient!nk;)V")
-	public Class88(@OriginalArg(0) byte[] arg0, @OriginalArg(1) LinkedHashEntry_Sub32 arg1) {
+	public Class88(@OriginalArg(0) byte[] arg0, @OriginalArg(1) LinkedEntry_Sub32 arg1) {
 		this.aClass4_Sub32_1 = arg1;
 		try {
 			@Pc(24) Packet local24 = new Packet(arg0);

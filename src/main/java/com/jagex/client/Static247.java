@@ -33,8 +33,8 @@ public final class Static247 {
 	}
 
 	@OriginalMember(owner = "client!ml", name = "a", descriptor = "(ILclient!qm;IZ)V")
-	public static void method3617(@OriginalArg(0) int arg0, @OriginalArg(1) LinkedHashEntry_Sub39 arg1, @OriginalArg(2) int arg2) {
-		if (arg1 == null || arg1 == Static206.aClass183_28.aLinkedHashEntry_207) {
+	public static void method3617(@OriginalArg(0) int arg0, @OriginalArg(1) LinkedEntry_Sub39 arg1, @OriginalArg(2) int arg2) {
+		if (arg1 == null || arg1 == Static206.aClass183_28.aLinkedEntry_207) {
 			return;
 		}
 		@Pc(15) int local15 = arg1.anInt5696;
@@ -240,7 +240,7 @@ public final class Static247 {
 			local895 = Static378.method3230(local18, local15);
 			if (local895 != null) {
 				Static336.method5139();
-				@Pc(902) LinkedHashEntry_Sub33 local902 = Static53.method900(local895);
+				@Pc(902) LinkedEntry_Sub33 local902 = Static53.method900(local895);
 				Static286.method3975(local902.anInt5110, local902.method3911(), local895);
 				Static388.aString62 = Static329.method4431(local895);
 				if (Static388.aString62 == null) {

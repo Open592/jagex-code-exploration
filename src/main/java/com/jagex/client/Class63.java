@@ -9,7 +9,7 @@ import org.openrs2.deob.annotation.Pc;
 public final class Class63 {
 
 	@OriginalMember(owner = "client!em", name = "e", descriptor = "Lclient!vu;")
-	private LinkedHashEntry aLinkedHashEntry_70;
+	private LinkedEntry aLinkedEntry_70;
 
 	@OriginalMember(owner = "client!em", name = "f", descriptor = "Lclient!pk;")
 	private Class183 aClass183_5;
@@ -24,25 +24,25 @@ public final class Class63 {
 	}
 
 	@OriginalMember(owner = "client!em", name = "a", descriptor = "(Z)Lclient!vu;")
-	public LinkedHashEntry method1611() {
-		@Pc(13) LinkedHashEntry local13 = this.aClass183_5.aLinkedHashEntry_207.previous;
-		if (local13 == this.aClass183_5.aLinkedHashEntry_207) {
-			this.aLinkedHashEntry_70 = null;
+	public LinkedEntry method1611() {
+		@Pc(13) LinkedEntry local13 = this.aClass183_5.aLinkedEntry_207.previous;
+		if (local13 == this.aClass183_5.aLinkedEntry_207) {
+			this.aLinkedEntry_70 = null;
 			return null;
 		} else {
-			this.aLinkedHashEntry_70 = local13.previous;
+			this.aLinkedEntry_70 = local13.previous;
 			return local13;
 		}
 	}
 
 	@OriginalMember(owner = "client!em", name = "a", descriptor = "(B)Lclient!vu;")
-	public LinkedHashEntry method1612() {
-		@Pc(12) LinkedHashEntry local12 = this.aLinkedHashEntry_70;
-		if (this.aClass183_5.aLinkedHashEntry_207 == local12) {
-			this.aLinkedHashEntry_70 = null;
+	public LinkedEntry method1612() {
+		@Pc(12) LinkedEntry local12 = this.aLinkedEntry_70;
+		if (this.aClass183_5.aLinkedEntry_207 == local12) {
+			this.aLinkedEntry_70 = null;
 			return null;
 		} else {
-			this.aLinkedHashEntry_70 = local12.previous;
+			this.aLinkedEntry_70 = local12.previous;
 			return local12;
 		}
 	}

@@ -170,11 +170,11 @@ public final class Class101 {
 							for (local88 = 0; local88 < local82; local88++) {
 								@Pc(222) boolean local222 = arg0.g1() == 1;
 								@Pc(226) int local226 = arg0.g3();
-								@Pc(235) LinkedHashEntry local235;
+								@Pc(235) LinkedEntry local235;
 								if (local222) {
-									local235 = new LinkedHashEntry_Sub7(arg0.gStringCP1252ToUTF8());
+									local235 = new LinkedEntry_Sub7(arg0.gStringCP1252ToUTF8());
 								} else {
-									local235 = new LinkedHashEntry_Sub37(arg0.g4());
+									local235 = new LinkedEntry_Sub37(arg0.g4());
 								}
 								this.aLinkedHashMap_Iterator_15.set((long) local226, local235);
 							}

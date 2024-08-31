@@ -16,10 +16,10 @@ public final class Static405 {
 	public static int anInt6682 = 0;
 
 	@OriginalMember(owner = "client!uk", name = "a", descriptor = "(IBI)Lclient!hp;")
-	public static LinkedHashEntry_Sub1_Sub11 method5222(@OriginalArg(0) int arg0, @OriginalArg(2) int arg1) {
-		@Pc(20) LinkedHashEntry_Sub1_Sub11 local20 = (LinkedHashEntry_Sub1_Sub11) Static34.A_ITERABLE_HASH_MAP___4.get((long) arg1 << 32 | (long) arg0);
+	public static LinkedEntry_Sub1_Sub11 method5222(@OriginalArg(0) int arg0, @OriginalArg(2) int arg1) {
+		@Pc(20) LinkedEntry_Sub1_Sub11 local20 = (LinkedEntry_Sub1_Sub11) Static34.A_ITERABLE_HASH_MAP___4.get((long) arg1 << 32 | (long) arg0);
 		if (local20 == null) {
-			local20 = new LinkedHashEntry_Sub1_Sub11(arg1, arg0);
+			local20 = new LinkedEntry_Sub1_Sub11(arg1, arg0);
 			Static34.A_ITERABLE_HASH_MAP___4.set(local20.hashKey, local20);
 		}
 		return local20;
@@ -50,7 +50,7 @@ public final class Static405 {
 
 	@OriginalMember(owner = "client!uk", name = "c", descriptor = "(II)V")
 	public static void method5228(@OriginalArg(1) int arg0) {
-		@Pc(1) LinkedHashEntry_Sub1_Sub4 local1 = null;
+		@Pc(1) LinkedEntry_Sub1_Sub4 local1 = null;
 		for (@Pc(3) int local3 = 1; local3 < arg0; local3++) {
 			@Pc(8) Class65 local8 = Static67.aClass65Array1[local3];
 			if (local8 != null) {

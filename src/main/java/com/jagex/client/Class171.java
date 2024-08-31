@@ -27,11 +27,11 @@ public final class Class171 {
 	}
 
 	@OriginalMember(owner = "client!oj", name = "a", descriptor = "(III[I)Lclient!js;")
-	private LinkedHashEntry_Sub4_Sub1 method3970(@OriginalArg(0) int arg0, @OriginalArg(2) int arg1, @OriginalArg(3) int[] arg2) {
+	private LinkedEntry_Sub4_Sub1 method3970(@OriginalArg(0) int arg0, @OriginalArg(2) int arg1, @OriginalArg(3) int[] arg2) {
 		@Pc(15) int local15 = (arg0 << 4 & 0xFFF4 | arg0 >>> 12) ^ arg1;
 		@Pc(21) int local21 = local15 | arg0 << 16;
 		@Pc(24) long local24 = (long) local21;
-		@Pc(31) LinkedHashEntry_Sub4_Sub1 local31 = (LinkedHashEntry_Sub4_Sub1) this.aLinkedHashMap_Iterator_26.get(local24);
+		@Pc(31) LinkedEntry_Sub4_Sub1 local31 = (LinkedEntry_Sub4_Sub1) this.aLinkedHashMap_Iterator_26.get(local24);
 		if (local31 != null) {
 			return local31;
 		} else if (arg2 == null || arg2[0] > 0) {
@@ -51,15 +51,15 @@ public final class Class171 {
 	}
 
 	@OriginalMember(owner = "client!oj", name = "a", descriptor = "(I[IBI)Lclient!js;")
-	private LinkedHashEntry_Sub4_Sub1 method3972(@OriginalArg(0) int arg0, @OriginalArg(1) int[] arg1, @OriginalArg(3) int arg2) {
+	private LinkedEntry_Sub4_Sub1 method3972(@OriginalArg(0) int arg0, @OriginalArg(1) int[] arg1, @OriginalArg(3) int arg2) {
 		@Pc(15) int local15 = arg2 ^ (arg0 << 4 & 0xFFF2 | arg0 >>> 12);
 		@Pc(26) int local26 = local15 | arg0 << 16;
 		@Pc(31) long local31 = (long) local26 ^ 0x100000000L;
-		@Pc(38) LinkedHashEntry_Sub4_Sub1 local38 = (LinkedHashEntry_Sub4_Sub1) this.aLinkedHashMap_Iterator_26.get(local31);
+		@Pc(38) LinkedEntry_Sub4_Sub1 local38 = (LinkedEntry_Sub4_Sub1) this.aLinkedHashMap_Iterator_26.get(local31);
 		if (local38 != null) {
 			return local38;
 		} else if (arg1 == null || arg1[0] > 0) {
-			@Pc(57) LinkedHashEntry_Sub13 local57 = (LinkedHashEntry_Sub13) this.aLinkedHashMap_Iterator_25.get(local31);
+			@Pc(57) LinkedEntry_Sub13 local57 = (LinkedEntry_Sub13) this.aLinkedHashMap_Iterator_25.get(local31);
 			if (local57 == null) {
 				local57 = Static68.method1318(this.aClass76_56, arg0, arg2);
 				if (local57 == null) {
@@ -81,7 +81,7 @@ public final class Class171 {
 	}
 
 	@OriginalMember(owner = "client!oj", name = "a", descriptor = "([III)Lclient!js;")
-	public LinkedHashEntry_Sub4_Sub1 method3973(@OriginalArg(0) int[] arg0, @OriginalArg(1) int arg1) {
+	public LinkedEntry_Sub4_Sub1 method3973(@OriginalArg(0) int[] arg0, @OriginalArg(1) int arg1) {
 		if (this.aClass76_56.method2100() == 1) {
 			return this.method3972(0, arg0, arg1);
 		} else if (this.aClass76_56.method2108(arg1) == 1) {
@@ -92,7 +92,7 @@ public final class Class171 {
 	}
 
 	@OriginalMember(owner = "client!oj", name = "b", descriptor = "([III)Lclient!js;")
-	public LinkedHashEntry_Sub4_Sub1 method3976(@OriginalArg(0) int[] arg0, @OriginalArg(2) int arg1) {
+	public LinkedEntry_Sub4_Sub1 method3976(@OriginalArg(0) int[] arg0, @OriginalArg(2) int arg1) {
 		if (this.aClass76_57.method2100() == 1) {
 			return this.method3970(0, arg1, arg0);
 		} else if (this.aClass76_57.method2108(arg1) == 1) {

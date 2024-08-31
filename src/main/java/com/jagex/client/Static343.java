@@ -91,7 +91,7 @@ public final class Static343 {
 
 	@OriginalMember(owner = "client!ri", name = "a", descriptor = "(II)V")
 	public static void method750(@OriginalArg(1) int arg0) {
-		@Pc(13) LinkedHashEntry_Sub1_Sub11 local13 = Static405.method5222(arg0, 9);
+		@Pc(13) LinkedEntry_Sub1_Sub11 local13 = Static405.method5222(arg0, 9);
 		local13.method2608();
 	}
 }
