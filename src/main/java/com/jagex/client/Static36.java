@@ -13,11 +13,11 @@ public final class Static36 {
 	public static Message aClass199_3;
 
 	@OriginalMember(owner = "client!bp", name = "e", descriptor = "[Lclient!pt;")
-	public static final LinkedEntry_Sub1_Sub17[] aClass4_Sub1_Sub17Array4 = new LinkedEntry_Sub1_Sub17[14];
+	public static final ContextualEntry_Sub1_Sub17[] aClass4_Sub1_Sub17Array4 = new ContextualEntry_Sub1_Sub17[14];
 
 	@OriginalMember(owner = "client!bp", name = "a", descriptor = "(II)[B")
 	public static byte[] method643(@OriginalArg(1) int arg0) {
-		@Pc(12) LinkedEntry_Sub1_Sub15 local12 = (LinkedEntry_Sub1_Sub15) Static392.aClass142_3.method3483((long) arg0);
+		@Pc(12) ContextualEntry_Sub1_Sub15 local12 = (ContextualEntry_Sub1_Sub15) Static392.aClass142_3.method3483((long) arg0);
 		if (local12 == null) {
 			@Pc(25) byte[] local25 = new byte[512];
 			@Pc(31) Random local31 = new Random((long) arg0);
@@ -31,7 +31,7 @@ public final class Static36 {
 				local25[local60] = local25[local55];
 				local25[local55] = local25[511 - local48] = local64;
 			}
-			local12 = new LinkedEntry_Sub1_Sub15(local25);
+			local12 = new ContextualEntry_Sub1_Sub15(local25);
 			Static392.aClass142_3.method3480((long) arg0, local12);
 		}
 		return local12.aByteArray57;

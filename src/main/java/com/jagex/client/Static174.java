@@ -886,7 +886,7 @@ public final class Static174 {
 														local3138 = local2473 + 1;
 													}
 													@Pc(3173) Class16_Sub1_Sub2 local3173 = new Class16_Sub1_Sub2(local70, 0, Static24.anInt5323, local2473, local3138, local2494, Static13.method135(local2494, local2473, local2648) - local224, local2648, local1263, local1263, local1267, local1267, local228);
-													Static292.aClass183_36.method4137(new LinkedEntry_Sub1_Sub10(local3173));
+													Static292.aClass183_36.method4137(new ContextualEntry_Sub1_Sub10(local3173));
 												}
 											}
 											Static300.aClass22_246 = null;

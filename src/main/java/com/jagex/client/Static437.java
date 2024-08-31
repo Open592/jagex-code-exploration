@@ -298,7 +298,7 @@ public final class Static437 {
 			Static8.anIntArray7[Static292.anInt5255++ & 0x1F] = local489;
 		}
 		@Pc(840) Class247 local840;
-		for (@Pc(815) LinkedEntry_Sub1_Sub11 local815 = Static92.method1614(); local815 != null; local815 = Static92.method1614()) {
+		for (@Pc(815) ContextualEntry_Sub1_Sub11 local815 = Static92.method1614(); local815 != null; local815 = Static92.method1614()) {
 			local416 = local815.method2606();
 			local140 = local815.method2609();
 			if (local416 == 1) {

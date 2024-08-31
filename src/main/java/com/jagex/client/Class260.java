@@ -13,13 +13,13 @@ public final class Class260 {
 	private boolean aBoolean669;
 
 	@OriginalMember(owner = "client!wb", name = "w", descriptor = "Lclient!io;")
-	private LinkedEntry_Sub1_Sub13 aClass4_Sub1_Sub13_1;
+	private ContextualEntry_Sub1_Sub13 aClass4_Sub1_Sub13_1;
 
 	@OriginalMember(owner = "client!wb", name = "z", descriptor = "Lclient!af;")
 	private Class6_Sub1 aClass6_Sub1_7;
 
 	@OriginalMember(owner = "client!wb", name = "E", descriptor = "Lclient!io;")
-	private LinkedEntry_Sub1_Sub13 aClass4_Sub1_Sub13_2;
+	private ContextualEntry_Sub1_Sub13 aClass4_Sub1_Sub13_2;
 
 	@OriginalMember(owner = "client!wb", name = "b", descriptor = "I")
 	private int anInt7127 = 1;
@@ -167,12 +167,12 @@ public final class Class260 {
 				this.aClass6_Sub1_7 = null;
 			}
 			if (this.aClass150_6 != null) {
-				this.aClass4_Sub1_Sub13_2 = new LinkedEntry_Sub1_Sub13(this.aClass19_Sub2_42, 6402, this.anInt7128, this.anInt7127, this.aClass19_Sub2_42.anInt2272);
+				this.aClass4_Sub1_Sub13_2 = new ContextualEntry_Sub1_Sub13(this.aClass19_Sub2_42, 6402, this.anInt7128, this.anInt7127, this.aClass19_Sub2_42.anInt2272);
 			}
 			if (this.aBoolean673) {
 				this.aClass6_Sub1_7 = new Class6_Sub1(this.aClass19_Sub2_42, 34037, 6402, this.anInt7128, this.anInt7127);
 			} else if (this.aClass4_Sub1_Sub13_2 == null) {
-				this.aClass4_Sub1_Sub13_2 = new LinkedEntry_Sub1_Sub13(this.aClass19_Sub2_42, 6402, this.anInt7128, this.anInt7127);
+				this.aClass4_Sub1_Sub13_2 = new ContextualEntry_Sub1_Sub13(this.aClass19_Sub2_42, 6402, this.anInt7128, this.anInt7127);
 			}
 			this.aBoolean671 = true;
 			this.aBoolean670 = false;
@@ -192,7 +192,7 @@ public final class Class260 {
 				this.aClass6_Sub1Array4[1] = null;
 			}
 			if (this.aClass150_6 != null) {
-				this.aClass4_Sub1_Sub13_1 = new LinkedEntry_Sub1_Sub13(this.aClass19_Sub2_42, this.anInt7138, this.anInt7128, this.anInt7127, this.aClass19_Sub2_42.anInt2272);
+				this.aClass4_Sub1_Sub13_1 = new ContextualEntry_Sub1_Sub13(this.aClass19_Sub2_42, this.anInt7138, this.anInt7128, this.anInt7127, this.aClass19_Sub2_42.anInt2272);
 			}
 			this.aClass6_Sub1Array4[0] = new Class6_Sub1(this.aClass19_Sub2_42, 34037, this.anInt7138, this.anInt7128, this.anInt7127);
 			this.aClass6_Sub1Array4[1] = this.anInt7137 <= 1 ? null : new Class6_Sub1(this.aClass19_Sub2_42, 34037, this.anInt7138, this.anInt7128, this.anInt7127);

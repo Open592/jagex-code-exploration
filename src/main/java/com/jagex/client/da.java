@@ -135,7 +135,7 @@ public final class da extends Class110 implements Interface4 {
 	public native int WA();
 
 	@OriginalMember(owner = "client!da", name = "fa", descriptor = "(Lclient!ba;)Lclient!ba;")
-	public native LinkedEntry_Sub1_Sub4 fa(@OriginalArg(0) LinkedEntry_Sub1_Sub4 arg0);
+	public native ContextualEntry_Sub1_Sub4 fa(@OriginalArg(0) ContextualEntry_Sub1_Sub4 arg0);
 
 	@OriginalMember(owner = "client!da", name = "NA", descriptor = "()I")
 	public native int NA();

@@ -16,8 +16,8 @@ public final class Static211 {
 	public static final LinkedHashMapIterator A_ITERABLE_HASH_MAP___18 = new LinkedHashMapIterator(512);
 
 	@OriginalMember(owner = "client!kn", name = "a", descriptor = "(II)Lclient!ae;")
-	public static LinkedEntry_Sub1_Sub1 method3200(@OriginalArg(0) int arg0) {
-		@Pc(10) LinkedEntry_Sub1_Sub1 local10 = (LinkedEntry_Sub1_Sub1) Static48.aClass142_1.method3483((long) arg0);
+	public static ContextualEntry_Sub1_ method3200(@OriginalArg(0) int arg0) {
+		@Pc(10) ContextualEntry_Sub1_ local10 = (ContextualEntry_Sub1_) Static48.aClass142_1.method3483((long) arg0);
 		if (local10 != null) {
 			return local10;
 		}

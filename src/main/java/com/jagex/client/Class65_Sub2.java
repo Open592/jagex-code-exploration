@@ -155,7 +155,7 @@ public final class Class65_Sub2 extends Class65 {
 
 	@OriginalMember(owner = "client!oq", name = "p", descriptor = "(Lclient!ba;IIIIZ)V")
 	@Override
-	public void p(@OriginalArg(0) LinkedEntry_Sub1_Sub4 arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4, @OriginalArg(5) boolean arg5) {
+	public void p(@OriginalArg(0) ContextualEntry_Sub1_Sub4 arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4, @OriginalArg(5) boolean arg5) {
 		if (this.aClass236_2 != null && arg0 != null) {
 			@Pc(24) int local24 = arg1 - (arg2 * this.aClass19_Sub2_30.anInt2289 >> 8) >> this.aClass19_Sub2_30.anInt2275;
 			@Pc(39) int local39 = arg3 - (this.aClass19_Sub2_30.anInt2311 * arg2 >> 8) >> this.aClass19_Sub2_30.anInt2275;
@@ -165,18 +165,18 @@ public final class Class65_Sub2 extends Class65 {
 
 	@OriginalMember(owner = "client!oq", name = "k", descriptor = "(IILclient!ba;)Lclient!ba;")
 	@Override
-	public LinkedEntry_Sub1_Sub4 k(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) LinkedEntry_Sub1_Sub4 arg2) {
+	public ContextualEntry_Sub1_Sub4 k(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) ContextualEntry_Sub1_Sub4 arg2) {
 		if ((this.aByteArrayArray22[arg0][arg1] & 0x1) == 0) {
 			return null;
 		}
 		@Pc(24) int local24 = super.anInt5261 >> this.aClass19_Sub2_30.anInt2275;
-		@Pc(27) LinkedEntry_Sub1_Sub4_Sub1 local27 = (LinkedEntry_Sub1_Sub4_Sub1) arg2;
-		@Pc(43) LinkedEntry_Sub1_Sub4_Sub1 local43;
+		@Pc(27) ContextualEntry_Sub1_Sub4_ local27 = (ContextualEntry_Sub1_Sub4_) arg2;
+		@Pc(43) ContextualEntry_Sub1_Sub4_ local43;
 		if (local27 != null && local27.method2301(local24, local24)) {
 			local43 = local27;
 			local27.method2304();
 		} else {
-			local43 = new LinkedEntry_Sub1_Sub4_Sub1(this.aClass19_Sub2_30, local24, local24);
+			local43 = new ContextualEntry_Sub1_Sub4_(this.aClass19_Sub2_30, local24, local24);
 		}
 		local43.method2299(0, 0, local24, local24);
 		this.method4032(local43, arg0, arg1);
@@ -298,7 +298,7 @@ public final class Class65_Sub2 extends Class65 {
 
 	@OriginalMember(owner = "client!oq", name = "a", descriptor = "(Lclient!ba;IIIIZ)Z")
 	@Override
-	public boolean method4022(@OriginalArg(0) LinkedEntry_Sub1_Sub4 arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3) {
+	public boolean method4022(@OriginalArg(0) ContextualEntry_Sub1_Sub4 arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3) {
 		if (this.aClass236_2 == null || arg0 == null) {
 			return false;
 		} else {
@@ -376,7 +376,7 @@ public final class Class65_Sub2 extends Class65 {
 
 	@OriginalMember(owner = "client!oq", name = "b", descriptor = "(Lclient!ba;IIIIZ)V")
 	@Override
-	public void b(@OriginalArg(0) LinkedEntry_Sub1_Sub4 arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4, @OriginalArg(5) boolean arg5) {
+	public void b(@OriginalArg(0) ContextualEntry_Sub1_Sub4 arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4, @OriginalArg(5) boolean arg5) {
 		if (this.aClass236_2 != null && arg0 != null) {
 			@Pc(24) int local24 = arg1 - (arg2 * this.aClass19_Sub2_30.anInt2289 >> 8) >> this.aClass19_Sub2_30.anInt2275;
 			@Pc(39) int local39 = arg3 - (this.aClass19_Sub2_30.anInt2311 * arg2 >> 8) >> this.aClass19_Sub2_30.anInt2275;
@@ -391,7 +391,7 @@ public final class Class65_Sub2 extends Class65 {
 	}
 
 	@OriginalMember(owner = "client!oq", name = "a", descriptor = "(Lclient!gm;IBI)V")
-	private void method4032(@OriginalArg(0) LinkedEntry_Sub1_Sub4_Sub1 arg0, @OriginalArg(1) int arg1, @OriginalArg(3) int arg2) {
+	private void method4032(@OriginalArg(0) ContextualEntry_Sub1_Sub4_ arg0, @OriginalArg(1) int arg1, @OriginalArg(3) int arg2) {
 		@Pc(12) int[] local12 = this.anIntArrayArrayArray6[arg1][arg2];
 		@Pc(19) int[] local19 = this.anIntArrayArrayArray7[arg1][arg2];
 		@Pc(22) int local22 = local12.length;

@@ -122,7 +122,7 @@ public final class Static6 {
 		if (local179 > local163) {
 			local179 = local163;
 		}
-		@Pc(539) LinkedEntry_Sub1_Sub17 local539 = null;
+		@Pc(539) ContextualEntry_Sub1_Sub17 local539 = null;
 		if (arg12 != null) {
 			@Pc(546) int local546 = arg12.anIntArray295[arg10];
 			local539 = Static182.aClass55_1.method1391(local546 >> 16);

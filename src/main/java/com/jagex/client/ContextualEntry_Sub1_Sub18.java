@@ -6,7 +6,7 @@ import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;
 
 @OriginalClass("client!rk")
-public final class LinkedEntry_Sub1_Sub18 extends LinkedEntry_Sub1 {
+public final class ContextualEntry_Sub1_Sub18 extends ContextualEntry {
 
 	@OriginalMember(owner = "client!rk", name = "y", descriptor = "Lclient!ib;")
 	private LinkedHashMapIterator aLinkedHashMap_Iterator_35;

@@ -7,7 +7,7 @@ import org.openrs2.deob.annotation.Pc;
 public final class Static148 {
 
 	@OriginalMember(owner = "client!hj", name = "a", descriptor = "Lclient!cn;")
-	public static LinkedEntry_Sub1_Sub5 aClass4_Sub1_Sub5_3;
+	public static ContextualEntry_Sub1_Sub5 aClass4_Sub1_Sub5_3;
 
 	@OriginalMember(owner = "client!hj", name = "c", descriptor = "Lclient!pj;")
 	public static Class182 aClass182_3;
@@ -131,7 +131,7 @@ public final class Static148 {
 
 	@OriginalMember(owner = "client!hj", name = "a", descriptor = "(I)V")
 	public static void method4492(@OriginalArg(0) int arg0) {
-		aClass4_Sub1_Sub5_3 = (LinkedEntry_Sub1_Sub5) A_ITERABLE_HASH_MAP___30.get((long) arg0);
+		aClass4_Sub1_Sub5_3 = (ContextualEntry_Sub1_Sub5) A_ITERABLE_HASH_MAP___30.get((long) arg0);
 	}
 
 	@OriginalMember(owner = "client!hj", name = "a", descriptor = "(Lclient!ya;IIII)V")
@@ -323,8 +323,8 @@ public final class Static148 {
 	}
 
 	@OriginalMember(owner = "client!hj", name = "a", descriptor = "(II)Lclient!cn;")
-	public static LinkedEntry_Sub1_Sub5 method4494(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1) {
-		for (@Pc(4) LinkedEntry_Sub1_Sub5 local4 = (LinkedEntry_Sub1_Sub5) A_ITERABLE_HASH_MAP___30.head(); local4 != null; local4 = (LinkedEntry_Sub1_Sub5) A_ITERABLE_HASH_MAP___30.nextEntry()) {
+	public static ContextualEntry_Sub1_Sub5 method4494(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1) {
+		for (@Pc(4) ContextualEntry_Sub1_Sub5 local4 = (ContextualEntry_Sub1_Sub5) A_ITERABLE_HASH_MAP___30.head(); local4 != null; local4 = (ContextualEntry_Sub1_Sub5) A_ITERABLE_HASH_MAP___30.nextEntry()) {
 			if (local4.aBoolean95 && local4.method932(arg1, arg0)) {
 				return local4;
 			}
@@ -836,7 +836,7 @@ public final class Static148 {
 	@OriginalMember(owner = "client!hj", name = "b", descriptor = "(II)Lclient!tn;")
 	public static Class229 method4506(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1) {
 		@Pc(3) Class229 local3 = new Class229();
-		for (@Pc(8) LinkedEntry_Sub1_Sub5 local8 = (LinkedEntry_Sub1_Sub5) A_ITERABLE_HASH_MAP___30.head(); local8 != null; local8 = (LinkedEntry_Sub1_Sub5) A_ITERABLE_HASH_MAP___30.nextEntry()) {
+		for (@Pc(8) ContextualEntry_Sub1_Sub5 local8 = (ContextualEntry_Sub1_Sub5) A_ITERABLE_HASH_MAP___30.head(); local8 != null; local8 = (ContextualEntry_Sub1_Sub5) A_ITERABLE_HASH_MAP___30.nextEntry()) {
 			if (local8.aBoolean95 && local8.method932(arg1, arg0)) {
 				local3.method5088(local8);
 			}
@@ -918,8 +918,8 @@ public final class Static148 {
 	}
 
 	@OriginalMember(owner = "client!hj", name = "b", descriptor = "(I)Lclient!cn;")
-	public static LinkedEntry_Sub1_Sub5 method4511(@OriginalArg(0) int arg0) {
-		return (LinkedEntry_Sub1_Sub5) A_ITERABLE_HASH_MAP___30.get((long) arg0);
+	public static ContextualEntry_Sub1_Sub5 method4511(@OriginalArg(0) int arg0) {
+		return (ContextualEntry_Sub1_Sub5) A_ITERABLE_HASH_MAP___30.get((long) arg0);
 	}
 
 	@OriginalMember(owner = "client!hj", name = "a", descriptor = "(Lclient!ga;II)V")
@@ -954,7 +954,7 @@ public final class Static148 {
 		@Pc(21) int local21 = aClass76_73.method2099("details");
 		@Pc(26) int[] local26 = aClass76_73.method2124(local21);
 		for (@Pc(28) int local28 = 0; local28 < local26.length; local28++) {
-			@Pc(37) LinkedEntry_Sub1_Sub5 local37 = Static90.method1609(local21, local26[local28], aClass76_73);
+			@Pc(37) ContextualEntry_Sub1_Sub5 local37 = Static90.method1609(local21, local26[local28], aClass76_73);
 			A_ITERABLE_HASH_MAP___30.set((long) local37.anInt1012, local37);
 		}
 		Static347.method4678(true, false);

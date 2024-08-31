@@ -7,7 +7,7 @@ import org.openrs2.deob.annotation.OriginalMember;
 public final class Class17 {
 
 	@OriginalMember(owner = "client!b", name = "a", descriptor = "Lclient!ae;")
-	public LinkedEntry_Sub1_Sub1 aClass4_Sub1_Sub1_1;
+	public ContextualEntry_Sub1_ aClass4_Sub1_Sub1_1;
 
 	@OriginalMember(owner = "client!b", name = "d", descriptor = "[I")
 	public int[] anIntArray23;

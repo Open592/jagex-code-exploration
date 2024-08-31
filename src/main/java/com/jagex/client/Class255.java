@@ -21,7 +21,7 @@ public final class Class255 {
 	private int anInt7061;
 
 	@OriginalMember(owner = "client!vn", name = "D", descriptor = "Lclient!je;")
-	private LinkedEntry_Sub1_Sub6_Sub1 aClass4_Sub1_Sub6_Sub1_2;
+	private ContextualEntry_Sub1_Sub6_ aClass4_Sub1_Sub6_Sub1_2;
 
 	@OriginalMember(owner = "client!vn", name = "j", descriptor = "Lclient!tn;")
 	private final Class229 aClass229_7 = new Class229();
@@ -77,10 +77,10 @@ public final class Class255 {
 		this.aClass4_Sub1_Sub6_Sub1_2 = null;
 
 		while (true) {
-			@Pc(40) LinkedEntry_Sub1_Sub6_Sub1 local40 = (LinkedEntry_Sub1_Sub6_Sub1) this.aClass229_8.method5091();
+			@Pc(40) ContextualEntry_Sub1_Sub6_ local40 = (ContextualEntry_Sub1_Sub6_) this.aClass229_8.method5091();
 			if (local40 == null) {
 				while (true) {
-					local40 = (LinkedEntry_Sub1_Sub6_Sub1) this.aClass229_10.method5091();
+					local40 = (ContextualEntry_Sub1_Sub6_) this.aClass229_10.method5091();
 					if (local40 == null) {
 						if (this.aByte94 != 0) {
 							try {
@@ -165,10 +165,10 @@ public final class Class255 {
 	}
 
 	@OriginalMember(owner = "client!vn", name = "a", descriptor = "(IBBZI)Lclient!je;")
-	public LinkedEntry_Sub1_Sub6_Sub1 method5465(@OriginalArg(0) int arg0, @OriginalArg(1) byte arg1, @OriginalArg(3) boolean arg2, @OriginalArg(4) int arg3) {
+	public ContextualEntry_Sub1_Sub6_ method5465(@OriginalArg(0) int arg0, @OriginalArg(1) byte arg1, @OriginalArg(3) boolean arg2, @OriginalArg(4) int arg3) {
 		@Pc(19) long local19 = (long) ((arg0 << 16) + arg3);
-		@Pc(23) LinkedEntry_Sub1_Sub6_Sub1 local23 = new LinkedEntry_Sub1_Sub6_Sub1();
-		local23.aLong198 = local19;
+		@Pc(23) ContextualEntry_Sub1_Sub6_ local23 = new ContextualEntry_Sub1_Sub6_();
+		local23.context = local19;
 		local23.aBoolean384 = arg2;
 		local23.aByte24 = arg1;
 		if (arg2) {
@@ -236,17 +236,17 @@ public final class Class255 {
 		}
 		try {
 			this.serverConnection.checkConnectionHealth();
-			for (@Pc(76) LinkedEntry_Sub1_Sub6_Sub1 local76 = (LinkedEntry_Sub1_Sub6_Sub1) this.aClass229_7.method5089(); local76 != null; local76 = (LinkedEntry_Sub1_Sub6_Sub1) this.aClass229_7.method5092()) {
+			for (@Pc(76) ContextualEntry_Sub1_Sub6_ local76 = (ContextualEntry_Sub1_Sub6_) this.aClass229_7.method5089(); local76 != null; local76 = (ContextualEntry_Sub1_Sub6_) this.aClass229_7.method5092()) {
 				this.aPacket_8.pos = 0;
 				this.aPacket_8.p1(1);
-				this.aPacket_8.p3((int) local76.aLong198);
+				this.aPacket_8.p3((int) local76.context);
 				this.serverConnection.enqueueClientMessage(4, this.aPacket_8.data);
 				this.aClass229_8.method5088(local76);
 			}
-			for (@Pc(122) LinkedEntry_Sub1_Sub6_Sub1 local122 = (LinkedEntry_Sub1_Sub6_Sub1) this.aClass229_9.method5089(); local122 != null; local122 = (LinkedEntry_Sub1_Sub6_Sub1) this.aClass229_9.method5092()) {
+			for (@Pc(122) ContextualEntry_Sub1_Sub6_ local122 = (ContextualEntry_Sub1_Sub6_) this.aClass229_9.method5089(); local122 != null; local122 = (ContextualEntry_Sub1_Sub6_) this.aClass229_9.method5092()) {
 				this.aPacket_8.pos = 0;
 				this.aPacket_8.p1(0);
-				this.aPacket_8.p3((int) local122.aLong198);
+				this.aPacket_8.p3((int) local122.context);
 				this.serverConnection.enqueueClientMessage(4, this.aPacket_8.data);
 				this.aClass229_10.method5088(local122);
 			}
@@ -286,7 +286,7 @@ public final class Class255 {
 					this.aClass4_Sub1_Sub6_Sub1_2.aClass4_Sub12_4.pos += local226;
 					this.aClass4_Sub1_Sub6_Sub1_2.anInt3510 += local226;
 					if (this.aClass4_Sub1_Sub6_Sub1_2.aClass4_Sub12_4.pos == local219) {
-						this.aClass4_Sub1_Sub6_Sub1_2.method4662();
+						this.aClass4_Sub1_Sub6_Sub1_2.popContextEntry();
 						this.aClass4_Sub1_Sub6_Sub1_2.aBoolean381 = false;
 						this.aClass4_Sub1_Sub6_Sub1_2 = null;
 					} else if (this.aClass4_Sub1_Sub6_Sub1_2.anInt3510 == 512) {
@@ -314,12 +314,12 @@ public final class Class255 {
 							@Pc(468) int local468 = local459 & 0x7F;
 							@Pc(479) boolean local479 = (local459 & 0x80) != 0;
 							@Pc(486) long local486 = (long) ((local226 << 16) + local275);
-							@Pc(496) LinkedEntry_Sub1_Sub6_Sub1 local496;
+							@Pc(496) ContextualEntry_Sub1_Sub6_ local496;
 							if (local479) {
-								for (local496 = (LinkedEntry_Sub1_Sub6_Sub1) this.aClass229_10.method5089(); local496 != null && local496.aLong198 != local486; local496 = (LinkedEntry_Sub1_Sub6_Sub1) this.aClass229_10.method5092()) {
+								for (local496 = (ContextualEntry_Sub1_Sub6_) this.aClass229_10.method5089(); local496 != null && local496.context != local486; local496 = (ContextualEntry_Sub1_Sub6_) this.aClass229_10.method5092()) {
 								}
 							} else {
-								for (local496 = (LinkedEntry_Sub1_Sub6_Sub1) this.aClass229_8.method5089(); local496 != null && local496.aLong198 != local486; local496 = (LinkedEntry_Sub1_Sub6_Sub1) this.aClass229_8.method5092()) {
+								for (local496 = (ContextualEntry_Sub1_Sub6_) this.aClass229_8.method5089(); local496 != null && local496.context != local486; local496 = (ContextualEntry_Sub1_Sub6_) this.aClass229_8.method5092()) {
 								}
 							}
 							if (local496 == null) {

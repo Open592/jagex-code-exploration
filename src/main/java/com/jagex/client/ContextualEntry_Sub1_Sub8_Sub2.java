@@ -6,13 +6,13 @@ import org.openrs2.deob.annotation.OriginalClass;
 import org.openrs2.deob.annotation.OriginalMember;
 
 @OriginalClass("client!nq")
-public final class LinkedEntry_Sub1_Sub8_Sub2 extends LinkedEntry_Sub1_Sub8 {
+public final class ContextualEntry_Sub1_Sub8_Sub2 extends ContextualEntry_Sub1_Sub8 {
 
 	@OriginalMember(owner = "client!nq", name = "B", descriptor = "Ljava/lang/ref/SoftReference;")
 	private final SoftReference aSoftReference2;
 
 	@OriginalMember(owner = "client!nq", name = "<init>", descriptor = "(Ljava/lang/Object;I)V")
-	public LinkedEntry_Sub1_Sub8_Sub2(@OriginalArg(0) Object arg0, @OriginalArg(1) int arg1) {
+	public ContextualEntry_Sub1_Sub8_Sub2(@OriginalArg(0) Object arg0, @OriginalArg(1) int arg1) {
 		super(arg1);
 		this.aSoftReference2 = new SoftReference(arg0);
 	}

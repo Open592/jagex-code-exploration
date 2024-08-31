@@ -11,7 +11,7 @@ public final class Static156 {
 
 	@OriginalMember(owner = "client!ht", name = "a", descriptor = "(II)V")
 	public static void method2667(@OriginalArg(1) int arg0) {
-		@Pc(13) LinkedEntry_Sub1_Sub11 local13 = Static405.method5222(arg0, 10);
+		@Pc(13) ContextualEntry_Sub1_Sub11 local13 = Static405.method5222(arg0, 10);
 		local13.method2608();
 	}
 }

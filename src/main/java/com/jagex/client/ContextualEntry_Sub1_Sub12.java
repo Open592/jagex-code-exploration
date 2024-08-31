@@ -5,7 +5,7 @@ import org.openrs2.deob.annotation.OriginalClass;
 import org.openrs2.deob.annotation.OriginalMember;
 
 @OriginalClass("client!ij")
-public final class LinkedEntry_Sub1_Sub12 extends LinkedEntry_Sub1 {
+public final class ContextualEntry_Sub1_Sub12 extends ContextualEntry {
 
 	@OriginalMember(owner = "client!ij", name = "A", descriptor = "I")
 	public int anInt3218;
@@ -29,7 +29,7 @@ public final class LinkedEntry_Sub1_Sub12 extends LinkedEntry_Sub1 {
 	public final Class8 aClass8_1;
 
 	@OriginalMember(owner = "client!ij", name = "<init>", descriptor = "(Lclient!pf;Lclient!ao;)V")
-	public LinkedEntry_Sub1_Sub12(@OriginalArg(0) Class179 arg0, @OriginalArg(1) Class3_Sub2 arg1) {
+	public ContextualEntry_Sub1_Sub12(@OriginalArg(0) Class179 arg0, @OriginalArg(1) Class3_Sub2 arg1) {
 		this.aClass179_1 = arg0;
 		this.aClass8_1 = this.aClass179_1.method4106();
 		this.method2732();

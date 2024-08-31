@@ -69,7 +69,7 @@ public final class Static271 {
 	private static void method3886(@OriginalArg(0) LinkedEntry_Sub34 arg0, @OriginalArg(1) int arg1) {
 		@Pc(2) Object[] local2 = arg0.anObjectArray4;
 		@Pc(8) int local8 = (Integer) local2[0];
-		@Pc(12) LinkedEntry_Sub1_Sub1 local12 = Static211.method3200(local8);
+		@Pc(12) ContextualEntry_Sub1_ local12 = Static211.method3200(local8);
 		if (local12 == null) {
 			return;
 		}
@@ -2696,7 +2696,7 @@ public final class Static271 {
 	}
 
 	@OriginalMember(owner = "client!nr", name = "a", descriptor = "(Lclient!ae;I)V")
-	private static void method3896(@OriginalArg(0) LinkedEntry_Sub1_Sub1 arg0, @OriginalArg(1) int arg1) {
+	private static void method3896(@OriginalArg(0) ContextualEntry_Sub1_ arg0, @OriginalArg(1) int arg1) {
 		anInt5095 = 0;
 		anInt5092 = 0;
 		@Pc(5) int local5 = -1;
@@ -2810,7 +2810,7 @@ public final class Static271 {
 						@Pc(452) int local452;
 						if (local31 == 40) {
 							local54 = local11[local5];
-							@Pc(436) LinkedEntry_Sub1_Sub1 local436 = Static211.method3200(local54);
+							@Pc(436) ContextualEntry_Sub1_ local436 = Static211.method3200(local54);
 							if (local436 == null) {
 								throw new RuntimeException();
 							}
@@ -3129,7 +3129,7 @@ public final class Static271 {
 				aStringArray21[anInt5092++] = Static401.aClass62_1.method1607(local157).aString49;
 				return;
 			}
-			@Pc(589) LinkedEntry_Sub1_Sub16 local589;
+			@Pc(589) ContextualEntry_Sub1_Sub16 local589;
 			if (arg0 == 5051) {
 				local157 = anIntArray330[--anInt5095];
 				local589 = Static401.aClass62_1.method1607(local157);
@@ -3144,7 +3144,7 @@ public final class Static271 {
 				anInt5095 -= 2;
 				local157 = anIntArray330[anInt5095];
 				local192 = anIntArray330[anInt5095 + 1];
-				@Pc(634) LinkedEntry_Sub1_Sub16 local634 = Static401.aClass62_1.method1607(local157);
+				@Pc(634) ContextualEntry_Sub1_Sub16 local634 = Static401.aClass62_1.method1607(local157);
 				local95 = local634.anIntArray326[local192];
 				anIntArray330[anInt5095++] = local95;
 				return;
@@ -3173,7 +3173,7 @@ public final class Static271 {
 			}
 			if (arg0 == 5056) {
 				local157 = anIntArray330[--anInt5095];
-				@Pc(760) LinkedEntry_Sub1_Sub3 local760 = Static445.aClass81_2.method2258(local157);
+				@Pc(760) ContextualEntry_Sub1_Sub3 local760 = Static445.aClass81_2.method2258(local157);
 				if (local760.anIntArray16 == null) {
 					anIntArray330[anInt5095++] = 0;
 					return;
@@ -3294,7 +3294,7 @@ public final class Static271 {
 				local157 = anIntArray330[anInt5095];
 				local192 = anIntArray330[anInt5095 + 1];
 				local89 = anIntArray330[anInt5095 + 2];
-				@Pc(1265) LinkedEntry_Sub1_Sub3 local1265 = Static445.aClass81_2.method2258(local157);
+				@Pc(1265) ContextualEntry_Sub1_Sub3 local1265 = Static445.aClass81_2.method2258(local157);
 				if (local1265.method226(local192).anInt3060 != 0) {
 					throw new RuntimeException("bad command");
 				}
@@ -3371,7 +3371,7 @@ public final class Static271 {
 					Static231.method3474(-1, -1, anIntArray330[--anInt5095], false);
 					return;
 				}
-				@Pc(1554) LinkedEntry_Sub1_Sub5 local1554;
+				@Pc(1554) ContextualEntry_Sub1_Sub5 local1554;
 				if (arg0 == 5206) {
 					local157 = anIntArray330[--anInt5095];
 					local1554 = Static148.method4494(local157 >> 14 & 0x3FFF, local157 & 0x3FFF);
@@ -3382,7 +3382,7 @@ public final class Static271 {
 					anIntArray330[anInt5095++] = local1554.anInt1012;
 					return;
 				}
-				@Pc(1587) LinkedEntry_Sub1_Sub5 local1587;
+				@Pc(1587) ContextualEntry_Sub1_Sub5 local1587;
 				if (arg0 == 5207) {
 					local1587 = Static148.method4511(anIntArray330[--anInt5095]);
 					if (local1587 != null && local1587.aString15 != null) {
@@ -3469,7 +3469,7 @@ public final class Static271 {
 					local192 = anIntArray330[anInt5095 + 1];
 					@Pc(1963) Class229 local1963 = Static148.method4506(local157 >> 14 & 0x3FFF, local157 & 0x3FFF);
 					local1965 = false;
-					for (@Pc(1970) LinkedEntry_Sub1_Sub5 local1970 = (LinkedEntry_Sub1_Sub5) local1963.method5089(); local1970 != null; local1970 = (LinkedEntry_Sub1_Sub5) local1963.method5092()) {
+					for (@Pc(1970) ContextualEntry_Sub1_Sub5 local1970 = (ContextualEntry_Sub1_Sub5) local1963.method5089(); local1970 != null; local1970 = (ContextualEntry_Sub1_Sub5) local1963.method5092()) {
 						if (local1970.anInt1012 == local192) {
 							local1965 = true;
 							break;
@@ -4978,7 +4978,7 @@ public final class Static271 {
 
 	@OriginalMember(owner = "client!nr", name = "a", descriptor = "(Lclient!pn;II)V")
 	public static void method3899(@OriginalArg(0) Class186 arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2) {
-		@Pc(5) LinkedEntry_Sub1_Sub1 local5 = Static119.method2147(arg2, arg1, arg0);
+		@Pc(5) ContextualEntry_Sub1_ local5 = Static119.method2147(arg2, arg1, arg0);
 		if (local5 == null) {
 			return;
 		}

@@ -4,7 +4,7 @@ import org.openrs2.deob.annotation.OriginalClass;
 import org.openrs2.deob.annotation.OriginalMember;
 
 @OriginalClass("client!ec")
-public abstract class LinkedEntry_Sub1_Sub6 extends LinkedEntry_Sub1 {
+public abstract class ContextualEntry_Sub1_Sub6 extends ContextualEntry {
 
 	@OriginalMember(owner = "client!ec", name = "z", descriptor = "Z")
 	public boolean aBoolean382;

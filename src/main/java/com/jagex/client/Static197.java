@@ -11,7 +11,7 @@ import org.openrs2.deob.annotation.Pc;
 public final class Static197 {
 
 	@OriginalMember(owner = "client!ju", name = "H", descriptor = "Lclient!cn;")
-	public static LinkedEntry_Sub1_Sub5 aClass4_Sub1_Sub5_2;
+	public static ContextualEntry_Sub1_Sub5 aClass4_Sub1_Sub5_2;
 
 	@OriginalMember(owner = "client!ju", name = "K", descriptor = "Lclient!fs;")
 	public static Class76 aClass76_45;

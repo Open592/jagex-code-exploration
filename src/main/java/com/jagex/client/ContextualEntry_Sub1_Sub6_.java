@@ -4,7 +4,7 @@ import org.openrs2.deob.annotation.OriginalClass;
 import org.openrs2.deob.annotation.OriginalMember;
 
 @OriginalClass("client!je")
-public final class LinkedEntry_Sub1_Sub6_Sub1 extends LinkedEntry_Sub1_Sub6 {
+public final class ContextualEntry_Sub1_Sub6_ extends ContextualEntry_Sub1_Sub6 {
 
 	@OriginalMember(owner = "client!je", name = "I", descriptor = "Lclient!iv;")
 	public Packet aClass4_Sub12_4;

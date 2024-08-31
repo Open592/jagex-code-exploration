@@ -24,7 +24,7 @@ public final class Class114 implements Interface12 {
 		@Pc(13) int local13 = local10.anInt3914;
 		@Pc(16) int local16 = local10.anInt3919;
 		@Pc(19) int local19 = local10.anInt3915;
-		@Pc(26) int local26 = LinkedEntry_Sub1_Sub3.anIntArray17[local19 - local16];
+		@Pc(26) int local26 = ContextualEntry_Sub1_Sub3.anIntArray17[local19 - local16];
 		if (arg0 < 0 || local26 < arg0) {
 			arg0 = 0;
 		}
@@ -76,7 +76,7 @@ public final class Class114 implements Interface12 {
 		@Pc(18) int local18 = local15.anInt3914;
 		@Pc(21) int local21 = local15.anInt3919;
 		@Pc(24) int local24 = local15.anInt3915;
-		@Pc(30) int local30 = LinkedEntry_Sub1_Sub3.anIntArray17[local24 - local21];
+		@Pc(30) int local30 = ContextualEntry_Sub1_Sub3.anIntArray17[local24 - local21];
 		return this.anIntArray220[local18] >> local21 & local30;
 	}
 
@@ -103,7 +103,7 @@ public final class Class114 implements Interface12 {
 		@Pc(19) int local19 = local16.anInt3914;
 		@Pc(22) int local22 = local16.anInt3919;
 		@Pc(25) int local25 = local16.anInt3915;
-		@Pc(32) int local32 = LinkedEntry_Sub1_Sub3.anIntArray17[local25 - local22];
+		@Pc(32) int local32 = ContextualEntry_Sub1_Sub3.anIntArray17[local25 - local22];
 		if (arg1 < 0 || arg1 > local32) {
 			arg1 = 0;
 		}

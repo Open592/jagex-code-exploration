@@ -6,7 +6,7 @@ import org.openrs2.deob.annotation.OriginalClass;
 import org.openrs2.deob.annotation.OriginalMember;
 
 @OriginalClass("client!io")
-public final class LinkedEntry_Sub1_Sub13 extends LinkedEntry_Sub1 implements Interface9 {
+public final class ContextualEntry_Sub1_Sub13 extends ContextualEntry implements Interface9 {
 
 	@OriginalMember(owner = "client!io", name = "I", descriptor = "I")
 	private int anInt3284 = -1;
@@ -33,7 +33,7 @@ public final class LinkedEntry_Sub1_Sub13 extends LinkedEntry_Sub1 implements In
 	private final int anInt3277;
 
 	@OriginalMember(owner = "client!io", name = "<init>", descriptor = "(Lclient!fd;III)V")
-	public LinkedEntry_Sub1_Sub13(@OriginalArg(0) Class19_Sub2 arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3) {
+	public ContextualEntry_Sub1_Sub13(@OriginalArg(0) Class19_Sub2 arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3) {
 		this.anInt3283 = arg1;
 		this.anInt3281 = arg2;
 		this.anInt3280 = arg3;
@@ -46,7 +46,7 @@ public final class LinkedEntry_Sub1_Sub13 extends LinkedEntry_Sub1 implements In
 	}
 
 	@OriginalMember(owner = "client!io", name = "<init>", descriptor = "(Lclient!fd;IIII)V")
-	public LinkedEntry_Sub1_Sub13(@OriginalArg(0) Class19_Sub2 arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4) {
+	public ContextualEntry_Sub1_Sub13(@OriginalArg(0) Class19_Sub2 arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4) {
 		this.anInt3283 = arg1;
 		this.aClass19_Sub2_20 = arg0;
 		this.anInt3280 = arg3;

@@ -100,7 +100,7 @@ public final class Static449 {
 
 	@OriginalMember(owner = "client!wo", name = "a", descriptor = "(I)V")
 	public static void method5654() {
-		for (@Pc(16) LinkedEntry_Sub1_Sub10 local16 = (LinkedEntry_Sub1_Sub10) Static292.aClass183_36.method4140(); local16 != null; local16 = (LinkedEntry_Sub1_Sub10) Static292.aClass183_36.method4144()) {
+		for (@Pc(16) ContextualEntry_Sub1_Sub10 local16 = (ContextualEntry_Sub1_Sub10) Static292.aClass183_36.method4140(); local16 != null; local16 = (ContextualEntry_Sub1_Sub10) Static292.aClass183_36.method4144()) {
 			@Pc(21) Class16_Sub1_Sub2 local21 = local16.aClass16_Sub1_Sub2_1;
 			if (local21.aBoolean113) {
 				local16.popSelf();

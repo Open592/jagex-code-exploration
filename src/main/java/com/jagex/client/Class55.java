@@ -28,13 +28,13 @@ public final class Class55 {
 	}
 
 	@OriginalMember(owner = "client!du", name = "a", descriptor = "(II)Lclient!pt;")
-	public LinkedEntry_Sub1_Sub17 method1391(@OriginalArg(0) int arg0) {
+	public ContextualEntry_Sub1_Sub17 method1391(@OriginalArg(0) int arg0) {
 		@Pc(6) Class68 local6 = this.aClass68_6;
-		@Pc(22) LinkedEntry_Sub1_Sub17 local22;
+		@Pc(22) ContextualEntry_Sub1_Sub17 local22;
 		synchronized (this.aClass68_6) {
-			local22 = (LinkedEntry_Sub1_Sub17) this.aClass68_6.method1787((long) arg0);
+			local22 = (ContextualEntry_Sub1_Sub17) this.aClass68_6.method1787((long) arg0);
 			if (local22 == null) {
-				local22 = new LinkedEntry_Sub1_Sub17(arg0);
+				local22 = new ContextualEntry_Sub1_Sub17(arg0);
 				this.aClass68_6.method1779((long) arg0, local22);
 			}
 		}

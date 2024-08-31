@@ -31,14 +31,14 @@ public final class Static79 {
 
 	@OriginalMember(owner = "client!du", name = "a", descriptor = "(Ljava/lang/String;II)V")
 	public static void method1398(@OriginalArg(0) String arg0, @OriginalArg(1) int arg1) {
-		@Pc(8) LinkedEntry_Sub1_Sub11 local8 = Static405.method5222(arg1, 3);
+		@Pc(8) ContextualEntry_Sub1_Sub11 local8 = Static405.method5222(arg1, 3);
 		local8.method2604();
 		local8.aString32 = arg0;
 	}
 
 	@OriginalMember(owner = "client!du", name = "a", descriptor = "(III)V")
 	public static void method1399(@OriginalArg(1) int arg0, @OriginalArg(2) int arg1) {
-		@Pc(13) LinkedEntry_Sub1_Sub11 local13 = Static405.method5222(arg1, 16);
+		@Pc(13) ContextualEntry_Sub1_Sub11 local13 = Static405.method5222(arg1, 16);
 		local13.method2604();
 		local13.anInt3083 = arg0;
 	}

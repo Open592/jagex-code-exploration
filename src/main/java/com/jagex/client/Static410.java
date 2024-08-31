@@ -55,7 +55,7 @@ public final class Static410 {
 
 	@OriginalMember(owner = "client!uq", name = "a", descriptor = "(II)V")
 	public static void method5271(@OriginalArg(1) int arg0) {
-		@Pc(8) LinkedEntry_Sub1_Sub11 local8 = Static405.method5222(arg0, 6);
+		@Pc(8) ContextualEntry_Sub1_Sub11 local8 = Static405.method5222(arg0, 6);
 		local8.method2608();
 	}
 }

@@ -287,13 +287,13 @@ public final class Class264 {
 		@Pc(288) int local288 = -1;
 		local112 = -1;
 		local117 = 0;
-		@Pc(294) LinkedEntry_Sub1_Sub17 local294 = null;
-		@Pc(296) LinkedEntry_Sub1_Sub17 local296 = null;
+		@Pc(294) ContextualEntry_Sub1_Sub17 local294 = null;
+		@Pc(296) ContextualEntry_Sub1_Sub17 local296 = null;
 		@Pc(298) int local298 = -1;
 		@Pc(300) int local300 = -1;
 		@Pc(302) int local302 = 0;
-		@Pc(304) LinkedEntry_Sub1_Sub17 local304 = null;
-		@Pc(306) LinkedEntry_Sub1_Sub17 local306 = null;
+		@Pc(304) ContextualEntry_Sub1_Sub17 local304 = null;
+		@Pc(306) ContextualEntry_Sub1_Sub17 local306 = null;
 		@Pc(387) int local387;
 		if (local63) {
 			@Pc(319) int local319;

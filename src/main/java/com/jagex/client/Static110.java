@@ -19,7 +19,7 @@ public final class Static110 {
 	public static int anInt2374 = 0;
 
 	@OriginalMember(owner = "client!fj", name = "a", descriptor = "(Lclient!ba;III[Z)V")
-	public static void method2015(@OriginalArg(0) LinkedEntry_Sub1_Sub4 arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) boolean[] arg4) {
+	public static void method2015(@OriginalArg(0) ContextualEntry_Sub1_Sub4 arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) boolean[] arg4) {
 		if (Static417.aClass65Array4 == Static285.aClass65Array3) {
 			return;
 		}

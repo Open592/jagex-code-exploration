@@ -29,7 +29,7 @@ public abstract class Class110 {
 	public abstract int MA();
 
 	@OriginalMember(owner = "client!t", name = "a", descriptor = "(IIZIILclient!pt;Lclient!pt;II)V")
-	public final void method4883(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) boolean arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4, @OriginalArg(5) LinkedEntry_Sub1_Sub17 arg5, @OriginalArg(6) LinkedEntry_Sub1_Sub17 arg6, @OriginalArg(7) int arg7) {
+	public final void method4883(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) boolean arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4, @OriginalArg(5) ContextualEntry_Sub1_Sub17 arg5, @OriginalArg(6) ContextualEntry_Sub1_Sub17 arg6, @OriginalArg(7) int arg7) {
 		if (arg3 == -1 || !this.w()) {
 			return;
 		}
@@ -188,7 +188,7 @@ public abstract class Class110 {
 	protected abstract void M(@OriginalArg(0) int arg0, @OriginalArg(1) int[] arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4, @OriginalArg(5) boolean arg5, @OriginalArg(6) int arg6, @OriginalArg(7) int[] arg7);
 
 	@OriginalMember(owner = "client!t", name = "fa", descriptor = "(Lclient!ba;)Lclient!ba;")
-	public abstract LinkedEntry_Sub1_Sub4 fa(@OriginalArg(0) LinkedEntry_Sub1_Sub4 arg0);
+	public abstract ContextualEntry_Sub1_Sub4 fa(@OriginalArg(0) ContextualEntry_Sub1_Sub4 arg0);
 
 	@OriginalMember(owner = "client!t", name = "P", descriptor = "()I")
 	public abstract int P();
@@ -215,7 +215,7 @@ public abstract class Class110 {
 	public abstract void R(@OriginalArg(0) int arg0);
 
 	@OriginalMember(owner = "client!t", name = "a", descriptor = "(IILclient!pt;)V")
-	public final void method4892(@OriginalArg(1) int arg0, @OriginalArg(2) LinkedEntry_Sub1_Sub17 arg1) {
+	public final void method4892(@OriginalArg(1) int arg0, @OriginalArg(2) ContextualEntry_Sub1_Sub17 arg1) {
 		if (arg0 == -1 || !this.w()) {
 			return;
 		}
@@ -398,7 +398,7 @@ public abstract class Class110 {
 	public abstract void I(@OriginalArg(0) short arg0, @OriginalArg(1) short arg1);
 
 	@OriginalMember(owner = "client!t", name = "a", descriptor = "(ILclient!pt;[IZIIIILclient!pt;II)V")
-	public final void method4897(@OriginalArg(0) int arg0, @OriginalArg(1) LinkedEntry_Sub1_Sub17 arg1, @OriginalArg(2) int[] arg2, @OriginalArg(3) boolean arg3, @OriginalArg(5) int arg4, @OriginalArg(7) int arg5, @OriginalArg(8) LinkedEntry_Sub1_Sub17 arg6, @OriginalArg(9) int arg7, @OriginalArg(10) int arg8) {
+	public final void method4897(@OriginalArg(0) int arg0, @OriginalArg(1) ContextualEntry_Sub1_Sub17 arg1, @OriginalArg(2) int[] arg2, @OriginalArg(3) boolean arg3, @OriginalArg(5) int arg4, @OriginalArg(7) int arg5, @OriginalArg(8) ContextualEntry_Sub1_Sub17 arg6, @OriginalArg(9) int arg7, @OriginalArg(10) int arg8) {
 		if (arg4 == -1 || !this.w()) {
 			return;
 		}
@@ -434,7 +434,7 @@ public abstract class Class110 {
 	protected abstract void N(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3);
 
 	@OriginalMember(owner = "client!t", name = "a", descriptor = "(IILclient!pt;ZIIILclient!pt;Lclient!pt;I[ZLclient!pt;III)V")
-	public final void method4899(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) LinkedEntry_Sub1_Sub17 arg2, @OriginalArg(3) boolean arg3, @OriginalArg(4) int arg4, @OriginalArg(5) int arg5, @OriginalArg(6) int arg6, @OriginalArg(7) LinkedEntry_Sub1_Sub17 arg7, @OriginalArg(8) LinkedEntry_Sub1_Sub17 arg8, @OriginalArg(9) int arg9, @OriginalArg(10) boolean[] arg10, @OriginalArg(11) LinkedEntry_Sub1_Sub17 arg11, @OriginalArg(12) int arg12, @OriginalArg(13) int arg13) {
+	public final void method4899(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) ContextualEntry_Sub1_Sub17 arg2, @OriginalArg(3) boolean arg3, @OriginalArg(4) int arg4, @OriginalArg(5) int arg5, @OriginalArg(6) int arg6, @OriginalArg(7) ContextualEntry_Sub1_Sub17 arg7, @OriginalArg(8) ContextualEntry_Sub1_Sub17 arg8, @OriginalArg(9) int arg9, @OriginalArg(10) boolean[] arg10, @OriginalArg(11) ContextualEntry_Sub1_Sub17 arg11, @OriginalArg(12) int arg12, @OriginalArg(13) int arg13) {
 		if (arg0 == -1) {
 			return;
 		}

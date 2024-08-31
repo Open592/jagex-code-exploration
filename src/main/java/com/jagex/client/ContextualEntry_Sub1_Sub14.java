@@ -6,7 +6,7 @@ import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;
 
 @OriginalClass("client!kv")
-public final class LinkedEntry_Sub1_Sub14 extends LinkedEntry_Sub1 {
+public final class ContextualEntry_Sub1_Sub14 extends ContextualEntry {
 
 	@OriginalMember(owner = "client!kv", name = "y", descriptor = "[I")
 	private final int[] anIntArray264;
@@ -27,7 +27,7 @@ public final class LinkedEntry_Sub1_Sub14 extends LinkedEntry_Sub1 {
 	private final LinkedEntry_Sub6[] aClass4_Sub6Array23;
 
 	@OriginalMember(owner = "client!kv", name = "<init>", descriptor = "()V")
-	private LinkedEntry_Sub1_Sub14() {
+	private ContextualEntry_Sub1_Sub14() {
 		this.anIntArray264 = new int[0];
 		this.anIntArray265 = new int[0];
 		this.aClass4_Sub6_1 = new LinkedEntry_Sub6_Sub21(0);
@@ -40,7 +40,7 @@ public final class LinkedEntry_Sub1_Sub14 extends LinkedEntry_Sub1 {
 	}
 
 	@OriginalMember(owner = "client!kv", name = "<init>", descriptor = "(Lclient!iv;)V")
-	public LinkedEntry_Sub1_Sub14(@OriginalArg(0) Packet arg0) {
+	public ContextualEntry_Sub1_Sub14(@OriginalArg(0) Packet arg0) {
 		@Pc(7) int local7 = arg0.g1();
 		@Pc(9) int local9 = 0;
 		@Pc(11) int local11 = 0;

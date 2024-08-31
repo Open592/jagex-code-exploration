@@ -12,7 +12,7 @@ public final class Static71 {
 	public static final LinkedEntry_Sub11 aClass4_Sub11_10 = new LinkedEntry_Sub11(0, 0);
 
 	@OriginalMember(owner = "client!dl", name = "b", descriptor = "[Lclient!pt;")
-	public static final LinkedEntry_Sub1_Sub17[] aClass4_Sub1_Sub17Array14 = new LinkedEntry_Sub1_Sub17[14];
+	public static final ContextualEntry_Sub1_Sub17[] aClass4_Sub1_Sub17Array14 = new ContextualEntry_Sub1_Sub17[14];
 
 	@OriginalMember(owner = "client!dl", name = "f", descriptor = "[I")
 	public static final int[] anIntArray536 = new int[200];

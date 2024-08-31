@@ -336,7 +336,7 @@ public final class Static53 {
 											local670 = (int) -((double) (local263.method519() - local22 - local6.anInt6805 / 2) * 2.0D / (double) Static148.aFloat178);
 											local430 = Static314.anInt5471 + local296 + Static148.anInt5732;
 											local709 = Static46.anInt5156 + local670 + Static148.anInt5724;
-											@Pc(939) LinkedEntry_Sub1_Sub5 local939 = Static107.method1990();
+											@Pc(939) ContextualEntry_Sub1_Sub5 local939 = Static107.method1990();
 											if (local939 == null) {
 												continue;
 											}

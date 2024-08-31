@@ -7,7 +7,7 @@ import org.openrs2.deob.annotation.OriginalMember;
 public final class Class149 {
 
 	@OriginalMember(owner = "client!mg", name = "b", descriptor = "Lclient!ba;")
-	public LinkedEntry_Sub1_Sub4 aClass4_Sub1_Sub4_4;
+	public ContextualEntry_Sub1_Sub4 aClass4_Sub1_Sub4_4;
 
 	@OriginalMember(owner = "client!mg", name = "d", descriptor = "Lclient!t;")
 	public Class110 aClass110_5;

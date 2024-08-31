@@ -19,7 +19,7 @@ public final class Static75 {
 
 	@OriginalMember(owner = "client!dq", name = "a", descriptor = "(B)V")
 	public static void method1365() {
-		@Pc(8) LinkedEntry_Sub1_Sub11 local8 = Static405.method5222(0, 15);
+		@Pc(8) ContextualEntry_Sub1_Sub11 local8 = Static405.method5222(0, 15);
 		local8.method2608();
 	}
 }

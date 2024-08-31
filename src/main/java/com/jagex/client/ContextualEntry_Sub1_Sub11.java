@@ -7,7 +7,7 @@ import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;
 
 @OriginalClass("client!hp")
-public final class LinkedEntry_Sub1_Sub11 extends LinkedEntry_Sub1 {
+public final class ContextualEntry_Sub1_Sub11 extends ContextualEntry {
 
 	@OriginalMember(owner = "client!hp", name = "Y", descriptor = "[Lclient!eh;")
 	private static final Class60[] aClass60Array1 = new Class60[32];
@@ -32,13 +32,13 @@ public final class LinkedEntry_Sub1_Sub11 extends LinkedEntry_Sub1 {
 	}
 
 	@OriginalMember(owner = "client!hp", name = "<init>", descriptor = "(II)V")
-	public LinkedEntry_Sub1_Sub11(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1) {
+	public ContextualEntry_Sub1_Sub11(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1) {
 		super.hashKey = (long) arg0 << 32 | (long) arg1;
 	}
 
 	@OriginalMember(owner = "client!hp", name = "a", descriptor = "(I)V")
 	public void method2604() {
-		super.aLong198 |= Long.MIN_VALUE;
+		super.context |= Long.MIN_VALUE;
 		if (this.method2611() == 0L) {
 			Static99.aClass229_1.method5088(this);
 		}
@@ -51,7 +51,7 @@ public final class LinkedEntry_Sub1_Sub11 extends LinkedEntry_Sub1 {
 
 	@OriginalMember(owner = "client!hp", name = "f", descriptor = "(B)V")
 	public void method2608() {
-		super.aLong198 = MonotonicClock.getCurrentTimeInMilliseconds() + 500L | Long.MIN_VALUE & super.aLong198;
+		super.context = MonotonicClock.getCurrentTimeInMilliseconds() + 500L | Long.MIN_VALUE & super.context;
 		Static250.aClass229_4.method5088(this);
 	}
 
@@ -62,6 +62,6 @@ public final class LinkedEntry_Sub1_Sub11 extends LinkedEntry_Sub1 {
 
 	@OriginalMember(owner = "client!hp", name = "e", descriptor = "(I)J")
 	public long method2611() {
-		return super.aLong198 & Long.MAX_VALUE;
+		return super.context & Long.MAX_VALUE;
 	}
 }

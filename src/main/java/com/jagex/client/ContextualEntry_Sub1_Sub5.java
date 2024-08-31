@@ -6,7 +6,7 @@ import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;
 
 @OriginalClass("client!cn")
-public final class LinkedEntry_Sub1_Sub5 extends LinkedEntry_Sub1 {
+public final class ContextualEntry_Sub1_Sub5 extends ContextualEntry {
 
 	@OriginalMember(owner = "client!cn", name = "K", descriptor = "I")
 	public int anInt1018 = 12800;
@@ -45,7 +45,7 @@ public final class LinkedEntry_Sub1_Sub5 extends LinkedEntry_Sub1 {
 	public final Class183 aClass183_4;
 
 	@OriginalMember(owner = "client!cn", name = "<init>", descriptor = "(ILjava/lang/String;Ljava/lang/String;IIZII)V")
-	public LinkedEntry_Sub1_Sub5(@OriginalArg(0) int arg0, @OriginalArg(1) String arg1, @OriginalArg(2) String arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4, @OriginalArg(5) boolean arg5, @OriginalArg(6) int arg6, @OriginalArg(7) int arg7) {
+	public ContextualEntry_Sub1_Sub5(@OriginalArg(0) int arg0, @OriginalArg(1) String arg1, @OriginalArg(2) String arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4, @OriginalArg(5) boolean arg5, @OriginalArg(6) int arg6, @OriginalArg(7) int arg7) {
 		this.anInt1017 = arg4;
 		this.anInt1016 = arg6;
 		this.anInt1012 = arg0;

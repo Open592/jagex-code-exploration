@@ -45,8 +45,8 @@ public final class LinkedEntry_Sub25 extends LinkedEntry {
 		@Pc(87) int local87 = -1;
 		@Pc(89) int local89 = -1;
 		@Pc(91) int local91 = 0;
-		@Pc(93) LinkedEntry_Sub1_Sub17 local93 = null;
-		@Pc(95) LinkedEntry_Sub1_Sub17 local95 = null;
+		@Pc(93) ContextualEntry_Sub1_Sub17 local93 = null;
+		@Pc(95) ContextualEntry_Sub1_Sub17 local95 = null;
 		if (arg2 != null) {
 			local9 = 2080;
 			local87 = arg2.anIntArray295[arg6];

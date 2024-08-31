@@ -342,7 +342,7 @@ public final class Class202 {
 			local78 = (Class149) this.aClass262_4.aClass68_56.method1787(local31);
 		}
 		@Pc(91) Class110 local91 = local78 == null ? null : local78.aClass110_5;
-		@Pc(93) LinkedEntry_Sub1_Sub4 local93 = null;
+		@Pc(93) ContextualEntry_Sub1_Sub4 local93 = null;
 		if (local91 != null && arg0.method4269(local91.P(), local33) == 0) {
 			local91 = local78.aClass110_5;
 			local93 = local78.aClass4_Sub1_Sub4_4;

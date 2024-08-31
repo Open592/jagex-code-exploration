@@ -105,12 +105,12 @@ public final class Class65_Sub1 extends Class65 {
 
 	@OriginalMember(owner = "client!es", name = "b", descriptor = "(Lclient!ba;IIIIZ)V")
 	@Override
-	public void b(@OriginalArg(0) LinkedEntry_Sub1_Sub4 arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4, @OriginalArg(5) boolean arg5) {
+	public void b(@OriginalArg(0) ContextualEntry_Sub1_Sub4 arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4, @OriginalArg(5) boolean arg5) {
 	}
 
 	@OriginalMember(owner = "client!es", name = "p", descriptor = "(Lclient!ba;IIIIZ)V")
 	@Override
-	public void p(@OriginalArg(0) LinkedEntry_Sub1_Sub4 arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4, @OriginalArg(5) boolean arg5) {
+	public void p(@OriginalArg(0) ContextualEntry_Sub1_Sub4 arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4, @OriginalArg(5) boolean arg5) {
 	}
 
 	@OriginalMember(owner = "client!es", name = "B", descriptor = "(II[I[I[I[I[I[I[I[IIIIZ)V")
@@ -653,7 +653,7 @@ public final class Class65_Sub1 extends Class65 {
 
 	@OriginalMember(owner = "client!es", name = "k", descriptor = "(IILclient!ba;)Lclient!ba;")
 	@Override
-	public LinkedEntry_Sub1_Sub4 k(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) LinkedEntry_Sub1_Sub4 arg2) {
+	public ContextualEntry_Sub1_Sub4 k(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) ContextualEntry_Sub1_Sub4 arg2) {
 		return null;
 	}
 
@@ -1441,7 +1441,7 @@ public final class Class65_Sub1 extends Class65 {
 
 	@OriginalMember(owner = "client!es", name = "a", descriptor = "(Lclient!ba;IIIIZ)Z")
 	@Override
-	public boolean method4022(@OriginalArg(0) LinkedEntry_Sub1_Sub4 arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3) {
+	public boolean method4022(@OriginalArg(0) ContextualEntry_Sub1_Sub4 arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3) {
 		return false;
 	}
 

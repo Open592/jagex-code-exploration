@@ -25,7 +25,7 @@ public final class Static94 {
 
 	@OriginalMember(owner = "client!eo", name = "a", descriptor = "(IBIII)V")
 	public static void method1652(@OriginalArg(0) int arg0, @OriginalArg(2) int arg1, @OriginalArg(3) int arg2, @OriginalArg(4) int arg3) {
-		@Pc(8) LinkedEntry_Sub1_Sub11 local8 = Static405.method5222(arg0, 8);
+		@Pc(8) ContextualEntry_Sub1_Sub11 local8 = Static405.method5222(arg0, 8);
 		local8.method2604();
 		local8.anInt3082 = arg1;
 		local8.anInt3083 = arg2;

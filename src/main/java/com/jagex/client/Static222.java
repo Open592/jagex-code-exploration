@@ -26,14 +26,14 @@ public final class Static222 {
 	}
 
 	@OriginalMember(owner = "client!lg", name = "a", descriptor = "(ZLclient!ac;Lclient!ac;)V")
-	public static void method3353(@OriginalArg(1) LinkedEntry_Sub1 arg0, @OriginalArg(2) LinkedEntry_Sub1 arg1) {
-		if (arg1.aClass4_Sub1_56 != null) {
-			arg1.method4662();
+	public static void method3353(@OriginalArg(1) ContextualEntry arg0, @OriginalArg(2) ContextualEntry arg1) {
+		if (arg1.nextContext != null) {
+			arg1.popContextEntry();
 		}
-		arg1.aClass4_Sub1_56 = arg0;
-		arg1.aClass4_Sub1_55 = arg0.aClass4_Sub1_55;
-		arg1.aClass4_Sub1_56.aClass4_Sub1_55 = arg1;
-		arg1.aClass4_Sub1_55.aClass4_Sub1_56 = arg1;
+		arg1.nextContext = arg0;
+		arg1.previousContext = arg0.previousContext;
+		arg1.nextContext.previousContext = arg1;
+		arg1.previousContext.nextContext = arg1;
 	}
 
 	@OriginalMember(owner = "client!lg", name = "a", descriptor = "(B)V")

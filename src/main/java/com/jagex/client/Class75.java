@@ -30,17 +30,17 @@ public final class Class75 {
 	}
 
 	@OriginalMember(owner = "client!fp", name = "a", descriptor = "(II)Lclient!an;")
-	public LinkedEntry_Sub1_Sub2 method2079(@OriginalArg(1) int arg0) {
+	public ContextualEntry_Sub1_Sub2 method2079(@OriginalArg(1) int arg0) {
 		@Pc(6) Class68 local6 = this.aClass68_11;
-		@Pc(16) LinkedEntry_Sub1_Sub2 local16;
+		@Pc(16) ContextualEntry_Sub1_Sub2 local16;
 		synchronized (this.aClass68_11) {
-			local16 = (LinkedEntry_Sub1_Sub2) this.aClass68_11.method1787((long) arg0);
+			local16 = (ContextualEntry_Sub1_Sub2) this.aClass68_11.method1787((long) arg0);
 		}
 		if (local16 != null) {
 			return local16;
 		}
 		@Pc(33) byte[] local33 = this.aClass76_28.method2104(arg0, 5);
-		local16 = new LinkedEntry_Sub1_Sub2();
+		local16 = new ContextualEntry_Sub1_Sub2();
 		if (local33 != null) {
 			local16.method154(new Packet(local33));
 		}

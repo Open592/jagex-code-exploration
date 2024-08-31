@@ -6,7 +6,7 @@ import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;
 
 @OriginalClass("client!au")
-public final class LinkedEntry_Sub1_Sub3 extends LinkedEntry_Sub1 {
+public final class ContextualEntry_Sub1_Sub3 extends ContextualEntry {
 
 	@OriginalMember(owner = "client!au", name = "B", descriptor = "[I")
 	public static final int[] anIntArray17 = new int[32];

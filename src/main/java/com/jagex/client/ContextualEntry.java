@@ -4,29 +4,29 @@ import org.openrs2.deob.annotation.OriginalClass;
 import org.openrs2.deob.annotation.OriginalMember;
 
 @OriginalClass("client!ac")
-public class LinkedEntry_Sub1 extends LinkedEntry {
+public class ContextualEntry extends LinkedEntry {
 
 	@OriginalMember(owner = "client!ac", name = "o", descriptor = "J")
-	public long aLong198;
+	public long context;
 
 	@OriginalMember(owner = "client!ac", name = "r", descriptor = "Lclient!ac;")
-	public LinkedEntry_Sub1 aClass4_Sub1_55;
+	public ContextualEntry previousContext;
 
 	@OriginalMember(owner = "client!ac", name = "s", descriptor = "Lclient!ac;")
-	public LinkedEntry_Sub1 aClass4_Sub1_56;
+	public ContextualEntry nextContext;
 
 	@OriginalMember(owner = "client!ac", name = "c", descriptor = "(B)V")
-	public final void method4662() {
-		if (this.aClass4_Sub1_56 != null) {
-			this.aClass4_Sub1_56.aClass4_Sub1_55 = this.aClass4_Sub1_55;
-			this.aClass4_Sub1_55.aClass4_Sub1_56 = this.aClass4_Sub1_56;
-			this.aClass4_Sub1_55 = null;
-			this.aClass4_Sub1_56 = null;
+	public final void popContextEntry() {
+		if (this.nextContext != null) {
+			this.nextContext.previousContext = this.previousContext;
+			this.previousContext.nextContext = this.nextContext;
+			this.previousContext = null;
+			this.nextContext = null;
 		}
 	}
 
 	@OriginalMember(owner = "client!ac", name = "a", descriptor = "(Z)Z")
-	public final boolean method4666() {
-		return this.aClass4_Sub1_56 != null;
+	public final boolean hasNextContext() {
+		return this.nextContext != null;
 	}
 }

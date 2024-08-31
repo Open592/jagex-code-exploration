@@ -64,7 +64,7 @@ public final class Class143_Sub1 extends Class143 {
 	private final Class254 aClass254_1;
 
 	@OriginalMember(owner = "client!lv", name = "x", descriptor = "Lclient!ec;")
-	private LinkedEntry_Sub1_Sub6 aClass4_Sub1_Sub6_1;
+	private ContextualEntry_Sub1_Sub6 aClass4_Sub1_Sub6_1;
 
 	@OriginalMember(owner = "client!lv", name = "<init>", descriptor = "(ILclient!st;Lclient!st;Lclient!vn;Lclient!vl;IIZ)V")
 	public Class143_Sub1(@OriginalArg(0) int arg0, @OriginalArg(1) Class222 arg1, @OriginalArg(2) Class222 arg2, @OriginalArg(3) Class255 arg3, @OriginalArg(4) Class254 arg4, @OriginalArg(5) int arg5, @OriginalArg(6) int arg6, @OriginalArg(7) boolean arg7) {
@@ -93,8 +93,8 @@ public final class Class143_Sub1 extends Class143 {
 	}
 
 	@OriginalMember(owner = "client!lv", name = "a", descriptor = "(III)Lclient!ec;")
-	private LinkedEntry_Sub1_Sub6 method3518(@OriginalArg(0) int arg0, @OriginalArg(2) int arg1) {
-		@Pc(13) LinkedEntry_Sub1_Sub6 local13 = (LinkedEntry_Sub1_Sub6) this.aLinkedHashMap_Iterator_20.get((long) arg1);
+	private ContextualEntry_Sub1_Sub6 method3518(@OriginalArg(0) int arg0, @OriginalArg(2) int arg1) {
+		@Pc(13) ContextualEntry_Sub1_Sub6 local13 = (ContextualEntry_Sub1_Sub6) this.aLinkedHashMap_Iterator_20.get((long) arg1);
 		if (local13 != null && arg0 == 0 && !local13.aBoolean384 && local13.aBoolean381) {
 			local13.popSelf();
 			local13 = null;
@@ -135,8 +135,8 @@ public final class Class143_Sub1 extends Class143 {
 		}
 		@Pc(161) byte[] local161 = local13.method3343();
 		@Pc(188) int local188;
-		@Pc(238) LinkedEntry_Sub1_Sub6_Sub1 local238;
-		if (!(local13 instanceof LinkedEntry_Sub1_Sub6_Sub2)) {
+		@Pc(238) ContextualEntry_Sub1_Sub6_ local238;
+		if (!(local13 instanceof ContextualEntry_Sub1_Sub6_Sub2)) {
 			try {
 				if (local161 == null || local161.length <= 2) {
 					throw new RuntimeException();
@@ -208,7 +208,7 @@ public final class Class143_Sub1 extends Class143 {
 	@OriginalMember(owner = "client!lv", name = "b", descriptor = "(II)[B")
 	@Override
 	public byte[] method3516(@OriginalArg(1) int arg0) {
-		@Pc(16) LinkedEntry_Sub1_Sub6 local16 = this.method3518(0, arg0);
+		@Pc(16) ContextualEntry_Sub1_Sub6 local16 = this.method3518(0, arg0);
 		if (local16 == null) {
 			return null;
 		} else {
@@ -309,7 +309,7 @@ public final class Class143_Sub1 extends Class143 {
 		if (!this.aBoolean414 || this.aLong149 > MonotonicClock.getCurrentTimeInMilliseconds()) {
 			return;
 		}
-		for (@Pc(325) LinkedEntry_Sub1_Sub6 local325 = (LinkedEntry_Sub1_Sub6) this.aLinkedHashMap_Iterator_20.head(); local325 != null; local325 = (LinkedEntry_Sub1_Sub6) this.aLinkedHashMap_Iterator_20.nextEntry()) {
+		for (@Pc(325) ContextualEntry_Sub1_Sub6 local325 = (ContextualEntry_Sub1_Sub6) this.aLinkedHashMap_Iterator_20.head(); local325 != null; local325 = (ContextualEntry_Sub1_Sub6) this.aLinkedHashMap_Iterator_20.nextEntry()) {
 			if (!local325.aBoolean381) {
 				if (local325.aBoolean382) {
 					if (!local325.aBoolean384) {
@@ -339,7 +339,7 @@ public final class Class143_Sub1 extends Class143 {
 	@OriginalMember(owner = "client!lv", name = "a", descriptor = "(IB)I")
 	@Override
 	public int method3515(@OriginalArg(0) int arg0) {
-		@Pc(11) LinkedEntry_Sub1_Sub6 local11 = (LinkedEntry_Sub1_Sub6) this.aLinkedHashMap_Iterator_20.get((long) arg0);
+		@Pc(11) ContextualEntry_Sub1_Sub6 local11 = (ContextualEntry_Sub1_Sub6) this.aLinkedHashMap_Iterator_20.get((long) arg0);
 		return local11 == null ? 0 : local11.method3342();
 	}
 
@@ -422,7 +422,7 @@ public final class Class143_Sub1 extends Class143 {
 			return null;
 		}
 		@Pc(43) byte[] local43 = this.aClass4_Sub1_Sub6_1.method3343();
-		if (this.aClass4_Sub1_Sub6_1 instanceof LinkedEntry_Sub1_Sub6_Sub2) {
+		if (this.aClass4_Sub1_Sub6_1 instanceof ContextualEntry_Sub1_Sub6_Sub2) {
 			try {
 				if (local43 == null) {
 					throw new RuntimeException();
