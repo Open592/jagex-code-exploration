@@ -18,6 +18,18 @@ public final class SecondaryLinkedList {
 		this.sentinelNode.secondaryPrevious = this.sentinelNode;
 	}
 
+	@OriginalMember(owner = "client!lg", name = "a", descriptor = "(ZLclient!ac;Lclient!ac;)V")
+	public static void insertAfter(SecondaryNode node, SecondaryNode position) {
+		if (position.secondaryNext != null) {
+			position.secondaryPopSelf();
+		}
+
+		position.secondaryNext = node;
+		position.secondaryPrevious = node.secondaryPrevious;
+		position.secondaryNext.secondaryPrevious = position;
+		position.secondaryPrevious.secondaryNext = position;
+	}
+
 	@OriginalMember(owner = "client!tn", name = "a", descriptor = "(B)V")
 	public void clear() {
 		while (true) {

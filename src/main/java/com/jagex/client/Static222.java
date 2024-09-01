@@ -25,17 +25,6 @@ public final class Static222 {
 		Static158.aClass68_16.method1788(50);
 	}
 
-	@OriginalMember(owner = "client!lg", name = "a", descriptor = "(ZLclient!ac;Lclient!ac;)V")
-	public static void method3353(@OriginalArg(1) SecondaryNode arg0, @OriginalArg(2) SecondaryNode arg1) {
-		if (arg1.secondaryNext != null) {
-			arg1.secondaryPopSelf();
-		}
-		arg1.secondaryNext = arg0;
-		arg1.secondaryPrevious = arg0.secondaryPrevious;
-		arg1.secondaryNext.secondaryPrevious = arg1;
-		arg1.secondaryPrevious.secondaryNext = arg1;
-	}
-
 	@OriginalMember(owner = "client!lg", name = "a", descriptor = "(B)V")
 	public static void method3355() {
 		Static336.aBoolean596 = true;

@@ -98,7 +98,7 @@ public final class Class220 {
 			} else if (++local21.secondaryValue > (long) 5) {
 				@Pc(47) SecondaryNode_Sub1_Sub9 local47 = Static224.aClass105_1.method5276(local21);
 				this.aLinkedHashMap_Iterator_37.set(local21.hashKey, local47);
-				Static222.method3353(local21, local47);
+				SecondaryLinkedList.insertAfter(local21, local47);
 				local21.popSelf();
 				local21.secondaryPopSelf();
 			}
