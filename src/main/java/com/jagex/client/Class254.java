@@ -11,7 +11,7 @@ import org.openrs2.deob.annotation.Pc;
 public final class Class254 implements Runnable {
 
 	@OriginalMember(owner = "client!vl", name = "g", descriptor = "Lclient!tn;")
-	private final Class229 aClass229_6 = new Class229();
+	private final SecondaryLinkedList aSecondaryLinkedList_6 = new SecondaryLinkedList();
 
 	@OriginalMember(owner = "client!vl", name = "q", descriptor = "I")
 	public int anInt7015 = 0;
@@ -49,9 +49,9 @@ public final class Class254 implements Runnable {
 	public SecondaryNode_Sub1_Sub6_Sub2 method5432(@OriginalArg(0) Class222 arg0, @OriginalArg(2) int arg1) {
 		@Pc(9) SecondaryNode_Sub1_Sub6_Sub2 local9 = new SecondaryNode_Sub1_Sub6_Sub2();
 		local9.anInt4117 = 1;
-		@Pc(15) Class229 local15 = this.aClass229_6;
-		synchronized (this.aClass229_6) {
-			@Pc(23) SecondaryNode_Sub1_Sub6_Sub2 local23 = (SecondaryNode_Sub1_Sub6_Sub2) this.aClass229_6.method5089();
+		@Pc(15) SecondaryLinkedList local15 = this.aSecondaryLinkedList_6;
+		synchronized (this.aSecondaryLinkedList_6) {
+			@Pc(23) SecondaryNode_Sub1_Sub6_Sub2 local23 = (SecondaryNode_Sub1_Sub6_Sub2) this.aSecondaryLinkedList_6.getHead();
 			while (true) {
 				if (local23 == null) {
 					break;
@@ -61,7 +61,7 @@ public final class Class254 implements Runnable {
 					local9.aByteArray50 = local23.aByteArray50;
 					return local9;
 				}
-				local23 = (SecondaryNode_Sub1_Sub6_Sub2) this.aClass229_6.method5092();
+				local23 = (SecondaryNode_Sub1_Sub6_Sub2) this.aSecondaryLinkedList_6.next();
 			}
 		}
 		local9.aByteArray50 = arg0.method4981(arg1);
@@ -73,9 +73,9 @@ public final class Class254 implements Runnable {
 	@OriginalMember(owner = "client!vl", name = "a", descriptor = "(I)V")
 	public void method5433() {
 		this.aBoolean659 = true;
-		@Pc(9) Class229 local9 = this.aClass229_6;
-		synchronized (this.aClass229_6) {
-			this.aClass229_6.notifyAll();
+		@Pc(9) SecondaryLinkedList local9 = this.aSecondaryLinkedList_6;
+		synchronized (this.aSecondaryLinkedList_6) {
+			this.aSecondaryLinkedList_6.notifyAll();
 		}
 		try {
 			this.aThread2.join();
@@ -88,13 +88,13 @@ public final class Class254 implements Runnable {
 	@Override
 	public void run() {
 		while (!this.aBoolean659) {
-			@Pc(10) Class229 local10 = this.aClass229_6;
+			@Pc(10) SecondaryLinkedList local10 = this.aSecondaryLinkedList_6;
 			@Pc(18) SecondaryNode_Sub1_Sub6_Sub2 local18;
-			synchronized (this.aClass229_6) {
-				local18 = (SecondaryNode_Sub1_Sub6_Sub2) this.aClass229_6.method5091();
+			synchronized (this.aSecondaryLinkedList_6) {
+				local18 = (SecondaryNode_Sub1_Sub6_Sub2) this.aSecondaryLinkedList_6.popHead();
 				if (local18 == null) {
 					try {
-						this.aClass229_6.wait();
+						this.aSecondaryLinkedList_6.wait();
 					} catch (@Pc(25) InterruptedException local25) {
 					}
 					continue;
@@ -116,11 +116,11 @@ public final class Class254 implements Runnable {
 
 	@OriginalMember(owner = "client!vl", name = "a", descriptor = "(ILclient!lf;)V")
 	private void method5434(@OriginalArg(1) SecondaryNode_Sub1_Sub6_Sub2 arg0) {
-		@Pc(2) Class229 local2 = this.aClass229_6;
-		synchronized (this.aClass229_6) {
-			this.aClass229_6.method5088(arg0);
+		@Pc(2) SecondaryLinkedList local2 = this.aSecondaryLinkedList_6;
+		synchronized (this.aSecondaryLinkedList_6) {
+			this.aSecondaryLinkedList_6.insert(arg0);
 			this.anInt7015++;
-			this.aClass229_6.notifyAll();
+			this.aSecondaryLinkedList_6.notifyAll();
 		}
 	}
 

@@ -834,11 +834,11 @@ public final class Static148 {
 	}
 
 	@OriginalMember(owner = "client!hj", name = "b", descriptor = "(II)Lclient!tn;")
-	public static Class229 method4506(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1) {
-		@Pc(3) Class229 local3 = new Class229();
+	public static SecondaryLinkedList method4506(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1) {
+		@Pc(3) SecondaryLinkedList local3 = new SecondaryLinkedList();
 		for (@Pc(8) SecondaryNode_Sub1_Sub5 local8 = (SecondaryNode_Sub1_Sub5) A_ITERABLE_HASH_MAP___30.head(); local8 != null; local8 = (SecondaryNode_Sub1_Sub5) A_ITERABLE_HASH_MAP___30.next()) {
 			if (local8.aBoolean95 && local8.method932(arg1, arg0)) {
-				local3.method5088(local8);
+				local3.insert(local8);
 			}
 		}
 		return local3;

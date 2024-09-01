@@ -12,7 +12,7 @@ public final class Class142 {
 	private SecondaryNode aClass4_Sub1_42 = new SecondaryNode();
 
 	@OriginalMember(owner = "client!lt", name = "j", descriptor = "Lclient!tn;")
-	private final Class229 aClass229_3 = new Class229();
+	private final SecondaryLinkedList aSecondaryLinkedList_3 = new SecondaryLinkedList();
 
 	@OriginalMember(owner = "client!lt", name = "l", descriptor = "I")
 	private final int anInt4442;
@@ -36,11 +36,11 @@ public final class Class142 {
 	@OriginalMember(owner = "client!lt", name = "a", descriptor = "(JLclient!ac;I)V")
 	public void method3480(@OriginalArg(0) long hashKey, @OriginalArg(1) SecondaryNode entry) {
 		if (this.anInt4441 == 0) {
-			@Pc(11) SecondaryNode local11 = this.aClass229_3.method5091();
+			@Pc(11) SecondaryNode local11 = this.aSecondaryLinkedList_3.popHead();
 			local11.popSelf();
 			local11.secondaryPopSelf();
 			if (local11 == this.aClass4_Sub1_42) {
-				local11 = this.aClass229_3.method5091();
+				local11 = this.aSecondaryLinkedList_3.popHead();
 				local11.popSelf();
 				local11.secondaryPopSelf();
 			}
@@ -48,21 +48,21 @@ public final class Class142 {
 			this.anInt4441--;
 		}
 		this.aLinkedHashMap_Iterator_19.set(hashKey, entry);
-		this.aClass229_3.method5088(entry);
+		this.aSecondaryLinkedList_3.insert(entry);
 	}
 
 	@OriginalMember(owner = "client!lt", name = "a", descriptor = "(JB)Lclient!ac;")
 	public SecondaryNode method3483(@OriginalArg(0) long arg0) {
 		@Pc(10) SecondaryNode local10 = (SecondaryNode) this.aLinkedHashMap_Iterator_19.get(arg0);
 		if (local10 != null) {
-			this.aClass229_3.method5088(local10);
+			this.aSecondaryLinkedList_3.insert(local10);
 		}
 		return local10;
 	}
 
 	@OriginalMember(owner = "client!lt", name = "a", descriptor = "(B)V")
 	public void method3484() {
-		this.aClass229_3.method5087();
+		this.aSecondaryLinkedList_3.clear();
 		this.aLinkedHashMap_Iterator_19.clear();
 		this.aClass4_Sub1_42 = new SecondaryNode();
 		this.anInt4441 = this.anInt4442;

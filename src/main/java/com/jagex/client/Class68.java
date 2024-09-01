@@ -9,7 +9,7 @@ import org.openrs2.deob.annotation.Pc;
 public final class Class68 {
 
 	@OriginalMember(owner = "client!fa", name = "k", descriptor = "Lclient!tn;")
-	private final Class229 aClass229_2 = new Class229();
+	private final SecondaryLinkedList aSecondaryLinkedList_2 = new SecondaryLinkedList();
 
 	@OriginalMember(owner = "client!fa", name = "l", descriptor = "I")
 	private int anInt2034;
@@ -32,7 +32,7 @@ public final class Class68 {
 
 	@OriginalMember(owner = "client!fa", name = "a", descriptor = "(Z)V")
 	public void method1777() {
-		this.aClass229_2.method5087();
+		this.aSecondaryLinkedList_2.clear();
 		this.aLinkedHashMap_Iterator_10.clear();
 		this.anInt2034 = this.anInt2029;
 	}
@@ -78,7 +78,7 @@ public final class Class68 {
 	@OriginalMember(owner = "client!fa", name = "c", descriptor = "(B)I")
 	public int method1786() {
 		@Pc(7) int local7 = 0;
-		for (@Pc(13) SecondaryNode_Sub1_Sub8 local13 = (SecondaryNode_Sub1_Sub8) this.aClass229_2.method5089(); local13 != null; local13 = (SecondaryNode_Sub1_Sub8) this.aClass229_2.method5092()) {
+		for (@Pc(13) SecondaryNode_Sub1_Sub8 local13 = (SecondaryNode_Sub1_Sub8) this.aSecondaryLinkedList_2.getHead(); local13 != null; local13 = (SecondaryNode_Sub1_Sub8) this.aSecondaryLinkedList_2.next()) {
 			if (!local13.method3883()) {
 				local7++;
 			}
@@ -102,12 +102,12 @@ public final class Class68 {
 		if (local10.method3883()) {
 			@Pc(51) SecondaryNode_Sub1_Sub8_Sub1 local51 = new SecondaryNode_Sub1_Sub8_Sub1(local18, local10.anInt5084);
 			this.aLinkedHashMap_Iterator_10.set(local10.hashKey, local51);
-			this.aClass229_2.method5088(local51);
+			this.aSecondaryLinkedList_2.insert(local51);
 			local51.secondaryValue = 0L;
 			local10.popSelf();
 			local10.secondaryPopSelf();
 		} else {
-			this.aClass229_2.method5088(local10);
+			this.aSecondaryLinkedList_2.insert(local10);
 			local10.secondaryValue = 0L;
 		}
 		return local18;
@@ -118,7 +118,7 @@ public final class Class68 {
 		if (Static293.aClass174_1 == null) {
 			return;
 		}
-		for (@Pc(13) SecondaryNode_Sub1_Sub8 local13 = (SecondaryNode_Sub1_Sub8) this.aClass229_2.method5089(); local13 != null; local13 = (SecondaryNode_Sub1_Sub8) this.aClass229_2.method5092()) {
+		for (@Pc(13) SecondaryNode_Sub1_Sub8 local13 = (SecondaryNode_Sub1_Sub8) this.aSecondaryLinkedList_2.getHead(); local13 != null; local13 = (SecondaryNode_Sub1_Sub8) this.aSecondaryLinkedList_2.next()) {
 			if (local13.method3883()) {
 				if (local13.method3885() == null) {
 					local13.popSelf();
@@ -160,18 +160,18 @@ public final class Class68 {
 		this.method1783(arg1);
 		this.anInt2034--;
 		while (this.anInt2034 < 0) {
-			@Pc(32) SecondaryNode_Sub1_Sub8 local32 = (SecondaryNode_Sub1_Sub8) this.aClass229_2.method5091();
+			@Pc(32) SecondaryNode_Sub1_Sub8 local32 = (SecondaryNode_Sub1_Sub8) this.aSecondaryLinkedList_2.popHead();
 			this.method1792(local32);
 		}
 		@Pc(45) SecondaryNode_Sub1_Sub8_Sub1 local45 = new SecondaryNode_Sub1_Sub8_Sub1(arg0, 1);
 		this.aLinkedHashMap_Iterator_10.set(arg1, local45);
-		this.aClass229_2.method5088(local45);
+		this.aSecondaryLinkedList_2.insert(local45);
 		local45.secondaryValue = 0L;
 	}
 
 	@OriginalMember(owner = "client!fa", name = "c", descriptor = "(I)V")
 	public void method1791() {
-		for (@Pc(7) SecondaryNode_Sub1_Sub8 local7 = (SecondaryNode_Sub1_Sub8) this.aClass229_2.method5089(); local7 != null; local7 = (SecondaryNode_Sub1_Sub8) this.aClass229_2.method5092()) {
+		for (@Pc(7) SecondaryNode_Sub1_Sub8 local7 = (SecondaryNode_Sub1_Sub8) this.aSecondaryLinkedList_2.getHead(); local7 != null; local7 = (SecondaryNode_Sub1_Sub8) this.aSecondaryLinkedList_2.next()) {
 			if (local7.method3883()) {
 				local7.popSelf();
 				local7.secondaryPopSelf();

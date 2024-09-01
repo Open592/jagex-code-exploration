@@ -3467,9 +3467,9 @@ public final class Static271 {
 					anInt5095 -= 2;
 					local157 = anIntArray330[anInt5095];
 					local192 = anIntArray330[anInt5095 + 1];
-					@Pc(1963) Class229 local1963 = Static148.method4506(local157 >> 14 & 0x3FFF, local157 & 0x3FFF);
+					@Pc(1963) SecondaryLinkedList local1963 = Static148.method4506(local157 >> 14 & 0x3FFF, local157 & 0x3FFF);
 					local1965 = false;
-					for (@Pc(1970) SecondaryNode_Sub1_Sub5 local1970 = (SecondaryNode_Sub1_Sub5) local1963.method5089(); local1970 != null; local1970 = (SecondaryNode_Sub1_Sub5) local1963.method5092()) {
+					for (@Pc(1970) SecondaryNode_Sub1_Sub5 local1970 = (SecondaryNode_Sub1_Sub5) local1963.getHead(); local1970 != null; local1970 = (SecondaryNode_Sub1_Sub5) local1963.next()) {
 						if (local1970.anInt1012 == local192) {
 							local1965 = true;
 							break;

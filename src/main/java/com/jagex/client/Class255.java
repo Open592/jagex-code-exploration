@@ -24,16 +24,16 @@ public final class Class255 {
 	private SecondaryNode_Sub1_Sub6_Sub1 aClass4_Sub1_Sub6_Sub1_2;
 
 	@OriginalMember(owner = "client!vn", name = "j", descriptor = "Lclient!tn;")
-	private final Class229 aClass229_7 = new Class229();
+	private final SecondaryLinkedList aSecondaryLinkedList_7 = new SecondaryLinkedList();
 
 	@OriginalMember(owner = "client!vn", name = "s", descriptor = "Lclient!tn;")
-	private final Class229 aClass229_8 = new Class229();
+	private final SecondaryLinkedList aSecondaryLinkedList_8 = new SecondaryLinkedList();
 
 	@OriginalMember(owner = "client!vn", name = "t", descriptor = "Lclient!tn;")
-	private final Class229 aClass229_9 = new Class229();
+	private final SecondaryLinkedList aSecondaryLinkedList_9 = new SecondaryLinkedList();
 
 	@OriginalMember(owner = "client!vn", name = "u", descriptor = "Lclient!tn;")
-	private final Class229 aClass229_10 = new Class229();
+	private final SecondaryLinkedList aSecondaryLinkedList_10 = new SecondaryLinkedList();
 
 	@OriginalMember(owner = "client!vn", name = "x", descriptor = "Lclient!iv;")
 	private final Packet aPacket_8 = new Packet(4);
@@ -52,7 +52,7 @@ public final class Class255 {
 
 	@OriginalMember(owner = "client!vn", name = "a", descriptor = "(B)I")
 	private int method5459() {
-		return this.aClass229_9.method5093() + this.aClass229_10.method5093();
+		return this.aSecondaryLinkedList_9.size() + this.aSecondaryLinkedList_10.size();
 	}
 
 	@OriginalMember(owner = "client!vn", name = "a", descriptor = "(I)Z")
@@ -77,10 +77,10 @@ public final class Class255 {
 		this.aClass4_Sub1_Sub6_Sub1_2 = null;
 
 		while (true) {
-			@Pc(40) SecondaryNode_Sub1_Sub6_Sub1 local40 = (SecondaryNode_Sub1_Sub6_Sub1) this.aClass229_8.method5091();
+			@Pc(40) SecondaryNode_Sub1_Sub6_Sub1 local40 = (SecondaryNode_Sub1_Sub6_Sub1) this.aSecondaryLinkedList_8.popHead();
 			if (local40 == null) {
 				while (true) {
-					local40 = (SecondaryNode_Sub1_Sub6_Sub1) this.aClass229_10.method5091();
+					local40 = (SecondaryNode_Sub1_Sub6_Sub1) this.aSecondaryLinkedList_10.popHead();
 					if (local40 == null) {
 						if (this.aByte94 != 0) {
 							try {
@@ -103,10 +103,10 @@ public final class Class255 {
 						this.aLong217 = MonotonicClock.getCurrentTimeInMilliseconds();
 						return;
 					}
-					this.aClass229_9.method5088(local40);
+					this.aSecondaryLinkedList_9.insert(local40);
 				}
 			}
-			this.aClass229_7.method5088(local40);
+			this.aSecondaryLinkedList_7.insert(local40);
 		}
 	}
 
@@ -175,9 +175,9 @@ public final class Class255 {
 			if (this.method5469() >= 20) {
 				throw new RuntimeException();
 			}
-			this.aClass229_7.method5088(local23);
+			this.aSecondaryLinkedList_7.insert(local23);
 		} else if (this.method5459() < 20) {
-			this.aClass229_9.method5088(local23);
+			this.aSecondaryLinkedList_9.insert(local23);
 		} else {
 			throw new RuntimeException();
 		}
@@ -236,19 +236,19 @@ public final class Class255 {
 		}
 		try {
 			this.serverConnection.checkConnectionHealth();
-			for (@Pc(76) SecondaryNode_Sub1_Sub6_Sub1 local76 = (SecondaryNode_Sub1_Sub6_Sub1) this.aClass229_7.method5089(); local76 != null; local76 = (SecondaryNode_Sub1_Sub6_Sub1) this.aClass229_7.method5092()) {
+			for (@Pc(76) SecondaryNode_Sub1_Sub6_Sub1 local76 = (SecondaryNode_Sub1_Sub6_Sub1) this.aSecondaryLinkedList_7.getHead(); local76 != null; local76 = (SecondaryNode_Sub1_Sub6_Sub1) this.aSecondaryLinkedList_7.next()) {
 				this.aPacket_8.pos = 0;
 				this.aPacket_8.p1(1);
 				this.aPacket_8.p3((int) local76.secondaryValue);
 				this.serverConnection.enqueueClientMessage(4, this.aPacket_8.data);
-				this.aClass229_8.method5088(local76);
+				this.aSecondaryLinkedList_8.insert(local76);
 			}
-			for (@Pc(122) SecondaryNode_Sub1_Sub6_Sub1 local122 = (SecondaryNode_Sub1_Sub6_Sub1) this.aClass229_9.method5089(); local122 != null; local122 = (SecondaryNode_Sub1_Sub6_Sub1) this.aClass229_9.method5092()) {
+			for (@Pc(122) SecondaryNode_Sub1_Sub6_Sub1 local122 = (SecondaryNode_Sub1_Sub6_Sub1) this.aSecondaryLinkedList_9.getHead(); local122 != null; local122 = (SecondaryNode_Sub1_Sub6_Sub1) this.aSecondaryLinkedList_9.next()) {
 				this.aPacket_8.pos = 0;
 				this.aPacket_8.p1(0);
 				this.aPacket_8.p3((int) local122.secondaryValue);
 				this.serverConnection.enqueueClientMessage(4, this.aPacket_8.data);
-				this.aClass229_10.method5088(local122);
+				this.aSecondaryLinkedList_10.insert(local122);
 			}
 			for (local18 = 0; local18 < 100; local18++) {
 				@Pc(177) int local177 = this.serverConnection.getEstimatedBytesAvailable();
@@ -316,10 +316,10 @@ public final class Class255 {
 							@Pc(486) long local486 = (long) ((local226 << 16) + local275);
 							@Pc(496) SecondaryNode_Sub1_Sub6_Sub1 local496;
 							if (local479) {
-								for (local496 = (SecondaryNode_Sub1_Sub6_Sub1) this.aClass229_10.method5089(); local496 != null && local496.secondaryValue != local486; local496 = (SecondaryNode_Sub1_Sub6_Sub1) this.aClass229_10.method5092()) {
+								for (local496 = (SecondaryNode_Sub1_Sub6_Sub1) this.aSecondaryLinkedList_10.getHead(); local496 != null && local496.secondaryValue != local486; local496 = (SecondaryNode_Sub1_Sub6_Sub1) this.aSecondaryLinkedList_10.next()) {
 								}
 							} else {
-								for (local496 = (SecondaryNode_Sub1_Sub6_Sub1) this.aClass229_8.method5089(); local496 != null && local496.secondaryValue != local486; local496 = (SecondaryNode_Sub1_Sub6_Sub1) this.aClass229_8.method5092()) {
+								for (local496 = (SecondaryNode_Sub1_Sub6_Sub1) this.aSecondaryLinkedList_8.getHead(); local496 != null && local496.secondaryValue != local486; local496 = (SecondaryNode_Sub1_Sub6_Sub1) this.aSecondaryLinkedList_8.next()) {
 								}
 							}
 							if (local496 == null) {
@@ -358,7 +358,7 @@ public final class Class255 {
 
 	@OriginalMember(owner = "client!vn", name = "c", descriptor = "(I)I")
 	public int method5469() {
-		return this.aClass229_7.method5093() + this.aClass229_8.method5093();
+		return this.aSecondaryLinkedList_7.size() + this.aSecondaryLinkedList_8.size();
 	}
 
 	@OriginalMember(owner = "client!vn", name = "f", descriptor = "(B)Z")

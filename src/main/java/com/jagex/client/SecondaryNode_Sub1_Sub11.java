@@ -40,7 +40,7 @@ public final class SecondaryNode_Sub1_Sub11 extends SecondaryNode {
 	public void method2604() {
 		super.secondaryValue |= Long.MIN_VALUE;
 		if (this.method2611() == 0L) {
-			Static99.aClass229_1.method5088(this);
+			Static99.A_DOUBLY_LINKED_LIST___1.insert(this);
 		}
 	}
 
@@ -52,7 +52,7 @@ public final class SecondaryNode_Sub1_Sub11 extends SecondaryNode {
 	@OriginalMember(owner = "client!hp", name = "f", descriptor = "(B)V")
 	public void method2608() {
 		super.secondaryValue = MonotonicClock.getCurrentTimeInMilliseconds() + 500L | Long.MIN_VALUE & super.secondaryValue;
-		Static250.aClass229_4.method5088(this);
+		Static250.A_DOUBLY_LINKED_LIST___4.insert(this);
 	}
 
 	@OriginalMember(owner = "client!hp", name = "g", descriptor = "(B)I")

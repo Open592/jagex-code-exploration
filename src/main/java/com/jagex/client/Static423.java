@@ -19,8 +19,8 @@ public final class Static423 {
 	@OriginalMember(owner = "client!vi", name = "g", descriptor = "(I)V")
 	public static void method5405() {
 		Static34.A_ITERABLE_HASH_MAP___4.clear();
-		Static250.aClass229_4.method5087();
-		Static99.aClass229_1.method5087();
+		Static250.A_DOUBLY_LINKED_LIST___4.clear();
+		Static99.A_DOUBLY_LINKED_LIST___1.clear();
 	}
 
 	@OriginalMember(owner = "client!vi", name = "b", descriptor = "(Z)Z")
