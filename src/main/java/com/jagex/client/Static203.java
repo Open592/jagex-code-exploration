@@ -23,7 +23,7 @@ public final class Static203 {
 	@OriginalMember(owner = "client!kf", name = "a", descriptor = "(III)V")
 	public static void method3177(@OriginalArg(1) int arg0, @OriginalArg(2) int arg1) {
 		@Pc(10) HashMap local10 = new HashMap(16);
-		for (@Pc(20) Node_Sub18 local20 = (Node_Sub18) Static440.aLinkedHashMap_Iterator_40.head(); local20 != null; local20 = (Node_Sub18) Static440.aLinkedHashMap_Iterator_40.next()) {
+		for (@Pc(20) Node_Sub18 local20 = (Node_Sub18) Static440.aHashMap_40.head(); local20 != null; local20 = (Node_Sub18) Static440.aHashMap_40.next()) {
 			local20.popSelf();
 			@Pc(31) int local31 = (int) (local20.hashKey >> 28);
 			@Pc(41) int local41 = (int) (local20.hashKey >> 14 & 0x3FFFL) - arg1;
@@ -32,6 +32,6 @@ public final class Static203 {
 				local10.set((long) (local31 << 28 | local41 << 14 | local49), local20);
 			}
 		}
-		Static440.aLinkedHashMap_Iterator_40 = local10;
+		Static440.aHashMap_40 = local10;
 	}
 }

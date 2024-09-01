@@ -18,7 +18,7 @@ public final class Class68 {
 	private final int anInt2029;
 
 	@OriginalMember(owner = "client!fa", name = "o", descriptor = "Lclient!ib;")
-	private final HashMap aLinkedHashMap_Iterator_10;
+	private final HashMap aHashMap_10;
 
 	@OriginalMember(owner = "client!fa", name = "<init>", descriptor = "(I)V")
 	public Class68(@OriginalArg(0) int arg0) {
@@ -27,13 +27,13 @@ public final class Class68 {
 		@Pc(14) int local14;
 		for (local14 = 1; arg0 > local14 + local14; local14 += local14) {
 		}
-		this.aLinkedHashMap_Iterator_10 = new HashMap(local14);
+		this.aHashMap_10 = new HashMap(local14);
 	}
 
 	@OriginalMember(owner = "client!fa", name = "a", descriptor = "(Z)V")
 	public void method1777() {
 		this.aSecondaryLinkedList_2.clear();
-		this.aLinkedHashMap_Iterator_10.clear();
+		this.aHashMap_10.clear();
 		this.anInt2034 = this.anInt2029;
 	}
 
@@ -49,14 +49,14 @@ public final class Class68 {
 
 	@OriginalMember(owner = "client!fa", name = "b", descriptor = "(I)Ljava/lang/Object;")
 	public Object method1782() {
-		@Pc(11) SecondaryNode_Sub1_Sub8 local11 = (SecondaryNode_Sub1_Sub8) this.aLinkedHashMap_Iterator_10.next();
+		@Pc(11) SecondaryNode_Sub1_Sub8 local11 = (SecondaryNode_Sub1_Sub8) this.aHashMap_10.next();
 		while (local11 != null) {
 			@Pc(23) Object local23 = local11.method3885();
 			if (local23 != null) {
 				return local23;
 			}
 			@Pc(29) SecondaryNode_Sub1_Sub8 local29 = local11;
-			local11 = (SecondaryNode_Sub1_Sub8) this.aLinkedHashMap_Iterator_10.next();
+			local11 = (SecondaryNode_Sub1_Sub8) this.aHashMap_10.next();
 			local29.popSelf();
 			local29.secondaryPopSelf();
 			this.anInt2034 += local11.anInt5084;
@@ -66,7 +66,7 @@ public final class Class68 {
 
 	@OriginalMember(owner = "client!fa", name = "a", descriptor = "(JI)V")
 	private void method1783(@OriginalArg(0) long arg0) {
-		@Pc(10) SecondaryNode_Sub1_Sub8 local10 = (SecondaryNode_Sub1_Sub8) this.aLinkedHashMap_Iterator_10.get(arg0);
+		@Pc(10) SecondaryNode_Sub1_Sub8 local10 = (SecondaryNode_Sub1_Sub8) this.aHashMap_10.get(arg0);
 		this.method1792(local10);
 	}
 
@@ -88,7 +88,7 @@ public final class Class68 {
 
 	@OriginalMember(owner = "client!fa", name = "a", descriptor = "(JB)Ljava/lang/Object;")
 	public Object method1787(@OriginalArg(0) long arg0) {
-		@Pc(10) SecondaryNode_Sub1_Sub8 local10 = (SecondaryNode_Sub1_Sub8) this.aLinkedHashMap_Iterator_10.get(arg0);
+		@Pc(10) SecondaryNode_Sub1_Sub8 local10 = (SecondaryNode_Sub1_Sub8) this.aHashMap_10.get(arg0);
 		if (local10 == null) {
 			return null;
 		}
@@ -101,7 +101,7 @@ public final class Class68 {
 		}
 		if (local10.method3883()) {
 			@Pc(51) SecondaryNode_Sub1_Sub8_Sub1 local51 = new SecondaryNode_Sub1_Sub8_Sub1(local18, local10.anInt5084);
-			this.aLinkedHashMap_Iterator_10.set(local10.hashKey, local51);
+			this.aHashMap_10.set(local10.hashKey, local51);
 			this.aSecondaryLinkedList_2.insert(local51);
 			local51.secondaryValue = 0L;
 			local10.popSelf();
@@ -127,7 +127,7 @@ public final class Class68 {
 				}
 			} else if (++local13.secondaryValue > (long) arg0) {
 				@Pc(39) SecondaryNode_Sub1_Sub8 local39 = Static293.aClass174_1.method4040(local13);
-				this.aLinkedHashMap_Iterator_10.set(local13.hashKey, local39);
+				this.aHashMap_10.set(local13.hashKey, local39);
 				SecondaryLinkedList.insertAfter(local13, local39);
 				local13.popSelf();
 				local13.secondaryPopSelf();
@@ -137,14 +137,14 @@ public final class Class68 {
 
 	@OriginalMember(owner = "client!fa", name = "d", descriptor = "(B)Ljava/lang/Object;")
 	public Object method1789() {
-		@Pc(16) SecondaryNode_Sub1_Sub8 local16 = (SecondaryNode_Sub1_Sub8) this.aLinkedHashMap_Iterator_10.head();
+		@Pc(16) SecondaryNode_Sub1_Sub8 local16 = (SecondaryNode_Sub1_Sub8) this.aHashMap_10.head();
 		while (local16 != null) {
 			@Pc(22) Object local22 = local16.method3885();
 			if (local22 != null) {
 				return local22;
 			}
 			@Pc(26) SecondaryNode_Sub1_Sub8 local26 = local16;
-			local16 = (SecondaryNode_Sub1_Sub8) this.aLinkedHashMap_Iterator_10.next();
+			local16 = (SecondaryNode_Sub1_Sub8) this.aHashMap_10.next();
 			local26.popSelf();
 			local26.secondaryPopSelf();
 			this.anInt2034 += local16.anInt5084;
@@ -164,7 +164,7 @@ public final class Class68 {
 			this.method1792(local32);
 		}
 		@Pc(45) SecondaryNode_Sub1_Sub8_Sub1 local45 = new SecondaryNode_Sub1_Sub8_Sub1(arg0, 1);
-		this.aLinkedHashMap_Iterator_10.set(arg1, local45);
+		this.aHashMap_10.set(arg1, local45);
 		this.aSecondaryLinkedList_2.insert(local45);
 		local45.secondaryValue = 0L;
 	}

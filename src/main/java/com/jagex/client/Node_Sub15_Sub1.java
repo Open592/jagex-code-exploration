@@ -99,7 +99,7 @@ public final class Node_Sub15_Sub1 extends Node_Sub15 {
 	private final Node_Sub15_Sub4 aClass4_Sub15_Sub4_1 = new Node_Sub15_Sub4(this);
 
 	@OriginalMember(owner = "client!dv", name = "J", descriptor = "Lclient!ib;")
-	private final HashMap aLinkedHashMap_Iterator_8 = new HashMap(128);
+	private final HashMap aHashMap_8 = new HashMap(128);
 
 	@OriginalMember(owner = "client!dv", name = "<init>", descriptor = "()V")
 	public Node_Sub15_Sub1() {
@@ -303,7 +303,7 @@ public final class Node_Sub15_Sub1 extends Node_Sub15 {
 				}
 			}
 		}
-		@Pc(115) Node_Sub38 local115 = (Node_Sub38) this.aLinkedHashMap_Iterator_8.get((long) this.anIntArray122[arg0]);
+		@Pc(115) Node_Sub38 local115 = (Node_Sub38) this.aHashMap_8.get((long) this.anIntArray122[arg0]);
 		if (local115 == null) {
 			return;
 		}
@@ -559,7 +559,7 @@ public final class Node_Sub15_Sub1 extends Node_Sub15 {
 
 	@OriginalMember(owner = "client!dv", name = "e", descriptor = "(B)V")
 	public synchronized void method1438() {
-		for (@Pc(15) Node_Sub38 local15 = (Node_Sub38) this.aLinkedHashMap_Iterator_8.head(); local15 != null; local15 = (Node_Sub38) this.aLinkedHashMap_Iterator_8.next()) {
+		for (@Pc(15) Node_Sub38 local15 = (Node_Sub38) this.aHashMap_8.head(); local15 != null; local15 = (Node_Sub38) this.aHashMap_8.next()) {
 			local15.method4393();
 		}
 	}
@@ -577,7 +577,7 @@ public final class Node_Sub15_Sub1 extends Node_Sub15 {
 
 	@OriginalMember(owner = "client!dv", name = "f", descriptor = "(B)V")
 	public synchronized void method1441() {
-		for (@Pc(15) Node_Sub38 local15 = (Node_Sub38) this.aLinkedHashMap_Iterator_8.head(); local15 != null; local15 = (Node_Sub38) this.aLinkedHashMap_Iterator_8.next()) {
+		for (@Pc(15) Node_Sub38 local15 = (Node_Sub38) this.aHashMap_8.head(); local15 != null; local15 = (Node_Sub38) this.aHashMap_8.next()) {
 			local15.popSelf();
 		}
 	}
@@ -845,16 +845,16 @@ public final class Node_Sub15_Sub1 extends Node_Sub15 {
 		arg2.method3726();
 		@Pc(9) boolean local9 = true;
 		@Pc(20) int[] local20 = new int[] { 22050 };
-		for (@Pc(26) Node_Sub19 local26 = (Node_Sub19) arg2.aLinkedHashMap_Iterator_23.head(); local26 != null; local26 = (Node_Sub19) arg2.aLinkedHashMap_Iterator_23.next()) {
+		for (@Pc(26) Node_Sub19 local26 = (Node_Sub19) arg2.aHashMap_23.head(); local26 != null; local26 = (Node_Sub19) arg2.aHashMap_23.next()) {
 			@Pc(32) int local32 = (int) local26.hashKey;
-			@Pc(40) Node_Sub38 local40 = (Node_Sub38) this.aLinkedHashMap_Iterator_8.get((long) local32);
+			@Pc(40) Node_Sub38 local40 = (Node_Sub38) this.aHashMap_8.get((long) local32);
 			if (local40 == null) {
 				local40 = Static30.method577(local32, arg1);
 				if (local40 == null) {
 					local9 = false;
 					continue;
 				}
-				this.aLinkedHashMap_Iterator_8.set((long) local32, local40);
+				this.aHashMap_8.set((long) local32, local40);
 			}
 			if (!local40.method4398(arg0, local26.aByteArray24, local20)) {
 				local9 = false;

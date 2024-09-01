@@ -237,7 +237,7 @@ public final class Static147 {
 							if (local23.aClass247Array2 != null) {
 								method2460(local154, local234, local95 - local23.anInt6849, local46, local23.aClass247Array2, local148, local23.anInt6809, local232, local90 - local23.anInt6825);
 							}
-							@Pc(815) Node_Sub43 local815 = (Node_Sub43) Static325.aLinkedHashMap_Iterator_29.get((long) local23.anInt6809);
+							@Pc(815) Node_Sub43 local815 = (Node_Sub43) Static325.aHashMap_29.get((long) local23.anInt6809);
 							if (local815 != null) {
 								Static11.method123(local148, local46, local154, local234, local815.anInt6979, local232, local90, local95);
 							}

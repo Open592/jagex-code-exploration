@@ -14,7 +14,7 @@ public final class Static300 {
 		@Pc(7) Node_Sub43 local7 = new Node_Sub43();
 		local7.anInt6981 = arg1;
 		local7.anInt6979 = arg0;
-		Static325.aLinkedHashMap_Iterator_29.set((long) arg3, local7);
+		Static325.aHashMap_29.set((long) arg3, local7);
 		Static426.method5439(arg0);
 		@Pc(26) Class247 local26 = Static392.method5121(arg3);
 		if (local26 != null) {

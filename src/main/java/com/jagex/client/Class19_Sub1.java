@@ -84,7 +84,7 @@ public final class Class19_Sub1 extends Class19 {
 	private boolean aBoolean42;
 
 	@OriginalMember(owner = "client!bc", name = "v", descriptor = "Lclient!ib;")
-	private HashMap aLinkedHashMap_Iterator_3;
+	private HashMap aHashMap_3;
 
 	@OriginalMember(owner = "client!bc", name = "A", descriptor = "I")
 	public int anInt403;
@@ -166,7 +166,7 @@ public final class Class19_Sub1 extends Class19 {
 		super(arg0, arg1);
 		this.aBoolean41 = false;
 		this.aBoolean42 = false;
-		this.aLinkedHashMap_Iterator_3 = new HashMap(4);
+		this.aHashMap_3 = new HashMap(4);
 		this.anInt403 = 3500;
 		this.anInt406 = 50;
 		this.anInt404 = 75518;
@@ -1209,10 +1209,10 @@ public final class Class19_Sub1 extends Class19 {
 	@OriginalMember(owner = "client!bc", name = "a", descriptor = "(Ljava/awt/Canvas;)V")
 	@Override
 	public void method4249(@OriginalArg(0) Canvas arg0) {
-		@Pc(8) Node_Sub22 local8 = (Node_Sub22) this.aLinkedHashMap_Iterator_3.get((long) arg0.hashCode());
+		@Pc(8) Node_Sub22 local8 = (Node_Sub22) this.aHashMap_3.get((long) arg0.hashCode());
 		if (local8 == null) {
 			local8 = Static164.method3584(arg0);
-			this.aLinkedHashMap_Iterator_3.set((long) arg0.hashCode(), local8);
+			this.aHashMap_3.set((long) arg0.hashCode(), local8);
 		}
 	}
 
@@ -1231,7 +1231,7 @@ public final class Class19_Sub1 extends Class19 {
 		}
 		this.aClass4_Sub22_1 = null;
 		this.aCanvas1 = null;
-		this.aLinkedHashMap_Iterator_3 = null;
+		this.aHashMap_3 = null;
 		this.aBoolean41 = true;
 	}
 
@@ -1525,13 +1525,13 @@ public final class Class19_Sub1 extends Class19 {
 	@OriginalMember(owner = "client!bc", name = "d", descriptor = "(Ljava/awt/Canvas;)V")
 	@Override
 	public void method4272(@OriginalArg(0) Canvas arg0) {
-		@Pc(8) Node_Sub22 local8 = (Node_Sub22) this.aLinkedHashMap_Iterator_3.get((long) arg0.hashCode());
+		@Pc(8) Node_Sub22 local8 = (Node_Sub22) this.aHashMap_3.get((long) arg0.hashCode());
 		if (local8 == null) {
 			return;
 		}
 		local8.popSelf();
 		local8 = Static164.method3584(arg0);
-		this.aLinkedHashMap_Iterator_3.set((long) arg0.hashCode(), local8);
+		this.aHashMap_3.set((long) arg0.hashCode(), local8);
 		if (this.aCanvas1 != arg0 || this.aClass57_5 != null) {
 			return;
 		}
@@ -1667,7 +1667,7 @@ public final class Class19_Sub1 extends Class19 {
 		if (this.aCanvas1 == arg0) {
 			this.method4250(null);
 		}
-		@Pc(15) Node_Sub22 local15 = (Node_Sub22) this.aLinkedHashMap_Iterator_3.get((long) arg0.hashCode());
+		@Pc(15) Node_Sub22 local15 = (Node_Sub22) this.aHashMap_3.get((long) arg0.hashCode());
 		if (local15 != null) {
 			local15.popSelf();
 		}
@@ -2004,7 +2004,7 @@ public final class Class19_Sub1 extends Class19 {
 			}
 			return;
 		}
-		@Pc(10) Node_Sub22 local10 = (Node_Sub22) this.aLinkedHashMap_Iterator_3.get((long) arg0.hashCode());
+		@Pc(10) Node_Sub22 local10 = (Node_Sub22) this.aHashMap_3.get((long) arg0.hashCode());
 		if (local10 == null) {
 			return;
 		}

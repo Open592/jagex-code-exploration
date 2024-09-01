@@ -50,7 +50,7 @@ public final class Static258 {
 			local31.anInt612 = local31.aClass16_Sub1_Sub5_Sub2_1.anInt6892 + (local31.aClass16_Sub1_Sub5_Sub2_1.method4751() << 6);
 			Static110.method2017(arg3, arg0, arg2, local31, arg1);
 		}
-		for (@Pc(202) Node_Sub8 local202 = (Node_Sub8) Static341.A_ITERABLE_HASH_MAP___38.head(); local202 != null; local202 = (Node_Sub8) Static341.A_ITERABLE_HASH_MAP___38.next()) {
+		for (@Pc(202) Node_Sub8 local202 = (Node_Sub8) Static341.A_HASH_MAP___38.head(); local202 != null; local202 = (Node_Sub8) Static341.A_HASH_MAP___38.next()) {
 			@Pc(206) byte local206 = 1;
 			@Pc(211) Class151 local211 = local202.aClass16_Sub1_Sub5_Sub1_2.method4757();
 			if (local202.aClass16_Sub1_Sub5_Sub1_2.aBoolean562) {

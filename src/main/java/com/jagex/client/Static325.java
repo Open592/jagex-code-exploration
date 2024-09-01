@@ -18,7 +18,7 @@ public final class Static325 {
 	public static final Class84 aClass84_7 = new Class84();
 
 	@OriginalMember(owner = "client!qh", name = "D", descriptor = "Lclient!ib;")
-	public static HashMap aLinkedHashMap_Iterator_29 = new HashMap(8);
+	public static HashMap aHashMap_29 = new HashMap(8);
 
 	@OriginalMember(owner = "client!qh", name = "E", descriptor = "Ljava/util/Random;")
 	public static final Random random = new Random();

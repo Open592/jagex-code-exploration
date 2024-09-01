@@ -26,7 +26,7 @@ public final class Static90 {
 		if (!arg2 && Static334.anInt5766 != -1) {
 			Static310.method4165(Static334.anInt5766, 1);
 		}
-		@Pc(58) Class25 local58 = new Class25(Static325.aLinkedHashMap_Iterator_29);
+		@Pc(58) Class25 local58 = new Class25(Static325.aHashMap_29);
 		for (@Pc(63) Node_Sub43 local63 = (Node_Sub43) local58.method641(); local63 != null; local63 = (Node_Sub43) local58.method640()) {
 			if (!local63.hasNext()) {
 				local63 = (Node_Sub43) local58.method641();

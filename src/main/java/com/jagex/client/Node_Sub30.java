@@ -9,7 +9,7 @@ import org.openrs2.deob.annotation.Pc;
 public final class Node_Sub30 extends Node {
 
 	@OriginalMember(owner = "client!nb", name = "m", descriptor = "Lclient!ib;")
-	public HashMap aLinkedHashMap_Iterator_23;
+	public HashMap aHashMap_23;
 
 	@OriginalMember(owner = "client!nb", name = "l", descriptor = "[B")
 	public final byte[] aByteArray58;
@@ -299,15 +299,15 @@ public final class Node_Sub30 extends Node {
 
 	@OriginalMember(owner = "client!nb", name = "a", descriptor = "()V")
 	public void method3725() {
-		this.aLinkedHashMap_Iterator_23 = null;
+		this.aHashMap_23 = null;
 	}
 
 	@OriginalMember(owner = "client!nb", name = "b", descriptor = "()V")
 	public void method3726() {
-		if (this.aLinkedHashMap_Iterator_23 != null) {
+		if (this.aHashMap_23 != null) {
 			return;
 		}
-		this.aLinkedHashMap_Iterator_23 = new HashMap(16);
+		this.aHashMap_23 = new HashMap(16);
 		@Pc(12) int[] local12 = new int[16];
 		@Pc(15) int[] local15 = new int[16];
 		local12[9] = local15[9] = 128;
@@ -356,10 +356,10 @@ public final class Node_Sub30 extends Node {
 						local99 = local64 >> 16 & 0x7F;
 						if (local99 > 0) {
 							@Pc(174) int local174 = local15[local87];
-							@Pc(182) Node_Sub19 local182 = (Node_Sub19) this.aLinkedHashMap_Iterator_23.get((long) local174);
+							@Pc(182) Node_Sub19 local182 = (Node_Sub19) this.aHashMap_23.get((long) local174);
 							if (local182 == null) {
 								local182 = new Node_Sub19(new byte[128]);
-								this.aLinkedHashMap_Iterator_23.set((long) local174, local182);
+								this.aHashMap_23.set((long) local174, local182);
 							}
 							local182.aByteArray24[local93] = 1;
 						}

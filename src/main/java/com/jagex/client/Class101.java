@@ -21,7 +21,7 @@ public final class Class101 {
 	private int[] anIntArray201;
 
 	@OriginalMember(owner = "client!hv", name = "i", descriptor = "Lclient!ib;")
-	private HashMap aLinkedHashMap_Iterator_15;
+	private HashMap aHashMap_15;
 
 	@OriginalMember(owner = "client!hv", name = "j", descriptor = "[Ljava/lang/String;")
 	private String[] aStringArray12;
@@ -163,9 +163,9 @@ public final class Class101 {
 							}
 						} else if (arg1 == 249) {
 							local82 = arg0.g1();
-							if (this.aLinkedHashMap_Iterator_15 == null) {
+							if (this.aHashMap_15 == null) {
 								local88 = Static370.method4949(local82);
-								this.aLinkedHashMap_Iterator_15 = new HashMap(local88);
+								this.aHashMap_15 = new HashMap(local88);
 							}
 							for (local88 = 0; local88 < local82; local88++) {
 								@Pc(222) boolean local222 = arg0.g1() == 1;
@@ -176,7 +176,7 @@ public final class Class101 {
 								} else {
 									local235 = new Node_Sub37(arg0.g4());
 								}
-								this.aLinkedHashMap_Iterator_15.set((long) local226, local235);
+								this.aHashMap_15.set((long) local226, local235);
 							}
 							return;
 						}

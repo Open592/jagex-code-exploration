@@ -1750,7 +1750,7 @@ public final class Class19_Sub2 extends Class19 {
 		if (this.anInterface11_2 != null) {
 			return;
 		}
-		@Pc(16) LinkedEntry_Sub12_Sub2 local16 = new LinkedEntry_Sub12_Sub2(80);
+		@Pc(16) Node_Sub12_Sub2 local16 = new Node_Sub12_Sub2(80);
 		if (this.aBoolean215) {
 			local16.method2556(-1.0F);
 			local16.method2556(-1.0F);

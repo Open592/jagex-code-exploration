@@ -109,7 +109,7 @@ public final class Static53 {
 
 	@OriginalMember(owner = "client!client", name = "b", descriptor = "(Lclient!uu;)Lclient!ns;")
 	public static Node_Sub33 method900(@OriginalArg(0) Class247 arg0) {
-		@Pc(13) Node_Sub33 local13 = (Node_Sub33) Static211.A_ITERABLE_HASH_MAP___18.get(((long) arg0.anInt6809 << 32) + (long) arg0.anInt6865);
+		@Pc(13) Node_Sub33 local13 = (Node_Sub33) Static211.A_HASH_MAP___18.get(((long) arg0.anInt6809 << 32) + (long) arg0.anInt6865);
 		return local13 == null ? arg0.aClass4_Sub33_2 : local13;
 	}
 
@@ -641,7 +641,7 @@ public final class Static53 {
 								if (local6.aClass247Array2 != null) {
 									method901(local6.aClass247Array2, local6.anInt6809, local28, local30, local32, local34, local17 - local6.anInt6825, local22 - local6.anInt6849, arg8, arg9);
 								}
-								@Pc(2073) Node_Sub43 local2073 = (Node_Sub43) Static325.aLinkedHashMap_Iterator_29.get((long) local6.anInt6809);
+								@Pc(2073) Node_Sub43 local2073 = (Node_Sub43) Static325.aHashMap_29.get((long) local6.anInt6809);
 								if (local2073 != null) {
 									if (Static393.currentGameDetails == Static196.runescapeGameDetails && local2073.anInt6981 == 0 && !Static234.aBoolean411 && local204 && !Static415.aBoolean626) {
 										Static314.method4198();

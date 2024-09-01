@@ -21,7 +21,7 @@ public final class Class142 {
 	private int anInt4441;
 
 	@OriginalMember(owner = "client!lt", name = "m", descriptor = "Lclient!ib;")
-	private final HashMap aLinkedHashMap_Iterator_19;
+	private final HashMap aHashMap_19;
 
 	@OriginalMember(owner = "client!lt", name = "<init>", descriptor = "(I)V")
 	public Class142(@OriginalArg(0) int arg0) {
@@ -30,11 +30,11 @@ public final class Class142 {
 		@Pc(19) int local19;
 		for (local19 = 1; arg0 > local19 + local19; local19 += local19) {
 		}
-		this.aLinkedHashMap_Iterator_19 = new HashMap(local19);
+		this.aHashMap_19 = new HashMap(local19);
 	}
 
 	@OriginalMember(owner = "client!lt", name = "a", descriptor = "(JLclient!ac;I)V")
-	public void method3480(@OriginalArg(0) long hashKey, @OriginalArg(1) SecondaryNode entry) {
+	public void method3480(@OriginalArg(0) long hashKey, @OriginalArg(1) SecondaryNode node) {
 		if (this.anInt4441 == 0) {
 			@Pc(11) SecondaryNode local11 = this.aSecondaryLinkedList_3.popHead();
 			local11.popSelf();
@@ -47,13 +47,13 @@ public final class Class142 {
 		} else {
 			this.anInt4441--;
 		}
-		this.aLinkedHashMap_Iterator_19.set(hashKey, entry);
-		this.aSecondaryLinkedList_3.insert(entry);
+		this.aHashMap_19.set(hashKey, node);
+		this.aSecondaryLinkedList_3.insert(node);
 	}
 
 	@OriginalMember(owner = "client!lt", name = "a", descriptor = "(JB)Lclient!ac;")
 	public SecondaryNode method3483(@OriginalArg(0) long arg0) {
-		@Pc(10) SecondaryNode local10 = (SecondaryNode) this.aLinkedHashMap_Iterator_19.get(arg0);
+		@Pc(10) SecondaryNode local10 = (SecondaryNode) this.aHashMap_19.get(arg0);
 		if (local10 != null) {
 			this.aSecondaryLinkedList_3.insert(local10);
 		}
@@ -63,7 +63,7 @@ public final class Class142 {
 	@OriginalMember(owner = "client!lt", name = "a", descriptor = "(B)V")
 	public void method3484() {
 		this.aSecondaryLinkedList_3.clear();
-		this.aLinkedHashMap_Iterator_19.clear();
+		this.aHashMap_19.clear();
 		this.aClass4_Sub1_42 = new SecondaryNode();
 		this.anInt4441 = this.anInt4442;
 	}

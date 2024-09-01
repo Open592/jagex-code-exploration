@@ -24,8 +24,8 @@ public final class Static428 {
 			return false;
 		} else if (!arg0.method3778(Static148.anInterface12_2)) {
 			return false;
-		} else if (Static138.A_ITERABLE_HASH_MAP___12.get((long) arg0.anInt4914) == null) {
-			return Static11.A_ITERABLE_HASH_MAP___1.get((long) arg0.anInt4919) == null;
+		} else if (Static138.A_HASH_MAP___12.get((long) arg0.anInt4914) == null) {
+			return Static11.A_HASH_MAP___1.get((long) arg0.anInt4919) == null;
 		} else {
 			return false;
 		}

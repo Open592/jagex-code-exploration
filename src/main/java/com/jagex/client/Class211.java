@@ -48,7 +48,7 @@ public final class Class211 {
 	private int anInt6178;
 
 	@OriginalMember(owner = "client!rv", name = "xb", descriptor = "Lclient!ib;")
-	public HashMap aLinkedHashMap_Iterator_36;
+	public HashMap aHashMap_36;
 
 	@OriginalMember(owner = "client!rv", name = "a", descriptor = "I")
 	public int anInt6122 = 0;
@@ -480,7 +480,7 @@ public final class Class211 {
 		this.aByteArray85 = arg0.aByteArray85;
 		this.anInt6181 = arg0.anInt6181;
 		this.aShortArray212 = arg0.aShortArray212;
-		this.aLinkedHashMap_Iterator_36 = arg0.aLinkedHashMap_Iterator_36;
+		this.aHashMap_36 = arg0.aHashMap_36;
 		this.aBoolean565 = arg0.aBoolean565;
 		this.anInt6122 = arg1.anInt6122;
 		this.anInt6134 = arg0.anInt6134;
@@ -637,9 +637,9 @@ public final class Class211 {
 				}
 			} else if (arg0 == 249) {
 				local147 = arg1.g1();
-				if (this.aLinkedHashMap_Iterator_36 == null) {
+				if (this.aHashMap_36 == null) {
 					local157 = Static370.method4949(local147);
-					this.aLinkedHashMap_Iterator_36 = new HashMap(local157);
+					this.aHashMap_36 = new HashMap(local157);
 				}
 				for (local157 = 0; local157 < local147; local157++) {
 					@Pc(517) boolean local517 = arg1.g1() == 1;
@@ -650,7 +650,7 @@ public final class Class211 {
 					} else {
 						local530 = new Node_Sub37(arg1.g4());
 					}
-					this.aLinkedHashMap_Iterator_36.set((long) local521, local530);
+					this.aHashMap_36.set((long) local521, local530);
 				}
 				return;
 			}
@@ -659,10 +659,10 @@ public final class Class211 {
 
 	@OriginalMember(owner = "client!rv", name = "b", descriptor = "(III)I")
 	public int method4781(@OriginalArg(0) int arg0, @OriginalArg(2) int arg1) {
-		if (this.aLinkedHashMap_Iterator_36 == null) {
+		if (this.aHashMap_36 == null) {
 			return arg1;
 		} else {
-			@Pc(16) Node_Sub37 local16 = (Node_Sub37) this.aLinkedHashMap_Iterator_36.get((long) arg0);
+			@Pc(16) Node_Sub37 local16 = (Node_Sub37) this.aHashMap_36.get((long) arg0);
 			return local16 == null ? arg1 : local16.anInt5426;
 		}
 	}
@@ -800,10 +800,10 @@ public final class Class211 {
 
 	@OriginalMember(owner = "client!rv", name = "a", descriptor = "(Ljava/lang/String;II)Ljava/lang/String;")
 	public String method4789(@OriginalArg(0) String arg0, @OriginalArg(2) int arg1) {
-		if (this.aLinkedHashMap_Iterator_36 == null) {
+		if (this.aHashMap_36 == null) {
 			return arg0;
 		} else {
-			@Pc(16) Node_Sub7 local16 = (Node_Sub7) this.aLinkedHashMap_Iterator_36.get((long) arg1);
+			@Pc(16) Node_Sub7 local16 = (Node_Sub7) this.aHashMap_36.get((long) arg1);
 			return local16 == null ? arg0 : local16.aString12;
 		}
 	}

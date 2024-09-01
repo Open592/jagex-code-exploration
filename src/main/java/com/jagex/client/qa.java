@@ -42,7 +42,7 @@ public final class qa extends Class19 implements Interface4 {
 	private final int anInt5538 = 4096;
 
 	@OriginalMember(owner = "client!qa", name = "L", descriptor = "Lclient!ib;")
-	private final HashMap aLinkedHashMap_Iterator_28 = new HashMap(4);
+	private final HashMap aHashMap_28 = new HashMap(4);
 
 	@OriginalMember(owner = "client!qa", name = "N", descriptor = "Z")
 	private boolean aBoolean496 = false;
@@ -284,7 +284,7 @@ public final class qa extends Class19 implements Interface4 {
 	@OriginalMember(owner = "client!qa", name = "a", descriptor = "(Ljava/awt/Canvas;)V")
 	@Override
 	public void method4249(@OriginalArg(0) Canvas arg0) {
-		@Pc(8) za local8 = (za) this.aLinkedHashMap_Iterator_28.get((long) arg0.hashCode());
+		@Pc(8) za local8 = (za) this.aHashMap_28.get((long) arg0.hashCode());
 		if (local8 != null) {
 			return;
 		}
@@ -295,7 +295,7 @@ public final class qa extends Class19 implements Interface4 {
 		} catch (@Pc(35) Exception local35) {
 		}
 		local8 = new za(this, arg0);
-		this.aLinkedHashMap_Iterator_28.set((long) arg0.hashCode(), local8);
+		this.aHashMap_28.set((long) arg0.hashCode(), local8);
 	}
 
 	@OriginalMember(owner = "client!qa", name = "o", descriptor = "()I")
@@ -568,7 +568,7 @@ public final class qa extends Class19 implements Interface4 {
 	@OriginalMember(owner = "client!qa", name = "d", descriptor = "(Ljava/awt/Canvas;)V")
 	@Override
 	public void method4272(@OriginalArg(0) Canvas arg0) {
-		@Pc(8) za local8 = (za) this.aLinkedHashMap_Iterator_28.get((long) arg0.hashCode());
+		@Pc(8) za local8 = (za) this.aHashMap_28.get((long) arg0.hashCode());
 		@Pc(11) Dimension local11 = arg0.getSize();
 		local8.H(arg0, local11.width, local11.height);
 		if (arg0 != null && arg0 == this.aCanvas6) {
@@ -718,7 +718,7 @@ public final class qa extends Class19 implements Interface4 {
 			this.aZa1 = null;
 			this.PA(null);
 		} else {
-			@Pc(10) za local10 = (za) this.aLinkedHashMap_Iterator_28.get((long) arg0.hashCode());
+			@Pc(10) za local10 = (za) this.aHashMap_28.get((long) arg0.hashCode());
 			this.aCanvas6 = arg0;
 			this.aZa1 = local10;
 			this.PA(local10);
@@ -824,7 +824,7 @@ public final class qa extends Class19 implements Interface4 {
 		if (this.aCanvas6 == arg0) {
 			this.method4250(null);
 		}
-		@Pc(15) za local15 = (za) this.aLinkedHashMap_Iterator_28.get((long) arg0.hashCode());
+		@Pc(15) za local15 = (za) this.aHashMap_28.get((long) arg0.hashCode());
 		if (local15 != null) {
 			local15.popSelf();
 		}

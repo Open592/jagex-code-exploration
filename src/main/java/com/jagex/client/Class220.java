@@ -18,7 +18,7 @@ public final class Class220 {
 	private final int anInt6334;
 
 	@OriginalMember(owner = "client!sq", name = "d", descriptor = "Lclient!ib;")
-	private final HashMap aLinkedHashMap_Iterator_37;
+	private final HashMap aHashMap_37;
 
 	@OriginalMember(owner = "client!sq", name = "<init>", descriptor = "(I)V")
 	public Class220(@OriginalArg(0) int arg0) {
@@ -27,13 +27,13 @@ public final class Class220 {
 		@Pc(16) int local16;
 		for (local16 = 1; local16 + local16 < arg0; local16 += local16) {
 		}
-		this.aLinkedHashMap_Iterator_37 = new HashMap(local16);
+		this.aHashMap_37 = new HashMap(local16);
 	}
 
 	@OriginalMember(owner = "client!sq", name = "a", descriptor = "(ILclient!bq;)V")
 	private void method4943(@OriginalArg(1) Interface2 arg0) {
 		@Pc(9) long local9 = arg0.method3685();
-		for (@Pc(16) SecondaryNode_Sub1_Sub9 local16 = (SecondaryNode_Sub1_Sub9) this.aLinkedHashMap_Iterator_37.get(local9); local16 != null; local16 = (SecondaryNode_Sub1_Sub9) this.aLinkedHashMap_Iterator_37.nextFoundNode()) {
+		for (@Pc(16) SecondaryNode_Sub1_Sub9 local16 = (SecondaryNode_Sub1_Sub9) this.aHashMap_37.get(local9); local16 != null; local16 = (SecondaryNode_Sub1_Sub9) this.aHashMap_37.nextFoundNode()) {
 			if (local16.anInterface2_3.method3684(arg0)) {
 				this.method4945(local16);
 				return;
@@ -58,13 +58,13 @@ public final class Class220 {
 	@OriginalMember(owner = "client!sq", name = "a", descriptor = "(Lclient!bq;I)Ljava/lang/Object;")
 	public Object method4946(@OriginalArg(0) Interface2 arg0) {
 		@Pc(9) long local9 = arg0.method3685();
-		for (@Pc(23) SecondaryNode_Sub1_Sub9 local23 = (SecondaryNode_Sub1_Sub9) this.aLinkedHashMap_Iterator_37.get(local9); local23 != null; local23 = (SecondaryNode_Sub1_Sub9) this.aLinkedHashMap_Iterator_37.nextFoundNode()) {
+		for (@Pc(23) SecondaryNode_Sub1_Sub9 local23 = (SecondaryNode_Sub1_Sub9) this.aHashMap_37.get(local9); local23 != null; local23 = (SecondaryNode_Sub1_Sub9) this.aHashMap_37.nextFoundNode()) {
 			if (local23.anInterface2_3.method3684(arg0)) {
 				@Pc(37) Object local37 = local23.method2571();
 				if (local37 != null) {
 					if (local23.method2567()) {
 						@Pc(66) SecondaryNode_Sub1_Sub9_Sub2 local66 = new SecondaryNode_Sub1_Sub9_Sub2(arg0, local37, local23.anInt3025);
-						this.aLinkedHashMap_Iterator_37.set(local23.hashKey, local66);
+						this.aHashMap_37.set(local23.hashKey, local66);
 						this.aSecondaryLinkedList_5.insert(local66);
 						local66.secondaryValue = 0L;
 						local23.popSelf();
@@ -97,7 +97,7 @@ public final class Class220 {
 				}
 			} else if (++local21.secondaryValue > (long) 5) {
 				@Pc(47) SecondaryNode_Sub1_Sub9 local47 = Static224.aClass105_1.method5276(local21);
-				this.aLinkedHashMap_Iterator_37.set(local21.hashKey, local47);
+				this.aHashMap_37.set(local21.hashKey, local47);
 				SecondaryLinkedList.insertAfter(local21, local47);
 				local21.popSelf();
 				local21.secondaryPopSelf();
@@ -108,7 +108,7 @@ public final class Class220 {
 	@OriginalMember(owner = "client!sq", name = "a", descriptor = "(Z)V")
 	public void method4951() {
 		this.aSecondaryLinkedList_5.clear();
-		this.aLinkedHashMap_Iterator_37.clear();
+		this.aHashMap_37.clear();
 		this.anInt6338 = this.anInt6334;
 	}
 
@@ -145,7 +145,7 @@ public final class Class220 {
 			this.method4945(local36);
 		}
 		@Pc(59) SecondaryNode_Sub1_Sub9_Sub2 local59 = new SecondaryNode_Sub1_Sub9_Sub2(arg0, arg1, 1);
-		this.aLinkedHashMap_Iterator_37.set(arg0.method3685(), local59);
+		this.aHashMap_37.set(arg0.method3685(), local59);
 		this.aSecondaryLinkedList_5.insert(local59);
 		local59.secondaryValue = 0L;
 	}

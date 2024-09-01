@@ -48,10 +48,10 @@ public final class Node_Sub24 extends Node {
 	private Packet aPacket_3;
 
 	@OriginalMember(owner = "client!iu", name = "C", descriptor = "Lclient!hk;")
-	private LinkedEntry_Sub12_Sub2 aClass4_Sub12_Sub2_2;
+	private Node_Sub12_Sub2 aNode_Sub12_Sub2_2;
 
 	@OriginalMember(owner = "client!iu", name = "E", descriptor = "Lclient!ib;")
-	private HashMap aLinkedHashMap_Iterator_17;
+	private HashMap aHashMap_17;
 
 	@OriginalMember(owner = "client!iu", name = "u", descriptor = "Lclient!bk;")
 	private final Interface1 anInterface1_3;
@@ -129,8 +129,8 @@ public final class Node_Sub24 extends Node {
 		}
 		if (local123 > 0) {
 			this.aPacket_3 = new Packet(local123 * 2);
-			this.aClass4_Sub12_Sub2_2 = new LinkedEntry_Sub12_Sub2(local123 * 16);
-			this.aLinkedHashMap_Iterator_17 = new HashMap(Static370.method4949(local123));
+			this.aNode_Sub12_Sub2_2 = new Node_Sub12_Sub2(local123 * 16);
+			this.aHashMap_17 = new HashMap(Static370.method4949(local123));
 			local178 = 0;
 			local141 = 0;
 			for (local193 = this.anInt3415; local193 <= this.anInt3409; local193++) {
@@ -174,7 +174,7 @@ public final class Node_Sub24 extends Node {
 				local178++;
 			}
 			this.anInterface1_3 = this.aClass19_Sub2_22.method1955(this.aPacket_3.pos, false, this.aPacket_3.data);
-			this.anInterface11_5 = this.aClass19_Sub2_22.method1960(this.aClass4_Sub12_Sub2_2.pos, this.aClass4_Sub12_Sub2_2.data, false, 16);
+			this.anInterface11_5 = this.aClass19_Sub2_22.method1960(this.aNode_Sub12_Sub2_2.pos, this.aNode_Sub12_Sub2_2.data, false, 16);
 			this.aClass177_12 = new Class177(this.anInterface11_5, 5126, 3, 0);
 			this.aClass177_11 = new Class177(this.anInterface11_5, 5121, 4, 12);
 		} else {
@@ -183,10 +183,10 @@ public final class Node_Sub24 extends Node {
 			this.anInterface1_3 = null;
 			this.aClass177_12 = null;
 		}
-		this.aLinkedHashMap_Iterator_17 = null;
+		this.aHashMap_17 = null;
 		this.aFloatArrayArray2 = this.aFloatArrayArray3 = this.aFloatArrayArray4 = null;
 		this.aPacket_3 = null;
-		this.aClass4_Sub12_Sub2_2 = null;
+		this.aNode_Sub12_Sub2_2 = null;
 	}
 
 	@OriginalMember(owner = "client!iu", name = "a", descriptor = "(IIIIIII)V")
@@ -197,7 +197,7 @@ public final class Node_Sub24 extends Node {
 		@Pc(35) int local35 = this.aClass65_Sub2_2.a(local21, local29);
 		if ((arg0 & 0x7F) == 0 || (arg1 & 0x7F) == 0) {
 			local7 = (long) local21 & 0xFFFFL | (long) local29 << 16 & 0xFFFFL << 16;
-			@Pc(66) Node local66 = this.aLinkedHashMap_Iterator_17.get(local7);
+			@Pc(66) Node local66 = this.aHashMap_17.get(local7);
 			if (local66 != null) {
 				this.method2840(((Node_Sub31) local66).aShort62);
 				return;
@@ -205,7 +205,7 @@ public final class Node_Sub24 extends Node {
 		}
 		@Pc(84) short local84 = (short) this.anInt3410++;
 		if (local7 != -1L) {
-			this.aLinkedHashMap_Iterator_17.set(local7, new Node_Sub31(local84));
+			this.aHashMap_17.set(local7, new Node_Sub31(local84));
 		}
 		@Pc(313) float local313;
 		@Pc(287) float local287;
@@ -285,21 +285,21 @@ public final class Node_Sub24 extends Node {
 		}
 		@Pc(594) int local594 = (int) (local543 * (float) (local554 & 0xFF));
 		if (this.aClass19_Sub2_22.aBoolean215) {
-			this.aClass4_Sub12_Sub2_2.method2556((float) local21);
-			this.aClass4_Sub12_Sub2_2.method2556((float) local35);
-			this.aClass4_Sub12_Sub2_2.method2556((float) local29);
+			this.aNode_Sub12_Sub2_2.method2556((float) local21);
+			this.aNode_Sub12_Sub2_2.method2556((float) local35);
+			this.aNode_Sub12_Sub2_2.method2556((float) local29);
 		} else {
-			this.aClass4_Sub12_Sub2_2.method2552((float) local21);
-			this.aClass4_Sub12_Sub2_2.method2552((float) local35);
-			this.aClass4_Sub12_Sub2_2.method2552((float) local29);
+			this.aNode_Sub12_Sub2_2.method2552((float) local21);
+			this.aNode_Sub12_Sub2_2.method2552((float) local35);
+			this.aNode_Sub12_Sub2_2.method2552((float) local29);
 		}
 		if (local594 > 255) {
 			local594 = 255;
 		}
-		this.aClass4_Sub12_Sub2_2.p1(local564);
-		this.aClass4_Sub12_Sub2_2.p1(local581);
-		this.aClass4_Sub12_Sub2_2.p1(local594);
-		this.aClass4_Sub12_Sub2_2.p1(255);
+		this.aNode_Sub12_Sub2_2.p1(local564);
+		this.aNode_Sub12_Sub2_2.p1(local581);
+		this.aNode_Sub12_Sub2_2.p1(local594);
+		this.aNode_Sub12_Sub2_2.p1(255);
 		this.method2840(local84);
 	}
 

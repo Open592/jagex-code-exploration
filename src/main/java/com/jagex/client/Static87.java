@@ -22,8 +22,8 @@ public final class Static87 {
 			local16.method89(new Packet(local26));
 		}
 		local16.method91();
-		if (local16.anInt121 == 2 && Static18.A_ITERABLE_HASH_MAP___2.get((long) arg0) == null) {
-			Static18.A_ITERABLE_HASH_MAP___2.set((long) arg0, new Node_Sub37(Static194.anInt3688));
+		if (local16.anInt121 == 2 && Static18.A_HASH_MAP___2.get((long) arg0) == null) {
+			Static18.A_HASH_MAP___2.set((long) arg0, new Node_Sub37(Static194.anInt3688));
 			Static392.aClass8Array1[Static194.anInt3688++] = local16;
 		}
 		Static330.aClass68_38.method1779((long) arg0, local16);

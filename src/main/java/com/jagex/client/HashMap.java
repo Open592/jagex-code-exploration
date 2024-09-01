@@ -68,10 +68,10 @@ public final class HashMap {
 
 		for (int i = 0; i < this.bucketCount; i++) {
 			Node sentinelNode = this.buckets[i];
-			Node currentEntry = sentinelNode.previous;
+			Node currentNode = sentinelNode.previous;
 
-			while (sentinelNode != currentEntry) {
-				currentEntry = currentEntry.previous;
+			while (sentinelNode != currentNode) {
+				currentNode = currentNode.previous;
 
 				count++;
 			}
@@ -86,13 +86,13 @@ public final class HashMap {
 			Node sentinelNode = this.buckets[i];
 
 			while (true) {
-				Node currentEntry = sentinelNode.previous;
+				Node currentNode = sentinelNode.previous;
 
-				if (currentEntry == sentinelNode) {
+				if (currentNode == sentinelNode) {
 					break;
 				}
 
-				currentEntry.popSelf();
+				currentNode.popSelf();
 			}
 		}
 
@@ -126,18 +126,18 @@ public final class HashMap {
 	}
 
 	@OriginalMember(owner = "client!ib", name = "a", descriptor = "(JILclient!vu;)V")
-	public void set(long hashKey, Node entry) {
-		if (entry.next != null) {
-			entry.popSelf();
+	public void set(long hashKey, Node node) {
+		if (node.next != null) {
+			node.popSelf();
 		}
 
 		Node sentinelNode = this.buckets[(int) (hashKey & (long) (this.bucketCount - 1))];
 
-		entry.previous = sentinelNode;
-		entry.next = sentinelNode.next;
-		entry.next.previous = entry;
-		entry.hashKey = hashKey;
-		entry.previous.next = entry;
+		node.previous = sentinelNode;
+		node.next = sentinelNode.next;
+		node.next.previous = node;
+		node.hashKey = hashKey;
+		node.previous.next = node;
 	}
 
 	@OriginalMember(owner = "client!ib", name = "b", descriptor = "(B)Lclient!vu;")
@@ -187,8 +187,8 @@ public final class HashMap {
 		for (int i = 0; i < this.bucketCount; i++) {
 			Node sentinelNode = this.buckets[i];
 
-			for (Node entry = sentinelNode.previous; entry != sentinelNode; entry = entry.previous) {
-				result[size++] = entry;
+			for (Node node = sentinelNode.previous; node != sentinelNode; node = node.previous) {
+				result[size++] = node;
 			}
 		}
 		return size;

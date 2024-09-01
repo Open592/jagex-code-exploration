@@ -111,7 +111,7 @@ public final class Static244 {
 			local40 = (local16 >> 4 & 0x7) + Static154.anInt813;
 			local49 = Static385.anInt6487 + (local16 & 0x7);
 			if (local40 >= 0 && local49 >= 0 && Static326.anInt5666 > local40 && local49 < Static283.anInt5187) {
-				@Pc(395) Node_Sub18 local395 = (Node_Sub18) Static440.aLinkedHashMap_Iterator_40.get((long) (Static113.anInt2426 << 28 | local49 << 14 | local40));
+				@Pc(395) Node_Sub18 local395 = (Node_Sub18) Static440.aHashMap_40.get((long) (Static113.anInt2426 << 28 | local49 << 14 | local40));
 				if (local395 != null) {
 					for (@Pc(403) Node_Sub45 local403 = (Node_Sub45) local395.aClass183_14.method4140(); local403 != null; local403 = (Node_Sub45) local395.aClass183_14.method4144()) {
 						if (local403.anInt7355 == (local12 & 0x7FFF)) {
@@ -266,8 +266,8 @@ public final class Static244 {
 				local49 = Static146.aClass4_Sub12_Sub1_3.g2();
 				local55 = Static146.aClass4_Sub12_Sub1_3.g2();
 				local126 = Static146.aClass4_Sub12_Sub1_3.g2();
-				if (Static440.aLinkedHashMap_Iterator_40 != null && local16 >= 0 && local40 >= 0 && Static326.anInt5666 > local16 && local40 < Static283.anInt5187) {
-					@Pc(1265) Node_Sub18 local1265 = (Node_Sub18) Static440.aLinkedHashMap_Iterator_40.get((long) (local16 | local40 << 14 | Static113.anInt2426 << 28));
+				if (Static440.aHashMap_40 != null && local16 >= 0 && local40 >= 0 && Static326.anInt5666 > local16 && local40 < Static283.anInt5187) {
+					@Pc(1265) Node_Sub18 local1265 = (Node_Sub18) Static440.aHashMap_40.get((long) (local16 | local40 << 14 | Static113.anInt2426 << 28));
 					if (local1265 != null) {
 						for (@Pc(1273) Node_Sub45 local1273 = (Node_Sub45) local1265.aClass183_14.method4140(); local1273 != null; local1273 = (Node_Sub45) local1265.aClass183_14.method4144()) {
 							if (local1273.anInt7355 == (local49 & 0x7FFF) && local55 == local1273.anInt7356) {

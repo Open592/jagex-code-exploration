@@ -62,7 +62,7 @@ public final class Static450 {
 			}
 			Static22.method294(local178, arg3, local257.anInt5807, arg0, local189, local10, arg1, arg2);
 		}
-		for (@Pc(293) Node_Sub18 local293 = (Node_Sub18) Static440.aLinkedHashMap_Iterator_40.head(); local293 != null; local293 = (Node_Sub18) Static440.aLinkedHashMap_Iterator_40.next()) {
+		for (@Pc(293) Node_Sub18 local293 = (Node_Sub18) Static440.aHashMap_40.head(); local293 != null; local293 = (Node_Sub18) Static440.aHashMap_40.next()) {
 			local189 = (int) (local293.hashKey >> 28 & 0x3L);
 			if (Static386.anInt3967 == local189) {
 				local200 = (int) (local293.hashKey & 0x3FFFL) * 4 + 2 - local63 / 32;

@@ -177,7 +177,7 @@ public final class Class247 {
 	public int anInt6860;
 
 	@OriginalMember(owner = "client!uu", name = "jd", descriptor = "Lclient!ib;")
-	private HashMap aLinkedHashMap_Iterator_39;
+	private HashMap aHashMap_39;
 
 	@OriginalMember(owner = "client!uu", name = "ld", descriptor = "[I")
 	public int[] anIntArray524;
@@ -454,14 +454,14 @@ public final class Class247 {
 
 	@OriginalMember(owner = "client!uu", name = "a", descriptor = "(Ljava/lang/String;II)V")
 	public void method5297(@OriginalArg(0) String arg0, @OriginalArg(1) int arg1) {
-		if (this.aLinkedHashMap_Iterator_39 == null) {
-			this.aLinkedHashMap_Iterator_39 = new HashMap(16);
-			this.aLinkedHashMap_Iterator_39.set((long) arg1, new Node_Sub7(arg0));
+		if (this.aHashMap_39 == null) {
+			this.aHashMap_39 = new HashMap(16);
+			this.aHashMap_39.set((long) arg1, new Node_Sub7(arg0));
 			return;
 		}
-		@Pc(41) Node_Sub7 local41 = (Node_Sub7) this.aLinkedHashMap_Iterator_39.get((long) arg1);
+		@Pc(41) Node_Sub7 local41 = (Node_Sub7) this.aHashMap_39.get((long) arg1);
 		if (local41 == null) {
-			this.aLinkedHashMap_Iterator_39.set((long) arg1, new Node_Sub7(arg0));
+			this.aHashMap_39.set((long) arg1, new Node_Sub7(arg0));
 		} else {
 			local41.aString12 = arg0;
 		}
@@ -486,10 +486,10 @@ public final class Class247 {
 
 	@OriginalMember(owner = "client!uu", name = "b", descriptor = "(III)I")
 	public int method5299(@OriginalArg(1) int arg0, @OriginalArg(2) int arg1) {
-		if (this.aLinkedHashMap_Iterator_39 == null) {
+		if (this.aHashMap_39 == null) {
 			return arg0;
 		} else {
-			@Pc(16) Node_Sub37 local16 = (Node_Sub37) this.aLinkedHashMap_Iterator_39.get((long) arg1);
+			@Pc(16) Node_Sub37 local16 = (Node_Sub37) this.aHashMap_39.get((long) arg1);
 			return local16 == null ? arg0 : local16.anInt5426;
 		}
 	}
@@ -553,8 +553,8 @@ public final class Class247 {
 
 	@OriginalMember(owner = "client!uu", name = "a", descriptor = "(BI)V")
 	public void method5303(@OriginalArg(1) int arg0) {
-		if (this.aLinkedHashMap_Iterator_39 != null) {
-			@Pc(9) Node local9 = this.aLinkedHashMap_Iterator_39.get((long) arg0);
+		if (this.aHashMap_39 != null) {
+			@Pc(9) Node local9 = this.aHashMap_39.get((long) arg0);
 			if (local9 != null) {
 				local9.popSelf();
 			}
@@ -751,13 +751,13 @@ public final class Class247 {
 			for (@Pc(780) int local780 = 0; local780 < local628; local780++) {
 				local786 = arg0.g3();
 				local790 = arg0.g4();
-				this.aLinkedHashMap_Iterator_39.set((long) local786, new Node_Sub37(local790));
+				this.aHashMap_39.set((long) local786, new Node_Sub37(local790));
 			}
 			local786 = arg0.g1();
 			for (local790 = 0; local790 < local786; local790++) {
 				@Pc(816) int local816 = arg0.g3();
 				@Pc(820) String local820 = arg0.gjstr2();
-				this.aLinkedHashMap_Iterator_39.set((long) local816, new Node_Sub7(local820));
+				this.aHashMap_39.set((long) local816, new Node_Sub7(local820));
 			}
 		}
 		this.anObjectArray28 = this.method5302(arg0);
@@ -987,24 +987,24 @@ public final class Class247 {
 
 	@OriginalMember(owner = "client!uu", name = "b", descriptor = "(Ljava/lang/String;II)Ljava/lang/String;")
 	public String method5314(@OriginalArg(0) String arg0, @OriginalArg(1) int arg1) {
-		if (this.aLinkedHashMap_Iterator_39 == null) {
+		if (this.aHashMap_39 == null) {
 			return arg0;
 		} else {
-			@Pc(22) Node_Sub7 local22 = (Node_Sub7) this.aLinkedHashMap_Iterator_39.get((long) arg1);
+			@Pc(22) Node_Sub7 local22 = (Node_Sub7) this.aHashMap_39.get((long) arg1);
 			return local22 == null ? arg0 : local22.aString12;
 		}
 	}
 
 	@OriginalMember(owner = "client!uu", name = "c", descriptor = "(III)V")
 	public void method5315(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1) {
-		if (this.aLinkedHashMap_Iterator_39 == null) {
-			this.aLinkedHashMap_Iterator_39 = new HashMap(16);
-			this.aLinkedHashMap_Iterator_39.set((long) arg0, new Node_Sub37(arg1));
+		if (this.aHashMap_39 == null) {
+			this.aHashMap_39 = new HashMap(16);
+			this.aHashMap_39.set((long) arg0, new Node_Sub37(arg1));
 			return;
 		}
-		@Pc(31) Node_Sub37 local31 = (Node_Sub37) this.aLinkedHashMap_Iterator_39.get((long) arg0);
+		@Pc(31) Node_Sub37 local31 = (Node_Sub37) this.aHashMap_39.get((long) arg0);
 		if (local31 == null) {
-			this.aLinkedHashMap_Iterator_39.set((long) arg0, new Node_Sub37(arg1));
+			this.aHashMap_39.set((long) arg0, new Node_Sub37(arg1));
 		} else {
 			local31.anInt5426 = arg1;
 		}

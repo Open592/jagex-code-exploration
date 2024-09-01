@@ -14,7 +14,7 @@ public final class Static440 {
 	public static boolean[][] aBooleanArrayArray6;
 
 	@OriginalMember(owner = "client!wf", name = "p", descriptor = "Lclient!ib;")
-	public static HashMap aLinkedHashMap_Iterator_40 = new HashMap(64);
+	public static HashMap aHashMap_40 = new HashMap(64);
 
 	@OriginalMember(owner = "client!wf", name = "q", descriptor = "[I")
 	public static final int[] anIntArray543 = new int[250];

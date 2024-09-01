@@ -9,10 +9,10 @@ import org.openrs2.deob.annotation.Pc;
 public final class Class171 {
 
 	@OriginalMember(owner = "client!oj", name = "j", descriptor = "Lclient!ib;")
-	private final HashMap aLinkedHashMap_Iterator_25 = new HashMap(256);
+	private final HashMap aHashMap_25 = new HashMap(256);
 
 	@OriginalMember(owner = "client!oj", name = "o", descriptor = "Lclient!ib;")
-	private final HashMap aLinkedHashMap_Iterator_26 = new HashMap(256);
+	private final HashMap aHashMap_26 = new HashMap(256);
 
 	@OriginalMember(owner = "client!oj", name = "b", descriptor = "Lclient!fs;")
 	private final Class76 aClass76_56;
@@ -31,7 +31,7 @@ public final class Class171 {
 		@Pc(15) int local15 = (arg0 << 4 & 0xFFF4 | arg0 >>> 12) ^ arg1;
 		@Pc(21) int local21 = local15 | arg0 << 16;
 		@Pc(24) long local24 = (long) local21;
-		@Pc(31) Node_Sub4_Sub1 local31 = (Node_Sub4_Sub1) this.aLinkedHashMap_Iterator_26.get(local24);
+		@Pc(31) Node_Sub4_Sub1 local31 = (Node_Sub4_Sub1) this.aHashMap_26.get(local24);
 		if (local31 != null) {
 			return local31;
 		} else if (arg2 == null || arg2[0] > 0) {
@@ -40,7 +40,7 @@ public final class Class171 {
 				return null;
 			}
 			local31 = local54.method5245();
-			this.aLinkedHashMap_Iterator_26.set(local24, local31);
+			this.aHashMap_26.set(local24, local31);
 			if (arg2 != null) {
 				arg2[0] -= local31.aByteArray48.length;
 			}
@@ -55,24 +55,24 @@ public final class Class171 {
 		@Pc(15) int local15 = arg2 ^ (arg0 << 4 & 0xFFF2 | arg0 >>> 12);
 		@Pc(26) int local26 = local15 | arg0 << 16;
 		@Pc(31) long local31 = (long) local26 ^ 0x100000000L;
-		@Pc(38) Node_Sub4_Sub1 local38 = (Node_Sub4_Sub1) this.aLinkedHashMap_Iterator_26.get(local31);
+		@Pc(38) Node_Sub4_Sub1 local38 = (Node_Sub4_Sub1) this.aHashMap_26.get(local31);
 		if (local38 != null) {
 			return local38;
 		} else if (arg1 == null || arg1[0] > 0) {
-			@Pc(57) Node_Sub13 local57 = (Node_Sub13) this.aLinkedHashMap_Iterator_25.get(local31);
+			@Pc(57) Node_Sub13 local57 = (Node_Sub13) this.aHashMap_25.get(local31);
 			if (local57 == null) {
 				local57 = Static68.method1318(this.aClass76_56, arg0, arg2);
 				if (local57 == null) {
 					return null;
 				}
-				this.aLinkedHashMap_Iterator_25.set(local31, local57);
+				this.aHashMap_25.set(local31, local57);
 			}
 			local38 = local57.method1322(arg1);
 			if (local38 == null) {
 				return null;
 			} else {
 				local57.popSelf();
-				this.aLinkedHashMap_Iterator_26.set(local31, local38);
+				this.aHashMap_26.set(local31, local38);
 				return local38;
 			}
 		} else {

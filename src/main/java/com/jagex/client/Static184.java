@@ -165,7 +165,7 @@ public final class Static184 {
 					}
 				}
 				if (local373.aClass16_1 instanceof Class16_Sub3_Sub1) {
-					@Pc(1063) Node_Sub18 local1063 = (Node_Sub18) Static440.aLinkedHashMap_Iterator_40.get((long) (local373.anInt2384 | local373.anInt2381 << 28 | local373.anInt2383 << 14));
+					@Pc(1063) Node_Sub18 local1063 = (Node_Sub18) Static440.aHashMap_40.get((long) (local373.anInt2384 | local373.anInt2381 << 28 | local373.anInt2383 << 14));
 					if (local1063 != null) {
 						for (@Pc(1071) Node_Sub45 local1071 = (Node_Sub45) local1063.aClass183_14.method4139(); local1071 != null; local1071 = (Node_Sub45) local1063.aClass183_14.method4145()) {
 							@Pc(1081) Class211 local1081 = Static444.aClass206_3.method4703(local1071.anInt7355);

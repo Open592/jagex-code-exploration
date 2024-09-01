@@ -12,7 +12,7 @@ public final class Static242 {
 
 	@OriginalMember(owner = "client!mf", name = "b", descriptor = "(I)V")
 	public static void method3557() {
-		Static138.A_ITERABLE_HASH_MAP___12.clear();
-		Static11.A_ITERABLE_HASH_MAP___1.clear();
+		Static138.A_HASH_MAP___12.clear();
+		Static11.A_HASH_MAP___1.clear();
 	}
 }

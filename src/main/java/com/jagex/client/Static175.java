@@ -32,6 +32,6 @@ public final class Static175 {
 	@OriginalMember(owner = "client!it", name = "a", descriptor = "(IZI)Lclient!jh;")
 	public static Node_Sub25 method2834(@OriginalArg(1) boolean arg0, @OriginalArg(2) int arg1) {
 		@Pc(17) long local17 = (long) (arg1 | (arg0 ? Integer.MIN_VALUE : 0));
-		return (Node_Sub25) Static208.A_ITERABLE_HASH_MAP___11.get(local17);
+		return (Node_Sub25) Static208.A_HASH_MAP___11.get(local17);
 	}
 }
