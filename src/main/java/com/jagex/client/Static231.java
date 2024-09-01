@@ -31,21 +31,21 @@ public final class Static231 {
 
 	@OriginalMember(owner = "client!lr", name = "a", descriptor = "(B)V")
 	public static void method3475() {
-		@Pc(17) LinkedEntry_Sub5 local17 = (LinkedEntry_Sub5) Static413.aClass183_47.method4140();
+		@Pc(17) Node_Sub5 local17 = (Node_Sub5) Static413.aClass183_47.method4140();
 		@Pc(28) boolean local28 = Static281.aClass247_12 != null || Static64.anInt1367 > 0;
 		if (local28) {
 			Static194.anInt3685 = 1;
 		}
 		if (Static434.isShiftClickEnabled && Static384.aClass244_1.method5489(81) && Static407.anInt6710 > 2) {
 			if (local28) {
-				Static413.aClass4_Sub39_2 = (LinkedEntry_Sub39) Static206.aClass183_28.aLinkedEntry_207.next.next;
+				Static413.aClass4_Sub39_2 = (Node_Sub39) Static206.aClass183_28.aNode_207.next.next;
 			} else {
-				Static247.method3617(local17.method519(), (LinkedEntry_Sub39) Static206.aClass183_28.aLinkedEntry_207.next.next, local17.method518());
+				Static247.method3617(local17.method519(), (Node_Sub39) Static206.aClass183_28.aNode_207.next.next, local17.method518());
 			}
 		} else if (local28) {
-			Static413.aClass4_Sub39_2 = (LinkedEntry_Sub39) Static206.aClass183_28.aLinkedEntry_207.next;
+			Static413.aClass4_Sub39_2 = (Node_Sub39) Static206.aClass183_28.aNode_207.next;
 		} else {
-			Static247.method3617(local17.method519(), (LinkedEntry_Sub39) Static206.aClass183_28.aLinkedEntry_207.next, local17.method518());
+			Static247.method3617(local17.method519(), (Node_Sub39) Static206.aClass183_28.aNode_207.next, local17.method518());
 		}
 	}
 }

@@ -18,19 +18,19 @@ public final class Class200 {
 	private int anInt5767;
 
 	@OriginalMember(owner = "client!qu", name = "k", descriptor = "Lclient!ib;")
-	public LinkedHashMapIterator aLinkedHashMap_Iterator_32;
+	public HashMap aLinkedHashMap_Iterator_32;
 
 	@OriginalMember(owner = "client!qu", name = "m", descriptor = "Lclient!ib;")
-	private LinkedHashMapIterator aLinkedHashMap_Iterator_33;
+	private HashMap aLinkedHashMap_Iterator_33;
 
 	@OriginalMember(owner = "client!qu", name = "h", descriptor = "Ljava/lang/String;")
 	private String aString58 = "null";
 
 	@OriginalMember(owner = "client!qu", name = "a", descriptor = "(B)V")
 	private void method4532() {
-		this.aLinkedHashMap_Iterator_33 = new LinkedHashMapIterator(this.aLinkedHashMap_Iterator_32.size());
-		for (@Pc(26) LinkedEntry_Sub7 local26 = (LinkedEntry_Sub7) this.aLinkedHashMap_Iterator_32.head(); local26 != null; local26 = (LinkedEntry_Sub7) this.aLinkedHashMap_Iterator_32.nextEntry()) {
-			@Pc(37) LinkedEntry_Sub35 local37 = new LinkedEntry_Sub35(local26.aString12, (int) local26.hashKey);
+		this.aLinkedHashMap_Iterator_33 = new HashMap(this.aLinkedHashMap_Iterator_32.bucketCount());
+		for (@Pc(26) Node_Sub7 local26 = (Node_Sub7) this.aLinkedHashMap_Iterator_32.head(); local26 != null; local26 = (Node_Sub7) this.aLinkedHashMap_Iterator_32.next()) {
+			@Pc(37) Node_Sub35 local37 = new Node_Sub35(local26.aString12, (int) local26.hashKey);
 			this.aLinkedHashMap_Iterator_33.set(Static237.method5625(local26.aString12), local37);
 		}
 	}
@@ -40,7 +40,7 @@ public final class Class200 {
 		if (this.aLinkedHashMap_Iterator_32 == null) {
 			return this.anInt5767;
 		} else {
-			@Pc(25) LinkedEntry_Sub37 local25 = (LinkedEntry_Sub37) this.aLinkedHashMap_Iterator_32.get((long) arg0);
+			@Pc(25) Node_Sub37 local25 = (Node_Sub37) this.aLinkedHashMap_Iterator_32.get((long) arg0);
 			return local25 == null ? this.anInt5767 : local25.anInt5426;
 		}
 	}
@@ -64,7 +64,7 @@ public final class Class200 {
 		if (this.aLinkedHashMap_Iterator_33 == null) {
 			this.method4532();
 		}
-		for (@Pc(30) LinkedEntry_Sub35 local30 = (LinkedEntry_Sub35) this.aLinkedHashMap_Iterator_33.get(Static237.method5625(arg0)); local30 != null; local30 = (LinkedEntry_Sub35) this.aLinkedHashMap_Iterator_33.nextFoundEntry()) {
+		for (@Pc(30) Node_Sub35 local30 = (Node_Sub35) this.aLinkedHashMap_Iterator_33.get(Static237.method5625(arg0)); local30 != null; local30 = (Node_Sub35) this.aLinkedHashMap_Iterator_33.nextFoundNode()) {
 			if (local30.aString51.equals(arg0)) {
 				return true;
 			}
@@ -80,7 +80,7 @@ public final class Class200 {
 		if (this.aLinkedHashMap_Iterator_33 == null) {
 			this.method4539();
 		}
-		@Pc(22) LinkedEntry_Sub37 local22 = (LinkedEntry_Sub37) this.aLinkedHashMap_Iterator_33.get((long) arg0);
+		@Pc(22) Node_Sub37 local22 = (Node_Sub37) this.aLinkedHashMap_Iterator_33.get((long) arg0);
 		return local22 != null;
 	}
 
@@ -96,14 +96,14 @@ public final class Class200 {
 			this.anInt5767 = arg0.g4();
 		} else if (arg1 == 5 || arg1 == 6) {
 			@Pc(31) int local31 = arg0.g2();
-			this.aLinkedHashMap_Iterator_32 = new LinkedHashMapIterator(Static370.method4949(local31));
+			this.aLinkedHashMap_Iterator_32 = new HashMap(Static370.method4949(local31));
 			for (@Pc(43) int local43 = 0; local43 < local31; local43++) {
 				@Pc(49) int local49 = arg0.g4();
-				@Pc(61) LinkedEntry local61;
+				@Pc(61) Node local61;
 				if (arg1 == 5) {
-					local61 = new LinkedEntry_Sub7(arg0.gStringCP1252ToUTF8());
+					local61 = new Node_Sub7(arg0.gStringCP1252ToUTF8());
 				} else {
-					local61 = new LinkedEntry_Sub37(arg0.g4());
+					local61 = new Node_Sub37(arg0.g4());
 				}
 				this.aLinkedHashMap_Iterator_32.set((long) local49, local61);
 			}
@@ -115,16 +115,16 @@ public final class Class200 {
 		if (this.aLinkedHashMap_Iterator_32 == null) {
 			return this.aString58;
 		} else {
-			@Pc(17) LinkedEntry_Sub7 local17 = (LinkedEntry_Sub7) this.aLinkedHashMap_Iterator_32.get((long) arg0);
+			@Pc(17) Node_Sub7 local17 = (Node_Sub7) this.aLinkedHashMap_Iterator_32.get((long) arg0);
 			return local17 == null ? this.aString58 : local17.aString12;
 		}
 	}
 
 	@OriginalMember(owner = "client!qu", name = "a", descriptor = "(I)V")
 	private void method4539() {
-		this.aLinkedHashMap_Iterator_33 = new LinkedHashMapIterator(this.aLinkedHashMap_Iterator_32.size());
-		for (@Pc(24) LinkedEntry_Sub37 local24 = (LinkedEntry_Sub37) this.aLinkedHashMap_Iterator_32.head(); local24 != null; local24 = (LinkedEntry_Sub37) this.aLinkedHashMap_Iterator_32.nextEntry()) {
-			@Pc(33) LinkedEntry_Sub37 local33 = new LinkedEntry_Sub37((int) local24.hashKey);
+		this.aLinkedHashMap_Iterator_33 = new HashMap(this.aLinkedHashMap_Iterator_32.bucketCount());
+		for (@Pc(24) Node_Sub37 local24 = (Node_Sub37) this.aLinkedHashMap_Iterator_32.head(); local24 != null; local24 = (Node_Sub37) this.aLinkedHashMap_Iterator_32.next()) {
+			@Pc(33) Node_Sub37 local33 = new Node_Sub37((int) local24.hashKey);
 			this.aLinkedHashMap_Iterator_33.set((long) local24.anInt5426, local33);
 		}
 	}

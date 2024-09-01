@@ -23,7 +23,7 @@ public final class Static171 {
 
 	@OriginalMember(owner = "client!ip", name = "a", descriptor = "(IIZ)V")
 	public static void method2796(@OriginalArg(0) int arg0, @OriginalArg(2) boolean arg1) {
-		@Pc(10) LinkedEntry_Sub25 local10 = Static175.method2834(arg1, arg0);
+		@Pc(10) Node_Sub25 local10 = Static175.method2834(arg1, arg0);
 		if (local10 != null) {
 			for (@Pc(15) int local15 = 0; local15 < local10.anIntArray230.length; local15++) {
 				local10.anIntArray230[local15] = -1;

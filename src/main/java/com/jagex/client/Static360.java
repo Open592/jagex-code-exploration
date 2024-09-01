@@ -7,7 +7,7 @@ import org.openrs2.deob.annotation.Pc;
 public final class Static360 {
 
 	@OriginalMember(owner = "client!sg", name = "b", descriptor = "Lclient!jl;")
-	public static LinkedEntry_Sub15_Sub2 aClass4_Sub15_Sub2_2;
+	public static Node_Sub15_Sub2 aClass4_Sub15_Sub2_2;
 
 	@OriginalMember(owner = "client!sg", name = "g", descriptor = "F")
 	public static float aFloat189;

@@ -24,7 +24,7 @@ public final class Static69 {
 
 	@OriginalMember(owner = "client!dj", name = "a", descriptor = "(IZII)I")
 	public static int method2853(@OriginalArg(1) boolean arg0, @OriginalArg(2) int arg1, @OriginalArg(3) int arg2) {
-		@Pc(10) LinkedEntry_Sub25 local10 = Static175.method2834(arg0, arg1);
+		@Pc(10) Node_Sub25 local10 = Static175.method2834(arg0, arg1);
 		if (local10 == null) {
 			return 0;
 		} else if (arg2 == -1) {

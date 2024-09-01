@@ -29,12 +29,12 @@ public abstract class Class110 {
 	public abstract int MA();
 
 	@OriginalMember(owner = "client!t", name = "a", descriptor = "(IIZIILclient!pt;Lclient!pt;II)V")
-	public final void method4883(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) boolean arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4, @OriginalArg(5) ContextualEntry_Sub1_Sub17 arg5, @OriginalArg(6) ContextualEntry_Sub1_Sub17 arg6, @OriginalArg(7) int arg7) {
+	public final void method4883(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) boolean arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4, @OriginalArg(5) SecondaryNode_Sub1_Sub17 arg5, @OriginalArg(6) SecondaryNode_Sub1_Sub17 arg6, @OriginalArg(7) int arg7) {
 		if (arg3 == -1 || !this.w()) {
 			return;
 		}
 		@Pc(16) Class88 local16 = arg5.aClass88Array1[arg3];
-		@Pc(19) LinkedEntry_Sub32 local19 = local16.aClass4_Sub32_1;
+		@Pc(19) Node_Sub32 local19 = local16.aClass4_Sub32_1;
 		@Pc(21) Class88 local21 = null;
 		if (arg6 != null) {
 			local21 = arg6.aClass88Array1[arg4];
@@ -188,7 +188,7 @@ public abstract class Class110 {
 	protected abstract void M(@OriginalArg(0) int arg0, @OriginalArg(1) int[] arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4, @OriginalArg(5) boolean arg5, @OriginalArg(6) int arg6, @OriginalArg(7) int[] arg7);
 
 	@OriginalMember(owner = "client!t", name = "fa", descriptor = "(Lclient!ba;)Lclient!ba;")
-	public abstract ContextualEntry_Sub1_Sub4 fa(@OriginalArg(0) ContextualEntry_Sub1_Sub4 arg0);
+	public abstract SecondaryNode_Sub1_Sub4 fa(@OriginalArg(0) SecondaryNode_Sub1_Sub4 arg0);
 
 	@OriginalMember(owner = "client!t", name = "P", descriptor = "()I")
 	public abstract int P();
@@ -215,12 +215,12 @@ public abstract class Class110 {
 	public abstract void R(@OriginalArg(0) int arg0);
 
 	@OriginalMember(owner = "client!t", name = "a", descriptor = "(IILclient!pt;)V")
-	public final void method4892(@OriginalArg(1) int arg0, @OriginalArg(2) ContextualEntry_Sub1_Sub17 arg1) {
+	public final void method4892(@OriginalArg(1) int arg0, @OriginalArg(2) SecondaryNode_Sub1_Sub17 arg1) {
 		if (arg0 == -1 || !this.w()) {
 			return;
 		}
 		@Pc(18) Class88 local18 = arg1.aClass88Array1[arg0];
-		@Pc(21) LinkedEntry_Sub32 local21 = local18.aClass4_Sub32_1;
+		@Pc(21) Node_Sub32 local21 = local18.aClass4_Sub32_1;
 		for (@Pc(23) int local23 = 0; local23 < local18.anInt2756; local23++) {
 			@Pc(30) short local30 = local18.aShortArray77[local23];
 			if (local21.aBooleanArray16[local30]) {
@@ -258,7 +258,7 @@ public abstract class Class110 {
 	public abstract void Q(@OriginalArg(0) int arg0);
 
 	@OriginalMember(owner = "client!t", name = "a", descriptor = "(Lclient!gr;[ZLclient!nk;IZIILclient!gr;ZII[I)V")
-	private void method4896(@OriginalArg(0) Class88 arg0, @OriginalArg(1) boolean[] arg1, @OriginalArg(2) LinkedEntry_Sub32 arg2, @OriginalArg(3) int arg3, @OriginalArg(4) boolean arg4, @OriginalArg(5) int arg5, @OriginalArg(7) Class88 arg6, @OriginalArg(8) boolean arg7, @OriginalArg(9) int arg8, @OriginalArg(10) int arg9, @OriginalArg(11) int[] arg10) {
+	private void method4896(@OriginalArg(0) Class88 arg0, @OriginalArg(1) boolean[] arg1, @OriginalArg(2) Node_Sub32 arg2, @OriginalArg(3) int arg3, @OriginalArg(4) boolean arg4, @OriginalArg(5) int arg5, @OriginalArg(7) Class88 arg6, @OriginalArg(8) boolean arg7, @OriginalArg(9) int arg8, @OriginalArg(10) int arg9, @OriginalArg(11) int[] arg10) {
 		@Pc(11) int local11;
 		if (arg0 == null || arg3 == 0) {
 			for (local11 = 0; local11 < arg6.anInt2756; local11++) {
@@ -398,12 +398,12 @@ public abstract class Class110 {
 	public abstract void I(@OriginalArg(0) short arg0, @OriginalArg(1) short arg1);
 
 	@OriginalMember(owner = "client!t", name = "a", descriptor = "(ILclient!pt;[IZIIIILclient!pt;II)V")
-	public final void method4897(@OriginalArg(0) int arg0, @OriginalArg(1) ContextualEntry_Sub1_Sub17 arg1, @OriginalArg(2) int[] arg2, @OriginalArg(3) boolean arg3, @OriginalArg(5) int arg4, @OriginalArg(7) int arg5, @OriginalArg(8) ContextualEntry_Sub1_Sub17 arg6, @OriginalArg(9) int arg7, @OriginalArg(10) int arg8) {
+	public final void method4897(@OriginalArg(0) int arg0, @OriginalArg(1) SecondaryNode_Sub1_Sub17 arg1, @OriginalArg(2) int[] arg2, @OriginalArg(3) boolean arg3, @OriginalArg(5) int arg4, @OriginalArg(7) int arg5, @OriginalArg(8) SecondaryNode_Sub1_Sub17 arg6, @OriginalArg(9) int arg7, @OriginalArg(10) int arg8) {
 		if (arg4 == -1 || !this.w()) {
 			return;
 		}
 		@Pc(17) Class88 local17 = arg6.aClass88Array1[arg4];
-		@Pc(20) LinkedEntry_Sub32 local20 = local17.aClass4_Sub32_1;
+		@Pc(20) Node_Sub32 local20 = local17.aClass4_Sub32_1;
 		@Pc(30) Class88 local30 = null;
 		if (arg1 != null) {
 			local30 = arg1.aClass88Array1[arg0];
@@ -434,7 +434,7 @@ public abstract class Class110 {
 	protected abstract void N(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3);
 
 	@OriginalMember(owner = "client!t", name = "a", descriptor = "(IILclient!pt;ZIIILclient!pt;Lclient!pt;I[ZLclient!pt;III)V")
-	public final void method4899(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) ContextualEntry_Sub1_Sub17 arg2, @OriginalArg(3) boolean arg3, @OriginalArg(4) int arg4, @OriginalArg(5) int arg5, @OriginalArg(6) int arg6, @OriginalArg(7) ContextualEntry_Sub1_Sub17 arg7, @OriginalArg(8) ContextualEntry_Sub1_Sub17 arg8, @OriginalArg(9) int arg9, @OriginalArg(10) boolean[] arg10, @OriginalArg(11) ContextualEntry_Sub1_Sub17 arg11, @OriginalArg(12) int arg12, @OriginalArg(13) int arg13) {
+	public final void method4899(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) SecondaryNode_Sub1_Sub17 arg2, @OriginalArg(3) boolean arg3, @OriginalArg(4) int arg4, @OriginalArg(5) int arg5, @OriginalArg(6) int arg6, @OriginalArg(7) SecondaryNode_Sub1_Sub17 arg7, @OriginalArg(8) SecondaryNode_Sub1_Sub17 arg8, @OriginalArg(9) int arg9, @OriginalArg(10) boolean[] arg10, @OriginalArg(11) SecondaryNode_Sub1_Sub17 arg11, @OriginalArg(12) int arg12, @OriginalArg(13) int arg13) {
 		if (arg0 == -1) {
 			return;
 		}
@@ -442,7 +442,7 @@ public abstract class Class110 {
 			this.method4883(0, arg1, arg3, arg0, arg13, arg8, arg11, arg12);
 		} else if (this.w()) {
 			@Pc(38) Class88 local38 = arg8.aClass88Array1[arg0];
-			@Pc(41) LinkedEntry_Sub32 local41 = local38.aClass4_Sub32_1;
+			@Pc(41) Node_Sub32 local41 = local38.aClass4_Sub32_1;
 			@Pc(43) Class88 local43 = null;
 			if (arg11 != null) {
 				local43 = arg11.aClass88Array1[arg13];

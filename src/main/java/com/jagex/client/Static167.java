@@ -81,9 +81,9 @@ public final class Static167 {
 		if (Static334.anInt5766 != -1) {
 			Static201.method4602(Static334.anInt5766);
 		}
-		for (@Pc(5778) LinkedEntry_Sub43 local5778 = (LinkedEntry_Sub43) Static325.aLinkedHashMap_Iterator_29.head(); local5778 != null; local5778 = (LinkedEntry_Sub43) Static325.aLinkedHashMap_Iterator_29.nextEntry()) {
+		for (@Pc(5778) Node_Sub43 local5778 = (Node_Sub43) Static325.aLinkedHashMap_Iterator_29.head(); local5778 != null; local5778 = (Node_Sub43) Static325.aLinkedHashMap_Iterator_29.next()) {
 			if (!local5778.hasNext()) {
-				local5778 = (LinkedEntry_Sub43) Static325.aLinkedHashMap_Iterator_29.head();
+				local5778 = (Node_Sub43) Static325.aLinkedHashMap_Iterator_29.head();
 				if (local5778 == null) {
 					break;
 				}
@@ -91,7 +91,7 @@ public final class Static167 {
 			Static90.method1606(true, local5778, false);
 		}
 		Static334.anInt5766 = -1;
-		Static325.aLinkedHashMap_Iterator_29 = new LinkedHashMapIterator(8);
+		Static325.aLinkedHashMap_Iterator_29 = new HashMap(8);
 		Static28.method529();
 		Static304.aClass247_16 = null;
 		for (@Pc(5818) int local5818 = 0; local5818 < 8; local5818++) {

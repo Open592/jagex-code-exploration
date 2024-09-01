@@ -10,7 +10,7 @@ public final class Class257 {
 	public int anInt7070;
 
 	@OriginalMember(owner = "client!vq", name = "b", descriptor = "Lclient!au;")
-	public ContextualEntry_Sub1_Sub3 aClass4_Sub1_Sub3_1;
+	public SecondaryNode_Sub1_Sub3 aClass4_Sub1_Sub3_1;
 
 	@OriginalMember(owner = "client!vq", name = "d", descriptor = "[I")
 	public int[] anIntArray538;

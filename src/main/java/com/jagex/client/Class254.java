@@ -35,33 +35,33 @@ public final class Class254 implements Runnable {
 	}
 
 	@OriginalMember(owner = "client!vl", name = "a", descriptor = "(ILclient!st;I)Lclient!lf;")
-	public ContextualEntry_Sub1_Sub6_Sub2 method5431(@OriginalArg(1) Class222 arg0, @OriginalArg(2) int arg1) {
-		@Pc(7) ContextualEntry_Sub1_Sub6_Sub2 local7 = new ContextualEntry_Sub1_Sub6_Sub2();
+	public SecondaryNode_Sub1_Sub6_Sub2 method5431(@OriginalArg(1) Class222 arg0, @OriginalArg(2) int arg1) {
+		@Pc(7) SecondaryNode_Sub1_Sub6_Sub2 local7 = new SecondaryNode_Sub1_Sub6_Sub2();
 		local7.aBoolean384 = false;
 		local7.aClass222_1 = arg0;
 		local7.anInt4117 = 3;
-		local7.context = arg1;
+		local7.secondaryValue = arg1;
 		this.method5434(local7);
 		return local7;
 	}
 
 	@OriginalMember(owner = "client!vl", name = "a", descriptor = "(Lclient!st;II)Lclient!lf;")
-	public ContextualEntry_Sub1_Sub6_Sub2 method5432(@OriginalArg(0) Class222 arg0, @OriginalArg(2) int arg1) {
-		@Pc(9) ContextualEntry_Sub1_Sub6_Sub2 local9 = new ContextualEntry_Sub1_Sub6_Sub2();
+	public SecondaryNode_Sub1_Sub6_Sub2 method5432(@OriginalArg(0) Class222 arg0, @OriginalArg(2) int arg1) {
+		@Pc(9) SecondaryNode_Sub1_Sub6_Sub2 local9 = new SecondaryNode_Sub1_Sub6_Sub2();
 		local9.anInt4117 = 1;
 		@Pc(15) Class229 local15 = this.aClass229_6;
 		synchronized (this.aClass229_6) {
-			@Pc(23) ContextualEntry_Sub1_Sub6_Sub2 local23 = (ContextualEntry_Sub1_Sub6_Sub2) this.aClass229_6.method5089();
+			@Pc(23) SecondaryNode_Sub1_Sub6_Sub2 local23 = (SecondaryNode_Sub1_Sub6_Sub2) this.aClass229_6.method5089();
 			while (true) {
 				if (local23 == null) {
 					break;
 				}
-				if ((long) arg1 == local23.context && local23.aClass222_1 == arg0 && local23.anInt4117 == 2) {
+				if ((long) arg1 == local23.secondaryValue && local23.aClass222_1 == arg0 && local23.anInt4117 == 2) {
 					local9.aBoolean381 = false;
 					local9.aByteArray50 = local23.aByteArray50;
 					return local9;
 				}
-				local23 = (ContextualEntry_Sub1_Sub6_Sub2) this.aClass229_6.method5092();
+				local23 = (SecondaryNode_Sub1_Sub6_Sub2) this.aClass229_6.method5092();
 			}
 		}
 		local9.aByteArray50 = arg0.method4981(arg1);
@@ -89,9 +89,9 @@ public final class Class254 implements Runnable {
 	public void run() {
 		while (!this.aBoolean659) {
 			@Pc(10) Class229 local10 = this.aClass229_6;
-			@Pc(18) ContextualEntry_Sub1_Sub6_Sub2 local18;
+			@Pc(18) SecondaryNode_Sub1_Sub6_Sub2 local18;
 			synchronized (this.aClass229_6) {
-				local18 = (ContextualEntry_Sub1_Sub6_Sub2) this.aClass229_6.method5091();
+				local18 = (SecondaryNode_Sub1_Sub6_Sub2) this.aClass229_6.method5091();
 				if (local18 == null) {
 					try {
 						this.aClass229_6.wait();
@@ -103,9 +103,9 @@ public final class Class254 implements Runnable {
 			}
 			try {
 				if (local18.anInt4117 == 2) {
-					local18.aClass222_1.method4982(local18.aByteArray50, (int) local18.context, local18.aByteArray50.length);
+					local18.aClass222_1.method4982(local18.aByteArray50, (int) local18.secondaryValue, local18.aByteArray50.length);
 				} else if (local18.anInt4117 == 3) {
-					local18.aByteArray50 = local18.aClass222_1.method4981((int) local18.context);
+					local18.aByteArray50 = local18.aClass222_1.method4981((int) local18.secondaryValue);
 				}
 			} catch (@Pc(74) Exception local74) {
 				Static94.handleClientError(local74, null);
@@ -115,7 +115,7 @@ public final class Class254 implements Runnable {
 	}
 
 	@OriginalMember(owner = "client!vl", name = "a", descriptor = "(ILclient!lf;)V")
-	private void method5434(@OriginalArg(1) ContextualEntry_Sub1_Sub6_Sub2 arg0) {
+	private void method5434(@OriginalArg(1) SecondaryNode_Sub1_Sub6_Sub2 arg0) {
 		@Pc(2) Class229 local2 = this.aClass229_6;
 		synchronized (this.aClass229_6) {
 			this.aClass229_6.method5088(arg0);
@@ -125,9 +125,9 @@ public final class Class254 implements Runnable {
 	}
 
 	@OriginalMember(owner = "client!vl", name = "a", descriptor = "(II[BLclient!st;)Lclient!lf;")
-	public ContextualEntry_Sub1_Sub6_Sub2 method5435(@OriginalArg(1) int arg0, @OriginalArg(2) byte[] arg1, @OriginalArg(3) Class222 arg2) {
-		@Pc(13) ContextualEntry_Sub1_Sub6_Sub2 local13 = new ContextualEntry_Sub1_Sub6_Sub2();
-		local13.context = arg0;
+	public SecondaryNode_Sub1_Sub6_Sub2 method5435(@OriginalArg(1) int arg0, @OriginalArg(2) byte[] arg1, @OriginalArg(3) Class222 arg2) {
+		@Pc(13) SecondaryNode_Sub1_Sub6_Sub2 local13 = new SecondaryNode_Sub1_Sub6_Sub2();
+		local13.secondaryValue = arg0;
 		local13.anInt4117 = 2;
 		local13.aByteArray50 = arg1;
 		local13.aClass222_1 = arg2;

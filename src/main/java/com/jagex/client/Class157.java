@@ -9,7 +9,7 @@ import org.openrs2.deob.annotation.Pc;
 public final class Class157 {
 
 	@OriginalMember(owner = "client!nf", name = "d", descriptor = "Lclient!ib;")
-	private LinkedHashMapIterator aLinkedHashMap_Iterator_24;
+	private HashMap aLinkedHashMap_Iterator_24;
 
 	@OriginalMember(owner = "client!nf", name = "e", descriptor = "I")
 	private int anInt4903;
@@ -115,7 +115,7 @@ public final class Class157 {
 		if (this.aLinkedHashMap_Iterator_24 == null) {
 			return arg0;
 		} else {
-			@Pc(23) LinkedEntry_Sub7 local23 = (LinkedEntry_Sub7) this.aLinkedHashMap_Iterator_24.get((long) arg1);
+			@Pc(23) Node_Sub7 local23 = (Node_Sub7) this.aLinkedHashMap_Iterator_24.get((long) arg1);
 			return local23 == null ? arg0 : local23.aString12;
 		}
 	}
@@ -151,7 +151,7 @@ public final class Class157 {
 		if (this.aLinkedHashMap_Iterator_24 == null) {
 			return arg0;
 		} else {
-			@Pc(16) LinkedEntry_Sub37 local16 = (LinkedEntry_Sub37) this.aLinkedHashMap_Iterator_24.get((long) arg1);
+			@Pc(16) Node_Sub37 local16 = (Node_Sub37) this.aLinkedHashMap_Iterator_24.get((long) arg1);
 			return local16 == null ? arg0 : local16.anInt5426;
 		}
 	}
@@ -257,16 +257,16 @@ public final class Class157 {
 									local189 = arg0.g1();
 									if (this.aLinkedHashMap_Iterator_24 == null) {
 										local196 = Static370.method4949(local189);
-										this.aLinkedHashMap_Iterator_24 = new LinkedHashMapIterator(local196);
+										this.aLinkedHashMap_Iterator_24 = new HashMap(local196);
 									}
 									for (local196 = 0; local196 < local189; local196++) {
 										@Pc(215) boolean local215 = arg0.g1() == 1;
 										@Pc(219) int local219 = arg0.g3();
-										@Pc(228) LinkedEntry local228;
+										@Pc(228) Node local228;
 										if (local215) {
-											local228 = new LinkedEntry_Sub7(arg0.gStringCP1252ToUTF8());
+											local228 = new Node_Sub7(arg0.gStringCP1252ToUTF8());
 										} else {
-											local228 = new LinkedEntry_Sub37(arg0.g4());
+											local228 = new Node_Sub37(arg0.g4());
 										}
 										this.aLinkedHashMap_Iterator_24.set((long) local219, local228);
 									}

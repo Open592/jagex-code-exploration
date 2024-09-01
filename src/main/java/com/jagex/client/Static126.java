@@ -34,7 +34,7 @@ public final class Static126 {
 
 	@OriginalMember(owner = "client!gi", name = "a", descriptor = "(IILclient!rs;Lclient!lh;IIILclient!rd;)V")
 	public static void method2264(@OriginalArg(0) int arg0, @OriginalArg(2) Class16_Sub1_Sub5_Sub2 arg1, @OriginalArg(3) Class16_Sub1_Sub5_Sub1 arg2, @OriginalArg(4) int arg3, @OriginalArg(5) int arg4, @OriginalArg(6) int arg5, @OriginalArg(7) Class202 arg6) {
-		@Pc(7) LinkedEntry_Sub8 local7 = new LinkedEntry_Sub8();
+		@Pc(7) Node_Sub8 local7 = new Node_Sub8();
 		local7.anInt614 = arg0 << 7;
 		local7.anInt619 = arg5;
 		local7.anInt613 = arg3 << 7;

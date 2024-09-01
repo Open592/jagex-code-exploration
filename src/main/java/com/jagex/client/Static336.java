@@ -21,7 +21,7 @@ public final class Static336 {
 		}
 		@Pc(11) Class247 local11 = Static378.method3230(Static408.anInt6726, Static23.anInt350);
 		if (local11 != null && local11.anObjectArray25 != null) {
-			@Pc(20) LinkedEntry_Sub34 local20 = new LinkedEntry_Sub34();
+			@Pc(20) Node_Sub34 local20 = new Node_Sub34();
 			local20.anObjectArray4 = local11.anObjectArray25;
 			local20.aClass247_15 = local11;
 			Static271.method3894(local20);

@@ -26,14 +26,14 @@ public final class Static222 {
 	}
 
 	@OriginalMember(owner = "client!lg", name = "a", descriptor = "(ZLclient!ac;Lclient!ac;)V")
-	public static void method3353(@OriginalArg(1) ContextualEntry arg0, @OriginalArg(2) ContextualEntry arg1) {
-		if (arg1.nextContext != null) {
-			arg1.popContextEntry();
+	public static void method3353(@OriginalArg(1) SecondaryNode arg0, @OriginalArg(2) SecondaryNode arg1) {
+		if (arg1.secondaryNext != null) {
+			arg1.secondaryPopSelf();
 		}
-		arg1.nextContext = arg0;
-		arg1.previousContext = arg0.previousContext;
-		arg1.nextContext.previousContext = arg1;
-		arg1.previousContext.nextContext = arg1;
+		arg1.secondaryNext = arg0;
+		arg1.secondaryPrevious = arg0.secondaryPrevious;
+		arg1.secondaryNext.secondaryPrevious = arg1;
+		arg1.secondaryPrevious.secondaryNext = arg1;
 	}
 
 	@OriginalMember(owner = "client!lg", name = "a", descriptor = "(B)V")

@@ -66,9 +66,9 @@ public final class Class241 {
 	}
 
 	@OriginalMember(owner = "client!um", name = "b", descriptor = "()Lclient!js;")
-	public LinkedEntry_Sub4_Sub1 method5245() {
+	public Node_Sub4_Sub1 method5245() {
 		@Pc(2) byte[] local2 = this.method5243();
-		return new LinkedEntry_Sub4_Sub1(22050, local2, this.anInt6706 * 22050 / 1000, this.anInt6707 * 22050 / 1000);
+		return new Node_Sub4_Sub1(22050, local2, this.anInt6706 * 22050 / 1000, this.anInt6707 * 22050 / 1000);
 	}
 
 	@OriginalMember(owner = "client!um", name = "c", descriptor = "()I")

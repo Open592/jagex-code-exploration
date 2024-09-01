@@ -7,7 +7,7 @@ import org.openrs2.deob.annotation.Pc;
 public final class Static413 {
 
 	@OriginalMember(owner = "client!uu", name = "tc", descriptor = "Lclient!qm;")
-	public static LinkedEntry_Sub39 aClass4_Sub39_2;
+	public static Node_Sub39 aClass4_Sub39_2;
 
 	@OriginalMember(owner = "client!uu", name = "qb", descriptor = "Lclient!pk;")
 	public static final Class183 aClass183_47 = new Class183();
@@ -58,7 +58,7 @@ public final class Static413 {
 			return;
 		}
 		if (local8.anObjectArray15 != null) {
-			@Pc(18) LinkedEntry_Sub34 local18 = new LinkedEntry_Sub34();
+			@Pc(18) Node_Sub34 local18 = new Node_Sub34();
 			local18.aClass247_15 = local8;
 			local18.anObjectArray4 = local8.anObjectArray15;
 			local18.aString50 = arg1;

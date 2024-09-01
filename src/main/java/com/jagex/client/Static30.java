@@ -17,9 +17,9 @@ public final class Static30 {
 	public static final boolean aBoolean53 = false;
 
 	@OriginalMember(owner = "client!bi", name = "a", descriptor = "(ILclient!fs;I)Lclient!qh;")
-	public static LinkedEntry_Sub38 method577(@OriginalArg(0) int arg0, @OriginalArg(1) Class76 arg1) {
+	public static Node_Sub38 method577(@OriginalArg(0) int arg0, @OriginalArg(1) Class76 arg1) {
 		@Pc(8) byte[] local8 = arg1.method2122(arg0);
-		return local8 == null ? null : new LinkedEntry_Sub38(local8);
+		return local8 == null ? null : new Node_Sub38(local8);
 	}
 
 	@OriginalMember(owner = "client!bi", name = "a", descriptor = "(BF)F")

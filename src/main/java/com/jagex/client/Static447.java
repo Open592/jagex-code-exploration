@@ -101,7 +101,7 @@ public final class Static447 {
 
 	@OriginalMember(owner = "client!wm", name = "a", descriptor = "(IB)V")
 	public static void method5629(@OriginalArg(0) int arg0) {
-		for (@Pc(9) LinkedEntry local9 = Static211.A_ITERABLE_HASH_MAP___18.head(); local9 != null; local9 = Static211.A_ITERABLE_HASH_MAP___18.nextEntry()) {
+		for (@Pc(9) Node local9 = Static211.A_ITERABLE_HASH_MAP___18.head(); local9 != null; local9 = Static211.A_ITERABLE_HASH_MAP___18.next()) {
 			if ((long) arg0 == (local9.hashKey >> 48 & 0xFFFFL)) {
 				local9.popSelf();
 			}

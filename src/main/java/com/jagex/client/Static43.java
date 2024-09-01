@@ -65,7 +65,7 @@ public final class Static43 {
 			Static198.aClass247_7 = arg2;
 		}
 		if (arg0 && arg2.anObjectArray7 != null && (local8 != arg2.anInt6833 || local52 != arg2.anInt6805)) {
-			@Pc(203) LinkedEntry_Sub34 local203 = new LinkedEntry_Sub34();
+			@Pc(203) Node_Sub34 local203 = new Node_Sub34();
 			local203.aClass247_15 = arg2;
 			local203.anObjectArray4 = arg2.anObjectArray7;
 			Static291.aClass183_35.method4137(local203);

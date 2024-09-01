@@ -18,7 +18,7 @@ public final class Class191 {
 	public int anInt5562;
 
 	@OriginalMember(owner = "client!qc", name = "f", descriptor = "Lclient!vp;")
-	public LinkedEntry_Sub21 aClass4_Sub21_2;
+	public Node_Sub21 aClass4_Sub21_2;
 
 	@OriginalMember(owner = "client!qc", name = "i", descriptor = "I")
 	private int anInt5565;

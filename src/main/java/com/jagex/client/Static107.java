@@ -17,7 +17,7 @@ public final class Static107 {
 	public static int worldID = 1;
 
 	@OriginalMember(owner = "client!fg", name = "a", descriptor = "(B)Lclient!cn;")
-	public static ContextualEntry_Sub1_Sub5 method1990() {
+	public static SecondaryNode_Sub1_Sub5 method1990() {
 		return Static148.aClass4_Sub1_Sub5_3;
 	}
 }

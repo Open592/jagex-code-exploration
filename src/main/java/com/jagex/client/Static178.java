@@ -9,7 +9,7 @@ public final class Static178 {
 	public static int[] anIntArray223;
 
 	@OriginalMember(owner = "client!j", name = "r", descriptor = "Lclient!va;")
-	public static LinkedEntry_Sub42 aClass4_Sub42_2;
+	public static Node_Sub42 aClass4_Sub42_2;
 
 	@OriginalMember(owner = "client!j", name = "i", descriptor = "Lclient!bg;")
 	public static final Class22 aClass22_152 = new Class22(48, 3);

@@ -12,7 +12,7 @@ public final class Static138 {
 	public static final Class83 aClass83_54 = new Class83(" has logged in.", " loggt sich ein.", " s'est connecté.", " entrou no jogo.");
 
 	@OriginalMember(owner = "client!gv", name = "G", descriptor = "Lclient!ib;")
-	public static final LinkedHashMapIterator A_ITERABLE_HASH_MAP___12 = new LinkedHashMapIterator(8);
+	public static final HashMap A_ITERABLE_HASH_MAP___12 = new HashMap(8);
 
 	@OriginalMember(owner = "client!gv", name = "a", descriptor = "(BLclient!fs;)V")
 	public static void method2373(@OriginalArg(1) Class76 arg0) {

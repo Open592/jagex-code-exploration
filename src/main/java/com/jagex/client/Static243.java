@@ -166,7 +166,7 @@ public final class Static243 {
 
 	@OriginalMember(owner = "client!mg", name = "a", descriptor = "(III)V")
 	public static void method3562(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1) {
-		@Pc(8) ContextualEntry_Sub1_Sub11 local8 = Static405.method5222(arg0, 12);
+		@Pc(8) SecondaryNode_Sub1_Sub11 local8 = Static405.method5222(arg0, 12);
 		local8.method2604();
 		local8.anInt3083 = arg1;
 	}

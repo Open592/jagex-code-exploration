@@ -19,15 +19,15 @@ public final class Static92 {
 	}
 
 	@OriginalMember(owner = "client!em", name = "a", descriptor = "(I)Lclient!hp;")
-	public static ContextualEntry_Sub1_Sub11 method1614() {
-		@Pc(12) ContextualEntry_Sub1_Sub11 local12 = (ContextualEntry_Sub1_Sub11) Static99.aClass229_1.method5089();
+	public static SecondaryNode_Sub1_Sub11 method1614() {
+		@Pc(12) SecondaryNode_Sub1_Sub11 local12 = (SecondaryNode_Sub1_Sub11) Static99.aClass229_1.method5089();
 		if (local12 != null) {
 			local12.popSelf();
-			local12.popContextEntry();
+			local12.secondaryPopSelf();
 			return local12;
 		}
 		do {
-			local12 = (ContextualEntry_Sub1_Sub11) Static250.aClass229_4.method5089();
+			local12 = (SecondaryNode_Sub1_Sub11) Static250.aClass229_4.method5089();
 			if (local12 == null) {
 				return null;
 			}
@@ -35,8 +35,8 @@ public final class Static92 {
 				return null;
 			}
 			local12.popSelf();
-			local12.popContextEntry();
-		} while ((local12.context & Long.MIN_VALUE) == 0L);
+			local12.secondaryPopSelf();
+		} while ((local12.secondaryValue & Long.MIN_VALUE) == 0L);
 		return local12;
 	}
 

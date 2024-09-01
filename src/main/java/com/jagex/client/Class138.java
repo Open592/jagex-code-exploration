@@ -158,19 +158,19 @@ public final class Class138 {
 	public Class110 method3456(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) Class110 arg4) {
 		@Pc(14) int local14 = this.anIntArray296[arg3];
 		@Pc(19) int local19 = this.anIntArray295[arg3];
-		@Pc(27) ContextualEntry_Sub1_Sub17 local27 = this.aClass55_2.method1391(local19 >> 16);
+		@Pc(27) SecondaryNode_Sub1_Sub17 local27 = this.aClass55_2.method1391(local19 >> 16);
 		@Pc(31) int local31 = local19 & 0xFFFF;
 		if (local27 == null) {
 			return arg4.method4887((byte) 1, arg1, true);
 		}
-		@Pc(41) ContextualEntry_Sub1_Sub17 local41 = null;
+		@Pc(41) SecondaryNode_Sub1_Sub17 local41 = null;
 		if ((this.aBoolean405 || Static127.aBoolean244) && arg2 != -1 && this.anIntArray295.length > arg2) {
 			@Pc(60) int local60 = this.anIntArray295[arg2];
 			local41 = this.aClass55_2.method1391(local60 >> 16);
 			arg2 = local60 & 0xFFFF;
 		}
-		@Pc(74) ContextualEntry_Sub1_Sub17 local74 = null;
-		@Pc(76) ContextualEntry_Sub1_Sub17 local76 = null;
+		@Pc(74) SecondaryNode_Sub1_Sub17 local74 = null;
+		@Pc(76) SecondaryNode_Sub1_Sub17 local76 = null;
 		@Pc(78) int local78 = 0;
 		@Pc(80) int local80 = 0;
 		if (this.anIntArray297 != null) {
@@ -248,8 +248,8 @@ public final class Class138 {
 		@Pc(5) int local5 = 0;
 		@Pc(7) int local7 = 0;
 		@Pc(20) int local20 = this.anIntArray295[arg0];
-		@Pc(22) ContextualEntry_Sub1_Sub17 local22 = null;
-		@Pc(30) ContextualEntry_Sub1_Sub17 local30 = this.aClass55_2.method1391(local20 >> 16);
+		@Pc(22) SecondaryNode_Sub1_Sub17 local22 = null;
+		@Pc(30) SecondaryNode_Sub1_Sub17 local30 = this.aClass55_2.method1391(local20 >> 16);
 		@Pc(34) int local34 = local20 & 0xFFFF;
 		if (local30 == null) {
 			return 0;
@@ -284,7 +284,7 @@ public final class Class138 {
 		}
 		if (this.anIntArray297 != null && arg2) {
 			@Pc(151) int local151;
-			@Pc(164) ContextualEntry_Sub1_Sub17 local164;
+			@Pc(164) SecondaryNode_Sub1_Sub17 local164;
 			if (this.anIntArray297.length > arg0) {
 				local151 = this.anIntArray297[arg0];
 				if (local151 != 65535) {
@@ -329,12 +329,12 @@ public final class Class138 {
 	public Class110 method3459(@OriginalArg(0) int arg0, @OriginalArg(1) byte arg1, @OriginalArg(2) Class110 arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4, @OriginalArg(5) int arg5, @OriginalArg(6) int arg6) {
 		@Pc(8) int local8 = this.anIntArray296[arg0];
 		@Pc(13) int local13 = this.anIntArray295[arg0];
-		@Pc(23) ContextualEntry_Sub1_Sub17 local23 = this.aClass55_2.method1391(local13 >> 16);
+		@Pc(23) SecondaryNode_Sub1_Sub17 local23 = this.aClass55_2.method1391(local13 >> 16);
 		@Pc(27) int local27 = local13 & 0xFFFF;
 		if (local23 == null) {
 			return arg2.method4887(arg1, arg6, true);
 		}
-		@Pc(37) ContextualEntry_Sub1_Sub17 local37 = null;
+		@Pc(37) SecondaryNode_Sub1_Sub17 local37 = null;
 		if ((this.aBoolean405 || Static127.aBoolean244) && arg4 != -1 && arg4 < this.anIntArray295.length) {
 			@Pc(55) int local55 = this.anIntArray295[arg4];
 			local37 = this.aClass55_2.method1391(local55 >> 16);

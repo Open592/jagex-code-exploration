@@ -4600,7 +4600,7 @@ public final class Class110_Sub2 extends Class110 {
 
 	@OriginalMember(owner = "client!sk", name = "fa", descriptor = "(Lclient!ba;)Lclient!ba;")
 	@Override
-	public ContextualEntry_Sub1_Sub4 fa(@OriginalArg(0) ContextualEntry_Sub1_Sub4 arg0) {
+	public SecondaryNode_Sub1_Sub4 fa(@OriginalArg(0) SecondaryNode_Sub1_Sub4 arg0) {
 		return null;
 	}
 

@@ -177,7 +177,7 @@ public final class Class206 {
 			local18.aStringArray33 = this.aStringArray30;
 			if (local18.aLinkedHashMap_Iterator_36 != null) {
 				@Pc(200) boolean local200 = false;
-				for (@Pc(205) LinkedEntry local205 = local18.aLinkedHashMap_Iterator_36.head(); local205 != null; local205 = local18.aLinkedHashMap_Iterator_36.nextEntry()) {
+				for (@Pc(205) Node local205 = local18.aLinkedHashMap_Iterator_36.head(); local205 != null; local205 = local18.aLinkedHashMap_Iterator_36.next()) {
 					@Pc(215) Class133 local215 = this.aClass180_2.method4121((int) local205.hashKey);
 					if (local215.aBoolean385) {
 						local205.popSelf();

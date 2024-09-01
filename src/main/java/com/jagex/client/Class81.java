@@ -51,8 +51,8 @@ public final class Class81 {
 	}
 
 	@OriginalMember(owner = "client!gh", name = "a", descriptor = "(IB)Lclient!au;")
-	public ContextualEntry_Sub1_Sub3 method2258(@OriginalArg(0) int arg0) {
-		@Pc(11) ContextualEntry_Sub1_Sub3 local11 = (ContextualEntry_Sub1_Sub3) this.aClass68_12.method1787((long) arg0);
+	public SecondaryNode_Sub1_Sub3 method2258(@OriginalArg(0) int arg0) {
+		@Pc(11) SecondaryNode_Sub1_Sub3 local11 = (SecondaryNode_Sub1_Sub3) this.aClass68_12.method1787((long) arg0);
 		if (local11 != null) {
 			return local11;
 		}
@@ -62,7 +62,7 @@ public final class Class81 {
 		} else {
 			local36 = this.aClass76_30.method2104(arg0, 1);
 		}
-		local11 = new ContextualEntry_Sub1_Sub3();
+		local11 = new SecondaryNode_Sub1_Sub3();
 		local11.aClass81_1 = this;
 		if (local36 != null) {
 			local11.method232(new Packet(local36));

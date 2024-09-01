@@ -98,11 +98,11 @@ public final class Static187 {
 	}
 
 	@OriginalMember(owner = "client!ji", name = "b", descriptor = "(I)Lclient!aq;")
-	public static LinkedEntry_Sub3 method2937() {
+	public static Node_Sub3 method2937() {
 		if (Static148.aClass183_41 == null || Static308.aClass63_1 == null) {
 			return null;
 		}
-		for (@Pc(16) LinkedEntry_Sub3 local16 = (LinkedEntry_Sub3) Static308.aClass63_1.method1612(); local16 != null; local16 = (LinkedEntry_Sub3) Static308.aClass63_1.method1612()) {
+		for (@Pc(16) Node_Sub3 local16 = (Node_Sub3) Static308.aClass63_1.method1612(); local16 != null; local16 = (Node_Sub3) Static308.aClass63_1.method1612()) {
 			@Pc(24) Class157 local24 = Static148.aClass182_3.method4124(local16.anInt234);
 			if (local24 != null && local24.aBoolean448 && local24.method3778(Static148.anInterface12_2)) {
 				return local16;

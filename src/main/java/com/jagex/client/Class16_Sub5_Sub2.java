@@ -33,7 +33,7 @@ public final class Class16_Sub5_Sub2 extends Class16_Sub5 implements Interface6 
 	private final boolean aBoolean548;
 
 	@OriginalMember(owner = "client!rj", name = "Q", descriptor = "Lclient!ba;")
-	private ContextualEntry_Sub1_Sub4 aClass4_Sub1_Sub4_5;
+	private SecondaryNode_Sub1_Sub4 aClass4_Sub1_Sub4_5;
 
 	@OriginalMember(owner = "client!rj", name = "D", descriptor = "Lclient!t;")
 	public Class110 aClass110_6;
@@ -69,7 +69,7 @@ public final class Class16_Sub5_Sub2 extends Class16_Sub5 implements Interface6 
 	@OriginalMember(owner = "client!rj", name = "a", descriptor = "(Lclient!ya;I)V")
 	@Override
 	public void method5348(@OriginalArg(0) Class19 arg0) {
-		@Pc(21) ContextualEntry_Sub1_Sub4 local21;
+		@Pc(21) SecondaryNode_Sub1_Sub4 local21;
 		if (this.aClass4_Sub1_Sub4_5 == null && this.aBoolean548) {
 			@Pc(34) Class149 local34 = this.method4653(262144, arg0, true);
 			local21 = local34 == null ? null : local34.aClass4_Sub1_Sub4_4;
@@ -217,7 +217,7 @@ public final class Class16_Sub5_Sub2 extends Class16_Sub5 implements Interface6 
 	@OriginalMember(owner = "client!rj", name = "a", descriptor = "(ZLclient!ya;)V")
 	@Override
 	public void method5349(@OriginalArg(1) Class19 arg0) {
-		@Pc(14) ContextualEntry_Sub1_Sub4 local14;
+		@Pc(14) SecondaryNode_Sub1_Sub4 local14;
 		if (this.aClass4_Sub1_Sub4_5 == null && this.aBoolean548) {
 			@Pc(25) Class149 local25 = this.method4653(262144, arg0, true);
 			local14 = local25 == null ? null : local25.aClass4_Sub1_Sub4_4;

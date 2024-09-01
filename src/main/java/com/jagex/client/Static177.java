@@ -77,13 +77,13 @@ public final class Static177 {
 							}
 						}
 						if (local131 > 0) {
-							@Pc(246) LinkedEntry_Sub4_Sub1 local246 = null;
+							@Pc(246) Node_Sub4_Sub1 local246 = null;
 							if (local13.aByte104 == 1) {
 								local246 = local13.aClass241_1.method5245().method3079(Static275.aClass261_1);
 							} else if (local13.aByte104 == 2) {
 								local246 = local13.aClass4_Sub4_Sub1_2;
 							}
-							@Pc(274) LinkedEntry_Sub15_Sub3 local274 = local13.aClass4_Sub15_Sub3_4 = Static462.method4489(local246, local131);
+							@Pc(274) Node_Sub15_Sub3 local274 = local13.aClass4_Sub15_Sub3_4 = Static462.method4489(local246, local131);
 							local274.method4461(local13.anInt7342 - 1);
 							Static360.aClass4_Sub15_Sub2_2.method2954(local274);
 						}

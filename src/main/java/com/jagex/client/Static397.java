@@ -15,7 +15,7 @@ public final class Static397 {
 	public static final Class83 aClass83_21 = new Class83("Members object", "Gegenstand für Mitglieder", "Objet d'abonnés", "Objeto para membros");
 
 	@OriginalMember(owner = "client!ua", name = "v", descriptor = "[Lclient!pt;")
-	public static final ContextualEntry_Sub1_Sub17[] aClass4_Sub1_Sub17Array6 = new ContextualEntry_Sub1_Sub17[14];
+	public static final SecondaryNode_Sub1_Sub17[] aClass4_Sub1_Sub17Array6 = new SecondaryNode_Sub1_Sub17[14];
 
 	@OriginalMember(owner = "client!ua", name = "a", descriptor = "(III)Z")
 	public static boolean method723(@OriginalArg(0) int arg0, @OriginalArg(2) int arg1) {

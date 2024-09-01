@@ -10,7 +10,7 @@ public final class Static90 {
 	public static float aFloat49;
 
 	@OriginalMember(owner = "client!ek", name = "a", descriptor = "(ZLclient!vj;ZI)V")
-	public static void method1606(@OriginalArg(0) boolean arg0, @OriginalArg(1) LinkedEntry_Sub43 arg1, @OriginalArg(2) boolean arg2) {
+	public static void method1606(@OriginalArg(0) boolean arg0, @OriginalArg(1) Node_Sub43 arg1, @OriginalArg(2) boolean arg2) {
 		@Pc(8) int local8 = arg1.anInt6979;
 		@Pc(12) int local12 = (int) arg1.hashKey;
 		arg1.popSelf();
@@ -27,9 +27,9 @@ public final class Static90 {
 			Static310.method4165(Static334.anInt5766, 1);
 		}
 		@Pc(58) Class25 local58 = new Class25(Static325.aLinkedHashMap_Iterator_29);
-		for (@Pc(63) LinkedEntry_Sub43 local63 = (LinkedEntry_Sub43) local58.method641(); local63 != null; local63 = (LinkedEntry_Sub43) local58.method640()) {
+		for (@Pc(63) Node_Sub43 local63 = (Node_Sub43) local58.method641(); local63 != null; local63 = (Node_Sub43) local58.method640()) {
 			if (!local63.hasNext()) {
-				local63 = (LinkedEntry_Sub43) local58.method641();
+				local63 = (Node_Sub43) local58.method641();
 				if (local63 == null) {
 					return;
 				}
@@ -45,17 +45,17 @@ public final class Static90 {
 
 	@OriginalMember(owner = "client!ek", name = "a", descriptor = "(II)V")
 	public static void method1608(@OriginalArg(0) int arg0) {
-		@Pc(8) ContextualEntry_Sub1_Sub11 local8 = Static405.method5222(arg0, 3);
+		@Pc(8) SecondaryNode_Sub1_Sub11 local8 = Static405.method5222(arg0, 3);
 		local8.method2608();
 	}
 
 	@OriginalMember(owner = "client!ek", name = "a", descriptor = "(IILclient!fs;I)Lclient!cn;")
-	public static ContextualEntry_Sub1_Sub5 method1609(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) Class76 arg2) {
+	public static SecondaryNode_Sub1_Sub5 method1609(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) Class76 arg2) {
 		@Pc(16) Packet local16 = new Packet(arg2.method2104(arg1, arg0));
-		@Pc(49) ContextualEntry_Sub1_Sub5 local49 = new ContextualEntry_Sub1_Sub5(arg1, local16.gStringCP1252ToUTF8(), local16.gStringCP1252ToUTF8(), local16.g4(), local16.g4(), local16.g1() == 1, local16.g1(), local16.g1());
+		@Pc(49) SecondaryNode_Sub1_Sub5 local49 = new SecondaryNode_Sub1_Sub5(arg1, local16.gStringCP1252ToUTF8(), local16.gStringCP1252ToUTF8(), local16.g4(), local16.g4(), local16.g1() == 1, local16.g1(), local16.g1());
 		@Pc(53) int local53 = local16.g1();
 		for (@Pc(55) int local55 = 0; local55 < local53; local55++) {
-			local49.aClass183_4.method4137(new LinkedEntry_Sub41(local16.g1(), local16.g2(), local16.g2(), local16.g2(), local16.g2(), local16.g2(), local16.g2(), local16.g2(), local16.g2()));
+			local49.aClass183_4.method4137(new Node_Sub41(local16.g1(), local16.g2(), local16.g2(), local16.g2(), local16.g2(), local16.g2(), local16.g2(), local16.g2(), local16.g2()));
 		}
 		local49.method933();
 		return local49;

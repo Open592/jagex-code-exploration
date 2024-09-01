@@ -9,10 +9,10 @@ public final class Static71 {
 	public static int anInt6919;
 
 	@OriginalMember(owner = "client!dl", name = "a", descriptor = "Lclient!cr;")
-	public static final LinkedEntry_Sub11 aClass4_Sub11_10 = new LinkedEntry_Sub11(0, 0);
+	public static final Node_Sub11 aClass4_Sub11_10 = new Node_Sub11(0, 0);
 
 	@OriginalMember(owner = "client!dl", name = "b", descriptor = "[Lclient!pt;")
-	public static final ContextualEntry_Sub1_Sub17[] aClass4_Sub1_Sub17Array14 = new ContextualEntry_Sub1_Sub17[14];
+	public static final SecondaryNode_Sub1_Sub17[] aClass4_Sub1_Sub17Array14 = new SecondaryNode_Sub1_Sub17[14];
 
 	@OriginalMember(owner = "client!dl", name = "f", descriptor = "[I")
 	public static final int[] anIntArray536 = new int[200];

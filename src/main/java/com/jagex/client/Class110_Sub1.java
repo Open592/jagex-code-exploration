@@ -1322,7 +1322,7 @@ public final class Class110_Sub1 extends Class110 {
 
 	@OriginalMember(owner = "client!ip", name = "fa", descriptor = "(Lclient!ba;)Lclient!ba;")
 	@Override
-	public ContextualEntry_Sub1_Sub4 fa(@OriginalArg(0) ContextualEntry_Sub1_Sub4 arg0) {
+	public SecondaryNode_Sub1_Sub4 fa(@OriginalArg(0) SecondaryNode_Sub1_Sub4 arg0) {
 		if (this.anInt3336 == 0) {
 			return null;
 		}
@@ -1349,13 +1349,13 @@ public final class Class110_Sub1 extends Class110 {
 		}
 		@Pc(172) int local172 = local57 + 1 - local40;
 		@Pc(179) int local179 = local131 + 1 - local114;
-		@Pc(182) ContextualEntry_Sub1_Sub4_ local182 = (ContextualEntry_Sub1_Sub4_) arg0;
-		@Pc(198) ContextualEntry_Sub1_Sub4_ local198;
+		@Pc(182) SecondaryNode_Sub1_Sub4_ local182 = (SecondaryNode_Sub1_Sub4_) arg0;
+		@Pc(198) SecondaryNode_Sub1_Sub4_ local198;
 		if (local182 != null && local182.method2301(local172, local179)) {
 			local198 = local182;
 			local182.method2304();
 		} else {
-			local198 = new ContextualEntry_Sub1_Sub4_(this.aClass19_Sub2_21, local172, local179);
+			local198 = new SecondaryNode_Sub1_Sub4_(this.aClass19_Sub2_21, local172, local179);
 		}
 		local198.method2299(local114, local40, local57, local131);
 		this.method2800(local198);
@@ -2334,7 +2334,7 @@ public final class Class110_Sub1 extends Class110 {
 	}
 
 	@OriginalMember(owner = "client!ip", name = "a", descriptor = "(Lclient!gm;I)V")
-	private void method2800(@OriginalArg(0) ContextualEntry_Sub1_Sub4_ arg0) {
+	private void method2800(@OriginalArg(0) SecondaryNode_Sub1_Sub4_ arg0) {
 		if (Static231.anIntArray298.length < this.anInt3336) {
 			Static231.anIntArray298 = new int[this.anInt3336];
 			Static173.anIntArray219 = new int[this.anInt3336];

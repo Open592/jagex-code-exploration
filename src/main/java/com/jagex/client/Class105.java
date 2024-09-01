@@ -12,5 +12,5 @@ public abstract class Class105 {
 	}
 
 	@OriginalMember(owner = "client!ie", name = "a", descriptor = "(Lclient!mh;I)Lclient!mh;")
-	public abstract ContextualEntry_Sub1_Sub9 method5276(@OriginalArg(0) ContextualEntry_Sub1_Sub9 arg0);
+	public abstract SecondaryNode_Sub1_Sub9 method5276(@OriginalArg(0) SecondaryNode_Sub1_Sub9 arg0);
 }

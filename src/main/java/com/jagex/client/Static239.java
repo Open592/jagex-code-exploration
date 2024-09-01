@@ -25,12 +25,12 @@ public final class Static239 {
 	}
 
 	@OriginalMember(owner = "client!mc", name = "a", descriptor = "(Lclient!ti;I)V")
-	public static void method3547(@OriginalArg(0) LinkedEntry_Sub15 arg0) {
+	public static void method3547(@OriginalArg(0) Node_Sub15 arg0) {
 		if (arg0.aClass4_Sub4_5 != null) {
 			arg0.aClass4_Sub4_5.anInt3724 = 0;
 		}
 		arg0.aBoolean569 = false;
-		for (@Pc(24) LinkedEntry_Sub15 local24 = arg0.method4860(); local24 != null; local24 = arg0.method4857()) {
+		for (@Pc(24) Node_Sub15 local24 = arg0.method4860(); local24 != null; local24 = arg0.method4857()) {
 			method3547(local24);
 		}
 	}

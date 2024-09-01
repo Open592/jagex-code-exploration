@@ -63,7 +63,7 @@ public final class Static96 {
 
 	@OriginalMember(owner = "client!eq", name = "f", descriptor = "(I)V")
 	public static void method1683() {
-		for (@Pc(10) ContextualEntry_Sub1_Sub7 local10 = (ContextualEntry_Sub1_Sub7) Static27.aClass183_2.method4140(); local10 != null; local10 = (ContextualEntry_Sub1_Sub7) Static27.aClass183_2.method4144()) {
+		for (@Pc(10) SecondaryNode_Sub1_Sub7 local10 = (SecondaryNode_Sub1_Sub7) Static27.aClass183_2.method4140(); local10 != null; local10 = (SecondaryNode_Sub1_Sub7) Static27.aClass183_2.method4144()) {
 			@Pc(15) Class16_Sub1_Sub3 local15 = local10.aClass16_Sub1_Sub3_1;
 			if (Static263.anInt4963 != local15.aByte82 || local15.anInt2581 < Static24.anInt5323) {
 				local10.popSelf();

@@ -9,71 +9,71 @@ import org.openrs2.deob.annotation.Pc;
 public final class Class229 {
 
 	@OriginalMember(owner = "client!tn", name = "k", descriptor = "Lclient!ac;")
-	private ContextualEntry aClass4_Sub1_58;
+	private SecondaryNode aClass4_Sub1_58;
 
 	@OriginalMember(owner = "client!tn", name = "d", descriptor = "Lclient!ac;")
-	private final ContextualEntry aClass4_Sub1_57 = new ContextualEntry();
+	private final SecondaryNode aClass4_Sub1_57 = new SecondaryNode();
 
 	@OriginalMember(owner = "client!tn", name = "<init>", descriptor = "()V")
 	public Class229() {
-		this.aClass4_Sub1_57.nextContext = this.aClass4_Sub1_57;
-		this.aClass4_Sub1_57.previousContext = this.aClass4_Sub1_57;
+		this.aClass4_Sub1_57.secondaryNext = this.aClass4_Sub1_57;
+		this.aClass4_Sub1_57.secondaryPrevious = this.aClass4_Sub1_57;
 	}
 
 	@OriginalMember(owner = "client!tn", name = "a", descriptor = "(B)V")
 	public void method5087() {
 		while (true) {
-			@Pc(5) ContextualEntry local5 = this.aClass4_Sub1_57.previousContext;
+			@Pc(5) SecondaryNode local5 = this.aClass4_Sub1_57.secondaryPrevious;
 			if (this.aClass4_Sub1_57 == local5) {
 				this.aClass4_Sub1_58 = null;
 				return;
 			}
-			local5.popContextEntry();
+			local5.secondaryPopSelf();
 		}
 	}
 
 	@OriginalMember(owner = "client!tn", name = "a", descriptor = "(ILclient!ac;)V")
-	public void method5088(@OriginalArg(1) ContextualEntry arg0) {
-		if (arg0.nextContext != null) {
-			arg0.popContextEntry();
+	public void method5088(@OriginalArg(1) SecondaryNode arg0) {
+		if (arg0.secondaryNext != null) {
+			arg0.secondaryPopSelf();
 		}
-		arg0.previousContext = this.aClass4_Sub1_57;
-		arg0.nextContext = this.aClass4_Sub1_57.nextContext;
-		arg0.nextContext.previousContext = arg0;
-		arg0.previousContext.nextContext = arg0;
+		arg0.secondaryPrevious = this.aClass4_Sub1_57;
+		arg0.secondaryNext = this.aClass4_Sub1_57.secondaryNext;
+		arg0.secondaryNext.secondaryPrevious = arg0;
+		arg0.secondaryPrevious.secondaryNext = arg0;
 	}
 
 	@OriginalMember(owner = "client!tn", name = "b", descriptor = "(B)Lclient!ac;")
-	public ContextualEntry method5089() {
-		@Pc(12) ContextualEntry local12 = this.aClass4_Sub1_57.previousContext;
+	public SecondaryNode method5089() {
+		@Pc(12) SecondaryNode local12 = this.aClass4_Sub1_57.secondaryPrevious;
 		if (local12 == this.aClass4_Sub1_57) {
 			this.aClass4_Sub1_58 = null;
 			return null;
 		} else {
-			this.aClass4_Sub1_58 = local12.previousContext;
+			this.aClass4_Sub1_58 = local12.secondaryPrevious;
 			return local12;
 		}
 	}
 
 	@OriginalMember(owner = "client!tn", name = "c", descriptor = "(B)Lclient!ac;")
-	public ContextualEntry method5091() {
-		@Pc(7) ContextualEntry local7 = this.aClass4_Sub1_57.previousContext;
+	public SecondaryNode method5091() {
+		@Pc(7) SecondaryNode local7 = this.aClass4_Sub1_57.secondaryPrevious;
 		if (this.aClass4_Sub1_57 == local7) {
 			return null;
 		} else {
-			local7.popContextEntry();
+			local7.secondaryPopSelf();
 			return local7;
 		}
 	}
 
 	@OriginalMember(owner = "client!tn", name = "b", descriptor = "(Z)Lclient!ac;")
-	public ContextualEntry method5092() {
-		@Pc(11) ContextualEntry local11 = this.aClass4_Sub1_58;
+	public SecondaryNode method5092() {
+		@Pc(11) SecondaryNode local11 = this.aClass4_Sub1_58;
 		if (this.aClass4_Sub1_57 == local11) {
 			this.aClass4_Sub1_58 = null;
 			return null;
 		} else {
-			this.aClass4_Sub1_58 = local11.previousContext;
+			this.aClass4_Sub1_58 = local11.secondaryPrevious;
 			return local11;
 		}
 	}
@@ -81,9 +81,9 @@ public final class Class229 {
 	@OriginalMember(owner = "client!tn", name = "c", descriptor = "(Z)I")
 	public int method5093() {
 		@Pc(13) int local13 = 0;
-		@Pc(17) ContextualEntry local17 = this.aClass4_Sub1_57.previousContext;
+		@Pc(17) SecondaryNode local17 = this.aClass4_Sub1_57.secondaryPrevious;
 		while (local17 != this.aClass4_Sub1_57) {
-			local17 = local17.previousContext;
+			local17 = local17.secondaryPrevious;
 			local13++;
 		}
 		return local13;
