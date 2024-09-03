@@ -11,9 +11,6 @@ public final class Static78 {
 	@OriginalMember(owner = "client!dt", name = "b", descriptor = "[S")
 	public static short[] aShortArray46 = new short[256];
 
-	@OriginalMember(owner = "client!dt", name = "c", descriptor = "I")
-	public static int clientInitializationStep = 0;
-
 	@OriginalMember(owner = "client!dt", name = "a", descriptor = "(BLclient!iv;)Lclient!kg;")
 	public static Class27_Sub3 method1389(@OriginalArg(1) Packet arg0) {
 		return new Class27_Sub3(arg0.g2s(), arg0.g2s(), arg0.g2s(), arg0.g2s(), arg0.g3(), arg0.g3(), arg0.g1());

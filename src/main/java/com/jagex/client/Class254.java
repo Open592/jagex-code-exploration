@@ -37,7 +37,7 @@ public final class Class254 implements Runnable {
 	@OriginalMember(owner = "client!vl", name = "a", descriptor = "(ILclient!st;I)Lclient!lf;")
 	public SecondaryNode_Sub1_Sub6_Sub2 method5431(@OriginalArg(1) Class222 arg0, @OriginalArg(2) int arg1) {
 		@Pc(7) SecondaryNode_Sub1_Sub6_Sub2 local7 = new SecondaryNode_Sub1_Sub6_Sub2();
-		local7.aBoolean384 = false;
+		local7.isUrgent = false;
 		local7.aClass222_1 = arg0;
 		local7.anInt4117 = 3;
 		local7.secondaryValue = arg1;
@@ -65,7 +65,7 @@ public final class Class254 implements Runnable {
 			}
 		}
 		local9.aByteArray50 = arg0.method4981(arg1);
-		local9.aBoolean384 = true;
+		local9.isUrgent = true;
 		local9.aBoolean381 = false;
 		return local9;
 	}
@@ -131,7 +131,7 @@ public final class Class254 implements Runnable {
 		local13.anInt4117 = 2;
 		local13.aByteArray50 = arg1;
 		local13.aClass222_1 = arg2;
-		local13.aBoolean384 = false;
+		local13.isUrgent = false;
 		this.method5434(local13);
 		return local13;
 	}

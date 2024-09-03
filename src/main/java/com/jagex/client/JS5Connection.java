@@ -9,7 +9,7 @@ import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;
 
 @OriginalClass("client!vn")
-public final class Class255 {
+public final class JS5Connection {
 
 	@OriginalMember(owner = "client!vn", name = "v", descriptor = "Lclient!al;")
 	private ServerConnection serverConnection;
@@ -47,31 +47,31 @@ public final class Class255 {
 	@OriginalMember(owner = "client!vn", name = "B", descriptor = "B")
 	private byte aByte94 = 0;
 
-	@OriginalMember(owner = "client!vn", name = "C", descriptor = "I")
-	public volatile int anInt7063 = 0;
-
-	@OriginalMember(owner = "client!vn", name = "a", descriptor = "(B)I")
-	private int method5459() {
-		return this.activeUrgentRequests.size() + this.activeRegularRequests.size();
-	}
-
-	@OriginalMember(owner = "client!vn", name = "a", descriptor = "(I)Z")
-	public boolean method5460() {
-		return this.method5469() >= 20;
-	}
-
 	@OriginalMember(owner = "client!vn", name = "c", descriptor = "(I)I")
-	public int method5469() {
+	public int getPendingRequestCount() {
 		return this.pendingUrgentRequests.size() + this.pendingRegularRequests.size();
 	}
 
+	@OriginalMember(owner = "client!vn", name = "a", descriptor = "(I)Z")
+	public boolean isPendingRequestQueueFull() {
+		return this.getPendingRequestCount() >= 20;
+	}
+
+	@OriginalMember(owner = "client!vn", name = "C", descriptor = "I")
+	public volatile int errorCode = 0;
+
+	@OriginalMember(owner = "client!vn", name = "a", descriptor = "(B)I")
+	private int getActiveRequestCount() {
+		return this.activeUrgentRequests.size() + this.activeRegularRequests.size();
+	}
+
 	@OriginalMember(owner = "client!vn", name = "f", descriptor = "(B)Z")
-	public boolean method5472() {
-		return this.method5459() >= 20;
+	public boolean isActiveRequestQueueFull() {
+		return this.getActiveRequestCount() >= 20;
 	}
 
 	@OriginalMember(owner = "client!vn", name = "a", descriptor = "(ILclient!al;Z)V")
-	public void method5461(@OriginalArg(1) ServerConnection serverConnection, @OriginalArg(2) boolean arg1) {
+	public void init(@OriginalArg(1) ServerConnection serverConnection, @OriginalArg(2) boolean arg1) {
 		if (this.serverConnection != null) {
 			try {
 				this.serverConnection.shutdown();
@@ -104,7 +104,7 @@ public final class Class255 {
 									this.serverConnection.shutdown();
 								} catch (@Pc(108) Exception local108) {
 								}
-								this.anInt7063 = -2;
+								this.errorCode = -2;
 								this.js5ConnectAttempts++;
 								this.serverConnection = null;
 							}
@@ -139,28 +139,7 @@ public final class Class255 {
 
 			this.serverConnection = null;
 			this.js5ConnectAttempts++;
-			this.anInt7063 = -2;
-		}
-	}
-
-	@OriginalMember(owner = "client!vn", name = "a", descriptor = "(ZB)V")
-	public void method5463(@OriginalArg(0) boolean arg0) {
-		if (this.serverConnection == null) {
-			return;
-		}
-		try {
-			this.outgoingPacket.pos = 0;
-			this.outgoingPacket.p1(arg0 ? 2 : 3);
-			this.outgoingPacket.p3(0);
-			this.serverConnection.write(4, this.outgoingPacket.data);
-		} catch (@Pc(41) IOException local41) {
-			try {
-				this.serverConnection.shutdown();
-			} catch (@Pc(47) Exception local47) {
-			}
-			this.anInt7063 = -2;
-			this.serverConnection = null;
-			this.js5ConnectAttempts++;
+			this.errorCode = -2;
 		}
 	}
 
@@ -170,47 +149,75 @@ public final class Class255 {
 			this.serverConnection.shutdown();
 		} catch (@Pc(9) Exception local9) {
 		}
+
 		this.serverConnection = null;
-		this.anInt7063 = -1;
+		this.errorCode = -1;
 		this.aByte94 = (byte) (Math.random() * 255.0D + 1.0D);
 		this.js5ConnectAttempts++;
 	}
 
 	@OriginalMember(owner = "client!vn", name = "a", descriptor = "(IBBZI)Lclient!je;")
-	public JS5NetRequest method5465(@OriginalArg(0) int arg0, @OriginalArg(1) byte arg1, @OriginalArg(3) boolean arg2, @OriginalArg(4) int arg3) {
-		@Pc(19) long local19 = (long) ((arg0 << 16) + arg3);
-		@Pc(23) JS5NetRequest local23 = new JS5NetRequest();
-		local23.secondaryValue = local19;
-		local23.aBoolean384 = arg2;
-		local23.aByte24 = arg1;
-		if (arg2) {
-			if (this.method5469() >= 20) {
+	public JS5NetRequest method5465(@OriginalArg(0) int archive, @OriginalArg(1) byte arg1, @OriginalArg(3) boolean isUrgent, @OriginalArg(4) int arg3) {
+		@Pc(19) long local19 = ((long) archive << 16) + arg3;
+
+		@Pc(23) JS5NetRequest request = new JS5NetRequest();
+		request.secondaryValue = local19;
+		request.isUrgent = isUrgent;
+		request.aByte24 = arg1;
+
+		if (isUrgent) {
+			if (this.getPendingRequestCount() >= 20) {
 				throw new RuntimeException();
 			}
-			this.pendingUrgentRequests.insert(local23);
-		} else if (this.method5459() < 20) {
-			this.activeUrgentRequests.insert(local23);
+			this.pendingUrgentRequests.insert(request);
+		} else if (this.getActiveRequestCount() < 20) {
+			this.activeUrgentRequests.insert(request);
 		} else {
 			throw new RuntimeException();
 		}
-		return local23;
+
+		return request;
 	}
 
 	@OriginalMember(owner = "client!vn", name = "d", descriptor = "(B)V")
-	public void method5466() {
+	public void breakConnection() {
 		if (this.serverConnection != null) {
 			this.serverConnection.breakConnection();
 		}
 	}
 
-	@OriginalMember(owner = "client!vn", name = "e", descriptor = "(B)V")
-	public void method5467() {
+	@OriginalMember(owner = "client!vn", name = "a", descriptor = "(ZB)V")
+	public void method5463(@OriginalArg(0) boolean arg0) {
 		if (this.serverConnection == null) {
 			return;
 		}
+
 		try {
 			this.outgoingPacket.pos = 0;
-			this.outgoingPacket.p1(7);
+			this.outgoingPacket.p1(arg0 ? 2 : 3);
+			this.outgoingPacket.p3(0);
+			this.serverConnection.write(4, this.outgoingPacket.data);
+		} catch (@Pc(41) IOException e) {
+			try {
+				this.serverConnection.shutdown();
+			} catch (@Pc(47) Exception ignored) {
+			}
+
+			this.errorCode = -2;
+			this.serverConnection = null;
+			this.js5ConnectAttempts++;
+		}
+	}
+
+	@OriginalMember(owner = "client!vn", name = "e", descriptor = "(B)V")
+	public void requestServerToDropRequests() {
+		if (this.serverConnection == null) {
+			return;
+		}
+
+		try {
+			this.outgoingPacket.pos = 0;
+			this.outgoingPacket.p1(JS5RequestOpCodes.JS5_DROP_ACTIVE_REQUESTS);
 			this.outgoingPacket.p3(0);
 			this.serverConnection.write(4, this.outgoingPacket.data);
 		} catch (@Pc(32) IOException local32) {
@@ -218,7 +225,7 @@ public final class Class255 {
 				this.serverConnection.shutdown();
 			} catch (@Pc(38) Exception local38) {
 			}
-			this.anInt7063 = -2;
+			this.errorCode = -2;
 			this.serverConnection = null;
 			this.js5ConnectAttempts++;
 		}
@@ -250,7 +257,7 @@ public final class Class255 {
 		}
 
 		if (this.serverConnection == null) {
-			return this.method5469() == 0 && this.method5459() == 0;
+			return this.getPendingRequestCount() == 0 && this.getActiveRequestCount() == 0;
 		}
 
 		try {
@@ -258,7 +265,7 @@ public final class Class255 {
 
 			for (@Pc(76) JS5NetRequest request = (JS5NetRequest) this.pendingUrgentRequests.getHead(); request != null; request = (JS5NetRequest) this.pendingUrgentRequests.next()) {
 				this.outgoingPacket.pos = 0;
-				this.outgoingPacket.p1(1);
+				this.outgoingPacket.p1(JS5RequestOpCodes.JS5_URGENT_REQUEST);
 				this.outgoingPacket.p3((int) request.secondaryValue);
 				this.serverConnection.write(4, this.outgoingPacket.data);
 				this.pendingRegularRequests.insert(request);
@@ -266,7 +273,7 @@ public final class Class255 {
 
 			for (@Pc(122) JS5NetRequest request = (JS5NetRequest) this.activeUrgentRequests.getHead(); request != null; request = (JS5NetRequest) this.activeUrgentRequests.next()) {
 				this.outgoingPacket.pos = 0;
-				this.outgoingPacket.p1(0);
+				this.outgoingPacket.p1(JS5RequestOpCodes.JS5_REGULAR_REQUEST);
 				this.outgoingPacket.p3((int) request.secondaryValue);
 				this.serverConnection.write(4, this.outgoingPacket.data);
 				this.activeRegularRequests.insert(request);
@@ -393,14 +400,14 @@ public final class Class255 {
 			} catch (@Pc(633) Exception local633) {
 			}
 			this.js5ConnectAttempts++;
-			this.anInt7063 = -2;
+			this.errorCode = -2;
 			this.serverConnection = null;
-			return this.method5469() == 0 && this.method5459() == 0;
+			return this.getPendingRequestCount() == 0 && this.getActiveRequestCount() == 0;
 		}
 	}
 
 	@OriginalMember(owner = "client!vn", name = "e", descriptor = "(I)V")
-	public void shutdownConnection() {
+	public void shutdown() {
 		if (this.serverConnection != null) {
 			this.serverConnection.shutdown();
 		}

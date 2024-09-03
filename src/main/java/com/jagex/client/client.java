@@ -1,6 +1,7 @@
 package com.jagex.client;
 
 import com.jagex.client.jagex3.jagmisc.jagmisc;
+import com.jagex.signlink.Message;
 import com.jagex.signlink.MonotonicClock;
 import com.jagex.signlink.SignLink;
 import java.awt.Container;
@@ -22,14 +23,23 @@ public final class client extends GameShell {
 	@OriginalMember(owner = "client!md", name = "e", descriptor = "Lclient!al;")
 	public static ServerConnection serverConnection;
 
+	@OriginalMember(owner = "client!dt", name = "c", descriptor = "I")
+	public static int js5ConnectionStage = 0;
+
 	@OriginalMember(owner = "client!nf", name = "V", descriptor = "Lclient!vn;")
-	public static Class255 aClass255_2;
+	public static JS5Connection js5Connection;
 
 	@OriginalMember(owner = "client!tl", name = "w", descriptor = "Lclient!vl;")
 	public static Class254 aClass254_3;
 
 	@OriginalMember(owner = "client!pu", name = "k", descriptor = "I")
 	public static int anInt5505 = 0;
+
+	@OriginalMember(owner = "client!bi", name = "B", descriptor = "Lclient!qt;")
+	public static Message connectionInitializationMessage;
+
+	@OriginalMember(owner = "client!a", name = "g", descriptor = "I")
+	public static int anInt5 = 0;
 
 	@OriginalMember(owner = "client!client", name = "main", descriptor = "([Ljava/lang/String;)V")
 	public static void main(@OriginalArg(0) String[] arguments) {
@@ -253,8 +263,8 @@ public final class client extends GameShell {
 
 	@OriginalMember(owner = "client!client", name = "i", descriptor = "(I)V")
 	private void js5connect() {
-		if (aClass255_2.js5ConnectAttempts > anInt5505) {
-			Static392.anInt6543 = (aClass255_2.js5ConnectAttempts * 50 - 50) * 5;
+		if (js5Connection.js5ConnectAttempts > anInt5505) {
+			Static392.anInt6543 = (js5Connection.js5ConnectAttempts * 50 - 50) * 5;
 
 			if (Static407.port == Static313.anInt5436) {
 				Static407.port = Static97.anInt1949;
@@ -266,22 +276,22 @@ public final class client extends GameShell {
 				Static392.anInt6543 = 3000;
 			}
 
-			if (aClass255_2.js5ConnectAttempts >= 2 && aClass255_2.anInt7063 == 6) {
+			if (js5Connection.js5ConnectAttempts >= 2 && js5Connection.errorCode == 6) {
 				this.handleGameError("js5connect_outofdate");
 				Static403.anInt6667 = 1000;
 				return;
 			}
 
-			if (aClass255_2.js5ConnectAttempts >= 4 && aClass255_2.anInt7063 == -1) {
+			if (js5Connection.js5ConnectAttempts >= 4 && js5Connection.errorCode == -1) {
 				this.handleGameError("js5crc");
 				Static403.anInt6667 = 1000;
 				return;
 			}
 
-			if (aClass255_2.js5ConnectAttempts >= 4 && (Static403.anInt6667 == 0 || Static403.anInt6667 == 5)) {
-				if (aClass255_2.anInt7063 == 7 || aClass255_2.anInt7063 == 9) {
+			if (js5Connection.js5ConnectAttempts >= 4 && (Static403.anInt6667 == 0 || Static403.anInt6667 == 5)) {
+				if (js5Connection.errorCode == 7 || js5Connection.errorCode == 9) {
 					this.handleGameError("js5connect_full");
-				} else if (aClass255_2.anInt7063 <= 0) {
+				} else if (js5Connection.errorCode <= 0) {
 					this.handleGameError("js5io");
 				} else {
 					this.handleGameError("js5connect");
@@ -293,7 +303,7 @@ public final class client extends GameShell {
 			}
 		}
 
-		anInt5505 = aClass255_2.js5ConnectAttempts;
+		anInt5505 = js5Connection.js5ConnectAttempts;
 
 		if (Static392.anInt6543 > 0) {
 			Static392.anInt6543--;
@@ -301,56 +311,58 @@ public final class client extends GameShell {
 		}
 
 		try {
-			if (Static78.clientInitializationStep == 0) {
-				Static30.connectionInitializationMessage = Static206.signLink.emitConnectionInitializationMessage(Static321.host, Static407.port);
-				Static78.clientInitializationStep++;
+			if (js5ConnectionStage == 0) {
+				connectionInitializationMessage = Static206.signLink.emitConnectionInitializationMessage(Static321.host, Static407.port);
+				js5ConnectionStage++;
 			}
 
-			if (Static78.clientInitializationStep == 1) {
-				if (Static30.connectionInitializationMessage.status == 2) {
-					this.method903(1000);
+			if (js5ConnectionStage == 1) {
+				if (connectionInitializationMessage.status == 2) {
+					this.signalJS5ConnectionFailedWithErrorCode(1000);
 					return;
 				}
-				if (Static30.connectionInitializationMessage.status == 1) {
-					Static78.clientInitializationStep++;
+				if (connectionInitializationMessage.status == 1) {
+					js5ConnectionStage++;
 				}
 			}
 
-			if (Static78.clientInitializationStep == 2) {
-				serverConnection = new ServerConnection((Socket) Static30.connectionInitializationMessage.output, Static206.signLink);
+			if (js5ConnectionStage == 2) {
+				serverConnection = new ServerConnection((Socket) connectionInitializationMessage.output, Static206.signLink);
 				@Pc(194) Packet local194 = new Packet(5);
 				local194.p1(Static153.aClass60_2.anInt1812);
 				local194.p4(592);
 				serverConnection.write(5, local194.data);
-				Static78.clientInitializationStep++;
+				js5ConnectionStage++;
 				Static327.connectionInitializationTimestamp = MonotonicClock.getCurrentTimeInMilliseconds();
 			}
 
-			if (Static78.clientInitializationStep == 3) {
+			if (js5ConnectionStage == 3) {
 				if (Static403.anInt6667 == 0 || Static403.anInt6667 == 5 || serverConnection.getEstimatedBytesAvailable() > 0) {
 					@Pc(259) int response = serverConnection.readByteFromServer();
 
 					if (response != 0) {
-						this.method903(response);
+						this.signalJS5ConnectionFailedWithErrorCode(response);
 						return;
 					}
 
-					Static78.clientInitializationStep++;
+					js5ConnectionStage++;
 				} else if (MonotonicClock.getCurrentTimeInMilliseconds() - Static327.connectionInitializationTimestamp > 30000L) {
-					this.method903(1001);
+					this.signalJS5ConnectionFailedWithErrorCode(1001);
 					return;
 				}
 			}
 
-			if (Static78.clientInitializationStep == 4) {
+			if (js5ConnectionStage == 4) {
 				@Pc(293) boolean local293 = Static403.anInt6667 == 5 || Static403.anInt6667 == 10 || Static403.anInt6667 == 28;
-				aClass255_2.method5461(serverConnection, !local293);
-				Static30.connectionInitializationMessage = null;
-				Static78.clientInitializationStep = 0;
+
+				js5Connection.init(serverConnection, !local293);
+
+				connectionInitializationMessage = null;
+				js5ConnectionStage = 0;
 				serverConnection = null;
 			}
 		} catch (@Pc(312) IOException local312) {
-			this.method903(1002);
+			this.signalJS5ConnectionFailedWithErrorCode(1002);
 		}
 	}
 
@@ -382,7 +394,7 @@ public final class client extends GameShell {
 		Static223.aClass14_1 = null;
 
 		Static64.method1241();
-		aClass255_2.shutdownConnection();
+		js5Connection.shutdown();
 		aClass254_3.method5433();
 
 		if (Static402.aClass256_1 != null) {
@@ -876,12 +888,13 @@ public final class client extends GameShell {
 	}
 
 	@OriginalMember(owner = "client!client", name = "a", descriptor = "(II)V")
-	private void method903(@OriginalArg(1) int arg0) {
+	private void signalJS5ConnectionFailedWithErrorCode(@OriginalArg(1) int errorCode) {
 		serverConnection = null;
-		Static30.connectionInitializationMessage = null;
-		aClass255_2.js5ConnectAttempts++;
-		aClass255_2.anInt7063 = arg0;
-		Static78.clientInitializationStep = 0;
+		connectionInitializationMessage = null;
+
+		js5Connection.js5ConnectAttempts++;
+		js5Connection.errorCode = errorCode;
+		js5ConnectionStage = 0;
 	}
 
 	@OriginalMember(owner = "client!client", name = "d", descriptor = "(I)V")
@@ -895,7 +908,7 @@ public final class client extends GameShell {
 		method3938();
 
 		aClass254_3 = new Class254(Static206.signLink);
-		aClass255_2 = new Class255();
+		js5Connection = new JS5Connection();
 
 		if (ClientSettings.MODEWHERE_LIVE != ClientSettings.modewhere) {
 			Static392.aByteArrayArray28 = new byte[50][];
@@ -1045,7 +1058,7 @@ public final class client extends GameShell {
 			}
 		}
 		@Pc(57) int local57;
-		if (Static1.anInt5 == 0) {
+		if (anInt5 == 0) {
 			@Pc(47) Runtime local47 = Runtime.getRuntime();
 			local57 = (int) ((local47.totalMemory() - local47.freeMemory()) / 1024L);
 			@Pc(60) long local60 = MonotonicClock.getCurrentTimeInMilliseconds();
@@ -1061,19 +1074,19 @@ public final class client extends GameShell {
 				Static247.anInt4590 = 5;
 			} else {
 				Static24.aString53 = Static24.aClass83_111.method2267(ClientSettings.langID);
-				Static1.anInt5 = 10;
+				anInt5 = 10;
 				Static247.anInt4590 = 5;
 			}
-		} else if (Static1.anInt5 == 10) {
+		} else if (anInt5 == 10) {
 			for (local10 = 0; local10 < 4; local10++) {
 				Static175.aClass213Array1[local10] = Static446.method5622(Static283.anInt5187, Static326.anInt5666);
 			}
 			Static24.aString53 = Static153.aClass83_61.method2267(ClientSettings.langID);
 			Static247.anInt4590 = 10;
-			Static1.anInt5 = 20;
-		} else if (Static1.anInt5 == 20) {
+			anInt5 = 20;
+		} else if (anInt5 == 20) {
 			if (Static94.aClass159_1 == null) {
-				Static94.aClass159_1 = new Class159(aClass255_2, aClass254_3);
+				Static94.aClass159_1 = new Class159(js5Connection, aClass254_3);
 			}
 			if (Static94.aClass159_1.method3814()) {
 				Static395.aClass76_92 = Static265.method3820(false, 0, true);
@@ -1108,12 +1121,12 @@ public final class client extends GameShell {
 				Static366.aClass76_83 = Static265.method3820(false, 29, true);
 				Static24.aString53 = Static321.aClass83_117.method2267(ClientSettings.langID);
 				Static247.anInt4590 = 15;
-				Static1.anInt5 = 30;
+				anInt5 = 30;
 			} else {
 				Static24.aString53 = Static33.aClass83_18.method2267(ClientSettings.langID);
 				Static247.anInt4590 = 12;
 			}
-		} else if (Static1.anInt5 == 30) {
+		} else if (anInt5 == 30) {
 			local10 = 0;
 			for (local57 = 0; local57 < 30; local57++) {
 				local10 += Static119.aClass143_Sub1Array1[local57].method3525() * Static251.anIntArray307[local57] / 100;
@@ -1123,29 +1136,29 @@ public final class client extends GameShell {
 				Static247.anInt4590 = 20;
 				Static138.method2373(Static293.aClass76_60);
 				Static221.method3346(Static293.aClass76_60);
-				Static1.anInt5 = 40;
+				anInt5 = 40;
 			} else {
 				if (local10 != 0) {
 					Static24.aString53 = Static96.aClass83_37.method2267(ClientSettings.langID) + local10 + "%";
 				}
 				Static247.anInt4590 = 20;
 			}
-		} else if (Static1.anInt5 == 40) {
+		} else if (anInt5 == 40) {
 			if (Static19.aClass76_2.method2116()) {
 				this.method908(Static19.aClass76_2.method2122(1));
 				Static24.aString53 = Static409.aClass83_145.method2267(ClientSettings.langID);
 				Static247.anInt4590 = 25;
-				Static1.anInt5 = 50;
+				anInt5 = 50;
 			} else {
 				Static24.aString53 = Static50.aClass83_27.method2267(ClientSettings.langID) + Static19.aClass76_2.method2112() + "%";
 				Static247.anInt4590 = 25;
 			}
-		} else if (Static1.anInt5 == 50) {
+		} else if (anInt5 == 50) {
 			Static72.method1354();
 			Static24.aString53 = Static309.aClass83_114.method2267(ClientSettings.langID);
 			Static247.anInt4590 = 30;
-			Static1.anInt5 = 60;
-		} else if (Static1.anInt5 == 60) {
+			anInt5 = 60;
+		} else if (anInt5 == 60) {
 			local10 = Static444.method5632(Static209.aClass76_48, Static293.aClass76_60);
 			local57 = Static454.method3302();
 			if (local10 < local57) {
@@ -1153,10 +1166,10 @@ public final class client extends GameShell {
 				Static247.anInt4590 = 35;
 			} else {
 				Static24.aString53 = Static43.aClass83_151.method2267(ClientSettings.langID);
-				Static1.anInt5 = 70;
+				anInt5 = 70;
 				Static247.anInt4590 = 35;
 			}
-		} else if (Static1.anInt5 == 70) {
+		} else if (anInt5 == 70) {
 			local10 = Static97.method1701(Static293.aClass76_60);
 			local57 = Static395.method5165();
 			if (local57 > local10) {
@@ -1164,24 +1177,24 @@ public final class client extends GameShell {
 				Static247.anInt4590 = 40;
 			} else {
 				Static24.aString53 = Static363.aClass83_122.method2267(ClientSettings.langID);
-				Static1.anInt5 = 80;
+				anInt5 = 80;
 				Static247.anInt4590 = 40;
 			}
-		} else if (Static1.anInt5 == 80) {
+		} else if (anInt5 == 80) {
 			if (Static24.aClass76_61.method2116()) {
 				Static80.anInterface7_3 = new Class91(Static24.aClass76_61, Static196.aClass76_44, Static293.aClass76_60);
 				Static24.aString53 = Static42.aClass83_22.method2267(ClientSettings.langID);
 				Static247.anInt4590 = 45;
-				Static1.anInt5 = 90;
+				anInt5 = 90;
 			} else {
 				Static24.aString53 = Static171.aClass83_71.method2267(ClientSettings.langID) + Static24.aClass76_61.method2112() + "%";
 				Static247.anInt4590 = 45;
 			}
-		} else if (Static1.anInt5 == 90) {
+		} else if (anInt5 == 90) {
 			Static24.aString53 = Static243.aClass83_95.method2267(ClientSettings.langID);
 			Static247.anInt4590 = 50;
-			Static1.anInt5 = 95;
-		} else if (Static1.anInt5 == 95) {
+			anInt5 = 95;
+		} else if (anInt5 == 95) {
 			if (Static323.aClass50_Sub1_1.aBoolean297) {
 				Static323.aClass50_Sub1_1.anInt3442 = 0;
 				Static323.aClass50_Sub1_1.anInt3447 = 1;
@@ -1194,14 +1207,14 @@ public final class client extends GameShell {
 			Static440.method5561(false, Static323.aClass50_Sub1_1.anInt3445);
 			Static24.aString53 = Static372.aClass83_126.method2267(ClientSettings.langID);
 			Static247.anInt4590 = 55;
-			Static1.anInt5 = 100;
-		} else if (Static1.anInt5 == 100) {
+			anInt5 = 100;
+		} else if (anInt5 == 100) {
 			Static40.method696(Static122.aClass19_16, Static293.aClass76_60, Static209.aClass76_48);
 			Static24.aString53 = Static296.aClass83_109.method2267(ClientSettings.langID);
 			Static247.anInt4590 = 60;
 			Static187.method2932(5);
-			Static1.anInt5 = 110;
-		} else if (Static1.anInt5 == 110) {
+			anInt5 = 110;
+		} else if (anInt5 == 110) {
 			Static74.aClass76_20.method2116();
 			local10 = Static74.aClass76_20.method2112();
 			Static424.aClass76_99.method2116();
@@ -1266,9 +1279,9 @@ public final class client extends GameShell {
 				Static119.method2149();
 				Static378.method3227(Static417.aClass76_98);
 				Static273.method3916(Static357.aClass76_82, Static80.anInterface7_3);
-				Static1.anInt5 = 120;
+				anInt5 = 120;
 			}
-		} else if (Static1.anInt5 == 120) {
+		} else if (anInt5 == 120) {
 			local10 = Static290.method5014(Static293.aClass76_60);
 			local57 = Static203.method3176();
 			if (local10 < local57) {
@@ -1278,58 +1291,58 @@ public final class client extends GameShell {
 				Static97.method1700(Static293.aClass76_60, Static122.aClass19_16);
 				Static324.method4387(Static429.aClass57Array18);
 				Static24.aString53 = Static391.aClass83_132.method2267(ClientSettings.langID);
-				Static1.anInt5 = 130;
+				anInt5 = 130;
 				Static247.anInt4590 = 70;
 			}
-		} else if (Static1.anInt5 == 130) {
+		} else if (anInt5 == 130) {
 			if (Static88.aClass76_23.method2123("", "huffman")) {
 				@Pc(1252) Class119 local1252 = new Class119(Static88.aClass76_23.method2109("huffman", ""));
 				Static195.method3074(local1252);
 				Static24.aString53 = Static3.aClass83_88.method2267(ClientSettings.langID);
 				Static247.anInt4590 = 75;
-				Static1.anInt5 = 140;
+				anInt5 = 140;
 			} else {
 				Static24.aString53 = Static60.aClass83_29.method2267(ClientSettings.langID) + "0%";
 				Static247.anInt4590 = 75;
 			}
-		} else if (Static1.anInt5 == 140) {
+		} else if (anInt5 == 140) {
 			if (Static256.aClass76_50.method2116()) {
 				Static24.aString53 = Static379.aClass83_130.method2267(ClientSettings.langID);
-				Static1.anInt5 = 150;
+				anInt5 = 150;
 				Static247.anInt4590 = 80;
 			} else {
 				Static24.aString53 = Static373.aClass83_127.method2267(ClientSettings.langID) + Static256.aClass76_50.method2112() + "%";
 				Static247.anInt4590 = 80;
 			}
-		} else if (Static1.anInt5 == 150) {
+		} else if (anInt5 == 150) {
 			if (Static197.aClass76_45.method2116()) {
 				Static24.aString53 = Static399.aClass83_138.method2267(ClientSettings.langID);
-				Static1.anInt5 = 160;
+				anInt5 = 160;
 				Static247.anInt4590 = 82;
 			} else {
 				Static24.aString53 = Static94.aClass83_35.method2267(ClientSettings.langID) + Static197.aClass76_45.method2112() + "%";
 				Static247.anInt4590 = 82;
 			}
-		} else if (Static1.anInt5 == 160) {
+		} else if (anInt5 == 160) {
 			if (Static209.aClass76_48.method2116()) {
 				Static24.aString53 = Static392.aClass83_134.method2267(ClientSettings.langID);
-				Static1.anInt5 = 170;
+				anInt5 = 170;
 				Static247.anInt4590 = 85;
 			} else {
 				Static24.aString53 = Static392.aClass83_134.method2267(ClientSettings.langID) + Static209.aClass76_48.method2112() + "%";
 				Static247.anInt4590 = 85;
 			}
-		} else if (Static1.anInt5 == 170) {
+		} else if (anInt5 == 170) {
 			if (Static163.aClass76_39.method2103("details")) {
 				Static148.method4514(Static163.aClass76_39, Static154.aClass124_2, Static234.aClass192_2, Static267.aClass262_2, Static348.aClass182_4, Static76.aClass265_2, Static257.aClass114_1);
 				Static24.aString53 = Static261.aClass83_103.method2267(ClientSettings.langID);
-				Static1.anInt5 = 180;
+				anInt5 = 180;
 				Static247.anInt4590 = 89;
 			} else {
 				Static24.aString53 = Static270.aClass83_106.method2267(ClientSettings.langID) + Static163.aClass76_39.method2113("details") + "%";
 				Static247.anInt4590 = 87;
 			}
-		} else if (Static1.anInt5 == 180) {
+		} else if (anInt5 == 180) {
 			local10 = Static112.method2035();
 			if (local10 == -1) {
 				Static24.aString53 = Static280.aClass83_108.method2267(ClientSettings.langID);
@@ -1339,13 +1352,13 @@ public final class client extends GameShell {
 				Static187.method2932(1000);
 			} else if (Static94.aBoolean176) {
 				Static24.aString53 = Static119.aClass83_44.method2267(ClientSettings.langID);
-				Static1.anInt5 = 190;
+				anInt5 = 190;
 				Static247.anInt4590 = 90;
 			} else {
 				this.handleGameError("worldlistio_" + local10);
 				Static187.method2932(1000);
 			}
-		} else if (Static1.anInt5 == 190) {
+		} else if (anInt5 == 190) {
 			Static265.aStringArray20 = new String[Static186.aClass197_1.anInt5738];
 			Static22.aBooleanArray3 = new boolean[Static43.aClass93_4.anInt2890];
 			Static165.anIntArray210 = new int[Static43.aClass93_4.anInt2890];
@@ -1375,15 +1388,15 @@ public final class client extends GameShell {
 			Static188.method4107(Static323.aClass50_Sub1_1.anInt3447, -1, -1, false);
 			Static24.aString53 = Static61.aClass83_30.method2267(ClientSettings.langID);
 			Static247.anInt4590 = 95;
-			Static1.anInt5 = 200;
-		} else if (Static1.anInt5 == 200) {
+			anInt5 = 200;
+		} else if (anInt5 == 200) {
 			Static374.method4994(true);
 		}
 	}
 
 	@OriginalMember(owner = "client!client", name = "f", descriptor = "(B)V")
 	private void method912() {
-		@Pc(7) boolean local7 = aClass255_2.method5468();
+		@Pc(7) boolean local7 = js5Connection.method5468();
 
 		if (!local7) {
 			this.js5connect();

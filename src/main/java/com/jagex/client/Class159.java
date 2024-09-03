@@ -18,17 +18,17 @@ public final class Class159 {
 	private final Class254 aClass254_2;
 
 	@OriginalMember(owner = "client!nj", name = "h", descriptor = "Lclient!vn;")
-	private final Class255 aClass255_3;
+	private final JS5Connection aJS5Connection_3;
 
 	@OriginalMember(owner = "client!nj", name = "i", descriptor = "Lclient!je;")
 	private JS5NetRequest aClass4_Sub1_Sub6_Sub1_1;
 
 	@OriginalMember(owner = "client!nj", name = "<init>", descriptor = "(Lclient!vn;Lclient!vl;)V")
-	public Class159(@OriginalArg(0) Class255 arg0, @OriginalArg(1) Class254 arg1) {
+	public Class159(@OriginalArg(0) JS5Connection arg0, @OriginalArg(1) Class254 arg1) {
 		this.aClass254_2 = arg1;
-		this.aClass255_3 = arg0;
-		if (!this.aClass255_3.method5460()) {
-			this.aClass4_Sub1_Sub6_Sub1_1 = this.aClass255_3.method5465(255, (byte) 0, true, 255);
+		this.aJS5Connection_3 = arg0;
+		if (!this.aJS5Connection_3.isPendingRequestQueueFull()) {
+			this.aClass4_Sub1_Sub6_Sub1_1 = this.aJS5Connection_3.method5465(255, (byte) 0, true, 255);
 		}
 	}
 
@@ -38,10 +38,10 @@ public final class Class159 {
 			return true;
 		}
 		if (this.aClass4_Sub1_Sub6_Sub1_1 == null) {
-			if (this.aClass255_3.method5460()) {
+			if (this.aJS5Connection_3.isPendingRequestQueueFull()) {
 				return false;
 			}
-			this.aClass4_Sub1_Sub6_Sub1_1 = this.aClass255_3.method5465(255, (byte) 0, true, 255);
+			this.aClass4_Sub1_Sub6_Sub1_1 = this.aJS5Connection_3.method5465(255, (byte) 0, true, 255);
 		}
 		if (this.aClass4_Sub1_Sub6_Sub1_1.aBoolean381) {
 			return false;
@@ -85,7 +85,7 @@ public final class Class159 {
 		} else if (this.aClass143_Sub1Array2[arg1] == null) {
 			@Pc(45) int local45 = this.aPacket_5.g4();
 			@Pc(50) int local50 = this.aPacket_5.g4();
-			@Pc(64) Class143_Sub1 local64 = new Class143_Sub1(arg1, arg0, arg2, this.aClass255_3, this.aClass254_2, local45, local50, true);
+			@Pc(64) Class143_Sub1 local64 = new Class143_Sub1(arg1, arg0, arg2, this.aJS5Connection_3, this.aClass254_2, local45, local50, true);
 			this.aClass143_Sub1Array2[arg1] = local64;
 			return local64;
 		} else {

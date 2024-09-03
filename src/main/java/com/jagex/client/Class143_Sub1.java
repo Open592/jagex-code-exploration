@@ -58,7 +58,7 @@ public final class Class143_Sub1 extends Class143 {
 	private final Class222 aClass222_4;
 
 	@OriginalMember(owner = "client!lv", name = "l", descriptor = "Lclient!vn;")
-	private final Class255 aClass255_1;
+	private final JS5Connection aJS5Connection_1;
 
 	@OriginalMember(owner = "client!lv", name = "B", descriptor = "Lclient!vl;")
 	private final Class254 aClass254_1;
@@ -67,7 +67,7 @@ public final class Class143_Sub1 extends Class143 {
 	private SecondaryNode_Sub1_Sub6 aClass4_Sub1_Sub6_1;
 
 	@OriginalMember(owner = "client!lv", name = "<init>", descriptor = "(ILclient!st;Lclient!st;Lclient!vn;Lclient!vl;IIZ)V")
-	public Class143_Sub1(@OriginalArg(0) int arg0, @OriginalArg(1) Class222 arg1, @OriginalArg(2) Class222 arg2, @OriginalArg(3) Class255 arg3, @OriginalArg(4) Class254 arg4, @OriginalArg(5) int arg5, @OriginalArg(6) int arg6, @OriginalArg(7) boolean arg7) {
+	public Class143_Sub1(@OriginalArg(0) int arg0, @OriginalArg(1) Class222 arg1, @OriginalArg(2) Class222 arg2, @OriginalArg(3) JS5Connection arg3, @OriginalArg(4) Class254 arg4, @OriginalArg(5) int arg5, @OriginalArg(6) int arg6, @OriginalArg(7) boolean arg7) {
 		this.aClass222_3 = arg1;
 		this.anInt4474 = arg0;
 		if (this.aClass222_3 == null) {
@@ -80,7 +80,7 @@ public final class Class143_Sub1 extends Class143 {
 		this.anInt4475 = arg6;
 		this.aBoolean414 = arg7;
 		this.aClass222_4 = arg2;
-		this.aClass255_1 = arg3;
+		this.aJS5Connection_1 = arg3;
 		this.aClass254_1 = arg4;
 		if (this.aClass222_4 != null) {
 			this.aClass4_Sub1_Sub6_1 = this.aClass254_1.method5432(this.aClass222_4, this.anInt4474);
@@ -95,17 +95,17 @@ public final class Class143_Sub1 extends Class143 {
 	@OriginalMember(owner = "client!lv", name = "a", descriptor = "(III)Lclient!ec;")
 	private SecondaryNode_Sub1_Sub6 method3518(@OriginalArg(0) int arg0, @OriginalArg(2) int arg1) {
 		@Pc(13) SecondaryNode_Sub1_Sub6 local13 = (SecondaryNode_Sub1_Sub6) this.aHashMap_20.get((long) arg1);
-		if (local13 != null && arg0 == 0 && !local13.aBoolean384 && local13.aBoolean381) {
+		if (local13 != null && arg0 == 0 && !local13.isUrgent && local13.aBoolean381) {
 			local13.popSelf();
 			local13 = null;
 		}
 		if (local13 == null) {
 			if (arg0 == 0) {
 				if (this.aClass222_3 == null || this.aByteArray56[arg1] == -1) {
-					if (this.aClass255_1.method5460()) {
+					if (this.aJS5Connection_1.isPendingRequestQueueFull()) {
 						return null;
 					}
-					local13 = this.aClass255_1.method5465(this.anInt4474, (byte) 2, true, arg1);
+					local13 = this.aJS5Connection_1.method5465(this.anInt4474, (byte) 2, true, arg1);
 				} else {
 					local13 = this.aClass254_1.method5432(this.aClass222_3, arg1);
 				}
@@ -121,10 +121,10 @@ public final class Class143_Sub1 extends Class143 {
 				if (this.aByteArray56[arg1] != -1) {
 					throw new RuntimeException();
 				}
-				if (this.aClass255_1.method5472()) {
+				if (this.aJS5Connection_1.isActiveRequestQueueFull()) {
 					return null;
 				}
-				local13 = this.aClass255_1.method5465(this.anInt4474, (byte) 2, false, arg1);
+				local13 = this.aJS5Connection_1.method5465(this.anInt4474, (byte) 2, false, arg1);
 			} else {
 				throw new RuntimeException();
 			}
@@ -147,13 +147,13 @@ public final class Class143_Sub1 extends Class143 {
 				if (local188 != this.aClass209_2.anIntArray430[arg1]) {
 					throw new RuntimeException();
 				}
-				this.aClass255_1.js5ConnectAttempts = 0;
-				this.aClass255_1.anInt7063 = 0;
+				this.aJS5Connection_1.js5ConnectAttempts = 0;
+				this.aJS5Connection_1.errorCode = 0;
 			} catch (@Pc(213) RuntimeException local213) {
-				this.aClass255_1.method5464();
+				this.aJS5Connection_1.method5464();
 				local13.popSelf();
-				if (local13.aBoolean384 && !this.aClass255_1.method5460()) {
-					local238 = this.aClass255_1.method5465(this.anInt4474, (byte) 2, true, arg1);
+				if (local13.isUrgent && !this.aJS5Connection_1.isPendingRequestQueueFull()) {
+					local238 = this.aJS5Connection_1.method5465(this.anInt4474, (byte) 2, true, arg1);
 					this.aHashMap_20.set((long) arg1, local238);
 				}
 				return null;
@@ -167,7 +167,7 @@ public final class Class143_Sub1 extends Class143 {
 					this.aByteArray56[arg1] = 1;
 				}
 			}
-			if (!local13.aBoolean384) {
+			if (!local13.isUrgent) {
 				local13.popSelf();
 			}
 			return local13;
@@ -190,15 +190,15 @@ public final class Class143_Sub1 extends Class143 {
 				this.anInt4482++;
 				this.aByteArray56[arg1] = 1;
 			}
-			if (!local13.aBoolean384) {
+			if (!local13.isUrgent) {
 				local13.popSelf();
 			}
 			return local13;
 		} catch (@Pc(412) Exception local412) {
 			this.aByteArray56[arg1] = -1;
 			local13.popSelf();
-			if (local13.aBoolean384 && !this.aClass255_1.method5460()) {
-				local238 = this.aClass255_1.method5465(this.anInt4474, (byte) 2, true, arg1);
+			if (local13.isUrgent && !this.aJS5Connection_1.isPendingRequestQueueFull()) {
+				local238 = this.aJS5Connection_1.method5465(this.anInt4474, (byte) 2, true, arg1);
 				this.aHashMap_20.set((long) arg1, local238);
 			}
 			return null;
@@ -282,7 +282,7 @@ public final class Class143_Sub1 extends Class143 {
 					if (this.aClass209_2.anIntArray428[this.anInt4489] == 0) {
 						this.anInt4489++;
 					} else {
-						if (this.aClass255_1.method5472()) {
+						if (this.aJS5Connection_1.isActiveRequestQueueFull()) {
 							local21 = false;
 							break;
 						}
@@ -312,7 +312,7 @@ public final class Class143_Sub1 extends Class143 {
 		for (@Pc(325) SecondaryNode_Sub1_Sub6 local325 = (SecondaryNode_Sub1_Sub6) this.aHashMap_20.head(); local325 != null; local325 = (SecondaryNode_Sub1_Sub6) this.aHashMap_20.next()) {
 			if (!local325.aBoolean381) {
 				if (local325.aBoolean382) {
-					if (!local325.aBoolean384) {
+					if (!local325.isUrgent) {
 						throw new RuntimeException();
 					}
 					local325.popSelf();
@@ -413,10 +413,10 @@ public final class Class143_Sub1 extends Class143 {
 			return this.aClass209_2;
 		}
 		if (this.aClass4_Sub1_Sub6_1 == null) {
-			if (this.aClass255_1.method5460()) {
+			if (this.aJS5Connection_1.isPendingRequestQueueFull()) {
 				return null;
 			}
-			this.aClass4_Sub1_Sub6_1 = this.aClass255_1.method5465(255, (byte) 0, true, this.anInt4474);
+			this.aClass4_Sub1_Sub6_1 = this.aJS5Connection_1.method5465(255, (byte) 0, true, this.anInt4474);
 		}
 		if (this.aClass4_Sub1_Sub6_1.aBoolean381) {
 			return null;
@@ -433,10 +433,10 @@ public final class Class143_Sub1 extends Class143 {
 				}
 			} catch (@Pc(133) RuntimeException local133) {
 				this.aClass209_2 = null;
-				if (this.aClass255_1.method5460()) {
+				if (this.aJS5Connection_1.isPendingRequestQueueFull()) {
 					this.aClass4_Sub1_Sub6_1 = null;
 				} else {
-					this.aClass4_Sub1_Sub6_1 = this.aClass255_1.method5465(255, (byte) 0, true, this.anInt4474);
+					this.aClass4_Sub1_Sub6_1 = this.aJS5Connection_1.method5465(255, (byte) 0, true, this.anInt4474);
 				}
 				return null;
 			}
@@ -447,12 +447,12 @@ public final class Class143_Sub1 extends Class143 {
 				}
 				this.aClass209_2 = new Class209(local43, this.anInt4473);
 			} catch (@Pc(63) RuntimeException local63) {
-				this.aClass255_1.method5464();
+				this.aJS5Connection_1.method5464();
 				this.aClass209_2 = null;
-				if (this.aClass255_1.method5460()) {
+				if (this.aJS5Connection_1.isPendingRequestQueueFull()) {
 					this.aClass4_Sub1_Sub6_1 = null;
 				} else {
-					this.aClass4_Sub1_Sub6_1 = this.aClass255_1.method5465(255, (byte) 0, true, this.anInt4474);
+					this.aClass4_Sub1_Sub6_1 = this.aJS5Connection_1.method5465(255, (byte) 0, true, this.anInt4474);
 				}
 				return null;
 			}

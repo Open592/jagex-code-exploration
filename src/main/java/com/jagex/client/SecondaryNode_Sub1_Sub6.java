@@ -10,7 +10,7 @@ public abstract class SecondaryNode_Sub1_Sub6 extends SecondaryNode {
 	public boolean aBoolean382;
 
 	@OriginalMember(owner = "client!ec", name = "C", descriptor = "Z")
-	public boolean aBoolean384;
+	public boolean isUrgent;
 
 	@OriginalMember(owner = "client!ec", name = "y", descriptor = "Z")
 	public volatile boolean aBoolean381 = true;

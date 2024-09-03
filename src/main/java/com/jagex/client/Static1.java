@@ -14,9 +14,6 @@ public final class Static1 {
 	@OriginalMember(owner = "client!a", name = "f", descriptor = "Lclient!bg;")
 	public static final Class22 aClass22_1 = new Class22(45, 2);
 
-	@OriginalMember(owner = "client!a", name = "g", descriptor = "I")
-	public static int anInt5 = 0;
-
 	@OriginalMember(owner = "client!a", name = "i", descriptor = "I")
 	public static int anInt6 = 0;
 
