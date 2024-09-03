@@ -21,25 +21,28 @@ public final class Class255 {
 	private int anInt7061;
 
 	@OriginalMember(owner = "client!vn", name = "D", descriptor = "Lclient!je;")
-	private SecondaryNode_Sub1_Sub6_Sub1 aClass4_Sub1_Sub6_Sub1_2;
+	private JS5NetRequest aClass4_Sub1_Sub6_Sub1_2;
 
 	@OriginalMember(owner = "client!vn", name = "j", descriptor = "Lclient!tn;")
-	private final SecondaryLinkedList aSecondaryLinkedList_7 = new SecondaryLinkedList();
+	private final SecondaryLinkedList pendingUrgentRequests = new SecondaryLinkedList();
 
 	@OriginalMember(owner = "client!vn", name = "s", descriptor = "Lclient!tn;")
-	private final SecondaryLinkedList aSecondaryLinkedList_8 = new SecondaryLinkedList();
+	private final SecondaryLinkedList pendingRegularRequests = new SecondaryLinkedList();
 
 	@OriginalMember(owner = "client!vn", name = "t", descriptor = "Lclient!tn;")
-	private final SecondaryLinkedList aSecondaryLinkedList_9 = new SecondaryLinkedList();
+	private final SecondaryLinkedList activeUrgentRequests = new SecondaryLinkedList();
 
 	@OriginalMember(owner = "client!vn", name = "u", descriptor = "Lclient!tn;")
-	private final SecondaryLinkedList aSecondaryLinkedList_10 = new SecondaryLinkedList();
+	private final SecondaryLinkedList activeRegularRequests = new SecondaryLinkedList();
 
 	@OriginalMember(owner = "client!vn", name = "x", descriptor = "Lclient!iv;")
-	private final Packet aPacket_8 = new Packet(4);
+	private final Packet outgoingPacket = new Packet(4);
+
+	@OriginalMember(owner = "client!vn", name = "z", descriptor = "Lclient!iv;")
+	private final Packet incomingPacket = new Packet(8);
 
 	@OriginalMember(owner = "client!vn", name = "A", descriptor = "I")
-	public volatile int clientInitializationAttemptCount = 0;
+	public volatile int js5ConnectAttempts = 0;
 
 	@OriginalMember(owner = "client!vn", name = "B", descriptor = "B")
 	private byte aByte94 = 0;
@@ -47,17 +50,24 @@ public final class Class255 {
 	@OriginalMember(owner = "client!vn", name = "C", descriptor = "I")
 	public volatile int anInt7063 = 0;
 
-	@OriginalMember(owner = "client!vn", name = "z", descriptor = "Lclient!iv;")
-	private final Packet aPacket_9 = new Packet(8);
-
 	@OriginalMember(owner = "client!vn", name = "a", descriptor = "(B)I")
 	private int method5459() {
-		return this.aSecondaryLinkedList_9.size() + this.aSecondaryLinkedList_10.size();
+		return this.activeUrgentRequests.size() + this.activeRegularRequests.size();
 	}
 
 	@OriginalMember(owner = "client!vn", name = "a", descriptor = "(I)Z")
 	public boolean method5460() {
 		return this.method5469() >= 20;
+	}
+
+	@OriginalMember(owner = "client!vn", name = "c", descriptor = "(I)I")
+	public int method5469() {
+		return this.pendingUrgentRequests.size() + this.pendingRegularRequests.size();
+	}
+
+	@OriginalMember(owner = "client!vn", name = "f", descriptor = "(B)Z")
+	public boolean method5472() {
+		return this.method5459() >= 20;
 	}
 
 	@OriginalMember(owner = "client!vn", name = "a", descriptor = "(ILclient!al;Z)V")
@@ -73,29 +83,29 @@ public final class Class255 {
 		this.serverConnection = serverConnection;
 		this.method5462();
 		this.method5463(arg1);
-		this.aPacket_9.pos = 0;
+		this.incomingPacket.pos = 0;
 		this.aClass4_Sub1_Sub6_Sub1_2 = null;
 
 		while (true) {
-			@Pc(40) SecondaryNode_Sub1_Sub6_Sub1 local40 = (SecondaryNode_Sub1_Sub6_Sub1) this.aSecondaryLinkedList_8.popHead();
+			@Pc(40) JS5NetRequest local40 = (JS5NetRequest) this.pendingRegularRequests.popHead();
 			if (local40 == null) {
 				while (true) {
-					local40 = (SecondaryNode_Sub1_Sub6_Sub1) this.aSecondaryLinkedList_10.popHead();
+					local40 = (JS5NetRequest) this.activeRegularRequests.popHead();
 					if (local40 == null) {
 						if (this.aByte94 != 0) {
 							try {
-								this.aPacket_8.pos = 0;
-								this.aPacket_8.p1(4);
-								this.aPacket_8.p1(this.aByte94);
-								this.aPacket_8.p2(0);
-								this.serverConnection.enqueueClientMessage(4, this.aPacket_8.data);
+								this.outgoingPacket.pos = 0;
+								this.outgoingPacket.p1(4);
+								this.outgoingPacket.p1(this.aByte94);
+								this.outgoingPacket.p2(0);
+								this.serverConnection.write(4, this.outgoingPacket.data);
 							} catch (@Pc(102) IOException local102) {
 								try {
 									this.serverConnection.shutdown();
 								} catch (@Pc(108) Exception local108) {
 								}
 								this.anInt7063 = -2;
-								this.clientInitializationAttemptCount++;
+								this.js5ConnectAttempts++;
 								this.serverConnection = null;
 							}
 						}
@@ -103,10 +113,10 @@ public final class Class255 {
 						this.aLong217 = MonotonicClock.getCurrentTimeInMilliseconds();
 						return;
 					}
-					this.aSecondaryLinkedList_9.insert(local40);
+					this.activeUrgentRequests.insert(local40);
 				}
 			}
-			this.aSecondaryLinkedList_7.insert(local40);
+			this.pendingUrgentRequests.insert(local40);
 		}
 	}
 
@@ -115,18 +125,20 @@ public final class Class255 {
 		if (this.serverConnection == null) {
 			return;
 		}
+
 		try {
-			this.aPacket_8.pos = 0;
-			this.aPacket_8.p1(6);
-			this.aPacket_8.p3(3);
-			this.serverConnection.enqueueClientMessage(4, this.aPacket_8.data);
+			this.outgoingPacket.pos = 0;
+			this.outgoingPacket.p1(6);
+			this.outgoingPacket.p3(3);
+			this.serverConnection.write(4, this.outgoingPacket.data);
 		} catch (@Pc(38) IOException local38) {
 			try {
 				this.serverConnection.shutdown();
 			} catch (@Pc(44) Exception local44) {
 			}
+
 			this.serverConnection = null;
-			this.clientInitializationAttemptCount++;
+			this.js5ConnectAttempts++;
 			this.anInt7063 = -2;
 		}
 	}
@@ -137,10 +149,10 @@ public final class Class255 {
 			return;
 		}
 		try {
-			this.aPacket_8.pos = 0;
-			this.aPacket_8.p1(arg0 ? 2 : 3);
-			this.aPacket_8.p3(0);
-			this.serverConnection.enqueueClientMessage(4, this.aPacket_8.data);
+			this.outgoingPacket.pos = 0;
+			this.outgoingPacket.p1(arg0 ? 2 : 3);
+			this.outgoingPacket.p3(0);
+			this.serverConnection.write(4, this.outgoingPacket.data);
 		} catch (@Pc(41) IOException local41) {
 			try {
 				this.serverConnection.shutdown();
@@ -148,7 +160,7 @@ public final class Class255 {
 			}
 			this.anInt7063 = -2;
 			this.serverConnection = null;
-			this.clientInitializationAttemptCount++;
+			this.js5ConnectAttempts++;
 		}
 	}
 
@@ -161,13 +173,13 @@ public final class Class255 {
 		this.serverConnection = null;
 		this.anInt7063 = -1;
 		this.aByte94 = (byte) (Math.random() * 255.0D + 1.0D);
-		this.clientInitializationAttemptCount++;
+		this.js5ConnectAttempts++;
 	}
 
 	@OriginalMember(owner = "client!vn", name = "a", descriptor = "(IBBZI)Lclient!je;")
-	public SecondaryNode_Sub1_Sub6_Sub1 method5465(@OriginalArg(0) int arg0, @OriginalArg(1) byte arg1, @OriginalArg(3) boolean arg2, @OriginalArg(4) int arg3) {
+	public JS5NetRequest method5465(@OriginalArg(0) int arg0, @OriginalArg(1) byte arg1, @OriginalArg(3) boolean arg2, @OriginalArg(4) int arg3) {
 		@Pc(19) long local19 = (long) ((arg0 << 16) + arg3);
-		@Pc(23) SecondaryNode_Sub1_Sub6_Sub1 local23 = new SecondaryNode_Sub1_Sub6_Sub1();
+		@Pc(23) JS5NetRequest local23 = new JS5NetRequest();
 		local23.secondaryValue = local19;
 		local23.aBoolean384 = arg2;
 		local23.aByte24 = arg1;
@@ -175,9 +187,9 @@ public final class Class255 {
 			if (this.method5469() >= 20) {
 				throw new RuntimeException();
 			}
-			this.aSecondaryLinkedList_7.insert(local23);
+			this.pendingUrgentRequests.insert(local23);
 		} else if (this.method5459() < 20) {
-			this.aSecondaryLinkedList_9.insert(local23);
+			this.activeUrgentRequests.insert(local23);
 		} else {
 			throw new RuntimeException();
 		}
@@ -197,10 +209,10 @@ public final class Class255 {
 			return;
 		}
 		try {
-			this.aPacket_8.pos = 0;
-			this.aPacket_8.p1(7);
-			this.aPacket_8.p3(0);
-			this.serverConnection.enqueueClientMessage(4, this.aPacket_8.data);
+			this.outgoingPacket.pos = 0;
+			this.outgoingPacket.p1(7);
+			this.outgoingPacket.p3(0);
+			this.serverConnection.write(4, this.outgoingPacket.data);
 		} catch (@Pc(32) IOException local32) {
 			try {
 				this.serverConnection.shutdown();
@@ -208,7 +220,7 @@ public final class Class255 {
 			}
 			this.anInt7063 = -2;
 			this.serverConnection = null;
-			this.clientInitializationAttemptCount++;
+			this.js5ConnectAttempts++;
 		}
 	}
 
@@ -217,12 +229,17 @@ public final class Class255 {
 		@Pc(18) int local18;
 		if (this.serverConnection != null) {
 			@Pc(11) long local11 = MonotonicClock.getCurrentTimeInMilliseconds();
+
 			local18 = (int) (local11 - this.aLong217);
+
 			this.aLong217 = local11;
+
 			if (local18 > 200) {
 				local18 = 200;
 			}
+
 			this.anInt7061 += local18;
+
 			if (this.anInt7061 > 30000) {
 				try {
 					this.serverConnection.shutdown();
@@ -231,53 +248,73 @@ public final class Class255 {
 				this.serverConnection = null;
 			}
 		}
+
 		if (this.serverConnection == null) {
 			return this.method5469() == 0 && this.method5459() == 0;
 		}
+
 		try {
-			this.serverConnection.checkConnectionHealth();
-			for (@Pc(76) SecondaryNode_Sub1_Sub6_Sub1 local76 = (SecondaryNode_Sub1_Sub6_Sub1) this.aSecondaryLinkedList_7.getHead(); local76 != null; local76 = (SecondaryNode_Sub1_Sub6_Sub1) this.aSecondaryLinkedList_7.next()) {
-				this.aPacket_8.pos = 0;
-				this.aPacket_8.p1(1);
-				this.aPacket_8.p3((int) local76.secondaryValue);
-				this.serverConnection.enqueueClientMessage(4, this.aPacket_8.data);
-				this.aSecondaryLinkedList_8.insert(local76);
+			this.serverConnection.verifyIsHealthy();
+
+			for (@Pc(76) JS5NetRequest request = (JS5NetRequest) this.pendingUrgentRequests.getHead(); request != null; request = (JS5NetRequest) this.pendingUrgentRequests.next()) {
+				this.outgoingPacket.pos = 0;
+				this.outgoingPacket.p1(1);
+				this.outgoingPacket.p3((int) request.secondaryValue);
+				this.serverConnection.write(4, this.outgoingPacket.data);
+				this.pendingRegularRequests.insert(request);
 			}
-			for (@Pc(122) SecondaryNode_Sub1_Sub6_Sub1 local122 = (SecondaryNode_Sub1_Sub6_Sub1) this.aSecondaryLinkedList_9.getHead(); local122 != null; local122 = (SecondaryNode_Sub1_Sub6_Sub1) this.aSecondaryLinkedList_9.next()) {
-				this.aPacket_8.pos = 0;
-				this.aPacket_8.p1(0);
-				this.aPacket_8.p3((int) local122.secondaryValue);
-				this.serverConnection.enqueueClientMessage(4, this.aPacket_8.data);
-				this.aSecondaryLinkedList_10.insert(local122);
+
+			for (@Pc(122) JS5NetRequest request = (JS5NetRequest) this.activeUrgentRequests.getHead(); request != null; request = (JS5NetRequest) this.activeUrgentRequests.next()) {
+				this.outgoingPacket.pos = 0;
+				this.outgoingPacket.p1(0);
+				this.outgoingPacket.p3((int) request.secondaryValue);
+				this.serverConnection.write(4, this.outgoingPacket.data);
+				this.activeRegularRequests.insert(request);
 			}
+
 			for (local18 = 0; local18 < 100; local18++) {
 				@Pc(177) int local177 = this.serverConnection.getEstimatedBytesAvailable();
+
 				if (local177 < 0) {
 					throw new IOException();
 				}
+
 				if (local177 == 0) {
 					break;
 				}
+
 				this.anInt7061 = 0;
+
 				@Pc(190) byte local190 = 0;
+
 				if (this.aClass4_Sub1_Sub6_Sub1_2 == null) {
 					local190 = 8;
 				} else if (this.aClass4_Sub1_Sub6_Sub1_2.anInt3510 == 0) {
 					local190 = 1;
 				}
+
 				@Pc(219) int local219;
 				@Pc(226) int local226;
 				@Pc(275) int local275;
+
 				if (local190 <= 0) {
 					local219 = this.aClass4_Sub1_Sub6_Sub1_2.aClass4_Sub12_4.data.length - this.aClass4_Sub1_Sub6_Sub1_2.aByte24;
 					local226 = 512 - this.aClass4_Sub1_Sub6_Sub1_2.anInt3510;
+
 					if (local219 - this.aClass4_Sub1_Sub6_Sub1_2.aClass4_Sub12_4.pos < local226) {
 						local226 = local219 - this.aClass4_Sub1_Sub6_Sub1_2.aClass4_Sub12_4.pos;
 					}
+
 					if (local226 > local177) {
 						local226 = local177;
 					}
-					this.serverConnection.readBytesFromServer(this.aClass4_Sub1_Sub6_Sub1_2.aClass4_Sub12_4.pos, local226, this.aClass4_Sub1_Sub6_Sub1_2.aClass4_Sub12_4.data);
+
+					this.serverConnection.readBytesFromServer(
+							this.aClass4_Sub1_Sub6_Sub1_2.aClass4_Sub12_4.pos,
+							local226,
+							this.aClass4_Sub1_Sub6_Sub1_2.aClass4_Sub12_4.data
+					);
+
 					if (this.aByte94 != 0) {
 						for (local275 = 0; local275 < local226; local275++) {
 							this.aClass4_Sub1_Sub6_Sub1_2.aClass4_Sub12_4.data[local275 + this.aClass4_Sub1_Sub6_Sub1_2.aClass4_Sub12_4.pos] ^= this.aByte94;
@@ -285,6 +322,7 @@ public final class Class255 {
 					}
 					this.aClass4_Sub1_Sub6_Sub1_2.aClass4_Sub12_4.pos += local226;
 					this.aClass4_Sub1_Sub6_Sub1_2.anInt3510 += local226;
+
 					if (this.aClass4_Sub1_Sub6_Sub1_2.aClass4_Sub12_4.pos == local219) {
 						this.aClass4_Sub1_Sub6_Sub1_2.secondaryPopSelf();
 						this.aClass4_Sub1_Sub6_Sub1_2.aBoolean381 = false;
@@ -293,33 +331,38 @@ public final class Class255 {
 						this.aClass4_Sub1_Sub6_Sub1_2.anInt3510 = 0;
 					}
 				} else {
-					local219 = local190 - this.aPacket_9.pos;
+					local219 = local190 - this.incomingPacket.pos;
+
 					if (local219 > local177) {
 						local219 = local177;
 					}
-					this.serverConnection.readBytesFromServer(this.aPacket_9.pos, local219, this.aPacket_9.data);
+
+					this.serverConnection.readBytesFromServer(this.incomingPacket.pos, local219, this.incomingPacket.data);
+
 					if (this.aByte94 != 0) {
 						for (local226 = 0; local226 < local219; local226++) {
-							this.aPacket_9.data[this.aPacket_9.pos + local226] ^= this.aByte94;
+							this.incomingPacket.data[this.incomingPacket.pos + local226] ^= this.aByte94;
 						}
 					}
-					this.aPacket_9.pos += local219;
-					if (local190 <= this.aPacket_9.pos) {
+
+					this.incomingPacket.pos += local219;
+
+					if (local190 <= this.incomingPacket.pos) {
 						if (this.aClass4_Sub1_Sub6_Sub1_2 == null) {
-							this.aPacket_9.pos = 0;
-							local226 = this.aPacket_9.g1();
-							local275 = this.aPacket_9.g2();
-							@Pc(459) int local459 = this.aPacket_9.g1();
-							@Pc(464) int local464 = this.aPacket_9.g4();
+							this.incomingPacket.pos = 0;
+							local226 = this.incomingPacket.g1();
+							local275 = this.incomingPacket.g2();
+							@Pc(459) int local459 = this.incomingPacket.g1();
+							@Pc(464) int local464 = this.incomingPacket.g4();
 							@Pc(468) int local468 = local459 & 0x7F;
 							@Pc(479) boolean local479 = (local459 & 0x80) != 0;
 							@Pc(486) long local486 = (long) ((local226 << 16) + local275);
-							@Pc(496) SecondaryNode_Sub1_Sub6_Sub1 local496;
+							@Pc(496) JS5NetRequest local496;
 							if (local479) {
-								for (local496 = (SecondaryNode_Sub1_Sub6_Sub1) this.aSecondaryLinkedList_10.getHead(); local496 != null && local496.secondaryValue != local486; local496 = (SecondaryNode_Sub1_Sub6_Sub1) this.aSecondaryLinkedList_10.next()) {
+								for (local496 = (JS5NetRequest) this.activeRegularRequests.getHead(); local496 != null && local496.secondaryValue != local486; local496 = (JS5NetRequest) this.activeRegularRequests.next()) {
 								}
 							} else {
-								for (local496 = (SecondaryNode_Sub1_Sub6_Sub1) this.aSecondaryLinkedList_8.getHead(); local496 != null && local496.secondaryValue != local486; local496 = (SecondaryNode_Sub1_Sub6_Sub1) this.aSecondaryLinkedList_8.next()) {
+								for (local496 = (JS5NetRequest) this.pendingRegularRequests.getHead(); local496 != null && local496.secondaryValue != local486; local496 = (JS5NetRequest) this.pendingRegularRequests.next()) {
 								}
 							}
 							if (local496 == null) {
@@ -330,13 +373,13 @@ public final class Class255 {
 							this.aClass4_Sub1_Sub6_Sub1_2.aClass4_Sub12_4 = new Packet(local549 + local464 + this.aClass4_Sub1_Sub6_Sub1_2.aByte24);
 							this.aClass4_Sub1_Sub6_Sub1_2.aClass4_Sub12_4.p1(local468);
 							this.aClass4_Sub1_Sub6_Sub1_2.aClass4_Sub12_4.p4(local464);
-							this.aPacket_9.pos = 0;
+							this.incomingPacket.pos = 0;
 							this.aClass4_Sub1_Sub6_Sub1_2.anInt3510 = 8;
 						} else if (this.aClass4_Sub1_Sub6_Sub1_2.anInt3510 != 0) {
 							throw new IOException();
-						} else if (this.aPacket_9.data[0] == -1) {
+						} else if (this.incomingPacket.data[0] == -1) {
 							this.aClass4_Sub1_Sub6_Sub1_2.anInt3510 = 1;
-							this.aPacket_9.pos = 0;
+							this.incomingPacket.pos = 0;
 						} else {
 							this.aClass4_Sub1_Sub6_Sub1_2 = null;
 						}
@@ -349,25 +392,15 @@ public final class Class255 {
 				this.serverConnection.shutdown();
 			} catch (@Pc(633) Exception local633) {
 			}
-			this.clientInitializationAttemptCount++;
+			this.js5ConnectAttempts++;
 			this.anInt7063 = -2;
 			this.serverConnection = null;
 			return this.method5469() == 0 && this.method5459() == 0;
 		}
 	}
 
-	@OriginalMember(owner = "client!vn", name = "c", descriptor = "(I)I")
-	public int method5469() {
-		return this.aSecondaryLinkedList_7.size() + this.aSecondaryLinkedList_8.size();
-	}
-
-	@OriginalMember(owner = "client!vn", name = "f", descriptor = "(B)Z")
-	public boolean method5472() {
-		return this.method5459() >= 20;
-	}
-
 	@OriginalMember(owner = "client!vn", name = "e", descriptor = "(I)V")
-	public void method5474() {
+	public void shutdownConnection() {
 		if (this.serverConnection != null) {
 			this.serverConnection.shutdown();
 		}

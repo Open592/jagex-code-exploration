@@ -73,7 +73,7 @@ public final class Static425 {
 				local112 = (int) (local102 >> 16 & 0x1FL);
 				Static3.aClass4_Sub12_Sub1_5.p1(Static153.aClass60_1.anInt1812);
 				Static3.aClass4_Sub12_Sub1_5.p1(local112);
-				Static125.aServerConnection_5.enqueueClientMessage(2, Static3.aClass4_Sub12_Sub1_5.data);
+				Static125.aServerConnection_5.write(2, Static3.aClass4_Sub12_Sub1_5.data);
 				Static329.method4427();
 				@Pc(134) int local134 = Static125.aServerConnection_5.readByteFromServer();
 				Static329.method4427();
@@ -157,7 +157,7 @@ public final class Static425 {
 				Static3.aClass4_Sub12_Sub1_5.p4(Static366.aClass76_83.method2111());
 				Static3.aClass4_Sub12_Sub1_5.pArrayBuffer(local185.data, local185.pos);
 				Static3.aClass4_Sub12_Sub1_5.pSize2(Static3.aClass4_Sub12_Sub1_5.pos - local112);
-				Static125.aServerConnection_5.enqueueClientMessage(Static3.aClass4_Sub12_Sub1_5.pos, Static3.aClass4_Sub12_Sub1_5.data);
+				Static125.aServerConnection_5.write(Static3.aClass4_Sub12_Sub1_5.pos, Static3.aClass4_Sub12_Sub1_5.data);
 				Static3.aClass4_Sub12_Sub1_5.initializeIsaacRandom(local188);
 				for (@Pc(551) int local551 = 0; local551 < 4; local551++) {
 					local188[local551] += 50;
@@ -201,7 +201,7 @@ public final class Static425 {
 			if (Static238.anInt4506 == 6) {
 				Static3.aClass4_Sub12_Sub1_5.pos = 0;
 				Static3.aClass4_Sub12_Sub1_5.method1133(Static153.aClass60_4.anInt1812);
-				Static125.aServerConnection_5.enqueueClientMessage(Static3.aClass4_Sub12_Sub1_5.pos, Static3.aClass4_Sub12_Sub1_5.data);
+				Static125.aServerConnection_5.write(Static3.aClass4_Sub12_Sub1_5.pos, Static3.aClass4_Sub12_Sub1_5.data);
 				Static238.anInt4506 = 4;
 			} else if (Static238.anInt4506 == 7) {
 				if (Static125.aServerConnection_5.getEstimatedBytesAvailable() >= 1) {

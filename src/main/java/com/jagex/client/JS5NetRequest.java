@@ -4,7 +4,7 @@ import org.openrs2.deob.annotation.OriginalClass;
 import org.openrs2.deob.annotation.OriginalMember;
 
 @OriginalClass("client!je")
-public final class SecondaryNode_Sub1_Sub6_Sub1 extends SecondaryNode_Sub1_Sub6 {
+public final class JS5NetRequest extends SecondaryNode_Sub1_Sub6 {
 
 	@OriginalMember(owner = "client!je", name = "I", descriptor = "Lclient!iv;")
 	public Packet aClass4_Sub12_4;

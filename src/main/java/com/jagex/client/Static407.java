@@ -141,7 +141,7 @@ public final class Static407 {
 			Static145.anInt2906 = local276;
 			Static136.anInt2790 = local280;
 			Static431.anInt7074 = local278;
-			if (Static439.aBoolean676 && Static261.aClass255_2.method5469() == 0) {
+			if (Static439.aBoolean676 && client.aClass255_2.method5469() == 0) {
 				Static439.aBoolean676 = false;
 			}
 			if (Static439.aBoolean676) {

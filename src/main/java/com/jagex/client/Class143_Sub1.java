@@ -135,7 +135,7 @@ public final class Class143_Sub1 extends Class143 {
 		}
 		@Pc(161) byte[] local161 = local13.method3343();
 		@Pc(188) int local188;
-		@Pc(238) SecondaryNode_Sub1_Sub6_Sub1 local238;
+		@Pc(238) JS5NetRequest local238;
 		if (!(local13 instanceof SecondaryNode_Sub1_Sub6_Sub2)) {
 			try {
 				if (local161 == null || local161.length <= 2) {
@@ -147,7 +147,7 @@ public final class Class143_Sub1 extends Class143 {
 				if (local188 != this.aClass209_2.anIntArray430[arg1]) {
 					throw new RuntimeException();
 				}
-				this.aClass255_1.clientInitializationAttemptCount = 0;
+				this.aClass255_1.js5ConnectAttempts = 0;
 				this.aClass255_1.anInt7063 = 0;
 			} catch (@Pc(213) RuntimeException local213) {
 				this.aClass255_1.method5464();

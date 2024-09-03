@@ -102,19 +102,19 @@ public final class Static400 {
 				return;
 			}
 			if (arg0.equalsIgnoreCase("clientjs5drop")) {
-				Static261.aClass255_2.method5474();
+				client.aClass255_2.shutdownConnection();
 				Static441.method5568("Dropped client js5 net queue");
 				return;
 			}
 			if (arg0.equalsIgnoreCase("serverjs5drop")) {
-				Static261.aClass255_2.method5467();
+				client.aClass255_2.method5467();
 				Static441.method5568("Dropped server js5 net queue");
 				return;
 			}
 			if (arg0.equalsIgnoreCase("breakcon")) {
 				Static206.signLink.refuseConnectionForFiveSeconds();
 				Static125.aServerConnection_5.breakConnection();
-				Static261.aClass255_2.method5466();
+				client.aClass255_2.method5466();
 				Static441.method5568("Breaking new connections for 5 seconds");
 				return;
 			}

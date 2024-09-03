@@ -15,9 +15,6 @@ public final class Static316 {
 	@OriginalMember(owner = "client!pu", name = "i", descriptor = "[I")
 	public static int[] anIntArray376 = new int[2];
 
-	@OriginalMember(owner = "client!pu", name = "k", descriptor = "I")
-	public static int anInt5505 = 0;
-
 	@OriginalMember(owner = "client!pu", name = "a", descriptor = "(I)V")
 	public static void method4216() {
 		@Pc(7) FileOnDisk local7 = null;

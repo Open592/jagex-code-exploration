@@ -203,15 +203,16 @@ public final class ServerConnection implements Runnable {
 	}
 
 	@OriginalMember(owner = "client!al", name = "e", descriptor = "(I)V")
-	public void checkConnectionHealth() throws IOException {
+	public void verifyIsHealthy() throws IOException {
 		if (!this.isShuttingDown && this.connectionNotHealthy) {
 			this.connectionNotHealthy = false;
+
 			throw new IOException();
 		}
 	}
 
 	@OriginalMember(owner = "client!al", name = "a", descriptor = "(II[BI)V")
-	public void enqueueClientMessage(@OriginalArg(0) int length, @OriginalArg(2) byte[] bytes) throws IOException {
+	public void write(@OriginalArg(0) int length, @OriginalArg(2) byte[] bytes) throws IOException {
 		if (this.isShuttingDown) {
 			return;
 		}

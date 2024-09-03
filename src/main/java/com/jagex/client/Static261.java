@@ -12,9 +12,6 @@ public final class Static261 {
 	@OriginalMember(owner = "client!nf", name = "J", descriptor = "I")
 	public static int anInt4928;
 
-	@OriginalMember(owner = "client!nf", name = "V", descriptor = "Lclient!vn;")
-	public static Class255 aClass255_2;
-
 	@OriginalMember(owner = "client!nf", name = "v", descriptor = "Lclient!gk;")
 	public static final Class83 aClass83_103 = new Class83("Loaded world map", "Weltkarte geladen", "Mappemonde chargée", "Mapa-múndi carregado");
 

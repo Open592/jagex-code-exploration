@@ -139,7 +139,7 @@ public final class Static112 {
 				Static3.aClass4_Sub12_Sub1_5.pos = 0;
 				Static3.aClass4_Sub12_Sub1_5.p1(Static153.aClass60_9.anInt1812);
 				Static3.aClass4_Sub12_Sub1_5.p4(local78);
-				Static125.aServerConnection_5.enqueueClientMessage(Static3.aClass4_Sub12_Sub1_5.pos, Static3.aClass4_Sub12_Sub1_5.data);
+				Static125.aServerConnection_5.write(Static3.aClass4_Sub12_Sub1_5.pos, Static3.aClass4_Sub12_Sub1_5.data);
 				Static329.method4427();
 				local110 = Static125.aServerConnection_5.readByteFromServer();
 				Static329.method4427();
