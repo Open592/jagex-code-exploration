@@ -57,6 +57,9 @@ public final class ClientSettings {
     @OriginalMember(owner = "client!ie", name = "e", descriptor = "Z")
     public static boolean hasObjectTag = false;
 
+    @OriginalMember(owner = "client!pk", name = "o", descriptor = "Z")
+    public static boolean hasAdvert = false;
+
     @OriginalMember(owner = "client!tt", name = "v", descriptor = "Lclient!jk;")
     public static GameDetails currentGameDetails = null;
 
@@ -105,6 +108,14 @@ public final class ClientSettings {
                 .filter(modeWhere -> modeWhere.getId() == id)
                 .findFirst()
                 .orElse(null);
+    }
+
+    @OriginalMember(owner = "client!jp", name = "a", descriptor = "(Lclient!sp;B)Z")
+    public static boolean isStagingEnvironment(@OriginalArg(0) ModeWhere modewhere) {
+        return MODEWHERE_WTRC == modewhere
+                || modewhere == MODEWHERE_WTQA
+                || modewhere == MODEWHERE_WTWIP
+                || modewhere == MODEWHERE_WTI;
     }
 
     @OriginalMember(owner = "client!nm", name = "b", descriptor = "(B)[Lclient!jc;")

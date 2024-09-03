@@ -234,7 +234,7 @@ public final class Static425 {
 						try {
 							Static458.callJavaScriptMethod(Static206.signLink.hostApplet, "zap");
 						} catch (@Pc(880) Throwable local880) {
-							if (Static306.hasAdvert) {
+							if (ClientSettings.hasAdvert) {
 								try {
 									Static206.signLink.hostApplet.getAppletContext().showDocument(new URL(Static206.signLink.hostApplet.getCodeBase(), "blank.ws"), "tbi");
 								} catch (@Pc(896) Exception local896) {

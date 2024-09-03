@@ -608,9 +608,10 @@ public final class client extends GameShell {
 		ClientSettings.worldID = Integer.parseInt(this.getParameter("worldid"));
 		ClientSettings.modewhere = ClientSettings.resolveModeWhereFromId(Integer.parseInt(this.getParameter("modewhere")));
 
-		if (!Static193.isStagingEnvironment(ClientSettings.modewhere) && ClientSettings.MODEWHERE_LIVE != ClientSettings.modewhere) {
+		if (!ClientSettings.isStagingEnvironment(ClientSettings.modewhere) && ClientSettings.MODEWHERE_LIVE != ClientSettings.modewhere) {
 			ClientSettings.modewhere = ClientSettings.MODEWHERE_LIVE;
 		}
+
 		ClientSettings.modewhat = ClientSettings.resolveModeWhatFromId(Integer.parseInt(this.getParameter("modewhat")));
 
 		if (ClientSettings.modewhat != ClientSettings.MODEWHAT_WIP && ClientSettings.modewhat != ClientSettings.MODEWHAT_RC && ClientSettings.modewhat != ClientSettings.MODEWHAT_LIVE) {
@@ -630,7 +631,7 @@ public final class client extends GameShell {
         ClientSettings.hasJS = jsParameter != null && jsParameter.equals("1");
 
 		@Pc(94) String advertParameter = this.getParameter("advert");
-        Static306.hasAdvert = advertParameter != null && advertParameter.equals("1");
+        ClientSettings.hasAdvert = advertParameter != null && advertParameter.equals("1");
 
 		@Pc(110) String gameID = this.getParameter("game");
 
@@ -732,7 +733,7 @@ public final class client extends GameShell {
 			Static13.host = this.getCodeBase().getHost();
 			Static133.JAGGRABPort = 43594;
 			Static11.HTTPPort = 443;
-		} else if (Static193.isStagingEnvironment(ClientSettings.modewhere)) {
+		} else if (ClientSettings.isStagingEnvironment(ClientSettings.modewhere)) {
 			Static13.host = this.getCodeBase().getHost();
 			Static133.JAGGRABPort = ClientSettings.worldID + 40000;
 			Static11.HTTPPort = ClientSettings.worldID + 50000;

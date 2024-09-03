@@ -13,8 +13,4 @@ public final class Static193 {
 		return (arg1 & 0x580) != 0;
 	}
 
-	@OriginalMember(owner = "client!jp", name = "a", descriptor = "(Lclient!sp;B)Z")
-	public static boolean isStagingEnvironment(@OriginalArg(0) ModeWhere modewhere) {
-		return ClientSettings.MODEWHERE_WTRC == modewhere || modewhere == ClientSettings.MODEWHERE_WTQA || modewhere == ClientSettings.MODEWHERE_WTWIP || modewhere == ClientSettings.MODEWHERE_WTI;
-	}
 }
