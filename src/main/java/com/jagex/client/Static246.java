@@ -4,9 +4,6 @@ import org.openrs2.deob.annotation.OriginalMember;
 
 public final class Static246 {
 
-	@OriginalMember(owner = "client!mk", name = "l", descriptor = "Z")
-	public static boolean aBoolean423 = false;
-
 	@OriginalMember(owner = "client!mk", name = "o", descriptor = "I")
 	public static int anInt4588 = 0;
 

@@ -13,9 +13,6 @@ public final class Static107 {
 	@OriginalMember(owner = "client!fg", name = "d", descriptor = "Lclient!gk;")
 	public static final Class83 aClass83_40 = new Class83("Allocating memory", "Speicher wird zugewiesen.", "Mémoire en cours d'attribution", "Alocando memória");
 
-	@OriginalMember(owner = "client!fg", name = "e", descriptor = "I")
-	public static int worldID = 1;
-
 	@OriginalMember(owner = "client!fg", name = "a", descriptor = "(B)Lclient!cn;")
 	public static SecondaryNode_Sub1_Sub5 method1990() {
 		return Static148.aClass4_Sub1_Sub5_3;

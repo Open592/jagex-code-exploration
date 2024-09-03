@@ -48,11 +48,6 @@ public final class Static15 {
 		}
 	}
 
-	@OriginalMember(owner = "client!an", name = "d", descriptor = "(I)[Lclient!sp;")
-	public static ModeWhere[] getValidEnvironment() {
-		return new ModeWhere[] { Static373.liveModeWhere, Static53.WTRCModeWhere, Static217.WTQAModeWhere, Static420.WTWIPModeWhere, Static286.localModeWhere, Static229.WTIModeWhere};
-	}
-
 	@OriginalMember(owner = "client!an", name = "a", descriptor = "(IBI)I")
 	public static int method158(@OriginalArg(2) int arg0) {
 		if (arg0 == -2) {

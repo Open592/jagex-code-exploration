@@ -88,7 +88,7 @@ public final class Static443 {
 			}
 		}
 		if (!local19) {
-			Static415.method5323(Static76.aClass83_32.method2267(Static178.langID) + arg0);
+			Static415.method5323(Static76.aClass83_32.method2267(ClientSettings.langID) + arg0);
 		}
 	}
 

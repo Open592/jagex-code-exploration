@@ -69,14 +69,4 @@ public final class Static316 {
 		local8.anInt3083 = arg1;
 	}
 
-	@OriginalMember(owner = "client!pu", name = "a", descriptor = "(IZ)Lclient!sp;")
-	public static ModeWhere resolveModeWhereFromID(@OriginalArg(0) int id) {
-		for (ModeWhere modeWhere : Static15.getValidEnvironment()) {
-			if (id == modeWhere.getID()) {
-				return modeWhere;
-			}
-		}
-
-		return null;
-	}
 }

@@ -14,9 +14,6 @@ public final class Static178 {
 	@OriginalMember(owner = "client!j", name = "i", descriptor = "Lclient!bg;")
 	public static final Class22 aClass22_152 = new Class22(48, 3);
 
-	@OriginalMember(owner = "client!j", name = "o", descriptor = "I")
-	public static int langID = 0;
-
 	@OriginalMember(owner = "client!j", name = "p", descriptor = "Lclient!gk;")
 	public static final Class83 aClass83_72 = new Class83("M", "M", "M", "M");
 

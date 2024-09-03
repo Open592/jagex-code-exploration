@@ -18,9 +18,6 @@ public final class Static157 {
 	@OriginalMember(owner = "client!hu", name = "m", descriptor = "I")
 	public static int anInt3147 = -1;
 
-	@OriginalMember(owner = "client!hu", name = "n", descriptor = "I")
-	public static int height = 503;
-
 	@OriginalMember(owner = "client!hu", name = "a", descriptor = "(Lclient!iv;II)V")
 	public static void method2669(@OriginalArg(0) Packet arg0, @OriginalArg(2) int arg1) {
 		if (Static394.aClass139_4 == null) {

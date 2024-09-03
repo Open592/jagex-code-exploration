@@ -28,7 +28,7 @@ public final class Static179 {
 		local30.p4(local8[0]);
 		local30.pjstr(arg2);
 		local30.p4(local8[1]);
-		local30.p2(Static168.affiliateID);
+		local30.p2(ClientSettings.affiliateID);
 		local30.p1(arg9);
 		local30.p1(arg0);
 		local30.p4(local8[2]);

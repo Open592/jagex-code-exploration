@@ -8,9 +8,6 @@ public final class Static393 {
 	@OriginalMember(owner = "client!tt", name = "J", descriptor = "[I")
 	public static int[] anIntArray501;
 
-	@OriginalMember(owner = "client!tt", name = "v", descriptor = "Lclient!jk;")
-	public static GameDetails currentGameDetails = null;
-
 	@OriginalMember(owner = "client!tt", name = "A", descriptor = "[I")
 	public static final int[] anIntArray500 = new int[32];
 

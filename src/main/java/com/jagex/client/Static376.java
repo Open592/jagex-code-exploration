@@ -15,9 +15,6 @@ public final class Static376 {
 	@OriginalMember(owner = "client!t", name = "b", descriptor = "I")
 	public static int anInt6277 = 0;
 
-	@OriginalMember(owner = "client!t", name = "d", descriptor = "Z")
-	public static boolean aBoolean573 = false;
-
 	@OriginalMember(owner = "client!t", name = "m", descriptor = "Lclient!bg;")
 	public static final Class22 aClass22_286 = new Class22(9, 6);
 

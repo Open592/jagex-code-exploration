@@ -8,9 +8,6 @@ public final class Static229 {
 	@OriginalMember(owner = "client!lp", name = "j", descriptor = "Lclient!l;")
 	public static Class57 aClass57_18;
 
-	@OriginalMember(owner = "client!lp", name = "l", descriptor = "Lclient!sp;")
-	public static final ModeWhere WTIModeWhere = new ModeWhere("WTI", 5);
-
 	@OriginalMember(owner = "client!lp", name = "o", descriptor = "I")
 	public static int anInt4407 = 0;
 

@@ -818,7 +818,7 @@ public final class Static302 {
 
 	@OriginalMember(owner = "client!pf", name = "a", descriptor = "(I)Z")
 	public static boolean method4105() {
-		if (Static385.hasJS) {
+		if (ClientSettings.hasJS) {
 			try {
 				if ((Boolean) Static458.callJavaScriptMethod(Static206.signLink.hostApplet, "showingVideoAd")) {
 					return false;

@@ -17,9 +17,6 @@ public final class Static385 {
 	@OriginalMember(owner = "client!tl", name = "l", descriptor = "[S")
 	public static final short[] aShortArray232 = new short[] { 58, 13, 10, 12, 5, 57, 17, 20 };
 
-	@OriginalMember(owner = "client!tl", name = "q", descriptor = "Z")
-	public static boolean hasJS = false;
-
 	@OriginalMember(owner = "client!tl", name = "c", descriptor = "(I)V")
 	public static void method5082() {
 		Static154.aClass124_2.method3151();

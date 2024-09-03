@@ -69,9 +69,9 @@ public final class Static292 {
 		@Pc(166) int local166;
 		if (arg0 == 1) {
 			Static303.yPOS = 0;
-			Static302.height = Static157.height;
-			Static230.xPOS = (Static425.anInt7000 - Static353.width) / 2;
-			Static141.width = Static353.width;
+			Static302.height = ClientSettings.height;
+			Static230.xPOS = (Static425.anInt7000 - ClientSettings.width) / 2;
+			Static141.width = ClientSettings.width;
 		} else if (Static70.anInt1503 < 96 && Static177.anInt2973 == 0) {
 			local166 = Static425.anInt7000 > 1024 ? 1024 : Static425.anInt7000;
 			@Pc(173) int local173 = Static17.anInt222 > 768 ? 768 : Static17.anInt222;
@@ -85,7 +85,7 @@ public final class Static292 {
 			Static302.height = Static17.anInt222;
 			Static230.xPOS = 0;
 		}
-		if (Static104.modewhere != Static373.liveModeWhere) {
+		if (ClientSettings.modewhere != ClientSettings.MODEWHERE_LIVE) {
 			@Pc(196) boolean local196;
 			if (Static141.width < 1024 && Static302.height < 768) {
 				local196 = true;

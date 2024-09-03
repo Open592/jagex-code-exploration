@@ -86,7 +86,7 @@ public final class Static325 {
 		}
 		@Pc(34) String local34 = local16.aString70;
 		if (local16.lb != 0) {
-			@Pc(50) String local50 = Static393.currentGameDetails == Static317.stellardawnGameDetails ? Static4.aClass83_121.method2267(Static178.langID) : Static320.aClass83_118.method2267(Static178.langID);
+			@Pc(50) String local50 = ClientSettings.currentGameDetails == ClientSettings.STELLAR_DAWN_GAME_DETAILS ? Static4.aClass83_121.method2267(ClientSettings.langID) : Static320.aClass83_118.method2267(ClientSettings.langID);
 			local34 = local34 + Static272.method3907(Static1.aClass16_Sub1_Sub5_Sub1_1.anInt4345, local16.lb) + " (" + local50 + local16.lb + ")";
 		}
 		if (!Static341.aBoolean599) {
@@ -98,7 +98,7 @@ public final class Static325 {
 				@Pc(94) int local94;
 				if (local84 != null) {
 					for (local94 = 4; local94 >= 0; local94--) {
-						if (local84[local94] != null && (Static393.currentGameDetails != Static196.runescapeGameDetails || !local84[local94].equalsIgnoreCase(Static81.aClass83_33.method2267(Static178.langID)))) {
+						if (local84[local94] != null && (ClientSettings.currentGameDetails != ClientSettings.RUNESCAPE_GAME_DETAILS || !local84[local94].equalsIgnoreCase(Static81.aClass83_33.method2267(ClientSettings.langID)))) {
 							@Pc(114) byte local114 = 0;
 							@Pc(116) int local116 = Static207.anInt5453;
 							if (local94 == 0) {
@@ -126,9 +126,9 @@ public final class Static325 {
 						}
 					}
 				}
-				if (Static393.currentGameDetails == Static196.runescapeGameDetails && local84 != null) {
+				if (ClientSettings.currentGameDetails == ClientSettings.RUNESCAPE_GAME_DETAILS && local84 != null) {
 					for (local94 = 4; local94 >= 0; local94--) {
-						if (local84[local94] != null && local84[local94].equalsIgnoreCase(Static81.aClass83_33.method2267(Static178.langID))) {
+						if (local84[local94] != null && local84[local94].equalsIgnoreCase(Static81.aClass83_33.method2267(ClientSettings.langID))) {
 							@Pc(214) short local214 = 0;
 							if (local16.lb > Static1.aClass16_Sub1_Sub5_Sub1_1.anInt4345) {
 								local214 = 2000;
@@ -157,7 +157,7 @@ public final class Static325 {
 					}
 				}
 			}
-			Static380.method5017(1003, arg0, (long) arg1.anInt6037, 0, "<col=ffff00>" + local34, true, Static21.aClass83_12.method2267(Static178.langID), 0, -1, Static103.anInt2066);
+			Static380.method5017(1003, arg0, (long) arg1.anInt6037, 0, "<col=ffff00>" + local34, true, Static21.aClass83_12.method2267(ClientSettings.langID), 0, -1, Static103.anInt2066);
 		} else if (!arg0) {
 			@Pc(339) Class133 local339 = Static7.anInt5460 == -1 ? null : Static153.aClass180_1.method4121(Static7.anInt5460);
 			if ((Static434.anInt7378 & 0x2) != 0) {

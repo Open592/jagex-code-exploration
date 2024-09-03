@@ -16,8 +16,4 @@ public final class Static268 {
 	@OriginalMember(owner = "client!nm", name = "A", descriptor = "I")
 	public static int anInt5006 = 1;
 
-	@OriginalMember(owner = "client!nm", name = "b", descriptor = "(B)[Lclient!jc;")
-	public static ModeWhat[] method3834() {
-		return new ModeWhat[] { Static183.liveModeWhat, Static346.RCModeWhat, Static65.WIPModeWhat};
-	}
 }

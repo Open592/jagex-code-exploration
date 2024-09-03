@@ -15,9 +15,6 @@ public final class Static162 {
 	@OriginalMember(owner = "client!ie", name = "a", descriptor = "J")
 	public static long aLong210 = 0L;
 
-	@OriginalMember(owner = "client!ie", name = "e", descriptor = "Z")
-	public static boolean aBoolean607 = false;
-
 	@OriginalMember(owner = "client!ie", name = "f", descriptor = "I")
 	public static int anInt6744 = 0;
 
@@ -38,14 +35,14 @@ public final class Static162 {
 			return false;
 		} else if (SignLink.anInt1987 == 3) {
 			@Pc(39) String local39 = "";
-			if (Static373.liveModeWhere != Static104.modewhere) {
+			if (ClientSettings.MODEWHERE_LIVE != ClientSettings.modewhere) {
 				local39 = ":" + (local7.anInt3881 + 7000);
 			}
 			@Pc(55) String local55 = "";
-			if (Static34.settings != null) {
-				local55 = "/p=" + Static34.settings;
+			if (ClientSettings.settings != null) {
+				local55 = "/p=" + ClientSettings.settings;
 			}
-			@Pc(104) String local104 = "http://" + local7.aString38 + local39 + "/l=" + Static178.langID + "/a=" + Static168.affiliateID + local55 + "/j" + (Static385.hasJS ? "1" : "0") + ",o" + (aBoolean607 ? "1" : "0") + ",a2";
+			@Pc(104) String local104 = "http://" + local7.aString38 + local39 + "/l=" + ClientSettings.langID + "/a=" + ClientSettings.affiliateID + local55 + "/j" + (ClientSettings.hasJS ? "1" : "0") + ",o" + (ClientSettings.hasObjectTag ? "1" : "0") + ",a2";
 			try {
 				Static6.client.getAppletContext().showDocument(new URL(local104), "_self");
 				return true;
@@ -55,7 +52,7 @@ public final class Static162 {
 		} else {
 			Static56.anInt1028 = local7.anInt3881;
 			Static321.host = local7.aString38;
-			if (Static104.modewhere != Static373.liveModeWhere) {
+			if (ClientSettings.modewhere != ClientSettings.MODEWHERE_LIVE) {
 				Static97.anInt1949 = Static56.anInt1028 + 50000;
 				Static313.anInt5436 = Static56.anInt1028 + 40000;
 				Static407.port = Static313.anInt5436;

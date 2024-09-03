@@ -39,7 +39,7 @@ public final class Static344 {
 
 	@OriginalMember(owner = "client!rj", name = "b", descriptor = "(III)V")
 	public static void method4658(@OriginalArg(1) int arg0, @OriginalArg(2) int arg1) {
-		@Pc(13) int local13 = Static118.aClass89_5.method2340(Static391.aClass83_133.method2267(Static178.langID));
+		@Pc(13) int local13 = Static118.aClass89_5.method2340(Static391.aClass83_133.method2267(ClientSettings.langID));
 		@Pc(24) int local24;
 		for (@Pc(18) Node_Sub39 local18 = (Node_Sub39) Static206.aClass183_28.method4140(); local18 != null; local18 = (Node_Sub39) Static206.aClass183_28.method4144()) {
 			local24 = Static210.method3197(local18);

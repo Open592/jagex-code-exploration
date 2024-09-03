@@ -12,9 +12,6 @@ public final class Static346 {
 	@OriginalMember(owner = "client!rl", name = "l", descriptor = "[I")
 	public static int[] anIntArray418;
 
-	@OriginalMember(owner = "client!rl", name = "d", descriptor = "Lclient!jc;")
-	public static final ModeWhat RCModeWhat = new ModeWhat("RC", 1);
-
 	@OriginalMember(owner = "client!rl", name = "i", descriptor = "I")
 	public static int anInt5948 = 0;
 

@@ -6,9 +6,6 @@ import org.openrs2.deob.annotation.Pc;
 
 public final class Static65 {
 
-	@OriginalMember(owner = "client!de", name = "c", descriptor = "Lclient!jc;")
-	public static final ModeWhat WIPModeWhat = new ModeWhat("WIP", 2);
-
 	@OriginalMember(owner = "client!de", name = "e", descriptor = "[Z")
 	public static final boolean[] aBooleanArray9 = new boolean[100];
 

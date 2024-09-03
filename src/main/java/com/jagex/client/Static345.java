@@ -13,6 +13,4 @@ public final class Static345 {
 	@OriginalMember(owner = "client!rk", name = "D", descriptor = "Lclient!bg;")
 	public static final Class22 aClass22_278 = new Class22(76, 7);
 
-	@OriginalMember(owner = "client!rk", name = "E", descriptor = "I")
-	public static int colourID = 0;
 }

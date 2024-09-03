@@ -6,9 +6,6 @@ import org.openrs2.deob.annotation.Pc;
 
 public final class Static217 {
 
-	@OriginalMember(owner = "client!ku", name = "m", descriptor = "Lclient!sp;")
-	public static final ModeWhere WTQAModeWhere = new ModeWhere("WTQA", 2);
-
 	@OriginalMember(owner = "client!ku", name = "o", descriptor = "[Z")
 	public static final boolean[] aBooleanArray13 = new boolean[8];
 

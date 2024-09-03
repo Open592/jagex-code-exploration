@@ -13,6 +13,4 @@ public final class Static34 {
 	@OriginalMember(owner = "client!bn", name = "s", descriptor = "Lclient!ib;")
 	public static final HashMap A_HASH_MAP___4 = new HashMap(16);
 
-	@OriginalMember(owner = "client!bn", name = "G", descriptor = "Ljava/lang/String;")
-	public static String settings = null;
 }

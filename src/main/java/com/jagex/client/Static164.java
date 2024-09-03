@@ -8,9 +8,6 @@ import org.openrs2.deob.annotation.Pc;
 
 public final class Static164 {
 
-	@OriginalMember(owner = "client!ii", name = "p", descriptor = "Ljava/lang/String;")
-	public static String quitURL;
-
 	@OriginalMember(owner = "client!ii", name = "E", descriptor = "F")
 	public static float aFloat143;
 

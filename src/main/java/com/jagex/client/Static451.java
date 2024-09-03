@@ -5,9 +5,6 @@ import org.openrs2.deob.annotation.OriginalMember;
 
 public final class Static451 {
 
-	@OriginalMember(owner = "client!ws", name = "a", descriptor = "Lclient!jc;")
-	public static ModeWhat modewhat;
-
 	@OriginalMember(owner = "client!ws", name = "b", descriptor = "(Z)V")
 	public static void method5011() {
 		Static330.aClass68_38.method1777();

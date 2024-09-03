@@ -182,17 +182,17 @@ public final class Static22 {
 	@OriginalMember(owner = "client!av", name = "h", descriptor = "(I)Ljava/lang/String;")
 	public static String method298() {
 		@Pc(12) String local12 = "www";
-		if (Static53.WTRCModeWhere == Static104.modewhere) {
+		if (ClientSettings.MODEWHERE_WTRC == ClientSettings.modewhere) {
 			local12 = "www-wtrc";
-		} else if (Static217.WTQAModeWhere == Static104.modewhere) {
+		} else if (ClientSettings.MODEWHERE_WTQA == ClientSettings.modewhere) {
 			local12 = "www-wtqa";
-		} else if (Static104.modewhere == Static420.WTWIPModeWhere) {
+		} else if (ClientSettings.modewhere == ClientSettings.MODEWHERE_WTWIP) {
 			local12 = "www-wtwip";
 		}
 		@Pc(33) String local33 = "";
-		if (Static34.settings != null) {
-			local33 = "/p=" + Static34.settings;
+		if (ClientSettings.settings != null) {
+			local33 = "/p=" + ClientSettings.settings;
 		}
-		return "http://" + local12 + "." + Static393.currentGameDetails.name + ".com/l=" + Static178.langID + "/a=" + Static168.affiliateID + local33 + "/";
+		return "http://" + local12 + "." + ClientSettings.currentGameDetails.name + ".com/l=" + ClientSettings.langID + "/a=" + ClientSettings.affiliateID + local33 + "/";
 	}
 }

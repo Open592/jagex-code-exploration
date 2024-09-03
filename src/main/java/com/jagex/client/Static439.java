@@ -81,7 +81,7 @@ public final class Static439 {
 
 	@OriginalMember(owner = "client!wd", name = "a", descriptor = "(BLjava/lang/String;)V")
 	public static void dropSettingsCookie(@OriginalArg(1) String settings) {
-		Static34.settings = settings;
+		ClientSettings.settings = settings;
 
 		if (Static206.signLink.hostApplet == null) {
 			return;

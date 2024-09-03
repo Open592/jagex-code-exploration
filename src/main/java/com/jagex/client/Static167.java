@@ -118,7 +118,7 @@ public final class Static167 {
 		Static222.method3355();
 		Static251.aBoolean429 = true;
 		Static252.aShortArray151 = Static330.aShortArray196 = Static78.aShortArray46 = Static166.aShortArray97 = new short[256];
-		aString35 = Static190.aClass83_76.method2267(Static178.langID);
+		aString35 = Static190.aClass83_76.method2267(ClientSettings.langID);
 		Static183.anInt3512 = 0;
 		Static323.aClass50_Sub1_1.aBoolean308 = false;
 		Static323.aClass50_Sub1_1.aBoolean309 = false;

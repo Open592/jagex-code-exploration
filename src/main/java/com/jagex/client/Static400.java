@@ -18,7 +18,7 @@ public final class Static400 {
 
 	@OriginalMember(owner = "client!ue", name = "a", descriptor = "(Ljava/lang/String;ZI)V")
 	public static void method5186(@OriginalArg(0) String arg0, @OriginalArg(1) boolean arg1) {
-		if (Static104.modewhere == Static373.liveModeWhere && Static104.anInt2252 < 2) {
+		if (ClientSettings.modewhere == ClientSettings.MODEWHERE_LIVE && Static104.anInt2252 < 2) {
 			return;
 		}
 		if (arg0.equalsIgnoreCase("errortest")) {
@@ -497,7 +497,7 @@ public final class Static400 {
 				Static3.aClass4_Sub12_Sub1_5.p1(arg1 ? 1 : 0);
 				Static3.aClass4_Sub12_Sub1_5.pjstr(arg0);
 			}
-			if (arg0.startsWith("fps ") && Static373.liveModeWhere != Static104.modewhere) {
+			if (arg0.startsWith("fps ") && ClientSettings.MODEWHERE_LIVE != ClientSettings.modewhere) {
 				Static13.method136(Static198.method3113(arg0.substring(4)));
 				return;
 			}
@@ -511,7 +511,7 @@ public final class Static400 {
 
 	@OriginalMember(owner = "client!ue", name = "d", descriptor = "(I)Z")
 	public static boolean method5187() {
-		if (Static385.hasJS) {
+		if (ClientSettings.hasJS) {
 			try {
 				Static458.callJavaScriptMethod(Static206.signLink.hostApplet, "showVideoAd");
 				return true;

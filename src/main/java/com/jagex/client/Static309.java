@@ -44,13 +44,6 @@ public final class Static309 {
 		Static391.method5118();
 	}
 
-	@OriginalMember(owner = "client!pn", name = "a", descriptor = "(Ljava/lang/String;B)V")
-	public static void handleInvalidCommandArguments(@OriginalArg(0) String error) {
-		System.out.println("Bad " + error + ", Usage: worldid, <live/rc/wip>, <english/german>, <game0/game1>");
-
-		System.exit(1);
-	}
-
 	@OriginalMember(owner = "client!pn", name = "a", descriptor = "(Lclient!uu;III)V")
 	public static void method4160(@OriginalArg(0) Class247 arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2) {
 		if (arg0.aByte81 == 0) {

@@ -118,8 +118,8 @@ public final class Static425 {
 				Static3.aClass4_Sub12_Sub1_5.p2(Static302.height);
 				Static3.aClass4_Sub12_Sub1_5.p1(Static323.aClass50_Sub1_1.anInt3440);
 				Static82.method1471(Static3.aClass4_Sub12_Sub1_5);
-				Static3.aClass4_Sub12_Sub1_5.pjstr(Static34.settings);
-				Static3.aClass4_Sub12_Sub1_5.p4(Static168.affiliateID);
+				Static3.aClass4_Sub12_Sub1_5.pjstr(ClientSettings.settings);
+				Static3.aClass4_Sub12_Sub1_5.p4(ClientSettings.affiliateID);
 				@Pc(323) Packet local323 = Static323.aClass50_Sub1_1.method2863();
 				Static3.aClass4_Sub12_Sub1_5.p1(local323.pos);
 				Static3.aClass4_Sub12_Sub1_5.pArrayBuffer(local323.data, local323.pos);
@@ -225,12 +225,12 @@ public final class Static425 {
 					Static436.aBoolean668 = Static146.aClass4_Sub12_Sub1_3.g1() == 1;
 					Static308.aBoolean486 = Static146.aClass4_Sub12_Sub1_3.g1() == 1;
 					Static207.anInt5452 = Static146.aClass4_Sub12_Sub1_3.g2();
-					Static246.aBoolean423 = Static146.aClass4_Sub12_Sub1_3.g1() == 1;
+					ClientSettings.aBoolean423 = Static146.aClass4_Sub12_Sub1_3.g1() == 1;
 					Static325.aBoolean506 = Static146.aClass4_Sub12_Sub1_3.g1() == 1;
 					Static267.aClass262_2.method5564(Static325.aBoolean506);
 					Static444.aClass206_3.method4704(Static325.aBoolean506);
 					Static329.aClass240_1.method5230(Static325.aBoolean506);
-					if (Static109.aBoolean628 && !Static436.aBoolean668 || Static246.aBoolean423) {
+					if (Static109.aBoolean628 && !Static436.aBoolean668 || ClientSettings.aBoolean423) {
 						try {
 							Static458.callJavaScriptMethod(Static206.signLink.hostApplet, "zap");
 						} catch (@Pc(880) Throwable local880) {
@@ -247,7 +247,7 @@ public final class Static425 {
 						} catch (@Pc(870) Throwable local870) {
 						}
 					}
-					if (Static373.liveModeWhere == Static104.modewhere) {
+					if (ClientSettings.MODEWHERE_LIVE == ClientSettings.modewhere) {
 						try {
 							Static458.callJavaScriptMethod(Static206.signLink.hostApplet, "loggedin");
 						} catch (@Pc(908) Throwable local908) {

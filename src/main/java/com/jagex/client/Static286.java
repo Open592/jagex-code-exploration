@@ -18,9 +18,6 @@ public final class Static286 {
 	@OriginalMember(owner = "client!oj", name = "a", descriptor = "Lclient!sl;")
 	public static final Class215 aClass215_64 = new Class215(8, 8);
 
-	@OriginalMember(owner = "client!oj", name = "m", descriptor = "Lclient!sp;")
-	public static final ModeWhere localModeWhere = new ModeWhere("LOCAL", 4);
-
 	@OriginalMember(owner = "client!oj", name = "a", descriptor = "(III)V")
 	public static void method3974(@OriginalArg(0) int arg0, @OriginalArg(2) int arg1) {
 		@Pc(9) int local9;

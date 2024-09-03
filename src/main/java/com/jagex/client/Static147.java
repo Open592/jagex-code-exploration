@@ -276,7 +276,7 @@ public final class Static147 {
 										}
 									}
 									if (Static304.aClass247_16 == local23) {
-										local975 = Static154.aClass83_26.method2267(Static178.langID);
+										local975 = Static154.aClass83_26.method2267(ClientSettings.langID);
 										local249 = local23.anInt6772;
 									}
 									if (Static449.aBoolean688) {
