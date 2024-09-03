@@ -28,7 +28,7 @@ public final class ModeWhat {
 	}
 
 	@OriginalMember(owner = "client!jc", name = "a", descriptor = "(Z)I")
-	public int getID() {
+	public int getId() {
 		return this.id;
 	}
 }

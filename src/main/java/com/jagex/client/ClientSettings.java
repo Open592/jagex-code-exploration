@@ -3,6 +3,8 @@ package com.jagex.client;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalMember;
 
+import java.util.Set;
+
 public final class ClientSettings {
     @OriginalMember(owner = "client!je", name = "H", descriptor = "Lclient!jc;")
     public static final ModeWhat MODEWHAT_LIVE = new ModeWhat("LIVE", 0);
@@ -86,34 +88,40 @@ public final class ClientSettings {
     public static int height = 503;
 
     @OriginalMember(owner = "client!an", name = "d", descriptor = "(I)[Lclient!sp;")
-    public static ModeWhere[] getValidModeWhereValues() {
-        return new ModeWhere[] {
+    public static Set<ModeWhere> getValidModeWhereValues() {
+        return Set.of(
                 MODEWHERE_LIVE,
                 MODEWHERE_WTRC,
                 MODEWHERE_WTQA,
                 MODEWHERE_WTWIP,
                 MODEWHERE_LOCAL,
                 MODEWHERE_WTI
-        };
+        );
     }
 
     @OriginalMember(owner = "client!pu", name = "a", descriptor = "(IZ)Lclient!sp;")
-    public static ModeWhere resolveModeWhereFromID(@OriginalArg(0) int id) {
-        for (ModeWhere modeWhere : getValidModeWhereValues()) {
-            if (id == modeWhere.getID()) {
-                return modeWhere;
-            }
-        }
-
-        return null;
+    public static ModeWhere resolveModeWhereFromId(@OriginalArg(0) int id) {
+        return getValidModeWhereValues().stream()
+                .filter(modeWhere -> modeWhere.getId() == id)
+                .findFirst()
+                .orElse(null);
     }
 
     @OriginalMember(owner = "client!nm", name = "b", descriptor = "(B)[Lclient!jc;")
-    public static ModeWhat[] getValidModeWhatValues() {
-        return new ModeWhat[] {
+    public static Set<ModeWhat> getValidModeWhatValues() {
+        return Set.of(
                 MODEWHAT_LIVE,
                 MODEWHAT_RC,
                 MODEWHAT_WIP
-        };
+        );
+    }
+
+    @OriginalMember(owner = "client!ol", name = "a", descriptor = "(II)Lclient!jc;")
+    public static ModeWhat resolveModeWhatFromId(@OriginalArg(1) int id) {
+        return getValidModeWhatValues()
+                .stream()
+                .filter(modeWhat -> modeWhat.getId() == id)
+                .findFirst()
+                .orElse(null);
     }
 }

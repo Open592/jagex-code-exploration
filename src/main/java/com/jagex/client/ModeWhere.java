@@ -21,7 +21,7 @@ public final class ModeWhere {
 		return this.name;
 	}
 
-	public int getID() {
+	public int getId() {
 		return this.id;
 	}
 

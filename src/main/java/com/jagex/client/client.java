@@ -76,7 +76,7 @@ public final class client extends GameShell {
 
 			@Pc(130) client local130 = new client();
 			Static6.client = local130;
-			local130.method885(ClientSettings.currentGameDetails.name, ClientSettings.modewhat.getID() + 32);
+			local130.method885(ClientSettings.currentGameDetails.name, ClientSettings.modewhat.getId() + 32);
 			Static226.aFrame1.setLocation(40, 40);
 		} catch (@Pc(153) Exception local153) {
 			Static94.handleClientError(local153, null);
@@ -606,12 +606,12 @@ public final class client extends GameShell {
 		}
 
 		ClientSettings.worldID = Integer.parseInt(this.getParameter("worldid"));
-		ClientSettings.modewhere = ClientSettings.resolveModeWhereFromID(Integer.parseInt(this.getParameter("modewhere")));
+		ClientSettings.modewhere = ClientSettings.resolveModeWhereFromId(Integer.parseInt(this.getParameter("modewhere")));
 
 		if (!Static193.isStagingEnvironment(ClientSettings.modewhere) && ClientSettings.MODEWHERE_LIVE != ClientSettings.modewhere) {
 			ClientSettings.modewhere = ClientSettings.MODEWHERE_LIVE;
 		}
-		ClientSettings.modewhat = Static288.method3983(Integer.parseInt(this.getParameter("modewhat")));
+		ClientSettings.modewhat = ClientSettings.resolveModeWhatFromId(Integer.parseInt(this.getParameter("modewhat")));
 
 		if (ClientSettings.modewhat != ClientSettings.MODEWHAT_WIP && ClientSettings.modewhat != ClientSettings.MODEWHAT_RC && ClientSettings.modewhat != ClientSettings.MODEWHAT_LIVE) {
 			ClientSettings.modewhat = ClientSettings.MODEWHAT_LIVE;
@@ -684,7 +684,7 @@ public final class client extends GameShell {
 			ClientSettings.width = 640;
 		}
 
-		this.load(ClientSettings.modewhat.getID() + 32, ClientSettings.height, ClientSettings.width);
+		this.load(ClientSettings.modewhat.getId() + 32, ClientSettings.height, ClientSettings.width);
 	}
 
 	@OriginalMember(owner = "client!client", name = "g", descriptor = "(I)V")
