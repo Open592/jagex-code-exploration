@@ -14,7 +14,7 @@ public final class Static382 {
 
 	@OriginalMember(owner = "client!tg", name = "b", descriptor = "(Z)[Lclient!eh;")
 	public static Class60[] method5040() {
-		return new Class60[] { Static153.aClass60_1, Static153.aClass60_2, Static153.aClass60_3, Static153.aClass60_4, Static153.aClass60_5, Static153.aClass60_6, Static153.aClass60_7, Static153.aClass60_8, Static153.aClass60_9, Static153.aClass60_10 };
+		return new Class60[] { Class60.aClass60_1, Class60.aClass60_2, Class60.aClass60_3, Class60.aClass60_4, Class60.aClass60_5, Class60.aClass60_6, Class60.aClass60_7, Class60.aClass60_8, Class60.aClass60_9, Class60.aClass60_10 };
 	}
 
 	@OriginalMember(owner = "client!tg", name = "f", descriptor = "(I)V")

@@ -30,7 +30,7 @@ public final class Static386 {
 	@OriginalMember(owner = "client!tm", name = "a", descriptor = "(IIIII)V")
 	public static void method3233(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(4) int arg3) {
 		Static3.aClass4_Sub12_Sub1_5.pos = 0;
-		Static3.aClass4_Sub12_Sub1_5.p1(Static153.aClass60_6.anInt1812);
+		Static3.aClass4_Sub12_Sub1_5.p1(Class60.aClass60_6.anInt1812);
 		Static3.aClass4_Sub12_Sub1_5.p1(arg1);
 		Static3.aClass4_Sub12_Sub1_5.p1(arg0);
 		Static3.aClass4_Sub12_Sub1_5.p2(arg2);

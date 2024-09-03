@@ -15,36 +15,6 @@ public final class Static153 {
 	@OriginalMember(owner = "client!hp", name = "eb", descriptor = "Lclient!ph;")
 	public static Class180 aClass180_1;
 
-	@OriginalMember(owner = "client!hp", name = "D", descriptor = "Lclient!eh;")
-	public static final Class60 aClass60_1 = new Class60(14, 1);
-
-	@OriginalMember(owner = "client!hp", name = "N", descriptor = "Lclient!eh;")
-	public static final Class60 aClass60_2 = new Class60(15, 4);
-
-	@OriginalMember(owner = "client!hp", name = "P", descriptor = "Lclient!eh;")
-	public static final Class60 aClass60_3 = new Class60(16, -2);
-
-	@OriginalMember(owner = "client!hp", name = "Q", descriptor = "Lclient!eh;")
-	public static final Class60 aClass60_4 = new Class60(17, 0);
-
-	@OriginalMember(owner = "client!hp", name = "R", descriptor = "Lclient!eh;")
-	public static final Class60 aClass60_5 = new Class60(18, -2);
-
-	@OriginalMember(owner = "client!hp", name = "S", descriptor = "Lclient!eh;")
-	public static final Class60 aClass60_6 = new Class60(20, 6);
-
-	@OriginalMember(owner = "client!hp", name = "T", descriptor = "Lclient!eh;")
-	public static final Class60 aClass60_7 = new Class60(21, 8);
-
-	@OriginalMember(owner = "client!hp", name = "U", descriptor = "Lclient!eh;")
-	public static final Class60 aClass60_8 = new Class60(22, -2);
-
-	@OriginalMember(owner = "client!hp", name = "V", descriptor = "Lclient!eh;")
-	public static final Class60 aClass60_9 = new Class60(23, 4);
-
-	@OriginalMember(owner = "client!hp", name = "X", descriptor = "Lclient!eh;")
-	public static final Class60 aClass60_10 = new Class60(24, -1);
-
 	@OriginalMember(owner = "client!hp", name = "Z", descriptor = "Lclient!gk;")
 	public static final Class83 aClass83_60 = new Class83("green:", "grün:", "vert:", "verde:");
 

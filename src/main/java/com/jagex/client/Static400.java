@@ -17,28 +17,28 @@ public final class Static400 {
 	public static int anInt6628 = 2;
 
 	@OriginalMember(owner = "client!ue", name = "a", descriptor = "(Ljava/lang/String;ZI)V")
-	public static void method5186(@OriginalArg(0) String arg0, @OriginalArg(1) boolean arg1) {
+	public static void method5186(@OriginalArg(0) String command, @OriginalArg(1) boolean arg1) {
 		if (ClientSettings.modewhere == ClientSettings.MODEWHERE_LIVE && Static104.anInt2252 < 2) {
 			return;
 		}
-		if (arg0.equalsIgnoreCase("errortest")) {
+		if (command.equalsIgnoreCase("errortest")) {
 			throw new RuntimeException();
 		}
-		if (arg0.equals("nativememerror")) {
+		if (command.equals("nativememerror")) {
 			throw new OutOfMemoryError("native(MPR");
 		}
 		try {
-			if (arg0.equalsIgnoreCase("fpson")) {
+			if (command.equalsIgnoreCase("fpson")) {
 				Static325.isNotRunningInLive = true;
 				Static441.method5568("fps debug enabled");
 				return;
 			}
-			if (arg0.equalsIgnoreCase("fpsoff")) {
+			if (command.equalsIgnoreCase("fpsoff")) {
 				Static325.isNotRunningInLive = false;
 				Static441.method5568("fps debug disabled");
 				return;
 			}
-			if (arg0.equals("systemmem")) {
+			if (command.equals("systemmem")) {
 				try {
 					Static441.method5568("System memory: " + jagmisc.getAvailablePhysicalMemory() / 1048576L + "/" + jagmisc.getTotalPhysicalMemory() / 1048576L + "Mb");
 					return;
@@ -46,12 +46,12 @@ public final class Static400 {
 					return;
 				}
 			}
-			if (arg0.equalsIgnoreCase("cls")) {
+			if (command.equalsIgnoreCase("cls")) {
 				Static93.anInt1881 = 0;
 				Static167.anInt3231 = 0;
 				return;
 			}
-			if (arg0.equalsIgnoreCase("cleartext")) {
+			if (command.equalsIgnoreCase("cleartext")) {
 				GameShell.aClass84_4.method2310();
 				Static441.method5568("Text coords cleared");
 				return;
@@ -59,7 +59,7 @@ public final class Static400 {
 			@Pc(106) int local106;
 			@Pc(125) int local125;
 			@Pc(115) Runtime local115;
-			if (arg0.equalsIgnoreCase("gc")) {
+			if (command.equalsIgnoreCase("gc")) {
 				Static385.method5082();
 				for (local106 = 0; local106 < 10; local106++) {
 					System.gc();
@@ -69,7 +69,7 @@ public final class Static400 {
 				Static441.method5568("mem=" + local125 + "k");
 				return;
 			}
-			if (arg0.equalsIgnoreCase("compact")) {
+			if (command.equalsIgnoreCase("compact")) {
 				Static385.method5082();
 				for (local106 = 0; local106 < 10; local106++) {
 					System.gc();
@@ -86,11 +86,11 @@ public final class Static400 {
 				Static441.method5568("Memory after cleanup=" + local125 + "k");
 				return;
 			}
-			if (arg0.equalsIgnoreCase("pcachesize")) {
+			if (command.equalsIgnoreCase("pcachesize")) {
 				Static441.method5568("Number of player models in cache:" + Static317.method4232());
 				return;
 			}
-			if (arg0.equalsIgnoreCase("clientdrop")) {
+			if (command.equalsIgnoreCase("clientdrop")) {
 				Static441.method5568("Dropped client connection");
 				if (Static403.anInt6667 == 30) {
 					Static165.method2731();
@@ -101,30 +101,30 @@ public final class Static400 {
 				}
 				return;
 			}
-			if (arg0.equalsIgnoreCase("clientjs5drop")) {
+			if (command.equalsIgnoreCase("clientjs5drop")) {
 				client.js5Connection.shutdown();
 				Static441.method5568("Dropped client js5 net queue");
 				return;
 			}
-			if (arg0.equalsIgnoreCase("serverjs5drop")) {
+			if (command.equalsIgnoreCase("serverjs5drop")) {
 				client.js5Connection.requestServerToDropRequests();
 				Static441.method5568("Dropped server js5 net queue");
 				return;
 			}
-			if (arg0.equalsIgnoreCase("breakcon")) {
+			if (command.equalsIgnoreCase("breakcon")) {
 				Static206.signLink.refuseConnectionForFiveSeconds();
 				Static125.aServerConnection_5.breakConnection();
 				client.js5Connection.breakConnection();
 				Static441.method5568("Breaking new connections for 5 seconds");
 				return;
 			}
-			if (arg0.equalsIgnoreCase("rebuild")) {
+			if (command.equalsIgnoreCase("rebuild")) {
 				Static335.method4744();
 				Static277.method3932();
 				Static441.method5568("Rebuilding map");
 				return;
 			}
-			if (arg0.equalsIgnoreCase("wm1")) {
+			if (command.equalsIgnoreCase("wm1")) {
 				Static188.method4107(1, -1, -1, false);
 				if (Static450.method5664() != 1) {
 					Static441.method5568("wm1 failed");
@@ -133,7 +133,7 @@ public final class Static400 {
 				Static441.method5568("wm1 succeeded");
 				return;
 			}
-			if (arg0.equalsIgnoreCase("wm2")) {
+			if (command.equalsIgnoreCase("wm2")) {
 				Static188.method4107(2, -1, -1, false);
 				if (Static450.method5664() != 2) {
 					Static441.method5568("wm2 failed");
@@ -142,7 +142,7 @@ public final class Static400 {
 				Static441.method5568("wm2 succeeded");
 				return;
 			}
-			if (arg0.equalsIgnoreCase("wm3")) {
+			if (command.equalsIgnoreCase("wm3")) {
 				Static188.method4107(3, 768, 1024, false);
 				if (Static450.method5664() != 3) {
 					Static441.method5568("wm3 failed");
@@ -151,7 +151,7 @@ public final class Static400 {
 				Static441.method5568("wm3 succeeded");
 				return;
 			}
-			if (arg0.equalsIgnoreCase("tk0")) {
+			if (command.equalsIgnoreCase("tk0")) {
 				Static239.method3551(0);
 				if (Static177.anInt2973 == 0) {
 					Static441.method5568("Entered tk0");
@@ -163,7 +163,7 @@ public final class Static400 {
 				Static441.method5568("Failed to enter tk0");
 				return;
 			}
-			if (arg0.equalsIgnoreCase("tk1")) {
+			if (command.equalsIgnoreCase("tk1")) {
 				Static239.method3551(1);
 				if (Static177.anInt2973 != 1) {
 					Static441.method5568("Failed to enter tk1");
@@ -175,7 +175,7 @@ public final class Static400 {
 				Static249.aBoolean425 = false;
 				return;
 			}
-			if (arg0.equalsIgnoreCase("tk2")) {
+			if (command.equalsIgnoreCase("tk2")) {
 				Static239.method3551(2);
 				if (Static177.anInt2973 == 2) {
 					Static441.method5568("Entered tk2");
@@ -187,7 +187,7 @@ public final class Static400 {
 				Static441.method5568("Failed to enter tk2");
 				return;
 			}
-			if (arg0.equalsIgnoreCase("tk3")) {
+			if (command.equalsIgnoreCase("tk3")) {
 				Static239.method3551(3);
 				if (Static177.anInt2973 == 3) {
 					Static441.method5568("Entered tk3");
@@ -196,7 +196,7 @@ public final class Static400 {
 				Static441.method5568("Failed to enter tk3");
 				return;
 			}
-			if (arg0.equalsIgnoreCase("ot")) {
+			if (command.equalsIgnoreCase("ot")) {
 				Static323.aClass50_Sub1_1.aBoolean293 = !Static323.aClass50_Sub1_1.aBoolean293;
 				Static323.aClass50_Sub1_1.method2856(Static206.signLink);
 				Static249.aBoolean425 = false;
@@ -204,7 +204,7 @@ public final class Static400 {
 				Static441.method5568("ot=" + Static323.aClass50_Sub1_1.aBoolean293);
 				return;
 			}
-			if (arg0.equalsIgnoreCase("gb")) {
+			if (command.equalsIgnoreCase("gb")) {
 				Static323.aClass50_Sub1_1.aBoolean289 = !Static323.aClass50_Sub1_1.aBoolean289;
 				Static323.aClass50_Sub1_1.method2856(Static206.signLink);
 				Static249.aBoolean425 = false;
@@ -213,12 +213,12 @@ public final class Static400 {
 				return;
 			}
 			@Pc(568) int local568;
-			if (arg0.startsWith("shadows")) {
-				if (arg0.length() < 8) {
+			if (command.startsWith("shadows")) {
+				if (command.length() < 8) {
 					Static441.method5568("Invalid shadows value");
 					return;
 				}
-				@Pc(558) String local558 = arg0.substring(8);
+				@Pc(558) String local558 = command.substring(8);
 				local568 = Static88.method1590(local558) ? Static198.method3113(local558) : -1;
 				if (local568 >= 0 && local568 <= 2) {
 					Static323.aClass50_Sub1_1.method2852(Static177.anInt2973, local568);
@@ -231,7 +231,7 @@ public final class Static400 {
 				Static441.method5568("Invalid shadows value");
 				return;
 			}
-			if (arg0.startsWith("textures")) {
+			if (command.startsWith("textures")) {
 				Static323.aClass50_Sub1_1.aBoolean307 = !Static323.aClass50_Sub1_1.aBoolean307;
 				Static323.aClass50_Sub1_1.method2856(Static206.signLink);
 				Static249.aBoolean425 = false;
@@ -240,12 +240,12 @@ public final class Static400 {
 				Static441.method5568("textures=" + Static323.aClass50_Sub1_1.aBoolean307);
 				return;
 			}
-			if (arg0.startsWith("setba")) {
-				if (arg0.length() < 6) {
+			if (command.startsWith("setba")) {
+				if (command.length() < 6) {
 					Static441.method5568("Invalid buildarea value");
 					return;
 				}
-				local106 = Static198.method3113(arg0.substring(6));
+				local106 = Static198.method3113(command.substring(6));
 				if (local106 >= 0 && local106 <= Static53.method898(Static70.anInt1503)) {
 					Static323.aClass50_Sub1_1.anInt3434 = local106;
 					Static323.aClass50_Sub1_1.method2856(Static206.signLink);
@@ -256,37 +256,37 @@ public final class Static400 {
 				Static441.method5568("Invalid buildarea value");
 				return;
 			}
-			if (arg0.startsWith("setparticles")) {
-				if (arg0.length() < 13) {
+			if (command.startsWith("setparticles")) {
+				if (command.length() < 13) {
 					Static441.method5568("Invalid particles value");
 					return;
 				}
-				Static157.method2673(Static198.method3113(arg0.substring(13)));
+				Static157.method2673(Static198.method3113(command.substring(13)));
 				Static323.aClass50_Sub1_1.method2856(Static206.signLink);
 				Static249.aBoolean425 = false;
 				Static441.method5568("particles=" + Static218.method3279());
 				return;
 			}
-			if (arg0.startsWith("rect_debug")) {
-				if (arg0.length() < 10) {
+			if (command.startsWith("rect_debug")) {
+				if (command.length() < 10) {
 					Static441.method5568("Invalid rect_debug value");
 					return;
 				}
-				Static293.anInt5286 = Static198.method3113(arg0.substring(10).trim());
+				Static293.anInt5286 = Static198.method3113(command.substring(10).trim());
 				Static441.method5568("rect_debug=" + Static293.anInt5286);
 				return;
 			}
-			if (arg0.equalsIgnoreCase("qa_op_test")) {
+			if (command.equalsIgnoreCase("qa_op_test")) {
 				Static415.aBoolean626 = true;
 				Static441.method5568("qa_op_test=" + Static415.aBoolean626);
 				return;
 			}
-			if (arg0.equalsIgnoreCase("clipcomponents")) {
+			if (command.equalsIgnoreCase("clipcomponents")) {
 				Static449.aBoolean688 = !Static449.aBoolean688;
 				Static441.method5568("clipcomponents=" + Static449.aBoolean688);
 				return;
 			}
-			if (arg0.startsWith("bloom")) {
+			if (command.startsWith("bloom")) {
 				@Pc(812) boolean local812 = Static122.aClass19_16.method4301();
 				if (Static353.method4772(!local812)) {
 					if (!local812) {
@@ -299,7 +299,7 @@ public final class Static400 {
 				Static441.method5568("Failed to enable bloom");
 				return;
 			}
-			if (arg0.equalsIgnoreCase("tween")) {
+			if (command.equalsIgnoreCase("tween")) {
 				if (Static127.aBoolean244) {
 					Static127.aBoolean244 = false;
 					Static441.method5568("Forced tweening disabled.");
@@ -309,7 +309,7 @@ public final class Static400 {
 				Static441.method5568("Forced tweening ENABLED!");
 				return;
 			}
-			if (arg0.equalsIgnoreCase("shiftclick")) {
+			if (command.equalsIgnoreCase("shiftclick")) {
 				if (!Static434.isShiftClickEnabled) {
 					Static441.method5568("Shift-click ENABLED!");
 					Static434.isShiftClickEnabled = true;
@@ -319,15 +319,15 @@ public final class Static400 {
 				Static434.isShiftClickEnabled = false;
 				return;
 			}
-			if (arg0.equalsIgnoreCase("getcgcoord")) {
+			if (command.equalsIgnoreCase("getcgcoord")) {
 				Static441.method5568("x:" + (Static1.aClass16_Sub1_Sub5_Sub1_1.anInt6893 >> 7) + " z:" + (Static1.aClass16_Sub1_Sub5_Sub1_1.anInt6892 >> 7));
 				return;
 			}
-			if (arg0.equalsIgnoreCase("getheight")) {
+			if (command.equalsIgnoreCase("getheight")) {
 				Static441.method5568("Height: " + Static417.aClass65Array4[Static1.aClass16_Sub1_Sub5_Sub1_1.aByte82].l(Static1.aClass16_Sub1_Sub5_Sub1_1.anInt6893 >> 7, Static1.aClass16_Sub1_Sub5_Sub1_1.anInt6892 >> 7));
 				return;
 			}
-			if (arg0.equalsIgnoreCase("resetminimap")) {
+			if (command.equalsIgnoreCase("resetminimap")) {
 				Static293.aClass76_60.method2102();
 				Static293.aClass76_60.method2118();
 				Static76.aClass265_2.method5587();
@@ -336,12 +336,12 @@ public final class Static400 {
 				Static441.method5568("Minimap reset");
 				return;
 			}
-			if (arg0.startsWith("mc")) {
+			if (command.startsWith("mc")) {
 				if (!Static122.aClass19_16.method4264()) {
 					Static441.method5568("Current toolkit doesn't support multiple cores");
 					return;
 				}
-				local106 = Integer.parseInt(arg0.substring(3));
+				local106 = Integer.parseInt(command.substring(3));
 				if (local106 < 1) {
 					local106 = 1;
 				} else if (local106 > 4) {
@@ -353,72 +353,72 @@ public final class Static400 {
 				Static441.method5568("Render cores now: " + Static218.anInt4043);
 				return;
 			}
-			if (arg0.startsWith("cachespace")) {
+			if (command.startsWith("cachespace")) {
 				Static441.method5568("I(s): " + Static259.aClass68_26.method1781() + "/" + Static259.aClass68_26.method1785());
 				Static441.method5568("I(m): " + Static232.aClass68_25.method1781() + "/" + Static232.aClass68_25.method1785());
 				Static441.method5568("O(s): " + Static444.aClass206_3.aClass220_1.method4944() + "/" + Static444.aClass206_3.aClass220_1.method4954());
 				return;
 			}
-			if (arg0.equalsIgnoreCase("getcamerapos")) {
+			if (command.equalsIgnoreCase("getcamerapos")) {
 				Static441.method5568("Pos: " + Static1.aClass16_Sub1_Sub5_Sub1_1.aByte82 + "," + (Static180.anInt3453 + (Static163.anInt3197 >> 7) >> 6) + "," + (Static86.anInt1771 + (Static145.anInt2906 >> 7) >> 6) + "," + (Static180.anInt3453 + (Static163.anInt3197 >> 7) & 0x3F) + "," + ((Static145.anInt2906 >> 7) + Static86.anInt1771 & 0x3F) + " Height: " + (Static13.method135(Static163.anInt3197, Static1.aClass16_Sub1_Sub5_Sub1_1.aByte82, Static145.anInt2906) - Static100.anInt2024));
 				Static441.method5568("Look: " + Static1.aClass16_Sub1_Sub5_Sub1_1.aByte82 + "," + (Static180.anInt3453 + Static111.anInt2379 >> 6) + "," + (Static419.anInt6924 + Static86.anInt1771 >> 6) + "," + (Static111.anInt2379 + Static180.anInt3453 & 0x3F) + "," + (Static86.anInt1771 + Static419.anInt6924 & 0x3F) + " Height: " + (Static13.method135(Static111.anInt2379, Static1.aClass16_Sub1_Sub5_Sub1_1.aByte82, Static419.anInt6924) - Static238.anInt4509));
 				return;
 			}
-			if (arg0.equals("showocc")) {
+			if (command.equals("showocc")) {
 				Static420.aBoolean647 = !Static420.aBoolean647;
 				Static335.method4744();
 				Static441.method5568("showocc=" + Static420.aBoolean647);
 				return;
 			}
-			if (arg0.equals("wallocc")) {
+			if (command.equals("wallocc")) {
 				Static172.aBoolean282 = !Static172.aBoolean282;
 				Static335.method4744();
 				Static441.method5568("forcewallocc=" + Static172.aBoolean282);
 				return;
 			}
-			if (arg0.equals("renderprofile") || arg0.equals("rp")) {
+			if (command.equals("renderprofile") || command.equals("rp")) {
 				Static437.aBoolean477 = !Static437.aBoolean477;
 				Static122.aClass19_16.method4255(Static437.aBoolean477);
 				Static47.method768();
 				Static441.method5568("showprofiling=" + Static437.aBoolean477);
 				return;
 			}
-			if (arg0.equals("performancetest")) {
+			if (command.equals("performancetest")) {
 				Static441.method5568("Java toolkit: " + Static424.method5410(Static206.signLink));
 				Static441.method5568("GL toolkit:   " + Static424.method5410(Static206.signLink));
 				Static441.method5568("SSE toolkit:  " + Static424.method5410(Static206.signLink));
 				return;
 			}
-			if (arg0.equals("nonpcs")) {
+			if (command.equals("nonpcs")) {
 				Static66.aBoolean508 = !Static66.aBoolean508;
 				Static441.method5568("nonpcs=" + Static66.aBoolean508);
 				return;
 			}
-			if (arg0.equals("autoworld")) {
+			if (command.equals("autoworld")) {
 				Static129.method2288();
 				Static441.method5568("auto world selected");
 				return;
 			}
-			if (arg0.startsWith("pc")) {
+			if (command.startsWith("pc")) {
 				Static429.method5476(Static311.aClass215_69);
 				Static3.aClass4_Sub12_Sub1_5.p1(0);
 				local106 = Static3.aClass4_Sub12_Sub1_5.pos;
-				local568 = arg0.indexOf(" ", 4);
-				Static3.aClass4_Sub12_Sub1_5.pjstr(arg0.substring(3, local568));
-				Static417.method5359(arg0.substring(local568), Static3.aClass4_Sub12_Sub1_5);
+				local568 = command.indexOf(" ", 4);
+				Static3.aClass4_Sub12_Sub1_5.pjstr(command.substring(3, local568));
+				Static417.method5359(command.substring(local568), Static3.aClass4_Sub12_Sub1_5);
 				Static3.aClass4_Sub12_Sub1_5.pSize1(Static3.aClass4_Sub12_Sub1_5.pos - local106);
 				return;
 			}
-			if (arg0.equals("heap")) {
+			if (command.equals("heap")) {
 				Static441.method5568("Heap: " + Static70.anInt1503 + "MB");
 				return;
 			}
-			if (arg0.equals("savevarcs")) {
+			if (command.equals("savevarcs")) {
 				Static316.method4216();
 				Static441.method5568("perm varcs saved");
 				return;
 			}
-			if (arg0.equals("scramblevarcs")) {
+			if (command.equals("scramblevarcs")) {
 				for (local106 = 0; local106 < Static165.anIntArray210.length; local106++) {
 					if (Static22.aBooleanArray3[local106]) {
 						Static165.anIntArray210[local106] = (int) (Math.random() * 99999.0D);
@@ -431,78 +431,78 @@ public final class Static400 {
 				Static441.method5568("perm varcs scrambled");
 				return;
 			}
-			if (arg0.equals("showcolmap")) {
+			if (command.equals("showcolmap")) {
 				Static247.aBoolean424 = true;
 				Static277.method3932();
 				Static441.method5568("colmap is shown");
 				return;
 			}
-			if (arg0.equals("hidecolmap")) {
+			if (command.equals("hidecolmap")) {
 				Static247.aBoolean424 = false;
 				Static277.method3932();
 				Static441.method5568("colmap is hidden");
 				return;
 			}
-			if (arg0.equals("resetcache")) {
+			if (command.equals("resetcache")) {
 				Static409.method5485();
 				Static441.method5568("Caches reset");
 				return;
 			}
-			if (arg0.equals("profilecpu")) {
+			if (command.equals("profilecpu")) {
 				Static441.method5568(Static371.method4958() + "ms");
 				return;
 			}
-			if (arg0.startsWith("cpuusage")) {
-				local106 = Integer.parseInt(arg0.substring(9));
+			if (command.startsWith("cpuusage")) {
+				local106 = Integer.parseInt(command.substring(9));
 				if (local106 >= 0 && local106 <= 4) {
 					Static323.aClass50_Sub1_1.anInt3437 = local106;
 				}
 				Static441.method5568("cpuusage=" + Static323.aClass50_Sub1_1.anInt3437);
 				return;
 			}
-			if (arg0.startsWith("getclientvarpbit")) {
-				local106 = Integer.parseInt(arg0.substring(17));
+			if (command.startsWith("getclientvarpbit")) {
+				local106 = Integer.parseInt(command.substring(17));
 				Static441.method5568("varpbit=" + Static257.aClass114_1.method2825(local106));
 				return;
 			}
-			if (arg0.startsWith("getclientvarp")) {
-				local106 = Integer.parseInt(arg0.substring(14));
+			if (command.startsWith("getclientvarp")) {
+				local106 = Integer.parseInt(command.substring(14));
 				Static441.method5568("varp=" + Static257.aClass114_1.method2826(local106));
 				return;
 			}
-			if (arg0.startsWith("csprofileclear")) {
+			if (command.startsWith("csprofileclear")) {
 				Static271.method3893();
 				return;
 			}
-			if (arg0.startsWith("csprofileoutputc")) {
+			if (command.startsWith("csprofileoutputc")) {
 				Static271.method3895();
 				return;
 			}
-			if (arg0.startsWith("csprofileoutputt")) {
+			if (command.startsWith("csprofileoutputt")) {
 				Static271.method3895();
 				return;
 			}
-			if (arg0.startsWith("texsize")) {
-				local106 = Integer.parseInt(arg0.substring(8));
+			if (command.startsWith("texsize")) {
+				local106 = Integer.parseInt(command.substring(8));
 				Static122.aClass19_16.method4306(local106);
 				return;
 			}
-			if (arg0.equals("soundstreamcount")) {
+			if (command.equals("soundstreamcount")) {
 				Static441.method5568("Active streams: " + Static360.aClass4_Sub15_Sub2_2.method2953());
 				return;
 			}
 			if (Static403.anInt6667 == 30) {
 				Static429.method5476(Static106.aClass215_26);
-				Static3.aClass4_Sub12_Sub1_5.p1(arg0.length() + 2);
+				Static3.aClass4_Sub12_Sub1_5.p1(command.length() + 2);
 				Static3.aClass4_Sub12_Sub1_5.p1(arg1 ? 1 : 0);
-				Static3.aClass4_Sub12_Sub1_5.pjstr(arg0);
+				Static3.aClass4_Sub12_Sub1_5.pjstr(command);
 			}
-			if (arg0.startsWith("fps ") && ClientSettings.MODEWHERE_LIVE != ClientSettings.modewhere) {
-				Static13.method136(Static198.method3113(arg0.substring(4)));
+			if (command.startsWith("fps ") && ClientSettings.MODEWHERE_LIVE != ClientSettings.modewhere) {
+				Static13.method136(Static198.method3113(command.substring(4)));
 				return;
 			}
 			if (Static403.anInt6667 != 30) {
-				Static441.method5568("Unrecogonised commmand when not logged in: " + arg0);
+				Static441.method5568("Unrecogonised commmand when not logged in: " + command);
 			}
 		} catch (@Pc(1681) Exception local1681) {
 			Static441.method5568("Whoops, something went wrong.");

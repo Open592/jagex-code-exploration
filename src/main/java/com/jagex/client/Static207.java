@@ -1,6 +1,5 @@
 package com.jagex.client;
 
-import java.io.IOException;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;
@@ -46,21 +45,4 @@ public final class Static207 {
 		Static3.aClass4_Sub12_Sub1_5.p2(Static161.anInt3179);
 	}
 
-	@OriginalMember(owner = "client!kj", name = "b", descriptor = "(Z)Z")
-	public static boolean method4188() {
-		try {
-			return Static174.method2816();
-		} catch (@Pc(14) IOException local14) {
-			Static165.method2731();
-			return true;
-		} catch (@Pc(19) Exception local19) {
-			@Pc(77) String local77 = "T2 - " + (Static300.aClass22_246 == null ? -1 : Static300.aClass22_246.method527()) + "," + (Static380.aClass22_294 == null ? -1 : Static380.aClass22_294.method527()) + "," + (Static316.aClass22_257 == null ? -1 : Static316.aClass22_257.method527()) + " - " + Static454.anInt4075 + "," + (Static1.aClass16_Sub1_Sub5_Sub1_1.anIntArray426[0] + Static180.anInt3453) + "," + (Static86.anInt1771 + Static1.aClass16_Sub1_Sub5_Sub1_1.anIntArray427[0]) + " - ";
-			for (@Pc(79) int local79 = 0; local79 < Static454.anInt4075 && local79 < 50; local79++) {
-				local77 = local77 + Static146.aClass4_Sub12_Sub1_3.data[local79] + ",";
-			}
-			Static94.handleClientError(local19, local77);
-			Static251.method3639();
-			return true;
-		}
-	}
 }

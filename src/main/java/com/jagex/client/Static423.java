@@ -23,8 +23,4 @@ public final class Static423 {
 		Static99.A_SECONDARY_DOUBLY_LINKED_LIST___1.clear();
 	}
 
-	@OriginalMember(owner = "client!vi", name = "b", descriptor = "(Z)Z")
-	public static boolean method5406() {
-		return ClientSettings.MODEWHERE_LIVE != ClientSettings.modewhere || Static104.anInt2252 >= 2;
-	}
 }

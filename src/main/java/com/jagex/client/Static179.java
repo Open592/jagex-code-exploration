@@ -44,7 +44,7 @@ public final class Static179 {
 		}
 		local120.tinyKeyEncrypt(local8);
 		Static3.aClass4_Sub12_Sub1_5.pos = 0;
-		Static3.aClass4_Sub12_Sub1_5.p1(Static153.aClass60_8.anInt1812);
+		Static3.aClass4_Sub12_Sub1_5.p1(Class60.aClass60_8.anInt1812);
 		Static3.aClass4_Sub12_Sub1_5.p2(local30.pos + local120.pos + 2);
 		Static3.aClass4_Sub12_Sub1_5.p2(592);
 		Static3.aClass4_Sub12_Sub1_5.pArrayBuffer(local30.data, local30.pos);

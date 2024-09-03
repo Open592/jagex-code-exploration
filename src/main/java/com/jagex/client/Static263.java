@@ -18,22 +18,6 @@ public final class Static263 {
 	@OriginalMember(owner = "client!nh", name = "G", descriptor = "Z")
 	public static boolean isRunningModernJavaVersion = false;
 
-	@OriginalMember(owner = "client!nh", name = "f", descriptor = "(I)V")
-	public static void method3806() {
-		if (!Static423.method5406()) {
-			return;
-		}
-		if (Static102.aStringArray8 == null) {
-			Static19.method198();
-		}
-		Static69.aBoolean292 = true;
-		Static259.anInt4882 = 0;
-		try {
-			Static348.aClipboard1 = Static6.client.getToolkit().getSystemClipboard();
-		} catch (@Pc(16) Exception local16) {
-		}
-	}
-
 	@OriginalMember(owner = "client!nh", name = "a", descriptor = "(BII)I")
 	public static int method3807(@OriginalArg(1) int arg0, @OriginalArg(2) int arg1) {
 		@Pc(9) int local9 = arg0 * 57 + arg1;
