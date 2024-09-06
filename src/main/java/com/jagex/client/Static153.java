@@ -118,11 +118,6 @@ public final class Static153 {
 		return local38;
 	}
 
-	@OriginalMember(owner = "client!hp", name = "d", descriptor = "(I)J")
-	public static long method2607() {
-		return Static63.aClass36_1.method2252();
-	}
-
 	@OriginalMember(owner = "client!hp", name = "a", descriptor = "(IB)V")
 	public static void method2610(@OriginalArg(0) int arg0) {
 		@Pc(7) int local7 = Static24.anInt5323 - Static294.anInt446;

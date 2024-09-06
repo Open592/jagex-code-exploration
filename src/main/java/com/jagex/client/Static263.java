@@ -15,9 +15,6 @@ public final class Static263 {
 	@OriginalMember(owner = "client!nh", name = "D", descriptor = "[Z")
 	public static final boolean[] aBooleanArray15 = new boolean[100];
 
-	@OriginalMember(owner = "client!nh", name = "G", descriptor = "Z")
-	public static boolean isRunningModernJavaVersion = false;
-
 	@OriginalMember(owner = "client!nh", name = "a", descriptor = "(BII)I")
 	public static int method3807(@OriginalArg(1) int arg0, @OriginalArg(2) int arg1) {
 		@Pc(9) int local9 = arg0 * 57 + arg1;

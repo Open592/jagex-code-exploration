@@ -51,16 +51,16 @@ public final class qa extends Class19 implements Interface4 {
 	private final Class31 aClass31_5;
 
 	@OriginalMember(owner = "client!qa", name = "<init>", descriptor = "(ILjava/awt/Canvas;Lclient!ga;Lclient!et;)V")
-	public qa(@OriginalArg(0) int arg0, @OriginalArg(1) Canvas arg1, @OriginalArg(2) Interface7 arg2, @OriginalArg(3) SignLink arg3) {
+	public qa(@OriginalArg(0) int arg0, @OriginalArg(1) Canvas arg1, @OriginalArg(2) Interface7 arg2, @OriginalArg(3) SignLink signLink) {
 		super(arg0, arg2);
 		try {
 			if (!Static319.aBoolean495) {
-				if (arg3 == null) {
+				if (signLink == null) {
 					System.loadLibrary("jawt");
 					System.loadLibrary("sw3d");
 					Static319.aBoolean495 = Boolean.TRUE;
 				} else {
-					arg3.method1740(this.getClass());
+					signLink.method1740(this.getClass());
 					Static319.aBoolean495 = Boolean.TRUE;
 				}
 			}

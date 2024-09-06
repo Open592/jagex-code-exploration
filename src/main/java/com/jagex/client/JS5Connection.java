@@ -87,11 +87,13 @@ public final class JS5Connection {
 		this.aClass4_Sub1_Sub6_Sub1_2 = null;
 
 		while (true) {
-			@Pc(40) JS5NetRequest local40 = (JS5NetRequest) this.pendingRegularRequests.popHead();
-			if (local40 == null) {
+			@Pc(40) JS5NetRequest request = (JS5NetRequest) this.pendingRegularRequests.popHead();
+
+			if (request == null) {
 				while (true) {
-					local40 = (JS5NetRequest) this.activeRegularRequests.popHead();
-					if (local40 == null) {
+					request = (JS5NetRequest) this.activeRegularRequests.popHead();
+
+					if (request == null) {
 						if (this.aByte94 != 0) {
 							try {
 								this.outgoingPacket.pos = 0;
@@ -113,10 +115,10 @@ public final class JS5Connection {
 						this.aLong217 = MonotonicClock.getCurrentTimeInMilliseconds();
 						return;
 					}
-					this.activeUrgentRequests.insert(local40);
+					this.activeUrgentRequests.insert(request);
 				}
 			}
-			this.pendingUrgentRequests.insert(local40);
+			this.pendingUrgentRequests.insert(request);
 		}
 	}
 
@@ -234,12 +236,13 @@ public final class JS5Connection {
 	@OriginalMember(owner = "client!vn", name = "b", descriptor = "(I)Z")
 	public boolean method5468() {
 		@Pc(18) int local18;
+
 		if (this.serverConnection != null) {
-			@Pc(11) long local11 = MonotonicClock.getCurrentTimeInMilliseconds();
+			@Pc(11) long currentTimeInMilliseconds = MonotonicClock.getCurrentTimeInMilliseconds();
 
-			local18 = (int) (local11 - this.aLong217);
+			local18 = (int) (currentTimeInMilliseconds - this.aLong217);
 
-			this.aLong217 = local11;
+			this.aLong217 = currentTimeInMilliseconds;
 
 			if (local18 > 200) {
 				local18 = 200;
@@ -250,8 +253,9 @@ public final class JS5Connection {
 			if (this.anInt7061 > 30000) {
 				try {
 					this.serverConnection.shutdown();
-				} catch (@Pc(42) Exception local42) {
+				} catch (@Pc(42) Exception ignored) {
 				}
+
 				this.serverConnection = null;
 			}
 		}

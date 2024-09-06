@@ -4,13 +4,9 @@ import com.jagex.signlink.MonotonicClock;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalClass;
 import org.openrs2.deob.annotation.OriginalMember;
-import org.openrs2.deob.annotation.Pc;
 
 @OriginalClass("client!hp")
 public final class SecondaryNode_Sub1_Sub11 extends SecondaryNode {
-
-	@OriginalMember(owner = "client!hp", name = "Y", descriptor = "[Lclient!eh;")
-	private static final Class60[] aClass60Array1 = new Class60[32];
 
 	@OriginalMember(owner = "client!hp", name = "F", descriptor = "I")
 	public int anInt3079;
@@ -23,13 +19,6 @@ public final class SecondaryNode_Sub1_Sub11 extends SecondaryNode {
 
 	@OriginalMember(owner = "client!hp", name = "L", descriptor = "I")
 	public int anInt3083;
-
-	static {
-		@Pc(65) Class60[] local65 = Static382.method5040();
-		for (@Pc(67) int local67 = 0; local67 < local65.length; local67++) {
-			aClass60Array1[local65[local67].anInt1812] = local65[local67];
-		}
-	}
 
 	@OriginalMember(owner = "client!hp", name = "<init>", descriptor = "(II)V")
 	public SecondaryNode_Sub1_Sub11(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1) {

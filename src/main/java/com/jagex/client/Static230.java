@@ -108,7 +108,7 @@ public final class Static230 {
 			Static148.method4498(arg1, Static148.anInt5719, Static148.anInt5721);
 			Static69.anInt3429 = 60;
 			Static299.method4087(true);
-			Static252.method3660();
+			GameShell.method3660();
 		} else if (Static69.anInt3429 == 60) {
 			if (Static148.aClass76_73.method2107(Static148.aClass4_Sub1_Sub5_3.aString16 + "_staticelements")) {
 				if (!Static148.aClass76_73.method2103(Static148.aClass4_Sub1_Sub5_3.aString16 + "_staticelements")) {
@@ -121,47 +121,47 @@ public final class Static230 {
 			Static148.method4503();
 			Static69.anInt3429 = 70;
 			Static299.method4087(true);
-			Static252.method3660();
+			GameShell.method3660();
 		} else if (Static69.anInt3429 == 70) {
 			Static258.aClass212_6 = new Class212(arg1, 11, true, Static273.aCanvas5);
 			Static69.anInt3429 = 73;
 			Static299.method4087(true);
-			Static252.method3660();
+			GameShell.method3660();
 		} else if (Static69.anInt3429 == 73) {
 			Static373.aClass212_8 = new Class212(arg1, 12, true, Static273.aCanvas5);
 			Static69.anInt3429 = 76;
 			Static299.method4087(true);
-			Static252.method3660();
+			GameShell.method3660();
 		} else if (Static69.anInt3429 == 76) {
 			Static239.aClass212_5 = new Class212(arg1, 14, true, Static273.aCanvas5);
 			Static69.anInt3429 = 79;
 			Static299.method4087(true);
-			Static252.method3660();
+			GameShell.method3660();
 		} else if (Static69.anInt3429 == 79) {
 			Static108.aClass212_3 = new Class212(arg1, 17, true, Static273.aCanvas5);
 			Static69.anInt3429 = 82;
 			Static299.method4087(true);
-			Static252.method3660();
+			GameShell.method3660();
 		} else if (Static69.anInt3429 == 82) {
 			Static262.aClass212_7 = new Class212(arg1, 19, true, Static273.aCanvas5);
 			Static69.anInt3429 = 85;
 			Static299.method4087(true);
-			Static252.method3660();
+			GameShell.method3660();
 		} else if (Static69.anInt3429 == 85) {
 			Static81.aClass212_2 = new Class212(arg1, 22, true, Static273.aCanvas5);
 			Static69.anInt3429 = 88;
 			Static299.method4087(true);
-			Static252.method3660();
+			GameShell.method3660();
 		} else if (Static69.anInt3429 == 88) {
 			Static58.aClass212_1 = new Class212(arg1, 26, true, Static273.aCanvas5);
 			Static69.anInt3429 = 91;
 			Static299.method4087(true);
-			Static252.method3660();
+			GameShell.method3660();
 		} else {
 			Static117.aClass212_4 = new Class212(arg1, 30, true, Static273.aCanvas5);
 			Static69.anInt3429 = 100;
 			Static299.method4087(true);
-			Static252.method3660();
+			GameShell.method3660();
 			System.gc();
 		}
 	}

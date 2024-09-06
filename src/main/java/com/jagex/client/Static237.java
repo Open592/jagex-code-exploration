@@ -14,7 +14,7 @@ public final class Static237 {
 		if (arg5 == arg6) {
 			Static103.method1815(arg2, arg5, arg3, arg4, arg0, arg1);
 		} else if (Static354.anInt6186 <= arg2 - arg5 && arg5 + arg2 <= Static208.anInt2656 && arg4 - arg6 >= Static376.anInt6287 && Static168.anInt3256 >= arg6 + arg4) {
-			Static243.method3558(arg4, arg6, arg5, arg0, arg1, arg2, arg3);
+			GameShell.method3558(arg4, arg6, arg5, arg0, arg1, arg2, arg3);
 		} else {
 			Static239.method3548(arg2, arg0, arg5, arg3, arg6, arg4, arg1);
 		}

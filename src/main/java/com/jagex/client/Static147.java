@@ -185,7 +185,7 @@ public final class Static147 {
 								local244 = local90 + local23.anInt6833;
 								local249 = local95 + 15;
 								if (Static325.isNotRunningInLive) {
-									Static207.aClass46_9.method5059("Fps:" + Static213.anInt3956, local249, -256, local244);
+									Static207.aClass46_9.method5059("Fps:" + GameShell.framesPerSecond, local249, -256, local244);
 									local249 += 15;
 									@Pc(495) Runtime local495 = Runtime.getRuntime();
 									local505 = (int) ((local495.totalMemory() - local495.freeMemory()) / 1024L);

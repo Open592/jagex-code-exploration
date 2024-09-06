@@ -12,20 +12,17 @@ public final class Static437 {
 	@OriginalMember(owner = "client!wa", name = "e", descriptor = "Z")
 	public static boolean aBoolean477 = false;
 
-	@OriginalMember(owner = "client!wa", name = "f", descriptor = "Lclient!o;")
-	public static GameShell anGameShell_2 = null;
-
 	@OriginalMember(owner = "client!wa", name = "g", descriptor = "[C")
 	public static final char[] aCharArray6 = new char[] { '[', ']', '#' };
 
 	@OriginalMember(owner = "client!wa", name = "a", descriptor = "(ZIZLjava/lang/String;)I")
-	public static int method4041(@OriginalArg(1) int arg0, @OriginalArg(3) String arg1) {
+	public static int stringToInt(@OriginalArg(1) int base, @OriginalArg(3) String input) {
 		@Pc(26) boolean local26 = false;
 		@Pc(28) boolean local28 = false;
 		@Pc(30) int local30 = 0;
-		@Pc(33) int local33 = arg1.length();
+		@Pc(33) int local33 = input.length();
 		for (@Pc(35) int local35 = 0; local35 < local33; local35++) {
-			@Pc(41) char local41 = arg1.charAt(local35);
+			@Pc(41) char local41 = input.charAt(local35);
 			if (local35 == 0) {
 				if (local41 == '-') {
 					local26 = true;
@@ -45,14 +42,14 @@ public final class Static437 {
 			} else {
 				throw new NumberFormatException();
 			}
-			if (local67 >= arg0) {
+			if (local67 >= base) {
 				throw new NumberFormatException();
 			}
 			if (local26) {
 				local67 = -local67;
 			}
-			@Pc(111) int local111 = local67 + local30 * arg0;
-			if (local111 / arg0 != local30) {
+			@Pc(111) int local111 = local67 + local30 * base;
+			if (local111 / base != local30) {
 				throw new NumberFormatException();
 			}
 			local30 = local111;

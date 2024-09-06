@@ -7,7 +7,7 @@ import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;
 
 @OriginalClass("client!ef")
-public final class Class36_Sub2 extends Class36 {
+public final class SystemMillisecondFrameTimer extends FrameTimer {
 
 	@OriginalMember(owner = "client!ef", name = "f", descriptor = "J")
 	private long aLong63 = 0L;
@@ -54,9 +54,11 @@ public final class Class36_Sub2 extends Class36 {
 
 	@OriginalMember(owner = "client!ef", name = "a", descriptor = "(ZI)I")
 	@Override
-	public int method2253(@OriginalArg(1) int arg0) {
-		@Pc(4) long local4 = (long) arg0 * 1000000L;
+	public int method2253(@OriginalArg(1) int frameTimeInMilliseconds) {
+		@Pc(4) long local4 = (long) frameTimeInMilliseconds * 1000000L;
+
 		this.aLong63 += this.method1557();
+
 		if (this.aLong63 < this.aLong65) {
 			Static435.sleepFor((this.aLong65 - this.aLong63) / 1000000L);
 			this.aLong64 += this.aLong65 - this.aLong63;
@@ -64,20 +66,24 @@ public final class Class36_Sub2 extends Class36 {
 			this.aLong65 += local4;
 			return 1;
 		}
+
 		@Pc(65) int local65 = 0;
+
 		do {
 			this.aLong65 += local4;
 			local65++;
 		} while (local65 < 10 && this.aLong65 < this.aLong63);
+
 		if (this.aLong65 < this.aLong63) {
 			this.aLong65 = this.aLong63;
 		}
+
 		return local65;
 	}
 
 	@OriginalMember(owner = "client!ef", name = "a", descriptor = "(B)V")
 	@Override
-	public void method2248() {
+	public void reset() {
 		if (this.aLong65 > this.aLong63) {
 			this.aLong63 += this.aLong65 - this.aLong63;
 		}

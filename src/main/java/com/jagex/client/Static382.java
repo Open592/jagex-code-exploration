@@ -12,11 +12,6 @@ public final class Static382 {
 	@OriginalMember(owner = "client!tg", name = "O", descriptor = "I")
 	public static int anInt6447 = 0;
 
-	@OriginalMember(owner = "client!tg", name = "b", descriptor = "(Z)[Lclient!eh;")
-	public static Class60[] method5040() {
-		return new Class60[] { Class60.aClass60_1, Class60.aClass60_2, Class60.aClass60_3, Class60.aClass60_4, Class60.aClass60_5, Class60.aClass60_6, Class60.aClass60_7, Class60.aClass60_8, Class60.aClass60_9, Class60.aClass60_10 };
-	}
-
 	@OriginalMember(owner = "client!tg", name = "f", descriptor = "(I)V")
 	public static void method5041() {
 		if (Static32.aBoolean63) {

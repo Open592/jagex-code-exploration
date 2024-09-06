@@ -40,6 +40,33 @@ public abstract class GameShell extends Applet implements Runnable, FocusListene
 	@OriginalMember(owner = "client!o", name = "P", descriptor = "I")
 	public static int anInt970 = 0;
 
+	@OriginalMember(owner = "client!eb", name = "g", descriptor = "J")
+	public static volatile long aLong59 = 0L;
+
+	@OriginalMember(owner = "client!nh", name = "G", descriptor = "Z")
+	public static boolean isRunningModernJavaVersion = false;
+
+	@OriginalMember(owner = "client!ir", name = "c", descriptor = "J")
+	public static long timeToShutdown = 0L;
+
+	@OriginalMember(owner = "client!cw", name = "Lb", descriptor = "Lclient!kk;")
+	public static FrameTimer aFrameTimer_1;
+
+	@OriginalMember(owner = "client!wa", name = "f", descriptor = "Lclient!o;")
+	public static GameShell instance = null;
+
+	/**
+	 * Defaults to 50 FPS
+	 */
+	@OriginalMember(owner = "client!mg", name = "i", descriptor = "I")
+	public static int frameTimeInMilliseconds = 20;
+
+	@OriginalMember(owner = "client!kp", name = "J", descriptor = "I")
+	public static int framesPerSecond = 0;
+
+	@OriginalMember(owner = "client!ur", name = "f", descriptor = "I")
+	public static int anInt6741;
+
 	@OriginalMember(owner = "client!o", name = "S", descriptor = "I")
 	private static int anInt972;
 
@@ -56,7 +83,7 @@ public abstract class GameShell extends Applet implements Runnable, FocusListene
 	private boolean handledGameError = false;
 
 	@OriginalMember(owner = "client!o", name = "f", descriptor = "Z")
-	private boolean aBoolean89 = false;
+	private boolean jagMiscNativeLibraryLoaded = false;
 
 	@OriginalMember(owner = "client!o", name = "providesignlink", descriptor = "(Lclient!et;)V")
 	public static void providesignlink(@OriginalArg(0) SignLink arg0) {
@@ -200,6 +227,128 @@ public abstract class GameShell extends Applet implements Runnable, FocusListene
 		Static182.aClass68_19.method1777();
 	}
 
+	@OriginalMember(owner = "client!mg", name = "a", descriptor = "(IIIIIIII)V")
+	public static void method3558(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(5) int arg4, @OriginalArg(6) int arg5, @OriginalArg(7) int arg6) {
+		@Pc(12) int local12 = 0;
+		@Pc(14) int local14 = arg1;
+		@Pc(16) int local16 = 0;
+		@Pc(21) int local21 = arg2 - arg4;
+		@Pc(25) int local25 = arg1 - arg4;
+		@Pc(29) int local29 = arg2 * arg2;
+		@Pc(33) int local33 = arg1 * arg1;
+		@Pc(37) int local37 = local21 * local21;
+		@Pc(41) int local41 = local25 * local25;
+		@Pc(45) int local45 = local33 << 1;
+		@Pc(49) int local49 = local29 << 1;
+		@Pc(53) int local53 = local41 << 1;
+		@Pc(57) int local57 = local37 << 1;
+		@Pc(61) int local61 = arg1 << 1;
+		@Pc(65) int local65 = local25 << 1;
+		@Pc(75) int local75 = local29 * (1 - local61) + local45;
+		@Pc(84) int local84 = local33 - (local61 - 1) * local49;
+		@Pc(93) int local93 = local53 + (1 - local65) * local37;
+		@Pc(101) int local101 = local41 - local57 * (local65 - 1);
+		@Pc(105) int local105 = local29 << 2;
+		@Pc(109) int local109 = local33 << 2;
+		@Pc(113) int local113 = local37 << 2;
+		@Pc(117) int local117 = local41 << 2;
+		@Pc(121) int local121 = local45 * 3;
+		@Pc(127) int local127 = local49 * (local61 - 3);
+		@Pc(131) int local131 = local53 * 3;
+		@Pc(137) int local137 = (local65 - 3) * local57;
+		@Pc(139) int local139 = local109;
+		@Pc(145) int local145 = (arg1 - 1) * local105;
+		@Pc(147) int local147 = local117;
+		@Pc(153) int local153 = (local25 - 1) * local113;
+		@Pc(157) int[] local157 = Static96.anIntArrayArray21[arg0];
+		Static251.method3640(arg5 - arg2, arg3, arg5 - local21, local157);
+		Static251.method3640(arg5 - local21, arg6, arg5 + local21, local157);
+		Static251.method3640(arg5 + local21, arg3, arg5 + arg2, local157);
+		while (local14 > 0) {
+			@Pc(205) boolean local205 = local25 >= local14;
+			if (local75 < 0) {
+				while (local75 < 0) {
+					local84 += local139;
+					local75 += local121;
+					local139 += local109;
+					local12++;
+					local121 += local109;
+				}
+			}
+			if (local205) {
+				if (local93 < 0) {
+					while (local93 < 0) {
+						local101 += local147;
+						local93 += local131;
+						local147 += local117;
+						local131 += local117;
+						local16++;
+					}
+				}
+				if (local101 < 0) {
+					local101 += local147;
+					local93 += local131;
+					local147 += local117;
+					local131 += local117;
+					local16++;
+				}
+				local93 += -local153;
+				local101 += -local137;
+				local137 -= local113;
+				local153 -= local113;
+			}
+			if (local84 < 0) {
+				local84 += local139;
+				local75 += local121;
+				local139 += local109;
+				local12++;
+				local121 += local109;
+			}
+			local84 += -local127;
+			local75 += -local145;
+			local145 -= local105;
+			local127 -= local105;
+			local14--;
+			@Pc(342) int local342 = arg0 - local14;
+			@Pc(346) int local346 = local14 + arg0;
+			@Pc(350) int local350 = local12 + arg5;
+			@Pc(354) int local354 = arg5 - local12;
+			if (local205) {
+				@Pc(378) int local378 = arg5 + local16;
+				@Pc(383) int local383 = arg5 - local16;
+				Static251.method3640(local354, arg3, local383, Static96.anIntArrayArray21[local342]);
+				Static251.method3640(local383, arg6, local378, Static96.anIntArrayArray21[local342]);
+				Static251.method3640(local378, arg3, local350, Static96.anIntArrayArray21[local342]);
+				Static251.method3640(local354, arg3, local383, Static96.anIntArrayArray21[local346]);
+				Static251.method3640(local383, arg6, local378, Static96.anIntArrayArray21[local346]);
+				Static251.method3640(local378, arg3, local350, Static96.anIntArrayArray21[local346]);
+			} else {
+				Static251.method3640(local354, arg3, local350, Static96.anIntArrayArray21[local342]);
+				Static251.method3640(local354, arg3, local350, Static96.anIntArrayArray21[local346]);
+			}
+		}
+	}
+
+	@OriginalMember(owner = "client!al", name = "a", descriptor = "(IB)V")
+	public static void calculateFrameTimeFromFPS(@OriginalArg(0) int framesPerSecond) {
+		frameTimeInMilliseconds = 1000 / framesPerSecond;
+	}
+
+	@OriginalMember(owner = "client!mq", name = "e", descriptor = "(B)V")
+	public static void method3660() {
+		aFrameTimer_1.reset();
+
+		for (@Pc(10) int local10 = 0; local10 < 32; local10++) {
+			Static347.aLongArray8[local10] = 0L;
+		}
+
+		for (@Pc(22) int local22 = 0; local22 < 32; local22++) {
+			Static142.aLongArray6[local22] = 0L;
+		}
+
+		anInt6741 = 0;
+	}
+
 	@OriginalMember(owner = "client!o", name = "a", descriptor = "(I)Z")
 	protected final boolean isValidHost() {
 		@Pc(16) String host = this.getDocumentBase().getHost().toLowerCase();
@@ -229,19 +378,25 @@ public abstract class GameShell extends Applet implements Runnable, FocusListene
 
 	@OriginalMember(owner = "client!o", name = "b", descriptor = "(I)V")
 	private void method870() {
-		@Pc(13) long local13 = MonotonicClock.getCurrentTimeInMilliseconds();
-		@Pc(17) long local17 = Static142.aLongArray6[Static21.anInt290];
-		Static142.aLongArray6[Static21.anInt290] = local13;
+		@Pc(13) long currentTimeInMilliseconds = MonotonicClock.getCurrentTimeInMilliseconds();
+		@Pc(17) long previousTimeInMilliseconds = Static142.aLongArray6[Static21.anInt290];
+
+		Static142.aLongArray6[Static21.anInt290] = currentTimeInMilliseconds;
+
 		@Pc(36) boolean local36;
-		if (local17 == 0L || local17 >= local13) {
+
+		if (previousTimeInMilliseconds == 0L || previousTimeInMilliseconds >= currentTimeInMilliseconds) {
 			local36 = false;
 		} else {
 			local36 = true;
 		}
+
 		Static21.anInt290 = Static21.anInt290 + 1 & 0x1F;
+
 		synchronized (this) {
 			Static265.aBoolean457 = Static198.isFocused;
 		}
+
 		this.method872();
 	}
 
@@ -279,8 +434,8 @@ public abstract class GameShell extends Applet implements Runnable, FocusListene
 	@OriginalMember(owner = "client!o", name = "start", descriptor = "()V")
 	@Override
 	public final void start() {
-		if (Static437.anGameShell_2 == this && !Static438.aBoolean675) {
-			Static173.timeToShutdown = 0L;
+		if (instance == this && !Static438.aBoolean675) {
+			timeToShutdown = 0L;
 		}
 	}
 
@@ -328,17 +483,17 @@ public abstract class GameShell extends Applet implements Runnable, FocusListene
 		Static265.aBoolean457 = true;
 		Static100.aBoolean189 = true;
 		Static84.aBoolean383 = false;
-		Static83.aLong59 = MonotonicClock.getCurrentTimeInMilliseconds();
+		aLong59 = MonotonicClock.getCurrentTimeInMilliseconds();
 	}
 
 	@OriginalMember(owner = "client!o", name = "paint", descriptor = "(Ljava/awt/Graphics;)V")
 	@Override
 	public final synchronized void paint(@OriginalArg(0) Graphics arg0) {
-		if (Static437.anGameShell_2 != this || Static438.aBoolean675) {
+		if (instance != this || Static438.aBoolean675) {
 			return;
 		}
 		Static100.aBoolean189 = true;
-		if (Static263.isRunningModernJavaVersion && MonotonicClock.getCurrentTimeInMilliseconds() - Static83.aLong59 > 1000L) {
+		if (isRunningModernJavaVersion && MonotonicClock.getCurrentTimeInMilliseconds() - aLong59 > 1000L) {
 			@Pc(24) Rectangle local24 = arg0.getClipBounds();
 			if (local24 == null || Static425.anInt7000 <= local24.width && Static17.anInt222 <= local24.height) {
 				Static84.aBoolean383 = true;
@@ -359,8 +514,8 @@ public abstract class GameShell extends Applet implements Runnable, FocusListene
 	@OriginalMember(owner = "client!o", name = "stop", descriptor = "()V")
 	@Override
 	public final void stop() {
-		if (Static437.anGameShell_2 == this && !Static438.aBoolean675) {
-			Static173.timeToShutdown = MonotonicClock.getCurrentTimeInMilliseconds() + 4000L;
+		if (instance == this && !Static438.aBoolean675) {
+			timeToShutdown = MonotonicClock.getCurrentTimeInMilliseconds() + 4000L;
 		}
 	}
 
@@ -395,14 +550,16 @@ public abstract class GameShell extends Applet implements Runnable, FocusListene
 			this.method886();
 		} catch (@Pc(33) Exception local33) {
 		}
-		if (this.aBoolean89) {
+
+		if (this.jagMiscNativeLibraryLoaded) {
 			try {
 				jagmisc.quit();
 			} catch (@Pc(39) Throwable local39) {
 			}
-			this.aBoolean89 = false;
+			this.jagMiscNativeLibraryLoaded = false;
 		}
-		@Pc(48) Message local48 = Static206.signLink.method1746(Static437.anGameShell_2.getClass());
+
+		@Pc(48) Message local48 = Static206.signLink.method1746(instance.getClass());
 		while (local48.status == 0) {
 			Static435.sleepFor(100L);
 		}
@@ -431,20 +588,26 @@ public abstract class GameShell extends Applet implements Runnable, FocusListene
 
 	@OriginalMember(owner = "client!o", name = "c", descriptor = "(B)V")
 	public final void method877() {
-		if (this.aBoolean89) {
+		if (this.jagMiscNativeLibraryLoaded) {
 			return;
 		}
+
 		try {
-			@Pc(22) Message local22 = Static206.signLink.method1736(Static437.anGameShell_2.getClass());
+			@Pc(22) Message local22 = Static206.signLink.method1736(instance.getClass());
+
 			while (local22.status == 0) {
 				Static435.sleepFor(100L);
 			}
+
 			if (local22.output != null) {
 				throw (Throwable) local22.output;
 			}
+
 			jagmisc.init();
-			this.aBoolean89 = true;
-			Static63.aClass36_1 = Static337.method4580();
+
+			this.jagMiscNativeLibraryLoaded = true;
+
+			aFrameTimer_1 = FrameTimer.getFrameTimer();
 		} catch (@Pc(50) Throwable local50) {
 		}
 	}
@@ -452,8 +615,8 @@ public abstract class GameShell extends Applet implements Runnable, FocusListene
 	@OriginalMember(owner = "client!o", name = "destroy", descriptor = "()V")
 	@Override
 	public final void destroy() {
-		if (Static437.anGameShell_2 == this && !Static438.aBoolean675) {
-			Static173.timeToShutdown = MonotonicClock.getCurrentTimeInMilliseconds();
+		if (instance == this && !Static438.aBoolean675) {
+			timeToShutdown = MonotonicClock.getCurrentTimeInMilliseconds();
 			Static435.sleepFor(5000L);
 			Static386.signLink = null;
 			this.shutdown(false);
@@ -472,10 +635,10 @@ public abstract class GameShell extends Applet implements Runnable, FocusListene
 	@OriginalMember(owner = "client!o", name = "a", descriptor = "(IIIIB)V")
 	protected final void load(@OriginalArg(1) int modewhat, @OriginalArg(2) int height, @OriginalArg(3) int width) {
 		try {
-			if (Static437.anGameShell_2 == null) {
+			if (instance == null) {
 				Static303.yPOS = 0;
 				Static230.xPOS = 0;
-				Static437.anGameShell_2 = this;
+				instance = this;
 				Static302.height = height;
 				Static17.anInt222 = height;
 				Static13.gameVersion = 592;
@@ -554,7 +717,7 @@ public abstract class GameShell extends Applet implements Runnable, FocusListene
 					}
 
 					if (javaOneMinorVersion >= 5) {
-						Static263.isRunningModernJavaVersion = true;
+						isRunningModernJavaVersion = true;
 					}
 				}
 
@@ -573,13 +736,13 @@ public abstract class GameShell extends Applet implements Runnable, FocusListene
 				Static112.method2036();
 				this.method874();
 				this.method883();
-				Static63.aClass36_1 = Static337.method4580();
+				aFrameTimer_1 = FrameTimer.getFrameTimer();
 				this.method877();
 
-				while (Static173.timeToShutdown == 0L || MonotonicClock.getCurrentTimeInMilliseconds() < Static173.timeToShutdown) {
-					Static411.anInt6741 = Static63.aClass36_1.method2253(Static243.anInt4535);
+				while (timeToShutdown == 0L || MonotonicClock.getCurrentTimeInMilliseconds() < timeToShutdown) {
+					anInt6741 = aFrameTimer_1.method2253(frameTimeInMilliseconds);
 
-					for (int i = 0; i < Static411.anInt6741; i++) {
+					for (int i = 0; i < anInt6741; i++) {
 						this.method870();
 					}
 
@@ -607,7 +770,7 @@ public abstract class GameShell extends Applet implements Runnable, FocusListene
 			Static13.gameVersion = 592;
 			Static302.height = 768;
 			Static17.anInt222 = 768;
-			Static437.anGameShell_2 = this;
+			instance = this;
 			Static226.aFrame1 = new Frame();
 			Static226.aFrame1.setTitle("Jagex");
 			Static226.aFrame1.setResizable(true);
@@ -682,12 +845,16 @@ public abstract class GameShell extends Applet implements Runnable, FocusListene
 	private void method892() {
 		@Pc(10) long local10 = MonotonicClock.getCurrentTimeInMilliseconds();
 		@Pc(14) long local14 = Static347.aLongArray8[Static406.anInt6705];
+
 		Static347.aLongArray8[Static406.anInt6705] = local10;
+
 		if (local14 != 0L && local10 > local14) {
 			@Pc(38) int local38 = (int) (local10 - local14);
-			Static213.anInt3956 = ((local38 >> 1) + 32000) / local38;
+			framesPerSecond = ((local38 >> 1) + 32000) / local38;
 		}
+
 		Static406.anInt6705 = Static406.anInt6705 + 1 & 0x1F;
+
 		if (Static452.anInt7357++ > 50) {
 			Static452.anInt7357 -= 50;
 			Static100.aBoolean189 = true;
@@ -700,6 +867,7 @@ public abstract class GameShell extends Applet implements Runnable, FocusListene
 				Static273.aCanvas5.setLocation(Static230.xPOS, Static303.yPOS);
 			}
 		}
+
 		this.method891();
 	}
 }

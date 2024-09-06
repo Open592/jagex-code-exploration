@@ -20,7 +20,7 @@ public final class Static198 {
 
 	@OriginalMember(owner = "client!jv", name = "a", descriptor = "(Ljava/lang/String;I)I")
 	public static int method3113(@OriginalArg(0) String arg0) {
-		return Static437.method4041(10, arg0);
+		return Static437.stringToInt(10, arg0);
 	}
 
 	@OriginalMember(owner = "client!jv", name = "c", descriptor = "(I)V")

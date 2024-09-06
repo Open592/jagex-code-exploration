@@ -2,7 +2,6 @@ package com.jagex.client;
 
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalMember;
-import org.openrs2.deob.annotation.Pc;
 
 public final class Static337 {
 
@@ -19,16 +18,4 @@ public final class Static337 {
 		}
 	}
 
-	@OriginalMember(owner = "client!rc", name = "f", descriptor = "(I)Lclient!kk;")
-	public static Class36 method4580() {
-		try {
-			return new Class36_Sub3();
-		} catch (@Pc(15) Throwable local15) {
-			try {
-				return (Class36) Class.forName("Class36_Sub1").getDeclaredConstructor().newInstance();
-			} catch (@Pc(21) Throwable local21) {
-				return new Class36_Sub2();
-			}
-		}
-	}
 }

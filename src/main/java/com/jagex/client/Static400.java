@@ -498,7 +498,7 @@ public final class Static400 {
 				Static3.aClass4_Sub12_Sub1_5.pjstr(command);
 			}
 			if (command.startsWith("fps ") && ClientSettings.MODEWHERE_LIVE != ClientSettings.modewhere) {
-				Static13.method136(Static198.method3113(command.substring(4)));
+				GameShell.calculateFrameTimeFromFPS(Static198.method3113(command.substring(4)));
 				return;
 			}
 			if (Static403.anInt6667 != 30) {

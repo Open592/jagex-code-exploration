@@ -297,6 +297,6 @@ public final class Static371 {
 
 	@OriginalMember(owner = "client!sr", name = "a", descriptor = "(IILjava/lang/String;)I")
 	public static int method4962(@OriginalArg(2) String arg0) {
-		return Static437.method4041(16, arg0);
+		return Static437.stringToInt(16, arg0);
 	}
 }

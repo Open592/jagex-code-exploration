@@ -1,6 +1,5 @@
 package com.jagex.client;
 
-import java.awt.datatransfer.ClipboardOwner;
 import java.awt.datatransfer.DataFlavor;
 import java.awt.datatransfer.StringSelection;
 import java.awt.datatransfer.Transferable;
@@ -11,9 +10,6 @@ public final class Static213 {
 
 	@OriginalMember(owner = "client!kp", name = "H", descriptor = "I")
 	public static int anInt3954;
-
-	@OriginalMember(owner = "client!kp", name = "J", descriptor = "I")
-	public static int anInt3956 = 0;
 
 	@OriginalMember(owner = "client!kp", name = "c", descriptor = "(B)V")
 	public static void method3223() {

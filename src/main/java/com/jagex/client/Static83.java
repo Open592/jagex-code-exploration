@@ -9,9 +9,6 @@ public final class Static83 {
 	@OriginalMember(owner = "client!eb", name = "j", descriptor = "Lclient!l;")
 	public static Class57 aClass57_10;
 
-	@OriginalMember(owner = "client!eb", name = "g", descriptor = "J")
-	public static volatile long aLong59 = 0L;
-
 	@OriginalMember(owner = "client!eb", name = "m", descriptor = "Z")
 	public static boolean aBoolean159 = false;
 

@@ -53,7 +53,7 @@ public final class Static315 {
 		}
 		@Pc(232) int local232 = arg1 + arg0 - 5;
 		@Pc(238) int local238 = arg4 + arg5 - 8;
-		Static207.aClass46_9.method5059("Fps:" + Static213.anInt3956, local238, 16776960, local232);
+		Static207.aClass46_9.method5059("Fps:" + GameShell.framesPerSecond, local238, 16776960, local232);
 		@Pc(253) int local253 = local238 - 15;
 		@Pc(255) Runtime local255 = Runtime.getRuntime();
 		@Pc(265) int local265 = (int) ((local255.totalMemory() - local255.freeMemory()) / 1024L);

@@ -29,11 +29,6 @@ public final class Static13 {
 		return Static417.aClass65Array4[local43].a(arg0, arg2);
 	}
 
-	@OriginalMember(owner = "client!al", name = "a", descriptor = "(IB)V")
-	public static void method136(@OriginalArg(0) int arg0) {
-		Static243.anInt4535 = 1000 / arg0;
-	}
-
 	@OriginalMember(owner = "client!al", name = "a", descriptor = "(III)Z")
 	public static boolean method137(@OriginalArg(1) int arg0, @OriginalArg(2) int arg1) {
 		if (Static44.method760(arg0, arg1)) {

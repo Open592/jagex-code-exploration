@@ -6,9 +6,6 @@ import org.openrs2.deob.annotation.Pc;
 
 public final class Static97 {
 
-	@OriginalMember(owner = "client!er", name = "C", descriptor = "I")
-	public static int anInt1949;
-
 	@OriginalMember(owner = "client!er", name = "a", descriptor = "(Lclient!fs;ZLclient!ya;)V")
 	public static void method1700(@OriginalArg(0) Class76 arg0, @OriginalArg(2) Class19 arg1) {
 		@Pc(10) Class18[] local10 = Static456.method327(arg0, Static336.anInt6553);
