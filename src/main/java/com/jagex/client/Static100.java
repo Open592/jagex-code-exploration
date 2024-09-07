@@ -12,9 +12,6 @@ public final class Static100 {
 	@OriginalMember(owner = "client!ev", name = "X", descriptor = "I")
 	public static int anInt2024;
 
-	@OriginalMember(owner = "client!ev", name = "G", descriptor = "Z")
-	public static volatile boolean aBoolean189 = true;
-
 	@OriginalMember(owner = "client!ev", name = "L", descriptor = "Lclient!sl;")
 	public static final Class215 aClass215_22 = new Class215(77, 7);
 

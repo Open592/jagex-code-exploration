@@ -12,9 +12,6 @@ public final class Static142 {
 	@OriginalMember(owner = "client!hd", name = "i", descriptor = "Lclient!qt;")
 	public static Message aClass199_6;
 
-	@OriginalMember(owner = "client!hd", name = "g", descriptor = "[J")
-	public static final long[] aLongArray6 = new long[32];
-
 	@OriginalMember(owner = "client!hd", name = "a", descriptor = "(Lclient!iv;B)V")
 	public static void method2425(@OriginalArg(0) Packet arg0) {
 		@Pc(9) int local9 = arg0.gSmart1Or2();
@@ -46,15 +43,15 @@ public final class Static142 {
 		Static384.aClass244_1.method5486();
 		Static420.aClass80_1.method2227();
 		if (Static223.aClass14_1 != null) {
-			Static223.aClass14_1.method213(Static273.aCanvas5);
+			Static223.aClass14_1.method213(GameShell.aCanvas5);
 		}
 		Static6.client.method874();
-		Static273.aCanvas5.setBackground(Color.black);
+		GameShell.aCanvas5.setBackground(Color.black);
 		Static6.anInt57 = -1;
-		Static384.aClass244_1 = Static140.method2398(Static273.aCanvas5);
-		Static420.aClass80_1 = Static376.method4882(Static273.aCanvas5);
+		Static384.aClass244_1 = Static140.method2398(GameShell.aCanvas5);
+		Static420.aClass80_1 = Static376.method4882(GameShell.aCanvas5);
 		if (Static223.aClass14_1 != null) {
-			Static223.aClass14_1.method209(Static273.aCanvas5);
+			Static223.aClass14_1.method209(GameShell.aCanvas5);
 		}
 	}
 

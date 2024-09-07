@@ -1,6 +1,5 @@
 package com.jagex.client;
 
-import java.awt.Canvas;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalMember;
 
@@ -11,9 +10,6 @@ public final class Static273 {
 
 	@OriginalMember(owner = "client!nt", name = "f", descriptor = "I")
 	public static int anInt5120;
-
-	@OriginalMember(owner = "client!nt", name = "m", descriptor = "Ljava/awt/Canvas;")
-	public static Canvas aCanvas5;
 
 	@OriginalMember(owner = "client!nt", name = "a", descriptor = "[I")
 	public static final int[] anIntArray334 = new int[8];

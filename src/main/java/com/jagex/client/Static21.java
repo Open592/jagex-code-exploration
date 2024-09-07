@@ -8,9 +8,6 @@ public final class Static21 {
 	@OriginalMember(owner = "client!au", name = "H", descriptor = "Lclient!l;")
 	public static Class57 aClass57_4;
 
-	@OriginalMember(owner = "client!au", name = "K", descriptor = "I")
-	public static int anInt290;
-
 	@OriginalMember(owner = "client!au", name = "P", descriptor = "[I")
 	public static int[] anIntArray19 = new int[2];
 

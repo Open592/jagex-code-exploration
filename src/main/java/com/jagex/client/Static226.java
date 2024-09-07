@@ -1,6 +1,5 @@
 package com.jagex.client;
 
-import java.awt.Frame;
 import java.util.Random;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalMember;
@@ -10,9 +9,6 @@ public final class Static226 {
 
 	@OriginalMember(owner = "client!ll", name = "h", descriptor = "F")
 	public static float aFloat136;
-
-	@OriginalMember(owner = "client!ll", name = "j", descriptor = "Ljava/awt/Frame;")
-	public static Frame aFrame1;
 
 	@OriginalMember(owner = "client!ll", name = "g", descriptor = "Lclient!sl;")
 	public static final Class215 aClass215_47 = new Class215(49, 6);

@@ -51,15 +51,15 @@ public final class Static348 {
 		}
 		try {
 			@Pc(49) Container local49;
-			if (Static226.aFrame1 == null) {
+			if (GameShell.aFrame1 == null) {
 				local49 = Static206.signLink.hostApplet;
 			} else {
-				local49 = Static226.aFrame1;
+				local49 = GameShell.aFrame1;
 			}
 			@Pc(55) int local55 = 0;
 			@Pc(57) int local57 = 0;
-			if (Static226.aFrame1 == local49) {
-				@Pc(63) Insets local63 = Static226.aFrame1.getInsets();
+			if (GameShell.aFrame1 == local49) {
+				@Pc(63) Insets local63 = GameShell.aFrame1.getInsets();
 				local55 = local63.left;
 				local57 = local63.top;
 			}

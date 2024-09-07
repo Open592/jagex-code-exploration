@@ -29,7 +29,7 @@ public final class Static201 {
 	@OriginalMember(owner = "client!kd", name = "a", descriptor = "(Ljava/awt/Color;ILjava/awt/Color;Ljava/awt/Color;IZLjava/lang/String;)V")
 	public static void method4604(@OriginalArg(0) Color arg0, @OriginalArg(2) Color arg1, @OriginalArg(3) Color arg2, @OriginalArg(4) int arg3, @OriginalArg(5) boolean arg4, @OriginalArg(6) String arg5) {
 		try {
-			@Pc(6) Graphics local6 = Static273.aCanvas5.getGraphics();
+			@Pc(6) Graphics local6 = GameShell.aCanvas5.getGraphics();
 			if (Static381.aFont1 == null) {
 				Static381.aFont1 = new Font("Helvetica", 1, 13);
 			}
@@ -48,7 +48,7 @@ public final class Static201 {
 			}
 			try {
 				if (Static253.anImage2 == null) {
-					Static253.anImage2 = Static273.aCanvas5.createImage(304, 34);
+					Static253.anImage2 = GameShell.aCanvas5.createImage(304, 34);
 				}
 				@Pc(63) Graphics local63 = Static253.anImage2.getGraphics();
 				local63.setColor(arg1);
@@ -82,7 +82,7 @@ public final class Static201 {
 				local6.drawString(Static129.aString30, Static141.width / 2 - Static129.aString30.length() * 6 / 2, Static302.height / 2 + -26);
 			}
 		} catch (@Pc(268) Exception local268) {
-			Static273.aCanvas5.repaint();
+			GameShell.aCanvas5.repaint();
 		}
 	}
 

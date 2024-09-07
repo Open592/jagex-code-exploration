@@ -55,16 +55,16 @@ public final class Static292 {
 			Static17.anInt222 = arg4;
 			local78 = Static320.aFrame3;
 			Static425.anInt7000 = arg2;
-		} else if (Static226.aFrame1 == null) {
+		} else if (GameShell.aFrame1 == null) {
 			local78 = Static206.signLink.hostApplet;
 			Static425.anInt7000 = local78.getSize().width;
 			Static17.anInt222 = local78.getSize().height;
 		} else {
-			local91 = Static226.aFrame1.getInsets();
-			Static425.anInt7000 = Static226.aFrame1.getSize().width - local91.left - local91.right;
+			local91 = GameShell.aFrame1.getInsets();
+			Static425.anInt7000 = GameShell.aFrame1.getSize().width - local91.left - local91.right;
 			@Pc(108) int local108 = -local91.bottom;
-			Static17.anInt222 = Static226.aFrame1.getSize().height + local108 - local91.top;
-			local78 = Static226.aFrame1;
+			Static17.anInt222 = GameShell.aFrame1.getSize().height + local108 - local91.top;
+			local78 = GameShell.aFrame1;
 		}
 		@Pc(166) int local166;
 		if (arg0 == 1) {
@@ -96,13 +96,13 @@ public final class Static292 {
 		if (arg3) {
 			Static349.method4711();
 		} else {
-			Static273.aCanvas5.setSize(Static141.width, Static302.height);
-			Static122.aClass19_16.method4272(Static273.aCanvas5);
-			if (local78 == Static226.aFrame1) {
-				local91 = Static226.aFrame1.getInsets();
-				Static273.aCanvas5.setLocation(local91.left + Static230.xPOS, local91.top - -Static303.yPOS);
+			GameShell.aCanvas5.setSize(Static141.width, Static302.height);
+			Static122.aClass19_16.method4272(GameShell.aCanvas5);
+			if (local78 == GameShell.aFrame1) {
+				local91 = GameShell.aFrame1.getInsets();
+				GameShell.aCanvas5.setLocation(local91.left + Static230.xPOS, local91.top - -Static303.yPOS);
 			} else {
-				Static273.aCanvas5.setLocation(Static230.xPOS, Static303.yPOS);
+				GameShell.aCanvas5.setLocation(Static230.xPOS, Static303.yPOS);
 			}
 		}
 		if (arg0 >= 2) {
@@ -119,6 +119,6 @@ public final class Static292 {
 		for (local166 = 0; local166 < 100; local166++) {
 			Static416.aBooleanArray21[local166] = true;
 		}
-		Static100.aBoolean189 = true;
+		GameShell.aBoolean189 = true;
 	}
 }

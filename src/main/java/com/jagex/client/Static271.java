@@ -3783,7 +3783,7 @@ public final class Static271 {
 						if (Static320.aFrame3 != null) {
 							Static188.method4107(Static323.aClass50_Sub1_1.anInt3447, -1, -1, false);
 						}
-						if (Static226.aFrame1 != null) {
+						if (GameShell.aFrame1 != null) {
 							Static316.method4216();
 							System.exit(0);
 							return;

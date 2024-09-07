@@ -40,10 +40,10 @@ public final class Static349 {
 	@OriginalMember(owner = "client!ro", name = "c", descriptor = "(I)V")
 	public static void method4711() {
 		if (Static122.aClass19_16.method4291()) {
-			Static122.aClass19_16.method4263(Static273.aCanvas5);
+			Static122.aClass19_16.method4263(GameShell.aCanvas5);
 			Static142.method2426();
-			Static122.aClass19_16.method4249(Static273.aCanvas5);
-			Static122.aClass19_16.method4250(Static273.aCanvas5);
+			Static122.aClass19_16.method4249(GameShell.aCanvas5);
+			Static122.aClass19_16.method4250(GameShell.aCanvas5);
 		} else {
 			Static239.method3551(Static177.anInt2973);
 		}

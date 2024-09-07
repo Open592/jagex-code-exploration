@@ -6,9 +6,6 @@ import org.openrs2.deob.annotation.Pc;
 
 public final class Static347 {
 
-	@OriginalMember(owner = "client!rm", name = "a", descriptor = "[J")
-	public static final long[] aLongArray8 = new long[32];
-
 	@OriginalMember(owner = "client!rm", name = "a", descriptor = "(ZZZ)V")
 	public static void method4678(@OriginalArg(0) boolean arg0, @OriginalArg(2) boolean arg1) {
 		if (arg0) {
