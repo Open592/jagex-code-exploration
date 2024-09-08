@@ -12,11 +12,13 @@ import java.io.DataInputStream;
 import java.io.File;
 import java.io.IOException;
 import java.io.RandomAccessFile;
+import java.lang.reflect.Field;
 import java.lang.reflect.Method;
 import java.net.InetAddress;
 import java.net.Socket;
 import java.net.URL;
 import java.util.Hashtable;
+import java.util.Vector;
 
 public final class SignLink implements Runnable {
 
@@ -64,11 +66,13 @@ public final class SignLink implements Runnable {
 
 	public static Method setFocusCycleRoot;
 
-	public static Hashtable aHashtable1 = new Hashtable(16);
+	public static Hashtable<String, File> resolvedCacheFilePaths = new Hashtable<>(16);
 
 	public static final int anInt1987 = 3;
 
 	public static volatile long refuseConnectionsUntilTimestamp = 0L;
+
+	private FullScreenManager fullScreenManager;
 
 	public SignLink(Applet hostApplet, int modewhat, String gameName, int arg3) throws Exception {
 		this.hostApplet = hostApplet;
@@ -138,6 +142,11 @@ public final class SignLink implements Runnable {
 		} catch (Exception ignored) {
 		}
 
+		try {
+			fullScreenManager = new FullScreenManager();
+		} catch (Throwable ignored) {
+		}
+
 		this.isShuttingDown = false;
 		this.thread = new Thread(this);
 		this.thread.setPriority(10);
@@ -146,7 +155,13 @@ public final class SignLink implements Runnable {
 	}
 
 	public Message method1726(int arg0, int arg1, int arg2) {
-		return this.emitMessage((arg2 << 16) + arg0, arg1 << 16, null, 0, 6);
+		return this.emitMessage(
+			(arg2 << 16) + arg0,
+			arg1 << 16,
+			null,
+			0,
+			6
+		);
 	}
 
 	public Message method1727(Frame arg0) {
@@ -237,10 +252,11 @@ public final class SignLink implements Runnable {
 		return this.emitMessage(0, 0, arg0, 0, 20);
 	}
 
-	private Message emitMessage(int integerInput, int arg1, Object genericInput, int arg3, int messageType) {
+	private Message emitMessage(int firstIntegerInput, int secondIntegerInput, Object genericInput, int arg3, int messageType) {
 		Message message = new Message();
 
-		message.integerInput = integerInput;
+		message.firstIntegerInput = firstIntegerInput;
+		message.secondIntegerInput = secondIntegerInput;
 		message.genericInput = genericInput;
 		message.type = messageType;
 
@@ -319,7 +335,7 @@ public final class SignLink implements Runnable {
 
 	private Message method1747(Component arg0, boolean arg1, int arg2, int arg3) {
 		if (arg1) {
-			aHashtable1 = null;
+			resolvedCacheFilePaths = null;
 		}
 		Point local7 = arg0.getLocationOnScreen();
 		return this.emitMessage(arg2 + local7.x, local7.y + arg3, null, 0, 14);
@@ -330,7 +346,7 @@ public final class SignLink implements Runnable {
 
 		synchronized (message) {
 			message.type = messageType;
-			message.integerInput = integerInput;
+			message.firstIntegerInput = integerInput;
 			message.genericInput = genericInput;
 
 			synchronized (this) {
@@ -404,6 +420,7 @@ public final class SignLink implements Runnable {
 					}
 				}
 			}
+
 			try {
 				int messageType = message.type;
 
@@ -412,42 +429,103 @@ public final class SignLink implements Runnable {
 						throw new IOException();
 					}
 
-					message.output = new Socket(InetAddress.getByName((String) message.genericInput), message.integerInput);
+					message.output = new Socket(InetAddress.getByName((String) message.genericInput), message.firstIntegerInput);
 				} else if (messageType == 2) {
 					Thread thread = new Thread((Runnable) message.genericInput);
 
 					thread.setDaemon(true);
 					thread.start();
-					thread.setPriority(message.integerInput);
+					thread.setPriority(message.firstIntegerInput);
 
 					message.output = thread;
+				} else if (messageType == 3) {
+					if (refuseConnectionsUntilTimestamp > MonotonicClock.getCurrentTimeInMilliseconds()) {
+						throw new IOException();
+					}
+
+					String host = ((message.firstIntegerInput >> 24) & 255) + "." +
+                            ((message.firstIntegerInput >> 16) & 255) + "." +
+                            ((message.firstIntegerInput >> 8) & 255) + "." +
+                            (message.firstIntegerInput & 255);
+					message.output = InetAddress.getByName(host).getHostName();
 				} else if (messageType == 4) {
 					if (refuseConnectionsUntilTimestamp > MonotonicClock.getCurrentTimeInMilliseconds()) {
 						throw new IOException();
 					}
 
 					message.output = new DataInputStream(((URL) message.genericInput).openStream());
-				} else {
-					Object[] local107;
+				} else if (messageType == 5) {
+					message.output = fullScreenManager.getDisplayModes();
+				} else if (messageType == 6) {
+					Frame window = new Frame("Jagex Full Screen");
+					message.output = window;
+					window.setResizable(false);
+					this.fullScreenManager.enterFullscreen(
+							window,
+							message.firstIntegerInput >>> 16,
+							message.firstIntegerInput & 0xFFFF,
+							message.secondIntegerInput >> 16,
+							message.secondIntegerInput & 0xFFFF
+					);
+				} else if (messageType == 7) {
+					this.fullScreenManager.exitFullScreen();
+				} else if (messageType == 8) {
+					Object[] input = (Object[]) message.genericInput;
 
-					if (messageType == 8) {
-						local107 = (Object[]) message.genericInput;
-						message.output = ((Class) local107[0]).getDeclaredMethod((String) local107[1], (Class[]) local107[2]);
-					} else if (messageType == 9) {
-						local107 = (Object[]) message.genericInput;
-						message.output = ((Class) local107[0]).getDeclaredField((String) local107[1]);
-					} else if (messageType == 18) {
-						Clipboard local168 = Toolkit.getDefaultToolkit().getSystemClipboard();
-
-						message.output = local168.getContents(null);
-					} else if (messageType == 19) {
-						Transferable local152 = (Transferable) message.genericInput;
-						Clipboard local155 = Toolkit.getDefaultToolkit().getSystemClipboard();
-
-						local155.setContents(local152, null);
-					} else {
-						throw new Exception("");
+					if (((Class<?>) input[0]).getClassLoader() == null) {
+						throw new SecurityException();
 					}
+
+					message.output = ((Class<?>) input[0]).getDeclaredMethod((String) input[1], (Class[]) input[2]);
+				} else if (messageType == 9) {
+					Object[] input = (Object[]) message.genericInput;
+
+					if (((Class<?>) input[0]).getClassLoader() == null) {
+						throw new SecurityException();
+					}
+
+					message.output = ((Class<?>) input[0]).getDeclaredField((String) input[1]);
+				} else if (messageType == 11) {
+					Field nativeLibrariesField = Class.forName("java.lang.ClassLoader").getDeclaredField("nativeLibraries");
+
+					nativeLibrariesField.setAccessible(true);
+
+					Vector nativeLibraries = (Vector) nativeLibrariesField.get(((Class) message.genericInput).getClassLoader());
+
+					for (Object library : nativeLibraries) {
+						Method finalizeMethod = library.getClass().getDeclaredMethod("finalize");
+
+						finalizeMethod.setAccessible(true);
+						finalizeMethod.invoke(library);
+						finalizeMethod.setAccessible(false);
+
+						Field handleField = library.getClass().getDeclaredField("handle");
+						handleField.setAccessible(true);
+						handleField.set(library, 0);
+						handleField.setAccessible(false);
+					}
+
+					nativeLibrariesField.setAccessible(false);
+				} else if (messageType == 12) {
+                    message.output = resolvePreferencesFile((String) message.genericInput, gameName, modewhat);
+				} else if (messageType == 18) {
+					Clipboard systemClipboard = Toolkit.getDefaultToolkit().getSystemClipboard();
+
+					message.output = systemClipboard.getContents(null);
+				} else if (messageType == 19) {
+					Transferable contents = (Transferable) message.genericInput;
+					Clipboard systemClipboard = Toolkit.getDefaultToolkit().getSystemClipboard();
+
+					systemClipboard.setContents(contents, null);
+				} else if (messageType == 21) {
+					if (refuseConnectionsUntilTimestamp > MonotonicClock.getCurrentTimeInMilliseconds()) {
+						throw new IOException();
+					}
+
+					message.output = InetAddress.getByName((String) message.genericInput).getAddress();
+
+				} else {
+					throw new Exception();
 				}
 
 				message.status = 1;
@@ -463,32 +541,30 @@ public final class SignLink implements Runnable {
 	}
 
 	public static File resolveCacheFilePath(String filename, int modewhat, String gameName) {
-		File local4 = (File) aHashtable1.get(filename);
+		File cachedFilePath = resolvedCacheFilePaths.get(filename);
 
-		if (local4 != null) {
-			return local4;
+		if (cachedFilePath != null) {
+			return cachedFilePath;
 		}
 
-		String[] local43 = new String[] { "c:/rscache/", "/rscache/", "c:/windows/", "c:/winnt/", "c:/", systemUserHome, "/tmp/", "" };
-		String[] local66 = new String[] { ".jagex_cache_" + modewhat, ".file_store_" + modewhat };
+		String[] potentialParentDirectories = new String[] { "c:/rscache/", "/rscache/", "c:/windows/", "c:/winnt/", "c:/", systemUserHome, "/tmp/", "" };
+		String[] potentialCacheDirectories = new String[] { ".jagex_cache_" + modewhat, ".file_store_" + modewhat };
 
-		for (int local68 = 0; local68 < 2; local68++) {
-            for (String s : local66) {
-                for (String string : local43) {
-                    String local105 = string + s + "/" + (gameName == null ? "" : gameName + "/") + filename;
+		for (int i = 0; i < 2; i++) {
+            for (String potentialCacheDirectory : potentialCacheDirectories) {
+                for (String potentialParentDirectory : potentialParentDirectories) {
+                    String local105 = potentialParentDirectory + potentialCacheDirectory + "/" + (gameName == null ? "" : gameName + "/") + filename;
                     RandomAccessFile local107 = null;
 
                     try {
                         File local112 = new File(local105);
 
-                        if (local68 != 0 || local112.exists()) {
-                            String local121 = string;
-
-                            if (local68 != 1 || local121.length() <= 0 || (new File(local121)).exists()) {
-                                (new File(string + s)).mkdir();
+                        if (i != 0 || local112.exists()) {
+                            if (i != 1 || potentialParentDirectory.length() <= 0 || (new File(potentialParentDirectory)).exists()) {
+                                (new File(potentialParentDirectory + potentialCacheDirectory)).mkdir();
 
                                 if (gameName != null) {
-                                    (new File(string + s + "/" + gameName)).mkdir();
+                                    (new File(potentialParentDirectory + potentialCacheDirectory + "/" + gameName)).mkdir();
                                 }
 
                                 local107 = new RandomAccessFile(local112, "rw");
@@ -497,7 +573,7 @@ public final class SignLink implements Runnable {
                                 local107.write(local185);
                                 local107.seek(0L);
                                 local107.close();
-                                aHashtable1.put(filename, local112);
+                                resolvedCacheFilePaths.put(filename, local112);
 
                                 return local112;
                             }
@@ -514,6 +590,40 @@ public final class SignLink implements Runnable {
             }
 		}
 		throw new RuntimeException();
+	}
+
+	private static FileOnDisk resolvePreferencesFile(String id, String gameName, int modewhat) {
+		String filename;
+
+		if (modewhat == 33) {
+			filename = "jagex_" + gameName + "_preferences" + id + "_rc.dat";
+		} else if (modewhat == 34) {
+			filename = "jagex_" + gameName + "_preferences" + id + "_wip.dat";
+		} else {
+			filename = "jagex_" + gameName + "_preferences" + id + ".dat";
+		}
+
+		String[] potentialParentDirectories = new String[] {
+				"c:/rscache/",
+				"/rscache/",
+				systemUserHome,
+				"c:/windows/",
+				"c:/winnt",
+				"c:/",
+				"/tmp/",
+				"",
+		};
+
+		for (String potentialParentDirectory : potentialParentDirectories) {
+			if (!potentialParentDirectory.isEmpty() || (new File(potentialParentDirectory).exists())) {
+				try {
+                    return new FileOnDisk(new File(potentialParentDirectory, filename), "rw", 10000L);
+				} catch (Exception ignored) {
+				}
+			}
+		}
+
+		return null;
 	}
 
 	public boolean method1754() {

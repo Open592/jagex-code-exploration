@@ -8,7 +8,9 @@ public final class Message {
 
 	public Message next;
 
-	public int integerInput;
+	public int firstIntegerInput;
+
+	public int secondIntegerInput;
 
 	public int type;
 
