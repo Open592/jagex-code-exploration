@@ -25,21 +25,21 @@ public final class SignLink implements Runnable {
 
 	private Interface10 anInterface10_1;
 
-	public FileOnDisk[] aFileOnDiskArray1;
-
 	private Message headMessage = null;
 
 	private Message tailMessage = null;
-
-	public FileOnDisk aFileOnDisk_1 = null;
 
 	public Applet hostApplet = null;
 
 	private boolean isShuttingDown = false;
 
-	public FileOnDisk aFileOnDisk_2 = null;
+	public FileOnDisk randomFile = null;
 
-	public FileOnDisk aFileOnDisk_3 = null;
+	public FileOnDisk cacheDataFile = null;
+
+	public FileOnDisk cacheIndex255 = null;
+
+	public FileOnDisk[] cacheIndexFiles;
 
 	private final String gameName;
 
@@ -77,7 +77,7 @@ public final class SignLink implements Runnable {
 
 	private CursorManager cursorManager;
 
-	public SignLink(Applet hostApplet, int modewhat, String gameName, int arg3) throws Exception {
+	public SignLink(Applet hostApplet, int modewhat, String gameName, int cacheIndexCount) throws Exception {
 		this.hostApplet = hostApplet;
 		this.gameName = gameName;
 		javaVersion = "1.1";
@@ -145,6 +145,15 @@ public final class SignLink implements Runnable {
 		} catch (Exception ignored) {
 		}
 
+		this.randomFile = new FileOnDisk(resolveCacheFilePath("random.dat", 0, gameName), "rw", 25L);
+		this.cacheDataFile = new FileOnDisk(this.resolveCacheFilePath("main_file_cache.dat2"), "rw", 209715200L);
+		this.cacheIndex255 = new FileOnDisk(this.resolveCacheFilePath("main_file_cache.idx255"), "rw", 1048576L);
+		this.cacheIndexFiles = new FileOnDisk[cacheIndexCount];
+
+		for (int i = 0; i < cacheIndexCount; i++) {
+			this.cacheIndexFiles[i] = new FileOnDisk(this.resolveCacheFilePath("main_file_cache.idx" + i), "rw", 1048576L);
+		}
+
 		try {
 			fullScreenManager = new FullScreenManager();
 		} catch (Throwable ignored) {
@@ -209,22 +218,22 @@ public final class SignLink implements Runnable {
 		} catch (InterruptedException ignored) {
 		}
 
-		if (this.aFileOnDisk_3 != null) {
+		if (this.cacheDataFile != null) {
 			try {
-				this.aFileOnDisk_3.close();
+				this.cacheDataFile.close();
 			} catch (IOException ignored) {
 			}
 		}
 
-		if (this.aFileOnDisk_1 != null) {
+		if (this.cacheIndex255 != null) {
 			try {
-				this.aFileOnDisk_1.close();
+				this.cacheIndex255.close();
 			} catch (IOException ignored) {
 			}
 		}
 
-		if (this.aFileOnDiskArray1 != null) {
-            for (FileOnDisk fileOnDisk : this.aFileOnDiskArray1) {
+		if (this.cacheIndexFiles != null) {
+            for (FileOnDisk fileOnDisk : this.cacheIndexFiles) {
                 if (fileOnDisk != null) {
                     try {
                         fileOnDisk.close();
@@ -234,9 +243,9 @@ public final class SignLink implements Runnable {
             }
 		}
 
-		if (this.aFileOnDisk_2 != null) {
+		if (this.randomFile != null) {
 			try {
-				this.aFileOnDisk_2.close();
+				this.randomFile.close();
 			} catch (IOException ignored) {
 			}
 		}
@@ -355,7 +364,7 @@ public final class SignLink implements Runnable {
 		threadGroup.enumerate(list);
 
 		Arrays.stream(list)
-				.filter(thread -> thread.getName().startsWith("AWT"))
+				.filter(thread -> thread != null && thread.getName().startsWith("AWT"))
 				.forEach(awtThread -> awtThread.setPriority(1));
 	}
 

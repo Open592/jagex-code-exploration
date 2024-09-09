@@ -4274,20 +4274,20 @@ public final class client extends GameShell {
 		Static96.anInt1932 = SignLink.anInt1987;
 
 		try {
-			if (Static206.signLink.aFileOnDisk_3 != null) {
-				Static88.aClass139_1 = new Class139(Static206.signLink.aFileOnDisk_3, 5200, 0);
+			if (Static206.signLink.cacheDataFile != null) {
+				Static88.aClass139_1 = new Class139(Static206.signLink.cacheDataFile, 5200, 0);
 
 				for (@Pc(169) int local169 = 0; local169 < 30; local169++) {
-					Static86.aClass139Array1[local169] = new Class139(Static206.signLink.aFileOnDiskArray1[local169], 6000, 0);
+					Static86.aClass139Array1[local169] = new Class139(Static206.signLink.cacheIndexFiles[local169], 6000, 0);
 				}
 
-				Static425.aClass139_5 = new Class139(Static206.signLink.aFileOnDisk_1, 6000, 0);
+				Static425.aClass139_5 = new Class139(Static206.signLink.cacheIndex255, 6000, 0);
 				Static225.aClass222_2 = new Class222(255, Static88.aClass139_1, Static425.aClass139_5, 500000);
-				Static394.aClass139_4 = new Class139(Static206.signLink.aFileOnDisk_2, 24, 0);
-				Static206.signLink.aFileOnDisk_1 = null;
-				Static206.signLink.aFileOnDisk_2 = null;
-				Static206.signLink.aFileOnDisk_3 = null;
-				Static206.signLink.aFileOnDiskArray1 = null;
+				Static394.aClass139_4 = new Class139(Static206.signLink.randomFile, 24, 0);
+				Static206.signLink.cacheIndex255 = null;
+				Static206.signLink.randomFile = null;
+				Static206.signLink.cacheDataFile = null;
+				Static206.signLink.cacheIndexFiles = null;
 			}
 		} catch (@Pc(227) IOException local227) {
 			Static394.aClass139_4 = null;

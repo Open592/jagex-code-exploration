@@ -31,8 +31,10 @@ public abstract class GameShell extends Applet implements Runnable, FocusListene
 
 	@OriginalMember(owner = "client!o", name = "N", descriptor = "Lclient!pn;")
 	public static final Class186 aClass186_3 = new Class186("", 14);
+
 	@OriginalMember(owner = "client!hd", name = "g", descriptor = "[J")
 	public static final long[] aLongArray6 = new long[32];
+
 	@OriginalMember(owner = "client!rm", name = "a", descriptor = "[J")
 	public static final long[] aLongArray8 = new long[32];
 
