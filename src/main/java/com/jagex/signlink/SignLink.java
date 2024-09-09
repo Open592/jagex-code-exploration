@@ -17,6 +17,7 @@ import java.lang.reflect.Method;
 import java.net.InetAddress;
 import java.net.Socket;
 import java.net.URL;
+import java.util.Arrays;
 import java.util.Hashtable;
 import java.util.Vector;
 
@@ -73,6 +74,8 @@ public final class SignLink implements Runnable {
 	public static volatile long refuseConnectionsUntilTimestamp = 0L;
 
 	private FullScreenManager fullScreenManager;
+
+	private CursorManager cursorManager;
 
 	public SignLink(Applet hostApplet, int modewhat, String gameName, int arg3) throws Exception {
 		this.hostApplet = hostApplet;
@@ -146,6 +149,13 @@ public final class SignLink implements Runnable {
 			fullScreenManager = new FullScreenManager();
 		} catch (Throwable ignored) {
 		}
+
+		try {
+			cursorManager = new CursorManager();
+		} catch (Throwable ignored) {
+		}
+
+		bumpAWTThreadPriority();
 
 		this.isShuttingDown = false;
 		this.thread = new Thread(this);
@@ -333,6 +343,22 @@ public final class SignLink implements Runnable {
 		return this.emitMessage(0, 0, arg0, 0, 11);
 	}
 
+	private void bumpAWTThreadPriority() {
+		ThreadGroup threadGroup = Thread.currentThread().getThreadGroup();
+
+		for (ThreadGroup parent = threadGroup.getParent(); parent != null; parent = threadGroup.getParent()) {
+			threadGroup = parent;
+		}
+
+		Thread[] list = new Thread[1000];
+
+		threadGroup.enumerate(list);
+
+		Arrays.stream(list)
+				.filter(thread -> thread.getName().startsWith("AWT"))
+				.forEach(awtThread -> awtThread.setPriority(1));
+	}
+
 	private Message method1747(Component arg0, boolean arg1, int arg2, int arg3) {
 		if (arg1) {
 			resolvedCacheFilePaths = null;
@@ -507,7 +533,55 @@ public final class SignLink implements Runnable {
 
 					nativeLibrariesField.setAccessible(false);
 				} else if (messageType == 12) {
-                    message.output = resolvePreferencesFile((String) message.genericInput, gameName, modewhat);
+					message.output = resolvePreferencesFile((String) message.genericInput, gameName, modewhat);
+				} else if (messageType == 14) {
+					int x = message.firstIntegerInput;
+					int y = message.secondIntegerInput;
+
+					this.cursorManager.mouseMove(x, y);
+				} else if (messageType == 15) {
+					boolean shouldReset = message.firstIntegerInput != 0;
+					Component component = (Component) message.genericInput;
+
+					this.cursorManager.setComponent(shouldReset, component);
+				} else if (messageType == 16) {
+					try {
+						if (!systemOSName.startsWith("win")) {
+							throw new Exception();
+						}
+
+						String url = (String) message.genericInput;
+
+						if (!url.startsWith("http://") && !url.startsWith("https://")) {
+							throw new Exception();
+						}
+
+						String validCharactersForUrl = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789?&=,.%+-_#:/*";
+
+						for (int i = 0; i < url.length(); i++) {
+							if (validCharactersForUrl.indexOf(url.charAt(i)) < 0) {
+								throw new Exception();
+							}
+						}
+
+						Runtime.getRuntime().exec("cmd /c start \"j\" \"" + url + "\"");
+
+						message.output = null;
+					} catch (Exception e) {
+						message.output = e;
+
+						throw e;
+					}
+				} else if (messageType == 17) {
+					Object[] input = (Object[]) message.genericInput;
+
+					this.cursorManager.setCursor(
+							(Component) input[0],
+							message.firstIntegerInput,
+							message.secondIntegerInput,
+							(int[]) input[1],
+							(Point) input[2]
+					);
 				} else if (messageType == 18) {
 					Clipboard systemClipboard = Toolkit.getDefaultToolkit().getSystemClipboard();
 
@@ -517,23 +591,43 @@ public final class SignLink implements Runnable {
 					Clipboard systemClipboard = Toolkit.getDefaultToolkit().getSystemClipboard();
 
 					systemClipboard.setContents(contents, null);
+				} else if (messageType == 20) {
+					try {
+						Runtime runtime = Runtime.getRuntime();
+						Method load0Method = Class.forName("java.lang.Runtime")
+								.getDeclaredMethod("load0", Class.class, String.class);
+
+						load0Method.setAccessible(true);
+
+						if (systemOSName.startsWith("win")) {
+							if (!systemOSArch.startsWith("amd64") && !systemOSArch.startsWith("x86_64")) {
+								load0Method.invoke(runtime, message.genericInput, resolveCacheFilePath("jagmisc.dll").toString());
+							} else {
+								load0Method.invoke(runtime, message.genericInput, resolveCacheFilePath("jagmisc64.dll").toString());
+							}
+						}
+
+						load0Method.setAccessible(false);
+					} catch (Throwable e) {
+						message.output = e;
+					}
 				} else if (messageType == 21) {
 					if (refuseConnectionsUntilTimestamp > MonotonicClock.getCurrentTimeInMilliseconds()) {
 						throw new IOException();
 					}
 
 					message.output = InetAddress.getByName((String) message.genericInput).getAddress();
-
 				} else {
 					throw new Exception();
 				}
 
 				message.status = 1;
-			} catch (ThreadDeath local198) {
-				throw local198;
-			} catch (Throwable local201) {
+			} catch (ThreadDeath e) {
+				throw e;
+			} catch (Throwable e) {
 				message.status = 2;
 			}
+
 			synchronized (message) {
 				message.notify();
 			}
