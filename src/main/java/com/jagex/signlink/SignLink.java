@@ -78,11 +78,11 @@ public final class SignLink implements Runnable {
 	private CursorManager cursorManager;
 
 	public SignLink(Applet hostApplet, int modewhat, String gameName, int cacheIndexCount) throws Exception {
+		javaVendor = "Unknown";
+		this.modewhat = modewhat;
 		this.hostApplet = hostApplet;
 		this.gameName = gameName;
 		javaVersion = "1.1";
-		this.modewhat = modewhat;
-		javaVendor = "Unknown";
 
 		try {
 			javaVendor = System.getProperty("java.vendor");
@@ -145,7 +145,7 @@ public final class SignLink implements Runnable {
 		} catch (Exception ignored) {
 		}
 
-		this.randomFile = new FileOnDisk(resolveCacheFilePath("random.dat", 0, gameName), "rw", 25L);
+		this.randomFile = new FileOnDisk(resolveCacheFilePath("random.dat", this.modewhat, null), "rw", 25L);
 		this.cacheDataFile = new FileOnDisk(this.resolveCacheFilePath("main_file_cache.dat2"), "rw", 209715200L);
 		this.cacheIndex255 = new FileOnDisk(this.resolveCacheFilePath("main_file_cache.idx255"), "rw", 1048576L);
 		this.cacheIndexFiles = new FileOnDisk[cacheIndexCount];
