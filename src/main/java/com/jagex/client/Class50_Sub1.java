@@ -75,7 +75,7 @@ public final class Class50_Sub1 extends Class50 {
 		super.aBoolean300 = false;
 		@Pc(129) FileOnDisk local129 = null;
 		try {
-			@Pc(134) Message local134 = arg0.method1738("");
+			@Pc(134) Message local134 = arg0.emitResolvePreferencesFileLocationMessage("");
 			while (local134.status == 0) {
 				Static435.sleepFor(1L);
 			}
@@ -105,7 +105,7 @@ public final class Class50_Sub1 extends Class50 {
 	public void method2856(@OriginalArg(0) SignLink arg0) {
 		@Pc(7) FileOnDisk local7 = null;
 		try {
-			@Pc(20) Message local20 = arg0.method1738("");
+			@Pc(20) Message local20 = arg0.emitResolvePreferencesFileLocationMessage("");
 			while (local20.status == 0) {
 				Static435.sleepFor(1L);
 			}

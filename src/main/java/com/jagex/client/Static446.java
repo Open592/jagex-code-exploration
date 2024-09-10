@@ -22,7 +22,7 @@ public final class Static446 {
 	@OriginalMember(owner = "client!wl", name = "a", descriptor = "(Lclient!et;BLjava/awt/Frame;)V")
 	public static void method5620(@OriginalArg(0) SignLink arg0, @OriginalArg(2) Frame arg1) {
 		while (true) {
-			@Pc(6) Message local6 = arg0.method1727(arg1);
+			@Pc(6) Message local6 = arg0.emitExitFullScreenModeMessage(arg1);
 			while (local6.status == 0) {
 				Static435.sleepFor(10L);
 			}

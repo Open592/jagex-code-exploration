@@ -19,7 +19,7 @@ public final class Static316 {
 	public static void method4216() {
 		@Pc(7) FileOnDisk local7 = null;
 		try {
-			@Pc(16) Message local16 = Static206.signLink.method1738("2");
+			@Pc(16) Message local16 = Static206.signLink.emitResolvePreferencesFileLocationMessage("2");
 			while (local16.status == 0) {
 				Static435.sleepFor(1L);
 			}

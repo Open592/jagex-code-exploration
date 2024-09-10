@@ -22,7 +22,7 @@ public final class Static197 {
 	@OriginalMember(owner = "client!ju", name = "a", descriptor = "(Lclient!et;ILjava/lang/String;I)Lclient!qt;")
 	public static Message method3110(@OriginalArg(0) SignLink signLink, @OriginalArg(1) int arg1, @OriginalArg(2) String url) {
 		if (arg1 == 0) {
-			return signLink.method1744(url);
+			return signLink.emitOpenURLInBrowserMessage(url);
 		}
 		@Pc(44) Message message;
 		if (arg1 == 1) {

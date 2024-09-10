@@ -38,7 +38,7 @@ public final class Static8 {
 		if (!local26) {
 			return null;
 		}
-		@Pc(94) Message local94 = arg1.method1726(arg2, arg3, arg0);
+		@Pc(94) Message local94 = arg1.emitEnterFullScreenModeMessage(arg2, arg3, arg0);
 		while (local94.status == 0) {
 			Static435.sleepFor(10L);
 		}

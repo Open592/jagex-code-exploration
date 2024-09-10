@@ -60,7 +60,7 @@ public final class qa extends Class19 implements Interface4 {
 					System.loadLibrary("sw3d");
 					Static319.aBoolean495 = Boolean.TRUE;
 				} else {
-					signLink.method1740(this.getClass());
+					signLink.loadGlNatives(this.getClass());
 					Static319.aBoolean495 = Boolean.TRUE;
 				}
 			}
