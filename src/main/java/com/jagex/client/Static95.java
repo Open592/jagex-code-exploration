@@ -60,7 +60,7 @@ public final class Static95 {
 					}
 					local13.anIntArray349[local55] = local61;
 					local13.anIntArray350[local55] = local82;
-					local13.aClass199Array1[local55] = arg2.method1750(Static323.method4383(local76), local80);
+					local13.aClass199Array1[local55] = arg2.emitGetDeclaredFieldMessage(Static323.method4383(local76), local80);
 				} else if (local61 == 3 || local61 == 4) {
 					local76 = arg0.gStringCP1252ToUTF8();
 					local80 = arg0.gStringCP1252ToUTF8();
@@ -83,7 +83,7 @@ public final class Static95 {
 					for (local167 = 0; local167 < local82; local167++) {
 						local196[local167] = Static323.method4383(local135[local167]);
 					}
-					local13.aClass199Array2[local55] = arg2.method1730(local196, local80, Static323.method4383(local76));
+					local13.aClass199Array2[local55] = arg2.emitGetDeclaredMethodMessage(Static323.method4383(local76), local80, local196);
 					local13.aByteArrayArrayArray4[local55] = local156;
 				}
 			} catch (@Pc(237) ClassNotFoundException local237) {

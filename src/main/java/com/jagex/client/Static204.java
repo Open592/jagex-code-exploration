@@ -19,7 +19,7 @@ public final class Static204 {
 		if (!arg0.method1754()) {
 			return new Class103[0];
 		}
-		@Pc(16) Message local16 = arg0.method1745();
+		@Pc(16) Message local16 = arg0.emitGetFullScreenDisplayModesMessage();
 		while (local16.status == 0) {
 			Static435.sleepFor(10L);
 		}

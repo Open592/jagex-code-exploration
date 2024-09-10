@@ -586,7 +586,7 @@ public abstract class GameShell extends Applet implements Runnable, FocusListene
 			this.jagMiscNativeLibraryLoaded = false;
 		}
 
-		@Pc(48) Message local48 = Static206.signLink.method1746(instance.getClass());
+		@Pc(48) Message local48 = Static206.signLink.emitPerformClassLoaderNativeLibrariesCleanupMessage(instance.getClass());
 
 		while (local48.status == 0) {
 			Static435.sleepFor(100L);
@@ -626,7 +626,7 @@ public abstract class GameShell extends Applet implements Runnable, FocusListene
 		}
 
 		try {
-			@Pc(22) Message local22 = Static206.signLink.method1736(instance.getClass());
+			@Pc(22) Message local22 = Static206.signLink.emitLoadJagMiscNativesMessage(instance.getClass());
 
 			while (local22.status == 0) {
 				Static435.sleepFor(100L);

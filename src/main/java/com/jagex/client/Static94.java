@@ -70,7 +70,7 @@ public final class Static94 {
 			errorMessage = Static437.method4044("%26", "&", errorMessage);
 			errorMessage = Static437.method4044("%23", "#", errorMessage);
 			if (Static386.signLink.hostApplet != null) {
-				@Pc(99) Message message = Static386.signLink.emitOpenURLConnectionMessage(new URL(Static386.signLink.hostApplet.getCodeBase(), "clienterror.ws?c=" + Static13.gameVersion + "&u=" + Static286.aLong174 + "&v1=" + SignLink.javaVendor + "&v2=" + SignLink.javaVersion + "&e=" + errorMessage));
+				@Pc(99) Message message = Static386.signLink.emitOpenURLStreamMessage(new URL(Static386.signLink.hostApplet.getCodeBase(), "clienterror.ws?c=" + Static13.gameVersion + "&u=" + Static286.aLong174 + "&v1=" + SignLink.javaVendor + "&v2=" + SignLink.javaVersion + "&e=" + errorMessage));
 
 				while (message.status == 0) {
 					Static435.sleepFor(1L);

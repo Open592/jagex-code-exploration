@@ -13,6 +13,7 @@ import java.io.File;
 import java.io.IOException;
 import java.io.RandomAccessFile;
 import java.lang.reflect.Field;
+import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.net.InetAddress;
 import java.net.Socket;
@@ -39,7 +40,7 @@ public final class SignLink implements Runnable {
 
 	public FileOnDisk cacheIndex255 = null;
 
-	public FileOnDisk[] cacheIndexFiles;
+	public FileOnDisk[] cacheArchiveFiles;
 
 	private final String gameName;
 
@@ -77,13 +78,119 @@ public final class SignLink implements Runnable {
 
 	private CursorManager cursorManager;
 
-	public SignLink(Applet hostApplet, int modewhat, String gameName, int cacheIndexCount) throws Exception {
-		javaVendor = "Unknown";
-		this.modewhat = modewhat;
-		this.hostApplet = hostApplet;
-		this.gameName = gameName;
-		javaVersion = "1.1";
+	private static void bumpAWTThreadPriority() {
+		ThreadGroup threadGroup = Thread.currentThread().getThreadGroup();
 
+		for (ThreadGroup parent = threadGroup.getParent(); parent != null; parent = threadGroup.getParent()) {
+			threadGroup = parent;
+		}
+
+		Thread[] list = new Thread[1000];
+
+		threadGroup.enumerate(list);
+
+		Arrays.stream(list)
+				.filter(thread -> thread != null && thread.getName().startsWith("AWT"))
+				.forEach(awtThread -> awtThread.setPriority(1));
+	}
+
+	private static File resolveCacheFilePath(String filename, int modewhat, String cacheSubDirectoryName) {
+		File cachedFilePath = resolvedCacheFilePaths.get(filename);
+
+		if (cachedFilePath != null) {
+			return cachedFilePath;
+		}
+
+		String[] potentialParentDirectories = new String[] { "c:/rscache/", "/rscache/", "c:/windows/", "c:/winnt/", "c:/", systemUserHome, "/tmp/", "" };
+		String[] potentialCacheDirectories = new String[] { ".jagex_cache_" + modewhat, ".file_store_" + modewhat };
+
+		for (int cacheFindPass = 0; cacheFindPass < 2; cacheFindPass++) {
+			for (String potentialCacheDirectory : potentialCacheDirectories) {
+				for (String potentialParentDirectory : potentialParentDirectories) {
+					String fullFilePath = potentialParentDirectory + potentialCacheDirectory + "/" + (cacheSubDirectoryName == null ? "" : cacheSubDirectoryName + "/") + filename;
+					RandomAccessFile randomAccessFile = null;
+
+					try {
+						File filePath = new File(fullFilePath);
+
+						if (cacheFindPass != 0 || filePath.exists()) {
+							if (cacheFindPass != 1 || potentialParentDirectory.isEmpty() || (new File(potentialParentDirectory)).exists()) {
+								(new File(potentialParentDirectory + potentialCacheDirectory)).mkdir();
+
+								if (cacheSubDirectoryName != null) {
+									(new File(potentialParentDirectory + potentialCacheDirectory + "/" + cacheSubDirectoryName)).mkdir();
+								}
+
+								randomAccessFile = new RandomAccessFile(filePath, "rw");
+
+								int singleFileDataByte = randomAccessFile.read();
+
+								randomAccessFile.seek(0L);
+								randomAccessFile.write(singleFileDataByte );
+								randomAccessFile.seek(0L);
+								randomAccessFile.close();
+
+								resolvedCacheFilePaths.put(filename, filePath);
+
+								return filePath;
+							}
+						}
+					} catch (Exception e) {
+						try {
+							if (randomAccessFile != null) {
+								randomAccessFile.close();
+							}
+						} catch (Exception ignored) {
+						}
+					}
+				}
+			}
+		}
+
+		throw new RuntimeException();
+	}
+
+	private static FileOnDisk resolvePreferencesFileLocation(String id, String gameName, int modewhat) {
+		String filename;
+
+		if (modewhat == 33) {
+			filename = "jagex_" + gameName + "_preferences" + id + "_rc.dat";
+		} else if (modewhat == 34) {
+			filename = "jagex_" + gameName + "_preferences" + id + "_wip.dat";
+		} else {
+			filename = "jagex_" + gameName + "_preferences" + id + ".dat";
+		}
+
+		String[] potentialParentDirectories = new String[] {
+				"c:/rscache/",
+				"/rscache/",
+				systemUserHome,
+				"c:/windows/",
+				"c:/winnt",
+				"c:/",
+				"/tmp/",
+				"",
+		};
+
+		for (String potentialParentDirectory : potentialParentDirectories) {
+			if (!potentialParentDirectory.isEmpty() || (new File(potentialParentDirectory).exists())) {
+				try {
+					return new FileOnDisk(new File(potentialParentDirectory, filename), "rw", 10000L);
+				} catch (Exception ignored) {
+				}
+			}
+		}
+
+		return null;
+	}
+
+	public SignLink(Applet hostApplet, int modewhat, String gameName, int cacheArchiveCount) throws Exception {
+		this.hostApplet = hostApplet;
+		this.modewhat = modewhat;
+		this.gameName = gameName;
+
+		javaVendor = "Unknown";
+		javaVersion = "1.1";
 		try {
 			javaVendor = System.getProperty("java.vendor");
 			javaVersion = System.getProperty("java.version");
@@ -112,6 +219,7 @@ public final class SignLink implements Runnable {
 
 		try {
 			systemUserHome = System.getProperty("user.home");
+
 			if (systemUserHome != null) {
 				systemUserHome = systemUserHome + "/";
 			}
@@ -128,19 +236,19 @@ public final class SignLink implements Runnable {
 		}
 
 		try {
-			if (hostApplet == null) {
-				setFocusTraversalKeysEnabled = Class.forName("java.awt.Component").getDeclaredMethod("setFocusTraversalKeysEnabled", Boolean.TYPE);
-			} else {
+			if (hostApplet != null) {
 				setFocusTraversalKeysEnabled = hostApplet.getClass().getMethod("setFocusTraversalKeysEnabled", Boolean.TYPE);
+			} else {
+				setFocusTraversalKeysEnabled = Class.forName("java.awt.Component").getDeclaredMethod("setFocusTraversalKeysEnabled", Boolean.TYPE);
 			}
 		} catch (Exception ignored) {
 		}
 
 		try {
-			if (hostApplet == null) {
-				setFocusCycleRoot = Class.forName("java.awt.Container").getDeclaredMethod("setFocusCycleRoot", Boolean.TYPE);
-			} else {
+			if (hostApplet != null) {
 				setFocusCycleRoot = hostApplet.getClass().getMethod("setFocusCycleRoot", Boolean.TYPE);
+			} else {
+				setFocusCycleRoot = Class.forName("java.awt.Container").getDeclaredMethod("setFocusCycleRoot", Boolean.TYPE);
 			}
 		} catch (Exception ignored) {
 		}
@@ -148,10 +256,10 @@ public final class SignLink implements Runnable {
 		this.randomFile = new FileOnDisk(resolveCacheFilePath("random.dat", this.modewhat, null), "rw", 25L);
 		this.cacheDataFile = new FileOnDisk(this.resolveCacheFilePath("main_file_cache.dat2"), "rw", 209715200L);
 		this.cacheIndex255 = new FileOnDisk(this.resolveCacheFilePath("main_file_cache.idx255"), "rw", 1048576L);
-		this.cacheIndexFiles = new FileOnDisk[cacheIndexCount];
+		this.cacheArchiveFiles = new FileOnDisk[cacheArchiveCount];
 
-		for (int i = 0; i < cacheIndexCount; i++) {
-			this.cacheIndexFiles[i] = new FileOnDisk(this.resolveCacheFilePath("main_file_cache.idx" + i), "rw", 1048576L);
+		for (int i = 0; i < cacheArchiveCount; i++) {
+			this.cacheArchiveFiles[i] = new FileOnDisk(this.resolveCacheFilePath("main_file_cache.idx" + i), "rw", 1048576L);
 		}
 
 		try {
@@ -171,260 +279,6 @@ public final class SignLink implements Runnable {
 		this.thread.setPriority(10);
 		this.thread.setDaemon(true);
 		this.thread.start();
-	}
-
-	public Message method1726(int arg0, int arg1, int arg2) {
-		return this.emitMessage(
-			(arg2 << 16) + arg0,
-			arg1 << 16,
-			null,
-			0,
-			6
-		);
-	}
-
-	public Message method1727(Frame arg0) {
-		return this.emitMessage(0, 0, arg0, 0, 7);
-	}
-
-	public Message emitConnectionInitializationMessage(String host, int port) {
-		return this.emitMessage(port, 0, host, 0, 1);
-	}
-
-	private byte[] method1729(String arg0, int arg1) {
-		Message local7 = this.method1749(arg0, 0, 0, 21);
-		if (arg1 != 14) {
-			this.resolveCacheFilePath(null);
-		}
-		return (byte[]) local7.output;
-	}
-
-	public Message method1730(Class[] arg0, String arg1, Class arg2) {
-		return this.emitMessage(0, 0, new Object[] { arg2, arg1, arg0 }, 0, 8);
-	}
-
-	private Message method1731(byte arg0) {
-		return arg0 == -128 ? this.emitMessage(0, 0, null, arg0 + 128, 18) : null;
-	}
-
-	public void shutdown() {
-		synchronized (this) {
-			this.isShuttingDown = true;
-			this.notifyAll();
-		}
-
-		try {
-			this.thread.join();
-		} catch (InterruptedException ignored) {
-		}
-
-		if (this.cacheDataFile != null) {
-			try {
-				this.cacheDataFile.close();
-			} catch (IOException ignored) {
-			}
-		}
-
-		if (this.cacheIndex255 != null) {
-			try {
-				this.cacheIndex255.close();
-			} catch (IOException ignored) {
-			}
-		}
-
-		if (this.cacheIndexFiles != null) {
-            for (FileOnDisk fileOnDisk : this.cacheIndexFiles) {
-                if (fileOnDisk != null) {
-                    try {
-                        fileOnDisk.close();
-                    } catch (IOException ignored) {
-                    }
-                }
-            }
-		}
-
-		if (this.randomFile != null) {
-			try {
-				this.randomFile.close();
-			} catch (IOException ignored) {
-			}
-		}
-	}
-
-	public File resolveCacheFilePath(String filename) {
-		return resolveCacheFilePath(filename, this.modewhat, this.gameName);
-	}
-
-	public Interface10 method1734() {
-		return this.anInterface10_1;
-	}
-
-	private Message method1735(int arg0, Component arg1, boolean arg2) {
-		if (arg0 != -23993) {
-			this.refuseConnectionForFiveSeconds();
-		}
-
-		return this.emitMessage(arg2 ? 1 : 0, 0, arg1, 0, 15);
-	}
-
-	public Message method1736(Class arg0) {
-		return this.emitMessage(0, 0, arg0, 0, 20);
-	}
-
-	private Message emitMessage(int firstIntegerInput, int secondIntegerInput, Object genericInput, int arg3, int messageType) {
-		Message message = new Message();
-
-		message.firstIntegerInput = firstIntegerInput;
-		message.secondIntegerInput = secondIntegerInput;
-		message.genericInput = genericInput;
-		message.type = messageType;
-
-		synchronized (this) {
-			if (this.tailMessage == null) {
-				this.tailMessage = this.headMessage = message;
-			} else {
-				this.tailMessage.next = message;
-				this.tailMessage = message;
-			}
-
-			this.notify();
-
-			return message;
-		}
-	}
-
-	public Message method1738(String arg0) {
-		return this.emitMessage(0, 0, arg0, 0, 12);
-	}
-
-	public Message method1739(int arg0) {
-		return this.emitMessage(arg0, 0, null, 0, 3);
-	}
-
-	public void method1740(Class arg0) throws Exception {
-		Class[] parameterTypes = new Class[] {
-				Class.forName("java.lang.Class"),
-				Class.forName("java.lang.String")
-		};
-		Runtime runtime = Runtime.getRuntime();
-		Method setAccessible = Class.forName("java.lang.reflect.Method").getMethod("setAccessible", Boolean.TYPE);
-		Method loadMethod;
-
-		if (!systemOSNameLowerCase.startsWith("mac")) {
-			loadMethod = Class.forName("java.lang.Runtime").getDeclaredMethod("loadLibrary0", parameterTypes);
-			setAccessible.invoke(loadMethod, Boolean.TRUE);
-			loadMethod.invoke(runtime, arg0, "jawt");
-			setAccessible.invoke(loadMethod, Boolean.FALSE);
-		}
-
-		loadMethod = Class.forName("java.lang.Runtime").getDeclaredMethod("load0", parameterTypes);
-		setAccessible.invoke(loadMethod, Boolean.TRUE);
-
-		if (!systemOSNameLowerCase.startsWith("win")) {
-			throw new Exception();
-		}
-
-		loadMethod.invoke(runtime, arg0, this.resolveCacheFilePath("sw3d.dll").toString());
-		setAccessible.invoke(loadMethod, Boolean.FALSE);
-	}
-
-	public Message emitThreadInitializationMessage(int arg0, Runnable target) {
-		return this.emitMessage(arg0, 0, target, 0, 2);
-	}
-
-	private Message method1742(Transferable arg0, byte arg1) {
-		return arg1 == 87 ? this.emitMessage(0, 0, arg0, 0, 19) : null;
-	}
-
-	public Message method1743(Point arg0, Component arg1, int arg2, int[] arg3, int arg4) {
-		return this.emitMessage(arg2, arg4, new Object[] { arg1, arg3, arg0 }, 0, 17);
-	}
-
-	public Message method1744(String arg0) {
-		return this.emitMessage(0, 0, arg0, 0, 16);
-	}
-
-	public Message method1745() {
-		return this.emitMessage(0, 0, null, 0, 5);
-	}
-
-	public Message method1746(Class arg0) {
-		return this.emitMessage(0, 0, arg0, 0, 11);
-	}
-
-	private void bumpAWTThreadPriority() {
-		ThreadGroup threadGroup = Thread.currentThread().getThreadGroup();
-
-		for (ThreadGroup parent = threadGroup.getParent(); parent != null; parent = threadGroup.getParent()) {
-			threadGroup = parent;
-		}
-
-		Thread[] list = new Thread[1000];
-
-		threadGroup.enumerate(list);
-
-		Arrays.stream(list)
-				.filter(thread -> thread != null && thread.getName().startsWith("AWT"))
-				.forEach(awtThread -> awtThread.setPriority(1));
-	}
-
-	private Message method1747(Component arg0, boolean arg1, int arg2, int arg3) {
-		if (arg1) {
-			resolvedCacheFilePaths = null;
-		}
-		Point local7 = arg0.getLocationOnScreen();
-		return this.emitMessage(arg2 + local7.x, local7.y + arg3, null, 0, 14);
-	}
-
-	private Message method1749(Object genericInput, int arg1, int integerInput, int messageType) {
-		Message message = new Message();
-
-		synchronized (message) {
-			message.type = messageType;
-			message.firstIntegerInput = integerInput;
-			message.genericInput = genericInput;
-
-			synchronized (this) {
-				if (arg1 != 0) {
-					return null;
-				}
-
-				if (this.tailMessage == null) {
-					this.tailMessage = this.headMessage = message;
-				} else {
-					this.tailMessage.next = message;
-					this.tailMessage = message;
-				}
-
-				this.notify();
-			}
-
-			try {
-				message.wait();
-			} catch (InterruptedException ignored) {
-			}
-
-			return message;
-		}
-	}
-
-	public Message method1750(Class arg0, String arg1) {
-		return this.emitMessage(0, 0, new Object[] { arg0, arg1 }, 0, 9);
-	}
-
-	public Message emitOpenURLConnectionMessage(URL url) {
-		return this.emitMessage(0, 0, url, 0, 4);
-	}
-
-	private Message method1752(String arg0, int arg1) {
-		if (arg1 <= 71) {
-			this.method1747(null, true, 35, 67);
-		}
-		return this.emitMessage(0, 0, arg0, 0, 21);
-	}
-
-	public void refuseConnectionForFiveSeconds() {
-		refuseConnectionsUntilTimestamp = MonotonicClock.getCurrentTimeInMilliseconds() + 5000L;
 	}
 
 	@Override
@@ -457,177 +311,80 @@ public final class SignLink implements Runnable {
 			}
 
 			try {
-				int messageType = message.type;
+				switch (message.type) {
+					case Message.CONNECTION_INITIALIZATION_MESSAGE:
+						performConnectionInitialization(message);
 
-				if (messageType == 1) {
-					if (refuseConnectionsUntilTimestamp > MonotonicClock.getCurrentTimeInMilliseconds()) {
-						throw new IOException();
-					}
+						break;
+					case Message.THREAD_INITIALIZATION_MESSAGE:
+						performThreadInitialization(message);
 
-					message.output = new Socket(InetAddress.getByName((String) message.genericInput), message.firstIntegerInput);
-				} else if (messageType == 2) {
-					Thread thread = new Thread((Runnable) message.genericInput);
+						break;
+					case Message.REVERSE_IP_LOOKUP_MESSAGE:
+						performReverseIPLookup(message);
 
-					thread.setDaemon(true);
-					thread.start();
-					thread.setPriority(message.firstIntegerInput);
+						break;
+					case Message.OPEN_URL_STREAM_MESSAGE:
+						performOpenURLStream(message);
 
-					message.output = thread;
-				} else if (messageType == 3) {
-					if (refuseConnectionsUntilTimestamp > MonotonicClock.getCurrentTimeInMilliseconds()) {
-						throw new IOException();
-					}
+						break;
+					case Message.GET_FULLSCREEN_DISPLAY_MODES_MESSAGE:
+						performGetFullscreenDisplayModes(message);
 
-					String host = ((message.firstIntegerInput >> 24) & 255) + "." +
-                            ((message.firstIntegerInput >> 16) & 255) + "." +
-                            ((message.firstIntegerInput >> 8) & 255) + "." +
-                            (message.firstIntegerInput & 255);
-					message.output = InetAddress.getByName(host).getHostName();
-				} else if (messageType == 4) {
-					if (refuseConnectionsUntilTimestamp > MonotonicClock.getCurrentTimeInMilliseconds()) {
-						throw new IOException();
-					}
+						break;
+					case Message.ENTER_FULLSCREEN_MODE_MESSAGE:
+						performEnterFullscreenMode(message);
 
-					message.output = new DataInputStream(((URL) message.genericInput).openStream());
-				} else if (messageType == 5) {
-					message.output = fullScreenManager.getDisplayModes();
-				} else if (messageType == 6) {
-					Frame window = new Frame("Jagex Full Screen");
-					message.output = window;
-					window.setResizable(false);
-					this.fullScreenManager.enterFullscreen(
-							window,
-							message.firstIntegerInput >>> 16,
-							message.firstIntegerInput & 0xFFFF,
-							message.secondIntegerInput >> 16,
-							message.secondIntegerInput & 0xFFFF
-					);
-				} else if (messageType == 7) {
-					this.fullScreenManager.exitFullScreen();
-				} else if (messageType == 8) {
-					Object[] input = (Object[]) message.genericInput;
+						break;
+					case Message.EXIT_FULLSCREEN_MODE_MESSAGE:
+						performExitFullscreenMode(message);
 
-					if (((Class<?>) input[0]).getClassLoader() == null) {
-						throw new SecurityException();
-					}
+						break;
+					case Message.GET_DECLARED_METHOD_MESSAGE:
+						performGetDeclaredMethod(message);
 
-					message.output = ((Class<?>) input[0]).getDeclaredMethod((String) input[1], (Class[]) input[2]);
-				} else if (messageType == 9) {
-					Object[] input = (Object[]) message.genericInput;
+						break;
+					case Message.GET_DECLARED_FIELD_MESSAGE:
+						performGetDeclaredField(message);
 
-					if (((Class<?>) input[0]).getClassLoader() == null) {
-						throw new SecurityException();
-					}
+						break;
+					case Message.PERFORM_CLASS_LOADER_NATIVE_LIBRARIES_CLEANUP_MESSAGE:
+						performClassLoaderNativeLibrariesCleanup(message);
 
-					message.output = ((Class<?>) input[0]).getDeclaredField((String) input[1]);
-				} else if (messageType == 11) {
-					Field nativeLibrariesField = Class.forName("java.lang.ClassLoader").getDeclaredField("nativeLibraries");
+						break;
+					case Message.RESOLVE_PREFERENCES_FILE_LOCATION_MESSAGE:
+						performResolvePreferencesFileLocation(message);
 
-					nativeLibrariesField.setAccessible(true);
+						break;
+					case Message.CUSTOM_CURSOR_MOUSE_MOVE_MESSAGE:
+						performCustomCursorMouseMove(message);
 
-					Vector nativeLibraries = (Vector) nativeLibrariesField.get(((Class) message.genericInput).getClassLoader());
+						break;
+					case Message.SET_CUSTOM_CURSOR_COMPONENT_MESSAGE:
+						performSetCustomCursorComponent(message);
 
-					for (Object library : nativeLibraries) {
-						Method finalizeMethod = library.getClass().getDeclaredMethod("finalize");
+						break;
+					case Message.OPEN_URL_IN_BROWSER_MESSAGE:
+						performOpenURLInBrowser(message);
 
-						finalizeMethod.setAccessible(true);
-						finalizeMethod.invoke(library);
-						finalizeMethod.setAccessible(false);
+						break;
+					case Message.SET_CUSTOM_CURSOR_MESSAGE:
+						performSetCustomCursor(message);
 
-						Field handleField = library.getClass().getDeclaredField("handle");
-						handleField.setAccessible(true);
-						handleField.set(library, 0);
-						handleField.setAccessible(false);
-					}
+						break;
+					case Message.GET_SYSTEM_CLIPBOARD_CONTENTS_MESSAGE:
+						performGetSystemClipboardContents(message);
 
-					nativeLibrariesField.setAccessible(false);
-				} else if (messageType == 12) {
-					message.output = resolvePreferencesFile((String) message.genericInput, gameName, modewhat);
-				} else if (messageType == 14) {
-					int x = message.firstIntegerInput;
-					int y = message.secondIntegerInput;
+						break;
+					case Message.SET_SYSTEM_CLIPBOARD_CONTENTS_MESSAGE:
+						performSetSystemClipboardContents(message);
 
-					this.cursorManager.mouseMove(x, y);
-				} else if (messageType == 15) {
-					boolean shouldReset = message.firstIntegerInput != 0;
-					Component component = (Component) message.genericInput;
+						break;
+					case Message.LOAD_JAG_MISC_NATIVES_MESSAGE:
+						performLoadJagMiscNatives(message);
 
-					this.cursorManager.setComponent(shouldReset, component);
-				} else if (messageType == 16) {
-					try {
-						if (!systemOSName.startsWith("win")) {
-							throw new Exception();
-						}
-
-						String url = (String) message.genericInput;
-
-						if (!url.startsWith("http://") && !url.startsWith("https://")) {
-							throw new Exception();
-						}
-
-						String validCharactersForUrl = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789?&=,.%+-_#:/*";
-
-						for (int i = 0; i < url.length(); i++) {
-							if (validCharactersForUrl.indexOf(url.charAt(i)) < 0) {
-								throw new Exception();
-							}
-						}
-
-						Runtime.getRuntime().exec("cmd /c start \"j\" \"" + url + "\"");
-
-						message.output = null;
-					} catch (Exception e) {
-						message.output = e;
-
-						throw e;
-					}
-				} else if (messageType == 17) {
-					Object[] input = (Object[]) message.genericInput;
-
-					this.cursorManager.setCursor(
-							(Component) input[0],
-							message.firstIntegerInput,
-							message.secondIntegerInput,
-							(int[]) input[1],
-							(Point) input[2]
-					);
-				} else if (messageType == 18) {
-					Clipboard systemClipboard = Toolkit.getDefaultToolkit().getSystemClipboard();
-
-					message.output = systemClipboard.getContents(null);
-				} else if (messageType == 19) {
-					Transferable contents = (Transferable) message.genericInput;
-					Clipboard systemClipboard = Toolkit.getDefaultToolkit().getSystemClipboard();
-
-					systemClipboard.setContents(contents, null);
-				} else if (messageType == 20) {
-					try {
-						Runtime runtime = Runtime.getRuntime();
-						Method load0Method = Class.forName("java.lang.Runtime")
-								.getDeclaredMethod("load0", Class.class, String.class);
-
-						load0Method.setAccessible(true);
-
-						if (systemOSName.startsWith("win")) {
-							if (!systemOSArch.startsWith("amd64") && !systemOSArch.startsWith("x86_64")) {
-								load0Method.invoke(runtime, message.genericInput, resolveCacheFilePath("jagmisc.dll").toString());
-							} else {
-								load0Method.invoke(runtime, message.genericInput, resolveCacheFilePath("jagmisc64.dll").toString());
-							}
-						}
-
-						load0Method.setAccessible(false);
-					} catch (Throwable e) {
-						message.output = e;
-					}
-				} else if (messageType == 21) {
-					if (refuseConnectionsUntilTimestamp > MonotonicClock.getCurrentTimeInMilliseconds()) {
-						throw new IOException();
-					}
-
-					message.output = InetAddress.getByName((String) message.genericInput).getAddress();
-				} else {
-					throw new Exception();
+						break;
+					default: throw new Exception();
 				}
 
 				message.status = 1;
@@ -643,90 +400,395 @@ public final class SignLink implements Runnable {
 		}
 	}
 
-	public static File resolveCacheFilePath(String filename, int modewhat, String gameName) {
-		File cachedFilePath = resolvedCacheFilePaths.get(filename);
+	public Message emitConnectionInitializationMessage(String host, int port) {
+		return this.enqueueMessage(Message.CONNECTION_INITIALIZATION_MESSAGE, port, 0, host);
+	}
 
-		if (cachedFilePath != null) {
-			return cachedFilePath;
+	public Message emitThreadInitializationMessage(int priority, Runnable target) {
+		return this.enqueueMessage(Message.THREAD_INITIALIZATION_MESSAGE, priority, 0, target);
+	}
+
+	public Message emitReverseIPLookupMessage(int ip) {
+		return this.enqueueMessage(Message.REVERSE_IP_LOOKUP_MESSAGE, ip, 0, null);
+	}
+
+	public Message emitOpenURLStreamMessage(URL url) {
+		return this.enqueueMessage(Message.OPEN_URL_STREAM_MESSAGE, 0, 0, url);
+	}
+
+	public Message emitGetFullScreenDisplayModesMessage() {
+		return this.enqueueMessage(Message.GET_FULLSCREEN_DISPLAY_MODES_MESSAGE, 0, 0, null);
+	}
+
+	public Message emitEnterFullScreenModeMessage(int arg0, int arg1, int arg2) {
+		return this.enqueueMessage(
+			Message.ENTER_FULLSCREEN_MODE_MESSAGE,
+			(arg2 << 16) + arg0,
+			arg1 << 16,
+			null
+		);
+	}
+
+	public Message emitExitFullScreenModeMessage(Frame frame) {
+		return this.enqueueMessage(Message.EXIT_FULLSCREEN_MODE_MESSAGE, 0, 0, frame);
+	}
+
+	public Message emitGetDeclaredMethodMessage(Class<?> clazz, String methodName, Class<?>[] parameterTypes) {
+		return this.enqueueMessage(Message.GET_DECLARED_METHOD_MESSAGE, 0, 0, new Object[] { clazz, methodName, parameterTypes });
+	}
+
+	public Message emitGetDeclaredFieldMessage(Class<?> clazz, String fieldName) {
+		return this.enqueueMessage(Message.GET_DECLARED_FIELD_MESSAGE, 0, 0, new Object[] { clazz, fieldName });
+	}
+
+	public Message emitPerformClassLoaderNativeLibrariesCleanupMessage(Class<?> fromClass) {
+		return this.enqueueMessage(Message.PERFORM_CLASS_LOADER_NATIVE_LIBRARIES_CLEANUP_MESSAGE, 0, 0, fromClass);
+	}
+
+	public Message emitResolvePreferencesFileLocationMessage(String id) {
+		return this.enqueueMessage(Message.RESOLVE_PREFERENCES_FILE_LOCATION_MESSAGE, 0, 0, id);
+	}
+
+	public Message emitOpenURLInBrowserMessage(String url) {
+		return this.enqueueMessage(Message.OPEN_URL_IN_BROWSER_MESSAGE, 0, 0, url);
+	}
+
+	public Message emitSetCustomCursorMessage(Component component, int width, int height, int[] rgbArray, Point hotSpot) {
+		return this.enqueueMessage(Message.SET_CUSTOM_CURSOR_MESSAGE, width, height, new Object[] { component, rgbArray, hotSpot });
+	}
+
+	public Message emitLoadJagMiscNativesMessage(Class<?> fromClass) {
+		return this.enqueueMessage(Message.LOAD_JAG_MISC_NATIVES_MESSAGE, 0, 0, fromClass);
+	}
+
+	public void loadGlNatives(Class<?> fromClass) throws Exception {
+		Runtime runtime = Runtime.getRuntime();
+		Method setAccessibleMethod = Class.forName("java.lang.reflect.Method").getMethod("setAccessible", Boolean.TYPE);
+		Method loadMethod;
+
+		if (!systemOSNameLowerCase.startsWith("mac")) {
+			loadMethod = Class.forName("java.lang.Runtime").getDeclaredMethod("loadLibrary0", Class.class, String.class);
+
+			setAccessibleMethod.invoke(loadMethod, Boolean.TRUE);
+
+			loadMethod.invoke(runtime, fromClass, "jawt");
+
+			setAccessibleMethod.invoke(loadMethod, Boolean.FALSE);
 		}
 
-		String[] potentialParentDirectories = new String[] { "c:/rscache/", "/rscache/", "c:/windows/", "c:/winnt/", "c:/", systemUserHome, "/tmp/", "" };
-		String[] potentialCacheDirectories = new String[] { ".jagex_cache_" + modewhat, ".file_store_" + modewhat };
+		loadMethod = Class.forName("java.lang.Runtime").getDeclaredMethod("load0", Class.class, String.class);
 
-		for (int i = 0; i < 2; i++) {
-            for (String potentialCacheDirectory : potentialCacheDirectories) {
-                for (String potentialParentDirectory : potentialParentDirectories) {
-                    String local105 = potentialParentDirectory + potentialCacheDirectory + "/" + (gameName == null ? "" : gameName + "/") + filename;
-                    RandomAccessFile local107 = null;
+		setAccessibleMethod.invoke(loadMethod, Boolean.TRUE);
 
+		if (!systemOSNameLowerCase.startsWith("win")) {
+			throw new Exception();
+		}
+
+		loadMethod.invoke(runtime, fromClass, this.resolveCacheFilePath("sw3d.dll").toString());
+
+		setAccessibleMethod.invoke(loadMethod, Boolean.FALSE);
+	}
+
+	public File resolveCacheFilePath(String filename) {
+		return resolveCacheFilePath(filename, this.modewhat, this.gameName);
+	}
+
+	public void refuseConnectionForFiveSeconds() {
+		refuseConnectionsUntilTimestamp = MonotonicClock.getCurrentTimeInMilliseconds() + 5000L;
+	}
+
+	public void shutdown() {
+		synchronized (this) {
+			this.isShuttingDown = true;
+			this.notifyAll();
+		}
+
+		try {
+			this.thread.join();
+		} catch (InterruptedException ignored) {
+		}
+
+		if (this.cacheDataFile != null) {
+			try {
+				this.cacheDataFile.close();
+			} catch (IOException ignored) {
+			}
+		}
+
+		if (this.cacheIndex255 != null) {
+			try {
+				this.cacheIndex255.close();
+			} catch (IOException ignored) {
+			}
+		}
+
+		if (this.cacheArchiveFiles != null) {
+            for (FileOnDisk cacheArchiveFile : this.cacheArchiveFiles) {
+                if (cacheArchiveFile != null) {
                     try {
-                        File local112 = new File(local105);
-
-                        if (i != 0 || local112.exists()) {
-                            if (i != 1 || potentialParentDirectory.length() <= 0 || (new File(potentialParentDirectory)).exists()) {
-                                (new File(potentialParentDirectory + potentialCacheDirectory)).mkdir();
-
-                                if (gameName != null) {
-                                    (new File(potentialParentDirectory + potentialCacheDirectory + "/" + gameName)).mkdir();
-                                }
-
-                                local107 = new RandomAccessFile(local112, "rw");
-                                int local185 = local107.read();
-                                local107.seek(0L);
-                                local107.write(local185);
-                                local107.seek(0L);
-                                local107.close();
-                                resolvedCacheFilePaths.put(filename, local112);
-
-                                return local112;
-                            }
-                        }
-                    } catch (Exception e) {
-                        try {
-                            if (local107 != null) {
-                                local107.close();
-                            }
-                        } catch (Exception ignored) {
-                        }
+                        cacheArchiveFile.close();
+                    } catch (IOException ignored) {
                     }
                 }
             }
 		}
-		throw new RuntimeException();
-	}
 
-	private static FileOnDisk resolvePreferencesFile(String id, String gameName, int modewhat) {
-		String filename;
-
-		if (modewhat == 33) {
-			filename = "jagex_" + gameName + "_preferences" + id + "_rc.dat";
-		} else if (modewhat == 34) {
-			filename = "jagex_" + gameName + "_preferences" + id + "_wip.dat";
-		} else {
-			filename = "jagex_" + gameName + "_preferences" + id + ".dat";
-		}
-
-		String[] potentialParentDirectories = new String[] {
-				"c:/rscache/",
-				"/rscache/",
-				systemUserHome,
-				"c:/windows/",
-				"c:/winnt",
-				"c:/",
-				"/tmp/",
-				"",
-		};
-
-		for (String potentialParentDirectory : potentialParentDirectories) {
-			if (!potentialParentDirectory.isEmpty() || (new File(potentialParentDirectory).exists())) {
-				try {
-                    return new FileOnDisk(new File(potentialParentDirectory, filename), "rw", 10000L);
-				} catch (Exception ignored) {
-				}
+		if (this.randomFile != null) {
+			try {
+				this.randomFile.close();
+			} catch (IOException ignored) {
 			}
 		}
+	}
 
-		return null;
+	public Interface10 method1734() {
+		return this.anInterface10_1;
+	}
+
+	private Message enqueueMessage(int type, int firstIntegerInput, int secondIntegerInput, Object genericInput) {
+		Message message = new Message(type, firstIntegerInput, secondIntegerInput, genericInput);
+
+		enqueueMessage(message);
+
+		return message;
+	}
+
+	private void enqueueMessage(Message message) {
+		synchronized (this) {
+			if (this.tailMessage == null) {
+				this.tailMessage = this.headMessage = message;
+			} else {
+				this.tailMessage.next = message;
+				this.tailMessage = message;
+			}
+
+			this.notify();
+		}
+	}
+
+	private Message emitCustomCursorMouseMoveMessage(Component component, int x, int y) {
+		Point local7 = component.getLocationOnScreen();
+
+		return this.enqueueMessage(Message.CUSTOM_CURSOR_MOUSE_MOVE_MESSAGE, x + local7.x, local7.y + y, null);
+	}
+
+	private Message emitSetCustomCursorComponentMessage(Component component, boolean shouldReset) {
+		return this.enqueueMessage(Message.SET_CUSTOM_CURSOR_COMPONENT_MESSAGE, shouldReset ? 1 : 0, 0, component);
+	}
+
+	private Message emitGetSystemClipboardContentsMessage() {
+		return this.enqueueMessage(Message.GET_SYSTEM_CLIPBOARD_CONTENTS_MESSAGE, 0, 0, null);
+	}
+
+	private Message emitSetSystemClipboardContentsMessage(Transferable contents) {
+		return this.enqueueMessage(Message.SET_SYSTEM_CLIPBOARD_CONTENTS_MESSAGE, 0, 0, contents);
+	}
+
+	private void performConnectionInitialization(Message message) throws IOException {
+		if (refuseConnectionsUntilTimestamp > MonotonicClock.getCurrentTimeInMilliseconds()) {
+			throw new IOException();
+		}
+
+		message.output = new Socket(InetAddress.getByName((String) message.genericInput), message.firstIntegerInput);
+	}
+
+	private void performThreadInitialization(Message message) {
+		Thread thread = new Thread((Runnable) message.genericInput);
+
+		thread.setDaemon(true);
+		thread.start();
+		thread.setPriority(message.firstIntegerInput);
+
+		message.output = thread;
+	}
+
+	private void performReverseIPLookup(Message message) throws IOException {
+		if (refuseConnectionsUntilTimestamp > MonotonicClock.getCurrentTimeInMilliseconds()) {
+			throw new IOException();
+		}
+
+		String host = ((message.firstIntegerInput >> 24) & 255) + "." +
+				((message.firstIntegerInput >> 16) & 255) + "." +
+				((message.firstIntegerInput >> 8) & 255) + "." +
+				(message.firstIntegerInput & 255);
+
+		message.output = InetAddress.getByName(host).getHostName();
+	}
+
+	private void performOpenURLStream(Message message) throws IOException {
+		if (refuseConnectionsUntilTimestamp > MonotonicClock.getCurrentTimeInMilliseconds()) {
+			throw new IOException();
+		}
+
+		message.output = new DataInputStream(((URL) message.genericInput).openStream());
+	}
+
+	private void performGetFullscreenDisplayModes(Message message) {
+		message.output = fullScreenManager.getDisplayModes();
+	}
+
+	private void performEnterFullscreenMode(Message message) {
+		Frame window = new Frame("Jagex Full Screen");
+
+		message.output = window;
+
+		window.setResizable(false);
+
+		this.fullScreenManager.enterFullscreen(
+				window,
+				message.firstIntegerInput >>> 16,
+				message.firstIntegerInput & 0xFFFF,
+				message.secondIntegerInput >> 16,
+				message.secondIntegerInput & 0xFFFF
+		);
+	}
+
+	private void performExitFullscreenMode(Message message) {
+		this.fullScreenManager.exitFullScreen();
+	}
+
+	private void performGetDeclaredMethod(Message message) throws NoSuchMethodException {
+		Object[] input = (Object[]) message.genericInput;
+
+		if (((Class<?>) input[0]).getClassLoader() == null) {
+			throw new SecurityException();
+		}
+
+		message.output = ((Class<?>) input[0]).getDeclaredMethod((String) input[1], (Class<?>[]) input[2]);
+	}
+
+	private void performGetDeclaredField(Message message) throws NoSuchFieldException {
+		Object[] input = (Object[]) message.genericInput;
+
+		if (((Class<?>) input[0]).getClassLoader() == null) {
+			throw new SecurityException();
+		}
+
+		message.output = ((Class<?>) input[0]).getDeclaredField((String) input[1]);
+	}
+
+	private void performClassLoaderNativeLibrariesCleanup(Message message)
+			throws 	ClassNotFoundException,
+					NoSuchFieldException,
+					NoSuchMethodException,
+					IllegalAccessException,
+					InvocationTargetException
+	{
+		Field nativeLibrariesField = Class.forName("java.lang.ClassLoader").getDeclaredField("nativeLibraries");
+
+		nativeLibrariesField.setAccessible(true);
+
+		Vector<?> nativeLibraries = (Vector<?>) nativeLibrariesField.get(((Class<?>) message.genericInput).getClassLoader());
+
+		for (Object library : nativeLibraries) {
+			Method finalizeMethod = library.getClass().getDeclaredMethod("finalize");
+
+			finalizeMethod.setAccessible(true);
+			finalizeMethod.invoke(library);
+			finalizeMethod.setAccessible(false);
+
+			Field handleField = library.getClass().getDeclaredField("handle");
+			handleField.setAccessible(true);
+			handleField.set(library, 0);
+			handleField.setAccessible(false);
+		}
+
+		nativeLibrariesField.setAccessible(false);
+	}
+
+	private void performResolvePreferencesFileLocation(Message message) {
+		message.output = resolvePreferencesFileLocation((String) message.genericInput, gameName, modewhat);
+	}
+
+	private void performCustomCursorMouseMove(Message message) {
+		int x = message.firstIntegerInput;
+		int y = message.secondIntegerInput;
+
+		this.cursorManager.mouseMove(x, y);
+	}
+
+	private void performSetCustomCursorComponent(Message message) {
+		boolean shouldReset = message.firstIntegerInput != 0;
+		Component component = (Component) message.genericInput;
+
+		this.cursorManager.setComponent(shouldReset, component);
+	}
+
+	private void performOpenURLInBrowser(Message message) throws Exception {
+		try {
+			if (!systemOSName.startsWith("win")) {
+				throw new Exception();
+			}
+
+			String url = (String) message.genericInput;
+
+			if (!url.startsWith("http://") && !url.startsWith("https://")) {
+				throw new Exception();
+			}
+
+			String validCharactersForUrl = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789?&=,.%+-_#:/*";
+
+			for (int i = 0; i < url.length(); i++) {
+				if (validCharactersForUrl.indexOf(url.charAt(i)) < 0) {
+					throw new Exception();
+				}
+			}
+
+			Runtime.getRuntime().exec("cmd /c start \"j\" \"" + url + "\"");
+
+			message.output = null;
+		} catch (Exception e) {
+			message.output = e;
+
+			throw e;
+		}
+	}
+
+	private void performSetCustomCursor(Message message) {
+		Object[] input = (Object[]) message.genericInput;
+
+		this.cursorManager.setCursor(
+				(Component) input[0],
+				message.firstIntegerInput,
+				message.secondIntegerInput,
+				(int[]) input[1],
+				(Point) input[2]
+		);
+	}
+
+	private void performGetSystemClipboardContents(Message message) {
+		Clipboard systemClipboard = Toolkit.getDefaultToolkit().getSystemClipboard();
+
+		message.output = systemClipboard.getContents(null);
+	}
+
+	private void performSetSystemClipboardContents(Message message) {
+		Transferable contents = (Transferable) message.genericInput;
+		Clipboard systemClipboard = Toolkit.getDefaultToolkit().getSystemClipboard();
+
+		systemClipboard.setContents(contents, null);
+	}
+
+	private void performLoadJagMiscNatives(Message message) {
+		try {
+			Runtime runtime = Runtime.getRuntime();
+			Method load0Method = Class.forName("java.lang.Runtime")
+					.getDeclaredMethod("load0", Class.class, String.class);
+
+			load0Method.setAccessible(true);
+
+			if (systemOSName.startsWith("win")) {
+				if (!systemOSArch.startsWith("amd64") && !systemOSArch.startsWith("x86_64")) {
+					load0Method.invoke(runtime, message.genericInput, resolveCacheFilePath("jagmisc.dll").toString());
+				} else {
+					load0Method.invoke(runtime, message.genericInput, resolveCacheFilePath("jagmisc64.dll").toString());
+				}
+			}
+
+			load0Method.setAccessible(false);
+		} catch (Throwable e) {
+			message.output = e;
+		}
 	}
 
 	public boolean method1754() {
