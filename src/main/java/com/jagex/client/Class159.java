@@ -27,8 +27,8 @@ public final class Class159 {
 	public Class159(@OriginalArg(0) JS5Connection arg0, @OriginalArg(1) Class254 arg1) {
 		this.aClass254_2 = arg1;
 		this.aJS5Connection_3 = arg0;
-		if (!this.aJS5Connection_3.isPendingRequestQueueFull()) {
-			this.aClass4_Sub1_Sub6_Sub1_1 = this.aJS5Connection_3.method5465(255, (byte) 0, true, 255);
+		if (!this.aJS5Connection_3.isUrgentRequestQueueFull()) {
+			this.aClass4_Sub1_Sub6_Sub1_1 = this.aJS5Connection_3.requestArchiveFile(255, (byte) 0, true, 255);
 		}
 	}
 
@@ -38,10 +38,10 @@ public final class Class159 {
 			return true;
 		}
 		if (this.aClass4_Sub1_Sub6_Sub1_1 == null) {
-			if (this.aJS5Connection_3.isPendingRequestQueueFull()) {
+			if (this.aJS5Connection_3.isUrgentRequestQueueFull()) {
 				return false;
 			}
-			this.aClass4_Sub1_Sub6_Sub1_1 = this.aJS5Connection_3.method5465(255, (byte) 0, true, 255);
+			this.aClass4_Sub1_Sub6_Sub1_1 = this.aJS5Connection_3.requestArchiveFile(255, (byte) 0, true, 255);
 		}
 		if (this.aClass4_Sub1_Sub6_Sub1_1.aBoolean381) {
 			return false;

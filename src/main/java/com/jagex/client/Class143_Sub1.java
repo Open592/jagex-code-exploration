@@ -102,10 +102,10 @@ public final class Class143_Sub1 extends Class143 {
 		if (local13 == null) {
 			if (arg0 == 0) {
 				if (this.aClass222_3 == null || this.aByteArray56[arg1] == -1) {
-					if (this.aJS5Connection_1.isPendingRequestQueueFull()) {
+					if (this.aJS5Connection_1.isUrgentRequestQueueFull()) {
 						return null;
 					}
-					local13 = this.aJS5Connection_1.method5465(this.anInt4474, (byte) 2, true, arg1);
+					local13 = this.aJS5Connection_1.requestArchiveFile(this.anInt4474, (byte) 2, true, arg1);
 				} else {
 					local13 = this.aClass254_1.method5432(this.aClass222_3, arg1);
 				}
@@ -121,10 +121,10 @@ public final class Class143_Sub1 extends Class143 {
 				if (this.aByteArray56[arg1] != -1) {
 					throw new RuntimeException();
 				}
-				if (this.aJS5Connection_1.isActiveRequestQueueFull()) {
+				if (this.aJS5Connection_1.isRegularRequestQueueFull()) {
 					return null;
 				}
-				local13 = this.aJS5Connection_1.method5465(this.anInt4474, (byte) 2, false, arg1);
+				local13 = this.aJS5Connection_1.requestArchiveFile(this.anInt4474, (byte) 2, false, arg1);
 			} else {
 				throw new RuntimeException();
 			}
@@ -152,8 +152,8 @@ public final class Class143_Sub1 extends Class143 {
 			} catch (@Pc(213) RuntimeException local213) {
 				this.aJS5Connection_1.method5464();
 				local13.popSelf();
-				if (local13.isUrgent && !this.aJS5Connection_1.isPendingRequestQueueFull()) {
-					local238 = this.aJS5Connection_1.method5465(this.anInt4474, (byte) 2, true, arg1);
+				if (local13.isUrgent && !this.aJS5Connection_1.isUrgentRequestQueueFull()) {
+					local238 = this.aJS5Connection_1.requestArchiveFile(this.anInt4474, (byte) 2, true, arg1);
 					this.aHashMap_20.set((long) arg1, local238);
 				}
 				return null;
@@ -197,8 +197,8 @@ public final class Class143_Sub1 extends Class143 {
 		} catch (@Pc(412) Exception local412) {
 			this.aByteArray56[arg1] = -1;
 			local13.popSelf();
-			if (local13.isUrgent && !this.aJS5Connection_1.isPendingRequestQueueFull()) {
-				local238 = this.aJS5Connection_1.method5465(this.anInt4474, (byte) 2, true, arg1);
+			if (local13.isUrgent && !this.aJS5Connection_1.isUrgentRequestQueueFull()) {
+				local238 = this.aJS5Connection_1.requestArchiveFile(this.anInt4474, (byte) 2, true, arg1);
 				this.aHashMap_20.set((long) arg1, local238);
 			}
 			return null;
@@ -282,7 +282,7 @@ public final class Class143_Sub1 extends Class143 {
 					if (this.aClass209_2.anIntArray428[this.anInt4489] == 0) {
 						this.anInt4489++;
 					} else {
-						if (this.aJS5Connection_1.isActiveRequestQueueFull()) {
+						if (this.aJS5Connection_1.isRegularRequestQueueFull()) {
 							local21 = false;
 							break;
 						}
@@ -413,10 +413,10 @@ public final class Class143_Sub1 extends Class143 {
 			return this.aClass209_2;
 		}
 		if (this.aClass4_Sub1_Sub6_1 == null) {
-			if (this.aJS5Connection_1.isPendingRequestQueueFull()) {
+			if (this.aJS5Connection_1.isUrgentRequestQueueFull()) {
 				return null;
 			}
-			this.aClass4_Sub1_Sub6_1 = this.aJS5Connection_1.method5465(255, (byte) 0, true, this.anInt4474);
+			this.aClass4_Sub1_Sub6_1 = this.aJS5Connection_1.requestArchiveFile(255, (byte) 0, true, this.anInt4474);
 		}
 		if (this.aClass4_Sub1_Sub6_1.aBoolean381) {
 			return null;
@@ -433,10 +433,10 @@ public final class Class143_Sub1 extends Class143 {
 				}
 			} catch (@Pc(133) RuntimeException local133) {
 				this.aClass209_2 = null;
-				if (this.aJS5Connection_1.isPendingRequestQueueFull()) {
+				if (this.aJS5Connection_1.isUrgentRequestQueueFull()) {
 					this.aClass4_Sub1_Sub6_1 = null;
 				} else {
-					this.aClass4_Sub1_Sub6_1 = this.aJS5Connection_1.method5465(255, (byte) 0, true, this.anInt4474);
+					this.aClass4_Sub1_Sub6_1 = this.aJS5Connection_1.requestArchiveFile(255, (byte) 0, true, this.anInt4474);
 				}
 				return null;
 			}
@@ -449,10 +449,10 @@ public final class Class143_Sub1 extends Class143 {
 			} catch (@Pc(63) RuntimeException local63) {
 				this.aJS5Connection_1.method5464();
 				this.aClass209_2 = null;
-				if (this.aJS5Connection_1.isPendingRequestQueueFull()) {
+				if (this.aJS5Connection_1.isUrgentRequestQueueFull()) {
 					this.aClass4_Sub1_Sub6_1 = null;
 				} else {
-					this.aClass4_Sub1_Sub6_1 = this.aJS5Connection_1.method5465(255, (byte) 0, true, this.anInt4474);
+					this.aClass4_Sub1_Sub6_1 = this.aJS5Connection_1.requestArchiveFile(255, (byte) 0, true, this.anInt4474);
 				}
 				return null;
 			}

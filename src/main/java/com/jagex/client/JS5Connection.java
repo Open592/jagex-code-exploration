@@ -27,10 +27,10 @@ public final class JS5Connection {
 	private final SecondaryLinkedList pendingUrgentRequests = new SecondaryLinkedList();
 
 	@OriginalMember(owner = "client!vn", name = "s", descriptor = "Lclient!tn;")
-	private final SecondaryLinkedList pendingRegularRequests = new SecondaryLinkedList();
+	private final SecondaryLinkedList activeUrgentRequests = new SecondaryLinkedList();
 
 	@OriginalMember(owner = "client!vn", name = "t", descriptor = "Lclient!tn;")
-	private final SecondaryLinkedList activeUrgentRequests = new SecondaryLinkedList();
+	private final SecondaryLinkedList pendingRegularRequests = new SecondaryLinkedList();
 
 	@OriginalMember(owner = "client!vn", name = "u", descriptor = "Lclient!tn;")
 	private final SecondaryLinkedList activeRegularRequests = new SecondaryLinkedList();
@@ -45,29 +45,29 @@ public final class JS5Connection {
 	public volatile int js5ConnectAttempts = 0;
 
 	@OriginalMember(owner = "client!vn", name = "B", descriptor = "B")
-	private byte aByte94 = 0;
+	private byte obfuscationKey = 0;
 
 	@OriginalMember(owner = "client!vn", name = "c", descriptor = "(I)I")
-	public int getPendingRequestCount() {
-		return this.pendingUrgentRequests.size() + this.pendingRegularRequests.size();
+	public int getUrgentRequestCount() {
+		return this.pendingUrgentRequests.size() + this.activeUrgentRequests.size();
 	}
 
 	@OriginalMember(owner = "client!vn", name = "a", descriptor = "(I)Z")
-	public boolean isPendingRequestQueueFull() {
-		return this.getPendingRequestCount() >= 20;
+	public boolean isUrgentRequestQueueFull() {
+		return this.getUrgentRequestCount() >= 20;
 	}
 
 	@OriginalMember(owner = "client!vn", name = "C", descriptor = "I")
 	public volatile int errorCode = 0;
 
 	@OriginalMember(owner = "client!vn", name = "a", descriptor = "(B)I")
-	private int getActiveRequestCount() {
-		return this.activeUrgentRequests.size() + this.activeRegularRequests.size();
+	private int getRegularRequestCount() {
+		return this.pendingRegularRequests.size() + this.activeRegularRequests.size();
 	}
 
 	@OriginalMember(owner = "client!vn", name = "f", descriptor = "(B)Z")
-	public boolean isActiveRequestQueueFull() {
-		return this.getActiveRequestCount() >= 20;
+	public boolean isRegularRequestQueueFull() {
+		return this.getRegularRequestCount() >= 20;
 	}
 
 	@OriginalMember(owner = "client!vn", name = "a", descriptor = "(ILclient!al;Z)V")
@@ -87,18 +87,18 @@ public final class JS5Connection {
 		this.aClass4_Sub1_Sub6_Sub1_2 = null;
 
 		while (true) {
-			@Pc(40) JS5NetRequest request = (JS5NetRequest) this.pendingRegularRequests.popHead();
+			@Pc(40) JS5NetRequest request = (JS5NetRequest) this.activeUrgentRequests.popHead();
 
 			if (request == null) {
 				while (true) {
 					request = (JS5NetRequest) this.activeRegularRequests.popHead();
 
 					if (request == null) {
-						if (this.aByte94 != 0) {
+						if (this.obfuscationKey != 0) {
 							try {
 								this.outgoingPacket.pos = 0;
-								this.outgoingPacket.p1(4);
-								this.outgoingPacket.p1(this.aByte94);
+								this.outgoingPacket.p1(JS5RequestOpCodes.JS5_STORE_OBFUSCATION_KEY);
+								this.outgoingPacket.p1(this.obfuscationKey);
 								this.outgoingPacket.p2(0);
 								this.serverConnection.write(4, this.outgoingPacket.data);
 							} catch (@Pc(102) IOException local102) {
@@ -111,11 +111,13 @@ public final class JS5Connection {
 								this.serverConnection = null;
 							}
 						}
+
 						this.anInt7061 = 0;
 						this.aLong217 = MonotonicClock.getCurrentTimeInMilliseconds();
+
 						return;
 					}
-					this.activeUrgentRequests.insert(request);
+					this.pendingRegularRequests.insert(request);
 				}
 			}
 			this.pendingUrgentRequests.insert(request);
@@ -154,26 +156,26 @@ public final class JS5Connection {
 
 		this.serverConnection = null;
 		this.errorCode = -1;
-		this.aByte94 = (byte) (Math.random() * 255.0D + 1.0D);
+		this.obfuscationKey = (byte) (Math.random() * 255.0D + 1.0D);
 		this.js5ConnectAttempts++;
 	}
 
 	@OriginalMember(owner = "client!vn", name = "a", descriptor = "(IBBZI)Lclient!je;")
-	public JS5NetRequest method5465(@OriginalArg(0) int archive, @OriginalArg(1) byte arg1, @OriginalArg(3) boolean isUrgent, @OriginalArg(4) int arg3) {
-		@Pc(19) long local19 = ((long) archive << 16) + arg3;
+	public JS5NetRequest requestArchiveFile(@OriginalArg(0) int archive, @OriginalArg(1) byte arg1, @OriginalArg(3) boolean isUrgent, @OriginalArg(4) int group) {
+		@Pc(19) long archiveGroupId = ((long) archive << 16) + group;
 
 		@Pc(23) JS5NetRequest request = new JS5NetRequest();
-		request.secondaryValue = local19;
+		request.secondaryValue = archiveGroupId;
 		request.isUrgent = isUrgent;
 		request.aByte24 = arg1;
 
 		if (isUrgent) {
-			if (this.getPendingRequestCount() >= 20) {
+			if (this.getUrgentRequestCount() >= 20) {
 				throw new RuntimeException();
 			}
 			this.pendingUrgentRequests.insert(request);
-		} else if (this.getActiveRequestCount() < 20) {
-			this.activeUrgentRequests.insert(request);
+		} else if (this.getRegularRequestCount() < 20) {
+			this.pendingRegularRequests.insert(request);
 		} else {
 			throw new RuntimeException();
 		}
@@ -261,7 +263,7 @@ public final class JS5Connection {
 		}
 
 		if (this.serverConnection == null) {
-			return this.getPendingRequestCount() == 0 && this.getActiveRequestCount() == 0;
+			return this.getUrgentRequestCount() == 0 && this.getRegularRequestCount() == 0;
 		}
 
 		try {
@@ -272,10 +274,10 @@ public final class JS5Connection {
 				this.outgoingPacket.p1(JS5RequestOpCodes.JS5_URGENT_REQUEST);
 				this.outgoingPacket.p3((int) request.secondaryValue);
 				this.serverConnection.write(4, this.outgoingPacket.data);
-				this.pendingRegularRequests.insert(request);
+				this.activeUrgentRequests.insert(request);
 			}
 
-			for (@Pc(122) JS5NetRequest request = (JS5NetRequest) this.activeUrgentRequests.getHead(); request != null; request = (JS5NetRequest) this.activeUrgentRequests.next()) {
+			for (@Pc(122) JS5NetRequest request = (JS5NetRequest) this.pendingRegularRequests.getHead(); request != null; request = (JS5NetRequest) this.pendingRegularRequests.next()) {
 				this.outgoingPacket.pos = 0;
 				this.outgoingPacket.p1(JS5RequestOpCodes.JS5_REGULAR_REQUEST);
 				this.outgoingPacket.p3((int) request.secondaryValue);
@@ -326,9 +328,9 @@ public final class JS5Connection {
 							this.aClass4_Sub1_Sub6_Sub1_2.aClass4_Sub12_4.data
 					);
 
-					if (this.aByte94 != 0) {
+					if (this.obfuscationKey != 0) {
 						for (local275 = 0; local275 < local226; local275++) {
-							this.aClass4_Sub1_Sub6_Sub1_2.aClass4_Sub12_4.data[local275 + this.aClass4_Sub1_Sub6_Sub1_2.aClass4_Sub12_4.pos] ^= this.aByte94;
+							this.aClass4_Sub1_Sub6_Sub1_2.aClass4_Sub12_4.data[local275 + this.aClass4_Sub1_Sub6_Sub1_2.aClass4_Sub12_4.pos] ^= this.obfuscationKey;
 						}
 					}
 					this.aClass4_Sub1_Sub6_Sub1_2.aClass4_Sub12_4.pos += local226;
@@ -350,9 +352,9 @@ public final class JS5Connection {
 
 					this.serverConnection.readBytesFromServer(this.incomingPacket.pos, local219, this.incomingPacket.data);
 
-					if (this.aByte94 != 0) {
+					if (this.obfuscationKey != 0) {
 						for (local226 = 0; local226 < local219; local226++) {
-							this.incomingPacket.data[this.incomingPacket.pos + local226] ^= this.aByte94;
+							this.incomingPacket.data[this.incomingPacket.pos + local226] ^= this.obfuscationKey;
 						}
 					}
 
@@ -367,13 +369,13 @@ public final class JS5Connection {
 							@Pc(464) int local464 = this.incomingPacket.g4();
 							@Pc(468) int local468 = local459 & 0x7F;
 							@Pc(479) boolean local479 = (local459 & 0x80) != 0;
-							@Pc(486) long local486 = (long) ((local226 << 16) + local275);
+							@Pc(486) long local486 = ((long) local226 << 16) + local275;
 							@Pc(496) JS5NetRequest local496;
 							if (local479) {
 								for (local496 = (JS5NetRequest) this.activeRegularRequests.getHead(); local496 != null && local496.secondaryValue != local486; local496 = (JS5NetRequest) this.activeRegularRequests.next()) {
 								}
 							} else {
-								for (local496 = (JS5NetRequest) this.pendingRegularRequests.getHead(); local496 != null && local496.secondaryValue != local486; local496 = (JS5NetRequest) this.pendingRegularRequests.next()) {
+								for (local496 = (JS5NetRequest) this.activeUrgentRequests.getHead(); local496 != null && local496.secondaryValue != local486; local496 = (JS5NetRequest) this.activeUrgentRequests.next()) {
 								}
 							}
 							if (local496 == null) {
@@ -406,7 +408,7 @@ public final class JS5Connection {
 			this.js5ConnectAttempts++;
 			this.errorCode = -2;
 			this.serverConnection = null;
-			return this.getPendingRequestCount() == 0 && this.getActiveRequestCount() == 0;
+			return this.getUrgentRequestCount() == 0 && this.getRegularRequestCount() == 0;
 		}
 	}
 

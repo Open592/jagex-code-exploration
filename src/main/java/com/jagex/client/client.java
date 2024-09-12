@@ -4702,9 +4702,9 @@ public final class client extends GameShell {
 
 	@OriginalMember(owner = "client!client", name = "f", descriptor = "(B)V")
 	private void method912() {
-		@Pc(7) boolean shouldConnect = js5Connection.method5468();
+		@Pc(7) boolean ranSuccessfully = js5Connection.method5468();
 
-		if (!shouldConnect) {
+		if (!ranSuccessfully) {
 			this.js5connect();
 		}
 	}
