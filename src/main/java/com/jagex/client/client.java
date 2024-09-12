@@ -4297,7 +4297,7 @@ public final class client extends GameShell {
 		}
 
 		if (ClientSettings.MODEWHERE_LIVE != ClientSettings.modewhere) {
-			Static325.isNotRunningInLive = true;
+			Static325.isFPSMonitorActive = true;
 		}
 
 		Static129.aString30 = (ClientSettings.RUNESCAPE_GAME_DETAILS == ClientSettings.currentGameDetails ? Static268.aClass83_104 : Static374.aClass83_129).method2267(ClientSettings.langID);

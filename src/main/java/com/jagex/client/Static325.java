@@ -24,7 +24,7 @@ public final class Static325 {
 	public static final Random random = new Random();
 
 	@OriginalMember(owner = "client!qh", name = "F", descriptor = "Z")
-	public static boolean isNotRunningInLive = false;
+	public static boolean isFPSMonitorActive = false;
 
 	@OriginalMember(owner = "client!qh", name = "G", descriptor = "I")
 	public static int anInt5640 = 1;

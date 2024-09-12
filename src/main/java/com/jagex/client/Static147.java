@@ -179,12 +179,12 @@ public final class Static147 {
 								continue;
 							}
 							if (Static281.anInt5183 == local23.anInt6842) {
-								if (!Static325.isNotRunningInLive && !Static437.aBoolean477) {
+								if (!Static325.isFPSMonitorActive && !Static437.isRenderProfileMonitorActive) {
 									continue;
 								}
 								local244 = local90 + local23.anInt6833;
 								local249 = local95 + 15;
-								if (Static325.isNotRunningInLive) {
+								if (Static325.isFPSMonitorActive) {
 									Static207.aClass46_9.method5059("Fps:" + GameShell.framesPerSecond, local249, -256, local244);
 									local249 += 15;
 									@Pc(495) Runtime local495 = Runtime.getRuntime();
@@ -218,7 +218,7 @@ public final class Static147 {
 									Static43.aClass46_12.method5059("Particles: " + Static275.anInt5137 + " / " + Static435.anInt7099, local249, -256, local244);
 								}
 								local249 += 12;
-								if (Static437.aBoolean477) {
+								if (Static437.isRenderProfileMonitorActive) {
 									Static43.aClass46_12.method5059("Polys: " + Static122.aClass19_16.ZA() + " Models: " + Static122.aClass19_16.w(), local249, -256, local244);
 									local249 += 12;
 									Static43.aClass46_12.method5059("Ls: " + Static236.anInt4491 + " La: " + Static308.anInt5410 + " NPC: " + Static412.anInt6770 + " Pl: " + Static28.anInt464, local249, -256, local244);

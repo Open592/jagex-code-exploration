@@ -10,7 +10,7 @@ public final class Static437 {
 	public static final Class215 aClass215_66 = new Class215(55, 16);
 
 	@OriginalMember(owner = "client!wa", name = "e", descriptor = "Z")
-	public static boolean aBoolean477 = false;
+	public static boolean isRenderProfileMonitorActive = false;
 
 	@OriginalMember(owner = "client!wa", name = "g", descriptor = "[C")
 	public static final char[] aCharArray6 = new char[] { '[', ']', '#' };

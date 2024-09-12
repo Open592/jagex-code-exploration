@@ -29,12 +29,12 @@ public final class Static400 {
 		}
 		try {
 			if (command.equalsIgnoreCase("fpson")) {
-				Static325.isNotRunningInLive = true;
+				Static325.isFPSMonitorActive = true;
 				Static441.method5568("fps debug enabled");
 				return;
 			}
 			if (command.equalsIgnoreCase("fpsoff")) {
-				Static325.isNotRunningInLive = false;
+				Static325.isFPSMonitorActive = false;
 				Static441.method5568("fps debug disabled");
 				return;
 			}
@@ -377,10 +377,10 @@ public final class Static400 {
 				return;
 			}
 			if (command.equals("renderprofile") || command.equals("rp")) {
-				Static437.aBoolean477 = !Static437.aBoolean477;
-				Static122.aClass19_16.method4255(Static437.aBoolean477);
+				Static437.isRenderProfileMonitorActive = !Static437.isRenderProfileMonitorActive;
+				Static122.aClass19_16.method4255(Static437.isRenderProfileMonitorActive);
 				Static47.method768();
-				Static441.method5568("showprofiling=" + Static437.aBoolean477);
+				Static441.method5568("showprofiling=" + Static437.isRenderProfileMonitorActive);
 				return;
 			}
 			if (command.equals("performancetest")) {

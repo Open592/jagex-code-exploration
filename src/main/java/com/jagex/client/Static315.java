@@ -48,7 +48,7 @@ public final class Static315 {
 				Static140.anInt2835--;
 			}
 		}
-		if (!Static325.isNotRunningInLive) {
+		if (!Static325.isFPSMonitorActive) {
 			return;
 		}
 		@Pc(232) int local232 = arg1 + arg0 - 5;
