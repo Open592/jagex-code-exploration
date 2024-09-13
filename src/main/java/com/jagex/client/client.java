@@ -51,6 +51,15 @@ public final class client extends GameShell {
 	@OriginalMember(owner = "client!er", name = "C", descriptor = "I")
 	public static int fallbackServerPort;
 
+	@OriginalMember(owner = "client!ts", name = "q", descriptor = "I")
+	public static int connectionRetrySkipIterations = 0;
+
+	@OriginalMember(owner = "client!un", name = "w", descriptor = "I")
+	public static int port;
+
+	@OriginalMember(owner = "client!qc", name = "c", descriptor = "Ljava/lang/String;")
+	public static String host;
+
 	@OriginalMember(owner = "client!client", name = "main", descriptor = "([Ljava/lang/String;)V")
 	public static void main(@OriginalArg(0) String[] arguments) {
 		try {
@@ -277,26 +286,34 @@ public final class client extends GameShell {
 			Static308.anInt5413 = Static325.anInt5640;
 			Static188.anInt5353--;
 		}
+
 		if (Static95.anInt1910 > 0) {
 			Static95.anInt1910--;
 		}
+
 		if (Static22.aBoolean38) {
 			Static22.aBoolean38 = false;
 			Static165.method2731();
+
 			return;
 		}
+
 		if (!Static234.aBoolean411) {
 			Static314.method4198();
 		}
+
 		for (@Pc(38) int local38 = 0; local38 < 100 && method4188(); local38++) {
 		}
+
 		if (Static403.anInt6667 != 30) {
 			return;
 		}
+
 		Static321.method4336(Static251.aClass215_54.method4926(), Static3.aClass4_Sub12_Sub1_5);
+
 		if (Static178.aClass4_Sub42_2 == null) {
 			if (Static419.aLong212 <= MonotonicClock.getCurrentTimeInMilliseconds()) {
-				Static178.aClass4_Sub42_2 = Static402.aClass256_1.method5479(Static321.host);
+				Static178.aClass4_Sub42_2 = Static402.aClass256_1.method5479(host);
 			}
 		} else if (Static178.aClass4_Sub42_2.anInt6883 != -1) {
 			Static429.method5476(Static27.aClass215_7);
@@ -304,6 +321,7 @@ public final class client extends GameShell {
 			Static178.aClass4_Sub42_2 = null;
 			Static419.aLong212 = MonotonicClock.getCurrentTimeInMilliseconds() + 30000L;
 		}
+
 		@Pc(99) Node_Sub5 local99 = (Node_Sub5) Static413.aClass183_47.method4140();
 		@Pc(119) int local119;
 		@Pc(140) int local140;
@@ -312,9 +330,11 @@ public final class client extends GameShell {
 		@Pc(227) int local227;
 		@Pc(234) int local234;
 		@Pc(246) int local246;
+
 		if (local99 != null || MonotonicClock.getCurrentTimeInMilliseconds() - 2000L > Static292.aLong177) {
 			@Pc(116) boolean local116 = false;
 			local119 = Static3.aClass4_Sub12_Sub1_5.pos;
+
 			for (@Pc(124) Node_Sub5 local124 = (Node_Sub5) Static348.aClass183_42.method4140(); local124 != null && Static3.aClass4_Sub12_Sub1_5.pos - local119 < 240; local124 = (Node_Sub5) Static348.aClass183_42.method4144()) {
 				local124.popSelf();
 				local140 = local124.method519();
@@ -809,15 +829,15 @@ public final class client extends GameShell {
 				}
 				Static238.anInt4506 = 1;
 				Static212.anInt3932++;
-				if (primaryServerPort == Static407.port) {
-					Static407.port = fallbackServerPort;
+				if (primaryServerPort == port) {
+					port = fallbackServerPort;
 				} else {
-					Static407.port = primaryServerPort;
+					port = primaryServerPort;
 				}
 				Static64.anInt1366 = 0;
 			}
 			if (Static238.anInt4506 == 1) {
-				Static36.aClass199_3 = Static206.signLink.emitConnectionInitializationMessage(Static321.host, Static407.port);
+				Static36.aClass199_3 = Static206.signLink.emitConnectionInitializationMessage(host, port);
 				Static238.anInt4506 = 2;
 			}
 			@Pc(112) int local112;
@@ -1084,10 +1104,10 @@ public final class client extends GameShell {
 				Static296.anInt5302 = -4;
 				Static238.anInt4506 = 0;
 			} else {
-				if (primaryServerPort == Static407.port) {
-					Static407.port = fallbackServerPort;
+				if (primaryServerPort == port) {
+					port = fallbackServerPort;
 				} else {
-					Static407.port = primaryServerPort;
+					port = primaryServerPort;
 				}
 				Static238.anInt4506 = 1;
 				Static212.anInt3932++;
@@ -1354,15 +1374,15 @@ public final class client extends GameShell {
 				}
 				Static354.anInt6183 = 1;
 				Static348.anInt5976 = 0;
-				if (primaryServerPort == Static407.port) {
-					Static407.port = fallbackServerPort;
+				if (primaryServerPort == port) {
+					port = fallbackServerPort;
 				} else {
-					Static407.port = primaryServerPort;
+					port = primaryServerPort;
 				}
 				Static119.anInt2524++;
 			}
 			if (Static354.anInt6183 == 1) {
-				Static36.aClass199_3 = Static206.signLink.emitConnectionInitializationMessage(Static321.host, Static407.port);
+				Static36.aClass199_3 = Static206.signLink.emitConnectionInitializationMessage(host, port);
 				Static354.anInt6183 = 2;
 			}
 			@Pc(120) int local120;
@@ -1416,10 +1436,10 @@ public final class client extends GameShell {
 				Static249.anInt4623 = -4;
 			} else {
 				Static354.anInt6183 = 1;
-				if (Static407.port == primaryServerPort) {
-					Static407.port = fallbackServerPort;
+				if (port == primaryServerPort) {
+					port = fallbackServerPort;
 				} else {
-					Static407.port = primaryServerPort;
+					port = primaryServerPort;
 				}
 				Static119.anInt2524++;
 				Static348.anInt5976 = 0;
@@ -3567,27 +3587,31 @@ public final class client extends GameShell {
 	@OriginalMember(owner = "client!client", name = "i", descriptor = "(I)V")
 	private void js5connect() {
 		if (js5Connection.js5ConnectAttempts > previousJS5ConnectionAttepts) {
-			Static392.anInt6543 = (js5Connection.js5ConnectAttempts * 50 - 50) * 5;
+			connectionRetrySkipIterations = (js5Connection.js5ConnectAttempts * 50 - 50) * 5;
 
-			if (Static407.port == primaryServerPort) {
-				Static407.port = fallbackServerPort;
+			if (port == primaryServerPort) {
+				port = fallbackServerPort;
 			} else {
-				Static407.port = primaryServerPort;
+				port = primaryServerPort;
 			}
 
-			if (Static392.anInt6543 > 3000) {
-				Static392.anInt6543 = 3000;
+			if (connectionRetrySkipIterations > 3000) {
+				connectionRetrySkipIterations = 3000;
 			}
 
 			if (js5Connection.js5ConnectAttempts >= 2 && js5Connection.errorCode == 6) {
 				this.handleGameError("js5connect_outofdate");
+
 				Static403.anInt6667 = 1000;
+
 				return;
 			}
 
 			if (js5Connection.js5ConnectAttempts >= 4 && js5Connection.errorCode == -1) {
 				this.handleGameError("js5crc");
+
 				Static403.anInt6667 = 1000;
+
 				return;
 			}
 
@@ -3608,20 +3632,22 @@ public final class client extends GameShell {
 
 		previousJS5ConnectionAttepts = js5Connection.js5ConnectAttempts;
 
-		if (Static392.anInt6543 > 0) {
-			Static392.anInt6543--;
+		if (connectionRetrySkipIterations > 0) {
+			connectionRetrySkipIterations--;
 			return;
 		}
 
 		try {
 			if (js5ConnectionStage == 0) {
-				connectionInitializationMessage = Static206.signLink.emitConnectionInitializationMessage(Static321.host, Static407.port);
+				connectionInitializationMessage = Static206.signLink.emitConnectionInitializationMessage(host, port);
+
 				js5ConnectionStage++;
 			}
 
 			if (js5ConnectionStage == 1) {
 				if (connectionInitializationMessage.status == 2) {
 					this.signalJS5ConnectionFailedWithErrorCode(1000);
+
 					return;
 				}
 				if (connectionInitializationMessage.status == 1) {
@@ -3631,11 +3657,15 @@ public final class client extends GameShell {
 
 			if (js5ConnectionStage == 2) {
 				serverConnection = new ServerConnection((Socket) connectionInitializationMessage.output, Static206.signLink);
+
 				@Pc(194) Packet connectionInitializationPacket = new Packet(5);
 				connectionInitializationPacket.p1(Class60.aClass60_2.anInt1812);
 				connectionInitializationPacket.p4(592);
+
 				serverConnection.write(5, connectionInitializationPacket.data);
+
 				js5ConnectionStage++;
+
 				connectionInitializationTimestamp = MonotonicClock.getCurrentTimeInMilliseconds();
 			}
 
@@ -3645,12 +3675,14 @@ public final class client extends GameShell {
 
 					if (response != 0) {
 						this.signalJS5ConnectionFailedWithErrorCode(response);
+
 						return;
 					}
 
 					js5ConnectionStage++;
 				} else if (MonotonicClock.getCurrentTimeInMilliseconds() - connectionInitializationTimestamp > 30000L) {
 					this.signalJS5ConnectionFailedWithErrorCode(1001);
+
 					return;
 				}
 			}
@@ -3664,7 +3696,7 @@ public final class client extends GameShell {
 				js5ConnectionStage = 0;
 				serverConnection = null;
 			}
-		} catch (@Pc(312) IOException local312) {
+		} catch (@Pc(312) IOException e) {
 			this.signalJS5ConnectionFailedWithErrorCode(1002);
 		}
 	}
@@ -4002,7 +4034,9 @@ public final class client extends GameShell {
 		if (Static403.anInt6667 == 1000) {
 			return;
 		}
+
 		Static24.anInt5323++;
+
 		if (Static24.anInt5323 % 1000 == 1) {
 			@Pc(24) GregorianCalendar gregorianCalendar = new GregorianCalendar();
 			Static239.randomSeed = gregorianCalendar.get(Calendar.HOUR_OF_DAY) * 600 + gregorianCalendar.get(Calendar.MINUTE) * 10 + gregorianCalendar.get(Calendar.SECOND) / 6;
@@ -4236,7 +4270,7 @@ public final class client extends GameShell {
 		}
 
 		Static313.anInt5435 = Static133.JS5Port;
-		Static321.host = Static13.host;
+		host = Static13.host;
 
 		fallbackServerPort = Static11.HTTPPort;
 		primaryServerPort = Static133.JS5Port;
@@ -4262,7 +4296,7 @@ public final class client extends GameShell {
 			Static299.aShortArray179 = Static354.aShortArray210;
 		}
 
-		Static407.port = Static313.anInt5435;
+		port = Static313.anInt5435;
 		Static384.aClass244_1 = Static140.method2398(GameShell.aCanvas5);
 		Static420.aClass80_1 = Static376.method4882(GameShell.aCanvas5);
 		Static223.aClass14_1 = Static328.method4424();

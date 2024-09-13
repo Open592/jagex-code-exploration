@@ -51,11 +51,11 @@ public final class Static162 {
 			}
 		} else {
 			Static56.anInt1028 = local7.anInt3881;
-			Static321.host = local7.aString38;
+			client.host = local7.aString38;
 			if (ClientSettings.modewhere != ClientSettings.MODEWHERE_LIVE) {
 				client.fallbackServerPort = Static56.anInt1028 + 50000;
 				client.primaryServerPort = Static56.anInt1028 + 40000;
-				Static407.port = client.primaryServerPort;
+				client.port = client.primaryServerPort;
 			}
 			return true;
 		}

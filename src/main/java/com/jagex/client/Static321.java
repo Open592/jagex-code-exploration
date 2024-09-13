@@ -15,9 +15,6 @@ import org.openrs2.deob.annotation.Pc;
 
 public final class Static321 {
 
-	@OriginalMember(owner = "client!qc", name = "c", descriptor = "Ljava/lang/String;")
-	public static String host;
-
 	@OriginalMember(owner = "client!qc", name = "h", descriptor = "Lclient!gk;")
 	public static final Class83 aClass83_117 = new Class83("Connected to update server", "Verbindung zum Update-Server hergestellt.", "Connecté au serveur de mise à jour", "Conectado ao servidor de atualização");
 

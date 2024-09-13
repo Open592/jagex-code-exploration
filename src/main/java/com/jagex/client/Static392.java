@@ -28,9 +28,6 @@ public final class Static392 {
 	@OriginalMember(owner = "client!ts", name = "p", descriptor = "[Lclient!ah;")
 	public static final Class8[] aClass8Array1 = new Class8[16];
 
-	@OriginalMember(owner = "client!ts", name = "q", descriptor = "I")
-	public static int anInt6543 = 0;
-
 	@OriginalMember(owner = "client!ts", name = "r", descriptor = "Lclient!gk;")
 	public static final Class83 aClass83_134 = new Class83("Loading additional fonts - ", "Lade Zusatzschriftarten - ", "Chargement de polices secondaires - ", "Carregando fontes principais - ");
 
