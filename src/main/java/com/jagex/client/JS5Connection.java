@@ -15,10 +15,10 @@ public final class JS5Connection {
 	private ServerConnection serverConnection;
 
 	@OriginalMember(owner = "client!vn", name = "w", descriptor = "J")
-	private long aLong217;
+	private long timeOfLastRequestProcesed;
 
 	@OriginalMember(owner = "client!vn", name = "y", descriptor = "I")
-	private int anInt7061;
+	private int timeSinceLastByteFromServer;
 
 	@OriginalMember(owner = "client!vn", name = "D", descriptor = "Lclient!je;")
 	private JS5NetRequest aClass4_Sub1_Sub6_Sub1_2;
@@ -46,6 +46,12 @@ public final class JS5Connection {
 
 	@OriginalMember(owner = "client!vn", name = "B", descriptor = "B")
 	private byte obfuscationKey = 0;
+
+	public enum ProcessConnectionsResult {
+		SUCCESSFULLY_PROCESSED_REQUESTS,
+		NO_REQUESTS_TO_PROCESS,
+		UNABLE_TO_PROCESS_REQUESTS,
+	}
 
 	@OriginalMember(owner = "client!vn", name = "c", descriptor = "(I)I")
 	public int getUrgentRequestCount() {
@@ -112,8 +118,8 @@ public final class JS5Connection {
 							}
 						}
 
-						this.anInt7061 = 0;
-						this.aLong217 = MonotonicClock.getCurrentTimeInMilliseconds();
+						this.timeSinceLastByteFromServer = 0;
+						this.timeOfLastRequestProcesed = MonotonicClock.getCurrentTimeInMilliseconds();
 
 						return;
 					}
@@ -236,23 +242,21 @@ public final class JS5Connection {
 	}
 
 	@OriginalMember(owner = "client!vn", name = "b", descriptor = "(I)Z")
-	public boolean method5468() {
-		@Pc(18) int local18;
-
+	public ProcessConnectionsResult processJS5Requests() {
 		if (this.serverConnection != null) {
 			@Pc(11) long currentTimeInMilliseconds = MonotonicClock.getCurrentTimeInMilliseconds();
 
-			local18 = (int) (currentTimeInMilliseconds - this.aLong217);
+			int connectionTimeInterval = (int) (currentTimeInMilliseconds - this.timeOfLastRequestProcesed);
 
-			this.aLong217 = currentTimeInMilliseconds;
+			this.timeOfLastRequestProcesed = currentTimeInMilliseconds;
 
-			if (local18 > 200) {
-				local18 = 200;
+			if (connectionTimeInterval > 200) {
+				connectionTimeInterval = 200;
 			}
 
-			this.anInt7061 += local18;
+			this.timeSinceLastByteFromServer += connectionTimeInterval;
 
-			if (this.anInt7061 > 30000) {
+			if (this.timeSinceLastByteFromServer > 30000) {
 				try {
 					this.serverConnection.shutdown();
 				} catch (@Pc(42) Exception ignored) {
@@ -263,7 +267,9 @@ public final class JS5Connection {
 		}
 
 		if (this.serverConnection == null) {
-			return this.getUrgentRequestCount() == 0 && this.getRegularRequestCount() == 0;
+			return (this.getUrgentRequestCount() == 0 && this.getRegularRequestCount() == 0)
+					? ProcessConnectionsResult.NO_REQUESTS_TO_PROCESS
+					: ProcessConnectionsResult.UNABLE_TO_PROCESS_REQUESTS;
 		}
 
 		try {
@@ -285,18 +291,18 @@ public final class JS5Connection {
 				this.activeRegularRequests.insert(request);
 			}
 
-			for (local18 = 0; local18 < 100; local18++) {
-				@Pc(177) int local177 = this.serverConnection.getEstimatedBytesAvailable();
+			for (int i = 0; i < 100; i++) {
+				@Pc(177) int estimatedBytesAvailable = this.serverConnection.getEstimatedBytesAvailable();
 
-				if (local177 < 0) {
+				if (estimatedBytesAvailable < 0) {
 					throw new IOException();
 				}
 
-				if (local177 == 0) {
+				if (estimatedBytesAvailable == 0) {
 					break;
 				}
 
-				this.anInt7061 = 0;
+				this.timeSinceLastByteFromServer = 0;
 
 				@Pc(190) byte local190 = 0;
 
@@ -318,8 +324,8 @@ public final class JS5Connection {
 						local226 = local219 - this.aClass4_Sub1_Sub6_Sub1_2.aClass4_Sub12_4.pos;
 					}
 
-					if (local226 > local177) {
-						local226 = local177;
+					if (local226 > estimatedBytesAvailable) {
+						local226 = estimatedBytesAvailable;
 					}
 
 					this.serverConnection.readBytesFromServer(
@@ -346,8 +352,8 @@ public final class JS5Connection {
 				} else {
 					local219 = local190 - this.incomingPacket.pos;
 
-					if (local219 > local177) {
-						local219 = local177;
+					if (local219 > estimatedBytesAvailable) {
+						local219 = estimatedBytesAvailable;
 					}
 
 					this.serverConnection.readBytesFromServer(this.incomingPacket.pos, local219, this.incomingPacket.data);
@@ -399,16 +405,21 @@ public final class JS5Connection {
 					}
 				}
 			}
-			return true;
-		} catch (@Pc(627) IOException local627) {
+
+			return ProcessConnectionsResult.SUCCESSFULLY_PROCESSED_REQUESTS;
+		} catch (@Pc(627) IOException e) {
 			try {
 				this.serverConnection.shutdown();
 			} catch (@Pc(633) Exception local633) {
 			}
+
 			this.js5ConnectAttempts++;
 			this.errorCode = -2;
 			this.serverConnection = null;
-			return this.getUrgentRequestCount() == 0 && this.getRegularRequestCount() == 0;
+
+			return (this.getUrgentRequestCount() == 0 && this.getRegularRequestCount() == 0)
+					? ProcessConnectionsResult.NO_REQUESTS_TO_PROCESS
+					: ProcessConnectionsResult.UNABLE_TO_PROCESS_REQUESTS;
 		}
 	}
 

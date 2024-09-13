@@ -4736,9 +4736,9 @@ public final class client extends GameShell {
 
 	@OriginalMember(owner = "client!client", name = "f", descriptor = "(B)V")
 	private void method912() {
-		@Pc(7) boolean ranSuccessfully = js5Connection.method5468();
+		JS5Connection.ProcessConnectionsResult result = js5Connection.processJS5Requests();
 
-		if (!ranSuccessfully) {
+		if (result == JS5Connection.ProcessConnectionsResult.UNABLE_TO_PROCESS_REQUESTS) {
 			this.js5connect();
 		}
 	}
