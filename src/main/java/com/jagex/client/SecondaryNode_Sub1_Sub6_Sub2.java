@@ -21,8 +21,8 @@ public final class SecondaryNode_Sub1_Sub6_Sub2 extends SecondaryNode_Sub1_Sub6 
 
 	@OriginalMember(owner = "client!lf", name = "b", descriptor = "(Z)[B")
 	@Override
-	public byte[] method3343() {
-		if (super.aBoolean381) {
+	public byte[] getResponseData() {
+		if (super.isRequestInProgress) {
 			throw new RuntimeException();
 		}
 		return this.aByteArray50;
@@ -31,6 +31,6 @@ public final class SecondaryNode_Sub1_Sub6_Sub2 extends SecondaryNode_Sub1_Sub6 
 	@OriginalMember(owner = "client!lf", name = "a", descriptor = "(I)I")
 	@Override
 	public int method3342() {
-		return super.aBoolean381 ? 0 : 100;
+		return super.isRequestInProgress ? 0 : 100;
 	}
 }

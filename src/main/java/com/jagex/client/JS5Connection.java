@@ -312,11 +312,11 @@ public final class JS5Connection {
 				@Pc(275) int local275;
 
 				if (local190 <= 0) {
-					local219 = this.aClass4_Sub1_Sub6_Sub1_2.aClass4_Sub12_4.data.length - this.aClass4_Sub1_Sub6_Sub1_2.aByte24;
+					local219 = this.aClass4_Sub1_Sub6_Sub1_2.packet.data.length - this.aClass4_Sub1_Sub6_Sub1_2.aByte24;
 					local226 = 512 - this.aClass4_Sub1_Sub6_Sub1_2.anInt3510;
 
-					if (local219 - this.aClass4_Sub1_Sub6_Sub1_2.aClass4_Sub12_4.pos < local226) {
-						local226 = local219 - this.aClass4_Sub1_Sub6_Sub1_2.aClass4_Sub12_4.pos;
+					if (local219 - this.aClass4_Sub1_Sub6_Sub1_2.packet.pos < local226) {
+						local226 = local219 - this.aClass4_Sub1_Sub6_Sub1_2.packet.pos;
 					}
 
 					if (local226 > estimatedBytesAvailable) {
@@ -324,22 +324,22 @@ public final class JS5Connection {
 					}
 
 					this.serverConnection.readBytesFromServer(
-							this.aClass4_Sub1_Sub6_Sub1_2.aClass4_Sub12_4.pos,
+							this.aClass4_Sub1_Sub6_Sub1_2.packet.pos,
 							local226,
-							this.aClass4_Sub1_Sub6_Sub1_2.aClass4_Sub12_4.data
+							this.aClass4_Sub1_Sub6_Sub1_2.packet.data
 					);
 
 					if (this.obfuscationKey != 0) {
 						for (local275 = 0; local275 < local226; local275++) {
-							this.aClass4_Sub1_Sub6_Sub1_2.aClass4_Sub12_4.data[local275 + this.aClass4_Sub1_Sub6_Sub1_2.aClass4_Sub12_4.pos] ^= this.obfuscationKey;
+							this.aClass4_Sub1_Sub6_Sub1_2.packet.data[local275 + this.aClass4_Sub1_Sub6_Sub1_2.packet.pos] ^= this.obfuscationKey;
 						}
 					}
-					this.aClass4_Sub1_Sub6_Sub1_2.aClass4_Sub12_4.pos += local226;
+					this.aClass4_Sub1_Sub6_Sub1_2.packet.pos += local226;
 					this.aClass4_Sub1_Sub6_Sub1_2.anInt3510 += local226;
 
-					if (this.aClass4_Sub1_Sub6_Sub1_2.aClass4_Sub12_4.pos == local219) {
+					if (this.aClass4_Sub1_Sub6_Sub1_2.packet.pos == local219) {
 						this.aClass4_Sub1_Sub6_Sub1_2.secondaryPopSelf();
-						this.aClass4_Sub1_Sub6_Sub1_2.aBoolean381 = false;
+						this.aClass4_Sub1_Sub6_Sub1_2.isRequestInProgress = false;
 						this.aClass4_Sub1_Sub6_Sub1_2 = null;
 					} else if (this.aClass4_Sub1_Sub6_Sub1_2.anInt3510 == 512) {
 						this.aClass4_Sub1_Sub6_Sub1_2.anInt3510 = 0;
@@ -384,9 +384,9 @@ public final class JS5Connection {
 							}
 							@Pc(549) int local549 = local468 == 0 ? 5 : 9;
 							this.aClass4_Sub1_Sub6_Sub1_2 = local496;
-							this.aClass4_Sub1_Sub6_Sub1_2.aClass4_Sub12_4 = new Packet(local549 + local464 + this.aClass4_Sub1_Sub6_Sub1_2.aByte24);
-							this.aClass4_Sub1_Sub6_Sub1_2.aClass4_Sub12_4.p1(local468);
-							this.aClass4_Sub1_Sub6_Sub1_2.aClass4_Sub12_4.p4(local464);
+							this.aClass4_Sub1_Sub6_Sub1_2.packet = new Packet(local549 + local464 + this.aClass4_Sub1_Sub6_Sub1_2.aByte24);
+							this.aClass4_Sub1_Sub6_Sub1_2.packet.p1(local468);
+							this.aClass4_Sub1_Sub6_Sub1_2.packet.p4(local464);
 							this.incomingPacket.pos = 0;
 							this.aClass4_Sub1_Sub6_Sub1_2.anInt3510 = 8;
 						} else if (this.aClass4_Sub1_Sub6_Sub1_2.anInt3510 != 0) {

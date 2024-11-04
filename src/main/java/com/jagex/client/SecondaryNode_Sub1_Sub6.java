@@ -13,11 +13,11 @@ public abstract class SecondaryNode_Sub1_Sub6 extends SecondaryNode {
 	public boolean isUrgent;
 
 	@OriginalMember(owner = "client!ec", name = "y", descriptor = "Z")
-	public volatile boolean aBoolean381 = true;
+	public volatile boolean isRequestInProgress = true;
 
 	@OriginalMember(owner = "client!ec", name = "a", descriptor = "(I)I")
 	public abstract int method3342();
 
 	@OriginalMember(owner = "client!ec", name = "b", descriptor = "(Z)[B")
-	public abstract byte[] method3343();
+	public abstract byte[] getResponseData();
 }

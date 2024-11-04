@@ -95,7 +95,7 @@ public final class Class143_Sub1 extends Class143 {
 	@OriginalMember(owner = "client!lv", name = "a", descriptor = "(III)Lclient!ec;")
 	private SecondaryNode_Sub1_Sub6 method3518(@OriginalArg(0) int arg0, @OriginalArg(2) int arg1) {
 		@Pc(13) SecondaryNode_Sub1_Sub6 local13 = (SecondaryNode_Sub1_Sub6) this.aHashMap_20.get((long) arg1);
-		if (local13 != null && arg0 == 0 && !local13.isUrgent && local13.aBoolean381) {
+		if (local13 != null && arg0 == 0 && !local13.isUrgent && local13.isRequestInProgress) {
 			local13.popSelf();
 			local13 = null;
 		}
@@ -130,10 +130,10 @@ public final class Class143_Sub1 extends Class143 {
 			}
 			this.aHashMap_20.set((long) arg1, local13);
 		}
-		if (local13.aBoolean381) {
+		if (local13.isRequestInProgress) {
 			return null;
 		}
-		@Pc(161) byte[] local161 = local13.method3343();
+		@Pc(161) byte[] local161 = local13.getResponseData();
 		@Pc(188) int local188;
 		@Pc(238) JS5NetRequest local238;
 		if (!(local13 instanceof SecondaryNode_Sub1_Sub6_Sub2)) {
@@ -212,7 +212,7 @@ public final class Class143_Sub1 extends Class143 {
 		if (local16 == null) {
 			return null;
 		} else {
-			@Pc(24) byte[] local24 = local16.method3343();
+			@Pc(24) byte[] local24 = local16.getResponseData();
 			local16.popSelf();
 			return local24;
 		}
@@ -310,7 +310,7 @@ public final class Class143_Sub1 extends Class143 {
 			return;
 		}
 		for (@Pc(325) SecondaryNode_Sub1_Sub6 local325 = (SecondaryNode_Sub1_Sub6) this.aHashMap_20.head(); local325 != null; local325 = (SecondaryNode_Sub1_Sub6) this.aHashMap_20.next()) {
-			if (!local325.aBoolean381) {
+			if (!local325.isRequestInProgress) {
 				if (local325.aBoolean382) {
 					if (!local325.isUrgent) {
 						throw new RuntimeException();
@@ -418,10 +418,10 @@ public final class Class143_Sub1 extends Class143 {
 			}
 			this.aClass4_Sub1_Sub6_1 = this.aJS5Connection_1.requestArchiveFile(255, (byte) 0, true, this.anInt4474);
 		}
-		if (this.aClass4_Sub1_Sub6_1.aBoolean381) {
+		if (this.aClass4_Sub1_Sub6_1.isRequestInProgress) {
 			return null;
 		}
-		@Pc(43) byte[] local43 = this.aClass4_Sub1_Sub6_1.method3343();
+		@Pc(43) byte[] local43 = this.aClass4_Sub1_Sub6_1.getResponseData();
 		if (this.aClass4_Sub1_Sub6_1 instanceof SecondaryNode_Sub1_Sub6_Sub2) {
 			try {
 				if (local43 == null) {

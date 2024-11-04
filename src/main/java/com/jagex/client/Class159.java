@@ -37,17 +37,20 @@ public final class Class159 {
 		if (this.aPacket_5 != null) {
 			return true;
 		}
+
 		if (this.archiveFileRequest == null) {
 			if (this.aJS5Connection_3.isUrgentRequestQueueFull()) {
 				return false;
 			}
 			this.archiveFileRequest = this.aJS5Connection_3.requestArchiveFile(255, (byte) 0, true, 255);
 		}
-		if (this.archiveFileRequest.aBoolean381) {
+
+		if (this.archiveFileRequest.isRequestInProgress) {
 			return false;
 		} else {
-			this.aPacket_5 = new Packet(this.archiveFileRequest.method3343());
+			this.aPacket_5 = new Packet(this.archiveFileRequest.getResponseData());
 			this.aClass143_Sub1Array2 = new Class143_Sub1[(this.aPacket_5.data.length - 5) / 8];
+
 			return true;
 		}
 	}

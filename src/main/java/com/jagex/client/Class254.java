@@ -57,7 +57,7 @@ public final class Class254 implements Runnable {
 					break;
 				}
 				if ((long) arg1 == local23.secondaryValue && local23.aClass222_1 == arg0 && local23.anInt4117 == 2) {
-					local9.aBoolean381 = false;
+					local9.isRequestInProgress = false;
 					local9.aByteArray50 = local23.aByteArray50;
 					return local9;
 				}
@@ -66,7 +66,7 @@ public final class Class254 implements Runnable {
 		}
 		local9.aByteArray50 = arg0.method4981(arg1);
 		local9.isUrgent = true;
-		local9.aBoolean381 = false;
+		local9.isRequestInProgress = false;
 		return local9;
 	}
 
@@ -110,7 +110,7 @@ public final class Class254 implements Runnable {
 			} catch (@Pc(74) Exception local74) {
 				Static94.handleClientError(local74, null);
 			}
-			local18.aBoolean381 = false;
+			local18.isRequestInProgress = false;
 		}
 	}
 
