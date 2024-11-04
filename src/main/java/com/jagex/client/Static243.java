@@ -9,9 +9,6 @@ public final class Static243 {
 	@OriginalMember(owner = "client!mg", name = "a", descriptor = "I")
 	public static int anInt4530;
 
-	@OriginalMember(owner = "client!mg", name = "h", descriptor = "Lclient!gk;")
-	public static final LocalizedString A_LOCALIZED_STRING___95 = new LocalizedString("Starting 3d Library", "Starte 3D-Softwarebibliothek.", "Démarrage de la librairie 3D", "Iniciando biblioteca 3D");
-
 	@OriginalMember(owner = "client!mg", name = "j", descriptor = "Lclient!gk;")
 	public static final LocalizedString A_LOCALIZED_STRING___96 = new LocalizedString("wave:", "welle:", "ondulation:", "onda:");
 

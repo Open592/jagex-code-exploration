@@ -6,9 +6,6 @@ import org.openrs2.deob.annotation.Pc;
 
 public final class Static379 {
 
-	@OriginalMember(owner = "client!td", name = "d", descriptor = "Lclient!gk;")
-	public static final LocalizedString A_LOCALIZED_STRING___130 = new LocalizedString("Loaded interfaces", "Benutzeroberfläche geladen.", "Interfaces chargées", "Interfaces carregadas");
-
 	@OriginalMember(owner = "client!td", name = "f", descriptor = "Lclient!bg;")
 	public static final Class22 aClass22_293 = new Class22(53, -1);
 

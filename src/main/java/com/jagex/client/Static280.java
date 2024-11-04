@@ -13,9 +13,6 @@ public final class Static280 {
 	@OriginalMember(owner = "client!od", name = "C", descriptor = "Lclient!ho;")
 	public static final Class98 aClass98_12 = new Class98(13, 0, 1, 0);
 
-	@OriginalMember(owner = "client!od", name = "F", descriptor = "Lclient!gk;")
-	public static final LocalizedString A_LOCALIZED_STRING___108 = new LocalizedString("Loading world list data", "Lade Liste der Welten", "Chargement de la liste des serveurs", "Carregando dados da lista de mundos");
-
 	@OriginalMember(owner = "client!od", name = "G", descriptor = "[I")
 	public static final int[] anIntArray339 = new int[200];
 

@@ -15,9 +15,6 @@ public final class Static171 {
 	@OriginalMember(owner = "client!ip", name = "vc", descriptor = "[I")
 	public static int[] anIntArray217;
 
-	@OriginalMember(owner = "client!ip", name = "lc", descriptor = "Lclient!gk;")
-	public static final LocalizedString A_LOCALIZED_STRING___71 = new LocalizedString("Loading textures - ", "Lade Texturen - ", "Chargement des textures - ", "Carregando texturas - ");
-
 	@OriginalMember(owner = "client!ip", name = "xc", descriptor = "[Ljava/awt/Color;")
 	public static final Color[] aColorArray5 = new Color[] { new Color(16777215), new Color(16777215) };
 

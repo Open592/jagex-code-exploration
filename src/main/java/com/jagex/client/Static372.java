@@ -11,9 +11,6 @@ public final class Static372 {
 	@OriginalMember(owner = "client!ss", name = "I", descriptor = "Lclient!bg;")
 	public static final Class22 aClass22_290 = new Class22(6, 11);
 
-	@OriginalMember(owner = "client!ss", name = "J", descriptor = "Lclient!gk;")
-	public static final LocalizedString A_LOCALIZED_STRING___126 = new LocalizedString("Started 3d Library", "3D-Softwarebibliothek gestartet.", "Librairie 3D démarrée", "Biblioteca 3D iniciada");
-
 	@OriginalMember(owner = "client!ss", name = "K", descriptor = "[I")
 	public static final int[] anIntArray484 = new int[] { 16, 32, 64, 128 };
 

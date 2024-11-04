@@ -9,9 +9,6 @@ public final class Static270 {
 	@OriginalMember(owner = "client!np", name = "M", descriptor = "I")
 	public static int anInt5073;
 
-	@OriginalMember(owner = "client!np", name = "H", descriptor = "Lclient!gk;")
-	public static final LocalizedString A_LOCALIZED_STRING___106 = new LocalizedString("Loading world map - ", "Lade Weltkarte - ", "Chargement de la mappemonde - ", "Carregando mapa-múndi - ");
-
 	@OriginalMember(owner = "client!np", name = "J", descriptor = "[J")
 	public static final long[] aLongArray7 = new long[100];
 

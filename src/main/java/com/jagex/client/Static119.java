@@ -18,9 +18,6 @@ public final class Static119 {
 	@OriginalMember(owner = "client!ft", name = "I", descriptor = "[Lclient!lv;")
 	public static final Class143_Sub1[] aClass143_Sub1Array1 = new Class143_Sub1[30];
 
-	@OriginalMember(owner = "client!ft", name = "J", descriptor = "Lclient!gk;")
-	public static final LocalizedString A_LOCALIZED_STRING___44 = new LocalizedString("Loaded world list data", "Liste der Welten geladen", "Liste des serveurs chargée", "Dados da lista de mundos carregados");
-
 	@OriginalMember(owner = "client!ft", name = "N", descriptor = "Lclient!bg;")
 	public static final Class22 aClass22_106 = new Class22(20, 12);
 

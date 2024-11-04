@@ -18,9 +18,6 @@ public final class Static96 {
 	@OriginalMember(owner = "client!eq", name = "H", descriptor = "Lclient!pn;")
 	public static final Class186 aClass186_8 = new Class186("", 12);
 
-	@OriginalMember(owner = "client!eq", name = "I", descriptor = "Lclient!gk;")
-	public static final LocalizedString A_LOCALIZED_STRING___37 = new LocalizedString("Checking for updates - ", "Suche nach Updates - ", "Vérification des mises à jour - ", "Verificando atualizações - ");
-
 	@OriginalMember(owner = "client!eq", name = "K", descriptor = "[I")
 	public static final int[] anIntArray156 = new int[1000];
 

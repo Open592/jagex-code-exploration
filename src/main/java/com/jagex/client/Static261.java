@@ -12,9 +12,6 @@ public final class Static261 {
 	@OriginalMember(owner = "client!nf", name = "J", descriptor = "I")
 	public static int anInt4928;
 
-	@OriginalMember(owner = "client!nf", name = "v", descriptor = "Lclient!gk;")
-	public static final LocalizedString A_LOCALIZED_STRING___103 = new LocalizedString("Loaded world map", "Weltkarte geladen", "Mappemonde chargée", "Mapa-múndi carregado");
-
 	@OriginalMember(owner = "client!nf", name = "T", descriptor = "Lclient!fa;")
 	public static final Class68 aClass68_27 = new Class68(4);
 

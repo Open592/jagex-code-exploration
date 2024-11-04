@@ -9,9 +9,6 @@ public final class Static409 {
 	@OriginalMember(owner = "client!up", name = "b", descriptor = "Lclient!bg;")
 	public static final Class22 aClass22_325 = new Class22(3, -1);
 
-	@OriginalMember(owner = "client!up", name = "e", descriptor = "Lclient!gk;")
-	public static final LocalizedString A_LOCALIZED_STRING___145 = new LocalizedString("Loaded defaults", "Standardeinstellungen geladen", "Paramètres par défaut chargés", "Padrões carregados");
-
 	@OriginalMember(owner = "client!up", name = "f", descriptor = "Lclient!gk;")
 	public static final LocalizedString A_LOCALIZED_STRING___146 = new LocalizedString("red:", "rot:", "rouge:", "vermelho:");
 

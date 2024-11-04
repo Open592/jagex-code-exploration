@@ -4,9 +4,6 @@ import org.openrs2.deob.annotation.OriginalMember;
 
 public final class Static42 {
 
-	@OriginalMember(owner = "client!bw", name = "k", descriptor = "Lclient!gk;")
-	public static final LocalizedString A_LOCALIZED_STRING___22 = new LocalizedString("Loaded textures", "Texturen geladen.", "Textures chargées", "Texturas carregadas");
-
 	@OriginalMember(owner = "client!bw", name = "l", descriptor = "Lclient!sl;")
 	public static final Class215 aClass215_8 = new Class215(64, 8);
 

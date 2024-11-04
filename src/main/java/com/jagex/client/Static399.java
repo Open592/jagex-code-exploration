@@ -8,9 +8,6 @@ public final class Static399 {
 	@OriginalMember(owner = "client!ud", name = "e", descriptor = "Lclient!bg;")
 	public static final Class22 aClass22_300 = new Class22(109, 0);
 
-	@OriginalMember(owner = "client!ud", name = "f", descriptor = "Lclient!gk;")
-	public static final LocalizedString A_LOCALIZED_STRING___138 = new LocalizedString("Loaded interface scripts", "Interface-Skripte geladen", "Interfaces chargées", "Interfaces carregadas");
-
 	@OriginalMember(owner = "client!ud", name = "g", descriptor = "Lclient!bg;")
 	public static final Class22 aClass22_301 = new Class22(60, -1);
 

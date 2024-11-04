@@ -14,9 +14,6 @@ public final class Static94 {
 	@OriginalMember(owner = "client!eo", name = "n", descriptor = "Lclient!nj;")
 	public static Class159 aClass159_1;
 
-	@OriginalMember(owner = "client!eo", name = "j", descriptor = "Lclient!gk;")
-	public static final LocalizedString A_LOCALIZED_STRING___35 = new LocalizedString("Loading interface scripts - ", "Lade Interface-Skripte - ", "Chargement des interfaces - ", "Carregando interfaces - ");
-
 	@OriginalMember(owner = "client!eo", name = "l", descriptor = "Lclient!sl;")
 	public static final Class215 aClass215_21 = new Class215(80, 7);
 

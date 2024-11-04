@@ -12,9 +12,6 @@ public final class Static22 {
 	@OriginalMember(owner = "client!av", name = "W", descriptor = "Lclient!la;")
 	public static Class46 aClass46_4;
 
-	@OriginalMember(owner = "client!av", name = "D", descriptor = "Lclient!gk;")
-	public static final LocalizedString A_LOCALIZED_STRING___13 = new LocalizedString("Loading config - ", "Lade Konfiguration - ", "Chargement des fichiers config - ", "Carregando config - ");
-
 	@OriginalMember(owner = "client!av", name = "S", descriptor = "J")
 	public static long aLong17 = 0L;
 

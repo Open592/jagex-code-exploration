@@ -8,9 +8,6 @@ public final class Static373 {
 	@OriginalMember(owner = "client!st", name = "j", descriptor = "Lclient!sb;")
 	public static Class212 aClass212_8;
 
-	@OriginalMember(owner = "client!st", name = "l", descriptor = "Lclient!gk;")
-	public static final LocalizedString A_LOCALIZED_STRING___127 = new LocalizedString("Loading interfaces - ", "Lade Benutzeroberfläche - ", "Chargement des interfaces - ", "Carregando interfaces - ");
-
 	@OriginalMember(owner = "client!st", name = "m", descriptor = "I")
 	public static int anInt6383 = -1;
 

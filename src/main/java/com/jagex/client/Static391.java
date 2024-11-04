@@ -9,9 +9,6 @@ public final class Static391 {
 	@OriginalMember(owner = "client!tr", name = "f", descriptor = "Lclient!fs;")
 	public static Class76 aClass76_91;
 
-	@OriginalMember(owner = "client!tr", name = "c", descriptor = "Lclient!gk;")
-	public static final LocalizedString A_LOCALIZED_STRING___132 = new LocalizedString("Loaded sprites", "Sprites geladen.", "Sprites chargés", "Sprites carregados");
-
 	@OriginalMember(owner = "client!tr", name = "d", descriptor = "Lclient!gk;")
 	public static final LocalizedString A_LOCALIZED_STRING___133 = new LocalizedString("Choose Option", "Wähl eine Option", "Choisir une option", "Selecionar opção");
 

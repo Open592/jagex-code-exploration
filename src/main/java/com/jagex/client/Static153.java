@@ -18,9 +18,6 @@ public final class Static153 {
 	@OriginalMember(owner = "client!hp", name = "Z", descriptor = "Lclient!gk;")
 	public static final LocalizedString A_LOCALIZED_STRING___60 = new LocalizedString("green:", "grün:", "vert:", "verde:");
 
-	@OriginalMember(owner = "client!hp", name = "ab", descriptor = "Lclient!gk;")
-	public static final LocalizedString A_LOCALIZED_STRING___61 = new LocalizedString("Created gameworld", "Spielwelt erstellt.", "Monde de jeu créé", "Universo de jogo criado");
-
 	@OriginalMember(owner = "client!hp", name = "bb", descriptor = "J")
 	public static long aLong107 = 0L;
 
