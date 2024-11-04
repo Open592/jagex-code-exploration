@@ -15,7 +15,7 @@ public final class Class232 {
 	public final Class3_Sub1 aClass3_Sub1_7 = new Class3_Sub1();
 
 	static {
-		new Class83("You can't report yourself!", "Du kannst dich nicht selbst melden!", "Vous ne pouvez pas vous signaler vous-même !", "Você não pode denunciar a si próprio!");
+		new LocalizedString("You can't report yourself!", "Du kannst dich nicht selbst melden!", "Vous ne pouvez pas vous signaler vous-même !", "Você não pode denunciar a si próprio!");
 	}
 
 	@OriginalMember(owner = "client!ts", name = "<init>", descriptor = "()V")

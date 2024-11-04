@@ -15,7 +15,7 @@ public final class Static146 {
 	public static final Class21 aClass21_2 = new Class21(12, 4);
 
 	@OriginalMember(owner = "client!hh", name = "e", descriptor = "Lclient!gk;")
-	public static final Class83 aClass83_10 = new Class83(" ", ": ", " ", " ");
+	public static final LocalizedString A_LOCALIZED_STRING___10 = new LocalizedString(" ", ": ", " ", " ");
 
 	@OriginalMember(owner = "client!hh", name = "g", descriptor = "Lclient!bg;")
 	public static final Class22 aClass22_23 = new Class22(47, 20);

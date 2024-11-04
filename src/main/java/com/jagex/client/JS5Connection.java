@@ -15,7 +15,7 @@ public final class JS5Connection {
 	private ServerConnection serverConnection;
 
 	@OriginalMember(owner = "client!vn", name = "w", descriptor = "J")
-	private long timeOfLastRequestProcesed;
+	private long lastRequestProcessedTime;
 
 	@OriginalMember(owner = "client!vn", name = "y", descriptor = "I")
 	private int timeSinceLastByteFromServer;
@@ -119,7 +119,7 @@ public final class JS5Connection {
 						}
 
 						this.timeSinceLastByteFromServer = 0;
-						this.timeOfLastRequestProcesed = MonotonicClock.getCurrentTimeInMilliseconds();
+						this.lastRequestProcessedTime = MonotonicClock.getCurrentTimeInMilliseconds();
 
 						return;
 					}
@@ -246,15 +246,10 @@ public final class JS5Connection {
 		if (this.serverConnection != null) {
 			@Pc(11) long currentTimeInMilliseconds = MonotonicClock.getCurrentTimeInMilliseconds();
 
-			int connectionTimeInterval = (int) (currentTimeInMilliseconds - this.timeOfLastRequestProcesed);
+			int delta = (int) (currentTimeInMilliseconds - this.lastRequestProcessedTime);
 
-			this.timeOfLastRequestProcesed = currentTimeInMilliseconds;
-
-			if (connectionTimeInterval > 200) {
-				connectionTimeInterval = 200;
-			}
-
-			this.timeSinceLastByteFromServer += connectionTimeInterval;
+			this.lastRequestProcessedTime = currentTimeInMilliseconds;
+			this.timeSinceLastByteFromServer += Math.min(delta, 200);
 
 			if (this.timeSinceLastByteFromServer > 30000) {
 				try {
@@ -376,7 +371,7 @@ public final class JS5Connection {
 							@Pc(468) int local468 = local459 & 0x7F;
 							@Pc(479) boolean local479 = (local459 & 0x80) != 0;
 							@Pc(486) long local486 = ((long) local226 << 16) + local275;
-							@Pc(496) JS5NetRequest local496;
+							@Pc(496) JS5NetRequest local496 = null;
 							if (local479) {
 								for (local496 = (JS5NetRequest) this.activeRegularRequests.getHead(); local496 != null && local496.secondaryValue != local486; local496 = (JS5NetRequest) this.activeRegularRequests.next()) {
 								}

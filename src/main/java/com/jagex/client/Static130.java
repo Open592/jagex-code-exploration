@@ -7,7 +7,7 @@ import org.openrs2.deob.annotation.Pc;
 public final class Static130 {
 
 	@OriginalMember(owner = "client!gm", name = "F", descriptor = "Lclient!gk;")
-	public static final Class83 aClass83_52 = new Class83("Loaded config", "Konfig geladen.", "Fichiers config chargés", "Config carregada");
+	public static final LocalizedString A_LOCALIZED_STRING___52 = new LocalizedString("Loaded config", "Konfig geladen.", "Fichiers config chargés", "Config carregada");
 
 	@OriginalMember(owner = "client!gm", name = "Q", descriptor = "Lclient!sl;")
 	public static final Class215 aClass215_34 = new Class215(65, 3);

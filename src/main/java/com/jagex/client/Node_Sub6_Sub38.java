@@ -36,7 +36,7 @@ public final class Node_Sub6_Sub38 extends Node_Sub6 {
 	private int anInt7044 = 0;
 
 	static {
-		new Class83("Please close the interface you have open before using 'Report Abuse'.", "Bitte schließ die momentan geöffnete Benutzeroberfläche,", "Fermez l'interface que vous avez ouverte avant d'utiliser le bouton « Signaler un abus ».", "Feche a interface aberta antes de usar o recurso \"Denunciar abuso\".");
+		new LocalizedString("Please close the interface you have open before using 'Report Abuse'.", "Bitte schließ die momentan geöffnete Benutzeroberfläche,", "Fermez l'interface que vous avez ouverte avant d'utiliser le bouton « Signaler un abus ».", "Feche a interface aberta antes de usar o recurso \"Denunciar abuso\".");
 	}
 
 	@OriginalMember(owner = "client!vm", name = "<init>", descriptor = "()V")

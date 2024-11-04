@@ -11,7 +11,7 @@ public final class Static320 {
 	public static Frame aFrame3;
 
 	@OriginalMember(owner = "client!qb", name = "q", descriptor = "Lclient!gk;")
-	public static final Class83 aClass83_118 = new Class83("level: ", "Stufe: ", "niveau ", "nível: ");
+	public static final LocalizedString A_LOCALIZED_STRING___118 = new LocalizedString("level: ", "Stufe: ", "niveau ", "nível: ");
 
 	@OriginalMember(owner = "client!qb", name = "A", descriptor = "Lclient!bg;")
 	public static final Class22 aClass22_263 = new Class22(41, 7);

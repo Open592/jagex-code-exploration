@@ -62,6 +62,7 @@ public final class SecondaryLinkedList {
 
 		if (head == this.sentinelNode) {
 			this.nextNodePointer = null;
+
 			return null;
 		} else {
 			this.nextNodePointer = head.secondaryPrevious;

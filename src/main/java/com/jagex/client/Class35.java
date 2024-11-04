@@ -15,7 +15,7 @@ public final class Class35 {
 	public int anInt858;
 
 	static {
-		new Class83("Your clan channel has now been disabled!", "Dein Chatraum ist jetzt ausgeschaltet.", "Votre canal de clan est désactivé.", "Seu canal de clã foi desativado!");
+		new LocalizedString("Your clan channel has now been disabled!", "Dein Chatraum ist jetzt ausgeschaltet.", "Votre canal de clan est désactivé.", "Seu canal de clã foi desativado!");
 	}
 
 	@OriginalMember(owner = "client!ch", name = "b", descriptor = "(I)I")

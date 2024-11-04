@@ -13,7 +13,7 @@ public final class Static190 {
 	public static int anInt3601;
 
 	@OriginalMember(owner = "client!jm", name = "H", descriptor = "Lclient!gk;")
-	public static final Class83 aClass83_76 = new Class83("Walk here", "Hierhin gehen", "Atteindre", "Caminhar para cá");
+	public static final LocalizedString A_LOCALIZED_STRING___76 = new LocalizedString("Walk here", "Hierhin gehen", "Atteindre", "Caminhar para cá");
 
 	@OriginalMember(owner = "client!jm", name = "I", descriptor = "Lclient!fa;")
 	public static final Class68 aClass68_20 = new Class68(5);

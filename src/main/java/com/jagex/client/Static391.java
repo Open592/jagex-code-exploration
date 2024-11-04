@@ -10,10 +10,10 @@ public final class Static391 {
 	public static Class76 aClass76_91;
 
 	@OriginalMember(owner = "client!tr", name = "c", descriptor = "Lclient!gk;")
-	public static final Class83 aClass83_132 = new Class83("Loaded sprites", "Sprites geladen.", "Sprites chargés", "Sprites carregados");
+	public static final LocalizedString A_LOCALIZED_STRING___132 = new LocalizedString("Loaded sprites", "Sprites geladen.", "Sprites chargés", "Sprites carregados");
 
 	@OriginalMember(owner = "client!tr", name = "d", descriptor = "Lclient!gk;")
-	public static final Class83 aClass83_133 = new Class83("Choose Option", "Wähl eine Option", "Choisir une option", "Selecionar opção");
+	public static final LocalizedString A_LOCALIZED_STRING___133 = new LocalizedString("Choose Option", "Wähl eine Option", "Choisir une option", "Selecionar opção");
 
 	@OriginalMember(owner = "client!tr", name = "a", descriptor = "(ILclient!cw;)V")
 	public static void method5117(@OriginalArg(1) ISAACPacket arg0) {

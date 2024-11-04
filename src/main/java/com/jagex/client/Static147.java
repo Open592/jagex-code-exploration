@@ -7,10 +7,10 @@ import org.openrs2.deob.annotation.Pc;
 public final class Static147 {
 
 	@OriginalMember(owner = "client!hi", name = "C", descriptor = "Lclient!gk;")
-	public static final Class83 aClass83_56 = new Class83("flash3:", "blinken3:", "clignotant3:", "brilho3:");
+	public static final LocalizedString A_LOCALIZED_STRING___56 = new LocalizedString("flash3:", "blinken3:", "clignotant3:", "brilho3:");
 
 	@OriginalMember(owner = "client!hi", name = "D", descriptor = "Lclient!gk;")
-	public static final Class83 aClass83_57 = new Class83("Take", "Nehmen", "Prendre", "Pegar");
+	public static final LocalizedString A_LOCALIZED_STRING___57 = new LocalizedString("Take", "Nehmen", "Prendre", "Pegar");
 
 	@OriginalMember(owner = "client!hi", name = "G", descriptor = "Z")
 	public static boolean aBoolean263 = true;
@@ -276,7 +276,7 @@ public final class Static147 {
 										}
 									}
 									if (Static304.aClass247_16 == local23) {
-										local975 = Static154.aClass83_26.method2267(ClientSettings.langID);
+										local975 = Static154.A_LOCALIZED_STRING___26.getLocalizedString(ClientSettings.langID);
 										local249 = local23.anInt6772;
 									}
 									if (Static449.aBoolean688) {

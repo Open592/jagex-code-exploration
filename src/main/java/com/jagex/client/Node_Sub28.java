@@ -70,7 +70,7 @@ public final class Node_Sub28 extends Node {
 	public int anInt4399;
 
 	static {
-		new Class83("You have been kicked from the channel.", "Du wurdest aus dem Chatraum rausgeworfen.", "Vous avez été expulsé du canal.", "Você foi expulso do canal.");
+		new LocalizedString("You have been kicked from the channel.", "Du wurdest aus dem Chatraum rausgeworfen.", "Vous avez été expulsé du canal.", "Você foi expulso do canal.");
 	}
 
 	@OriginalMember(owner = "client!lm", name = "a", descriptor = "(I)V")

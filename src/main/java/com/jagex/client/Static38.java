@@ -10,7 +10,7 @@ public final class Static38 {
 	public static final Class21 aClass21_6 = new Class21(11, 18);
 
 	@OriginalMember(owner = "client!bs", name = "p", descriptor = "Lclient!gk;")
-	public static final Class83 aClass83_19 = new Class83("Discard", "Ablegen", "Jeter", "Descartar");
+	public static final LocalizedString A_LOCALIZED_STRING___19 = new LocalizedString("Discard", "Ablegen", "Jeter", "Descartar");
 
 	@OriginalMember(owner = "client!bs", name = "q", descriptor = "I")
 	public static final int anInt671 = 1403;

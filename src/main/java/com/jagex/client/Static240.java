@@ -9,7 +9,7 @@ public final class Static240 {
 	public static final short[] aShortArray251 = new short[] { 960, 957, -21568, -21571, 22464 };
 
 	@OriginalMember(owner = "client!md", name = "b", descriptor = "Lclient!gk;")
-	public static final Class83 aClass83_153 = new Class83("Loading sprites - ", "Lade Sprites - ", "Chargement des sprites - ", "Carregando sprites - ");
+	public static final LocalizedString A_LOCALIZED_STRING___153 = new LocalizedString("Loading sprites - ", "Lade Sprites - ", "Chargement des sprites - ", "Carregando sprites - ");
 
 	@OriginalMember(owner = "client!md", name = "b", descriptor = "(Z)[Lclient!ic;")
 	public static Class103[] method5675() {

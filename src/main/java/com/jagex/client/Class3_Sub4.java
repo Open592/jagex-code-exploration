@@ -22,6 +22,6 @@ public final class Class3_Sub4 extends Class3 {
 	public Class16_Sub1_Sub5 aClass16_Sub1_Sub5_1;
 
 	static {
-		new Class83("Now talking in clan channel of player: ", "Clanchat dieses Spieler beigetreten: ", "Vous participez actuellement au canal de clan du joueur : ", "Falando no canal do clã do jogador: ");
+		new LocalizedString("Now talking in clan channel of player: ", "Clanchat dieses Spieler beigetreten: ", "Vous participez actuellement au canal de clan du joueur : ", "Falando no canal do clã do jogador: ");
 	}
 }

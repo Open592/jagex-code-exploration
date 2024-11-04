@@ -21,7 +21,7 @@ public final class Class126 {
 	public int anInt3919;
 
 	static {
-		new Class83("That player is offline, or has privacy mode enabled.", "Dieser Spieler ist offline oder hat den Privatsphären-Modus aktiviert.", "Ce joueur est déconnecté ou en mode privé.", "O jogador está offline ou está com o modo de privacidade ativado.");
+		new LocalizedString("That player is offline, or has privacy mode enabled.", "Dieser Spieler ist offline oder hat den Privatsphären-Modus aktiviert.", "Ce joueur est déconnecté ou en mode privé.", "O jogador está offline ou está com o modo de privacidade ativado.");
 		anIntArray260 = new int[99];
 		@Pc(14) int local14 = 0;
 		for (@Pc(16) int local16 = 0; local16 < 99; local16++) {

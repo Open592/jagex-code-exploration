@@ -31,7 +31,7 @@ public final class Static260 {
 			Static400.aClass57_23.method5534((Static141.width - Static400.aClass57_23.j()) / 2, (Static302.height - Static400.aClass57_23.T()) / 2);
 			Static83.aClass57_10.method5534((Static141.width - Static83.aClass57_10.j()) / 2, 18);
 		}
-		arg4.method5056(Static141.width / 2, arg3, Static302.height / 2 - 26, -1, (ClientSettings.RUNESCAPE_GAME_DETAILS == ClientSettings.currentGameDetails ? Static268.aClass83_104 : Static374.aClass83_129).method2267(ClientSettings.langID));
+		arg4.method5056(Static141.width / 2, arg3, Static302.height / 2 - 26, -1, (ClientSettings.RUNESCAPE_GAME_DETAILS == ClientSettings.currentGameDetails ? Static268.A_LOCALIZED_STRING___104 : Static374.A_LOCALIZED_STRING___129).getLocalizedString(ClientSettings.langID));
 		@Pc(64) int local64 = Static302.height / 2 - 18;
 		arg5.method4312(Static141.width / 2 - 152, local64, 304, 34, arg0, 0);
 		arg5.method4312(Static141.width / 2 - 151, local64 - -1, 302, 32, 0, 0);

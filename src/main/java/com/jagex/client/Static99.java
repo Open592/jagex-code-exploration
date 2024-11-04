@@ -7,7 +7,7 @@ import org.openrs2.deob.annotation.Pc;
 public final class Static99 {
 
 	@OriginalMember(owner = "client!eu", name = "b", descriptor = "Lclient!gk;")
-	public static final Class83 aClass83_39 = new Class83("wave2:", "welle2:", "ondulation2:", "onda2:");
+	public static final LocalizedString A_LOCALIZED_STRING___39 = new LocalizedString("wave2:", "welle2:", "ondulation2:", "onda2:");
 
 	@OriginalMember(owner = "client!eu", name = "c", descriptor = "[I")
 	public static final int[] anIntArray157 = new int[2048];

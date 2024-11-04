@@ -10,10 +10,10 @@ public final class Static157 {
 	public static int anInt3142;
 
 	@OriginalMember(owner = "client!hu", name = "e", descriptor = "Lclient!gk;")
-	public static final Class83 aClass83_64 = new Class83("cyan:", "blaugrün:", "cyan:", "cyan:");
+	public static final LocalizedString A_LOCALIZED_STRING___64 = new LocalizedString("cyan:", "blaugrün:", "cyan:", "cyan:");
 
 	@OriginalMember(owner = "client!hu", name = "h", descriptor = "Lclient!gk;")
-	public static final Class83 aClass83_65 = new Class83("scroll:", "scrollen:", "déroulement:", "rolagem:");
+	public static final LocalizedString A_LOCALIZED_STRING___65 = new LocalizedString("scroll:", "scrollen:", "déroulement:", "rolagem:");
 
 	@OriginalMember(owner = "client!hu", name = "m", descriptor = "I")
 	public static int anInt3147 = -1;

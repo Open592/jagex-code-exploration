@@ -15,7 +15,7 @@ public final class Node_Sub6_Sub12 extends Node_Sub6 {
 	private int anInt2824 = 0;
 
 	static {
-		new Class83("You do not have permission to kick users in this channel.", "Du darfst keine Benutzer aus diesem Chatraum rauswerfen.", "Vous n'êtes pas autorisé à expulser des utilisateurs de ce canal.", "Você não tem permissão para expulsar usuários neste canal.");
+		new LocalizedString("You do not have permission to kick users in this channel.", "Du darfst keine Benutzer aus diesem Chatraum rauswerfen.", "Vous n'êtes pas autorisé à expulser des utilisateurs de ce canal.", "Você não tem permissão para expulsar usuários neste canal.");
 	}
 
 	@OriginalMember(owner = "client!gv", name = "<init>", descriptor = "()V")

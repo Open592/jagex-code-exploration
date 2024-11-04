@@ -12,7 +12,7 @@ public final class Class48_Sub1_Sub1 extends Class48_Sub1 {
 	private byte[] aByteArray61;
 
 	static {
-		new Class83("Unable to add name - unknown player.", "Name konnte nicht hinzugefügt werden - Spieler unbekannt.", "Impossible d'ajouter le nom - joueur inconnu.", "Não foi possível adicionar um nome - jogador desconhecido.");
+		new LocalizedString("Unable to add name - unknown player.", "Name konnte nicht hinzugefügt werden - Spieler unbekannt.", "Impossible d'ajouter le nom - joueur inconnu.", "Não foi possível adicionar um nome - jogador desconhecido.");
 	}
 
 	@OriginalMember(owner = "client!nd", name = "<init>", descriptor = "()V")

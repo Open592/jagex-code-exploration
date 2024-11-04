@@ -27,7 +27,7 @@ public final class Class147 {
 		for (@Pc(4) int local4 = 0; local4 < aClass84Array1.length; local4++) {
 			aClass84Array1[local4] = new Class84();
 		}
-		new Class83("Unable to send message - system busy.", "Deine Nachricht konnte nicht verschickt werden, das System ist derzeit ausgelastet.", "Impossible d'envoyer un message - système occupé.", "Não foi possível enviar a mensagem. O sistema está ocupado.");
+		new LocalizedString("Unable to send message - system busy.", "Deine Nachricht konnte nicht verschickt werden, das System ist derzeit ausgelastet.", "Impossible d'envoyer un message - système occupé.", "Não foi possível enviar a mensagem. O sistema está ocupado.");
 	}
 
 	@OriginalMember(owner = "client!me", name = "<init>", descriptor = "(IIII)V")

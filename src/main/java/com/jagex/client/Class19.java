@@ -16,8 +16,8 @@ public abstract class Class19 {
 	public final int anInt5532;
 
 	static {
-		new Class83("You cannot report that person for Staff Impersonation, they are Jagex Staff.", "Diese Person ist ein Jagex-Mitarbeiter!", "Cette personne est un membre du personnel de Jagex, vous ne pouvez pas la signaler pour abus d'identité.", "Você não pode denunciar essa pessoa por tentar se passar por membro da equipe Jagex, pois ela faz parte da equipe.");
-		new Class83(null, "die kürzlich gesprochen oder gehandelt haben.", null, null);
+		new LocalizedString("You cannot report that person for Staff Impersonation, they are Jagex Staff.", "Diese Person ist ein Jagex-Mitarbeiter!", "Cette personne est un membre du personnel de Jagex, vous ne pouvez pas la signaler pour abus d'identité.", "Você não pode denunciar essa pessoa por tentar se passar por membro da equipe Jagex, pois ela faz parte da equipe.");
+		new LocalizedString(null, "die kürzlich gesprochen oder gehandelt haben.", null, null);
 	}
 
 	@OriginalMember(owner = "client!ya", name = "<init>", descriptor = "(ILclient!ga;)V")

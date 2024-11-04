@@ -29,7 +29,7 @@ public final class Node_Sub3 extends Node {
 	public int anInt234 = -1;
 
 	static {
-		new Class83("System update in: ", "System-Update in: ", "Mise à jour système dans : ", "Atualização do sistema em: ");
+		new LocalizedString("System update in: ", "System-Update in: ", "Mise à jour système dans : ", "Atualização do sistema em: ");
 	}
 
 	@OriginalMember(owner = "client!aq", name = "<init>", descriptor = "(I)V")

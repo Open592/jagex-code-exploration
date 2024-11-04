@@ -14,7 +14,7 @@ public final class Static422 {
 	public static boolean aBoolean649;
 
 	@OriginalMember(owner = "client!vh", name = "f", descriptor = "Lclient!gk;")
-	public static final Class83 aClass83_144 = new Class83(" from your ignore list first.", " zuerst von deiner Ignorieren-Liste!", " de votre liste noire.", " da sua lista de ignorados primeiro.");
+	public static final LocalizedString A_LOCALIZED_STRING___144 = new LocalizedString(" from your ignore list first.", " zuerst von deiner Ignorieren-Liste!", " de votre liste noire.", " da sua lista de ignorados primeiro.");
 
 	@OriginalMember(owner = "client!vh", name = "h", descriptor = "I")
 	public static int anInt6950 = 0;

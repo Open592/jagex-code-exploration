@@ -52,7 +52,7 @@ public final class Node_Sub6_Sub24 extends Node_Sub6 {
 	private int anInt4805 = 204;
 
 	static {
-		new Class83("Your ignore list is full. Max of 100 users.", "Deine Ignorieren-Liste ist voll, du kannst nur 100 Spieler darauf eintragen.", "Votre liste noire est pleine (100 noms maximum).", "Sua lista de ignorados está cheia. O limite é 100 usuários.");
+		new LocalizedString("Your ignore list is full. Max of 100 users.", "Deine Ignorieren-Liste ist voll, du kannst nur 100 Spieler darauf eintragen.", "Votre liste noire est pleine (100 noms maximum).", "Sua lista de ignorados está cheia. O limite é 100 usuários.");
 	}
 
 	@OriginalMember(owner = "client!mv", name = "<init>", descriptor = "()V")

@@ -9,9 +9,6 @@ public final class Static328 {
 	@OriginalMember(owner = "client!qk", name = "b", descriptor = "I")
 	public static int anInt5676 = -60;
 
-	@OriginalMember(owner = "client!qk", name = "c", descriptor = "J")
-	public static long aLong190 = 0L;
-
 	@OriginalMember(owner = "client!qk", name = "a", descriptor = "(Z)Lclient!hh;")
 	public static Class14 method4424() {
 		try {

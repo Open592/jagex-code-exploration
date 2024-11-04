@@ -6,7 +6,7 @@ import org.openrs2.deob.annotation.OriginalMember;
 public final class Static318 {
 
 	@OriginalMember(owner = "client!q", name = "r", descriptor = "Lclient!gk;")
-	public static final Class83 aClass83_101 = new Class83("yellow:", "gelb:", "jaune:", "amarelo:");
+	public static final LocalizedString A_LOCALIZED_STRING___101 = new LocalizedString("yellow:", "gelb:", "jaune:", "amarelo:");
 
 	@OriginalMember(owner = "client!q", name = "a", descriptor = "(FIFF)F")
 	public static float method3751(@OriginalArg(0) float arg0, @OriginalArg(2) float arg1, @OriginalArg(3) float arg2) {

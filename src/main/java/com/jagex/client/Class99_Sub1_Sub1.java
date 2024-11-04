@@ -16,7 +16,7 @@ public final class Class99_Sub1_Sub1 extends Class99_Sub1 {
 	private final Class6_Sub4 aClass6_Sub4_1;
 
 	static {
-		new Class83("Swap this note at any bank for the equivalent item.", "Dieses Zertifikat kann in einer Bank entsprechend eingetauscht werden.", "Échangez ce reçu contre l'objet correspondant dans la banque de votre choix.", "Vá a qualquer banco para trocar esta nota pelo objeto equivalente.");
+		new LocalizedString("Swap this note at any bank for the equivalent item.", "Dieses Zertifikat kann in einer Bank entsprechend eingetauscht werden.", "Échangez ce reçu contre l'objet correspondant dans la banque de votre choix.", "Vá a qualquer banco para trocar esta nota pelo objeto equivalente.");
 	}
 
 	@OriginalMember(owner = "client!ht", name = "<init>", descriptor = "(Lclient!fd;I)V")

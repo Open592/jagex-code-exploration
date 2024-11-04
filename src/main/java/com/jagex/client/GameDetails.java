@@ -14,7 +14,7 @@ public final class GameDetails {
 	public final int id;
 
 	static {
-		new Class83("Attempting to join channel...", "Chatraum wird betreten...", "Tentative de connexion au canal...", "Tentando acessar canal...");
+		new LocalizedString("Attempting to join channel...", "Chatraum wird betreten...", "Tentative de connexion au canal...", "Tentando acessar canal...");
 	}
 
 	@OriginalMember(owner = "client!jk", name = "<init>", descriptor = "(Ljava/lang/String;I)V")

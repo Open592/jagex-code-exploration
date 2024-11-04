@@ -22,7 +22,7 @@ public final class Static17 {
 		}
 		@Pc(38) String local38;
 		if (Static341.aBoolean599 && Static407.anInt6710 < 2) {
-			local38 = Static388.aString62 + Static146.aClass83_10.method2267(ClientSettings.langID) + Static49.aString28 + " ->";
+			local38 = Static388.aString62 + Static146.A_LOCALIZED_STRING___10.getLocalizedString(ClientSettings.langID) + Static49.aString28 + " ->";
 		} else if (Static434.isShiftClickEnabled && Static384.aClass244_1.method5489(81) && Static407.anInt6710 > 2) {
 			local38 = Static200.method3166((Node_Sub39) Static206.aClass183_28.aNode_207.next.next);
 		} else {
@@ -63,7 +63,7 @@ public final class Static17 {
 			}
 		}
 		if (Static407.anInt6710 > 2) {
-			local38 = local38 + "<col=ffffff> / " + (Static407.anInt6710 - 2) + Static70.aClass83_31.method2267(ClientSettings.langID);
+			local38 = local38 + "<col=ffffff> / " + (Static407.anInt6710 - 2) + Static70.A_LOCALIZED_STRING___31.getLocalizedString(ClientSettings.langID);
 		}
 		if (Static283.aClass247_13 != null) {
 			@Pc(252) Class46 local252 = Static283.aClass247_13.method5310(arg0);

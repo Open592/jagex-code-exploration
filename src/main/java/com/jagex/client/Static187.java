@@ -10,7 +10,7 @@ public final class Static187 {
 	public static final int[] anIntArray233 = new int[14];
 
 	@OriginalMember(owner = "client!ji", name = "h", descriptor = "Lclient!gk;")
-	public static final Class83 aClass83_74 = new Class83("K", "T", "K", "K");
+	public static final LocalizedString A_LOCALIZED_STRING___74 = new LocalizedString("K", "T", "K", "K");
 
 	@OriginalMember(owner = "client!ji", name = "m", descriptor = "I")
 	public static int anInt3559 = 0;

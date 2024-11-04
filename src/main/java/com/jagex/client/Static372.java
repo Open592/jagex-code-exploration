@@ -12,7 +12,7 @@ public final class Static372 {
 	public static final Class22 aClass22_290 = new Class22(6, 11);
 
 	@OriginalMember(owner = "client!ss", name = "J", descriptor = "Lclient!gk;")
-	public static final Class83 aClass83_126 = new Class83("Started 3d Library", "3D-Softwarebibliothek gestartet.", "Librairie 3D démarrée", "Biblioteca 3D iniciada");
+	public static final LocalizedString A_LOCALIZED_STRING___126 = new LocalizedString("Started 3d Library", "3D-Softwarebibliothek gestartet.", "Librairie 3D démarrée", "Biblioteca 3D iniciada");
 
 	@OriginalMember(owner = "client!ss", name = "K", descriptor = "[I")
 	public static final int[] anIntArray484 = new int[] { 16, 32, 64, 128 };

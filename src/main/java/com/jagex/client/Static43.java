@@ -19,7 +19,7 @@ public final class Static43 {
 	public static Class46 aClass46_12;
 
 	@OriginalMember(owner = "client!c", name = "a", descriptor = "Lclient!gk;")
-	public static final Class83 aClass83_151 = new Class83("Loaded core fonts", "Schriftarten geladen", "Polices chargées", "Fontes principais carregadas");
+	public static final LocalizedString A_LOCALIZED_STRING___151 = new LocalizedString("Loaded core fonts", "Schriftarten geladen", "Polices chargées", "Fontes principais carregadas");
 
 	@OriginalMember(owner = "client!c", name = "d", descriptor = "Lclient!bg;")
 	public static final Class22 aClass22_332 = new Class22(59, -2);

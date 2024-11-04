@@ -30,7 +30,7 @@ public final class Class154 implements Interface2 {
 	public int anInt4769;
 
 	static {
-		new Class83("You are temporarily blocked from joining channels - please try again later!", "Du darfst derzeit keine Chaträume betreten - bitte versuch es später.", "Vous êtes temporairement exclu des canaux - veuillez réessayer ultérieurement.", "Você está temporariamente impedido de entrar em canais. Tente de novo depois!");
+		new LocalizedString("You are temporarily blocked from joining channels - please try again later!", "Du darfst derzeit keine Chaträume betreten - bitte versuch es später.", "Vous êtes temporairement exclu des canaux - veuillez réessayer ultérieurement.", "Você está temporariamente impedido de entrar em canais. Tente de novo depois!");
 	}
 
 	@OriginalMember(owner = "client!mt", name = "a", descriptor = "(B)J")

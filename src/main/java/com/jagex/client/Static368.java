@@ -8,7 +8,7 @@ import org.openrs2.deob.annotation.Pc;
 public final class Static368 {
 
 	@OriginalMember(owner = "client!so", name = "a", descriptor = "Lclient!gk;")
-	public static final Class83 aClass83_124 = new Class83("Please remove ", "Bitte entferne ", "Veuillez commencer par supprimer ", "Remova ");
+	public static final LocalizedString A_LOCALIZED_STRING___124 = new LocalizedString("Please remove ", "Bitte entferne ", "Veuillez commencer par supprimer ", "Remova ");
 
 	@OriginalMember(owner = "client!so", name = "c", descriptor = "F")
 	public static float aFloat192 = 0.0F;

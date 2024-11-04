@@ -20,7 +20,7 @@ public final class Static154 {
 	public static final Packet A_BYTE_BUFFER___2 = new Packet(new byte[5000]);
 
 	@OriginalMember(owner = "client!hq", name = "d", descriptor = "Lclient!gk;")
-	public static final Class83 aClass83_26 = new Class83("Please wait...", "Bitte warte...", "Veuillez patienter...", "Aguarde...");
+	public static final LocalizedString A_LOCALIZED_STRING___26 = new LocalizedString("Please wait...", "Bitte warte...", "Veuillez patienter...", "Aguarde...");
 
 	@OriginalMember(owner = "client!hq", name = "g", descriptor = "[I")
 	public static final int[] anIntArray49 = new int[13];

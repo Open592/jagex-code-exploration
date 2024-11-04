@@ -14,7 +14,7 @@ public abstract class Node_Sub10 extends Node {
 	protected final Class19_Sub2 aClass19_Sub2_16;
 
 	static {
-		new Class83("Sending request to leave channel...", "Chatraum wird verlassen...", "Envoi de la demande de sortie du canal...", "Enviando solicitação para deixar o canal...");
+		new LocalizedString("Sending request to leave channel...", "Chatraum wird verlassen...", "Envoi de la demande de sortie du canal...", "Enviando solicitação para deixar o canal...");
 	}
 
 	@OriginalMember(owner = "client!cg", name = "<init>", descriptor = "(Lclient!fd;)V")

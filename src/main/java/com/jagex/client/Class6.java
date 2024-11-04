@@ -31,7 +31,7 @@ public abstract class Class6 implements Interface9 {
 	protected int anInt5449;
 
 	static {
-		new Class83("Loaded additional fonts", "Zusatzschriftarten geladen", "Polices secondaires chargées", "Fontes principais carregadas");
+		new LocalizedString("Loaded additional fonts", "Zusatzschriftarten geladen", "Polices secondaires chargées", "Fontes principais carregadas");
 	}
 
 	@OriginalMember(owner = "client!kj", name = "<init>", descriptor = "(Lclient!fd;IIIZ)V")

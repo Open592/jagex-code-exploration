@@ -18,7 +18,7 @@ public final class Class59 {
 	private final Class19_Sub2 aClass19_Sub2_12;
 
 	static {
-		new Class83("Leave request already in progress - please wait...", "Du versuchst bereits, einen Chatraum zu verlassen - bitte warte.", "Demande de sortie déjà effectuée - veuillez patienter...", "Solicitação de saída já em andamento. Aguarde...");
+		new LocalizedString("Leave request already in progress - please wait...", "Du versuchst bereits, einen Chatraum zu verlassen - bitte warte.", "Demande de sortie déjà effectuée - veuillez patienter...", "Solicitação de saída já em andamento. Aguarde...");
 	}
 
 	@OriginalMember(owner = "client!ee", name = "<init>", descriptor = "(Lclient!fd;Lclient!ga;)V")

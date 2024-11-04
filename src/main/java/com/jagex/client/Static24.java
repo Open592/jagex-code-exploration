@@ -18,7 +18,7 @@ public final class Static24 {
 	public static int anInt5323 = 0;
 
 	@OriginalMember(owner = "client!ba", name = "D", descriptor = "Lclient!gk;")
-	public static final Class83 aClass83_111 = new Class83("Allocated memory", "Zugewiesener Speicher.", "Mémoire attribuée", "Memória alocada");
+	public static final LocalizedString allocatedMemoryLocalizedString = new LocalizedString("Allocated memory", "Zugewiesener Speicher.", "Mémoire attribuée", "Memória alocada");
 
 	@OriginalMember(owner = "client!ba", name = "b", descriptor = "(II)I")
 	public static int method4082(@OriginalArg(1) int arg0) {

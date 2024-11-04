@@ -120,7 +120,7 @@ public final class Class122 {
 	public int anInt3689 = 0;
 
 	static {
-		new Class83("From", "Von:", "De", "De");
+		new LocalizedString("From", "Von:", "De", "De");
 	}
 
 	@OriginalMember(owner = "client!jq", name = "<init>", descriptor = "([B)V")

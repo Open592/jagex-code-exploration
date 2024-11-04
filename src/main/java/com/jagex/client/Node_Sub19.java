@@ -11,7 +11,7 @@ public final class Node_Sub19 extends Node {
 	public final byte[] aByteArray24;
 
 	static {
-		new Class83("Invalid channel name entered!", "Ungültiger Chatraum-Name angegeben.", "Nom de canal incorrect !", "Nome de canal inválido!");
+		new LocalizedString("Invalid channel name entered!", "Ungültiger Chatraum-Name angegeben.", "Nom de canal incorrect !", "Nome de canal inválido!");
 	}
 
 	@OriginalMember(owner = "client!fr", name = "<init>", descriptor = "([B)V")

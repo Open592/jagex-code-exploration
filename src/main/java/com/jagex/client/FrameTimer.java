@@ -9,7 +9,7 @@ import org.openrs2.deob.annotation.Pc;
 public abstract class FrameTimer {
 
 	static {
-		new Class83("Unable to send message - player unavailable.", "Deine Nachricht konnte nicht verschickt werden,", "Impossible d'envoyer un message - joueur indisponible.", "Não foi possível enviar a mensagem. O jogador não está disponível.");
+		new LocalizedString("Unable to send message - player unavailable.", "Deine Nachricht konnte nicht verschickt werden,", "Impossible d'envoyer un message - joueur indisponible.", "Não foi possível enviar a mensagem. O jogador não está disponível.");
 	}
 
 	@OriginalMember(owner = "client!rc", name = "f", descriptor = "(I)Lclient!kk;")

@@ -19,13 +19,13 @@ public final class Static96 {
 	public static final Class186 aClass186_8 = new Class186("", 12);
 
 	@OriginalMember(owner = "client!eq", name = "I", descriptor = "Lclient!gk;")
-	public static final Class83 aClass83_37 = new Class83("Checking for updates - ", "Suche nach Updates - ", "Vérification des mises à jour - ", "Verificando atualizações - ");
+	public static final LocalizedString A_LOCALIZED_STRING___37 = new LocalizedString("Checking for updates - ", "Suche nach Updates - ", "Vérification des mises à jour - ", "Verificando atualizações - ");
 
 	@OriginalMember(owner = "client!eq", name = "K", descriptor = "[I")
 	public static final int[] anIntArray156 = new int[1000];
 
 	@OriginalMember(owner = "client!eq", name = "L", descriptor = "Lclient!gk;")
-	public static final Class83 aClass83_38 = new Class83("Loading...", "Lade...", "Chargement en cours...", "Carregando...");
+	public static final LocalizedString A_LOCALIZED_STRING___38 = new LocalizedString("Loading...", "Lade...", "Chargement en cours...", "Carregando...");
 
 	@OriginalMember(owner = "client!eq", name = "a", descriptor = "(IILclient!uu;I)V")
 	public static void method1680(@OriginalArg(1) int arg0, @OriginalArg(2) Class247 arg1, @OriginalArg(3) int arg2) {

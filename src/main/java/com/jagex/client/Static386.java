@@ -19,7 +19,7 @@ public final class Static386 {
 	public static int anInt3967 = -1;
 
 	@OriginalMember(owner = "client!tm", name = "p", descriptor = "Lclient!gk;")
-	public static final Class83 aClass83_80 = new Class83("Your friend list is full. Max of 100 for free users, and 200 for members.", "Deine Freunde-Liste ist voll! Maximale Einträge: Mitglieder 200/freie Spieler 100", "Votre liste d'amis est pleine (100 noms maximum pour la version gratuite et 200 pour les abonnés).", "Sua lista de amigos está cheia. O limite é 100 para os usuários não pagantes e 200 para os membros.");
+	public static final LocalizedString A_LOCALIZED_STRING___80 = new LocalizedString("Your friend list is full. Max of 100 for free users, and 200 for members.", "Deine Freunde-Liste ist voll! Maximale Einträge: Mitglieder 200/freie Spieler 100", "Votre liste d'amis est pleine (100 noms maximum pour la version gratuite et 200 pour les abonnés).", "Sua lista de amigos está cheia. O limite é 100 para os usuários não pagantes e 200 para os membros.");
 
 	@OriginalMember(owner = "client!tm", name = "q", descriptor = "Lclient!fa;")
 	public static final Class68 aClass68_23 = new Class68(8);

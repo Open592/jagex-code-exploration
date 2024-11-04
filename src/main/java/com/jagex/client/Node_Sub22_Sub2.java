@@ -30,7 +30,7 @@ public final class Node_Sub22_Sub2 extends Node_Sub22 implements ImageProducer {
 	private Image anImage3;
 
 	static {
-		new Class83("Unable to delete name - system busy.", "Name konnte nicht gelöscht werden - Systemfehler.", "Impossible d'effacer le nom - système occupé.", "Não foi possível deletar o nome - sistema ocupado.");
+		new LocalizedString("Unable to delete name - system busy.", "Name konnte nicht gelöscht werden - Systemfehler.", "Impossible d'effacer le nom - système occupé.", "Não foi possível deletar o nome - sistema ocupado.");
 	}
 
 	@OriginalMember(owner = "client!re", name = "removeConsumer", descriptor = "(Ljava/awt/image/ImageConsumer;)V")

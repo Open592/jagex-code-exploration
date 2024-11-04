@@ -11,7 +11,7 @@ public final class Class16_Sub5_Sub1 extends Class16_Sub5 implements Interface6 
 	public Class16_Sub5 aClass16_Sub5_1;
 
 	static {
-		new Class83("Ok", "Okay", "OK", "Ok");
+		new LocalizedString("Ok", "Okay", "OK", "Ok");
 	}
 
 	@OriginalMember(owner = "client!jo", name = "<init>", descriptor = "(IIIIILclient!rb;)V")

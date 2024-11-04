@@ -7,7 +7,7 @@ import org.openrs2.deob.annotation.OriginalMember;
 public abstract class Class30 {
 
 	static {
-		new Class83("Select", "Auswählen", "Sélectionner", "Selecionar");
+		new LocalizedString("Select", "Auswählen", "Sélectionner", "Selecionar");
 	}
 
 	@OriginalMember(owner = "client!ri", name = "a", descriptor = "(Z)Z")

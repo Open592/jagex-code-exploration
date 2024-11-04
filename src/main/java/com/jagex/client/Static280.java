@@ -14,7 +14,7 @@ public final class Static280 {
 	public static final Class98 aClass98_12 = new Class98(13, 0, 1, 0);
 
 	@OriginalMember(owner = "client!od", name = "F", descriptor = "Lclient!gk;")
-	public static final Class83 aClass83_108 = new Class83("Loading world list data", "Lade Liste der Welten", "Chargement de la liste des serveurs", "Carregando dados da lista de mundos");
+	public static final LocalizedString A_LOCALIZED_STRING___108 = new LocalizedString("Loading world list data", "Lade Liste der Welten", "Chargement de la liste des serveurs", "Carregando dados da lista de mundos");
 
 	@OriginalMember(owner = "client!od", name = "G", descriptor = "[I")
 	public static final int[] anIntArray339 = new int[200];

@@ -19,7 +19,7 @@ public final class Class6_Sub4 extends Class6 {
 	public final int anInt3257;
 
 	static {
-		new Class83("Unable to add friend - unknown player.", "Spieler konnte nicht hinzugefügt werden - Spieler unbekannt.", "Impossible d'ajouter l'ami - joueur inconnu.", "Não foi possível adicionar um amigo - jogador desconhecido.");
+		new LocalizedString("Unable to add friend - unknown player.", "Spieler konnte nicht hinzugefügt werden - Spieler unbekannt.", "Impossible d'ajouter l'ami - joueur inconnu.", "Não foi possível adicionar um amigo - jogador desconhecido.");
 	}
 
 	@OriginalMember(owner = "client!im", name = "<init>", descriptor = "(Lclient!fd;IIZ[[BI)V")

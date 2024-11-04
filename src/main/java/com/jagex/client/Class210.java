@@ -14,7 +14,7 @@ public final class Class210 {
 	public final long aLong202;
 
 	static {
-		new Class83("Chat disabled", "Deaktiviert", "Messagerie désactivée", "Bate-papo desativado");
+		new LocalizedString("Chat disabled", "Deaktiviert", "Messagerie désactivée", "Bate-papo desativado");
 	}
 
 	@OriginalMember(owner = "client!ru", name = "<init>", descriptor = "(Lclient!fd;J[Lclient!wl;)V")

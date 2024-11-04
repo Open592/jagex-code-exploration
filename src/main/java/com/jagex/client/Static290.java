@@ -48,7 +48,7 @@ public final class Static290 {
 			return;
 		}
 		if (arg0.aString64 == null) {
-			Static380.method5017(60, false, 0L, arg0.anInt6865, "", true, Static412.aClass83_142.method2267(ClientSettings.langID), arg0.anInt6809, arg0.anInt6779, -1);
+			Static380.method5017(60, false, 0L, arg0.anInt6865, "", true, Static412.A_LOCALIZED_STRING___142.getLocalizedString(ClientSettings.langID), arg0.anInt6809, arg0.anInt6779, -1);
 		} else {
 			Static380.method5017(60, false, 0L, arg0.anInt6865, "", true, arg0.aString64, arg0.anInt6809, arg0.anInt6779, -1);
 		}

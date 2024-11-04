@@ -66,7 +66,7 @@ public final class Node_Sub24 extends Node {
 	private final Class177 aClass177_11;
 
 	static {
-		new Class83(" days.", " Tage.", " jours.", " dias.");
+		new LocalizedString(" days.", " Tage.", " jours.", " dias.");
 	}
 
 	@OriginalMember(owner = "client!iu", name = "<init>", descriptor = "(Lclient!fd;Lclient!oq;Lclient!vp;[I)V")

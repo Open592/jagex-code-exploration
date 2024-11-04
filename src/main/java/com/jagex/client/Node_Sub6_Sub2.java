@@ -24,7 +24,7 @@ public final class Node_Sub6_Sub2 extends Node_Sub6 {
 	private final short[] aShortArray21 = new short[257];
 
 	static {
-		new Class83("clan_chat", "clanchat", "conversation_clan", "clan_chat");
+		new LocalizedString("clan_chat", "clanchat", "conversation_clan", "clan_chat");
 	}
 
 	@OriginalMember(owner = "client!bt", name = "<init>", descriptor = "()V")

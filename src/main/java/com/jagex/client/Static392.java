@@ -29,7 +29,7 @@ public final class Static392 {
 	public static final Class8[] aClass8Array1 = new Class8[16];
 
 	@OriginalMember(owner = "client!ts", name = "r", descriptor = "Lclient!gk;")
-	public static final Class83 aClass83_134 = new Class83("Loading additional fonts - ", "Lade Zusatzschriftarten - ", "Chargement de polices secondaires - ", "Carregando fontes principais - ");
+	public static final LocalizedString A_LOCALIZED_STRING___134 = new LocalizedString("Loading additional fonts - ", "Lade Zusatzschriftarten - ", "Chargement de polices secondaires - ", "Carregando fontes principais - ");
 
 	@OriginalMember(owner = "client!ts", name = "a", descriptor = "(II)Lclient!uu;")
 	public static Class247 method5121(@OriginalArg(1) int arg0) {

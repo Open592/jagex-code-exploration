@@ -33,7 +33,7 @@ public final class Class37 {
 	public int anInt871 = -1;
 
 	static {
-		new Class83("To go here you must login to a members' server.", "Du musst auf einer Mitglieder-Welt sein, um dort hinzukommen.", "Vous devez vous connecter à un serveur d'abonnés pour aller à cet endroit.", "Para entrar aqui, acesse um servidor para membros.");
+		new LocalizedString("To go here you must login to a members' server.", "Du musst auf einer Mitglieder-Welt sein, um dort hinzukommen.", "Vous devez vous connecter à un serveur d'abonnés pour aller à cet endroit.", "Para entrar aqui, acesse um servidor para membros.");
 	}
 
 	@OriginalMember(owner = "client!cj", name = "a", descriptor = "(IIZLclient!uk;Lclient!ro;Lclient!vs;ILclient!lp;Lclient!in;Lclient!ya;Lclient!du;I)Lclient!t;")

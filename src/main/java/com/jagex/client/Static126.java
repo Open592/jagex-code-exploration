@@ -10,7 +10,7 @@ public final class Static126 {
 	public static Class57[] aClass57Array7;
 
 	@OriginalMember(owner = "client!gi", name = "g", descriptor = "Lclient!gk;")
-	public static final Class83 aClass83_49 = new Class83("skill: ", "Fertigkeit: ", "compétence ", "habilidade: ");
+	public static final LocalizedString A_LOCALIZED_STRING___49 = new LocalizedString("skill: ", "Fertigkeit: ", "compétence ", "habilidade: ");
 
 	@OriginalMember(owner = "client!gi", name = "a", descriptor = "(BII)Z")
 	public static boolean method2260(@OriginalArg(1) int arg0, @OriginalArg(2) int arg1) {

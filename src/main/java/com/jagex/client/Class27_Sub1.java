@@ -33,7 +33,7 @@ public final class Class27_Sub1 extends Class27 {
 	private final int anInt653;
 
 	static {
-		new Class83("To interact with this please login to a members' server.", "Logg dich auf einer Mitglieder-Welt ein, um damit zu interagieren.", "Veuillez vous connecter à un serveur d'abonnés pour cette interaction.", "Para interagir, acesse um servidor para membros.");
+		new LocalizedString("To interact with this please login to a members' server.", "Logg dich auf einer Mitglieder-Welt ein, um damit zu interagieren.", "Veuillez vous connecter à un serveur d'abonnés pour cette interaction.", "Para interagir, acesse um servidor para membros.");
 	}
 
 	@OriginalMember(owner = "client!br", name = "<init>", descriptor = "(IIIIIIIIII)V")

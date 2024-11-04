@@ -10,7 +10,7 @@ public final class Static298 {
 	public static final Class183 aClass183_38 = new Class183();
 
 	@OriginalMember(owner = "client!pb", name = "e", descriptor = "Lclient!gk;")
-	public static final Class83 aClass83_112 = new Class83("slide:", "gleiten:", "glissement:", "deslizamento:");
+	public static final LocalizedString A_LOCALIZED_STRING___112 = new LocalizedString("slide:", "gleiten:", "glissement:", "deslizamento:");
 
 	@OriginalMember(owner = "client!pb", name = "f", descriptor = "S")
 	public static short aShort67 = 256;

@@ -9,7 +9,7 @@ public final class Static373 {
 	public static Class212 aClass212_8;
 
 	@OriginalMember(owner = "client!st", name = "l", descriptor = "Lclient!gk;")
-	public static final Class83 aClass83_127 = new Class83("Loading interfaces - ", "Lade Benutzeroberfläche - ", "Chargement des interfaces - ", "Carregando interfaces - ");
+	public static final LocalizedString A_LOCALIZED_STRING___127 = new LocalizedString("Loading interfaces - ", "Lade Benutzeroberfläche - ", "Chargement des interfaces - ", "Carregando interfaces - ");
 
 	@OriginalMember(owner = "client!st", name = "m", descriptor = "I")
 	public static int anInt6383 = -1;

@@ -17,7 +17,7 @@ public abstract class Class27 {
 	public final int anInt5155;
 
 	static {
-		new Class83("Unable to add friend - system busy.", "Der Freund konnte nicht hinzugefügt werden, das System ist derzeit ausgelastet.", "Impossible d'ajouter un ami - système occupé.", "Não foi possível adicionar o amigo. O sistema está ocupado.");
+		new LocalizedString("Unable to add friend - system busy.", "Der Freund konnte nicht hinzugefügt werden, das System ist derzeit ausgelastet.", "Impossible d'ajouter un ami - système occupé.", "Não foi possível adicionar o amigo. O sistema está ocupado.");
 	}
 
 	@OriginalMember(owner = "client!cc", name = "<init>", descriptor = "(III)V")

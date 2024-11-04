@@ -19,7 +19,7 @@ public final class Static50 {
 	public static float aFloat28 = 0.0F;
 
 	@OriginalMember(owner = "client!ch", name = "g", descriptor = "Lclient!gk;")
-	public static final Class83 aClass83_27 = new Class83("Loading defaults - ", "Lade Standardeinstellungen - ", "Chargement des paramètres par défaut - ", "Carregando padrões - ");
+	public static final LocalizedString A_LOCALIZED_STRING___27 = new LocalizedString("Loading defaults - ", "Lade Standardeinstellungen - ", "Chargement des paramètres par défaut - ", "Carregando padrões - ");
 
 	@OriginalMember(owner = "client!ch", name = "h", descriptor = "[I")
 	public static final int[] anIntArray50 = new int[] { 1, 2, 4, 8 };

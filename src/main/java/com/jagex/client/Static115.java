@@ -11,7 +11,7 @@ public final class Static115 {
 	public static final Class22 aClass22_102 = new Class22(32, -2);
 
 	@OriginalMember(owner = "client!fp", name = "g", descriptor = "Lclient!gk;")
-	public static final Class83 aClass83_42 = new Class83("glow2:", "leuchten2:", "brillant2:", "brilho2:");
+	public static final LocalizedString A_LOCALIZED_STRING___42 = new LocalizedString("glow2:", "leuchten2:", "brillant2:", "brilho2:");
 
 	@OriginalMember(owner = "client!fp", name = "h", descriptor = "[I")
 	public static final int[] anIntArray164 = new int[13];

@@ -19,7 +19,7 @@ public final class Static444 {
 	public static Class206 aClass206_3;
 
 	@OriginalMember(owner = "client!wj", name = "i", descriptor = "Lclient!gk;")
-	public static final Class83 aClass83_150 = new Class83("Connection lost.", "Verbindung abgebrochen.", "Connexion perdue.", "Conexão perdida.");
+	public static final LocalizedString A_LOCALIZED_STRING___150 = new LocalizedString("Connection lost.", "Verbindung abgebrochen.", "Connexion perdue.", "Conexão perdida.");
 
 	@OriginalMember(owner = "client!wj", name = "A", descriptor = "I")
 	public static int anInt7298 = 1;

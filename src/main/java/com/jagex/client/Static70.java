@@ -11,7 +11,7 @@ public final class Static70 {
 	public static int anInt1504;
 
 	@OriginalMember(owner = "client!dk", name = "i", descriptor = "Lclient!gk;")
-	public static final Class83 aClass83_31 = new Class83(" more options", " weitere Optionen", " autres options", " mais opções");
+	public static final LocalizedString A_LOCALIZED_STRING___31 = new LocalizedString(" more options", " weitere Optionen", " autres options", " mais opções");
 
 	@OriginalMember(owner = "client!dk", name = "l", descriptor = "[S")
 	public static final short[] aShortArray43 = new short[] { -4160, -4163, -8256, -8259, 22461 };

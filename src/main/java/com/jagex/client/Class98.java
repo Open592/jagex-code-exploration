@@ -20,7 +20,7 @@ public final class Class98 {
 	public final int anInt3057;
 
 	static {
-		new Class83("You are not allowed to talk in this clan channel.", "Du darfst in diesem Chatraum nicht reden.", "Vous n'êtes pas autorisé à parler dans ce canal de clan.", "Você não tem permissão para conversar neste canal de clã.");
+		new LocalizedString("You are not allowed to talk in this clan channel.", "Du darfst in diesem Chatraum nicht reden.", "Vous n'êtes pas autorisé à parler dans ce canal de clan.", "Você não tem permissão para conversar neste canal de clã.");
 	}
 
 	@OriginalMember(owner = "client!ho", name = "<init>", descriptor = "(IIII)V")

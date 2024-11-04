@@ -9,7 +9,7 @@ public final class Static296 {
 	public static Class217 aClass217_1;
 
 	@OriginalMember(owner = "client!ou", name = "l", descriptor = "Lclient!gk;")
-	public static final Class83 aClass83_109 = new Class83("Opened title screen", "Titelbild geöffnet.", "Écran-titre ouvert", "Tela título aberta");
+	public static final LocalizedString A_LOCALIZED_STRING___109 = new LocalizedString("Opened title screen", "Titelbild geöffnet.", "Écran-titre ouvert", "Tela título aberta");
 
 	@OriginalMember(owner = "client!ou", name = "n", descriptor = "I")
 	public static int anInt5302 = -2;

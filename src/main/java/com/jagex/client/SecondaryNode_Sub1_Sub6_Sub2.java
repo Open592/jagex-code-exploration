@@ -16,7 +16,7 @@ public final class SecondaryNode_Sub1_Sub6_Sub2 extends SecondaryNode_Sub1_Sub6 
 	public int anInt4117;
 
 	static {
-		new Class83("You have been permanently muted due to breaking a rule.", "Du wurdest permanent stumm geschaltet, da du gegen eine Regel verstoßen hast.", "L'accès à la messagerie instantanée vous a définitivement été retiré suite à une infraction.", "Você foi permanentemente vetado por ter violado uma regra.");
+		new LocalizedString("You have been permanently muted due to breaking a rule.", "Du wurdest permanent stumm geschaltet, da du gegen eine Regel verstoßen hast.", "L'accès à la messagerie instantanée vous a définitivement été retiré suite à une infraction.", "Você foi permanentemente vetado por ter violado uma regra.");
 	}
 
 	@OriginalMember(owner = "client!lf", name = "b", descriptor = "(Z)[B")

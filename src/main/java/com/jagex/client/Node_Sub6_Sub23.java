@@ -25,7 +25,7 @@ public final class Node_Sub6_Sub23 extends Node_Sub6 {
 		for (@Pc(4) int local4 = 0; local4 < 100; local4++) {
 			aRectangleArray1[local4] = new Rectangle();
 		}
-		new Class83("To use this item please login to a members' server.", "Du musst auf einer Mitglieder-Welt sein, um diesen Gegenstand zu benutzen.", "Veuillez vous connecter à un serveur d'abonnés pour utiliser cet objet.", "Acesse um servidor para membros para usar este objeto.");
+		new LocalizedString("To use this item please login to a members' server.", "Du musst auf einer Mitglieder-Welt sein, um diesen Gegenstand zu benutzen.", "Veuillez vous connecter à un serveur d'abonnés pour utiliser cet objet.", "Acesse um servidor para membros para usar este objeto.");
 	}
 
 	@OriginalMember(owner = "client!mr", name = "<init>", descriptor = "()V")

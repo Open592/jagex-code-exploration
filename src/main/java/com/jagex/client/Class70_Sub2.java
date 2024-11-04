@@ -15,7 +15,7 @@ public final class Class70_Sub2 extends Class70 {
 	private final Class120 aClass120_1 = new Class120();
 
 	static {
-		new Class83("You are temporarily banned from this clan channel.", "Du wurdest temporär aus diesem Chatraum verbannt.", "Vous êtes temporairement exclu de ce canal de clan.", "Você está temporariamente vetado de entrar nesse canal de clã.");
+		new LocalizedString("You are temporarily banned from this clan channel.", "Du wurdest temporär aus diesem Chatraum verbannt.", "Vous êtes temporairement exclu de ce canal de clan.", "Você está temporariamente vetado de entrar nesse canal de clã.");
 	}
 
 	@OriginalMember(owner = "client!tl", name = "b", descriptor = "(I)V")

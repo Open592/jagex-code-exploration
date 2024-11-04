@@ -13,7 +13,7 @@ public final class Static136 {
 	public static Class10[] aClass10Array1;
 
 	@OriginalMember(owner = "client!gt", name = "o", descriptor = "Lclient!gk;")
-	public static final Class83 aClass83_53 = new Class83("Cancel", "Abbrechen", "Annuler", "Cancelar");
+	public static final LocalizedString A_LOCALIZED_STRING___53 = new LocalizedString("Cancel", "Abbrechen", "Annuler", "Cancelar");
 
 	@OriginalMember(owner = "client!gt", name = "a", descriptor = "(III)Lclient!rb;")
 	public static Class16_Sub5 method2344(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2) {

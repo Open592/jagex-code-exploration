@@ -15,7 +15,7 @@ public final class Class217 {
 	private final Class76 aClass76_84;
 
 	static {
-		new Class83("I can't reach that!", "Da kommst du nicht hin.", "Je ne peux pas l'atteindre !", "Não consigo alcançar!");
+		new LocalizedString("I can't reach that!", "Da kommst du nicht hin.", "Je ne peux pas l'atteindre !", "Não consigo alcançar!");
 	}
 
 	@OriginalMember(owner = "client!sn", name = "<init>", descriptor = "(Lclient!jk;ILclient!fs;)V")

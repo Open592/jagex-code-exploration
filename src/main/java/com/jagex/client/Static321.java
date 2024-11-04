@@ -16,7 +16,7 @@ import org.openrs2.deob.annotation.Pc;
 public final class Static321 {
 
 	@OriginalMember(owner = "client!qc", name = "h", descriptor = "Lclient!gk;")
-	public static final Class83 aClass83_117 = new Class83("Connected to update server", "Verbindung zum Update-Server hergestellt.", "Connecté au serveur de mise à jour", "Conectado ao servidor de atualização");
+	public static final LocalizedString A_LOCALIZED_STRING___117 = new LocalizedString("Connected to update server", "Verbindung zum Update-Server hergestellt.", "Connecté au serveur de mise à jour", "Conectado ao servidor de atualização");
 
 	@OriginalMember(owner = "client!qc", name = "n", descriptor = "[I")
 	public static int[] anIntArray387 = new int[1];

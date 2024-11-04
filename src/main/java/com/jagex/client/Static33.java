@@ -13,7 +13,7 @@ public final class Static33 {
 	public static int anInt602;
 
 	@OriginalMember(owner = "client!bm", name = "q", descriptor = "Lclient!gk;")
-	public static final Class83 aClass83_18 = new Class83("Connecting to update server", "Verbindung mit Update-Server...", "Connexion au serveur de mise à jour en cours", "Conectando ao servidor de atualização");
+	public static final LocalizedString A_LOCALIZED_STRING___18 = new LocalizedString("Connecting to update server", "Verbindung mit Update-Server...", "Connexion au serveur de mise à jour en cours", "Conectando ao servidor de atualização");
 
 	@OriginalMember(owner = "client!bm", name = "r", descriptor = "[I")
 	public static final int[] anIntArray36 = new int[50];

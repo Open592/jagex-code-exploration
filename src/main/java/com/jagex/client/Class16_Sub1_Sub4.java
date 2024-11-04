@@ -15,7 +15,7 @@ public final class Class16_Sub1_Sub4 extends Class16_Sub1 implements Interface6 
 	private final boolean aBoolean312;
 
 	static {
-		new Class83(" was kicked from the channel.", " wurde aus dem Chatraum rausgeworfen.", " a été expulsé du canal.", " foi expulso do canal.");
+		new LocalizedString(" was kicked from the channel.", " wurde aus dem Chatraum rausgeworfen.", " a été expulsé du canal.", " foi expulso do canal.");
 	}
 
 	@OriginalMember(owner = "client!jd", name = "<init>", descriptor = "(Lclient!ya;Lclient!rd;IIIIIZIIIIIII)V")

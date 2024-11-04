@@ -6,7 +6,7 @@ import org.openrs2.deob.annotation.Pc;
 public final class Static294 {
 
 	@OriginalMember(owner = "client!os", name = "n", descriptor = "Lclient!gk;")
-	public static final Class83 aClass83_17 = new Class83(" is already on your friend list.", " steht bereits auf deiner Freunde-Liste!", " est déjà dans votre liste d'amis.", " já está na sua lista de amigos.");
+	public static final LocalizedString A_LOCALIZED_STRING___17 = new LocalizedString(" is already on your friend list.", " steht bereits auf deiner Freunde-Liste!", " est déjà dans votre liste d'amis.", " já está na sua lista de amigos.");
 
 	@OriginalMember(owner = "client!os", name = "o", descriptor = "Lclient!bf;")
 	public static final Class21 aClass21_4 = new Class21(0, 15);

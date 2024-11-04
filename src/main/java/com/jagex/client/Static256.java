@@ -14,7 +14,7 @@ public final class Static256 {
 	public static Class76 aClass76_50;
 
 	@OriginalMember(owner = "client!mu", name = "f", descriptor = "Lclient!gk;")
-	public static final Class83 aClass83_99 = new Class83("Please remove ", "Bitte entferne ", "Veuillez commencer par supprimer ", "Remova ");
+	public static final LocalizedString A_LOCALIZED_STRING___99 = new LocalizedString("Please remove ", "Bitte entferne ", "Veuillez commencer par supprimer ", "Remova ");
 
 	@OriginalMember(owner = "client!mu", name = "i", descriptor = "J")
 	public static long aLong156 = -1L;

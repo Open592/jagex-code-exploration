@@ -21,14 +21,14 @@ public final class Class159 {
 	private final JS5Connection aJS5Connection_3;
 
 	@OriginalMember(owner = "client!nj", name = "i", descriptor = "Lclient!je;")
-	private JS5NetRequest aClass4_Sub1_Sub6_Sub1_1;
+	private JS5NetRequest archiveFileRequest;
 
 	@OriginalMember(owner = "client!nj", name = "<init>", descriptor = "(Lclient!vn;Lclient!vl;)V")
 	public Class159(@OriginalArg(0) JS5Connection arg0, @OriginalArg(1) Class254 arg1) {
 		this.aClass254_2 = arg1;
 		this.aJS5Connection_3 = arg0;
 		if (!this.aJS5Connection_3.isUrgentRequestQueueFull()) {
-			this.aClass4_Sub1_Sub6_Sub1_1 = this.aJS5Connection_3.requestArchiveFile(255, (byte) 0, true, 255);
+			this.archiveFileRequest = this.aJS5Connection_3.requestArchiveFile(255, (byte) 0, true, 255);
 		}
 	}
 
@@ -37,16 +37,16 @@ public final class Class159 {
 		if (this.aPacket_5 != null) {
 			return true;
 		}
-		if (this.aClass4_Sub1_Sub6_Sub1_1 == null) {
+		if (this.archiveFileRequest == null) {
 			if (this.aJS5Connection_3.isUrgentRequestQueueFull()) {
 				return false;
 			}
-			this.aClass4_Sub1_Sub6_Sub1_1 = this.aJS5Connection_3.requestArchiveFile(255, (byte) 0, true, 255);
+			this.archiveFileRequest = this.aJS5Connection_3.requestArchiveFile(255, (byte) 0, true, 255);
 		}
-		if (this.aClass4_Sub1_Sub6_Sub1_1.aBoolean381) {
+		if (this.archiveFileRequest.aBoolean381) {
 			return false;
 		} else {
-			this.aPacket_5 = new Packet(this.aClass4_Sub1_Sub6_Sub1_1.method3343());
+			this.aPacket_5 = new Packet(this.archiveFileRequest.method3343());
 			this.aClass143_Sub1Array2 = new Class143_Sub1[(this.aPacket_5.data.length - 5) / 8];
 			return true;
 		}

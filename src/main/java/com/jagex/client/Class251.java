@@ -64,8 +64,8 @@ public final class Class251 {
 	public boolean aBoolean645;
 
 	static {
-		new Class83("Nothing interesting happens.", "Nichts Interessantes passiert.", "Il ne se passe rien d'intéressant.", "Nada de interessante acontece.");
-		new Class83("You do not have permission to kick this user.", "Du darfst diesen Benutzer nicht rauswerfen.", "Vous n'êtes pas autorisé à expulser cet utilisateur.", "Você não tem permissão para expulsar este usuário.");
-		new Class83("Use", "Benutzen", "Utiliser", "Usar");
+		new LocalizedString("Nothing interesting happens.", "Nichts Interessantes passiert.", "Il ne se passe rien d'intéressant.", "Nada de interessante acontece.");
+		new LocalizedString("You do not have permission to kick this user.", "Du darfst diesen Benutzer nicht rauswerfen.", "Vous n'êtes pas autorisé à expulser cet utilisateur.", "Você não tem permissão para expulsar este usuário.");
+		new LocalizedString("Use", "Benutzen", "Utiliser", "Usar");
 	}
 }

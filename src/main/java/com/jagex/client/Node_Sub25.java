@@ -15,7 +15,7 @@ public final class Node_Sub25 extends Node {
 	public int[] anIntArray229 = new int[1];
 
 	static {
-		new Class83("Invalid player name.", "Unzulässiger Charaktername!", "Nom de joueur incorrect.", "Nome de jogador inválido.");
+		new LocalizedString("Invalid player name.", "Unzulässiger Charaktername!", "Nom de joueur incorrect.", "Nome de jogador inválido.");
 	}
 
 	@OriginalMember(owner = "client!jh", name = "a", descriptor = "(IZBILclient!lp;IILclient!cj;ILclient!ya;)Lclient!t;")

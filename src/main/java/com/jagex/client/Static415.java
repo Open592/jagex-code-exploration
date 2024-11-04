@@ -9,7 +9,7 @@ public final class Static415 {
 	public static float aFloat213;
 
 	@OriginalMember(owner = "client!v", name = "e", descriptor = "Lclient!gk;")
-	public static final Class83 aClass83_143 = new Class83("white:", "weiss:", "blanc:", "branco:");
+	public static final LocalizedString A_LOCALIZED_STRING___143 = new LocalizedString("white:", "weiss:", "blanc:", "branco:");
 
 	@OriginalMember(owner = "client!v", name = "i", descriptor = "Z")
 	public static final boolean aBoolean625 = false;

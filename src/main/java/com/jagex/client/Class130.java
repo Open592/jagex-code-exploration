@@ -9,7 +9,7 @@ import org.openrs2.deob.annotation.Pc;
 public final class Class130 implements Interface8 {
 
 	static {
-		new Class83("You are not currently in a channel.", "Du befindest dich derzeit nicht in einem Chatraum.", "Vous n'êtes dans aucun canal à l'heure actuelle.", "No momento você não está em um canal.");
+		new LocalizedString("You are not currently in a channel.", "Du befindest dich derzeit nicht in einem Chatraum.", "Vous n'êtes dans aucun canal à l'heure actuelle.", "No momento você não está em um canal.");
 	}
 
 	@OriginalMember(owner = "client!ko", name = "a", descriptor = "(JB[ILclient!ho;)Ljava/lang/String;")

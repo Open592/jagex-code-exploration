@@ -15,7 +15,7 @@ public final class Class192 {
 	private final Class76 aClass76_68;
 
 	static {
-		new Class83("To prevent further mutes please read the rules.", "Um eine erneute Stummschaltung zu verhindern, lies bitte die Regeln.", "Pour éviter un nouveau blocage, lisez le règlement.", "Para evitar outros vetos, leia as regras.");
+		new LocalizedString("To prevent further mutes please read the rules.", "Um eine erneute Stummschaltung zu verhindern, lies bitte die Regeln.", "Pour éviter un nouveau blocage, lisez le règlement.", "Para evitar outros vetos, leia as regras.");
 	}
 
 	@OriginalMember(owner = "client!qd", name = "<init>", descriptor = "(Lclient!jk;ILclient!fs;)V")

@@ -10,7 +10,7 @@ public final class Static340 {
 	public static final Class98 aClass98_15 = new Class98(10, 2, 2, 0);
 
 	@OriginalMember(owner = "client!rf", name = "c", descriptor = "Lclient!gk;")
-	public static final Class83 aClass83_119 = new Class83("You can't add yourself to your own ignore list.", "Du kannst dich nicht auf deine eigene Ignorieren-Liste setzen!", "Vous ne pouvez pas ajouter votre nom à votre liste noire.", "Você não pode adicionar a si próprio à sua lista de ignorados.");
+	public static final LocalizedString A_LOCALIZED_STRING___119 = new LocalizedString("You can't add yourself to your own ignore list.", "Du kannst dich nicht auf deine eigene Ignorieren-Liste setzen!", "Vous ne pouvez pas ajouter votre nom à votre liste noire.", "Você não pode adicionar a si próprio à sua lista de ignorados.");
 
 	@OriginalMember(owner = "client!rf", name = "e", descriptor = "[I")
 	public static final int[] anIntArray411 = new int[100];

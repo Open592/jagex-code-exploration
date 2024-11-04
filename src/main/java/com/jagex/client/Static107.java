@@ -11,7 +11,7 @@ public final class Static107 {
 	public static final Class22 aClass22_96 = new Class22(28, 3);
 
 	@OriginalMember(owner = "client!fg", name = "d", descriptor = "Lclient!gk;")
-	public static final Class83 aClass83_40 = new Class83("Allocating memory", "Speicher wird zugewiesen.", "Mémoire en cours d'attribution", "Alocando memória");
+	public static final LocalizedString A_LOCALIZED_STRING___40 = new LocalizedString("Allocating memory", "Speicher wird zugewiesen.", "Mémoire en cours d'attribution", "Alocando memória");
 
 	@OriginalMember(owner = "client!fg", name = "a", descriptor = "(B)Lclient!cn;")
 	public static SecondaryNode_Sub1_Sub5 method1990() {

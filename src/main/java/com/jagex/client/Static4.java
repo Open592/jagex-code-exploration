@@ -19,7 +19,7 @@ public final class Static4 {
 	public static final Class22 aClass22_277 = new Class22(81, -2);
 
 	@OriginalMember(owner = "client!ac", name = "x", descriptor = "Lclient!gk;")
-	public static final Class83 aClass83_121 = new Class83("rating: ", "Kampfstufe: ", "classement ", "qualificação: ");
+	public static final LocalizedString A_LOCALIZED_STRING___121 = new LocalizedString("rating: ", "Kampfstufe: ", "classement ", "qualificação: ");
 
 	@OriginalMember(owner = "client!ac", name = "a", descriptor = "(II)V")
 	public static void method4663(@OriginalArg(0) int arg0) {

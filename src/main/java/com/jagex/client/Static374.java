@@ -10,10 +10,10 @@ public final class Static374 {
 	public static float aFloat194;
 
 	@OriginalMember(owner = "client!su", name = "m", descriptor = "Lclient!gk;")
-	public static final Class83 aClass83_128 = new Class83("Drop", "Fallen lassen", "Poser", "Largar");
+	public static final LocalizedString A_LOCALIZED_STRING___128 = new LocalizedString("Drop", "Fallen lassen", "Poser", "Largar");
 
 	@OriginalMember(owner = "client!su", name = "o", descriptor = "Lclient!gk;")
-	public static final Class83 aClass83_129 = new Class83("Stellar Dawn is loading - please wait...", "Mechscape wird geladen - bitte warten...", "Chargement de Mechscape en cours - veuillez patienter...", "Mechscape carregando. Aguarde...");
+	public static final LocalizedString A_LOCALIZED_STRING___129 = new LocalizedString("Stellar Dawn is loading - please wait...", "Mechscape wird geladen - bitte warten...", "Chargement de Mechscape en cours - veuillez patienter...", "Mechscape carregando. Aguarde...");
 
 	@OriginalMember(owner = "client!su", name = "p", descriptor = "I")
 	public static int anInt6394 = -1;

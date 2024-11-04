@@ -32,7 +32,7 @@ public final class Static440 {
 				Static122.aClass19_16.p(0);
 				@Pc(22) Class89 local22 = Static239.method3546(Static62.anInt1122, Static209.aClass76_48);
 				@Pc(31) Class46 local31 = Static122.aClass19_16.method4275(local22, Static456.method327(Static293.aClass76_60, Static62.anInt1122));
-				Static436.method5519(true, Static439.aClass83_148.method2267(ClientSettings.langID), local31);
+				Static436.method5519(true, Static439.A_LOCALIZED_STRING___148.getLocalizedString(ClientSettings.langID), local31);
 				Static122.aClass19_16.method4247();
 				Static348.method4697();
 				Static122.aClass19_16.method4267();

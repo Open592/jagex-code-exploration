@@ -13,7 +13,7 @@ public final class Static234 {
 	public static Class192 aClass192_2;
 
 	@OriginalMember(owner = "client!lu", name = "D", descriptor = "Lclient!gk;")
-	public static final Class83 aClass83_93 = new Class83("glow3:", "leuchten3:", "brillant3:", "brilho3:");
+	public static final LocalizedString A_LOCALIZED_STRING___93 = new LocalizedString("glow3:", "leuchten3:", "brillant3:", "brilho3:");
 
 	@OriginalMember(owner = "client!lu", name = "H", descriptor = "Z")
 	public static boolean aBoolean411 = false;

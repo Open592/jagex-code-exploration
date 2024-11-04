@@ -33,7 +33,7 @@ public final class Class244_Sub1 extends Class244 implements KeyListener, FocusL
 	private final boolean[] aBooleanArray24 = new boolean[112];
 
 	static {
-		new Class83("If you are not, please change your password to something more obscure!", "nicht der Fall ist, ändere dein Passwort zu einem ungewöhnlicheren Begriff!", "Si ce n'est pas le cas, remplacez votre mot de passe par une formule moins évidente !", "Caso não esteja, altere sua senha para algo mais obscuro!");
+		new LocalizedString("If you are not, please change your password to something more obscure!", "nicht der Fall ist, ändere dein Passwort zu einem ungewöhnlicheren Begriff!", "Si ce n'est pas le cas, remplacez votre mot de passe par une formule moins évidente !", "Caso não esteja, altere sua senha para algo mais obscuro!");
 	}
 
 	@OriginalMember(owner = "client!vr", name = "<init>", descriptor = "(Ljava/awt/Component;)V")

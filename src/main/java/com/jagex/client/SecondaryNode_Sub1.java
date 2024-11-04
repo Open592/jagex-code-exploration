@@ -37,6 +37,6 @@ public final class SecondaryNode_Sub1 extends SecondaryNode {
 	public Class186 aClass186_1;
 
 	static {
-		new Class83("You have left the channel.", "Du hast den Chatraum verlassen.", "Vous avez quitté le canal.", "Você saiu do canal.");
+		new LocalizedString("You have left the channel.", "Du hast den Chatraum verlassen.", "Vous avez quitté le canal.", "Você saiu do canal.");
 	}
 }

@@ -8,7 +8,7 @@ import org.openrs2.deob.annotation.Pc;
 public final class Static439 {
 
 	@OriginalMember(owner = "client!wd", name = "i", descriptor = "Lclient!gk;")
-	public static final Class83 aClass83_148 = new Class83("Loading - please wait.", "Ladevorgang - bitte warte.", "Chargement en cours. Veuillez patienter.", "Carregando. Aguarde.");
+	public static final LocalizedString A_LOCALIZED_STRING___148 = new LocalizedString("Loading - please wait.", "Ladevorgang - bitte warte.", "Chargement en cours. Veuillez patienter.", "Carregando. Aguarde.");
 
 	@OriginalMember(owner = "client!wd", name = "l", descriptor = "Z")
 	public static boolean aBoolean676 = true;

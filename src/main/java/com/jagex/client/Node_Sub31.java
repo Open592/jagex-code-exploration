@@ -11,7 +11,7 @@ public final class Node_Sub31 extends Node {
 	public short aShort62;
 
 	static {
-		new Class83("You do not have a high enough rank to join this clan channel.", "Dein Rang reicht nicht aus, um diesen Chatraum zu betreten.", "Votre rang n'est pas assez élevé pour rejoindre ce canal de clan.", "Sua posição não é alta o suficiente para você entrar nesse canal de clã.");
+		new LocalizedString("You do not have a high enough rank to join this clan channel.", "Dein Rang reicht nicht aus, um diesen Chatraum zu betreten.", "Votre rang n'est pas assez élevé pour rejoindre ce canal de clan.", "Sua posição não é alta o suficiente para você entrar nesse canal de clã.");
 	}
 
 	@OriginalMember(owner = "client!ni", name = "<init>", descriptor = "()V")

@@ -49,7 +49,7 @@ public final class Class40 {
 	private int anInt998 = 0;
 
 	static {
-		new Class83("Invalid teleport!", "Unzulässiger Teleport!", "Téléportation non valide !", "Teleporte inválido!");
+		new LocalizedString("Invalid teleport!", "Unzulässiger Teleport!", "Téléportation non valide !", "Teleporte inválido!");
 	}
 
 	@OriginalMember(owner = "client!cm", name = "a", descriptor = "(Lclient!fd;II)V")

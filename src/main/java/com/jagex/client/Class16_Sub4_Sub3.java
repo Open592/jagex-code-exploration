@@ -36,7 +36,7 @@ public final class Class16_Sub4_Sub3 extends Class16_Sub4 implements Interface6 
 	private SecondaryNode_Sub1_Sub4 aClass4_Sub1_Sub4_3;
 
 	static {
-		new Class83(null, "geschickt werden.", null, null);
+		new LocalizedString(null, "geschickt werden.", null, null);
 	}
 
 	@OriginalMember(owner = "client!jp", name = "<init>", descriptor = "(Lclient!ya;Lclient!rd;IIIIZIZ)V")

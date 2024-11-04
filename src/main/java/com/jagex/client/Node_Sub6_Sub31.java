@@ -18,7 +18,7 @@ public final class Node_Sub6_Sub31 extends Node_Sub6 {
 	private int anInt5975 = 2048;
 
 	static {
-		new Class83("Now talking in clan channel ", "Chatraum: ", "Vous participez actuellement au canal de clan ", "Falando no canal do clã agora ");
+		new LocalizedString("Now talking in clan channel ", "Chatraum: ", "Vous participez actuellement au canal de clan ", "Falando no canal do clã agora ");
 	}
 
 	@OriginalMember(owner = "client!rn", name = "<init>", descriptor = "()V")

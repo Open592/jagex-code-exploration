@@ -10,10 +10,10 @@ public final class Static409 {
 	public static final Class22 aClass22_325 = new Class22(3, -1);
 
 	@OriginalMember(owner = "client!up", name = "e", descriptor = "Lclient!gk;")
-	public static final Class83 aClass83_145 = new Class83("Loaded defaults", "Standardeinstellungen geladen", "Paramètres par défaut chargés", "Padrões carregados");
+	public static final LocalizedString A_LOCALIZED_STRING___145 = new LocalizedString("Loaded defaults", "Standardeinstellungen geladen", "Paramètres par défaut chargés", "Padrões carregados");
 
 	@OriginalMember(owner = "client!up", name = "f", descriptor = "Lclient!gk;")
-	public static final Class83 aClass83_146 = new Class83("red:", "rot:", "rouge:", "vermelho:");
+	public static final LocalizedString A_LOCALIZED_STRING___146 = new LocalizedString("red:", "rot:", "rouge:", "vermelho:");
 
 	@OriginalMember(owner = "client!up", name = "g", descriptor = "S")
 	public static short aShort100 = 32767;

@@ -12,7 +12,7 @@ public final class Node_Sub6_Sub4 extends Node_Sub6 {
 	private int anInt1400 = 585;
 
 	static {
-		new Class83(null, "Spieler nicht auf deiner Freunde-Liste.", null, null);
+		new LocalizedString(null, "Spieler nicht auf deiner Freunde-Liste.", null, null);
 	}
 
 	@OriginalMember(owner = "client!dg", name = "<init>", descriptor = "()V")

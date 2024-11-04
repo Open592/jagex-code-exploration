@@ -30,7 +30,7 @@ public final class Class240 {
 	public final Class76 aClass76_94;
 
 	static {
-		new Class83("Login to a members' server to use this object.", "Du musst auf einer Mitglieder-Welt sein, um diesen Gegenstand zu benutzen.", "Connectez-vous à un serveur d'abonnés pour utiliser cet objet.", "Acesse um servidor para membros para usar este objeto.");
+		new LocalizedString("Login to a members' server to use this object.", "Du musst auf einer Mitglieder-Welt sein, um diesen Gegenstand zu benutzen.", "Connectez-vous à un serveur d'abonnés pour utiliser cet objet.", "Acesse um servidor para membros para usar este objeto.");
 	}
 
 	@OriginalMember(owner = "client!uk", name = "<init>", descriptor = "(Lclient!jk;IZLclient!fs;Lclient!fs;)V")

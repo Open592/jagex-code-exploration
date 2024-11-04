@@ -16,6 +16,6 @@ public final class Class92 {
 	public int anInt2885;
 
 	static {
-		new Class83("This mute will remain for a further ", "Diese Stummschaltung gilt für weitere ", "Votre accès restera bloqué encore ", "Este veto permanecerá por mais ");
+		new LocalizedString("This mute will remain for a further ", "Diese Stummschaltung gilt für weitere ", "Votre accès restera bloqué encore ", "Este veto permanecerá por mais ");
 	}
 }

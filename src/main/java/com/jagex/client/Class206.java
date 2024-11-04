@@ -60,8 +60,8 @@ public final class Class206 {
 			@Pc(49) int local49 = this.aClass76_78.method2100() - 1;
 			this.anInt5987 = this.aClass76_78.method2108(local49) + local49 * 256;
 		}
-		this.aStringArray31 = new String[] { null, null, Static147.aClass83_57.method2267(this.anInt5988), null, null };
-		this.aStringArray30 = new String[] { null, null, null, null, Static374.aClass83_128.method2267(this.anInt5988) };
+		this.aStringArray31 = new String[] { null, null, Static147.A_LOCALIZED_STRING___57.getLocalizedString(this.anInt5988), null, null };
+		this.aStringArray30 = new String[] { null, null, null, null, Static374.A_LOCALIZED_STRING___128.getLocalizedString(this.anInt5988) };
 	}
 
 	@OriginalMember(owner = "client!ro", name = "a", descriptor = "(ZLclient!cj;Lclient!la;IILclient!ya;ZIIIZLclient!ya;)Lclient!l;")
@@ -156,8 +156,8 @@ public final class Class206 {
 		local18 = new Class211();
 		local18.anInt6171 = arg0;
 		local18.aClass206_1 = this;
-		local18.aStringArray34 = new String[] { null, null, Static147.aClass83_57.method2267(this.anInt5988), null, null };
-		local18.aStringArray33 = new String[] { null, null, null, null, Static374.aClass83_128.method2267(this.anInt5988) };
+		local18.aStringArray34 = new String[] { null, null, Static147.A_LOCALIZED_STRING___57.getLocalizedString(this.anInt5988), null, null };
+		local18.aStringArray33 = new String[] { null, null, null, null, Static374.A_LOCALIZED_STRING___128.getLocalizedString(this.anInt5988) };
 		if (local41 != null) {
 			local18.method4790(new Packet(local41));
 		}
@@ -169,7 +169,7 @@ public final class Class206 {
 			local18.method4779(this.method4703(local18.anInt6138), this.method4703(local18.anInt6185));
 		}
 		if (!this.aBoolean555 && local18.aBoolean565) {
-			local18.aString61 = Static397.aClass83_21.method2267(this.anInt5988);
+			local18.aString61 = Static397.A_LOCALIZED_STRING___21.getLocalizedString(this.anInt5988);
 			local18.anInt6181 = 0;
 			local18.aStringArray34 = this.aStringArray31;
 			local18.anIntArray435 = null;

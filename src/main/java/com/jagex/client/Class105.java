@@ -8,7 +8,7 @@ import org.openrs2.deob.annotation.OriginalMember;
 public abstract class Class105 {
 
 	static {
-		new Class83("Unable to add name - system busy.", "Der Name konnte nicht hinzugefügt werden, das System ist derzeit ausgelastet.", "Impossible d'ajouter un nom - système occupé.", "Não foi possível adicionar o nome. O sistema está ocupado.");
+		new LocalizedString("Unable to add name - system busy.", "Der Name konnte nicht hinzugefügt werden, das System ist derzeit ausgelastet.", "Impossible d'ajouter un nom - système occupé.", "Não foi possível adicionar o nome. O sistema está ocupado.");
 	}
 
 	@OriginalMember(owner = "client!ie", name = "a", descriptor = "(Lclient!mh;I)Lclient!mh;")

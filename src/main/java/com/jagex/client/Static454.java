@@ -13,7 +13,7 @@ public final class Static454 {
 	public static int anInt4075 = 0;
 
 	@OriginalMember(owner = "client!wv", name = "B", descriptor = "Lclient!gk;")
-	public static final Class83 aClass83_89 = new Class83("flash1:", "blinken1:", "clignotant1:", "flash1:");
+	public static final LocalizedString A_LOCALIZED_STRING___89 = new LocalizedString("flash1:", "blinken1:", "clignotant1:", "flash1:");
 
 	@OriginalMember(owner = "client!wv", name = "a", descriptor = "(IIIBII)I")
 	public static int method3300(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(4) int arg3, @OriginalArg(5) int arg4) {

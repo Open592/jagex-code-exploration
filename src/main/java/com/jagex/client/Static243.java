@@ -10,10 +10,10 @@ public final class Static243 {
 	public static int anInt4530;
 
 	@OriginalMember(owner = "client!mg", name = "h", descriptor = "Lclient!gk;")
-	public static final Class83 aClass83_95 = new Class83("Starting 3d Library", "Starte 3D-Softwarebibliothek.", "Démarrage de la librairie 3D", "Iniciando biblioteca 3D");
+	public static final LocalizedString A_LOCALIZED_STRING___95 = new LocalizedString("Starting 3d Library", "Starte 3D-Softwarebibliothek.", "Démarrage de la librairie 3D", "Iniciando biblioteca 3D");
 
 	@OriginalMember(owner = "client!mg", name = "j", descriptor = "Lclient!gk;")
-	public static final Class83 aClass83_96 = new Class83("wave:", "welle:", "ondulation:", "onda:");
+	public static final LocalizedString A_LOCALIZED_STRING___96 = new LocalizedString("wave:", "welle:", "ondulation:", "onda:");
 
 	@OriginalMember(owner = "client!mg", name = "k", descriptor = "Lclient!sl;")
 	public static final Class215 aClass215_50 = new Class215(72, -1);

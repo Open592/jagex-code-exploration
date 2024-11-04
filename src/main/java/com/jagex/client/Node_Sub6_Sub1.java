@@ -18,7 +18,7 @@ public final class Node_Sub6_Sub1 extends Node_Sub6 {
 	private int anInt588;
 
 	static {
-		new Class83("Please wait until you are logged out of your previous channel.", "Bitte warte, bis du den vorherigen Chatraum verlassen hast.", "Veuillez attendre d'être déconnecté(e) de votre canal précédent.", "Aguarde até se desconectar do canal anterior.");
+		new LocalizedString("Please wait until you are logged out of your previous channel.", "Bitte warte, bis du den vorherigen Chatraum verlassen hast.", "Veuillez attendre d'être déconnecté(e) de votre canal précédent.", "Aguarde até se desconectar do canal anterior.");
 	}
 
 	@OriginalMember(owner = "client!bj", name = "<init>", descriptor = "(I)V")

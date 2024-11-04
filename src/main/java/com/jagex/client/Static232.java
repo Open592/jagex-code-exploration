@@ -11,5 +11,5 @@ public final class Static232 {
 	public static Class247 aClass247_9 = null;
 
 	@OriginalMember(owner = "client!ls", name = "c", descriptor = "Lclient!gk;")
-	public static final Class83 aClass83_92 = new Class83(" from your friend list first.", " zuerst von deiner Freunde-Liste!", " de votre liste d'amis.", " da sua lista de amigos primeiro.");
+	public static final LocalizedString A_LOCALIZED_STRING___92 = new LocalizedString(" from your friend list first.", " zuerst von deiner Freunde-Liste!", " de votre liste d'amis.", " da sua lista de amigos primeiro.");
 }

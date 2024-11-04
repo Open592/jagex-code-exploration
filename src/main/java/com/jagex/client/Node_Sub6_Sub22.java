@@ -12,8 +12,8 @@ public final class Node_Sub6_Sub22 extends Node_Sub6 {
 	private int anInt4463 = 32768;
 
 	static {
-		new Class83(" left the channel.", " hat den Chatraum verlassen.", " a quitté le canal.", " deixou o canal.");
-		new Class83("Your friendlist is full, max of 100 for free users, and 200 for members.", "Ihre Freunde-Liste ist voll!", "Votre liste d'amis est pleine (100 noms maximum pour la version gratuite et 200 pour les abonnés).", "Sua lista de amigos está cheia. O limite é 100 para usuários não pagantes, e 200 para membros.");
+		new LocalizedString(" left the channel.", " hat den Chatraum verlassen.", " a quitté le canal.", " deixou o canal.");
+		new LocalizedString("Your friendlist is full, max of 100 for free users, and 200 for members.", "Ihre Freunde-Liste ist voll!", "Votre liste d'amis est pleine (100 noms maximum pour la version gratuite et 200 pour les abonnés).", "Sua lista de amigos está cheia. O limite é 100 para usuários não pagantes, e 200 para membros.");
 	}
 
 	@OriginalMember(owner = "client!lu", name = "<init>", descriptor = "()V")

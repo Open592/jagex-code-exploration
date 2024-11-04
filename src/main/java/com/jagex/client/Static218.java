@@ -13,7 +13,7 @@ public final class Static218 {
 	public static int anInt4043 = 1;
 
 	@OriginalMember(owner = "client!kv", name = "P", descriptor = "Lclient!gk;")
-	public static final Class83 aClass83_83 = new Class83("Face here", "Hierhin drehen", "Regarder dans cette direction", "Virar para cá");
+	public static final LocalizedString A_LOCALIZED_STRING = new LocalizedString("Face here", "Hierhin drehen", "Regarder dans cette direction", "Virar para cá");
 
 	@OriginalMember(owner = "client!kv", name = "a", descriptor = "(II[Lclient!uu;IIZ)V")
 	public static void method3278(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) Class247[] arg2, @OriginalArg(4) int arg3, @OriginalArg(5) boolean arg4) {

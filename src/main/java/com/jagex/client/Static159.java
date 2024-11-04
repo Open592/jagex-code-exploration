@@ -10,7 +10,7 @@ public final class Static159 {
 	public static final int[][] anIntArrayArray30 = new int[128][128];
 
 	@OriginalMember(owner = "client!ib", name = "i", descriptor = "Lclient!gk;")
-	public static final Class83 aClass83_67 = new Class83("Loading core fonts - ", "Lade Schriftarten - ", "Chargement des polices - ", "Carregando fontes principais - ");
+	public static final LocalizedString A_LOCALIZED_STRING___67 = new LocalizedString("Loading core fonts - ", "Lade Schriftarten - ", "Chargement des polices - ", "Carregando fontes principais - ");
 
 	@OriginalMember(owner = "client!ib", name = "u", descriptor = "F")
 	public static float aFloat108 = 1.0F;

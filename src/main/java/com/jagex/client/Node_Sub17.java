@@ -26,7 +26,7 @@ public final class Node_Sub17 extends Node {
 	public final int anInt2373;
 
 	static {
-		new Class83(null, "Mitglieder können 200 Freunde hinzufügen, freie Spieler nur 100.", null, null);
+		new LocalizedString(null, "Mitglieder können 200 Freunde hinzufügen, freie Spieler nur 100.", null, null);
 	}
 
 	@OriginalMember(owner = "client!fj", name = "<init>", descriptor = "(IIIIIZ)V")

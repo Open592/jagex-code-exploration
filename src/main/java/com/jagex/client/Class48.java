@@ -31,7 +31,7 @@ public abstract class Class48 {
 	private int anInt5650 = 4;
 
 	static {
-		new Class83("Unable to delete friend - system busy.", "Der Freund konnte nicht entfernt werden, das System ist derzeit ausgelastet.", "Impossible de supprimer un ami - système occupé.", "Não foi possível excluir o amigo. O sistema está ocupado.");
+		new LocalizedString("Unable to delete friend - system busy.", "Der Freund konnte nicht entfernt werden, das System ist derzeit ausgelastet.", "Impossible de supprimer un ami - système occupé.", "Não foi possível excluir o amigo. O sistema está ocupado.");
 	}
 
 	@OriginalMember(owner = "client!df", name = "<init>", descriptor = "(IIIII)V")

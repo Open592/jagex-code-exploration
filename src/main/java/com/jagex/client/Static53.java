@@ -318,7 +318,7 @@ public final class Static53 {
 											continue;
 										}
 										if (ClientSettings.currentGameDetails == ClientSettings.STELLAR_DAWN_GAME_DETAILS) {
-											Static380.method5017(59, false, 1L, local775, "", true, Static218.aClass83_83.method2267(ClientSettings.langID), local783, -1, -1);
+											Static380.method5017(59, false, 1L, local775, "", true, Static218.A_LOCALIZED_STRING.getLocalizedString(ClientSettings.langID), local783, -1, -1);
 										}
 										Static380.method5017(44, false, 1L, local775, "", true, Static167.aString35, local783, -1, Static220.anInt4097);
 										continue;

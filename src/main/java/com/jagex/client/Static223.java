@@ -19,7 +19,7 @@ public final class Static223 {
 	public static int[] anIntArray284;
 
 	@OriginalMember(owner = "client!lh", name = "Ic", descriptor = "Lclient!gk;")
-	public static final Class83 aClass83_91 = new Class83("Self", "Mich", "Moi", "Eu");
+	public static final LocalizedString A_LOCALIZED_STRING___91 = new LocalizedString("Self", "Mich", "Moi", "Eu");
 
 	@OriginalMember(owner = "client!lh", name = "id", descriptor = "[I")
 	public static final int[] anIntArray283 = new int[] { 16776960, 16711680, 65280, 65535, 16711935, 16777215 };

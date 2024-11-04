@@ -7,7 +7,7 @@ import org.openrs2.deob.annotation.Pc;
 public final class Static18 {
 
 	@OriginalMember(owner = "client!aq", name = "t", descriptor = "Lclient!gk;")
-	public static final Class83 aClass83_8 = new Class83("You can't add yourself to your own friend list.", "Du kannst dich nicht auf deine eigene Freunde-Liste setzen!", "Vous ne pouvez pas ajouter votre nom à votre liste d'amis.", "Você não pode adicionar a si próprio à sua lista de amigos.");
+	public static final LocalizedString A_LOCALIZED_STRING___8 = new LocalizedString("You can't add yourself to your own friend list.", "Du kannst dich nicht auf deine eigene Freunde-Liste setzen!", "Vous ne pouvez pas ajouter votre nom à votre liste d'amis.", "Você não pode adicionar a si próprio à sua lista de amigos.");
 
 	@OriginalMember(owner = "client!aq", name = "v", descriptor = "J")
 	public static long aLong14 = 0L;

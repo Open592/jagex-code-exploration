@@ -13,7 +13,7 @@ public final class Static188 {
 	public static int anInt5355;
 
 	@OriginalMember(owner = "client!jj", name = "f", descriptor = "Lclient!gk;")
-	public static final Class83 aClass83_113 = new Class83(" is already on your ignore list.", " steht bereits auf deiner Ignorieren-Liste!", " est déjà dans votre liste noire.", " já está na sua lista de ignorados.");
+	public static final LocalizedString A_LOCALIZED_STRING___113 = new LocalizedString(" is already on your ignore list.", " steht bereits auf deiner Ignorieren-Liste!", " est déjà dans votre liste noire.", " já está na sua lista de ignorados.");
 
 	@OriginalMember(owner = "client!jj", name = "i", descriptor = "I")
 	public static int anInt5353 = 0;

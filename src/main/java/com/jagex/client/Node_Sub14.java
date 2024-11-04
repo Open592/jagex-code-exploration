@@ -35,7 +35,7 @@ public final class Node_Sub14 extends Node {
 	public final Node_Sub3 aClass4_Sub3_1;
 
 	static {
-		new Class83("The channel you tried to join is currently full.", "Der von dir gewünschte Chatraum ist derzeit überfüllt.", "Le canal que vous essayez de rejoindre est plein.", "O canal que você tentou acessar está cheio no momento.");
+		new LocalizedString("The channel you tried to join is currently full.", "Der von dir gewünschte Chatraum ist derzeit überfüllt.", "Le canal que vous essayez de rejoindre est plein.", "O canal que você tentou acessar está cheio no momento.");
 	}
 
 	@OriginalMember(owner = "client!dr", name = "<init>", descriptor = "(Lclient!aq;)V")

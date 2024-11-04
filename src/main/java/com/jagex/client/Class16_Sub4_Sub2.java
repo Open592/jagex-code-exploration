@@ -15,7 +15,7 @@ public final class Class16_Sub4_Sub2 extends Class16_Sub4 implements Interface6 
 	private final boolean aBoolean234;
 
 	static {
-		new Class83("Already attempting to join a channel - please wait...", "Du versuchst bereits, einem Chatraum beizutreten - bitte warte.", "Tentative de connexion au canal déjà en cours - veuillez patienter...", "Já há uma tentativa de entrar em um canal. Aguarde...");
+		new LocalizedString("Already attempting to join a channel - please wait...", "Du versuchst bereits, einem Chatraum beizutreten - bitte warte.", "Tentative de connexion au canal déjà en cours - veuillez patienter...", "Já há uma tentativa de entrar em um canal. Aguarde...");
 	}
 
 	@OriginalMember(owner = "client!ft", name = "<init>", descriptor = "(Lclient!ya;Lclient!rd;IIIIIZII)V")

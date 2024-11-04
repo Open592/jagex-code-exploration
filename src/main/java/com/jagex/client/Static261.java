@@ -13,7 +13,7 @@ public final class Static261 {
 	public static int anInt4928;
 
 	@OriginalMember(owner = "client!nf", name = "v", descriptor = "Lclient!gk;")
-	public static final Class83 aClass83_103 = new Class83("Loaded world map", "Weltkarte geladen", "Mappemonde chargée", "Mapa-múndi carregado");
+	public static final LocalizedString A_LOCALIZED_STRING___103 = new LocalizedString("Loaded world map", "Weltkarte geladen", "Mappemonde chargée", "Mapa-múndi carregado");
 
 	@OriginalMember(owner = "client!nf", name = "T", descriptor = "Lclient!fa;")
 	public static final Class68 aClass68_27 = new Class68(4);

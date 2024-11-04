@@ -13,7 +13,7 @@ public final class Static371 {
 	public static Class76 aClass76_85;
 
 	@OriginalMember(owner = "client!sr", name = "l", descriptor = "Lclient!gk;")
-	public static final Class83 aClass83_125 = new Class83(" has logged out.", " loggt sich aus.", " s'est déconnecté.", " saiu do jogo.");
+	public static final LocalizedString A_LOCALIZED_STRING___125 = new LocalizedString(" has logged out.", " loggt sich aus.", " s'est déconnecté.", " saiu do jogo.");
 
 	@OriginalMember(owner = "client!sr", name = "b", descriptor = "(I)I")
 	public static int method4958() {

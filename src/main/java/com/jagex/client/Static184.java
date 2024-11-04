@@ -78,7 +78,7 @@ public final class Static184 {
 					}
 				} else {
 					if (ClientSettings.currentGameDetails == ClientSettings.STELLAR_DAWN_GAME_DETAILS) {
-						Static380.method5017(59, false, 0L, local58, "", true, Static218.aClass83_83.method2267(ClientSettings.langID), local60, -1, -1);
+						Static380.method5017(59, false, 0L, local58, "", true, Static218.A_LOCALIZED_STRING.getLocalizedString(ClientSettings.langID), local60, -1, -1);
 					}
 					Static380.method5017(44, false, 0L, local58, "", true, Static167.aString35, local60, -1, Static220.anInt4097);
 				}
@@ -201,7 +201,7 @@ public final class Static184 {
 										}
 									}
 								}
-								Static380.method5017(1009, Static1.aClass16_Sub1_Sub5_Sub1_1.aByte82 != local373.anInt2381, (long) local1071.anInt7355, local373.anInt2384, "<col=ff9040>" + local1081.aString61, true, Static21.aClass83_12.method2267(ClientSettings.langID), local373.anInt2383, -1, Static103.anInt2066);
+								Static380.method5017(1009, Static1.aClass16_Sub1_Sub5_Sub1_1.aByte82 != local373.anInt2381, (long) local1071.anInt7355, local373.anInt2384, "<col=ff9040>" + local1081.aString61, true, Static21.A_LOCALIZED_STRING___12.getLocalizedString(ClientSettings.langID), local373.anInt2383, -1, Static103.anInt2066);
 							} else if (Static1.aClass16_Sub1_Sub5_Sub1_1.aByte82 == local373.anInt2381) {
 								@Pc(1098) Class133 local1098 = Static7.anInt5460 == -1 ? null : Static153.aClass180_1.method4121(Static7.anInt5460);
 								if ((Static434.anInt7378 & 0x1) != 0 && (local1098 == null || local1081.method4781(Static7.anInt5460, local1098.anInt4123) != local1098.anInt4123)) {
@@ -252,7 +252,7 @@ public final class Static184 {
 									}
 								}
 							}
-							Static380.method5017(1010, local373.anInt2381 != Static1.aClass16_Sub1_Sub5_Sub1_1.aByte82, (long) local1304.anInt5823, local373.anInt2384, "<col=00ffff>" + local1304.aString59, true, Static21.aClass83_12.method2267(ClientSettings.langID), local373.anInt2383, -1, Static103.anInt2066);
+							Static380.method5017(1010, local373.anInt2381 != Static1.aClass16_Sub1_Sub5_Sub1_1.aByte82, (long) local1304.anInt5823, local373.anInt2384, "<col=00ffff>" + local1304.aString59, true, Static21.A_LOCALIZED_STRING___12.getLocalizedString(ClientSettings.langID), local373.anInt2383, -1, Static103.anInt2066);
 						} else if (Static1.aClass16_Sub1_Sub5_Sub1_1.aByte82 == local373.anInt2381) {
 							@Pc(1485) Class133 local1485 = Static7.anInt5460 == -1 ? null : Static153.aClass180_1.method4121(Static7.anInt5460);
 							if ((Static434.anInt7378 & 0x4) != 0 && (local1485 == null || local1304.method4585(Static7.anInt5460, local1485.anInt4123) != local1485.anInt4123)) {

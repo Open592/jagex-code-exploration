@@ -48,7 +48,7 @@ public final class Class155 {
 	public final int anInt4770;
 
 	static {
-		new Class83("Unable to send abuse report - system busy.", "Meldung konnte nicht gesendet werden - Systeme überlastet", "Impossible de signaler un abus - Erreur système", "Sistema ocupado. Não foi possível enviar sua denúncia de abuso.");
+		new LocalizedString("Unable to send abuse report - system busy.", "Meldung konnte nicht gesendet werden - Systeme überlastet", "Impossible de signaler un abus - Erreur système", "Sistema ocupado. Não foi possível enviar sua denúncia de abuso.");
 	}
 
 	@OriginalMember(owner = "client!mu", name = "<init>", descriptor = "()V")

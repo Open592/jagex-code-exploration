@@ -16,10 +16,10 @@ public final class Static153 {
 	public static Class180 aClass180_1;
 
 	@OriginalMember(owner = "client!hp", name = "Z", descriptor = "Lclient!gk;")
-	public static final Class83 aClass83_60 = new Class83("green:", "grün:", "vert:", "verde:");
+	public static final LocalizedString A_LOCALIZED_STRING___60 = new LocalizedString("green:", "grün:", "vert:", "verde:");
 
 	@OriginalMember(owner = "client!hp", name = "ab", descriptor = "Lclient!gk;")
-	public static final Class83 aClass83_61 = new Class83("Created gameworld", "Spielwelt erstellt.", "Monde de jeu créé", "Universo de jogo criado");
+	public static final LocalizedString A_LOCALIZED_STRING___61 = new LocalizedString("Created gameworld", "Spielwelt erstellt.", "Monde de jeu créé", "Universo de jogo criado");
 
 	@OriginalMember(owner = "client!hp", name = "bb", descriptor = "J")
 	public static long aLong107 = 0L;

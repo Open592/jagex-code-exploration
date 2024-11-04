@@ -9,7 +9,7 @@ public final class Static336 {
 	public static int anInt6553;
 
 	@OriginalMember(owner = "client!rb", name = "i", descriptor = "Lclient!gk;")
-	public static final Class83 aClass83_135 = new Class83("Loaded update list", "Update-Liste geladen.", "Liste des mises à jour chargée", "Lista de atualizações carregada");
+	public static final LocalizedString A_LOCALIZED_STRING___135 = new LocalizedString("Loaded update list", "Update-Liste geladen.", "Liste des mises à jour chargée", "Lista de atualizações carregada");
 
 	@OriginalMember(owner = "client!rb", name = "p", descriptor = "Z")
 	public static boolean aBoolean596 = false;

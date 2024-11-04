@@ -12,7 +12,7 @@ public final class Static214 {
 	public static final Class22 aClass22_178 = new Class22(36, 12);
 
 	@OriginalMember(owner = "client!kq", name = "f", descriptor = "Lclient!gk;")
-	public static final Class83 aClass83_79 = new Class83("K", "T", "K", "K");
+	public static final LocalizedString A_LOCALIZED_STRING___79 = new LocalizedString("K", "T", "K", "K");
 
 	@OriginalMember(owner = "client!kq", name = "a", descriptor = "(I)V")
 	public static void method3224() {
@@ -27,7 +27,7 @@ public final class Static214 {
 			return;
 		}
 		Static302.method4103(Static310.anInt5424, Static112.anInt2392, Static173.anInt3370, Static172.anInt3367);
-		@Pc(57) int local57 = Static118.aClass89_5.method2340(Static391.aClass83_133.method2267(ClientSettings.langID));
+		@Pc(57) int local57 = Static118.aClass89_5.method2340(Static391.A_LOCALIZED_STRING___133.getLocalizedString(ClientSettings.langID));
 		for (@Pc(62) Node_Sub39 local62 = (Node_Sub39) Static206.aClass183_28.method4140(); local62 != null; local62 = (Node_Sub39) Static206.aClass183_28.method4144()) {
 			@Pc(68) int local68 = Static210.method3197(local62);
 			if (local57 < local68) {

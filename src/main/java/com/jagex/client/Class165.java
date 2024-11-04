@@ -25,6 +25,6 @@ public final class Class165 {
 	public int anInt5143;
 
 	static {
-		new Class83(" joined the channel.", " hat den Chatraum betreten.", " a rejoint le canal.", " entrou no canal.");
+		new LocalizedString(" joined the channel.", " hat den Chatraum betreten.", " a rejoint le canal.", " entrou no canal.");
 	}
 }

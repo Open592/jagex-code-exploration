@@ -8,7 +8,7 @@ public final class Static438 {
 	public static String[] aStringArray39;
 
 	@OriginalMember(owner = "client!wb", name = "h", descriptor = "Lclient!gk;")
-	public static final Class83 aClass83_147 = new Class83("Your ignore list is full, max of 100.", "Deine Ignorieren-Liste ist voll, du kannst nur 100 Spieler darauf eintragen.", "Votre liste noire est pleine (100 noms maximum).", "Sua lista de ignorados está cheia. O máx. é 100.");
+	public static final LocalizedString A_LOCALIZED_STRING___147 = new LocalizedString("Your ignore list is full, max of 100.", "Deine Ignorieren-Liste ist voll, du kannst nur 100 Spieler darauf eintragen.", "Votre liste noire est pleine (100 noms maximum).", "Sua lista de ignorados está cheia. O máx. é 100.");
 
 	@OriginalMember(owner = "client!wb", name = "G", descriptor = "Lclient!sl;")
 	public static final Class215 aClass215_96 = new Class215(63, -1);

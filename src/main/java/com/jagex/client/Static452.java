@@ -11,7 +11,7 @@ public final class Static452 {
 	public static float aFloat227;
 
 	@OriginalMember(owner = "client!wt", name = "n", descriptor = "Lclient!gk;")
-	public static final Class83 aClass83_152 = new Class83("M", "M", "M", "M");
+	public static final LocalizedString A_LOCALIZED_STRING___152 = new LocalizedString("M", "M", "M", "M");
 
 	@OriginalMember(owner = "client!wt", name = "q", descriptor = "Lclient!bg;")
 	public static final Class22 aClass22_335 = new Class22(29, 1);

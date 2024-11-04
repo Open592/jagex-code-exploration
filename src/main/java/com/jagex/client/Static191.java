@@ -10,7 +10,7 @@ public final class Static191 {
 	public static short[] aShortArray66;
 
 	@OriginalMember(owner = "client!jn", name = "c", descriptor = "Lclient!gk;")
-	public static final Class83 aClass83_48 = new Class83("glow1:", "leuchten1:", "brillant1:", "brilho1:");
+	public static final LocalizedString A_LOCALIZED_STRING___48 = new LocalizedString("glow1:", "leuchten1:", "brillant1:", "brilho1:");
 
 	@OriginalMember(owner = "client!jn", name = "d", descriptor = "[I")
 	public static final int[] anIntArray180 = new int[4];

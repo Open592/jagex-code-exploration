@@ -60,7 +60,7 @@ public final class Class101 {
 	public int anInt3153 = -1;
 
 	static {
-		new Class83("Invalid name", "Unzulässiger Name!", "Nom incorrect", "Nome inválido");
+		new LocalizedString("Invalid name", "Unzulässiger Name!", "Nom incorrect", "Nome inválido");
 	}
 
 	@OriginalMember(owner = "client!hv", name = "a", descriptor = "(I)V")

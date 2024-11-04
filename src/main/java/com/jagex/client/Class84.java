@@ -15,7 +15,7 @@ public final class Class84 {
 	private final Class3 aClass3_9 = new Class3();
 
 	static {
-		new Class83("You have been removed from this channel.", "Du wurdest aus dem Chatraum entfernt.", "Vous avez été supprimé de ce canal.", "Você foi retirado desse canal.");
+		new LocalizedString("You have been removed from this channel.", "Du wurdest aus dem Chatraum entfernt.", "Vous avez été supprimé de ce canal.", "Você foi retirado desse canal.");
 	}
 
 	@OriginalMember(owner = "client!gn", name = "<init>", descriptor = "()V")
