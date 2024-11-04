@@ -70,7 +70,7 @@ public final class Static147 {
 				} else {
 					local46 = arg3;
 				}
-				local23.anInt6798 = Static24.anInt5323;
+				local23.anInt6798 = client.gameLogicStepCount;
 				local23.anInt6852 = local46;
 				if (!Static53.method895(local23)) {
 					if (local23.anInt6842 != 0) {

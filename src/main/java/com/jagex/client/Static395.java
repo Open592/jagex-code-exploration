@@ -55,7 +55,7 @@ public final class Static395 {
 		}
 		@Pc(112) Class138 local112;
 		@Pc(98) Class161 local98;
-		if (arg1.anInt6029 != -1 && arg1.anInt6057 <= Static24.anInt5323) {
+		if (arg1.anInt6029 != -1 && arg1.anInt6057 <= client.gameLogicStepCount) {
 			local98 = Static352.aClass194_2.method4421(arg1.anInt6029);
 			if (local98.aBoolean459 && local98.anInt5002 != -1) {
 				local112 = Static182.aClass55_1.method1397(local98.anInt5002);
@@ -73,7 +73,7 @@ public final class Static395 {
 				}
 			}
 		}
-		if (arg1.anInt6029 != -1 && arg1.anInt6057 <= Static24.anInt5323) {
+		if (arg1.anInt6029 != -1 && arg1.anInt6057 <= client.gameLogicStepCount) {
 			local98 = Static352.aClass194_2.method4421(arg1.anInt6029);
 			if (local98.aBoolean459 && local98.anInt5002 != -1) {
 				local112 = Static182.aClass55_1.method1397(local98.anInt5002);

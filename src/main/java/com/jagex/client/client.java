@@ -170,6 +170,8 @@ public final class client extends GameShell {
 
 	@OriginalMember(owner = "client!av", name = "S", descriptor = "J")
 	public static long firstLoadClientAssetsTimestamp = 0L;
+	@OriginalMember(owner = "client!ba", name = "C", descriptor = "I")
+	public static int gameLogicStepCount = 0;
 
 	@OriginalMember(owner = "client!client", name = "main", descriptor = "([Ljava/lang/String;)V")
 	public static void main(@OriginalArg(0) String[] arguments) {
@@ -2310,16 +2312,16 @@ public final class client extends GameShell {
 														if (local2152) {
 															if (local230) {
 																local2477.anInt6022 = 0;
-																local2477.anInt6066 = local327 + Static24.anInt5323;
+																local2477.anInt6066 = local327 + gameLogicStepCount;
 																local2477.anInt6053 = local224;
 																local2477.anInt6069 = 1;
 																local2477.anInt6062 = 0;
 																local2477.anInt6056 = local228 & 0x7;
 																local2477.anInt6045 = local70;
-																if (local2477.anInt6066 > Static24.anInt5323) {
+																if (local2477.anInt6066 > gameLogicStepCount) {
 																	local2477.anInt6022 = -1;
 																}
-																if (local2477.anInt6045 != -1 && Static24.anInt5323 == local2477.anInt6066) {
+																if (local2477.anInt6045 != -1 && gameLogicStepCount == local2477.anInt6066) {
 																	local2648 = Static352.aClass194_2.method4421(local2477.anInt6045).anInt5002;
 																	if (local2648 != -1) {
 																		local2573 = Static182.aClass55_1.method1397(local2648);
@@ -2334,12 +2336,12 @@ public final class client extends GameShell {
 																local2477.anInt6083 = 1;
 																local2477.anInt6029 = local70;
 																local2477.anInt6017 = local228 & 0x7;
-																local2477.anInt6057 = local327 + Static24.anInt5323;
+																local2477.anInt6057 = local327 + gameLogicStepCount;
 																local2477.anInt6033 = 0;
-																if (local2477.anInt6057 > Static24.anInt5323) {
+																if (local2477.anInt6057 > gameLogicStepCount) {
 																	local2477.anInt6027 = -1;
 																}
-																if (local2477.anInt6029 != -1 && Static24.anInt5323 == local2477.anInt6057) {
+																if (local2477.anInt6029 != -1 && gameLogicStepCount == local2477.anInt6057) {
 																	local2648 = Static352.aClass194_2.method4421(local2477.anInt6029).anInt5002;
 																	if (local2648 != -1) {
 																		local2573 = Static182.aClass55_1.method1397(local2648);
@@ -2395,16 +2397,16 @@ public final class client extends GameShell {
 																local2773.anInt6045 = local70;
 																local2773.anInt6053 = local224;
 																local2773.anInt6069 = 1;
-																local2773.anInt6066 = local327 + Static24.anInt5323;
+																local2773.anInt6066 = local327 + gameLogicStepCount;
 																local2773.anInt6022 = 0;
 																local2773.anInt6062 = 0;
 																if (local2773.anInt6045 == 65535) {
 																	local2773.anInt6045 = -1;
 																}
-																if (local2773.anInt6066 > Static24.anInt5323) {
+																if (local2773.anInt6066 > gameLogicStepCount) {
 																	local2773.anInt6022 = -1;
 																}
-																if (local2773.anInt6045 != -1 && local2773.anInt6066 == Static24.anInt5323) {
+																if (local2773.anInt6045 != -1 && local2773.anInt6066 == gameLogicStepCount) {
 																	local2648 = Static352.aClass194_2.method4421(local2773.anInt6045).anInt5002;
 																	if (local2648 != -1) {
 																		local2573 = Static182.aClass55_1.method1397(local2648);
@@ -2419,15 +2421,15 @@ public final class client extends GameShell {
 																local2773.anInt6014 = local224;
 																local2773.anInt6083 = 1;
 																local2773.anInt6029 = local70;
-																local2773.anInt6057 = Static24.anInt5323 + local327;
+																local2773.anInt6057 = gameLogicStepCount + local327;
 																local2773.anInt6027 = 0;
 																if (local2773.anInt6029 == 65535) {
 																	local2773.anInt6029 = -1;
 																}
-																if (local2773.anInt6057 > Static24.anInt5323) {
+																if (local2773.anInt6057 > gameLogicStepCount) {
 																	local2773.anInt6027 = -1;
 																}
-																if (local2773.anInt6029 != -1 && local2773.anInt6057 == Static24.anInt5323) {
+																if (local2773.anInt6029 != -1 && local2773.anInt6057 == gameLogicStepCount) {
 																	local2648 = Static352.aClass194_2.method4421(local2773.anInt6029).anInt5002;
 																	if (local2648 != -1) {
 																		local2573 = Static182.aClass55_1.method1397(local2648);
@@ -2451,7 +2453,7 @@ public final class client extends GameShell {
 													if (local2473 < 3 && Static378.method3229(local1263, local1267)) {
 														local3138 = local2473 + 1;
 													}
-													@Pc(3173) Class16_Sub1_Sub2 local3173 = new Class16_Sub1_Sub2(local70, 0, Static24.anInt5323, local2473, local3138, local2494, Static13.method135(local2494, local2473, local2648) - local224, local2648, local1263, local1263, local1267, local1267, local228);
+													@Pc(3173) Class16_Sub1_Sub2 local3173 = new Class16_Sub1_Sub2(local70, 0, gameLogicStepCount, local2473, local3138, local2494, Static13.method135(local2494, local2473, local2648) - local224, local2648, local1263, local1263, local1267, local1267, local228);
 													Static292.aClass183_36.method4137(new SecondaryNode_Sub1_Sub10(local3173));
 												}
 											}
@@ -3439,8 +3441,8 @@ public final class client extends GameShell {
 				local49 = local49 * 128 + 64;
 				local55 = local55 * 128 + 64;
 				local202 <<= 0x0;
-				local309 = new Class16_Sub1_Sub3(local190, Static113.anInt2426, local40, local49, local196, local206 + Static24.anInt5323, local210 + Static24.anInt5323, local214, local223, local186, local202, local155);
-				local309.method2197(Static24.anInt5323 + local206, local55, Static13.method135(local55, Static113.anInt2426, local126) - local202, local126);
+				local309 = new Class16_Sub1_Sub3(local190, Static113.anInt2426, local40, local49, local196, local206 + gameLogicStepCount, local210 + gameLogicStepCount, local214, local223, local186, local202, local155);
+				local309.method2197(gameLogicStepCount + local206, local55, Static13.method135(local55, Static113.anInt2426, local126) - local202, local126);
 				Static27.aClass183_2.method4137(new SecondaryNode_Sub1_Sub7(local309));
 			}
 		} else if (Static420.aClass21_16 == arg0) {
@@ -3556,8 +3558,8 @@ public final class client extends GameShell {
 							}
 						}
 					}
-					@Pc(918) Class16_Sub1_Sub3 local918 = new Class16_Sub1_Sub3(local196, Static113.anInt2426, local16, local40, local202, Static24.anInt5323 + local210, local214 - -Static24.anInt5323, local223, local693, local190, local206, local635);
-					local918.method2197(local210 + Static24.anInt5323, local55, Static13.method135(local55, Static113.anInt2426, local126) - local206, local126);
+					@Pc(918) Class16_Sub1_Sub3 local918 = new Class16_Sub1_Sub3(local196, Static113.anInt2426, local16, local40, local202, gameLogicStepCount + local210, local214 - -gameLogicStepCount, local223, local693, local190, local206, local635);
+					local918.method2197(local210 + gameLogicStepCount, local55, Static13.method135(local55, Static113.anInt2426, local126) - local206, local126);
 					Static27.aClass183_2.method4137(new SecondaryNode_Sub1_Sub7(local918));
 				}
 			} else if (arg0 == Static152.aClass21_9) {
@@ -3594,7 +3596,7 @@ public final class client extends GameShell {
 					if (local202 < 3 && Static378.method3229(local16, local40)) {
 						local202++;
 					}
-					@Pc(1186) Class16_Sub1_Sub2 local1186 = new Class16_Sub1_Sub2(local49, local126, Static24.anInt5323, Static113.anInt2426, local202, local190, Static13.method135(local190, Static113.anInt2426, local196) - local55, local196, local16, local16, local40, local40, local186);
+					@Pc(1186) Class16_Sub1_Sub2 local1186 = new Class16_Sub1_Sub2(local49, local126, gameLogicStepCount, Static113.anInt2426, local202, local190, Static13.method135(local190, Static113.anInt2426, local196) - local55, local196, local16, local16, local40, local40, local186);
 					Static292.aClass183_36.method4137(new SecondaryNode_Sub1_Sub10(local1186));
 				}
 			} else if (Static106.aClass21_7 == arg0) {
@@ -3679,8 +3681,8 @@ public final class client extends GameShell {
 					local16 *= 64;
 					local55 *= 64;
 					local196 <<= 0x0;
-					local309 = new Class16_Sub1_Sub3(local190, Static113.anInt2426, local16, local40, local196, Static24.anInt5323 + local206, local210 - -Static24.anInt5323, local214, local223, local186, local202, local635);
-					local309.method2197(local206 + Static24.anInt5323, local55, Static13.method135(local55, Static113.anInt2426, local126) - local202, local126);
+					local309 = new Class16_Sub1_Sub3(local190, Static113.anInt2426, local16, local40, local196, gameLogicStepCount + local206, local210 - -gameLogicStepCount, local214, local223, local186, local202, local635);
+					local309.method2197(local206 + gameLogicStepCount, local55, Static13.method135(local55, Static113.anInt2426, local126) - local202, local126);
 					Static27.aClass183_2.method4137(new SecondaryNode_Sub1_Sub7(local309));
 				}
 			} else {
@@ -3984,8 +3986,8 @@ public final class client extends GameShell {
 	@Override
 	protected void runGameLogicStep() {
 		try {
-			this.gameLogic();
-		} catch (@Pc(14) OutOfMemoryError e) {
+			this.gameLogicStep();
+		} catch (OutOfMemoryError e) {
 			if (e.getMessage() == null || !e.getMessage().startsWith("native")) {
 				throw e;
 			}
@@ -4102,7 +4104,7 @@ public final class client extends GameShell {
 											if (Static281.aClass247_12 != null) {
 												Static1.method3();
 											}
-											if (Static24.anInt5323 % 1500 == 0) {
+											if (gameLogicStepCount % 1500 == 0) {
 												Static343.method744();
 											}
 											Static375.method4999();
@@ -4141,19 +4143,19 @@ public final class client extends GameShell {
 	}
 
 	@OriginalMember(owner = "client!client", name = "m", descriptor = "(I)V")
-	private void gameLogic() {
+	private void gameLogicStep() {
 		if (Static403.anInt6667 == 1000) {
 			return;
 		}
 
-		Static24.anInt5323++;
+		gameLogicStepCount++;
 
-		if (Static24.anInt5323 % 1000 == 1) {
+		if (gameLogicStepCount % 1000 == 1) {
 			@Pc(24) GregorianCalendar gregorianCalendar = new GregorianCalendar();
 			Static239.randomSeed = gregorianCalendar.get(Calendar.HOUR_OF_DAY) * 600 + gregorianCalendar.get(Calendar.MINUTE) * 10 + gregorianCalendar.get(Calendar.SECOND) / 6;
 			Static325.random.setSeed(Static239.randomSeed);
 		}
-		if (Static24.anInt5323 % 50 == 0) {
+		if (gameLogicStepCount % 50 == 0) {
 			Static449.anInt7316 = Static60.anInt1097;
 			Static55.anInt1020 = Static138.anInt2826;
 			Static60.anInt1097 = 0;

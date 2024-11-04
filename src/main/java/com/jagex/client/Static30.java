@@ -25,7 +25,7 @@ public final class Static30 {
 
 	@OriginalMember(owner = "client!bi", name = "a", descriptor = "(Lclient!r;I)V")
 	public static void method583(@OriginalArg(0) Class16_Sub1_Sub5 arg0) {
-		@Pc(9) int local9 = arg0.anInt6018 - Static24.anInt5323;
+		@Pc(9) int local9 = arg0.anInt6018 - client.gameLogicStepCount;
 		@Pc(20) int local20 = arg0.anInt6043 * 128 + arg0.method4751() * 64;
 		@Pc(32) int local32 = arg0.anInt6052 * 128 + arg0.method4751() * 64;
 		arg0.anInt6892 += (local32 - arg0.anInt6892) / local9;

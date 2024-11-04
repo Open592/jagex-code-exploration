@@ -50,7 +50,7 @@ public final class Static194 {
 						Static143.aClass16_Sub1_Sub5_Sub2Array1[local90].anInt6037 = local90;
 						@Pc(188) Class16_Sub1_Sub5_Sub2 local188 = Static143.aClass16_Sub1_Sub5_Sub2Array1[local90];
 						Static342.anIntArray412[Static12.anInt163++] = local90;
-						local188.anInt6015 = Static24.anInt5323;
+						local188.anInt6015 = client.gameLogicStepCount;
 						local188.method4766(local142);
 						local188.method4754(local188.aClass264_1.anInt7201);
 						local188.anInt6080 = local188.aClass264_1.anInt7221 << 3;

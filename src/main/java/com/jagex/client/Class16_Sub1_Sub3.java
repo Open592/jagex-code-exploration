@@ -177,10 +177,10 @@ public final class Class16_Sub1_Sub3 extends Class16_Sub1 {
 		@Pc(11) Class29[] local11 = arg0.method4881();
 		@Pc(14) Class179[] local14 = arg0.method4885();
 		if ((this.aClass3_Sub2_3 == null || this.aClass3_Sub2_3.aBoolean24) && (local11 != null || local14 != null)) {
-			this.aClass3_Sub2_3 = new Class3_Sub2(Static24.anInt5323);
+			this.aClass3_Sub2_3 = new Class3_Sub2(client.gameLogicStepCount);
 		}
 		if (this.aClass3_Sub2_3 != null) {
-			this.aClass3_Sub2_3.method169(arg1, (long) Static24.anInt5323, local11, local14);
+			this.aClass3_Sub2_3.method169(arg1, (long) client.gameLogicStepCount, local11, local14);
 			this.aClass3_Sub2_3.method174(super.aByte82, super.aShort94, super.aShort97, super.aShort96, super.aShort95);
 		}
 	}

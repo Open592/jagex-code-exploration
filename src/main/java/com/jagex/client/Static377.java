@@ -124,7 +124,7 @@ public final class Static377 {
 					@Pc(248) Class57[] local248;
 					@Pc(255) Class18[] local255;
 					@Pc(311) Class57 local311;
-					if (local30.aBoolean561 || local30.anInt6072 <= Static24.anInt5323) {
+					if (local30.aBoolean561 || local30.anInt6072 <= client.gameLogicStepCount) {
 						local187 -= Math.max(Static118.aClass89_5.anInt2783, Static151.aClass57Array8[0].ma());
 					} else {
 						@Pc(202) byte local202 = 1;
@@ -176,7 +176,7 @@ public final class Static377 {
 					local187 -= 2;
 					if (!local30.aBoolean561) {
 						@Pc(408) Class57 local408;
-						if (Static24.anInt5323 < local30.anInt6035) {
+						if (client.gameLogicStepCount < local30.anInt6035) {
 							local408 = Static410.aClass57Array17[local30.aBoolean559 ? 2 : 0];
 							@Pc(417) Class57 local417 = Static410.aClass57Array17[local30.aBoolean559 ? 3 : 1];
 							if (local30 instanceof Class16_Sub1_Sub5_Sub2) {
@@ -204,7 +204,7 @@ public final class Static377 {
 									local417 = local248[local30.aBoolean559 ? 3 : 1];
 								}
 							}
-							@Pc(526) int local526 = local30.anInt6035 - Static24.anInt5323;
+							@Pc(526) int local526 = local30.anInt6035 - client.gameLogicStepCount;
 							if (local30.anInt6051 < local526) {
 								local526 -= local30.anInt6051;
 								local263 = local30.anInt6054 == 0 ? 0 : local30.anInt6054 * ((local30.anInt6041 - local526) / local30.anInt6054);
@@ -252,7 +252,7 @@ public final class Static377 {
 								if (local311.ma() > local216) {
 									local216 = local311.ma();
 								}
-								if (Static24.anInt5323 % 20 < 10) {
+								if (client.gameLogicStepCount % 20 < 10) {
 									local311.method5534(arg2 + Static449.anIntArray557[0] - 12, local187 + -local311.ma());
 								}
 							}
@@ -276,7 +276,7 @@ public final class Static377 {
 						}
 					}
 					for (local216 = 0; local216 < 4; local216++) {
-						if (Static24.anInt5323 < local30.anIntArray424[local216]) {
+						if (client.gameLogicStepCount < local30.anIntArray424[local216]) {
 							local867 = local30.method4755() / 2;
 							Static369.method4939(arg0 >> 1, arg3 >> 1, local867, local30);
 							if (Static449.anIntArray557[0] > -1) {

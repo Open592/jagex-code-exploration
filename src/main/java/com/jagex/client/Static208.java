@@ -54,9 +54,9 @@ public final class Static208 {
 		@Pc(108) Class65 local108 = Static417.aClass65Array4[arg7];
 		@Pc(132) int local132 = local108.l(local73, local88) + local108.l(local82, local88) + local108.l(local73, local104) + local108.l(local82, local104) >> 2;
 		@Pc(136) Node_Sub23 local136 = new Node_Sub23();
-		local136.anInt3191 = Static24.anInt5323 + arg11;
+		local136.anInt3191 = client.gameLogicStepCount + arg11;
 		local136.anInt3195 = arg12;
-		local136.anInt3202 = Static24.anInt5323 + arg1;
+		local136.anInt3202 = client.gameLogicStepCount + arg1;
 		local136.anInt3196 = local25.aByte82;
 		local136.anInt3190 = arg2;
 		@Pc(167) int local167;

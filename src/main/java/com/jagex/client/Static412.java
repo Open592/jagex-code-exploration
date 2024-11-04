@@ -39,7 +39,7 @@ public final class Static412 {
 				@Pc(273) Class16_Sub5 local273;
 				@Pc(98) Class16_Sub2_Sub2 local98;
 				@Pc(309) Class16_Sub5_Sub1 local309;
-				if (Static24.anInt5323 >= local18.anInt3202) {
+				if (client.gameLogicStepCount >= local18.anInt3202) {
 					local44 = Static201.anIntArray410[local18.anInt3195];
 					if (local44 == 0) {
 						local273 = Static227.method3449(local18.anInt3196, local18.anInt3189, local18.anInt3193);
@@ -79,7 +79,7 @@ public final class Static412 {
 						}
 					}
 					local18.popSelf();
-				} else if (local18.anInt3191 == Static24.anInt5323) {
+				} else if (local18.anInt3191 == client.gameLogicStepCount) {
 					local44 = Static201.anIntArray410[local18.anInt3195];
 					if (local44 == 0) {
 						local273 = Static227.method3449(local18.anInt3196, local18.anInt3189, local18.anInt3193);

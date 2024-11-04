@@ -29,7 +29,7 @@ public final class Static298 {
 
 	@OriginalMember(owner = "client!pb", name = "a", descriptor = "(Z)V")
 	public static void method4085() {
-		Static70.method1340((long) Static24.anInt5323, Static122.aClass19_16);
+		Static70.method1340((long) client.gameLogicStepCount, Static122.aClass19_16);
 		if (Static334.anInt5766 != -1) {
 			Static146.method208(Static334.anInt5766);
 		}
@@ -40,7 +40,7 @@ public final class Static298 {
 			Static65.aBooleanArray9[local24] = Static416.aBooleanArray21[local24];
 			Static416.aBooleanArray21[local24] = false;
 		}
-		Static250.anInt4639 = Static24.anInt5323;
+		Static250.anInt4639 = client.gameLogicStepCount;
 		if (Static122.aClass19_16.method4243()) {
 			Static401.aBoolean600 = true;
 		}

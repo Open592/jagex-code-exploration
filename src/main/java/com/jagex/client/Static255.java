@@ -42,7 +42,7 @@ public final class Static255 {
 					}
 					@Pc(48) Class16_Sub1_Sub5_Sub2 local48 = Static143.aClass16_Sub1_Sub5_Sub2Array1[local22];
 					Static342.anIntArray412[Static12.anInt163++] = local22;
-					local48.anInt6015 = Static24.anInt5323;
+					local48.anInt6015 = client.gameLogicStepCount;
 					if (local48.aClass264_1 != null && local48.aClass264_1.method5578()) {
 						Static425.method5429(local48);
 					}

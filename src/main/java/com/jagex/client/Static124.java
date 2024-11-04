@@ -22,7 +22,7 @@ public final class Static124 {
 		@Pc(33) int local33;
 		for (@Pc(27) int local27 = 0; local27 < Static88.anInt1816; local27++) {
 			local33 = Static31.anIntArray35[local27];
-			if (Static24.anInt5323 != Static143.aClass16_Sub1_Sub5_Sub2Array1[local33].anInt6015) {
+			if (client.gameLogicStepCount != Static143.aClass16_Sub1_Sub5_Sub2Array1[local33].anInt6015) {
 				if (Static143.aClass16_Sub1_Sub5_Sub2Array1[local33].aClass264_1.method5578()) {
 					Static425.method5429(Static143.aClass16_Sub1_Sub5_Sub2Array1[local33]);
 				}

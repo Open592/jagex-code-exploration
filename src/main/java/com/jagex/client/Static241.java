@@ -46,7 +46,7 @@ public final class Static241 {
 			if ((local21 & 0x2) != 0) {
 				local44 = Static146.aClass4_Sub12_Sub1_3.gSmart1Or2();
 				local162 = Static146.aClass4_Sub12_Sub1_3.g1_alt1();
-				local17.method4746(local44, Static24.anInt5323, local162);
+				local17.method4746(local44, client.gameLogicStepCount, local162);
 			}
 			if ((local21 & 0x400) != 0) {
 				local17.anInt6089 = Static146.aClass4_Sub12_Sub1_3.g2_alt2();
@@ -57,8 +57,8 @@ public final class Static241 {
 				local17.anInt6052 = Static146.aClass4_Sub12_Sub1_3.g1s_alt3();
 				local17.anInt6044 = Static146.aClass4_Sub12_Sub1_3.g1s_alt2();
 				local17.anInt6074 = Static146.aClass4_Sub12_Sub1_3.g1s_alt3();
-				local17.anInt6018 = Static146.aClass4_Sub12_Sub1_3.g2() + Static24.anInt5323;
-				local17.anInt6023 = Static146.aClass4_Sub12_Sub1_3.g2_alt2() + Static24.anInt5323;
+				local17.anInt6018 = Static146.aClass4_Sub12_Sub1_3.g2() + client.gameLogicStepCount;
+				local17.anInt6023 = Static146.aClass4_Sub12_Sub1_3.g2_alt2() + client.gameLogicStepCount;
 				local17.lb = Static146.aClass4_Sub12_Sub1_3.g1_alt3();
 				local17.anInt6052 += local17.anIntArray427[0];
 				local17.anInt6074 += local17.anIntArray427[0];
@@ -90,8 +90,8 @@ public final class Static241 {
 				local17.aByte69 = Static146.aClass4_Sub12_Sub1_3.g1s_alt1();
 				local17.aByte70 = Static146.aClass4_Sub12_Sub1_3.g1s_alt1();
 				local17.aByte68 = (byte) Static146.aClass4_Sub12_Sub1_3.g1_alt2();
-				local17.anInt6020 = Static24.anInt5323 + Static146.aClass4_Sub12_Sub1_3.g2_alt3();
-				local17.anInt6068 = Static24.anInt5323 + Static146.aClass4_Sub12_Sub1_3.g2();
+				local17.anInt6020 = client.gameLogicStepCount + Static146.aClass4_Sub12_Sub1_3.g2_alt3();
+				local17.anInt6068 = client.gameLogicStepCount + Static146.aClass4_Sub12_Sub1_3.g2();
 			}
 			if ((local21 & 0x1) != 0) {
 				local44 = Static146.aClass4_Sub12_Sub1_3.g2_alt2();
@@ -108,7 +108,7 @@ public final class Static241 {
 				local17.anInt6054 = Static146.aClass4_Sub12_Sub1_3.g1();
 				local17.anInt6041 = local44 & 0x7FFF;
 				local17.aBoolean559 = (local44 & 0x8000) != 0;
-				local17.anInt6035 = local17.anInt6051 + Static24.anInt5323 + local17.anInt6041;
+				local17.anInt6035 = local17.anInt6051 + client.gameLogicStepCount + local17.anInt6041;
 			}
 			if ((local21 & 0x8) != 0) {
 				local17.anInt6034 = Static146.aClass4_Sub12_Sub1_3.g2_alt2();
@@ -123,8 +123,8 @@ public final class Static241 {
 			if ((local21 & 0x20) != 0) {
 				local44 = Static146.aClass4_Sub12_Sub1_3.gSmart1Or2();
 				local162 = Static146.aClass4_Sub12_Sub1_3.g1_alt1();
-				local17.method4746(local44, Static24.anInt5323, local162);
-				local17.anInt6072 = Static24.anInt5323 + 300;
+				local17.method4746(local44, client.gameLogicStepCount, local162);
+				local17.anInt6072 = client.gameLogicStepCount + 300;
 				local17.anInt6026 = Static146.aClass4_Sub12_Sub1_3.g1_alt1();
 			}
 		}

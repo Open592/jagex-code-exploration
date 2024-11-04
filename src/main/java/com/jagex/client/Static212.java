@@ -19,7 +19,7 @@ public final class Static212 {
 		@Pc(7) Class3_Sub8 local7 = new Class3_Sub8();
 		local7.anInt7376 = arg0;
 		local7.anInt7372 = arg2;
-		local7.anInt7367 = Static24.anInt5323 + arg1;
+		local7.anInt7367 = client.gameLogicStepCount + arg1;
 		local7.anInt7374 = arg4;
 		local7.aString71 = arg6;
 		local7.anInt7366 = arg3;

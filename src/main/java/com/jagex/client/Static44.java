@@ -29,9 +29,9 @@ public final class Static44 {
 	public static void method761(@OriginalArg(0) int arg0, @OriginalArg(2) Class16_Sub1_Sub5 arg1) {
 		@Pc(7) int local7 = -1;
 		@Pc(9) int local9 = 0;
-		if (arg1.anInt6018 > Static24.anInt5323) {
+		if (arg1.anInt6018 > client.gameLogicStepCount) {
 			Static30.method583(arg1);
-		} else if (arg1.anInt6023 >= Static24.anInt5323) {
+		} else if (arg1.anInt6023 >= client.gameLogicStepCount) {
 			Static179.method2849(arg1);
 		} else {
 			Static395.method5163(false, arg1);

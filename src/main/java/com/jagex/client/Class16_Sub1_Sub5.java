@@ -321,7 +321,7 @@ public abstract class Class16_Sub1_Sub5 extends Class16_Sub1 {
 					local36++;
 				}
 				if ((this.aClass3_Sub2_7 == null || this.aClass3_Sub2_7.aBoolean24) && (local36 > 0 || local40 > 0)) {
-					this.aClass3_Sub2_7 = new Class3_Sub2(Static24.anInt5323);
+					this.aClass3_Sub2_7 = new Class3_Sub2(client.gameLogicStepCount);
 				}
 				if (this.aClass3_Sub2_7 != null) {
 					@Pc(149) Class29[] local149;
@@ -368,12 +368,12 @@ public abstract class Class16_Sub1_Sub5 extends Class16_Sub1 {
 					} else {
 						local211 = local94;
 					}
-					this.aClass3_Sub2_7.method169(arg2, (long) Static24.anInt5323, local149, local211);
+					this.aClass3_Sub2_7.method169(arg2, (long) client.gameLogicStepCount, local149, local211);
 				}
 				this.aBoolean563 = true;
 			}
 		} else if (this.aClass3_Sub2_7 != null) {
-			this.aClass3_Sub2_7.method168((long) Static24.anInt5323);
+			this.aClass3_Sub2_7.method168((long) client.gameLogicStepCount);
 		}
 		if (this.aClass3_Sub2_7 != null) {
 			this.aClass3_Sub2_7.method174(super.aByte82, super.aShort94, super.aShort97, super.aShort96, super.aShort95);
@@ -472,7 +472,7 @@ public abstract class Class16_Sub1_Sub5 extends Class16_Sub1 {
 				}
 			}
 		}
-		@Pc(107) int local107 = Static24.anInt5323;
+		@Pc(107) int local107 = client.gameLogicStepCount;
 		@Pc(164) int local164;
 		if (arg2) {
 			this.anInt6062 = 0;

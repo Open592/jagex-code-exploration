@@ -62,7 +62,7 @@ public final class Static325 {
 			@Pc(15) Class38 local15 = local7[local9];
 			if (local15 != null && local15.anInt891 == 2) {
 				Static270.method3871(local15.anInt892, local15.anInt894, local15.anInt887, local15.anInt895 * 2, arg2 >> 1, arg1 >> 1);
-				if (Static449.anIntArray557[0] > -1 && Static24.anInt5323 % 20 < 10) {
+				if (Static449.anIntArray557[0] > -1 && client.gameLogicStepCount % 20 < 10) {
 					Static59.aClass57Array3[local15.anInt886].method5534(arg3 + Static449.anIntArray557[0] - 12, arg0 + (Static449.anIntArray557[1] - 28));
 				}
 			}

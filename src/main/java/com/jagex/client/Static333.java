@@ -37,19 +37,19 @@ public final class Static333 {
 			@Pc(65) int local65 = Static146.aClass4_Sub12_Sub1_3.method1143(1);
 			if (local65 == 0) {
 				Static342.anIntArray412[Static12.anInt163++] = local56;
-				local60.anInt6015 = Static24.anInt5323;
+				local60.anInt6015 = client.gameLogicStepCount;
 			} else {
 				@Pc(90) int local90 = Static146.aClass4_Sub12_Sub1_3.method1143(2);
 				if (local90 == 0) {
 					Static342.anIntArray412[Static12.anInt163++] = local56;
-					local60.anInt6015 = Static24.anInt5323;
+					local60.anInt6015 = client.gameLogicStepCount;
 					Static440.anIntArray543[Static41.anInt759++] = local56;
 				} else {
 					@Pc(134) int local134;
 					@Pc(144) int local144;
 					if (local90 == 1) {
 						Static342.anIntArray412[Static12.anInt163++] = local56;
-						local60.anInt6015 = Static24.anInt5323;
+						local60.anInt6015 = client.gameLogicStepCount;
 						local134 = Static146.aClass4_Sub12_Sub1_3.method1143(3);
 						local60.method4763(local134, 1);
 						local144 = Static146.aClass4_Sub12_Sub1_3.method1143(1);
@@ -58,7 +58,7 @@ public final class Static333 {
 						}
 					} else if (local90 == 2) {
 						Static342.anIntArray412[Static12.anInt163++] = local56;
-						local60.anInt6015 = Static24.anInt5323;
+						local60.anInt6015 = client.gameLogicStepCount;
 						if (Static146.aClass4_Sub12_Sub1_3.method1143(1) == 1) {
 							local134 = Static146.aClass4_Sub12_Sub1_3.method1143(3);
 							local60.method4763(local134, 2);

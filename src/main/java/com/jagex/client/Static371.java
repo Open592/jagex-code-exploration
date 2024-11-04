@@ -78,7 +78,7 @@ public final class Static371 {
 		@Pc(183) int local183;
 		@Pc(196) Class138 local196;
 		@Pc(180) Class161 local180;
-		if (arg0.anInt6029 != -1 && arg0.anInt6057 <= Static24.anInt5323) {
+		if (arg0.anInt6029 != -1 && arg0.anInt6057 <= client.gameLogicStepCount) {
 			local180 = Static352.aClass194_2.method4421(arg0.anInt6029);
 			local183 = local180.anInt5002;
 			if (local183 == -1) {
@@ -88,12 +88,12 @@ public final class Static371 {
 					local196 = Static182.aClass55_1.method1397(local183);
 					if (local180.aBoolean459) {
 						if (local196.anInt4401 == 3) {
-							if (arg0.anInt6087 > 0 && Static24.anInt5323 >= arg0.anInt6018 && Static24.anInt5323 > arg0.anInt6023) {
+							if (arg0.anInt6087 > 0 && client.gameLogicStepCount >= arg0.anInt6018 && client.gameLogicStepCount > arg0.anInt6023) {
 								arg0.anInt6029 = -1;
 								break label396;
 							}
-						} else if (local196.anInt4401 == 1 && arg0.anInt6087 > 0 && Static24.anInt5323 >= arg0.anInt6018 && Static24.anInt5323 > arg0.anInt6023) {
-							arg0.anInt6057 = Static24.anInt5323 + 1;
+						} else if (local196.anInt4401 == 1 && arg0.anInt6087 > 0 && client.gameLogicStepCount >= arg0.anInt6018 && client.gameLogicStepCount > arg0.anInt6023) {
+							arg0.anInt6057 = client.gameLogicStepCount + 1;
 							break label396;
 						}
 					}
@@ -142,7 +142,7 @@ public final class Static371 {
 				}
 			}
 		}
-		if (arg0.anInt6045 != -1 && arg0.anInt6066 <= Static24.anInt5323) {
+		if (arg0.anInt6045 != -1 && arg0.anInt6066 <= client.gameLogicStepCount) {
 			local180 = Static352.aClass194_2.method4421(arg0.anInt6045);
 			local183 = local180.anInt5002;
 			if (local183 == -1) {
@@ -152,12 +152,12 @@ public final class Static371 {
 					local196 = Static182.aClass55_1.method1397(local183);
 					if (local180.aBoolean459) {
 						if (local196.anInt4401 == 3) {
-							if (arg0.anInt6087 > 0 && Static24.anInt5323 >= arg0.anInt6018 && Static24.anInt5323 > arg0.anInt6023) {
+							if (arg0.anInt6087 > 0 && client.gameLogicStepCount >= arg0.anInt6018 && client.gameLogicStepCount > arg0.anInt6023) {
 								arg0.anInt6045 = -1;
 								break label399;
 							}
-						} else if (local196.anInt4401 == 1 && arg0.anInt6087 > 0 && Static24.anInt5323 >= arg0.anInt6018 && arg0.anInt6023 < Static24.anInt5323) {
-							arg0.anInt6066 = Static24.anInt5323 + 1;
+						} else if (local196.anInt4401 == 1 && arg0.anInt6087 > 0 && client.gameLogicStepCount >= arg0.anInt6018 && arg0.anInt6023 < client.gameLogicStepCount) {
+							arg0.anInt6066 = client.gameLogicStepCount + 1;
 							break label399;
 						}
 					}
@@ -209,10 +209,10 @@ public final class Static371 {
 		if (arg0.anInt6021 != -1 && arg0.anInt6046 <= 1) {
 			local19 = Static182.aClass55_1.method1397(arg0.anInt6021);
 			if (local19.anInt4401 == 3) {
-				if (arg0.anInt6087 > 0 && arg0.anInt6018 <= Static24.anInt5323 && Static24.anInt5323 > arg0.anInt6023) {
+				if (arg0.anInt6087 > 0 && arg0.anInt6018 <= client.gameLogicStepCount && client.gameLogicStepCount > arg0.anInt6023) {
 					arg0.anInt6021 = -1;
 				}
-			} else if (local19.anInt4401 == 1 && arg0.anInt6087 > 0 && arg0.anInt6018 <= Static24.anInt5323 && Static24.anInt5323 > arg0.anInt6023) {
+			} else if (local19.anInt4401 == 1 && arg0.anInt6087 > 0 && arg0.anInt6018 <= client.gameLogicStepCount && client.gameLogicStepCount > arg0.anInt6023) {
 				arg0.anInt6046 = 2;
 			}
 		}

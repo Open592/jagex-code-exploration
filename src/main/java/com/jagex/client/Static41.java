@@ -70,8 +70,8 @@ public final class Static41 {
 			arg3.anInt6052 = arg1.g1s();
 			arg3.anInt6044 = arg1.g1s_alt3();
 			arg3.anInt6074 = arg1.g1s();
-			arg3.anInt6018 = arg1.g2() + Static24.anInt5323;
-			arg3.anInt6023 = arg1.g2_alt2() + Static24.anInt5323;
+			arg3.anInt6018 = arg1.g2() + client.gameLogicStepCount;
+			arg3.anInt6023 = arg1.g2_alt2() + client.gameLogicStepCount;
 			arg3.lb = arg1.g1_alt1();
 			arg3.anInt6087 = 0;
 			if (arg3.aBoolean401) {
@@ -95,7 +95,7 @@ public final class Static41 {
 			arg3.anInt6054 = arg1.g1_alt1();
 			arg3.aBoolean559 = (local243 & 0x8000) != 0;
 			arg3.anInt6041 = local243 & 0x7FFF;
-			arg3.anInt6035 = Static24.anInt5323 + arg3.anInt6041 + arg3.anInt6051;
+			arg3.anInt6035 = client.gameLogicStepCount + arg3.anInt6041 + arg3.anInt6051;
 		}
 		if ((arg0 & 0x10000) != 0) {
 			local243 = arg1.g1();
@@ -206,8 +206,8 @@ public final class Static41 {
 			arg3.aByte69 = arg1.g1s_alt3();
 			arg3.aByte70 = arg1.g1s();
 			arg3.aByte68 = (byte) arg1.g1_alt3();
-			arg3.anInt6020 = Static24.anInt5323 + arg1.g2_alt2();
-			arg3.anInt6068 = Static24.anInt5323 + arg1.g2_alt1();
+			arg3.anInt6020 = client.gameLogicStepCount + arg1.g2_alt2();
+			arg3.anInt6068 = client.gameLogicStepCount + arg1.g2_alt1();
 		}
 		if ((arg0 & 0x200) != 0) {
 			local7 = arg1.g1s_alt2();
@@ -215,8 +215,8 @@ public final class Static41 {
 		if ((arg0 & 0x10) != 0) {
 			local243 = arg1.gSmart1Or2();
 			local363 = arg1.g1_alt1();
-			arg3.method4746(local243, Static24.anInt5323, local363);
-			arg3.anInt6072 = Static24.anInt5323 + 300;
+			arg3.method4746(local243, client.gameLogicStepCount, local363);
+			arg3.anInt6072 = client.gameLogicStepCount + 300;
 			arg3.anInt6026 = arg1.g1_alt1();
 		}
 		if ((arg0 & 0x4000) != 0) {
@@ -231,7 +231,7 @@ public final class Static41 {
 			arg3.method3422(local823);
 		}
 		if ((arg0 & 0x100) != 0) {
-			local243 = Static24.anInt5323;
+			local243 = client.gameLogicStepCount;
 			local363 = arg1.gSmart1Or2();
 			local367 = arg1.g1_alt3();
 			arg3.method4746(local363, local243, local367);

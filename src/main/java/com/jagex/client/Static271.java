@@ -1198,7 +1198,7 @@ public final class Static271 {
 									}
 								} else if (arg0 < 3400) {
 									if (arg0 == 3300) {
-										anIntArray330[anInt5095++] = Static24.anInt5323;
+										anIntArray330[anInt5095++] = client.gameLogicStepCount;
 										return;
 									}
 									if (arg0 == 3301) {

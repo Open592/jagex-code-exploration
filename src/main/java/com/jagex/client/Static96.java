@@ -48,7 +48,7 @@ public final class Static96 {
 			return;
 		}
 		arg0.anInt6844 = 150;
-		arg0.anInt6858 = (int) (Math.sin((double) Static24.anInt5323 / 40.0D) * 256.0D) & 0x7FF;
+		arg0.anInt6858 = (int) (Math.sin((double) client.gameLogicStepCount / 40.0D) * 256.0D) & 0x7FF;
 		arg0.anInt6796 = 5;
 		arg0.anInt6781 = Static207.anInt5452;
 		arg0.anInt6848 = Static130.method2302(Static1.aClass16_Sub1_Sub5_Sub1_1.aString44);
@@ -62,14 +62,14 @@ public final class Static96 {
 	public static void method1683() {
 		for (@Pc(10) SecondaryNode_Sub1_Sub7 local10 = (SecondaryNode_Sub1_Sub7) Static27.aClass183_2.method4140(); local10 != null; local10 = (SecondaryNode_Sub1_Sub7) Static27.aClass183_2.method4144()) {
 			@Pc(15) Class16_Sub1_Sub3 local15 = local10.aClass16_Sub1_Sub3_1;
-			if (Static263.anInt4963 != local15.aByte82 || local15.anInt2581 < Static24.anInt5323) {
+			if (Static263.anInt4963 != local15.aByte82 || local15.anInt2581 < client.gameLogicStepCount) {
 				local10.popSelf();
 				local15.method2194();
-			} else if (local15.anInt2599 <= Static24.anInt5323) {
+			} else if (local15.anInt2599 <= client.gameLogicStepCount) {
 				if (local15.anInt2587 > 0) {
 					@Pc(56) Class16_Sub1_Sub5_Sub2 local56 = Static143.aClass16_Sub1_Sub5_Sub2Array1[local15.anInt2587 - 1];
 					if (local56 != null && local56.anInt6893 >= 0 && Static326.anInt5666 * 128 > local56.anInt6893 && local56.anInt6892 >= 0 && Static283.anInt5187 * 128 > local56.anInt6892) {
-						local15.method2197(Static24.anInt5323, local56.anInt6893, Static13.method135(local56.anInt6893, local15.aByte82, local56.anInt6892) - local15.anInt2586, local56.anInt6892);
+						local15.method2197(client.gameLogicStepCount, local56.anInt6893, Static13.method135(local56.anInt6893, local15.aByte82, local56.anInt6892) - local15.anInt2586, local56.anInt6892);
 					}
 				}
 				if (local15.anInt2587 < 0) {
@@ -81,7 +81,7 @@ public final class Static96 {
 						local127 = Static267.aClass16_Sub1_Sub5_Sub1Array1[local118];
 					}
 					if (local127 != null && local127.anInt6893 >= 0 && local127.anInt6893 < Static326.anInt5666 * 128 && local127.anInt6892 >= 0 && local127.anInt6892 < Static283.anInt5187 * 128) {
-						local15.method2197(Static24.anInt5323, local127.anInt6893, Static13.method135(local127.anInt6893, local15.aByte82, local127.anInt6892) - local15.anInt2586, local127.anInt6892);
+						local15.method2197(client.gameLogicStepCount, local127.anInt6893, Static13.method135(local127.anInt6893, local15.aByte82, local127.anInt6892) - local15.anInt2586, local127.anInt6892);
 					}
 				}
 				local15.method2198(Static176.anInt3414);

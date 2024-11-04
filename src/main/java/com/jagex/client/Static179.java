@@ -58,7 +58,7 @@ public final class Static179 {
 	@OriginalMember(owner = "client!ja", name = "a", descriptor = "(Lclient!r;I)V")
 	public static void method2849(@OriginalArg(0) Class16_Sub1_Sub5 arg0) {
 		@Pc(5) boolean local5 = false;
-		if (arg0.anInt6023 == Static24.anInt5323 || arg0.anInt6021 == -1 || arg0.anInt6046 != 0) {
+		if (arg0.anInt6023 == client.gameLogicStepCount || arg0.anInt6021 == -1 || arg0.anInt6046 != 0) {
 			local5 = true;
 		} else {
 			@Pc(26) Class138 local26 = Static182.aClass55_1.method1397(arg0.anInt6021);
@@ -68,7 +68,7 @@ public final class Static179 {
 		}
 		if (local5) {
 			@Pc(54) int local54 = arg0.anInt6023 - arg0.anInt6018;
-			@Pc(60) int local60 = Static24.anInt5323 - arg0.anInt6018;
+			@Pc(60) int local60 = client.gameLogicStepCount - arg0.anInt6018;
 			@Pc(71) int local71 = arg0.anInt6043 * 128 + arg0.method4751() * 64;
 			@Pc(83) int local83 = arg0.anInt6052 * 128 + arg0.method4751() * 64;
 			@Pc(95) int local95 = arg0.anInt6044 * 128 + arg0.method4751() * 64;

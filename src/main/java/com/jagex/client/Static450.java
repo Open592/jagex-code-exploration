@@ -134,7 +134,7 @@ public final class Static450 {
 		@Pc(754) int local754;
 		for (local499 = 0; local499 < local658.length; local499++) {
 			@Pc(666) Class38 local666 = local658[local499];
-			if (local666 != null && local666.anInt891 != 0 && Static24.anInt5323 % 20 < 10) {
+			if (local666 != null && local666.anInt891 != 0 && client.gameLogicStepCount % 20 < 10) {
 				@Pc(727) int local727;
 				if (local666.anInt891 == 1 && local666.anInt885 >= 0 && Static143.aClass16_Sub1_Sub5_Sub2Array1.length > local666.anInt885) {
 					@Pc(705) Class16_Sub1_Sub5_Sub2 local705 = Static143.aClass16_Sub1_Sub5_Sub2Array1[local666.anInt885];

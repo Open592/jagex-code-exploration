@@ -124,7 +124,7 @@ public final class Static407 {
 			Static100.method1772(Static219.anInt6458 << 1, local113 / 2 + local119, local115 / 2 + local117, Static219.anInt6458 << 1);
 			Static446.method5621(-Static136.anInt2790 & 0x3FFF, -Static103.anInt2070 & 0x3FFF, Static163.anInt3197, Static145.anInt2906, -Static431.anInt7074 & 0x3FFF, Static100.anInt2024);
 			@Pc(548) byte local548 = Static323.aClass50_Sub1_1.method2858(Static177.anInt2973) == 2 ? (byte) Static361.anInt6264 : 1;
-			Static90.method1610(Static122.aClass19_16, Static24.anInt5323, Static218.anInt4043, Static111.aClass31_1, Static163.anInt3197, Static100.anInt2024, Static145.anInt2906, Static12.aByteArrayArrayArray1, Static306.anIntArray360, Static21.anIntArray19, Static443.anIntArray549, Static316.anIntArray376, Static52.anIntArray53, Static1.aClass16_Sub1_Sub5_Sub1_1.aByte82 + 1, local548, Static1.aClass16_Sub1_Sub5_Sub1_1.anInt6893 >> 7, Static1.aClass16_Sub1_Sub5_Sub1_1.anInt6892 >> 7, !Static323.aClass50_Sub1_1.aBoolean295);
+			Static90.method1610(Static122.aClass19_16, client.gameLogicStepCount, Static218.anInt4043, Static111.aClass31_1, Static163.anInt3197, Static100.anInt2024, Static145.anInt2906, Static12.aByteArrayArrayArray1, Static306.anIntArray360, Static21.anIntArray19, Static443.anIntArray549, Static316.anIntArray376, Static52.anIntArray53, Static1.aClass16_Sub1_Sub5_Sub1_1.aByte82 + 1, local548, Static1.aClass16_Sub1_Sub5_Sub1_1.anInt6893 >> 7, Static1.aClass16_Sub1_Sub5_Sub1_1.anInt6892 >> 7, !Static323.aClass50_Sub1_1.aBoolean295);
 			Static159.method2701();
 			if (Static403.anInt6667 == 30) {
 				Static142.method2429(local115, local117, local113, local119);

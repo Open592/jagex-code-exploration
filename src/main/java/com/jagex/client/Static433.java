@@ -46,7 +46,7 @@ public final class Static433 {
 		arg0.method4256(Static141.width, 350 - Static363.anInt6275, 0, -1);
 		Static331.aClass46_10.method5058(-16777216, -1, "--> " + Static117.aString29, 350 - Static118.aClass89_5.anInt2778 - 1, 10);
 		local45 = -1;
-		if (Static24.anInt5323 % 30 > 15) {
+		if (client.gameLogicStepCount % 30 > 15) {
 			local45 = 16777215;
 		}
 		arg0.method4240(350 - Static118.aClass89_5.anInt2778 - 11, 12, Static118.aClass89_5.method2340("--> " + Static117.aString29.substring(0, Static238.anInt4511)) + 10, local45);

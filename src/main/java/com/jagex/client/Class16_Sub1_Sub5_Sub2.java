@@ -281,7 +281,7 @@ public final class Class16_Sub1_Sub5_Sub2 extends Class16_Sub1_Sub5 {
 		if (local46 != 0 || local49 != 0 || local11.anInt4674 != 0 || local11.anInt4660 != 0) {
 			arg1 |= 0x7;
 		}
-		@Pc(98) boolean local98 = super.aByte68 != 0 && Static24.anInt5323 >= super.anInt6020 && Static24.anInt5323 < super.anInt6068;
+		@Pc(98) boolean local98 = super.aByte68 != 0 && client.gameLogicStepCount >= super.anInt6020 && client.gameLogicStepCount < super.anInt6068;
 		if (local98) {
 			arg1 |= 0x80000;
 		}
@@ -389,9 +389,9 @@ public final class Class16_Sub1_Sub5_Sub2 extends Class16_Sub1_Sub5 {
 		}
 		super.aClass110Array3[2] = null;
 		if (super.aClass4_Sub23_3 != null) {
-			if (super.aClass4_Sub23_3.anInt3202 <= Static24.anInt5323) {
+			if (super.aClass4_Sub23_3.anInt3202 <= client.gameLogicStepCount) {
 				super.aClass4_Sub23_3 = null;
-			} else if (super.aClass4_Sub23_3.anInt3191 <= Static24.anInt5323) {
+			} else if (super.aClass4_Sub23_3.anInt3191 <= client.gameLogicStepCount) {
 				@Pc(564) Class110 local564 = super.aClass4_Sub23_3.method2719(arg0, local7 | 0x7);
 				if (local564 != null) {
 					local564.JA(-super.anInt6893 + super.aClass4_Sub23_3.anInt3198, super.aClass4_Sub23_3.anInt3188 + -super.anInt6889, super.aClass4_Sub23_3.anInt3203 - super.anInt6892);

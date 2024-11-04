@@ -39,7 +39,7 @@ public final class Static100 {
 		Static59.anInt1090 = Static145.anInt2906;
 		Static222.anInt4125 = 0;
 		Static140.anInt2836 = -1;
-		Static294.anInt446 = Static24.anInt5323;
+		Static294.anInt446 = client.gameLogicStepCount;
 		Static111.anInt2386 = 5;
 		Static381.anInt6417 = 0;
 		Static137.anInt2797 = -1;

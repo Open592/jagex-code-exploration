@@ -117,7 +117,7 @@ public final class Static153 {
 
 	@OriginalMember(owner = "client!hp", name = "a", descriptor = "(IB)V")
 	public static void method2610(@OriginalArg(0) int arg0) {
-		@Pc(7) int local7 = Static24.anInt5323 - Static294.anInt446;
+		@Pc(7) int local7 = client.gameLogicStepCount - Static294.anInt446;
 		if (local7 >= 100) {
 			Static111.anInt2386 = 1;
 			return;

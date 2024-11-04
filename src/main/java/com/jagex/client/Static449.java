@@ -105,7 +105,7 @@ public final class Static449 {
 			if (local21.aBoolean113) {
 				local16.popSelf();
 				local21.method1244();
-			} else if (local21.anInt1346 <= Static24.anInt5323) {
+			} else if (local21.anInt1346 <= client.gameLogicStepCount) {
 				local21.method1243(Static176.anInt3414);
 				if (local21.aBoolean113) {
 					local16.popSelf();

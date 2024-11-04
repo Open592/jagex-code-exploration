@@ -243,7 +243,7 @@ public final class Class23 {
 		if (this.anInt552 < 0 || this.aClass138_1.anIntArray295.length <= this.anInt552) {
 			this.anInt552 = -1;
 		}
-		this.anInt549 = Static24.anInt5323 - this.anInt533;
+		this.anInt549 = client.gameLogicStepCount - this.anInt533;
 	}
 
 	@OriginalMember(owner = "client!bi", name = "a", descriptor = "(B)I")
@@ -273,7 +273,7 @@ public final class Class23 {
 					return;
 				}
 			}
-			@Pc(33) int local33 = Static24.anInt5323 - this.anInt549;
+			@Pc(33) int local33 = client.gameLogicStepCount - this.anInt549;
 			if (local33 > 100 && this.aClass138_1.anInt4405 > 0) {
 				@Pc(49) int local49 = this.aClass138_1.anIntArray295.length - this.aClass138_1.anInt4405;
 				while (local49 > this.anInt538 && local33 > this.aClass138_1.anIntArray296[this.anInt538]) {
@@ -315,7 +315,7 @@ public final class Class23 {
 				}
 			}
 			this.anInt533 = local33;
-			this.anInt549 = Static24.anInt5323 - local33;
+			this.anInt549 = client.gameLogicStepCount - local33;
 			return;
 		}
 	}
@@ -330,16 +330,16 @@ public final class Class23 {
 				local33 = local33.method4584(Static257.aClass114_1);
 			}
 			if (local33 != null) {
-				this.aClass3_Sub2_1 = new Class3_Sub2(Static24.anInt5323);
+				this.aClass3_Sub2_1 = new Class3_Sub2(client.gameLogicStepCount);
 			}
 		}
 		if (this.aClass3_Sub2_1 == null) {
 			return;
 		}
 		if (arg0) {
-			this.aClass3_Sub2_1.method169(arg4, (long) Static24.anInt5323, local6, local16);
+			this.aClass3_Sub2_1.method169(arg4, (long) client.gameLogicStepCount, local6, local16);
 		} else {
-			this.aClass3_Sub2_1.method168((long) Static24.anInt5323);
+			this.aClass3_Sub2_1.method168((long) client.gameLogicStepCount);
 		}
 		this.aClass3_Sub2_1.method174(this.aByte9, arg6, arg3, arg1, arg5);
 	}
