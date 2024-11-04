@@ -12,9 +12,6 @@ public final class Static22 {
 	@OriginalMember(owner = "client!av", name = "W", descriptor = "Lclient!la;")
 	public static Class46 aClass46_4;
 
-	@OriginalMember(owner = "client!av", name = "S", descriptor = "J")
-	public static long aLong17 = 0L;
-
 	@OriginalMember(owner = "client!av", name = "V", descriptor = "Z")
 	public static boolean aBoolean38 = false;
 

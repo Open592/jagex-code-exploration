@@ -164,8 +164,12 @@ public final class client extends GameShell {
 
 	@OriginalMember(owner = "client!qc", name = "c", descriptor = "Ljava/lang/String;")
 	public static String host;
+
 	@OriginalMember(owner = "client!qk", name = "c", descriptor = "J")
 	public static long lastGarbageCollectionRequestTimestamp = 0L;
+
+	@OriginalMember(owner = "client!av", name = "S", descriptor = "J")
+	public static long firstLoadClientAssetsTimestamp = 0L;
 
 	@OriginalMember(owner = "client!client", name = "main", descriptor = "([Ljava/lang/String;)V")
 	public static void main(@OriginalArg(0) String[] arguments) {
@@ -283,15 +287,15 @@ public final class client extends GameShell {
 				local132 = false;
 			}
 		}
-		GameShell.aCanvas5.setSize(Static141.width, Static302.height);
+		GameShell.canvas.setSize(Static141.width, Static302.height);
 		if (Static122.aClass19_16 != null) {
-			Static122.aClass19_16.method4272(GameShell.aCanvas5);
+			Static122.aClass19_16.method4272(GameShell.canvas);
 		}
 		if (local13 == GameShell.aFrame1) {
 			local31 = GameShell.aFrame1.getInsets();
-			GameShell.aCanvas5.setLocation(Static230.xPOS + local31.left, local31.top - -Static303.yPOS);
+			GameShell.canvas.setLocation(Static230.xPOS + local31.left, local31.top - -Static303.yPOS);
 		} else {
-			GameShell.aCanvas5.setLocation(Static230.xPOS, Static303.yPOS);
+			GameShell.canvas.setLocation(Static230.xPOS, Static303.yPOS);
 		}
 		if (Static334.anInt5766 != -1) {
 			Static327.method4422(true);
@@ -3830,7 +3834,7 @@ public final class client extends GameShell {
 		}
 
 		if (Static223.aClass14_1 != null) {
-			Static223.aClass14_1.method213(GameShell.aCanvas5);
+			Static223.aClass14_1.method213(GameShell.canvas);
 		}
 
 		Static223.aClass14_1 = null;
@@ -3904,7 +3908,7 @@ public final class client extends GameShell {
 			Static369.method4940();
 		}
 		if (Static403.anInt6667 == 0) {
-			Static201.method4604(Static171.aColorArray5[ClientSettings.colourID], Static164.aColorArray6[ClientSettings.colourID], Static64.aColorArray3[ClientSettings.colourID], Static247.anInt4590, local176, Static24.aString53);
+			GameShell.initializeClientLoadingBox(Static171.aColorArray5[ClientSettings.colourID], Static164.aColorArray6[ClientSettings.colourID], Static64.aColorArray3[ClientSettings.colourID], Static247.anInt4590, local176, Static24.aString53);
 		} else if (Static403.anInt6667 == 5) {
 			Static260.method3773(Static164.aColorArray6[ClientSettings.colourID].getRGB(), local176 | Static122.aClass19_16.method4258(), Static64.aColorArray3[ClientSettings.colourID].getRGB(), Static171.aColorArray5[ClientSettings.colourID].getRGB(), Static331.aClass46_10, Static122.aClass19_16);
 		} else if (Static403.anInt6667 == 10) {
@@ -4404,12 +4408,12 @@ public final class client extends GameShell {
 		}
 
 		port = Static313.anInt5435;
-		Static384.aClass244_1 = Static140.method2398(GameShell.aCanvas5);
-		Static420.aClass80_1 = Static376.method4882(GameShell.aCanvas5);
+		Static384.aClass244_1 = Static140.method2398(GameShell.canvas);
+		Static420.aClass80_1 = Static376.method4882(GameShell.canvas);
 		Static223.aClass14_1 = Static328.method4424();
 
 		if (Static223.aClass14_1 != null) {
-			Static223.aClass14_1.method209(GameShell.aCanvas5);
+			Static223.aClass14_1.method209(GameShell.canvas);
 		}
 
 		Static96.anInt1932 = SignLink.anInt1987;
@@ -4441,7 +4445,11 @@ public final class client extends GameShell {
 			Static325.isFPSMonitorActive = true;
 		}
 
-		Static129.aString30 = (ClientSettings.RUNESCAPE_GAME_DETAILS == ClientSettings.currentGameDetails ? Static268.A_LOCALIZED_STRING___104 : Static374.A_LOCALIZED_STRING___129).getLocalizedString(ClientSettings.langID);
+		gameNameIsLoadingPleaseWaitMessage = (
+			ClientSettings.RUNESCAPE_GAME_DETAILS == ClientSettings.currentGameDetails
+				? Static268.runescapeIsLoadingPleaseWaitLocalizedString
+				: Static374.stellarDawnIsLoadingPleaseWaitLocalizedString
+		).getLocalizedString(ClientSettings.langID);
 	}
 
 	@OriginalMember(owner = "client!client", name = "a", descriptor = "([BB)V")
@@ -4507,17 +4515,17 @@ public final class client extends GameShell {
 
 		if (anInt5 == 0) {
 			Runtime local47 = Runtime.getRuntime();
-			int totalUsedMemory = (int) ((local47.totalMemory() - local47.freeMemory()) / 1024L);
-			long timestamp = MonotonicClock.getCurrentTimeInMilliseconds();
+			int totalUtilizedMemoryBytes = (int) ((local47.totalMemory() - local47.freeMemory()) / 1024L);
+			long currentTimeInMilliseconds = MonotonicClock.getCurrentTimeInMilliseconds();
 
-			if (Static22.aLong17 == 0L) {
-				Static22.aLong17 = timestamp;
+			if (firstLoadClientAssetsTimestamp == 0L) {
+				firstLoadClientAssetsTimestamp = currentTimeInMilliseconds;
 			}
 
-			if (totalUsedMemory > 16384 && timestamp - Static22.aLong17 < 5000L) {
-				if (timestamp - lastGarbageCollectionRequestTimestamp > 1000L) {
+			if (totalUtilizedMemoryBytes > 16384 && currentTimeInMilliseconds - firstLoadClientAssetsTimestamp < 5000L) {
+				if (currentTimeInMilliseconds - lastGarbageCollectionRequestTimestamp > 1000L) {
 					System.gc();
-					lastGarbageCollectionRequestTimestamp = timestamp;
+					lastGarbageCollectionRequestTimestamp = currentTimeInMilliseconds;
 				}
 
 				Static24.aString53 = allocatingMemoryLocalizedString.getLocalizedString(ClientSettings.langID);

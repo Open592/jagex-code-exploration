@@ -27,12 +27,12 @@ public final class Static368 {
 			if (local34 == null) {
 				arg0 = -1;
 			} else {
-				Static206.signLink.emitSetCustomCursorMessage(GameShell.aCanvas5, local34.method324(), local34.method325(), local34.method319(), new Point(local30.anInt2420, local30.anInt2419));
+				Static206.signLink.emitSetCustomCursorMessage(GameShell.canvas, local34.method324(), local34.method325(), local34.method319(), new Point(local30.anInt2420, local30.anInt2419));
 				Static6.anInt57 = arg0;
 			}
 		}
 		if (arg0 == -1 && Static6.anInt57 != -1) {
-			Static206.signLink.emitSetCustomCursorMessage(GameShell.aCanvas5, -1, -1, null, new Point());
+			Static206.signLink.emitSetCustomCursorMessage(GameShell.canvas, -1, -1, null, new Point());
 			Static6.anInt57 = -1;
 		}
 	}

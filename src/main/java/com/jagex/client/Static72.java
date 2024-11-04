@@ -42,10 +42,10 @@ public final class Static72 {
 		Static420.method5385(Static323.aClass50_Sub1_1.aBoolean291);
 		Static363.aClass4_Sub15_Sub1_3 = new Node_Sub15_Sub1();
 		Static363.aClass4_Sub15_Sub1_3.method1453();
-		Static424.aClass49_2 = Static380.method5016(0, Static206.signLink, 22050, GameShell.aCanvas5);
+		Static424.aClass49_2 = Static380.method5016(0, Static206.signLink, 22050, GameShell.canvas);
 		Static424.aClass49_2.method2070(Static363.aClass4_Sub15_Sub1_3);
 		Static439.method5554(Static67.aClass76_19, Static363.aClass4_Sub15_Sub1_3, Static312.aClass76_66, Static350.aClass76_79);
-		Static291.aClass49_1 = Static380.method5016(1, Static206.signLink, 2048, GameShell.aCanvas5);
+		Static291.aClass49_1 = Static380.method5016(1, Static206.signLink, 2048, GameShell.canvas);
 		Static360.aClass4_Sub15_Sub2_2 = new Node_Sub15_Sub2();
 		Static291.aClass49_1.method2070(Static360.aClass4_Sub15_Sub2_2);
 		Static275.aClass261_1 = new Class261(22050, Static261.anInt4928);

@@ -205,9 +205,9 @@ public final class Static167 {
 	public static void method2740() {
 		Static64.method1241();
 		Static420.method5385(Static323.aClass50_Sub1_1.aBoolean291);
-		Static424.aClass49_2 = Static380.method5016(0, Static206.signLink, 22050, GameShell.aCanvas5);
+		Static424.aClass49_2 = Static380.method5016(0, Static206.signLink, 22050, GameShell.canvas);
 		Static424.aClass49_2.method2070(Static363.aClass4_Sub15_Sub1_3);
-		Static291.aClass49_1 = Static380.method5016(1, Static206.signLink, 2048, GameShell.aCanvas5);
+		Static291.aClass49_1 = Static380.method5016(1, Static206.signLink, 2048, GameShell.canvas);
 		Static291.aClass49_1.method2070(Static360.aClass4_Sub15_Sub2_2);
 	}
 }

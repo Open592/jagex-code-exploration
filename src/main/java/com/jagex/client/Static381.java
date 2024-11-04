@@ -1,6 +1,5 @@
 package com.jagex.client;
 
-import java.awt.Font;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;
@@ -15,9 +14,6 @@ public final class Static381 {
 
 	@OriginalMember(owner = "client!tf", name = "f", descriptor = "Lclient!fs;")
 	public static Class76 aClass76_89;
-
-	@OriginalMember(owner = "client!tf", name = "h", descriptor = "Ljava/awt/Font;")
-	public static Font aFont1;
 
 	@OriginalMember(owner = "client!tf", name = "b", descriptor = "[Ljava/lang/String;")
 	public static final String[] aStringArray35 = new String[5];

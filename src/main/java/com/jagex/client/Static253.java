@@ -9,7 +9,7 @@ import org.openrs2.deob.annotation.OriginalMember;
 public final class Static253 {
 
 	@OriginalMember(owner = "client!mr", name = "L", descriptor = "Ljava/awt/Image;")
-	public static Image anImage2;
+	public static Image loadingBoxImage;
 
 	@OriginalMember(owner = "client!mr", name = "K", descriptor = "Lclient!sl;")
 	public static final Class215 aClass215_57 = new Class215(51, 4);
@@ -19,8 +19,8 @@ public final class Static253 {
 
 	@OriginalMember(owner = "client!mr", name = "b", descriptor = "(Z)V")
 	public static void method3676() {
-		anImage2 = null;
-		Static381.aFont1 = null;
+		loadingBoxImage = null;
+		GameShell.helveticaBoldFont = null;
 	}
 
 	@OriginalMember(owner = "client!mr", name = "a", descriptor = "(IIIIIZZ)V")

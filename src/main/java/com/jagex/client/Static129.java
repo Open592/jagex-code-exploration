@@ -7,9 +7,6 @@ import org.openrs2.deob.annotation.Pc;
 
 public final class Static129 {
 
-	@OriginalMember(owner = "client!gl", name = "H", descriptor = "Ljava/lang/String;")
-	public static String aString30 = null;
-
 	@OriginalMember(owner = "client!gl", name = "Q", descriptor = "[I")
 	public static final int[] anIntArray182 = new int[4096];
 

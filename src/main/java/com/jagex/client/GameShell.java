@@ -6,12 +6,7 @@ import com.jagex.signlink.MonotonicClock;
 import com.jagex.client.jagex3.jagmisc.jagmisc;
 import java.applet.Applet;
 import java.applet.AppletContext;
-import java.awt.Canvas;
-import java.awt.Container;
-import java.awt.Frame;
-import java.awt.Graphics;
-import java.awt.Insets;
-import java.awt.Rectangle;
+import java.awt.*;
 import java.awt.event.FocusEvent;
 import java.awt.event.FocusListener;
 import java.awt.event.WindowEvent;
@@ -87,10 +82,16 @@ public abstract class GameShell extends Applet implements Runnable, FocusListene
 	public static volatile boolean aBoolean189 = true;
 
 	@OriginalMember(owner = "client!nt", name = "m", descriptor = "Ljava/awt/Canvas;")
-	public static Canvas aCanvas5;
+	public static Canvas canvas;
 
 	@OriginalMember(owner = "client!ll", name = "j", descriptor = "Ljava/awt/Frame;")
 	public static Frame aFrame1;
+
+	@OriginalMember(owner = "client!tf", name = "h", descriptor = "Ljava/awt/Font;")
+	public static Font helveticaBoldFont;
+
+	@OriginalMember(owner = "client!gl", name = "H", descriptor = "Ljava/lang/String;")
+	public static String gameNameIsLoadingPleaseWaitMessage = null;
 
 	@OriginalMember(owner = "client!o", name = "S", descriptor = "I")
 	private static int anInt972;
@@ -374,6 +375,89 @@ public abstract class GameShell extends Applet implements Runnable, FocusListene
 		anInt6741 = 0;
 	}
 
+	public static void initializeClientLoadingBox(
+		Color textColor,
+		Color borderColor,
+		Color progressBarColor,
+		int currentProgress,
+		boolean shouldDrawBackground,
+		String message
+	) {
+		try {
+			Graphics canvasGraphics = canvas.getGraphics();
+
+			if (helveticaBoldFont == null) {
+				helveticaBoldFont = new Font("Helvetica", Font.BOLD, 13);
+			}
+
+			if (shouldDrawBackground) {
+				canvasGraphics.setColor(Color.black);
+				canvasGraphics.fillRect(0, 0, Static141.width, Static302.height);
+			}
+
+			if (progressBarColor == null) {
+				progressBarColor = new Color(140, 17, 17);
+			}
+
+			if (borderColor == null) {
+				borderColor = new Color(140, 17, 17);
+			}
+
+			if (textColor == null) {
+				textColor = new Color(255, 255, 255);
+			}
+
+			try {
+				if (Static253.loadingBoxImage == null) {
+					Static253.loadingBoxImage = canvas.createImage(304, 34);
+				}
+
+				Graphics loadingBoxImageGraphics = Static253.loadingBoxImage.getGraphics();
+
+				loadingBoxImageGraphics.setColor(borderColor);
+				loadingBoxImageGraphics.drawRect(0, 0, 303, 33);
+
+				loadingBoxImageGraphics.setColor(progressBarColor);
+				loadingBoxImageGraphics.fillRect(2, 2, currentProgress * 3, 30);
+
+				loadingBoxImageGraphics.setColor(Color.black);
+				loadingBoxImageGraphics.drawRect(1, 1, 301, 31);
+				loadingBoxImageGraphics.fillRect(currentProgress * 3 + 2, 2, 300 - currentProgress * 3, 30);
+
+				loadingBoxImageGraphics.setFont(helveticaBoldFont);
+				loadingBoxImageGraphics.setColor(textColor);
+				loadingBoxImageGraphics.drawString(message, (304 - message.length() * 6) / 2, 22);
+
+				canvasGraphics.drawImage(Static253.loadingBoxImage, Static141.width / 2 - 152, Static302.height / 2 + -18, null);
+			} catch (Exception e) {
+				int local155 = Static141.width / 2 - 152;
+				int local161 = Static302.height / 2 - 18;
+
+				canvasGraphics.setColor(borderColor);
+				canvasGraphics.drawRect(0, 0, 303, 33);
+
+				canvasGraphics.setColor(progressBarColor);
+				canvasGraphics.fillRect(local155 + 2, local161 + 2, currentProgress * 3, 30);
+
+				canvasGraphics.setColor(Color.black);
+				canvasGraphics.drawRect(local155 + 1, local161 + 1, 301, 31);
+				canvasGraphics.fillRect(currentProgress * 3 + local155 + 2, local161 - -2, 300 - currentProgress * 3, 30);
+
+				canvasGraphics.setFont(helveticaBoldFont);
+				canvasGraphics.setColor(textColor);
+				canvasGraphics.drawString(message, (304 - message.length() * 6) / 2 + local155, local161 - -22);
+			}
+
+			if (gameNameIsLoadingPleaseWaitMessage != null) {
+				canvasGraphics.setFont(helveticaBoldFont);
+				canvasGraphics.setColor(textColor);
+				canvasGraphics.drawString(gameNameIsLoadingPleaseWaitMessage, Static141.width / 2 - gameNameIsLoadingPleaseWaitMessage.length() * 6 / 2, Static302.height / 2 - 26);
+			}
+		} catch (Exception e) {
+			canvas.repaint();
+		}
+	}
+
 	@OriginalMember(owner = "client!o", name = "a", descriptor = "(I)Z")
 	protected final boolean isValidHost() {
 		@Pc(16) String host = this.getDocumentBase().getHost().toLowerCase();
@@ -479,9 +563,9 @@ public abstract class GameShell extends Applet implements Runnable, FocusListene
 
 	@OriginalMember(owner = "client!o", name = "b", descriptor = "(B)V")
 	public final synchronized void method874() {
-		if (aCanvas5 != null) {
-			aCanvas5.removeFocusListener(this);
-			aCanvas5.getParent().remove(aCanvas5);
+		if (canvas != null) {
+			canvas.removeFocusListener(this);
+			canvas.getParent().remove(canvas);
 		}
 		@Pc(18) Container local18;
 		if (Static320.aFrame3 != null) {
@@ -492,18 +576,18 @@ public abstract class GameShell extends Applet implements Runnable, FocusListene
 			local18 = aFrame1;
 		}
 		local18.setLayout(null);
-		aCanvas5 = new Canvas_Sub1(this);
-		local18.add(aCanvas5);
-		aCanvas5.setSize(Static141.width, Static302.height);
-		aCanvas5.setVisible(true);
+		canvas = new Canvas_Sub1(this);
+		local18.add(canvas);
+		canvas.setSize(Static141.width, Static302.height);
+		canvas.setVisible(true);
 		if (local18 == aFrame1) {
 			@Pc(60) Insets local60 = aFrame1.getInsets();
-			aCanvas5.setLocation(Static230.xPOS + local60.left, local60.top + Static303.yPOS);
+			canvas.setLocation(Static230.xPOS + local60.left, local60.top + Static303.yPOS);
 		} else {
-			aCanvas5.setLocation(Static230.xPOS, Static303.yPOS);
+			canvas.setLocation(Static230.xPOS, Static303.yPOS);
 		}
-		aCanvas5.addFocusListener(this);
-		aCanvas5.requestFocus();
+		canvas.addFocusListener(this);
+		canvas.requestFocus();
 		Static198.isFocused = true;
 		Static265.aBoolean457 = true;
 		aBoolean189 = true;
@@ -592,10 +676,10 @@ public abstract class GameShell extends Applet implements Runnable, FocusListene
 			Static435.sleepFor(100L);
 		}
 
-		if (aCanvas5 != null) {
+		if (canvas != null) {
 			try {
-				aCanvas5.removeFocusListener(this);
-				aCanvas5.getParent().remove(aCanvas5);
+				canvas.removeFocusListener(this);
+				canvas.getParent().remove(canvas);
 			} catch (@Pc(75) Exception local75) {
 			}
 		}
@@ -781,7 +865,7 @@ public abstract class GameShell extends Applet implements Runnable, FocusListene
 
 					this.triggerGraphicsStep();
 
-					Static441.waitForSystemEventQueueToDrain(Static206.signLink, aCanvas5);
+					Static441.waitForSystemEventQueueToDrain(Static206.signLink, canvas);
 				}
 			}
 		} catch (@Pc(190) Throwable e) {
@@ -892,14 +976,14 @@ public abstract class GameShell extends Applet implements Runnable, FocusListene
 			graphicsStepCount -= 50;
 			aBoolean189 = true;
 
-			aCanvas5.setSize(Static141.width, Static302.height);
-			aCanvas5.setVisible(true);
+			canvas.setSize(Static141.width, Static302.height);
+			canvas.setVisible(true);
 
 			if (aFrame1 != null && Static320.aFrame3 == null) {
 				@Pc(86) Insets local86 = aFrame1.getInsets();
-				aCanvas5.setLocation(Static230.xPOS + local86.left, local86.top - -Static303.yPOS);
+				canvas.setLocation(Static230.xPOS + local86.left, local86.top - -Static303.yPOS);
 			} else {
-				aCanvas5.setLocation(Static230.xPOS, Static303.yPOS);
+				canvas.setLocation(Static230.xPOS, Static303.yPOS);
 			}
 		}
 
