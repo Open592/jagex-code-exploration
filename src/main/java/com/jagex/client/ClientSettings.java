@@ -112,7 +112,7 @@ public final class ClientSettings {
 
     @OriginalMember(owner = "client!jp", name = "a", descriptor = "(Lclient!sp;B)Z")
     public static boolean isStagingEnvironment(@OriginalArg(0) ModeWhere modewhere) {
-        return MODEWHERE_WTRC == modewhere
+        return modewhere == MODEWHERE_WTRC
                 || modewhere == MODEWHERE_WTQA
                 || modewhere == MODEWHERE_WTWIP
                 || modewhere == MODEWHERE_WTI;
