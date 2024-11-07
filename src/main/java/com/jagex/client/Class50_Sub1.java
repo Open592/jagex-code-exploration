@@ -1,5 +1,6 @@
 package com.jagex.client;
 
+import com.jagex.client.utilities.ThreadingUtilities;
 import com.jagex.signlink.Message;
 import com.jagex.signlink.FileOnDisk;
 import com.jagex.signlink.SignLink;
@@ -77,7 +78,7 @@ public final class Class50_Sub1 extends Class50 {
 		try {
 			@Pc(134) Message local134 = arg0.emitResolvePreferencesFileLocationMessage("");
 			while (local134.status == 0) {
-				Static435.sleepFor(1L);
+				ThreadingUtilities.sleepFor(1L);
 			}
 			if (local134.status == 1) {
 				local129 = (FileOnDisk) local134.output;
@@ -107,7 +108,7 @@ public final class Class50_Sub1 extends Class50 {
 		try {
 			@Pc(20) Message local20 = arg0.emitResolvePreferencesFileLocationMessage("");
 			while (local20.status == 0) {
-				Static435.sleepFor(1L);
+				ThreadingUtilities.sleepFor(1L);
 			}
 			if (local20.status == 1) {
 				local7 = (FileOnDisk) local20.output;

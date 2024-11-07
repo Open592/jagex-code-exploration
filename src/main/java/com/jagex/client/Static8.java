@@ -1,12 +1,7 @@
 package com.jagex.client;
 
-import java.awt.Frame;
-
-import com.jagex.signlink.Message;
-import com.jagex.signlink.SignLink;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalMember;
-import org.openrs2.deob.annotation.Pc;
 
 public final class Static8 {
 
@@ -18,40 +13,6 @@ public final class Static8 {
 
 	@OriginalMember(owner = "client!ag", name = "j", descriptor = "Lclient!bg;")
 	public static final Class22 aClass22_11 = new Class22(82, 12);
-
-	@OriginalMember(owner = "client!ag", name = "a", descriptor = "(IILclient!et;III)Ljava/awt/Frame;")
-	public static Frame method86(@OriginalArg(0) int arg0, @OriginalArg(2) SignLink arg1, @OriginalArg(3) int arg2, @OriginalArg(4) int arg3) {
-		if (!arg1.method1754()) {
-			return null;
-		}
-		@Pc(20) Class103[] local20 = Static204.method3184(arg1);
-		if (local20 == null) {
-			return null;
-		}
-		@Pc(26) boolean local26 = false;
-		for (@Pc(28) int local28 = 0; local28 < local20.length; local28++) {
-			if (local20[local28].anInt3173 == arg0 && local20[local28].anInt3174 == arg2 && (!local26 || local20[local28].anInt3176 > arg3)) {
-				local26 = true;
-				arg3 = local20[local28].anInt3176;
-			}
-		}
-		if (!local26) {
-			return null;
-		}
-		@Pc(94) Message local94 = arg1.emitEnterFullScreenModeMessage(arg2, arg3, arg0);
-		while (local94.status == 0) {
-			Static435.sleepFor(10L);
-		}
-		@Pc(116) Frame local116 = (Frame) local94.output;
-		if (local116 == null) {
-			return null;
-		} else if (local94.status == 2) {
-			Static446.method5620(arg1, local116);
-			return null;
-		} else {
-			return local116;
-		}
-	}
 
 	@OriginalMember(owner = "client!ag", name = "a", descriptor = "(III)Z")
 	public static boolean method87(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1) {

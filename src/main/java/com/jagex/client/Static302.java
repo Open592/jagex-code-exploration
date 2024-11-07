@@ -820,7 +820,7 @@ public final class Static302 {
 	public static boolean method4105() {
 		if (ClientSettings.hasJS) {
 			try {
-				if ((Boolean) Static458.callJavaScriptMethod(Static206.signLink.hostApplet, "showingVideoAd")) {
+				if ((Boolean) Static458.callJavaScriptMethod(GameShell.signLink.hostApplet, "showingVideoAd")) {
 					return false;
 				}
 				return true;

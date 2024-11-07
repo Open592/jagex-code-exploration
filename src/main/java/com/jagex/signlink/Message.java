@@ -45,4 +45,12 @@ public final class Message {
 	public int type;
 
 	public volatile int status = 0;
+
+	public boolean isInProgress() {
+		return status == 0;
+	}
+
+	public boolean isSuccess() {
+		return status == 1;
+	}
 }

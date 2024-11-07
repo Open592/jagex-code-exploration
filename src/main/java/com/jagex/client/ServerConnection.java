@@ -6,6 +6,7 @@ import java.io.InputStream;
 import java.io.OutputStream;
 import java.net.Socket;
 
+import com.jagex.client.utilities.ThreadingUtilities;
 import com.jagex.signlink.Message;
 import com.jagex.signlink.SignLink;
 import org.openrs2.deob.annotation.OriginalArg;
@@ -111,7 +112,7 @@ public final class ServerConnection implements Runnable {
 
 		if (this.Js5NetThreadMessage != null) {
 			while (this.Js5NetThreadMessage.status == 0) {
-				Static435.sleepFor(1L);
+				ThreadingUtilities.sleepFor(1L);
 			}
 
 			if (this.Js5NetThreadMessage.status == 1) {

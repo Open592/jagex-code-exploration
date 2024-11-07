@@ -1,5 +1,6 @@
 package com.jagex.client;
 
+import com.jagex.client.utilities.ThreadingUtilities;
 import com.jagex.signlink.Message;
 import com.jagex.signlink.SignLink;
 import org.openrs2.deob.annotation.OriginalArg;
@@ -26,7 +27,7 @@ public final class Class254 implements Runnable {
 	public Class254(@OriginalArg(0) SignLink signLink) {
 		@Pc(20) Message local20 = signLink.emitThreadInitializationMessage(5, this);
 		while (local20.status == 0) {
-			Static435.sleepFor(10L);
+			ThreadingUtilities.sleepFor(10L);
 		}
 		if (local20.status == 2) {
 			throw new RuntimeException();

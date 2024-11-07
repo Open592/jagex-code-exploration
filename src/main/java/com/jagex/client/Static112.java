@@ -114,7 +114,7 @@ public final class Static112 {
 				if (Static162.aLong210 > MonotonicClock.getCurrentTimeInMilliseconds() - 5000L) {
 					return 0;
 				}
-				Static292.aClass199_8 = Static206.signLink.emitConnectionInitializationMessage(Static13.host, Static313.anInt5435);
+				Static292.aClass199_8 = GameShell.signLink.emitConnectionInitializationMessage(Static13.host, Static313.anInt5435);
 				Static18.aLong14 = MonotonicClock.getCurrentTimeInMilliseconds();
 				Static50.anInt862 = 1;
 			}
@@ -130,7 +130,7 @@ public final class Static112 {
 				if (Static292.aClass199_8.status != 1) {
 					return -1;
 				}
-				Static125.aServerConnection_5 = new ServerConnection((Socket) Static292.aClass199_8.output, Static206.signLink);
+				Static125.aServerConnection_5 = new ServerConnection((Socket) Static292.aClass199_8.output, GameShell.signLink);
 				Static292.aClass199_8 = null;
 				local78 = 0;
 				if (Static94.aBoolean176) {

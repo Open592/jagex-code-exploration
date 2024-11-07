@@ -7,7 +7,7 @@ import org.openrs2.deob.annotation.Pc;
 public final class Static287 {
 
 	@OriginalMember(owner = "client!ok", name = "f", descriptor = "[Lclient!ic;")
-	public static Class103[] aClass103Array1;
+	public static GraphicsDeviceDisplayMode[] aGraphicsDeviceDisplayModeArray1;
 
 	@OriginalMember(owner = "client!ok", name = "n", descriptor = "F")
 	public static float aFloat163;

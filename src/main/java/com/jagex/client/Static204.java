@@ -1,7 +1,5 @@
 package com.jagex.client;
 
-import com.jagex.signlink.Message;
-import com.jagex.signlink.SignLink;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;
@@ -13,31 +11,6 @@ public final class Static204 {
 
 	@OriginalMember(owner = "client!kg", name = "l", descriptor = "F")
 	public static float aFloat127;
-
-	@OriginalMember(owner = "client!kg", name = "a", descriptor = "(Lclient!et;I)[Lclient!ic;")
-	public static Class103[] method3184(@OriginalArg(0) SignLink arg0) {
-		if (!arg0.method1754()) {
-			return new Class103[0];
-		}
-		@Pc(16) Message local16 = arg0.emitGetFullScreenDisplayModesMessage();
-		while (local16.status == 0) {
-			Static435.sleepFor(10L);
-		}
-		if (local16.status == 2) {
-			return new Class103[0];
-		}
-		@Pc(40) int[] local40 = (int[]) local16.output;
-		@Pc(46) Class103[] local46 = new Class103[local40.length >> 2];
-		for (@Pc(48) int local48 = 0; local48 < local46.length; local48++) {
-			@Pc(54) Class103 local54 = new Class103();
-			local46[local48] = local54;
-			local54.anInt3173 = local40[local48 << 2];
-			local54.anInt3174 = local40[(local48 << 2) + 1];
-			local54.anInt3176 = local40[(local48 << 2) + 2];
-			local54.anInt3175 = local40[(local48 << 2) + 3];
-		}
-		return local46;
-	}
 
 	@OriginalMember(owner = "client!kg", name = "a", descriptor = "(ZZIIB)I")
 	public static int method3185(@OriginalArg(1) boolean arg0, @OriginalArg(2) int arg1, @OriginalArg(3) int arg2) {

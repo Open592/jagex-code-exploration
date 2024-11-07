@@ -1,5 +1,6 @@
 package com.jagex.client;
 
+import com.jagex.client.utilities.ThreadingUtilities;
 import com.jagex.signlink.SignLink;
 import org.openrs2.deob.annotation.OriginalClass;
 import org.openrs2.deob.annotation.OriginalMember;
@@ -32,7 +33,7 @@ public final class Class227 implements Runnable {
 						local19.method2069();
 					}
 				}
-				Static435.sleepFor(10L);
+				ThreadingUtilities.sleepFor(10L);
 				Static441.waitForSystemEventQueueToDrain(this.aSignLink_7, null);
 			}
 		} catch (@Pc(43) Exception local43) {

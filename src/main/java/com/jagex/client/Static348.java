@@ -39,7 +39,7 @@ public final class Static348 {
 
 	@OriginalMember(owner = "client!rn", name = "c", descriptor = "(B)V")
 	public static void method4697() {
-		if (Static320.aFrame3 != null) {
+		if (GameShell.aFrame3 != null) {
 			return;
 		}
 		@Pc(16) int local16 = Static230.xPOS;
@@ -51,15 +51,15 @@ public final class Static348 {
 		}
 		try {
 			@Pc(49) Container local49;
-			if (GameShell.aFrame1 == null) {
-				local49 = Static206.signLink.hostApplet;
+			if (GameShell.frame == null) {
+				local49 = GameShell.signLink.hostApplet;
 			} else {
-				local49 = GameShell.aFrame1;
+				local49 = GameShell.frame;
 			}
 			@Pc(55) int local55 = 0;
 			@Pc(57) int local57 = 0;
-			if (GameShell.aFrame1 == local49) {
-				@Pc(63) Insets local63 = GameShell.aFrame1.getInsets();
+			if (GameShell.frame == local49) {
+				@Pc(63) Insets local63 = GameShell.frame.getInsets();
 				local55 = local63.left;
 				local57 = local63.top;
 			}

@@ -39,7 +39,7 @@ public final class Static45 {
 		}
 		Static122.aClass19_16.e();
 		Static348.method4696(Static122.aClass19_16);
-		@Pc(94) int local94 = Static320.method4409();
+		@Pc(94) int local94 = GameShell.method4409();
 		if (local94 == -1) {
 			local94 = Static157.anInt3147;
 		}

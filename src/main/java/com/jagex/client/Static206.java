@@ -1,6 +1,5 @@
 package com.jagex.client;
 
-import com.jagex.signlink.SignLink;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalMember;
 
@@ -11,9 +10,6 @@ public final class Static206 {
 
 	@OriginalMember(owner = "client!ki", name = "j", descriptor = "I")
 	public static int anInt3920;
-
-	@OriginalMember(owner = "client!ki", name = "k", descriptor = "Lclient!et;")
-	public static SignLink signLink;
 
 	@OriginalMember(owner = "client!ki", name = "a", descriptor = "Lclient!pk;")
 	public static final Class183 aClass183_28 = new Class183();

@@ -2,6 +2,7 @@ package com.jagex.client;
 
 import com.jagex.client.jagex3.jagmisc.jagmisc;
 
+import com.jagex.client.utilities.ThreadingUtilities;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalClass;
 import org.openrs2.deob.annotation.OriginalMember;
@@ -72,7 +73,7 @@ public final class JagMiscNanosecondFrameTimer extends FrameTimer {
 		@Pc(9) long local9 = (long) frameTimeInMilliseconds * 1000000L;
 		this.aLong89 += this.method2254();
 		if (this.aLong90 > this.aLong89) {
-			Static435.sleepFor((this.aLong90 - this.aLong89) / 1000000L);
+			ThreadingUtilities.sleepFor((this.aLong90 - this.aLong89) / 1000000L);
 			this.previousNanoTime += this.aLong90 - this.aLong89;
 			this.aLong89 += this.aLong90 - this.aLong89;
 			this.aLong90 += local9;

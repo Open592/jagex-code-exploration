@@ -112,7 +112,7 @@ public final class Static400 {
 				return;
 			}
 			if (command.equalsIgnoreCase("breakcon")) {
-				Static206.signLink.refuseConnectionForFiveSeconds();
+				GameShell.signLink.refuseConnectionForFiveSeconds();
 				Static125.aServerConnection_5.breakConnection();
 				client.js5Connection.breakConnection();
 				Static441.method5568("Breaking new connections for 5 seconds");
@@ -156,7 +156,7 @@ public final class Static400 {
 				if (Static177.anInt2973 == 0) {
 					Static441.method5568("Entered tk0");
 					Static323.aClass50_Sub1_1.anInt3445 = 0;
-					Static323.aClass50_Sub1_1.method2856(Static206.signLink);
+					Static323.aClass50_Sub1_1.method2856(GameShell.signLink);
 					Static249.aBoolean425 = false;
 					return;
 				}
@@ -171,7 +171,7 @@ public final class Static400 {
 				}
 				Static441.method5568("Entered tk1");
 				Static323.aClass50_Sub1_1.anInt3445 = 1;
-				Static323.aClass50_Sub1_1.method2856(Static206.signLink);
+				Static323.aClass50_Sub1_1.method2856(GameShell.signLink);
 				Static249.aBoolean425 = false;
 				return;
 			}
@@ -180,7 +180,7 @@ public final class Static400 {
 				if (Static177.anInt2973 == 2) {
 					Static441.method5568("Entered tk2");
 					Static323.aClass50_Sub1_1.anInt3445 = 2;
-					Static323.aClass50_Sub1_1.method2856(Static206.signLink);
+					Static323.aClass50_Sub1_1.method2856(GameShell.signLink);
 					Static249.aBoolean425 = false;
 					return;
 				}
@@ -198,7 +198,7 @@ public final class Static400 {
 			}
 			if (command.equalsIgnoreCase("ot")) {
 				Static323.aClass50_Sub1_1.aBoolean293 = !Static323.aClass50_Sub1_1.aBoolean293;
-				Static323.aClass50_Sub1_1.method2856(Static206.signLink);
+				Static323.aClass50_Sub1_1.method2856(GameShell.signLink);
 				Static249.aBoolean425 = false;
 				Static335.method4744();
 				Static441.method5568("ot=" + Static323.aClass50_Sub1_1.aBoolean293);
@@ -206,7 +206,7 @@ public final class Static400 {
 			}
 			if (command.equalsIgnoreCase("gb")) {
 				Static323.aClass50_Sub1_1.aBoolean289 = !Static323.aClass50_Sub1_1.aBoolean289;
-				Static323.aClass50_Sub1_1.method2856(Static206.signLink);
+				Static323.aClass50_Sub1_1.method2856(GameShell.signLink);
 				Static249.aBoolean425 = false;
 				Static335.method4744();
 				Static441.method5568("gb=" + Static323.aClass50_Sub1_1.aBoolean289);
@@ -222,7 +222,7 @@ public final class Static400 {
 				local568 = Static88.method1590(local558) ? Static198.method3113(local558) : -1;
 				if (local568 >= 0 && local568 <= 2) {
 					Static323.aClass50_Sub1_1.method2852(Static177.anInt2973, local568);
-					Static323.aClass50_Sub1_1.method2856(Static206.signLink);
+					Static323.aClass50_Sub1_1.method2856(GameShell.signLink);
 					Static249.aBoolean425 = false;
 					Static335.method4744();
 					Static441.method5568("shadows=" + local568);
@@ -233,7 +233,7 @@ public final class Static400 {
 			}
 			if (command.startsWith("textures")) {
 				Static323.aClass50_Sub1_1.aBoolean307 = !Static323.aClass50_Sub1_1.aBoolean307;
-				Static323.aClass50_Sub1_1.method2856(Static206.signLink);
+				Static323.aClass50_Sub1_1.method2856(GameShell.signLink);
 				Static249.aBoolean425 = false;
 				Static119.method2149();
 				Static335.method4744();
@@ -248,7 +248,7 @@ public final class Static400 {
 				local106 = Static198.method3113(command.substring(6));
 				if (local106 >= 0 && local106 <= Static53.method898(Static70.anInt1503)) {
 					Static323.aClass50_Sub1_1.anInt3434 = local106;
-					Static323.aClass50_Sub1_1.method2856(Static206.signLink);
+					Static323.aClass50_Sub1_1.method2856(GameShell.signLink);
 					Static249.aBoolean425 = false;
 					Static441.method5568("maxbuildarea=" + Static323.aClass50_Sub1_1.anInt3434);
 					return;
@@ -262,7 +262,7 @@ public final class Static400 {
 					return;
 				}
 				Static157.method2673(Static198.method3113(command.substring(13)));
-				Static323.aClass50_Sub1_1.method2856(Static206.signLink);
+				Static323.aClass50_Sub1_1.method2856(GameShell.signLink);
 				Static249.aBoolean425 = false;
 				Static441.method5568("particles=" + Static218.method3279());
 				return;
@@ -384,9 +384,9 @@ public final class Static400 {
 				return;
 			}
 			if (command.equals("performancetest")) {
-				Static441.method5568("Java toolkit: " + Static424.method5410(Static206.signLink));
-				Static441.method5568("GL toolkit:   " + Static424.method5410(Static206.signLink));
-				Static441.method5568("SSE toolkit:  " + Static424.method5410(Static206.signLink));
+				Static441.method5568("Java toolkit: " + Static424.method5410(GameShell.signLink));
+				Static441.method5568("GL toolkit:   " + Static424.method5410(GameShell.signLink));
+				Static441.method5568("SSE toolkit:  " + Static424.method5410(GameShell.signLink));
 				return;
 			}
 			if (command.equals("nonpcs")) {
@@ -513,7 +513,7 @@ public final class Static400 {
 	public static boolean method5187() {
 		if (ClientSettings.hasJS) {
 			try {
-				Static458.callJavaScriptMethod(Static206.signLink.hostApplet, "showVideoAd");
+				Static458.callJavaScriptMethod(GameShell.signLink.hostApplet, "showVideoAd");
 				return true;
 			} catch (@Pc(19) Throwable local19) {
 			}

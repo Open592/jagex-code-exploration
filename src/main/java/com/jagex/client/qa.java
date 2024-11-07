@@ -5,6 +5,7 @@ import java.awt.Dimension;
 import java.awt.Rectangle;
 import java.lang.reflect.Method;
 
+import com.jagex.client.utilities.ThreadingUtilities;
 import com.jagex.signlink.SignLink;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalClass;
@@ -107,7 +108,7 @@ public final class qa extends Class19 implements Interface4 {
 				}
 				return;
 			} catch (@Pc(44) Exception local44) {
-				Static435.sleepFor(200L);
+				ThreadingUtilities.sleepFor(200L);
 				local1++;
 			}
 		}
@@ -654,7 +655,7 @@ public final class qa extends Class19 implements Interface4 {
 					return;
 				}
 			} catch (@Pc(18) Exception local18) {
-				Static435.sleepFor(200L);
+				ThreadingUtilities.sleepFor(200L);
 				local1++;
 			}
 		}

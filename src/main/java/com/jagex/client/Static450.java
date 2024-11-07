@@ -194,7 +194,7 @@ public final class Static450 {
 
 	@OriginalMember(owner = "client!wq", name = "a", descriptor = "(B)I")
 	public static int method5664() {
-		if (Static320.aFrame3 == null) {
+		if (GameShell.aFrame3 == null) {
 			return Static41.aBoolean76 ? 2 : 1;
 		} else {
 			return 3;

@@ -9,20 +9,20 @@ public final class Static240 {
 	public static final short[] aShortArray251 = new short[] { 960, 957, -21568, -21571, 22464 };
 
 	@OriginalMember(owner = "client!md", name = "b", descriptor = "(Z)[Lclient!ic;")
-	public static Class103[] method5675() {
-		if (Static287.aClass103Array1 == null) {
-			@Pc(16) Class103[] local16 = Static204.method3184(Static206.signLink);
-			@Pc(20) Class103[] local20 = new Class103[local16.length];
+	public static GraphicsDeviceDisplayMode[] method5675() {
+		if (Static287.aGraphicsDeviceDisplayModeArray1 == null) {
+			@Pc(16) GraphicsDeviceDisplayMode[] local16 = GameShell.getFullScreenDisplayModes(GameShell.signLink);
+			@Pc(20) GraphicsDeviceDisplayMode[] local20 = new GraphicsDeviceDisplayMode[local16.length];
 			@Pc(22) int local22 = 0;
 			@Pc(66) int local66;
-			@Pc(72) Class103 local72;
+			@Pc(72) GraphicsDeviceDisplayMode local72;
 			label63: for (@Pc(24) int local24 = 0; local24 < local16.length; local24++) {
-				@Pc(30) Class103 local30 = local16[local24];
-				if ((local30.anInt3176 <= 0 || local30.anInt3176 >= 24) && local30.anInt3173 >= 800 && local30.anInt3174 >= 600 && (Static70.anInt1503 >= 96 || Static177.anInt2973 != 0 || local30.anInt3173 <= 1024 && local30.anInt3174 <= 768)) {
+				@Pc(30) GraphicsDeviceDisplayMode local30 = local16[local24];
+				if ((local30.bitDepth <= 0 || local30.bitDepth >= 24) && local30.width >= 800 && local30.height >= 600 && (Static70.anInt1503 >= 96 || Static177.anInt2973 != 0 || local30.width <= 1024 && local30.height <= 768)) {
 					for (local66 = 0; local66 < local22; local66++) {
 						local72 = local20[local66];
-						if (local30.anInt3173 == local72.anInt3173 && local72.anInt3174 == local30.anInt3174) {
-							if (local30.anInt3176 > local72.anInt3176) {
+						if (local30.width == local72.width && local72.height == local30.height) {
+							if (local30.bitDepth > local72.bitDepth) {
 								local20[local66] = local30;
 							}
 							continue label63;
@@ -32,16 +32,16 @@ public final class Static240 {
 					local22++;
 				}
 			}
-			Static287.aClass103Array1 = new Class103[local22];
-			Static459.method3332(local20, 0, Static287.aClass103Array1, 0, local22);
-			@Pc(128) int[] local128 = new int[Static287.aClass103Array1.length];
-			for (local66 = 0; local66 < Static287.aClass103Array1.length; local66++) {
-				local72 = Static287.aClass103Array1[local66];
-				local128[local66] = local72.anInt3173 * local72.anInt3174;
+			Static287.aGraphicsDeviceDisplayModeArray1 = new GraphicsDeviceDisplayMode[local22];
+			Static459.method3332(local20, 0, Static287.aGraphicsDeviceDisplayModeArray1, 0, local22);
+			@Pc(128) int[] local128 = new int[Static287.aGraphicsDeviceDisplayModeArray1.length];
+			for (local66 = 0; local66 < Static287.aGraphicsDeviceDisplayModeArray1.length; local66++) {
+				local72 = Static287.aGraphicsDeviceDisplayModeArray1[local66];
+				local128[local66] = local72.width * local72.height;
 			}
-			Static146.method214(Static287.aClass103Array1, local128);
+			Static146.method214(Static287.aGraphicsDeviceDisplayModeArray1, local128);
 		}
-		return Static287.aClass103Array1;
+		return Static287.aGraphicsDeviceDisplayModeArray1;
 	}
 
 	@OriginalMember(owner = "client!md", name = "b", descriptor = "(I)V")

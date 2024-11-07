@@ -1,5 +1,6 @@
 package com.jagex.client;
 
+import com.jagex.client.utilities.ThreadingUtilities;
 import com.jagex.signlink.MonotonicClock;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalClass;
@@ -60,7 +61,7 @@ public final class SystemMillisecondFrameTimer extends FrameTimer {
 		this.aLong63 += this.method1557();
 
 		if (this.aLong63 < this.aLong65) {
-			Static435.sleepFor((this.aLong65 - this.aLong63) / 1000000L);
+			ThreadingUtilities.sleepFor((this.aLong65 - this.aLong63) / 1000000L);
 			this.aLong64 += this.aLong65 - this.aLong63;
 			this.aLong63 += this.aLong65 - this.aLong63;
 			this.aLong65 += local4;

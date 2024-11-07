@@ -1,5 +1,6 @@
 package com.jagex.client;
 
+import com.jagex.client.utilities.ThreadingUtilities;
 import com.jagex.signlink.Message;
 import com.jagex.signlink.FileOnDisk;
 import com.jagex.signlink.MonotonicClock;
@@ -19,9 +20,9 @@ public final class Static316 {
 	public static void method4216() {
 		@Pc(7) FileOnDisk local7 = null;
 		try {
-			@Pc(16) Message local16 = Static206.signLink.emitResolvePreferencesFileLocationMessage("2");
+			@Pc(16) Message local16 = GameShell.signLink.emitResolvePreferencesFileLocationMessage("2");
 			while (local16.status == 0) {
-				Static435.sleepFor(1L);
+				ThreadingUtilities.sleepFor(1L);
 			}
 			if (local16.status == 1) {
 				local7 = (FileOnDisk) local16.output;

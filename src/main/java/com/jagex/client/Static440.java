@@ -25,10 +25,10 @@ public final class Static440 {
 	@OriginalMember(owner = "client!wf", name = "a", descriptor = "(IZI)V")
 	public static void method5561(@OriginalArg(1) boolean arg0, @OriginalArg(2) int arg1) {
 		if (arg1 == 0) {
-			Static122.aClass19_16 = Static455.method4241(Static80.anInterface7_3, Static323.aClass50_Sub1_1.anInt3440 * 2, GameShell.canvas, arg1, Static206.signLink);
+			Static122.aClass19_16 = Static455.method4241(Static80.anInterface7_3, Static323.aClass50_Sub1_1.anInt3440 * 2, GameShell.canvas, arg1, GameShell.signLink);
 		} else {
 			if (arg0) {
-				Static122.aClass19_16 = Static455.method4241(Static80.anInterface7_3, 0, GameShell.canvas, 0, Static206.signLink);
+				Static122.aClass19_16 = Static455.method4241(Static80.anInterface7_3, 0, GameShell.canvas, 0, GameShell.signLink);
 				Static122.aClass19_16.p(0);
 				@Pc(22) Class89 local22 = Static239.method3546(Static62.anInt1122, Static209.aClass76_48);
 				@Pc(31) Class46 local31 = Static122.aClass19_16.method4275(local22, Static456.method327(Static293.aClass76_60, Static62.anInt1122));
@@ -38,7 +38,7 @@ public final class Static440 {
 				Static122.aClass19_16.method4267();
 			}
 			try {
-				Static122.aClass19_16 = Static455.method4241(Static80.anInterface7_3, Static323.aClass50_Sub1_1.anInt3440 * 2, GameShell.canvas, arg1, Static206.signLink);
+				Static122.aClass19_16 = Static455.method4241(Static80.anInterface7_3, Static323.aClass50_Sub1_1.anInt3440 * 2, GameShell.canvas, arg1, GameShell.signLink);
 				if (Static122.aClass19_16.method4300()) {
 					@Pc(62) boolean local62 = true;
 					try {
@@ -54,7 +54,7 @@ public final class Static440 {
 					Static122.aClass19_16.method4244(local78);
 				}
 			} catch (@Pc(89) Throwable local89) {
-				Static122.aClass19_16 = Static455.method4241(Static80.anInterface7_3, 0, GameShell.canvas, 0, Static206.signLink);
+				Static122.aClass19_16 = Static455.method4241(Static80.anInterface7_3, 0, GameShell.canvas, 0, GameShell.signLink);
 				arg1 = 0;
 			}
 		}

@@ -2,6 +2,7 @@ package com.jagex.client;
 
 import java.awt.event.ActionEvent;
 
+import com.jagex.client.utilities.ThreadingUtilities;
 import com.jagex.signlink.SignLink;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalMember;
@@ -19,7 +20,7 @@ public final class Static441 {
 		}
 
 		for (@Pc(16) int i = 0; i < 50 && signLink.systemEventQueue.peekEvent() != null; i++) {
-			Static435.sleepFor(1L);
+			ThreadingUtilities.sleepFor(1L);
 		}
 
 		if (arg1 != null) {

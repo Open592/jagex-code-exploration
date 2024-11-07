@@ -36,19 +36,6 @@ public final class Static435 {
 		return local17;
 	}
 
-	@OriginalMember(owner = "client!vv", name = "a", descriptor = "(JI)V")
-	public static void sleepFor(@OriginalArg(0) long milliseconds) {
-		if (milliseconds <= 0L) {
-			return;
-		}
-		if (milliseconds % 10L == 0L) {
-			sleepUninterrupted(milliseconds - 1L);
-			sleepUninterrupted(1L);
-		} else {
-			sleepUninterrupted(milliseconds);
-		}
-	}
-
 	@OriginalMember(owner = "client!vv", name = "a", descriptor = "([II)Ljava/lang/String;")
 	public static String method5504(@OriginalArg(0) int[] arg0) {
 		@Pc(14) StringBuffer local14 = new StringBuffer();
@@ -74,11 +61,4 @@ public final class Static435 {
 		return local14.toString();
 	}
 
-	@OriginalMember(owner = "client!tp", name = "a", descriptor = "(IJ)V")
-	private static void sleepUninterrupted(@OriginalArg(1) long milliseconds) {
-		try {
-			Thread.sleep(milliseconds);
-		} catch (@Pc(11) InterruptedException ignored) {
-		}
-	}
 }

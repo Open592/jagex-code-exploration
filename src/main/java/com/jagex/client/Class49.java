@@ -2,6 +2,7 @@ package com.jagex.client;
 
 import java.awt.Component;
 
+import com.jagex.client.utilities.ThreadingUtilities;
 import com.jagex.signlink.MonotonicClock;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalClass;
@@ -206,7 +207,7 @@ public class Class49 {
 			if (local15) {
 				Static62.aClass227_1.aBoolean589 = true;
 				while (Static62.aClass227_1.aBoolean590) {
-					Static435.sleepFor(50L);
+					ThreadingUtilities.sleepFor(50L);
 				}
 				Static62.aClass227_1 = null;
 			}

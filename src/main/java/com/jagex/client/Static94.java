@@ -3,6 +3,7 @@ package com.jagex.client;
 import java.io.DataInputStream;
 import java.net.URL;
 
+import com.jagex.client.utilities.ThreadingUtilities;
 import com.jagex.signlink.Message;
 import com.jagex.signlink.SignLink;
 import org.openrs2.deob.annotation.OriginalArg;
@@ -70,7 +71,7 @@ public final class Static94 {
 				@Pc(99) Message message = Static386.signLink.emitOpenURLStreamMessage(new URL(Static386.signLink.hostApplet.getCodeBase(), "clienterror.ws?c=" + Static13.gameVersion + "&u=" + Static286.aLong174 + "&v1=" + SignLink.javaVendor + "&v2=" + SignLink.javaVersion + "&e=" + errorMessage));
 
 				while (message.status == 0) {
-					Static435.sleepFor(1L);
+					ThreadingUtilities.sleepFor(1L);
 				}
 
 				if (message.status == 1) {

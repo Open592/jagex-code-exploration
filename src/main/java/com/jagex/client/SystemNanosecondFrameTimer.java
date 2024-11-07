@@ -1,5 +1,6 @@
 package com.jagex.client;
 
+import com.jagex.client.utilities.ThreadingUtilities;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalClass;
 import org.openrs2.deob.annotation.OriginalMember;
@@ -71,7 +72,7 @@ public final class SystemNanosecondFrameTimer extends FrameTimer {
 		this.aLong32 += this.getAverageIntervalNanoTime();
 
 		if (this.aLong33 > this.aLong32) {
-			Static435.sleepFor((this.aLong33 - this.aLong32) / 1000000L);
+			ThreadingUtilities.sleepFor((this.aLong33 - this.aLong32) / 1000000L);
 			this.lastNanoTime += this.aLong33 - this.aLong32;
 			this.aLong32 += this.aLong33 - this.aLong32;
 			this.aLong33 += frameTimeInNanoseconds;

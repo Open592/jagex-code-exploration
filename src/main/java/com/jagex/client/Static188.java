@@ -28,6 +28,6 @@ public final class Static188 {
 		if (!Static122.aClass19_16.method4245()) {
 			arg3 = true;
 		}
-		Static292.method4020(arg0, local13, arg2, arg3, arg1);
+		GameShell.method4020(arg0, local13, arg2, arg3, arg1);
 	}
 }
