@@ -1,5 +1,6 @@
 package com.jagex.client;
 
+import com.jagex.client.display.FullScreenMode;
 import com.jagex.client.utilities.ThreadingUtilities;
 import com.jagex.signlink.Message;
 import com.jagex.signlink.SignLink;
@@ -89,7 +90,7 @@ public abstract class GameShell extends Applet implements Runnable, FocusListene
 	public static Frame frame;
 
 	@OriginalMember(owner = "client!qb", name = "z", descriptor = "Ljava/awt/Frame;")
-	public static Frame aFrame3;
+	public static Frame fullScreenFrame;
 
 	@OriginalMember(owner = "client!tf", name = "h", descriptor = "Ljava/awt/Font;")
 	public static Font helveticaBoldFont;
@@ -511,27 +512,27 @@ public abstract class GameShell extends Applet implements Runnable, FocusListene
 
 	@OriginalMember(owner = "client!op", name = "a", descriptor = "(IIBIZI)V")
 	public static void method4020(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(3) int arg2, @OriginalArg(4) boolean arg3, @OriginalArg(5) int arg4) {
-		if (aFrame3 != null && (arg0 != 3 || arg2 != Static323.aClass50_Sub1_1.anInt3431 || Static323.aClass50_Sub1_1.anInt3450 != arg4)) {
-			Static446.method5620(signLink, aFrame3);
-			aFrame3 = null;
+		if (fullScreenFrame != null && (arg0 != 3 || arg2 != Static323.aClass50_Sub1_1.anInt3431 || Static323.aClass50_Sub1_1.anInt3450 != arg4)) {
+			FullScreenMode.exitFullScreenMode(signLink, fullScreenFrame);
+			fullScreenFrame = null;
 		}
-		if (arg0 == 3 && aFrame3 == null) {
-			aFrame3 = method86(arg2, signLink, arg4, 0);
-			if (aFrame3 != null) {
+		if (arg0 == 3 && fullScreenFrame == null) {
+			fullScreenFrame = FullScreenMode.enterFullScreenMode(arg2, signLink, arg4, 0);
+			if (fullScreenFrame != null) {
 				Static323.aClass50_Sub1_1.anInt3431 = arg2;
 				Static323.aClass50_Sub1_1.anInt3450 = arg4;
 				Static323.aClass50_Sub1_1.method2856(signLink);
 			}
 		}
-		if (arg0 == 3 && aFrame3 == null) {
+		if (arg0 == 3 && fullScreenFrame == null) {
 			method4020(Static323.aClass50_Sub1_1.anInt3447, arg1, -1, true, -1);
 			return;
 		}
 		@Pc(78) Container local78;
 		@Pc(91) Insets local91;
-		if (aFrame3 != null) {
+		if (fullScreenFrame != null) {
 			Static17.anInt222 = arg4;
-			local78 = aFrame3;
+			local78 = fullScreenFrame;
 			Static425.anInt7000 = arg2;
 		} else if (frame == null) {
 			local78 = signLink.hostApplet;
@@ -598,77 +599,6 @@ public abstract class GameShell extends Applet implements Runnable, FocusListene
 			Static416.aBooleanArray21[local166] = true;
 		}
 		aBoolean189 = true;
-	}
-
-	@OriginalMember(owner = "client!ag", name = "a", descriptor = "(IILclient!et;III)Ljava/awt/Frame;")
-	public static Frame method86(@OriginalArg(0) int arg0, @OriginalArg(2) SignLink signLink, @OriginalArg(3) int arg2, @OriginalArg(4) int arg3) {
-		if (!signLink.method1754()) {
-			return null;
-		}
-
-		@Pc(20) GraphicsDeviceDisplayMode[] displayModes = getFullScreenDisplayModes(signLink);
-
-		// NOTE: Was originally checking for `null` but if our signlink message returns
-		// an error we don't return `null` we return an empty array.
-		if (displayModes.length == 0) {
-			return null;
-		}
-
-		@Pc(26) boolean local26 = false;
-		for (@Pc(28) int local28 = 0; local28 < displayModes.length; local28++) {
-			if (displayModes[local28].width == arg0 && displayModes[local28].height == arg2 && (!local26 || displayModes[local28].bitDepth > arg3)) {
-				local26 = true;
-				arg3 = displayModes[local28].bitDepth;
-			}
-		}
-		if (!local26) {
-			return null;
-		}
-		@Pc(94) Message local94 = signLink.emitEnterFullScreenModeMessage(arg2, arg3, arg0);
-		while (local94.status == 0) {
-			ThreadingUtilities.sleepFor(10L);
-		}
-		@Pc(116) Frame local116 = (Frame) local94.output;
-		if (local116 == null) {
-			return null;
-		} else if (local94.status == 2) {
-			Static446.method5620(signLink, local116);
-			return null;
-		} else {
-			return local116;
-		}
-	}
-
-	@OriginalMember(owner = "client!kg", name = "a", descriptor = "(Lclient!et;I)[Lclient!ic;")
-	public static GraphicsDeviceDisplayMode[] getFullScreenDisplayModes(SignLink signLink) {
-		if (!signLink.method1754()) {
-			return new GraphicsDeviceDisplayMode[0];
-		}
-
-		Message getFullScreenDisplayModesMessage = signLink.emitGetFullScreenDisplayModesMessage();
-
-		while (getFullScreenDisplayModesMessage.isInProgress()) {
-			ThreadingUtilities.sleepFor(10L);
-		}
-
-		if (!getFullScreenDisplayModesMessage.isSuccess()) {
-			return new GraphicsDeviceDisplayMode[0];
-		}
-
-		int[] output = (int[]) getFullScreenDisplayModesMessage.output;
-		GraphicsDeviceDisplayMode[] displayModes = new GraphicsDeviceDisplayMode[output.length >> 2];
-
-		for (int i = 0; i < displayModes.length; i++) {
-			GraphicsDeviceDisplayMode displayMode = new GraphicsDeviceDisplayMode();
-			displayModes[i] = displayMode;
-
-			displayMode.width = output[i << 2];
-			displayMode.height = output[(i << 2) + 1];
-			displayMode.bitDepth = output[(i << 2) + 2];
-			displayMode.refreshRate = output[(i << 2) + 3];
-		}
-
-		return displayModes;
 	}
 
 	@OriginalMember(owner = "client!o", name = "a", descriptor = "(I)Z")
@@ -781,8 +711,8 @@ public abstract class GameShell extends Applet implements Runnable, FocusListene
 			canvas.getParent().remove(canvas);
 		}
 		@Pc(18) Container local18;
-		if (aFrame3 != null) {
-			local18 = aFrame3;
+		if (fullScreenFrame != null) {
+			local18 = fullScreenFrame;
 		} else if (frame == null) {
 			local18 = signLink.hostApplet;
 		} else {
@@ -1192,7 +1122,7 @@ public abstract class GameShell extends Applet implements Runnable, FocusListene
 			canvas.setSize(Static141.width, Static302.height);
 			canvas.setVisible(true);
 
-			if (frame != null && aFrame3 == null) {
+			if (frame != null && fullScreenFrame == null) {
 				@Pc(86) Insets local86 = frame.getInsets();
 				canvas.setLocation(Static230.xPOS + local86.left, local86.top - -Static303.yPOS);
 			} else {

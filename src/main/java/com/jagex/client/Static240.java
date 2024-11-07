@@ -1,5 +1,7 @@
 package com.jagex.client;
 
+import com.jagex.client.display.FullScreenMode;
+import com.jagex.client.display.GraphicsDeviceDisplayMode;
 import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;
 
@@ -11,7 +13,7 @@ public final class Static240 {
 	@OriginalMember(owner = "client!md", name = "b", descriptor = "(Z)[Lclient!ic;")
 	public static GraphicsDeviceDisplayMode[] method5675() {
 		if (Static287.aGraphicsDeviceDisplayModeArray1 == null) {
-			@Pc(16) GraphicsDeviceDisplayMode[] local16 = GameShell.getFullScreenDisplayModes(GameShell.signLink);
+			@Pc(16) GraphicsDeviceDisplayMode[] local16 = FullScreenMode.getFullScreenDisplayModes(GameShell.signLink);
 			@Pc(20) GraphicsDeviceDisplayMode[] local20 = new GraphicsDeviceDisplayMode[local16.length];
 			@Pc(22) int local22 = 0;
 			@Pc(66) int local66;

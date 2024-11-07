@@ -39,7 +39,7 @@ public final class Static348 {
 
 	@OriginalMember(owner = "client!rn", name = "c", descriptor = "(B)V")
 	public static void method4697() {
-		if (GameShell.aFrame3 != null) {
+		if (GameShell.fullScreenFrame != null) {
 			return;
 		}
 		@Pc(16) int local16 = Static230.xPOS;

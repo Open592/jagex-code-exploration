@@ -1,5 +1,6 @@
 package com.jagex.client;
 
+import com.jagex.client.display.GraphicsDeviceDisplayMode;
 import com.jagex.client.jagex3.jagmisc.jagmisc;
 import com.jagex.signlink.MonotonicClock;
 import com.jagex.signlink.SignLink;
@@ -3665,11 +3666,11 @@ public final class Static271 {
 					local157 = anIntArray330[anInt5095];
 					local192 = anIntArray330[anInt5095 + 1];
 					Static188.method4107(3, local192, local157, false);
-					anIntArray330[anInt5095++] = GameShell.aFrame3 == null ? 0 : 1;
+					anIntArray330[anInt5095++] = GameShell.fullScreenFrame == null ? 0 : 1;
 					return;
 				}
 				if (arg0 == 5301) {
-					if (GameShell.aFrame3 != null) {
+					if (GameShell.fullScreenFrame != null) {
 						Static188.method4107(Static323.aClass50_Sub1_1.anInt3447, -1, -1, false);
 					}
 					return;
@@ -3780,7 +3781,7 @@ public final class Static271 {
 						return;
 					}
 					if (arg0 == 5411) {
-						if (GameShell.aFrame3 != null) {
+						if (GameShell.fullScreenFrame != null) {
 							Static188.method4107(Static323.aClass50_Sub1_1.anInt3447, -1, -1, false);
 						}
 						if (GameShell.frame != null) {
@@ -3809,7 +3810,7 @@ public final class Static271 {
 						return;
 					}
 					if (arg0 == 5421) {
-						if (GameShell.aFrame3 != null) {
+						if (GameShell.fullScreenFrame != null) {
 							Static188.method4107(Static323.aClass50_Sub1_1.anInt3447, -1, -1, false);
 						}
 						local75 = aStringArray21[--anInt5092];

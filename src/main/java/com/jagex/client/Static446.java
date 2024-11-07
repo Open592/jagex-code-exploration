@@ -1,10 +1,5 @@
 package com.jagex.client;
 
-import java.awt.Frame;
-
-import com.jagex.client.utilities.ThreadingUtilities;
-import com.jagex.signlink.Message;
-import com.jagex.signlink.SignLink;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;
@@ -19,22 +14,6 @@ public final class Static446 {
 
 	@OriginalMember(owner = "client!wl", name = "c", descriptor = "Lclient!ho;")
 	public static final Class98 aClass98_18 = new Class98(1, 2, 2, 0);
-
-	@OriginalMember(owner = "client!wl", name = "a", descriptor = "(Lclient!et;BLjava/awt/Frame;)V")
-	public static void method5620(@OriginalArg(0) SignLink arg0, @OriginalArg(2) Frame arg1) {
-		while (true) {
-			@Pc(6) Message local6 = arg0.emitExitFullScreenModeMessage(arg1);
-			while (local6.status == 0) {
-				ThreadingUtilities.sleepFor(10L);
-			}
-			if (local6.status == 1) {
-				arg1.setVisible(false);
-				arg1.dispose();
-				return;
-			}
-			ThreadingUtilities.sleepFor(100L);
-		}
-	}
 
 	@OriginalMember(owner = "client!wl", name = "a", descriptor = "(IIIIIII)V")
 	public static void method5621(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4, @OriginalArg(5) int arg5) {

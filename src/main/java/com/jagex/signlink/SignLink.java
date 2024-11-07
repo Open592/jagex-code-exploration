@@ -791,7 +791,8 @@ public final class SignLink implements Runnable {
 		}
 	}
 
-	public boolean method1754() {
+	// TODO: Hmm, is this correct? Maybe we are missing something here?
+	public boolean isFullScreenModeSupported() {
 		return false;
 	}
 }

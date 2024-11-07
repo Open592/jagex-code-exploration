@@ -1,5 +1,6 @@
 package com.jagex.client;
 
+import com.jagex.client.display.FullScreenMode;
 import com.jagex.client.jagex3.jagmisc.jagmisc;
 import com.jagex.client.utilities.ThreadingUtilities;
 import com.jagex.signlink.Message;
@@ -247,7 +248,7 @@ public final class client extends GameShell {
 
 	@OriginalMember(owner = "client!cc", name = "a", descriptor = "(Z)V")
 	public static void method3938() {
-		if (GameShell.aFrame3 != null) {
+		if (GameShell.fullScreenFrame != null) {
 			return;
 		}
 
@@ -2008,7 +2009,7 @@ public final class client extends GameShell {
 						Static300.aClass22_246 = null;
 						return true;
 					} else if (Static187.aClass22_159 == Static300.aClass22_246) {
-						if (GameShell.aFrame3 != null) {
+						if (GameShell.fullScreenFrame != null) {
 							Static188.method4107(Static323.aClass50_Sub1_1.anInt3447, -1, -1, false);
 						}
 						@Pc(1483) byte[] local1483 = new byte[Static454.anInt4075];
@@ -3827,9 +3828,9 @@ public final class client extends GameShell {
 			Static122.aClass19_16.method4267();
 		}
 
-		if (GameShell.aFrame3 != null) {
-			Static446.method5620(GameShell.signLink, GameShell.aFrame3);
-			GameShell.aFrame3 = null;
+		if (GameShell.fullScreenFrame != null) {
+			FullScreenMode.exitFullScreenMode(GameShell.signLink, GameShell.fullScreenFrame);
+			GameShell.fullScreenFrame = null;
 		}
 
 		if (Static125.aServerConnection_5 != null) {
@@ -3873,7 +3874,7 @@ public final class client extends GameShell {
 		}
 		@Pc(98) int local98;
 		@Pc(102) int local102;
-		if (GameShell.aFrame3 == null) {
+		if (GameShell.fullScreenFrame == null) {
 			@Pc(89) Container local89;
 			if (GameShell.frame == null) {
 				local89 = GameShell.signLink.hostApplet;
@@ -3897,7 +3898,7 @@ public final class client extends GameShell {
 				Static453.aLong223 = MonotonicClock.getCurrentTimeInMilliseconds() + 500L;
 			}
 		}
-		if (GameShell.aFrame3 != null && !Static265.aBoolean457 && (Static403.anInt6667 == 30 || Static403.anInt6667 == 10)) {
+		if (GameShell.fullScreenFrame != null && !Static265.aBoolean457 && (Static403.anInt6667 == 30 || Static403.anInt6667 == 10)) {
 			Static188.method4107(Static323.aClass50_Sub1_1.anInt3447, -1, -1, false);
 		}
 		@Pc(176) boolean local176 = false;
