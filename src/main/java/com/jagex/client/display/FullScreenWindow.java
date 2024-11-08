@@ -7,7 +7,7 @@ import org.openrs2.deob.annotation.OriginalMember;
 
 import java.awt.*;
 
-public final class FullScreenMode {
+public final class FullScreenWindow {
     @OriginalMember(owner = "client!ag", name = "a", descriptor = "(IILclient!et;III)Ljava/awt/Frame;")
     public static Frame enterFullScreenMode(int width, SignLink signLink, int height, int bitDepth) {
         if (!signLink.isFullScreenModeSupported()) {
