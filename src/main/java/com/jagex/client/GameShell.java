@@ -227,11 +227,6 @@ public abstract class GameShell extends Applet implements Runnable, FocusListene
 		Static120.anInt2600 = arg2;
 	}
 
-	@OriginalMember(owner = "client!o", name = "a", descriptor = "(BI[B)I")
-	public static int method879(@OriginalArg(1) int arg0, @OriginalArg(2) byte[] arg1) {
-		return CRC32Checksum.calculateChecksum(arg1, arg0, 0);
-	}
-
 	@OriginalMember(owner = "client!o", name = "c", descriptor = "(I)V")
 	public static void method882(@OriginalArg(0) int arg0) {
 		Static358.anInt6251 = arg0;

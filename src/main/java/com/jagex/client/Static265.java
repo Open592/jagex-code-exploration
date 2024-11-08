@@ -65,15 +65,19 @@ public final class Static265 {
 	}
 
 	@OriginalMember(owner = "client!nj", name = "a", descriptor = "(ZIZII)Lclient!fs;")
-	public static Class76 method3820(@OriginalArg(0) boolean arg0, @OriginalArg(1) int arg1, @OriginalArg(2) boolean arg2) {
-		@Pc(5) Class222 local5 = null;
+	public static Class76 method3820(boolean arg0, int archive, boolean arg2) {
+		Class222 local5 = null;
+
 		if (Static88.aClass139_1 != null) {
-			local5 = new Class222(arg1, Static88.aClass139_1, Static86.aClass139Array1[arg1], 1000000);
+			local5 = new Class222(archive, Static88.aClass139_1, Static86.aClass139Array1[archive], 1000000);
 		}
-		Static119.aClass143_Sub1Array1[arg1] = Static94.aClass159_1.method3817(Static225.aClass222_2, local5, arg1);
+
+		Static119.aClass143_Sub1Array1[archive] = Static94.aClass159_1.method3817(Static225.aClass222_2, local5, archive);
+
 		if (arg2) {
-			Static119.aClass143_Sub1Array1[arg1].method3526();
+			Static119.aClass143_Sub1Array1[archive].method3526();
 		}
-		return new Class76(Static119.aClass143_Sub1Array1[arg1], arg0, 1);
+
+		return new Class76(Static119.aClass143_Sub1Array1[archive], arg0, 1);
 	}
 }

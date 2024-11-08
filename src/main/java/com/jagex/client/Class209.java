@@ -48,15 +48,17 @@ public final class Class209 {
 	public int[] anIntArray433;
 
 	@OriginalMember(owner = "client!rt", name = "k", descriptor = "I")
-	public final int anInt6111;
+	public final int checksum;
 
 	@OriginalMember(owner = "client!rt", name = "<init>", descriptor = "([BI)V")
-	public Class209(@OriginalArg(0) byte[] arg0, @OriginalArg(1) int arg1) {
-		this.anInt6111 = GameShell.method879(arg0.length, arg0);
-		if (this.anInt6111 != arg1) {
+	public Class209(@OriginalArg(0) byte[] buffer, @OriginalArg(1) int expectedChecksum) {
+		this.checksum = CRC32Checksum.calculateChecksum(buffer.length, buffer);
+
+		if (this.checksum != expectedChecksum) {
 			throw new RuntimeException();
 		}
-		this.method4767(arg0);
+
+		this.method4767(buffer);
 	}
 
 	@OriginalMember(owner = "client!rt", name = "a", descriptor = "([BI)V")

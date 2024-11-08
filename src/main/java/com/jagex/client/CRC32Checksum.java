@@ -12,6 +12,11 @@ public final class CRC32Checksum {
         init();
     }
 
+    @OriginalMember(owner = "client!o", name = "a", descriptor = "(BI[B)I")
+    public static int calculateChecksum(@OriginalArg(1) int length, @OriginalArg(2) byte[] buffer) {
+        return calculateChecksum(buffer, length, 0);
+    }
+
     @OriginalMember(owner = "client!ja", name = "a", descriptor = "(IB[BI)I")
     public static int calculateChecksum(@OriginalArg(2) byte[] buffer, @OriginalArg(3) int length, @OriginalArg(0) int offset) {
         @Pc(7) int checksum = -1;

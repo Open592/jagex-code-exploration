@@ -20,20 +20,20 @@ public final class Class222 {
 	private int anInt6379 = 65000;
 
 	@OriginalMember(owner = "client!st", name = "k", descriptor = "I")
-	private final int anInt6382;
+	private final int archive;
 
 	@OriginalMember(owner = "client!st", name = "<init>", descriptor = "(ILclient!lq;Lclient!lq;I)V")
-	public Class222(@OriginalArg(0) int arg0, @OriginalArg(1) Class139 arg1, @OriginalArg(2) Class139 arg2, @OriginalArg(3) int arg3) {
+	public Class222(@OriginalArg(0) int archive, @OriginalArg(1) Class139 arg1, @OriginalArg(2) Class139 arg2, @OriginalArg(3) int arg3) {
 		this.aClass139_3 = arg2;
 		this.aClass139_2 = arg1;
-		this.anInt6382 = arg0;
+		this.archive = archive;
 		this.anInt6379 = arg3;
 	}
 
 	@OriginalMember(owner = "client!st", name = "toString", descriptor = "()Ljava/lang/String;")
 	@Override
 	public String toString() {
-		return "Cache:" + this.anInt6382;
+		return "Cache:" + this.archive;
 	}
 
 	@OriginalMember(owner = "client!st", name = "a", descriptor = "(II)[B")
@@ -68,7 +68,7 @@ public final class Class222 {
 						@Pc(215) int local215 = (Static166.aByteArray37[3] & 0xFF) + ((Static166.aByteArray37[2] & 0xFF) << 8);
 						@Pc(237) int local237 = ((Static166.aByteArray37[5] & 0xFF) << 8) + ((Static166.aByteArray37[4] & 0xFF) << 16) + (Static166.aByteArray37[6] & 0xFF);
 						@Pc(243) int local243 = Static166.aByteArray37[7] & 0xFF;
-						if (arg0 == local201 && local147 == local215 && this.anInt6382 == local243) {
+						if (arg0 == local201 && local147 == local215 && this.archive == local243) {
 							if (local237 >= 0 && (long) local237 <= this.aClass139_2.method3463() / 520L) {
 								for (@Pc(290) int local290 = 0; local290 < local170; local290++) {
 									local137[local139++] = Static166.aByteArray37[local290 + 8];
@@ -152,7 +152,7 @@ public final class Class222 {
 						local169 = ((Static166.aByteArray37[4] & 0xFF) << 16) + ((Static166.aByteArray37[5] & 0xFF) << 8) + (Static166.aByteArray37[6] & 0xFF);
 						@Pc(242) int local242 = ((Static166.aByteArray37[2] & 0xFF) << 8) + (Static166.aByteArray37[3] & 0xFF);
 						@Pc(248) int local248 = Static166.aByteArray37[7] & 0xFF;
-						if (arg0 != local204 || local242 != local165 || this.anInt6382 != local248) {
+						if (arg0 != local204 || local242 != local165 || this.archive != local248) {
 							return false;
 						}
 						if (local169 < 0 || (long) local169 > this.aClass139_2.method3463() / 520L) {
@@ -176,7 +176,7 @@ public final class Class222 {
 					if (arg2 - local163 <= 512) {
 						local169 = 0;
 					}
-					Static166.aByteArray37[7] = (byte) this.anInt6382;
+					Static166.aByteArray37[7] = (byte) this.archive;
 					Static166.aByteArray37[5] = (byte) (local169 >> 8);
 					Static166.aByteArray37[4] = (byte) (local169 >> 16);
 					Static166.aByteArray37[6] = (byte) local169;
