@@ -18,7 +18,7 @@ public final class Static400 {
 
 	@OriginalMember(owner = "client!ue", name = "a", descriptor = "(Ljava/lang/String;ZI)V")
 	public static void method5186(@OriginalArg(0) String command, @OriginalArg(1) boolean arg1) {
-		if (ClientSettings.modewhere == ClientSettings.MODEWHERE_LIVE && Static104.anInt2252 < 2) {
+		if (ClientSettings.modewhere.isLive() && Static104.anInt2252 < 2) {
 			return;
 		}
 		if (command.equalsIgnoreCase("errortest")) {
@@ -497,7 +497,7 @@ public final class Static400 {
 				Static3.aClass4_Sub12_Sub1_5.p1(arg1 ? 1 : 0);
 				Static3.aClass4_Sub12_Sub1_5.pjstr(command);
 			}
-			if (command.startsWith("fps ") && ClientSettings.MODEWHERE_LIVE != ClientSettings.modewhere) {
+			if (command.startsWith("fps ") && !ClientSettings.modewhere.isLive()) {
 				GameShell.calculateFrameTimeFromFPS(Static198.method3113(command.substring(4)));
 				return;
 			}

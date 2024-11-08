@@ -1,5 +1,6 @@
 package com.jagex.client;
 
+import com.jagex.client.env.ModeWhere;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;
@@ -176,17 +177,21 @@ public final class Static22 {
 	@OriginalMember(owner = "client!av", name = "h", descriptor = "(I)Ljava/lang/String;")
 	public static String method298() {
 		@Pc(12) String local12 = "www";
-		if (ClientSettings.MODEWHERE_WTRC == ClientSettings.modewhere) {
+
+		if (ClientSettings.modewhere == ModeWhere.WTRC) {
 			local12 = "www-wtrc";
-		} else if (ClientSettings.MODEWHERE_WTQA == ClientSettings.modewhere) {
+		} else if (ClientSettings.modewhere == ModeWhere.WTQA) {
 			local12 = "www-wtqa";
-		} else if (ClientSettings.modewhere == ClientSettings.MODEWHERE_WTWIP) {
+		} else if (ClientSettings.modewhere == ModeWhere.WTWIP) {
 			local12 = "www-wtwip";
 		}
+
 		@Pc(33) String local33 = "";
+
 		if (ClientSettings.settings != null) {
 			local33 = "/p=" + ClientSettings.settings;
 		}
+
 		return "http://" + local12 + "." + ClientSettings.currentGameDetails.name + ".com/l=" + ClientSettings.langID + "/a=" + ClientSettings.affiliateID + local33 + "/";
 	}
 }

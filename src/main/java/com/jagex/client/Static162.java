@@ -35,7 +35,7 @@ public final class Static162 {
 			return false;
 		} else if (SignLink.anInt1987 == 3) {
 			@Pc(39) String local39 = "";
-			if (ClientSettings.MODEWHERE_LIVE != ClientSettings.modewhere) {
+			if (!ClientSettings.modewhere.isLive()) {
 				local39 = ":" + (local7.anInt3881 + 7000);
 			}
 			@Pc(55) String local55 = "";
@@ -52,7 +52,7 @@ public final class Static162 {
 		} else {
 			Static56.anInt1028 = local7.anInt3881;
 			client.host = local7.aString38;
-			if (ClientSettings.modewhere != ClientSettings.MODEWHERE_LIVE) {
+			if (!ClientSettings.modewhere.isLive()) {
 				client.fallbackServerPort = Static56.anInt1028 + 50000;
 				client.primaryServerPort = Static56.anInt1028 + 40000;
 				client.port = client.primaryServerPort;

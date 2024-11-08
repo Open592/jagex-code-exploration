@@ -72,7 +72,7 @@ public final class Static409 {
 		Static357.method4846();
 		Static441.method5571();
 		Static48.method789();
-		if (ClientSettings.MODEWHERE_LIVE != ClientSettings.modewhere) {
+		if (!ClientSettings.modewhere.isLive()) {
 			for (@Pc(76) int local76 = 0; local76 < Static392.aByteArrayArray28.length; local76++) {
 				Static392.aByteArrayArray28[local76] = null;
 			}

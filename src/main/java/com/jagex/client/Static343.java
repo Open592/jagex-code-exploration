@@ -29,7 +29,7 @@ public final class Static343 {
 
 	@OriginalMember(owner = "client!ri", name = "b", descriptor = "(B)V")
 	public static void method744() {
-		if (ClientSettings.modewhere != ClientSettings.MODEWHERE_LOCAL) {
+		if (!ClientSettings.modewhere.isLocal()) {
 			try {
 				Static458.callJavaScriptMethod(Static6.client, "tbrefresh");
 			} catch (@Pc(19) Throwable local19) {

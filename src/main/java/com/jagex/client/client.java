@@ -2,6 +2,7 @@ package com.jagex.client;
 
 import com.jagex.client.display.FullScreenWindow;
 import com.jagex.client.env.ModeWhat;
+import com.jagex.client.env.ModeWhere;
 import com.jagex.client.jagex3.jagmisc.jagmisc;
 import com.jagex.client.utilities.ThreadingUtilities;
 import com.jagex.signlink.Message;
@@ -186,7 +187,7 @@ public final class client extends GameShell {
 			}
 
 			ClientSettings.worldID = Integer.parseInt(arguments[0]);
-			ClientSettings.modewhere = ClientSettings.MODEWHERE_LOCAL;
+			ClientSettings.modewhere = ModeWhere.LOCAL;
 
 			Optional<ModeWhat> modeWhatFromArguments = ModeWhat.fromName(arguments[1]);
 
@@ -280,7 +281,7 @@ public final class client extends GameShell {
 			Static303.yPOS = 0;
 			Static230.xPOS = 0;
 		}
-		if (ClientSettings.modewhere != ClientSettings.MODEWHERE_LIVE) {
+		if (!ClientSettings.modewhere.isLive()) {
 			@Pc(132) boolean local132;
 			if (Static141.width < 1024 && Static302.height < 768) {
 				local132 = true;
@@ -1141,7 +1142,7 @@ public final class client extends GameShell {
 						} catch (@Pc(870) Throwable local870) {
 						}
 					}
-					if (ClientSettings.MODEWHERE_LIVE == ClientSettings.modewhere) {
+					if (ClientSettings.modewhere.isLive()) {
 						try {
 							Static458.callJavaScriptMethod(GameShell.signLink.hostApplet, "loggedin");
 						} catch (@Pc(908) Throwable local908) {
@@ -3365,7 +3366,7 @@ public final class client extends GameShell {
 
 	@OriginalMember(owner = "client!vi", name = "b", descriptor = "(Z)Z")
 	public static boolean areModeratorPrivilegesAvailable() {
-		return ClientSettings.MODEWHERE_LIVE != ClientSettings.modewhere || Static104.anInt2252 >= 2;
+		return !ClientSettings.modewhere.isLive() || Static104.anInt2252 >= 2;
 	}
 
 	@OriginalMember(owner = "client!mh", name = "a", descriptor = "(ILclient!bf;)V")
@@ -4237,12 +4238,7 @@ public final class client extends GameShell {
 		}
 
 		ClientSettings.worldID = Integer.parseInt(this.getParameter("worldid"));
-		ClientSettings.modewhere = ClientSettings.resolveModeWhereFromId(Integer.parseInt(this.getParameter("modewhere")));
-
-		if (!ClientSettings.isStagingEnvironment(ClientSettings.modewhere) && ClientSettings.MODEWHERE_LIVE != ClientSettings.modewhere) {
-			ClientSettings.modewhere = ClientSettings.MODEWHERE_LIVE;
-		}
-
+		ClientSettings.modewhere = ModeWhere.fromId(Integer.parseInt(this.getParameter("modewhere"))).orElse(ModeWhere.LIVE);
 		ClientSettings.modewhat = ModeWhat.fromId(Integer.parseInt(this.getParameter("modewhat"))).orElse(ModeWhat.LIVE);
 
 		try {
@@ -4357,21 +4353,21 @@ public final class client extends GameShell {
 		aClass254_3 = new Class254(GameShell.signLink);
 		js5Connection = new JS5Connection();
 
-		if (ClientSettings.MODEWHERE_LIVE != ClientSettings.modewhere) {
+		if (!ClientSettings.modewhere.isLive()) {
 			Static392.aByteArrayArray28 = new byte[50][];
 		}
 
 		Static323.aClass50_Sub1_1 = new Class50_Sub1(GameShell.signLink);
 
-		if (ClientSettings.modewhere == ClientSettings.MODEWHERE_LIVE) {
+		if (ClientSettings.modewhere.isLive()) {
 			Static13.host = this.getCodeBase().getHost();
 			Static133.JS5Port = 43594;
 			Static11.HTTPPort = 443;
-		} else if (ClientSettings.isStagingEnvironment(ClientSettings.modewhere)) {
+		} else if (ClientSettings.modewhere.isStagingEnvironment()) {
 			Static13.host = this.getCodeBase().getHost();
 			Static133.JS5Port = ClientSettings.worldID + 40000;
 			Static11.HTTPPort = ClientSettings.worldID + 50000;
-		} else if (ClientSettings.modewhere == ClientSettings.MODEWHERE_LOCAL) {
+		} else if (ClientSettings.modewhere.isLocal()) {
 			Static133.JS5Port = ClientSettings.worldID + 40000;
 			Static13.host = "127.0.0.1";
 			Static11.HTTPPort = ClientSettings.worldID + 50000;
@@ -4438,7 +4434,7 @@ public final class client extends GameShell {
 			Static425.aClass139_5 = null;
 		}
 
-		if (ClientSettings.MODEWHERE_LIVE != ClientSettings.modewhere) {
+		if (!ClientSettings.modewhere.isLive()) {
 			Static325.isFPSMonitorActive = true;
 		}
 

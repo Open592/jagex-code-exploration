@@ -1,30 +1,10 @@
 package com.jagex.client;
 
 import com.jagex.client.env.ModeWhat;
-import org.openrs2.deob.annotation.OriginalArg;
+import com.jagex.client.env.ModeWhere;
 import org.openrs2.deob.annotation.OriginalMember;
 
-import java.util.Set;
-
 public final class ClientSettings {
-    @OriginalMember(owner = "client!st", name = "f", descriptor = "Lclient!sp;")
-    public static final ModeWhere MODEWHERE_LIVE = new ModeWhere("LIVE", 0);
-
-    @OriginalMember(owner = "client!client", name = "fb", descriptor = "Lclient!sp;")
-    public static final ModeWhere MODEWHERE_WTRC = new ModeWhere("WTRC", 1);
-
-    @OriginalMember(owner = "client!ku", name = "m", descriptor = "Lclient!sp;")
-    public static final ModeWhere MODEWHERE_WTQA = new ModeWhere("WTQA", 2);
-
-    @OriginalMember(owner = "client!vf", name = "q", descriptor = "Lclient!sp;")
-    public static final ModeWhere MODEWHERE_WTWIP = new ModeWhere("WTWIP", 3);
-
-    @OriginalMember(owner = "client!lp", name = "l", descriptor = "Lclient!sp;")
-    public static final ModeWhere MODEWHERE_WTI = new ModeWhere("WTI", 5);
-
-    @OriginalMember(owner = "client!oj", name = "m", descriptor = "Lclient!sp;")
-    public static final ModeWhere MODEWHERE_LOCAL = new ModeWhere("LOCAL", 4);
-
     @OriginalMember(owner = "client!jt", name = "D", descriptor = "Lclient!jk;")
     public static final GameDetails RUNESCAPE_GAME_DETAILS = new GameDetails("runescape", 0);
 
@@ -81,32 +61,4 @@ public final class ClientSettings {
 
     @OriginalMember(owner = "client!hu", name = "n", descriptor = "I")
     public static int height = 503;
-
-    @OriginalMember(owner = "client!an", name = "d", descriptor = "(I)[Lclient!sp;")
-    public static Set<ModeWhere> getValidModeWhereValues() {
-        return Set.of(
-                MODEWHERE_LIVE,
-                MODEWHERE_WTRC,
-                MODEWHERE_WTQA,
-                MODEWHERE_WTWIP,
-                MODEWHERE_LOCAL,
-                MODEWHERE_WTI
-        );
-    }
-
-    @OriginalMember(owner = "client!pu", name = "a", descriptor = "(IZ)Lclient!sp;")
-    public static ModeWhere resolveModeWhereFromId(@OriginalArg(0) int id) {
-        return getValidModeWhereValues().stream()
-                .filter(modeWhere -> modeWhere.getId() == id)
-                .findFirst()
-                .orElse(null);
-    }
-
-    @OriginalMember(owner = "client!jp", name = "a", descriptor = "(Lclient!sp;B)Z")
-    public static boolean isStagingEnvironment(@OriginalArg(0) ModeWhere modewhere) {
-        return modewhere == MODEWHERE_WTRC
-                || modewhere == MODEWHERE_WTQA
-                || modewhere == MODEWHERE_WTWIP
-                || modewhere == MODEWHERE_WTI;
-    }
 }

@@ -564,7 +564,7 @@ public abstract class GameShell extends Applet implements Runnable, FocusListene
 			Static302.height = Static17.anInt222;
 			Static230.xPOS = 0;
 		}
-		if (ClientSettings.modewhere != ClientSettings.MODEWHERE_LIVE) {
+		if (!ClientSettings.modewhere.isLive()) {
 			@Pc(196) boolean local196;
 			if (Static141.width < 1024 && Static302.height < 768) {
 				local196 = true;
