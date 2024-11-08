@@ -9,7 +9,7 @@ import java.lang.reflect.Field;
 public class FullScreenManager {
     private DisplayMode windowedDisplayMode;
 
-    private GraphicsDevice fullScreenSupportedGraphicsDevice;
+    private final GraphicsDevice fullScreenSupportedGraphicsDevice;
 
     public FullScreenManager() throws Exception {
         GraphicsEnvironment localGraphicsEnvironment = GraphicsEnvironment.getLocalGraphicsEnvironment();
