@@ -1,20 +1,12 @@
 package com.jagex.client;
 
+import com.jagex.client.env.ModeWhat;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalMember;
 
 import java.util.Set;
 
 public final class ClientSettings {
-    @OriginalMember(owner = "client!je", name = "H", descriptor = "Lclient!jc;")
-    public static final ModeWhat MODEWHAT_LIVE = new ModeWhat("LIVE", 0);
-
-    @OriginalMember(owner = "client!rl", name = "d", descriptor = "Lclient!jc;")
-    public static final ModeWhat MODEWHAT_RC = new ModeWhat("RC", 1);
-
-    @OriginalMember(owner = "client!de", name = "c", descriptor = "Lclient!jc;")
-    public static final ModeWhat MODEWHAT_WIP = new ModeWhat("WIP", 2);
-
     @OriginalMember(owner = "client!st", name = "f", descriptor = "Lclient!sp;")
     public static final ModeWhere MODEWHERE_LIVE = new ModeWhere("LIVE", 0);
 
@@ -116,23 +108,5 @@ public final class ClientSettings {
                 || modewhere == MODEWHERE_WTQA
                 || modewhere == MODEWHERE_WTWIP
                 || modewhere == MODEWHERE_WTI;
-    }
-
-    @OriginalMember(owner = "client!nm", name = "b", descriptor = "(B)[Lclient!jc;")
-    public static Set<ModeWhat> getValidModeWhatValues() {
-        return Set.of(
-                MODEWHAT_LIVE,
-                MODEWHAT_RC,
-                MODEWHAT_WIP
-        );
-    }
-
-    @OriginalMember(owner = "client!ol", name = "a", descriptor = "(II)Lclient!jc;")
-    public static ModeWhat resolveModeWhatFromId(@OriginalArg(1) int id) {
-        return getValidModeWhatValues()
-                .stream()
-                .filter(modeWhat -> modeWhat.getId() == id)
-                .findFirst()
-                .orElse(null);
     }
 }

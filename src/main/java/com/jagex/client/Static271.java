@@ -1,6 +1,7 @@
 package com.jagex.client;
 
 import com.jagex.client.display.GraphicsDeviceDisplayMode;
+import com.jagex.client.env.ModeWhat;
 import com.jagex.client.jagex3.jagmisc.jagmisc;
 import com.jagex.signlink.MonotonicClock;
 import com.jagex.signlink.SignLink;
@@ -4760,7 +4761,7 @@ public final class Static271 {
 						anIntArray330[anInt5095++] = Static323.aClass50_Sub1_1.aBoolean303 ? 1 : 0;
 						return;
 					}
-				} else if (arg0 < 6800 && ClientSettings.modewhat == ClientSettings.MODEWHAT_WIP) {
+				} else if (arg0 < 6800 && ClientSettings.modewhat == ModeWhat.WIP) {
 					if (arg0 == 6700) {
 						local157 = Static325.aHashMap_29.size();
 						if (Static334.anInt5766 != -1) {

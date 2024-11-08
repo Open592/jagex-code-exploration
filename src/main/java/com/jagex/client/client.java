@@ -1,6 +1,7 @@
 package com.jagex.client;
 
-import com.jagex.client.display.FullScreenMode;
+import com.jagex.client.display.FullScreenWindow;
+import com.jagex.client.env.ModeWhat;
 import com.jagex.client.jagex3.jagmisc.jagmisc;
 import com.jagex.client.utilities.ThreadingUtilities;
 import com.jagex.signlink.Message;
@@ -15,6 +16,8 @@ import java.net.Socket;
 import java.net.URL;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
+import java.util.Optional;
+
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalClass;
 import org.openrs2.deob.annotation.OriginalMember;
@@ -185,19 +188,12 @@ public final class client extends GameShell {
 			ClientSettings.worldID = Integer.parseInt(arguments[0]);
 			ClientSettings.modewhere = ClientSettings.MODEWHERE_LOCAL;
 
-			switch (arguments[1]) {
-				case "live":
-					ClientSettings.modewhat = ClientSettings.MODEWHAT_LIVE;
-					break;
-				case "rc":
-					ClientSettings.modewhat = ClientSettings.MODEWHAT_RC;
-					break;
-				case "wip":
-					ClientSettings.modewhat = ClientSettings.MODEWHAT_WIP;
-					break;
-				default:
-					handleInvalidCommandArguments("modewhat");
-					break;
+			Optional<ModeWhat> modeWhatFromArguments = ModeWhat.fromName(arguments[1]);
+
+			if (modeWhatFromArguments.isPresent()) {
+				ClientSettings.modewhat = modeWhatFromArguments.get();
+			} else {
+				handleInvalidCommandArguments("modewhat");
 			}
 
 			ClientSettings.langID = Static73.method1357(arguments[2]);
@@ -3829,7 +3825,7 @@ public final class client extends GameShell {
 		}
 
 		if (GameShell.fullScreenFrame != null) {
-			FullScreenMode.exitFullScreenMode(GameShell.signLink, GameShell.fullScreenFrame);
+			FullScreenWindow.exitFullScreenMode(GameShell.signLink, GameShell.fullScreenFrame);
 			GameShell.fullScreenFrame = null;
 		}
 
@@ -4247,11 +4243,7 @@ public final class client extends GameShell {
 			ClientSettings.modewhere = ClientSettings.MODEWHERE_LIVE;
 		}
 
-		ClientSettings.modewhat = ClientSettings.resolveModeWhatFromId(Integer.parseInt(this.getParameter("modewhat")));
-
-		if (ClientSettings.modewhat != ClientSettings.MODEWHAT_WIP && ClientSettings.modewhat != ClientSettings.MODEWHAT_RC && ClientSettings.modewhat != ClientSettings.MODEWHAT_LIVE) {
-			ClientSettings.modewhat = ClientSettings.MODEWHAT_LIVE;
-		}
+		ClientSettings.modewhat = ModeWhat.fromId(Integer.parseInt(this.getParameter("modewhat"))).orElse(ModeWhat.LIVE);
 
 		try {
 			ClientSettings.langID = Integer.parseInt(this.getParameter("lang"));

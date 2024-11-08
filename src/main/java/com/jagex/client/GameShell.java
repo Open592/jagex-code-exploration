@@ -1,6 +1,6 @@
 package com.jagex.client;
 
-import com.jagex.client.display.FullScreenMode;
+import com.jagex.client.display.FullScreenWindow;
 import com.jagex.client.utilities.ThreadingUtilities;
 import com.jagex.signlink.Message;
 import com.jagex.signlink.SignLink;
@@ -513,11 +513,11 @@ public abstract class GameShell extends Applet implements Runnable, FocusListene
 	@OriginalMember(owner = "client!op", name = "a", descriptor = "(IIBIZI)V")
 	public static void method4020(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(3) int arg2, @OriginalArg(4) boolean arg3, @OriginalArg(5) int arg4) {
 		if (fullScreenFrame != null && (arg0 != 3 || arg2 != Static323.aClass50_Sub1_1.anInt3431 || Static323.aClass50_Sub1_1.anInt3450 != arg4)) {
-			FullScreenMode.exitFullScreenMode(signLink, fullScreenFrame);
+			FullScreenWindow.exitFullScreenMode(signLink, fullScreenFrame);
 			fullScreenFrame = null;
 		}
 		if (arg0 == 3 && fullScreenFrame == null) {
-			fullScreenFrame = FullScreenMode.enterFullScreenMode(arg2, signLink, arg4, 0);
+			fullScreenFrame = FullScreenWindow.enterFullScreenMode(arg2, signLink, arg4, 0);
 			if (fullScreenFrame != null) {
 				Static323.aClass50_Sub1_1.anInt3431 = arg2;
 				Static323.aClass50_Sub1_1.anInt3450 = arg4;
