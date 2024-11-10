@@ -3827,13 +3827,13 @@ public final class Static271 {
 						local89 = anIntArray330[--anInt5095];
 						if (local75.length() > 0) {
 							if (Static440.aStringArray40 == null) {
-								Static440.aStringArray40 = new String[Static72.anIntArray116[ClientSettings.currentGameDetails.id]];
+								Static440.aStringArray40 = new String[Static72.anIntArray116[ClientSettings.modeGame.getId()]];
 							}
 							Static440.aStringArray40[local89] = local75;
 						}
 						if (local81.length() > 0) {
 							if (Static438.aStringArray39 == null) {
-								Static438.aStringArray39 = new String[Static72.anIntArray116[ClientSettings.currentGameDetails.id]];
+								Static438.aStringArray39 = new String[Static72.anIntArray116[ClientSettings.modeGame.getId()]];
 							}
 							Static438.aStringArray39[local89] = local81;
 						}

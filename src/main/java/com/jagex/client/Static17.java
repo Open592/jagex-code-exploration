@@ -72,7 +72,7 @@ public final class Static17 {
 			}
 			local252.method5047(Static283.aClass247_13.anInt6838, Static283.aClass247_13.anInt6805, Static239.randomSeed, Static278.anIntArray338, Static385.aClass57Array16, Static327.anInt5675, Static325.random, local38, Static283.aClass247_13.anInt6772, Static283.aClass247_13.anInt6833, Static283.aClass247_13.anInt6778, Static283.aClass247_13.anInt6803, Static191.anIntArray180, Static413.anInt6861);
 			Static302.method4103(Static191.anIntArray180[0], Static191.anIntArray180[3], Static191.anIntArray180[2], Static191.anIntArray180[1]);
-		} else if (Static161.aClass247_6 != null && ClientSettings.currentGameDetails == ClientSettings.RUNESCAPE_GAME_DETAILS) {
+		} else if (Static161.aClass247_6 != null && ClientSettings.modeGame.isRunescape()) {
 			@Pc(232) int local232 = Static331.aClass46_10.method5053(Static325.random, Static385.aClass57Array16, Static278.anIntArray338, Static239.randomSeed, local38, Static290.anInt6409 + 4, Static260.anInt4896 - -16);
 			Static302.method4103(Static290.anInt6409 + 4, 16, Static118.aClass89_5.method2340(local38) + local232, Static260.anInt4896);
 			return;

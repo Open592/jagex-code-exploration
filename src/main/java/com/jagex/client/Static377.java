@@ -28,7 +28,7 @@ public final class Static377 {
 						local89 = false;
 					}
 				}
-				@Pc(176) String local176 = ClientSettings.STELLAR_DAWN_GAME_DETAILS == ClientSettings.currentGameDetails ? Static4.A_LOCALIZED_STRING___121.getLocalizedString(ClientSettings.langID) : Static320.A_LOCALIZED_STRING___118.getLocalizedString(ClientSettings.langID);
+				@Pc(176) String local176 = ClientSettings.modeGame.isStellarDawn() ? Static4.A_LOCALIZED_STRING___121.getLocalizedString(ClientSettings.langID) : Static320.A_LOCALIZED_STRING___118.getLocalizedString(ClientSettings.langID);
 				if (arg1.anInt4345 >= arg1.anInt4332) {
 					local85 = arg1.method3428() + (local89 ? Static272.method3907(Static1.aClass16_Sub1_Sub5_Sub1_1.anInt4345, arg1.anInt4345) : "<col=ffffff>") + " (" + local176 + arg1.anInt4345 + ")";
 				} else {
@@ -47,7 +47,7 @@ public final class Static377 {
 				for (@Pc(282) int local282 = 7; local282 >= 0; local282--) {
 					if (Static349.aStringArray29[local282] != null) {
 						@Pc(290) short local290 = 0;
-						if (ClientSettings.currentGameDetails == ClientSettings.RUNESCAPE_GAME_DETAILS && Static349.aStringArray29[local282].equalsIgnoreCase(Static81.A_LOCALIZED_STRING___33.getLocalizedString(ClientSettings.langID))) {
+						if (ClientSettings.modeGame.isRunescape() && Static349.aStringArray29[local282].equalsIgnoreCase(Static81.A_LOCALIZED_STRING___33.getLocalizedString(ClientSettings.langID))) {
 							if (arg1.anInt4345 > Static1.aClass16_Sub1_Sub5_Sub1_1.anInt4345) {
 								local290 = 2000;
 							}

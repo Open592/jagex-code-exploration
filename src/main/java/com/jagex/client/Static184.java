@@ -77,7 +77,7 @@ public final class Static184 {
 						Static380.method5017(19, false, 0L, local58, " ->", true, Static388.aString62, local60, -1, Static273.anInt5120);
 					}
 				} else {
-					if (ClientSettings.currentGameDetails == ClientSettings.STELLAR_DAWN_GAME_DETAILS) {
+					if (ClientSettings.modeGame.isStellarDawn()) {
 						Static380.method5017(59, false, 0L, local58, "", true, Static218.A_LOCALIZED_STRING.getLocalizedString(ClientSettings.langID), local60, -1, -1);
 					}
 					Static380.method5017(44, false, 0L, local58, "", true, Static167.aString35, local60, -1, Static220.anInt4097);

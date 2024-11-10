@@ -1,6 +1,7 @@
 package com.jagex.client;
 
 import com.jagex.client.display.FullScreenWindow;
+import com.jagex.client.env.ModeGame;
 import com.jagex.client.env.ModeWhat;
 import com.jagex.client.env.ModeWhere;
 import com.jagex.client.jagex3.jagmisc.jagmisc;
@@ -212,10 +213,10 @@ public final class client extends GameShell {
 			ClientSettings.hasJS = false;
 			ClientSettings.hasObjectTag = false;
 
-			if (arguments[3].equals("game0")) {
-				ClientSettings.currentGameDetails = ClientSettings.RUNESCAPE_GAME_DETAILS;
-			} else if (arguments[3].equals("game1")) {
-				ClientSettings.currentGameDetails = ClientSettings.STELLAR_DAWN_GAME_DETAILS;
+			Optional<ModeGame> gameWhatFromArguments = ModeGame.fromGameId(arguments[3]);
+
+			if (gameWhatFromArguments.isPresent()) {
+				ClientSettings.modeGame = gameWhatFromArguments.get();
 			} else {
 				handleInvalidCommandArguments("game");
 			}
@@ -225,11 +226,11 @@ public final class client extends GameShell {
 			ClientSettings.settings = "";
 			ClientSettings.countryID = 0;
 			ClientSettings.affiliateID = 0;
-			ClientSettings.colourID = ClientSettings.currentGameDetails.id;
+			ClientSettings.colourID = ClientSettings.modeGame.getId();
 
 			@Pc(130) client local130 = new client();
 			Static6.client = local130;
-			local130.method885(ClientSettings.currentGameDetails.name, ClientSettings.modewhat.getId() + 32);
+			local130.method885(ClientSettings.modeGame.getName(), ClientSettings.modewhat.getId() + 32);
 			GameShell.frame.setLocation(40, 40);
 		} catch (@Pc(153) Exception local153) {
 			Static94.handleClientError(local153, null);
@@ -4256,13 +4257,9 @@ public final class client extends GameShell {
 		@Pc(94) String advertParameter = this.getParameter("advert");
         ClientSettings.hasAdvert = advertParameter != null && advertParameter.equals("1");
 
-		@Pc(110) String gameID = this.getParameter("game");
+		@Pc(110) String gameId = this.getParameter("game");
 
-		if (gameID != null && gameID.equals("1")) {
-			ClientSettings.currentGameDetails = ClientSettings.STELLAR_DAWN_GAME_DETAILS;
-		} else {
-			ClientSettings.currentGameDetails = ClientSettings.RUNESCAPE_GAME_DETAILS;
-		}
+		ClientSettings.modeGame = ModeGame.fromGameId(gameId).orElse(ModeGame.RUNESCAPE);
 
 		try {
 			ClientSettings.affiliateID = Integer.parseInt(this.getParameter("affid"));
@@ -4300,10 +4297,10 @@ public final class client extends GameShell {
 
 		Static6.client = this;
 
-		if (ClientSettings.RUNESCAPE_GAME_DETAILS == ClientSettings.currentGameDetails) {
+		if (ClientSettings.modeGame.isRunescape()) {
 			ClientSettings.width = 765;
 			ClientSettings.height = 503;
-		} else if (ClientSettings.STELLAR_DAWN_GAME_DETAILS == ClientSettings.currentGameDetails) {
+		} else if (ClientSettings.modeGame.isStellarDawn()) {
 			ClientSettings.height = 480;
 			ClientSettings.width = 640;
 		}
@@ -4385,7 +4382,7 @@ public final class client extends GameShell {
 
 		Static252.aShortArray151 = Static330.aShortArray196 = Static78.aShortArray46 = Static166.aShortArray97 = new short[256];
 
-		if (ClientSettings.STELLAR_DAWN_GAME_DETAILS == ClientSettings.currentGameDetails) {
+		if (ClientSettings.modeGame.isRunescape()) {
 			Static15.aShortArrayArray1 = Static78.aShortArrayArray4;
 			Static299.aShortArray179 = Static240.aShortArray251;
 			Static65.anInt1369 = 16777215;
@@ -4439,7 +4436,7 @@ public final class client extends GameShell {
 		}
 
 		gameNameIsLoadingPleaseWaitMessage = (
-			ClientSettings.RUNESCAPE_GAME_DETAILS == ClientSettings.currentGameDetails
+			ClientSettings.modeGame.isRunescape()
 				? Static268.runescapeIsLoadingPleaseWaitLocalizedString
 				: Static374.stellarDawnIsLoadingPleaseWaitLocalizedString
 		).getLocalizedString(ClientSettings.langID);
@@ -4695,30 +4692,30 @@ public final class client extends GameShell {
 				Static24.aString53 = loadingConfigLocalizedString.getLocalizedString(ClientSettings.langID) + local10 / 12 + "%";
 				Static247.anInt4590 = 65;
 			} else {
-				Static153.aClass180_1 = new Class180(ClientSettings.currentGameDetails, ClientSettings.langID, Static74.aClass76_20);
-				Static222.aClass249_1 = new Class249(ClientSettings.currentGameDetails, ClientSettings.langID, Static74.aClass76_20);
-				Static118.aClass172_2 = new Class172(ClientSettings.currentGameDetails, ClientSettings.langID, Static74.aClass76_20, Static293.aClass76_60);
-				Static416.aClass158_1 = new Class158(ClientSettings.currentGameDetails, ClientSettings.langID, Static208.aClass76_29);
-				Static154.aClass124_2 = new Class124(ClientSettings.currentGameDetails, ClientSettings.langID, Static74.aClass76_20);
-				Static234.aClass192_2 = new Class192(ClientSettings.currentGameDetails, ClientSettings.langID, Static74.aClass76_20);
-				Static420.aClass109_2 = new Class109(ClientSettings.currentGameDetails, ClientSettings.langID, Static74.aClass76_20, Static357.aClass76_82);
-				Static101.aClass75_1 = new Class75(ClientSettings.currentGameDetails, ClientSettings.langID, Static74.aClass76_20);
-				Static405.aClass204_1 = new Class204(ClientSettings.currentGameDetails, ClientSettings.langID, Static74.aClass76_20);
-				Static267.aClass262_2 = new Class262(ClientSettings.currentGameDetails, ClientSettings.langID, true, Static424.aClass76_99, Static357.aClass76_82);
-				Static348.aClass182_4 = new Class182(ClientSettings.currentGameDetails, ClientSettings.langID, Static74.aClass76_20, Static293.aClass76_60);
-				Static76.aClass265_2 = new Class265(ClientSettings.currentGameDetails, ClientSettings.langID, Static74.aClass76_20, Static293.aClass76_60);
-				Static329.aClass240_1 = new Class240(ClientSettings.currentGameDetails, ClientSettings.langID, true, Static381.aClass76_87, Static357.aClass76_82);
-				Static444.aClass206_3 = new Class206(ClientSettings.currentGameDetails, ClientSettings.langID, true, Static153.aClass180_1, Static391.aClass76_91, Static357.aClass76_82);
-				Static426.aClass208_1 = new Class208(ClientSettings.currentGameDetails, ClientSettings.langID, Static74.aClass76_20);
-				Static182.aClass55_1 = new Class55(ClientSettings.currentGameDetails, ClientSettings.langID, Static388.aClass76_90, Static395.aClass76_92, Static324.aClass76_69);
-				Static296.aClass217_1 = new Class217(ClientSettings.currentGameDetails, ClientSettings.langID, Static74.aClass76_20);
-				Static238.aClass226_1 = new Class226(ClientSettings.currentGameDetails, ClientSettings.langID, Static74.aClass76_20);
-				Static352.aClass194_2 = new Class194(ClientSettings.currentGameDetails, ClientSettings.langID, Static55.aClass76_16, Static357.aClass76_82);
-				Static280.aClass72_1 = new Class72(ClientSettings.currentGameDetails, ClientSettings.langID, Static74.aClass76_20);
-				Static186.aClass197_1 = new Class197(ClientSettings.currentGameDetails, ClientSettings.langID, Static74.aClass76_20);
-				Static43.aClass93_4 = new Class93(ClientSettings.currentGameDetails, ClientSettings.langID, Static74.aClass76_20);
-				Static26.aClass26_1 = new Class26(ClientSettings.currentGameDetails, ClientSettings.langID, Static64.aClass76_17);
-				Static183.aClass223_1 = new Class223(ClientSettings.currentGameDetails, ClientSettings.langID, Static74.aClass76_20);
+				Static153.aClass180_1 = new Class180(ClientSettings.modeGame, ClientSettings.langID, Static74.aClass76_20);
+				Static222.aClass249_1 = new Class249(ClientSettings.modeGame, ClientSettings.langID, Static74.aClass76_20);
+				Static118.aClass172_2 = new Class172(ClientSettings.modeGame, ClientSettings.langID, Static74.aClass76_20, Static293.aClass76_60);
+				Static416.aClass158_1 = new Class158(ClientSettings.modeGame, ClientSettings.langID, Static208.aClass76_29);
+				Static154.aClass124_2 = new Class124(ClientSettings.modeGame, ClientSettings.langID, Static74.aClass76_20);
+				Static234.aClass192_2 = new Class192(ClientSettings.modeGame, ClientSettings.langID, Static74.aClass76_20);
+				Static420.aClass109_2 = new Class109(ClientSettings.modeGame, ClientSettings.langID, Static74.aClass76_20, Static357.aClass76_82);
+				Static101.aClass75_1 = new Class75(ClientSettings.modeGame, ClientSettings.langID, Static74.aClass76_20);
+				Static405.aClass204_1 = new Class204(ClientSettings.modeGame, ClientSettings.langID, Static74.aClass76_20);
+				Static267.aClass262_2 = new Class262(ClientSettings.modeGame, ClientSettings.langID, true, Static424.aClass76_99, Static357.aClass76_82);
+				Static348.aClass182_4 = new Class182(ClientSettings.modeGame, ClientSettings.langID, Static74.aClass76_20, Static293.aClass76_60);
+				Static76.aClass265_2 = new Class265(ClientSettings.modeGame, ClientSettings.langID, Static74.aClass76_20, Static293.aClass76_60);
+				Static329.aClass240_1 = new Class240(ClientSettings.modeGame, ClientSettings.langID, true, Static381.aClass76_87, Static357.aClass76_82);
+				Static444.aClass206_3 = new Class206(ClientSettings.modeGame, ClientSettings.langID, true, Static153.aClass180_1, Static391.aClass76_91, Static357.aClass76_82);
+				Static426.aClass208_1 = new Class208(ClientSettings.modeGame, ClientSettings.langID, Static74.aClass76_20);
+				Static182.aClass55_1 = new Class55(ClientSettings.modeGame, ClientSettings.langID, Static388.aClass76_90, Static395.aClass76_92, Static324.aClass76_69);
+				Static296.aClass217_1 = new Class217(ClientSettings.modeGame, ClientSettings.langID, Static74.aClass76_20);
+				Static238.aClass226_1 = new Class226(ClientSettings.modeGame, ClientSettings.langID, Static74.aClass76_20);
+				Static352.aClass194_2 = new Class194(ClientSettings.modeGame, ClientSettings.langID, Static55.aClass76_16, Static357.aClass76_82);
+				Static280.aClass72_1 = new Class72(ClientSettings.modeGame, ClientSettings.langID, Static74.aClass76_20);
+				Static186.aClass197_1 = new Class197(ClientSettings.modeGame, ClientSettings.langID, Static74.aClass76_20);
+				Static43.aClass93_4 = new Class93(ClientSettings.modeGame, ClientSettings.langID, Static74.aClass76_20);
+				Static26.aClass26_1 = new Class26(ClientSettings.modeGame, ClientSettings.langID, Static64.aClass76_17);
+				Static183.aClass223_1 = new Class223(ClientSettings.modeGame, ClientSettings.langID, Static74.aClass76_20);
 				Static442.method5586(Static256.aClass76_50, Static209.aClass76_48, Static357.aClass76_82, Static293.aClass76_60);
 				Static165.method2730(Static366.aClass76_83);
 				Static401.aClass62_1 = new Class62(ClientSettings.langID, Static66.aClass76_70, Static154.aClass76_11);

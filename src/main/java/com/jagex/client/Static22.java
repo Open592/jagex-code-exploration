@@ -192,6 +192,6 @@ public final class Static22 {
 			local33 = "/p=" + ClientSettings.settings;
 		}
 
-		return "http://" + local12 + "." + ClientSettings.currentGameDetails.name + ".com/l=" + ClientSettings.langID + "/a=" + ClientSettings.affiliateID + local33 + "/";
+		return "http://" + local12 + "." + ClientSettings.modeGame.getName() + ".com/l=" + ClientSettings.langID + "/a=" + ClientSettings.affiliateID + local33 + "/";
 	}
 }

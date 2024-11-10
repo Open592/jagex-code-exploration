@@ -25,7 +25,7 @@ public final class Static95 {
 
 	@OriginalMember(owner = "client!ep", name = "a", descriptor = "(III)V")
 	public static void method1664(@OriginalArg(0) int arg0, @OriginalArg(2) int arg1) {
-		if (ClientSettings.currentGameDetails == ClientSettings.STELLAR_DAWN_GAME_DETAILS) {
+		if (ClientSettings.modeGame.isStellarDawn()) {
 			if (!Static166.method2734(0, arg1, arg0, 1, false, 1, 0, -2)) {
 				Static166.method2734(0, arg1, arg0, 1, false, 1, 0, -3);
 			}

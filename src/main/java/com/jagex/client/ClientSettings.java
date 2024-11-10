@@ -1,16 +1,11 @@
 package com.jagex.client;
 
+import com.jagex.client.env.ModeGame;
 import com.jagex.client.env.ModeWhat;
 import com.jagex.client.env.ModeWhere;
 import org.openrs2.deob.annotation.OriginalMember;
 
 public final class ClientSettings {
-    @OriginalMember(owner = "client!jt", name = "D", descriptor = "Lclient!jk;")
-    public static final GameDetails RUNESCAPE_GAME_DETAILS = new GameDetails("runescape", 0);
-
-    @OriginalMember(owner = "client!pv", name = "p", descriptor = "Lclient!jk;")
-    public static final GameDetails STELLAR_DAWN_GAME_DETAILS = new GameDetails("stellardawn", 1);
-
     @OriginalMember(owner = "client!fg", name = "e", descriptor = "I")
     public static int worldID = 1;
 
@@ -33,7 +28,7 @@ public final class ClientSettings {
     public static boolean hasAdvert = false;
 
     @OriginalMember(owner = "client!tt", name = "v", descriptor = "Lclient!jk;")
-    public static GameDetails currentGameDetails = null;
+    public static ModeGame modeGame = null;
 
     @OriginalMember(owner = "client!t", name = "d", descriptor = "Z")
     public static boolean aBoolean573 = false;

@@ -1,5 +1,6 @@
 package com.jagex.client;
 
+import com.jagex.client.env.ModeGame;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalClass;
 import org.openrs2.deob.annotation.OriginalMember;
@@ -15,7 +16,7 @@ public final class Class208 {
 	private final Class76 aClass76_80;
 
 	@OriginalMember(owner = "client!rq", name = "<init>", descriptor = "(Lclient!jk;ILclient!fs;)V")
-	public Class208(@OriginalArg(0) GameDetails arg0, @OriginalArg(1) int arg1, @OriginalArg(2) Class76 arg2) {
+	public Class208(@OriginalArg(0) ModeGame arg0, @OriginalArg(1) int arg1, @OriginalArg(2) Class76 arg2) {
 		this.aClass76_80 = arg2;
 		if (this.aClass76_80 != null) {
 			this.aClass76_80.method2108(35);
