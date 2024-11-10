@@ -140,10 +140,10 @@ public final class client extends GameShell {
 	public static int js5ConnectionStage = 0;
 
 	@OriginalMember(owner = "client!nf", name = "V", descriptor = "Lclient!vn;")
-	public static JS5Connection js5Connection;
+	public static Js5NetQueue js5NetQueue;
 
 	@OriginalMember(owner = "client!tl", name = "w", descriptor = "Lclient!vl;")
-	public static Class254 aClass254_3;
+	public static Js5DiskCache aJs5DiskCache_3;
 
 	@OriginalMember(owner = "client!pu", name = "k", descriptor = "I")
 	public static int previousJS5ConnectionAttepts = 0;
@@ -3700,8 +3700,8 @@ public final class client extends GameShell {
 
 	@OriginalMember(owner = "client!client", name = "i", descriptor = "(I)V")
 	private void js5connect() {
-		if (js5Connection.js5ConnectAttempts > previousJS5ConnectionAttepts) {
-			connectionRetrySkipIterations = (js5Connection.js5ConnectAttempts * 50 - 50) * 5;
+		if (js5NetQueue.js5ConnectAttempts > previousJS5ConnectionAttepts) {
+			connectionRetrySkipIterations = (js5NetQueue.js5ConnectAttempts * 50 - 50) * 5;
 
 			if (port == primaryServerPort) {
 				port = fallbackServerPort;
@@ -3713,7 +3713,7 @@ public final class client extends GameShell {
 				connectionRetrySkipIterations = 3000;
 			}
 
-			if (js5Connection.js5ConnectAttempts >= 2 && js5Connection.errorCode == 6) {
+			if (js5NetQueue.js5ConnectAttempts >= 2 && js5NetQueue.errorCode == 6) {
 				this.handleGameError("js5connect_outofdate");
 
 				Static403.anInt6667 = 1000;
@@ -3721,7 +3721,7 @@ public final class client extends GameShell {
 				return;
 			}
 
-			if (js5Connection.js5ConnectAttempts >= 4 && js5Connection.errorCode == -1) {
+			if (js5NetQueue.js5ConnectAttempts >= 4 && js5NetQueue.errorCode == -1) {
 				this.handleGameError("js5crc");
 
 				Static403.anInt6667 = 1000;
@@ -3729,10 +3729,10 @@ public final class client extends GameShell {
 				return;
 			}
 
-			if (js5Connection.js5ConnectAttempts >= 4 && (Static403.anInt6667 == 0 || Static403.anInt6667 == 5)) {
-				if (js5Connection.errorCode == 7 || js5Connection.errorCode == 9) {
+			if (js5NetQueue.js5ConnectAttempts >= 4 && (Static403.anInt6667 == 0 || Static403.anInt6667 == 5)) {
+				if (js5NetQueue.errorCode == 7 || js5NetQueue.errorCode == 9) {
 					this.handleGameError("js5connect_full");
-				} else if (js5Connection.errorCode <= 0) {
+				} else if (js5NetQueue.errorCode <= 0) {
 					this.handleGameError("js5io");
 				} else {
 					this.handleGameError("js5connect");
@@ -3744,7 +3744,7 @@ public final class client extends GameShell {
 			}
 		}
 
-		previousJS5ConnectionAttepts = js5Connection.js5ConnectAttempts;
+		previousJS5ConnectionAttepts = js5NetQueue.js5ConnectAttempts;
 
 		if (connectionRetrySkipIterations > 0) {
 			connectionRetrySkipIterations--;
@@ -3804,7 +3804,7 @@ public final class client extends GameShell {
 			if (js5ConnectionStage == 4) {
 				@Pc(293) boolean local293 = Static403.anInt6667 == 5 || Static403.anInt6667 == 10 || Static403.anInt6667 == 28;
 
-				js5Connection.init(serverConnection, !local293);
+				js5NetQueue.init(serverConnection, !local293);
 
 				connectionInitializationMessage = null;
 				js5ConnectionStage = 0;
@@ -3843,8 +3843,8 @@ public final class client extends GameShell {
 		Static223.aClass14_1 = null;
 
 		Static64.method1241();
-		js5Connection.shutdown();
-		aClass254_3.method5433();
+		js5NetQueue.shutdown();
+		aJs5DiskCache_3.method5433();
 
 		if (Static402.aClass256_1 != null) {
 			Static402.aClass256_1.method5475();
@@ -4332,8 +4332,8 @@ public final class client extends GameShell {
 		serverConnection = null;
 		connectionInitializationMessage = null;
 
-		js5Connection.js5ConnectAttempts++;
-		js5Connection.errorCode = errorCode;
+		js5NetQueue.js5ConnectAttempts++;
+		js5NetQueue.errorCode = errorCode;
 		js5ConnectionStage = 0;
 	}
 
@@ -4347,8 +4347,8 @@ public final class client extends GameShell {
 
 		method3938();
 
-		aClass254_3 = new Class254(GameShell.signLink);
-		js5Connection = new JS5Connection();
+		aJs5DiskCache_3 = new Js5DiskCache(GameShell.signLink);
+		js5NetQueue = new Js5NetQueue();
 
 		if (!ClientSettings.modewhere.isLive()) {
 			Static392.aByteArrayArray28 = new byte[50][];
@@ -4535,9 +4535,9 @@ public final class client extends GameShell {
 			anInt5 = 20;
 		} else if (anInt5 == 20) {
 			if (Static94.aClass159_1 == null) {
-				Static94.aClass159_1 = new Class159(js5Connection, aClass254_3);
+				Static94.aClass159_1 = new Class159(js5NetQueue, aJs5DiskCache_3);
 			}
-			if (Static94.aClass159_1.method3814()) {
+			if (Static94.aClass159_1.isReady()) {
 				Static395.aClass76_92 = Static265.method3820(false, 0, true);
 				Static324.aClass76_69 = Static265.method3820(false, 1, true);
 				Static74.aClass76_20 = Static265.method3820(false, 2, true);
@@ -4845,9 +4845,9 @@ public final class client extends GameShell {
 
 	@OriginalMember(owner = "client!client", name = "f", descriptor = "(B)V")
 	private void method912() {
-		JS5Connection.ProcessConnectionsResult result = js5Connection.processJS5Requests();
+		Js5NetQueue.ProcessConnectionsResult result = js5NetQueue.processJS5Requests();
 
-		if (result == JS5Connection.ProcessConnectionsResult.UNABLE_TO_PROCESS_REQUESTS) {
+		if (result == Js5NetQueue.ProcessConnectionsResult.UNABLE_TO_PROCESS_REQUESTS) {
 			this.js5connect();
 		}
 	}

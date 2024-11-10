@@ -1,6 +1,5 @@
 package com.jagex.client;
 
-import java.util.zip.CRC32;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;
@@ -9,9 +8,6 @@ public final class Static327 {
 
 	@OriginalMember(owner = "client!qj", name = "k", descriptor = "Lclient!sl;")
 	public static final Class215 aClass215_76 = new Class215(15, -1);
-
-	@OriginalMember(owner = "client!qj", name = "n", descriptor = "Ljava/util/zip/CRC32;")
-	public static final CRC32 aCRC32_1 = new CRC32();
 
 	@OriginalMember(owner = "client!qj", name = "p", descriptor = "I")
 	public static int anInt5675 = -1;

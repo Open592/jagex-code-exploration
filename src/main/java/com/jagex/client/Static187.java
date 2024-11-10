@@ -78,10 +78,10 @@ public final class Static187 {
 				} else {
 					Static408.method5258(Static323.aClass50_Sub1_1.anInt3439, Static46.aClass76_54, Static414.anInt6866);
 				}
-				client.js5Connection.method5463(false);
+				client.js5NetQueue.method5463(false);
 			} else {
 				Static397.method724();
-				client.js5Connection.method5463(true);
+				client.js5NetQueue.method5463(true);
 			}
 		}
 		if (arg0 == 25 || arg0 == 28 || arg0 == 40) {

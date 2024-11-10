@@ -16,7 +16,7 @@ public final class Static119 {
 	public static int anInt2524 = 0;
 
 	@OriginalMember(owner = "client!ft", name = "I", descriptor = "[Lclient!lv;")
-	public static final Class143_Sub1[] aClass143_Sub1Array1 = new Class143_Sub1[30];
+	public static final Js5NetResourceProvider[] aClass143_Sub1Array1 = new Js5NetResourceProvider[30];
 
 	@OriginalMember(owner = "client!ft", name = "N", descriptor = "Lclient!bg;")
 	public static final Class22 aClass22_106 = new Class22(20, 12);

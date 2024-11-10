@@ -102,19 +102,19 @@ public final class Static400 {
 				return;
 			}
 			if (command.equalsIgnoreCase("clientjs5drop")) {
-				client.js5Connection.shutdown();
+				client.js5NetQueue.shutdown();
 				Static441.method5568("Dropped client js5 net queue");
 				return;
 			}
 			if (command.equalsIgnoreCase("serverjs5drop")) {
-				client.js5Connection.requestServerToDropRequests();
+				client.js5NetQueue.requestServerToDropRequests();
 				Static441.method5568("Dropped server js5 net queue");
 				return;
 			}
 			if (command.equalsIgnoreCase("breakcon")) {
 				GameShell.signLink.refuseConnectionForFiveSeconds();
 				Static125.aServerConnection_5.breakConnection();
-				client.js5Connection.breakConnection();
+				client.js5NetQueue.breakConnection();
 				Static441.method5568("Breaking new connections for 5 seconds");
 				return;
 			}

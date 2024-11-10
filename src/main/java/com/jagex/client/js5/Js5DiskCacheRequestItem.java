@@ -4,13 +4,13 @@ import org.openrs2.deob.annotation.OriginalClass;
 import org.openrs2.deob.annotation.OriginalMember;
 
 @OriginalClass("client!lf")
-public final class SecondaryNode_Sub1_Sub6_Sub2 extends SecondaryNode_Sub1_Sub6 {
+public final class Js5DiskCacheRequestItem extends Js5QueueRequest {
 
 	@OriginalMember(owner = "client!lf", name = "G", descriptor = "Lclient!st;")
 	public Class222 aClass222_1;
 
 	@OriginalMember(owner = "client!lf", name = "H", descriptor = "[B")
-	public byte[] aByteArray50;
+	public byte[] responseData;
 
 	@OriginalMember(owner = "client!lf", name = "K", descriptor = "I")
 	public int anInt4117;
@@ -25,12 +25,13 @@ public final class SecondaryNode_Sub1_Sub6_Sub2 extends SecondaryNode_Sub1_Sub6 
 		if (super.isRequestInProgress) {
 			throw new RuntimeException();
 		}
-		return this.aByteArray50;
+
+		return this.responseData;
 	}
 
 	@OriginalMember(owner = "client!lf", name = "a", descriptor = "(I)I")
 	@Override
-	public int method3342() {
+	public int getDownloadPercentage() {
 		return super.isRequestInProgress ? 0 : 100;
 	}
 }

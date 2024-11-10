@@ -9,7 +9,7 @@ import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;
 
 @OriginalClass("client!vn")
-public final class JS5Connection {
+public final class Js5NetQueue {
 
 	@OriginalMember(owner = "client!vn", name = "v", descriptor = "Lclient!al;")
 	private ServerConnection serverConnection;
@@ -21,7 +21,7 @@ public final class JS5Connection {
 	private int timeSinceLastByteFromServer;
 
 	@OriginalMember(owner = "client!vn", name = "D", descriptor = "Lclient!je;")
-	private JS5NetRequest aClass4_Sub1_Sub6_Sub1_2;
+	private Js5NetQueueRequest aClass4_Sub1_Sub6_Sub1_2;
 
 	@OriginalMember(owner = "client!vn", name = "j", descriptor = "Lclient!tn;")
 	private final SecondaryLinkedList pendingUrgentRequests = new SecondaryLinkedList();
@@ -93,11 +93,11 @@ public final class JS5Connection {
 		this.aClass4_Sub1_Sub6_Sub1_2 = null;
 
 		while (true) {
-			@Pc(40) JS5NetRequest request = (JS5NetRequest) this.activeUrgentRequests.popHead();
+			@Pc(40) Js5NetQueueRequest request = (Js5NetQueueRequest) this.activeUrgentRequests.popHead();
 
 			if (request == null) {
 				while (true) {
-					request = (JS5NetRequest) this.activeRegularRequests.popHead();
+					request = (Js5NetQueueRequest) this.activeRegularRequests.popHead();
 
 					if (request == null) {
 						if (this.obfuscationKey != 0) {
@@ -167,10 +167,10 @@ public final class JS5Connection {
 	}
 
 	@OriginalMember(owner = "client!vn", name = "a", descriptor = "(IBBZI)Lclient!je;")
-	public JS5NetRequest requestArchiveFile(@OriginalArg(0) int archive, @OriginalArg(1) byte arg1, @OriginalArg(3) boolean isUrgent, @OriginalArg(4) int group) {
+	public Js5NetQueueRequest requestArchiveFile(@OriginalArg(0) int archive, @OriginalArg(1) byte arg1, @OriginalArg(3) boolean isUrgent, @OriginalArg(4) int group) {
 		@Pc(19) long archiveGroupId = ((long) archive << 16) + group;
 
-		@Pc(23) JS5NetRequest request = new JS5NetRequest();
+		@Pc(23) Js5NetQueueRequest request = new Js5NetQueueRequest();
 		request.secondaryValue = archiveGroupId;
 		request.isUrgent = isUrgent;
 		request.aByte24 = arg1;
@@ -270,7 +270,7 @@ public final class JS5Connection {
 		try {
 			this.serverConnection.verifyIsHealthy();
 
-			for (@Pc(76) JS5NetRequest request = (JS5NetRequest) this.pendingUrgentRequests.getHead(); request != null; request = (JS5NetRequest) this.pendingUrgentRequests.next()) {
+			for (@Pc(76) Js5NetQueueRequest request = (Js5NetQueueRequest) this.pendingUrgentRequests.getHead(); request != null; request = (Js5NetQueueRequest) this.pendingUrgentRequests.next()) {
 				this.outgoingPacket.pos = 0;
 				this.outgoingPacket.p1(JS5RequestOpCodes.JS5_URGENT_REQUEST);
 				this.outgoingPacket.p3((int) request.secondaryValue);
@@ -278,7 +278,7 @@ public final class JS5Connection {
 				this.activeUrgentRequests.insert(request);
 			}
 
-			for (@Pc(122) JS5NetRequest request = (JS5NetRequest) this.pendingRegularRequests.getHead(); request != null; request = (JS5NetRequest) this.pendingRegularRequests.next()) {
+			for (@Pc(122) Js5NetQueueRequest request = (Js5NetQueueRequest) this.pendingRegularRequests.getHead(); request != null; request = (Js5NetQueueRequest) this.pendingRegularRequests.next()) {
 				this.outgoingPacket.pos = 0;
 				this.outgoingPacket.p1(JS5RequestOpCodes.JS5_REGULAR_REQUEST);
 				this.outgoingPacket.p3((int) request.secondaryValue);
@@ -371,12 +371,12 @@ public final class JS5Connection {
 							@Pc(468) int local468 = local459 & 0x7F;
 							@Pc(479) boolean local479 = (local459 & 0x80) != 0;
 							@Pc(486) long local486 = ((long) local226 << 16) + local275;
-							@Pc(496) JS5NetRequest local496 = null;
+							@Pc(496) Js5NetQueueRequest local496 = null;
 							if (local479) {
-								for (local496 = (JS5NetRequest) this.activeRegularRequests.getHead(); local496 != null && local496.secondaryValue != local486; local496 = (JS5NetRequest) this.activeRegularRequests.next()) {
+								for (local496 = (Js5NetQueueRequest) this.activeRegularRequests.getHead(); local496 != null && local496.secondaryValue != local486; local496 = (Js5NetQueueRequest) this.activeRegularRequests.next()) {
 								}
 							} else {
-								for (local496 = (JS5NetRequest) this.activeUrgentRequests.getHead(); local496 != null && local496.secondaryValue != local486; local496 = (JS5NetRequest) this.activeUrgentRequests.next()) {
+								for (local496 = (Js5NetQueueRequest) this.activeUrgentRequests.getHead(); local496 != null && local496.secondaryValue != local486; local496 = (Js5NetQueueRequest) this.activeUrgentRequests.next()) {
 								}
 							}
 							if (local496 == null) {

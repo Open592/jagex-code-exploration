@@ -24,19 +24,19 @@ public final class Class76 {
 	private final boolean aBoolean230;
 
 	@OriginalMember(owner = "client!fs", name = "F", descriptor = "Lclient!oi;")
-	private final Class143 aClass143_1;
+	private final Js5ResourceProvider aJs5ResourceProvider_1;
 
 	@OriginalMember(owner = "client!fs", name = "<init>", descriptor = "(Lclient!oi;ZI)V")
-	public Class76(@OriginalArg(0) Class143 arg0, @OriginalArg(1) boolean arg1, @OriginalArg(2) int arg2) {
+	public Class76(@OriginalArg(0) Js5ResourceProvider arg0, @OriginalArg(1) boolean arg1, @OriginalArg(2) int arg2) {
 		this.anInt2476 = arg2;
 		this.aBoolean230 = arg1;
-		this.aClass143_1 = arg0;
+		this.aJs5ResourceProvider_1 = arg0;
 	}
 
 	@OriginalMember(owner = "client!fs", name = "a", descriptor = "(Z)Z")
 	private boolean method2097() {
 		if (this.aClass209_1 == null) {
-			this.aClass209_1 = this.aClass143_1.method3514();
+			this.aClass209_1 = this.aJs5ResourceProvider_1.method3514();
 			if (this.aClass209_1 == null) {
 				return false;
 			}
@@ -116,7 +116,7 @@ public final class Class76 {
 	@OriginalMember(owner = "client!fs", name = "b", descriptor = "(II)I")
 	private int method2105(@OriginalArg(1) int arg0) {
 		if (this.method2106(arg0)) {
-			return this.anObjectArray3[arg0] == null ? this.aClass143_1.method3515(arg0) : 100;
+			return this.anObjectArray3[arg0] == null ? this.aJs5ResourceProvider_1.method3515(arg0) : 100;
 		} else {
 			return 0;
 		}
@@ -419,15 +419,15 @@ public final class Class76 {
 	@OriginalMember(owner = "client!fs", name = "g", descriptor = "(II)V")
 	private void method2119(@OriginalArg(1) int arg0) {
 		if (this.aBoolean230) {
-			this.anObjectArray3[arg0] = this.aClass143_1.method3516(arg0);
+			this.anObjectArray3[arg0] = this.aJs5ResourceProvider_1.method3516(arg0);
 		} else {
-			this.anObjectArray3[arg0] = Static327.method4416(this.aClass143_1.method3516(arg0));
+			this.anObjectArray3[arg0] = Static327.method4416(this.aJs5ResourceProvider_1.method3516(arg0));
 		}
 	}
 
 	@OriginalMember(owner = "client!fs", name = "a", descriptor = "(BI)V")
 	private void method2120(@OriginalArg(1) int arg0) {
-		this.aClass143_1.method3512(arg0);
+		this.aJs5ResourceProvider_1.method3512(arg0);
 	}
 
 	@OriginalMember(owner = "client!fs", name = "a", descriptor = "(II[IB)[B")
