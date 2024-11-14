@@ -14,7 +14,7 @@ import org.openrs2.deob.annotation.Pc;
 public final class Class222 {
 
 	@OriginalMember(owner = "client!st", name = "b", descriptor = "Lclient!lq;")
-	private final Class139 cacheMasterIndexFile;
+	private final Class139 indexFile;
 
 	@OriginalMember(owner = "client!st", name = "a", descriptor = "Lclient!lq;")
 	private final Class139 cacheDataFile;
@@ -23,13 +23,13 @@ public final class Class222 {
 	private final int anInt6379;
 
 	@OriginalMember(owner = "client!st", name = "k", descriptor = "I")
-	private final int archive;
+	private final int archiveNumber;
 
 	@OriginalMember(owner = "client!st", name = "<init>", descriptor = "(ILclient!lq;Lclient!lq;I)V")
-	public Class222(int archive, Class139 cacheDataFile, Class139 cacheMasterIndexFile, int arg3) {
-		this.cacheMasterIndexFile = cacheMasterIndexFile;
+	public Class222(int archiveNumber, Class139 cacheDataFile, Class139 indexFile, int arg3) {
+		this.indexFile = indexFile;
 		this.cacheDataFile = cacheDataFile;
-		this.archive = archive;
+		this.archiveNumber = archiveNumber;
 
 		// Was originally given a redundant default of 65000
 		this.anInt6379 = arg3;
@@ -38,7 +38,7 @@ public final class Class222 {
 	@OriginalMember(owner = "client!st", name = "toString", descriptor = "()Ljava/lang/String;")
 	@Override
 	public String toString() {
-		return "Cache:" + this.archive;
+		return "Cache:" + this.archiveNumber;
 	}
 
 	@OriginalMember(owner = "client!st", name = "a", descriptor = "(II)[B")
@@ -46,12 +46,12 @@ public final class Class222 {
 		@Pc(8) Class139 local8 = this.cacheDataFile;
 		synchronized (this.cacheDataFile) {
 			try {
-				if (this.cacheMasterIndexFile.method3463() < (arg0 * 6L + 6)) {
+				if (this.indexFile.method3463() < (arg0 * 6L + 6)) {
 					return null;
 				}
 
-				this.cacheMasterIndexFile.seek(arg0 * 6L);
-				this.cacheMasterIndexFile.method3471(0, 6, Static166.aByteArray37);
+				this.indexFile.seek(arg0 * 6L);
+				this.indexFile.method3471(0, 6, Static166.aByteArray37);
 
 				int local70 = (Static166.aByteArray37[2] & 0xFF) + (((Static166.aByteArray37[0] & 0xFF) << 16) + ((Static166.aByteArray37[1] & 0xFF) << 8));
 				int local93 = ((Static166.aByteArray37[3] & 0xFF) << 16) + ((Static166.aByteArray37[4] & 0xFF) << 8) + (Static166.aByteArray37[5] & 0xFF);
@@ -83,7 +83,7 @@ public final class Class222 {
 						int local237 = ((Static166.aByteArray37[5] & 0xFF) << 8) + ((Static166.aByteArray37[4] & 0xFF) << 16) + (Static166.aByteArray37[6] & 0xFF);
 						int local243 = Static166.aByteArray37[7] & 0xFF;
 
-						if (arg0 == local201 && local147 == local215 && this.archive == local243) {
+						if (arg0 == local201 && local147 == local215 && this.archiveNumber == local243) {
 							if (local237 >= 0 && (long) local237 <= this.cacheDataFile.method3463() / 520L) {
 								for (int i = 0; i < local170; i++) {
 									local137[local139++] = Static166.aByteArray37[i + 8];
@@ -133,11 +133,11 @@ public final class Class222 {
 			try {
 				@Pc(67) int local67;
 				if (arg3) {
-					if ((long) (arg0 * 6 + 6) > this.cacheMasterIndexFile.method3463()) {
+					if ((long) (arg0 * 6 + 6) > this.indexFile.method3463()) {
 						return false;
 					}
-					this.cacheMasterIndexFile.seek((long) (arg0 * 6));
-					this.cacheMasterIndexFile.method3471(0, 6, Static166.aByteArray37);
+					this.indexFile.seek((long) (arg0 * 6));
+					this.indexFile.method3471(0, 6, Static166.aByteArray37);
 					local67 = ((Static166.aByteArray37[4] & 0xFF) << 8) + (Static166.aByteArray37[3] << 16 & 0xFF0000) + (Static166.aByteArray37[5] & 0xFF);
 					if (local67 <= 0 || this.cacheDataFile.method3463() / 520L < (long) local67) {
 						return false;
@@ -154,8 +154,8 @@ public final class Class222 {
 				Static166.aByteArray37[0] = (byte) (arg2 >> 16);
 				Static166.aByteArray37[4] = (byte) (local67 >> 8);
 				Static166.aByteArray37[1] = (byte) (arg2 >> 8);
-				this.cacheMasterIndexFile.seek((long) (arg0 * 6));
-				this.cacheMasterIndexFile.method3464(0, Static166.aByteArray37, 6);
+				this.indexFile.seek((long) (arg0 * 6));
+				this.indexFile.method3464(0, Static166.aByteArray37, 6);
 				@Pc(163) int local163 = 0;
 				@Pc(165) int local165 = 0;
 				while (arg2 > local163) {
@@ -172,7 +172,7 @@ public final class Class222 {
 						local169 = ((Static166.aByteArray37[4] & 0xFF) << 16) + ((Static166.aByteArray37[5] & 0xFF) << 8) + (Static166.aByteArray37[6] & 0xFF);
 						@Pc(242) int local242 = ((Static166.aByteArray37[2] & 0xFF) << 8) + (Static166.aByteArray37[3] & 0xFF);
 						@Pc(248) int local248 = Static166.aByteArray37[7] & 0xFF;
-						if (arg0 != local204 || local242 != local165 || this.archive != local248) {
+						if (arg0 != local204 || local242 != local165 || this.archiveNumber != local248) {
 							return false;
 						}
 						if (local169 < 0 || (long) local169 > this.cacheDataFile.method3463() / 520L) {
@@ -196,7 +196,7 @@ public final class Class222 {
 					if (arg2 - local163 <= 512) {
 						local169 = 0;
 					}
-					Static166.aByteArray37[7] = (byte) this.archive;
+					Static166.aByteArray37[7] = (byte) this.archiveNumber;
 					Static166.aByteArray37[5] = (byte) (local169 >> 8);
 					Static166.aByteArray37[4] = (byte) (local169 >> 16);
 					Static166.aByteArray37[6] = (byte) local169;

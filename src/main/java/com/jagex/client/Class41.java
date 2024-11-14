@@ -26,8 +26,8 @@ public final class Class41 {
 		@Pc(32) Class57 local32 = (Class57) this.aClass265_1.aClass68_60.method1787(local24);
 		if (local32 != null) {
 			return local32;
-		} else if (this.aClass265_1.aClass76_103.method2125(this.anInt1024)) {
-			@Pc(61) Class18 local61 = Static456.method318(this.aClass265_1.aClass76_103, this.anInt1024, 0);
+		} else if (this.aClass265_1.aJs5_103.method2125(this.anInt1024)) {
+			@Pc(61) Class18 local61 = Static456.method318(this.aClass265_1.aJs5_103, this.anInt1024, 0);
 			if (local61 != null) {
 				local61.anInt371 = local61.anInt368 = local61.anInt369 = local61.anInt370 = 0;
 				if (arg0) {
@@ -76,6 +76,6 @@ public final class Class41 {
 
 	@OriginalMember(owner = "client!co", name = "a", descriptor = "(B)Z")
 	public boolean method941() {
-		return this.aClass265_1.aClass76_103.method2125(this.anInt1024);
+		return this.aClass265_1.aJs5_103.method2125(this.anInt1024);
 	}
 }

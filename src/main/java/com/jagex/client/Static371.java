@@ -2,7 +2,7 @@ package com.jagex.client;
 
 import java.awt.Canvas;
 
-import com.jagex.client.js5.Class76;
+import com.jagex.client.js5.Js5;
 import com.jagex.signlink.MonotonicClock;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalMember;
@@ -11,7 +11,7 @@ import org.openrs2.deob.annotation.Pc;
 public final class Static371 {
 
 	@OriginalMember(owner = "client!sr", name = "o", descriptor = "Lclient!fs;")
-	public static Class76 aClass76_85;
+	public static Js5 aJs5_85;
 
 	@OriginalMember(owner = "client!sr", name = "l", descriptor = "Lclient!gk;")
 	public static final LocalizedString A_LOCALIZED_STRING___125 = new LocalizedString(" has logged out.", " loggt sich aus.", " s'est déconnecté.", " saiu do jogo.");

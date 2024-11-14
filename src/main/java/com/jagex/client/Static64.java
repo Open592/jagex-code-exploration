@@ -2,13 +2,13 @@ package com.jagex.client;
 
 import java.awt.Color;
 
-import com.jagex.client.js5.Class76;
+import com.jagex.client.js5.Js5;
 import org.openrs2.deob.annotation.OriginalMember;
 
 public final class Static64 {
 
 	@OriginalMember(owner = "client!dd", name = "M", descriptor = "Lclient!fs;")
-	public static Class76 aClass76_17;
+	public static Js5 aJs5_17;
 
 	@OriginalMember(owner = "client!dd", name = "Q", descriptor = "[I")
 	public static int[] anIntArray106;

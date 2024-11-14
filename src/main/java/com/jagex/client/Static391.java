@@ -1,6 +1,6 @@
 package com.jagex.client;
 
-import com.jagex.client.js5.Class76;
+import com.jagex.client.js5.Js5;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;
@@ -8,7 +8,7 @@ import org.openrs2.deob.annotation.Pc;
 public final class Static391 {
 
 	@OriginalMember(owner = "client!tr", name = "f", descriptor = "Lclient!fs;")
-	public static Class76 aClass76_91;
+	public static Js5 aJs5_91;
 
 	@OriginalMember(owner = "client!tr", name = "d", descriptor = "Lclient!gk;")
 	public static final LocalizedString A_LOCALIZED_STRING___133 = new LocalizedString("Choose Option", "Wähl eine Option", "Choisir une option", "Selecionar opção");

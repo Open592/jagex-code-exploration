@@ -1,7 +1,7 @@
 package com.jagex.client;
 
 import com.jagex.client.env.ModeGame;
-import com.jagex.client.js5.Class76;
+import com.jagex.client.js5.Js5;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalClass;
 import org.openrs2.deob.annotation.OriginalMember;
@@ -14,16 +14,16 @@ public final class Class192 {
 	private final Class68 aClass68_35 = new Class68(128);
 
 	@OriginalMember(owner = "client!qd", name = "b", descriptor = "Lclient!fs;")
-	private final Class76 aClass76_68;
+	private final Js5 aJs5_68;
 
 	static {
 		new LocalizedString("To prevent further mutes please read the rules.", "Um eine erneute Stummschaltung zu verhindern, lies bitte die Regeln.", "Pour éviter un nouveau blocage, lisez le règlement.", "Para evitar outros vetos, leia as regras.");
 	}
 
 	@OriginalMember(owner = "client!qd", name = "<init>", descriptor = "(Lclient!jk;ILclient!fs;)V")
-	public Class192(@OriginalArg(0) ModeGame arg0, @OriginalArg(1) int arg1, @OriginalArg(2) Class76 arg2) {
-		this.aClass76_68 = arg2;
-		this.aClass76_68.method2108(1);
+	public Class192(@OriginalArg(0) ModeGame arg0, @OriginalArg(1) int arg1, @OriginalArg(2) Js5 arg2) {
+		this.aJs5_68 = arg2;
+		this.aJs5_68.method2108(1);
 	}
 
 	@OriginalMember(owner = "client!qd", name = "a", descriptor = "(BI)V")
@@ -44,7 +44,7 @@ public final class Class192 {
 		if (local16 != null) {
 			return local16;
 		}
-		@Pc(33) byte[] local33 = this.aClass76_68.method2104(arg0, 1);
+		@Pc(33) byte[] local33 = this.aJs5_68.method2104(arg0, 1);
 		local16 = new Class221();
 		if (local33 != null) {
 			local16.method4960(new Packet(local33));

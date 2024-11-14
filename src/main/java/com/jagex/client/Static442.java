@@ -1,6 +1,6 @@
 package com.jagex.client;
 
-import com.jagex.client.js5.Class76;
+import com.jagex.client.js5.Js5;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;
@@ -64,12 +64,12 @@ public final class Static442 {
 	}
 
 	@OriginalMember(owner = "client!wh", name = "a", descriptor = "(ILclient!fs;Lclient!fs;Lclient!fs;Lclient!fs;)V")
-	public static void method5586(@OriginalArg(1) Class76 arg0, @OriginalArg(2) Class76 arg1, @OriginalArg(3) Class76 arg2, @OriginalArg(4) Class76 arg3) {
-		Static356.aClass76_81 = arg0;
-		Static410.aClass76_95 = arg2;
-		Static52.aClass76_15 = arg1;
-		Static381.aClass76_89 = arg3;
-		Static297.aClass247ArrayArray2 = new Class247[Static356.aClass76_81.method2100()][];
-		Static453.aBooleanArray25 = new boolean[Static356.aClass76_81.method2100()];
+	public static void method5586(@OriginalArg(1) Js5 arg0, @OriginalArg(2) Js5 arg1, @OriginalArg(3) Js5 arg2, @OriginalArg(4) Js5 arg3) {
+		Static356.aJs5_81 = arg0;
+		Static410.aJs5_95 = arg2;
+		Static52.aJs5_15 = arg1;
+		Static381.aJs5_89 = arg3;
+		Static297.aClass247ArrayArray2 = new Class247[Static356.aJs5_81.method2100()][];
+		Static453.aBooleanArray25 = new boolean[Static356.aJs5_81.method2100()];
 	}
 }

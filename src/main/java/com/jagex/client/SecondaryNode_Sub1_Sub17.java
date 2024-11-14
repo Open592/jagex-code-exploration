@@ -34,13 +34,13 @@ public final class SecondaryNode_Sub1_Sub17 extends SecondaryNode {
 		}
 		@Pc(34) int local34;
 		if (this.aByteArrayArray24 == null) {
-			if (!Static10.aClass76_1.method2101(this.anInt5488)) {
+			if (!Static10.aJs5_1.method2101(this.anInt5488)) {
 				return false;
 			}
-			@Pc(27) int[] local27 = Static10.aClass76_1.method2124(this.anInt5488);
+			@Pc(27) int[] local27 = Static10.aJs5_1.method2124(this.anInt5488);
 			this.aByteArrayArray24 = new byte[local27.length][];
 			for (local34 = 0; local34 < local27.length; local34++) {
-				this.aByteArrayArray24[local34] = Static10.aClass76_1.method2104(local27[local34], this.anInt5488);
+				this.aByteArrayArray24[local34] = Static10.aJs5_1.method2104(local27[local34], this.anInt5488);
 			}
 		}
 		@Pc(55) boolean local55 = true;
@@ -48,15 +48,15 @@ public final class SecondaryNode_Sub1_Sub17 extends SecondaryNode {
 		for (local34 = 0; local34 < this.aByteArrayArray24.length; local34++) {
 			@Pc(64) byte[] local64 = this.aByteArrayArray24[local34];
 			local78 = (local64[0] & 0xFF) << 8 | local64[1] & 0xFF;
-			local55 &= Static414.aClass76_96.method2125(local78);
+			local55 &= Static414.aJs5_96.method2125(local78);
 		}
 		if (!local55) {
 			return false;
 		}
 		@Pc(103) Class183 local103 = new Class183();
-		local78 = Static10.aClass76_1.method2108(this.anInt5488);
+		local78 = Static10.aJs5_1.method2108(this.anInt5488);
 		this.aClass88Array1 = new Class88[local78];
-		@Pc(119) int[] local119 = Static10.aClass76_1.method2124(this.anInt5488);
+		@Pc(119) int[] local119 = Static10.aJs5_1.method2124(this.anInt5488);
 		for (@Pc(121) int local121 = 0; local121 < local119.length; local121++) {
 			@Pc(128) byte[] local128 = this.aByteArrayArray24[local121];
 			@Pc(142) int local142 = local128[1] & 0xFF | (local128[0] & 0xFF) << 8;
@@ -68,7 +68,7 @@ public final class SecondaryNode_Sub1_Sub17 extends SecondaryNode {
 				}
 			}
 			if (local144 == null) {
-				local144 = new Node_Sub32(local142, Static414.aClass76_96.method2122(local142));
+				local144 = new Node_Sub32(local142, Static414.aJs5_96.method2122(local142));
 				local103.method4137(local144);
 			}
 			this.aClass88Array1[local119[local121]] = new Class88(local128, local144);

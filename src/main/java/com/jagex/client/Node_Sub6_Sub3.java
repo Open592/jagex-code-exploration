@@ -74,7 +74,7 @@ public class Node_Sub6_Sub3 extends Node_Sub6 {
 		if (this.anIntArray62 != null) {
 			return true;
 		} else if (this.anInt1085 >= 0) {
-			@Pc(32) Class18 local32 = Static182.anInt3496 >= 0 ? Static456.method318(Static40.aClass76_9, Static182.anInt3496, this.anInt1085) : Static456.method328(Static40.aClass76_9, this.anInt1085);
+			@Pc(32) Class18 local32 = Static182.anInt3496 >= 0 ? Static456.method318(Static40.aJs5_9, Static182.anInt3496, this.anInt1085) : Static456.method328(Static40.aJs5_9, this.anInt1085);
 			local32.method322();
 			this.anIntArray62 = local32.method319();
 			this.anInt1086 = local32.anInt366;

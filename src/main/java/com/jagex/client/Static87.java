@@ -15,7 +15,7 @@ public final class Static87 {
 		if (local16 != null) {
 			return local16;
 		}
-		@Pc(26) byte[] local26 = Static185.aClass76_42.method2104(arg0, 1);
+		@Pc(26) byte[] local26 = Static185.aJs5_42.method2104(arg0, 1);
 		local16 = new Class8();
 		local16.anInt130 = arg0;
 		if (local26 != null) {

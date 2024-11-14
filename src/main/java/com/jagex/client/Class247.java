@@ -502,7 +502,7 @@ public final class Class247 {
 		if (local65 != null) {
 			return local65;
 		}
-		@Pc(75) Class18 local75 = Static456.method318(Static381.aClass76_89, this.lb, 0);
+		@Pc(75) Class18 local75 = Static456.method318(Static381.aJs5_89, this.lb, 0);
 		if (local75 == null) {
 			Static10.aBoolean15 = true;
 			return null;
@@ -835,7 +835,7 @@ public final class Class247 {
 					if (local64 != null) {
 						arg5 = arg1.method4282(arg5, local64.P());
 					}
-					@Pc(90) Class122 local90 = Static370.method4948(Static410.aClass76_95, this.anInt6781);
+					@Pc(90) Class122 local90 = Static370.method4948(Static410.aJs5_95, this.anInt6781);
 					if (local90 == null) {
 						Static10.aBoolean15 = true;
 						return null;
@@ -918,12 +918,12 @@ public final class Class247 {
 		if (local19 != null) {
 			return local19;
 		}
-		@Pc(28) Class18[] local28 = Static456.method323(Static381.aClass76_89, this.anInt6791);
+		@Pc(28) Class18[] local28 = Static456.method323(Static381.aJs5_89, this.anInt6791);
 		if (local28 == null) {
 			Static10.aBoolean15 = true;
 			return null;
 		}
-		@Pc(40) Class89 local40 = Static315.method4213(this.anInt6791, Static52.aClass76_15);
+		@Pc(40) Class89 local40 = Static315.method4213(this.anInt6791, Static52.aJs5_15);
 		if (local40 == null) {
 			Static10.aBoolean15 = true;
 			return null;
@@ -954,7 +954,7 @@ public final class Class247 {
 		if (local13 != null) {
 			return local13;
 		}
-		@Pc(23) Class18 local23 = Static456.method318(Static381.aClass76_89, this.lb, 0);
+		@Pc(23) Class18 local23 = Static456.method318(Static381.aJs5_89, this.lb, 0);
 		if (local23 == null) {
 			return null;
 		}

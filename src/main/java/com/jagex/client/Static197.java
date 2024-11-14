@@ -2,7 +2,7 @@ package com.jagex.client;
 
 import java.net.URL;
 
-import com.jagex.client.js5.Class76;
+import com.jagex.client.js5.Js5;
 import com.jagex.signlink.Message;
 import com.jagex.signlink.SignLink;
 import org.openrs2.deob.annotation.OriginalArg;
@@ -15,7 +15,7 @@ public final class Static197 {
 	public static SecondaryNode_Sub1_Sub5 aClass4_Sub1_Sub5_2;
 
 	@OriginalMember(owner = "client!ju", name = "K", descriptor = "Lclient!fs;")
-	public static Class76 aClass76_45;
+	public static Js5 aJs5_45;
 
 	@OriginalMember(owner = "client!ju", name = "I", descriptor = "Lclient!sl;")
 	public static final Class215 aClass215_39 = new Class215(32, -1);

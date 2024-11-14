@@ -30,8 +30,8 @@ public final class Static440 {
 			if (arg0) {
 				Static122.aClass19_16 = Static455.method4241(Static80.anInterface7_3, 0, GameShell.canvas, 0, GameShell.signLink);
 				Static122.aClass19_16.p(0);
-				@Pc(22) Class89 local22 = Static239.method3546(Static62.anInt1122, Static209.aClass76_48);
-				@Pc(31) Class46 local31 = Static122.aClass19_16.method4275(local22, Static456.method327(Static293.aClass76_60, Static62.anInt1122));
+				@Pc(22) Class89 local22 = Static239.method3546(Static62.anInt1122, Static209.aJs5_48);
+				@Pc(31) Class46 local31 = Static122.aClass19_16.method4275(local22, Static456.method327(Static293.aJs5_60, Static62.anInt1122));
 				Static436.method5519(true, Static439.A_LOCALIZED_STRING___148.getLocalizedString(ClientSettings.langID), local31);
 				Static122.aClass19_16.method4247();
 				Static348.method4697();

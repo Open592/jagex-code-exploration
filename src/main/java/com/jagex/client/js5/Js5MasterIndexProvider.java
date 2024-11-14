@@ -58,8 +58,8 @@ public final class Js5MasterIndexProvider {
 	}
 
 	@OriginalMember(owner = "client!nj", name = "a", descriptor = "(Lclient!st;Lclient!st;II)Lclient!lv;")
-	public Js5NetResourceProvider getArchiveData(@OriginalArg(0) Class222 arg0, @OriginalArg(1) Class222 arg1, @OriginalArg(3) int archive) {
-		return this.getArchiveData(arg1, archive, arg0);
+	public Js5NetResourceProvider getArchiveDataResourceProvider(@OriginalArg(0) Class222 arg0, @OriginalArg(1) Class222 arg1, @OriginalArg(3) int archive) {
+		return this.getArchiveDataResourceProvider(arg1, archive, arg0);
 	}
 
 	@OriginalMember(owner = "client!nj", name = "b", descriptor = "(I)V")
@@ -82,7 +82,7 @@ public final class Js5MasterIndexProvider {
 	}
 
 	@OriginalMember(owner = "client!nj", name = "a", descriptor = "(Lclient!st;ZBILclient!st;)Lclient!lv;")
-	private Js5NetResourceProvider getArchiveData(Class222 arg0, int archive, Class222 arg2) {
+	private Js5NetResourceProvider getArchiveDataResourceProvider(Class222 arg0, int archive, Class222 arg2) {
 		if (this.masterIndexResponsePacket == null) {
 			throw new RuntimeException();
 		}
@@ -94,11 +94,11 @@ public final class Js5MasterIndexProvider {
 		} else if (this.masterIndexArchiveData[archive] == null) {
 			int checksum = this.masterIndexResponsePacket.g4();
 			int version = this.masterIndexResponsePacket.g4();
-			Js5NetResourceProvider local64 = new Js5NetResourceProvider(archive, arg0, arg2, this.netQueue, this.diskQueue, checksum, version, true);
+			Js5NetResourceProvider resourceProvider = new Js5NetResourceProvider(archive, arg0, arg2, this.netQueue, this.diskQueue, checksum, version, true);
 
-			this.masterIndexArchiveData[archive] = local64;
+			this.masterIndexArchiveData[archive] = resourceProvider;
 
-			return local64;
+			return resourceProvider;
 		} else {
 			return this.masterIndexArchiveData[archive];
 		}

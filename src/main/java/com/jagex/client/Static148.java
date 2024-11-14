@@ -1,6 +1,6 @@
 package com.jagex.client;
 
-import com.jagex.client.js5.Class76;
+import com.jagex.client.js5.Js5;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;
@@ -14,7 +14,7 @@ public final class Static148 {
 	public static Class182 aClass182_3;
 
 	@OriginalMember(owner = "client!hj", name = "d", descriptor = "Lclient!fs;")
-	public static Class76 aClass76_73;
+	public static Js5 aJs5_73;
 
 	@OriginalMember(owner = "client!hj", name = "e", descriptor = "Lclient!wi;")
 	public static Class265 aClass265_4;
@@ -515,7 +515,7 @@ public final class Static148 {
 
 	@OriginalMember(owner = "client!hj", name = "a", descriptor = "(Lclient!ya;II)V")
 	public static void method4498(@OriginalArg(0) Class19 arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2) {
-		@Pc(9) Packet local9 = new Packet(aClass76_73.method2109(aClass4_Sub1_Sub5_3.aString16, "area"));
+		@Pc(9) Packet local9 = new Packet(aJs5_73.method2109(aClass4_Sub1_Sub5_3.aString16, "area"));
 		@Pc(13) int local13 = local9.g1();
 		@Pc(16) int[] local16 = new int[local13];
 		for (@Pc(18) int local18 = 0; local18 < local13; local18++) {
@@ -943,8 +943,8 @@ public final class Static148 {
 	}
 
 	@OriginalMember(owner = "client!hj", name = "a", descriptor = "(Lclient!fs;Lclient!kb;Lclient!qd;Lclient!wf;Lclient!pj;Lclient!wi;Lclient!vs;)V")
-	public static void method4514(@OriginalArg(0) Class76 arg0, @OriginalArg(1) Class124 arg1, @OriginalArg(2) Class192 arg2, @OriginalArg(3) Class262 arg3, @OriginalArg(4) Class182 arg4, @OriginalArg(5) Class265 arg5, @OriginalArg(6) Interface12 arg6) {
-		aClass76_73 = arg0;
+	public static void method4514(@OriginalArg(0) Js5 arg0, @OriginalArg(1) Class124 arg1, @OriginalArg(2) Class192 arg2, @OriginalArg(3) Class262 arg3, @OriginalArg(4) Class182 arg4, @OriginalArg(5) Class265 arg5, @OriginalArg(6) Interface12 arg6) {
+		aJs5_73 = arg0;
 		aClass124_5 = arg1;
 		aClass192_3 = arg2;
 		aClass262_3 = arg3;
@@ -952,10 +952,10 @@ public final class Static148 {
 		aClass265_4 = arg5;
 		anInterface12_2 = arg6;
 		A_HASH_MAP___30.clear();
-		@Pc(21) int local21 = aClass76_73.method2099("details");
-		@Pc(26) int[] local26 = aClass76_73.method2124(local21);
+		@Pc(21) int local21 = aJs5_73.method2099("details");
+		@Pc(26) int[] local26 = aJs5_73.method2124(local21);
 		for (@Pc(28) int local28 = 0; local28 < local26.length; local28++) {
-			@Pc(37) SecondaryNode_Sub1_Sub5 local37 = Static90.method1609(local21, local26[local28], aClass76_73);
+			@Pc(37) SecondaryNode_Sub1_Sub5 local37 = Static90.method1609(local21, local26[local28], aJs5_73);
 			A_HASH_MAP___30.set((long) local37.anInt1012, local37);
 		}
 		Static347.method4678(true, false);

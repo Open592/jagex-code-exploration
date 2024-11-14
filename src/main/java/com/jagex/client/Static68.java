@@ -1,6 +1,6 @@
 package com.jagex.client;
 
-import com.jagex.client.js5.Class76;
+import com.jagex.client.js5.Js5;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;
@@ -100,7 +100,7 @@ public final class Static68 {
 	}
 
 	@OriginalMember(owner = "client!di", name = "a", descriptor = "(Lclient!fs;I)Lclient!di;")
-	public static Node_Sub13 method1316(@OriginalArg(0) Class76 arg0, @OriginalArg(1) int arg1) {
+	public static Node_Sub13 method1316(@OriginalArg(0) Js5 arg0, @OriginalArg(1) int arg1) {
 		if (method1320(arg0)) {
 			@Pc(14) byte[] local14 = arg0.method2122(arg1);
 			return local14 == null ? null : new Node_Sub13(local14);
@@ -120,7 +120,7 @@ public final class Static68 {
 	}
 
 	@OriginalMember(owner = "client!di", name = "a", descriptor = "(Lclient!fs;II)Lclient!di;")
-	public static Node_Sub13 method1318(@OriginalArg(0) Class76 arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2) {
+	public static Node_Sub13 method1318(@OriginalArg(0) Js5 arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2) {
 		if (method1320(arg0)) {
 			@Pc(16) byte[] local16 = arg0.method2104(arg2, arg1);
 			return local16 == null ? null : new Node_Sub13(local16);
@@ -217,7 +217,7 @@ public final class Static68 {
 	}
 
 	@OriginalMember(owner = "client!di", name = "a", descriptor = "(Lclient!fs;)Z")
-	private static boolean method1320(@OriginalArg(0) Class76 arg0) {
+	private static boolean method1320(@OriginalArg(0) Js5 arg0) {
 		if (!aBoolean124) {
 			@Pc(7) byte[] local7 = arg0.method2104(0, 0);
 			if (local7 == null) {

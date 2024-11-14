@@ -21,8 +21,8 @@ public final class Static230 {
 			return;
 		}
 		if (Static69.anInt3429 < 10) {
-			if (!Static148.aClass76_73.method2103(Static148.aClass4_Sub1_Sub5_3.aString16)) {
-				Static69.anInt3429 = Static163.aClass76_39.method2113(Static148.aClass4_Sub1_Sub5_3.aString16) / 10;
+			if (!Static148.aJs5_73.method2103(Static148.aClass4_Sub1_Sub5_3.aString16)) {
+				Static69.anInt3429 = Static163.aJs5_39.method2113(Static148.aClass4_Sub1_Sub5_3.aString16) / 10;
 				return;
 			}
 			Static424.method5412();
@@ -110,11 +110,11 @@ public final class Static230 {
 			Static299.method4087(true);
 			GameShell.method3660();
 		} else if (Static69.anInt3429 == 60) {
-			if (Static148.aClass76_73.method2107(Static148.aClass4_Sub1_Sub5_3.aString16 + "_staticelements")) {
-				if (!Static148.aClass76_73.method2103(Static148.aClass4_Sub1_Sub5_3.aString16 + "_staticelements")) {
+			if (Static148.aJs5_73.method2107(Static148.aClass4_Sub1_Sub5_3.aString16 + "_staticelements")) {
+				if (!Static148.aJs5_73.method2103(Static148.aClass4_Sub1_Sub5_3.aString16 + "_staticelements")) {
 					return;
 				}
-				Static148.aClass195_3 = Static380.method5018(Static148.aClass76_73, Static148.aClass4_Sub1_Sub5_3.aString16 + "_staticelements", Static325.aBoolean506);
+				Static148.aClass195_3 = Static380.method5018(Static148.aJs5_73, Static148.aClass4_Sub1_Sub5_3.aString16 + "_staticelements", Static325.aBoolean506);
 			} else {
 				Static148.aClass195_3 = new Class195(0);
 			}
@@ -202,10 +202,10 @@ public final class Static230 {
 		for (local51 = (local15 - (Static326.anInt5666 >> 4)) / 8; local51 <= ((Static326.anInt5666 >> 4) + local15) / 8; local51++) {
 			for (@Pc(122) int local122 = (local19 - (Static283.anInt5187 >> 4)) / 8; local122 <= ((Static283.anInt5187 >> 4) + local19) / 8; local122++) {
 				Static308.anIntArray372[local41] = local122 + (local51 << 8);
-				Static225.anIntArray291[local41] = Static49.aClass76_27.method2099("m" + local51 + "_" + local122);
-				Static346.anIntArray418[local41] = Static49.aClass76_27.method2099("l" + local51 + "_" + local122);
-				Static95.anIntArray155[local41] = Static49.aClass76_27.method2099("um" + local51 + "_" + local122);
-				Static189.anIntArray236[local41] = Static49.aClass76_27.method2099("ul" + local51 + "_" + local122);
+				Static225.anIntArray291[local41] = Static49.aJs5_27.method2099("m" + local51 + "_" + local122);
+				Static346.anIntArray418[local41] = Static49.aJs5_27.method2099("l" + local51 + "_" + local122);
+				Static95.anIntArray155[local41] = Static49.aJs5_27.method2099("um" + local51 + "_" + local122);
+				Static189.anIntArray236[local41] = Static49.aJs5_27.method2099("ul" + local51 + "_" + local122);
 				local41++;
 			}
 		}

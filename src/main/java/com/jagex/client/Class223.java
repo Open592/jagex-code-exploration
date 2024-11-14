@@ -1,7 +1,7 @@
 package com.jagex.client;
 
 import com.jagex.client.env.ModeGame;
-import com.jagex.client.js5.Class76;
+import com.jagex.client.js5.Js5;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalClass;
 import org.openrs2.deob.annotation.OriginalMember;
@@ -14,18 +14,18 @@ public final class Class223 {
 	private final Class68 aClass68_45 = new Class68(64);
 
 	@OriginalMember(owner = "client!sv", name = "f", descriptor = "Lclient!fs;")
-	private final Class76 aClass76_86;
+	private final Js5 aJs5_86;
 
 	@OriginalMember(owner = "client!sv", name = "h", descriptor = "I")
 	public final int anInt6400;
 
 	@OriginalMember(owner = "client!sv", name = "<init>", descriptor = "(Lclient!jk;ILclient!fs;)V")
-	public Class223(@OriginalArg(0) ModeGame arg0, @OriginalArg(1) int arg1, @OriginalArg(2) Class76 arg2) {
-		this.aClass76_86 = arg2;
-		if (this.aClass76_86 == null) {
+	public Class223(@OriginalArg(0) ModeGame arg0, @OriginalArg(1) int arg1, @OriginalArg(2) Js5 arg2) {
+		this.aJs5_86 = arg2;
+		if (this.aJs5_86 == null) {
 			this.anInt6400 = 0;
 		} else {
-			this.anInt6400 = this.aClass76_86.method2108(16);
+			this.anInt6400 = this.aJs5_86.method2108(16);
 		}
 	}
 
@@ -55,7 +55,7 @@ public final class Class223 {
 		if (local16 != null) {
 			return local16;
 		}
-		@Pc(33) byte[] local33 = this.aClass76_86.method2104(arg0, 16);
+		@Pc(33) byte[] local33 = this.aJs5_86.method2104(arg0, 16);
 		local16 = new Class111();
 		if (local33 != null) {
 			local16.method2810(new Packet(local33));

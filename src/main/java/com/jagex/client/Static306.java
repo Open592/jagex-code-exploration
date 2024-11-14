@@ -1,6 +1,6 @@
 package com.jagex.client;
 
-import com.jagex.client.js5.Class76;
+import com.jagex.client.js5.Js5;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;
@@ -8,7 +8,7 @@ import org.openrs2.deob.annotation.Pc;
 public final class Static306 {
 
 	@OriginalMember(owner = "client!pk", name = "b", descriptor = "Lclient!fs;")
-	public static Class76 aClass76_65;
+	public static Js5 aJs5_65;
 
 	@OriginalMember(owner = "client!pk", name = "c", descriptor = "[I")
 	public static final int[] anIntArray359 = new int[] { 1, 2, 4, 8 };

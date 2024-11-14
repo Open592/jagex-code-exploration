@@ -162,8 +162,8 @@ public final class Class157 {
 		if (local20 != null) {
 			return local20;
 		}
-		this.aClass182_2.aClass76_63.method2125(this.anInt4912);
-		@Pc(45) Class18 local45 = Static456.method318(this.aClass182_2.aClass76_63, this.anInt4912, 0);
+		this.aClass182_2.aJs5_63.method2125(this.anInt4912);
+		@Pc(45) Class18 local45 = Static456.method318(this.aClass182_2.aJs5_63, this.anInt4912, 0);
 		if (local45 != null) {
 			local20 = arg0.method4308(local45);
 			this.aClass182_2.aClass68_34.method1779((long) (arg0.anInt5532 << 29 | this.anInt4912 | 0x20000), local20);
@@ -321,8 +321,8 @@ public final class Class157 {
 		@Pc(32) Class57 local32 = (Class57) this.aClass182_2.aClass68_34.method1787((long) local18);
 		if (local32 != null) {
 			return local32;
-		} else if (this.aClass182_2.aClass76_63.method2125(local11)) {
-			@Pc(52) Class18 local52 = Static456.method318(this.aClass182_2.aClass76_63, local11, 0);
+		} else if (this.aClass182_2.aJs5_63.method2125(local11)) {
+			@Pc(52) Class18 local52 = Static456.method318(this.aClass182_2.aJs5_63, local11, 0);
 			if (local52 != null) {
 				local32 = arg0.method4308(local52);
 				this.aClass182_2.aClass68_34.method1779((long) local18, local32);

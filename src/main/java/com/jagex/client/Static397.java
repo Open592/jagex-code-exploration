@@ -28,7 +28,7 @@ public final class Static397 {
 		Static47.anInt811 = 2;
 		Static14.anInt190 = -1;
 		Static206.anInt3920 = 0;
-		Static236.aClass76_49 = null;
+		Static236.aJs5_49 = null;
 		anInt742 = -1;
 		Static19.aBoolean30 = false;
 	}

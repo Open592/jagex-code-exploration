@@ -47,7 +47,7 @@ public final class Class74 {
 		if (local13 != null) {
 			return local13;
 		}
-		local13 = Static456.method318(this.aClass172_1.aClass76_59, this.anInt2423, 0);
+		local13 = Static456.method318(this.aClass172_1.aJs5_59, this.anInt2423, 0);
 		if (local13 != null) {
 			this.aClass172_1.aClass68_31.method1779((long) this.anInt2423, local13);
 		}

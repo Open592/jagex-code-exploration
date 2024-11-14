@@ -34,11 +34,11 @@ public final class Static63 {
 			for (local98 = (local25 - (Static283.anInt5187 >> 4)) / 8; local98 <= ((Static283.anInt5187 >> 4) + local25) / 8; local98++) {
 				@Pc(106) int local106 = local98 + (local87 << 8);
 				Static308.anIntArray372[local78] = local106;
-				Static225.anIntArray291[local78] = Static49.aClass76_27.method2099("m" + local87 + "_" + local98);
-				Static346.anIntArray418[local78] = Static49.aClass76_27.method2099("l" + local87 + "_" + local98);
-				Static175.anIntArray222[local78] = Static49.aClass76_27.method2099("n" + local87 + "_" + local98);
-				Static95.anIntArray155[local78] = Static49.aClass76_27.method2099("um" + local87 + "_" + local98);
-				Static189.anIntArray236[local78] = Static49.aClass76_27.method2099("ul" + local87 + "_" + local98);
+				Static225.anIntArray291[local78] = Static49.aJs5_27.method2099("m" + local87 + "_" + local98);
+				Static346.anIntArray418[local78] = Static49.aJs5_27.method2099("l" + local87 + "_" + local98);
+				Static175.anIntArray222[local78] = Static49.aJs5_27.method2099("n" + local87 + "_" + local98);
+				Static95.anIntArray155[local78] = Static49.aJs5_27.method2099("um" + local87 + "_" + local98);
+				Static189.anIntArray236[local78] = Static49.aJs5_27.method2099("ul" + local87 + "_" + local98);
 				if (Static175.anIntArray222[local78] == -1) {
 					Static225.anIntArray291[local78] = -1;
 					Static346.anIntArray418[local78] = -1;

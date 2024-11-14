@@ -1,6 +1,6 @@
 package com.jagex.client;
 
-import com.jagex.client.js5.Class76;
+import com.jagex.client.js5.Js5;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalClass;
 import org.openrs2.deob.annotation.OriginalMember;
@@ -394,12 +394,12 @@ public final class Class202 {
 		if (this.anIntArrayArray45 == null) {
 			return true;
 		}
-		@Pc(14) Class76 local14 = this.aClass262_4.aClass76_100;
-		synchronized (this.aClass262_4.aClass76_100) {
+		@Pc(14) Js5 local14 = this.aClass262_4.aJs5_100;
+		synchronized (this.aClass262_4.aJs5_100) {
 			for (@Pc(24) int local24 = 0; local24 < this.lb.length; local24++) {
 				if (this.lb[local24] == arg0) {
 					for (@Pc(34) int local34 = 0; local34 < this.anIntArrayArray45[local24].length; local34++) {
-						if (!this.aClass262_4.aClass76_100.method2098(0, this.anIntArrayArray45[local24][local34])) {
+						if (!this.aClass262_4.aJs5_100.method2098(0, this.anIntArrayArray45[local24][local34])) {
 							return false;
 						}
 					}
@@ -489,9 +489,9 @@ public final class Class202 {
 							}
 							break;
 						}
-						@Pc(256) Class76 local256 = this.aClass262_4.aClass76_100;
-						synchronized (this.aClass262_4.aClass76_100) {
-							local245 = Static370.method4948(this.aClass262_4.aClass76_100, this.anIntArrayArray45[local117][local251] & 0xFFFF);
+						@Pc(256) Js5 local256 = this.aClass262_4.aJs5_100;
+						synchronized (this.aClass262_4.aJs5_100) {
+							local245 = Static370.method4948(this.aClass262_4.aJs5_100, this.anIntArrayArray45[local117][local251] & 0xFFFF);
 						}
 						if (local245 == null) {
 							return null;
@@ -564,11 +564,11 @@ public final class Class202 {
 			return true;
 		}
 		@Pc(12) boolean local12 = true;
-		@Pc(16) Class76 local16 = this.aClass262_4.aClass76_100;
-		synchronized (this.aClass262_4.aClass76_100) {
+		@Pc(16) Js5 local16 = this.aClass262_4.aJs5_100;
+		synchronized (this.aClass262_4.aJs5_100) {
 			for (@Pc(20) int local20 = 0; local20 < this.anIntArrayArray45.length; local20++) {
 				for (@Pc(24) int local24 = 0; local24 < this.anIntArrayArray45[local20].length; local24++) {
-					local12 &= this.aClass262_4.aClass76_100.method2098(0, this.anIntArrayArray45[local20][local24]);
+					local12 &= this.aClass262_4.aJs5_100.method2098(0, this.anIntArrayArray45[local20][local24]);
 				}
 			}
 			return local12;

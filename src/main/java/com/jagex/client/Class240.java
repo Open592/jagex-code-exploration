@@ -1,7 +1,7 @@
 package com.jagex.client;
 
 import com.jagex.client.env.ModeGame;
-import com.jagex.client.js5.Class76;
+import com.jagex.client.js5.Js5;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalClass;
 import org.openrs2.deob.annotation.OriginalMember;
@@ -26,23 +26,23 @@ public final class Class240 {
 	public boolean aBoolean604;
 
 	@OriginalMember(owner = "client!uk", name = "j", descriptor = "Lclient!fs;")
-	private final Class76 aClass76_93;
+	private final Js5 aJs5_93;
 
 	@OriginalMember(owner = "client!uk", name = "n", descriptor = "Lclient!fs;")
-	public final Class76 aClass76_94;
+	public final Js5 aJs5_94;
 
 	static {
 		new LocalizedString("Login to a members' server to use this object.", "Du musst auf einer Mitglieder-Welt sein, um diesen Gegenstand zu benutzen.", "Connectez-vous à un serveur d'abonnés pour utiliser cet objet.", "Acesse um servidor para membros para usar este objeto.");
 	}
 
 	@OriginalMember(owner = "client!uk", name = "<init>", descriptor = "(Lclient!jk;IZLclient!fs;Lclient!fs;)V")
-	public Class240(@OriginalArg(0) ModeGame arg0, @OriginalArg(1) int arg1, @OriginalArg(2) boolean arg2, @OriginalArg(3) Class76 arg3, @OriginalArg(4) Class76 arg4) {
+	public Class240(@OriginalArg(0) ModeGame arg0, @OriginalArg(1) int arg1, @OriginalArg(2) boolean arg2, @OriginalArg(3) Js5 arg3, @OriginalArg(4) Js5 arg4) {
 		this.aBoolean604 = arg2;
-		this.aClass76_93 = arg3;
-		this.aClass76_94 = arg4;
-		if (this.aClass76_93 != null) {
-			@Pc(38) int local38 = this.aClass76_93.method2100() - 1;
-			this.aClass76_93.method2108(local38);
+		this.aJs5_93 = arg3;
+		this.aJs5_94 = arg4;
+		if (this.aJs5_93 != null) {
+			@Pc(38) int local38 = this.aJs5_93.method2100() - 1;
+			this.aJs5_93.method2108(local38);
 		}
 	}
 
@@ -113,7 +113,7 @@ public final class Class240 {
 		if (local16 != null) {
 			return local16;
 		}
-		@Pc(37) byte[] local37 = this.aClass76_93.method2104(Static174.method2820(arg0), Static354.method4785(arg0));
+		@Pc(37) byte[] local37 = this.aJs5_93.method2104(Static174.method2820(arg0), Static354.method4785(arg0));
 		local16 = new Class264();
 		local16.anInt7211 = arg0;
 		local16.aClass240_2 = this;

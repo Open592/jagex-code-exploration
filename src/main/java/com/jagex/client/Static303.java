@@ -28,20 +28,20 @@ public final class Static303 {
 		try {
 			if (Static27.anInt461 == 2) {
 				if (Static143.aClass4_Sub30_2 == null) {
-					Static143.aClass4_Sub30_2 = Static461.method3724(Static236.aClass76_49, Static14.anInt190, Static397.anInt742);
+					Static143.aClass4_Sub30_2 = Static461.method3724(Static236.aJs5_49, Static14.anInt190, Static397.anInt742);
 					if (Static143.aClass4_Sub30_2 == null) {
 						return false;
 					}
 				}
 				if (Static419.aClass171_1 == null) {
-					Static419.aClass171_1 = new Class171(Static371.aClass76_85, Static345.aClass76_75);
+					Static419.aClass171_1 = new Class171(Static371.aJs5_85, Static345.aJs5_75);
 				}
-				if (Static56.aClass4_Sub15_Sub1_1.method1456(Static419.aClass171_1, Static195.aClass76_43, Static143.aClass4_Sub30_2)) {
+				if (Static56.aClass4_Sub15_Sub1_1.method1456(Static419.aClass171_1, Static195.aJs5_43, Static143.aClass4_Sub30_2)) {
 					Static56.aClass4_Sub15_Sub1_1.method1438();
 					Static56.aClass4_Sub15_Sub1_1.method1428(Static206.anInt3920);
 					Static56.aClass4_Sub15_Sub1_1.method1450(Static19.aBoolean30, Static143.aClass4_Sub30_2);
 					Static419.aClass171_1 = null;
-					Static236.aClass76_49 = null;
+					Static236.aJs5_49 = null;
 					Static27.anInt461 = 0;
 					Static143.aClass4_Sub30_2 = null;
 					return true;
@@ -51,7 +51,7 @@ public final class Static303 {
 			local63.printStackTrace();
 			Static56.aClass4_Sub15_Sub1_1.method1440();
 			Static419.aClass171_1 = null;
-			Static236.aClass76_49 = null;
+			Static236.aJs5_49 = null;
 			Static27.anInt461 = 0;
 			Static143.aClass4_Sub30_2 = null;
 		}

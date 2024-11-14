@@ -1,7 +1,7 @@
 package com.jagex.client;
 
 import com.jagex.client.env.ModeGame;
-import com.jagex.client.js5.Class76;
+import com.jagex.client.js5.Js5;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalClass;
 import org.openrs2.deob.annotation.OriginalMember;
@@ -17,20 +17,20 @@ public final class Class172 {
 	public final Class68 aClass68_31 = new Class68(2);
 
 	@OriginalMember(owner = "client!ok", name = "i", descriptor = "Lclient!fs;")
-	public final Class76 aClass76_59;
+	public final Js5 aJs5_59;
 
 	@OriginalMember(owner = "client!ok", name = "c", descriptor = "Lclient!fs;")
-	private final Class76 aClass76_58;
+	private final Js5 aJs5_58;
 
 	static {
 		new LocalizedString("Changes will take effect on your clan in the next 60 seconds.", "Die Änderungen am Chatraum werden innerhalb von 60 Sekunden gültig.", "Les modifications seront apportées à votre clan dans les prochaines 60 secondes.", "As alterações passarão a valer no seu clã nos próximos 60 segundos.");
 	}
 
 	@OriginalMember(owner = "client!ok", name = "<init>", descriptor = "(Lclient!jk;ILclient!fs;Lclient!fs;)V")
-	public Class172(@OriginalArg(0) ModeGame arg0, @OriginalArg(1) int arg1, @OriginalArg(2) Class76 arg2, @OriginalArg(3) Class76 arg3) {
-		this.aClass76_59 = arg3;
-		this.aClass76_58 = arg2;
-		this.aClass76_58.method2108(33);
+	public Class172(@OriginalArg(0) ModeGame arg0, @OriginalArg(1) int arg1, @OriginalArg(2) Js5 arg2, @OriginalArg(3) Js5 arg3) {
+		this.aJs5_59 = arg3;
+		this.aJs5_58 = arg2;
+		this.aJs5_58.method2108(33);
 	}
 
 	@OriginalMember(owner = "client!ok", name = "a", descriptor = "(II)Lclient!fn;")
@@ -43,7 +43,7 @@ public final class Class172 {
 		if (local16 != null) {
 			return local16;
 		}
-		@Pc(41) byte[] local41 = this.aClass76_58.method2104(arg0, 33);
+		@Pc(41) byte[] local41 = this.aJs5_58.method2104(arg0, 33);
 		local16 = new Class74();
 		local16.aClass172_1 = this;
 		if (local41 != null) {

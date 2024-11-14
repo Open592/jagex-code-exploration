@@ -1,6 +1,6 @@
 package com.jagex.client;
 
-import com.jagex.client.js5.Class76;
+import com.jagex.client.js5.Js5;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalClass;
 import org.openrs2.deob.annotation.OriginalMember;
@@ -22,21 +22,21 @@ public final class Class81 {
 	private Interface8 anInterface8_1 = null;
 
 	@OriginalMember(owner = "client!gh", name = "f", descriptor = "Lclient!fs;")
-	private final Class76 aClass76_30;
+	private final Js5 aJs5_30;
 
 	@OriginalMember(owner = "client!gh", name = "g", descriptor = "Lclient!fs;")
-	private final Class76 aClass76_31;
+	private final Js5 aJs5_31;
 
 	@OriginalMember(owner = "client!gh", name = "<init>", descriptor = "(ILclient!fs;Lclient!fs;Lclient!lo;)V")
-	public Class81(@OriginalArg(0) int arg0, @OriginalArg(1) Class76 arg1, @OriginalArg(2) Class76 arg2, @OriginalArg(3) Interface8 arg3) {
+	public Class81(@OriginalArg(0) int arg0, @OriginalArg(1) Js5 arg1, @OriginalArg(2) Js5 arg2, @OriginalArg(3) Interface8 arg3) {
 		this.anInterface8_1 = arg3;
-		this.aClass76_30 = arg1;
-		this.aClass76_31 = arg2;
-		if (this.aClass76_30 != null) {
-			this.anInt2661 = this.aClass76_30.method2108(1);
+		this.aJs5_30 = arg1;
+		this.aJs5_31 = arg2;
+		if (this.aJs5_30 != null) {
+			this.anInt2661 = this.aJs5_30.method2108(1);
 		}
-		if (this.aClass76_31 != null) {
-			this.anInt2663 = this.aClass76_31.method2108(1);
+		if (this.aJs5_31 != null) {
+			this.anInt2663 = this.aJs5_31.method2108(1);
 		}
 	}
 
@@ -59,9 +59,9 @@ public final class Class81 {
 		}
 		@Pc(36) byte[] local36;
 		if (arg0 >= 32768) {
-			local36 = this.aClass76_31.method2104(arg0 & 0x7FFF, 1);
+			local36 = this.aJs5_31.method2104(arg0 & 0x7FFF, 1);
 		} else {
-			local36 = this.aClass76_30.method2104(arg0, 1);
+			local36 = this.aJs5_30.method2104(arg0, 1);
 		}
 		local11 = new SecondaryNode_Sub1_Sub3();
 		local11.aClass81_1 = this;

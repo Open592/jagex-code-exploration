@@ -1,6 +1,6 @@
 package com.jagex.client;
 
-import com.jagex.client.js5.Class76;
+import com.jagex.client.js5.Js5;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;
@@ -8,7 +8,7 @@ import org.openrs2.deob.annotation.Pc;
 public final class Static97 {
 
 	@OriginalMember(owner = "client!er", name = "a", descriptor = "(Lclient!fs;ZLclient!ya;)V")
-	public static void method1700(@OriginalArg(0) Class76 arg0, @OriginalArg(2) Class19 arg1) {
+	public static void method1700(@OriginalArg(0) Js5 arg0, @OriginalArg(2) Class19 arg1) {
 		@Pc(10) Class18[] local10 = Static456.method327(arg0, Static336.anInt6553);
 		Static349.aClass57Array14 = new Class57[local10.length];
 		for (@Pc(20) int local20 = 0; local20 < local10.length; local20++) {
@@ -79,7 +79,7 @@ public final class Static97 {
 	}
 
 	@OriginalMember(owner = "client!er", name = "a", descriptor = "(Lclient!fs;I)I")
-	public static int method1701(@OriginalArg(0) Class76 arg0) {
+	public static int method1701(@OriginalArg(0) Js5 arg0) {
 		@Pc(5) int local5 = 0;
 		if (arg0.method2125(Static338.anInt5846)) {
 			local5++;

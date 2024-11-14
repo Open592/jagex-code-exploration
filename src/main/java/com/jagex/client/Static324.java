@@ -2,7 +2,7 @@ package com.jagex.client;
 
 import java.lang.reflect.Method;
 
-import com.jagex.client.js5.Class76;
+import com.jagex.client.js5.Js5;
 import com.jagex.signlink.SignLink;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalMember;
@@ -11,7 +11,7 @@ import org.openrs2.deob.annotation.Pc;
 public final class Static324 {
 
 	@OriginalMember(owner = "client!qg", name = "d", descriptor = "Lclient!fs;")
-	public static Class76 aClass76_69;
+	public static Js5 aJs5_69;
 
 	@OriginalMember(owner = "client!qg", name = "a", descriptor = "Lclient!bg;")
 	public static final Class22 aClass22_261 = new Class22(7, 0);

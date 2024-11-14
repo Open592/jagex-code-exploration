@@ -41,6 +41,6 @@ public final class Static106 {
 	public static void method1986() {
 		Static56.aClass4_Sub15_Sub1_1.method1440();
 		Static27.anInt461 = 1;
-		Static236.aClass76_49 = null;
+		Static236.aJs5_49 = null;
 	}
 }

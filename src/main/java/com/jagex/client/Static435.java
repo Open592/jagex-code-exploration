@@ -27,7 +27,7 @@ public final class Static435 {
 		if (local17 != null) {
 			return local17;
 		}
-		@Pc(27) byte[] local27 = Static306.aClass76_65.method2104(arg0, 0);
+		@Pc(27) byte[] local27 = Static306.aJs5_65.method2104(arg0, 0);
 		local17 = new Class118();
 		if (local27 != null) {
 			local17.method2922(arg0, new Packet(local27));
@@ -45,7 +45,7 @@ public final class Static435 {
 			if (local27.anInt3153 != -1) {
 				@Pc(39) Class57 local39 = (Class57) Static105.aClass68_9.method1787((long) local27.anInt3153);
 				if (local39 == null) {
-					@Pc(47) Class18 local47 = Static456.method318(Static293.aClass76_60, local27.anInt3153, 0);
+					@Pc(47) Class18 local47 = Static456.method318(Static293.aJs5_60, local27.anInt3153, 0);
 					if (local47 != null) {
 						local39 = Static122.aClass19_16.method4308(local47);
 						Static105.aClass68_9.method1779((long) local27.anInt3153, local39);

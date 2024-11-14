@@ -61,8 +61,8 @@ public final class Static28 {
 
 	@OriginalMember(owner = "client!bg", name = "b", descriptor = "(I)V")
 	public static void method529() {
-		Static297.aClass247ArrayArray2 = new Class247[Static356.aClass76_81.method2100()][];
-		Static30.aClass247ArrayArray1 = new Class247[Static356.aClass76_81.method2100()][];
-		Static453.aBooleanArray25 = new boolean[Static356.aClass76_81.method2100()];
+		Static297.aClass247ArrayArray2 = new Class247[Static356.aJs5_81.method2100()][];
+		Static30.aClass247ArrayArray1 = new Class247[Static356.aJs5_81.method2100()][];
+		Static453.aBooleanArray25 = new boolean[Static356.aJs5_81.method2100()];
 	}
 }

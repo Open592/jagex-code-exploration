@@ -63,9 +63,9 @@ public final class Static305 {
 		@Pc(11) int local11 = Static173.anInt3370;
 		@Pc(15) int local15 = Static112.anInt2392 - 3;
 		if (Static21.aClass57_4 == null || Static430.aClass57_17 == null) {
-			if (Static293.aClass76_60.method2125(Static199.anInt3850) && Static293.aClass76_60.method2125(Static419.anInt6931)) {
-				Static21.aClass57_4 = arg0.method4308(Static456.method318(Static293.aClass76_60, Static199.anInt3850, 0));
-				@Pc(63) Class18 local63 = Static456.method318(Static293.aClass76_60, Static419.anInt6931, 0);
+			if (Static293.aJs5_60.method2125(Static199.anInt3850) && Static293.aJs5_60.method2125(Static419.anInt6931)) {
+				Static21.aClass57_4 = arg0.method4308(Static456.method318(Static293.aJs5_60, Static199.anInt3850, 0));
+				@Pc(63) Class18 local63 = Static456.method318(Static293.aJs5_60, Static419.anInt6931, 0);
 				Static430.aClass57_17 = arg0.method4308(local63);
 				local63.method316();
 				Static299.aClass57_20 = arg0.method4308(local63);
@@ -96,13 +96,13 @@ public final class Static305 {
 				arg0.O(local7, local196 - 12, local11, 16, 255 - Static131.anInt2738 << 24 | Static152.anInt3062, 1);
 			}
 		}
-		if ((Static257.aClass57_19 == null || Static369.aClass57_21 == null || Static143.aClass57_15 == null) && Static293.aClass76_60.method2125(Static270.anInt5073) && Static293.aClass76_60.method2125(Static190.anInt3601) && Static293.aClass76_60.method2125(Static444.anInt7297)) {
-			@Pc(279) Class18 local279 = Static456.method318(Static293.aClass76_60, Static190.anInt3601, 0);
+		if ((Static257.aClass57_19 == null || Static369.aClass57_21 == null || Static143.aClass57_15 == null) && Static293.aJs5_60.method2125(Static270.anInt5073) && Static293.aJs5_60.method2125(Static190.anInt3601) && Static293.aJs5_60.method2125(Static444.anInt7297)) {
+			@Pc(279) Class18 local279 = Static456.method318(Static293.aJs5_60, Static190.anInt3601, 0);
 			Static369.aClass57_21 = arg0.method4308(local279);
 			local279.method316();
 			Static80.aClass57_9 = arg0.method4308(local279);
-			Static257.aClass57_19 = arg0.method4308(Static456.method318(Static293.aClass76_60, Static270.anInt5073, 0));
-			@Pc(304) Class18 local304 = Static456.method318(Static293.aClass76_60, Static444.anInt7297, 0);
+			Static257.aClass57_19 = arg0.method4308(Static456.method318(Static293.aJs5_60, Static270.anInt5073, 0));
+			@Pc(304) Class18 local304 = Static456.method318(Static293.aJs5_60, Static444.anInt7297, 0);
 			Static143.aClass57_15 = arg0.method4308(local304);
 			local304.method316();
 			Static132.aClass57_12 = arg0.method4308(local304);

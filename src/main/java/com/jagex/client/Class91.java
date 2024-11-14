@@ -1,6 +1,6 @@
 package com.jagex.client;
 
-import com.jagex.client.js5.Class76;
+import com.jagex.client.js5.Js5;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalClass;
 import org.openrs2.deob.annotation.OriginalMember;
@@ -13,18 +13,18 @@ public final class Class91 implements Interface7 {
 	private final Class142 aClass142_2 = new Class142(256);
 
 	@OriginalMember(owner = "client!hb", name = "e", descriptor = "Lclient!fs;")
-	private final Class76 aClass76_34;
+	private final Js5 aJs5_34;
 
 	@OriginalMember(owner = "client!hb", name = "l", descriptor = "Lclient!fs;")
-	private final Class76 aClass76_35;
+	private final Js5 aJs5_35;
 
 	@OriginalMember(owner = "client!hb", name = "n", descriptor = "[Lclient!vf;")
 	private final Class251[] aClass251Array1;
 
 	@OriginalMember(owner = "client!hb", name = "<init>", descriptor = "(Lclient!fs;Lclient!fs;Lclient!fs;)V")
-	public Class91(@OriginalArg(0) Class76 arg0, @OriginalArg(1) Class76 arg1, @OriginalArg(2) Class76 arg2) {
-		this.aClass76_34 = arg2;
-		this.aClass76_35 = arg1;
+	public Class91(@OriginalArg(0) Js5 arg0, @OriginalArg(1) Js5 arg1, @OriginalArg(2) Js5 arg2) {
+		this.aJs5_34 = arg2;
+		this.aJs5_35 = arg1;
 		@Pc(24) Packet local24 = new Packet(arg0.method2104(0, 0));
 		@Pc(28) int local28 = local24.g2();
 		this.aClass251Array1 = new Class251[local28];
@@ -139,19 +139,19 @@ public final class Class91 implements Interface7 {
 	@OriginalMember(owner = "client!hb", name = "a", descriptor = "(ZIZFII)[I")
 	@Override
 	public int[] method2395(@OriginalArg(1) int arg0, @OriginalArg(3) float arg1, @OriginalArg(4) int arg2, @OriginalArg(5) int arg3) {
-		return this.method2397(arg0).method3282(arg3, this.aClass76_34, this, arg2, (double) arg1, this.aClass251Array1[arg0].aBoolean645);
+		return this.method2397(arg0).method3282(arg3, this.aJs5_34, this, arg2, (double) arg1, this.aClass251Array1[arg0].aBoolean645);
 	}
 
 	@OriginalMember(owner = "client!hb", name = "a", descriptor = "(ZIIFII)[I")
 	@Override
 	public int[] method2393(@OriginalArg(0) boolean arg0, @OriginalArg(2) int arg1, @OriginalArg(3) float arg2, @OriginalArg(4) int arg3, @OriginalArg(5) int arg4) {
-		return this.method2397(arg1).method3277(this, arg0, this.aClass251Array1[arg1].aBoolean645, this.aClass76_34, (double) arg2, arg4, arg3);
+		return this.method2397(arg1).method3277(this, arg0, this.aClass251Array1[arg1].aBoolean645, this.aJs5_34, (double) arg2, arg4, arg3);
 	}
 
 	@OriginalMember(owner = "client!hb", name = "a", descriptor = "(FIIZII)[F")
 	@Override
 	public float[] method2394(@OriginalArg(0) float arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(4) int arg3) {
-		return this.method2397(arg1).method3283(this, this.aClass76_34, arg3, this.aClass251Array1[arg1].aBoolean645, arg2);
+		return this.method2397(arg1).method3283(this, this.aJs5_34, arg3, this.aClass251Array1[arg1].aBoolean645, arg2);
 	}
 
 	@OriginalMember(owner = "client!hb", name = "c", descriptor = "(II)Lclient!kv;")
@@ -160,7 +160,7 @@ public final class Class91 implements Interface7 {
 		if (local10 != null) {
 			return (SecondaryNode_Sub1_Sub14) local10;
 		}
-		@Pc(26) byte[] local26 = this.aClass76_35.method2122(arg0);
+		@Pc(26) byte[] local26 = this.aJs5_35.method2122(arg0);
 		if (local26 == null) {
 			return null;
 		} else {
@@ -174,6 +174,6 @@ public final class Class91 implements Interface7 {
 	@Override
 	public boolean method2392(@OriginalArg(0) int arg0) {
 		@Pc(15) SecondaryNode_Sub1_Sub14 local15 = this.method2397(arg0);
-		return local15 != null && local15.method3276(this.aClass76_34, this);
+		return local15 != null && local15.method3276(this.aJs5_34, this);
 	}
 }

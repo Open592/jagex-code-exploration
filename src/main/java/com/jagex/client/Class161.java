@@ -173,7 +173,7 @@ public final class Class161 {
 			if (this.aShortArray165 != null) {
 				local134 |= 0x8000;
 			}
-			@Pc(157) Class122 local157 = Static370.method4948(this.aClass194_1.aClass76_71, this.anInt4996);
+			@Pc(157) Class122 local157 = Static370.method4948(this.aClass194_1.aJs5_71, this.anInt4996);
 			if (local157 == null) {
 				return null;
 			}

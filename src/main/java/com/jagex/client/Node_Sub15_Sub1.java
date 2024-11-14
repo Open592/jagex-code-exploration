@@ -1,6 +1,6 @@
 package com.jagex.client;
 
-import com.jagex.client.js5.Class76;
+import com.jagex.client.js5.Js5;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalClass;
 import org.openrs2.deob.annotation.OriginalMember;
@@ -842,7 +842,7 @@ public final class Node_Sub15_Sub1 extends Node_Sub15 {
 	}
 
 	@OriginalMember(owner = "client!dv", name = "a", descriptor = "(ILclient!oj;ZLclient!fs;Lclient!nb;)Z")
-	public synchronized boolean method1456(@OriginalArg(1) Class171 arg0, @OriginalArg(3) Class76 arg1, @OriginalArg(4) Node_Sub30 arg2) {
+	public synchronized boolean method1456(@OriginalArg(1) Class171 arg0, @OriginalArg(3) Js5 arg1, @OriginalArg(4) Node_Sub30 arg2) {
 		arg2.method3726();
 		@Pc(9) boolean local9 = true;
 		@Pc(20) int[] local20 = new int[] { 22050 };

@@ -1,6 +1,6 @@
 package com.jagex.client;
 
-import com.jagex.client.js5.Class76;
+import com.jagex.client.js5.Js5;
 import com.jagex.signlink.MonotonicClock;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalMember;
@@ -105,10 +105,10 @@ public final class Static439 {
 	}
 
 	@OriginalMember(owner = "client!wd", name = "a", descriptor = "(Lclient!fs;Lclient!dv;Lclient!fs;Lclient!fs;B)Z")
-	public static boolean method5554(@OriginalArg(0) Class76 arg0, @OriginalArg(1) Node_Sub15_Sub1 arg1, @OriginalArg(2) Class76 arg2, @OriginalArg(3) Class76 arg3) {
-		Static195.aClass76_43 = arg3;
-		Static345.aClass76_75 = arg2;
-		Static371.aClass76_85 = arg0;
+	public static boolean method5554(@OriginalArg(0) Js5 arg0, @OriginalArg(1) Node_Sub15_Sub1 arg1, @OriginalArg(2) Js5 arg2, @OriginalArg(3) Js5 arg3) {
+		Static195.aJs5_43 = arg3;
+		Static345.aJs5_75 = arg2;
+		Static371.aJs5_85 = arg0;
 		Static56.aClass4_Sub15_Sub1_1 = arg1;
 		return true;
 	}

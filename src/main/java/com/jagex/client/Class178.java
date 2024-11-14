@@ -1,6 +1,6 @@
 package com.jagex.client;
 
-import com.jagex.client.js5.Class76;
+import com.jagex.client.js5.Js5;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalClass;
 import org.openrs2.deob.annotation.OriginalMember;
@@ -44,10 +44,10 @@ public final class Class178 {
 	@OriginalMember(owner = "client!pd", name = "a", descriptor = "(B)Z")
 	public boolean method4093() {
 		@Pc(15) boolean local15 = true;
-		@Pc(19) Class76 local19 = this.aClass109_1.aClass76_41;
-		synchronized (this.aClass109_1.aClass76_41) {
+		@Pc(19) Js5 local19 = this.aClass109_1.aJs5_41;
+		synchronized (this.aClass109_1.aJs5_41) {
 			for (@Pc(23) int local23 = 0; local23 < 5; local23++) {
-				if (this.anIntArray355[local23] != -1 && !this.aClass109_1.aClass76_41.method2098(0, this.anIntArray355[local23])) {
+				if (this.anIntArray355[local23] != -1 && !this.aClass109_1.aJs5_41.method2098(0, this.anIntArray355[local23])) {
 					local15 = false;
 				}
 			}
@@ -61,10 +61,10 @@ public final class Class178 {
 			return true;
 		}
 		@Pc(19) boolean local19 = true;
-		@Pc(23) Class76 local23 = this.aClass109_1.aClass76_41;
-		synchronized (this.aClass109_1.aClass76_41) {
+		@Pc(23) Js5 local23 = this.aClass109_1.aJs5_41;
+		synchronized (this.aClass109_1.aJs5_41) {
 			for (@Pc(27) int local27 = 0; local27 < this.anIntArray356.length; local27++) {
-				if (!this.aClass109_1.aClass76_41.method2098(0, this.anIntArray356[local27])) {
+				if (!this.aClass109_1.aJs5_41.method2098(0, this.anIntArray356[local27])) {
 					local19 = false;
 				}
 			}
@@ -78,15 +78,15 @@ public final class Class178 {
 			return null;
 		}
 		@Pc(15) Class122[] local15 = new Class122[this.anIntArray356.length];
-		@Pc(19) Class76 local19 = this.aClass109_1.aClass76_41;
+		@Pc(19) Js5 local19 = this.aClass109_1.aJs5_41;
 		@Pc(23) int local23;
-		synchronized (this.aClass109_1.aClass76_41) {
+		synchronized (this.aClass109_1.aJs5_41) {
 			local23 = 0;
 			while (true) {
 				if (local23 >= this.anIntArray356.length) {
 					break;
 				}
-				local15[local23] = Static370.method4948(this.aClass109_1.aClass76_41, this.anIntArray356[local23]);
+				local15[local23] = Static370.method4948(this.aClass109_1.aJs5_41, this.anIntArray356[local23]);
 				local23++;
 			}
 		}
@@ -158,16 +158,16 @@ public final class Class178 {
 	public Class122 method4099() {
 		@Pc(8) Class122[] local8 = new Class122[5];
 		@Pc(10) int local10 = 0;
-		@Pc(14) Class76 local14 = this.aClass109_1.aClass76_41;
+		@Pc(14) Js5 local14 = this.aClass109_1.aJs5_41;
 		@Pc(18) int local18;
-		synchronized (this.aClass109_1.aClass76_41) {
+		synchronized (this.aClass109_1.aJs5_41) {
 			local18 = 0;
 			while (true) {
 				if (local18 >= 5) {
 					break;
 				}
 				if (this.anIntArray355[local18] != -1) {
-					local8[local10++] = Static370.method4948(this.aClass109_1.aClass76_41, this.anIntArray355[local18]);
+					local8[local10++] = Static370.method4948(this.aClass109_1.aJs5_41, this.anIntArray355[local18]);
 				}
 				local18++;
 			}

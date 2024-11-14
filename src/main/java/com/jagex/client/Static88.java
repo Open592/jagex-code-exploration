@@ -1,13 +1,13 @@
 package com.jagex.client;
 
-import com.jagex.client.js5.Class76;
+import com.jagex.client.js5.Js5;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalMember;
 
 public final class Static88 {
 
 	@OriginalMember(owner = "client!eh", name = "e", descriptor = "Lclient!fs;")
-	public static Class76 aClass76_23;
+	public static Js5 aJs5_23;
 
 	@OriginalMember(owner = "client!eh", name = "h", descriptor = "Lclient!lq;")
 	public static Class139 cacheDataFile;

@@ -1,7 +1,7 @@
 package com.jagex.client;
 
 import com.jagex.client.env.ModeGame;
-import com.jagex.client.js5.Class76;
+import com.jagex.client.js5.Js5;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalClass;
 import org.openrs2.deob.annotation.OriginalMember;
@@ -29,10 +29,10 @@ public final class Class206 {
 	private final Class180 aClass180_2;
 
 	@OriginalMember(owner = "client!ro", name = "n", descriptor = "Lclient!fs;")
-	public final Class76 aClass76_77;
+	public final Js5 aJs5_77;
 
 	@OriginalMember(owner = "client!ro", name = "r", descriptor = "Lclient!fs;")
-	private final Class76 aClass76_78;
+	private final Js5 aJs5_78;
 
 	@OriginalMember(owner = "client!ro", name = "u", descriptor = "Z")
 	private boolean aBoolean555;
@@ -50,17 +50,17 @@ public final class Class206 {
 	private final String[] aStringArray30;
 
 	@OriginalMember(owner = "client!ro", name = "<init>", descriptor = "(Lclient!jk;IZLclient!ph;Lclient!fs;Lclient!fs;)V")
-	public Class206(@OriginalArg(0) ModeGame arg0, @OriginalArg(1) int arg1, @OriginalArg(2) boolean arg2, @OriginalArg(3) Class180 arg3, @OriginalArg(4) Class76 arg4, @OriginalArg(5) Class76 arg5) {
+	public Class206(@OriginalArg(0) ModeGame arg0, @OriginalArg(1) int arg1, @OriginalArg(2) boolean arg2, @OriginalArg(3) Class180 arg3, @OriginalArg(4) Js5 arg4, @OriginalArg(5) Js5 arg5) {
 		this.aClass180_2 = arg3;
-		this.aClass76_77 = arg5;
-		this.aClass76_78 = arg4;
+		this.aJs5_77 = arg5;
+		this.aJs5_78 = arg4;
 		this.aBoolean555 = arg2;
 		this.anInt5988 = arg1;
-		if (this.aClass76_78 == null) {
+		if (this.aJs5_78 == null) {
 			this.anInt5987 = 0;
 		} else {
-			@Pc(49) int local49 = this.aClass76_78.method2100() - 1;
-			this.anInt5987 = this.aClass76_78.method2108(local49) + local49 * 256;
+			@Pc(49) int local49 = this.aJs5_78.method2100() - 1;
+			this.anInt5987 = this.aJs5_78.method2108(local49) + local49 * 256;
 		}
 		this.aStringArray31 = new String[] { null, null, Static147.A_LOCALIZED_STRING___57.getLocalizedString(this.anInt5988), null, null };
 		this.aStringArray30 = new String[] { null, null, null, null, Static374.A_LOCALIZED_STRING___128.getLocalizedString(this.anInt5988) };
@@ -154,7 +154,7 @@ public final class Class206 {
 		if (local18 != null) {
 			return local18;
 		}
-		@Pc(41) byte[] local41 = this.aClass76_78.method2104(Static24.method4082(arg0), Static379.method5009(arg0));
+		@Pc(41) byte[] local41 = this.aJs5_78.method2104(Static24.method4082(arg0), Static379.method5009(arg0));
 		local18 = new Class211();
 		local18.anInt6171 = arg0;
 		local18.aClass206_1 = this;

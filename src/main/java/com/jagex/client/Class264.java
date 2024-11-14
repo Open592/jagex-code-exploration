@@ -1,6 +1,6 @@
 package com.jagex.client;
 
-import com.jagex.client.js5.Class76;
+import com.jagex.client.js5.Js5;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalClass;
 import org.openrs2.deob.annotation.OriginalMember;
@@ -380,14 +380,14 @@ public final class Class264 {
 			}
 			local387 = local37;
 			@Pc(625) boolean local625 = false;
-			@Pc(629) Class76 local629 = this.aClass240_2.aClass76_94;
-			synchronized (this.aClass240_2.aClass76_94) {
+			@Pc(629) Js5 local629 = this.aClass240_2.aJs5_94;
+			synchronized (this.aClass240_2.aJs5_94) {
 				local633 = 0;
 				while (true) {
 					if (local633 >= this.anIntArray545.length) {
 						break;
 					}
-					if (this.anIntArray545[local633] != -1 && !this.aClass240_2.aClass76_94.method2098(0, this.anIntArray545[local633])) {
+					if (this.anIntArray545[local633] != -1 && !this.aClass240_2.aJs5_94.method2098(0, this.anIntArray545[local633])) {
 						local625 = true;
 					}
 					local633++;
@@ -399,9 +399,9 @@ public final class Class264 {
 			@Pc(676) Class122[] local676 = new Class122[this.anIntArray545.length];
 			for (local633 = 0; local633 < this.anIntArray545.length; local633++) {
 				if (this.anIntArray545[local633] != -1) {
-					@Pc(690) Class76 local690 = this.aClass240_2.aClass76_94;
-					synchronized (this.aClass240_2.aClass76_94) {
-						local676[local633] = Static370.method4948(this.aClass240_2.aClass76_94, this.anIntArray545[local633]);
+					@Pc(690) Js5 local690 = this.aClass240_2.aJs5_94;
+					synchronized (this.aClass240_2.aJs5_94) {
+						local676[local633] = Static370.method4948(this.aClass240_2.aJs5_94, this.anIntArray545[local633]);
 					}
 					if (local676[local633] != null) {
 						if (local676[local633].anInt3681 < 13) {
@@ -824,14 +824,14 @@ public final class Class264 {
 				}
 				@Pc(105) int local105 = local42;
 				@Pc(107) boolean local107 = false;
-				@Pc(111) Class76 local111 = this.aClass240_2.aClass76_94;
-				synchronized (this.aClass240_2.aClass76_94) {
+				@Pc(111) Js5 local111 = this.aClass240_2.aJs5_94;
+				synchronized (this.aClass240_2.aJs5_94) {
 					@Pc(115) int local115 = 0;
 					while (true) {
 						if (local115 >= this.anIntArray546.length) {
 							break;
 						}
-						if (!this.aClass240_2.aClass76_94.method2098(0, this.anIntArray546[local115])) {
+						if (!this.aClass240_2.aJs5_94.method2098(0, this.anIntArray546[local115])) {
 							local107 = true;
 						}
 						local115++;
@@ -841,11 +841,11 @@ public final class Class264 {
 					return null;
 				}
 				@Pc(151) Class122[] local151 = new Class122[this.anIntArray546.length];
-				@Pc(155) Class76 local155 = this.aClass240_2.aClass76_94;
+				@Pc(155) Js5 local155 = this.aClass240_2.aJs5_94;
 				@Pc(159) int local159;
-				synchronized (this.aClass240_2.aClass76_94) {
+				synchronized (this.aClass240_2.aJs5_94) {
 					for (local159 = 0; local159 < this.anIntArray546.length; local159++) {
-						local151[local159] = Static370.method4948(this.aClass240_2.aClass76_94, this.anIntArray546[local159]);
+						local151[local159] = Static370.method4948(this.aClass240_2.aJs5_94, this.anIntArray546[local159]);
 					}
 				}
 				for (@Pc(192) int local192 = 0; local192 < this.anIntArray546.length; local192++) {

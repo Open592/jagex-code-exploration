@@ -1,7 +1,7 @@
 package com.jagex.client;
 
 import com.jagex.client.env.ModeGame;
-import com.jagex.client.js5.Class76;
+import com.jagex.client.js5.Js5;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalClass;
 import org.openrs2.deob.annotation.OriginalMember;
@@ -29,22 +29,22 @@ public final class Class262 {
 	public final Class68 aClass68_57 = new Class68(50);
 
 	@OriginalMember(owner = "client!wf", name = "r", descriptor = "Lclient!fs;")
-	private final Class76 aClass76_101;
+	private final Js5 aJs5_101;
 
 	@OriginalMember(owner = "client!wf", name = "d", descriptor = "Z")
 	public boolean aBoolean677;
 
 	@OriginalMember(owner = "client!wf", name = "o", descriptor = "Lclient!fs;")
-	public final Class76 aClass76_100;
+	public final Js5 aJs5_100;
 
 	@OriginalMember(owner = "client!wf", name = "<init>", descriptor = "(Lclient!jk;IZLclient!fs;Lclient!fs;)V")
-	public Class262(@OriginalArg(0) ModeGame arg0, @OriginalArg(1) int arg1, @OriginalArg(2) boolean arg2, @OriginalArg(3) Class76 arg3, @OriginalArg(4) Class76 arg4) {
-		this.aClass76_101 = arg3;
+	public Class262(@OriginalArg(0) ModeGame arg0, @OriginalArg(1) int arg1, @OriginalArg(2) boolean arg2, @OriginalArg(3) Js5 arg3, @OriginalArg(4) Js5 arg4) {
+		this.aJs5_101 = arg3;
 		this.aBoolean677 = arg2;
-		this.aClass76_100 = arg4;
-		if (this.aClass76_101 != null) {
-			@Pc(47) int local47 = this.aClass76_101.method2100() - 1;
-			this.aClass76_101.method2108(local47);
+		this.aJs5_100 = arg4;
+		if (this.aJs5_101 != null) {
+			@Pc(47) int local47 = this.aJs5_101.method2100() - 1;
+			this.aJs5_101.method2108(local47);
 		}
 	}
 
@@ -135,7 +135,7 @@ public final class Class262 {
 		if (local20 != null) {
 			return local20;
 		}
-		@Pc(41) byte[] local41 = this.aClass76_101.method2104(Static27.method523(arg0), Static306.method4142(arg0));
+		@Pc(41) byte[] local41 = this.aJs5_101.method2104(Static27.method523(arg0), Static306.method4142(arg0));
 		local20 = new Class202();
 		local20.aClass262_4 = this;
 		local20.anInt5823 = arg0;

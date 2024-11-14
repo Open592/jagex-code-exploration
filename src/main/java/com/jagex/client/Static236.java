@@ -1,13 +1,13 @@
 package com.jagex.client;
 
-import com.jagex.client.js5.Class76;
+import com.jagex.client.js5.Js5;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalMember;
 
 public final class Static236 {
 
 	@OriginalMember(owner = "client!m", name = "i", descriptor = "Lclient!fs;")
-	public static Class76 aClass76_49;
+	public static Js5 aJs5_49;
 
 	@OriginalMember(owner = "client!m", name = "c", descriptor = "Lclient!bg;")
 	public static final Class22 aClass22_200 = new Class22(97, -2);

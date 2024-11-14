@@ -15,7 +15,7 @@ public final class Static201 {
 	@OriginalMember(owner = "client!kd", name = "a", descriptor = "(II)V")
 	public static void method4602(@OriginalArg(1) int arg0) {
 		if (-1 != arg0 && Static453.aBooleanArray25[arg0]) {
-			Static356.aClass76_81.method2115(arg0);
+			Static356.aJs5_81.method2115(arg0);
 			Static297.aClass247ArrayArray2[arg0] = null;
 			Static30.aClass247ArrayArray1[arg0] = null;
 			Static453.aBooleanArray25[arg0] = false;

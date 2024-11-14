@@ -44,12 +44,12 @@ public final class Static72 {
 		Static363.aClass4_Sub15_Sub1_3.method1453();
 		Static424.aClass49_2 = Static380.method5016(0, GameShell.signLink, 22050, GameShell.canvas);
 		Static424.aClass49_2.method2070(Static363.aClass4_Sub15_Sub1_3);
-		Static439.method5554(Static67.aClass76_19, Static363.aClass4_Sub15_Sub1_3, Static312.aClass76_66, Static350.aClass76_79);
+		Static439.method5554(Static67.aJs5_19, Static363.aClass4_Sub15_Sub1_3, Static312.aJs5_66, Static350.aJs5_79);
 		Static291.aClass49_1 = Static380.method5016(1, GameShell.signLink, 2048, GameShell.canvas);
 		Static360.aClass4_Sub15_Sub2_2 = new Node_Sub15_Sub2();
 		Static291.aClass49_1.method2070(Static360.aClass4_Sub15_Sub2_2);
 		Static275.aClass261_1 = new Class261(22050, Static261.anInt4928);
-		Static414.anInt6866 = Static46.aClass76_54.method2099("scape main");
+		Static414.anInt6866 = Static46.aJs5_54.method2099("scape main");
 	}
 
 	@OriginalMember(owner = "client!dm", name = "a", descriptor = "(IIIIII)V")

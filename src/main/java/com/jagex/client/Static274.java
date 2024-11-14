@@ -28,7 +28,7 @@ public final class Static274 {
 				Static56.aClass4_Sub15_Sub1_1.method1440();
 				Static56.aClass4_Sub15_Sub1_1.method1441();
 				Static419.aClass171_1 = null;
-				if (Static236.aClass76_49 == null) {
+				if (Static236.aJs5_49 == null) {
 					Static27.anInt461 = 0;
 				} else {
 					Static27.anInt461 = 2;
@@ -38,7 +38,7 @@ public final class Static274 {
 		} catch (@Pc(61) Exception local61) {
 			local61.printStackTrace();
 			Static56.aClass4_Sub15_Sub1_1.method1440();
-			Static236.aClass76_49 = null;
+			Static236.aJs5_49 = null;
 			Static27.anInt461 = 0;
 			Static419.aClass171_1 = null;
 			Static143.aClass4_Sub30_2 = null;
@@ -51,7 +51,7 @@ public final class Static274 {
 		if (local10 != null) {
 			return local10;
 		}
-		@Pc(20) byte[] local20 = Static146.aClass76_4.method2104(arg0, 0);
+		@Pc(20) byte[] local20 = Static146.aJs5_4.method2104(arg0, 0);
 		local10 = new Class123();
 		if (local20 != null) {
 			local10.method3114(new Packet(local20));

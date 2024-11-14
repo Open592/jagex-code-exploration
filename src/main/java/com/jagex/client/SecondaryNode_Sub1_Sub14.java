@@ -1,6 +1,6 @@
 package com.jagex.client;
 
-import com.jagex.client.js5.Class76;
+import com.jagex.client.js5.Js5;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalClass;
 import org.openrs2.deob.annotation.OriginalMember;
@@ -89,7 +89,7 @@ public final class SecondaryNode_Sub1_Sub14 extends SecondaryNode {
 	}
 
 	@OriginalMember(owner = "client!kv", name = "a", descriptor = "(BLclient!fs;Lclient!ga;)Z")
-	public boolean method3276(@OriginalArg(1) Class76 arg0, @OriginalArg(2) Interface7 arg1) {
+	public boolean method3276(@OriginalArg(1) Js5 arg0, @OriginalArg(2) Interface7 arg1) {
 		@Pc(9) int local9;
 		if (Static182.anInt3496 < 0) {
 			for (local9 = 0; local9 < this.anIntArray264.length; local9++) {
@@ -113,8 +113,8 @@ public final class SecondaryNode_Sub1_Sub14 extends SecondaryNode {
 	}
 
 	@OriginalMember(owner = "client!kv", name = "a", descriptor = "(Lclient!ga;IZZLclient!fs;DII)[I")
-	public int[] method3277(@OriginalArg(0) Interface7 arg0, @OriginalArg(2) boolean arg1, @OriginalArg(3) boolean arg2, @OriginalArg(4) Class76 arg3, @OriginalArg(5) double arg4, @OriginalArg(6) int arg5, @OriginalArg(7) int arg6) {
-		Static40.aClass76_9 = arg3;
+	public int[] method3277(@OriginalArg(0) Interface7 arg0, @OriginalArg(2) boolean arg1, @OriginalArg(3) boolean arg2, @OriginalArg(4) Js5 arg3, @OriginalArg(5) double arg4, @OriginalArg(6) int arg5, @OriginalArg(7) int arg6) {
+		Static40.aJs5_9 = arg3;
 		Static331.anInterface7_7 = arg0;
 		for (@Pc(11) int local11 = 0; local11 < this.aClass4_Sub6Array23.length; local11++) {
 			this.aClass4_Sub6Array23[local11].method5513(arg5, arg6);
@@ -195,9 +195,9 @@ public final class SecondaryNode_Sub1_Sub14 extends SecondaryNode {
 	}
 
 	@OriginalMember(owner = "client!kv", name = "a", descriptor = "(IBLclient!fs;Lclient!ga;IDZ)[I")
-	public int[] method3282(@OriginalArg(0) int arg0, @OriginalArg(2) Class76 arg1, @OriginalArg(3) Interface7 arg2, @OriginalArg(4) int arg3, @OriginalArg(5) double arg4, @OriginalArg(6) boolean arg5) {
+	public int[] method3282(@OriginalArg(0) int arg0, @OriginalArg(2) Js5 arg1, @OriginalArg(3) Interface7 arg2, @OriginalArg(4) int arg3, @OriginalArg(5) double arg4, @OriginalArg(6) boolean arg5) {
 		Static331.anInterface7_7 = arg2;
-		Static40.aClass76_9 = arg1;
+		Static40.aJs5_9 = arg1;
 		for (@Pc(23) int local23 = 0; local23 < this.aClass4_Sub6Array23.length; local23++) {
 			this.aClass4_Sub6Array23[local23].method5513(arg3, arg0);
 		}
@@ -279,8 +279,8 @@ public final class SecondaryNode_Sub1_Sub14 extends SecondaryNode {
 	}
 
 	@OriginalMember(owner = "client!kv", name = "a", descriptor = "(ZLclient!ga;Lclient!fs;IZI)[F")
-	public float[] method3283(@OriginalArg(1) Interface7 arg0, @OriginalArg(2) Class76 arg1, @OriginalArg(3) int arg2, @OriginalArg(4) boolean arg3, @OriginalArg(5) int arg4) {
-		Static40.aClass76_9 = arg1;
+	public float[] method3283(@OriginalArg(1) Interface7 arg0, @OriginalArg(2) Js5 arg1, @OriginalArg(3) int arg2, @OriginalArg(4) boolean arg3, @OriginalArg(5) int arg4) {
+		Static40.aJs5_9 = arg1;
 		Static331.anInterface7_7 = arg0;
 		for (@Pc(18) int local18 = 0; local18 < this.aClass4_Sub6Array23.length; local18++) {
 			this.aClass4_Sub6Array23[local18].method5513(arg4, arg2);

@@ -17,7 +17,7 @@ public final class Static119 {
 	public static int anInt2524 = 0;
 
 	@OriginalMember(owner = "client!ft", name = "I", descriptor = "[Lclient!lv;")
-	public static final Js5NetResourceProvider[] aClass143_Sub1Array1 = new Js5NetResourceProvider[30];
+	public static final Js5NetResourceProvider[] archiveDataResourceProviders = new Js5NetResourceProvider[30];
 
 	@OriginalMember(owner = "client!ft", name = "N", descriptor = "Lclient!bg;")
 	public static final Class22 aClass22_106 = new Class22(20, 12);
@@ -32,21 +32,21 @@ public final class Static119 {
 		if (local19 != null) {
 			return local19;
 		}
-		@Pc(33) byte[] local33 = Static197.aClass76_45.method2122(Static197.aClass76_45.method2117(local10));
+		@Pc(33) byte[] local33 = Static197.aJs5_45.method2122(Static197.aJs5_45.method2117(local10));
 		if (local33 == null) {
 			local10 = arg2.anInt5418 | arg0 + 65536 << 8;
 			local19 = (SecondaryNode_Sub1) Static48.aClass142_1.method3483((long) local10 << 16);
 			if (local19 != null) {
 				return local19;
 			}
-			local33 = Static197.aClass76_45.method2122(Static197.aClass76_45.method2117(local10));
+			local33 = Static197.aJs5_45.method2122(Static197.aJs5_45.method2117(local10));
 			if (local33 == null) {
 				local10 = arg2.anInt5418 | 0xFFFF00;
 				local19 = (SecondaryNode_Sub1) Static48.aClass142_1.method3483((long) local10 << 16);
 				if (local19 != null) {
 					return local19;
 				}
-				local33 = Static197.aClass76_45.method2122(Static197.aClass76_45.method2117(local10));
+				local33 = Static197.aJs5_45.method2122(Static197.aJs5_45.method2117(local10));
 				if (local33 == null) {
 					return null;
 				} else if (local33.length <= 1) {

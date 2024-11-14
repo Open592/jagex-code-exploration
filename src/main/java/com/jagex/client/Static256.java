@@ -1,7 +1,7 @@
 package com.jagex.client;
 
 import com.jagex.client.jaggl.OpenGL;
-import com.jagex.client.js5.Class76;
+import com.jagex.client.js5.Js5;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;
@@ -12,7 +12,7 @@ public final class Static256 {
 	public static int anInt4776;
 
 	@OriginalMember(owner = "client!mu", name = "t", descriptor = "Lclient!fs;")
-	public static Class76 aClass76_50;
+	public static Js5 aJs5_50;
 
 	@OriginalMember(owner = "client!mu", name = "f", descriptor = "Lclient!gk;")
 	public static final LocalizedString A_LOCALIZED_STRING___99 = new LocalizedString("Please remove ", "Bitte entferne ", "Veuillez commencer par supprimer ", "Remova ");

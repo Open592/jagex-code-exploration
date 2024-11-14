@@ -328,8 +328,8 @@ public final class Static400 {
 				return;
 			}
 			if (command.equalsIgnoreCase("resetminimap")) {
-				Static293.aClass76_60.method2102();
-				Static293.aClass76_60.method2118();
+				Static293.aJs5_60.method2102();
+				Static293.aJs5_60.method2118();
 				Static76.aClass265_2.method5587();
 				Static348.aClass182_4.method4127();
 				Static277.method3932();

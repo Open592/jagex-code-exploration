@@ -404,6 +404,7 @@ public final class Js5NetResourceProvider extends Js5ResourceProvider {
 	public void method3526() {
 		if (this.aClass222_3 != null) {
 			this.aBoolean413 = true;
+
 			if (this.aClass183_31 == null) {
 				this.aClass183_31 = new Class183();
 			}

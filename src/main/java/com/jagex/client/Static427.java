@@ -21,7 +21,7 @@ public final class Static427 {
 		if (arg0 == -1 && !Static436.aBoolean666) {
 			Static106.method1986();
 		} else if (arg0 != -1 && (arg0 != Static62.anInt1117 || !Static109.method5336()) && local6 != 0 && !Static436.aBoolean666) {
-			Static417.method5355(local6, Static46.aClass76_54, arg1, arg0);
+			Static417.method5355(local6, Static46.aJs5_54, arg1, arg0);
 		}
 		Static62.anInt1117 = arg0;
 	}

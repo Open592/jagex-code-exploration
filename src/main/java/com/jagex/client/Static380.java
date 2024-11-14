@@ -2,7 +2,7 @@ package com.jagex.client;
 
 import java.awt.Component;
 
-import com.jagex.client.js5.Class76;
+import com.jagex.client.js5.Js5;
 import com.jagex.signlink.SignLink;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalMember;
@@ -80,7 +80,7 @@ public final class Static380 {
 	}
 
 	@OriginalMember(owner = "client!te", name = "a", descriptor = "(Lclient!fs;ILjava/lang/String;Z)Lclient!qk;")
-	public static Class195 method5018(@OriginalArg(0) Class76 arg0, @OriginalArg(2) String arg1, @OriginalArg(3) boolean arg2) {
+	public static Class195 method5018(@OriginalArg(0) Js5 arg0, @OriginalArg(2) String arg1, @OriginalArg(3) boolean arg2) {
 		@Pc(18) int local18 = arg0.method2099(arg1);
 		if (local18 == -1) {
 			return new Class195(0);

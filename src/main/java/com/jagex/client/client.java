@@ -1024,36 +1024,36 @@ public final class client extends GameShell {
 				Static3.aClass4_Sub12_Sub1_5.pArrayBuffer(local323.data, local323.pos);
 				Static249.aBoolean425 = true;
 				Static3.aClass4_Sub12_Sub1_5.p2(Static183.anInt3512);
-				Static3.aClass4_Sub12_Sub1_5.p4(Static395.aClass76_92.method2111());
-				Static3.aClass4_Sub12_Sub1_5.p4(Static324.aClass76_69.method2111());
-				Static3.aClass4_Sub12_Sub1_5.p4(Static74.aClass76_20.method2111());
-				Static3.aClass4_Sub12_Sub1_5.p4(Static256.aClass76_50.method2111());
-				Static3.aClass4_Sub12_Sub1_5.p4(Static67.aClass76_19.method2111());
-				Static3.aClass4_Sub12_Sub1_5.p4(Static49.aClass76_27.method2111());
-				Static3.aClass4_Sub12_Sub1_5.p4(Static46.aClass76_54.method2111());
-				Static3.aClass4_Sub12_Sub1_5.p4(Static357.aClass76_82.method2111());
-				Static3.aClass4_Sub12_Sub1_5.p4(Static293.aClass76_60.method2111());
-				Static3.aClass4_Sub12_Sub1_5.p4(Static196.aClass76_44.method2111());
-				Static3.aClass4_Sub12_Sub1_5.p4(Static88.aClass76_23.method2111());
-				Static3.aClass4_Sub12_Sub1_5.p4(Static284.aClass76_55.method2111());
-				Static3.aClass4_Sub12_Sub1_5.p4(Static197.aClass76_45.method2111());
-				Static3.aClass4_Sub12_Sub1_5.p4(Static209.aClass76_48.method2111());
-				Static3.aClass4_Sub12_Sub1_5.p4(Static312.aClass76_66.method2111());
-				Static3.aClass4_Sub12_Sub1_5.p4(Static350.aClass76_79.method2111());
-				Static3.aClass4_Sub12_Sub1_5.p4(Static424.aClass76_99.method2111());
-				Static3.aClass4_Sub12_Sub1_5.p4(Static208.aClass76_29.method2111());
-				Static3.aClass4_Sub12_Sub1_5.p4(Static381.aClass76_87.method2111());
-				Static3.aClass4_Sub12_Sub1_5.p4(Static391.aClass76_91.method2111());
-				Static3.aClass4_Sub12_Sub1_5.p4(Static388.aClass76_90.method2111());
-				Static3.aClass4_Sub12_Sub1_5.p4(Static55.aClass76_16.method2111());
-				Static3.aClass4_Sub12_Sub1_5.p4(Static64.aClass76_17.method2111());
-				Static3.aClass4_Sub12_Sub1_5.p4(Static163.aClass76_39.method2111());
-				Static3.aClass4_Sub12_Sub1_5.p4(Static66.aClass76_70.method2111());
-				Static3.aClass4_Sub12_Sub1_5.p4(Static154.aClass76_11.method2111());
-				Static3.aClass4_Sub12_Sub1_5.p4(Static24.aClass76_61.method2111());
-				Static3.aClass4_Sub12_Sub1_5.p4(Static417.aClass76_98.method2111());
-				Static3.aClass4_Sub12_Sub1_5.p4(Static19.aClass76_2.method2111());
-				Static3.aClass4_Sub12_Sub1_5.p4(Static366.aClass76_83.method2111());
+				Static3.aClass4_Sub12_Sub1_5.p4(Static395.aJs5_92.method2111());
+				Static3.aClass4_Sub12_Sub1_5.p4(Static324.aJs5_69.method2111());
+				Static3.aClass4_Sub12_Sub1_5.p4(Static74.aJs5_20.method2111());
+				Static3.aClass4_Sub12_Sub1_5.p4(Static256.aJs5_50.method2111());
+				Static3.aClass4_Sub12_Sub1_5.p4(Static67.aJs5_19.method2111());
+				Static3.aClass4_Sub12_Sub1_5.p4(Static49.aJs5_27.method2111());
+				Static3.aClass4_Sub12_Sub1_5.p4(Static46.aJs5_54.method2111());
+				Static3.aClass4_Sub12_Sub1_5.p4(Static357.aJs5_82.method2111());
+				Static3.aClass4_Sub12_Sub1_5.p4(Static293.aJs5_60.method2111());
+				Static3.aClass4_Sub12_Sub1_5.p4(Static196.aJs5_44.method2111());
+				Static3.aClass4_Sub12_Sub1_5.p4(Static88.aJs5_23.method2111());
+				Static3.aClass4_Sub12_Sub1_5.p4(Static284.aJs5_55.method2111());
+				Static3.aClass4_Sub12_Sub1_5.p4(Static197.aJs5_45.method2111());
+				Static3.aClass4_Sub12_Sub1_5.p4(Static209.aJs5_48.method2111());
+				Static3.aClass4_Sub12_Sub1_5.p4(Static312.aJs5_66.method2111());
+				Static3.aClass4_Sub12_Sub1_5.p4(Static350.aJs5_79.method2111());
+				Static3.aClass4_Sub12_Sub1_5.p4(Static424.aJs5_99.method2111());
+				Static3.aClass4_Sub12_Sub1_5.p4(Static208.aJs5_29.method2111());
+				Static3.aClass4_Sub12_Sub1_5.p4(Static381.aJs5_87.method2111());
+				Static3.aClass4_Sub12_Sub1_5.p4(Static391.aJs5_91.method2111());
+				Static3.aClass4_Sub12_Sub1_5.p4(Static388.aJs5_90.method2111());
+				Static3.aClass4_Sub12_Sub1_5.p4(Static55.aJs5_16.method2111());
+				Static3.aClass4_Sub12_Sub1_5.p4(Static64.aJs5_17.method2111());
+				Static3.aClass4_Sub12_Sub1_5.p4(Static163.aJs5_39.method2111());
+				Static3.aClass4_Sub12_Sub1_5.p4(Static66.aJs5_70.method2111());
+				Static3.aClass4_Sub12_Sub1_5.p4(Static154.aJs5_11.method2111());
+				Static3.aClass4_Sub12_Sub1_5.p4(Static24.aJs5_61.method2111());
+				Static3.aClass4_Sub12_Sub1_5.p4(Static417.aJs5_98.method2111());
+				Static3.aClass4_Sub12_Sub1_5.p4(Static19.aJs5_2.method2111());
+				Static3.aClass4_Sub12_Sub1_5.p4(Static366.aJs5_83.method2111());
 				Static3.aClass4_Sub12_Sub1_5.pArrayBuffer(local185.data, local185.pos);
 				Static3.aClass4_Sub12_Sub1_5.pSize2(Static3.aClass4_Sub12_Sub1_5.pos - local112);
 				Static125.aServerConnection_5.write(Static3.aClass4_Sub12_Sub1_5.pos, Static3.aClass4_Sub12_Sub1_5.data);
@@ -1240,35 +1240,35 @@ public final class client extends GameShell {
 		@Pc(12) boolean local12 = true;
 		for (@Pc(14) int local14 = 0; local14 < Static386.aByteArrayArray15.length; local14++) {
 			if (Static225.anIntArray291[local14] != -1 && Static386.aByteArrayArray15[local14] == null) {
-				Static386.aByteArrayArray15[local14] = Static49.aClass76_27.method2104(0, Static225.anIntArray291[local14]);
+				Static386.aByteArrayArray15[local14] = Static49.aJs5_27.method2104(0, Static225.anIntArray291[local14]);
 				if (Static386.aByteArrayArray15[local14] == null) {
 					Static100.anInt2020++;
 					local12 = false;
 				}
 			}
 			if (Static346.anIntArray418[local14] != -1 && Static247.aByteArrayArray16[local14] == null) {
-				Static247.aByteArrayArray16[local14] = Static49.aClass76_27.method2121(Static346.anIntArray418[local14], 0, Static376.anIntArrayArray50[local14]);
+				Static247.aByteArrayArray16[local14] = Static49.aJs5_27.method2121(Static346.anIntArray418[local14], 0, Static376.anIntArrayArray50[local14]);
 				if (Static247.aByteArrayArray16[local14] == null) {
 					Static100.anInt2020++;
 					local12 = false;
 				}
 			}
 			if (Static95.anIntArray155[local14] != -1 && Static435.aByteArrayArray30[local14] == null) {
-				Static435.aByteArrayArray30[local14] = Static49.aClass76_27.method2104(0, Static95.anIntArray155[local14]);
+				Static435.aByteArrayArray30[local14] = Static49.aJs5_27.method2104(0, Static95.anIntArray155[local14]);
 				if (Static435.aByteArrayArray30[local14] == null) {
 					Static100.anInt2020++;
 					local12 = false;
 				}
 			}
 			if (Static189.anIntArray236[local14] != -1 && Static193.aByteArrayArray13[local14] == null) {
-				Static193.aByteArrayArray13[local14] = Static49.aClass76_27.method2104(0, Static189.anIntArray236[local14]);
+				Static193.aByteArrayArray13[local14] = Static49.aJs5_27.method2104(0, Static189.anIntArray236[local14]);
 				if (Static193.aByteArrayArray13[local14] == null) {
 					Static100.anInt2020++;
 					local12 = false;
 				}
 			}
 			if (Static175.anIntArray222 != null && Static34.aByteArrayArray1[local14] == null && Static175.anIntArray222[local14] != -1) {
-				Static34.aByteArrayArray1[local14] = Static49.aClass76_27.method2121(Static175.anIntArray222[local14], 0, Static376.anIntArrayArray50[local14]);
+				Static34.aByteArrayArray1[local14] = Static49.aJs5_27.method2121(Static175.anIntArray222[local14], 0, Static376.anIntArrayArray50[local14]);
 				if (Static34.aByteArrayArray1[local14] == null) {
 					Static100.anInt2020++;
 					local12 = false;
@@ -1276,10 +1276,10 @@ public final class client extends GameShell {
 			}
 		}
 		if (Static292.aClass195_2 == null) {
-			if (Static197.aClass4_Sub1_Sub5_2 == null || !Static163.aClass76_39.method2107(Static197.aClass4_Sub1_Sub5_2.aString16 + "_staticelements")) {
+			if (Static197.aClass4_Sub1_Sub5_2 == null || !Static163.aJs5_39.method2107(Static197.aClass4_Sub1_Sub5_2.aString16 + "_staticelements")) {
 				Static292.aClass195_2 = new Class195(0);
-			} else if (Static163.aClass76_39.method2103(Static197.aClass4_Sub1_Sub5_2.aString16 + "_staticelements")) {
-				Static292.aClass195_2 = Static380.method5018(Static163.aClass76_39, Static197.aClass4_Sub1_Sub5_2.aString16 + "_staticelements", Static325.aBoolean506);
+			} else if (Static163.aJs5_39.method2103(Static197.aClass4_Sub1_Sub5_2.aString16 + "_staticelements")) {
+				Static292.aClass195_2 = Static380.method5018(Static163.aJs5_39, Static197.aClass4_Sub1_Sub5_2.aString16 + "_staticelements", Static325.aBoolean506);
 			} else {
 				local12 = false;
 				Static100.anInt2020++;
@@ -1454,8 +1454,8 @@ public final class client extends GameShell {
 			for (@Pc(868) int local868 = local766 - 1; local868 <= local770 + 1; local868++) {
 				for (@Pc(874) int local874 = local856 - 1; local874 <= local864 + 1; local874++) {
 					if (local766 > local868 || local770 < local868 || local874 < local856 || local864 < local874) {
-						Static49.aClass76_27.method2126("m" + local868 + "_" + local874);
-						Static49.aClass76_27.method2126("l" + local868 + "_" + local874);
+						Static49.aJs5_27.method2126("m" + local868 + "_" + local874);
+						Static49.aJs5_27.method2126("l" + local868 + "_" + local874);
 					}
 				}
 			}
@@ -3702,20 +3702,20 @@ public final class client extends GameShell {
 	}
 
 	@OriginalMember(owner = "client!nj", name = "a", descriptor = "(ZIZII)Lclient!fs;")
-	public static Class76 method3820(boolean arg0, int archive, boolean arg2) {
+	public static Js5 method3820(boolean arg0, int archive, boolean arg2) {
 		Class222 local5 = null;
 
 		if (Static88.cacheDataFile != null) {
 			local5 = new Class222(archive, Static88.cacheDataFile, Static86.aClass139Array1[archive], 1000000);
 		}
 
-		Static119.aClass143_Sub1Array1[archive] = masterIndexProvider.getArchiveData(Static225.aClass222_2, local5, archive);
+		Static119.archiveDataResourceProviders[archive] = masterIndexProvider.getArchiveDataResourceProvider(Static225.aClass222_2, local5, archive);
 
 		if (arg2) {
-			Static119.aClass143_Sub1Array1[archive].method3526();
+			Static119.archiveDataResourceProviders[archive].method3526();
 		}
 
-		return new Class76(Static119.aClass143_Sub1Array1[archive], arg0, 1);
+		return new Js5(Static119.archiveDataResourceProviders[archive], arg0, 1);
 	}
 
 	@OriginalMember(owner = "client!client", name = "i", descriptor = "(I)V")
@@ -4559,36 +4559,36 @@ public final class client extends GameShell {
 				masterIndexProvider = new Js5MasterIndexProvider(js5NetQueue, aJs5DiskCache_3);
 			}
 			if (masterIndexProvider.isReady()) {
-				Static395.aClass76_92 = method3820(false, 0, true);
-				Static324.aClass76_69 = method3820(false, 1, true);
-				Static74.aClass76_20 = method3820(false, 2, true);
-				Static256.aClass76_50 = method3820(false, 3, true);
-				Static67.aClass76_19 = method3820(false, 4, true);
-				Static49.aClass76_27 = method3820(true, 5, true);
-				Static46.aClass76_54 = method3820(true, 6, false);
-				Static357.aClass76_82 = method3820(false, 7, true);
-				Static293.aClass76_60 = method3820(false, 8, true);
-				Static196.aClass76_44 = method3820(false, 9, true);
-				Static88.aClass76_23 = method3820(false, 10, true);
-				Static284.aClass76_55 = method3820(false, 11, true);
-				Static197.aClass76_45 = method3820(false, 12, true);
-				Static209.aClass76_48 = method3820(false, 13, true);
-				Static312.aClass76_66 = method3820(false, 14, false);
-				Static350.aClass76_79 = method3820(false, 15, true);
-				Static424.aClass76_99 = method3820(false, 16, true);
-				Static208.aClass76_29 = method3820(false, 17, true);
-				Static381.aClass76_87 = method3820(false, 18, true);
-				Static391.aClass76_91 = method3820(false, 19, true);
-				Static388.aClass76_90 = method3820(false, 20, true);
-				Static55.aClass76_16 = method3820(false, 21, true);
-				Static64.aClass76_17 = method3820(false, 22, true);
-				Static163.aClass76_39 = method3820(true, 23, true);
-				Static66.aClass76_70 = method3820(false, 24, true);
-				Static154.aClass76_11 = method3820(false, 25, true);
-				Static24.aClass76_61 = method3820(true, 26, true);
-				Static417.aClass76_98 = method3820(false, 27, true);
-				Static19.aClass76_2 = method3820(true, 28, true);
-				Static366.aClass76_83 = method3820(false, 29, true);
+				Static395.aJs5_92 = method3820(false, 0, true);
+				Static324.aJs5_69 = method3820(false, 1, true);
+				Static74.aJs5_20 = method3820(false, 2, true);
+				Static256.aJs5_50 = method3820(false, 3, true);
+				Static67.aJs5_19 = method3820(false, 4, true);
+				Static49.aJs5_27 = method3820(true, 5, true);
+				Static46.aJs5_54 = method3820(true, 6, false);
+				Static357.aJs5_82 = method3820(false, 7, true);
+				Static293.aJs5_60 = method3820(false, 8, true);
+				Static196.aJs5_44 = method3820(false, 9, true);
+				Static88.aJs5_23 = method3820(false, 10, true);
+				Static284.aJs5_55 = method3820(false, 11, true);
+				Static197.aJs5_45 = method3820(false, 12, true);
+				Static209.aJs5_48 = method3820(false, 13, true);
+				Static312.aJs5_66 = method3820(false, 14, false);
+				Static350.aJs5_79 = method3820(false, 15, true);
+				Static424.aJs5_99 = method3820(false, 16, true);
+				Static208.aJs5_29 = method3820(false, 17, true);
+				Static381.aJs5_87 = method3820(false, 18, true);
+				Static391.aJs5_91 = method3820(false, 19, true);
+				Static388.aJs5_90 = method3820(false, 20, true);
+				Static55.aJs5_16 = method3820(false, 21, true);
+				Static64.aJs5_17 = method3820(false, 22, true);
+				Static163.aJs5_39 = method3820(true, 23, true);
+				Static66.aJs5_70 = method3820(false, 24, true);
+				Static154.aJs5_11 = method3820(false, 25, true);
+				Static24.aJs5_61 = method3820(true, 26, true);
+				Static417.aJs5_98 = method3820(false, 27, true);
+				Static19.aJs5_2 = method3820(true, 28, true);
+				Static366.aJs5_83 = method3820(false, 29, true);
 				Static24.aString53 = connectedToUpdateServerLocalizedString.getLocalizedString(ClientSettings.langID);
 				Static247.anInt4590 = 15;
 				anInt5 = 30;
@@ -4599,13 +4599,13 @@ public final class client extends GameShell {
 		} else if (anInt5 == 30) {
 			local10 = 0;
 			for (int i = 0; i < 30; i++) {
-				local10 += Static119.aClass143_Sub1Array1[i].method3525() * Static251.anIntArray307[i] / 100;
+				local10 += Static119.archiveDataResourceProviders[i].method3525() * Static251.anIntArray307[i] / 100;
 			}
 			if (local10 == 100) {
 				Static24.aString53 = loadedUpdateListLocalizedString.getLocalizedString(ClientSettings.langID);
 				Static247.anInt4590 = 20;
-				Static138.method2373(Static293.aClass76_60);
-				Static221.method3346(Static293.aClass76_60);
+				Static138.method2373(Static293.aJs5_60);
+				Static221.method3346(Static293.aJs5_60);
 				anInt5 = 40;
 			} else {
 				if (local10 != 0) {
@@ -4614,13 +4614,13 @@ public final class client extends GameShell {
 				Static247.anInt4590 = 20;
 			}
 		} else if (anInt5 == 40) {
-			if (Static19.aClass76_2.method2116()) {
-				this.method908(Static19.aClass76_2.method2122(1));
+			if (Static19.aJs5_2.method2116()) {
+				this.method908(Static19.aJs5_2.method2122(1));
 				Static24.aString53 = loadedDefaultsLocalizedString.getLocalizedString(ClientSettings.langID);
 				Static247.anInt4590 = 25;
 				anInt5 = 50;
 			} else {
-				Static24.aString53 = loadingDefaultsLocalizedString.getLocalizedString(ClientSettings.langID) + Static19.aClass76_2.method2112() + "%";
+				Static24.aString53 = loadingDefaultsLocalizedString.getLocalizedString(ClientSettings.langID) + Static19.aJs5_2.method2112() + "%";
 				Static247.anInt4590 = 25;
 			}
 		} else if (anInt5 == 50) {
@@ -4629,7 +4629,7 @@ public final class client extends GameShell {
 			Static247.anInt4590 = 30;
 			anInt5 = 60;
 		} else if (anInt5 == 60) {
-			local10 = Static444.method5632(Static209.aClass76_48, Static293.aClass76_60);
+			local10 = Static444.method5632(Static209.aJs5_48, Static293.aJs5_60);
 			int local11 = Static454.method3302();
 			if (local10 < local11) {
 				Static24.aString53 = loadingCoreFontsLocalizedString.getLocalizedString(ClientSettings.langID) + local10 * 100 / local11 + "%";
@@ -4640,7 +4640,7 @@ public final class client extends GameShell {
 				Static247.anInt4590 = 35;
 			}
 		} else if (anInt5 == 70) {
-			local10 = Static97.method1701(Static293.aClass76_60);
+			local10 = Static97.method1701(Static293.aJs5_60);
 			int local12 = Static395.method5165();
 			if (local12 > local10) {
 				Static24.aString53 = loadingTitleScreenLocalizedString.getLocalizedString(ClientSettings.langID) + local10 * 100 / local12 + "%";
@@ -4651,13 +4651,13 @@ public final class client extends GameShell {
 				Static247.anInt4590 = 40;
 			}
 		} else if (anInt5 == 80) {
-			if (Static24.aClass76_61.method2116()) {
-				Static80.anInterface7_3 = new Class91(Static24.aClass76_61, Static196.aClass76_44, Static293.aClass76_60);
+			if (Static24.aJs5_61.method2116()) {
+				Static80.anInterface7_3 = new Class91(Static24.aJs5_61, Static196.aJs5_44, Static293.aJs5_60);
 				Static24.aString53 = loadedTexturesLocalizedString.getLocalizedString(ClientSettings.langID);
 				Static247.anInt4590 = 45;
 				anInt5 = 90;
 			} else {
-				Static24.aString53 = loadingTexturesLocalizedText.getLocalizedString(ClientSettings.langID) + Static24.aClass76_61.method2112() + "%";
+				Static24.aString53 = loadingTexturesLocalizedText.getLocalizedString(ClientSettings.langID) + Static24.aJs5_61.method2112() + "%";
 				Static247.anInt4590 = 45;
 			}
 		} else if (anInt5 == 90) {
@@ -4679,94 +4679,94 @@ public final class client extends GameShell {
 			Static247.anInt4590 = 55;
 			anInt5 = 100;
 		} else if (anInt5 == 100) {
-			Static40.method696(Static122.aClass19_16, Static293.aClass76_60, Static209.aClass76_48);
+			Static40.method696(Static122.aClass19_16, Static293.aJs5_60, Static209.aJs5_48);
 			Static24.aString53 = openedTitleScreenLocalizedString.getLocalizedString(ClientSettings.langID);
 			Static247.anInt4590 = 60;
 			Static187.method2932(5);
 			anInt5 = 110;
 		} else if (anInt5 == 110) {
-			Static74.aClass76_20.method2116();
-			local10 = Static74.aClass76_20.method2112();
-			Static424.aClass76_99.method2116();
-			local10 += Static424.aClass76_99.method2112();
-			Static208.aClass76_29.method2116();
-			local10 += Static208.aClass76_29.method2112();
-			Static381.aClass76_87.method2116();
-			local10 += Static381.aClass76_87.method2112();
-			Static391.aClass76_91.method2116();
-			local10 += Static391.aClass76_91.method2112();
-			Static388.aClass76_90.method2116();
-			local10 += Static388.aClass76_90.method2112();
-			Static55.aClass76_16.method2116();
-			local10 += Static55.aClass76_16.method2112();
-			Static64.aClass76_17.method2116();
-			local10 += Static64.aClass76_17.method2112();
-			Static66.aClass76_70.method2116();
-			local10 += Static66.aClass76_70.method2112();
-			Static154.aClass76_11.method2116();
-			local10 += Static154.aClass76_11.method2112();
-			Static417.aClass76_98.method2116();
-			local10 += Static417.aClass76_98.method2112();
-			Static366.aClass76_83.method2116();
-			local10 += Static366.aClass76_83.method2112();
+			Static74.aJs5_20.method2116();
+			local10 = Static74.aJs5_20.method2112();
+			Static424.aJs5_99.method2116();
+			local10 += Static424.aJs5_99.method2112();
+			Static208.aJs5_29.method2116();
+			local10 += Static208.aJs5_29.method2112();
+			Static381.aJs5_87.method2116();
+			local10 += Static381.aJs5_87.method2112();
+			Static391.aJs5_91.method2116();
+			local10 += Static391.aJs5_91.method2112();
+			Static388.aJs5_90.method2116();
+			local10 += Static388.aJs5_90.method2112();
+			Static55.aJs5_16.method2116();
+			local10 += Static55.aJs5_16.method2112();
+			Static64.aJs5_17.method2116();
+			local10 += Static64.aJs5_17.method2112();
+			Static66.aJs5_70.method2116();
+			local10 += Static66.aJs5_70.method2112();
+			Static154.aJs5_11.method2116();
+			local10 += Static154.aJs5_11.method2112();
+			Static417.aJs5_98.method2116();
+			local10 += Static417.aJs5_98.method2112();
+			Static366.aJs5_83.method2116();
+			local10 += Static366.aJs5_83.method2112();
 			if (local10 < 1200) {
 				Static24.aString53 = loadingConfigLocalizedString.getLocalizedString(ClientSettings.langID) + local10 / 12 + "%";
 				Static247.anInt4590 = 65;
 			} else {
-				Static153.aClass180_1 = new Class180(ClientSettings.modeGame, ClientSettings.langID, Static74.aClass76_20);
-				Static222.aClass249_1 = new Class249(ClientSettings.modeGame, ClientSettings.langID, Static74.aClass76_20);
-				Static118.aClass172_2 = new Class172(ClientSettings.modeGame, ClientSettings.langID, Static74.aClass76_20, Static293.aClass76_60);
-				Static416.aClass158_1 = new Class158(ClientSettings.modeGame, ClientSettings.langID, Static208.aClass76_29);
-				Static154.aClass124_2 = new Class124(ClientSettings.modeGame, ClientSettings.langID, Static74.aClass76_20);
-				Static234.aClass192_2 = new Class192(ClientSettings.modeGame, ClientSettings.langID, Static74.aClass76_20);
-				Static420.aClass109_2 = new Class109(ClientSettings.modeGame, ClientSettings.langID, Static74.aClass76_20, Static357.aClass76_82);
-				Static101.aClass75_1 = new Class75(ClientSettings.modeGame, ClientSettings.langID, Static74.aClass76_20);
-				Static405.aClass204_1 = new Class204(ClientSettings.modeGame, ClientSettings.langID, Static74.aClass76_20);
-				Static267.aClass262_2 = new Class262(ClientSettings.modeGame, ClientSettings.langID, true, Static424.aClass76_99, Static357.aClass76_82);
-				Static348.aClass182_4 = new Class182(ClientSettings.modeGame, ClientSettings.langID, Static74.aClass76_20, Static293.aClass76_60);
-				Static76.aClass265_2 = new Class265(ClientSettings.modeGame, ClientSettings.langID, Static74.aClass76_20, Static293.aClass76_60);
-				Static329.aClass240_1 = new Class240(ClientSettings.modeGame, ClientSettings.langID, true, Static381.aClass76_87, Static357.aClass76_82);
-				Static444.aClass206_3 = new Class206(ClientSettings.modeGame, ClientSettings.langID, true, Static153.aClass180_1, Static391.aClass76_91, Static357.aClass76_82);
-				Static426.aClass208_1 = new Class208(ClientSettings.modeGame, ClientSettings.langID, Static74.aClass76_20);
-				Static182.aClass55_1 = new Class55(ClientSettings.modeGame, ClientSettings.langID, Static388.aClass76_90, Static395.aClass76_92, Static324.aClass76_69);
-				Static296.aClass217_1 = new Class217(ClientSettings.modeGame, ClientSettings.langID, Static74.aClass76_20);
-				Static238.aClass226_1 = new Class226(ClientSettings.modeGame, ClientSettings.langID, Static74.aClass76_20);
-				Static352.aClass194_2 = new Class194(ClientSettings.modeGame, ClientSettings.langID, Static55.aClass76_16, Static357.aClass76_82);
-				Static280.aClass72_1 = new Class72(ClientSettings.modeGame, ClientSettings.langID, Static74.aClass76_20);
-				Static186.aClass197_1 = new Class197(ClientSettings.modeGame, ClientSettings.langID, Static74.aClass76_20);
-				Static43.aClass93_4 = new Class93(ClientSettings.modeGame, ClientSettings.langID, Static74.aClass76_20);
-				Static26.aClass26_1 = new Class26(ClientSettings.modeGame, ClientSettings.langID, Static64.aClass76_17);
-				Static183.aClass223_1 = new Class223(ClientSettings.modeGame, ClientSettings.langID, Static74.aClass76_20);
-				Static442.method5586(Static256.aClass76_50, Static209.aClass76_48, Static357.aClass76_82, Static293.aClass76_60);
-				Static165.method2730(Static366.aClass76_83);
-				Static401.aClass62_1 = new Class62(ClientSettings.langID, Static66.aClass76_70, Static154.aClass76_11);
-				Static445.aClass81_2 = new Class81(ClientSettings.langID, Static66.aClass76_70, Static154.aClass76_11, new Class130());
+				Static153.aClass180_1 = new Class180(ClientSettings.modeGame, ClientSettings.langID, Static74.aJs5_20);
+				Static222.aClass249_1 = new Class249(ClientSettings.modeGame, ClientSettings.langID, Static74.aJs5_20);
+				Static118.aClass172_2 = new Class172(ClientSettings.modeGame, ClientSettings.langID, Static74.aJs5_20, Static293.aJs5_60);
+				Static416.aClass158_1 = new Class158(ClientSettings.modeGame, ClientSettings.langID, Static208.aJs5_29);
+				Static154.aClass124_2 = new Class124(ClientSettings.modeGame, ClientSettings.langID, Static74.aJs5_20);
+				Static234.aClass192_2 = new Class192(ClientSettings.modeGame, ClientSettings.langID, Static74.aJs5_20);
+				Static420.aClass109_2 = new Class109(ClientSettings.modeGame, ClientSettings.langID, Static74.aJs5_20, Static357.aJs5_82);
+				Static101.aClass75_1 = new Class75(ClientSettings.modeGame, ClientSettings.langID, Static74.aJs5_20);
+				Static405.aClass204_1 = new Class204(ClientSettings.modeGame, ClientSettings.langID, Static74.aJs5_20);
+				Static267.aClass262_2 = new Class262(ClientSettings.modeGame, ClientSettings.langID, true, Static424.aJs5_99, Static357.aJs5_82);
+				Static348.aClass182_4 = new Class182(ClientSettings.modeGame, ClientSettings.langID, Static74.aJs5_20, Static293.aJs5_60);
+				Static76.aClass265_2 = new Class265(ClientSettings.modeGame, ClientSettings.langID, Static74.aJs5_20, Static293.aJs5_60);
+				Static329.aClass240_1 = new Class240(ClientSettings.modeGame, ClientSettings.langID, true, Static381.aJs5_87, Static357.aJs5_82);
+				Static444.aClass206_3 = new Class206(ClientSettings.modeGame, ClientSettings.langID, true, Static153.aClass180_1, Static391.aJs5_91, Static357.aJs5_82);
+				Static426.aClass208_1 = new Class208(ClientSettings.modeGame, ClientSettings.langID, Static74.aJs5_20);
+				Static182.aClass55_1 = new Class55(ClientSettings.modeGame, ClientSettings.langID, Static388.aJs5_90, Static395.aJs5_92, Static324.aJs5_69);
+				Static296.aClass217_1 = new Class217(ClientSettings.modeGame, ClientSettings.langID, Static74.aJs5_20);
+				Static238.aClass226_1 = new Class226(ClientSettings.modeGame, ClientSettings.langID, Static74.aJs5_20);
+				Static352.aClass194_2 = new Class194(ClientSettings.modeGame, ClientSettings.langID, Static55.aJs5_16, Static357.aJs5_82);
+				Static280.aClass72_1 = new Class72(ClientSettings.modeGame, ClientSettings.langID, Static74.aJs5_20);
+				Static186.aClass197_1 = new Class197(ClientSettings.modeGame, ClientSettings.langID, Static74.aJs5_20);
+				Static43.aClass93_4 = new Class93(ClientSettings.modeGame, ClientSettings.langID, Static74.aJs5_20);
+				Static26.aClass26_1 = new Class26(ClientSettings.modeGame, ClientSettings.langID, Static64.aJs5_17);
+				Static183.aClass223_1 = new Class223(ClientSettings.modeGame, ClientSettings.langID, Static74.aJs5_20);
+				Static442.method5586(Static256.aJs5_50, Static209.aJs5_48, Static357.aJs5_82, Static293.aJs5_60);
+				Static165.method2730(Static366.aJs5_83);
+				Static401.aClass62_1 = new Class62(ClientSettings.langID, Static66.aJs5_70, Static154.aJs5_11);
+				Static445.aClass81_2 = new Class81(ClientSettings.langID, Static66.aJs5_70, Static154.aJs5_11, new Class130());
 				Static24.aString53 = loadedConfigLocalizedString.getLocalizedString(ClientSettings.langID);
 				Static247.anInt4590 = 65;
 				Static38.method673();
 				Static267.aClass262_2.method5562(!Static323.aClass50_Sub1_1.method2861(Static177.anInt2973));
 				Static257.aClass114_1 = new Class114();
 				Static119.method2149();
-				Static378.method3227(Static417.aClass76_98);
-				Static273.method3916(Static357.aClass76_82, Static80.anInterface7_3);
+				Static378.method3227(Static417.aJs5_98);
+				Static273.method3916(Static357.aJs5_82, Static80.anInterface7_3);
 				anInt5 = 120;
 			}
 		} else if (anInt5 == 120) {
-			local10 = Static290.method5014(Static293.aClass76_60);
+			local10 = Static290.method5014(Static293.aJs5_60);
 			int local13 = Static203.method3176();
 			if (local10 < local13) {
 				Static24.aString53 = loadingSpritesLocalizedString.getLocalizedString(ClientSettings.langID) + local10 * 100 / local13 + "%";
 				Static247.anInt4590 = 70;
 			} else {
-				Static97.method1700(Static293.aClass76_60, Static122.aClass19_16);
+				Static97.method1700(Static293.aJs5_60, Static122.aClass19_16);
 				Static324.method4387(Static429.aClass57Array18);
 				Static24.aString53 = loadedSpritesLocalizedString.getLocalizedString(ClientSettings.langID);
 				anInt5 = 130;
 				Static247.anInt4590 = 70;
 			}
 		} else if (anInt5 == 130) {
-			if (Static88.aClass76_23.method2123("", "huffman")) {
-				@Pc(1252) Class119 local1252 = new Class119(Static88.aClass76_23.method2109("huffman", ""));
+			if (Static88.aJs5_23.method2123("", "huffman")) {
+				@Pc(1252) Class119 local1252 = new Class119(Static88.aJs5_23.method2109("huffman", ""));
 				Static195.method3074(local1252);
 				Static24.aString53 = loadedWordpackLocalizedString.getLocalizedString(ClientSettings.langID);
 				Static247.anInt4590 = 75;
@@ -4776,40 +4776,40 @@ public final class client extends GameShell {
 				Static247.anInt4590 = 75;
 			}
 		} else if (anInt5 == 140) {
-			if (Static256.aClass76_50.method2116()) {
+			if (Static256.aJs5_50.method2116()) {
 				Static24.aString53 = loadedInterfacesLocalizedString.getLocalizedString(ClientSettings.langID);
 				anInt5 = 150;
 				Static247.anInt4590 = 80;
 			} else {
-				Static24.aString53 = loadingInterfacesLocalizedString.getLocalizedString(ClientSettings.langID) + Static256.aClass76_50.method2112() + "%";
+				Static24.aString53 = loadingInterfacesLocalizedString.getLocalizedString(ClientSettings.langID) + Static256.aJs5_50.method2112() + "%";
 				Static247.anInt4590 = 80;
 			}
 		} else if (anInt5 == 150) {
-			if (Static197.aClass76_45.method2116()) {
+			if (Static197.aJs5_45.method2116()) {
 				Static24.aString53 = loadedInterfaceScriptsLocalizedString.getLocalizedString(ClientSettings.langID);
 				anInt5 = 160;
 				Static247.anInt4590 = 82;
 			} else {
-				Static24.aString53 = loadingInterfaceScriptsLocalizedString.getLocalizedString(ClientSettings.langID) + Static197.aClass76_45.method2112() + "%";
+				Static24.aString53 = loadingInterfaceScriptsLocalizedString.getLocalizedString(ClientSettings.langID) + Static197.aJs5_45.method2112() + "%";
 				Static247.anInt4590 = 82;
 			}
 		} else if (anInt5 == 160) {
-			if (Static209.aClass76_48.method2116()) {
+			if (Static209.aJs5_48.method2116()) {
 				Static24.aString53 = loadingAdditionalFontsLocalizedString.getLocalizedString(ClientSettings.langID);
 				anInt5 = 170;
 				Static247.anInt4590 = 85;
 			} else {
-				Static24.aString53 = loadingAdditionalFontsLocalizedString.getLocalizedString(ClientSettings.langID) + Static209.aClass76_48.method2112() + "%";
+				Static24.aString53 = loadingAdditionalFontsLocalizedString.getLocalizedString(ClientSettings.langID) + Static209.aJs5_48.method2112() + "%";
 				Static247.anInt4590 = 85;
 			}
 		} else if (anInt5 == 170) {
-			if (Static163.aClass76_39.method2103("details")) {
-				Static148.method4514(Static163.aClass76_39, Static154.aClass124_2, Static234.aClass192_2, Static267.aClass262_2, Static348.aClass182_4, Static76.aClass265_2, Static257.aClass114_1);
+			if (Static163.aJs5_39.method2103("details")) {
+				Static148.method4514(Static163.aJs5_39, Static154.aClass124_2, Static234.aClass192_2, Static267.aClass262_2, Static348.aClass182_4, Static76.aClass265_2, Static257.aClass114_1);
 				Static24.aString53 = loadedWorldMapLocalizedString.getLocalizedString(ClientSettings.langID);
 				anInt5 = 180;
 				Static247.anInt4590 = 89;
 			} else {
-				Static24.aString53 = loadingWorldMapLocalizedString.getLocalizedString(ClientSettings.langID) + Static163.aClass76_39.method2113("details") + "%";
+				Static24.aString53 = loadingWorldMapLocalizedString.getLocalizedString(ClientSettings.langID) + Static163.aJs5_39.method2113("details") + "%";
 				Static247.anInt4590 = 87;
 			}
 		} else if (anInt5 == 180) {
@@ -4840,21 +4840,21 @@ public final class client extends GameShell {
 				Static165.anIntArray210[local10] = -1;
 			}
 			Static228.method2068();
-			Static254.anInt4755 = Static256.aClass76_50.method2099("loginscreen");
-			Static49.aClass76_27.method2128(false);
-			Static46.aClass76_54.method2128(true);
-			Static293.aClass76_60.method2128(true);
-			Static209.aClass76_48.method2128(true);
-			Static88.aClass76_23.method2128(true);
-			Static256.aClass76_50.method2128(true);
-			Static74.aClass76_20.anInt2476 = 2;
+			Static254.anInt4755 = Static256.aJs5_50.method2099("loginscreen");
+			Static49.aJs5_27.method2128(false);
+			Static46.aJs5_54.method2128(true);
+			Static293.aJs5_60.method2128(true);
+			Static209.aJs5_48.method2128(true);
+			Static88.aJs5_23.method2128(true);
+			Static256.aJs5_50.method2128(true);
+			Static74.aJs5_20.anInt2476 = 2;
 			Static9.aBoolean10 = true;
-			Static208.aClass76_29.anInt2476 = 2;
-			Static424.aClass76_99.anInt2476 = 2;
-			Static381.aClass76_87.anInt2476 = 2;
-			Static391.aClass76_91.anInt2476 = 2;
-			Static388.aClass76_90.anInt2476 = 2;
-			Static55.aClass76_16.anInt2476 = 2;
+			Static208.aJs5_29.anInt2476 = 2;
+			Static424.aJs5_99.anInt2476 = 2;
+			Static381.aJs5_87.anInt2476 = 2;
+			Static391.aJs5_91.anInt2476 = 2;
+			Static388.aJs5_90.anInt2476 = 2;
+			Static55.aJs5_16.anInt2476 = 2;
 			Static188.method4107(Static323.aClass50_Sub1_1.anInt3447, -1, -1, false);
 			Static24.aString53 = loadedClientVariableDataLocalizedString.getLocalizedString(ClientSettings.langID);
 			Static247.anInt4590 = 95;

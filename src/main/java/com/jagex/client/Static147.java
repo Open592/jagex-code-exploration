@@ -204,9 +204,9 @@ public final class Static147 {
 									local583 = 0;
 									@Pc(585) int local585 = 0;
 									for (@Pc(587) int local587 = 0; local587 < 30; local587++) {
-										local581 += Static119.aClass143_Sub1Array1[local587].method3517();
-										local583 += Static119.aClass143_Sub1Array1[local587].method3527();
-										local585 += Static119.aClass143_Sub1Array1[local587].method3521();
+										local581 += Static119.archiveDataResourceProviders[local587].method3517();
+										local583 += Static119.archiveDataResourceProviders[local587].method3527();
+										local585 += Static119.archiveDataResourceProviders[local587].method3521();
 									}
 									@Pc(625) int local625 = local585 * 100 / local581;
 									@Pc(631) int local631 = local583 * 10000 / local581;

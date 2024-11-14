@@ -64,7 +64,7 @@ public final class Class5 {
 
 	@OriginalMember(owner = "client!ad", name = "a", descriptor = "(Lclient!ya;Lclient!ad;)V")
 	private void method30(@OriginalArg(0) Class19 arg0, @OriginalArg(1) Class5 arg1) {
-		@Pc(6) Class122 local6 = Static370.method4948(Static151.aClass76_38, this.anInt32);
+		@Pc(6) Class122 local6 = Static370.method4948(Static151.aJs5_38, this.anInt32);
 		if (local6 == null) {
 			return;
 		}

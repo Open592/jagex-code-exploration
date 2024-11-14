@@ -1,15 +1,16 @@
 package com.jagex.client.js5;
 
 import com.jagex.client.*;
-import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalClass;
 import org.openrs2.deob.annotation.OriginalMember;
-import org.openrs2.deob.annotation.Pc;
 
 import java.util.Arrays;
 
 @OriginalClass("client!fs")
-public final class Class76 {
+public final class Js5 {
+
+	@OriginalMember(owner = "client!v", name = "i", descriptor = "Z")
+	public static final boolean SHOULD_THROW_EXCEPTION = false;
 
 	@OriginalMember(owner = "client!fs", name = "c", descriptor = "[[Ljava/lang/Object;")
 	private Object[][] anObjectArrayArray1;
@@ -27,36 +28,40 @@ public final class Class76 {
 	private final boolean aBoolean230;
 
 	@OriginalMember(owner = "client!fs", name = "F", descriptor = "Lclient!oi;")
-	private final Js5ResourceProvider aJs5ResourceProvider_1;
+	private final Js5ResourceProvider resourceProvider;
 
 	@OriginalMember(owner = "client!fs", name = "<init>", descriptor = "(Lclient!oi;ZI)V")
-	public Class76(@OriginalArg(0) Js5ResourceProvider arg0, @OriginalArg(1) boolean arg1, @OriginalArg(2) int arg2) {
+	public Js5(Js5ResourceProvider resourceProvider, boolean arg1, int arg2) {
 		this.anInt2476 = arg2;
 		this.aBoolean230 = arg1;
-		this.aJs5ResourceProvider_1 = arg0;
+		this.resourceProvider = resourceProvider;
 	}
 
 	@OriginalMember(owner = "client!fs", name = "a", descriptor = "(Z)Z")
 	private boolean method2097() {
 		if (this.aClass209_1 == null) {
-			this.aClass209_1 = this.aJs5ResourceProvider_1.method3514();
+			this.aClass209_1 = this.resourceProvider.method3514();
+
 			if (this.aClass209_1 == null) {
 				return false;
 			}
+
 			this.anObjectArray3 = new Object[this.aClass209_1.anInt6112];
 			this.anObjectArrayArray1 = new Object[this.aClass209_1.anInt6112][];
 		}
+
 		return true;
 	}
 
 	@OriginalMember(owner = "client!fs", name = "a", descriptor = "(IBI)Z")
-	public boolean method2098(@OriginalArg(0) int arg0, @OriginalArg(2) int arg1) {
+	public boolean method2098(int arg0, int arg1) {
 		if (!this.method2127(arg1, arg0)) {
 			return false;
 		} else if (this.anObjectArrayArray1[arg1] != null && this.anObjectArrayArray1[arg1][arg0] != null) {
 			return true;
 		} else if (this.anObjectArray3[arg1] == null) {
 			this.method2119(arg1);
+
 			return this.anObjectArray3[arg1] != null;
 		} else {
 			return true;
@@ -64,10 +69,11 @@ public final class Class76 {
 	}
 
 	@OriginalMember(owner = "client!fs", name = "a", descriptor = "(Ljava/lang/String;B)I")
-	public int method2099(@OriginalArg(0) String arg0) {
+	public int method2099(String arg0) {
 		if (this.method2097()) {
-			@Pc(20) String local20 = arg0.toLowerCase();
-			@Pc(29) int local29 = this.aClass209_1.aClass235_1.method5174(Static269.method3854(local20));
+			String local20 = arg0.toLowerCase();
+			int local29 = this.aClass209_1.aClass235_1.method5174(Static269.method3854(local20));
+
 			return this.method2106(local29) ? local29 : -1;
 		} else {
 			return -1;
@@ -80,7 +86,7 @@ public final class Class76 {
 	}
 
 	@OriginalMember(owner = "client!fs", name = "a", descriptor = "(II)Z")
-	public boolean method2101(@OriginalArg(0) int arg0) {
+	public boolean method2101(int arg0) {
 		if (!this.method2106(arg0)) {
 			return false;
 		} else if (this.anObjectArray3[arg0] == null) {
@@ -99,10 +105,11 @@ public final class Class76 {
 	}
 
 	@OriginalMember(owner = "client!fs", name = "a", descriptor = "(ILjava/lang/String;)Z")
-	public boolean method2103(@OriginalArg(1) String arg0) {
+	public boolean method2103(String arg0) {
 		if (this.method2097()) {
-			@Pc(17) String local17 = arg0.toLowerCase();
-			@Pc(26) int local26 = this.aClass209_1.aClass235_1.method5174(Static269.method3854(local17));
+			String local17 = arg0.toLowerCase();
+			int local26 = this.aClass209_1.aClass235_1.method5174(Static269.method3854(local17));
+
 			return this.method2101(local26);
 		} else {
 			return false;
@@ -110,26 +117,26 @@ public final class Class76 {
 	}
 
 	@OriginalMember(owner = "client!fs", name = "a", descriptor = "(III)[B")
-	public byte[] method2104(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1) {
+	public byte[] method2104(int arg0, int arg1) {
 		return this.method2121(arg1, arg0, null);
 	}
 
 	@OriginalMember(owner = "client!fs", name = "b", descriptor = "(II)I")
-	private int method2105(@OriginalArg(1) int arg0) {
+	private int method2105(int arg0) {
 		if (this.method2106(arg0)) {
-			return this.anObjectArray3[arg0] == null ? this.aJs5ResourceProvider_1.method3515(arg0) : 100;
+			return this.anObjectArray3[arg0] == null ? this.resourceProvider.method3515(arg0) : 100;
 		} else {
 			return 0;
 		}
 	}
 
 	@OriginalMember(owner = "client!fs", name = "c", descriptor = "(II)Z")
-	private boolean method2106(@OriginalArg(0) int arg0) {
+	private boolean method2106(int arg0) {
 		if (!this.method2097()) {
 			return false;
 		} else if (arg0 >= 0 && arg0 < this.aClass209_1.anIntArray433.length && this.aClass209_1.anIntArray433[arg0] != 0) {
 			return true;
-		} else if (Static415.aBoolean625) {
+		} else if (SHOULD_THROW_EXCEPTION) {
 			throw new IllegalArgumentException(Integer.toString(arg0));
 		} else {
 			return false;
@@ -137,10 +144,11 @@ public final class Class76 {
 	}
 
 	@OriginalMember(owner = "client!fs", name = "a", descriptor = "(Ljava/lang/String;I)Z")
-	public boolean method2107(@OriginalArg(0) String arg0) {
+	public boolean method2107(String arg0) {
 		if (this.method2097()) {
-			@Pc(12) String local12 = arg0.toLowerCase();
-			@Pc(21) int local21 = this.aClass209_1.aClass235_1.method5174(Static269.method3854(local12));
+			String local12 = arg0.toLowerCase();
+			int local21 = this.aClass209_1.aClass235_1.method5174(Static269.method3854(local12));
+
 			return local21 >= 0;
 		} else {
 			return false;
@@ -148,20 +156,23 @@ public final class Class76 {
 	}
 
 	@OriginalMember(owner = "client!fs", name = "d", descriptor = "(II)I")
-	public int method2108(@OriginalArg(0) int arg0) {
+	public int method2108(int arg0) {
 		return this.method2106(arg0) ? this.aClass209_1.anIntArray433[arg0] : 0;
 	}
 
 	@OriginalMember(owner = "client!fs", name = "a", descriptor = "(Ljava/lang/String;ZLjava/lang/String;)[B")
-	public byte[] method2109(@OriginalArg(0) String arg0, @OriginalArg(2) String arg1) {
+	public byte[] method2109(String arg0, String arg1) {
 		if (!this.method2097()) {
 			return null;
 		}
-		@Pc(18) String local18 = arg0.toLowerCase();
-		@Pc(21) String local21 = arg1.toLowerCase();
-		@Pc(30) int local30 = this.aClass209_1.aClass235_1.method5174(Static269.method3854(local18));
+
+		String local18 = arg0.toLowerCase();
+		String local21 = arg1.toLowerCase();
+		int local30 = this.aClass209_1.aClass235_1.method5174(Static269.method3854(local18));
+
 		if (this.method2106(local30)) {
-			@Pc(48) int local48 = this.aClass209_1.aClass235Array1[local30].method5174(Static269.method3854(local21));
+			int local48 = this.aClass209_1.aClass235Array1[local30].method5174(Static269.method3854(local21));
+
 			return this.method2104(local48, local30);
 		} else {
 			return null;
@@ -173,6 +184,7 @@ public final class Class76 {
 		if (!this.method2097()) {
 			throw new IllegalStateException("");
 		}
+
 		return this.aClass209_1.checksum;
 	}
 
@@ -181,14 +193,17 @@ public final class Class76 {
 		if (!this.method2097()) {
 			return 0;
 		}
-		@Pc(18) int local18 = 0;
-		@Pc(20) int local20 = 0;
-		for (@Pc(22) int local22 = 0; local22 < this.anObjectArray3.length; local22++) {
-			if (this.aClass209_1.anIntArray428[local22] > 0) {
+
+		int local18 = 0;
+		int local20 = 0;
+
+		for (int i = 0; i < this.anObjectArray3.length; i++) {
+			if (this.aClass209_1.anIntArray428[i] > 0) {
 				local18 += 100;
-				local20 += this.method2105(local22);
+				local20 += this.method2105(i);
 			}
 		}
+
 		if (local18 == 0) {
 			return 100;
 		} else {
@@ -197,10 +212,11 @@ public final class Class76 {
 	}
 
 	@OriginalMember(owner = "client!fs", name = "b", descriptor = "(Ljava/lang/String;B)I")
-	public int method2113(@OriginalArg(0) String arg0) {
+	public int method2113(String arg0) {
 		if (this.method2097()) {
-			@Pc(17) String local17 = arg0.toLowerCase();
-			@Pc(26) int local26 = this.aClass209_1.aClass235_1.method5174(Static269.method3854(local17));
+			String local17 = arg0.toLowerCase();
+			int local26 = this.aClass209_1.aClass235_1.method5174(Static269.method3854(local17));
+
 			return this.method2105(local26);
 		} else {
 			return 0;
@@ -208,69 +224,82 @@ public final class Class76 {
 	}
 
 	@OriginalMember(owner = "client!fs", name = "a", descriptor = "(III[I)Z")
-	private boolean method2114(@OriginalArg(0) int arg0, @OriginalArg(2) int arg1, @OriginalArg(3) int[] arg2) {
+	private boolean method2114(int arg0, int arg1, int[] arg2) {
 		if (!this.method2106(arg0)) {
 			return false;
 		} else if (this.anObjectArray3[arg0] == null) {
 			return false;
 		} else {
-			@Pc(25) int local25 = this.aClass209_1.anIntArray428[arg0];
-			@Pc(31) int[] local31 = this.aClass209_1.anIntArrayArray46[arg0];
+			int local25 = this.aClass209_1.anIntArray428[arg0];
+			int[] local31 = this.aClass209_1.anIntArrayArray46[arg0];
+
 			if (this.anObjectArrayArray1[arg0] == null) {
 				this.anObjectArrayArray1[arg0] = new Object[this.aClass209_1.anIntArray433[arg0]];
 			}
-			@Pc(51) Object[] local51 = this.anObjectArrayArray1[arg0];
-			@Pc(53) boolean local53 = true;
-			for (@Pc(55) int local55 = 0; local55 < local25; local55++) {
-				@Pc(63) int local63;
+
+			Object[] local51 = this.anObjectArrayArray1[arg0];
+			boolean local53 = true;
+
+			for (int i = 0; i < local25; i++) {
+				int local63;
+
 				if (local31 == null) {
-					local63 = local55;
+					local63 = i;
 				} else {
-					local63 = local31[local55];
+					local63 = local31[i];
 				}
+
 				if (local51[local63] == null) {
 					local53 = false;
 					break;
 				}
 			}
+
 			if (local53) {
 				return true;
 			}
-			@Pc(122) byte[] local122;
+
+			byte[] local122;
 			if (arg2 == null || arg2[0] == 0 && arg2[1] == 0 && arg2[2] == 0 && arg2[3] == 0) {
 				local122 = Static366.method4930(false, this.anObjectArray3[arg0]);
 			} else {
 				local122 = Static366.method4930(true, this.anObjectArray3[arg0]);
-				@Pc(127) Packet local127 = new Packet(local122);
+
+				Packet local127 = new Packet(local122);
+
 				local127.tinyKeyDecrypt(local127.data.length, arg2);
 			}
-			@Pc(149) byte[] local149;
+
+			byte[] local149;
 			try {
 				local149 = Static453.method5680(local122);
-			} catch (@Pc(151) RuntimeException local151) {
-				throw Static350.method4724(local151, "T3 - " + (arg2 != null) + "," + arg0 + "," + local122.length + "," + CRC32Checksum.calculateChecksum(local122.length, local122) + "," + CRC32Checksum.calculateChecksum(local122.length - 2, local122) + "," + this.aClass209_1.anIntArray430[arg0] + "," + this.aClass209_1.checksum);
+			} catch (RuntimeException e) {
+				throw Static350.method4724(e, "T3 - " + (arg2 != null) + "," + arg0 + "," + local122.length + "," + CRC32Checksum.calculateChecksum(local122.length, local122) + "," + CRC32Checksum.calculateChecksum(local122.length - 2, local122) + "," + this.aClass209_1.anIntArray430[arg0] + "," + this.aClass209_1.checksum);
 			}
+
 			if (this.aBoolean230) {
 				this.anObjectArray3[arg0] = null;
 			}
-			@Pc(228) int local228;
+
+			int local228;
 			if (local25 > 1) {
-				@Pc(235) int local235;
-				@Pc(248) Packet local248;
-				@Pc(252) int local252;
-				@Pc(257) int local257;
-				@Pc(261) int local261;
-				@Pc(263) int local263;
-				@Pc(275) int local275;
-				@Pc(325) int local325;
-				@Pc(327) int local327;
+				int local235;
+				Packet local248;
+				int local252;
+				int local257;
+				int local261;
+				int local263;
+				int local275;
+				int local325;
+				int local327;
+
 				if (this.anInt2476 == 2) {
 					local228 = local149.length;
-					@Pc(230) int local230 = local228 - 1;
+					int local230 = local228 - 1;
 					local235 = local149[local230] & 0xFF;
-					@Pc(243) int local243 = local230 - local25 * local235 * 4;
+					int local243 = local230 - local25 * local235 * 4;
 					local248 = new Packet(local149);
-					@Pc(250) int local250 = 0;
+					int local250 = 0;
 					local252 = 0;
 					local248.pos = local243;
 					for (local257 = 0; local257 < local235; local257++) {
@@ -288,10 +317,12 @@ public final class Class76 {
 							}
 						}
 					}
+
 					if (local250 == 0) {
 						return true;
 					}
-					@Pc(312) byte[] local312 = new byte[local250];
+
+					byte[] local312 = new byte[local250];
 					local248.pos = local243;
 					local250 = 0;
 					local263 = 0;
@@ -299,7 +330,7 @@ public final class Class76 {
 						local325 = 0;
 						for (local327 = 0; local327 < local25; local327++) {
 							local325 += local248.g4();
-							@Pc(339) int local339;
+							int local339;
 							if (local31 == null) {
 								local339 = local327;
 							} else {
@@ -319,7 +350,7 @@ public final class Class76 {
 					local235 = local149[local228] & 0xFF;
 					local228 -= local25 * local235 * 4;
 					local248 = new Packet(local149);
-					@Pc(410) int[] local410 = new int[local25];
+					int[] local410 = new int[local25];
 					local248.pos = local228;
 					for (local252 = 0; local252 < local235; local252++) {
 						local257 = 0;
@@ -328,7 +359,7 @@ public final class Class76 {
 							local410[local261] += local257;
 						}
 					}
-					@Pc(451) byte[][] local451 = new byte[local25][];
+					byte[][] local451 = new byte[local25][];
 					for (local261 = 0; local261 < local25; local261++) {
 						local451[local261] = new byte[local410[local261]];
 						local410[local261] = 0;
@@ -374,7 +405,7 @@ public final class Class76 {
 	}
 
 	@OriginalMember(owner = "client!fs", name = "e", descriptor = "(II)V")
-	public void method2115(@OriginalArg(1) int arg0) {
+	public void method2115(int arg0) {
 		if (this.method2106(arg0) && this.anObjectArrayArray1 != null) {
 			this.anObjectArrayArray1[arg0] = null;
 		}
@@ -385,23 +416,29 @@ public final class Class76 {
 		if (!this.method2097()) {
 			return false;
 		}
-		@Pc(13) boolean local13 = true;
-		for (@Pc(15) int local15 = 0; local15 < this.aClass209_1.anIntArray431.length; local15++) {
-			@Pc(23) int local23 = this.aClass209_1.anIntArray431[local15];
+
+		boolean local13 = true;
+
+		for (int i = 0; i < this.aClass209_1.anIntArray431.length; i++) {
+			int local23 = this.aClass209_1.anIntArray431[i];
+
 			if (this.anObjectArray3[local23] == null) {
 				this.method2119(local23);
+
 				if (this.anObjectArray3[local23] == null) {
 					local13 = false;
 				}
 			}
 		}
+
 		return local13;
 	}
 
 	@OriginalMember(owner = "client!fs", name = "f", descriptor = "(II)I")
-	public int method2117(@OriginalArg(1) int arg0) {
+	public int method2117(int arg0) {
 		if (this.method2097()) {
-			@Pc(16) int local16 = this.aClass209_1.aClass235_1.method5174(arg0);
+			int local16 = this.aClass209_1.aClass235_1.method5174(arg0);
+
 			return this.method2106(local16) ? local16 : -1;
 		} else {
 			return -1;
@@ -411,55 +448,61 @@ public final class Class76 {
 	@OriginalMember(owner = "client!fs", name = "c", descriptor = "(I)V")
 	public void method2118() {
 		if (this.anObjectArrayArray1 != null) {
-			for (@Pc(13) int local13 = 0; local13 < this.anObjectArrayArray1.length; local13++) {
-				this.anObjectArrayArray1[local13] = null;
-			}
+            Arrays.fill(this.anObjectArrayArray1, null);
 		}
 	}
 
 	@OriginalMember(owner = "client!fs", name = "g", descriptor = "(II)V")
-	private void method2119(@OriginalArg(1) int arg0) {
+	private void method2119(int arg0) {
 		if (this.aBoolean230) {
-			this.anObjectArray3[arg0] = this.aJs5ResourceProvider_1.method3516(arg0);
+			this.anObjectArray3[arg0] = this.resourceProvider.method3516(arg0);
 		} else {
-			this.anObjectArray3[arg0] = Static327.method4416(this.aJs5ResourceProvider_1.method3516(arg0));
+			this.anObjectArray3[arg0] = Static327.method4416(this.resourceProvider.method3516(arg0));
 		}
 	}
 
 	@OriginalMember(owner = "client!fs", name = "a", descriptor = "(BI)V")
-	private void method2120(@OriginalArg(1) int arg0) {
-		this.aJs5ResourceProvider_1.method3512(arg0);
+	private void method2120(int arg0) {
+		this.resourceProvider.method3512(arg0);
 	}
 
 	@OriginalMember(owner = "client!fs", name = "a", descriptor = "(II[IB)[B")
-	public byte[] method2121(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int[] arg2) {
+	public byte[] method2121(int arg0, int arg1, int[] arg2) {
 		if (!this.method2127(arg0, arg1)) {
 			return null;
 		}
+
 		if (this.anObjectArrayArray1[arg0] == null || this.anObjectArrayArray1[arg0][arg1] == null) {
-			@Pc(30) boolean local30 = this.method2114(arg0, arg1, arg2);
+			boolean local30 = this.method2114(arg0, arg1, arg2);
+
 			if (!local30) {
 				this.method2119(arg0);
+
 				local30 = this.method2114(arg0, arg1, arg2);
+
 				if (!local30) {
 					return null;
 				}
 			}
 		}
-		@Pc(57) byte[] local57 = Static366.method4930(false, this.anObjectArrayArray1[arg0][arg1]);
+
+		byte[] local57 = Static366.method4930(false, this.anObjectArrayArray1[arg0][arg1]);
+
 		if (this.anInt2476 == 1) {
 			this.anObjectArrayArray1[arg0][arg1] = null;
+
 			if (this.aClass209_1.anIntArray433[arg0] == 1) {
 				this.anObjectArrayArray1[arg0] = null;
 			}
 		} else if (this.anInt2476 == 2) {
 			this.anObjectArrayArray1[arg0] = null;
 		}
+
 		return local57;
 	}
 
 	@OriginalMember(owner = "client!fs", name = "h", descriptor = "(II)[B")
-	public byte[] method2122(@OriginalArg(0) int arg0) {
+	public byte[] method2122(int arg0) {
 		if (!this.method2097()) {
 			return null;
 		} else if (this.aClass209_1.anIntArray433.length == 1) {
@@ -474,15 +517,17 @@ public final class Class76 {
 	}
 
 	@OriginalMember(owner = "client!fs", name = "a", descriptor = "(ILjava/lang/String;Ljava/lang/String;)Z")
-	public boolean method2123(@OriginalArg(1) String arg0, @OriginalArg(2) String arg1) {
+	public boolean method2123(String arg0, String arg1) {
 		if (!this.method2097()) {
 			return false;
 		}
-		@Pc(21) String local21 = arg1.toLowerCase();
-		@Pc(24) String local24 = arg0.toLowerCase();
-		@Pc(33) int local33 = this.aClass209_1.aClass235_1.method5174(Static269.method3854(local21));
+
+		String local21 = arg1.toLowerCase();
+		String local24 = arg0.toLowerCase();
+		int local33 = this.aClass209_1.aClass235_1.method5174(Static269.method3854(local21));
+
 		if (this.method2106(local33)) {
-			@Pc(51) int local51 = this.aClass209_1.aClass235Array1[local33].method5174(Static269.method3854(local24));
+			int local51 = this.aClass209_1.aClass235Array1[local33].method5174(Static269.method3854(local24));
 			return this.method2098(local51, local33);
 		} else {
 			return false;
@@ -490,23 +535,26 @@ public final class Class76 {
 	}
 
 	@OriginalMember(owner = "client!fs", name = "i", descriptor = "(II)[I")
-	public int[] method2124(@OriginalArg(1) int arg0) {
+	public int[] method2124(int arg0) {
 		if (!this.method2106(arg0)) {
 			return null;
 		}
-		@Pc(27) int[] local27 = this.aClass209_1.anIntArrayArray46[arg0];
+
+		int[] local27 = this.aClass209_1.anIntArrayArray46[arg0];
+
 		if (local27 == null) {
 			local27 = new int[this.aClass209_1.anIntArray428[arg0]];
-			@Pc(38) int local38 = 0;
+			int local38 = 0;
 			while (local27.length > local38) {
 				local27[local38] = local38++;
 			}
 		}
+
 		return local27;
 	}
 
 	@OriginalMember(owner = "client!fs", name = "j", descriptor = "(II)Z")
-	public boolean method2125(@OriginalArg(1) int arg0) {
+	public boolean method2125(int arg0) {
 		if (!this.method2097()) {
 			return false;
 		} else if (this.aClass209_1.anIntArray433.length == 1) {
@@ -521,21 +569,22 @@ public final class Class76 {
 	}
 
 	@OriginalMember(owner = "client!fs", name = "b", descriptor = "(ILjava/lang/String;)V")
-	public void method2126(@OriginalArg(1) String arg0) {
+	public void method2126(String arg0) {
 		if (this.method2097()) {
-			@Pc(11) String local11 = arg0.toLowerCase();
-			@Pc(28) int local28 = this.aClass209_1.aClass235_1.method5174(Static269.method3854(local11));
+			String local11 = arg0.toLowerCase();
+			int local28 = this.aClass209_1.aClass235_1.method5174(Static269.method3854(local11));
+
 			this.method2120(local28);
 		}
 	}
 
 	@OriginalMember(owner = "client!fs", name = "a", descriptor = "(BII)Z")
-	private boolean method2127(@OriginalArg(1) int arg0, @OriginalArg(2) int arg1) {
+	private boolean method2127(int arg0, int arg1) {
 		if (!this.method2097()) {
 			return false;
 		} else if (arg0 >= 0 && arg1 >= 0 && this.aClass209_1.anIntArray433.length > arg0 && this.aClass209_1.anIntArray433[arg0] > arg1) {
 			return true;
-		} else if (Static415.aBoolean625) {
+		} else if (SHOULD_THROW_EXCEPTION) {
 			throw new IllegalArgumentException(arg0 + "," + arg1);
 		} else {
 			return false;
@@ -543,12 +592,14 @@ public final class Class76 {
 	}
 
 	@OriginalMember(owner = "client!fs", name = "a", descriptor = "(ZIZ)V")
-	public void method2128(@OriginalArg(0) boolean arg0) {
+	public void method2128(boolean arg0) {
 		if (!this.method2097()) {
 			return;
 		}
+
 		this.aClass209_1.anIntArrayArray47 = null;
 		this.aClass209_1.aClass235Array1 = null;
+
 		if (arg0) {
 			this.aClass209_1.anIntArray432 = null;
 			this.aClass209_1.aClass235_1 = null;

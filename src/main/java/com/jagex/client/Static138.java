@@ -1,6 +1,6 @@
 package com.jagex.client;
 
-import com.jagex.client.js5.Class76;
+import com.jagex.client.js5.Js5;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalMember;
 
@@ -16,7 +16,7 @@ public final class Static138 {
 	public static final HashMap A_HASH_MAP___12 = new HashMap(8);
 
 	@OriginalMember(owner = "client!gv", name = "a", descriptor = "(BLclient!fs;)V")
-	public static void method2373(@OriginalArg(1) Class76 arg0) {
+	public static void method2373(@OriginalArg(1) Js5 arg0) {
 		Static177.anInt2985 = arg0.method2099("p11_full");
 		Static62.anInt1122 = arg0.method2099("p12_full");
 		Static145.anInt2907 = arg0.method2099("b12_full");

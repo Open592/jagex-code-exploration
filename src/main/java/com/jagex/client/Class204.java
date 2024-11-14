@@ -1,7 +1,7 @@
 package com.jagex.client;
 
 import com.jagex.client.env.ModeGame;
-import com.jagex.client.js5.Class76;
+import com.jagex.client.js5.Js5;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalClass;
 import org.openrs2.deob.annotation.OriginalMember;
@@ -14,12 +14,12 @@ public final class Class204 {
 	private final Class68 aClass68_39 = new Class68(64);
 
 	@OriginalMember(owner = "client!rl", name = "j", descriptor = "Lclient!fs;")
-	private final Class76 aClass76_76;
+	private final Js5 aJs5;
 
 	@OriginalMember(owner = "client!rl", name = "<init>", descriptor = "(Lclient!jk;ILclient!fs;)V")
-	public Class204(@OriginalArg(0) ModeGame arg0, @OriginalArg(1) int arg1, @OriginalArg(2) Class76 arg2) {
-		this.aClass76_76 = arg2;
-		this.aClass76_76.method2108(31);
+	public Class204(@OriginalArg(0) ModeGame arg0, @OriginalArg(1) int arg1, @OriginalArg(2) Js5 arg2) {
+		this.aJs5 = arg2;
+		this.aJs5.method2108(31);
 	}
 
 	@OriginalMember(owner = "client!rl", name = "a", descriptor = "(I)V")
@@ -56,7 +56,7 @@ public final class Class204 {
 		if (local25 != null) {
 			return local25;
 		}
-		@Pc(42) byte[] local42 = this.aClass76_76.method2104(arg0, 31);
+		@Pc(42) byte[] local42 = this.aJs5.method2104(arg0, 31);
 		local25 = new Class190();
 		if (local42 != null) {
 			local25.method4218(new Packet(local42));

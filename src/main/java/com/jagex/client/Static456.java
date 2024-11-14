@@ -1,6 +1,6 @@
 package com.jagex.client;
 
-import com.jagex.client.js5.Class76;
+import com.jagex.client.js5.Js5;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;
@@ -102,25 +102,25 @@ public final class Static456 {
 	}
 
 	@OriginalMember(owner = "client!bb", name = "a", descriptor = "(Lclient!fs;II)Lclient!bb;")
-	public static Class18 method318(@OriginalArg(0) Class76 arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2) {
+	public static Class18 method318(@OriginalArg(0) Js5 arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2) {
 		@Pc(5) byte[] local5 = arg0.method2104(arg2, arg1);
 		return local5 == null ? null : method315(local5)[0];
 	}
 
 	@OriginalMember(owner = "client!bb", name = "a", descriptor = "(Lclient!fs;I)[Lclient!bb;")
-	public static Class18[] method323(@OriginalArg(0) Class76 arg0, @OriginalArg(1) int arg1) {
+	public static Class18[] method323(@OriginalArg(0) Js5 arg0, @OriginalArg(1) int arg1) {
 		@Pc(4) byte[] local4 = arg0.method2122(arg1);
 		return local4 == null ? null : method315(local4);
 	}
 
 	@OriginalMember(owner = "client!bb", name = "b", descriptor = "(Lclient!fs;II)[Lclient!bb;")
-	public static Class18[] method327(@OriginalArg(0) Class76 arg0, @OriginalArg(1) int arg1) {
+	public static Class18[] method327(@OriginalArg(0) Js5 arg0, @OriginalArg(1) int arg1) {
 		@Pc(5) byte[] local5 = arg0.method2104(0, arg1);
 		return local5 == null ? null : method315(local5);
 	}
 
 	@OriginalMember(owner = "client!bb", name = "b", descriptor = "(Lclient!fs;I)Lclient!bb;")
-	public static Class18 method328(@OriginalArg(0) Class76 arg0, @OriginalArg(1) int arg1) {
+	public static Class18 method328(@OriginalArg(0) Js5 arg0, @OriginalArg(1) int arg1) {
 		@Pc(4) byte[] local4 = arg0.method2122(arg1);
 		return local4 == null ? null : method315(local4)[0];
 	}

@@ -1,6 +1,6 @@
 package com.jagex.client;
 
-import com.jagex.client.js5.Class76;
+import com.jagex.client.js5.Js5;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;
@@ -8,7 +8,7 @@ import org.openrs2.deob.annotation.Pc;
 public final class Static356 {
 
 	@OriginalMember(owner = "client!sc", name = "l", descriptor = "Lclient!fs;")
-	public static Class76 aClass76_81;
+	public static Js5 aJs5_81;
 
 	@OriginalMember(owner = "client!sc", name = "q", descriptor = "I")
 	public static int anInt6220;

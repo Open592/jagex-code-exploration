@@ -1,7 +1,7 @@
 package com.jagex.client;
 
 import com.jagex.client.env.ModeGame;
-import com.jagex.client.js5.Class76;
+import com.jagex.client.js5.Js5;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalClass;
 import org.openrs2.deob.annotation.OriginalMember;
@@ -14,16 +14,16 @@ public final class Class217 {
 	private final Class68 aClass68_44 = new Class68(16);
 
 	@OriginalMember(owner = "client!sn", name = "c", descriptor = "Lclient!fs;")
-	private final Class76 aClass76_84;
+	private final Js5 aJs5_84;
 
 	static {
 		new LocalizedString("I can't reach that!", "Da kommst du nicht hin.", "Je ne peux pas l'atteindre !", "Não consigo alcançar!");
 	}
 
 	@OriginalMember(owner = "client!sn", name = "<init>", descriptor = "(Lclient!jk;ILclient!fs;)V")
-	public Class217(@OriginalArg(0) ModeGame arg0, @OriginalArg(1) int arg1, @OriginalArg(2) Class76 arg2) {
-		this.aClass76_84 = arg2;
-		this.aClass76_84.method2108(29);
+	public Class217(@OriginalArg(0) ModeGame arg0, @OriginalArg(1) int arg1, @OriginalArg(2) Js5 arg2) {
+		this.aJs5_84 = arg2;
+		this.aJs5_84.method2108(29);
 	}
 
 	@OriginalMember(owner = "client!sn", name = "a", descriptor = "(B)V")
@@ -74,7 +74,7 @@ public final class Class217 {
 		if (local16 != null) {
 			return local16;
 		}
-		@Pc(33) byte[] local33 = this.aClass76_84.method2104(arg0, 29);
+		@Pc(33) byte[] local33 = this.aJs5_84.method2104(arg0, 29);
 		local16 = new Class170();
 		if (local33 != null) {
 			local16.method3966(new Packet(local33));
