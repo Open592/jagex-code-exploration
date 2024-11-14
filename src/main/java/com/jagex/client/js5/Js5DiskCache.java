@@ -1,6 +1,8 @@
-package com.jagex.client;
+package com.jagex.client.js5;
 
+import com.jagex.client.Static94;
 import com.jagex.client.utilities.ThreadingUtilities;
+import com.jagex.client.SecondaryLinkedList;
 import com.jagex.signlink.Message;
 import com.jagex.signlink.SignLink;
 import org.openrs2.deob.annotation.OriginalArg;

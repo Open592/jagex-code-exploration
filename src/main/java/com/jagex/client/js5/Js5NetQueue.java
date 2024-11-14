@@ -1,7 +1,10 @@
-package com.jagex.client;
+package com.jagex.client.js5;
 
 import java.io.IOException;
 
+import com.jagex.client.Packet;
+import com.jagex.client.SecondaryLinkedList;
+import com.jagex.client.ServerConnection;
 import com.jagex.signlink.MonotonicClock;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalClass;

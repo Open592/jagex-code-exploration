@@ -1,9 +1,11 @@
-package com.jagex.client;
+package com.jagex.client.js5;
 
 import java.io.EOFException;
 import java.io.File;
 import java.io.IOException;
 
+import com.jagex.client.LocalizedString;
+import com.jagex.client.Static459;
 import com.jagex.signlink.FileOnDisk;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalClass;

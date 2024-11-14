@@ -2,6 +2,7 @@ package com.jagex.client;
 
 import java.lang.reflect.Method;
 
+import com.jagex.client.js5.Class76;
 import com.jagex.signlink.SignLink;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalMember;

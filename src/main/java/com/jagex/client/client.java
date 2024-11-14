@@ -5,6 +5,7 @@ import com.jagex.client.env.ModeGame;
 import com.jagex.client.env.ModeWhat;
 import com.jagex.client.env.ModeWhere;
 import com.jagex.client.jagex3.jagmisc.jagmisc;
+import com.jagex.client.js5.*;
 import com.jagex.client.utilities.ThreadingUtilities;
 import com.jagex.signlink.Message;
 import com.jagex.signlink.MonotonicClock;

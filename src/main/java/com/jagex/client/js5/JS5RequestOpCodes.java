@@ -1,4 +1,4 @@
-package com.jagex.client;
+package com.jagex.client.js5;
 
 public final class JS5RequestOpCodes {
     public static final int JS5_REGULAR_REQUEST = 0;

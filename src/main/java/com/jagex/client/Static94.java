@@ -3,6 +3,7 @@ package com.jagex.client;
 import java.io.DataInputStream;
 import java.net.URL;
 
+import com.jagex.client.js5.Class159;
 import com.jagex.client.utilities.ThreadingUtilities;
 import com.jagex.signlink.Message;
 import com.jagex.signlink.SignLink;

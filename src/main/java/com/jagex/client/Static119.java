@@ -1,5 +1,6 @@
 package com.jagex.client;
 
+import com.jagex.client.js5.Js5NetResourceProvider;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;

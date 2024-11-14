@@ -1,5 +1,7 @@
 package com.jagex.client;
 
+import com.jagex.client.js5.Class222;
+import com.jagex.client.js5.Class76;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;

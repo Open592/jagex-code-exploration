@@ -1,7 +1,9 @@
-package com.jagex.client;
+package com.jagex.client.js5;
 
+import com.jagex.client.SecondaryNode;
 import org.openrs2.deob.annotation.OriginalClass;
 import org.openrs2.deob.annotation.OriginalMember;
+
 
 @OriginalClass("client!ec")
 public abstract class Js5QueueRequest extends SecondaryNode {

@@ -1,9 +1,12 @@
-package com.jagex.client;
+package com.jagex.client.js5;
 
+import com.jagex.client.*;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalClass;
 import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;
+
+import java.util.Arrays;
 
 @OriginalClass("client!fs")
 public final class Class76 {
@@ -91,9 +94,7 @@ public final class Class76 {
 	@OriginalMember(owner = "client!fs", name = "b", descriptor = "(B)V")
 	public void method2102() {
 		if (this.anObjectArray3 != null) {
-			for (@Pc(10) int local10 = 0; local10 < this.anObjectArray3.length; local10++) {
-				this.anObjectArray3[local10] = null;
-			}
+            Arrays.fill(this.anObjectArray3, null);
 		}
 	}
 

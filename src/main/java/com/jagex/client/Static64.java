@@ -1,6 +1,8 @@
 package com.jagex.client;
 
 import java.awt.Color;
+
+import com.jagex.client.js5.Class76;
 import org.openrs2.deob.annotation.OriginalMember;
 
 public final class Static64 {

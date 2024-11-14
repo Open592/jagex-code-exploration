@@ -1,7 +1,9 @@
-package com.jagex.client;
+package com.jagex.client.js5;
 
 import java.io.EOFException;
 import java.io.IOException;
+
+import com.jagex.client.Static166;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalClass;
 import org.openrs2.deob.annotation.OriginalMember;
