@@ -1,6 +1,5 @@
 package com.jagex.client;
 
-import com.jagex.client.js5.Class139;
 import com.jagex.client.js5.Class76;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalMember;
@@ -11,7 +10,7 @@ public final class Static88 {
 	public static Class76 aClass76_23;
 
 	@OriginalMember(owner = "client!eh", name = "h", descriptor = "Lclient!lq;")
-	public static Class139 aClass139_1;
+	public static Class139 cacheDataFile;
 
 	@OriginalMember(owner = "client!eh", name = "c", descriptor = "Lclient!sl;")
 	public static final Class215 aClass215_20 = new Class215(59, 18);

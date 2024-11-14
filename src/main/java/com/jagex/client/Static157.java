@@ -20,12 +20,12 @@ public final class Static157 {
 
 	@OriginalMember(owner = "client!hu", name = "a", descriptor = "(Lclient!iv;II)V")
 	public static void method2669(@OriginalArg(0) Packet arg0, @OriginalArg(2) int arg1) {
-		if (Static394.aClass139_4 == null) {
+		if (Static394.randomFile == null) {
 			return;
 		}
 		try {
-			Static394.aClass139_4.method3466(0L);
-			Static394.aClass139_4.method3464(arg1, arg0.data, 24);
+			Static394.randomFile.seek(0L);
+			Static394.randomFile.method3464(arg1, arg0.data, 24);
 		} catch (@Pc(18) Exception local18) {
 		}
 	}

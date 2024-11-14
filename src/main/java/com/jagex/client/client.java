@@ -180,6 +180,8 @@ public final class client extends GameShell {
 	public static long firstLoadClientAssetsTimestamp = 0L;
 	@OriginalMember(owner = "client!ba", name = "C", descriptor = "I")
 	public static int gameLogicStepCount = 0;
+	@OriginalMember(owner = "client!eo", name = "n", descriptor = "Lclient!nj;")
+	public static Js5MasterIndexProvider masterIndexProvider;
 
 	@OriginalMember(owner = "client!client", name = "main", descriptor = "([Ljava/lang/String;)V")
 	public static void main(@OriginalArg(0) String[] arguments) {
@@ -3699,6 +3701,23 @@ public final class client extends GameShell {
 		return aFrameTimer_1.method2252();
 	}
 
+	@OriginalMember(owner = "client!nj", name = "a", descriptor = "(ZIZII)Lclient!fs;")
+	public static Class76 method3820(boolean arg0, int archive, boolean arg2) {
+		Class222 local5 = null;
+
+		if (Static88.cacheDataFile != null) {
+			local5 = new Class222(archive, Static88.cacheDataFile, Static86.aClass139Array1[archive], 1000000);
+		}
+
+		Static119.aClass143_Sub1Array1[archive] = masterIndexProvider.getArchiveData(Static225.aClass222_2, local5, archive);
+
+		if (arg2) {
+			Static119.aClass143_Sub1Array1[archive].method3526();
+		}
+
+		return new Class76(Static119.aClass143_Sub1Array1[archive], arg0, 1);
+	}
+
 	@OriginalMember(owner = "client!client", name = "i", descriptor = "(I)V")
 	private void js5connect() {
 		if (js5NetQueue.js5ConnectAttempts > previousJS5ConnectionAttepts) {
@@ -3845,7 +3864,7 @@ public final class client extends GameShell {
 
 		Static64.method1241();
 		js5NetQueue.shutdown();
-		aJs5DiskCache_3.method5433();
+		aJs5DiskCache_3.stop();
 
 		if (Static402.aClass256_1 != null) {
 			Static402.aClass256_1.method5475();
@@ -4164,8 +4183,8 @@ public final class client extends GameShell {
 			Static138.anInt2826 = 0;
 		}
 		this.method912();
-		if (Static94.aClass159_1 != null) {
-			Static94.aClass159_1.method3819();
+		if (masterIndexProvider != null) {
+			masterIndexProvider.method3819();
 		}
 		Static225.method3438();
 		Static384.aClass244_1.method5487();
@@ -4411,25 +4430,26 @@ public final class client extends GameShell {
 
 		try {
 			if (GameShell.signLink.cacheDataFile != null) {
-				Static88.aClass139_1 = new Class139(GameShell.signLink.cacheDataFile, 5200, 0);
+				Static88.cacheDataFile = new Class139(GameShell.signLink.cacheDataFile, 5200, 0);
 
 				for (@Pc(169) int i = 0; i < 30; i++) {
 					Static86.aClass139Array1[i] = new Class139(GameShell.signLink.cacheArchiveFiles[i], 6000, 0);
 				}
 
-				Static425.aClass139_5 = new Class139(GameShell.signLink.cacheIndex255, 6000, 0);
-				Static225.aClass222_2 = new Class222(255, Static88.aClass139_1, Static425.aClass139_5, 500000);
-				Static394.aClass139_4 = new Class139(GameShell.signLink.randomFile, 24, 0);
+				Static425.cacheMasterIndexFile = new Class139(GameShell.signLink.cacheIndex255, 6000, 0);
+				Static225.aClass222_2 = new Class222(255, Static88.cacheDataFile, Static425.cacheMasterIndexFile, 500000);
+				Static394.randomFile = new Class139(GameShell.signLink.randomFile, 24, 0);
+
 				GameShell.signLink.cacheIndex255 = null;
 				GameShell.signLink.randomFile = null;
 				GameShell.signLink.cacheDataFile = null;
 				GameShell.signLink.cacheArchiveFiles = null;
 			}
 		} catch (@Pc(227) IOException local227) {
-			Static394.aClass139_4 = null;
-			Static88.aClass139_1 = null;
+			Static394.randomFile = null;
+			Static88.cacheDataFile = null;
 			Static225.aClass222_2 = null;
-			Static425.aClass139_5 = null;
+			Static425.cacheMasterIndexFile = null;
 		}
 
 		if (!ClientSettings.modewhere.isLive()) {
@@ -4535,40 +4555,40 @@ public final class client extends GameShell {
 			Static247.anInt4590 = 10;
 			anInt5 = 20;
 		} else if (anInt5 == 20) {
-			if (Static94.aClass159_1 == null) {
-				Static94.aClass159_1 = new Class159(js5NetQueue, aJs5DiskCache_3);
+			if (masterIndexProvider == null) {
+				masterIndexProvider = new Js5MasterIndexProvider(js5NetQueue, aJs5DiskCache_3);
 			}
-			if (Static94.aClass159_1.isReady()) {
-				Static395.aClass76_92 = Static265.method3820(false, 0, true);
-				Static324.aClass76_69 = Static265.method3820(false, 1, true);
-				Static74.aClass76_20 = Static265.method3820(false, 2, true);
-				Static256.aClass76_50 = Static265.method3820(false, 3, true);
-				Static67.aClass76_19 = Static265.method3820(false, 4, true);
-				Static49.aClass76_27 = Static265.method3820(true, 5, true);
-				Static46.aClass76_54 = Static265.method3820(true, 6, false);
-				Static357.aClass76_82 = Static265.method3820(false, 7, true);
-				Static293.aClass76_60 = Static265.method3820(false, 8, true);
-				Static196.aClass76_44 = Static265.method3820(false, 9, true);
-				Static88.aClass76_23 = Static265.method3820(false, 10, true);
-				Static284.aClass76_55 = Static265.method3820(false, 11, true);
-				Static197.aClass76_45 = Static265.method3820(false, 12, true);
-				Static209.aClass76_48 = Static265.method3820(false, 13, true);
-				Static312.aClass76_66 = Static265.method3820(false, 14, false);
-				Static350.aClass76_79 = Static265.method3820(false, 15, true);
-				Static424.aClass76_99 = Static265.method3820(false, 16, true);
-				Static208.aClass76_29 = Static265.method3820(false, 17, true);
-				Static381.aClass76_87 = Static265.method3820(false, 18, true);
-				Static391.aClass76_91 = Static265.method3820(false, 19, true);
-				Static388.aClass76_90 = Static265.method3820(false, 20, true);
-				Static55.aClass76_16 = Static265.method3820(false, 21, true);
-				Static64.aClass76_17 = Static265.method3820(false, 22, true);
-				Static163.aClass76_39 = Static265.method3820(true, 23, true);
-				Static66.aClass76_70 = Static265.method3820(false, 24, true);
-				Static154.aClass76_11 = Static265.method3820(false, 25, true);
-				Static24.aClass76_61 = Static265.method3820(true, 26, true);
-				Static417.aClass76_98 = Static265.method3820(false, 27, true);
-				Static19.aClass76_2 = Static265.method3820(true, 28, true);
-				Static366.aClass76_83 = Static265.method3820(false, 29, true);
+			if (masterIndexProvider.isReady()) {
+				Static395.aClass76_92 = method3820(false, 0, true);
+				Static324.aClass76_69 = method3820(false, 1, true);
+				Static74.aClass76_20 = method3820(false, 2, true);
+				Static256.aClass76_50 = method3820(false, 3, true);
+				Static67.aClass76_19 = method3820(false, 4, true);
+				Static49.aClass76_27 = method3820(true, 5, true);
+				Static46.aClass76_54 = method3820(true, 6, false);
+				Static357.aClass76_82 = method3820(false, 7, true);
+				Static293.aClass76_60 = method3820(false, 8, true);
+				Static196.aClass76_44 = method3820(false, 9, true);
+				Static88.aClass76_23 = method3820(false, 10, true);
+				Static284.aClass76_55 = method3820(false, 11, true);
+				Static197.aClass76_45 = method3820(false, 12, true);
+				Static209.aClass76_48 = method3820(false, 13, true);
+				Static312.aClass76_66 = method3820(false, 14, false);
+				Static350.aClass76_79 = method3820(false, 15, true);
+				Static424.aClass76_99 = method3820(false, 16, true);
+				Static208.aClass76_29 = method3820(false, 17, true);
+				Static381.aClass76_87 = method3820(false, 18, true);
+				Static391.aClass76_91 = method3820(false, 19, true);
+				Static388.aClass76_90 = method3820(false, 20, true);
+				Static55.aClass76_16 = method3820(false, 21, true);
+				Static64.aClass76_17 = method3820(false, 22, true);
+				Static163.aClass76_39 = method3820(true, 23, true);
+				Static66.aClass76_70 = method3820(false, 24, true);
+				Static154.aClass76_11 = method3820(false, 25, true);
+				Static24.aClass76_61 = method3820(true, 26, true);
+				Static417.aClass76_98 = method3820(false, 27, true);
+				Static19.aClass76_2 = method3820(true, 28, true);
+				Static366.aClass76_83 = method3820(false, 29, true);
 				Static24.aString53 = connectedToUpdateServerLocalizedString.getLocalizedString(ClientSettings.langID);
 				Static247.anInt4590 = 15;
 				anInt5 = 30;

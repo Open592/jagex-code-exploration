@@ -6,7 +6,7 @@ import org.openrs2.deob.annotation.OriginalClass;
 import org.openrs2.deob.annotation.OriginalMember;
 
 @OriginalClass("client!nj")
-public final class Class159 {
+public final class Js5MasterIndexProvider {
 
 	@OriginalMember(owner = "client!nj", name = "g", descriptor = "[Lclient!lv;")
 	private Js5NetResourceProvider[] masterIndexArchiveData;
@@ -15,21 +15,21 @@ public final class Class159 {
 	private Packet masterIndexResponsePacket;
 
 	@OriginalMember(owner = "client!nj", name = "d", descriptor = "Lclient!vl;")
-	private final Js5DiskCache aJs5DiskCache_2;
+	private final Js5DiskCache diskQueue;
 
 	@OriginalMember(owner = "client!nj", name = "h", descriptor = "Lclient!vn;")
-	private final Js5NetQueue js5NetQueue;
+	private final Js5NetQueue netQueue;
 
 	@OriginalMember(owner = "client!nj", name = "i", descriptor = "Lclient!je;")
 	private Js5NetQueueRequest masterIndexRequest;
 
 	@OriginalMember(owner = "client!nj", name = "<init>", descriptor = "(Lclient!vn;Lclient!vl;)V")
-	public Class159(@OriginalArg(0) Js5NetQueue js5NetQueue, @OriginalArg(1) Js5DiskCache arg1) {
-		this.js5NetQueue = js5NetQueue;
-		this.aJs5DiskCache_2 = arg1;
+	public Js5MasterIndexProvider(@OriginalArg(0) Js5NetQueue netQueue, @OriginalArg(1) Js5DiskCache diskCache) {
+		this.netQueue = netQueue;
+		this.diskQueue = diskCache;
 
-		if (!this.js5NetQueue.isUrgentRequestQueueFull()) {
-			this.masterIndexRequest = this.js5NetQueue.requestArchiveFile(255, (byte) 0, true, 255);
+		if (!this.netQueue.isUrgentRequestQueueFull()) {
+			this.masterIndexRequest = this.netQueue.requestArchiveFile(255, (byte) 0, true, 255);
 		}
 	}
 
@@ -40,11 +40,11 @@ public final class Class159 {
 		}
 
 		if (this.masterIndexRequest == null) {
-			if (this.js5NetQueue.isUrgentRequestQueueFull()) {
+			if (this.netQueue.isUrgentRequestQueueFull()) {
 				return false;
 			}
 
-			this.masterIndexRequest = this.js5NetQueue.requestArchiveFile(255, (byte) 0, true, 255);
+			this.masterIndexRequest = this.netQueue.requestArchiveFile(255, (byte) 0, true, 255);
 		}
 
 		if (this.masterIndexRequest.isRequestInProgress) {
@@ -58,7 +58,7 @@ public final class Class159 {
 	}
 
 	@OriginalMember(owner = "client!nj", name = "a", descriptor = "(Lclient!st;Lclient!st;II)Lclient!lv;")
-	public Js5NetResourceProvider method3817(@OriginalArg(0) Class222 arg0, @OriginalArg(1) Class222 arg1, @OriginalArg(3) int archive) {
+	public Js5NetResourceProvider getArchiveData(@OriginalArg(0) Class222 arg0, @OriginalArg(1) Class222 arg1, @OriginalArg(3) int archive) {
 		return this.getArchiveData(arg1, archive, arg0);
 	}
 
@@ -94,7 +94,7 @@ public final class Class159 {
 		} else if (this.masterIndexArchiveData[archive] == null) {
 			int checksum = this.masterIndexResponsePacket.g4();
 			int version = this.masterIndexResponsePacket.g4();
-			Js5NetResourceProvider local64 = new Js5NetResourceProvider(archive, arg0, arg2, this.js5NetQueue, this.aJs5DiskCache_2, checksum, version, true);
+			Js5NetResourceProvider local64 = new Js5NetResourceProvider(archive, arg0, arg2, this.netQueue, this.diskQueue, checksum, version, true);
 
 			this.masterIndexArchiveData[archive] = local64;
 

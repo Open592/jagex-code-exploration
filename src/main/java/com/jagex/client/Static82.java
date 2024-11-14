@@ -81,11 +81,11 @@ public final class Static82 {
 	@OriginalMember(owner = "client!e", name = "a", descriptor = "(BLclient!iv;)V")
 	public static void method1471(@OriginalArg(1) Packet arg0) {
 		@Pc(13) byte[] local13 = new byte[24];
-		if (Static394.aClass139_4 != null) {
+		if (Static394.randomFile != null) {
 			@Pc(25) int local25;
 			try {
-				Static394.aClass139_4.method3466(0L);
-				Static394.aClass139_4.method3462(local13);
+				Static394.randomFile.seek(0L);
+				Static394.randomFile.method3462(local13);
 				for (local25 = 0; local25 < 24 && local13[local25] == 0; local25++) {
 				}
 				if (local25 >= 24) {

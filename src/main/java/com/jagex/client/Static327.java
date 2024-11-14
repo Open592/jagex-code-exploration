@@ -17,15 +17,19 @@ public final class Static327 {
 		if (arg0 == null) {
 			return null;
 		}
+
 		if (arg0.length > 136 && !Static279.aBoolean664) {
 			try {
-				@Pc(25) Class34 local25 = (Class34) Class.forName("Class34_Sub1").getDeclaredConstructor().newInstance();
+				Class34 local25 = new Class34_Sub1();
+
 				local25.method775(arg0);
+
 				return local25;
-			} catch (@Pc(34) Throwable local34) {
+			} catch (Throwable ignored) {
 				Static279.aBoolean664 = true;
 			}
 		}
+
 		return arg0;
 	}
 

@@ -1,6 +1,5 @@
 package com.jagex.client;
 
-import com.jagex.client.js5.Class139;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalMember;
 
@@ -13,7 +12,7 @@ public final class Static394 {
 	public static int anInt6593;
 
 	@OriginalMember(owner = "client!tu", name = "O", descriptor = "Lclient!lq;")
-	public static Class139 aClass139_4;
+	public static Class139 randomFile;
 
 	@OriginalMember(owner = "client!tu", name = "a", descriptor = "(BLclient!ku;)V")
 	public static void method5157(@OriginalArg(1) Class3_Sub4 arg0) {
