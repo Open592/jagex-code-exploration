@@ -7,7 +7,7 @@ import org.openrs2.deob.annotation.Pc;
 public final class Static425 {
 
 	@OriginalMember(owner = "client!vk", name = "F", descriptor = "Lclient!lq;")
-	public static Class139 cacheMasterIndexFile;
+	public static BufferedFile cacheMasterIndexFile;
 
 	@OriginalMember(owner = "client!vk", name = "I", descriptor = "I")
 	public static int anInt7000;

@@ -12,7 +12,7 @@ public final class Static394 {
 	public static int anInt6593;
 
 	@OriginalMember(owner = "client!tu", name = "O", descriptor = "Lclient!lq;")
-	public static Class139 randomFile;
+	public static BufferedFile randomFile;
 
 	@OriginalMember(owner = "client!tu", name = "a", descriptor = "(BLclient!ku;)V")
 	public static void method5157(@OriginalArg(1) Class3_Sub4 arg0) {

@@ -10,7 +10,7 @@ public final class Static88 {
 	public static Js5 aJs5_23;
 
 	@OriginalMember(owner = "client!eh", name = "h", descriptor = "Lclient!lq;")
-	public static Class139 cacheDataFile;
+	public static BufferedFile cacheDataFile;
 
 	@OriginalMember(owner = "client!eh", name = "c", descriptor = "Lclient!sl;")
 	public static final Class215 aClass215_20 = new Class215(59, 18);

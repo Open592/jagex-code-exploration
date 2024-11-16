@@ -31,7 +31,7 @@ public final class Js5NetResourceProvider extends Js5ResourceProvider {
 	private int anInt4482 = 0;
 
 	@OriginalMember(owner = "client!lv", name = "o", descriptor = "Lclient!ib;")
-	private final HashMap aHashMap_20 = new HashMap(16);
+	private final HashMap groupRequests = new HashMap(16);
 
 	@OriginalMember(owner = "client!lv", name = "J", descriptor = "I")
 	private int anInt4489 = 0;
@@ -46,7 +46,7 @@ public final class Js5NetResourceProvider extends Js5ResourceProvider {
 	private final Class222 aClass222_3;
 
 	@OriginalMember(owner = "client!lv", name = "j", descriptor = "I")
-	private final int anInt4474;
+	private final int archive;
 
 	@OriginalMember(owner = "client!lv", name = "D", descriptor = "Z")
 	private boolean aBoolean412;
@@ -70,15 +70,15 @@ public final class Js5NetResourceProvider extends Js5ResourceProvider {
 	private final Js5NetQueue js5NetQueue;
 
 	@OriginalMember(owner = "client!lv", name = "B", descriptor = "Lclient!vl;")
-	private final Js5DiskCache aJs5DiskCache_1;
+	private final Js5DiskCache diskCache;
 
 	@OriginalMember(owner = "client!lv", name = "x", descriptor = "Lclient!ec;")
-	private Js5QueueRequest aClass4_Sub1_Sub6_1;
+	private Js5QueueRequest request;
 
 	@OriginalMember(owner = "client!lv", name = "<init>", descriptor = "(ILclient!st;Lclient!st;Lclient!vn;Lclient!vl;IIZ)V")
-	public Js5NetResourceProvider(int arg0, Class222 arg1, Class222 arg2, Js5NetQueue js5NetQueue, Js5DiskCache arg4, int checksum, int version, boolean arg7) {
+	public Js5NetResourceProvider(int archive, Class222 arg1, Class222 arg2, Js5NetQueue js5NetQueue, Js5DiskCache arg4, int checksum, int version, boolean arg7) {
 		this.aClass222_3 = arg1;
-		this.anInt4474 = arg0;
+		this.archive = archive;
 		if (this.aClass222_3 == null) {
 			this.aBoolean412 = false;
 		} else {
@@ -90,9 +90,9 @@ public final class Js5NetResourceProvider extends Js5ResourceProvider {
 		this.aBoolean414 = arg7;
 		this.aClass222_4 = arg2;
 		this.js5NetQueue = js5NetQueue;
-		this.aJs5DiskCache_1 = arg4;
+		this.diskCache = arg4;
 		if (this.aClass222_4 != null) {
-			this.aClass4_Sub1_Sub6_1 = this.aJs5DiskCache_1.method5432(this.aClass222_4, this.anInt4474);
+			this.request = this.diskCache.method5432(this.aClass222_4, this.archive);
 		}
 	}
 
@@ -102,50 +102,60 @@ public final class Js5NetResourceProvider extends Js5ResourceProvider {
 	}
 
 	@OriginalMember(owner = "client!lv", name = "a", descriptor = "(III)Lclient!ec;")
-	private Js5QueueRequest method3518(@OriginalArg(0) int arg0, @OriginalArg(2) int arg1) {
-		@Pc(13) Js5QueueRequest local13 = (Js5QueueRequest) this.aHashMap_20.get((long) arg1);
-		if (local13 != null && arg0 == 0 && !local13.isUrgent && local13.isRequestInProgress) {
-			local13.popSelf();
-			local13 = null;
+	private Js5QueueRequest method3518(@OriginalArg(0) int arg0, @OriginalArg(2) int group) {
+		@Pc(13) Js5QueueRequest groupRequest = (Js5QueueRequest) this.groupRequests.get(group);
+
+		if (groupRequest != null && arg0 == 0 && !groupRequest.isUrgent && groupRequest.isRequestInProgress) {
+			groupRequest.popSelf();
+			groupRequest = null;
 		}
-		if (local13 == null) {
+
+		if (groupRequest == null) {
 			if (arg0 == 0) {
-				if (this.aClass222_3 == null || this.aByteArray56[arg1] == -1) {
+				if (this.aClass222_3 == null || this.aByteArray56[group] == -1) {
 					if (this.js5NetQueue.isUrgentRequestQueueFull()) {
 						return null;
 					}
-					local13 = this.js5NetQueue.requestArchiveFile(this.anInt4474, (byte) 2, true, arg1);
+
+					groupRequest = this.js5NetQueue.requestArchiveFile(this.archive, (byte) 2, true, group);
 				} else {
-					local13 = this.aJs5DiskCache_1.method5432(this.aClass222_3, arg1);
+					groupRequest = this.diskCache.method5432(this.aClass222_3, group);
 				}
 			} else if (arg0 == 1) {
 				if (this.aClass222_3 == null) {
 					throw new RuntimeException();
 				}
-				local13 = this.aJs5DiskCache_1.method5431(this.aClass222_3, arg1);
+
+				groupRequest = this.diskCache.method5431(this.aClass222_3, group);
 			} else if (arg0 == 2) {
 				if (this.aClass222_3 == null) {
 					throw new RuntimeException();
 				}
-				if (this.aByteArray56[arg1] != -1) {
+
+				if (this.aByteArray56[group] != -1) {
 					throw new RuntimeException();
 				}
+
 				if (this.js5NetQueue.isRegularRequestQueueFull()) {
 					return null;
 				}
-				local13 = this.js5NetQueue.requestArchiveFile(this.anInt4474, (byte) 2, false, arg1);
+
+				groupRequest = this.js5NetQueue.requestArchiveFile(this.archive, (byte) 2, false, group);
 			} else {
 				throw new RuntimeException();
 			}
-			this.aHashMap_20.set((long) arg1, local13);
+
+			this.groupRequests.set(group, groupRequest);
 		}
-		if (local13.isRequestInProgress) {
+		if (groupRequest.isRequestInProgress) {
 			return null;
 		}
-		@Pc(161) byte[] local161 = local13.getResponseData();
+
+		@Pc(161) byte[] local161 = groupRequest.getResponseData();
 		@Pc(188) int local188;
 		@Pc(238) Js5NetQueueRequest local238;
-		if (!(local13 instanceof Js5DiskCacheRequestItem)) {
+
+		if (!(groupRequest instanceof Js5DiskCacheRequestItem)) {
 			try {
 				if (local161 == null || local161.length <= 2) {
 					throw new RuntimeException();
@@ -153,33 +163,33 @@ public final class Js5NetResourceProvider extends Js5ResourceProvider {
 				aCRC32_1.reset();
 				aCRC32_1.update(local161, 0, local161.length - 2);
 				local188 = (int) aCRC32_1.getValue();
-				if (local188 != this.aClass209_2.anIntArray430[arg1]) {
+				if (local188 != this.aClass209_2.anIntArray430[group]) {
 					throw new RuntimeException();
 				}
 				this.js5NetQueue.js5ConnectAttempts = 0;
 				this.js5NetQueue.errorCode = 0;
 			} catch (@Pc(213) RuntimeException local213) {
 				this.js5NetQueue.method5464();
-				local13.popSelf();
-				if (local13.isUrgent && !this.js5NetQueue.isUrgentRequestQueueFull()) {
-					local238 = this.js5NetQueue.requestArchiveFile(this.anInt4474, (byte) 2, true, arg1);
-					this.aHashMap_20.set((long) arg1, local238);
+				groupRequest.popSelf();
+				if (groupRequest.isUrgent && !this.js5NetQueue.isUrgentRequestQueueFull()) {
+					local238 = this.js5NetQueue.requestArchiveFile(this.archive, (byte) 2, true, group);
+					this.groupRequests.set((long) group, local238);
 				}
 				return null;
 			}
-			local161[local161.length - 2] = (byte) (this.aClass209_2.anIntArray429[arg1] >>> 8);
-			local161[local161.length - 1] = (byte) this.aClass209_2.anIntArray429[arg1];
+			local161[local161.length - 2] = (byte) (this.aClass209_2.anIntArray429[group] >>> 8);
+			local161[local161.length - 1] = (byte) this.aClass209_2.anIntArray429[group];
 			if (this.aClass222_3 != null) {
-				this.aJs5DiskCache_1.method5435(arg1, local161, this.aClass222_3);
-				if (this.aByteArray56[arg1] != 1) {
+				this.diskCache.method5435(group, local161, this.aClass222_3);
+				if (this.aByteArray56[group] != 1) {
 					this.anInt4482++;
-					this.aByteArray56[arg1] = 1;
+					this.aByteArray56[group] = 1;
 				}
 			}
-			if (!local13.isUrgent) {
-				local13.popSelf();
+			if (!groupRequest.isUrgent) {
+				groupRequest.popSelf();
 			}
-			return local13;
+			return groupRequest;
 		}
 		try {
 			if (local161 == null || local161.length <= 2) {
@@ -188,27 +198,27 @@ public final class Js5NetResourceProvider extends Js5ResourceProvider {
 			aCRC32_1.reset();
 			aCRC32_1.update(local161, 0, local161.length - 2);
 			local188 = (int) aCRC32_1.getValue();
-			if (this.aClass209_2.anIntArray430[arg1] != local188) {
+			if (this.aClass209_2.anIntArray430[group] != local188) {
 				throw new RuntimeException();
 			}
 			@Pc(371) int local371 = ((local161[local161.length - 2] & 0xFF) << 8) + (local161[local161.length - 1] & 0xFF);
-			if (local371 != (this.aClass209_2.anIntArray429[arg1] & 0xFFFF)) {
+			if (local371 != (this.aClass209_2.anIntArray429[group] & 0xFFFF)) {
 				throw new RuntimeException();
 			}
-			if (this.aByteArray56[arg1] != 1) {
+			if (this.aByteArray56[group] != 1) {
 				this.anInt4482++;
-				this.aByteArray56[arg1] = 1;
+				this.aByteArray56[group] = 1;
 			}
-			if (!local13.isUrgent) {
-				local13.popSelf();
+			if (!groupRequest.isUrgent) {
+				groupRequest.popSelf();
 			}
-			return local13;
+			return groupRequest;
 		} catch (@Pc(412) Exception local412) {
-			this.aByteArray56[arg1] = -1;
-			local13.popSelf();
-			if (local13.isUrgent && !this.js5NetQueue.isUrgentRequestQueueFull()) {
-				local238 = this.js5NetQueue.requestArchiveFile(this.anInt4474, (byte) 2, true, arg1);
-				this.aHashMap_20.set((long) arg1, local238);
+			this.aByteArray56[group] = -1;
+			groupRequest.popSelf();
+			if (groupRequest.isUrgent && !this.js5NetQueue.isUrgentRequestQueueFull()) {
+				local238 = this.js5NetQueue.requestArchiveFile(this.archive, (byte) 2, true, group);
+				this.groupRequests.set((long) group, local238);
 			}
 			return null;
 		}
@@ -254,7 +264,7 @@ public final class Js5NetResourceProvider extends Js5ResourceProvider {
 					if (this.aClass209_2.anIntArray428[this.anInt4489] == 0) {
 						this.anInt4489++;
 					} else {
-						if (this.aJs5DiskCache_1.anInt7015 >= 250) {
+						if (this.diskCache.anInt7015 >= 250) {
 							local21 = false;
 							break;
 						}
@@ -318,7 +328,7 @@ public final class Js5NetResourceProvider extends Js5ResourceProvider {
 		if (!this.aBoolean414 || this.aLong149 > MonotonicClock.getCurrentTimeInMilliseconds()) {
 			return;
 		}
-		for (@Pc(325) Js5QueueRequest request = (Js5QueueRequest) this.aHashMap_20.head(); request != null; request = (Js5QueueRequest) this.aHashMap_20.next()) {
+		for (@Pc(325) Js5QueueRequest request = (Js5QueueRequest) this.groupRequests.head(); request != null; request = (Js5QueueRequest) this.groupRequests.next()) {
 			if (!request.isRequestInProgress) {
 				if (request.isRequested) {
 					if (!request.isUrgent) {
@@ -347,8 +357,8 @@ public final class Js5NetResourceProvider extends Js5ResourceProvider {
 
 	@OriginalMember(owner = "client!lv", name = "a", descriptor = "(IB)I")
 	@Override
-	public int method3515(@OriginalArg(0) int arg0) {
-		@Pc(11) Js5QueueRequest local11 = (Js5QueueRequest) this.aHashMap_20.get((long) arg0);
+	public int getDownloadPercentage(@OriginalArg(0) int arg0) {
+		@Pc(11) Js5QueueRequest local11 = (Js5QueueRequest) this.groupRequests.get(arg0);
 		return local11 == null ? 0 : local11.getDownloadPercentage();
 	}
 
@@ -378,7 +388,7 @@ public final class Js5NetResourceProvider extends Js5ResourceProvider {
 	@OriginalMember(owner = "client!lv", name = "f", descriptor = "(I)I")
 	public int getDownloadPercentage() {
 		if (this.method3514() == null) {
-			return this.aClass4_Sub1_Sub6_1 == null ? 0 : this.aClass4_Sub1_Sub6_1.getDownloadPercentage();
+			return this.request == null ? 0 : this.request.getDownloadPercentage();
 		} else {
 			return 100;
 		}
@@ -427,21 +437,21 @@ public final class Js5NetResourceProvider extends Js5ResourceProvider {
 			return this.aClass209_2;
 		}
 
-		if (this.aClass4_Sub1_Sub6_1 == null) {
+		if (this.request == null) {
 			if (this.js5NetQueue.isUrgentRequestQueueFull()) {
 				return null;
 			}
 
-			this.aClass4_Sub1_Sub6_1 = this.js5NetQueue.requestArchiveFile(255, (byte) 0, true, this.anInt4474);
+			this.request = this.js5NetQueue.requestArchiveFile(255, (byte) 0, true, this.archive);
 		}
 
-		if (this.aClass4_Sub1_Sub6_1.isRequestInProgress) {
+		if (this.request.isRequestInProgress) {
 			return null;
 		}
 
-		byte[] responseData = this.aClass4_Sub1_Sub6_1.getResponseData();
+		byte[] responseData = this.request.getResponseData();
 
-		if (this.aClass4_Sub1_Sub6_1 instanceof Js5DiskCacheRequestItem) {
+		if (this.request instanceof Js5DiskCacheRequestItem) {
 			try {
 				if (responseData == null) {
 					throw new RuntimeException();
@@ -456,9 +466,9 @@ public final class Js5NetResourceProvider extends Js5ResourceProvider {
 				this.aClass209_2 = null;
 
 				if (this.js5NetQueue.isUrgentRequestQueueFull()) {
-					this.aClass4_Sub1_Sub6_1 = null;
+					this.request = null;
 				} else {
-					this.aClass4_Sub1_Sub6_1 = this.js5NetQueue.requestArchiveFile(255, (byte) 0, true, this.anInt4474);
+					this.request = this.js5NetQueue.requestArchiveFile(255, (byte) 0, true, this.archive);
 				}
 
 				return null;
@@ -475,19 +485,19 @@ public final class Js5NetResourceProvider extends Js5ResourceProvider {
 				this.aClass209_2 = null;
 
 				if (this.js5NetQueue.isUrgentRequestQueueFull()) {
-					this.aClass4_Sub1_Sub6_1 = null;
+					this.request = null;
 				} else {
-					this.aClass4_Sub1_Sub6_1 = this.js5NetQueue.requestArchiveFile(255, (byte) 0, true, this.anInt4474);
+					this.request = this.js5NetQueue.requestArchiveFile(255, (byte) 0, true, this.archive);
 				}
 
 				return null;
 			}
 			if (this.aClass222_4 != null) {
-				this.aJs5DiskCache_1.method5435(this.anInt4474, responseData, this.aClass222_4);
+				this.diskCache.method5435(this.archive, responseData, this.aClass222_4);
 			}
 		}
 
-		this.aClass4_Sub1_Sub6_1 = null;
+		this.request = null;
 
 		if (this.aClass222_3 != null) {
 			this.aByteArray56 = new byte[this.aClass209_2.anInt6112];

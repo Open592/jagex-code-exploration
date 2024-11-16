@@ -135,7 +135,7 @@ public final class client extends GameShell {
 	public static final LocalizedString loadedClientVariableDataLocalizedString = new LocalizedString("Loaded client variable data", "Client-Variablen geladen", "Variables du client chargées", "As variáveis do sistema foram carregadas");
 
 	@OriginalMember(owner = "client!mp", name = "ab", descriptor = "[I")
-	public static final int[] anIntArray307 = new int[]{
+	public static final int[] ARCHIVE_FILE_SIZE_WEIGHTS = new int[]{
 			4, // 	4%
 			4, // 	8%
 			1, // 	9%
@@ -3740,7 +3740,7 @@ public final class client extends GameShell {
 		Class222 local5 = null;
 
 		if (Static88.cacheDataFile != null) {
-			local5 = new Class222(archive, Static88.cacheDataFile, Static86.aClass139Array1[archive], 1000000);
+			local5 = new Class222(archive, Static88.cacheDataFile, Static86.cacheIndexFiles[archive], 1000000);
 		}
 
 		Static119.archiveDataResourceProviders[archive] = masterIndexProvider.getArchiveDataResourceProvider(Static225.aClass222_2, local5, archive);
@@ -4464,20 +4464,20 @@ public final class client extends GameShell {
 
 		try {
 			if (GameShell.signLink.cacheDataFile != null) {
-				Static88.cacheDataFile = new Class139(GameShell.signLink.cacheDataFile, 5200, 0);
+				Static88.cacheDataFile = new BufferedFile(GameShell.signLink.cacheDataFile, 5200, 0);
 
 				for (@Pc(169) int i = 0; i < 30; i++) {
-					Static86.aClass139Array1[i] = new Class139(GameShell.signLink.cacheArchiveFiles[i], 6000, 0);
+					Static86.cacheIndexFiles[i] = new BufferedFile(GameShell.signLink.cacheIndexFiles[i], 6000, 0);
 				}
 
-				Static425.cacheMasterIndexFile = new Class139(GameShell.signLink.cacheIndex255, 6000, 0);
+				Static425.cacheMasterIndexFile = new BufferedFile(GameShell.signLink.cacheIndex255, 6000, 0);
 				Static225.aClass222_2 = new Class222(255, Static88.cacheDataFile, Static425.cacheMasterIndexFile, 500000);
-				Static394.randomFile = new Class139(GameShell.signLink.randomFile, 24, 0);
+				Static394.randomFile = new BufferedFile(GameShell.signLink.randomFile, 24, 0);
 
 				GameShell.signLink.cacheIndex255 = null;
 				GameShell.signLink.randomFile = null;
 				GameShell.signLink.cacheDataFile = null;
-				GameShell.signLink.cacheArchiveFiles = null;
+				GameShell.signLink.cacheIndexFiles = null;
 			}
 		} catch (@Pc(227) IOException local227) {
 			Static394.randomFile = null;
@@ -4633,7 +4633,7 @@ public final class client extends GameShell {
 			int percentLoaded = 0;
 
 			for (int i = 0; i < 30; i++) {
-				percentLoaded += Static119.archiveDataResourceProviders[i].getDownloadPercentage() * anIntArray307[i] / 100;
+				percentLoaded += Static119.archiveDataResourceProviders[i].getDownloadPercentage() * ARCHIVE_FILE_SIZE_WEIGHTS[i] / 100;
 			}
 
 			if (percentLoaded == 100) {

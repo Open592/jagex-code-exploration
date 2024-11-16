@@ -40,7 +40,7 @@ public final class SignLink implements Runnable {
 
 	public FileOnDisk cacheIndex255 = null;
 
-	public FileOnDisk[] cacheArchiveFiles;
+	public FileOnDisk[] cacheIndexFiles;
 
 	private final String gameName;
 
@@ -256,10 +256,10 @@ public final class SignLink implements Runnable {
 		this.randomFile = new FileOnDisk(resolveCacheFilePath("random.dat", this.modewhat, null), "rw", 25L);
 		this.cacheDataFile = new FileOnDisk(this.resolveCacheFilePath("main_file_cache.dat2"), "rw", 209715200L);
 		this.cacheIndex255 = new FileOnDisk(this.resolveCacheFilePath("main_file_cache.idx255"), "rw", 1048576L);
-		this.cacheArchiveFiles = new FileOnDisk[cacheArchiveCount];
+		this.cacheIndexFiles = new FileOnDisk[cacheArchiveCount];
 
 		for (int i = 0; i < cacheArchiveCount; i++) {
-			this.cacheArchiveFiles[i] = new FileOnDisk(this.resolveCacheFilePath("main_file_cache.idx" + i), "rw", 1048576L);
+			this.cacheIndexFiles[i] = new FileOnDisk(this.resolveCacheFilePath("main_file_cache.idx" + i), "rw", 1048576L);
 		}
 
 		try {
@@ -522,8 +522,8 @@ public final class SignLink implements Runnable {
 			}
 		}
 
-		if (this.cacheArchiveFiles != null) {
-            for (FileOnDisk cacheArchiveFile : this.cacheArchiveFiles) {
+		if (this.cacheIndexFiles != null) {
+            for (FileOnDisk cacheArchiveFile : this.cacheIndexFiles) {
                 if (cacheArchiveFile != null) {
                     try {
                         cacheArchiveFile.close();

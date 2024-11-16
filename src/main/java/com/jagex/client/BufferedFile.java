@@ -10,7 +10,7 @@ import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;
 
 @OriginalClass("client!lq")
-public final class Class139 {
+public final class BufferedFile {
 
 	@OriginalMember(owner = "client!lq", name = "i", descriptor = "J")
 	private long aLong144;
@@ -50,7 +50,7 @@ public final class Class139 {
 	}
 
 	@OriginalMember(owner = "client!lq", name = "<init>", descriptor = "(Lclient!rp;II)V")
-	public Class139(FileOnDisk file, int arg1, int arg2) throws IOException {
+	public BufferedFile(FileOnDisk file, int arg1, int arg2) throws IOException {
 		this.file = file;
 		this.aLong147 = this.aLong145 = file.bufferLength();
 		this.filePointer = 0L;

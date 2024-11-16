@@ -18,7 +18,7 @@ public abstract class Js5ResourceProvider {
 	public abstract Class209 method3514();
 
 	@OriginalMember(owner = "client!oi", name = "a", descriptor = "(IB)I")
-	public abstract int method3515(@OriginalArg(0) int arg0);
+	public abstract int getDownloadPercentage(@OriginalArg(0) int arg0);
 
 	@OriginalMember(owner = "client!oi", name = "b", descriptor = "(II)[B")
 	public abstract byte[] method3516(@OriginalArg(1) int arg0);

@@ -55,7 +55,7 @@ public final class Js5DiskCache implements Runnable {
 	}
 
 	@OriginalMember(owner = "client!vl", name = "a", descriptor = "(Lclient!st;II)Lclient!lf;")
-	public Js5DiskCacheRequestItem method5432(@OriginalArg(0) Class222 arg0, @OriginalArg(2) int arg1) {
+	public Js5DiskCacheRequestItem method5432(@OriginalArg(0) Class222 arg0, @OriginalArg(2) int group) {
 		@Pc(9) Js5DiskCacheRequestItem local9 = new Js5DiskCacheRequestItem();
 
 		local9.anInt4117 = 1;
@@ -68,7 +68,7 @@ public final class Js5DiskCache implements Runnable {
 					break;
 				}
 
-				if ((long) arg1 == requestItem.secondaryValue && requestItem.aClass222_1 == arg0 && requestItem.anInt4117 == 2) {
+				if ((long) group == requestItem.secondaryValue && requestItem.aClass222_1 == arg0 && requestItem.anInt4117 == 2) {
 					local9.isRequestInProgress = false;
 					local9.responseData = requestItem.responseData;
 					return local9;
@@ -78,7 +78,7 @@ public final class Js5DiskCache implements Runnable {
 			}
 		}
 
-		local9.responseData = arg0.method4981(arg1);
+		local9.responseData = arg0.method4981(group);
 		local9.isUrgent = true;
 		local9.isRequestInProgress = false;
 

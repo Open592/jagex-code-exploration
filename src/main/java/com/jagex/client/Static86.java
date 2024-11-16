@@ -13,7 +13,7 @@ public final class Static86 {
 	public static Class269[] aClass269Array1 = new Class269[50];
 
 	@OriginalMember(owner = "client!ee", name = "k", descriptor = "[Lclient!lq;")
-	public static final Class139[] aClass139Array1 = new Class139[30];
+	public static final BufferedFile[] cacheIndexFiles = new BufferedFile[30];
 
 	@OriginalMember(owner = "client!ee", name = "a", descriptor = "(III)I")
 	public static int method1546(@OriginalArg(0) int arg0, @OriginalArg(2) int arg1) {

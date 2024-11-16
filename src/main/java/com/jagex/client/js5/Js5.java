@@ -124,7 +124,7 @@ public final class Js5 {
 	@OriginalMember(owner = "client!fs", name = "b", descriptor = "(II)I")
 	private int method2105(int arg0) {
 		if (this.method2106(arg0)) {
-			return this.anObjectArray3[arg0] == null ? this.resourceProvider.method3515(arg0) : 100;
+			return this.anObjectArray3[arg0] == null ? this.resourceProvider.getDownloadPercentage(arg0) : 100;
 		} else {
 			return 0;
 		}

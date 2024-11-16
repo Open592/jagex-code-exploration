@@ -91,7 +91,7 @@ public final class Js5NetQueue {
 
 		this.serverConnection = serverConnection;
 		this.method5462();
-		this.method5463(arg1);
+		this.informUserAuthenticationStatus(arg1);
 		this.incomingPacket.pos = 0;
 		this.aClass4_Sub1_Sub6_Sub1_2 = null;
 
@@ -200,20 +200,23 @@ public final class Js5NetQueue {
 	}
 
 	@OriginalMember(owner = "client!vn", name = "a", descriptor = "(ZB)V")
-	public void method5463(@OriginalArg(0) boolean arg0) {
+	public void informUserAuthenticationStatus(boolean isLoggedIn) {
 		if (this.serverConnection == null) {
 			return;
 		}
 
 		try {
 			this.outgoingPacket.pos = 0;
-			this.outgoingPacket.p1(arg0 ? 2 : 3);
+			this.outgoingPacket.p1(isLoggedIn
+					? JS5RequestOpCodes.JS5_INFORM_USER_IS_LOGGED_IN
+					: JS5RequestOpCodes.JS5_INFORM_USER_IS_LOGGED_OUT
+			);
 			this.outgoingPacket.p3(0);
 			this.serverConnection.write(4, this.outgoingPacket.data);
-		} catch (@Pc(41) IOException e) {
+		} catch (IOException e) {
 			try {
 				this.serverConnection.shutdown();
-			} catch (@Pc(47) Exception ignored) {
+			} catch (Exception ignored) {
 			}
 
 			this.errorCode = -2;

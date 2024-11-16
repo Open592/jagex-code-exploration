@@ -3,7 +3,7 @@ package com.jagex.client.js5;
 import java.io.EOFException;
 import java.io.IOException;
 
-import com.jagex.client.Class139;
+import com.jagex.client.BufferedFile;
 import com.jagex.client.Static166;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalClass;
@@ -14,10 +14,10 @@ import org.openrs2.deob.annotation.Pc;
 public final class Class222 {
 
 	@OriginalMember(owner = "client!st", name = "b", descriptor = "Lclient!lq;")
-	private final Class139 indexFile;
+	private final BufferedFile cacheIndexFile;
 
 	@OriginalMember(owner = "client!st", name = "a", descriptor = "Lclient!lq;")
-	private final Class139 cacheDataFile;
+	private final BufferedFile cacheDataFile;
 
 	@OriginalMember(owner = "client!st", name = "g", descriptor = "I")
 	private final int anInt6379;
@@ -26,8 +26,8 @@ public final class Class222 {
 	private final int archiveNumber;
 
 	@OriginalMember(owner = "client!st", name = "<init>", descriptor = "(ILclient!lq;Lclient!lq;I)V")
-	public Class222(int archiveNumber, Class139 cacheDataFile, Class139 indexFile, int arg3) {
-		this.indexFile = indexFile;
+	public Class222(int archiveNumber, BufferedFile cacheDataFile, BufferedFile cacheIndexFile, int arg3) {
+		this.cacheIndexFile = cacheIndexFile;
 		this.cacheDataFile = cacheDataFile;
 		this.archiveNumber = archiveNumber;
 
@@ -43,15 +43,15 @@ public final class Class222 {
 
 	@OriginalMember(owner = "client!st", name = "a", descriptor = "(II)[B")
 	public byte[] method4981(@OriginalArg(1) int arg0) {
-		@Pc(8) Class139 local8 = this.cacheDataFile;
+		@Pc(8) BufferedFile local8 = this.cacheDataFile;
 		synchronized (this.cacheDataFile) {
 			try {
-				if (this.indexFile.method3463() < (arg0 * 6L + 6)) {
+				if (this.cacheIndexFile.method3463() < (arg0 * 6L + 6)) {
 					return null;
 				}
 
-				this.indexFile.seek(arg0 * 6L);
-				this.indexFile.method3471(0, 6, Static166.aByteArray37);
+				this.cacheIndexFile.seek(arg0 * 6L);
+				this.cacheIndexFile.method3471(0, 6, Static166.aByteArray37);
 
 				int local70 = (Static166.aByteArray37[2] & 0xFF) + (((Static166.aByteArray37[0] & 0xFF) << 16) + ((Static166.aByteArray37[1] & 0xFF) << 8));
 				int local93 = ((Static166.aByteArray37[3] & 0xFF) << 16) + ((Static166.aByteArray37[4] & 0xFF) << 8) + (Static166.aByteArray37[5] & 0xFF);
@@ -113,7 +113,7 @@ public final class Class222 {
 
 	@OriginalMember(owner = "client!st", name = "a", descriptor = "([BZII)Z")
 	public boolean method4982(@OriginalArg(0) byte[] arg0, @OriginalArg(2) int arg1, @OriginalArg(3) int arg2) {
-		@Pc(12) Class139 local12 = this.cacheDataFile;
+		@Pc(12) BufferedFile local12 = this.cacheDataFile;
 		synchronized (this.cacheDataFile) {
 			if (arg2 < 0 || arg2 > this.anInt6379) {
 				throw new IllegalArgumentException();
@@ -128,16 +128,16 @@ public final class Class222 {
 
 	@OriginalMember(owner = "client!st", name = "a", descriptor = "(II[BIZ)Z")
 	private boolean method4983(@OriginalArg(0) int arg0, @OriginalArg(2) byte[] arg1, @OriginalArg(3) int arg2, @OriginalArg(4) boolean arg3) {
-		@Pc(8) Class139 local8 = this.cacheDataFile;
+		@Pc(8) BufferedFile local8 = this.cacheDataFile;
 		synchronized (this.cacheDataFile) {
 			try {
 				@Pc(67) int local67;
 				if (arg3) {
-					if ((long) (arg0 * 6 + 6) > this.indexFile.method3463()) {
+					if ((long) (arg0 * 6 + 6) > this.cacheIndexFile.method3463()) {
 						return false;
 					}
-					this.indexFile.seek((long) (arg0 * 6));
-					this.indexFile.method3471(0, 6, Static166.aByteArray37);
+					this.cacheIndexFile.seek((long) (arg0 * 6));
+					this.cacheIndexFile.method3471(0, 6, Static166.aByteArray37);
 					local67 = ((Static166.aByteArray37[4] & 0xFF) << 8) + (Static166.aByteArray37[3] << 16 & 0xFF0000) + (Static166.aByteArray37[5] & 0xFF);
 					if (local67 <= 0 || this.cacheDataFile.method3463() / 520L < (long) local67) {
 						return false;
@@ -154,8 +154,8 @@ public final class Class222 {
 				Static166.aByteArray37[0] = (byte) (arg2 >> 16);
 				Static166.aByteArray37[4] = (byte) (local67 >> 8);
 				Static166.aByteArray37[1] = (byte) (arg2 >> 8);
-				this.indexFile.seek((long) (arg0 * 6));
-				this.indexFile.method3464(0, Static166.aByteArray37, 6);
+				this.cacheIndexFile.seek((long) (arg0 * 6));
+				this.cacheIndexFile.method3464(0, Static166.aByteArray37, 6);
 				@Pc(163) int local163 = 0;
 				@Pc(165) int local165 = 0;
 				while (arg2 > local163) {
