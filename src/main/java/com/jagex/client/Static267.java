@@ -21,17 +21,17 @@ public final class Static267 {
 		if (Static109.anObject33 == null) {
 			@Pc(5) Class48_Sub1_Sub1 local5 = new Class48_Sub1_Sub1();
 			local12 = local5.method3759();
-			Static109.anObject33 = Static327.method4416(local12);
+			Static109.anObject33 = ByteBufferBufferedBytes.attemptToBufferIfRequired(local12);
 		}
 		if (Static113.anObject13 == null) {
 			@Pc(32) Class48_Sub2_Sub1 local32 = new Class48_Sub2_Sub1();
 			local12 = local32.method4412();
-			Static113.anObject13 = Static327.method4416(local12);
+			Static113.anObject13 = ByteBufferBufferedBytes.attemptToBufferIfRequired(local12);
 		}
 		@Pc(47) Class47 local47 = arg0.aClass47_1;
 		if (local47.method1248() && Static190.anObject19 == null) {
 			local12 = Static257.method3710(0.6F, 4.0F, 16.0F, 0.5F, new Class79_Sub1(419684), 4.0F);
-			Static190.anObject19 = Static327.method4416(local12);
+			Static190.anObject19 = ByteBufferBufferedBytes.attemptToBufferIfRequired(local12);
 		}
 	}
 }

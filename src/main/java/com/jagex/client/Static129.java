@@ -17,9 +17,9 @@ public final class Static129 {
 		} else if (arg0 instanceof byte[]) {
 			@Pc(13) byte[] local13 = (byte[]) arg0;
 			return Static388.method5097(arg1, local13);
-		} else if (arg0 instanceof Class34) {
-			@Pc(25) Class34 local25 = (Class34) arg0;
-			return local25.method773(arg1);
+		} else if (arg0 instanceof BufferedBytes) {
+			@Pc(25) BufferedBytes local25 = (BufferedBytes) arg0;
+			return local25.getAt(arg1);
 		} else {
 			throw new IllegalArgumentException();
 		}

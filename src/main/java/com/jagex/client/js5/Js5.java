@@ -382,7 +382,7 @@ public final class Js5 {
 							local327 = local31[local325];
 						}
 						if (this.anInt2476 == 0) {
-							local51[local327] = Static327.method4416(local451[local325]);
+							local51[local327] = ByteBufferBufferedBytes.attemptToBufferIfRequired(local451[local325]);
 						} else {
 							local51[local327] = local451[local325];
 						}
@@ -395,7 +395,7 @@ public final class Js5 {
 					local228 = local31[0];
 				}
 				if (this.anInt2476 == 0) {
-					local51[local228] = Static327.method4416(local149);
+					local51[local228] = ByteBufferBufferedBytes.attemptToBufferIfRequired(local149);
 				} else {
 					local51[local228] = local149;
 				}
@@ -457,7 +457,7 @@ public final class Js5 {
 		if (this.aBoolean230) {
 			this.anObjectArray3[arg0] = this.resourceProvider.method3516(arg0);
 		} else {
-			this.anObjectArray3[arg0] = Static327.method4416(this.resourceProvider.method3516(arg0));
+			this.anObjectArray3[arg0] = ByteBufferBufferedBytes.attemptToBufferIfRequired(this.resourceProvider.method3516(arg0));
 		}
 	}
 

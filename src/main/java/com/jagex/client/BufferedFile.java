@@ -50,12 +50,12 @@ public final class BufferedFile {
 	}
 
 	@OriginalMember(owner = "client!lq", name = "<init>", descriptor = "(Lclient!rp;II)V")
-	public BufferedFile(FileOnDisk file, int arg1, int arg2) throws IOException {
+	public BufferedFile(FileOnDisk file, int readBufferSize, int writeBufferSize) throws IOException {
 		this.file = file;
 		this.aLong147 = this.aLong145 = file.bufferLength();
 		this.filePointer = 0L;
-		this.readBuffer = new byte[arg1];
-		this.writeBuffer = new byte[arg2];
+		this.readBuffer = new byte[readBufferSize];
+		this.writeBuffer = new byte[writeBufferSize];
 	}
 
 	@OriginalMember(owner = "client!lq", name = "a", descriptor = "([BI)V")
