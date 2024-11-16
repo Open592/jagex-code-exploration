@@ -12,9 +12,6 @@ public final class Static251 {
 	@OriginalMember(owner = "client!mp", name = "X", descriptor = "Z")
 	public static boolean aBoolean429 = true;
 
-	@OriginalMember(owner = "client!mp", name = "ab", descriptor = "[I")
-	public static final int[] anIntArray307 = new int[] { 4, 4, 1, 2, 6, 4, 2, 47, 2, 2, 2, 2, 2, 2, 2, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 };
-
 	@OriginalMember(owner = "client!mp", name = "a", descriptor = "(IBII)I")
 	public static int method3636(@OriginalArg(0) int arg0, @OriginalArg(2) int arg1, @OriginalArg(3) int arg2) {
 		@Pc(7) int local7 = arg0 & 0x3;

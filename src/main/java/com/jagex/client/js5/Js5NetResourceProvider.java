@@ -376,7 +376,7 @@ public final class Js5NetResourceProvider extends Js5ResourceProvider {
 	}
 
 	@OriginalMember(owner = "client!lv", name = "f", descriptor = "(I)I")
-	public int method3525() {
+	public int getDownloadPercentage() {
 		if (this.method3514() == null) {
 			return this.aClass4_Sub1_Sub6_1 == null ? 0 : this.aClass4_Sub1_Sub6_1.getDownloadPercentage();
 		} else {
@@ -422,34 +422,41 @@ public final class Js5NetResourceProvider extends Js5ResourceProvider {
 		if (this.aClass209_2 != null) {
 			return this.aClass209_2;
 		}
+
 		if (this.aClass4_Sub1_Sub6_1 == null) {
 			if (this.js5NetQueue.isUrgentRequestQueueFull()) {
 				return null;
 			}
+
 			this.aClass4_Sub1_Sub6_1 = this.js5NetQueue.requestArchiveFile(255, (byte) 0, true, this.anInt4474);
 		}
+
 		if (this.aClass4_Sub1_Sub6_1.isRequestInProgress) {
 			return null;
 		}
 
-		@Pc(43) byte[] responseData = this.aClass4_Sub1_Sub6_1.getResponseData();
+		byte[] responseData = this.aClass4_Sub1_Sub6_1.getResponseData();
 
 		if (this.aClass4_Sub1_Sub6_1 instanceof Js5DiskCacheRequestItem) {
 			try {
 				if (responseData == null) {
 					throw new RuntimeException();
 				}
+
 				this.aClass209_2 = new Class209(responseData, this.checksum);
+
 				if (this.aClass209_2.anInt6113 != this.version) {
 					throw new RuntimeException();
 				}
 			} catch (@Pc(133) RuntimeException local133) {
 				this.aClass209_2 = null;
+
 				if (this.js5NetQueue.isUrgentRequestQueueFull()) {
 					this.aClass4_Sub1_Sub6_1 = null;
 				} else {
 					this.aClass4_Sub1_Sub6_1 = this.js5NetQueue.requestArchiveFile(255, (byte) 0, true, this.anInt4474);
 				}
+
 				return null;
 			}
 		} else {
@@ -457,26 +464,32 @@ public final class Js5NetResourceProvider extends Js5ResourceProvider {
 				if (responseData == null) {
 					throw new RuntimeException();
 				}
+
 				this.aClass209_2 = new Class209(responseData, this.checksum);
 			} catch (@Pc(63) RuntimeException local63) {
 				this.js5NetQueue.method5464();
 				this.aClass209_2 = null;
+
 				if (this.js5NetQueue.isUrgentRequestQueueFull()) {
 					this.aClass4_Sub1_Sub6_1 = null;
 				} else {
 					this.aClass4_Sub1_Sub6_1 = this.js5NetQueue.requestArchiveFile(255, (byte) 0, true, this.anInt4474);
 				}
+
 				return null;
 			}
 			if (this.aClass222_4 != null) {
 				this.aJs5DiskCache_1.method5435(this.anInt4474, responseData, this.aClass222_4);
 			}
 		}
+
 		this.aClass4_Sub1_Sub6_1 = null;
+
 		if (this.aClass222_3 != null) {
 			this.aByteArray56 = new byte[this.aClass209_2.anInt6112];
 			this.anInt4482 = 0;
 		}
+
 		return this.aClass209_2;
 	}
 }

@@ -133,6 +133,8 @@ public final class client extends GameShell {
 
 	@OriginalMember(owner = "client!cu", name = "n", descriptor = "Lclient!gk;")
 	public static final LocalizedString loadedClientVariableDataLocalizedString = new LocalizedString("Loaded client variable data", "Client-Variablen geladen", "Variables du client chargées", "As variáveis do sistema foram carregadas");
+	@OriginalMember(owner = "client!mp", name = "ab", descriptor = "[I")
+	public static final int[] anIntArray307 = new int[] { 4, 4, 1, 2, 6, 4, 2, 47, 2, 2, 2, 2, 2, 2, 2, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 };
 
 	@OriginalMember(owner = "client!md", name = "e", descriptor = "Lclient!al;")
 	public static ServerConnection serverConnection;
@@ -4514,10 +4516,9 @@ public final class client extends GameShell {
 
 	@OriginalMember(owner = "client!client", name = "p", descriptor = "(I)V")
 	private void loadClientAssets() {
-		@Pc(10) int local10;
 		if (!Static323.aClass50_Sub1_1.aBoolean297) {
-			for (local10 = 0; local10 < Static190.anInt3602; local10++) {
-				if (Static164.aClass30Array4[local10].method749() == 's' || Static164.aClass30Array4[local10].method749() == 'S') {
+			for (int i = 0; i < Static190.anInt3602; i++) {
+				if (Static164.aClass30Array4[i].method749() == 's' || Static164.aClass30Array4[i].method749() == 'S') {
 					Static323.aClass50_Sub1_1.aBoolean297 = true;
 					break;
 				}
@@ -4597,20 +4598,23 @@ public final class client extends GameShell {
 				Static247.anInt4590 = 12;
 			}
 		} else if (anInt5 == 30) {
-			local10 = 0;
+			int percentLoaded = 0;
+
 			for (int i = 0; i < 30; i++) {
-				local10 += Static119.archiveDataResourceProviders[i].method3525() * Static251.anIntArray307[i] / 100;
+				percentLoaded += Static119.archiveDataResourceProviders[i].getDownloadPercentage() * anIntArray307[i] / 100;
 			}
-			if (local10 == 100) {
+
+			if (percentLoaded == 100) {
 				Static24.aString53 = loadedUpdateListLocalizedString.getLocalizedString(ClientSettings.langID);
 				Static247.anInt4590 = 20;
 				Static138.method2373(Static293.aJs5_60);
 				Static221.method3346(Static293.aJs5_60);
 				anInt5 = 40;
 			} else {
-				if (local10 != 0) {
-					Static24.aString53 = checkingForUpdatesLocalizedString.getLocalizedString(ClientSettings.langID) + local10 + "%";
+				if (percentLoaded != 0) {
+					Static24.aString53 = checkingForUpdatesLocalizedString.getLocalizedString(ClientSettings.langID) + percentLoaded + "%";
 				}
+
 				Static247.anInt4590 = 20;
 			}
 		} else if (anInt5 == 40) {
@@ -4629,7 +4633,7 @@ public final class client extends GameShell {
 			Static247.anInt4590 = 30;
 			anInt5 = 60;
 		} else if (anInt5 == 60) {
-			local10 = Static444.method5632(Static209.aJs5_48, Static293.aJs5_60);
+			int local10 = Static444.method5632(Static209.aJs5_48, Static293.aJs5_60);
 			int local11 = Static454.method3302();
 			if (local10 < local11) {
 				Static24.aString53 = loadingCoreFontsLocalizedString.getLocalizedString(ClientSettings.langID) + local10 * 100 / local11 + "%";
@@ -4640,7 +4644,7 @@ public final class client extends GameShell {
 				Static247.anInt4590 = 35;
 			}
 		} else if (anInt5 == 70) {
-			local10 = Static97.method1701(Static293.aJs5_60);
+			int local10 = Static97.method1701(Static293.aJs5_60);
 			int local12 = Static395.method5165();
 			if (local12 > local10) {
 				Static24.aString53 = loadingTitleScreenLocalizedString.getLocalizedString(ClientSettings.langID) + local10 * 100 / local12 + "%";
@@ -4686,7 +4690,7 @@ public final class client extends GameShell {
 			anInt5 = 110;
 		} else if (anInt5 == 110) {
 			Static74.aJs5_20.method2116();
-			local10 = Static74.aJs5_20.method2112();
+			int local10 = Static74.aJs5_20.method2112();
 			Static424.aJs5_99.method2116();
 			local10 += Static424.aJs5_99.method2112();
 			Static208.aJs5_29.method2116();
@@ -4752,7 +4756,7 @@ public final class client extends GameShell {
 				anInt5 = 120;
 			}
 		} else if (anInt5 == 120) {
-			local10 = Static290.method5014(Static293.aJs5_60);
+			int local10 = Static290.method5014(Static293.aJs5_60);
 			int local13 = Static203.method3176();
 			if (local10 < local13) {
 				Static24.aString53 = loadingSpritesLocalizedString.getLocalizedString(ClientSettings.langID) + local10 * 100 / local13 + "%";
@@ -4813,7 +4817,7 @@ public final class client extends GameShell {
 				Static247.anInt4590 = 87;
 			}
 		} else if (anInt5 == 180) {
-			local10 = Static112.method2035();
+			int local10 = Static112.method2035();
 			if (local10 == -1) {
 				Static24.aString53 = loadingWorldListDataLocalizedString.getLocalizedString(ClientSettings.langID);
 				Static247.anInt4590 = 90;
@@ -4832,12 +4836,12 @@ public final class client extends GameShell {
 			Static265.aStringArray20 = new String[Static186.aClass197_1.anInt5738];
 			Static22.aBooleanArray3 = new boolean[Static43.aClass93_4.anInt2890];
 			Static165.anIntArray210 = new int[Static43.aClass93_4.anInt2890];
-			for (local10 = 0; local10 < Static43.aClass93_4.anInt2890; local10++) {
-				if (Static43.aClass93_4.method2430(local10).anInt6668 == 0) {
-					Static22.aBooleanArray3[local10] = true;
+			for (int i = 0; i < Static43.aClass93_4.anInt2890; i++) {
+				if (Static43.aClass93_4.method2430(i).anInt6668 == 0) {
+					Static22.aBooleanArray3[i] = true;
 					Static268.anInt4998++;
 				}
-				Static165.anIntArray210[local10] = -1;
+				Static165.anIntArray210[i] = -1;
 			}
 			Static228.method2068();
 			Static254.anInt4755 = Static256.aJs5_50.method2099("loginscreen");

@@ -10,7 +10,7 @@ import java.util.Arrays;
 public final class Js5 {
 
 	@OriginalMember(owner = "client!v", name = "i", descriptor = "Z")
-	public static final boolean SHOULD_THROW_EXCEPTION = false;
+	private static final boolean SHOULD_THROW_EXCEPTION = false;
 
 	@OriginalMember(owner = "client!fs", name = "c", descriptor = "[[Ljava/lang/Object;")
 	private Object[][] anObjectArrayArray1;
