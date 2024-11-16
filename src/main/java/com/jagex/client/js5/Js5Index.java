@@ -10,7 +10,7 @@ import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;
 
 @OriginalClass("client!rt")
-public final class Class209 {
+public final class Js5Index {
 
 	@OriginalMember(owner = "client!rt", name = "a", descriptor = "[I")
 	public int[] anIntArray428;
@@ -55,7 +55,7 @@ public final class Class209 {
 	public final int checksum;
 
 	@OriginalMember(owner = "client!rt", name = "<init>", descriptor = "([BI)V")
-	public Class209(@OriginalArg(0) byte[] buffer, @OriginalArg(1) int expectedChecksum) {
+	public Js5Index(@OriginalArg(0) byte[] buffer, @OriginalArg(1) int expectedChecksum) {
 		this.checksum = CRC32Checksum.calculateChecksum(buffer.length, buffer);
 
 		if (this.checksum != expectedChecksum) {

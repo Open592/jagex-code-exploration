@@ -19,7 +19,7 @@ public final class Js5 {
 	private Object[] anObjectArray3;
 
 	@OriginalMember(owner = "client!fs", name = "K", descriptor = "Lclient!rt;")
-	private Class209 aClass209_1 = null;
+	private Js5Index index = null;
 
 	@OriginalMember(owner = "client!fs", name = "l", descriptor = "I")
 	public int anInt2476;
@@ -39,15 +39,15 @@ public final class Js5 {
 
 	@OriginalMember(owner = "client!fs", name = "a", descriptor = "(Z)Z")
 	private boolean method2097() {
-		if (this.aClass209_1 == null) {
-			this.aClass209_1 = this.resourceProvider.method3514();
+		if (this.index == null) {
+			this.index = this.resourceProvider.fetchIndex();
 
-			if (this.aClass209_1 == null) {
+			if (this.index == null) {
 				return false;
 			}
 
-			this.anObjectArray3 = new Object[this.aClass209_1.anInt6112];
-			this.anObjectArrayArray1 = new Object[this.aClass209_1.anInt6112][];
+			this.anObjectArray3 = new Object[this.index.anInt6112];
+			this.anObjectArrayArray1 = new Object[this.index.anInt6112][];
 		}
 
 		return true;
@@ -72,7 +72,7 @@ public final class Js5 {
 	public int method2099(String arg0) {
 		if (this.method2097()) {
 			String local20 = arg0.toLowerCase();
-			int local29 = this.aClass209_1.aClass235_1.method5174(Static269.method3854(local20));
+			int local29 = this.index.aClass235_1.method5174(Static269.method3854(local20));
 
 			return this.method2106(local29) ? local29 : -1;
 		} else {
@@ -82,7 +82,7 @@ public final class Js5 {
 
 	@OriginalMember(owner = "client!fs", name = "a", descriptor = "(B)I")
 	public int method2100() {
-		return this.method2097() ? this.aClass209_1.anIntArray433.length : -1;
+		return this.method2097() ? this.index.anIntArray433.length : -1;
 	}
 
 	@OriginalMember(owner = "client!fs", name = "a", descriptor = "(II)Z")
@@ -108,7 +108,7 @@ public final class Js5 {
 	public boolean method2103(String arg0) {
 		if (this.method2097()) {
 			String local17 = arg0.toLowerCase();
-			int local26 = this.aClass209_1.aClass235_1.method5174(Static269.method3854(local17));
+			int local26 = this.index.aClass235_1.method5174(Static269.method3854(local17));
 
 			return this.method2101(local26);
 		} else {
@@ -134,7 +134,7 @@ public final class Js5 {
 	private boolean method2106(int arg0) {
 		if (!this.method2097()) {
 			return false;
-		} else if (arg0 >= 0 && arg0 < this.aClass209_1.anIntArray433.length && this.aClass209_1.anIntArray433[arg0] != 0) {
+		} else if (arg0 >= 0 && arg0 < this.index.anIntArray433.length && this.index.anIntArray433[arg0] != 0) {
 			return true;
 		} else if (SHOULD_THROW_EXCEPTION) {
 			throw new IllegalArgumentException(Integer.toString(arg0));
@@ -147,7 +147,7 @@ public final class Js5 {
 	public boolean method2107(String arg0) {
 		if (this.method2097()) {
 			String local12 = arg0.toLowerCase();
-			int local21 = this.aClass209_1.aClass235_1.method5174(Static269.method3854(local12));
+			int local21 = this.index.aClass235_1.method5174(Static269.method3854(local12));
 
 			return local21 >= 0;
 		} else {
@@ -157,7 +157,7 @@ public final class Js5 {
 
 	@OriginalMember(owner = "client!fs", name = "d", descriptor = "(II)I")
 	public int method2108(int arg0) {
-		return this.method2106(arg0) ? this.aClass209_1.anIntArray433[arg0] : 0;
+		return this.method2106(arg0) ? this.index.anIntArray433[arg0] : 0;
 	}
 
 	@OriginalMember(owner = "client!fs", name = "a", descriptor = "(Ljava/lang/String;ZLjava/lang/String;)[B")
@@ -168,10 +168,10 @@ public final class Js5 {
 
 		String local18 = arg0.toLowerCase();
 		String local21 = arg1.toLowerCase();
-		int local30 = this.aClass209_1.aClass235_1.method5174(Static269.method3854(local18));
+		int local30 = this.index.aClass235_1.method5174(Static269.method3854(local18));
 
 		if (this.method2106(local30)) {
-			int local48 = this.aClass209_1.aClass235Array1[local30].method5174(Static269.method3854(local21));
+			int local48 = this.index.aClass235Array1[local30].method5174(Static269.method3854(local21));
 
 			return this.method2104(local48, local30);
 		} else {
@@ -185,7 +185,7 @@ public final class Js5 {
 			throw new IllegalStateException("");
 		}
 
-		return this.aClass209_1.checksum;
+		return this.index.checksum;
 	}
 
 	@OriginalMember(owner = "client!fs", name = "b", descriptor = "(Z)I")
@@ -198,7 +198,7 @@ public final class Js5 {
 		int local20 = 0;
 
 		for (int i = 0; i < this.anObjectArray3.length; i++) {
-			if (this.aClass209_1.anIntArray428[i] > 0) {
+			if (this.index.anIntArray428[i] > 0) {
 				local18 += 100;
 				local20 += this.method2105(i);
 			}
@@ -215,7 +215,7 @@ public final class Js5 {
 	public int method2113(String arg0) {
 		if (this.method2097()) {
 			String local17 = arg0.toLowerCase();
-			int local26 = this.aClass209_1.aClass235_1.method5174(Static269.method3854(local17));
+			int local26 = this.index.aClass235_1.method5174(Static269.method3854(local17));
 
 			return this.method2105(local26);
 		} else {
@@ -230,11 +230,11 @@ public final class Js5 {
 		} else if (this.anObjectArray3[arg0] == null) {
 			return false;
 		} else {
-			int local25 = this.aClass209_1.anIntArray428[arg0];
-			int[] local31 = this.aClass209_1.anIntArrayArray46[arg0];
+			int local25 = this.index.anIntArray428[arg0];
+			int[] local31 = this.index.anIntArrayArray46[arg0];
 
 			if (this.anObjectArrayArray1[arg0] == null) {
-				this.anObjectArrayArray1[arg0] = new Object[this.aClass209_1.anIntArray433[arg0]];
+				this.anObjectArrayArray1[arg0] = new Object[this.index.anIntArray433[arg0]];
 			}
 
 			Object[] local51 = this.anObjectArrayArray1[arg0];
@@ -274,7 +274,7 @@ public final class Js5 {
 			try {
 				local149 = Static453.method5680(local122);
 			} catch (RuntimeException e) {
-				throw Static350.method4724(e, "T3 - " + (arg2 != null) + "," + arg0 + "," + local122.length + "," + CRC32Checksum.calculateChecksum(local122.length, local122) + "," + CRC32Checksum.calculateChecksum(local122.length - 2, local122) + "," + this.aClass209_1.anIntArray430[arg0] + "," + this.aClass209_1.checksum);
+				throw Static350.method4724(e, "T3 - " + (arg2 != null) + "," + arg0 + "," + local122.length + "," + CRC32Checksum.calculateChecksum(local122.length, local122) + "," + CRC32Checksum.calculateChecksum(local122.length - 2, local122) + "," + this.index.anIntArray430[arg0] + "," + this.index.checksum);
 			}
 
 			if (this.aBoolean230) {
@@ -419,8 +419,8 @@ public final class Js5 {
 
 		boolean local13 = true;
 
-		for (int i = 0; i < this.aClass209_1.anIntArray431.length; i++) {
-			int local23 = this.aClass209_1.anIntArray431[i];
+		for (int i = 0; i < this.index.anIntArray431.length; i++) {
+			int local23 = this.index.anIntArray431[i];
 
 			if (this.anObjectArray3[local23] == null) {
 				this.method2119(local23);
@@ -437,7 +437,7 @@ public final class Js5 {
 	@OriginalMember(owner = "client!fs", name = "f", descriptor = "(II)I")
 	public int method2117(int arg0) {
 		if (this.method2097()) {
-			int local16 = this.aClass209_1.aClass235_1.method5174(arg0);
+			int local16 = this.index.aClass235_1.method5174(arg0);
 
 			return this.method2106(local16) ? local16 : -1;
 		} else {
@@ -491,7 +491,7 @@ public final class Js5 {
 		if (this.anInt2476 == 1) {
 			this.anObjectArrayArray1[arg0][arg1] = null;
 
-			if (this.aClass209_1.anIntArray433[arg0] == 1) {
+			if (this.index.anIntArray433[arg0] == 1) {
 				this.anObjectArrayArray1[arg0] = null;
 			}
 		} else if (this.anInt2476 == 2) {
@@ -505,11 +505,11 @@ public final class Js5 {
 	public byte[] method2122(int arg0) {
 		if (!this.method2097()) {
 			return null;
-		} else if (this.aClass209_1.anIntArray433.length == 1) {
+		} else if (this.index.anIntArray433.length == 1) {
 			return this.method2104(arg0, 0);
 		} else if (!this.method2106(arg0)) {
 			return null;
-		} else if (this.aClass209_1.anIntArray433[arg0] == 1) {
+		} else if (this.index.anIntArray433[arg0] == 1) {
 			return this.method2104(0, arg0);
 		} else {
 			throw new RuntimeException();
@@ -524,10 +524,10 @@ public final class Js5 {
 
 		String local21 = arg1.toLowerCase();
 		String local24 = arg0.toLowerCase();
-		int local33 = this.aClass209_1.aClass235_1.method5174(Static269.method3854(local21));
+		int local33 = this.index.aClass235_1.method5174(Static269.method3854(local21));
 
 		if (this.method2106(local33)) {
-			int local51 = this.aClass209_1.aClass235Array1[local33].method5174(Static269.method3854(local24));
+			int local51 = this.index.aClass235Array1[local33].method5174(Static269.method3854(local24));
 			return this.method2098(local51, local33);
 		} else {
 			return false;
@@ -540,10 +540,10 @@ public final class Js5 {
 			return null;
 		}
 
-		int[] local27 = this.aClass209_1.anIntArrayArray46[arg0];
+		int[] local27 = this.index.anIntArrayArray46[arg0];
 
 		if (local27 == null) {
-			local27 = new int[this.aClass209_1.anIntArray428[arg0]];
+			local27 = new int[this.index.anIntArray428[arg0]];
 			int local38 = 0;
 			while (local27.length > local38) {
 				local27[local38] = local38++;
@@ -557,11 +557,11 @@ public final class Js5 {
 	public boolean method2125(int arg0) {
 		if (!this.method2097()) {
 			return false;
-		} else if (this.aClass209_1.anIntArray433.length == 1) {
+		} else if (this.index.anIntArray433.length == 1) {
 			return this.method2098(arg0, 0);
 		} else if (!this.method2106(arg0)) {
 			return false;
-		} else if (this.aClass209_1.anIntArray433[arg0] == 1) {
+		} else if (this.index.anIntArray433[arg0] == 1) {
 			return this.method2098(0, arg0);
 		} else {
 			throw new RuntimeException();
@@ -572,7 +572,7 @@ public final class Js5 {
 	public void method2126(String arg0) {
 		if (this.method2097()) {
 			String local11 = arg0.toLowerCase();
-			int local28 = this.aClass209_1.aClass235_1.method5174(Static269.method3854(local11));
+			int local28 = this.index.aClass235_1.method5174(Static269.method3854(local11));
 
 			this.method2120(local28);
 		}
@@ -582,7 +582,7 @@ public final class Js5 {
 	private boolean method2127(int arg0, int arg1) {
 		if (!this.method2097()) {
 			return false;
-		} else if (arg0 >= 0 && arg1 >= 0 && this.aClass209_1.anIntArray433.length > arg0 && this.aClass209_1.anIntArray433[arg0] > arg1) {
+		} else if (arg0 >= 0 && arg1 >= 0 && this.index.anIntArray433.length > arg0 && this.index.anIntArray433[arg0] > arg1) {
 			return true;
 		} else if (SHOULD_THROW_EXCEPTION) {
 			throw new IllegalArgumentException(arg0 + "," + arg1);
@@ -597,12 +597,12 @@ public final class Js5 {
 			return;
 		}
 
-		this.aClass209_1.anIntArrayArray47 = null;
-		this.aClass209_1.aClass235Array1 = null;
+		this.index.anIntArrayArray47 = null;
+		this.index.aClass235Array1 = null;
 
 		if (arg0) {
-			this.aClass209_1.anIntArray432 = null;
-			this.aClass209_1.aClass235_1 = null;
+			this.index.anIntArray432 = null;
+			this.index.aClass235_1 = null;
 		}
 	}
 }

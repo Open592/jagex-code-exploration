@@ -15,7 +15,7 @@ public abstract class Js5ResourceProvider {
 	public abstract void method3512(@OriginalArg(0) int arg0);
 
 	@OriginalMember(owner = "client!oi", name = "a", descriptor = "(B)Lclient!rt;")
-	public abstract Class209 method3514();
+	public abstract Js5Index fetchIndex();
 
 	@OriginalMember(owner = "client!oi", name = "a", descriptor = "(IB)I")
 	public abstract int getDownloadPercentage(@OriginalArg(0) int arg0);
