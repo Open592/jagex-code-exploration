@@ -133,8 +133,40 @@ public final class client extends GameShell {
 
 	@OriginalMember(owner = "client!cu", name = "n", descriptor = "Lclient!gk;")
 	public static final LocalizedString loadedClientVariableDataLocalizedString = new LocalizedString("Loaded client variable data", "Client-Variablen geladen", "Variables du client chargées", "As variáveis do sistema foram carregadas");
+
 	@OriginalMember(owner = "client!mp", name = "ab", descriptor = "[I")
-	public static final int[] anIntArray307 = new int[] { 4, 4, 1, 2, 6, 4, 2, 47, 2, 2, 2, 2, 2, 2, 2, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 };
+	public static final int[] anIntArray307 = new int[]{
+			4, // 	4%
+			4, // 	8%
+			1, // 	9%
+			2, // 	11%
+			6, // 	17%
+			4, // 	21%
+			2, // 	23%
+			47, // 	70%
+			2, // 	72%
+			2, // 	74%
+			2, // 	76%
+			2, // 	78%
+			2, // 	80%
+			2, // 	82%
+			2, // 	84%
+			2, // 	86%
+			1, // 	87%
+			1, // 	88%
+			1, // 	89%
+			1, // 	90%
+			1, // 	91%
+			1, // 	92%
+			1, // 	93%
+			1, // 	94%
+			1, // 	95%
+			1, // 	96%
+			1, // 	97%
+			1, // 	98%
+			1, // 	99%
+			1 // 	100%
+	};
 
 	@OriginalMember(owner = "client!md", name = "e", descriptor = "Lclient!al;")
 	public static ServerConnection serverConnection;

@@ -386,17 +386,21 @@ public final class Js5NetResourceProvider extends Js5ResourceProvider {
 
 	@OriginalMember(owner = "client!lv", name = "a", descriptor = "(II)V")
 	@Override
-	public void method3512(@OriginalArg(0) int arg0) {
+	public void method3512(int arg0) {
 		if (this.aClass222_3 == null) {
 			return;
 		}
-		for (@Pc(14) Node local14 = this.aClass183_30.method4140(); local14 != null; local14 = this.aClass183_30.method4144()) {
+
+		for (Node local14 = this.aClass183_30.method4140(); local14 != null; local14 = this.aClass183_30.method4144()) {
 			if (local14.hashKey == (long) arg0) {
 				return;
 			}
 		}
-		@Pc(43) Node local43 = new Node();
+
+		Node local43 = new Node();
+
 		local43.hashKey = arg0;
+
 		this.aClass183_30.method4137(local43);
 	}
 
