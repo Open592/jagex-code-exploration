@@ -370,29 +370,34 @@ public final class Js5NetQueue {
 					if (local190 <= this.incomingPacket.pos) {
 						if (this.aClass4_Sub1_Sub6_Sub1_2 == null) {
 							this.incomingPacket.pos = 0;
-							local226 = this.incomingPacket.g1();
-							local275 = this.incomingPacket.g2();
-							@Pc(459) int local459 = this.incomingPacket.g1();
-							@Pc(464) int local464 = this.incomingPacket.g4();
-							@Pc(468) int local468 = local459 & 0x7F;
-							@Pc(479) boolean local479 = (local459 & 0x80) != 0;
-							@Pc(486) long local486 = ((long) local226 << 16) + local275;
-							@Pc(496) Js5NetQueueRequest local496 = null;
-							if (local479) {
-								for (local496 = (Js5NetQueueRequest) this.activeRegularRequests.getHead(); local496 != null && local496.secondaryValue != local486; local496 = (Js5NetQueueRequest) this.activeRegularRequests.next()) {
+
+							int archive = this.incomingPacket.g1();
+							int group = this.incomingPacket.g2();
+							int compression = this.incomingPacket.g1();
+
+							int length = this.incomingPacket.g4();
+							int local468 = compression & 0x7F;
+							boolean isPrefetch = (compression & 0x80) != 0;
+							long archiveGroupId = ((long) archive << 16) + group;
+							Js5NetQueueRequest request;
+
+							if (isPrefetch) {
+								for (request = (Js5NetQueueRequest) this.activeRegularRequests.getHead(); request != null && request.secondaryValue != archiveGroupId; request = (Js5NetQueueRequest) this.activeRegularRequests.next()) {
 								}
 							} else {
-								for (local496 = (Js5NetQueueRequest) this.activeUrgentRequests.getHead(); local496 != null && local496.secondaryValue != local486; local496 = (Js5NetQueueRequest) this.activeUrgentRequests.next()) {
+								for (request = (Js5NetQueueRequest) this.activeUrgentRequests.getHead(); request != null && request.secondaryValue != archiveGroupId; request = (Js5NetQueueRequest) this.activeUrgentRequests.next()) {
 								}
 							}
-							if (local496 == null) {
+
+							if (request == null) {
 								throw new IOException();
 							}
+
 							@Pc(549) int local549 = local468 == 0 ? 5 : 9;
-							this.aClass4_Sub1_Sub6_Sub1_2 = local496;
-							this.aClass4_Sub1_Sub6_Sub1_2.packet = new Packet(local549 + local464 + this.aClass4_Sub1_Sub6_Sub1_2.aByte24);
+							this.aClass4_Sub1_Sub6_Sub1_2 = request;
+							this.aClass4_Sub1_Sub6_Sub1_2.packet = new Packet(local549 + length + this.aClass4_Sub1_Sub6_Sub1_2.aByte24);
 							this.aClass4_Sub1_Sub6_Sub1_2.packet.p1(local468);
-							this.aClass4_Sub1_Sub6_Sub1_2.packet.p4(local464);
+							this.aClass4_Sub1_Sub6_Sub1_2.packet.p4(length);
 							this.incomingPacket.pos = 0;
 							this.aClass4_Sub1_Sub6_Sub1_2.anInt3510 = 8;
 						} else if (this.aClass4_Sub1_Sub6_Sub1_2.anInt3510 != 0) {
