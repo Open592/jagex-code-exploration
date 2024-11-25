@@ -340,6 +340,7 @@ public final class Js5NetQueue {
 							this.aClass4_Sub1_Sub6_Sub1_2.packet.data[local275 + this.aClass4_Sub1_Sub6_Sub1_2.packet.pos] ^= this.obfuscationKey;
 						}
 					}
+
 					this.aClass4_Sub1_Sub6_Sub1_2.packet.pos += local226;
 					this.aClass4_Sub1_Sub6_Sub1_2.anInt3510 += local226;
 
@@ -351,21 +352,21 @@ public final class Js5NetQueue {
 						this.aClass4_Sub1_Sub6_Sub1_2.anInt3510 = 0;
 					}
 				} else {
-					local219 = local190 - this.incomingPacket.pos;
+					int bytesToReadFromServer = local190 - this.incomingPacket.pos;
 
-					if (local219 > estimatedBytesAvailable) {
-						local219 = estimatedBytesAvailable;
+					if (bytesToReadFromServer > estimatedBytesAvailable) {
+						bytesToReadFromServer = estimatedBytesAvailable;
 					}
 
-					this.serverConnection.readBytesFromServer(this.incomingPacket.pos, local219, this.incomingPacket.data);
+					this.serverConnection.readBytesFromServer(this.incomingPacket.pos, bytesToReadFromServer, this.incomingPacket.data);
 
 					if (this.obfuscationKey != 0) {
-						for (local226 = 0; local226 < local219; local226++) {
-							this.incomingPacket.data[this.incomingPacket.pos + local226] ^= this.obfuscationKey;
+						for (int j = 0; j < bytesToReadFromServer; j++) {
+							this.incomingPacket.data[this.incomingPacket.pos + j] ^= this.obfuscationKey;
 						}
 					}
 
-					this.incomingPacket.pos += local219;
+					this.incomingPacket.pos += bytesToReadFromServer;
 
 					if (local190 <= this.incomingPacket.pos) {
 						if (this.aClass4_Sub1_Sub6_Sub1_2 == null) {
@@ -374,9 +375,9 @@ public final class Js5NetQueue {
 							int archive = this.incomingPacket.g1();
 							int group = this.incomingPacket.g2();
 							int compression = this.incomingPacket.g1();
-
 							int length = this.incomingPacket.g4();
-							int local468 = compression & 0x7F;
+
+							int compressionType = compression & 0x7F;
 							boolean isPrefetch = (compression & 0x80) != 0;
 							long archiveGroupId = ((long) archive << 16) + group;
 							Js5NetQueueRequest request;
@@ -393,10 +394,12 @@ public final class Js5NetQueue {
 								throw new IOException();
 							}
 
-							@Pc(549) int local549 = local468 == 0 ? 5 : 9;
+							// If the data is compressed the header will include both compressed and uncompressed size,
+							// otherwise it will just include the size of the uncompressed data.
+							int headerSize = compressionType == 0 ? 5 : 9;
 							this.aClass4_Sub1_Sub6_Sub1_2 = request;
-							this.aClass4_Sub1_Sub6_Sub1_2.packet = new Packet(local549 + length + this.aClass4_Sub1_Sub6_Sub1_2.aByte24);
-							this.aClass4_Sub1_Sub6_Sub1_2.packet.p1(local468);
+							this.aClass4_Sub1_Sub6_Sub1_2.packet = new Packet(headerSize + length + this.aClass4_Sub1_Sub6_Sub1_2.aByte24);
+							this.aClass4_Sub1_Sub6_Sub1_2.packet.p1(compressionType);
 							this.aClass4_Sub1_Sub6_Sub1_2.packet.p4(length);
 							this.incomingPacket.pos = 0;
 							this.aClass4_Sub1_Sub6_Sub1_2.anInt3510 = 8;
@@ -413,10 +416,10 @@ public final class Js5NetQueue {
 			}
 
 			return ProcessConnectionsResult.SUCCESSFULLY_PROCESSED_REQUESTS;
-		} catch (@Pc(627) IOException e) {
+		} catch (IOException e) {
 			try {
 				this.serverConnection.shutdown();
-			} catch (@Pc(633) Exception local633) {
+			} catch (Exception ignored) {
 			}
 
 			this.js5ConnectAttempts++;
