@@ -3,7 +3,6 @@ package com.jagex.client.js5;
 import com.jagex.client.CRC32Checksum;
 import com.jagex.client.Class235;
 import com.jagex.client.Packet;
-import com.jagex.client.Static453;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalClass;
 import org.openrs2.deob.annotation.OriginalMember;
@@ -66,7 +65,7 @@ public final class Js5Index {
 
 	@OriginalMember(owner = "client!rt", name = "a", descriptor = "([BI)V")
 	private void method4767(@OriginalArg(0) byte[] arg0) {
-		Packet packet = new Packet(Static453.method5680(arg0));
+		Packet packet = new Packet(Js5Compression.uncompress(arg0));
 		int local16 = packet.g1();
 
 		if (local16 != 5 && local16 != 6) {

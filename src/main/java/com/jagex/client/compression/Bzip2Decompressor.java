@@ -1,10 +1,12 @@
-package com.jagex.client;
+package com.jagex.client.compression;
 
+import com.jagex.client.Class44;
+import com.jagex.client.Static393;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;
 
-public final class Static139 {
+public final class Bzip2Decompressor {
 
 	@OriginalMember(owner = "client!h", name = "a", descriptor = "Lclient!cu;")
 	private static final Class44 aClass44_1 = new Class44();
@@ -295,7 +297,7 @@ public final class Static139 {
 	}
 
 	@OriginalMember(owner = "client!h", name = "a", descriptor = "([BI[BII)I")
-	public static int method2376(@OriginalArg(0) byte[] arg0, @OriginalArg(1) int arg1, @OriginalArg(2) byte[] arg2, @OriginalArg(3) int arg3) {
+	public static int uncompress(@OriginalArg(0) byte[] arg0, @OriginalArg(1) int arg1, @OriginalArg(2) byte[] arg2) {
 		@Pc(1) Class44 local1 = aClass44_1;
 		synchronized (aClass44_1) {
 			aClass44_1.aByteArray11 = arg2;

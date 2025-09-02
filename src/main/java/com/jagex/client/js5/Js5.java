@@ -272,7 +272,7 @@ public final class Js5 {
 
 			byte[] local149;
 			try {
-				local149 = Static453.method5680(local122);
+				local149 = Js5Compression.uncompress(local122);
 			} catch (RuntimeException e) {
 				throw Static350.method4724(e, "T3 - " + (arg2 != null) + "," + arg0 + "," + local122.length + "," + CRC32Checksum.calculateChecksum(local122.length, local122) + "," + CRC32Checksum.calculateChecksum(local122.length - 2, local122) + "," + this.index.anIntArray430[arg0] + "," + this.index.checksum);
 			}
