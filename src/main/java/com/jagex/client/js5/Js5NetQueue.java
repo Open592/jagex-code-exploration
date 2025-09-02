@@ -24,7 +24,7 @@ public final class Js5NetQueue {
 	private int timeSinceLastByteFromServer;
 
 	@OriginalMember(owner = "client!vn", name = "D", descriptor = "Lclient!je;")
-	private Js5NetQueueRequest aClass4_Sub1_Sub6_Sub1_2;
+	private Js5NetQueueRequest currentRequest;
 
 	@OriginalMember(owner = "client!vn", name = "j", descriptor = "Lclient!tn;")
 	private final SecondaryLinkedList pendingUrgentRequests = new SecondaryLinkedList();
@@ -41,11 +41,23 @@ public final class Js5NetQueue {
 	@OriginalMember(owner = "client!vn", name = "x", descriptor = "Lclient!iv;")
 	private final Packet outgoingPacket = new Packet(4);
 
-	@OriginalMember(owner = "client!vn", name = "z", descriptor = "Lclient!iv;")
+    /**
+     * Incoming packet from the server whose responsibility is to deliver control
+     * messages to the client.
+     * <p>
+     *      <b>Primarily handles:</b>
+     * <ul>
+     *
+     *      <li>Response headers (8 bytes)</li>
+     *      <li>Continuation marker (1 byte)</li>
+     *
+     * </ul>
+     * </p>
+     */
 	private final Packet incomingPacket = new Packet(8);
 
 	@OriginalMember(owner = "client!vn", name = "A", descriptor = "I")
-	public volatile int js5ConnectAttempts = 0;
+	public volatile int connectionFailures = 0;
 
 	@OriginalMember(owner = "client!vn", name = "B", descriptor = "B")
 	private byte obfuscationKey = 0;
@@ -55,6 +67,16 @@ public final class Js5NetQueue {
 		NO_REQUESTS_TO_PROCESS,
 		UNABLE_TO_PROCESS_REQUESTS,
 	}
+
+    // The size of a block of data.
+    private static final int BLOCK_SIZE = 512;
+
+    // A marker byte signifying that the next block of data is available for
+    // transmission.
+    //
+    // If, after reading a full block of data, the server does not send this marker
+    // we know the request has concluded.
+    private static final int CONTINUATION_MARKER = -1;
 
 	@OriginalMember(owner = "client!vn", name = "c", descriptor = "(I)I")
 	public int getUrgentRequestCount() {
@@ -84,16 +106,15 @@ public final class Js5NetQueue {
 		if (this.serverConnection != null) {
 			try {
 				this.serverConnection.shutdown();
-			} catch (@Pc(14) Exception local14) {
+			} catch (Exception ignored) {
 			}
-			this.serverConnection = null;
-		}
+        }
 
 		this.serverConnection = serverConnection;
 		this.method5462();
 		this.informUserAuthenticationStatus(arg1);
 		this.incomingPacket.pos = 0;
-		this.aClass4_Sub1_Sub6_Sub1_2 = null;
+		this.currentRequest = null;
 
 		while (true) {
 			@Pc(40) Js5NetQueueRequest request = (Js5NetQueueRequest) this.activeUrgentRequests.popHead();
@@ -113,10 +134,10 @@ public final class Js5NetQueue {
 							} catch (@Pc(102) IOException local102) {
 								try {
 									this.serverConnection.shutdown();
-								} catch (@Pc(108) Exception local108) {
+								} catch (Exception ignored) {
 								}
 								this.errorCode = -2;
-								this.js5ConnectAttempts++;
+								this.connectionFailures++;
 								this.serverConnection = null;
 							}
 						}
@@ -147,11 +168,11 @@ public final class Js5NetQueue {
 		} catch (@Pc(38) IOException local38) {
 			try {
 				this.serverConnection.shutdown();
-			} catch (@Pc(44) Exception local44) {
+			} catch (Exception ignored) {
 			}
 
 			this.serverConnection = null;
-			this.js5ConnectAttempts++;
+			this.connectionFailures++;
 			this.errorCode = -2;
 		}
 	}
@@ -160,23 +181,23 @@ public final class Js5NetQueue {
 	public void method5464() {
 		try {
 			this.serverConnection.shutdown();
-		} catch (@Pc(9) Exception local9) {
+		} catch (Exception ignored) {
 		}
 
 		this.serverConnection = null;
 		this.errorCode = -1;
 		this.obfuscationKey = (byte) (Math.random() * 255.0D + 1.0D);
-		this.js5ConnectAttempts++;
+		this.connectionFailures++;
 	}
 
 	@OriginalMember(owner = "client!vn", name = "a", descriptor = "(IBBZI)Lclient!je;")
-	public Js5NetQueueRequest requestArchiveFile(@OriginalArg(0) int archive, @OriginalArg(1) byte arg1, @OriginalArg(3) boolean isUrgent, @OriginalArg(4) int group) {
+	public Js5NetQueueRequest requestArchiveFile(@OriginalArg(0) int archive, @OriginalArg(1) byte reservedBytes, @OriginalArg(3) boolean isUrgent, @OriginalArg(4) int group) {
 		@Pc(19) long archiveGroupId = ((long) archive << 16) + group;
 
 		@Pc(23) Js5NetQueueRequest request = new Js5NetQueueRequest();
 		request.secondaryValue = archiveGroupId;
 		request.isUrgent = isUrgent;
-		request.aByte24 = arg1;
+		request.reservedBytes = reservedBytes;
 
 		if (isUrgent) {
 			if (this.getUrgentRequestCount() >= 20) {
@@ -221,7 +242,7 @@ public final class Js5NetQueue {
 
 			this.errorCode = -2;
 			this.serverConnection = null;
-			this.js5ConnectAttempts++;
+			this.connectionFailures++;
 		}
 	}
 
@@ -239,11 +260,11 @@ public final class Js5NetQueue {
 		} catch (@Pc(32) IOException local32) {
 			try {
 				this.serverConnection.shutdown();
-			} catch (@Pc(38) Exception local38) {
+			} catch (Exception ignored) {
 			}
 			this.errorCode = -2;
 			this.serverConnection = null;
-			this.js5ConnectAttempts++;
+			this.connectionFailures++;
 		}
 	}
 
@@ -260,7 +281,7 @@ public final class Js5NetQueue {
 			if (this.timeSinceLastByteFromServer > 30000) {
 				try {
 					this.serverConnection.shutdown();
-				} catch (@Pc(42) Exception ignored) {
+				} catch (Exception ignored) {
 				}
 
 				this.serverConnection = null;
@@ -305,51 +326,51 @@ public final class Js5NetQueue {
 
 				this.timeSinceLastByteFromServer = 0;
 
+                // Read the rest of this block's data.
 				@Pc(190) byte local190 = 0;
 
-				if (this.aClass4_Sub1_Sub6_Sub1_2 == null) {
+				if (this.currentRequest == null) {
+                    // Read next block's header
 					local190 = 8;
-				} else if (this.aClass4_Sub1_Sub6_Sub1_2.anInt3510 == 0) {
+				} else if (this.currentRequest.currentBlockPos == 0) {
+                    // Check for continuation marker
 					local190 = 1;
 				}
 
-				@Pc(219) int local219;
-				@Pc(226) int local226;
-				@Pc(275) int local275;
+				if (local190 == 0) {
+					int packetSize = this.currentRequest.packet.data.length - this.currentRequest.reservedBytes;
+					int bytesToRead = BLOCK_SIZE - this.currentRequest.currentBlockPos;
 
-				if (local190 <= 0) {
-					local219 = this.aClass4_Sub1_Sub6_Sub1_2.packet.data.length - this.aClass4_Sub1_Sub6_Sub1_2.aByte24;
-					local226 = 512 - this.aClass4_Sub1_Sub6_Sub1_2.anInt3510;
-
-					if (local219 - this.aClass4_Sub1_Sub6_Sub1_2.packet.pos < local226) {
-						local226 = local219 - this.aClass4_Sub1_Sub6_Sub1_2.packet.pos;
+					if (packetSize - this.currentRequest.packet.pos < bytesToRead) {
+						bytesToRead = packetSize - this.currentRequest.packet.pos;
 					}
 
-					if (local226 > estimatedBytesAvailable) {
-						local226 = estimatedBytesAvailable;
+					if (bytesToRead > estimatedBytesAvailable) {
+						bytesToRead = estimatedBytesAvailable;
 					}
 
 					this.serverConnection.readBytesFromServer(
-							this.aClass4_Sub1_Sub6_Sub1_2.packet.pos,
-							local226,
-							this.aClass4_Sub1_Sub6_Sub1_2.packet.data
+							this.currentRequest.packet.pos,
+							bytesToRead,
+							this.currentRequest.packet.data
 					);
 
+                    // De-obfuscate all data read in this turn.
 					if (this.obfuscationKey != 0) {
-						for (local275 = 0; local275 < local226; local275++) {
-							this.aClass4_Sub1_Sub6_Sub1_2.packet.data[local275 + this.aClass4_Sub1_Sub6_Sub1_2.packet.pos] ^= this.obfuscationKey;
+						for (int j = 0; j < bytesToRead; j++) {
+							this.currentRequest.packet.data[j + this.currentRequest.packet.pos] ^= this.obfuscationKey;
 						}
 					}
 
-					this.aClass4_Sub1_Sub6_Sub1_2.packet.pos += local226;
-					this.aClass4_Sub1_Sub6_Sub1_2.anInt3510 += local226;
+					this.currentRequest.packet.pos += bytesToRead;
+					this.currentRequest.currentBlockPos += bytesToRead;
 
-					if (this.aClass4_Sub1_Sub6_Sub1_2.packet.pos == local219) {
-						this.aClass4_Sub1_Sub6_Sub1_2.secondaryPopSelf();
-						this.aClass4_Sub1_Sub6_Sub1_2.isRequestInProgress = false;
-						this.aClass4_Sub1_Sub6_Sub1_2 = null;
-					} else if (this.aClass4_Sub1_Sub6_Sub1_2.anInt3510 == 512) {
-						this.aClass4_Sub1_Sub6_Sub1_2.anInt3510 = 0;
+					if (this.currentRequest.packet.pos == packetSize) {
+						this.currentRequest.secondaryPopSelf();
+						this.currentRequest.isRequestInProgress = false;
+						this.currentRequest = null;
+					} else if (this.currentRequest.currentBlockPos == BLOCK_SIZE) {
+						this.currentRequest.currentBlockPos = 0;
 					}
 				} else {
 					int bytesToReadFromServer = local190 - this.incomingPacket.pos;
@@ -369,47 +390,46 @@ public final class Js5NetQueue {
 					this.incomingPacket.pos += bytesToReadFromServer;
 
 					if (local190 <= this.incomingPacket.pos) {
-						if (this.aClass4_Sub1_Sub6_Sub1_2 == null) {
+						if (this.currentRequest == null) {
 							this.incomingPacket.pos = 0;
 
 							int archive = this.incomingPacket.g1();
 							int group = this.incomingPacket.g2();
-							int compression = this.incomingPacket.g1();
+							int flags = this.incomingPacket.g1();
 							int length = this.incomingPacket.g4();
 
-							int compressionType = compression & 0x7F;
-							boolean isPrefetch = (compression & 0x80) != 0;
+							int compressionType = flags & 0x7F;
+							boolean isPrefetch = (flags & 0x80) != 0;
 							long archiveGroupId = ((long) archive << 16) + group;
 							Js5NetQueueRequest request;
 
-							if (isPrefetch) {
-								for (request = (Js5NetQueueRequest) this.activeRegularRequests.getHead(); request != null && request.secondaryValue != archiveGroupId; request = (Js5NetQueueRequest) this.activeRegularRequests.next()) {
-								}
-							} else {
-								for (request = (Js5NetQueueRequest) this.activeUrgentRequests.getHead(); request != null && request.secondaryValue != archiveGroupId; request = (Js5NetQueueRequest) this.activeUrgentRequests.next()) {
-								}
-							}
+                            var queueToSearch = isPrefetch ? this.activeRegularRequests : this.activeUrgentRequests;
+
+                            for (request = (Js5NetQueueRequest) queueToSearch.getHead(); request != null && request.secondaryValue != archiveGroupId; request = (Js5NetQueueRequest) queueToSearch.next()) {
+                            }
 
 							if (request == null) {
 								throw new IOException();
 							}
 
-							// If the data is compressed the header will include both compressed and uncompressed size,
+							// If the data is compressed, the header will include both compressed and uncompressed size,
 							// otherwise it will just include the size of the uncompressed data.
 							int headerSize = compressionType == 0 ? 5 : 9;
-							this.aClass4_Sub1_Sub6_Sub1_2 = request;
-							this.aClass4_Sub1_Sub6_Sub1_2.packet = new Packet(headerSize + length + this.aClass4_Sub1_Sub6_Sub1_2.aByte24);
-							this.aClass4_Sub1_Sub6_Sub1_2.packet.p1(compressionType);
-							this.aClass4_Sub1_Sub6_Sub1_2.packet.p4(length);
-							this.incomingPacket.pos = 0;
-							this.aClass4_Sub1_Sub6_Sub1_2.anInt3510 = 8;
-						} else if (this.aClass4_Sub1_Sub6_Sub1_2.anInt3510 != 0) {
+							this.currentRequest = request;
+							this.currentRequest.packet = new Packet(headerSize + length + this.currentRequest.reservedBytes);
+							this.currentRequest.packet.p1(compressionType);
+							this.currentRequest.packet.p4(length);
+							this.currentRequest.currentBlockPos = 8;
+                            this.incomingPacket.pos = 0;
+						} else if (this.currentRequest.currentBlockPos != 0) {
+                            // At this point we expect that we have finalized a data block.
 							throw new IOException();
-						} else if (this.incomingPacket.data[0] == -1) {
-							this.aClass4_Sub1_Sub6_Sub1_2.anInt3510 = 1;
+						} else if (this.incomingPacket.data[0] == CONTINUATION_MARKER) {
+							this.currentRequest.currentBlockPos = 1;
 							this.incomingPacket.pos = 0;
 						} else {
-							this.aClass4_Sub1_Sub6_Sub1_2 = null;
+                            // Nothing more to read in this request.
+							this.currentRequest = null;
 						}
 					}
 				}
@@ -422,7 +442,7 @@ public final class Js5NetQueue {
 			} catch (Exception ignored) {
 			}
 
-			this.js5ConnectAttempts++;
+			this.connectionFailures++;
 			this.errorCode = -2;
 			this.serverConnection = null;
 

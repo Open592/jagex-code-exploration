@@ -172,7 +172,7 @@ public final class Js5NetResourceProvider extends Js5ResourceProvider {
 					throw new RuntimeException();
 				}
 
-				this.js5NetQueue.js5ConnectAttempts = 0;
+				this.js5NetQueue.connectionFailures = 0;
 				this.js5NetQueue.errorCode = 0;
 			} catch (RuntimeException e) {
 				this.js5NetQueue.method5464();

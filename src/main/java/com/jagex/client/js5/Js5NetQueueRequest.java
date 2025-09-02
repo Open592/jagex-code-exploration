@@ -11,21 +11,21 @@ public final class Js5NetQueueRequest extends Js5QueueRequest {
 	public Packet packet;
 
 	@OriginalMember(owner = "client!je", name = "J", descriptor = "I")
-	public int anInt3510;
+	public int currentBlockPos;
 
 	@OriginalMember(owner = "client!je", name = "L", descriptor = "B")
-	public byte aByte24;
+	public byte reservedBytes;
 
 	@OriginalMember(owner = "client!je", name = "a", descriptor = "(I)I")
 	@Override
 	public int getDownloadPercentage() {
-		return this.packet == null ? 0 : this.packet.pos * 100 / (this.packet.data.length - this.aByte24);
+		return this.packet == null ? 0 : this.packet.pos * 100 / (this.packet.data.length - this.reservedBytes);
 	}
 
 	@OriginalMember(owner = "client!je", name = "b", descriptor = "(Z)[B")
 	@Override
 	public byte[] getResponseData() {
-		if (super.isRequestInProgress || this.packet.pos < this.packet.data.length - this.aByte24) {
+		if (super.isRequestInProgress || this.packet.pos < this.packet.data.length - this.reservedBytes) {
 			throw new RuntimeException();
 		}
 

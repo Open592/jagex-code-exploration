@@ -3754,8 +3754,8 @@ public final class client extends GameShell {
 
 	@OriginalMember(owner = "client!client", name = "i", descriptor = "(I)V")
 	private void js5connect() {
-		if (js5NetQueue.js5ConnectAttempts > previousJS5ConnectionAttepts) {
-			connectionRetrySkipIterations = (js5NetQueue.js5ConnectAttempts * 50 - 50) * 5;
+		if (js5NetQueue.connectionFailures > previousJS5ConnectionAttepts) {
+			connectionRetrySkipIterations = (js5NetQueue.connectionFailures * 50 - 50) * 5;
 
 			if (port == primaryServerPort) {
 				port = fallbackServerPort;
@@ -3767,7 +3767,7 @@ public final class client extends GameShell {
 				connectionRetrySkipIterations = 3000;
 			}
 
-			if (js5NetQueue.js5ConnectAttempts >= 2 && js5NetQueue.errorCode == 6) {
+			if (js5NetQueue.connectionFailures >= 2 && js5NetQueue.errorCode == 6) {
 				this.handleGameError("js5connect_outofdate");
 
 				Static403.anInt6667 = 1000;
@@ -3775,7 +3775,7 @@ public final class client extends GameShell {
 				return;
 			}
 
-			if (js5NetQueue.js5ConnectAttempts >= 4 && js5NetQueue.errorCode == -1) {
+			if (js5NetQueue.connectionFailures >= 4 && js5NetQueue.errorCode == -1) {
 				this.handleGameError("js5crc");
 
 				Static403.anInt6667 = 1000;
@@ -3783,7 +3783,7 @@ public final class client extends GameShell {
 				return;
 			}
 
-			if (js5NetQueue.js5ConnectAttempts >= 4 && (Static403.anInt6667 == 0 || Static403.anInt6667 == 5)) {
+			if (js5NetQueue.connectionFailures >= 4 && (Static403.anInt6667 == 0 || Static403.anInt6667 == 5)) {
 				if (js5NetQueue.errorCode == 7 || js5NetQueue.errorCode == 9) {
 					this.handleGameError("js5connect_full");
 				} else if (js5NetQueue.errorCode <= 0) {
@@ -3798,7 +3798,7 @@ public final class client extends GameShell {
 			}
 		}
 
-		previousJS5ConnectionAttepts = js5NetQueue.js5ConnectAttempts;
+		previousJS5ConnectionAttepts = js5NetQueue.connectionFailures;
 
 		if (connectionRetrySkipIterations > 0) {
 			connectionRetrySkipIterations--;
@@ -4386,7 +4386,7 @@ public final class client extends GameShell {
 		serverConnection = null;
 		connectionInitializationMessage = null;
 
-		js5NetQueue.js5ConnectAttempts++;
+		js5NetQueue.connectionFailures++;
 		js5NetQueue.errorCode = errorCode;
 		js5ConnectionStage = 0;
 	}
