@@ -1,5 +1,6 @@
 package com.jagex.client;
 
+import com.jagex.client.ds.LinkedList;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalClass;
 import org.openrs2.deob.annotation.OriginalMember;
@@ -9,10 +10,10 @@ import org.openrs2.deob.annotation.Pc;
 public final class Node_Sub15_Sub2 extends Node_Sub15 {
 
 	@OriginalMember(owner = "client!jl", name = "p", descriptor = "Lclient!pk;")
-	private final Class183 aClass183_26 = new Class183();
+	private final LinkedList aLinkedList_26 = new LinkedList();
 
 	@OriginalMember(owner = "client!jl", name = "q", descriptor = "Lclient!pk;")
-	private final Class183 aClass183_27 = new Class183();
+	private final LinkedList aLinkedList_27 = new LinkedList();
 
 	@OriginalMember(owner = "client!jl", name = "r", descriptor = "I")
 	private int anInt3580 = -1;
@@ -22,12 +23,12 @@ public final class Node_Sub15_Sub2 extends Node_Sub15 {
 
 	@OriginalMember(owner = "client!jl", name = "e", descriptor = "()I")
 	public synchronized int method2953() {
-		return this.aClass183_26.method4148();
+		return this.aLinkedList_26.count();
 	}
 
 	@OriginalMember(owner = "client!jl", name = "a", descriptor = "(Lclient!ti;)V")
 	public synchronized void method2954(@OriginalArg(0) Node_Sub15 arg0) {
-		this.aClass183_26.method4133(arg0);
+		this.aLinkedList_26.addLast(arg0);
 	}
 
 	@OriginalMember(owner = "client!jl", name = "b", descriptor = "(Lclient!ti;)V")
@@ -38,12 +39,12 @@ public final class Node_Sub15_Sub2 extends Node_Sub15 {
 	@OriginalMember(owner = "client!jl", name = "b", descriptor = "()Lclient!ti;")
 	@Override
 	public Node_Sub15 method4857() {
-		return (Node_Sub15) this.aClass183_26.method4144();
+		return (Node_Sub15) this.aLinkedList_26.previous();
 	}
 
 	@OriginalMember(owner = "client!jl", name = "c", descriptor = "([III)V")
 	private void method2956(@OriginalArg(0) int[] arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2) {
-		for (@Pc(5) Node_Sub15 local5 = (Node_Sub15) this.aClass183_26.method4140(); local5 != null; local5 = (Node_Sub15) this.aClass183_26.method4144()) {
+		for (@Pc(5) Node_Sub15 local5 = (Node_Sub15) this.aLinkedList_26.tail(); local5 != null; local5 = (Node_Sub15) this.aLinkedList_26.previous()) {
 			local5.method4858(arg0, arg1, arg2);
 		}
 	}
@@ -51,15 +52,15 @@ public final class Node_Sub15_Sub2 extends Node_Sub15 {
 	@OriginalMember(owner = "client!jl", name = "d", descriptor = "()Lclient!ti;")
 	@Override
 	public Node_Sub15 method4860() {
-		return (Node_Sub15) this.aClass183_26.method4140();
+		return (Node_Sub15) this.aLinkedList_26.tail();
 	}
 
 	@OriginalMember(owner = "client!jl", name = "a", descriptor = "(Lclient!wr;)V")
 	private void method2957(@OriginalArg(0) Node_Sub44 arg0) {
 		arg0.popSelf();
 		arg0.method5668();
-		@Pc(9) Node local9 = this.aClass183_27.aNode_207.previous;
-		if (local9 == this.aClass183_27.aNode_207) {
+		@Pc(9) Node local9 = this.aLinkedList_27.sentinelNode.previous;
+		if (local9 == this.aLinkedList_27.sentinelNode) {
 			this.anInt3580 = -1;
 		} else {
 			this.anInt3580 = ((Node_Sub44) local9).anInt7350;
@@ -68,16 +69,16 @@ public final class Node_Sub15_Sub2 extends Node_Sub15 {
 
 	@OriginalMember(owner = "client!jl", name = "a", descriptor = "(Lclient!vu;Lclient!wr;)V")
 	private void method2958(@OriginalArg(0) Node arg0, @OriginalArg(1) Node_Sub44 arg1) {
-		while (arg0 != this.aClass183_27.aNode_207 && ((Node_Sub44) arg0).anInt7350 <= arg1.anInt7350) {
+		while (arg0 != this.aLinkedList_27.sentinelNode && ((Node_Sub44) arg0).anInt7350 <= arg1.anInt7350) {
 			arg0 = arg0.previous;
 		}
 		Static245.method3597(arg0, arg1);
-		this.anInt3580 = ((Node_Sub44) this.aClass183_27.aNode_207.previous).anInt7350;
+		this.anInt3580 = ((Node_Sub44) this.aLinkedList_27.sentinelNode.previous).anInt7350;
 	}
 
 	@OriginalMember(owner = "client!jl", name = "c", descriptor = "(I)V")
 	private void method2959(@OriginalArg(0) int arg0) {
-		for (@Pc(5) Node_Sub15 local5 = (Node_Sub15) this.aClass183_26.method4140(); local5 != null; local5 = (Node_Sub15) this.aClass183_26.method4144()) {
+		for (@Pc(5) Node_Sub15 local5 = (Node_Sub15) this.aLinkedList_26.tail(); local5 != null; local5 = (Node_Sub15) this.aLinkedList_26.previous()) {
 			local5.method4861(arg0);
 		}
 	}
@@ -87,7 +88,7 @@ public final class Node_Sub15_Sub2 extends Node_Sub15 {
 		if (this.anInt3581 <= 0) {
 			return;
 		}
-		for (@Pc(8) Node_Sub44 local8 = (Node_Sub44) this.aClass183_27.method4140(); local8 != null; local8 = (Node_Sub44) this.aClass183_27.method4144()) {
+		for (@Pc(8) Node_Sub44 local8 = (Node_Sub44) this.aLinkedList_27.tail(); local8 != null; local8 = (Node_Sub44) this.aLinkedList_27.previous()) {
 			local8.anInt7350 -= this.anInt3581;
 		}
 		this.anInt3580 -= this.anInt3581;
@@ -118,7 +119,7 @@ public final class Node_Sub15_Sub2 extends Node_Sub15 {
 			arg0 -= local29;
 			this.anInt3581 += local29;
 			this.method2960();
-			@Pc(50) Node_Sub44 local50 = (Node_Sub44) this.aClass183_27.method4140();
+			@Pc(50) Node_Sub44 local50 = (Node_Sub44) this.aLinkedList_27.tail();
 			synchronized (local50) {
 				@Pc(58) int local58 = local50.method5669(this);
 				if (local58 < 0) {
@@ -151,7 +152,7 @@ public final class Node_Sub15_Sub2 extends Node_Sub15 {
 			arg2 -= local33;
 			this.anInt3581 += local33;
 			this.method2960();
-			@Pc(60) Node_Sub44 local60 = (Node_Sub44) this.aClass183_27.method4140();
+			@Pc(60) Node_Sub44 local60 = (Node_Sub44) this.aLinkedList_27.tail();
 			synchronized (local60) {
 				@Pc(68) int local68 = local60.method5669(this);
 				if (local68 < 0) {

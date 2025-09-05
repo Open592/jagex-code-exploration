@@ -5,6 +5,7 @@ import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.awt.event.MouseMotionListener;
 
+import com.jagex.client.ds.LinkedList;
 import com.jagex.signlink.MonotonicClock;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalClass;
@@ -36,10 +37,10 @@ public final class Class80_Sub1 extends Class80 implements MouseListener, MouseM
 	private Component aComponent1;
 
 	@OriginalMember(owner = "client!gf", name = "v", descriptor = "Lclient!pk;")
-	private Class183 aClass183_16 = new Class183();
+	private LinkedList aLinkedList_16 = new LinkedList();
 
 	@OriginalMember(owner = "client!gf", name = "L", descriptor = "Lclient!pk;")
-	private Class183 aClass183_17 = new Class183();
+	private LinkedList aLinkedList_17 = new LinkedList();
 
 	@OriginalMember(owner = "client!gf", name = "Q", descriptor = "Z")
 	private final boolean aBoolean242;
@@ -83,10 +84,10 @@ public final class Class80_Sub1 extends Class80 implements MouseListener, MouseM
 		this.aComponent1.removeMouseListener(this);
 		this.aComponent1.removeMouseMotionListener(this);
 		this.aComponent1 = null;
-		this.aClass183_16 = null;
+		this.aLinkedList_16 = null;
 		this.anInt2652 = this.anInt2653 = this.anInt2651 = 0;
 		this.anInt2631 = this.anInt2640 = this.anInt2649 = 0;
-		this.aClass183_17 = null;
+		this.aLinkedList_17 = null;
 	}
 
 	@OriginalMember(owner = "client!gf", name = "a", descriptor = "(Ljava/awt/event/MouseEvent;I)I")
@@ -139,10 +140,10 @@ public final class Class80_Sub1 extends Class80 implements MouseListener, MouseM
 		this.anInt2631 = this.anInt2652;
 		this.anInt2640 = this.anInt2653;
 		this.anInt2649 = this.anInt2651;
-		@Pc(25) Class183 local25 = this.aClass183_16;
-		this.aClass183_16 = this.aClass183_17;
-		this.aClass183_17 = local25;
-		this.aClass183_17.method4138();
+		@Pc(25) LinkedList local25 = this.aLinkedList_16;
+		this.aLinkedList_16 = this.aLinkedList_17;
+		this.aLinkedList_17 = local25;
+		this.aLinkedList_17.clear();
 	}
 
 	@OriginalMember(owner = "client!gf", name = "a", descriptor = "(IIBI)V")
@@ -152,7 +153,7 @@ public final class Class80_Sub1 extends Class80 implements MouseListener, MouseM
 		local7.anInt455 = arg1;
 		local7.anInt451 = arg2;
 		local7.aLong23 = MonotonicClock.getCurrentTimeInMilliseconds();
-		this.aClass183_17.method4137(local7);
+		this.aLinkedList_17.addFirst(local7);
 	}
 
 	@OriginalMember(owner = "client!gf", name = "mouseDragged", descriptor = "(Ljava/awt/event/MouseEvent;)V")
@@ -236,6 +237,6 @@ public final class Class80_Sub1 extends Class80 implements MouseListener, MouseM
 	@OriginalMember(owner = "client!gf", name = "a", descriptor = "(B)Lclient!os;")
 	@Override
 	public Node_Sub5 method2232() {
-		return (Node_Sub5) this.aClass183_16.method4136();
+		return (Node_Sub5) this.aLinkedList_16.pollLast();
 	}
 }

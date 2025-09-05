@@ -263,7 +263,7 @@ public final class Class3_Sub1_Sub1_Sub1 extends Class3_Sub1_Sub1 {
 		@Pc(501) int local501;
 		@Pc(537) int local537;
 		if (local35.anIntArray256 != null) {
-			@Pc(426) Node local426 = local31.aClass183_1.aNode_207;
+			@Pc(426) Node local426 = local31.aLinkedList_1.sentinelNode;
 			for (@Pc(429) Node local429 = local426.previous; local429 != local426; local429 = local429.previous) {
 				@Pc(433) SecondaryNode_Sub1_Sub12 local433 = (SecondaryNode_Sub1_Sub12) local429;
 				@Pc(436) Class8 local436 = local433.aClass8_1;

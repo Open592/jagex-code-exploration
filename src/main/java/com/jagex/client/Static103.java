@@ -32,7 +32,7 @@ public final class Static103 {
 	@OriginalMember(owner = "client!fc", name = "c", descriptor = "(I)V")
 	public static void method1816() {
 		Static407.anInt6710 = 0;
-		Static206.aClass183_28.method4138();
+		Static206.A_LINKED_LIST___28.clear();
 		Static234.aBoolean411 = false;
 	}
 }

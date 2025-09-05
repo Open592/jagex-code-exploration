@@ -11,8 +11,8 @@ public final class Static158 {
 
 	@OriginalMember(owner = "client!hv", name = "b", descriptor = "(B)Z")
 	public static boolean method2677() {
-		@Pc(8) Node_Sub39 local8 = (Node_Sub39) Static206.aClass183_28.aNode_207.next;
-		if (local8 == null || local8 == Static206.aClass183_28.aNode_207) {
+		@Pc(8) Node_Sub39 local8 = (Node_Sub39) Static206.A_LINKED_LIST___28.sentinelNode.next;
+		if (local8 == null || local8 == Static206.A_LINKED_LIST___28.sentinelNode) {
 			return false;
 		} else {
 			if (local8.anInt5699 >= 2000) {

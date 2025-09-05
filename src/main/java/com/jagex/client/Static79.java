@@ -45,12 +45,12 @@ public final class Static79 {
 
 	@OriginalMember(owner = "client!du", name = "a", descriptor = "(Lclient!ya;Z)V")
 	public static void method1400(@OriginalArg(0) Class19 arg0) {
-		if (Static379.aClass183_45.method4148() == 0) {
+		if (Static379.A_LINKED_LIST___45.count() == 0) {
 			return;
 		}
 		@Pc(58) Node_Sub17 local58;
 		if (Static177.anInt2973 == 0) {
-			for (local58 = (Node_Sub17) Static379.aClass183_45.method4140(); local58 != null; local58 = (Node_Sub17) Static379.aClass183_45.method4144()) {
+			for (local58 = (Node_Sub17) Static379.A_LINKED_LIST___45.tail(); local58 != null; local58 = (Node_Sub17) Static379.A_LINKED_LIST___45.previous()) {
 				Static444.aClass206_3.method4699(false, local58.aBoolean222 ? Static1.aClass16_Sub1_Sub5_Sub1_1.aClass37_1 : null, Static43.aClass46_12, local58.anInt2372, local58.anInt2367, arg0, false, local58.anInt2368, local58.anInt2366, local58.anInt2373, arg0);
 				local58.popSelf();
 			}
@@ -63,7 +63,7 @@ public final class Static79 {
 			Static4.aClass19_34 = Static455.method4241(Static80.anInterface7_3, 0, local28, 0, GameShell.signLink);
 			Static22.aClass46_4 = Static4.aClass19_34.method4275(Static239.method3546(Static177.anInt2985, Static209.aJs5_48), Static456.method327(Static293.aJs5_60, Static177.anInt2985));
 		}
-		for (local58 = (Node_Sub17) Static379.aClass183_45.method4140(); local58 != null; local58 = (Node_Sub17) Static379.aClass183_45.method4144()) {
+		for (local58 = (Node_Sub17) Static379.A_LINKED_LIST___45.tail(); local58 != null; local58 = (Node_Sub17) Static379.A_LINKED_LIST___45.previous()) {
 			Static444.aClass206_3.method4699(false, local58.aBoolean222 ? Static1.aClass16_Sub1_Sub5_Sub1_1.aClass37_1 : null, Static22.aClass46_4, local58.anInt2372, local58.anInt2367, Static4.aClass19_34, false, local58.anInt2368, local58.anInt2366, local58.anInt2373, arg0);
 			local58.popSelf();
 		}

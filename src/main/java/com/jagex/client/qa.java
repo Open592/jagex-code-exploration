@@ -5,6 +5,7 @@ import java.awt.Dimension;
 import java.awt.Rectangle;
 import java.lang.reflect.Method;
 
+import com.jagex.client.ds.LinkedList;
 import com.jagex.client.utilities.ThreadingUtilities;
 import com.jagex.signlink.SignLink;
 import org.openrs2.deob.annotation.OriginalArg;
@@ -34,7 +35,7 @@ public final class qa extends Class19 implements Interface4 {
 	private final long nativeid = 0L;
 
 	@OriginalMember(owner = "client!qa", name = "t", descriptor = "Lclient!pk;")
-	private final Class183 aClass183_40 = new Class183();
+	private final LinkedList aLinkedList_40 = new LinkedList();
 
 	@OriginalMember(owner = "client!qa", name = "C", descriptor = "I")
 	private final int anInt5539 = 4096;
@@ -451,7 +452,7 @@ public final class qa extends Class19 implements Interface4 {
 	public void method4246(@OriginalArg(0) int arg0) {
 		Static404.method5219();
 		this.ma(arg0);
-		for (@Pc(10) na local10 = (na) this.aClass183_40.method4140(); local10 != null; local10 = (na) this.aClass183_40.method4144()) {
+		for (@Pc(10) na local10 = (na) this.aLinkedList_40.tail(); local10 != null; local10 = (na) this.aLinkedList_40.previous()) {
 			local10.a();
 		}
 	}
@@ -496,10 +497,10 @@ public final class qa extends Class19 implements Interface4 {
 	@OriginalMember(owner = "client!qa", name = "c", descriptor = "()V")
 	@Override
 	protected void method4239() {
-		for (@Pc(5) na local5 = (na) this.aClass183_40.method4140(); local5 != null; local5 = (na) this.aClass183_40.method4144()) {
+		for (@Pc(5) na local5 = (na) this.aLinkedList_40.tail(); local5 != null; local5 = (na) this.aLinkedList_40.previous()) {
 			local5.H();
 		}
-		this.aClass183_40.method4138();
+		this.aLinkedList_40.clear();
 		this.FA();
 		if (this.aBoolean496) {
 			Static218.method3281(false, true);
@@ -746,7 +747,7 @@ public final class qa extends Class19 implements Interface4 {
 	@Override
 	public Node_Sub2 method4284(@OriginalArg(0) int arg0) {
 		@Pc(5) na local5 = new na(this, arg0);
-		this.aClass183_40.method4137(local5);
+		this.aLinkedList_40.addFirst(local5);
 		return local5;
 	}
 

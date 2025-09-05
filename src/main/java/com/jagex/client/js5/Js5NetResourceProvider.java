@@ -1,6 +1,6 @@
 package com.jagex.client.js5;
 
-import com.jagex.client.Class183;
+import com.jagex.client.ds.LinkedList;
 import com.jagex.client.Node;
 import org.openrs2.deob.annotation.OriginalClass;
 import org.openrs2.deob.annotation.OriginalMember;
@@ -35,7 +35,7 @@ public final class Js5NetResourceProvider extends Js5ResourceProvider {
 	private int anInt4489 = 0;
 
 	@OriginalMember(owner = "client!lv", name = "G", descriptor = "Lclient!pk;")
-	private final Class183 aClass183_30 = new Class183();
+	private final LinkedList aLinkedList_30 = new LinkedList();
 
 	@OriginalMember(owner = "client!lv", name = "L", descriptor = "J")
 	private long aLong149 = 0L;
@@ -50,7 +50,7 @@ public final class Js5NetResourceProvider extends Js5ResourceProvider {
 	private boolean aBoolean412;
 
 	@OriginalMember(owner = "client!lv", name = "H", descriptor = "Lclient!pk;")
-	private Class183 aClass183_31;
+	private LinkedList aLinkedList_31;
 
 	@OriginalMember(owner = "client!lv", name = "g", descriptor = "I")
 	private final int checksum;
@@ -82,7 +82,7 @@ public final class Js5NetResourceProvider extends Js5ResourceProvider {
 			this.aBoolean412 = false;
 		} else {
 			this.aBoolean412 = true;
-			this.aClass183_31 = new Class183();
+			this.aLinkedList_31 = new LinkedList();
 		}
 
 		this.checksum = checksum;
@@ -267,7 +267,7 @@ public final class Js5NetResourceProvider extends Js5ResourceProvider {
 
 	@OriginalMember(owner = "client!lv", name = "d", descriptor = "(I)V")
 	public void method3520() {
-		if (this.aClass183_31 != null) {
+		if (this.aLinkedList_31 != null) {
 			if (this.fetchIndex() == null) {
 				return;
 			}
@@ -280,7 +280,7 @@ public final class Js5NetResourceProvider extends Js5ResourceProvider {
 			if (this.aBoolean412) {
 				local21 = true;
 
-				for (local28 = this.aClass183_31.method4140(); local28 != null; local28 = this.aClass183_31.method4144()) {
+				for (local28 = this.aLinkedList_31.tail(); local28 != null; local28 = this.aLinkedList_31.previous()) {
 					local34 = (int) local28.hashKey;
 					if (this.aByteArray56[local34] == 0) {
 						this.method3518(1, local34);
@@ -307,7 +307,7 @@ public final class Js5NetResourceProvider extends Js5ResourceProvider {
 							local127 = new Node();
 							local127.hashKey = this.anInt4489;
 							local21 = false;
-							this.aClass183_31.method4137(local127);
+							this.aLinkedList_31.addFirst(local127);
 						}
 						this.anInt4489++;
 					}
@@ -318,7 +318,7 @@ public final class Js5NetResourceProvider extends Js5ResourceProvider {
 				}
 			} else if (this.aBoolean413) {
 				local21 = true;
-				for (local28 = this.aClass183_31.method4140(); local28 != null; local28 = this.aClass183_31.method4144()) {
+				for (local28 = this.aLinkedList_31.tail(); local28 != null; local28 = this.aLinkedList_31.previous()) {
 					local34 = (int) local28.hashKey;
 
 					if (this.aByteArray56[local34] != 1) {
@@ -349,7 +349,7 @@ public final class Js5NetResourceProvider extends Js5ResourceProvider {
 							local127 = new Node();
 							local127.hashKey = this.anInt4489;
 							local21 = false;
-							this.aClass183_31.method4137(local127);
+							this.aLinkedList_31.addFirst(local127);
 						}
 
 						this.anInt4489++;
@@ -361,7 +361,7 @@ public final class Js5NetResourceProvider extends Js5ResourceProvider {
 					this.aBoolean413 = false;
 				}
 			} else {
-				this.aClass183_31 = null;
+				this.aLinkedList_31 = null;
 			}
 		}
 		if (!this.aBoolean414 || this.aLong149 > MonotonicClock.getCurrentTimeInMilliseconds()) {
@@ -390,7 +390,7 @@ public final class Js5NetResourceProvider extends Js5ResourceProvider {
 		if (this.index == null) {
 			return 0;
 		} else if (this.aBoolean412) {
-			Node local25 = this.aClass183_31.method4140();
+			Node local25 = this.aLinkedList_31.tail();
 
 			return local25 == null ? 0 : (int) local25.hashKey;
 		} else {
@@ -408,11 +408,11 @@ public final class Js5NetResourceProvider extends Js5ResourceProvider {
 
 	@OriginalMember(owner = "client!lv", name = "c", descriptor = "(B)V")
 	public void method3522() {
-		if (this.aClass183_31 == null || this.fetchIndex() == null) {
+		if (this.aLinkedList_31 == null || this.fetchIndex() == null) {
 			return;
 		}
 
-		for (Node local23 = this.aClass183_30.method4140(); local23 != null; local23 = this.aClass183_30.method4144()) {
+		for (Node local23 = this.aLinkedList_30.tail(); local23 != null; local23 = this.aLinkedList_30.previous()) {
 			int local29 = (int) local23.hashKey;
 
 			if (local29 < 0 || local29 >= this.index.anInt6112 || this.index.anIntArray428[local29] == 0) {
@@ -447,7 +447,7 @@ public final class Js5NetResourceProvider extends Js5ResourceProvider {
 			return;
 		}
 
-		for (Node local14 = this.aClass183_30.method4140(); local14 != null; local14 = this.aClass183_30.method4144()) {
+		for (Node local14 = this.aLinkedList_30.tail(); local14 != null; local14 = this.aLinkedList_30.previous()) {
 			if (local14.hashKey == (long) arg0) {
 				return;
 			}
@@ -457,7 +457,7 @@ public final class Js5NetResourceProvider extends Js5ResourceProvider {
 
 		local43.hashKey = arg0;
 
-		this.aClass183_30.method4137(local43);
+		this.aLinkedList_30.addFirst(local43);
 	}
 
 	@OriginalMember(owner = "client!lv", name = "d", descriptor = "(B)V")
@@ -465,8 +465,8 @@ public final class Js5NetResourceProvider extends Js5ResourceProvider {
 		if (this.aClass222_3 != null) {
 			this.aBoolean413 = true;
 
-			if (this.aClass183_31 == null) {
-				this.aClass183_31 = new Class183();
+			if (this.aLinkedList_31 == null) {
+				this.aLinkedList_31 = new LinkedList();
 			}
 		}
 	}

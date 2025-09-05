@@ -1,5 +1,6 @@
 package com.jagex.client;
 
+import com.jagex.client.ds.LinkedList;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalClass;
 import org.openrs2.deob.annotation.OriginalMember;
@@ -53,7 +54,7 @@ public final class SecondaryNode_Sub1_Sub17 extends SecondaryNode {
 		if (!local55) {
 			return false;
 		}
-		@Pc(103) Class183 local103 = new Class183();
+		@Pc(103) LinkedList local103 = new LinkedList();
 		local78 = Static10.aJs5_1.method2108(this.anInt5488);
 		this.aClass88Array1 = new Class88[local78];
 		@Pc(119) int[] local119 = Static10.aJs5_1.method2124(this.anInt5488);
@@ -61,7 +62,7 @@ public final class SecondaryNode_Sub1_Sub17 extends SecondaryNode {
 			@Pc(128) byte[] local128 = this.aByteArrayArray24[local121];
 			@Pc(142) int local142 = local128[1] & 0xFF | (local128[0] & 0xFF) << 8;
 			@Pc(144) Node_Sub32 local144 = null;
-			for (@Pc(149) Node_Sub32 local149 = (Node_Sub32) local103.method4140(); local149 != null; local149 = (Node_Sub32) local103.method4144()) {
+			for (@Pc(149) Node_Sub32 local149 = (Node_Sub32) local103.tail(); local149 != null; local149 = (Node_Sub32) local103.previous()) {
 				if (local149.anInt4984 == local142) {
 					local144 = local149;
 					break;
@@ -69,7 +70,7 @@ public final class SecondaryNode_Sub1_Sub17 extends SecondaryNode {
 			}
 			if (local144 == null) {
 				local144 = new Node_Sub32(local142, Static414.aJs5_96.method2122(local142));
-				local103.method4137(local144);
+				local103.addFirst(local144);
 			}
 			this.aClass88Array1[local119[local121]] = new Class88(local128, local144);
 		}

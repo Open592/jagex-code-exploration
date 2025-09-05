@@ -1,5 +1,6 @@
 package com.jagex.client;
 
+import com.jagex.client.ds.LinkedList;
 import com.jagex.client.jaggl.OpenGL;
 import com.jagex.client.jaggl.memory.NativeBuffer;
 import com.jagex.client.jaggl.memory.NativeStream;
@@ -45,7 +46,7 @@ public final class Class65_Sub2 extends Class65 {
 	private Node_Sub16[] aClass4_Sub16Array1;
 
 	@OriginalMember(owner = "client!oq", name = "F", descriptor = "Lclient!pk;")
-	private final Class183 aClass183_37 = new Class183();
+	private final LinkedList aLinkedList_37 = new LinkedList();
 
 	@OriginalMember(owner = "client!oq", name = "u", descriptor = "[[I")
 	private final int[][] anIntArrayArray44;
@@ -293,7 +294,7 @@ public final class Class65_Sub2 extends Class65 {
 	@OriginalMember(owner = "client!oq", name = "a", descriptor = "(Lclient!vp;[I)V")
 	@Override
 	public void method4024(@OriginalArg(0) Node_Sub21 arg0, @OriginalArg(1) int[] arg1) {
-		this.aClass183_37.method4137(new Node_Sub24(this.aClass19_Sub2_30, this, arg0, arg1));
+		this.aLinkedList_37.addFirst(new Node_Sub24(this.aClass19_Sub2_30, this, arg0, arg1));
 	}
 
 	@OriginalMember(owner = "client!oq", name = "a", descriptor = "(Lclient!ba;IIIIZ)Z")
@@ -868,7 +869,7 @@ public final class Class65_Sub2 extends Class65 {
 		for (@Pc(194) int local194 = 0; local194 < this.aClass4_Sub16Array1.length; local194++) {
 			this.aClass4_Sub16Array1[local194].method1462(Static192.anIntArray239, Static356.anInt6220);
 		}
-		if (!this.aClass183_37.method4147()) {
+		if (!this.aLinkedList_37.isEmpty()) {
 			local130 = this.aClass19_Sub2_30.anInt2302;
 			@Pc(227) int local227 = this.aClass19_Sub2_30.anInt2315;
 			this.aClass19_Sub2_30.UA(0, local227, this.aClass19_Sub2_30.anInt2282);
@@ -881,7 +882,7 @@ public final class Class65_Sub2 extends Class65 {
 			this.aClass19_Sub2_30.method1912(8448, 7681);
 			this.aClass19_Sub2_30.method1945(0, 770, 34166);
 			this.aClass19_Sub2_30.method1954(34167, 0);
-			for (@Pc(294) Node local294 = this.aClass183_37.method4140(); local294 != null; local294 = this.aClass183_37.method4144()) {
+			for (@Pc(294) Node local294 = this.aLinkedList_37.tail(); local294 != null; local294 = this.aLinkedList_37.previous()) {
 				@Pc(299) Node_Sub24 local299 = (Node_Sub24) local294;
 				local299.method2842(arg4, arg0, arg3, arg2);
 			}

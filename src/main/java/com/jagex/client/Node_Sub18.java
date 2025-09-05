@@ -1,5 +1,6 @@
 package com.jagex.client;
 
+import com.jagex.client.ds.LinkedList;
 import org.openrs2.deob.annotation.OriginalClass;
 import org.openrs2.deob.annotation.OriginalMember;
 
@@ -7,5 +8,5 @@ import org.openrs2.deob.annotation.OriginalMember;
 public final class Node_Sub18 extends Node {
 
 	@OriginalMember(owner = "client!fl", name = "p", descriptor = "Lclient!pk;")
-	public final Class183 aClass183_14 = new Class183();
+	public final LinkedList aLinkedList_14 = new LinkedList();
 }

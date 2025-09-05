@@ -1,5 +1,6 @@
 package com.jagex.client;
 
+import com.jagex.client.ds.LinkedList;
 import org.openrs2.deob.annotation.OriginalMember;
 
 public final class Static115 {
@@ -17,5 +18,5 @@ public final class Static115 {
 	public static final int[] anIntArray164 = new int[13];
 
 	@OriginalMember(owner = "client!fp", name = "i", descriptor = "Lclient!pk;")
-	public static Class183 aClass183_15 = new Class183();
+	public static LinkedList aLinkedList_15 = new LinkedList();
 }

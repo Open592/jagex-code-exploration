@@ -81,7 +81,7 @@ public final class Static208 {
 		local136.anInt3199 = arg4 + arg9;
 		local136.anInt3188 = local132;
 		local136.anInt3198 = (local136.anInt3189 << 7) + (local56 << 6);
-		Static298.aClass183_38.method4137(local136);
+		Static298.A_LINKED_LIST___38.addFirst(local136);
 		local25.aClass4_Sub23_3 = local136;
 	}
 

@@ -179,7 +179,7 @@ public final class Static272 {
 			local731.anInt1541 = local223;
 			local731.anInt1544 = local110;
 			local731.anInt1543 = local227;
-			Static378.aClass183_29.method4137(local731);
+			Static378.aLinkedList_29.addFirst(local731);
 		}
 		return false;
 	}

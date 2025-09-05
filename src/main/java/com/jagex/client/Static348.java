@@ -5,6 +5,8 @@ import java.awt.Container;
 import java.awt.Graphics;
 import java.awt.Insets;
 import java.awt.datatransfer.Clipboard;
+
+import com.jagex.client.ds.LinkedList;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;
@@ -18,7 +20,7 @@ public final class Static348 {
 	public static Clipboard aClipboard1;
 
 	@OriginalMember(owner = "client!rn", name = "E", descriptor = "Lclient!pk;")
-	public static final Class183 aClass183_42 = new Class183();
+	public static final LinkedList A_LINKED_LIST___42 = new LinkedList();
 
 	@OriginalMember(owner = "client!rn", name = "P", descriptor = "I")
 	public static int anInt5976 = 0;

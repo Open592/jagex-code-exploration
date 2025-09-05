@@ -1,5 +1,6 @@
 package com.jagex.client;
 
+import com.jagex.client.ds.LinkedList;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalClass;
 import org.openrs2.deob.annotation.OriginalMember;
@@ -39,7 +40,7 @@ public final class Class3_Sub2 extends Class3 {
 	private int anInt213 = 0;
 
 	@OriginalMember(owner = "client!ao", name = "s", descriptor = "Lclient!pk;")
-	public Class183 aClass183_1 = new Class183();
+	public LinkedList aLinkedList_1 = new LinkedList();
 
 	@OriginalMember(owner = "client!ao", name = "v", descriptor = "Z")
 	private boolean aBoolean25 = false;
@@ -75,7 +76,7 @@ public final class Class3_Sub2 extends Class3 {
 	@OriginalMember(owner = "client!ao", name = "b", descriptor = "()V")
 	public void method165() {
 		this.aBoolean24 = true;
-		for (@Pc(8) SecondaryNode_Sub1_Sub12 local8 = (SecondaryNode_Sub1_Sub12) this.aClass183_1.method4140(); local8 != null; local8 = (SecondaryNode_Sub1_Sub12) this.aClass183_1.method4144()) {
+		for (@Pc(8) SecondaryNode_Sub1_Sub12 local8 = (SecondaryNode_Sub1_Sub12) this.aLinkedList_1.tail(); local8 != null; local8 = (SecondaryNode_Sub1_Sub12) this.aLinkedList_1.previous()) {
 			if (local8.aClass8_1.anInt121 == 1) {
 				local8.secondaryPopSelf();
 			}
@@ -84,7 +85,7 @@ public final class Class3_Sub2 extends Class3 {
 		this.anInt212 = 0;
 		this.aClass84_1 = new Class84();
 		this.anInt213 = 0;
-		this.aClass183_1 = new Class183();
+		this.aLinkedList_1 = new LinkedList();
 		this.anInt216 = 0;
 		this.method5676();
 	}
@@ -155,7 +156,7 @@ public final class Class3_Sub2 extends Class3 {
 			Static16.aBooleanArray1[local1] = false;
 		}
 		@Pc(21) int local21;
-		label68: for (@Pc(16) SecondaryNode_Sub1_Sub12 local16 = (SecondaryNode_Sub1_Sub12) this.aClass183_1.method4140(); local16 != null; local16 = (SecondaryNode_Sub1_Sub12) this.aClass183_1.method4144()) {
+		label68: for (@Pc(16) SecondaryNode_Sub1_Sub12 local16 = (SecondaryNode_Sub1_Sub12) this.aLinkedList_1.tail(); local16 != null; local16 = (SecondaryNode_Sub1_Sub12) this.aLinkedList_1.previous()) {
 			if (arg0 != null) {
 				for (local21 = 0; local21 < arg0.length; local21++) {
 					if (local16.aClass179_1 == arg0[local21] || local16.aClass179_1 == arg0[local21].aClass179_2) {
@@ -186,7 +187,7 @@ public final class Class3_Sub2 extends Class3 {
 				if (local93 == null) {
 					local93 = new SecondaryNode_Sub1_Sub12(arg0[local21], this);
 				}
-				this.aClass183_1.method4137(local93);
+				this.aLinkedList_1.addFirst(local93);
 				this.anInt216++;
 				Static16.aBooleanArray1[local21] = true;
 			}

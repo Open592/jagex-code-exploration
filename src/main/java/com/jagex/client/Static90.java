@@ -56,7 +56,7 @@ public final class Static90 {
 		@Pc(49) SecondaryNode_Sub1_Sub5 local49 = new SecondaryNode_Sub1_Sub5(arg1, local16.gStringCP1252ToUTF8(), local16.gStringCP1252ToUTF8(), local16.g4(), local16.g4(), local16.g1() == 1, local16.g1(), local16.g1());
 		@Pc(53) int local53 = local16.g1();
 		for (@Pc(55) int local55 = 0; local55 < local53; local55++) {
-			local49.aClass183_4.method4137(new Node_Sub41(local16.g1(), local16.g2(), local16.g2(), local16.g2(), local16.g2(), local16.g2(), local16.g2(), local16.g2(), local16.g2()));
+			local49.aLinkedList_4.addFirst(new Node_Sub41(local16.g1(), local16.g2(), local16.g2(), local16.g2(), local16.g2(), local16.g2(), local16.g2(), local16.g2(), local16.g2()));
 		}
 		local49.method933();
 		return local49;

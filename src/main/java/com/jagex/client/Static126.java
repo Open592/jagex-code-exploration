@@ -61,7 +61,7 @@ public final class Static126 {
 			if (local7.anIntArray37 != null) {
 				local7.anInt618 = local7.anInt623 + (int) ((double) (local7.anInt622 - local7.anInt623) * Math.random());
 			}
-			Static281.aClass183_34.method4137(local7);
+			Static281.A_LINKED_LIST___34.addFirst(local7);
 			return;
 		}
 		if (arg1 != null) {
@@ -78,7 +78,7 @@ public final class Static126 {
 				local7.anInt611 = local42.anInt7238 << 7;
 				local7.anInt620 = local42.anInt7235;
 			}
-			Static143.aClass183_20.method4137(local7);
+			Static143.A_LINKED_LIST___20.addFirst(local7);
 			return;
 		}
 		if (arg2 == null) {

@@ -1,5 +1,6 @@
 package com.jagex.client;
 
+import com.jagex.client.ds.LinkedList;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalClass;
 import org.openrs2.deob.annotation.OriginalMember;
@@ -15,7 +16,7 @@ public final class Class153 {
 	private int anInt4753 = -1;
 
 	@OriginalMember(owner = "client!ms", name = "b", descriptor = "Lclient!pk;")
-	private Class183 aClass183_33 = new Class183();
+	private LinkedList aLinkedList_33 = new LinkedList();
 
 	@OriginalMember(owner = "client!ms", name = "o", descriptor = "Z")
 	public boolean aBoolean437 = false;
@@ -55,7 +56,7 @@ public final class Class153 {
 			if (local72 == null) {
 				this.aBoolean437 = true;
 				if (this.anInt4747 >= this.anInt4749) {
-					@Pc(97) Node_Sub20 local97 = (Node_Sub20) this.aClass183_33.method4139();
+					@Pc(97) Node_Sub20 local97 = (Node_Sub20) this.aLinkedList_33.head();
 					local72 = new Node_Sub20(arg0, local97.anInt2616);
 					this.aClass4_Sub20Array1[local97.anInt2614] = null;
 					local97.popSelf();
@@ -67,7 +68,7 @@ public final class Class153 {
 			} else {
 				this.aBoolean437 = false;
 			}
-			this.aClass183_33.method4133(local72);
+			this.aLinkedList_33.addLast(local72);
 			return this.anIntArrayArrayArray5[local72.anInt2616];
 		}
 	}
@@ -93,7 +94,7 @@ public final class Class153 {
 		}
 		this.anIntArrayArrayArray5 = null;
 		this.aClass4_Sub20Array1 = null;
-		this.aClass183_33.method4138();
-		this.aClass183_33 = null;
+		this.aLinkedList_33.clear();
+		this.aLinkedList_33 = null;
 	}
 }

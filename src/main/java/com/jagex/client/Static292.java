@@ -1,5 +1,6 @@
 package com.jagex.client;
 
+import com.jagex.client.ds.LinkedList;
 import com.jagex.signlink.Message;
 import org.openrs2.deob.annotation.OriginalMember;
 
@@ -9,7 +10,7 @@ public final class Static292 {
 	public static Class195 aClass195_2;
 
 	@OriginalMember(owner = "client!op", name = "p", descriptor = "Lclient!pk;")
-	public static final Class183 aClass183_36 = new Class183();
+	public static final LinkedList A_LINKED_LIST___36 = new LinkedList();
 
 	@OriginalMember(owner = "client!op", name = "r", descriptor = "J")
 	public static long aLong177 = -1L;

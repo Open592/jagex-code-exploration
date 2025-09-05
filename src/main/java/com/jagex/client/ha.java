@@ -1,5 +1,6 @@
 package com.jagex.client;
 
+import com.jagex.client.ds.LinkedList;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalClass;
 import org.openrs2.deob.annotation.OriginalMember;
@@ -12,7 +13,7 @@ public final class ha extends Class65 implements Interface4 {
 	private long nativeid;
 
 	@OriginalMember(owner = "client!ha", name = "i", descriptor = "Lclient!pk;")
-	private final Class183 aClass183_19 = new Class183();
+	private final LinkedList aLinkedList_19 = new LinkedList();
 
 	@OriginalMember(owner = "client!ha", name = "j", descriptor = "Lclient!qa;")
 	private final qa aQa2;
@@ -135,7 +136,7 @@ public final class ha extends Class65 implements Interface4 {
 	@OriginalMember(owner = "client!ha", name = "a", descriptor = "(Lclient!vp;[I)V")
 	@Override
 	public void method4024(@OriginalArg(0) Node_Sub21 arg0, @OriginalArg(1) int[] arg1) {
-		this.aClass183_19.method4137(arg0);
+		this.aLinkedList_19.addFirst(arg0);
 		this.G(arg0.hashCode(), arg0.method3160(), arg0.method3161(), arg0.method3164(), arg0.method3165(), arg0.method3162(), arg1);
 	}
 
@@ -167,8 +168,8 @@ public final class ha extends Class65 implements Interface4 {
 	@Override
 	public void method4029(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2, @OriginalArg(3) boolean[][] arg3, @OriginalArg(4) boolean arg4) {
 		@Pc(1) int local1 = 0;
-		@Pc(7) float[] local7 = new float[this.aClass183_19.method4148()];
-		for (@Pc(13) Node_Sub21 local13 = (Node_Sub21) this.aClass183_19.method4140(); local13 != null; local13 = (Node_Sub21) this.aClass183_19.method4144()) {
+		@Pc(7) float[] local7 = new float[this.aLinkedList_19.count()];
+		for (@Pc(13) Node_Sub21 local13 = (Node_Sub21) this.aLinkedList_19.tail(); local13 != null; local13 = (Node_Sub21) this.aLinkedList_19.previous()) {
 			local7[local1++] = local13.method3159();
 		}
 		this.W(local7);

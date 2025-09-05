@@ -99,7 +99,7 @@ public final class Static187 {
 
 	@OriginalMember(owner = "client!ji", name = "b", descriptor = "(I)Lclient!aq;")
 	public static Node_Sub3 method2937() {
-		if (Static148.aClass183_41 == null || Static308.aClass63_1 == null) {
+		if (Static148.A_LINKED_LIST___41 == null || Static308.aClass63_1 == null) {
 			return null;
 		}
 		for (@Pc(16) Node_Sub3 local16 = (Node_Sub3) Static308.aClass63_1.method1612(); local16 != null; local16 = (Node_Sub3) Static308.aClass63_1.method1612()) {

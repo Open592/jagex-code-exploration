@@ -1,5 +1,6 @@
 package com.jagex.client;
 
+import com.jagex.client.ds.LinkedList;
 import com.jagex.client.js5.Js5;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalMember;
@@ -119,7 +120,7 @@ public final class Static148 {
 	public static int anInt5719 = (int) (Math.random() * 11.0D) - 5;
 
 	@OriginalMember(owner = "client!hj", name = "o", descriptor = "Lclient!pk;")
-	public static final Class183 aClass183_41 = new Class183();
+	public static final LinkedList A_LINKED_LIST___41 = new LinkedList();
 
 	@OriginalMember(owner = "client!hj", name = "p", descriptor = "[S")
 	private static final short[] aShortArray198 = new short[1];
@@ -683,7 +684,7 @@ public final class Static148 {
 	}
 
 	@OriginalMember(owner = "client!hj", name = "a", descriptor = "(Lclient!ya;)Lclient!pk;")
-	public static Class183 method4501(@OriginalArg(0) Class19 arg0) {
+	public static LinkedList method4501(@OriginalArg(0) Class19 arg0) {
 		@Pc(3) int local3 = anInt5728 - anInt5726;
 		@Pc(7) int local7 = anInt5722 - anInt5725;
 		@Pc(15) int local15 = (anInt5731 - anInt5723 << 16) / local3;
@@ -712,7 +713,7 @@ public final class Static148 {
 				@Pc(42) Node_Sub3 local42 = new Node_Sub3(aClass195_3.anIntArray396[local4]);
 				local42.anInt233 = local2[1] - anInt5732;
 				local42.anInt228 = local2[2] - anInt5724;
-				aClass183_41.method4137(local42);
+				A_LINKED_LIST___41.addFirst(local42);
 			}
 		}
 	}
@@ -780,7 +781,7 @@ public final class Static148 {
 									@Pc(70) Node_Sub3 local70 = new Node_Sub3(local49);
 									local70.anInt233 = local1;
 									local70.anInt228 = local4;
-									aClass183_41.method4137(local70);
+									A_LINKED_LIST___41.addFirst(local70);
 								}
 							}
 						}
@@ -797,7 +798,7 @@ public final class Static148 {
 							@Pc(118) Node_Sub3 local118 = new Node_Sub3(local35);
 							local118.anInt233 = local1;
 							local118.anInt228 = local4;
-							aClass183_41.method4137(local118);
+							A_LINKED_LIST___41.addFirst(local118);
 						}
 					}
 				}
@@ -823,7 +824,7 @@ public final class Static148 {
 										@Pc(201) Node_Sub3 local201 = new Node_Sub3(local180);
 										local201.anInt233 = (local15 + (anInt5732 >> 6)) * 64 + local160.aByte74 - anInt5732;
 										local201.anInt228 = (local144 + (anInt5724 >> 6)) * 64 + local160.aByte73 - anInt5724;
-										aClass183_41.method4137(local201);
+										A_LINKED_LIST___41.addFirst(local201);
 									}
 								}
 							}
@@ -846,11 +847,11 @@ public final class Static148 {
 	}
 
 	@OriginalMember(owner = "client!hj", name = "b", descriptor = "(Lclient!ya;IIII)Lclient!pk;")
-	private static Class183 method4507(@OriginalArg(0) Class19 arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2) {
-		for (@Pc(4) Node_Sub3 local4 = (Node_Sub3) aClass183_41.method4140(); local4 != null; local4 = (Node_Sub3) aClass183_41.method4144()) {
+	private static LinkedList method4507(@OriginalArg(0) Class19 arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2) {
+		for (@Pc(4) Node_Sub3 local4 = (Node_Sub3) A_LINKED_LIST___41.tail(); local4 != null; local4 = (Node_Sub3) A_LINKED_LIST___41.previous()) {
 			method4499(arg0, local4, arg1, arg2);
 		}
-		return aClass183_41;
+		return A_LINKED_LIST___41;
 	}
 
 	@OriginalMember(owner = "client!hj", name = "b", descriptor = "(Lclient!ya;)V")

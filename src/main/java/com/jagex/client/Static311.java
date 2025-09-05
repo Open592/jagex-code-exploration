@@ -102,7 +102,7 @@ public final class Static311 {
 			}
 		}
 		Static203.method3177(local92, local97);
-		for (@Pc(418) Node_Sub9 local418 = (Node_Sub9) Static115.aClass183_15.method4140(); local418 != null; local418 = (Node_Sub9) Static115.aClass183_15.method4144()) {
+		for (@Pc(418) Node_Sub9 local418 = (Node_Sub9) Static115.aLinkedList_15.tail(); local418 != null; local418 = (Node_Sub9) Static115.aLinkedList_15.previous()) {
 			local418.anInt790 -= local97;
 			local418.anInt793 -= local92;
 			if (Static448.anInt7307 != 3 && (local418.anInt793 < 0 || local418.anInt790 < 0 || local418.anInt793 >= Static326.anInt5666 || local418.anInt790 >= Static283.anInt5187)) {
@@ -134,8 +134,8 @@ public final class Static311 {
 		}
 		Static103.method1816();
 		Static277.method3932();
-		Static292.aClass183_36.method4138();
-		Static27.aClass183_2.method4138();
+		Static292.A_LINKED_LIST___36.clear();
+		Static27.A_LINKED_LIST___2.clear();
 		GameShell.aClass84_4.method2310();
 		Static9.method90();
 	}

@@ -1,5 +1,6 @@
 package com.jagex.client;
 
+import com.jagex.client.ds.LinkedList;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;
@@ -7,7 +8,7 @@ import org.openrs2.deob.annotation.Pc;
 public final class Static298 {
 
 	@OriginalMember(owner = "client!pb", name = "d", descriptor = "Lclient!pk;")
-	public static final Class183 aClass183_38 = new Class183();
+	public static final LinkedList A_LINKED_LIST___38 = new LinkedList();
 
 	@OriginalMember(owner = "client!pb", name = "e", descriptor = "Lclient!gk;")
 	public static final LocalizedString A_LOCALIZED_STRING___112 = new LocalizedString("slide:", "gleiten:", "glissement:", "deslizamento:");

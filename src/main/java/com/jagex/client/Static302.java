@@ -803,7 +803,7 @@ public final class Static302 {
 		local379.anInt1542 = local31 + local16;
 		local379.anInt1541 = local251;
 		local379.anInt1543 = local253;
-		Static378.aClass183_29.method4137(local379);
+		Static378.aLinkedList_29.addFirst(local379);
 	}
 
 	@OriginalMember(owner = "client!pf", name = "a", descriptor = "(IZIII)V")

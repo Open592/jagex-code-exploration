@@ -1,5 +1,6 @@
 package com.jagex.client;
 
+import com.jagex.client.ds.LinkedList;
 import com.jagex.client.js5.Js5;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalMember;
@@ -40,7 +41,7 @@ public final class Static315 {
 		Static188.anInt5352 = Static314.anInt5471 - (int) ((float) arg1 / Static148.aFloat178);
 		Static148.method4513(local108 + Static148.anInt5732, local33 + Static148.anInt5724, Static148.anInt5732 + local52, Static148.anInt5724 + local146, arg0, arg5, arg0 + arg1, arg4 + arg5 - -1);
 		Static148.method4508(arg3);
-		@Pc(201) Class183 local201 = Static148.method4501(arg3);
+		@Pc(201) LinkedList local201 = Static148.method4501(arg3);
 		Static382.method5042(local201, arg3);
 		if (Static140.anInt2835 > 0) {
 			Static274.anInt5136--;

@@ -298,8 +298,7 @@ public final class Bzip2Decompressor {
 
 	@OriginalMember(owner = "client!h", name = "a", descriptor = "([BI[BII)I")
 	public static int uncompress(@OriginalArg(0) byte[] arg0, @OriginalArg(1) int arg1, @OriginalArg(2) byte[] arg2) {
-		@Pc(1) Class44 local1 = aClass44_1;
-		synchronized (aClass44_1) {
+        synchronized (aClass44_1) {
 			aClass44_1.aByteArray11 = arg2;
 			aClass44_1.anInt1103 = 9;
 			aClass44_1.aByteArray9 = arg0;

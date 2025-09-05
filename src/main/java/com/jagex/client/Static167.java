@@ -1,5 +1,6 @@
 package com.jagex.client;
 
+import com.jagex.client.ds.LinkedList;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;
@@ -54,11 +55,11 @@ public final class Static167 {
 		for (@Pc(5689) int local5689 = 0; local5689 < 32768; local5689++) {
 			Static143.aClass16_Sub1_Sub5_Sub2Array1[local5689] = null;
 		}
-		Static27.aClass183_2.method4138();
-		Static292.aClass183_36.method4138();
+		Static27.A_LINKED_LIST___2.clear();
+		Static292.A_LINKED_LIST___36.clear();
 		GameShell.aClass84_4.method2310();
 		Static440.aHashMap_40.clear();
-		Static115.aClass183_15 = new Class183();
+		Static115.aLinkedList_15 = new LinkedList();
 		Static49.anInt2346 = 0;
 		Static376.anInt6277 = 0;
 		Static257.aClass114_1.method2829();

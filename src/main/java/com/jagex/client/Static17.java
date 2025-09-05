@@ -24,9 +24,9 @@ public final class Static17 {
 		if (Static341.aBoolean599 && Static407.anInt6710 < 2) {
 			local38 = Static388.aString62 + Static146.A_LOCALIZED_STRING___10.getLocalizedString(ClientSettings.langID) + Static49.aString28 + " ->";
 		} else if (Static434.isShiftClickEnabled && Static384.aClass244_1.method5489(81) && Static407.anInt6710 > 2) {
-			local38 = Static200.method3166((Node_Sub39) Static206.aClass183_28.aNode_207.next.next);
+			local38 = Static200.method3166((Node_Sub39) Static206.A_LINKED_LIST___28.sentinelNode.next.next);
 		} else {
-			@Pc(55) Node_Sub39 local55 = (Node_Sub39) Static206.aClass183_28.aNode_207.next;
+			@Pc(55) Node_Sub39 local55 = (Node_Sub39) Static206.A_LINKED_LIST___28.sentinelNode.next;
 			local38 = Static200.method3166(local55);
 			@Pc(61) int[] local61 = null;
 			if (Static441.method5569(local55.anInt5699)) {

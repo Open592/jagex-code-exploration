@@ -73,10 +73,10 @@ public final class Static308 {
 			Static402.anInt6662 = -1;
 			Static85.anInt1763 = -1;
 		}
-		if (!Static423.aBoolean653 || Static378.aClass183_29 == null) {
+		if (!Static423.aBoolean653 || Static378.aLinkedList_29 == null) {
 			return;
 		}
-		for (@Pc(177) Node_Sub14 local177 = (Node_Sub14) Static378.aClass183_29.method4140(); local177 != null; local177 = (Node_Sub14) Static378.aClass183_29.method4144()) {
+		for (@Pc(177) Node_Sub14 local177 = (Node_Sub14) Static378.aLinkedList_29.tail(); local177 != null; local177 = (Node_Sub14) Static378.aLinkedList_29.previous()) {
 			@Pc(186) Class157 local186 = Static148.aClass182_3.method4124(local177.aClass4_Sub3_1.anInt234);
 			if (local177.method1370(arg1, arg0)) {
 				if (local186.aStringArray19 != null) {

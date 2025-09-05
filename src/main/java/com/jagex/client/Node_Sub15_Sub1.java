@@ -110,7 +110,7 @@ public final class Node_Sub15_Sub1 extends Node_Sub15 {
 
 	@OriginalMember(owner = "client!dv", name = "a", descriptor = "(II)V")
 	private void method1421(@OriginalArg(1) int arg0) {
-		for (@Pc(8) Node_Sub28 local8 = (Node_Sub28) this.aClass4_Sub15_Sub4_1.aClass183_44.method4140(); local8 != null; local8 = (Node_Sub28) this.aClass4_Sub15_Sub4_1.aClass183_44.method4144()) {
+		for (@Pc(8) Node_Sub28 local8 = (Node_Sub28) this.aClass4_Sub15_Sub4_1.aLinkedList_44.tail(); local8 != null; local8 = (Node_Sub28) this.aClass4_Sub15_Sub4_1.aLinkedList_44.previous()) {
 			if (arg0 < 0 || arg0 == local8.anInt4386) {
 				if (local8.aClass4_Sub15_Sub3_3 != null) {
 					local8.aClass4_Sub15_Sub3_3.method4490(Static261.anInt4928 / 100);
@@ -291,7 +291,7 @@ public final class Node_Sub15_Sub1 extends Node_Sub15 {
 	private void method1424(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2) {
 		this.method1452(arg0, 64, arg1);
 		if ((this.anIntArray133[arg0] & 0x2) != 0) {
-			for (@Pc(28) Node_Sub28 local28 = (Node_Sub28) this.aClass4_Sub15_Sub4_1.aClass183_44.method4139(); local28 != null; local28 = (Node_Sub28) this.aClass4_Sub15_Sub4_1.aClass183_44.method4145()) {
+			for (@Pc(28) Node_Sub28 local28 = (Node_Sub28) this.aClass4_Sub15_Sub4_1.aLinkedList_44.head(); local28 != null; local28 = (Node_Sub28) this.aClass4_Sub15_Sub4_1.aLinkedList_44.next()) {
 				if (arg0 == local28.anInt4386 && local28.anInt4394 < 0) {
 					this.aClass4_Sub28ArrayArray1[arg0][local28.anInt4384] = null;
 					this.aClass4_Sub28ArrayArray1[arg0][arg1] = local28;
@@ -344,7 +344,7 @@ public final class Node_Sub15_Sub1 extends Node_Sub15 {
 			}
 			this.aClass4_Sub28ArrayArray2[arg0][local130.anInt4385] = local130;
 		}
-		this.aClass4_Sub15_Sub4_1.aClass183_44.method4137(local130);
+		this.aClass4_Sub15_Sub4_1.aLinkedList_44.addFirst(local130);
 		this.aClass4_Sub28ArrayArray1[arg0][arg1] = local130;
 	}
 
@@ -389,7 +389,7 @@ public final class Node_Sub15_Sub1 extends Node_Sub15 {
 
 	@OriginalMember(owner = "client!dv", name = "b", descriptor = "(ZI)V")
 	private void method1429(@OriginalArg(1) int arg0) {
-		for (@Pc(19) Node_Sub28 local19 = (Node_Sub28) this.aClass4_Sub15_Sub4_1.aClass183_44.method4140(); local19 != null; local19 = (Node_Sub28) this.aClass4_Sub15_Sub4_1.aClass183_44.method4144()) {
+		for (@Pc(19) Node_Sub28 local19 = (Node_Sub28) this.aClass4_Sub15_Sub4_1.aLinkedList_44.tail(); local19 != null; local19 = (Node_Sub28) this.aClass4_Sub15_Sub4_1.aLinkedList_44.previous()) {
 			if ((arg0 < 0 || local19.anInt4386 == arg0) && local19.anInt4394 < 0) {
 				this.aClass4_Sub28ArrayArray1[local19.anInt4386][local19.anInt4384] = null;
 				local19.anInt4394 = 0;
@@ -634,7 +634,7 @@ public final class Node_Sub15_Sub1 extends Node_Sub15 {
 		if ((this.anIntArray133[arg0] & 0x4) == 0) {
 			return;
 		}
-		for (@Pc(26) Node_Sub28 local26 = (Node_Sub28) this.aClass4_Sub15_Sub4_1.aClass183_44.method4140(); local26 != null; local26 = (Node_Sub28) this.aClass4_Sub15_Sub4_1.aClass183_44.method4144()) {
+		for (@Pc(26) Node_Sub28 local26 = (Node_Sub28) this.aClass4_Sub15_Sub4_1.aLinkedList_44.tail(); local26 != null; local26 = (Node_Sub28) this.aClass4_Sub15_Sub4_1.aLinkedList_44.previous()) {
 			if (local26.anInt4386 == arg0) {
 				local26.anInt4391 = 0;
 			}
@@ -764,7 +764,7 @@ public final class Node_Sub15_Sub1 extends Node_Sub15 {
 		if ((this.anIntArray133[arg0] & 0x2) == 0) {
 			return;
 		}
-		for (@Pc(18) Node_Sub28 local18 = (Node_Sub28) this.aClass4_Sub15_Sub4_1.aClass183_44.method4140(); local18 != null; local18 = (Node_Sub28) this.aClass4_Sub15_Sub4_1.aClass183_44.method4144()) {
+		for (@Pc(18) Node_Sub28 local18 = (Node_Sub28) this.aClass4_Sub15_Sub4_1.aLinkedList_44.tail(); local18 != null; local18 = (Node_Sub28) this.aClass4_Sub15_Sub4_1.aLinkedList_44.previous()) {
 			if (local18.anInt4386 == arg0 && this.aClass4_Sub28ArrayArray1[arg0][local18.anInt4384] == null && local18.anInt4394 < 0) {
 				local18.anInt4394 = 0;
 			}
@@ -804,7 +804,7 @@ public final class Node_Sub15_Sub1 extends Node_Sub15 {
 			local12.anInt4394 = 0;
 			return;
 		}
-		for (@Pc(49) Node_Sub28 local49 = (Node_Sub28) this.aClass4_Sub15_Sub4_1.aClass183_44.method4140(); local49 != null; local49 = (Node_Sub28) this.aClass4_Sub15_Sub4_1.aClass183_44.method4144()) {
+		for (@Pc(49) Node_Sub28 local49 = (Node_Sub28) this.aClass4_Sub15_Sub4_1.aLinkedList_44.tail(); local49 != null; local49 = (Node_Sub28) this.aClass4_Sub15_Sub4_1.aLinkedList_44.previous()) {
 			if (local12.anInt4386 == local49.anInt4386 && local49.anInt4394 < 0 && local49 != local12) {
 				local12.anInt4394 = 0;
 				return;

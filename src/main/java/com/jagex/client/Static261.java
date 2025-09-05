@@ -23,12 +23,12 @@ public final class Static261 {
 
 	@OriginalMember(owner = "client!nf", name = "a", descriptor = "(B)V")
 	public static void method3775() {
-		for (@Pc(10) Node_Sub8 local10 = (Node_Sub8) Static281.aClass183_34.method4140(); local10 != null; local10 = (Node_Sub8) Static281.aClass183_34.method4144()) {
+		for (@Pc(10) Node_Sub8 local10 = (Node_Sub8) Static281.A_LINKED_LIST___34.tail(); local10 != null; local10 = (Node_Sub8) Static281.A_LINKED_LIST___34.previous()) {
 			if (local10.aBoolean66) {
 				local10.method638();
 			}
 		}
-		for (@Pc(30) Node_Sub8 local30 = (Node_Sub8) Static143.aClass183_20.method4140(); local30 != null; local30 = (Node_Sub8) Static143.aClass183_20.method4144()) {
+		for (@Pc(30) Node_Sub8 local30 = (Node_Sub8) Static143.A_LINKED_LIST___20.tail(); local30 != null; local30 = (Node_Sub8) Static143.A_LINKED_LIST___20.previous()) {
 			if (local30.aBoolean66) {
 				local30.method638();
 			}

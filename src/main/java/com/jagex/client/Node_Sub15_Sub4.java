@@ -1,5 +1,6 @@
 package com.jagex.client;
 
+import com.jagex.client.ds.LinkedList;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalClass;
 import org.openrs2.deob.annotation.OriginalMember;
@@ -9,7 +10,7 @@ import org.openrs2.deob.annotation.Pc;
 public final class Node_Sub15_Sub4 extends Node_Sub15 {
 
 	@OriginalMember(owner = "client!se", name = "u", descriptor = "Lclient!pk;")
-	public final Class183 aClass183_44 = new Class183();
+	public final LinkedList aLinkedList_44 = new LinkedList();
 
 	@OriginalMember(owner = "client!se", name = "w", descriptor = "Lclient!jl;")
 	public final Node_Sub15_Sub2 aClass4_Sub15_Sub2_1 = new Node_Sub15_Sub2();
@@ -27,7 +28,7 @@ public final class Node_Sub15_Sub4 extends Node_Sub15 {
 	public Node_Sub15 method4857() {
 		@Pc(9) Node_Sub28 local9;
 		do {
-			local9 = (Node_Sub28) this.aClass183_44.method4144();
+			local9 = (Node_Sub28) this.aLinkedList_44.previous();
 			if (local9 == null) {
 				return null;
 			}
@@ -39,7 +40,7 @@ public final class Node_Sub15_Sub4 extends Node_Sub15 {
 	@Override
 	public void method4855(@OriginalArg(0) int[] arg0, @OriginalArg(1) int arg1, @OriginalArg(2) int arg2) {
 		this.aClass4_Sub15_Sub2_1.method4855(arg0, arg1, arg2);
-		for (@Pc(17) Node_Sub28 local17 = (Node_Sub28) this.aClass183_44.method4140(); local17 != null; local17 = (Node_Sub28) this.aClass183_44.method4144()) {
+		for (@Pc(17) Node_Sub28 local17 = (Node_Sub28) this.aLinkedList_44.tail(); local17 != null; local17 = (Node_Sub28) this.aLinkedList_44.previous()) {
 			if (!this.aClass4_Sub15_Sub1_2.method1430(local17)) {
 				@Pc(27) int local27 = arg1;
 				@Pc(29) int local29 = arg2;
@@ -82,7 +83,7 @@ public final class Node_Sub15_Sub4 extends Node_Sub15 {
 	@OriginalMember(owner = "client!se", name = "d", descriptor = "()Lclient!ti;")
 	@Override
 	public Node_Sub15 method4860() {
-		@Pc(9) Node_Sub28 local9 = (Node_Sub28) this.aClass183_44.method4140();
+		@Pc(9) Node_Sub28 local9 = (Node_Sub28) this.aLinkedList_44.tail();
 		if (local9 == null) {
 			return null;
 		} else if (local9.aClass4_Sub15_Sub3_3 == null) {
@@ -136,7 +137,7 @@ public final class Node_Sub15_Sub4 extends Node_Sub15 {
 	@Override
 	public void method4861(@OriginalArg(0) int arg0) {
 		this.aClass4_Sub15_Sub2_1.method4861(arg0);
-		for (@Pc(15) Node_Sub28 local15 = (Node_Sub28) this.aClass183_44.method4140(); local15 != null; local15 = (Node_Sub28) this.aClass183_44.method4144()) {
+		for (@Pc(15) Node_Sub28 local15 = (Node_Sub28) this.aLinkedList_44.tail(); local15 != null; local15 = (Node_Sub28) this.aLinkedList_44.previous()) {
 			if (!this.aClass4_Sub15_Sub1_2.method1430(local15)) {
 				@Pc(25) int local25 = arg0;
 				do {

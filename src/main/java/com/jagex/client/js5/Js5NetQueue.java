@@ -162,7 +162,7 @@ public final class Js5NetQueue {
 
 		try {
 			this.outgoingPacket.pos = 0;
-			this.outgoingPacket.p1(6);
+			this.outgoingPacket.p1(JS5RequestOpCodes.JS5_CONNECTION_START);
 			this.outgoingPacket.p3(3);
 			this.serverConnection.write(4, this.outgoingPacket.data);
 		} catch (@Pc(38) IOException local38) {

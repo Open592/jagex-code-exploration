@@ -893,7 +893,7 @@ public final class Static271 {
 								local3254.aClass247_15 = local137;
 								local3254.anObjectArray4 = local137.anObjectArray7;
 								local3254.anInt5249 = anInt5099 + 1;
-								Static291.aClass183_35.method4137(local3254);
+								Static291.A_LINKED_LIST___35.addFirst(local3254);
 								return;
 							}
 						} else if (arg0 < 2600) {

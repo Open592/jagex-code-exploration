@@ -473,7 +473,7 @@ public final class client extends GameShell {
 			Static419.aLong212 = MonotonicClock.getCurrentTimeInMilliseconds() + 30000L;
 		}
 
-		@Pc(99) Node_Sub5 local99 = (Node_Sub5) Static413.aClass183_47.method4140();
+		@Pc(99) Node_Sub5 local99 = (Node_Sub5) Static413.A_LINKED_LIST___47.tail();
 		@Pc(119) int local119;
 		@Pc(140) int local140;
 		@Pc(159) int local159;
@@ -486,7 +486,7 @@ public final class client extends GameShell {
 			@Pc(116) boolean local116 = false;
 			local119 = Static3.aClass4_Sub12_Sub1_5.pos;
 
-			for (@Pc(124) Node_Sub5 local124 = (Node_Sub5) Static348.aClass183_42.method4140(); local124 != null && Static3.aClass4_Sub12_Sub1_5.pos - local119 < 240; local124 = (Node_Sub5) Static348.aClass183_42.method4144()) {
+			for (@Pc(124) Node_Sub5 local124 = (Node_Sub5) Static348.A_LINKED_LIST___42.tail(); local124 != null && Static3.aClass4_Sub12_Sub1_5.pos - local119 < 240; local124 = (Node_Sub5) Static348.A_LINKED_LIST___42.previous()) {
 				local124.popSelf();
 				local140 = local124.method519();
 				if (local140 < 0) {
@@ -825,15 +825,15 @@ public final class client extends GameShell {
 			@Pc(1462) Node_Sub34 local1462;
 			@Pc(1467) Class247 local1467;
 			do {
-				local1462 = (Node_Sub34) Static237.aClass183_52.method4136();
+				local1462 = (Node_Sub34) Static237.A_LINKED_LIST___52.pollLast();
 				if (local1462 == null) {
 					while (true) {
 						do {
-							local1462 = (Node_Sub34) Static39.aClass183_3.method4136();
+							local1462 = (Node_Sub34) Static39.A_LINKED_LIST___3.pollLast();
 							if (local1462 == null) {
 								while (true) {
 									do {
-										local1462 = (Node_Sub34) Static291.aClass183_35.method4136();
+										local1462 = (Node_Sub34) Static291.A_LINKED_LIST___35.pollLast();
 										if (local1462 == null) {
 											if (Static81.aClass247_2 == null) {
 												Static64.anInt1367 = 0;
@@ -2492,7 +2492,7 @@ public final class client extends GameShell {
 														local3138 = local2473 + 1;
 													}
 													@Pc(3173) Class16_Sub1_Sub2 local3173 = new Class16_Sub1_Sub2(local70, 0, gameLogicStepCount, local2473, local3138, local2494, Static13.method135(local2494, local2473, local2648) - local224, local2648, local1263, local1263, local1267, local1267, local228);
-													Static292.aClass183_36.method4137(new SecondaryNode_Sub1_Sub10(local3173));
+													Static292.A_LINKED_LIST___36.addFirst(new SecondaryNode_Sub1_Sub10(local3173));
 												}
 											}
 											Static300.aClass22_246 = null;
@@ -3139,7 +3139,7 @@ public final class client extends GameShell {
 															Static443.method5595(Static113.anInt2426, local70, local335);
 														}
 													}
-													for (@Pc(5544) Node_Sub9 local5544 = (Node_Sub9) Static115.aClass183_15.method4140(); local5544 != null; local5544 = (Node_Sub9) Static115.aClass183_15.method4144()) {
+													for (@Pc(5544) Node_Sub9 local5544 = (Node_Sub9) Static115.aLinkedList_15.tail(); local5544 != null; local5544 = (Node_Sub9) Static115.aLinkedList_15.previous()) {
 														if (Static154.anInt813 <= local5544.anInt793 && Static154.anInt813 + 8 > local5544.anInt793 && local5544.anInt790 >= Static385.anInt6487 && Static385.anInt6487 + 8 > local5544.anInt790 && Static113.anInt2426 == local5544.anInt800) {
 															local5544.anInt796 = 0;
 														}
@@ -3481,7 +3481,7 @@ public final class client extends GameShell {
 				local202 <<= 0x0;
 				local309 = new Class16_Sub1_Sub3(local190, Static113.anInt2426, local40, local49, local196, local206 + gameLogicStepCount, local210 + gameLogicStepCount, local214, local223, local186, local202, local155);
 				local309.method2197(gameLogicStepCount + local206, local55, Static13.method135(local55, Static113.anInt2426, local126) - local202, local126);
-				Static27.aClass183_2.method4137(new SecondaryNode_Sub1_Sub7(local309));
+				Static27.A_LINKED_LIST___2.addFirst(new SecondaryNode_Sub1_Sub7(local309));
 			}
 		} else if (Static420.aClass21_16 == arg0) {
 			local12 = Static146.aClass4_Sub12_Sub1_3.g2_alt3();
@@ -3491,13 +3491,13 @@ public final class client extends GameShell {
 			if (local40 >= 0 && local49 >= 0 && Static326.anInt5666 > local40 && local49 < Static283.anInt5187) {
 				@Pc(395) Node_Sub18 local395 = (Node_Sub18) Static440.aHashMap_40.get((long) (Static113.anInt2426 << 28 | local49 << 14 | local40));
 				if (local395 != null) {
-					for (@Pc(403) Node_Sub45 local403 = (Node_Sub45) local395.aClass183_14.method4140(); local403 != null; local403 = (Node_Sub45) local395.aClass183_14.method4144()) {
+					for (@Pc(403) Node_Sub45 local403 = (Node_Sub45) local395.aLinkedList_14.tail(); local403 != null; local403 = (Node_Sub45) local395.aLinkedList_14.previous()) {
 						if (local403.anInt7355 == (local12 & 0x7FFF)) {
 							local403.popSelf();
 							break;
 						}
 					}
-					if (local395.aClass183_14.method4147()) {
+					if (local395.aLinkedList_14.isEmpty()) {
 						local395.popSelf();
 					}
 					Static443.method5595(Static113.anInt2426, local40, local49);
@@ -3598,7 +3598,7 @@ public final class client extends GameShell {
 					}
 					@Pc(918) Class16_Sub1_Sub3 local918 = new Class16_Sub1_Sub3(local196, Static113.anInt2426, local16, local40, local202, gameLogicStepCount + local210, local214 - -gameLogicStepCount, local223, local693, local190, local206, local635);
 					local918.method2197(local210 + gameLogicStepCount, local55, Static13.method135(local55, Static113.anInt2426, local126) - local206, local126);
-					Static27.aClass183_2.method4137(new SecondaryNode_Sub1_Sub7(local918));
+					Static27.A_LINKED_LIST___2.addFirst(new SecondaryNode_Sub1_Sub7(local918));
 				}
 			} else if (arg0 == Static152.aClass21_9) {
 				local12 = Static146.aClass4_Sub12_Sub1_3.g1();
@@ -3635,7 +3635,7 @@ public final class client extends GameShell {
 						local202++;
 					}
 					@Pc(1186) Class16_Sub1_Sub2 local1186 = new Class16_Sub1_Sub2(local49, local126, gameLogicStepCount, Static113.anInt2426, local202, local190, Static13.method135(local190, Static113.anInt2426, local196) - local55, local196, local16, local16, local40, local40, local186);
-					Static292.aClass183_36.method4137(new SecondaryNode_Sub1_Sub10(local1186));
+					Static292.A_LINKED_LIST___36.addFirst(new SecondaryNode_Sub1_Sub10(local1186));
 				}
 			} else if (Static106.aClass21_7 == arg0) {
 				local12 = Static146.aClass4_Sub12_Sub1_3.g1();
@@ -3647,7 +3647,7 @@ public final class client extends GameShell {
 				if (Static440.aHashMap_40 != null && local16 >= 0 && local40 >= 0 && Static326.anInt5666 > local16 && local40 < Static283.anInt5187) {
 					@Pc(1265) Node_Sub18 local1265 = (Node_Sub18) Static440.aHashMap_40.get((long) (local16 | local40 << 14 | Static113.anInt2426 << 28));
 					if (local1265 != null) {
-						for (@Pc(1273) Node_Sub45 local1273 = (Node_Sub45) local1265.aClass183_14.method4140(); local1273 != null; local1273 = (Node_Sub45) local1265.aClass183_14.method4144()) {
+						for (@Pc(1273) Node_Sub45 local1273 = (Node_Sub45) local1265.aLinkedList_14.tail(); local1273 != null; local1273 = (Node_Sub45) local1265.aLinkedList_14.previous()) {
 							if (local1273.anInt7355 == (local49 & 0x7FFF) && local55 == local1273.anInt7356) {
 								local1273.popSelf();
 								local1273.anInt7356 = local126;
@@ -3721,7 +3721,7 @@ public final class client extends GameShell {
 					local196 <<= 0x0;
 					local309 = new Class16_Sub1_Sub3(local190, Static113.anInt2426, local16, local40, local196, gameLogicStepCount + local206, local210 - -gameLogicStepCount, local214, local223, local186, local202, local635);
 					local309.method2197(local206 + gameLogicStepCount, local55, Static13.method135(local55, Static113.anInt2426, local126) - local202, local126);
-					Static27.aClass183_2.method4137(new SecondaryNode_Sub1_Sub7(local309));
+					Static27.A_LINKED_LIST___2.addFirst(new SecondaryNode_Sub1_Sub7(local309));
 				}
 			} else {
 				Static94.handleClientError(null, "T3 - " + arg0);
@@ -4146,15 +4146,15 @@ public final class client extends GameShell {
 			@Pc(316) Class247 local316;
 			@Pc(327) Class247 local327;
 			do {
-				local311 = (Node_Sub34) Static237.aClass183_52.method4136();
+				local311 = (Node_Sub34) Static237.A_LINKED_LIST___52.pollLast();
 				if (local311 == null) {
 					while (true) {
 						do {
-							local311 = (Node_Sub34) Static39.aClass183_3.method4136();
+							local311 = (Node_Sub34) Static39.A_LINKED_LIST___3.pollLast();
 							if (local311 == null) {
 								while (true) {
 									do {
-										local311 = (Node_Sub34) Static291.aClass183_35.method4136();
+										local311 = (Node_Sub34) Static291.A_LINKED_LIST___35.pollLast();
 										if (local311 == null) {
 											if (Static281.aClass247_12 != null) {
 												Static1.method3();
@@ -4248,12 +4248,12 @@ public final class client extends GameShell {
 		for (@Pc(168) Node_Sub5 local168 = Static420.aClass80_1.method2232(); local168 != null; local168 = Static420.aClass80_1.method2232()) {
 			@Pc(174) int local174 = local168.method515();
 			if (local174 == -1) {
-				Static348.aClass183_42.method4137(local168);
+				Static348.A_LINKED_LIST___42.addFirst(local168);
 			} else if (Static105.method1981(local174)) {
-				Static413.aClass183_47.method4137(local168);
+				Static413.A_LINKED_LIST___47.addFirst(local168);
 			}
-			if (Static413.aClass183_47.method4148() > 10) {
-				Static413.aClass183_47.method4136();
+			if (Static413.A_LINKED_LIST___47.count() > 10) {
+				Static413.A_LINKED_LIST___47.pollLast();
 			}
 		}
 		if (Static426.method5440()) {
@@ -4282,7 +4282,7 @@ public final class client extends GameShell {
 			}
 		}
 		Static79.method1400(Static122.aClass19_16);
-		Static413.aClass183_47.method4136();
+		Static413.A_LINKED_LIST___47.pollLast();
 	}
 
 	@OriginalMember(owner = "client!client", name = "init", descriptor = "()V")

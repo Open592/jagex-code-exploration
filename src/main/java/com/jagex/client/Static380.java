@@ -74,7 +74,7 @@ public final class Static380 {
 		if (!Static234.aBoolean411 && Static407.anInt6710 < 500) {
 			@Pc(16) int local16 = arg9 == -1 ? Static157.anInt3147 : arg9;
 			@Pc(30) Node_Sub39 local30 = new Node_Sub39(arg6, arg4, local16, arg0, arg8, arg2, arg3, arg7, arg5, arg1);
-			Static206.aClass183_28.method4137(local30);
+			Static206.A_LINKED_LIST___28.addFirst(local30);
 			Static407.anInt6710++;
 		}
 	}

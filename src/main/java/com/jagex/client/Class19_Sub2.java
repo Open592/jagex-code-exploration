@@ -1,5 +1,6 @@
 package com.jagex.client;
 
+import com.jagex.client.ds.LinkedList;
 import com.jagex.client.jaggl.OpenGL;
 import com.jagex.client.jaggl.memory.NativeBuffer;
 import com.jagex.client.jaggl.memory.NativeHeap;
@@ -301,7 +302,7 @@ public final class Class19_Sub2 extends Class19 {
 	private boolean aBoolean190 = false;
 
 	@OriginalMember(owner = "client!fd", name = "te", descriptor = "Lclient!pk;")
-	private final Class183 aClass183_6 = new Class183();
+	private final LinkedList aLinkedList_6 = new LinkedList();
 
 	@OriginalMember(owner = "client!fd", name = "ue", descriptor = "[Lclient!cp;")
 	private final Interface3[] anInterface3Array1 = new Interface3[4];
@@ -322,25 +323,25 @@ public final class Class19_Sub2 extends Class19 {
 	private int anInt2278 = -1;
 
 	@OriginalMember(owner = "client!fd", name = "De", descriptor = "Lclient!pk;")
-	private final Class183 aClass183_7;
+	private final LinkedList aLinkedList_7;
 
 	@OriginalMember(owner = "client!fd", name = "Ge", descriptor = "Lclient!pk;")
-	private final Class183 aClass183_8;
+	private final LinkedList aLinkedList_8;
 
 	@OriginalMember(owner = "client!fd", name = "He", descriptor = "Lclient!pk;")
-	private final Class183 aClass183_9;
+	private final LinkedList aLinkedList_9;
 
 	@OriginalMember(owner = "client!fd", name = "Ie", descriptor = "Lclient!pk;")
-	private final Class183 aClass183_10;
+	private final LinkedList aLinkedList_10;
 
 	@OriginalMember(owner = "client!fd", name = "Je", descriptor = "Lclient!pk;")
-	private final Class183 aClass183_11;
+	private final LinkedList aLinkedList_11;
 
 	@OriginalMember(owner = "client!fd", name = "Ke", descriptor = "Lclient!pk;")
-	private final Class183 aClass183_12;
+	private final LinkedList aLinkedList_12;
 
 	@OriginalMember(owner = "client!fd", name = "Le", descriptor = "Lclient!pk;")
-	private final Class183 aClass183_13;
+	private final LinkedList aLinkedList_13;
 
 	@OriginalMember(owner = "client!fd", name = "We", descriptor = "F")
 	public float aFloat58;
@@ -521,13 +522,13 @@ public final class Class19_Sub2 extends Class19 {
 		super(arg0, arg2);
 		new SecondaryLinkedList();
 		new HashMap(16);
-		this.aClass183_7 = new Class183();
-		this.aClass183_8 = new Class183();
-		this.aClass183_9 = new Class183();
-		this.aClass183_10 = new Class183();
-		this.aClass183_11 = new Class183();
-		this.aClass183_12 = new Class183();
-		this.aClass183_13 = new Class183();
+		this.aLinkedList_7 = new LinkedList();
+		this.aLinkedList_8 = new LinkedList();
+		this.aLinkedList_9 = new LinkedList();
+		this.aLinkedList_10 = new LinkedList();
+		this.aLinkedList_11 = new LinkedList();
+		this.aLinkedList_12 = new LinkedList();
+		this.aLinkedList_13 = new LinkedList();
 		this.aFloat58 = 1.0F;
 		this.anInt2282 = 0;
 		this.aFloatArray16 = new float[4];
@@ -914,7 +915,7 @@ public final class Class19_Sub2 extends Class19 {
 	@Override
 	public Node_Sub2 method4284(@OriginalArg(0) int arg0) {
 		@Pc(8) Node_Sub2_Sub1 local8 = new Node_Sub2_Sub1(arg0);
-		this.aClass183_6.method4137(local8);
+		this.aLinkedList_6.addFirst(local8);
 		return local8;
 	}
 
@@ -944,7 +945,7 @@ public final class Class19_Sub2 extends Class19 {
 	public synchronized void method1908(@OriginalArg(0) int arg0) {
 		@Pc(13) Node local13 = new Node();
 		local13.hashKey = arg0;
-		this.aClass183_12.method4137(local13);
+		this.aLinkedList_12.addFirst(local13);
 	}
 
 	@OriginalMember(owner = "client!fd", name = "a", descriptor = "(B)V")
@@ -993,7 +994,7 @@ public final class Class19_Sub2 extends Class19 {
 	public synchronized void method1910(@OriginalArg(1) int arg0, @OriginalArg(2) int arg1) {
 		@Pc(8) Node_Sub37 local8 = new Node_Sub37(arg0);
 		local8.hashKey = arg1;
-		this.aClass183_11.method4137(local8);
+		this.aLinkedList_11.addFirst(local8);
 	}
 
 	@OriginalMember(owner = "client!fd", name = "x", descriptor = "()Z")
@@ -1477,8 +1478,8 @@ public final class Class19_Sub2 extends Class19 {
 		@Pc(9) int local9 = arg0 & Integer.MAX_VALUE;
 		@Pc(11) int local11 = 0;
 		@Pc(19) Node_Sub37 local19;
-		while (!this.aClass183_8.method4147()) {
-			local19 = (Node_Sub37) this.aClass183_8.method4136();
+		while (!this.aLinkedList_8.isEmpty()) {
+			local19 = (Node_Sub37) this.aLinkedList_8.pollLast();
 			Static429.anIntArray537[local11++] = (int) local19.hashKey;
 			this.anInt2280 -= local19.anInt5426;
 			if (local11 == 1000) {
@@ -1490,8 +1491,8 @@ public final class Class19_Sub2 extends Class19 {
 			OpenGL.glDeleteBuffersARB(local11, Static429.anIntArray537, 0);
 			local11 = 0;
 		}
-		while (!this.aClass183_9.method4147()) {
-			local19 = (Node_Sub37) this.aClass183_9.method4136();
+		while (!this.aLinkedList_9.isEmpty()) {
+			local19 = (Node_Sub37) this.aLinkedList_9.pollLast();
 			Static429.anIntArray537[local11++] = (int) local19.hashKey;
 			this.anInt2279 -= local19.anInt5426;
 			if (local11 == 1000) {
@@ -1503,8 +1504,8 @@ public final class Class19_Sub2 extends Class19 {
 			OpenGL.glDeleteTextures(local11, Static429.anIntArray537, 0);
 			local11 = 0;
 		}
-		while (!this.aClass183_10.method4147()) {
-			local19 = (Node_Sub37) this.aClass183_10.method4136();
+		while (!this.aLinkedList_10.isEmpty()) {
+			local19 = (Node_Sub37) this.aLinkedList_10.pollLast();
 			Static429.anIntArray537[local11++] = local19.anInt5426;
 			if (local11 == 1000) {
 				OpenGL.glDeleteFramebuffersEXT(local11, Static429.anIntArray537, 0);
@@ -1515,8 +1516,8 @@ public final class Class19_Sub2 extends Class19 {
 			OpenGL.glDeleteFramebuffersEXT(local11, Static429.anIntArray537, 0);
 			local11 = 0;
 		}
-		while (!this.aClass183_11.method4147()) {
-			local19 = (Node_Sub37) this.aClass183_11.method4136();
+		while (!this.aLinkedList_11.isEmpty()) {
+			local19 = (Node_Sub37) this.aLinkedList_11.pollLast();
 			Static429.anIntArray537[local11++] = (int) local19.hashKey;
 			this.anInt2281 -= local19.anInt5426;
 			if (local11 == 1000) {
@@ -1527,21 +1528,21 @@ public final class Class19_Sub2 extends Class19 {
 		if (local11 > 0) {
 			OpenGL.glDeleteRenderbuffersEXT(local11, Static429.anIntArray537, 0);
 		}
-		while (!this.aClass183_7.method4147()) {
-			local19 = (Node_Sub37) this.aClass183_7.method4136();
+		while (!this.aLinkedList_7.isEmpty()) {
+			local19 = (Node_Sub37) this.aLinkedList_7.pollLast();
 			OpenGL.glDeleteLists((int) local19.hashKey, local19.anInt5426);
 		}
 		@Pc(215) Node local215;
-		while (!this.aClass183_12.method4147()) {
-			local215 = this.aClass183_12.method4136();
+		while (!this.aLinkedList_12.isEmpty()) {
+			local215 = this.aLinkedList_12.pollLast();
 			OpenGL.glDeleteProgramARB((int) local215.hashKey);
 		}
-		while (!this.aClass183_13.method4147()) {
-			local215 = this.aClass183_13.method4136();
+		while (!this.aLinkedList_13.isEmpty()) {
+			local215 = this.aLinkedList_13.pollLast();
 			OpenGL.glDeleteObjectARB(local215.hashKey);
 		}
-		while (!this.aClass183_7.method4147()) {
-			local19 = (Node_Sub37) this.aClass183_7.method4136();
+		while (!this.aLinkedList_7.isEmpty()) {
+			local19 = (Node_Sub37) this.aLinkedList_7.pollLast();
 			OpenGL.glDeleteLists((int) local19.hashKey, local19.anInt5426);
 		}
 		this.aClass59_1.method1545();
@@ -1849,7 +1850,7 @@ public final class Class19_Sub2 extends Class19 {
 	public synchronized void method1939(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1) {
 		@Pc(12) Node_Sub37 local12 = new Node_Sub37(arg1);
 		local12.hashKey = arg0;
-		this.aClass183_8.method4137(local12);
+		this.aLinkedList_8.addFirst(local12);
 	}
 
 	@OriginalMember(owner = "client!fd", name = "q", descriptor = "()Z")
@@ -1903,7 +1904,7 @@ public final class Class19_Sub2 extends Class19 {
 	@OriginalMember(owner = "client!fd", name = "c", descriptor = "(ZI)V")
 	public synchronized void method1941(@OriginalArg(1) int arg0) {
 		@Pc(12) Node_Sub37 local12 = new Node_Sub37(arg0);
-		this.aClass183_10.method4137(local12);
+		this.aLinkedList_10.addFirst(local12);
 	}
 
 	@OriginalMember(owner = "client!fd", name = "a", descriptor = "(Lclient!tu;I)V")
@@ -2039,7 +2040,7 @@ public final class Class19_Sub2 extends Class19 {
 	@OriginalMember(owner = "client!fd", name = "c", descriptor = "()V")
 	@Override
 	protected void method4239() {
-		for (@Pc(6) Node local6 = this.aClass183_6.method4140(); local6 != null; local6 = this.aClass183_6.method4144()) {
+		for (@Pc(6) Node local6 = this.aLinkedList_6.tail(); local6 != null; local6 = this.aLinkedList_6.previous()) {
 			((Node_Sub2_Sub1) local6).method104();
 		}
 		if (this.aClass260_1 != null) {
@@ -2823,7 +2824,7 @@ public final class Class19_Sub2 extends Class19 {
 	public synchronized void method1973(@OriginalArg(1) long arg0) {
 		@Pc(7) Node local7 = new Node();
 		local7.hashKey = arg0;
-		this.aClass183_13.method4137(local7);
+		this.aLinkedList_13.addFirst(local7);
 	}
 
 	@OriginalMember(owner = "client!fd", name = "H", descriptor = "(IIII)V")
@@ -2998,6 +2999,6 @@ public final class Class19_Sub2 extends Class19 {
 	public synchronized void method1978(@OriginalArg(0) int arg0, @OriginalArg(2) int arg1) {
 		@Pc(8) Node_Sub37 local8 = new Node_Sub37(arg1);
 		local8.hashKey = arg0;
-		this.aClass183_9.method4137(local8);
+		this.aLinkedList_9.addFirst(local8);
 	}
 }

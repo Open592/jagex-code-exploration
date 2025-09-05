@@ -98,6 +98,6 @@ public final class Static95 {
 				local13.anIntArray351[local55] = -5;
 			}
 		}
-		Static421.aClass183_48.method4137(local13);
+		Static421.aLinkedList_48.addFirst(local13);
 	}
 }

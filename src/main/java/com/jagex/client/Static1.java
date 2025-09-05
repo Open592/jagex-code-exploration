@@ -22,7 +22,7 @@ public final class Static1 {
 
 	@OriginalMember(owner = "client!a", name = "a", descriptor = "(I)V")
 	public static void method1() {
-		for (@Pc(14) Node_Sub9 local14 = (Node_Sub9) Static115.aClass183_15.method4140(); local14 != null; local14 = (Node_Sub9) Static115.aClass183_15.method4144()) {
+		for (@Pc(14) Node_Sub9 local14 = (Node_Sub9) Static115.aLinkedList_15.tail(); local14 != null; local14 = (Node_Sub9) Static115.aLinkedList_15.previous()) {
 			if (local14.anInt796 == -1) {
 				local14.anInt799 = 0;
 				if (local14.anInt793 >= 0 && local14.anInt790 >= 0 && Static326.anInt5666 > local14.anInt793 && Static283.anInt5187 > local14.anInt790) {

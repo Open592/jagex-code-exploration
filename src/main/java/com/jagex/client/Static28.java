@@ -37,7 +37,7 @@ public final class Static28 {
 		if (local26 == null) {
 			local26 = new Node_Sub18();
 			Static440.aHashMap_40.set(local20, local26);
-			local26.aClass183_14.method4137(arg0);
+			local26.aLinkedList_14.addFirst(arg0);
 			return;
 		}
 		@Pc(49) Class211 local49 = Static444.aClass206_3.method4703(arg0.anInt7355);
@@ -45,7 +45,7 @@ public final class Static28 {
 		if (local49.anInt6164 == 1) {
 			local52 *= arg0.anInt7356 + 1;
 		}
-		for (@Pc(71) Node_Sub45 local71 = (Node_Sub45) local26.aClass183_14.method4140(); local71 != null; local71 = (Node_Sub45) local26.aClass183_14.method4144()) {
+		for (@Pc(71) Node_Sub45 local71 = (Node_Sub45) local26.aLinkedList_14.tail(); local71 != null; local71 = (Node_Sub45) local26.aLinkedList_14.previous()) {
 			local49 = Static444.aClass206_3.method4703(local71.anInt7355);
 			@Pc(82) int local82 = local49.anInt6165;
 			if (local49.anInt6164 == 1) {
@@ -56,7 +56,7 @@ public final class Static28 {
 				return;
 			}
 		}
-		local26.aClass183_14.method4137(arg0);
+		local26.aLinkedList_14.addFirst(arg0);
 	}
 
 	@OriginalMember(owner = "client!bg", name = "b", descriptor = "(I)V")

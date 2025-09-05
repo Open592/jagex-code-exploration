@@ -1,5 +1,6 @@
 package com.jagex.client;
 
+import com.jagex.client.ds.LinkedList;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalClass;
 import org.openrs2.deob.annotation.OriginalMember;
@@ -15,7 +16,7 @@ public final class Class82 {
 	private int anInt2672 = -1;
 
 	@OriginalMember(owner = "client!gi", name = "h", descriptor = "Lclient!pk;")
-	private Class183 aClass183_18 = new Class183();
+	private LinkedList aLinkedList_18 = new LinkedList();
 
 	@OriginalMember(owner = "client!gi", name = "p", descriptor = "Z")
 	public boolean aBoolean243 = false;
@@ -47,8 +48,8 @@ public final class Class82 {
 		}
 		this.anIntArrayArray26 = null;
 		this.aClass4_Sub11Array1 = null;
-		this.aClass183_18.method4138();
-		this.aClass183_18 = null;
+		this.aLinkedList_18.clear();
+		this.aLinkedList_18 = null;
 	}
 
 	@OriginalMember(owner = "client!gi", name = "c", descriptor = "(I)[[I")
@@ -80,7 +81,7 @@ public final class Class82 {
 					local24 = new Node_Sub11(arg0, this.anInt2670);
 					this.anInt2670++;
 				} else {
-					@Pc(59) Node_Sub11 local59 = (Node_Sub11) this.aClass183_18.method4139();
+					@Pc(59) Node_Sub11 local59 = (Node_Sub11) this.aLinkedList_18.head();
 					local24 = new Node_Sub11(arg0, local59.anInt1037);
 					this.aClass4_Sub11Array1[local59.anInt1036] = null;
 					local59.popSelf();
@@ -89,7 +90,7 @@ public final class Class82 {
 			} else {
 				this.aBoolean243 = false;
 			}
-			this.aClass183_18.method4133(local24);
+			this.aLinkedList_18.addLast(local24);
 			return this.anIntArrayArray26[local24.anInt1037];
 		}
 	}

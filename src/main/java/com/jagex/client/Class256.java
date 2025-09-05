@@ -1,5 +1,6 @@
 package com.jagex.client;
 
+import com.jagex.client.ds.LinkedList;
 import com.jagex.client.jagex3.jagmisc.jagmisc;
 import java.net.InetAddress;
 import org.openrs2.deob.annotation.OriginalArg;
@@ -11,7 +12,7 @@ import org.openrs2.deob.annotation.Pc;
 public final class Class256 implements Runnable {
 
 	@OriginalMember(owner = "client!vo", name = "a", descriptor = "Lclient!pk;")
-	private final Class183 aClass183_49 = new Class183();
+	private final LinkedList aLinkedList_49 = new LinkedList();
 
 	@OriginalMember(owner = "client!vo", name = "d", descriptor = "Ljava/lang/Thread;")
 	private Thread aThread3 = new Thread(this);
@@ -37,10 +38,10 @@ public final class Class256 implements Runnable {
 
 	@OriginalMember(owner = "client!vo", name = "a", descriptor = "(ILclient!vu;)V")
 	private void method5477(@OriginalArg(1) Node arg0) {
-		@Pc(10) Class183 local10 = this.aClass183_49;
-		synchronized (this.aClass183_49) {
-			this.aClass183_49.method4137(arg0);
-			this.aClass183_49.notify();
+		@Pc(10) LinkedList local10 = this.aLinkedList_49;
+		synchronized (this.aLinkedList_49) {
+			this.aLinkedList_49.addFirst(arg0);
+			this.aLinkedList_49.notify();
 		}
 	}
 
@@ -61,13 +62,13 @@ public final class Class256 implements Runnable {
 	@Override
 	public void run() {
 		while (true) {
-			@Pc(8) Class183 local8 = this.aClass183_49;
+			@Pc(8) LinkedList local8 = this.aLinkedList_49;
 			@Pc(38) Node_Sub42 local38;
-			synchronized (this.aClass183_49) {
+			synchronized (this.aLinkedList_49) {
 				@Pc(15) Node local15;
-				for (local15 = this.aClass183_49.method4136(); local15 == null; local15 = this.aClass183_49.method4136()) {
+				for (local15 = this.aLinkedList_49.pollLast(); local15 == null; local15 = this.aLinkedList_49.pollLast()) {
 					try {
-						this.aClass183_49.wait();
+						this.aLinkedList_49.wait();
 					} catch (@Pc(22) InterruptedException local22) {
 					}
 				}

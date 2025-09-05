@@ -1,5 +1,6 @@
 package com.jagex.client;
 
+import com.jagex.client.ds.LinkedList;
 import com.jagex.client.jaggl.OpenGL;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalClass;
@@ -34,7 +35,7 @@ public final class Class260 {
 	private int anInt7128 = 1;
 
 	@OriginalMember(owner = "client!wb", name = "f", descriptor = "Lclient!pk;")
-	private final Class183 aClass183_50 = new Class183();
+	private final LinkedList aLinkedList_50 = new LinkedList();
 
 	@OriginalMember(owner = "client!wb", name = "x", descriptor = "I")
 	private int anInt7138 = -1;
@@ -91,8 +92,8 @@ public final class Class260 {
 		this.aClass150_5 = this.aClass150_6 = this.aClass150_7 = null;
 		this.aClass6_Sub1Array4 = null;
 		this.aClass4_Sub1_Sub13_1 = null;
-		if (!this.aClass183_50.method4147()) {
-			for (@Pc(42) Node local42 = this.aClass183_50.method4140(); local42 != this.aClass183_50.aNode_207; local42 = local42.previous) {
+		if (!this.aLinkedList_50.isEmpty()) {
+			for (@Pc(42) Node local42 = this.aLinkedList_50.tail(); local42 != this.aLinkedList_50.sentinelNode; local42 = local42.previous) {
 				((Node_Sub10) local42).method2006();
 			}
 		}
@@ -103,7 +104,7 @@ public final class Class260 {
 	public boolean method5525(@OriginalArg(1) Node_Sub10 arg0) {
 		if (this.aClass150_5 != null) {
 			if (arg0.method2004() || arg0.method2005()) {
-				this.aClass183_50.method4137(arg0);
+				this.aLinkedList_50.addFirst(arg0);
 				this.method5526();
 				if (this.method5528()) {
 					if (this.anInt7128 != -1 && this.anInt7127 != -1) {
@@ -124,7 +125,7 @@ public final class Class260 {
 		@Pc(9) int local9 = 0;
 		@Pc(11) int local11 = 0;
 		@Pc(25) int local25;
-		for (@Pc(19) Node_Sub10 local19 = (Node_Sub10) this.aClass183_50.method4140(); local19 != null; local19 = (Node_Sub10) this.aClass183_50.method4144()) {
+		for (@Pc(19) Node_Sub10 local19 = (Node_Sub10) this.aLinkedList_50.tail(); local19 != null; local19 = (Node_Sub10) this.aLinkedList_50.previous()) {
 			local25 = local19.method1999();
 			local11 += local19.method2001();
 			if (local25 > local9) {
@@ -257,13 +258,13 @@ public final class Class260 {
 
 	@OriginalMember(owner = "client!wb", name = "a", descriptor = "(IIIII)Z")
 	public boolean method5530(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1, @OriginalArg(3) int arg2, @OriginalArg(4) int arg3) {
-		if (this.aClass150_5 == null || this.aClass183_50.method4147()) {
+		if (this.aClass150_5 == null || this.aLinkedList_50.isEmpty()) {
 			return false;
 		}
 		if (this.anInt7128 != arg1 || arg3 != this.anInt7127) {
 			this.anInt7127 = arg3;
 			this.anInt7128 = arg1;
-			for (@Pc(49) Node local49 = this.aClass183_50.method4140(); local49 != this.aClass183_50.aNode_207; local49 = local49.previous) {
+			for (@Pc(49) Node local49 = this.aLinkedList_50.tail(); local49 != this.aLinkedList_50.sentinelNode; local49 = local49.previous) {
 				((Node_Sub10) local49).method2007(this.anInt7127, this.anInt7128);
 			}
 			this.aBoolean674 = true;
@@ -312,8 +313,8 @@ public final class Class260 {
 		@Pc(101) int local101 = 0;
 		@Pc(103) int local103 = 1;
 		@Pc(117) Node_Sub10 local117;
-		for (@Pc(109) Node_Sub10 local109 = (Node_Sub10) this.aClass183_50.method4140(); local109 != null; local109 = local117) {
-			local117 = (Node_Sub10) this.aClass183_50.method4144();
+		for (@Pc(109) Node_Sub10 local109 = (Node_Sub10) this.aLinkedList_50.tail(); local109 != null; local109 = local117) {
+			local117 = (Node_Sub10) this.aLinkedList_50.previous();
 			@Pc(121) int local121 = local109.method2001();
 			for (@Pc(123) int local123 = 0; local123 < local121; local123++) {
 				local109.method2000(local123, this.aClass6_Sub1Array4[local101], this.aClass6_Sub1_7);

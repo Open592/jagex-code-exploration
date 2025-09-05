@@ -254,16 +254,16 @@ public final class Static41 {
 
 	@OriginalMember(owner = "client!bv", name = "a", descriptor = "(I)V")
 	public static void method730() {
-		Static304.aClass183_39.method4138();
-		for (@Pc(15) Node_Sub39 local15 = (Node_Sub39) Static206.aClass183_28.method4140(); local15 != null; local15 = (Node_Sub39) Static206.aClass183_28.method4144()) {
+		Static304.A_LINKED_LIST___39.clear();
+		for (@Pc(15) Node_Sub39 local15 = (Node_Sub39) Static206.A_LINKED_LIST___28.tail(); local15 != null; local15 = (Node_Sub39) Static206.A_LINKED_LIST___28.previous()) {
 			if (local15.anInt5699 < 1000) {
 				local15.popSelf();
-				Static304.aClass183_39.method4137(local15);
+				Static304.A_LINKED_LIST___39.addFirst(local15);
 			}
 		}
-		Static304.aClass183_39.method4149(Static206.aClass183_28);
+		Static304.A_LINKED_LIST___39.moveTo(Static206.A_LINKED_LIST___28);
 		@Pc(43) int local43 = -1;
-		@Pc(48) Node_Sub5 local48 = (Node_Sub5) Static413.aClass183_47.method4140();
+		@Pc(48) Node_Sub5 local48 = (Node_Sub5) Static413.A_LINKED_LIST___47.tail();
 		if (local48 != null) {
 			local43 = local48.method515();
 		}
@@ -323,7 +323,7 @@ public final class Static41 {
 		}
 		if (local200 != -1) {
 			local219 = 0;
-			@Pc(301) Class63 local301 = new Class63(Static206.aClass183_28);
+			@Pc(301) Class63 local301 = new Class63(Static206.A_LINKED_LIST___28);
 			for (@Pc(306) Node_Sub39 local306 = (Node_Sub39) local301.method1611(); local306 != null; local306 = (Node_Sub39) local301.method1612()) {
 				if (local219 == local200) {
 					Static247.method3617(local198, local306, local194);

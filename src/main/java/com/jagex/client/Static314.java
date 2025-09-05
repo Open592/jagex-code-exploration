@@ -19,8 +19,8 @@ public final class Static314 {
 	@OriginalMember(owner = "client!ps", name = "g", descriptor = "(I)V")
 	public static void method4198() {
 		Static407.anInt6710 = 0;
-		Static206.aClass183_28.method4138();
-		Static206.aClass183_28.method4137(Static198.aClass4_Sub39_1);
+		Static206.A_LINKED_LIST___28.clear();
+		Static206.A_LINKED_LIST___28.addFirst(Static198.aClass4_Sub39_1);
 		Static407.anInt6710++;
 	}
 }

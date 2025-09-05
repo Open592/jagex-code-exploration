@@ -77,9 +77,9 @@ public final class Static33 {
 		Static69.anInt3429 = 0;
 		Static148.aClass4_Sub1_Sub5_3 = null;
 		Static81.aClass247_2 = null;
-		Static378.aClass183_29 = null;
+		Static378.aLinkedList_29 = null;
 		Static148.method4510();
-		Static148.aClass183_41.method4138();
+		Static148.A_LINKED_LIST___41.clear();
 		Static262.aClass212_7 = null;
 		Static373.aClass212_8 = null;
 		Static71.anInt6920 = -1;

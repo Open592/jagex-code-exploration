@@ -65,7 +65,7 @@ public final class Static43 {
 			@Pc(203) Node_Sub34 local203 = new Node_Sub34();
 			local203.aClass247_15 = arg2;
 			local203.anObjectArray4 = arg2.anObjectArray7;
-			Static291.aClass183_35.method4137(local203);
+			Static291.A_LINKED_LIST___35.addFirst(local203);
 		}
 	}
 }

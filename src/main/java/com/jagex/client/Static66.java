@@ -55,7 +55,7 @@ public final class Static66 {
 		} else {
 			local202 = Static274.anInt5136 * 5;
 		}
-		for (@Pc(213) Node_Sub3 local213 = (Node_Sub3) Static148.aClass183_41.method4140(); local213 != null; local213 = (Node_Sub3) Static148.aClass183_41.method4144()) {
+		for (@Pc(213) Node_Sub3 local213 = (Node_Sub3) Static148.A_LINKED_LIST___41.tail(); local213 != null; local213 = (Node_Sub3) Static148.A_LINKED_LIST___41.previous()) {
 			@Pc(221) Class157 local221 = Static148.aClass182_3.method4124(local213.anInt234);
 			if (Static428.method5473(local221)) {
 				@Pc(247) int local247;

@@ -34,7 +34,7 @@ public final class Static247 {
 
 	@OriginalMember(owner = "client!ml", name = "a", descriptor = "(ILclient!qm;IZ)V")
 	public static void method3617(@OriginalArg(0) int arg0, @OriginalArg(1) Node_Sub39 arg1, @OriginalArg(2) int arg2) {
-		if (arg1 == null || arg1 == Static206.aClass183_28.aNode_207) {
+		if (arg1 == null || arg1 == Static206.A_LINKED_LIST___28.sentinelNode) {
 			return;
 		}
 		@Pc(15) int local15 = arg1.anInt5696;

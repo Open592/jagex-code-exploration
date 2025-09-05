@@ -1,5 +1,6 @@
 package com.jagex.client;
 
+import com.jagex.client.ds.LinkedList;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;
@@ -27,12 +28,12 @@ public final class Static382 {
 	}
 
 	@OriginalMember(owner = "client!tg", name = "a", descriptor = "(Lclient!pk;ILclient!ya;II)V")
-	public static void method5042(@OriginalArg(0) Class183 arg0, @OriginalArg(2) Class19 arg1) {
-		Static378.aClass183_29.method4138();
+	public static void method5042(@OriginalArg(0) LinkedList arg0, @OriginalArg(2) Class19 arg1) {
+		Static378.aLinkedList_29.clear();
 		if (Static303.aBoolean482) {
 			return;
 		}
-		for (@Pc(21) Node_Sub3 local21 = (Node_Sub3) arg0.method4140(); local21 != null; local21 = (Node_Sub3) arg0.method4144()) {
+		for (@Pc(21) Node_Sub3 local21 = (Node_Sub3) arg0.tail(); local21 != null; local21 = (Node_Sub3) arg0.previous()) {
 			@Pc(29) Class157 local29 = Static148.aClass182_3.method4124(local21.anInt234);
 			if (Static428.method5473(local29)) {
 				@Pc(41) boolean local41 = Static272.method3908(arg1, local21, local29);

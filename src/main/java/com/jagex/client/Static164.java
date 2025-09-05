@@ -82,7 +82,7 @@ public final class Static164 {
 		}
 		@Pc(17) int local17 = Static420.aClass80_1.method2234();
 		@Pc(23) int local23 = Static420.aClass80_1.method2230();
-		@Pc(28) Node_Sub5 local28 = (Node_Sub5) Static413.aClass183_47.method4140();
+		@Pc(28) Node_Sub5 local28 = (Node_Sub5) Static413.A_LINKED_LIST___47.tail();
 		if (local28 != null) {
 			local17 = local28.method518();
 			local23 = local28.method519();

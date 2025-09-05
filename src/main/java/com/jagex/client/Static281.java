@@ -1,11 +1,12 @@
 package com.jagex.client;
 
+import com.jagex.client.ds.LinkedList;
 import org.openrs2.deob.annotation.OriginalMember;
 
 public final class Static281 {
 
 	@OriginalMember(owner = "client!oe", name = "a", descriptor = "Lclient!pk;")
-	public static final Class183 aClass183_34 = new Class183();
+	public static final LinkedList A_LINKED_LIST___34 = new LinkedList();
 
 	@OriginalMember(owner = "client!oe", name = "b", descriptor = "Lclient!uu;")
 	public static Class247 aClass247_12 = null;

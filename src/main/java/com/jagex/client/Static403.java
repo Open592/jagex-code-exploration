@@ -49,10 +49,10 @@ public final class Static403 {
 
 	@OriginalMember(owner = "client!uh", name = "a", descriptor = "(Z)Lclient!aq;")
 	public static Node_Sub3 method5217() {
-		if (Static148.aClass183_41 == null || Static308.aClass63_1 == null) {
+		if (Static148.A_LINKED_LIST___41 == null || Static308.aClass63_1 == null) {
 			return null;
 		}
-		Static308.aClass63_1.method1615(Static148.aClass183_41);
+		Static308.aClass63_1.method1615(Static148.A_LINKED_LIST___41);
 		@Pc(18) Node_Sub3 local18 = (Node_Sub3) Static308.aClass63_1.method1611();
 		if (local18 == null) {
 			return null;

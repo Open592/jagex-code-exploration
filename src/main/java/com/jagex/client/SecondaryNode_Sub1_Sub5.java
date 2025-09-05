@@ -1,5 +1,6 @@
 package com.jagex.client;
 
+import com.jagex.client.ds.LinkedList;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalClass;
 import org.openrs2.deob.annotation.OriginalMember;
@@ -42,7 +43,7 @@ public final class SecondaryNode_Sub1_Sub5 extends SecondaryNode {
 	public final int anInt1023;
 
 	@OriginalMember(owner = "client!cn", name = "L", descriptor = "Lclient!pk;")
-	public final Class183 aClass183_4;
+	public final LinkedList aLinkedList_4;
 
 	@OriginalMember(owner = "client!cn", name = "<init>", descriptor = "(ILjava/lang/String;Ljava/lang/String;IIZII)V")
 	public SecondaryNode_Sub1_Sub5(@OriginalArg(0) int arg0, @OriginalArg(1) String arg1, @OriginalArg(2) String arg2, @OriginalArg(3) int arg3, @OriginalArg(4) int arg4, @OriginalArg(5) boolean arg5, @OriginalArg(6) int arg6, @OriginalArg(7) int arg7) {
@@ -56,12 +57,12 @@ public final class SecondaryNode_Sub1_Sub5 extends SecondaryNode {
 		if (this.anInt1016 == 255) {
 			this.anInt1016 = 0;
 		}
-		this.aClass183_4 = new Class183();
+		this.aLinkedList_4 = new LinkedList();
 	}
 
 	@OriginalMember(owner = "client!cn", name = "a", descriptor = "(I[IBI)Z")
 	public boolean method930(@OriginalArg(0) int arg0, @OriginalArg(1) int[] arg1, @OriginalArg(3) int arg2) {
-		for (@Pc(11) Node_Sub41 local11 = (Node_Sub41) this.aClass183_4.method4140(); local11 != null; local11 = (Node_Sub41) this.aClass183_4.method4144()) {
+		for (@Pc(11) Node_Sub41 local11 = (Node_Sub41) this.aLinkedList_4.tail(); local11 != null; local11 = (Node_Sub41) this.aLinkedList_4.previous()) {
 			if (local11.method5239(arg2, arg0)) {
 				local11.method5237(arg2, arg0, arg1);
 				return true;
@@ -72,7 +73,7 @@ public final class SecondaryNode_Sub1_Sub5 extends SecondaryNode {
 
 	@OriginalMember(owner = "client!cn", name = "a", descriptor = "(I[III)Z")
 	public boolean method931(@OriginalArg(1) int[] arg0, @OriginalArg(2) int arg1, @OriginalArg(3) int arg2) {
-		for (@Pc(11) Node_Sub41 local11 = (Node_Sub41) this.aClass183_4.method4140(); local11 != null; local11 = (Node_Sub41) this.aClass183_4.method4144()) {
+		for (@Pc(11) Node_Sub41 local11 = (Node_Sub41) this.aLinkedList_4.tail(); local11 != null; local11 = (Node_Sub41) this.aLinkedList_4.previous()) {
 			if (local11.method5238(arg1, arg2)) {
 				local11.method5236(arg0, arg2, arg1);
 				return true;
@@ -83,7 +84,7 @@ public final class SecondaryNode_Sub1_Sub5 extends SecondaryNode {
 
 	@OriginalMember(owner = "client!cn", name = "a", descriptor = "(III)Z")
 	public boolean method932(@OriginalArg(1) int arg0, @OriginalArg(2) int arg1) {
-		for (@Pc(22) Node_Sub41 local22 = (Node_Sub41) this.aClass183_4.method4140(); local22 != null; local22 = (Node_Sub41) this.aClass183_4.method4144()) {
+		for (@Pc(22) Node_Sub41 local22 = (Node_Sub41) this.aLinkedList_4.tail(); local22 != null; local22 = (Node_Sub41) this.aLinkedList_4.previous()) {
 			if (local22.method5238(arg0, arg1)) {
 				return true;
 			}
@@ -97,7 +98,7 @@ public final class SecondaryNode_Sub1_Sub5 extends SecondaryNode {
 		this.anInt1014 = 0;
 		this.anInt1019 = 0;
 		this.anInt1010 = 12800;
-		for (@Pc(32) Node_Sub41 local32 = (Node_Sub41) this.aClass183_4.method4140(); local32 != null; local32 = (Node_Sub41) this.aClass183_4.method4144()) {
+		for (@Pc(32) Node_Sub41 local32 = (Node_Sub41) this.aLinkedList_4.tail(); local32 != null; local32 = (Node_Sub41) this.aLinkedList_4.previous()) {
 			if (local32.anInt6701 < this.anInt1010) {
 				this.anInt1010 = local32.anInt6701;
 			}
@@ -115,7 +116,7 @@ public final class SecondaryNode_Sub1_Sub5 extends SecondaryNode {
 
 	@OriginalMember(owner = "client!cn", name = "a", descriptor = "(Z[IIII)Z")
 	public boolean method935(@OriginalArg(1) int[] arg0, @OriginalArg(2) int arg1, @OriginalArg(3) int arg2, @OriginalArg(4) int arg3) {
-		for (@Pc(17) Node_Sub41 local17 = (Node_Sub41) this.aClass183_4.method4140(); local17 != null; local17 = (Node_Sub41) this.aClass183_4.method4144()) {
+		for (@Pc(17) Node_Sub41 local17 = (Node_Sub41) this.aLinkedList_4.tail(); local17 != null; local17 = (Node_Sub41) this.aLinkedList_4.previous()) {
 			if (local17.method5240(arg2, arg3, arg1)) {
 				local17.method5236(arg0, arg3, arg2);
 				return true;
