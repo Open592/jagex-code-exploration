@@ -1,6 +1,6 @@
 package com.jagex.client;
 
-import com.jagex.client.js5.Class222;
+import com.jagex.client.js5.Cache;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;
@@ -11,7 +11,7 @@ public final class Static225 {
 	public static int[] anIntArray291;
 
 	@OriginalMember(owner = "client!lk", name = "z", descriptor = "Lclient!st;")
-	public static Class222 aClass222_2;
+	public static Cache aCache_2;
 
 	@OriginalMember(owner = "client!lk", name = "k", descriptor = "[I")
 	public static final int[] anIntArray290 = new int[500];

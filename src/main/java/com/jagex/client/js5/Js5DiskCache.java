@@ -41,11 +41,11 @@ public final class Js5DiskCache implements Runnable {
 	}
 
 	@OriginalMember(owner = "client!vl", name = "a", descriptor = "(ILclient!st;I)Lclient!lf;")
-	public Js5DiskCacheRequestItem method5431(@OriginalArg(1) Class222 arg0, @OriginalArg(2) int arg1) {
+	public Js5DiskCacheRequestItem method5431(@OriginalArg(1) Cache arg0, @OriginalArg(2) int arg1) {
 		@Pc(7) Js5DiskCacheRequestItem request = new Js5DiskCacheRequestItem();
 
 		request.isUrgent = false;
-		request.aClass222_1 = arg0;
+		request.aCache_1 = arg0;
 		request.anInt4117 = 3;
 		request.secondaryValue = arg1;
 
@@ -55,7 +55,7 @@ public final class Js5DiskCache implements Runnable {
 	}
 
 	@OriginalMember(owner = "client!vl", name = "a", descriptor = "(Lclient!st;II)Lclient!lf;")
-	public Js5DiskCacheRequestItem method5432(@OriginalArg(0) Class222 arg0, @OriginalArg(2) int group) {
+	public Js5DiskCacheRequestItem method5432(@OriginalArg(0) Cache arg0, @OriginalArg(2) int group) {
 		@Pc(9) Js5DiskCacheRequestItem local9 = new Js5DiskCacheRequestItem();
 
 		local9.anInt4117 = 1;
@@ -68,7 +68,7 @@ public final class Js5DiskCache implements Runnable {
 					break;
 				}
 
-				if ((long) group == requestItem.secondaryValue && requestItem.aClass222_1 == arg0 && requestItem.anInt4117 == 2) {
+				if ((long) group == requestItem.secondaryValue && requestItem.aCache_1 == arg0 && requestItem.anInt4117 == 2) {
 					local9.isRequestInProgress = false;
 					local9.responseData = requestItem.responseData;
 					return local9;
@@ -78,7 +78,7 @@ public final class Js5DiskCache implements Runnable {
 			}
 		}
 
-		local9.responseData = arg0.method4981(group);
+		local9.responseData = arg0.read(group);
 		local9.isUrgent = true;
 		local9.isRequestInProgress = false;
 
@@ -120,9 +120,9 @@ public final class Js5DiskCache implements Runnable {
 			}
 			try {
 				if (local18.anInt4117 == 2) {
-					local18.aClass222_1.method4982(local18.responseData, (int) local18.secondaryValue, local18.responseData.length);
+					local18.aCache_1.write(local18.responseData, (int) local18.secondaryValue, local18.responseData.length);
 				} else if (local18.anInt4117 == 3) {
-					local18.responseData = local18.aClass222_1.method4981((int) local18.secondaryValue);
+					local18.responseData = local18.aCache_1.read((int) local18.secondaryValue);
 				}
 			} catch (@Pc(74) Exception local74) {
 				Static94.handleClientError(local74, null);
@@ -143,13 +143,13 @@ public final class Js5DiskCache implements Runnable {
 	}
 
 	@OriginalMember(owner = "client!vl", name = "a", descriptor = "(II[BLclient!st;)Lclient!lf;")
-	public Js5DiskCacheRequestItem method5435(@OriginalArg(1) int arg0, @OriginalArg(2) byte[] arg1, @OriginalArg(3) Class222 arg2) {
+	public Js5DiskCacheRequestItem method5435(@OriginalArg(1) int arg0, @OriginalArg(2) byte[] arg1, @OriginalArg(3) Cache arg2) {
 		@Pc(13) Js5DiskCacheRequestItem local13 = new Js5DiskCacheRequestItem();
 
 		local13.secondaryValue = arg0;
 		local13.anInt4117 = 2;
 		local13.responseData = arg1;
-		local13.aClass222_1 = arg2;
+		local13.aCache_1 = arg2;
 		local13.isUrgent = false;
 
 		this.method5434(local13);

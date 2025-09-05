@@ -8,7 +8,7 @@ import org.openrs2.deob.annotation.OriginalMember;
 public final class Js5DiskCacheRequestItem extends Js5QueueRequest {
 
 	@OriginalMember(owner = "client!lf", name = "G", descriptor = "Lclient!st;")
-	public Class222 aClass222_1;
+	public Cache aCache_1;
 
 	@OriginalMember(owner = "client!lf", name = "H", descriptor = "[B")
 	public byte[] responseData;

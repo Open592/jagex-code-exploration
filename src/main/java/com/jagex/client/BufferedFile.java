@@ -34,7 +34,7 @@ public final class BufferedFile {
 	private long aLong145;
 
 	@OriginalMember(owner = "client!lq", name = "s", descriptor = "J")
-	private long aLong147;
+	private long length;
 
 	@OriginalMember(owner = "client!lq", name = "a", descriptor = "J")
 	private long filePointer;
@@ -52,7 +52,7 @@ public final class BufferedFile {
 	@OriginalMember(owner = "client!lq", name = "<init>", descriptor = "(Lclient!rp;II)V")
 	public BufferedFile(FileOnDisk file, int readBufferSize, int writeBufferSize) throws IOException {
 		this.file = file;
-		this.aLong147 = this.aLong145 = file.bufferLength();
+		this.length = this.aLong145 = file.bufferLength();
 		this.filePointer = 0L;
 		this.readBuffer = new byte[readBufferSize];
 		this.writeBuffer = new byte[writeBufferSize];
@@ -64,15 +64,15 @@ public final class BufferedFile {
 	}
 
 	@OriginalMember(owner = "client!lq", name = "a", descriptor = "(Z)J")
-	public long method3463() {
-		return this.aLong147;
+	public long length() {
+		return this.length;
 	}
 
 	@OriginalMember(owner = "client!lq", name = "a", descriptor = "(IB[BI)V")
 	public void method3464(int arg0, byte[] arg1, int arg2) throws IOException {
 		try {
-			if (this.aLong147 < (long) arg2 + this.filePointer) {
-				this.aLong147 = (long) arg2 + this.filePointer;
+			if (this.length < (long) arg2 + this.filePointer) {
+				this.length = (long) arg2 + this.filePointer;
 			}
 			if (this.aLong143 != -1L && (this.aLong143 > this.filePointer || this.filePointer > this.aLong143 + (long) this.anInt4426)) {
 				this.method3472();

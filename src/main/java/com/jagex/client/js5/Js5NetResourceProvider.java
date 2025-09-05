@@ -41,7 +41,7 @@ public final class Js5NetResourceProvider extends Js5ResourceProvider {
 	private long aLong149 = 0L;
 
 	@OriginalMember(owner = "client!lv", name = "h", descriptor = "Lclient!st;")
-	private final Class222 aClass222_3;
+	private final Cache aCache_3;
 
 	@OriginalMember(owner = "client!lv", name = "j", descriptor = "I")
 	private final int archive;
@@ -62,7 +62,7 @@ public final class Js5NetResourceProvider extends Js5ResourceProvider {
 	private final boolean aBoolean414;
 
 	@OriginalMember(owner = "client!lv", name = "i", descriptor = "Lclient!st;")
-	private final Class222 aClass222_4;
+	private final Cache aCache_4;
 
 	@OriginalMember(owner = "client!lv", name = "l", descriptor = "Lclient!vn;")
 	private final Js5NetQueue js5NetQueue;
@@ -74,11 +74,11 @@ public final class Js5NetResourceProvider extends Js5ResourceProvider {
 	private Js5QueueRequest request;
 
 	@OriginalMember(owner = "client!lv", name = "<init>", descriptor = "(ILclient!st;Lclient!st;Lclient!vn;Lclient!vl;IIZ)V")
-	public Js5NetResourceProvider(int archive, Class222 arg1, Class222 arg2, Js5NetQueue js5NetQueue, Js5DiskCache arg4, int checksum, int version, boolean arg7) {
-		this.aClass222_3 = arg1;
+	public Js5NetResourceProvider(int archive, Cache arg1, Cache arg2, Js5NetQueue js5NetQueue, Js5DiskCache arg4, int checksum, int version, boolean arg7) {
+		this.aCache_3 = arg1;
 		this.archive = archive;
 
-		if (this.aClass222_3 == null) {
+		if (this.aCache_3 == null) {
 			this.aBoolean412 = false;
 		} else {
 			this.aBoolean412 = true;
@@ -88,12 +88,12 @@ public final class Js5NetResourceProvider extends Js5ResourceProvider {
 		this.checksum = checksum;
 		this.version = version;
 		this.aBoolean414 = arg7;
-		this.aClass222_4 = arg2;
+		this.aCache_4 = arg2;
 		this.js5NetQueue = js5NetQueue;
 		this.diskCache = arg4;
 
-		if (this.aClass222_4 != null) {
-			this.request = this.diskCache.method5432(this.aClass222_4, this.archive);
+		if (this.aCache_4 != null) {
+			this.request = this.diskCache.method5432(this.aCache_4, this.archive);
 		}
 	}
 
@@ -113,23 +113,23 @@ public final class Js5NetResourceProvider extends Js5ResourceProvider {
 
 		if (groupRequest == null) {
 			if (arg0 == 0) {
-				if (this.aClass222_3 == null || this.aByteArray56[group] == -1) {
+				if (this.aCache_3 == null || this.aByteArray56[group] == -1) {
 					if (this.js5NetQueue.isUrgentRequestQueueFull()) {
 						return null;
 					}
 
 					groupRequest = this.js5NetQueue.requestArchiveFile(this.archive, (byte) 2, true, group);
 				} else {
-					groupRequest = this.diskCache.method5432(this.aClass222_3, group);
+					groupRequest = this.diskCache.method5432(this.aCache_3, group);
 				}
 			} else if (arg0 == 1) {
-				if (this.aClass222_3 == null) {
+				if (this.aCache_3 == null) {
 					throw new RuntimeException();
 				}
 
-				groupRequest = this.diskCache.method5431(this.aClass222_3, group);
+				groupRequest = this.diskCache.method5431(this.aCache_3, group);
 			} else if (arg0 == 2) {
-				if (this.aClass222_3 == null) {
+				if (this.aCache_3 == null) {
 					throw new RuntimeException();
 				}
 
@@ -190,8 +190,8 @@ public final class Js5NetResourceProvider extends Js5ResourceProvider {
 			local161[local161.length - 2] = (byte) (this.index.anIntArray429[group] >>> 8);
 			local161[local161.length - 1] = (byte) this.index.anIntArray429[group];
 
-			if (this.aClass222_3 != null) {
-				this.diskCache.method5435(group, local161, this.aClass222_3);
+			if (this.aCache_3 != null) {
+				this.diskCache.method5435(group, local161, this.aCache_3);
 
 				if (this.aByteArray56[group] != 1) {
 					this.anInt4482++;
@@ -443,7 +443,7 @@ public final class Js5NetResourceProvider extends Js5ResourceProvider {
 	@OriginalMember(owner = "client!lv", name = "a", descriptor = "(II)V")
 	@Override
 	public void method3512(int arg0) {
-		if (this.aClass222_3 == null) {
+		if (this.aCache_3 == null) {
 			return;
 		}
 
@@ -462,7 +462,7 @@ public final class Js5NetResourceProvider extends Js5ResourceProvider {
 
 	@OriginalMember(owner = "client!lv", name = "d", descriptor = "(B)V")
 	public void method3526() {
-		if (this.aClass222_3 != null) {
+		if (this.aCache_3 != null) {
 			this.aBoolean413 = true;
 
 			if (this.aLinkedList_31 == null) {
@@ -539,14 +539,14 @@ public final class Js5NetResourceProvider extends Js5ResourceProvider {
 				return null;
 			}
 
-			if (this.aClass222_4 != null) {
-				this.diskCache.method5435(this.archive, responseData, this.aClass222_4);
+			if (this.aCache_4 != null) {
+				this.diskCache.method5435(this.archive, responseData, this.aCache_4);
 			}
 		}
 
 		this.request = null;
 
-		if (this.aClass222_3 != null) {
+		if (this.aCache_3 != null) {
 			this.aByteArray56 = new byte[this.index.anInt6112];
 			this.anInt4482 = 0;
 		}

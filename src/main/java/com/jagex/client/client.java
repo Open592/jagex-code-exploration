@@ -3737,13 +3737,13 @@ public final class client extends GameShell {
 
 	@OriginalMember(owner = "client!nj", name = "a", descriptor = "(ZIZII)Lclient!fs;")
 	public static Js5 method3820(boolean arg0, int archive, boolean arg2) {
-		Class222 local5 = null;
+		Cache local5 = null;
 
 		if (Static88.cacheDataFile != null) {
-			local5 = new Class222(archive, Static88.cacheDataFile, Static86.cacheIndexFiles[archive], 1000000);
+			local5 = new Cache(archive, Static88.cacheDataFile, Static86.cacheIndexFiles[archive], 1000000);
 		}
 
-		Static119.archiveDataResourceProviders[archive] = masterIndexProvider.getArchiveDataResourceProvider(Static225.aClass222_2, local5, archive);
+		Static119.archiveDataResourceProviders[archive] = masterIndexProvider.getArchiveDataResourceProvider(Static225.aCache_2, local5, archive);
 
 		if (arg2) {
 			Static119.archiveDataResourceProviders[archive].method3526();
@@ -4471,7 +4471,7 @@ public final class client extends GameShell {
 				}
 
 				Static425.cacheMasterIndexFile = new BufferedFile(GameShell.signLink.cacheIndex255, 6000, 0);
-				Static225.aClass222_2 = new Class222(255, Static88.cacheDataFile, Static425.cacheMasterIndexFile, 500000);
+				Static225.aCache_2 = new Cache(255, Static88.cacheDataFile, Static425.cacheMasterIndexFile, 500000);
 				Static394.randomFile = new BufferedFile(GameShell.signLink.randomFile, 24, 0);
 
 				GameShell.signLink.cacheIndex255 = null;
@@ -4482,7 +4482,7 @@ public final class client extends GameShell {
 		} catch (@Pc(227) IOException local227) {
 			Static394.randomFile = null;
 			Static88.cacheDataFile = null;
-			Static225.aClass222_2 = null;
+			Static225.aCache_2 = null;
 			Static425.cacheMasterIndexFile = null;
 		}
 

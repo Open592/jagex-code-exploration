@@ -58,7 +58,7 @@ public final class Js5MasterIndexProvider {
 	}
 
 	@OriginalMember(owner = "client!nj", name = "a", descriptor = "(Lclient!st;Lclient!st;II)Lclient!lv;")
-	public Js5NetResourceProvider getArchiveDataResourceProvider(@OriginalArg(0) Class222 arg0, @OriginalArg(1) Class222 arg1, @OriginalArg(3) int archive) {
+	public Js5NetResourceProvider getArchiveDataResourceProvider(@OriginalArg(0) Cache arg0, @OriginalArg(1) Cache arg1, @OriginalArg(3) int archive) {
 		return this.getArchiveDataResourceProvider(arg1, archive, arg0);
 	}
 
@@ -82,7 +82,7 @@ public final class Js5MasterIndexProvider {
 	}
 
 	@OriginalMember(owner = "client!nj", name = "a", descriptor = "(Lclient!st;ZBILclient!st;)Lclient!lv;")
-	private Js5NetResourceProvider getArchiveDataResourceProvider(Class222 arg0, int archive, Class222 arg2) {
+	private Js5NetResourceProvider getArchiveDataResourceProvider(Cache arg0, int archive, Cache arg2) {
 		if (this.masterIndexResponsePacket == null) {
 			throw new RuntimeException();
 		}
