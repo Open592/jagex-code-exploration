@@ -9,38 +9,42 @@ import org.openrs2.deob.annotation.Pc;
 @OriginalClass("client!tj")
 public final class Class227 implements Runnable {
 
-	@OriginalMember(owner = "client!tj", name = "b", descriptor = "Lclient!et;")
-	public SignLink aSignLink_7;
+  @OriginalMember(owner = "client!tj", name = "b", descriptor = "Lclient!et;")
+  public SignLink aSignLink_7;
 
-	@OriginalMember(owner = "client!tj", name = "e", descriptor = "[Lclient!ln;")
-	public final Class49[] aClass49Array1 = new Class49[2];
+  @OriginalMember(owner = "client!tj", name = "e", descriptor = "[Lclient!ln;")
+  public final Class49[] aClass49Array1 = new Class49[2];
 
-	@OriginalMember(owner = "client!tj", name = "c", descriptor = "Z")
-	public volatile boolean aBoolean589 = false;
+  @OriginalMember(owner = "client!tj", name = "c", descriptor = "Z")
+  public volatile boolean aBoolean589 = false;
 
-	@OriginalMember(owner = "client!tj", name = "f", descriptor = "Z")
-	public volatile boolean aBoolean590 = false;
+  @OriginalMember(owner = "client!tj", name = "f", descriptor = "Z")
+  public volatile boolean aBoolean590 = false;
 
-	@OriginalMember(owner = "client!tj", name = "run", descriptor = "()V")
-	@Override
-	public void run() {
-		this.aBoolean590 = true;
-		try {
-			while (!this.aBoolean589) {
-				for (@Pc(12) int local12 = 0; local12 < 2; local12++) {
-					@Pc(19) Class49 local19 = this.aClass49Array1[local12];
-					if (local19 != null) {
-						local19.method2069();
-					}
-				}
-				ThreadingUtilities.sleepFor(10L);
-				Static441.waitForSystemEventQueueToDrain(this.aSignLink_7, null);
-			}
-		} catch (@Pc(43) Exception local43) {
-			Static94.handleClientError(local43, null);
-		} finally {
-			@Pc(53) Object local53 = null;
-			this.aBoolean590 = false;
-		}
-	}
+  @OriginalMember(owner = "client!tj", name = "run", descriptor = "()V")
+  @Override
+  public void run() {
+    this.aBoolean590 = true;
+    try {
+      while (!this.aBoolean589) {
+        for (@Pc(12) int local12 = 0; local12 < 2; local12++) {
+          @Pc(19)
+          Class49 local19 = this.aClass49Array1[local12];
+          if (local19 != null) {
+            local19.method2069();
+          }
+        }
+        ThreadingUtilities.sleepFor(10L);
+        Static441.waitForSystemEventQueueToDrain(this.aSignLink_7, null);
+      }
+    } catch (
+        @Pc(43)
+        Exception local43) {
+      Static94.handleClientError(local43, null);
+    } finally {
+      @Pc(53)
+      Object local53 = null;
+      this.aBoolean590 = false;
+    }
+  }
 }

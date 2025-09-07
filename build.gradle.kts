@@ -1,6 +1,7 @@
 plugins {
     id("java")
     id("application")
+    id("com.diffplug.spotless") version "7.2.1"
 }
 
 group = "com.jagex"
@@ -33,6 +34,12 @@ repositories {
 dependencies {
     testImplementation(platform("org.junit:junit-bom:5.9.1"))
     testImplementation("org.junit.jupiter:junit-jupiter")
+}
+
+spotless {
+    java {
+        googleJavaFormat()
+    }
 }
 
 tasks.withType<Jar> {

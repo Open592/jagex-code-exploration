@@ -7,14 +7,14 @@ import org.openrs2.deob.annotation.OriginalMember;
 @OriginalClass("client!od")
 public final class Node_Sub6_Sub26 extends Node_Sub6 {
 
-	@OriginalMember(owner = "client!od", name = "<init>", descriptor = "()V")
-	public Node_Sub6_Sub26() {
-		super(0, true);
-	}
+  @OriginalMember(owner = "client!od", name = "<init>", descriptor = "()V")
+  public Node_Sub6_Sub26() {
+    super(0, true);
+  }
 
-	@OriginalMember(owner = "client!od", name = "a", descriptor = "(II)[I")
-	@Override
-	public int[] method5510(@OriginalArg(1) int arg0) {
-		return Static341.anIntArray504;
-	}
+  @OriginalMember(owner = "client!od", name = "a", descriptor = "(II)[I")
+  @Override
+  public int[] method5510(@OriginalArg(1) int arg0) {
+    return Static341.anIntArray504;
+  }
 }

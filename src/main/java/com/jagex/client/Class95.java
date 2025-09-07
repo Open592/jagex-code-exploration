@@ -3,5 +3,4 @@ package com.jagex.client;
 import org.openrs2.deob.annotation.OriginalClass;
 
 @OriginalClass("client!ws")
-public class Class95 {
-}
+public class Class95 {}

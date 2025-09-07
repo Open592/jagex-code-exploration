@@ -14,96 +14,94 @@ import java.util.Iterator;
 
 // $FF: renamed from: app.a
 final class AppletEnvironment implements AppletStub, AppletContext {
-   public void showDocument(URL var1) {
-      if (AppletViewer.isDebug) {
-         System.out.println("showdocument url:" + var1);
+  public void showDocument(URL var1) {
+    if (AppletViewer.isDebug) {
+      System.out.println("showdocument url:" + var1);
+    }
+
+    URLViewer.showurl(var1.toString(), null);
+  }
+
+  public AudioClip getAudioClip(URL var1) {
+    throw new UnsupportedOperationException();
+  }
+
+  public InputStream getStream(String var1) {
+    throw new UnsupportedOperationException();
+  }
+
+  public Iterator getStreamKeys() {
+    throw new UnsupportedOperationException();
+  }
+
+  public Image getImage(URL var1) {
+    throw new UnsupportedOperationException();
+  }
+
+  public void setStream(String var1, InputStream var2) {
+    throw new UnsupportedOperationException();
+  }
+
+  public boolean isActive() {
+    return true;
+  }
+
+  public String getParameter(String name) {
+    String result = AppletViewer.getParameter(name);
+
+    if (AppletViewer.isDebug && result == null) {
+      if ("force64mb".equals(name)) {
+        System.out.println("Returning false for force64mb");
+        return "false";
       }
 
-      URLViewer.showurl(var1.toString(), null);
-   }
+      System.out.println("Unavailable param:" + name);
+    }
 
-   public AudioClip getAudioClip(URL var1) {
-      throw new UnsupportedOperationException();
-   }
+    return result;
+  }
 
-   public InputStream getStream(String var1) {
-      throw new UnsupportedOperationException();
-   }
+  public Applet getApplet(String var1) {
+    throw new UnsupportedOperationException();
+  }
 
-   public Iterator getStreamKeys() {
-      throw new UnsupportedOperationException();
-   }
+  public void showDocument(URL url, String target) {
+    if (AppletViewer.isDebug) {
+      System.out.println("showdocument url:" + url + " target:" + target);
+    }
 
-   public Image getImage(URL var1) {
-      throw new UnsupportedOperationException();
-   }
+    URLViewer.showurl(url.toString(), target);
+  }
 
-   public void setStream(String var1, InputStream var2) {
-      throw new UnsupportedOperationException();
-   }
+  public void showStatus(String var1) {
+    throw new UnsupportedOperationException();
+  }
 
-   public boolean isActive() {
-      return true;
-   }
+  public void appletResize(int var1, int var2) {}
 
-   public String getParameter(String name) {
-      String result = AppletViewer.getParameter(name);
+  public Enumeration getApplets() {
+    throw new UnsupportedOperationException();
+  }
 
-      if (AppletViewer.isDebug && result == null) {
-         if ("force64mb".equals(name)) {
-            System.out.println("Returning false for force64mb");
-            return "false";
-         }
+  public AppletEnvironment() {}
 
-         System.out.println("Unavailable param:" + name);
-      }
+  public URL getDocumentBase() {
+    try {
+      return new URL(AppletViewer.getConfigValue("codebase"));
+    } catch (MalformedURLException var2) {
+      throw new InvalidParameterException();
+    }
+  }
 
-      return result;
-   }
+  public URL getCodeBase() {
+    try {
+      return new URL(AppletViewer.getConfigValue("codebase"));
+    } catch (MalformedURLException var2) {
+      throw new InvalidParameterException();
+    }
+  }
 
-   public Applet getApplet(String var1) {
-      throw new UnsupportedOperationException();
-   }
-
-   public void showDocument(URL url, String target) {
-      if (AppletViewer.isDebug) {
-         System.out.println("showdocument url:" + url + " target:" + target);
-      }
-
-      URLViewer.showurl(url.toString(), target);
-   }
-
-   public void showStatus(String var1) {
-      throw new UnsupportedOperationException();
-   }
-
-   public void appletResize(int var1, int var2) {
-   }
-
-   public Enumeration getApplets() {
-      throw new UnsupportedOperationException();
-   }
-
-   public AppletEnvironment() {
-   }
-
-   public URL getDocumentBase() {
-      try {
-         return new URL(AppletViewer.getConfigValue("codebase"));
-      } catch (MalformedURLException var2) {
-         throw new InvalidParameterException();
-      }
-   }
-
-   public URL getCodeBase() {
-      try {
-         return new URL(AppletViewer.getConfigValue("codebase"));
-      } catch (MalformedURLException var2) {
-         throw new InvalidParameterException();
-      }
-   }
-
-   public AppletContext getAppletContext() {
-      return this;
-   }
+  public AppletContext getAppletContext() {
+    return this;
+  }
 }
