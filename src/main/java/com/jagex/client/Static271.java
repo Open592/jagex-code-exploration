@@ -2069,7 +2069,7 @@ public final class Static271 {
                     anInt5095 -= 2;
                     local19 = anIntArray330[anInt5095];
                     local25 = anIntArray330[anInt5095 + 1];
-                    local7624 = Static239.method3546(local25, Static209.aJs5_48);
+                    local7624 = Static239.method3546(local25, Static209.archive13);
                     anIntArray330[anInt5095++] =
                         local7624.method2347(Static429.aClass57Array18, local19, local3888);
                     return;
@@ -2079,7 +2079,7 @@ public final class Static271 {
                     anInt5095 -= 2;
                     local19 = anIntArray330[anInt5095];
                     local25 = anIntArray330[anInt5095 + 1];
-                    local7624 = Static239.method3546(local25, Static209.aJs5_48);
+                    local7624 = Static239.method3546(local25, Static209.archive13);
                     anIntArray330[anInt5095++] =
                         local7624.method2349(local3888, local19, Static429.aClass57Array18);
                     return;
@@ -2203,7 +2203,7 @@ public final class Static271 {
                     local3888 = aStringArray21[--anInt5092];
                     local19 = anIntArray330[--anInt5095];
                     @Pc(8210)
-                    Class89 local8210 = Static239.method3546(local19, Static209.aJs5_48);
+                    Class89 local8210 = Static239.method3546(local19, Static209.archive13);
                     anIntArray330[anInt5095++] =
                         local8210.method2342(local3888, Static429.aClass57Array18);
                     return;
@@ -4214,11 +4214,11 @@ public final class Static271 {
             Static444.anInt7297 = anIntArray330[anInt5095 + 8];
             Static111.anInt2387 = anIntArray330[anInt5095 + 9];
             Static286.anInt5199 = anIntArray330[anInt5095 + 10];
-            Static293.aJs5_60.method2125(Static199.anInt3850);
-            Static293.aJs5_60.method2125(Static419.anInt6931);
-            Static293.aJs5_60.method2125(Static270.anInt5073);
-            Static293.aJs5_60.method2125(Static190.anInt3601);
-            Static293.aJs5_60.method2125(Static444.anInt7297);
+            Static293.archive8.method2125(Static199.anInt3850);
+            Static293.archive8.method2125(Static419.anInt6931);
+            Static293.archive8.method2125(Static270.anInt5073);
+            Static293.archive8.method2125(Static190.anInt3601);
+            Static293.archive8.method2125(Static444.anInt7297);
             Static257.aClass57_19 = null;
             Static132.aClass57_12 = null;
             Static143.aClass57_15 = null;
@@ -4643,7 +4643,7 @@ public final class Static271 {
             }
             if (local157 != Static323.aClass50_Sub1_1.anInt3439) {
               if (Static323.aClass50_Sub1_1.anInt3439 == 0 && Static62.anInt1117 != -1) {
-                Static32.method625(local157, Static62.anInt1117, Static46.aJs5_54);
+                Static32.method625(local157, Static62.anInt1117, Static46.archive6);
                 Static436.aBoolean666 = false;
               } else if (local157 == 0) {
                 Static106.method1986();

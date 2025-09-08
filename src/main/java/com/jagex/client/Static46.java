@@ -9,7 +9,7 @@ public final class Static46 {
   public static int anInt5156;
 
   @OriginalMember(owner = "client!cc", name = "g", descriptor = "Lclient!fs;")
-  public static Js5 aJs5_54;
+  public static Js5 archive6;
 
   @OriginalMember(owner = "client!cc", name = "d", descriptor = "Lclient!ho;")
   public static final Class98 aClass98_11 = new Class98(6, 0, 4, 2);

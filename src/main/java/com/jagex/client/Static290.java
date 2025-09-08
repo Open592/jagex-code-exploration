@@ -1,5 +1,6 @@
 package com.jagex.client;
 
+import com.jagex.client.cache.Sprites;
 import com.jagex.client.js5.Js5;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalMember;
@@ -127,52 +128,52 @@ public final class Static290 {
   public static int method5014(@OriginalArg(1) Js5 arg0) {
     @Pc(5)
     int local5 = 0;
-    if (arg0.method2125(Static336.anInt6553)) {
+    if (arg0.method2125(Sprites.hitmarksId)) {
       local5++;
     }
-    if (arg0.method2125(Static394.anInt6593)) {
+    if (arg0.method2125(Sprites.hitbarDefaultId)) {
       local5++;
     }
-    if (arg0.method2125(Static75.anInt1532)) {
+    if (arg0.method2125(Sprites.timerbarDefaultId)) {
       local5++;
     }
-    if (arg0.method2125(Static454.anInt4074)) {
+    if (arg0.method2125(Sprites.headiconsPkId)) {
       local5++;
     }
-    if (arg0.method2125(Static145.anInt2904)) {
+    if (arg0.method2125(Sprites.headiconsPrayerId)) {
       local5++;
     }
-    if (arg0.method2125(Static260.anInt4897)) {
+    if (arg0.method2125(Sprites.hintHeadiconsId)) {
       local5++;
     }
-    if (arg0.method2125(Static289.anInt5213)) {
+    if (arg0.method2125(Sprites.hintMapmarkersId)) {
       local5++;
     }
-    if (arg0.method2125(Static365.anInt6310)) {
+    if (arg0.method2125(Sprites.mapflagId)) {
       local5++;
     }
-    if (arg0.method2125(Static223.anInt4342)) {
+    if (arg0.method2125(Sprites.crossId)) {
       local5++;
     }
-    if (arg0.method2125(Static37.anInt649)) {
+    if (arg0.method2125(Sprites.mapdotsId)) {
       local5++;
     }
-    if (arg0.method2125(Static376.anInt6286)) {
+    if (arg0.method2125(Sprites.scrollbarId)) {
       local5++;
     }
-    if (arg0.method2125(Static205.anInt3910)) {
+    if (arg0.method2125(Sprites.nameIconsId)) {
       local5++;
     }
-    if (arg0.method2125(Static77.anInt1566)) {
+    if (arg0.method2125(Sprites.floorshadowsId)) {
       local5++;
     }
-    if (arg0.method2125(Static339.anInt5870)) {
+    if (arg0.method2125(Sprites.compassId)) {
       local5++;
     }
-    if (arg0.method2125(Static410.anInt6733)) {
+    if (arg0.method2125(Sprites.otherlevelId)) {
       local5++;
     }
-    if (arg0.method2125(Static175.anInt3393)) {
+    if (arg0.method2125(Sprites.hintMapedgeId)) {
       local5++;
     }
     return local5;

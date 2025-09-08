@@ -14,7 +14,7 @@ public final class Static67 {
   public static Class266_Sub1 aClass266_Sub1_1;
 
   @OriginalMember(owner = "client!dg", name = "K", descriptor = "Lclient!fs;")
-  public static Js5 aJs5_19;
+  public static Js5 archive4;
 
   @OriginalMember(owner = "client!dg", name = "O", descriptor = "I")
   public static int anInt1408;

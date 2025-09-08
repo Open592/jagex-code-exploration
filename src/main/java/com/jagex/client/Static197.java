@@ -14,7 +14,7 @@ public final class Static197 {
   public static SecondaryNode_Sub1_Sub5 aClass4_Sub1_Sub5_2;
 
   @OriginalMember(owner = "client!ju", name = "K", descriptor = "Lclient!fs;")
-  public static Js5 aJs5_45;
+  public static Js5 archive12;
 
   @OriginalMember(owner = "client!ju", name = "I", descriptor = "Lclient!sl;")
   public static final Class215 aClass215_39 = new Class215(32, -1);

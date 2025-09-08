@@ -23,7 +23,7 @@ public final class Static211 {
       return local10;
     }
     @Pc(25)
-    byte[] local25 = Static197.aJs5_45.method2104(0, arg0);
+    byte[] local25 = Static197.archive12.method2104(0, arg0);
     if (local25 == null || local25.length <= 1) {
       return null;
     } else {
@@ -115,13 +115,13 @@ public final class Static211 {
               @Pc(260)
               int local260 = local225 & 0xFF;
               Static225.anIntArray291[local51] =
-                  Static49.aJs5_27.method2099("m" + local256 + "_" + local260);
+                  Static49.archive5.getGroupId("m" + local256 + "_" + local260);
               Static346.anIntArray418[local51] =
-                  Static49.aJs5_27.method2099("l" + local256 + "_" + local260);
+                  Static49.archive5.getGroupId("l" + local256 + "_" + local260);
               Static95.anIntArray155[local51] =
-                  Static49.aJs5_27.method2099("um" + local256 + "_" + local260);
+                  Static49.archive5.getGroupId("um" + local256 + "_" + local260);
               Static189.anIntArray236[local51] =
-                  Static49.aJs5_27.method2099("ul" + local256 + "_" + local260);
+                  Static49.archive5.getGroupId("ul" + local256 + "_" + local260);
               local51++;
             }
           }

@@ -10,7 +10,7 @@ public final class Static19 {
   public static int anInt255;
 
   @OriginalMember(owner = "client!ar", name = "y", descriptor = "Lclient!fs;")
-  public static Js5 aJs5_2;
+  public static Js5 archive28;
 
   @OriginalMember(owner = "client!ar", name = "A", descriptor = "Z")
   public static boolean aBoolean30;

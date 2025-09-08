@@ -38,21 +38,21 @@ public final class Static119 {
       return local19;
     }
     @Pc(33)
-    byte[] local33 = Static197.aJs5_45.method2122(Static197.aJs5_45.method2117(local10));
+    byte[] local33 = Static197.archive12.method2122(Static197.archive12.method2117(local10));
     if (local33 == null) {
       local10 = arg2.anInt5418 | arg0 + 65536 << 8;
       local19 = (SecondaryNode_Sub1) Static48.aClass142_1.method3483((long) local10 << 16);
       if (local19 != null) {
         return local19;
       }
-      local33 = Static197.aJs5_45.method2122(Static197.aJs5_45.method2117(local10));
+      local33 = Static197.archive12.method2122(Static197.archive12.method2117(local10));
       if (local33 == null) {
         local10 = arg2.anInt5418 | 0xFFFF00;
         local19 = (SecondaryNode_Sub1) Static48.aClass142_1.method3483((long) local10 << 16);
         if (local19 != null) {
           return local19;
         }
-        local33 = Static197.aJs5_45.method2122(Static197.aJs5_45.method2117(local10));
+        local33 = Static197.archive12.method2122(Static197.archive12.method2117(local10));
         if (local33 == null) {
           return null;
         } else if (local33.length <= 1) {

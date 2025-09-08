@@ -1,5 +1,6 @@
 package com.jagex.client;
 
+import com.jagex.client.cache.Sprites;
 import com.jagex.client.jagex3.jagmisc.jagmisc;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalMember;
@@ -54,11 +55,11 @@ public final class Static440 {
                 Static80.anInterface7_3, 0, GameShell.canvas, 0, GameShell.signLink);
         Static122.aClass19_16.p(0);
         @Pc(22)
-        Class89 local22 = Static239.method3546(Static62.anInt1122, Static209.aJs5_48);
+        Class89 local22 = Static239.method3546(Sprites.p12FullId, Static209.archive13);
         @Pc(31)
         Class46 local31 =
             Static122.aClass19_16.method4275(
-                local22, Static456.method327(Static293.aJs5_60, Static62.anInt1122));
+                local22, Static456.method327(Static293.archive8, Sprites.p12FullId));
         Static436.method5519(
             true,
             Static439.A_LOCALIZED_STRING___148.getLocalizedString(ClientSettings.langID),

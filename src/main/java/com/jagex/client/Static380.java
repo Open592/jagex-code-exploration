@@ -115,7 +115,7 @@ public final class Static380 {
   public static Class195 method5018(
       @OriginalArg(0) Js5 arg0, @OriginalArg(2) String arg1, @OriginalArg(3) boolean arg2) {
     @Pc(18)
-    int local18 = arg0.method2099(arg1);
+    int local18 = arg0.getGroupId(arg1);
     if (local18 == -1) {
       return new Class195(0);
     }

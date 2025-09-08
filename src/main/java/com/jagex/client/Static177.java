@@ -9,9 +9,6 @@ public final class Static177 {
   @OriginalMember(owner = "client!iv", name = "s", descriptor = "[I")
   public static int[] anIntArray188;
 
-  @OriginalMember(owner = "client!iv", name = "eb", descriptor = "I")
-  public static int anInt2985;
-
   @OriginalMember(owner = "client!iv", name = "S", descriptor = "I")
   public static int anInt2973 = -1;
 
@@ -30,7 +27,7 @@ public final class Static177 {
           local15 = true;
         } else {
           if (local13.aByte104 == 1 && local13.aClass241_1 == null) {
-            local13.aClass241_1 = Static464.method5244(Static67.aJs5_19, local13.anInt7340, 0);
+            local13.aClass241_1 = Static464.method5244(Static67.archive4, local13.anInt7340, 0);
             if (local13.aClass241_1 == null) {
               continue;
             }
@@ -38,7 +35,7 @@ public final class Static177 {
           } else if (local13.aByte104 == 2
               && (local13.aClass4_Sub13_1 == null || local13.aClass4_Sub4_Sub1_2 == null)) {
             if (local13.aClass4_Sub13_1 == null) {
-              local13.aClass4_Sub13_1 = Static68.method1316(Static312.aJs5_66, local13.anInt7340);
+              local13.aClass4_Sub13_1 = Static68.method1316(Static312.archive14, local13.anInt7340);
             }
             if (local13.aClass4_Sub13_1 == null) {
               continue;
@@ -122,7 +119,7 @@ public final class Static177 {
     if (Static436.aBoolean666 && !Static109.method5336()) {
       if (Static323.aClass50_Sub1_1.anInt3439 != 0 && Static62.anInt1117 != -1) {
         Static32.method625(
-            Static323.aClass50_Sub1_1.anInt3439, Static62.anInt1117, Static46.aJs5_54);
+            Static323.aClass50_Sub1_1.anInt3439, Static62.anInt1117, Static46.archive6);
       }
       Static436.aBoolean666 = false;
     } else if (Static323.aClass50_Sub1_1.anInt3439 != 0

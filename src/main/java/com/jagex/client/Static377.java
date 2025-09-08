@@ -259,7 +259,7 @@ public final class Static377 {
             if (local216 != -1) {
               local248 = (Class57[]) Static261.aClass68_27.method1787((long) local216);
               if (local248 == null) {
-                local255 = Static456.method327(Static293.aJs5_60, local216);
+                local255 = Static456.method327(Static293.archive8, local216);
                 if (local255 != null) {
                   local248 = new Class57[local255.length];
                   for (local263 = 0; local263 < local255.length; local263++) {
@@ -309,7 +309,7 @@ public final class Static377 {
               if (local427 != -1) {
                 local248 = (Class57[]) Static200.aClass68_22.method1787((long) local427);
                 if (local248 == null) {
-                  local255 = Static456.method327(Static293.aJs5_60, local427);
+                  local255 = Static456.method327(Static293.archive8, local427);
                   if (local255 != null) {
                     local248 = new Class57[local255.length];
                     for (local263 = 0; local263 < local255.length; local263++) {
@@ -607,7 +607,7 @@ public final class Static377 {
     Class57 local20 = (Class57) Static386.aClass68_23.method1787((long) local7);
     if (local20 == null) {
       @Pc(27)
-      Class18[] local27 = Static456.method327(Static293.aJs5_60, local7);
+      Class18[] local27 = Static456.method327(Static293.archive8, local7);
       if (local27 == null) {
         return;
       }

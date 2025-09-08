@@ -7,7 +7,7 @@ import org.openrs2.deob.annotation.OriginalMember;
 public final class Static64 {
 
   @OriginalMember(owner = "client!dd", name = "M", descriptor = "Lclient!fs;")
-  public static Js5 aJs5_17;
+  public static Js5 archive22;
 
   @OriginalMember(owner = "client!dd", name = "Q", descriptor = "[I")
   public static int[] anIntArray106;

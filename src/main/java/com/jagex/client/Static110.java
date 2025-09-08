@@ -108,7 +108,7 @@ public final class Static110 {
       arg3.aClass4_Sub15_Sub3_2.method4478(local149);
     } else if (arg3.anInt616 >= 0) {
       @Pc(161)
-      Class241 local161 = Static464.method5244(Static67.aJs5_19, arg3.anInt616, 0);
+      Class241 local161 = Static464.method5244(Static67.archive4, arg3.anInt616, 0);
       if (local161 != null) {
         @Pc(168)
         Node_Sub4_Sub1 local168 = local161.method5245().method3079(Static275.aClass261_1);
@@ -129,7 +129,7 @@ public final class Static110 {
       @Pc(210)
       int local210 = (int) (Math.random() * (double) arg3.anIntArray37.length);
       @Pc(218)
-      Class241 local218 = Static464.method5244(Static67.aJs5_19, arg3.anIntArray37[local210], 0);
+      Class241 local218 = Static464.method5244(Static67.archive4, arg3.anIntArray37[local210], 0);
       if (local218 != null) {
         @Pc(225)
         Node_Sub4_Sub1 local225 = local218.method5245().method3079(Static275.aClass261_1);

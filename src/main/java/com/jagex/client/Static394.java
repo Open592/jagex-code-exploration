@@ -8,9 +8,6 @@ public final class Static394 {
   @OriginalMember(owner = "client!tu", name = "o", descriptor = "I")
   public static int anInt6578;
 
-  @OriginalMember(owner = "client!tu", name = "L", descriptor = "I")
-  public static int anInt6593;
-
   @OriginalMember(owner = "client!tu", name = "O", descriptor = "Lclient!lq;")
   public static BufferedFile randomFile;
 

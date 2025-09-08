@@ -282,7 +282,7 @@ public final class Static270 {
         }
       }
       if (Static292.aClass195_2 != null) {
-        Static74.aJs5_20.anInt2476 = 1;
+        Static74.archive2.anInt2476 = 1;
         Static348.aClass182_4.method4131(64, 1024);
         for (local210 = 0; local210 < Static292.aClass195_2.anInt5679; local210++) {
           local214 = Static292.aClass195_2.anIntArray397[local210];
@@ -309,8 +309,8 @@ public final class Static270 {
           }
         }
         Static348.aClass182_4.method4131(64, 128);
-        Static74.aJs5_20.anInt2476 = 2;
-        Static74.aJs5_20.method2118();
+        Static74.archive2.anInt2476 = 2;
+        Static74.archive2.method2118();
       }
     }
     return true;

@@ -1,5 +1,6 @@
 package com.jagex.client;
 
+import com.jagex.client.cache.Sprites;
 import java.awt.Canvas;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalMember;
@@ -90,8 +91,8 @@ public final class Static79 {
           Static455.method4241(Static80.anInterface7_3, 0, local28, 0, GameShell.signLink);
       Static22.aClass46_4 =
           Static4.aClass19_34.method4275(
-              Static239.method3546(Static177.anInt2985, Static209.aJs5_48),
-              Static456.method327(Static293.aJs5_60, Static177.anInt2985));
+              Static239.method3546(Sprites.p11FullId, Static209.archive13),
+              Static456.method327(Static293.archive8, Sprites.p11FullId));
     }
     for (local58 = (Node_Sub17) Static379.A_LINKED_LIST___45.tail();
         local58 != null;

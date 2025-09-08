@@ -8,7 +8,7 @@ import org.openrs2.deob.annotation.Pc;
 public final class Static381 {
 
   @OriginalMember(owner = "client!tf", name = "a", descriptor = "Lclient!fs;")
-  public static Js5 aJs5_87;
+  public static Js5 archive18;
 
   @OriginalMember(owner = "client!tf", name = "d", descriptor = "I")
   public static int anInt6417;

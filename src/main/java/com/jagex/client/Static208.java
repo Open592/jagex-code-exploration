@@ -9,7 +9,7 @@ import org.openrs2.deob.annotation.Pc;
 public final class Static208 {
 
   @OriginalMember(owner = "client!kk", name = "e", descriptor = "Lclient!fs;")
-  public static Js5 aJs5_29;
+  public static Js5 archive17;
 
   @OriginalMember(owner = "client!kk", name = "c", descriptor = "Lclient!ib;")
   public static final HashMap A_HASH_MAP___11 = new HashMap(32);

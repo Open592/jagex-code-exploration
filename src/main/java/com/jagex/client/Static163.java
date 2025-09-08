@@ -12,5 +12,5 @@ public final class Static163 {
   public static int anInt3197;
 
   @OriginalMember(owner = "client!ig", name = "x", descriptor = "Lclient!fs;")
-  public static Js5 aJs5_39;
+  public static Js5 archive23;
 }

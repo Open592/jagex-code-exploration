@@ -8,7 +8,7 @@ import org.openrs2.deob.annotation.Pc;
 public final class Static391 {
 
   @OriginalMember(owner = "client!tr", name = "f", descriptor = "Lclient!fs;")
-  public static Js5 aJs5_91;
+  public static Js5 archive19;
 
   @OriginalMember(owner = "client!tr", name = "d", descriptor = "Lclient!gk;")
   public static final LocalizedString A_LOCALIZED_STRING___133 =

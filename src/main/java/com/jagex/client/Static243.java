@@ -23,7 +23,7 @@ public final class Static243 {
 
   @OriginalMember(owner = "client!mg", name = "a", descriptor = "(BLjava/lang/String;Z)V")
   public static void method3561(@OriginalArg(1) String arg0, @OriginalArg(2) boolean arg1) {
-    Static391.aJs5_91.anInt2476 = 1;
+    Static391.archive19.anInt2476 = 1;
     @Pc(11)
     String local11 = arg0.toLowerCase();
     @Pc(14)
@@ -63,8 +63,8 @@ public final class Static243 {
       local114[local116] = Static444.aClass206_3.method4703(local14[local116]).aString61;
     }
     Static67.method1278(local114, Static191.aShortArray66);
-    Static391.aJs5_91.method2118();
-    Static391.aJs5_91.anInt2476 = 2;
+    Static391.archive19.method2118();
+    Static391.archive19.anInt2476 = 2;
   }
 
   @OriginalMember(owner = "client!mg", name = "a", descriptor = "(III)V")

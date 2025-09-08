@@ -11,7 +11,7 @@ public final class Static417 {
   public static Class65[] aClass65Array4;
 
   @OriginalMember(owner = "client!vb", name = "ab", descriptor = "Lclient!fs;")
-  public static Js5 aJs5_98;
+  public static Js5 archive27;
 
   @OriginalMember(owner = "client!vb", name = "a", descriptor = "(ILclient!fs;BIZII)V")
   public static void method5355(

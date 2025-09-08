@@ -8,9 +8,6 @@ import org.openrs2.deob.annotation.Pc;
 
 public final class Static37 {
 
-  @OriginalMember(owner = "client!br", name = "n", descriptor = "I")
-  public static int anInt649;
-
   @OriginalMember(owner = "client!br", name = "w", descriptor = "[Ljava/lang/String;")
   public static final String[] DAYS_OF_WEEK =
       new String[] {"Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"};

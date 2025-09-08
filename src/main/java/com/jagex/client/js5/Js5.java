@@ -69,7 +69,7 @@ public final class Js5 {
   }
 
   @OriginalMember(owner = "client!fs", name = "a", descriptor = "(Ljava/lang/String;B)I")
-  public int method2099(String arg0) {
+  public int getGroupId(String arg0) {
     if (this.method2097()) {
       String local20 = arg0.toLowerCase();
       int local29 = this.index.aClass235_1.method5174(Static269.method3854(local20));
@@ -187,7 +187,7 @@ public final class Js5 {
   }
 
   @OriginalMember(owner = "client!fs", name = "c", descriptor = "(B)I")
-  public int method2111() {
+  public int getChecksum() {
     if (!this.method2097()) {
       throw new IllegalStateException("");
     }

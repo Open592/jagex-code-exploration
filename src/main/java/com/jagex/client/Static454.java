@@ -6,9 +6,6 @@ import org.openrs2.deob.annotation.Pc;
 
 public final class Static454 {
 
-  @OriginalMember(owner = "client!wv", name = "z", descriptor = "I")
-  public static int anInt4074;
-
   @OriginalMember(owner = "client!wv", name = "A", descriptor = "I")
   public static int anInt4075 = 0;
 
@@ -69,10 +66,5 @@ public final class Static454 {
     } else {
       return Static417.aClass65Array4[arg4].a(arg1, arg3);
     }
-  }
-
-  @OriginalMember(owner = "client!wv", name = "e", descriptor = "(I)I")
-  public static int method3302() {
-    return 6;
   }
 }

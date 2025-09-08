@@ -13,10 +13,9 @@ public final class Static221 {
   @OriginalMember(owner = "client!lf", name = "L", descriptor = "Ljava/lang/String;")
   public static String aString39 = null;
 
-  @OriginalMember(owner = "client!lf", name = "a", descriptor = "(Lclient!fs;I)V")
-  public static void method3346(@OriginalArg(0) Js5 arg0) {
-    Static338.anInt5846 = arg0.method2099("titlebg");
-    Static367.anInt6320 = arg0.method2099("logo");
+  public static void method3346(Js5 archive) {
+    Static338.anInt5846 = archive.getGroupId("titlebg");
+    Static367.anInt6320 = archive.getGroupId("logo");
   }
 
   @OriginalMember(owner = "client!lf", name = "a", descriptor = "(I[SI)[S")

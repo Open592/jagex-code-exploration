@@ -1,9 +1,7 @@
 package com.jagex.client;
 
-import com.jagex.client.js5.Js5;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalMember;
-import org.openrs2.deob.annotation.Pc;
 
 public final class Static444 {
 
@@ -26,31 +24,6 @@ public final class Static444 {
 
   @OriginalMember(owner = "client!wj", name = "A", descriptor = "I")
   public static int anInt7298 = 1;
-
-  @OriginalMember(owner = "client!wj", name = "a", descriptor = "(BLclient!fs;Lclient!fs;)I")
-  public static int method5632(@OriginalArg(1) Js5 arg0, @OriginalArg(2) Js5 arg1) {
-    @Pc(5)
-    int local5 = 0;
-    if (arg1.method2125(Static177.anInt2985)) {
-      local5++;
-    }
-    if (arg1.method2125(Static62.anInt1122)) {
-      local5++;
-    }
-    if (arg1.method2125(Static145.anInt2907)) {
-      local5++;
-    }
-    if (arg0.method2125(Static177.anInt2985)) {
-      local5++;
-    }
-    if (arg0.method2125(Static62.anInt1122)) {
-      local5++;
-    }
-    if (arg0.method2125(Static145.anInt2907)) {
-      local5++;
-    }
-    return local5;
-  }
 
   @OriginalMember(owner = "client!wj", name = "a", descriptor = "(II)Z")
   public static boolean method5641(@OriginalArg(1) int arg0) {

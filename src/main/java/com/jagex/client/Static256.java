@@ -12,7 +12,7 @@ public final class Static256 {
   public static int anInt4776;
 
   @OriginalMember(owner = "client!mu", name = "t", descriptor = "Lclient!fs;")
-  public static Js5 aJs5_50;
+  public static Js5 archive3;
 
   @OriginalMember(owner = "client!mu", name = "f", descriptor = "Lclient!gk;")
   public static final LocalizedString A_LOCALIZED_STRING___99 =

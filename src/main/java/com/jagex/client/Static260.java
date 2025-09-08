@@ -6,9 +6,6 @@ import org.openrs2.deob.annotation.Pc;
 
 public final class Static260 {
 
-  @OriginalMember(owner = "client!ne", name = "G", descriptor = "I")
-  public static int anInt4897;
-
   @OriginalMember(owner = "client!ne", name = "E", descriptor = "I")
   public static int anInt4896 = -1;
 
@@ -77,6 +74,7 @@ public final class Static260 {
         30,
         0,
         0);
-    arg4.method5056(Static141.width / 2, arg3, Static302.height / 2 + 4, -1, Static24.aString53);
+    arg4.method5056(
+        Static141.width / 2, arg3, Static302.height / 2 + 4, -1, Static24.currentLoadingBoxText);
   }
 }

@@ -38,13 +38,13 @@ public final class Static187 {
       Static169.aServerConnection_6 = null;
     }
     if (Static403.anInt6667 == 25 || Static403.anInt6667 == 28) {
-      Static74.aJs5_20.anInt2476 = 2;
-      Static208.aJs5_29.anInt2476 = 2;
-      Static424.aJs5_99.anInt2476 = 2;
-      Static381.aJs5_87.anInt2476 = 2;
-      Static391.aJs5_91.anInt2476 = 2;
-      Static388.aJs5_90.anInt2476 = 2;
-      Static55.aJs5_16.anInt2476 = 2;
+      Static74.archive2.anInt2476 = 2;
+      Static208.archive17.anInt2476 = 2;
+      Static424.archive16.anInt2476 = 2;
+      Static381.archive18.anInt2476 = 2;
+      Static391.archive19.anInt2476 = 2;
+      Static388.archive20.anInt2476 = 2;
+      Static55.archive21.anInt2476 = 2;
     }
     if (arg0 == 25 || arg0 == 28) {
       Static275.anInt5144 = 0;
@@ -53,19 +53,19 @@ public final class Static187 {
       Static100.anInt2020 = 0;
       Static444.anInt7298 = 1;
       Static33.method633(true);
-      Static74.aJs5_20.anInt2476 = 1;
-      Static208.aJs5_29.anInt2476 = 1;
-      Static424.aJs5_99.anInt2476 = 1;
-      Static381.aJs5_87.anInt2476 = 1;
-      Static391.aJs5_91.anInt2476 = 1;
-      Static388.aJs5_90.anInt2476 = 1;
-      Static55.aJs5_16.anInt2476 = 1;
+      Static74.archive2.anInt2476 = 1;
+      Static208.archive17.anInt2476 = 1;
+      Static424.archive16.anInt2476 = 1;
+      Static381.archive18.anInt2476 = 1;
+      Static391.archive19.anInt2476 = 1;
+      Static388.archive20.anInt2476 = 1;
+      Static55.archive21.anInt2476 = 1;
     }
     if (arg0 == 25 || arg0 == 10) {
       Static343.method744();
     }
     if (arg0 == 5) {
-      Static443.method5592(Static122.aClass19_16, Static293.aJs5_60);
+      Static443.method5592(Static122.aClass19_16, Static293.archive8);
     } else {
       Static356.method4834();
     }
@@ -81,7 +81,7 @@ public final class Static187 {
           Static397.method724();
         } else {
           Static408.method5258(
-              Static323.aClass50_Sub1_1.anInt3439, Static46.aJs5_54, Static414.anInt6866);
+              Static323.aClass50_Sub1_1.anInt3439, Static46.archive6, Static414.anInt6866);
         }
         client.js5NetQueue.informUserAuthenticationStatus(false);
       } else {

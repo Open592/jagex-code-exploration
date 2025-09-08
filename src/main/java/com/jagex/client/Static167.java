@@ -18,7 +18,7 @@ public final class Static167 {
 
   @OriginalMember(owner = "client!il", name = "a", descriptor = "(I)V")
   public static void method2736() {
-    Static74.aJs5_20.anInt2476 = 1;
+    Static74.archive2.anInt2476 = 1;
     Static6.client.method877();
     Static265.aBoolean457 = true;
     Static41.aBoolean74 = true;
@@ -129,7 +129,7 @@ public final class Static167 {
     Static323.aClass50_Sub1_1.aBoolean309 = false;
     Static103.method1816();
     Static1.method5();
-    Static74.aJs5_20.anInt2476 = 2;
+    Static74.archive2.anInt2476 = 2;
     Static178.aClass4_Sub42_2 = null;
     Static419.aLong212 = 0L;
   }

@@ -1,5 +1,6 @@
 package com.jagex.client;
 
+import com.jagex.client.cache.Sprites;
 import com.jagex.client.js5.Js5;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalMember;
@@ -22,15 +23,15 @@ public final class Static40 {
       descriptor = "(Lclient!ya;Lclient!fs;ILclient!fs;)V")
   public static void method696(
       @OriginalArg(0) Class19 arg0, @OriginalArg(1) Js5 arg1, @OriginalArg(3) Js5 arg2) {
-    Static387.aClass89_10 = Static239.method3546(Static177.anInt2985, arg2);
+    Static387.aClass89_10 = Static239.method3546(Sprites.p11FullId, arg2);
     Static43.aClass46_12 =
-        arg0.method4275(Static387.aClass89_10, Static456.method327(arg1, Static177.anInt2985));
-    Static34.aClass89_1 = Static239.method3546(Static62.anInt1122, arg2);
+        arg0.method4275(Static387.aClass89_10, Static456.method327(arg1, Sprites.p11FullId));
+    Static34.aClass89_1 = Static239.method3546(Sprites.p12FullId, arg2);
     Static207.aClass46_9 =
-        arg0.method4275(Static34.aClass89_1, Static456.method327(arg1, Static62.anInt1122));
-    Static118.aClass89_5 = Static239.method3546(Static145.anInt2907, arg2);
+        arg0.method4275(Static34.aClass89_1, Static456.method327(arg1, Sprites.p12FullId));
+    Static118.aClass89_5 = Static239.method3546(Sprites.b12FullId, arg2);
     Static331.aClass46_10 =
-        arg0.method4275(Static118.aClass89_5, Static456.method327(arg1, Static145.anInt2907));
+        arg0.method4275(Static118.aClass89_5, Static456.method327(arg1, Sprites.b12FullId));
   }
 
   @OriginalMember(owner = "client!bu", name = "a", descriptor = "(ILclient!uu;II)V")

@@ -9,7 +9,7 @@ import org.openrs2.deob.annotation.Pc;
 public final class Static424 {
 
   @OriginalMember(owner = "client!vj", name = "s", descriptor = "Lclient!fs;")
-  public static Js5 aJs5_99;
+  public static Js5 archive16;
 
   @OriginalMember(owner = "client!vj", name = "t", descriptor = "Lclient!ln;")
   public static Class49 aClass49_2;

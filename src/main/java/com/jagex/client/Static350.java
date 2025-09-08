@@ -11,7 +11,7 @@ public final class Static350 {
   public static float aFloat187;
 
   @OriginalMember(owner = "client!rq", name = "j", descriptor = "Lclient!fs;")
-  public static Js5 aJs5_79;
+  public static Js5 archive15;
 
   @OriginalMember(owner = "client!rq", name = "b", descriptor = "Z")
   public static boolean aBoolean556 = true;

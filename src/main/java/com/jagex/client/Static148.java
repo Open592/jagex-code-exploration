@@ -1276,7 +1276,7 @@ public final class Static148 {
     anInterface12_2 = arg6;
     A_HASH_MAP___30.clear();
     @Pc(21)
-    int local21 = aJs5_73.method2099("details");
+    int local21 = aJs5_73.getGroupId("details");
     @Pc(26)
     int[] local26 = aJs5_73.method2124(local21);
     for (@Pc(28) int local28 = 0; local28 < local26.length; local28++) {

@@ -10,9 +10,6 @@ public final class Static410 {
   @OriginalMember(owner = "client!uq", name = "b", descriptor = "Lclient!fs;")
   public static Js5 aJs5_95;
 
-  @OriginalMember(owner = "client!uq", name = "c", descriptor = "I")
-  public static int anInt6733;
-
   @OriginalMember(owner = "client!uq", name = "i", descriptor = "[Lclient!l;")
   public static Class57[] aClass57Array17;
 

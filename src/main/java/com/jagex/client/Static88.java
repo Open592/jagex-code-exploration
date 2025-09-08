@@ -7,7 +7,7 @@ import org.openrs2.deob.annotation.OriginalMember;
 public final class Static88 {
 
   @OriginalMember(owner = "client!eh", name = "e", descriptor = "Lclient!fs;")
-  public static Js5 aJs5_23;
+  public static Js5 archive10;
 
   @OriginalMember(owner = "client!eh", name = "h", descriptor = "Lclient!lq;")
   public static BufferedFile cacheDataFile;
