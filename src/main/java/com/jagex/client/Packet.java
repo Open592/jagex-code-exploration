@@ -243,7 +243,7 @@ public class Packet extends Node {
     return (this.data[this.pos - 1] & 0xFF)
         + ((this.data[this.pos - 2] & 0xFF) << 8)
         + ((this.data[this.pos - 3] & 0xFF) << 16)
-        + (this.data[this.pos - 4] << 24 & 0xFF);
+        + ((this.data[this.pos - 4] & 0xFF) << 24);
   }
 
   @OriginalMember(owner = "client!iv", name = "j", descriptor = "(I)I")
