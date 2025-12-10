@@ -1,7 +1,7 @@
 package com.jagex.client;
 
 import com.jagex.client.cache.Sprites;
-import com.jagex.client.jagex3.jagmisc.jagmisc;
+import jagex3.jagmisc.jagmisc;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;

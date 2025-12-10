@@ -1,4 +1,4 @@
-package com.jagex.client.jaggl.memory;
+package jaggl.memory;
 
 public final class NativeHeap {
 

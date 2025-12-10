@@ -1,7 +1,7 @@
 package com.jagex.client;
 
 import com.jagex.client.ds.LinkedList;
-import com.jagex.client.jagex3.jagmisc.jagmisc;
+import jagex3.jagmisc.jagmisc;
 import java.net.InetAddress;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalClass;

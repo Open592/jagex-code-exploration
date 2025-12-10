@@ -2,7 +2,7 @@ package com.jagex.client;
 
 import com.jagex.client.display.GraphicsDeviceDisplayMode;
 import com.jagex.client.env.ModeWhat;
-import com.jagex.client.jagex3.jagmisc.jagmisc;
+import jagex3.jagmisc.jagmisc;
 import com.jagex.signlink.MonotonicClock;
 import com.jagex.signlink.SignLink;
 import java.util.Calendar;

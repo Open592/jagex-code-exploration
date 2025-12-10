@@ -1,4 +1,4 @@
-package com.jagex.client.jaggl;
+package jaggl;
 
 import java.awt.Canvas;
 import java.util.Hashtable;

@@ -6,7 +6,7 @@ import com.jagex.client.display.FullScreenWindow;
 import com.jagex.client.env.ModeGame;
 import com.jagex.client.env.ModeWhat;
 import com.jagex.client.env.ModeWhere;
-import com.jagex.client.jagex3.jagmisc.jagmisc;
+import jagex3.jagmisc.jagmisc;
 import com.jagex.client.js5.Cache;
 import com.jagex.client.js5.Js5;
 import com.jagex.client.js5.Js5DiskCache;

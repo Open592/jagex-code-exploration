@@ -1,6 +1,6 @@
 package com.jagex.client;
 
-import com.jagex.client.jaggl.memory.NativeHeap;
+import jaggl.memory.NativeHeap;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalClass;
 import org.openrs2.deob.annotation.OriginalMember;

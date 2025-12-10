@@ -1,4 +1,4 @@
-package com.jagex.client.jagex3.jagmisc;
+package jagex3.jagmisc;
 
 public final class jagmisc {
 

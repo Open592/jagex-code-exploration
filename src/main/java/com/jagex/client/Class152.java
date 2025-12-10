@@ -1,7 +1,7 @@
 package com.jagex.client;
 
-import com.jagex.client.jaggl.OpenGL;
-import com.jagex.client.jaggl.memory.NativeBuffer;
+import jaggl.OpenGL;
+import jaggl.memory.NativeBuffer;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalClass;
 import org.openrs2.deob.annotation.OriginalMember;
