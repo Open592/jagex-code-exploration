@@ -44,8 +44,8 @@ public final class Static377 {
         @Pc(176)
         String local176 =
             ClientSettings.modeGame.isStellarDawn()
-                ? Static4.A_LOCALIZED_STRING___121.getLocalizedString(ClientSettings.langID)
-                : Static320.A_LOCALIZED_STRING___118.getLocalizedString(ClientSettings.langID);
+                ? Static4.A_LOCALIZED_STRING___121.getString(ClientSettings.langID)
+                : Static320.A_LOCALIZED_STRING___118.getString(ClientSettings.langID);
         if (arg1.anInt4345 >= arg1.anInt4332) {
           local85 =
               arg1.method3428()
@@ -75,7 +75,7 @@ public final class Static377 {
         local85 =
             arg1.method3428()
                 + " ("
-                + Static126.A_LOCALIZED_STRING___49.getLocalizedString(ClientSettings.langID)
+                + Static126.A_LOCALIZED_STRING___49.getString(ClientSettings.langID)
                 + arg1.anInt4336
                 + ")";
       }
@@ -102,7 +102,7 @@ public final class Static377 {
             short local290 = 0;
             if (ClientSettings.modeGame.isRunescape()
                 && Static349.aStringArray29[local282].equalsIgnoreCase(
-                    Static81.A_LOCALIZED_STRING___33.getLocalizedString(ClientSettings.langID))) {
+                    Static81.A_LOCALIZED_STRING___33.getString(ClientSettings.langID))) {
               if (arg1.anInt4345 > Static1.aClass16_Sub1_Sub5_Sub1_1.anInt4345) {
                 local290 = 2000;
               }
@@ -154,7 +154,7 @@ public final class Static377 {
           0,
           Static49.aString28
               + " -> <col=ffffff>"
-              + Static223.A_LOCALIZED_STRING___91.getLocalizedString(ClientSettings.langID),
+              + Static223.A_LOCALIZED_STRING___91.getString(ClientSettings.langID),
           true,
           Static388.aString62,
           0,

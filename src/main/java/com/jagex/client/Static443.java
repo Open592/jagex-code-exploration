@@ -107,7 +107,7 @@ public final class Static443 {
     }
     if (!local19) {
       Static415.method5323(
-          Static76.A_LOCALIZED_STRING___32.getLocalizedString(ClientSettings.langID) + arg0);
+          Static76.A_LOCALIZED_STRING___32.getString(ClientSettings.langID) + arg0);
     }
   }
 

@@ -20,7 +20,7 @@ public final class Static200 {
     return arg0.aString56 == null || arg0.aString56.length() <= 0
         ? arg0.aString55
         : arg0.aString55
-            + Static146.A_LOCALIZED_STRING___10.getLocalizedString(ClientSettings.langID)
+            + Static146.A_LOCALIZED_STRING___10.getString(ClientSettings.langID)
             + arg0.aString56;
   }
 

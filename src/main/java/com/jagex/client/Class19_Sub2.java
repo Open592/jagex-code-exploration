@@ -1,13 +1,13 @@
 package com.jagex.client;
 
 import com.jagex.client.ds.LinkedList;
+import com.jagex.client.utilities.ThreadingUtilities;
+import com.jagex.signlink.MonotonicClock;
+import com.jagex.signlink.SignLink;
 import jaggl.OpenGL;
 import jaggl.memory.NativeBuffer;
 import jaggl.memory.NativeHeap;
 import jaggl.memory.NativeStream;
-import com.jagex.client.utilities.ThreadingUtilities;
-import com.jagex.signlink.MonotonicClock;
-import com.jagex.signlink.SignLink;
 import java.awt.Canvas;
 import java.awt.Dimension;
 import java.awt.Rectangle;

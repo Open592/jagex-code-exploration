@@ -1,5 +1,6 @@
 package com.jagex.client;
 
+import com.jagex.client.locale.LocalizedString;
 import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;
 
@@ -35,7 +36,7 @@ public final class Static214 {
     @Pc(57)
     int local57 =
         Static118.aClass89_5.method2340(
-            Static391.A_LOCALIZED_STRING___133.getLocalizedString(ClientSettings.langID));
+            Static391.A_LOCALIZED_STRING___133.getString(ClientSettings.langID));
     for (@Pc(62) Node_Sub39 local62 = (Node_Sub39) Static206.A_LINKED_LIST___28.tail();
         local62 != null;
         local62 = (Node_Sub39) Static206.A_LINKED_LIST___28.previous()) {

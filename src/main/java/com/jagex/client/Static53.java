@@ -452,7 +452,7 @@ public final class Static53 {
                           local775,
                           "",
                           true,
-                          Static218.A_LOCALIZED_STRING.getLocalizedString(ClientSettings.langID),
+                          Static218.A_LOCALIZED_STRING.getString(ClientSettings.langID),
                           local783,
                           -1,
                           -1);

@@ -1,4 +1,4 @@
-package com.jagex.client;
+package com.jagex.client.locale;
 
 public final class LocalizedString {
   private final String[] strings;
@@ -7,7 +7,7 @@ public final class LocalizedString {
     this.strings = new String[] {english, german, french, portuguese};
   }
 
-  public String getLocalizedString(int languageId) {
+  public String getString(int languageId) {
     return this.strings[languageId];
   }
 

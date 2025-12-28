@@ -248,7 +248,7 @@ public final class Static407 {
         Static122.aClass19_16.method4293(local119, local113, local117, -16777216, local115);
         Static436.method5519(
             false,
-            Static439.A_LOCALIZED_STRING___148.getLocalizedString(ClientSettings.langID),
+            Static439.A_LOCALIZED_STRING___148.getString(ClientSettings.langID),
             Static207.aClass46_9);
       }
     } else {

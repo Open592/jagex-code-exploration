@@ -53,7 +53,7 @@ public final class Static315 {
           Static171.aColorArray5[ClientSettings.colourID].getRGB(),
           local52 + 20,
           -1,
-          Static96.A_LOCALIZED_STRING___38.getLocalizedString(ClientSettings.langID));
+          Static96.A_LOCALIZED_STRING___38.getString(ClientSettings.langID));
       return;
     }
     @Pc(108)

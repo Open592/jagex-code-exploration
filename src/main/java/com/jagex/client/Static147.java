@@ -1,5 +1,6 @@
 package com.jagex.client;
 
+import com.jagex.client.locale.LocalizedString;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;
@@ -468,8 +469,7 @@ public final class Static147 {
                     }
                   }
                   if (Static304.aClass247_16 == local23) {
-                    local975 =
-                        Static154.A_LOCALIZED_STRING___26.getLocalizedString(ClientSettings.langID);
+                    local975 = Static154.A_LOCALIZED_STRING___26.getString(ClientSettings.langID);
                     local249 = local23.anInt6772;
                   }
                   if (Static449.aBoolean688) {

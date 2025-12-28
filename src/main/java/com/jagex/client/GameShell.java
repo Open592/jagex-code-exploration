@@ -1,11 +1,11 @@
 package com.jagex.client;
 
 import com.jagex.client.display.FullScreenWindow;
-import jagex3.jagmisc.jagmisc;
 import com.jagex.client.utilities.ThreadingUtilities;
 import com.jagex.signlink.Message;
 import com.jagex.signlink.MonotonicClock;
 import com.jagex.signlink.SignLink;
+import jagex3.jagmisc.jagmisc;
 import java.applet.Applet;
 import java.applet.AppletContext;
 import java.awt.*;

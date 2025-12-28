@@ -1,5 +1,6 @@
 package com.jagex.client;
 
+import com.jagex.client.locale.LocalizedString;
 import org.openrs2.deob.annotation.OriginalClass;
 
 @OriginalClass("client!dq")

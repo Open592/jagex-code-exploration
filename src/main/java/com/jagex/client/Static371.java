@@ -1,6 +1,7 @@
 package com.jagex.client;
 
 import com.jagex.client.js5.Js5;
+import com.jagex.client.locale.LocalizedString;
 import com.jagex.signlink.MonotonicClock;
 import java.awt.Canvas;
 import org.openrs2.deob.annotation.OriginalArg;

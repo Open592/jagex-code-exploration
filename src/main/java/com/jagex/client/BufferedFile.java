@@ -1,5 +1,6 @@
 package com.jagex.client;
 
+import com.jagex.client.locale.LocalizedString;
 import com.jagex.signlink.FileOnDisk;
 import java.io.EOFException;
 import java.io.File;

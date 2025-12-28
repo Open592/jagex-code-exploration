@@ -61,7 +61,7 @@ public final class Static260 {
         (ClientSettings.modeGame.isRunescape()
                 ? Static268.runescapeIsLoadingPleaseWaitLocalizedString
                 : Static374.stellarDawnIsLoadingPleaseWaitLocalizedString)
-            .getLocalizedString(ClientSettings.langID));
+            .getString(ClientSettings.langID));
     @Pc(64)
     int local64 = Static302.height / 2 - 18;
     arg5.method4312(Static141.width / 2 - 152, local64, 304, 34, arg0, 0);

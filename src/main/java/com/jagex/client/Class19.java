@@ -1,5 +1,6 @@
 package com.jagex.client;
 
+import com.jagex.client.locale.LocalizedString;
 import java.awt.Canvas;
 import java.awt.Rectangle;
 import org.openrs2.deob.annotation.OriginalArg;

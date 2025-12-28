@@ -1,6 +1,7 @@
 package com.jagex.client;
 
 import com.jagex.client.ds.LinkedList;
+import com.jagex.client.locale.LocalizedString;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;

@@ -61,9 +61,7 @@ public final class Static440 {
             Static122.aClass19_16.method4275(
                 local22, Static456.method327(Static293.archive8, Sprites.p12FullId));
         Static436.method5519(
-            true,
-            Static439.A_LOCALIZED_STRING___148.getLocalizedString(ClientSettings.langID),
-            local31);
+            true, Static439.A_LOCALIZED_STRING___148.getString(ClientSettings.langID), local31);
         Static122.aClass19_16.method4247();
         Static348.method4697();
         Static122.aClass19_16.method4267();

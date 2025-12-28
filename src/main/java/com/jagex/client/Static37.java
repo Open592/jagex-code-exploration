@@ -1,7 +1,7 @@
 package com.jagex.client;
 
-import jaggl.OpenGL;
 import com.jagex.client.js5.Js5;
+import jaggl.OpenGL;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;

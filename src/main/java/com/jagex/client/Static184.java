@@ -127,7 +127,7 @@ public final class Static184 {
                 local58,
                 "",
                 true,
-                Static218.A_LOCALIZED_STRING.getLocalizedString(ClientSettings.langID),
+                Static218.A_LOCALIZED_STRING.getString(ClientSettings.langID),
                 local60,
                 -1,
                 -1);
@@ -354,7 +354,7 @@ public final class Static184 {
                     local373.anInt2384,
                     "<col=ff9040>" + local1081.aString61,
                     true,
-                    Static21.A_LOCALIZED_STRING___12.getLocalizedString(ClientSettings.langID),
+                    Static21.A_LOCALIZED_STRING___12.getString(ClientSettings.langID),
                     local373.anInt2383,
                     -1,
                     Static103.anInt2066);
@@ -446,7 +446,7 @@ public final class Static184 {
                   local373.anInt2384,
                   "<col=00ffff>" + local1304.aString59,
                   true,
-                  Static21.A_LOCALIZED_STRING___12.getLocalizedString(ClientSettings.langID),
+                  Static21.A_LOCALIZED_STRING___12.getString(ClientSettings.langID),
                   local373.anInt2383,
                   -1,
                   Static103.anInt2066);

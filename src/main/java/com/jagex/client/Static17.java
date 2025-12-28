@@ -25,7 +25,7 @@ public final class Static17 {
     if (Static341.aBoolean599 && Static407.anInt6710 < 2) {
       local38 =
           Static388.aString62
-              + Static146.A_LOCALIZED_STRING___10.getLocalizedString(ClientSettings.langID)
+              + Static146.A_LOCALIZED_STRING___10.getString(ClientSettings.langID)
               + Static49.aString28
               + " ->";
     } else if (Static434.isShiftClickEnabled
@@ -82,7 +82,7 @@ public final class Static17 {
           local38
               + "<col=ffffff> / "
               + (Static407.anInt6710 - 2)
-              + Static70.A_LOCALIZED_STRING___31.getLocalizedString(ClientSettings.langID);
+              + Static70.A_LOCALIZED_STRING___31.getString(ClientSettings.langID);
     }
     if (Static283.aClass247_13 != null) {
       @Pc(252)

@@ -38,7 +38,7 @@ public final class Static311 {
     }
     Static436.method5519(
         true,
-        Static439.A_LOCALIZED_STRING___148.getLocalizedString(ClientSettings.langID),
+        Static439.A_LOCALIZED_STRING___148.getString(ClientSettings.langID),
         Static207.aClass46_9);
     @Pc(59)
     int local59 = Static180.anInt3453;

@@ -105,7 +105,7 @@ public final class Static290 {
           arg0.anInt6865,
           "",
           true,
-          Static412.A_LOCALIZED_STRING___142.getLocalizedString(ClientSettings.langID),
+          Static412.A_LOCALIZED_STRING___142.getString(ClientSettings.langID),
           arg0.anInt6809,
           arg0.anInt6779,
           -1);

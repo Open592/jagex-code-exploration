@@ -2,9 +2,9 @@ package com.jagex.client;
 
 import com.jagex.client.display.GraphicsDeviceDisplayMode;
 import com.jagex.client.env.ModeWhat;
-import jagex3.jagmisc.jagmisc;
 import com.jagex.signlink.MonotonicClock;
 import com.jagex.signlink.SignLink;
+import jagex3.jagmisc.jagmisc;
 import java.util.Calendar;
 import java.util.Date;
 import org.openrs2.deob.annotation.OriginalArg;
@@ -2714,200 +2714,164 @@ public final class Static271 {
     String local11 = arg0.toLowerCase();
     @Pc(13)
     byte local13 = 0;
-    if (local11.startsWith(Static318.A_LOCALIZED_STRING___101.getLocalizedString(0))) {
+    if (local11.startsWith(Static318.A_LOCALIZED_STRING___101.getString(0))) {
       local13 = 0;
-      arg0 = arg0.substring(Static318.A_LOCALIZED_STRING___101.getLocalizedString(0).length());
-    } else if (local11.startsWith(Static409.A_LOCALIZED_STRING___146.getLocalizedString(0))) {
+      arg0 = arg0.substring(Static318.A_LOCALIZED_STRING___101.getString(0).length());
+    } else if (local11.startsWith(Static409.A_LOCALIZED_STRING___146.getString(0))) {
       local13 = 1;
-      arg0 = arg0.substring(Static409.A_LOCALIZED_STRING___146.getLocalizedString(0).length());
-    } else if (local11.startsWith(Static153.A_LOCALIZED_STRING___60.getLocalizedString(0))) {
+      arg0 = arg0.substring(Static409.A_LOCALIZED_STRING___146.getString(0).length());
+    } else if (local11.startsWith(Static153.A_LOCALIZED_STRING___60.getString(0))) {
       local13 = 2;
-      arg0 = arg0.substring(Static153.A_LOCALIZED_STRING___60.getLocalizedString(0).length());
-    } else if (local11.startsWith(Static157.A_LOCALIZED_STRING___64.getLocalizedString(0))) {
+      arg0 = arg0.substring(Static153.A_LOCALIZED_STRING___60.getString(0).length());
+    } else if (local11.startsWith(Static157.A_LOCALIZED_STRING___64.getString(0))) {
       local13 = 3;
-      arg0 = arg0.substring(Static157.A_LOCALIZED_STRING___64.getLocalizedString(0).length());
-    } else if (local11.startsWith(Static42.A_LOCALIZED_STRING___23.getLocalizedString(0))) {
+      arg0 = arg0.substring(Static157.A_LOCALIZED_STRING___64.getString(0).length());
+    } else if (local11.startsWith(Static42.A_LOCALIZED_STRING___23.getString(0))) {
       local13 = 4;
-      arg0 = arg0.substring(Static42.A_LOCALIZED_STRING___23.getLocalizedString(0).length());
-    } else if (local11.startsWith(Static415.A_LOCALIZED_STRING___143.getLocalizedString(0))) {
+      arg0 = arg0.substring(Static42.A_LOCALIZED_STRING___23.getString(0).length());
+    } else if (local11.startsWith(Static415.A_LOCALIZED_STRING___143.getString(0))) {
       local13 = 5;
-      arg0 = arg0.substring(Static415.A_LOCALIZED_STRING___143.getLocalizedString(0).length());
-    } else if (local11.startsWith(Static454.A_LOCALIZED_STRING___89.getLocalizedString(0))) {
+      arg0 = arg0.substring(Static415.A_LOCALIZED_STRING___143.getString(0).length());
+    } else if (local11.startsWith(Static454.A_LOCALIZED_STRING___89.getString(0))) {
       local13 = 6;
-      arg0 = arg0.substring(Static454.A_LOCALIZED_STRING___89.getLocalizedString(0).length());
-    } else if (local11.startsWith(Static408.A_LOCALIZED_STRING___139.getLocalizedString(0))) {
+      arg0 = arg0.substring(Static454.A_LOCALIZED_STRING___89.getString(0).length());
+    } else if (local11.startsWith(Static408.A_LOCALIZED_STRING___139.getString(0))) {
       local13 = 7;
-      arg0 = arg0.substring(Static408.A_LOCALIZED_STRING___139.getLocalizedString(0).length());
-    } else if (local11.startsWith(Static147.A_LOCALIZED_STRING___56.getLocalizedString(0))) {
+      arg0 = arg0.substring(Static408.A_LOCALIZED_STRING___139.getString(0).length());
+    } else if (local11.startsWith(Static147.A_LOCALIZED_STRING___56.getString(0))) {
       local13 = 8;
-      arg0 = arg0.substring(Static147.A_LOCALIZED_STRING___56.getLocalizedString(0).length());
-    } else if (local11.startsWith(Static191.A_LOCALIZED_STRING___48.getLocalizedString(0))) {
+      arg0 = arg0.substring(Static147.A_LOCALIZED_STRING___56.getString(0).length());
+    } else if (local11.startsWith(Static191.A_LOCALIZED_STRING___48.getString(0))) {
       local13 = 9;
-      arg0 = arg0.substring(Static191.A_LOCALIZED_STRING___48.getLocalizedString(0).length());
-    } else if (local11.startsWith(Static115.A_LOCALIZED_STRING___42.getLocalizedString(0))) {
+      arg0 = arg0.substring(Static191.A_LOCALIZED_STRING___48.getString(0).length());
+    } else if (local11.startsWith(Static115.A_LOCALIZED_STRING___42.getString(0))) {
       local13 = 10;
-      arg0 = arg0.substring(Static115.A_LOCALIZED_STRING___42.getLocalizedString(0).length());
-    } else if (local11.startsWith(Static234.A_LOCALIZED_STRING___93.getLocalizedString(0))) {
+      arg0 = arg0.substring(Static115.A_LOCALIZED_STRING___42.getString(0).length());
+    } else if (local11.startsWith(Static234.A_LOCALIZED_STRING___93.getString(0))) {
       local13 = 11;
-      arg0 = arg0.substring(Static234.A_LOCALIZED_STRING___93.getLocalizedString(0).length());
+      arg0 = arg0.substring(Static234.A_LOCALIZED_STRING___93.getString(0).length());
     } else if (ClientSettings.langID != 0) {
-      if (local11.startsWith(
-          Static318.A_LOCALIZED_STRING___101.getLocalizedString(ClientSettings.langID))) {
+      if (local11.startsWith(Static318.A_LOCALIZED_STRING___101.getString(ClientSettings.langID))) {
         local13 = 0;
         arg0 =
             arg0.substring(
-                Static318.A_LOCALIZED_STRING___101
-                    .getLocalizedString(ClientSettings.langID)
-                    .length());
+                Static318.A_LOCALIZED_STRING___101.getString(ClientSettings.langID).length());
       } else if (local11.startsWith(
-          Static409.A_LOCALIZED_STRING___146.getLocalizedString(ClientSettings.langID))) {
+          Static409.A_LOCALIZED_STRING___146.getString(ClientSettings.langID))) {
         local13 = 1;
         arg0 =
             arg0.substring(
-                Static409.A_LOCALIZED_STRING___146
-                    .getLocalizedString(ClientSettings.langID)
-                    .length());
+                Static409.A_LOCALIZED_STRING___146.getString(ClientSettings.langID).length());
       } else if (local11.startsWith(
-          Static153.A_LOCALIZED_STRING___60.getLocalizedString(ClientSettings.langID))) {
+          Static153.A_LOCALIZED_STRING___60.getString(ClientSettings.langID))) {
         local13 = 2;
         arg0 =
             arg0.substring(
-                Static153.A_LOCALIZED_STRING___60
-                    .getLocalizedString(ClientSettings.langID)
-                    .length());
+                Static153.A_LOCALIZED_STRING___60.getString(ClientSettings.langID).length());
       } else if (local11.startsWith(
-          Static157.A_LOCALIZED_STRING___64.getLocalizedString(ClientSettings.langID))) {
+          Static157.A_LOCALIZED_STRING___64.getString(ClientSettings.langID))) {
         local13 = 3;
         arg0 =
             arg0.substring(
-                Static157.A_LOCALIZED_STRING___64
-                    .getLocalizedString(ClientSettings.langID)
-                    .length());
+                Static157.A_LOCALIZED_STRING___64.getString(ClientSettings.langID).length());
       } else if (local11.startsWith(
-          Static42.A_LOCALIZED_STRING___23.getLocalizedString(ClientSettings.langID))) {
+          Static42.A_LOCALIZED_STRING___23.getString(ClientSettings.langID))) {
         local13 = 4;
         arg0 =
             arg0.substring(
-                Static42.A_LOCALIZED_STRING___23
-                    .getLocalizedString(ClientSettings.langID)
-                    .length());
+                Static42.A_LOCALIZED_STRING___23.getString(ClientSettings.langID).length());
       } else if (local11.startsWith(
-          Static415.A_LOCALIZED_STRING___143.getLocalizedString(ClientSettings.langID))) {
+          Static415.A_LOCALIZED_STRING___143.getString(ClientSettings.langID))) {
         local13 = 5;
         arg0 =
             arg0.substring(
-                Static415.A_LOCALIZED_STRING___143
-                    .getLocalizedString(ClientSettings.langID)
-                    .length());
+                Static415.A_LOCALIZED_STRING___143.getString(ClientSettings.langID).length());
       } else if (local11.startsWith(
-          Static454.A_LOCALIZED_STRING___89.getLocalizedString(ClientSettings.langID))) {
+          Static454.A_LOCALIZED_STRING___89.getString(ClientSettings.langID))) {
         local13 = 6;
         arg0 =
             arg0.substring(
-                Static454.A_LOCALIZED_STRING___89
-                    .getLocalizedString(ClientSettings.langID)
-                    .length());
+                Static454.A_LOCALIZED_STRING___89.getString(ClientSettings.langID).length());
       } else if (local11.startsWith(
-          Static408.A_LOCALIZED_STRING___139.getLocalizedString(ClientSettings.langID))) {
+          Static408.A_LOCALIZED_STRING___139.getString(ClientSettings.langID))) {
         local13 = 7;
         arg0 =
             arg0.substring(
-                Static408.A_LOCALIZED_STRING___139
-                    .getLocalizedString(ClientSettings.langID)
-                    .length());
+                Static408.A_LOCALIZED_STRING___139.getString(ClientSettings.langID).length());
       } else if (local11.startsWith(
-          Static147.A_LOCALIZED_STRING___56.getLocalizedString(ClientSettings.langID))) {
+          Static147.A_LOCALIZED_STRING___56.getString(ClientSettings.langID))) {
         local13 = 8;
         arg0 =
             arg0.substring(
-                Static147.A_LOCALIZED_STRING___56
-                    .getLocalizedString(ClientSettings.langID)
-                    .length());
+                Static147.A_LOCALIZED_STRING___56.getString(ClientSettings.langID).length());
       } else if (local11.startsWith(
-          Static191.A_LOCALIZED_STRING___48.getLocalizedString(ClientSettings.langID))) {
+          Static191.A_LOCALIZED_STRING___48.getString(ClientSettings.langID))) {
         local13 = 9;
         arg0 =
             arg0.substring(
-                Static191.A_LOCALIZED_STRING___48
-                    .getLocalizedString(ClientSettings.langID)
-                    .length());
+                Static191.A_LOCALIZED_STRING___48.getString(ClientSettings.langID).length());
       } else if (local11.startsWith(
-          Static115.A_LOCALIZED_STRING___42.getLocalizedString(ClientSettings.langID))) {
+          Static115.A_LOCALIZED_STRING___42.getString(ClientSettings.langID))) {
         local13 = 10;
         arg0 =
             arg0.substring(
-                Static115.A_LOCALIZED_STRING___42
-                    .getLocalizedString(ClientSettings.langID)
-                    .length());
+                Static115.A_LOCALIZED_STRING___42.getString(ClientSettings.langID).length());
       } else if (local11.startsWith(
-          Static234.A_LOCALIZED_STRING___93.getLocalizedString(ClientSettings.langID))) {
+          Static234.A_LOCALIZED_STRING___93.getString(ClientSettings.langID))) {
         local13 = 11;
         arg0 =
             arg0.substring(
-                Static234.A_LOCALIZED_STRING___93
-                    .getLocalizedString(ClientSettings.langID)
-                    .length());
+                Static234.A_LOCALIZED_STRING___93.getString(ClientSettings.langID).length());
       }
     }
     local11 = arg0.toLowerCase();
     @Pc(451)
     byte local451 = 0;
-    if (local11.startsWith(Static243.A_LOCALIZED_STRING___96.getLocalizedString(0))) {
+    if (local11.startsWith(Static243.A_LOCALIZED_STRING___96.getString(0))) {
       local451 = 1;
-      arg0 = arg0.substring(Static243.A_LOCALIZED_STRING___96.getLocalizedString(0).length());
-    } else if (local11.startsWith(Static99.A_LOCALIZED_STRING___39.getLocalizedString(0))) {
+      arg0 = arg0.substring(Static243.A_LOCALIZED_STRING___96.getString(0).length());
+    } else if (local11.startsWith(Static99.A_LOCALIZED_STRING___39.getString(0))) {
       local451 = 2;
-      arg0 = arg0.substring(Static99.A_LOCALIZED_STRING___39.getLocalizedString(0).length());
-    } else if (local11.startsWith(Static384.A_LOCALIZED_STRING___131.getLocalizedString(0))) {
+      arg0 = arg0.substring(Static99.A_LOCALIZED_STRING___39.getString(0).length());
+    } else if (local11.startsWith(Static384.A_LOCALIZED_STRING___131.getString(0))) {
       local451 = 3;
-      arg0 = arg0.substring(Static384.A_LOCALIZED_STRING___131.getLocalizedString(0).length());
-    } else if (local11.startsWith(Static157.A_LOCALIZED_STRING___65.getLocalizedString(0))) {
+      arg0 = arg0.substring(Static384.A_LOCALIZED_STRING___131.getString(0).length());
+    } else if (local11.startsWith(Static157.A_LOCALIZED_STRING___65.getString(0))) {
       local451 = 4;
-      arg0 = arg0.substring(Static157.A_LOCALIZED_STRING___65.getLocalizedString(0).length());
-    } else if (local11.startsWith(Static298.A_LOCALIZED_STRING___112.getLocalizedString(0))) {
+      arg0 = arg0.substring(Static157.A_LOCALIZED_STRING___65.getString(0).length());
+    } else if (local11.startsWith(Static298.A_LOCALIZED_STRING___112.getString(0))) {
       local451 = 5;
-      arg0 = arg0.substring(Static298.A_LOCALIZED_STRING___112.getLocalizedString(0).length());
+      arg0 = arg0.substring(Static298.A_LOCALIZED_STRING___112.getString(0).length());
     } else if (ClientSettings.langID != 0) {
-      if (local11.startsWith(
-          Static243.A_LOCALIZED_STRING___96.getLocalizedString(ClientSettings.langID))) {
+      if (local11.startsWith(Static243.A_LOCALIZED_STRING___96.getString(ClientSettings.langID))) {
         local451 = 1;
         arg0 =
             arg0.substring(
-                Static243.A_LOCALIZED_STRING___96
-                    .getLocalizedString(ClientSettings.langID)
-                    .length());
+                Static243.A_LOCALIZED_STRING___96.getString(ClientSettings.langID).length());
       } else if (local11.startsWith(
-          Static99.A_LOCALIZED_STRING___39.getLocalizedString(ClientSettings.langID))) {
+          Static99.A_LOCALIZED_STRING___39.getString(ClientSettings.langID))) {
         local451 = 2;
         arg0 =
             arg0.substring(
-                Static99.A_LOCALIZED_STRING___39
-                    .getLocalizedString(ClientSettings.langID)
-                    .length());
+                Static99.A_LOCALIZED_STRING___39.getString(ClientSettings.langID).length());
       } else if (local11.startsWith(
-          Static384.A_LOCALIZED_STRING___131.getLocalizedString(ClientSettings.langID))) {
+          Static384.A_LOCALIZED_STRING___131.getString(ClientSettings.langID))) {
         local451 = 3;
         arg0 =
             arg0.substring(
-                Static384.A_LOCALIZED_STRING___131
-                    .getLocalizedString(ClientSettings.langID)
-                    .length());
+                Static384.A_LOCALIZED_STRING___131.getString(ClientSettings.langID).length());
       } else if (local11.startsWith(
-          Static157.A_LOCALIZED_STRING___65.getLocalizedString(ClientSettings.langID))) {
+          Static157.A_LOCALIZED_STRING___65.getString(ClientSettings.langID))) {
         local451 = 4;
         arg0 =
             arg0.substring(
-                Static157.A_LOCALIZED_STRING___65
-                    .getLocalizedString(ClientSettings.langID)
-                    .length());
+                Static157.A_LOCALIZED_STRING___65.getString(ClientSettings.langID).length());
       } else if (local11.startsWith(
-          Static298.A_LOCALIZED_STRING___112.getLocalizedString(ClientSettings.langID))) {
+          Static298.A_LOCALIZED_STRING___112.getString(ClientSettings.langID))) {
         local451 = 5;
         arg0 =
             arg0.substring(
-                Static298.A_LOCALIZED_STRING___112
-                    .getLocalizedString(ClientSettings.langID)
-                    .length());
+                Static298.A_LOCALIZED_STRING___112.getString(ClientSettings.langID).length());
       }
     }
     Static429.method5476(Static44.aClass215_10);

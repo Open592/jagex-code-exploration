@@ -15,7 +15,7 @@ public final class Static132 {
   public static void method2315() {
     Static198.aClass4_Sub39_1 =
         new Node_Sub39(
-            Static136.A_LOCALIZED_STRING___53.getLocalizedString(ClientSettings.langID),
+            Static136.A_LOCALIZED_STRING___53.getString(ClientSettings.langID),
             "",
             Static157.anInt3147,
             1011,

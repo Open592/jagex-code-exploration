@@ -1,5 +1,6 @@
 package com.jagex.client;
 
+import com.jagex.client.locale.LocalizedString;
 import jaggl.OpenGL;
 import jaggl.memory.NativeBuffer;
 import org.openrs2.deob.annotation.OriginalArg;

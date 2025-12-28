@@ -1,5 +1,6 @@
 package com.jagex.client;
 
+import com.jagex.client.locale.LocalizedString;
 import com.jagex.signlink.MonotonicClock;
 import com.jagex.signlink.SignLink;
 import java.awt.Component;

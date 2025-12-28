@@ -1,6 +1,6 @@
 package com.jagex.client.env;
 
-import com.jagex.client.LocalizedString;
+import com.jagex.client.locale.LocalizedString;
 import java.util.Optional;
 import org.openrs2.deob.annotation.OriginalClass;
 import org.openrs2.deob.annotation.OriginalMember;

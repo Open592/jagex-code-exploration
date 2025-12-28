@@ -6,16 +6,17 @@ import com.jagex.client.display.FullScreenWindow;
 import com.jagex.client.env.ModeGame;
 import com.jagex.client.env.ModeWhat;
 import com.jagex.client.env.ModeWhere;
-import jagex3.jagmisc.jagmisc;
 import com.jagex.client.js5.Cache;
 import com.jagex.client.js5.Js5;
 import com.jagex.client.js5.Js5DiskCache;
 import com.jagex.client.js5.Js5MasterIndexProvider;
 import com.jagex.client.js5.Js5NetQueue;
+import com.jagex.client.locale.Messages;
 import com.jagex.client.utilities.ThreadingUtilities;
 import com.jagex.signlink.Message;
 import com.jagex.signlink.MonotonicClock;
 import com.jagex.signlink.SignLink;
+import jagex3.jagmisc.jagmisc;
 import java.awt.Container;
 import java.awt.Frame;
 import java.awt.Insets;
@@ -33,268 +34,6 @@ import org.openrs2.deob.annotation.Pc;
 
 @OriginalClass("client!client")
 public final class client extends GameShell {
-
-  @OriginalMember(owner = "client!fg", name = "d", descriptor = "Lclient!gk;")
-  public static final LocalizedString allocatingMemoryLocalizedString =
-      new LocalizedString(
-          "Allocating memory",
-          "Speicher wird zugewiesen.",
-          "Mémoire en cours d'attribution",
-          "Alocando memória");
-
-  @OriginalMember(owner = "client!ba", name = "D", descriptor = "Lclient!gk;")
-  public static final LocalizedString allocatedMemoryLocalizedString =
-      new LocalizedString(
-          "Allocated memory", "Zugewiesener Speicher.", "Mémoire attribuée", "Memória alocada");
-
-  @OriginalMember(owner = "client!hp", name = "ab", descriptor = "Lclient!gk;")
-  public static final LocalizedString createdGameWorldLocalizedString =
-      new LocalizedString(
-          "Created gameworld",
-          "Spielwelt erstellt.",
-          "Monde de jeu créé",
-          "Universo de jogo criado");
-
-  @OriginalMember(owner = "client!qc", name = "h", descriptor = "Lclient!gk;")
-  public static final LocalizedString connectedToUpdateServerLocalizedString =
-      new LocalizedString(
-          "Connected to update server",
-          "Verbindung zum Update-Server hergestellt.",
-          "Connecté au serveur de mise à jour",
-          "Conectado ao servidor de atualização");
-
-  @OriginalMember(owner = "client!bm", name = "q", descriptor = "Lclient!gk;")
-  public static final LocalizedString connectingToUpdateServerLocalizedString =
-      new LocalizedString(
-          "Connecting to update server",
-          "Verbindung mit Update-Server...",
-          "Connexion au serveur de mise à jour en cours",
-          "Conectando ao servidor de atualização");
-
-  @OriginalMember(owner = "client!rb", name = "i", descriptor = "Lclient!gk;")
-  public static final LocalizedString loadedUpdateListLocalizedString =
-      new LocalizedString(
-          "Loaded update list",
-          "Update-Liste geladen.",
-          "Liste des mises à jour chargée",
-          "Lista de atualizações carregada");
-
-  @OriginalMember(owner = "client!eq", name = "I", descriptor = "Lclient!gk;")
-  public static final LocalizedString checkingForUpdatesLocalizedString =
-      new LocalizedString(
-          "Checking for updates - ",
-          "Suche nach Updates - ",
-          "Vérification des mises à jour - ",
-          "Verificando atualizações - ");
-
-  @OriginalMember(owner = "client!up", name = "e", descriptor = "Lclient!gk;")
-  public static final LocalizedString loadedDefaultsLocalizedString =
-      new LocalizedString(
-          "Loaded defaults",
-          "Standardeinstellungen geladen",
-          "Paramètres par défaut chargés",
-          "Padrões carregados");
-
-  @OriginalMember(owner = "client!ch", name = "g", descriptor = "Lclient!gk;")
-  public static final LocalizedString loadingDefaultsLocalizedString =
-      new LocalizedString(
-          "Loading defaults - ",
-          "Lade Standardeinstellungen - ",
-          "Chargement des paramètres par défaut - ",
-          "Carregando padrões - ");
-
-  @OriginalMember(owner = "client!pn", name = "i", descriptor = "Lclient!gk;")
-  public static final LocalizedString preparedSoundEngineLocalizedString =
-      new LocalizedString(
-          "Prepared sound engine",
-          "Musik-Engine vorbereitet.",
-          "Moteur son préparé",
-          "Mecanismo de som preparado");
-
-  @OriginalMember(owner = "client!ib", name = "i", descriptor = "Lclient!gk;")
-  public static final LocalizedString loadingCoreFontsLocalizedString =
-      new LocalizedString(
-          "Loading core fonts - ",
-          "Lade Schriftarten - ",
-          "Chargement des polices - ",
-          "Carregando fontes principais - ");
-
-  @OriginalMember(owner = "client!c", name = "a", descriptor = "Lclient!gk;")
-  public static final LocalizedString loadedCoreFontsLocalizedString =
-      new LocalizedString(
-          "Loaded core fonts",
-          "Schriftarten geladen",
-          "Polices chargées",
-          "Fontes principais carregadas");
-
-  @OriginalMember(owner = "client!sj", name = "e", descriptor = "Lclient!gk;")
-  public static final LocalizedString loadingTitleScreenLocalizedString =
-      new LocalizedString(
-          "Loading title screen - ",
-          "Lade Titelbild - ",
-          "Chargement de l'écran-titre - ",
-          "Carregando tela título - ");
-
-  @OriginalMember(owner = "client!sj", name = "b", descriptor = "Lclient!gk;")
-  public static final LocalizedString loadedTitleScreenLocalizedString =
-      new LocalizedString(
-          "Loaded title screen",
-          "Titelbild geladen.",
-          "Écran-titre chargé",
-          "Tela título carregada");
-
-  @OriginalMember(owner = "client!bw", name = "k", descriptor = "Lclient!gk;")
-  public static final LocalizedString loadedTexturesLocalizedString =
-      new LocalizedString(
-          "Loaded textures", "Texturen geladen.", "Textures chargées", "Texturas carregadas");
-
-  @OriginalMember(owner = "client!ip", name = "lc", descriptor = "Lclient!gk;")
-  public static final LocalizedString loadingTexturesLocalizedText =
-      new LocalizedString(
-          "Loading textures - ",
-          "Lade Texturen - ",
-          "Chargement des textures - ",
-          "Carregando texturas - ");
-
-  @OriginalMember(owner = "client!mg", name = "h", descriptor = "Lclient!gk;")
-  public static final LocalizedString starting3dLibraryLocalizedString =
-      new LocalizedString(
-          "Starting 3d Library",
-          "Starte 3D-Softwarebibliothek.",
-          "Démarrage de la librairie 3D",
-          "Iniciando biblioteca 3D");
-
-  @OriginalMember(owner = "client!ss", name = "J", descriptor = "Lclient!gk;")
-  public static final LocalizedString started3dLibraryLocalizedString =
-      new LocalizedString(
-          "Started 3d Library",
-          "3D-Softwarebibliothek gestartet.",
-          "Librairie 3D démarrée",
-          "Biblioteca 3D iniciada");
-
-  @OriginalMember(owner = "client!ou", name = "l", descriptor = "Lclient!gk;")
-  public static final LocalizedString openedTitleScreenLocalizedString =
-      new LocalizedString(
-          "Opened title screen", "Titelbild geöffnet.", "Écran-titre ouvert", "Tela título aberta");
-
-  @OriginalMember(owner = "client!av", name = "D", descriptor = "Lclient!gk;")
-  public static final LocalizedString loadingConfigLocalizedString =
-      new LocalizedString(
-          "Loading config - ",
-          "Lade Konfiguration - ",
-          "Chargement des fichiers config - ",
-          "Carregando config - ");
-
-  @OriginalMember(owner = "client!gm", name = "F", descriptor = "Lclient!gk;")
-  public static final LocalizedString loadedConfigLocalizedString =
-      new LocalizedString(
-          "Loaded config", "Konfig geladen.", "Fichiers config chargés", "Config carregada");
-
-  @OriginalMember(owner = "client!md", name = "b", descriptor = "Lclient!gk;")
-  public static final LocalizedString loadingSpritesLocalizedString =
-      new LocalizedString(
-          "Loading sprites - ",
-          "Lade Sprites - ",
-          "Chargement des sprites - ",
-          "Carregando sprites - ");
-
-  @OriginalMember(owner = "client!tr", name = "c", descriptor = "Lclient!gk;")
-  public static final LocalizedString loadedSpritesLocalizedString =
-      new LocalizedString(
-          "Loaded sprites", "Sprites geladen.", "Sprites chargés", "Sprites carregados");
-
-  @OriginalMember(owner = "client!ab", name = "o", descriptor = "Lclient!gk;")
-  public static final LocalizedString loadedWordpackLocalizedString =
-      new LocalizedString(
-          "Loaded wordpack",
-          "Wordpack geladen.",
-          "Module texte chargé",
-          "Pacote de palavras carregado");
-
-  @OriginalMember(owner = "client!ct", name = "d", descriptor = "Lclient!gk;")
-  public static final LocalizedString loadingWordpackLocalizedString =
-      new LocalizedString(
-          "Loading wordpack - ",
-          "Lade Wordpack - ",
-          "Chargement du module texte - ",
-          "Carregando pacote de palavras - ");
-
-  @OriginalMember(owner = "client!td", name = "d", descriptor = "Lclient!gk;")
-  public static final LocalizedString loadedInterfacesLocalizedString =
-      new LocalizedString(
-          "Loaded interfaces",
-          "Benutzeroberfläche geladen.",
-          "Interfaces chargées",
-          "Interfaces carregadas");
-
-  @OriginalMember(owner = "client!st", name = "l", descriptor = "Lclient!gk;")
-  public static final LocalizedString loadingInterfacesLocalizedString =
-      new LocalizedString(
-          "Loading interfaces - ",
-          "Lade Benutzeroberfläche - ",
-          "Chargement des interfaces - ",
-          "Carregando interfaces - ");
-
-  @OriginalMember(owner = "client!ud", name = "f", descriptor = "Lclient!gk;")
-  public static final LocalizedString loadedInterfaceScriptsLocalizedString =
-      new LocalizedString(
-          "Loaded interface scripts",
-          "Interface-Skripte geladen",
-          "Interfaces chargées",
-          "Interfaces carregadas");
-
-  @OriginalMember(owner = "client!eo", name = "j", descriptor = "Lclient!gk;")
-  public static final LocalizedString loadingInterfaceScriptsLocalizedString =
-      new LocalizedString(
-          "Loading interface scripts - ",
-          "Lade Interface-Skripte - ",
-          "Chargement des interfaces - ",
-          "Carregando interfaces - ");
-
-  @OriginalMember(owner = "client!ts", name = "r", descriptor = "Lclient!gk;")
-  public static final LocalizedString loadingAdditionalFontsLocalizedString =
-      new LocalizedString(
-          "Loading additional fonts - ",
-          "Lade Zusatzschriftarten - ",
-          "Chargement de polices secondaires - ",
-          "Carregando fontes principais - ");
-
-  @OriginalMember(owner = "client!nf", name = "v", descriptor = "Lclient!gk;")
-  public static final LocalizedString loadedWorldMapLocalizedString =
-      new LocalizedString(
-          "Loaded world map", "Weltkarte geladen", "Mappemonde chargée", "Mapa-múndi carregado");
-
-  @OriginalMember(owner = "client!np", name = "H", descriptor = "Lclient!gk;")
-  public static final LocalizedString loadingWorldMapLocalizedString =
-      new LocalizedString(
-          "Loading world map - ",
-          "Lade Weltkarte - ",
-          "Chargement de la mappemonde - ",
-          "Carregando mapa-múndi - ");
-
-  @OriginalMember(owner = "client!od", name = "F", descriptor = "Lclient!gk;")
-  public static final LocalizedString loadingWorldListDataLocalizedString =
-      new LocalizedString(
-          "Loading world list data",
-          "Lade Liste der Welten",
-          "Chargement de la liste des serveurs",
-          "Carregando dados da lista de mundos");
-
-  @OriginalMember(owner = "client!ft", name = "J", descriptor = "Lclient!gk;")
-  public static final LocalizedString loadedWorldListDataLocalizedString =
-      new LocalizedString(
-          "Loaded world list data",
-          "Liste der Welten geladen",
-          "Liste des serveurs chargée",
-          "Dados da lista de mundos carregados");
-
-  @OriginalMember(owner = "client!cu", name = "n", descriptor = "Lclient!gk;")
-  public static final LocalizedString loadedClientVariableDataLocalizedString =
-      new LocalizedString(
-          "Loaded client variable data",
-          "Client-Variablen geladen",
-          "Variables du client chargées",
-          "As variáveis do sistema foram carregadas");
 
   @OriginalMember(owner = "client!mp", name = "ab", descriptor = "[I")
   public static final int[] ARCHIVE_FILE_SIZE_WEIGHTS =
@@ -1669,8 +1408,7 @@ public final class client extends GameShell {
     if (Static51.anInt883 != 0) {
       Static436.method5519(
           true,
-          Static439.A_LOCALIZED_STRING___148.getLocalizedString(ClientSettings.langID)
-              + "<br>(100%)",
+          Static439.A_LOCALIZED_STRING___148.getString(ClientSettings.langID) + "<br>(100%)",
           Static207.aClass46_9);
     }
     Static159.method2701();
@@ -2586,7 +2324,7 @@ public final class client extends GameShell {
                                 0,
                                 5,
                                 local210
-                                    + Static138.A_LOCALIZED_STRING___54.getLocalizedString(
+                                    + Static138.A_LOCALIZED_STRING___54.getString(
                                         ClientSettings.langID),
                                 "",
                                 "");
@@ -2596,7 +2334,7 @@ public final class client extends GameShell {
                                 0,
                                 5,
                                 local210
-                                    + Static371.A_LOCALIZED_STRING___125.getLocalizedString(
+                                    + Static371.A_LOCALIZED_STRING___125.getString(
                                         ClientSettings.langID),
                                 "",
                                 "");
@@ -3872,7 +3610,7 @@ public final class client extends GameShell {
                           Static167.aString35 =
                               Static454.anInt4075 > 2
                                   ? Static146.aClass4_Sub12_Sub1_3.gStringCP1252ToUTF8()
-                                  : Static190.A_LOCALIZED_STRING___76.getLocalizedString(
+                                  : Static190.A_LOCALIZED_STRING___76.getString(
                                       ClientSettings.langID);
                           Static220.anInt4097 =
                               Static454.anInt4075 > 0 ? Static146.aClass4_Sub12_Sub1_3.g2() : -1;
@@ -4906,7 +4644,7 @@ public final class client extends GameShell {
         local98 = (Static26.anInt448 - Static100.anInt2020) * 50 / Static26.anInt448;
         Static436.method5519(
             true,
-            Static439.A_LOCALIZED_STRING___148.getLocalizedString(ClientSettings.langID)
+            Static439.A_LOCALIZED_STRING___148.getString(ClientSettings.langID)
                 + "<br>("
                 + local98
                 + "%)",
@@ -4918,7 +4656,7 @@ public final class client extends GameShell {
         local98 = (Static444.anInt7298 - Static275.anInt5144) * 50 / Static444.anInt7298 + 50;
         Static436.method5519(
             true,
-            Static439.A_LOCALIZED_STRING___148.getLocalizedString(ClientSettings.langID)
+            Static439.A_LOCALIZED_STRING___148.getString(ClientSettings.langID)
                 + "<br>("
                 + local98
                 + "%)",
@@ -4926,7 +4664,7 @@ public final class client extends GameShell {
       } else {
         Static436.method5519(
             true,
-            Static439.A_LOCALIZED_STRING___148.getLocalizedString(ClientSettings.langID),
+            Static439.A_LOCALIZED_STRING___148.getString(ClientSettings.langID),
             Static207.aClass46_9);
       }
     } else if (Static403.anInt6667 == 30) {
@@ -4934,9 +4672,9 @@ public final class client extends GameShell {
     } else if (Static403.anInt6667 == 40) {
       Static436.method5519(
           true,
-          Static444.A_LOCALIZED_STRING___150.getLocalizedString(ClientSettings.langID)
+          Static444.A_LOCALIZED_STRING___150.getString(ClientSettings.langID)
               + "<br>"
-              + Static168.A_LOCALIZED_STRING___69.getLocalizedString(ClientSettings.langID),
+              + Static168.A_LOCALIZED_STRING___69.getString(ClientSettings.langID),
           Static207.aClass46_9);
     }
     if (Static293.anInt5286 == 3) {
@@ -5560,7 +5298,7 @@ public final class client extends GameShell {
         (ClientSettings.modeGame.isRunescape()
                 ? Static268.runescapeIsLoadingPleaseWaitLocalizedString
                 : Static374.stellarDawnIsLoadingPleaseWaitLocalizedString)
-            .getLocalizedString(ClientSettings.langID);
+            .getString(ClientSettings.langID);
   }
 
   @OriginalMember(owner = "client!client", name = "a", descriptor = "([BB)V")
@@ -5646,12 +5384,10 @@ public final class client extends GameShell {
           lastGarbageCollectionRequestTimestamp = currentTimeInMilliseconds;
         }
 
-        Static24.currentLoadingBoxText =
-            allocatingMemoryLocalizedString.getLocalizedString(ClientSettings.langID);
+        Static24.currentLoadingBoxText = Messages.allocatingMemory.getString(ClientSettings.langID);
         Static247.anInt4590 = 5;
       } else {
-        Static24.currentLoadingBoxText =
-            allocatedMemoryLocalizedString.getLocalizedString(ClientSettings.langID);
+        Static24.currentLoadingBoxText = Messages.allocatedMemory.getString(ClientSettings.langID);
         anInt5 = 10;
         Static247.anInt4590 = 5;
       }
@@ -5661,8 +5397,7 @@ public final class client extends GameShell {
             Static446.method5622(Static283.anInt5187, Static326.anInt5666);
       }
 
-      Static24.currentLoadingBoxText =
-          createdGameWorldLocalizedString.getLocalizedString(ClientSettings.langID);
+      Static24.currentLoadingBoxText = Messages.createdGameWorld.getString(ClientSettings.langID);
       Static247.anInt4590 = 10;
       anInt5 = 20;
     } else if (anInt5 == 20) {
@@ -5701,12 +5436,12 @@ public final class client extends GameShell {
         Static19.archive28 = loadArchive(true, 28, true);
         Static366.archive29 = loadArchive(false, 29, true);
         Static24.currentLoadingBoxText =
-            connectedToUpdateServerLocalizedString.getLocalizedString(ClientSettings.langID);
+            Messages.connectedToUpdateServer.getString(ClientSettings.langID);
         Static247.anInt4590 = 15;
         anInt5 = 30;
       } else {
         Static24.currentLoadingBoxText =
-            connectingToUpdateServerLocalizedString.getLocalizedString(ClientSettings.langID);
+            Messages.connectingToUpdateServer.getString(ClientSettings.langID);
         Static247.anInt4590 = 12;
       }
     } else if (anInt5 == 30) {
@@ -5720,8 +5455,7 @@ public final class client extends GameShell {
       }
 
       if (percentLoaded == 100) {
-        Static24.currentLoadingBoxText =
-            loadedUpdateListLocalizedString.getLocalizedString(ClientSettings.langID);
+        Static24.currentLoadingBoxText = Messages.loadedUpdateList.getString(ClientSettings.langID);
         Static247.anInt4590 = 20;
         Sprites.initializeSpriteIds(Static293.archive8);
         Static221.method3346(Static293.archive8);
@@ -5729,9 +5463,7 @@ public final class client extends GameShell {
       } else {
         if (percentLoaded != 0) {
           Static24.currentLoadingBoxText =
-              checkingForUpdatesLocalizedString.getLocalizedString(ClientSettings.langID)
-                  + percentLoaded
-                  + "%";
+              Messages.checkingForUpdates.getString(ClientSettings.langID) + percentLoaded + "%";
         }
 
         Static247.anInt4590 = 20;
@@ -5739,13 +5471,12 @@ public final class client extends GameShell {
     } else if (anInt5 == 40) {
       if (Static19.archive28.method2116()) {
         this.method908(Static19.archive28.method2122(1));
-        Static24.currentLoadingBoxText =
-            loadedDefaultsLocalizedString.getLocalizedString(ClientSettings.langID);
+        Static24.currentLoadingBoxText = Messages.loadedDefaults.getString(ClientSettings.langID);
         Static247.anInt4590 = 25;
         anInt5 = 50;
       } else {
         Static24.currentLoadingBoxText =
-            loadingDefaultsLocalizedString.getLocalizedString(ClientSettings.langID)
+            Messages.loadingDefaults.getString(ClientSettings.langID)
                 + Static19.archive28.method2112()
                 + "%";
         Static247.anInt4590 = 25;
@@ -5753,7 +5484,7 @@ public final class client extends GameShell {
     } else if (anInt5 == 50) {
       Static72.method1354();
       Static24.currentLoadingBoxText =
-          preparedSoundEngineLocalizedString.getLocalizedString(ClientSettings.langID);
+          Messages.preparedSoundEngine.getString(ClientSettings.langID);
       Static247.anInt4590 = 30;
       anInt5 = 60;
     } else if (anInt5 == 60) {
@@ -5762,13 +5493,12 @@ public final class client extends GameShell {
 
       if (loadedFontCount < totalFontCount) {
         Static24.currentLoadingBoxText =
-            loadingCoreFontsLocalizedString.getLocalizedString(ClientSettings.langID)
+            Messages.loadingCoreFonts.getString(ClientSettings.langID)
                 + loadedFontCount * 100 / totalFontCount
                 + "%";
         Static247.anInt4590 = 35;
       } else {
-        Static24.currentLoadingBoxText =
-            loadedCoreFontsLocalizedString.getLocalizedString(ClientSettings.langID);
+        Static24.currentLoadingBoxText = Messages.loadedCoreFonts.getString(ClientSettings.langID);
         anInt5 = 70;
         Static247.anInt4590 = 35;
       }
@@ -5777,13 +5507,13 @@ public final class client extends GameShell {
       int local12 = Static395.method5165();
       if (local12 > local10) {
         Static24.currentLoadingBoxText =
-            loadingTitleScreenLocalizedString.getLocalizedString(ClientSettings.langID)
+            Messages.loadingTitleScreen.getString(ClientSettings.langID)
                 + local10 * 100 / local12
                 + "%";
         Static247.anInt4590 = 40;
       } else {
         Static24.currentLoadingBoxText =
-            loadedTitleScreenLocalizedString.getLocalizedString(ClientSettings.langID);
+            Messages.loadedTitleScreen.getString(ClientSettings.langID);
         anInt5 = 80;
         Static247.anInt4590 = 40;
       }
@@ -5791,20 +5521,18 @@ public final class client extends GameShell {
       if (Static24.archive26.method2116()) {
         Static80.anInterface7_3 =
             new Class91(Static24.archive26, Static196.archive9, Static293.archive8);
-        Static24.currentLoadingBoxText =
-            loadedTexturesLocalizedString.getLocalizedString(ClientSettings.langID);
+        Static24.currentLoadingBoxText = Messages.loadedTextures.getString(ClientSettings.langID);
         Static247.anInt4590 = 45;
         anInt5 = 90;
       } else {
         Static24.currentLoadingBoxText =
-            loadingTexturesLocalizedText.getLocalizedString(ClientSettings.langID)
+            Messages.loadingTextures.getString(ClientSettings.langID)
                 + Static24.archive26.method2112()
                 + "%";
         Static247.anInt4590 = 45;
       }
     } else if (anInt5 == 90) {
-      Static24.currentLoadingBoxText =
-          starting3dLibraryLocalizedString.getLocalizedString(ClientSettings.langID);
+      Static24.currentLoadingBoxText = Messages.starting3dLibrary.getString(ClientSettings.langID);
       Static247.anInt4590 = 50;
       anInt5 = 95;
     } else if (anInt5 == 95) {
@@ -5818,14 +5546,12 @@ public final class client extends GameShell {
       Static323.aClass50_Sub1_1.aBoolean297 = true;
       Static323.aClass50_Sub1_1.method2856(GameShell.signLink);
       Static440.method5561(false, Static323.aClass50_Sub1_1.anInt3445);
-      Static24.currentLoadingBoxText =
-          started3dLibraryLocalizedString.getLocalizedString(ClientSettings.langID);
+      Static24.currentLoadingBoxText = Messages.started3dLibrary.getString(ClientSettings.langID);
       Static247.anInt4590 = 55;
       anInt5 = 100;
     } else if (anInt5 == 100) {
       Static40.method696(Static122.aClass19_16, Static293.archive8, Static209.archive13);
-      Static24.currentLoadingBoxText =
-          openedTitleScreenLocalizedString.getLocalizedString(ClientSettings.langID);
+      Static24.currentLoadingBoxText = Messages.openedTitleScreen.getString(ClientSettings.langID);
       Static247.anInt4590 = 60;
       Static187.method2932(5);
       anInt5 = 110;
@@ -5856,9 +5582,7 @@ public final class client extends GameShell {
       local10 += Static366.archive29.method2112();
       if (local10 < 1200) {
         Static24.currentLoadingBoxText =
-            loadingConfigLocalizedString.getLocalizedString(ClientSettings.langID)
-                + local10 / 12
-                + "%";
+            Messages.loadingConfig.getString(ClientSettings.langID) + local10 / 12 + "%";
         Static247.anInt4590 = 65;
       } else {
         Static153.aClass180_1 =
@@ -5958,8 +5682,7 @@ public final class client extends GameShell {
         Static445.aClass81_2 =
             new Class81(
                 ClientSettings.langID, Static66.archive24, Static154.archive25, new Class130());
-        Static24.currentLoadingBoxText =
-            loadedConfigLocalizedString.getLocalizedString(ClientSettings.langID);
+        Static24.currentLoadingBoxText = Messages.loadedConfig.getString(ClientSettings.langID);
         Static247.anInt4590 = 65;
         Static38.method673();
         Static267.aClass262_2.method5562(
@@ -5975,15 +5698,14 @@ public final class client extends GameShell {
       int local13 = Static203.method3176();
       if (local10 < local13) {
         Static24.currentLoadingBoxText =
-            loadingSpritesLocalizedString.getLocalizedString(ClientSettings.langID)
+            Messages.loadingSprites.getString(ClientSettings.langID)
                 + local10 * 100 / local13
                 + "%";
         Static247.anInt4590 = 70;
       } else {
         Static97.method1700(Static293.archive8, Static122.aClass19_16);
         Static324.method4387(Static429.aClass57Array18);
-        Static24.currentLoadingBoxText =
-            loadedSpritesLocalizedString.getLocalizedString(ClientSettings.langID);
+        Static24.currentLoadingBoxText = Messages.loadedSprites.getString(ClientSettings.langID);
         anInt5 = 130;
         Static247.anInt4590 = 70;
       }
@@ -5992,24 +5714,22 @@ public final class client extends GameShell {
         @Pc(1252)
         Class119 local1252 = new Class119(Static88.archive10.method2109("huffman", ""));
         Static195.method3074(local1252);
-        Static24.currentLoadingBoxText =
-            loadedWordpackLocalizedString.getLocalizedString(ClientSettings.langID);
+        Static24.currentLoadingBoxText = Messages.loadedWordpack.getString(ClientSettings.langID);
         Static247.anInt4590 = 75;
         anInt5 = 140;
       } else {
         Static24.currentLoadingBoxText =
-            loadingWordpackLocalizedString.getLocalizedString(ClientSettings.langID) + "0%";
+            Messages.loadingWordpack.getString(ClientSettings.langID) + "0%";
         Static247.anInt4590 = 75;
       }
     } else if (anInt5 == 140) {
       if (Static256.archive3.method2116()) {
-        Static24.currentLoadingBoxText =
-            loadedInterfacesLocalizedString.getLocalizedString(ClientSettings.langID);
+        Static24.currentLoadingBoxText = Messages.loadedInterfaces.getString(ClientSettings.langID);
         anInt5 = 150;
         Static247.anInt4590 = 80;
       } else {
         Static24.currentLoadingBoxText =
-            loadingInterfacesLocalizedString.getLocalizedString(ClientSettings.langID)
+            Messages.loadingInterfaces.getString(ClientSettings.langID)
                 + Static256.archive3.method2112()
                 + "%";
         Static247.anInt4590 = 80;
@@ -6017,12 +5737,12 @@ public final class client extends GameShell {
     } else if (anInt5 == 150) {
       if (Static197.archive12.method2116()) {
         Static24.currentLoadingBoxText =
-            loadedInterfaceScriptsLocalizedString.getLocalizedString(ClientSettings.langID);
+            Messages.loadedInterfaceScripts.getString(ClientSettings.langID);
         anInt5 = 160;
         Static247.anInt4590 = 82;
       } else {
         Static24.currentLoadingBoxText =
-            loadingInterfaceScriptsLocalizedString.getLocalizedString(ClientSettings.langID)
+            Messages.loadingInterfaceScripts.getString(ClientSettings.langID)
                 + Static197.archive12.method2112()
                 + "%";
         Static247.anInt4590 = 82;
@@ -6030,12 +5750,12 @@ public final class client extends GameShell {
     } else if (anInt5 == 160) {
       if (Static209.archive13.method2116()) {
         Static24.currentLoadingBoxText =
-            loadingAdditionalFontsLocalizedString.getLocalizedString(ClientSettings.langID);
+            Messages.loadingAdditionalFonts.getString(ClientSettings.langID);
         anInt5 = 170;
         Static247.anInt4590 = 85;
       } else {
         Static24.currentLoadingBoxText =
-            loadingAdditionalFontsLocalizedString.getLocalizedString(ClientSettings.langID)
+            Messages.loadingAdditionalFonts.getString(ClientSettings.langID)
                 + Static209.archive13.method2112()
                 + "%";
         Static247.anInt4590 = 85;
@@ -6050,13 +5770,12 @@ public final class client extends GameShell {
             Static348.aClass182_4,
             Static76.aClass265_2,
             Static257.aClass114_1);
-        Static24.currentLoadingBoxText =
-            loadedWorldMapLocalizedString.getLocalizedString(ClientSettings.langID);
+        Static24.currentLoadingBoxText = Messages.loadedWorldMap.getString(ClientSettings.langID);
         anInt5 = 180;
         Static247.anInt4590 = 89;
       } else {
         Static24.currentLoadingBoxText =
-            loadingWorldMapLocalizedString.getLocalizedString(ClientSettings.langID)
+            Messages.loadingWorldMap.getString(ClientSettings.langID)
                 + Static163.archive23.method2113("details")
                 + "%";
         Static247.anInt4590 = 87;
@@ -6065,14 +5784,14 @@ public final class client extends GameShell {
       int local10 = Static112.method2035();
       if (local10 == -1) {
         Static24.currentLoadingBoxText =
-            loadingWorldListDataLocalizedString.getLocalizedString(ClientSettings.langID);
+            Messages.loadingWorldListData.getString(ClientSettings.langID);
         Static247.anInt4590 = 90;
       } else if (local10 == 7 || local10 == 9) {
         this.handleGameError("worldlistfull");
         Static187.method2932(1000);
       } else if (Static94.aBoolean176) {
         Static24.currentLoadingBoxText =
-            loadedWorldListDataLocalizedString.getLocalizedString(ClientSettings.langID);
+            Messages.loadedWorldListData.getString(ClientSettings.langID);
         anInt5 = 190;
         Static247.anInt4590 = 90;
       } else {
@@ -6108,7 +5827,7 @@ public final class client extends GameShell {
       Static55.archive21.anInt2476 = 2;
       Static188.method4107(Static323.aClass50_Sub1_1.anInt3447, -1, -1, false);
       Static24.currentLoadingBoxText =
-          loadedClientVariableDataLocalizedString.getLocalizedString(ClientSettings.langID);
+          Messages.loadedClientVariableData.getString(ClientSettings.langID);
       Static247.anInt4590 = 95;
       anInt5 = 200;
     } else if (anInt5 == 200) {

@@ -48,7 +48,7 @@ public final class Static344 {
     @Pc(13)
     int local13 =
         Static118.aClass89_5.method2340(
-            Static391.A_LOCALIZED_STRING___133.getLocalizedString(ClientSettings.langID));
+            Static391.A_LOCALIZED_STRING___133.getString(ClientSettings.langID));
     @Pc(24)
     int local24;
     for (@Pc(18) Node_Sub39 local18 = (Node_Sub39) Static206.A_LINKED_LIST___28.tail();

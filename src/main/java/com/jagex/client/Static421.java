@@ -32,14 +32,14 @@ public final class Static421 {
     if (local13.length() > 9) {
       return " <col=00ff80>"
           + local13.substring(0, local13.length() - 8)
-          + Static452.A_LOCALIZED_STRING___152.getLocalizedString(ClientSettings.langID)
+          + Static452.A_LOCALIZED_STRING___152.getString(ClientSettings.langID)
           + " ("
           + local13
           + ")</col>";
     } else if (local13.length() > 6) {
       return " <col=ffffff>"
           + local13.substring(0, local13.length() - 4)
-          + Static214.A_LOCALIZED_STRING___79.getLocalizedString(ClientSettings.langID)
+          + Static214.A_LOCALIZED_STRING___79.getString(ClientSettings.langID)
           + " ("
           + local13
           + ")</col>";

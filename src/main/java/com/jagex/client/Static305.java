@@ -105,7 +105,7 @@ public final class Static305 {
     Static331.aClass46_10.method5058(
         -1,
         Static111.anInt2387 | -16777216,
-        Static391.A_LOCALIZED_STRING___133.getLocalizedString(ClientSettings.langID),
+        Static391.A_LOCALIZED_STRING___133.getString(ClientSettings.langID),
         local9 + 14,
         local7 + 3);
     arg0.O(
@@ -295,7 +295,7 @@ public final class Static305 {
     }
     if (!local10) {
       Static415.method5323(
-          Static76.A_LOCALIZED_STRING___32.getLocalizedString(ClientSettings.langID) + arg0);
+          Static76.A_LOCALIZED_STRING___32.getString(ClientSettings.langID) + arg0);
     }
     if (Static341.aBoolean599) {
       Static336.method5139();

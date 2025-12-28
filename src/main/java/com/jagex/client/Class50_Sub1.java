@@ -1,10 +1,10 @@
 package com.jagex.client;
 
-import jagex3.jagmisc.jagmisc;
 import com.jagex.client.utilities.ThreadingUtilities;
 import com.jagex.signlink.FileOnDisk;
 import com.jagex.signlink.Message;
 import com.jagex.signlink.SignLink;
+import jagex3.jagmisc.jagmisc;
 import java.io.IOException;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalClass;

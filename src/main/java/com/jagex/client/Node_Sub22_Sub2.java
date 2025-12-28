@@ -1,5 +1,6 @@
 package com.jagex.client;
 
+import com.jagex.client.locale.LocalizedString;
 import java.awt.Canvas;
 import java.awt.Graphics;
 import java.awt.Image;

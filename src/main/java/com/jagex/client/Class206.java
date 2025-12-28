@@ -74,19 +74,11 @@ public final class Class206 {
     }
     this.aStringArray31 =
         new String[] {
-          null,
-          null,
-          Static147.A_LOCALIZED_STRING___57.getLocalizedString(this.anInt5988),
-          null,
-          null
+          null, null, Static147.A_LOCALIZED_STRING___57.getString(this.anInt5988), null, null
         };
     this.aStringArray30 =
         new String[] {
-          null,
-          null,
-          null,
-          null,
-          Static374.A_LOCALIZED_STRING___128.getLocalizedString(this.anInt5988)
+          null, null, null, null, Static374.A_LOCALIZED_STRING___128.getString(this.anInt5988)
         };
   }
 
@@ -220,19 +212,11 @@ public final class Class206 {
     local18.aClass206_1 = this;
     local18.aStringArray34 =
         new String[] {
-          null,
-          null,
-          Static147.A_LOCALIZED_STRING___57.getLocalizedString(this.anInt5988),
-          null,
-          null
+          null, null, Static147.A_LOCALIZED_STRING___57.getString(this.anInt5988), null, null
         };
     local18.aStringArray33 =
         new String[] {
-          null,
-          null,
-          null,
-          null,
-          Static374.A_LOCALIZED_STRING___128.getLocalizedString(this.anInt5988)
+          null, null, null, null, Static374.A_LOCALIZED_STRING___128.getString(this.anInt5988)
         };
     if (local41 != null) {
       local18.method4790(new Packet(local41));
@@ -245,7 +229,7 @@ public final class Class206 {
       local18.method4779(this.method4703(local18.anInt6138), this.method4703(local18.anInt6185));
     }
     if (!this.aBoolean555 && local18.aBoolean565) {
-      local18.aString61 = Static397.A_LOCALIZED_STRING___21.getLocalizedString(this.anInt5988);
+      local18.aString61 = Static397.A_LOCALIZED_STRING___21.getString(this.anInt5988);
       local18.anInt6181 = 0;
       local18.aStringArray34 = this.aStringArray31;
       local18.anIntArray435 = null;

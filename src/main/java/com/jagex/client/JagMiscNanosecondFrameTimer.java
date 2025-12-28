@@ -1,7 +1,7 @@
 package com.jagex.client;
 
-import jagex3.jagmisc.jagmisc;
 import com.jagex.client.utilities.ThreadingUtilities;
+import jagex3.jagmisc.jagmisc;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalClass;
 import org.openrs2.deob.annotation.OriginalMember;

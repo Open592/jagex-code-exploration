@@ -38,7 +38,7 @@ public final class Static293 {
     Static331.aClass46_10.method5058(
         -1,
         -10660793,
-        Static391.A_LOCALIZED_STRING___133.getLocalizedString(ClientSettings.langID),
+        Static391.A_LOCALIZED_STRING___133.getString(ClientSettings.langID),
         local9 + 14,
         local7 + 3);
     @Pc(77)

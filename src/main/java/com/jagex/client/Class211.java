@@ -530,12 +530,12 @@ public final class Class211 {
     } else if (arg0 < 10000000) {
       return "<col=ffffff>"
           + arg0 / 1000
-          + Static187.A_LOCALIZED_STRING___74.getLocalizedString(this.aClass206_1.anInt5988)
+          + Static187.A_LOCALIZED_STRING___74.getString(this.aClass206_1.anInt5988)
           + "</col>";
     } else {
       return "<col=00ff80>"
           + arg0 / 1000000
-          + Static178.A_LOCALIZED_STRING___72.getLocalizedString(this.aClass206_1.anInt5988)
+          + Static178.A_LOCALIZED_STRING___72.getString(this.aClass206_1.anInt5988)
           + "</col>";
     }
   }
@@ -582,8 +582,7 @@ public final class Class211 {
         this.aStringArray33[local149] = arg0.aStringArray33[local149];
       }
     }
-    this.aStringArray33[4] =
-        Static38.A_LOCALIZED_STRING___19.getLocalizedString(this.aClass206_1.anInt5988);
+    this.aStringArray33[4] = Static38.A_LOCALIZED_STRING___19.getString(this.aClass206_1.anInt5988);
   }
 
   @OriginalMember(owner = "client!rv", name = "a", descriptor = "(ILclient!iv;I)V")
