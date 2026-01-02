@@ -1,6 +1,5 @@
 package com.jagex.client;
 
-import java.math.BigInteger;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalMember;
 
@@ -11,11 +10,6 @@ public final class Static309 {
 
   @OriginalMember(owner = "client!pn", name = "d", descriptor = "Lclient!sl;")
   public static final Class215 aClass215_67 = new Class215(25, 4);
-
-  @OriginalMember(owner = "client!pn", name = "g", descriptor = "Ljava/math/BigInteger;")
-  public static final BigInteger aBigInteger2 =
-      new BigInteger(
-          "7162900525229798032761816791230527296329313291232324290237849263501208207972894053929065636522363163621000728841182238772712427862772219676577293600221789");
 
   @OriginalMember(owner = "client!pn", name = "h", descriptor = "[I")
   public static final int[] anIntArray373 =

@@ -1,5 +1,6 @@
 package com.jagex.client;
 
+import com.jagex.client.crypto.RSA;
 import com.jagex.client.encoding.Base37;
 
 public final class LoginManager {
@@ -25,7 +26,7 @@ public final class LoginManager {
       local40.p4((int) (Math.random() * 9.9999999E7D));
       local40.pjstr(password);
       local40.p4((int) (Math.random() * 9.9999999E7D));
-      local40.rsaEncrypt(Static85.aBigInteger1, Static309.aBigInteger2);
+      local40.rsaEncrypt(RSA.EXPONENT, RSA.MODULUS);
       Static3.aClass4_Sub12_Sub1_5.pos = 0;
       Static3.aClass4_Sub12_Sub1_5.p1(Class60.aClass60_10.anInt1812);
       Static3.aClass4_Sub12_Sub1_5.p1(local40.pos + 2);

@@ -27,17 +27,6 @@ public final class Static278 {
     return new Class19_Sub2(arg0, arg1, arg4, arg3, arg2);
   }
 
-  @OriginalMember(owner = "client!ob", name = "a", descriptor = "(JB)V")
-  public static void method3942(@OriginalArg(0) long arg0) {
-    Static3.aClass4_Sub12_Sub1_5.pos = 0;
-    Static3.aClass4_Sub12_Sub1_5.p1(Class60.aClass60_7.anInt1812);
-    Static3.aClass4_Sub12_Sub1_5.p8(arg0);
-    Static348.anInt5976 = 0;
-    Static119.anInt2524 = 0;
-    Static354.anInt6183 = 1;
-    Static249.anInt4623 = -3;
-  }
-
   @OriginalMember(owner = "client!ob", name = "a", descriptor = "(Lclient!ya;)V")
   public static void method3943(@OriginalArg(0) Class19 arg0) {
     for (@Pc(1) int local1 = Static358.anInt6251; local1 < Static235.anInt4487; local1++) {

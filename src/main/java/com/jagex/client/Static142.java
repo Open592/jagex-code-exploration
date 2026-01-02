@@ -44,16 +44,16 @@ public final class Static142 {
   public static void method2426() {
     Static384.aClass244_1.method5486();
     Static420.aClass80_1.method2227();
-    if (Static223.aClass14_1 != null) {
-      Static223.aClass14_1.method213(GameShell.canvas);
+    if (Static223.aIMouseWheel_1 != null) {
+      Static223.aIMouseWheel_1.removeListener(GameShell.canvas);
     }
     Static6.client.method874();
     GameShell.canvas.setBackground(Color.black);
     Static6.anInt57 = -1;
     Static384.aClass244_1 = Static140.method2398(GameShell.canvas);
     Static420.aClass80_1 = Static376.method4882(GameShell.canvas);
-    if (Static223.aClass14_1 != null) {
-      Static223.aClass14_1.method209(GameShell.canvas);
+    if (Static223.aIMouseWheel_1 != null) {
+      Static223.aIMouseWheel_1.addListener(GameShell.canvas);
     }
   }
 

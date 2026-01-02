@@ -2,6 +2,7 @@ package com.jagex.client;
 
 import com.jagex.client.cache.Fonts;
 import com.jagex.client.cache.Sprites;
+import com.jagex.client.crypto.RSA;
 import com.jagex.client.display.FullScreenWindow;
 import com.jagex.client.encoding.Base37;
 import com.jagex.client.env.ModeGame;
@@ -1039,7 +1040,7 @@ public final class client extends GameShell {
         local185.p4(local188[3]);
         local185.p8(Base37.encode(LoginManager.username));
         local185.pjstr(LoginManager.password);
-        local185.rsaEncrypt(Static85.aBigInteger1, Static309.aBigInteger2);
+        local185.rsaEncrypt(RSA.EXPONENT, RSA.MODULUS);
         Static3.aClass4_Sub12_Sub1_5.pos = 0;
         if (Static403.anInt6667 == 40) {
           Static3.aClass4_Sub12_Sub1_5.p1(Class60.aClass60_5.anInt1812);
@@ -1893,11 +1894,11 @@ public final class client extends GameShell {
       Static125.aServerConnection_5 = null;
     }
 
-    if (Static223.aClass14_1 != null) {
-      Static223.aClass14_1.method213(GameShell.canvas);
+    if (Static223.aIMouseWheel_1 != null) {
+      Static223.aIMouseWheel_1.removeListener(GameShell.canvas);
     }
 
-    Static223.aClass14_1 = null;
+    Static223.aIMouseWheel_1 = null;
 
     Static64.method1241();
     js5NetQueue.shutdown();
@@ -2361,9 +2362,8 @@ public final class client extends GameShell {
     Static225.method3438();
     Static384.aClass244_1.method5487();
     Static420.aClass80_1.method2236();
-    if (Static223.aClass14_1 != null) {
-      @Pc(85)
-      int local85 = Static223.aClass14_1.method212();
+    if (Static223.aIMouseWheel_1 != null) {
+      int local85 = Static223.aIMouseWheel_1.getWheelRotation();
       Static430.anInt3862 = local85;
     }
     if (Static122.aClass19_16 != null) {
@@ -2617,10 +2617,10 @@ public final class client extends GameShell {
     port = Static313.anInt5435;
     Static384.aClass244_1 = Static140.method2398(GameShell.canvas);
     Static420.aClass80_1 = Static376.method4882(GameShell.canvas);
-    Static223.aClass14_1 = Static328.method4424();
+    Static223.aIMouseWheel_1 = IMouseWheel.create();
 
-    if (Static223.aClass14_1 != null) {
-      Static223.aClass14_1.method209(GameShell.canvas);
+    if (Static223.aIMouseWheel_1 != null) {
+      Static223.aIMouseWheel_1.addListener(GameShell.canvas);
     }
 
     Static96.anInt1932 = SignLink.anInt1987;

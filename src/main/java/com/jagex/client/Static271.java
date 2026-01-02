@@ -3,6 +3,7 @@ package com.jagex.client;
 import com.jagex.client.display.GraphicsDeviceDisplayMode;
 import com.jagex.client.encoding.Base37;
 import com.jagex.client.env.ModeWhat;
+import com.jagex.client.lobby.AccountCreation;
 import com.jagex.client.preferences.ClientPreferences;
 import com.jagex.client.preferences.Preferences;
 import com.jagex.client.social.Chat;
@@ -4408,7 +4409,7 @@ public final class Static271 {
                 && Static238.anInt4506 == 0
                 && Static354.anInt6183 == 0
                 && Static50.anInt862 == 0) {
-              Static278.method3942(Base37.encode(aStringArray21[anInt5092]));
+              AccountCreation.checkIsNameAvailable(Base37.encode(aStringArray21[anInt5092]));
               return;
             }
             return;

@@ -11,7 +11,7 @@ public final class Static223 {
   public static int anInt4343;
 
   @OriginalMember(owner = "client!lh", name = "rd", descriptor = "Lclient!hh;")
-  public static Class14 aClass14_1;
+  public static IMouseWheel aIMouseWheel_1;
 
   @OriginalMember(owner = "client!lh", name = "vd", descriptor = "[I")
   public static int[] anIntArray284;

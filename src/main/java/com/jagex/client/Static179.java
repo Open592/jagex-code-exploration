@@ -1,5 +1,6 @@
 package com.jagex.client;
 
+import com.jagex.client.crypto.RSA;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;
@@ -50,7 +51,7 @@ public final class Static179 {
     local30.p2(arg5);
     local30.p2(arg6);
     local30.p4(local8[3]);
-    local30.rsaEncrypt(Static85.aBigInteger1, Static309.aBigInteger2);
+    local30.rsaEncrypt(RSA.EXPONENT, RSA.MODULUS);
     @Pc(120)
     Packet local120 = new Packet(350);
     local120.pjstr(arg8);
