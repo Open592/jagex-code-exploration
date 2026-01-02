@@ -38,9 +38,6 @@ public final class Static164 {
   @OriginalMember(owner = "client!ii", name = "w", descriptor = "F")
   public static float aFloat142 = 1024.0F;
 
-  @OriginalMember(owner = "client!ii", name = "B", descriptor = "Lclient!bg;")
-  public static final Class22 aClass22_204 = new Class22(57, 15);
-
   @OriginalMember(owner = "client!ii", name = "C", descriptor = "[I")
   public static final int[] anIntArray302 = new int[] {28, 35, 40, 44};
 

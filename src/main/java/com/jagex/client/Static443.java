@@ -13,9 +13,6 @@ public final class Static443 {
   @OriginalMember(owner = "client!wi", name = "d", descriptor = "[I")
   public static int[] anIntArray549 = new int[2];
 
-  @OriginalMember(owner = "client!wi", name = "o", descriptor = "Lclient!bg;")
-  public static final Class22 aClass22_331 = new Class22(101, -1);
-
   @OriginalMember(owner = "client!wi", name = "a", descriptor = "(IJII)V")
   public static void method5589(
       @OriginalArg(1) long arg0, @OriginalArg(2) int arg1, @OriginalArg(3) int arg2) {

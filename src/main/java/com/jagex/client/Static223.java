@@ -24,9 +24,6 @@ public final class Static223 {
   public static final int[] anIntArray283 =
       new int[] {16776960, 16711680, 65280, 65535, 16711935, 16777215};
 
-  @OriginalMember(owner = "client!lh", name = "sd", descriptor = "Lclient!bg;")
-  public static final Class22 aClass22_191 = new Class22(27, -2);
-
   @OriginalMember(owner = "client!lh", name = "a", descriptor = "(Lclient!mu;II)V")
   public static void method3431(@OriginalArg(0) Class155 arg0, @OriginalArg(1) int arg1) {
     if (Static336.aBoolean596) {

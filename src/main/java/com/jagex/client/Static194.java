@@ -10,9 +10,6 @@ public final class Static194 {
   @OriginalMember(owner = "client!jq", name = "O", descriptor = "I")
   public static int anInt3685 = 0;
 
-  @OriginalMember(owner = "client!jq", name = "T", descriptor = "Lclient!bg;")
-  public static final Class22 aClass22_164 = new Class22(67, 10);
-
   @OriginalMember(owner = "client!jq", name = "Y", descriptor = "I")
   public static int anInt3688 = 0;
 

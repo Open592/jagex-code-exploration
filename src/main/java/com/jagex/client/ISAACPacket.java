@@ -12,17 +12,16 @@ public final class ISAACPacket extends Packet {
   private IsaacRandom isaacRandom;
 
   @OriginalMember(owner = "client!cw", name = "Nb", descriptor = "I")
-  private int anInt1270;
+  private int bitPos;
 
   @OriginalMember(owner = "client!cw", name = "<init>", descriptor = "(I)V")
   public ISAACPacket(@OriginalArg(0) int size) {
     super(size);
   }
 
-  @OriginalMember(owner = "client!cw", name = "a", descriptor = "(III[B)V")
-  public void method1132(@OriginalArg(1) int arg0, @OriginalArg(3) byte[] arg1) {
-    for (@Pc(11) int i = 0; i < arg0; i++) {
-      arg1[i] = (byte) (super.data[super.pos++] - this.isaacRandom.next());
+  public void readEncryptedBytes(byte[] bytes, int len) {
+    for (int i = 0; i < len; i++) {
+      bytes[i] = (byte) (super.data[super.pos++] - this.isaacRandom.next());
     }
   }
 
@@ -33,17 +32,17 @@ public final class ISAACPacket extends Packet {
 
   @OriginalMember(owner = "client!cw", name = "n", descriptor = "(B)V")
   public void method1135() {
-    super.pos = (this.anInt1270 + 7) / 8;
+    super.pos = (this.bitPos + 7) / 8;
   }
 
   @OriginalMember(owner = "client!cw", name = "u", descriptor = "(I)V")
   public void method1136() {
-    this.anInt1270 = super.pos * 8;
+    this.bitPos = super.pos * 8;
   }
 
   @OriginalMember(owner = "client!cw", name = "n", descriptor = "(II)I")
   public int method1137(@OriginalArg(1) int arg0) {
-    return arg0 * 8 - this.anInt1270;
+    return arg0 * 8 - this.bitPos;
   }
 
   @OriginalMember(owner = "client!cw", name = "b", descriptor = "([II)V")
@@ -52,8 +51,7 @@ public final class ISAACPacket extends Packet {
   }
 
   @OriginalMember(owner = "client!cw", name = "v", descriptor = "(I)I")
-  public int method1140() {
-    @Pc(21)
+  public int readOpcode() {
     int local21 = super.data[super.pos++] - this.isaacRandom.next() & 0xFF;
 
     return local21 < 128
@@ -63,7 +61,6 @@ public final class ISAACPacket extends Packet {
 
   @OriginalMember(owner = "client!cw", name = "w", descriptor = "(I)Z")
   public boolean method1141() {
-    @Pc(23)
     int local23 = super.data[super.pos] - this.isaacRandom.peek() & 0xFF;
 
     return local23 >= 128;
@@ -72,13 +69,13 @@ public final class ISAACPacket extends Packet {
   @OriginalMember(owner = "client!cw", name = "o", descriptor = "(II)I")
   public int method1143(@OriginalArg(1) int arg0) {
     @Pc(10)
-    int local10 = this.anInt1270 >> 3;
+    int local10 = this.bitPos >> 3;
     @Pc(18)
-    int local18 = 8 - (this.anInt1270 & 0x7);
+    int local18 = 8 - (this.bitPos & 0x7);
     @Pc(20)
     int local20 = 0;
 
-    this.anInt1270 += arg0;
+    this.bitPos += arg0;
 
     while (local18 < arg0) {
       local20 += (super.data[local10++] & Static20.anIntArray14[local18]) << arg0 - local18;

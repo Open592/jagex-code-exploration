@@ -82,9 +82,9 @@ public final class PreferencesImpl extends Preferences {
     super.aBoolean302 = true;
     super.anInt3433 = 1;
     if (Static70.anInt1503 >= 96) {
-      Static157.setParticles(2);
+      Preferences.setParticles(2);
     } else {
-      Static157.setParticles(0);
+      Preferences.setParticles(0);
     }
     super.anInt3434 = 0;
     super.aBoolean303 = false;
@@ -265,7 +265,7 @@ public final class PreferencesImpl extends Preferences {
       if (Static70.anInt1503 < 96) {
         local474 = 0;
       }
-      Static157.setParticles(local474);
+      Preferences.setParticles(local474);
     }
     if (version >= 5) {
       super.anInt3428 = buffer.g4();
@@ -321,11 +321,11 @@ public final class PreferencesImpl extends Preferences {
       }
     }
     if (version >= 16) {
-      super.aBoolean307 = buffer.g1() == 1;
+      super.isTexturesEnabled = buffer.g1() == 1;
 
       try {
         if (jagmisc.getTotalPhysicalMemory() <= 268435456L) {
-          super.aBoolean307 = false;
+          super.isTexturesEnabled = false;
         }
       } catch (Throwable ignored) {
       }
@@ -361,7 +361,7 @@ public final class PreferencesImpl extends Preferences {
     local8.p1(super.anInt3449);
     local8.p2(super.anInt3431);
     local8.p2(super.anInt3450);
-    local8.p1(Static218.getParticles());
+    local8.p1(Preferences.getParticles());
     local8.p4(super.anInt3428);
     local8.p1(super.anInt3447);
     local8.p1(super.aBoolean297 ? 1 : 0);
@@ -373,7 +373,7 @@ public final class PreferencesImpl extends Preferences {
     local8.p1(super.aBoolean289 ? 1 : 0);
     local8.p1(super.anInt3445);
     local8.p1(super.anInt3437);
-    local8.p1(super.aBoolean307 ? 1 : 0);
+    local8.p1(super.isTexturesEnabled ? 1 : 0);
     return local8;
   }
 }

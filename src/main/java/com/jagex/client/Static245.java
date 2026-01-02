@@ -5,9 +5,6 @@ import org.openrs2.deob.annotation.OriginalMember;
 
 public final class Static245 {
 
-  @OriginalMember(owner = "client!mj", name = "P", descriptor = "Lclient!bg;")
-  public static final Class22 aClass22_205 = new Class22(72, 6);
-
   @OriginalMember(owner = "client!mj", name = "a", descriptor = "(III)Z")
   public static boolean method3594(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1) {
     return (arg1 & 0x21) != 0;

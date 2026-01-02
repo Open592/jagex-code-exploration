@@ -11,7 +11,7 @@ public final class Static218 {
   public static int anInt4042 = 0;
 
   @OriginalMember(owner = "client!kv", name = "K", descriptor = "I")
-  public static int anInt4043 = 1;
+  public static int renderCoreCount = 1;
 
   @OriginalMember(owner = "client!kv", name = "P", descriptor = "Lclient!gk;")
   public static final LocalizedString A_LOCALIZED_STRING =
@@ -48,11 +48,6 @@ public final class Static218 {
         }
       }
     }
-  }
-
-  @OriginalMember(owner = "client!kv", name = "a", descriptor = "(I)I")
-  public static int getParticles() {
-    return Static216.particles;
   }
 
   @OriginalMember(owner = "client!kv", name = "a", descriptor = "(IC)Z")

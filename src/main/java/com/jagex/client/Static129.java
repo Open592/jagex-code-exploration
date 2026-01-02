@@ -30,7 +30,7 @@ public final class Static129 {
   @OriginalMember(owner = "client!gl", name = "d", descriptor = "(B)V")
   public static void method2288() {
     if (SignLink.anInt1987 != 3) {
-      Static56.anInt1028 = -1;
+      WorldManager.worldId = -1;
     }
   }
 }

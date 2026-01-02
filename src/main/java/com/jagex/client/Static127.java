@@ -9,7 +9,7 @@ public final class Static127 {
   public static int anInt2675;
 
   @OriginalMember(owner = "client!gj", name = "a", descriptor = "Z")
-  public static boolean aBoolean244 = false;
+  public static boolean isForcedTweeningEnabled = false;
 
   @OriginalMember(owner = "client!gj", name = "b", descriptor = "I")
   public static int anInt2674 = -1;

@@ -9,9 +9,6 @@ public final class Static115 {
   @OriginalMember(owner = "client!fp", name = "c", descriptor = "Lclient!sl;")
   public static final Class215 aClass215_31 = new Class215(29, 7);
 
-  @OriginalMember(owner = "client!fp", name = "e", descriptor = "Lclient!bg;")
-  public static final Class22 aClass22_102 = new Class22(32, -2);
-
   @OriginalMember(owner = "client!fp", name = "g", descriptor = "Lclient!gk;")
   public static final LocalizedString A_LOCALIZED_STRING___42 =
       new LocalizedString("glow2:", "leuchten2:", "brillant2:", "brilho2:");

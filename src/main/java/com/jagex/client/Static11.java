@@ -15,9 +15,6 @@ public final class Static11 {
   @OriginalMember(owner = "client!aj", name = "s", descriptor = "Lclient!ib;")
   public static final HashMap A_HASH_MAP___1 = new HashMap(8);
 
-  @OriginalMember(owner = "client!aj", name = "x", descriptor = "Lclient!bg;")
-  public static final Class22 aClass22_16 = new Class22(0, 28);
-
   @OriginalMember(owner = "client!aj", name = "a", descriptor = "(II)Lclient!oc;")
   public static Node_Sub6 method122(@OriginalArg(0) int arg0) {
     if (arg0 == 0) {

@@ -1,5 +1,6 @@
 package com.jagex.client;
 
+import com.jagex.client.encoding.Base37;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;
@@ -24,7 +25,7 @@ public final class Static347 {
       descriptor = "(ZLjava/lang/String;)Ljava/lang/String;")
   public static String method4680(@OriginalArg(1) String arg0) {
     @Pc(16)
-    String local16 = Static45.method766(Static96.method1684(arg0));
+    String local16 = Static45.method766(Base37.encode(arg0));
     if (local16 == null) {
       local16 = "";
     }

@@ -13,12 +13,6 @@ public final class Static287 {
   @OriginalMember(owner = "client!ok", name = "n", descriptor = "F")
   public static float aFloat163;
 
-  @OriginalMember(owner = "client!ok", name = "h", descriptor = "Lclient!bg;")
-  public static final Class22 aClass22_235 = new Class22(56, 4);
-
-  @OriginalMember(owner = "client!ok", name = "m", descriptor = "Lclient!bg;")
-  public static final Class22 aClass22_236 = new Class22(51, 14);
-
   @OriginalMember(owner = "client!ok", name = "a", descriptor = "(BIIII)V")
   public static void method3980(
       @OriginalArg(1) int arg0,

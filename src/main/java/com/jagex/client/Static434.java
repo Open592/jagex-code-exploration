@@ -15,7 +15,4 @@ public final class Static434 {
 
   @OriginalMember(owner = "client!vu", name = "e", descriptor = "Z")
   public static boolean isShiftClickEnabled = false;
-
-  @OriginalMember(owner = "client!vu", name = "i", descriptor = "Lclient!bg;")
-  public static final Class22 aClass22_336 = new Class22(65, 2);
 }

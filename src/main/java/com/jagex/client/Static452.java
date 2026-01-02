@@ -15,9 +15,6 @@ public final class Static452 {
   public static final LocalizedString A_LOCALIZED_STRING___152 =
       new LocalizedString("M", "M", "M", "M");
 
-  @OriginalMember(owner = "client!wt", name = "q", descriptor = "Lclient!bg;")
-  public static final Class22 aClass22_335 = new Class22(29, 1);
-
   @OriginalMember(owner = "client!wt", name = "r", descriptor = "[[I")
   public static final int[][] anIntArrayArray66 =
       new int[][] {

@@ -92,7 +92,7 @@ public final class Class37 {
         local38 = local68.method4215(local63) | false;
         local36 = arg6.aBoolean406 | false;
       }
-      if ((arg6.aBoolean405 || Static127.aBoolean244)
+      if ((arg6.aBoolean405 || Static127.isForcedTweeningEnabled)
           && arg1 != -1
           && arg1 < arg6.anIntArray295.length) {
         local119 = arg6.anIntArray295[arg1];
@@ -311,7 +311,7 @@ public final class Class37 {
             local134 |= Static36.aClass4_Sub1_Sub17Array4[local161].method4214(local216);
             local144 |= Static36.aClass4_Sub1_Sub17Array4[local161].method4215(local216);
           }
-          if ((local179.aBoolean405 || Static127.aBoolean244)
+          if ((local179.aBoolean405 || Static127.isForcedTweeningEnabled)
               && local198 != -1
               && local198 < local179.anIntArray295.length) {
             Static227.anIntArray292[local161] = local179.anIntArray296[local193];
@@ -369,7 +369,7 @@ public final class Class37 {
           local134 |= local365.method4214(local359);
           local144 |= local365.method4215(local359);
         }
-        if ((arg8.aBoolean405 || Static127.aBoolean244)
+        if ((arg8.aBoolean405 || Static127.isForcedTweeningEnabled)
             && arg6 != -1
             && arg8.anIntArray295.length > arg6) {
           local198 = arg8.anIntArray296[arg7];
@@ -395,7 +395,7 @@ public final class Class37 {
           local134 |= local375.method4214(local369);
           local144 |= local375.method4215(local369);
         }
-        if ((arg2.aBoolean405 || Static127.aBoolean244)
+        if ((arg2.aBoolean405 || Static127.isForcedTweeningEnabled)
             && arg10 != -1
             && arg2.anIntArray295.length > arg10) {
           local371 = arg2.anIntArray295[arg10];
@@ -756,7 +756,7 @@ public final class Class37 {
         local17 = local43.method4215(local47) | false;
         local15 = arg0.aBoolean406 | false;
       }
-      if ((arg0.aBoolean405 || Static127.aBoolean244)
+      if ((arg0.aBoolean405 || Static127.isForcedTweeningEnabled)
           && arg6 != -1
           && arg6 < arg0.anIntArray295.length) {
         local93 = arg0.anIntArray295[arg6];

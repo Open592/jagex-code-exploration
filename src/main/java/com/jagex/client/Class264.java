@@ -308,7 +308,7 @@ public final class Class264 {
             local71 |= Static35.aClass4_Sub1_Sub17Array3[local80].method4215(local135);
             local69 |= local98.aBoolean406;
           }
-          if ((local98.aBoolean405 || Static127.aBoolean244)
+          if ((local98.aBoolean405 || Static127.isForcedTweeningEnabled)
               && local117 != -1
               && local98.anIntArray295.length > local117) {
             Static350.anIntArray419[local80] = local98.anIntArray296[local112];
@@ -367,7 +367,7 @@ public final class Class264 {
           local71 |= local294.method4215(local288);
           local69 |= arg1.aBoolean406;
         }
-        if ((arg1.aBoolean405 || Static127.aBoolean244)
+        if ((arg1.aBoolean405 || Static127.isForcedTweeningEnabled)
             && arg3 != -1
             && arg3 < arg1.anIntArray295.length) {
           local112 = arg1.anIntArray295[arg3];
@@ -398,7 +398,7 @@ public final class Class264 {
           local71 |= local304.method4215(local298);
           local69 |= arg11.aBoolean406;
         }
-        if ((arg11.aBoolean405 || Static127.aBoolean244)
+        if ((arg11.aBoolean405 || Static127.isForcedTweeningEnabled)
             && arg9 != -1
             && arg9 < arg11.anIntArray295.length) {
           local300 = arg11.anIntArray295[arg9];

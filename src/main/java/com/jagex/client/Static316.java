@@ -1,5 +1,6 @@
 package com.jagex.client;
 
+import com.jagex.client.protocol.OpCode;
 import com.jagex.client.utilities.ThreadingUtilities;
 import com.jagex.signlink.FileOnDisk;
 import com.jagex.signlink.Message;
@@ -11,7 +12,7 @@ import org.openrs2.deob.annotation.Pc;
 public final class Static316 {
 
   @OriginalMember(owner = "client!pu", name = "e", descriptor = "Lclient!bg;")
-  public static Class22 aClass22_257;
+  public static OpCode aOpCode_257;
 
   @OriginalMember(owner = "client!pu", name = "i", descriptor = "[I")
   public static int[] anIntArray376 = new int[2];

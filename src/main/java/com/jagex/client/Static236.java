@@ -9,9 +9,6 @@ public final class Static236 {
   @OriginalMember(owner = "client!m", name = "i", descriptor = "Lclient!fs;")
   public static Js5 aJs5_49;
 
-  @OriginalMember(owner = "client!m", name = "c", descriptor = "Lclient!bg;")
-  public static final Class22 aClass22_200 = new Class22(97, -2);
-
   @OriginalMember(owner = "client!m", name = "j", descriptor = "I")
   public static int anInt4491 = 0;
 

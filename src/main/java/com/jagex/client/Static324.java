@@ -12,9 +12,6 @@ public final class Static324 {
   @OriginalMember(owner = "client!qg", name = "d", descriptor = "Lclient!fs;")
   public static Js5 archive1;
 
-  @OriginalMember(owner = "client!qg", name = "a", descriptor = "Lclient!bg;")
-  public static final Class22 aClass22_261 = new Class22(7, 0);
-
   @OriginalMember(owner = "client!qg", name = "e", descriptor = "Lclient!id;")
   public static final Class104 aClass104_3 = new Class104(2);
 

@@ -4,12 +4,6 @@ import org.openrs2.deob.annotation.OriginalMember;
 
 public final class Static423 {
 
-  @OriginalMember(owner = "client!vi", name = "H", descriptor = "Lclient!bg;")
-  public static final Class22 aClass22_316 = new Class22(17, 0);
-
-  @OriginalMember(owner = "client!vi", name = "I", descriptor = "Lclient!bg;")
-  public static final Class22 aClass22_317 = new Class22(15, 8);
-
   @OriginalMember(owner = "client!vi", name = "J", descriptor = "Z")
   public static boolean aBoolean653 = false;
 

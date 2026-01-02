@@ -18,9 +18,6 @@ public final class Static265 {
   @OriginalMember(owner = "client!nj", name = "m", descriptor = "Lclient!sl;")
   public static final Class215 aClass215_60 = new Class215(47, 3);
 
-  @OriginalMember(owner = "client!nj", name = "p", descriptor = "Lclient!bg;")
-  public static final Class22 aClass22_223 = new Class22(86, 8);
-
   @OriginalMember(owner = "client!nj", name = "a", descriptor = "(B)V")
   public static void method3816() {
     for (@Pc(7) int local7 = 0; local7 < Static1.aClass155ArrayArray1.length; local7++) {

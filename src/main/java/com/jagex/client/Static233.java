@@ -6,12 +6,6 @@ import org.openrs2.deob.annotation.Pc;
 
 public final class Static233 {
 
-  @OriginalMember(owner = "client!lt", name = "h", descriptor = "Lclient!bg;")
-  public static final Class22 aClass22_195 = new Class22(2, -2);
-
-  @OriginalMember(owner = "client!lt", name = "i", descriptor = "Lclient!bg;")
-  public static final Class22 aClass22_196 = new Class22(23, 8);
-
   @OriginalMember(owner = "client!lt", name = "a", descriptor = "(Ljava/lang/String;Z)V")
   public static void method3478(@OriginalArg(0) String arg0) {
     if (arg0 == null) {

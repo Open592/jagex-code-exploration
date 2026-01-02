@@ -90,7 +90,7 @@ public final class Node_Sub25 extends Node {
         local85 = local93.method4215(local87) | false;
         local78 = arg2.aBoolean406 | false;
       }
-      if ((arg2.aBoolean405 || Static127.aBoolean244)
+      if ((arg2.aBoolean405 || Static127.isForcedTweeningEnabled)
           && arg1 != -1
           && arg2.anIntArray295.length > arg1) {
         local89 = arg2.anIntArray295[arg1];

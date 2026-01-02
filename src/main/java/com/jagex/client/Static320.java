@@ -11,9 +11,6 @@ public final class Static320 {
   public static final LocalizedString A_LOCALIZED_STRING___118 =
       new LocalizedString("level: ", "Stufe: ", "niveau ", "nível: ");
 
-  @OriginalMember(owner = "client!qb", name = "A", descriptor = "Lclient!bg;")
-  public static final Class22 aClass22_263 = new Class22(41, 7);
-
   @OriginalMember(owner = "client!qb", name = "B", descriptor = "I")
   public static int anInt5660 = -1;
 

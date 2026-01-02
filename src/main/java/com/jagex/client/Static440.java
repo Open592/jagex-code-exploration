@@ -105,9 +105,9 @@ public final class Static440 {
     Static177.anInt2973 = arg1;
     Static103.method1813();
     if (!Static122.aClass19_16.method4264()) {
-      Static218.anInt4043 = 1;
+      Static218.renderCoreCount = 1;
     }
-    Static122.aClass19_16.method4283(Static218.anInt4043);
+    Static122.aClass19_16.method4283(Static218.renderCoreCount);
     Static122.aClass19_16.method4273(0);
     Static122.aClass19_16.MA(8);
     Static111.aClass31_1 = Static122.aClass19_16.method4274();

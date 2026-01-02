@@ -7,17 +7,11 @@ import org.openrs2.deob.annotation.Pc;
 
 public final class Static421 {
 
-  @OriginalMember(owner = "client!vg", name = "d", descriptor = "Lclient!bg;")
-  public static final Class22 aClass22_310 = new Class22(25, -1);
-
   @OriginalMember(owner = "client!vg", name = "j", descriptor = "Lclient!sl;")
   public static final Class215 aClass215_93 = new Class215(31, 3);
 
   @OriginalMember(owner = "client!vg", name = "k", descriptor = "Lclient!pk;")
   public static LinkedList aLinkedList_48 = new LinkedList();
-
-  @OriginalMember(owner = "client!vg", name = "n", descriptor = "Lclient!bg;")
-  public static final Class22 aClass22_311 = new Class22(75, 14);
 
   @OriginalMember(owner = "client!vg", name = "o", descriptor = "F")
   public static float aFloat215 = 0.25F;

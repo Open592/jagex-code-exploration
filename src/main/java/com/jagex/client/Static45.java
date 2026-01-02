@@ -6,9 +6,6 @@ import org.openrs2.deob.annotation.Pc;
 
 public final class Static45 {
 
-  @OriginalMember(owner = "client!cb", name = "b", descriptor = "Lclient!bg;")
-  public static final Class22 aClass22_49 = new Class22(108, 8);
-
   @OriginalMember(owner = "client!cb", name = "a", descriptor = "(JI)V")
   public static void method764(@OriginalArg(0) long arg0) {
     if (Static202.aClass164ArrayArrayArray5 != null) {

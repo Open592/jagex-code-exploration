@@ -27,10 +27,4 @@ public final class Static422 {
 
   @OriginalMember(owner = "client!vh", name = "i", descriptor = "I")
   public static int anInt6951 = 0;
-
-  @OriginalMember(owner = "client!vh", name = "j", descriptor = "Lclient!bg;")
-  public static final Class22 aClass22_312 = new Class22(58, -1);
-
-  @OriginalMember(owner = "client!vh", name = "l", descriptor = "Lclient!bg;")
-  public static final Class22 aClass22_313 = new Class22(31, 18);
 }

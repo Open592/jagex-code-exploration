@@ -8,9 +8,6 @@ public final class Static310 {
   @OriginalMember(owner = "client!po", name = "n", descriptor = "I")
   public static int anInt5424;
 
-  @OriginalMember(owner = "client!po", name = "m", descriptor = "Lclient!bg;")
-  public static final Class22 aClass22_251 = new Class22(55, 2);
-
   @OriginalMember(owner = "client!po", name = "a", descriptor = "(IIBII)Z")
   public static boolean method4164(
       @OriginalArg(0) int arg0,

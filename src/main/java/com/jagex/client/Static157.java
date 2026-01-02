@@ -34,11 +34,4 @@ public final class Static157 {
         Exception local18) {
     }
   }
-
-  public static void setParticles(int count) {
-    if (count < 0 || count > 2) {
-      count = 0;
-    }
-    Static216.particles = count;
-  }
 }

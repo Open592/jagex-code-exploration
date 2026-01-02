@@ -9,14 +9,8 @@ public final class Static433 {
   @OriginalMember(owner = "client!vt", name = "f", descriptor = "Lclient!ke;")
   public static Class70 aClass70_1;
 
-  @OriginalMember(owner = "client!vt", name = "a", descriptor = "Lclient!bg;")
-  public static final Class22 aClass22_326 = new Class22(107, -1);
-
   @OriginalMember(owner = "client!vt", name = "e", descriptor = "[Ljava/lang/String;")
   public static final String[] aStringArray38 = new String[200];
-
-  @OriginalMember(owner = "client!vt", name = "g", descriptor = "Lclient!bg;")
-  public static final Class22 aClass22_327 = new Class22(103, 6);
 
   @OriginalMember(owner = "client!vt", name = "a", descriptor = "(Lclient!ya;I)V")
   public static void method5498(@OriginalArg(0) Class19 arg0) {

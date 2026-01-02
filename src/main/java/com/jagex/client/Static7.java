@@ -18,9 +18,6 @@ public final class Static7 {
   @OriginalMember(owner = "client!af", name = "L", descriptor = "Lclient!sl;")
   public static final Class215 aClass215_71 = new Class215(66, 8);
 
-  @OriginalMember(owner = "client!af", name = "N", descriptor = "Lclient!bg;")
-  public static final Class22 aClass22_254 = new Class22(89, 8);
-
   @OriginalMember(owner = "client!af", name = "a", descriptor = "(ZI)I")
   public static int method4190(@OriginalArg(1) int arg0) {
     return arg0 >>> 8;

@@ -12,9 +12,6 @@ public final class Static113 {
   @OriginalMember(owner = "client!fn", name = "m", descriptor = "I")
   public static int anInt2426;
 
-  @OriginalMember(owner = "client!fn", name = "g", descriptor = "Lclient!bg;")
-  public static final Class22 aClass22_101 = new Class22(104, 6);
-
   @OriginalMember(owner = "client!fn", name = "h", descriptor = "S")
   public static short aShort19 = 1;
 

@@ -1,8 +1,10 @@
 package com.jagex.client;
 
 import com.jagex.client.display.GraphicsDeviceDisplayMode;
+import com.jagex.client.encoding.Base37;
 import com.jagex.client.env.ModeWhat;
 import com.jagex.client.preferences.ClientPreferences;
+import com.jagex.client.preferences.Preferences;
 import com.jagex.signlink.MonotonicClock;
 import com.jagex.signlink.SignLink;
 import jagex3.jagmisc.jagmisc;
@@ -1375,7 +1377,7 @@ public final class Static271 {
                     return;
                   }
                   if (arg0 == 3318) {
-                    anIntArray330[anInt5095++] = Static56.anInt1028;
+                    anIntArray330[anInt5095++] = WorldManager.worldId;
                     return;
                   }
                   if (arg0 == 3321) {
@@ -3333,7 +3335,7 @@ public final class Static271 {
       if (arg0 == 5015) {
         if (Static1.aClass16_Sub1_Sub5_Sub1_1 == null
             || Static1.aClass16_Sub1_Sub5_Sub1_1.aString43 == null) {
-          local75 = Static2.aString1;
+          local75 = LoginManager.username;
         } else {
           local75 = Static1.aClass16_Sub1_Sub5_Sub1_1.method3428();
         }
@@ -3372,7 +3374,7 @@ public final class Static271 {
       if (arg0 == 5020) {
         if (Static1.aClass16_Sub1_Sub5_Sub1_1 == null
             || Static1.aClass16_Sub1_Sub5_Sub1_1.aString43 == null) {
-          local75 = Static2.aString1;
+          local75 = LoginManager.username;
         } else {
           local75 = Static1.aClass16_Sub1_Sub5_Sub1_1.method3432();
         }
@@ -4361,7 +4363,7 @@ public final class Static271 {
                 && Static238.anInt4506 == 0
                 && Static354.anInt6183 == 0
                 && Static50.anInt862 == 0) {
-              Static445.method5618(local75, local89, local81);
+              LoginManager.performLogin(local75, local89, local81);
               return;
             }
             return;
@@ -4403,7 +4405,7 @@ public final class Static271 {
                 && Static238.anInt4506 == 0
                 && Static354.anInt6183 == 0
                 && Static50.anInt862 == 0) {
-              Static278.method3942(Static96.method1684(aStringArray21[anInt5092]));
+              Static278.method3942(Base37.encode(aStringArray21[anInt5092]));
               return;
             }
             return;
@@ -4426,7 +4428,7 @@ public final class Static271 {
                   anIntArray330[anInt5095 + 4] == 1,
                   anIntArray330[anInt5095 + 2],
                   anIntArray330[anInt5095 + 3],
-                  Static96.method1684(aStringArray21[anInt5092]),
+                  Base37.encode(aStringArray21[anInt5092]),
                   aStringArray21[anInt5092 + 2],
                   anIntArray330[anInt5095]);
               return;
@@ -4653,7 +4655,7 @@ public final class Static271 {
               local157 = 0;
               local1313 = true;
             }
-            Static157.setParticles(local157);
+            Preferences.setParticles(local157);
             ClientPreferences.preferences.writeToFile(GameShell.signLink);
             Static249.aBoolean425 = false;
             anIntArray330[anInt5095++] = local1313 ? 0 : 1;
@@ -4730,7 +4732,7 @@ public final class Static271 {
             return;
           }
           if (arg0 == 6034) {
-            ClientPreferences.preferences.aBoolean307 = anIntArray330[--anInt5095] == 1;
+            ClientPreferences.preferences.isTexturesEnabled = anIntArray330[--anInt5095] == 1;
             ClientPreferences.preferences.writeToFile(GameShell.signLink);
             Static119.method2149();
             Static249.aBoolean425 = false;
@@ -4823,7 +4825,7 @@ public final class Static271 {
             return;
           }
           if (arg0 == 6123) {
-            anIntArray330[anInt5095++] = Static218.getParticles();
+            anIntArray330[anInt5095++] = Preferences.getParticles();
             return;
           }
           if (arg0 == 6124) {
@@ -4875,7 +4877,7 @@ public final class Static271 {
             return;
           }
           if (arg0 == 6136) {
-            anIntArray330[anInt5095++] = ClientPreferences.preferences.aBoolean307 ? 1 : 0;
+            anIntArray330[anInt5095++] = ClientPreferences.preferences.isTexturesEnabled ? 1 : 0;
             return;
           }
           if (arg0 == 6137) {

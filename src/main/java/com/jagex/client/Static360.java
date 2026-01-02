@@ -15,9 +15,6 @@ public final class Static360 {
   @OriginalMember(owner = "client!sg", name = "h", descriptor = "F")
   public static float aFloat190;
 
-  @OriginalMember(owner = "client!sg", name = "c", descriptor = "Lclient!bg;")
-  public static final Class22 aClass22_284 = new Class22(106, 10);
-
   @OriginalMember(owner = "client!sg", name = "a", descriptor = "(ILclient!iv;)V")
   public static void method4864(@OriginalArg(1) Packet arg0) {
     if (arg0.data.length - arg0.pos < 1) {

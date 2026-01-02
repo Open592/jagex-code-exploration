@@ -12,9 +12,6 @@ public final class Static41 {
   @OriginalMember(owner = "client!bv", name = "L", descriptor = "Z")
   public static boolean aBoolean74 = true;
 
-  @OriginalMember(owner = "client!bv", name = "M", descriptor = "Lclient!bg;")
-  public static final Class22 aClass22_45 = new Class22(69, -1);
-
   @OriginalMember(owner = "client!bv", name = "N", descriptor = "I")
   public static int anInt759 = 0;
 

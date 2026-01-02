@@ -783,7 +783,9 @@ public final class Class266_Sub1 extends Class266 {
     }
     @Pc(30)
     Class202 local30 = Static267.aClass262_2.method5560(arg4);
-    if (arg5.method4251() && ClientPreferences.preferences.aBoolean307 && local30.aBoolean531) {
+    if (arg5.method4251()
+        && ClientPreferences.preferences.isTexturesEnabled
+        && local30.aBoolean531) {
       return;
     }
     @Pc(49)

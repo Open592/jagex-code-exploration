@@ -12,9 +12,6 @@ public final class Static257 {
   @OriginalMember(owner = "client!mv", name = "Z", descriptor = "Lclient!it;")
   public static Class114 aClass114_1;
 
-  @OriginalMember(owner = "client!mv", name = "V", descriptor = "Lclient!bg;")
-  public static final Class22 aClass22_212 = new Class22(61, 5);
-
   @OriginalMember(owner = "client!mv", name = "Y", descriptor = "Lclient!sl;")
   public static final Class215 aClass215_58 = new Class215(33, 11);
 

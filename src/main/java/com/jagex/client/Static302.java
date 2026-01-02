@@ -10,12 +10,6 @@ public final class Static302 {
   @OriginalMember(owner = "client!pf", name = "l", descriptor = "I")
   public static int height;
 
-  @OriginalMember(owner = "client!pf", name = "i", descriptor = "Lclient!bg;")
-  public static final Class22 aClass22_247 = new Class22(22, 9);
-
-  @OriginalMember(owner = "client!pf", name = "n", descriptor = "Lclient!bg;")
-  public static final Class22 aClass22_248 = new Class22(10, 12);
-
   @OriginalMember(owner = "client!pf", name = "a", descriptor = "(Lclient!jj;Lclient!nt;)V")
   public static void method4101(@OriginalArg(0) Class120 arg0, @OriginalArg(1) Class164 arg1) {
     if (!arg1.aBoolean466) {

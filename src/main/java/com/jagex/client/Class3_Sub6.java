@@ -1,6 +1,7 @@
 package com.jagex.client;
 
 import com.jagex.client.graphics.RenderMath;
+import com.jagex.client.preferences.Preferences;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalClass;
 import org.openrs2.deob.annotation.OriginalMember;
@@ -217,9 +218,9 @@ public final class Class3_Sub6 extends Class3 {
     int local40;
     if (this.aBoolean427) {
       arg2 = false;
-    } else if (this.aClass123_1.anInt3798 > Static216.particles) {
+    } else if (this.aClass123_1.anInt3798 > Preferences.particles) {
       arg2 = false;
-    } else if (Static272.anInt5116 > Static70.anIntArray113[Static216.particles]) {
+    } else if (Static272.anInt5116 > Static70.anIntArray113[Preferences.particles]) {
       arg2 = false;
     } else if (this.aBoolean426) {
       arg2 = false;

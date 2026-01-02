@@ -13,9 +13,6 @@ public final class Static72 {
   @OriginalMember(owner = "client!dm", name = "k", descriptor = "D")
   public static double aDouble1 = -1.0D;
 
-  @OriginalMember(owner = "client!dm", name = "o", descriptor = "Lclient!bg;")
-  public static final Class22 aClass22_71 = new Class22(77, -2);
-
   @OriginalMember(owner = "client!dm", name = "A", descriptor = "[B")
   public static final byte[] aByteArray19 = new byte[] {0, 4, 4, 8, 0, 0, 8, 0, 0};
 

@@ -1,6 +1,7 @@
 package com.jagex.client;
 
 import com.jagex.client.preferences.ClientPreferences;
+import com.jagex.client.preferences.Preferences;
 import jagex3.jagmisc.jagmisc;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalMember;
@@ -245,12 +246,13 @@ public final class Static400 {
         return;
       }
       if (command.startsWith("textures")) {
-        ClientPreferences.preferences.aBoolean307 = !ClientPreferences.preferences.aBoolean307;
+        ClientPreferences.preferences.isTexturesEnabled =
+            !ClientPreferences.preferences.isTexturesEnabled;
         ClientPreferences.preferences.writeToFile(GameShell.signLink);
         Static249.aBoolean425 = false;
         Static119.method2149();
         Static335.method4744();
-        Static441.method5568("textures=" + ClientPreferences.preferences.aBoolean307);
+        Static441.method5568("textures=" + ClientPreferences.preferences.isTexturesEnabled);
         return;
       }
       if (command.startsWith("setba")) {
@@ -274,10 +276,10 @@ public final class Static400 {
           Static441.method5568("Invalid particles value");
           return;
         }
-        Static157.setParticles(Static198.parseStringToInt(command.substring(13)));
+        Preferences.setParticles(Static198.parseStringToInt(command.substring(13)));
         ClientPreferences.preferences.writeToFile(GameShell.signLink);
         Static249.aBoolean425 = false;
-        Static441.method5568("particles=" + Static218.getParticles());
+        Static441.method5568("particles=" + Preferences.getParticles());
         return;
       }
       if (command.startsWith("rect_debug")) {
@@ -314,12 +316,12 @@ public final class Static400 {
         return;
       }
       if (command.equalsIgnoreCase("tween")) {
-        if (Static127.aBoolean244) {
-          Static127.aBoolean244 = false;
+        if (Static127.isForcedTweeningEnabled) {
+          Static127.isForcedTweeningEnabled = false;
           Static441.method5568("Forced tweening disabled.");
           return;
         }
-        Static127.aBoolean244 = true;
+        Static127.isForcedTweeningEnabled = true;
         Static441.method5568("Forced tweening ENABLED!");
         return;
       }
@@ -369,10 +371,10 @@ public final class Static400 {
         } else if (local106 > 4) {
           local106 = 4;
         }
-        Static218.anInt4043 = local106;
-        Static122.aClass19_16.method4283(Static218.anInt4043);
+        Static218.renderCoreCount = local106;
+        Static122.aClass19_16.method4283(Static218.renderCoreCount);
         Static122.aClass19_16.method4273(0);
-        Static441.method5568("Render cores now: " + Static218.anInt4043);
+        Static441.method5568("Render cores now: " + Static218.renderCoreCount);
         return;
       }
       if (command.startsWith("cachespace")) {

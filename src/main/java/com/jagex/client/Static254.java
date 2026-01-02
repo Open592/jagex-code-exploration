@@ -8,9 +8,6 @@ public final class Static254 {
   @OriginalMember(owner = "client!ms", name = "n", descriptor = "I")
   public static int loginScreenGroupId;
 
-  @OriginalMember(owner = "client!ms", name = "e", descriptor = "Lclient!bg;")
-  public static final Class22 aClass22_209 = new Class22(102, 5);
-
   @OriginalMember(owner = "client!ms", name = "l", descriptor = "[I")
   public static final int[] anIntArray311 = new int[14];
 

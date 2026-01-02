@@ -12,9 +12,6 @@ public final class Static390 {
   @OriginalMember(owner = "client!tq", name = "e", descriptor = "Z")
   public static boolean aBoolean584 = false;
 
-  @OriginalMember(owner = "client!tq", name = "f", descriptor = "Lclient!bg;")
-  public static final Class22 aClass22_292 = new Class22(11, -2);
-
   @OriginalMember(owner = "client!tq", name = "h", descriptor = "[I")
   public static final int[] anIntArray486 = new int[5];
 

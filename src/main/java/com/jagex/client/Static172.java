@@ -9,9 +9,6 @@ public final class Static172 {
   @OriginalMember(owner = "client!iq", name = "g", descriptor = "I")
   public static int anInt3367;
 
-  @OriginalMember(owner = "client!iq", name = "b", descriptor = "Lclient!bg;")
-  public static final Class22 aClass22_150 = new Class22(46, -1);
-
   @OriginalMember(owner = "client!iq", name = "e", descriptor = "Z")
   public static boolean aBoolean282 = false;
 

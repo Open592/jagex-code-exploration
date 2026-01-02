@@ -121,31 +121,4 @@ public final class Static96 {
       }
     }
   }
-
-  @OriginalMember(owner = "client!eq", name = "a", descriptor = "(ILjava/lang/String;)J")
-  public static long method1684(@OriginalArg(1) String arg0) {
-    @Pc(7)
-    long local7 = 0L;
-    @Pc(10)
-    int local10 = arg0.length();
-    for (@Pc(19) int local19 = 0; local19 < local10; local19++) {
-      local7 *= 37L;
-      @Pc(29)
-      char local29 = arg0.charAt(local19);
-      if (local29 >= 'A' && local29 <= 'Z') {
-        local7 += local29 + 1 - 65;
-      } else if (local29 >= 'a' && local29 <= 'z') {
-        local7 += local29 + 1 - 97;
-      } else if (local29 >= '0' && local29 <= '9') {
-        local7 += local29 + 27 - 48;
-      }
-      if (local7 >= 177917621779460413L) {
-        break;
-      }
-    }
-    while (local7 % 37L == 0L && local7 != 0L) {
-      local7 /= 37L;
-    }
-    return local7;
-  }
 }

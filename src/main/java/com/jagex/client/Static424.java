@@ -14,9 +14,6 @@ public final class Static424 {
   @OriginalMember(owner = "client!vj", name = "t", descriptor = "Lclient!ln;")
   public static Class49 aClass49_2;
 
-  @OriginalMember(owner = "client!vj", name = "m", descriptor = "Lclient!bg;")
-  public static final Class22 aClass22_319 = new Class22(73, 12);
-
   @OriginalMember(owner = "client!vj", name = "r", descriptor = "[Z")
   public static final boolean[] aBooleanArray23 = new boolean[200];
 

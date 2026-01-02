@@ -20,9 +20,6 @@ public final class Static234 {
   @OriginalMember(owner = "client!lu", name = "H", descriptor = "Z")
   public static boolean aBoolean411 = false;
 
-  @OriginalMember(owner = "client!lu", name = "L", descriptor = "Lclient!bg;")
-  public static final Class22 aClass22_199 = new Class22(19, 6);
-
   @OriginalMember(owner = "client!lu", name = "a", descriptor = "(IIIIILclient!sd;IIIIII)Z")
   public static boolean method3499(
       @OriginalArg(1) int arg0,

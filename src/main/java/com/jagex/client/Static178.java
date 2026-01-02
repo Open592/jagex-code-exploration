@@ -12,9 +12,6 @@ public final class Static178 {
   @OriginalMember(owner = "client!j", name = "r", descriptor = "Lclient!va;")
   public static Node_Sub42 aClass4_Sub42_2;
 
-  @OriginalMember(owner = "client!j", name = "i", descriptor = "Lclient!bg;")
-  public static final Class22 aClass22_152 = new Class22(48, 3);
-
   @OriginalMember(owner = "client!j", name = "p", descriptor = "Lclient!gk;")
   public static final LocalizedString A_LOCALIZED_STRING___72 =
       new LocalizedString("M", "M", "M", "M");

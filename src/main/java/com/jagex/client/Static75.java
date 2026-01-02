@@ -8,9 +8,6 @@ public final class Static75 {
   @OriginalMember(owner = "client!dq", name = "a", descriptor = "Lclient!ns;")
   public static final Node_Sub33 aClass4_Sub33_1 = new Node_Sub33(0, -1);
 
-  @OriginalMember(owner = "client!dq", name = "c", descriptor = "Lclient!bg;")
-  public static final Class22 aClass22_73 = new Class22(71, 6);
-
   @OriginalMember(owner = "client!dq", name = "d", descriptor = "Lclient!id;")
   public static final Class104 aClass104_1 = new Class104(1);
 

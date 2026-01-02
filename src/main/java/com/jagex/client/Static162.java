@@ -73,11 +73,11 @@ public final class Static162 {
         return false;
       }
     } else {
-      Static56.anInt1028 = local7.anInt3881;
+      WorldManager.worldId = local7.anInt3881;
       client.host = local7.aString38;
       if (!ClientSettings.modewhere.isLive()) {
-        client.fallbackServerPort = Static56.anInt1028 + 50000;
-        client.primaryServerPort = Static56.anInt1028 + 40000;
+        client.fallbackServerPort = WorldManager.worldId + 50000;
+        client.primaryServerPort = WorldManager.worldId + 40000;
         client.port = client.primaryServerPort;
       }
       return true;

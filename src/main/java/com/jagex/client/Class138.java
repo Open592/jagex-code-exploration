@@ -179,7 +179,7 @@ public final class Class138 {
     }
     @Pc(41)
     SecondaryNode_Sub1_Sub17 local41 = null;
-    if ((this.aBoolean405 || Static127.aBoolean244)
+    if ((this.aBoolean405 || Static127.isForcedTweeningEnabled)
         && arg2 != -1
         && this.anIntArray295.length > arg2) {
       @Pc(60)
@@ -203,7 +203,7 @@ public final class Class138 {
           local78 &= 0xFFFF;
         }
       }
-      if ((this.aBoolean405 || Static127.aBoolean244)
+      if ((this.aBoolean405 || Static127.isForcedTweeningEnabled)
           && arg2 != -1
           && arg2 < this.anIntArray297.length) {
         local80 = this.anIntArray297[arg2];
@@ -287,7 +287,7 @@ public final class Class138 {
     if (local30 == null) {
       return 0;
     }
-    if ((this.aBoolean405 || Static127.aBoolean244)
+    if ((this.aBoolean405 || Static127.isForcedTweeningEnabled)
         && arg1 != -1
         && arg1 < this.anIntArray295.length) {
       local7 = this.anIntArray295[arg1];
@@ -340,7 +340,7 @@ public final class Class138 {
           }
         }
       }
-      if ((this.aBoolean405 || Static127.aBoolean244)
+      if ((this.aBoolean405 || Static127.isForcedTweeningEnabled)
           && arg1 != -1
           && this.anIntArray297.length > arg1) {
         local151 = this.anIntArray297[arg1];
@@ -386,7 +386,7 @@ public final class Class138 {
     }
     @Pc(37)
     SecondaryNode_Sub1_Sub17 local37 = null;
-    if ((this.aBoolean405 || Static127.aBoolean244)
+    if ((this.aBoolean405 || Static127.isForcedTweeningEnabled)
         && arg4 != -1
         && arg4 < this.anIntArray295.length) {
       @Pc(55)

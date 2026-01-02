@@ -14,9 +14,6 @@ public final class Static27 {
   @OriginalMember(owner = "client!bf", name = "e", descriptor = "Lclient!sl;")
   public static final Class215 aClass215_7 = new Class215(19, 2);
 
-  @OriginalMember(owner = "client!bf", name = "f", descriptor = "Lclient!bg;")
-  public static final Class22 aClass22_33 = new Class22(18, 1);
-
   @OriginalMember(owner = "client!bf", name = "i", descriptor = "Lclient!pk;")
   public static final LinkedList A_LINKED_LIST___2 = new LinkedList();
 

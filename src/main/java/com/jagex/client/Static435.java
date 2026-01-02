@@ -15,9 +15,6 @@ public final class Static435 {
   @OriginalMember(owner = "client!vv", name = "b", descriptor = "[B")
   public static final byte[] aByteArray103 = new byte[] {1, 1, 0, 0, 0, 8, 0, 0, 8};
 
-  @OriginalMember(owner = "client!vv", name = "e", descriptor = "Lclient!bg;")
-  public static final Class22 aClass22_328 = new Class22(4, -1);
-
   @OriginalMember(owner = "client!vv", name = "h", descriptor = "Lclient!bf;")
   public static final Class21 aClass21_17 = new Class21(13, 3);
 

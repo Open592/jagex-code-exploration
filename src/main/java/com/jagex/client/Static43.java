@@ -18,9 +18,6 @@ public final class Static43 {
   @OriginalMember(owner = "client!c", name = "g", descriptor = "Lclient!la;")
   public static Class46 aClass46_12;
 
-  @OriginalMember(owner = "client!c", name = "d", descriptor = "Lclient!bg;")
-  public static final Class22 aClass22_332 = new Class22(59, -2);
-
   @OriginalMember(owner = "client!c", name = "a", descriptor = "(ZILclient!uu;II)V")
   public static void method5658(
       @OriginalArg(0) boolean arg0,

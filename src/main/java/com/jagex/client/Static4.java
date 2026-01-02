@@ -16,9 +16,6 @@ public final class Static4 {
   @OriginalMember(owner = "client!ac", name = "n", descriptor = "[I")
   public static final int[] anIntArray415 = new int[] {4, 2, 1, 1, 2, 2, 3, 1, 3, 3, 3, 2, 0};
 
-  @OriginalMember(owner = "client!ac", name = "w", descriptor = "Lclient!bg;")
-  public static final Class22 aClass22_277 = new Class22(81, -2);
-
   @OriginalMember(owner = "client!ac", name = "x", descriptor = "Lclient!gk;")
   public static final LocalizedString A_LOCALIZED_STRING___121 =
       new LocalizedString("rating: ", "Kampfstufe: ", "classement ", "qualificação: ");

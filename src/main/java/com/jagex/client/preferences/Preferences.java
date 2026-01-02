@@ -2,6 +2,8 @@ package com.jagex.client.preferences;
 
 public abstract class Preferences {
 
+  public static int particles = 2;
+
   protected boolean aBoolean299;
 
   protected boolean aBoolean301;
@@ -60,7 +62,7 @@ public abstract class Preferences {
 
   public boolean aBoolean294 = true;
 
-  public boolean aBoolean307 = false;
+  public boolean isTexturesEnabled = false;
 
   public boolean aBoolean305 = true;
 
@@ -71,6 +73,18 @@ public abstract class Preferences {
   public boolean aBoolean302 = true;
 
   protected Preferences() {}
+
+  public static void setParticles(int count) {
+    if (count < 0 || count > 2) {
+      count = 0;
+    }
+
+    particles = count;
+  }
+
+  public static int getParticles() {
+    return particles;
+  }
 
   public final int method2850(int arg0) {
     return arg0 == 1 || arg0 == 3 ? this.anInt3435 : this.anInt3430;

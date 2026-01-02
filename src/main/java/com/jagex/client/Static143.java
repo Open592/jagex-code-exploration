@@ -23,9 +23,6 @@ public final class Static143 {
   @OriginalMember(owner = "client!he", name = "g", descriptor = "[I")
   public static final int[] anIntArray184 = new int[32];
 
-  @OriginalMember(owner = "client!he", name = "k", descriptor = "Lclient!bg;")
-  public static final Class22 aClass22_125 = new Class22(91, -1);
-
   @OriginalMember(owner = "client!he", name = "m", descriptor = "[Lclient!rs;")
   public static final Class16_Sub1_Sub5_Sub2[] aClass16_Sub1_Sub5_Sub2Array1 =
       new Class16_Sub1_Sub5_Sub2[32768];

@@ -9,18 +9,15 @@ public final class Static297 {
   @OriginalMember(owner = "client!ov", name = "v", descriptor = "[[Lclient!uu;")
   public static Class247[][] aClass247ArrayArray2;
 
-  @OriginalMember(owner = "client!ov", name = "o", descriptor = "Ljava/lang/String;")
-  public static String aString52 = "";
-
   @OriginalMember(owner = "client!ov", name = "a", descriptor = "(I)V")
   public static void method4069() {
     Static3.aClass4_Sub12_Sub1_5.pos = 0;
     Static410.anInt6735 = 0;
-    Static380.aClass22_294 = null;
-    Static316.aClass22_257 = null;
+    Static380.aOpCode_294 = null;
+    Static316.aOpCode_257 = null;
     Static188.anInt5353 = 0;
-    Static300.aClass22_246 = null;
-    Static35.aClass22_42 = null;
+    Static300.aOpCode_246 = null;
+    Static35.aOpCode_42 = null;
     Static146.aClass4_Sub12_Sub1_3.pos = 0;
     Static454.anInt4075 = 0;
     Static103.method1816();

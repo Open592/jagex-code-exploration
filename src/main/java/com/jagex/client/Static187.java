@@ -18,9 +18,6 @@ public final class Static187 {
   @OriginalMember(owner = "client!ji", name = "m", descriptor = "I")
   public static int anInt3559 = 0;
 
-  @OriginalMember(owner = "client!ji", name = "n", descriptor = "Lclient!bg;")
-  public static final Class22 aClass22_159 = new Class22(16, -1);
-
   @OriginalMember(owner = "client!ji", name = "o", descriptor = "I")
   public static int anInt3560 = 0;
 

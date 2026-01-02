@@ -16,9 +16,6 @@ public final class Static239 {
   @OriginalMember(owner = "client!mc", name = "i", descriptor = "I")
   public static int anInt4518 = 0;
 
-  @OriginalMember(owner = "client!mc", name = "l", descriptor = "Lclient!bg;")
-  public static final Class22 aClass22_203 = new Class22(21, 6);
-
   @OriginalMember(owner = "client!mc", name = "a", descriptor = "(IIILclient!fs;)Lclient!gt;")
   public static Class89 method3546(@OriginalArg(2) int arg0, @OriginalArg(3) Js5 arg1) {
     @Pc(14)

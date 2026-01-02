@@ -15,9 +15,6 @@ public final class Static331 {
   @OriginalMember(owner = "client!qp", name = "S", descriptor = "Lclient!sl;")
   public static final Class215 aClass215_78 = new Class215(67, 7);
 
-  @OriginalMember(owner = "client!qp", name = "U", descriptor = "Lclient!bg;")
-  public static final Class22 aClass22_268 = new Class22(85, 6);
-
   @OriginalMember(owner = "client!qp", name = "a", descriptor = "(BIILclient!uu;)V")
   public static void method4515(
       @OriginalArg(1) int arg0, @OriginalArg(2) int arg1, @OriginalArg(3) Class247 arg2) {

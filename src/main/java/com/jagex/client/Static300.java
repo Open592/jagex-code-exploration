@@ -1,5 +1,6 @@
 package com.jagex.client;
 
+import com.jagex.client.protocol.OpCode;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;
@@ -7,7 +8,7 @@ import org.openrs2.deob.annotation.Pc;
 public final class Static300 {
 
   @OriginalMember(owner = "client!pd", name = "j", descriptor = "Lclient!bg;")
-  public static Class22 aClass22_246 = null;
+  public static OpCode aOpCode_246 = null;
 
   @OriginalMember(owner = "client!pd", name = "a", descriptor = "(IIZBI)Lclient!vj;")
   public static Node_Sub43 method4092(

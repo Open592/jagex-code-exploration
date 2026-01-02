@@ -1,6 +1,7 @@
 package com.jagex.client;
 
 import com.jagex.client.js5.Js5;
+import com.jagex.client.protocol.OpCode;
 import com.jagex.signlink.SignLink;
 import java.awt.Component;
 import org.openrs2.deob.annotation.OriginalArg;
@@ -10,7 +11,7 @@ import org.openrs2.deob.annotation.Pc;
 public final class Static380 {
 
   @OriginalMember(owner = "client!te", name = "m", descriptor = "Lclient!bg;")
-  public static Class22 aClass22_294;
+  public static OpCode aOpCode_294;
 
   @OriginalMember(owner = "client!te", name = "l", descriptor = "F")
   public static float aFloat195 = 0.0F;

@@ -9,9 +9,6 @@ public final class Static49 {
   @OriginalMember(owner = "client!cg", name = "v", descriptor = "Lclient!fs;")
   public static Js5 archive5;
 
-  @OriginalMember(owner = "client!cg", name = "n", descriptor = "Lclient!bg;")
-  public static final Class22 aClass22_98 = new Class22(33, 0);
-
   @OriginalMember(owner = "client!cg", name = "r", descriptor = "Ljava/lang/String;")
   public static String aString28 = null;
 

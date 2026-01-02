@@ -15,9 +15,6 @@ public final class Static154 {
   @OriginalMember(owner = "client!hq", name = "f", descriptor = "I")
   public static int anInt813;
 
-  @OriginalMember(owner = "client!hq", name = "a", descriptor = "Lclient!bg;")
-  public static final Class22 aClass22_51 = new Class22(78, 2);
-
   @OriginalMember(owner = "client!hq", name = "b", descriptor = "Lclient!iv;")
   public static final Packet A_BYTE_BUFFER___2 = new Packet(new byte[5000]);
 

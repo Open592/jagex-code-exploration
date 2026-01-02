@@ -9,9 +9,6 @@ public final class Static214 {
   @OriginalMember(owner = "client!kq", name = "e", descriptor = "[[[Lclient!nt;")
   public static Class164[][][] aClass164ArrayArrayArray4;
 
-  @OriginalMember(owner = "client!kq", name = "b", descriptor = "Lclient!bg;")
-  public static final Class22 aClass22_178 = new Class22(36, 12);
-
   @OriginalMember(owner = "client!kq", name = "f", descriptor = "Lclient!gk;")
   public static final LocalizedString A_LOCALIZED_STRING___79 =
       new LocalizedString("K", "T", "K", "K");

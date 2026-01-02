@@ -12,9 +12,6 @@ public final class Static2 {
   @OriginalMember(owner = "client!aa", name = "a", descriptor = "[F")
   public static final float[] aFloatArray1 = new float[4];
 
-  @OriginalMember(owner = "client!aa", name = "c", descriptor = "Ljava/lang/String;")
-  public static String aString1 = "";
-
   @OriginalMember(owner = "client!aa", name = "a", descriptor = "(II)Lclient!id;")
   public static Class104 method6(@OriginalArg(1) int arg0) {
     @Pc(8)

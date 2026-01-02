@@ -138,7 +138,7 @@ public final class Class23 {
             & (this.anInt539 != local11.anInt5823
                 || (this.anInt538 != this.anInt537
                         || this.aClass138_1 != null
-                            && (this.aClass138_1.aBoolean404 || Static127.aBoolean244)
+                            && (this.aClass138_1.aBoolean404 || Static127.isForcedTweeningEnabled)
                             && this.anInt538 != this.anInt552)
                     && ClientPreferences.preferences.method2850(Static177.anInt2973) >= 2);
     if (arg5 && !local110) {

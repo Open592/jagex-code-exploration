@@ -21,9 +21,6 @@ public final class Static119 {
   public static final Js5NetResourceProvider[] archiveDataResourceProviders =
       new Js5NetResourceProvider[30];
 
-  @OriginalMember(owner = "client!ft", name = "N", descriptor = "Lclient!bg;")
-  public static final Class22 aClass22_106 = new Class22(20, 12);
-
   @OriginalMember(owner = "client!ft", name = "O", descriptor = "I")
   public static int anInt2527 = 0;
 
@@ -89,7 +86,7 @@ public final class Static119 {
     if (ClientPreferences.preferences.method2854(Static177.anInt2973)) {
       local5 = 55;
     }
-    if (!ClientPreferences.preferences.aBoolean307) {
+    if (!ClientPreferences.preferences.isTexturesEnabled) {
       local5 |= 0x40;
     }
     Static6.method51(local5);

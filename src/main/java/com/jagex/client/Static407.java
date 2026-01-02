@@ -213,7 +213,7 @@ public final class Static407 {
       Static90.method1610(
           Static122.aClass19_16,
           client.gameLogicStepCount,
-          Static218.anInt4043,
+          Static218.renderCoreCount,
           Static111.aClass31_1,
           Static163.anInt3197,
           Static100.anInt2024,

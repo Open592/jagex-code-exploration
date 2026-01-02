@@ -11,9 +11,6 @@ public final class Static167 {
   @OriginalMember(owner = "client!il", name = "e", descriptor = "Ljava/lang/String;")
   public static String aString35;
 
-  @OriginalMember(owner = "client!il", name = "a", descriptor = "Lclient!bg;")
-  public static final Class22 aClass22_144 = new Class22(92, 2);
-
   @OriginalMember(owner = "client!il", name = "f", descriptor = "I")
   public static int anInt3231 = 0;
 
@@ -25,13 +22,13 @@ public final class Static167 {
     Static41.aBoolean74 = true;
     Static111.method2023();
     Static3.aClass4_Sub12_Sub1_5.pos = 0;
-    Static316.aClass22_257 = null;
+    Static316.aOpCode_257 = null;
     Static410.anInt6735 = 0;
-    Static300.aClass22_246 = null;
+    Static300.aOpCode_246 = null;
     Static146.aClass4_Sub12_Sub1_3.pos = 0;
     Static95.anInt1910 = 0;
-    Static35.aClass22_42 = null;
-    Static380.aClass22_294 = null;
+    Static35.aOpCode_42 = null;
+    Static380.aOpCode_294 = null;
     Static188.anInt5353 = 0;
     for (@Pc(5586) int local5586 = 0; local5586 < Static306.aClass38Array1.length; local5586++) {
       Static306.aClass38Array1[local5586] = null;

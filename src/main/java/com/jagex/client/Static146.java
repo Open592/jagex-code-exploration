@@ -20,9 +20,6 @@ public final class Static146 {
   public static final LocalizedString A_LOCALIZED_STRING___10 =
       new LocalizedString(" ", ": ", " ", " ");
 
-  @OriginalMember(owner = "client!hh", name = "g", descriptor = "Lclient!bg;")
-  public static final Class22 aClass22_23 = new Class22(47, 20);
-
   @OriginalMember(owner = "client!hh", name = "h", descriptor = "Lclient!cw;")
   public static final ISAACPacket aClass4_Sub12_Sub1_3 = new ISAACPacket(5000);
 
