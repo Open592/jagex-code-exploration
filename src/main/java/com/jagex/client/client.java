@@ -583,7 +583,7 @@ public final class client extends GameShell {
       Static3.aClass4_Sub12_Sub1_5.p1(0);
       local489 = Static3.aClass4_Sub12_Sub1_5.pos;
       @Pc(692)
-      Packet local692 = ClientPreferences.preferences.method2863();
+      Packet local692 = ClientPreferences.preferences.encodePreferences();
       Static3.aClass4_Sub12_Sub1_5.pArrayBuffer(local692.data, local692.pos);
       Static3.aClass4_Sub12_Sub1_5.pSize1(Static3.aClass4_Sub12_Sub1_5.pos - local489);
       Static249.aBoolean425 = true;
@@ -1058,7 +1058,7 @@ public final class client extends GameShell {
         Static3.aClass4_Sub12_Sub1_5.pjstr(ClientSettings.settings);
         Static3.aClass4_Sub12_Sub1_5.p4(ClientSettings.affiliateID);
         @Pc(323)
-        Packet local323 = ClientPreferences.preferences.method2863();
+        Packet local323 = ClientPreferences.preferences.encodePreferences();
         Static3.aClass4_Sub12_Sub1_5.p1(local323.pos);
         Static3.aClass4_Sub12_Sub1_5.pArrayBuffer(local323.data, local323.pos);
         Static249.aBoolean425 = true;
@@ -4731,7 +4731,7 @@ public final class client extends GameShell {
         && Static403.anInt6667 == 10
         && Static334.anInt5766 != -1) {
       ClientPreferences.preferences.aBoolean297 = false;
-      ClientPreferences.preferences.method2856(GameShell.signLink);
+      ClientPreferences.preferences.writeToFile(GameShell.signLink);
     }
   }
 
@@ -5547,7 +5547,7 @@ public final class client extends GameShell {
         ClientPreferences.preferences.anInt3434 = 0;
       }
       ClientPreferences.preferences.aBoolean297 = true;
-      ClientPreferences.preferences.method2856(GameShell.signLink);
+      ClientPreferences.preferences.writeToFile(GameShell.signLink);
       Static440.method5561(false, ClientPreferences.preferences.anInt3445);
       Static24.currentLoadingBoxText = Messages.started3dLibrary.getString(ClientSettings.langID);
       Static247.anInt4590 = 55;

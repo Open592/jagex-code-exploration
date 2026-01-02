@@ -623,7 +623,7 @@ public abstract class GameShell extends Applet implements Runnable, FocusListene
       if (fullScreenFrame != null) {
         ClientPreferences.preferences.anInt3431 = arg2;
         ClientPreferences.preferences.anInt3450 = arg4;
-        ClientPreferences.preferences.method2856(signLink);
+        ClientPreferences.preferences.writeToFile(signLink);
       }
     }
     if (arg0 == 3 && fullScreenFrame == null) {

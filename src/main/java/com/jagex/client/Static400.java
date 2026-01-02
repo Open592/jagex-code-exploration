@@ -167,7 +167,7 @@ public final class Static400 {
         if (Static177.anInt2973 == 0) {
           Static441.method5568("Entered tk0");
           ClientPreferences.preferences.anInt3445 = 0;
-          ClientPreferences.preferences.method2856(GameShell.signLink);
+          ClientPreferences.preferences.writeToFile(GameShell.signLink);
           Static249.aBoolean425 = false;
           return;
         }
@@ -182,7 +182,7 @@ public final class Static400 {
         }
         Static441.method5568("Entered tk1");
         ClientPreferences.preferences.anInt3445 = 1;
-        ClientPreferences.preferences.method2856(GameShell.signLink);
+        ClientPreferences.preferences.writeToFile(GameShell.signLink);
         Static249.aBoolean425 = false;
         return;
       }
@@ -191,7 +191,7 @@ public final class Static400 {
         if (Static177.anInt2973 == 2) {
           Static441.method5568("Entered tk2");
           ClientPreferences.preferences.anInt3445 = 2;
-          ClientPreferences.preferences.method2856(GameShell.signLink);
+          ClientPreferences.preferences.writeToFile(GameShell.signLink);
           Static249.aBoolean425 = false;
           return;
         }
@@ -209,7 +209,7 @@ public final class Static400 {
       }
       if (command.equalsIgnoreCase("ot")) {
         ClientPreferences.preferences.aBoolean293 = !ClientPreferences.preferences.aBoolean293;
-        ClientPreferences.preferences.method2856(GameShell.signLink);
+        ClientPreferences.preferences.writeToFile(GameShell.signLink);
         Static249.aBoolean425 = false;
         Static335.method4744();
         Static441.method5568("ot=" + ClientPreferences.preferences.aBoolean293);
@@ -217,7 +217,7 @@ public final class Static400 {
       }
       if (command.equalsIgnoreCase("gb")) {
         ClientPreferences.preferences.aBoolean289 = !ClientPreferences.preferences.aBoolean289;
-        ClientPreferences.preferences.method2856(GameShell.signLink);
+        ClientPreferences.preferences.writeToFile(GameShell.signLink);
         Static249.aBoolean425 = false;
         Static335.method4744();
         Static441.method5568("gb=" + ClientPreferences.preferences.aBoolean289);
@@ -235,7 +235,7 @@ public final class Static400 {
         local568 = Static88.method1590(local558) ? Static198.parseStringToInt(local558) : -1;
         if (local568 >= 0 && local568 <= 2) {
           ClientPreferences.preferences.method2852(Static177.anInt2973, local568);
-          ClientPreferences.preferences.method2856(GameShell.signLink);
+          ClientPreferences.preferences.writeToFile(GameShell.signLink);
           Static249.aBoolean425 = false;
           Static335.method4744();
           Static441.method5568("shadows=" + local568);
@@ -246,7 +246,7 @@ public final class Static400 {
       }
       if (command.startsWith("textures")) {
         ClientPreferences.preferences.aBoolean307 = !ClientPreferences.preferences.aBoolean307;
-        ClientPreferences.preferences.method2856(GameShell.signLink);
+        ClientPreferences.preferences.writeToFile(GameShell.signLink);
         Static249.aBoolean425 = false;
         Static119.method2149();
         Static335.method4744();
@@ -261,7 +261,7 @@ public final class Static400 {
         local106 = Static198.parseStringToInt(command.substring(6));
         if (local106 >= 0 && local106 <= Static53.method898(Static70.anInt1503)) {
           ClientPreferences.preferences.anInt3434 = local106;
-          ClientPreferences.preferences.method2856(GameShell.signLink);
+          ClientPreferences.preferences.writeToFile(GameShell.signLink);
           Static249.aBoolean425 = false;
           Static441.method5568("maxbuildarea=" + ClientPreferences.preferences.anInt3434);
           return;
@@ -275,7 +275,7 @@ public final class Static400 {
           return;
         }
         Static157.setParticles(Static198.parseStringToInt(command.substring(13)));
-        ClientPreferences.preferences.method2856(GameShell.signLink);
+        ClientPreferences.preferences.writeToFile(GameShell.signLink);
         Static249.aBoolean425 = false;
         Static441.method5568("particles=" + Static218.getParticles());
         return;

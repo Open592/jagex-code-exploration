@@ -4029,7 +4029,7 @@ public final class Static271 {
           local157 = anIntArray330[--anInt5095];
           if (local157 >= 1 && local157 <= 2) {
             ClientPreferences.preferences.anInt3447 = local157;
-            ClientPreferences.preferences.method2856(GameShell.signLink);
+            ClientPreferences.preferences.writeToFile(GameShell.signLink);
             return;
           }
           return;
@@ -4476,7 +4476,7 @@ public final class Static271 {
             }
             ClientPreferences.preferences.anInt3436 = local157;
             Static335.method4744();
-            ClientPreferences.preferences.method2856(GameShell.signLink);
+            ClientPreferences.preferences.writeToFile(GameShell.signLink);
             Static249.aBoolean425 = false;
             return;
           }
@@ -4484,53 +4484,53 @@ public final class Static271 {
             ClientPreferences.preferences.method2859(anIntArray330[--anInt5095] == 1);
             Static335.method4744();
             Static215.method3238();
-            ClientPreferences.preferences.method2856(GameShell.signLink);
+            ClientPreferences.preferences.writeToFile(GameShell.signLink);
             Static249.aBoolean425 = false;
             return;
           }
           if (arg0 == 6003) {
             ClientPreferences.preferences.aBoolean306 = anIntArray330[--anInt5095] == 1;
             Static215.method3238();
-            ClientPreferences.preferences.method2856(GameShell.signLink);
+            ClientPreferences.preferences.writeToFile(GameShell.signLink);
             Static249.aBoolean425 = false;
             return;
           }
           if (arg0 == 6005) {
             ClientPreferences.preferences.aBoolean305 = anIntArray330[--anInt5095] == 1;
             Static335.method4744();
-            ClientPreferences.preferences.method2856(GameShell.signLink);
+            ClientPreferences.preferences.writeToFile(GameShell.signLink);
             Static249.aBoolean425 = false;
             return;
           }
           if (arg0 == 6006) {
             ClientPreferences.preferences.aBoolean296 = anIntArray330[--anInt5095] == 1;
             Static122.aClass19_16.method4237(!ClientPreferences.preferences.aBoolean296);
-            ClientPreferences.preferences.method2856(GameShell.signLink);
+            ClientPreferences.preferences.writeToFile(GameShell.signLink);
             Static249.aBoolean425 = false;
             return;
           }
           if (arg0 == 6007) {
             ClientPreferences.preferences.anInt3433 = anIntArray330[--anInt5095];
-            ClientPreferences.preferences.method2856(GameShell.signLink);
+            ClientPreferences.preferences.writeToFile(GameShell.signLink);
             Static249.aBoolean425 = false;
             return;
           }
           if (arg0 == 6008) {
             ClientPreferences.preferences.aBoolean295 = anIntArray330[--anInt5095] == 1;
-            ClientPreferences.preferences.method2856(GameShell.signLink);
+            ClientPreferences.preferences.writeToFile(GameShell.signLink);
             Static249.aBoolean425 = false;
             return;
           }
           if (arg0 == 6009) {
             ClientPreferences.preferences.aBoolean293 = anIntArray330[--anInt5095] == 1;
             Static335.method4744();
-            ClientPreferences.preferences.method2856(GameShell.signLink);
+            ClientPreferences.preferences.writeToFile(GameShell.signLink);
             Static249.aBoolean425 = false;
             return;
           }
           if (arg0 == 6010) {
             ClientPreferences.preferences.aBoolean302 = anIntArray330[--anInt5095] == 1;
-            ClientPreferences.preferences.method2856(GameShell.signLink);
+            ClientPreferences.preferences.writeToFile(GameShell.signLink);
             Static249.aBoolean425 = false;
             return;
           }
@@ -4541,7 +4541,7 @@ public final class Static271 {
             }
             ClientPreferences.preferences.method2852(Static177.anInt2973, local157);
             Static335.method4744();
-            ClientPreferences.preferences.method2856(GameShell.signLink);
+            ClientPreferences.preferences.writeToFile(GameShell.signLink);
             Static249.aBoolean425 = false;
             return;
           }
@@ -4550,21 +4550,21 @@ public final class Static271 {
                 anIntArray330[--anInt5095] == 1, Static177.anInt2973);
             Static119.method2149();
             Static222.method3355();
-            ClientPreferences.preferences.method2856(GameShell.signLink);
+            ClientPreferences.preferences.writeToFile(GameShell.signLink);
             Static249.aBoolean425 = false;
             return;
           }
           if (arg0 == 6014) {
             ClientPreferences.preferences.aBoolean294 = anIntArray330[--anInt5095] == 1;
             Static335.method4744();
-            ClientPreferences.preferences.method2856(GameShell.signLink);
+            ClientPreferences.preferences.writeToFile(GameShell.signLink);
             Static249.aBoolean425 = false;
             return;
           }
           if (arg0 == 6015) {
             ClientPreferences.preferences.aBoolean298 = anIntArray330[--anInt5095] == 1;
             Static335.method4744();
-            ClientPreferences.preferences.method2856(GameShell.signLink);
+            ClientPreferences.preferences.writeToFile(GameShell.signLink);
             Static249.aBoolean425 = false;
             return;
           }
@@ -4575,13 +4575,13 @@ public final class Static271 {
             }
             ClientPreferences.preferences.anInt3440 = local157;
             Static239.method3551(Static177.anInt2973);
-            ClientPreferences.preferences.method2856(GameShell.signLink);
+            ClientPreferences.preferences.writeToFile(GameShell.signLink);
             return;
           }
           if (arg0 == 6017) {
             ClientPreferences.preferences.aBoolean291 = anIntArray330[--anInt5095] == 1;
             Static167.method2740();
-            ClientPreferences.preferences.method2856(GameShell.signLink);
+            ClientPreferences.preferences.writeToFile(GameShell.signLink);
             Static249.aBoolean425 = false;
             return;
           }
@@ -4594,7 +4594,7 @@ public final class Static271 {
               local157 = 127;
             }
             ClientPreferences.preferences.anInt3448 = local157;
-            ClientPreferences.preferences.method2856(GameShell.signLink);
+            ClientPreferences.preferences.writeToFile(GameShell.signLink);
             Static249.aBoolean425 = false;
             return;
           }
@@ -4618,7 +4618,7 @@ public final class Static271 {
               }
               ClientPreferences.preferences.anInt3439 = local157;
             }
-            ClientPreferences.preferences.method2856(GameShell.signLink);
+            ClientPreferences.preferences.writeToFile(GameShell.signLink);
             Static249.aBoolean425 = false;
             return;
           }
@@ -4631,7 +4631,7 @@ public final class Static271 {
               local157 = 127;
             }
             ClientPreferences.preferences.anInt3449 = local157;
-            ClientPreferences.preferences.method2856(GameShell.signLink);
+            ClientPreferences.preferences.writeToFile(GameShell.signLink);
             Static249.aBoolean425 = false;
             return;
           }
@@ -4654,7 +4654,7 @@ public final class Static271 {
               local1313 = true;
             }
             Static157.setParticles(local157);
-            ClientPreferences.preferences.method2856(GameShell.signLink);
+            ClientPreferences.preferences.writeToFile(GameShell.signLink);
             Static249.aBoolean425 = false;
             anIntArray330[anInt5095++] = local1313 ? 0 : 1;
             return;
@@ -4665,7 +4665,7 @@ public final class Static271 {
               local157 = 0;
             }
             ClientPreferences.preferences.anInt3442 = local157;
-            ClientPreferences.preferences.method2856(GameShell.signLink);
+            ClientPreferences.preferences.writeToFile(GameShell.signLink);
             return;
           }
           if (arg0 == 6025) {
@@ -4674,7 +4674,7 @@ public final class Static271 {
               local157 = 0;
             }
             ClientPreferences.preferences.anInt3434 = local157;
-            ClientPreferences.preferences.method2856(GameShell.signLink);
+            ClientPreferences.preferences.writeToFile(GameShell.signLink);
             Static249.aBoolean425 = false;
             return;
           }
@@ -4688,17 +4688,17 @@ public final class Static271 {
           }
           if (arg0 == 6028) {
             ClientPreferences.preferences.aBoolean304 = anIntArray330[--anInt5095] != 0;
-            ClientPreferences.preferences.method2856(GameShell.signLink);
+            ClientPreferences.preferences.writeToFile(GameShell.signLink);
             return;
           }
           if (arg0 == 6029) {
             ClientPreferences.preferences.anInt3433 = anIntArray330[--anInt5095];
-            ClientPreferences.preferences.method2856(GameShell.signLink);
+            ClientPreferences.preferences.writeToFile(GameShell.signLink);
             return;
           }
           if (arg0 == 6030) {
             ClientPreferences.preferences.aBoolean289 = anIntArray330[--anInt5095] != 0;
-            ClientPreferences.preferences.method2856(GameShell.signLink);
+            ClientPreferences.preferences.writeToFile(GameShell.signLink);
             Static335.method4744();
             return;
           }
@@ -4716,7 +4716,7 @@ public final class Static271 {
               local157 = 2;
             }
             ClientPreferences.preferences.anInt3445 = local157;
-            ClientPreferences.preferences.method2856(GameShell.signLink);
+            ClientPreferences.preferences.writeToFile(GameShell.signLink);
             Static249.aBoolean425 = false;
             return;
           }
@@ -4726,12 +4726,12 @@ public final class Static271 {
               local157 = 2;
             }
             ClientPreferences.preferences.anInt3437 = local157;
-            ClientPreferences.preferences.method2856(GameShell.signLink);
+            ClientPreferences.preferences.writeToFile(GameShell.signLink);
             return;
           }
           if (arg0 == 6034) {
             ClientPreferences.preferences.aBoolean307 = anIntArray330[--anInt5095] == 1;
-            ClientPreferences.preferences.method2856(GameShell.signLink);
+            ClientPreferences.preferences.writeToFile(GameShell.signLink);
             Static119.method2149();
             Static249.aBoolean425 = false;
             return;
@@ -5086,7 +5086,7 @@ public final class Static271 {
           }
           if (arg0 == 6504) {
             ClientPreferences.preferences.anInt3428 = anIntArray330[--anInt5095];
-            ClientPreferences.preferences.method2856(GameShell.signLink);
+            ClientPreferences.preferences.writeToFile(GameShell.signLink);
             return;
           }
           if (arg0 == 6505) {
@@ -5139,7 +5139,7 @@ public final class Static271 {
         } else if (arg0 < 6700) {
           if (arg0 == 6600) {
             ClientPreferences.preferences.aBoolean303 = anIntArray330[--anInt5095] == 1;
-            ClientPreferences.preferences.method2856(GameShell.signLink);
+            ClientPreferences.preferences.writeToFile(GameShell.signLink);
             return;
           }
           if (arg0 == 6601) {

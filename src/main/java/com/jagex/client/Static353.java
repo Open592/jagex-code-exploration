@@ -72,7 +72,7 @@ public final class Static353 {
       return false;
     } else {
       ClientPreferences.preferences.aBoolean300 = arg0;
-      ClientPreferences.preferences.method2856(GameShell.signLink);
+      ClientPreferences.preferences.writeToFile(GameShell.signLink);
       return true;
     }
   }
