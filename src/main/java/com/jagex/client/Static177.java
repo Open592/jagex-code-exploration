@@ -1,5 +1,6 @@
 package com.jagex.client;
 
+import com.jagex.client.preferences.ClientPreferences;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;
@@ -49,7 +50,7 @@ public final class Static177 {
           }
           if (local13.anInt7336 < 0) {
             if (local13.anInt7341 == 0) {
-              local131 = local13.anInt7337 * Static323.aClass50_Sub1_1.anInt3448 >> 8;
+              local131 = local13.anInt7337 * ClientPreferences.preferences.anInt3448 >> 8;
             } else {
               @Pc(140)
               int local140 = local13.anInt7341 >> 24 & 0x3;
@@ -81,7 +82,7 @@ public final class Static177 {
                 }
                 local131 =
                     (local159 - local212)
-                            * Static323.aClass50_Sub1_1.anInt3449
+                            * ClientPreferences.preferences.anInt3449
                             * local13.anInt7337
                             / local159
                         >> 8;
@@ -117,12 +118,12 @@ public final class Static177 {
       }
     }
     if (Static436.aBoolean666 && !Static109.method5336()) {
-      if (Static323.aClass50_Sub1_1.anInt3439 != 0 && Static62.anInt1117 != -1) {
+      if (ClientPreferences.preferences.anInt3439 != 0 && Static62.anInt1117 != -1) {
         Static32.method625(
-            Static323.aClass50_Sub1_1.anInt3439, Static62.anInt1117, Static46.archive6);
+            ClientPreferences.preferences.anInt3439, Static62.anInt1117, Static46.archive6);
       }
       Static436.aBoolean666 = false;
-    } else if (Static323.aClass50_Sub1_1.anInt3439 != 0
+    } else if (ClientPreferences.preferences.anInt3439 != 0
         && Static62.anInt1117 != -1
         && !Static109.method5336()) {
       Static429.method5476(Static309.aClass215_67);

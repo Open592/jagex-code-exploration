@@ -1,6 +1,7 @@
 package com.jagex.client;
 
 import com.jagex.client.js5.Js5;
+import com.jagex.client.preferences.ClientPreferences;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalMember;
 
@@ -27,7 +28,7 @@ public final class Static273 {
       @OriginalArg(1) int arg1,
       @OriginalArg(3) int arg2,
       @OriginalArg(4) int arg3) {
-    if (Static323.aClass50_Sub1_1.anInt3448 != 0
+    if (ClientPreferences.preferences.anInt3448 != 0
         && arg0 != 0
         && Static109.anInt6886 < 50
         && arg2 != -1) {

@@ -6,7 +6,7 @@ import org.openrs2.deob.annotation.OriginalMember;
 public final class Static254 {
 
   @OriginalMember(owner = "client!ms", name = "n", descriptor = "I")
-  public static int anInt4755;
+  public static int loginScreenGroupId;
 
   @OriginalMember(owner = "client!ms", name = "e", descriptor = "Lclient!bg;")
   public static final Class22 aClass22_209 = new Class22(102, 5);

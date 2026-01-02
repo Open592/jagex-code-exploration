@@ -1,5 +1,6 @@
 package com.jagex.client;
 
+import com.jagex.client.graphics.RenderMath;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalClass;
 import org.openrs2.deob.annotation.OriginalMember;
@@ -680,9 +681,9 @@ public abstract class Class16_Sub1_Sub5 extends Class16_Sub1 {
     @Pc(23)
     int local23 = super.aShort95 + super.aShort96 >> 1;
     @Pc(27)
-    int local27 = Class50_Sub1.anIntArray225[arg3];
+    int local27 = RenderMath.SINE_TABLE[arg3];
     @Pc(31)
-    int local31 = Class50_Sub1.anIntArray224[arg3];
+    int local31 = RenderMath.COSINE_TABLE[arg3];
     @Pc(36)
     int local36 = -arg0 / 2;
     @Pc(41)

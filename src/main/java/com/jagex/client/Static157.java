@@ -35,11 +35,10 @@ public final class Static157 {
     }
   }
 
-  @OriginalMember(owner = "client!hu", name = "a", descriptor = "(II)V")
-  public static void method2673(@OriginalArg(0) int arg0) {
-    if (arg0 < 0 || arg0 > 2) {
-      arg0 = 0;
+  public static void setParticles(int count) {
+    if (count < 0 || count > 2) {
+      count = 0;
     }
-    Static216.anInt4008 = arg0;
+    Static216.particles = count;
   }
 }

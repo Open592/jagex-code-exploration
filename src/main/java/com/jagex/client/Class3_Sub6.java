@@ -1,5 +1,6 @@
 package com.jagex.client;
 
+import com.jagex.client.graphics.RenderMath;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalClass;
 import org.openrs2.deob.annotation.OriginalMember;
@@ -216,9 +217,9 @@ public final class Class3_Sub6 extends Class3 {
     int local40;
     if (this.aBoolean427) {
       arg2 = false;
-    } else if (this.aClass123_1.anInt3798 > Static216.anInt4008) {
+    } else if (this.aClass123_1.anInt3798 > Static216.particles) {
       arg2 = false;
-    } else if (Static272.anInt5116 > Static70.anIntArray113[Static216.anInt4008]) {
+    } else if (Static272.anInt5116 > Static70.anIntArray113[Static216.particles]) {
       arg2 = false;
     } else if (this.aBoolean426) {
       arg2 = false;
@@ -273,13 +274,13 @@ public final class Class3_Sub6 extends Class3 {
             local188 = (int) (Math.random() * (double) this.anInt4643) + this.anInt4632;
             @Pc(192)
             int local192 = local188 & 0x3FFF;
-            local196 = Class50_Sub1.anIntArray225[local192];
-            local200 = Class50_Sub1.anIntArray224[local192];
+            local196 = RenderMath.SINE_TABLE[local192];
+            local200 = RenderMath.COSINE_TABLE[local192];
             local210 = this.anInt4647 + (int) (Math.random() * (double) this.anInt4641);
             @Pc(214)
             int local214 = local210 & 0x1FFF;
-            local218 = Class50_Sub1.anIntArray225[local214];
-            local222 = Class50_Sub1.anIntArray224[local214];
+            local218 = RenderMath.SINE_TABLE[local214];
+            local222 = RenderMath.COSINE_TABLE[local214];
             local170 = (local222 << 0) * -1;
             local173 = local200 * local218 >> 15;
             local176 = local218 * local196 >> 15;

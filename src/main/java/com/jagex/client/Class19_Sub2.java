@@ -646,7 +646,7 @@ public final class Class19_Sub2 extends Class19 {
                   local397 = local397.substring(2);
                 }
                 if (local397.length() >= 4 && Static88.method1590(local397.substring(0, 4))) {
-                  local376 = Static198.method3113(local397.substring(0, 4));
+                  local376 = Static198.parseStringToInt(local397.substring(0, 4));
                   break;
                 }
               }
@@ -3336,9 +3336,9 @@ public final class Class19_Sub2 extends Class19 {
     } else {
       try {
         @Pc(70)
-        int local70 = Static198.method3113(local54[0]);
+        int local70 = Static198.parseStringToInt(local54[0]);
         @Pc(76)
-        int local76 = Static198.method3113(local54[1]);
+        int local76 = Static198.parseStringToInt(local54[1]);
         this.anInt2300 = local70 * 10 + local76;
       } catch (
           @Pc(85)

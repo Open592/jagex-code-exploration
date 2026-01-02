@@ -1,5 +1,6 @@
 package com.jagex.client;
 
+import com.jagex.client.graphics.RenderMath;
 import com.jagex.client.locale.LocalizedString;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalMember;
@@ -783,12 +784,10 @@ public final class Static147 {
                       Static122.aClass19_16.method4309(false);
                     }
                     local581 =
-                        (local23.anInt6857 << 0)
-                                * Class50_Sub1.anIntArray225[local23.anInt6844 << 3]
+                        (local23.anInt6857 << 0) * RenderMath.SINE_TABLE[local23.anInt6844 << 3]
                             >> 15;
                     local583 =
-                        (local23.anInt6857 << 0)
-                                * Class50_Sub1.anIntArray224[local23.anInt6844 << 3]
+                        (local23.anInt6857 << 0) * RenderMath.COSINE_TABLE[local23.anInt6844 << 3]
                             >> 15;
                     Static247.aClass31_2.O(-local23.anInt6843 << 3);
                     Static247.aClass31_2.ja(local23.anInt6858 << 3);

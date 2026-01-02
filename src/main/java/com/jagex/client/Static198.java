@@ -1,6 +1,5 @@
 package com.jagex.client;
 
-import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;
 
@@ -18,8 +17,7 @@ public final class Static198 {
   @OriginalMember(owner = "client!jv", name = "vb", descriptor = "Lclient!uu;")
   public static Class247 aClass247_7 = null;
 
-  @OriginalMember(owner = "client!jv", name = "a", descriptor = "(Ljava/lang/String;I)I")
-  public static int method3113(@OriginalArg(0) String arg0) {
+  public static int parseStringToInt(String arg0) {
     return Static437.stringToInt(10, arg0);
   }
 

@@ -45,7 +45,7 @@ public final class Static374 {
       Static334.anInt5766 = -1;
       Static325.aHashMap_29 = new HashMap(8);
       Static28.method529();
-      Static334.anInt5766 = Static254.anInt4755;
+      Static334.anInt5766 = Static254.loginScreenGroupId;
       Static327.method4422(false);
       Static369.method4940();
       Static271.method3897(Static334.anInt5766);

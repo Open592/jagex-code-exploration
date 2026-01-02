@@ -1,5 +1,6 @@
 package com.jagex.client;
 
+import com.jagex.client.preferences.ClientPreferences;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalClass;
 import org.openrs2.deob.annotation.OriginalMember;
@@ -773,7 +774,7 @@ public final class Class266_Sub1 extends Class266 {
       @OriginalArg(7) int arg7,
       @OriginalArg(8) int arg8,
       @OriginalArg(10) Class213 arg9) {
-    if (!Static323.aClass50_Sub1_1.method2861(Static177.anInt2973)
+    if (!ClientPreferences.preferences.method2861(Static177.anInt2973)
         && !Static310.method4164(arg0, Static317.anInt5523, arg8, arg7)) {
       return;
     }
@@ -782,7 +783,7 @@ public final class Class266_Sub1 extends Class266 {
     }
     @Pc(30)
     Class202 local30 = Static267.aClass262_2.method5560(arg4);
-    if (arg5.method4251() && Static323.aClass50_Sub1_1.aBoolean307 && local30.aBoolean531) {
+    if (arg5.method4251() && ClientPreferences.preferences.aBoolean307 && local30.aBoolean531) {
       return;
     }
     @Pc(49)
@@ -1647,7 +1648,7 @@ public final class Class266_Sub1 extends Class266 {
           }
         }
       }
-    } else if (Static323.aClass50_Sub1_1.aBoolean305
+    } else if (ClientPreferences.preferences.aBoolean305
         || local30.anInt5813 != 0
         || local30.anInt5851 == 1
         || local30.aBoolean539) {

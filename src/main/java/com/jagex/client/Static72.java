@@ -1,5 +1,6 @@
 package com.jagex.client;
 
+import com.jagex.client.preferences.ClientPreferences;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;
@@ -39,7 +40,7 @@ public final class Static72 {
 
   @OriginalMember(owner = "client!dm", name = "b", descriptor = "(B)V")
   public static void method1354() {
-    Static420.method5385(Static323.aClass50_Sub1_1.aBoolean291);
+    Static420.method5385(ClientPreferences.preferences.aBoolean291);
     Static363.aClass4_Sub15_Sub1_3 = new Node_Sub15_Sub1();
     Static363.aClass4_Sub15_Sub1_3.method1453();
     Static424.aClass49_2 = Static380.method5016(0, GameShell.signLink, 22050, GameShell.canvas);

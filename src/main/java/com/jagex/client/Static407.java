@@ -1,5 +1,6 @@
 package com.jagex.client;
 
+import com.jagex.client.preferences.ClientPreferences;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;
@@ -206,7 +207,7 @@ public final class Static407 {
           Static100.anInt2024);
       @Pc(548)
       byte local548 =
-          Static323.aClass50_Sub1_1.method2858(Static177.anInt2973) == 2
+          ClientPreferences.preferences.method2858(Static177.anInt2973) == 2
               ? (byte) Static361.anInt6264
               : 1;
       Static90.method1610(
@@ -227,7 +228,7 @@ public final class Static407 {
           local548,
           Static1.aClass16_Sub1_Sub5_Sub1_1.anInt6893 >> 7,
           Static1.aClass16_Sub1_Sub5_Sub1_1.anInt6892 >> 7,
-          !Static323.aClass50_Sub1_1.aBoolean295);
+          !ClientPreferences.preferences.aBoolean295);
       Static159.method2701();
       if (Static403.anInt6667 == 30) {
         Static142.method2429(local115, local117, local113, local119);

@@ -1,5 +1,6 @@
 package com.jagex.client;
 
+import com.jagex.client.preferences.ClientPreferences;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalClass;
 import org.openrs2.deob.annotation.OriginalMember;
@@ -332,7 +333,7 @@ public final class Class16_Sub1_Sub5_Sub1 extends Class16_Sub1_Sub5 {
     float local38 = arg0.W();
     @Pc(47)
     float local47 = arg0.xa();
-    if (Static323.aClass50_Sub1_1.aBoolean302) {
+    if (ClientPreferences.preferences.aBoolean302) {
       @Pc(54)
       Class151 local54 = this.method4757();
       if (local54.aBoolean428

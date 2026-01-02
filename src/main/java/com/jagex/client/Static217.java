@@ -1,5 +1,6 @@
 package com.jagex.client;
 
+import com.jagex.client.preferences.ClientPreferences;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;
@@ -45,7 +46,7 @@ public final class Static217 {
       }
       Static394.anInt6578 += local69;
     }
-    if (!Static323.aClass50_Sub1_1.aBoolean303) {
+    if (!ClientPreferences.preferences.aBoolean303) {
       Static164.aFloat142 += Static50.aFloat28 * (float) arg0 / 6.0F;
       Static368.aFloat192 += (float) arg0 * Static380.aFloat195 / 6.0F;
     }

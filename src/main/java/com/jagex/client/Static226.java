@@ -1,5 +1,6 @@
 package com.jagex.client;
 
+import com.jagex.client.preferences.ClientPreferences;
 import java.util.Random;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalMember;
@@ -78,7 +79,7 @@ public final class Static226 {
       return;
     }
     Static32.aBoolean63 = true;
-    if (Static323.aClass50_Sub1_1.aBoolean303) {
+    if (ClientPreferences.preferences.aBoolean303) {
       Static164.aFloat142 = (int) Static164.aFloat142 + 47 & 0xFFFFFFF0;
     } else {
       Static50.aFloat28 += (12.0F - Static50.aFloat28) / 2.0F;

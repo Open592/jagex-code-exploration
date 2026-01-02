@@ -1,6 +1,7 @@
 package com.jagex.client;
 
 import com.jagex.client.cache.Sprites;
+import com.jagex.client.preferences.ClientPreferences;
 import jagex3.jagmisc.jagmisc;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalMember;
@@ -44,7 +45,7 @@ public final class Static440 {
       Static122.aClass19_16 =
           Static455.method4241(
               Static80.anInterface7_3,
-              Static323.aClass50_Sub1_1.anInt3440 * 2,
+              ClientPreferences.preferences.anInt3440 * 2,
               GameShell.canvas,
               arg1,
               GameShell.signLink);
@@ -70,7 +71,7 @@ public final class Static440 {
         Static122.aClass19_16 =
             Static455.method4241(
                 Static80.anInterface7_3,
-                Static323.aClass50_Sub1_1.anInt3440 * 2,
+                ClientPreferences.preferences.anInt3440 * 2,
                 GameShell.canvas,
                 arg1,
                 GameShell.signLink);
@@ -112,9 +113,9 @@ public final class Static440 {
     Static111.aClass31_1 = Static122.aClass19_16.method4274();
     Static247.aClass31_2 = Static122.aClass19_16.method4274();
     Static201.method4607();
-    Static122.aClass19_16.method4237(!Static323.aClass50_Sub1_1.aBoolean296);
+    Static122.aClass19_16.method4237(!ClientPreferences.preferences.aBoolean296);
     if (Static122.aClass19_16.method4252()) {
-      Static353.method4772(Static323.aClass50_Sub1_1.aBoolean300);
+      Static353.method4772(ClientPreferences.preferences.aBoolean300);
     }
     Static254.method3682(Static283.anInt5187 >> 3, Static122.aClass19_16, Static326.anInt5666 >> 3);
     Static222.method3355();

@@ -1,5 +1,6 @@
 package com.jagex.client;
 
+import com.jagex.client.graphics.RenderMath;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalClass;
 import org.openrs2.deob.annotation.OriginalMember;
@@ -53,8 +54,8 @@ public final class Class31_Sub2 extends Class31 {
   @Override
   public void N(@OriginalArg(0) int arg0) {
     this.anInt7334 = 32768;
-    this.anInt7326 = this.anInt7325 = Class50_Sub1.anIntArray224[arg0 & 0x3FFF];
-    this.anInt7330 = Class50_Sub1.anIntArray225[arg0 & 0x3FFF];
+    this.anInt7326 = this.anInt7325 = RenderMath.COSINE_TABLE[arg0 & 0x3FFF];
+    this.anInt7330 = RenderMath.SINE_TABLE[arg0 & 0x3FFF];
     this.anInt7327 = -this.anInt7330;
     this.anInt7328 =
         this.anInt7332 =
@@ -65,8 +66,8 @@ public final class Class31_Sub2 extends Class31 {
   @Override
   public void O(@OriginalArg(0) int arg0) {
     this.anInt7325 = 32768;
-    this.anInt7334 = this.anInt7326 = Class50_Sub1.anIntArray224[arg0 & 0x3FFF];
-    this.anInt7331 = Class50_Sub1.anIntArray225[arg0 & 0x3FFF];
+    this.anInt7334 = this.anInt7326 = RenderMath.COSINE_TABLE[arg0 & 0x3FFF];
+    this.anInt7331 = RenderMath.SINE_TABLE[arg0 & 0x3FFF];
     this.anInt7328 = -this.anInt7331;
     this.anInt7332 =
         this.anInt7329 =
@@ -77,9 +78,9 @@ public final class Class31_Sub2 extends Class31 {
   @Override
   public void ka(@OriginalArg(0) int arg0) {
     @Pc(5)
-    int local5 = Class50_Sub1.anIntArray224[arg0 & 0x3FFF];
+    int local5 = RenderMath.COSINE_TABLE[arg0 & 0x3FFF];
     @Pc(11)
-    int local11 = Class50_Sub1.anIntArray225[arg0 & 0x3FFF];
+    int local11 = RenderMath.SINE_TABLE[arg0 & 0x3FFF];
     @Pc(14)
     int local14 = this.anInt7331;
     @Pc(17)
@@ -148,9 +149,9 @@ public final class Class31_Sub2 extends Class31 {
   @Override
   public void ja(@OriginalArg(0) int arg0) {
     @Pc(5)
-    int local5 = Class50_Sub1.anIntArray224[arg0 & 0x3FFF];
+    int local5 = RenderMath.COSINE_TABLE[arg0 & 0x3FFF];
     @Pc(11)
-    int local11 = Class50_Sub1.anIntArray225[arg0 & 0x3FFF];
+    int local11 = RenderMath.SINE_TABLE[arg0 & 0x3FFF];
     @Pc(14)
     int local14 = this.anInt7334;
     @Pc(17)
@@ -204,8 +205,8 @@ public final class Class31_Sub2 extends Class31 {
   @Override
   public void ra(@OriginalArg(0) int arg0) {
     this.anInt7326 = 32768;
-    this.anInt7334 = this.anInt7325 = Class50_Sub1.anIntArray224[arg0 & 0x3FFF];
-    this.anInt7332 = Class50_Sub1.anIntArray225[arg0 & 0x3FFF];
+    this.anInt7334 = this.anInt7325 = RenderMath.COSINE_TABLE[arg0 & 0x3FFF];
+    this.anInt7332 = RenderMath.SINE_TABLE[arg0 & 0x3FFF];
     this.anInt7323 = -this.anInt7332;
     this.anInt7328 =
         this.anInt7329 =
@@ -222,17 +223,17 @@ public final class Class31_Sub2 extends Class31 {
       @OriginalArg(4) int arg4,
       @OriginalArg(5) int arg5) {
     @Pc(5)
-    int local5 = Class50_Sub1.anIntArray224[arg3 & 0x3FFF];
+    int local5 = RenderMath.COSINE_TABLE[arg3 & 0x3FFF];
     @Pc(11)
-    int local11 = Class50_Sub1.anIntArray225[arg3 & 0x3FFF];
+    int local11 = RenderMath.SINE_TABLE[arg3 & 0x3FFF];
     @Pc(17)
-    int local17 = Class50_Sub1.anIntArray224[arg4 & 0x3FFF];
+    int local17 = RenderMath.COSINE_TABLE[arg4 & 0x3FFF];
     @Pc(23)
-    int local23 = Class50_Sub1.anIntArray225[arg4 & 0x3FFF];
+    int local23 = RenderMath.SINE_TABLE[arg4 & 0x3FFF];
     @Pc(29)
-    int local29 = Class50_Sub1.anIntArray224[arg5 & 0x3FFF];
+    int local29 = RenderMath.COSINE_TABLE[arg5 & 0x3FFF];
     @Pc(35)
-    int local35 = Class50_Sub1.anIntArray225[arg5 & 0x3FFF];
+    int local35 = RenderMath.SINE_TABLE[arg5 & 0x3FFF];
     @Pc(41)
     int local41 = local11 * local29 >> 15;
     @Pc(47)

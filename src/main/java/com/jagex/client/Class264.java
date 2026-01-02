@@ -1,5 +1,6 @@
 package com.jagex.client;
 
+import com.jagex.client.graphics.RenderMath;
 import com.jagex.client.js5.Js5;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalClass;
@@ -526,17 +527,17 @@ public final class Class264 {
                 local875[12] = -local812;
               } else {
                 @Pc(917)
-                int local917 = Class50_Sub1.anIntArray224[local835];
+                int local917 = RenderMath.COSINE_TABLE[local835];
                 @Pc(921)
-                int local921 = Class50_Sub1.anIntArray225[local835];
+                int local921 = RenderMath.SINE_TABLE[local835];
                 @Pc(925)
-                int local925 = Class50_Sub1.anIntArray224[local844];
+                int local925 = RenderMath.COSINE_TABLE[local844];
                 @Pc(929)
-                int local929 = Class50_Sub1.anIntArray225[local844];
+                int local929 = RenderMath.SINE_TABLE[local844];
                 @Pc(933)
-                int local933 = Class50_Sub1.anIntArray224[local853];
+                int local933 = RenderMath.COSINE_TABLE[local853];
                 @Pc(937)
-                int local937 = Class50_Sub1.anIntArray225[local853];
+                int local937 = RenderMath.SINE_TABLE[local853];
                 @Pc(945)
                 int local945 = local933 * local921 + 16384 >> 15;
                 @Pc(953)

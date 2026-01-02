@@ -1,5 +1,6 @@
 package com.jagex.client;
 
+import com.jagex.client.graphics.RenderMath;
 import com.jagex.signlink.Message;
 import com.jagex.signlink.SignLink;
 import org.openrs2.deob.annotation.OriginalArg;
@@ -90,9 +91,9 @@ public final class Static275 {
       return;
     }
     @Pc(55)
-    int local55 = Class50_Sub1.anIntArray225[local11];
+    int local55 = RenderMath.SINE_TABLE[local11];
     @Pc(59)
-    int local59 = Class50_Sub1.anIntArray224[local11];
+    int local59 = RenderMath.COSINE_TABLE[local11];
     if (Static111.anInt2386 != 4) {
       local59 = local59 * 256 / (Static110.anInt2374 + 256);
       local55 = local55 * 256 / (Static110.anInt2374 + 256);

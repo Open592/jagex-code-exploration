@@ -1,5 +1,6 @@
 package com.jagex.client;
 
+import com.jagex.client.graphics.RenderMath;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalClass;
 import org.openrs2.deob.annotation.OriginalMember;
@@ -64,7 +65,7 @@ public final class Class8 {
 
   @OriginalMember(owner = "client!ah", name = "a", descriptor = "(Z)V")
   public void method91() {
-    this.anInt124 = Class50_Sub1.anIntArray224[this.anInt122 << 3];
+    this.anInt124 = RenderMath.COSINE_TABLE[this.anInt122 << 3];
     this.anInt119 =
         (int)
             Math.sqrt(

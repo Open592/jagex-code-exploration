@@ -1,5 +1,6 @@
 package com.jagex.client;
 
+import com.jagex.client.graphics.RenderMath;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;
@@ -60,7 +61,7 @@ public final class Static227 {
       @OriginalArg(2) int arg2,
       @OriginalArg(3) int arg3) {
     @Pc(21)
-    int local21 = 65536 - Class50_Sub1.anIntArray224[arg0 * 8192 / arg1] >> 1;
+    int local21 = 65536 - RenderMath.COSINE_TABLE[arg0 * 8192 / arg1] >> 1;
     return (arg3 * local21 >> 16) + ((65536 - local21) * arg2 >> 16);
   }
 

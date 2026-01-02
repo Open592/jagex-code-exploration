@@ -1,5 +1,6 @@
 package com.jagex.client;
 
+import com.jagex.client.preferences.ClientPreferences;
 import jagex3.jagmisc.jagmisc;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalMember;
@@ -165,8 +166,8 @@ public final class Static400 {
         Static239.method3551(0);
         if (Static177.anInt2973 == 0) {
           Static441.method5568("Entered tk0");
-          Static323.aClass50_Sub1_1.anInt3445 = 0;
-          Static323.aClass50_Sub1_1.method2856(GameShell.signLink);
+          ClientPreferences.preferences.anInt3445 = 0;
+          ClientPreferences.preferences.method2856(GameShell.signLink);
           Static249.aBoolean425 = false;
           return;
         }
@@ -180,8 +181,8 @@ public final class Static400 {
           return;
         }
         Static441.method5568("Entered tk1");
-        Static323.aClass50_Sub1_1.anInt3445 = 1;
-        Static323.aClass50_Sub1_1.method2856(GameShell.signLink);
+        ClientPreferences.preferences.anInt3445 = 1;
+        ClientPreferences.preferences.method2856(GameShell.signLink);
         Static249.aBoolean425 = false;
         return;
       }
@@ -189,8 +190,8 @@ public final class Static400 {
         Static239.method3551(2);
         if (Static177.anInt2973 == 2) {
           Static441.method5568("Entered tk2");
-          Static323.aClass50_Sub1_1.anInt3445 = 2;
-          Static323.aClass50_Sub1_1.method2856(GameShell.signLink);
+          ClientPreferences.preferences.anInt3445 = 2;
+          ClientPreferences.preferences.method2856(GameShell.signLink);
           Static249.aBoolean425 = false;
           return;
         }
@@ -207,19 +208,19 @@ public final class Static400 {
         return;
       }
       if (command.equalsIgnoreCase("ot")) {
-        Static323.aClass50_Sub1_1.aBoolean293 = !Static323.aClass50_Sub1_1.aBoolean293;
-        Static323.aClass50_Sub1_1.method2856(GameShell.signLink);
+        ClientPreferences.preferences.aBoolean293 = !ClientPreferences.preferences.aBoolean293;
+        ClientPreferences.preferences.method2856(GameShell.signLink);
         Static249.aBoolean425 = false;
         Static335.method4744();
-        Static441.method5568("ot=" + Static323.aClass50_Sub1_1.aBoolean293);
+        Static441.method5568("ot=" + ClientPreferences.preferences.aBoolean293);
         return;
       }
       if (command.equalsIgnoreCase("gb")) {
-        Static323.aClass50_Sub1_1.aBoolean289 = !Static323.aClass50_Sub1_1.aBoolean289;
-        Static323.aClass50_Sub1_1.method2856(GameShell.signLink);
+        ClientPreferences.preferences.aBoolean289 = !ClientPreferences.preferences.aBoolean289;
+        ClientPreferences.preferences.method2856(GameShell.signLink);
         Static249.aBoolean425 = false;
         Static335.method4744();
-        Static441.method5568("gb=" + Static323.aClass50_Sub1_1.aBoolean289);
+        Static441.method5568("gb=" + ClientPreferences.preferences.aBoolean289);
         return;
       }
       @Pc(568)
@@ -231,10 +232,10 @@ public final class Static400 {
         }
         @Pc(558)
         String local558 = command.substring(8);
-        local568 = Static88.method1590(local558) ? Static198.method3113(local558) : -1;
+        local568 = Static88.method1590(local558) ? Static198.parseStringToInt(local558) : -1;
         if (local568 >= 0 && local568 <= 2) {
-          Static323.aClass50_Sub1_1.method2852(Static177.anInt2973, local568);
-          Static323.aClass50_Sub1_1.method2856(GameShell.signLink);
+          ClientPreferences.preferences.method2852(Static177.anInt2973, local568);
+          ClientPreferences.preferences.method2856(GameShell.signLink);
           Static249.aBoolean425 = false;
           Static335.method4744();
           Static441.method5568("shadows=" + local568);
@@ -244,12 +245,12 @@ public final class Static400 {
         return;
       }
       if (command.startsWith("textures")) {
-        Static323.aClass50_Sub1_1.aBoolean307 = !Static323.aClass50_Sub1_1.aBoolean307;
-        Static323.aClass50_Sub1_1.method2856(GameShell.signLink);
+        ClientPreferences.preferences.aBoolean307 = !ClientPreferences.preferences.aBoolean307;
+        ClientPreferences.preferences.method2856(GameShell.signLink);
         Static249.aBoolean425 = false;
         Static119.method2149();
         Static335.method4744();
-        Static441.method5568("textures=" + Static323.aClass50_Sub1_1.aBoolean307);
+        Static441.method5568("textures=" + ClientPreferences.preferences.aBoolean307);
         return;
       }
       if (command.startsWith("setba")) {
@@ -257,12 +258,12 @@ public final class Static400 {
           Static441.method5568("Invalid buildarea value");
           return;
         }
-        local106 = Static198.method3113(command.substring(6));
+        local106 = Static198.parseStringToInt(command.substring(6));
         if (local106 >= 0 && local106 <= Static53.method898(Static70.anInt1503)) {
-          Static323.aClass50_Sub1_1.anInt3434 = local106;
-          Static323.aClass50_Sub1_1.method2856(GameShell.signLink);
+          ClientPreferences.preferences.anInt3434 = local106;
+          ClientPreferences.preferences.method2856(GameShell.signLink);
           Static249.aBoolean425 = false;
-          Static441.method5568("maxbuildarea=" + Static323.aClass50_Sub1_1.anInt3434);
+          Static441.method5568("maxbuildarea=" + ClientPreferences.preferences.anInt3434);
           return;
         }
         Static441.method5568("Invalid buildarea value");
@@ -273,10 +274,10 @@ public final class Static400 {
           Static441.method5568("Invalid particles value");
           return;
         }
-        Static157.method2673(Static198.method3113(command.substring(13)));
-        Static323.aClass50_Sub1_1.method2856(GameShell.signLink);
+        Static157.setParticles(Static198.parseStringToInt(command.substring(13)));
+        ClientPreferences.preferences.method2856(GameShell.signLink);
         Static249.aBoolean425 = false;
-        Static441.method5568("particles=" + Static218.method3279());
+        Static441.method5568("particles=" + Static218.getParticles());
         return;
       }
       if (command.startsWith("rect_debug")) {
@@ -284,7 +285,7 @@ public final class Static400 {
           Static441.method5568("Invalid rect_debug value");
           return;
         }
-        Static293.anInt5286 = Static198.method3113(command.substring(10).trim());
+        Static293.anInt5286 = Static198.parseStringToInt(command.substring(10).trim());
         Static441.method5568("rect_debug=" + Static293.anInt5286);
         return;
       }
@@ -520,9 +521,9 @@ public final class Static400 {
       if (command.startsWith("cpuusage")) {
         local106 = Integer.parseInt(command.substring(9));
         if (local106 >= 0 && local106 <= 4) {
-          Static323.aClass50_Sub1_1.anInt3437 = local106;
+          ClientPreferences.preferences.anInt3437 = local106;
         }
-        Static441.method5568("cpuusage=" + Static323.aClass50_Sub1_1.anInt3437);
+        Static441.method5568("cpuusage=" + ClientPreferences.preferences.anInt3437);
         return;
       }
       if (command.startsWith("getclientvarpbit")) {
@@ -563,7 +564,7 @@ public final class Static400 {
         Static3.aClass4_Sub12_Sub1_5.pjstr(command);
       }
       if (command.startsWith("fps ") && !ClientSettings.modewhere.isLive()) {
-        GameShell.calculateFrameTimeFromFPS(Static198.method3113(command.substring(4)));
+        GameShell.calculateFrameTimeFromFPS(Static198.parseStringToInt(command.substring(4)));
         return;
       }
       if (Static403.anInt6667 != 30) {

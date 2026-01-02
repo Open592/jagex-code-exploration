@@ -1,5 +1,6 @@
 package com.jagex.client;
 
+import com.jagex.client.graphics.RenderMath;
 import com.jagex.client.locale.LocalizedString;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalClass;
@@ -1115,8 +1116,8 @@ public final class Class122 {
     @Pc(35)
     int local35;
     if (arg2 != 0) {
-      local11 = Class50_Sub1.anIntArray225[arg2];
-      local15 = Class50_Sub1.anIntArray224[arg2];
+      local11 = RenderMath.SINE_TABLE[arg2];
+      local15 = RenderMath.COSINE_TABLE[arg2];
       for (local17 = 0; local17 < this.anInt3668; local17++) {
         local35 =
             local15 * this.anIntArray244[local17] + this.anIntArray242[local17] * local11 >> 15;
@@ -1126,8 +1127,8 @@ public final class Class122 {
       }
     }
     if (arg0 != 0) {
-      local11 = Class50_Sub1.anIntArray225[arg0];
-      local15 = Class50_Sub1.anIntArray224[arg0];
+      local11 = RenderMath.SINE_TABLE[arg0];
+      local15 = RenderMath.COSINE_TABLE[arg0];
       for (local17 = 0; local17 < this.anInt3668; local17++) {
         local35 =
             this.anIntArray242[local17] * local15 - local11 * this.anIntArray251[local17] >> 15;
@@ -1139,8 +1140,8 @@ public final class Class122 {
     if (arg1 == 0) {
       return;
     }
-    local11 = Class50_Sub1.anIntArray225[arg1];
-    local15 = Class50_Sub1.anIntArray224[arg1];
+    local11 = RenderMath.SINE_TABLE[arg1];
+    local15 = RenderMath.COSINE_TABLE[arg1];
     for (local17 = 0; local17 < this.anInt3668; local17++) {
       local35 = this.anIntArray244[local17] * local15 + this.anIntArray251[local17] * local11 >> 15;
       this.anIntArray251[local17] =

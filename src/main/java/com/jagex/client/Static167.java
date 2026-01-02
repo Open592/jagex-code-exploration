@@ -1,6 +1,7 @@
 package com.jagex.client;
 
 import com.jagex.client.ds.LinkedList;
+import com.jagex.client.preferences.ClientPreferences;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;
@@ -125,8 +126,8 @@ public final class Static167 {
             Static78.aShortArray46 = Static166.aShortArray97 = new short[256];
     aString35 = Static190.A_LOCALIZED_STRING___76.getString(ClientSettings.langID);
     Static183.anInt3512 = 0;
-    Static323.aClass50_Sub1_1.aBoolean308 = false;
-    Static323.aClass50_Sub1_1.aBoolean309 = false;
+    ClientPreferences.preferences.aBoolean308 = false;
+    ClientPreferences.preferences.aBoolean309 = false;
     Static103.method1816();
     Static1.method5();
     Static74.archive2.anInt2476 = 2;
@@ -223,7 +224,7 @@ public final class Static167 {
   @OriginalMember(owner = "client!il", name = "a", descriptor = "(Z)V")
   public static void method2740() {
     Static64.method1241();
-    Static420.method5385(Static323.aClass50_Sub1_1.aBoolean291);
+    Static420.method5385(ClientPreferences.preferences.aBoolean291);
     Static424.aClass49_2 = Static380.method5016(0, GameShell.signLink, 22050, GameShell.canvas);
     Static424.aClass49_2.method2070(Static363.aClass4_Sub15_Sub1_3);
     Static291.aClass49_1 = Static380.method5016(1, GameShell.signLink, 2048, GameShell.canvas);

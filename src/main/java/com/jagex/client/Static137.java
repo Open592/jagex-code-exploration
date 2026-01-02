@@ -1,5 +1,6 @@
 package com.jagex.client;
 
+import com.jagex.client.preferences.ClientPreferences;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;
@@ -30,7 +31,7 @@ public final class Static137 {
     int local29;
     @Pc(31)
     int local31;
-    if (Static323.aClass50_Sub1_1.method2861(Static177.anInt2973)) {
+    if (ClientPreferences.preferences.method2861(Static177.anInt2973)) {
       local29 = 0;
       local31 = 3;
     } else {

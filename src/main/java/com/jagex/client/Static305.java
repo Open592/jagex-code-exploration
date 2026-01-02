@@ -1,5 +1,6 @@
 package com.jagex.client;
 
+import com.jagex.client.preferences.ClientPreferences;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;
@@ -20,7 +21,8 @@ public final class Static305 {
 
   @OriginalMember(owner = "client!pj", name = "a", descriptor = "(I)V")
   public static void method4123() {
-    Static57.aClass19_7.B(((float) Static323.aClass50_Sub1_1.anInt3436 * 0.1F + 0.7F) * 1.1523438F);
+    Static57.aClass19_7.B(
+        ((float) ClientPreferences.preferences.anInt3436 * 0.1F + 0.7F) * 1.1523438F);
     Static57.aClass19_7.T(Static65.anInt1369, 0.69921875F, 1.2F, -50.0F, -60.0F, -50.0F);
     Static57.aClass19_7.UA(Static317.anInt5521, -1, 256);
     Static57.aClass19_7.method4288(Static265.aClass99_5);

@@ -1,6 +1,7 @@
 package com.jagex.client;
 
 import com.jagex.client.locale.LocalizedString;
+import com.jagex.client.preferences.ClientPreferences;
 import java.awt.Point;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalMember;
@@ -18,7 +19,7 @@ public final class Static368 {
 
   @OriginalMember(owner = "client!so", name = "a", descriptor = "(IB)V")
   public static void method4938(@OriginalArg(0) int arg0) {
-    if (!Static323.aClass50_Sub1_1.aBoolean304) {
+    if (!ClientPreferences.preferences.aBoolean304) {
       arg0 = -1;
     }
     if (arg0 == Static6.anInt57) {

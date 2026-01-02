@@ -6,12 +6,15 @@ import com.jagex.client.display.FullScreenWindow;
 import com.jagex.client.env.ModeGame;
 import com.jagex.client.env.ModeWhat;
 import com.jagex.client.env.ModeWhere;
+import com.jagex.client.graphics.RenderMath;
 import com.jagex.client.js5.Cache;
 import com.jagex.client.js5.Js5;
 import com.jagex.client.js5.Js5DiskCache;
 import com.jagex.client.js5.Js5MasterIndexProvider;
 import com.jagex.client.js5.Js5NetQueue;
 import com.jagex.client.locale.Messages;
+import com.jagex.client.preferences.ClientPreferences;
+import com.jagex.client.preferences.PreferencesImpl;
 import com.jagex.client.utilities.ThreadingUtilities;
 import com.jagex.signlink.Message;
 import com.jagex.signlink.MonotonicClock;
@@ -580,7 +583,7 @@ public final class client extends GameShell {
       Static3.aClass4_Sub12_Sub1_5.p1(0);
       local489 = Static3.aClass4_Sub12_Sub1_5.pos;
       @Pc(692)
-      Packet local692 = Static323.aClass50_Sub1_1.method2863();
+      Packet local692 = ClientPreferences.preferences.method2863();
       Static3.aClass4_Sub12_Sub1_5.pArrayBuffer(local692.data, local692.pos);
       Static3.aClass4_Sub12_Sub1_5.pSize1(Static3.aClass4_Sub12_Sub1_5.pos - local489);
       Static249.aBoolean425 = true;
@@ -1050,12 +1053,12 @@ public final class client extends GameShell {
         Static3.aClass4_Sub12_Sub1_5.p1(Static450.method5664());
         Static3.aClass4_Sub12_Sub1_5.p2(Static141.width);
         Static3.aClass4_Sub12_Sub1_5.p2(Static302.height);
-        Static3.aClass4_Sub12_Sub1_5.p1(Static323.aClass50_Sub1_1.anInt3440);
+        Static3.aClass4_Sub12_Sub1_5.p1(ClientPreferences.preferences.anInt3440);
         Static82.method1471(Static3.aClass4_Sub12_Sub1_5);
         Static3.aClass4_Sub12_Sub1_5.pjstr(ClientSettings.settings);
         Static3.aClass4_Sub12_Sub1_5.p4(ClientSettings.affiliateID);
         @Pc(323)
-        Packet local323 = Static323.aClass50_Sub1_1.method2863();
+        Packet local323 = ClientPreferences.preferences.method2863();
         Static3.aClass4_Sub12_Sub1_5.p1(local323.pos);
         Static3.aClass4_Sub12_Sub1_5.pArrayBuffer(local323.data, local323.pos);
         Static249.aBoolean425 = true;
@@ -1415,7 +1418,7 @@ public final class client extends GameShell {
     Static409.method5485();
     @Pc(386)
     boolean local386 = false;
-    if (Static122.aClass19_16.method4261() && Static323.aClass50_Sub1_1.aBoolean294) {
+    if (Static122.aClass19_16.method4261() && ClientPreferences.preferences.aBoolean294) {
       for (local266 = 0; local266 < Static386.aByteArrayArray15.length; local266++) {
         if (Static193.aByteArrayArray13[local266] != null
             || Static435.aByteArrayArray30[local266] != null) {
@@ -1424,7 +1427,7 @@ public final class client extends GameShell {
         }
       }
     }
-    if (Static323.aClass50_Sub1_1.aBoolean298) {
+    if (ClientPreferences.preferences.aBoolean298) {
       local266 = Static149.anIntArray189[Static140.anInt2845];
     } else {
       local266 = Static164.anIntArray302[Static140.anInt2845];
@@ -1449,15 +1452,15 @@ public final class client extends GameShell {
     System.gc();
     Static299.method4087(true);
     Static261.method3788();
-    Static63.anInt1262 = Static323.aClass50_Sub1_1.method2850(Static177.anInt2973);
+    Static63.anInt1262 = ClientPreferences.preferences.method2850(Static177.anInt2973);
     Static41.aBoolean75 = Static70.anInt1503 >= 96;
-    Static321.aBoolean498 = Static323.aClass50_Sub1_1.aBoolean294;
-    Static242.aBoolean418 = Static323.aClass50_Sub1_1.method2854(Static177.anInt2973);
-    Static147.aBoolean263 = !Static323.aClass50_Sub1_1.aBoolean293;
+    Static321.aBoolean498 = ClientPreferences.preferences.aBoolean294;
+    Static242.aBoolean418 = ClientPreferences.preferences.method2854(Static177.anInt2973);
+    Static147.aBoolean263 = !ClientPreferences.preferences.aBoolean293;
     Static259.anInt4877 =
-        Static323.aClass50_Sub1_1.method2861(Static177.anInt2973) ? -1 : Static317.anInt5523;
-    Static436.aBoolean667 = Static323.aClass50_Sub1_1.aBoolean307;
-    Static54.aBoolean93 = Static177.anInt2973 == 1 || Static323.aClass50_Sub1_1.aBoolean289;
+        ClientPreferences.preferences.method2861(Static177.anInt2973) ? -1 : Static317.anInt5523;
+    Static436.aBoolean667 = ClientPreferences.preferences.aBoolean307;
+    Static54.aBoolean93 = Static177.anInt2973 == 1 || ClientPreferences.preferences.aBoolean289;
     Static67.aClass266_Sub1_1 =
         new Class266_Sub1(4, Static326.anInt5666, Static283.anInt5187, false);
     if (Static448.anInt7307 == 0) {
@@ -1527,7 +1530,7 @@ public final class client extends GameShell {
     if (Static263.anInt4963 - 1 > local729) {
       local729 = Static263.anInt4963 - 1;
     }
-    if (Static323.aClass50_Sub1_1.method2861(Static177.anInt2973)) {
+    if (ClientPreferences.preferences.method2861(Static177.anInt2973)) {
       method882(0);
     } else {
       method882(local729);
@@ -2192,7 +2195,7 @@ public final class client extends GameShell {
             return true;
           } else if (Static187.aClass22_159 == Static300.aClass22_246) {
             if (GameShell.fullScreenFrame != null) {
-              Static188.method4107(Static323.aClass50_Sub1_1.anInt3447, -1, -1, false);
+              Static188.method4107(ClientPreferences.preferences.anInt3447, -1, -1, false);
             }
             @Pc(1483)
             byte[] local1483 = new byte[Static454.anInt4075];
@@ -4109,9 +4112,9 @@ public final class client extends GameShell {
                 @Pc(850)
                 int local850 = local793.aClass35_7.method811();
                 @Pc(854)
-                int local854 = Class50_Sub1.anIntArray225[local850];
+                int local854 = RenderMath.SINE_TABLE[local850];
                 @Pc(858)
-                int local858 = Class50_Sub1.anIntArray224[local850];
+                int local858 = RenderMath.COSINE_TABLE[local850];
                 @Pc(868)
                 int local868 = local845 * local854 + local776 * local858 >> 15;
                 @Pc(878)
@@ -4563,8 +4566,8 @@ public final class client extends GameShell {
           && MonotonicClock.getCurrentTimeInMilliseconds() > Static453.aLong223) {
         Static188.method4107(
             Static450.method5664(),
-            Static323.aClass50_Sub1_1.anInt3450,
-            Static323.aClass50_Sub1_1.anInt3431,
+            ClientPreferences.preferences.anInt3450,
+            ClientPreferences.preferences.anInt3431,
             false);
       } else if (!Static122.aClass19_16.method4258() && Static84.aBoolean383) {
         Static349.method4711();
@@ -4603,7 +4606,7 @@ public final class client extends GameShell {
     if (GameShell.fullScreenFrame != null
         && !Static265.aBoolean457
         && (Static403.anInt6667 == 30 || Static403.anInt6667 == 10)) {
-      Static188.method4107(Static323.aClass50_Sub1_1.anInt3447, -1, -1, false);
+      Static188.method4107(ClientPreferences.preferences.anInt3447, -1, -1, false);
     }
     @Pc(176)
     boolean local176 = false;
@@ -4712,23 +4715,23 @@ public final class client extends GameShell {
         Static263.aBooleanArray15[local98] = false;
       }
     }
-    if (Static323.aClass50_Sub1_1.anInt3437 == 0) {
+    if (ClientPreferences.preferences.anInt3437 == 0) {
       ThreadingUtilities.sleepFor(15L);
-    } else if (Static323.aClass50_Sub1_1.anInt3437 == 1) {
+    } else if (ClientPreferences.preferences.anInt3437 == 1) {
       ThreadingUtilities.sleepFor(10L);
-    } else if (Static323.aClass50_Sub1_1.anInt3437 == 2) {
+    } else if (ClientPreferences.preferences.anInt3437 == 2) {
       ThreadingUtilities.sleepFor(5L);
-    } else if (Static323.aClass50_Sub1_1.anInt3437 == 3) {
+    } else if (ClientPreferences.preferences.anInt3437 == 3) {
       ThreadingUtilities.sleepFor(2L);
     }
     if (Static9.aBoolean10) {
       Static198.method3117();
     }
-    if (Static323.aClass50_Sub1_1.aBoolean297
+    if (ClientPreferences.preferences.aBoolean297
         && Static403.anInt6667 == 10
         && Static334.anInt5766 != -1) {
-      Static323.aClass50_Sub1_1.aBoolean297 = false;
-      Static323.aClass50_Sub1_1.method2856(GameShell.signLink);
+      ClientPreferences.preferences.aBoolean297 = false;
+      ClientPreferences.preferences.method2856(GameShell.signLink);
     }
   }
 
@@ -4780,7 +4783,7 @@ public final class client extends GameShell {
               + "3)"
               + Static177.anInt2973
               + "|4)"
-              + Static323.aClass50_Sub1_1.anInt3440
+              + ClientPreferences.preferences.anInt3440
               + "|5)"
               + Static450.method5664()
               + "|6)"
@@ -4788,12 +4791,12 @@ public final class client extends GameShell {
               + ","
               + Static302.height
               + "|";
-      local5 = local5 + "7)" + Static323.aClass50_Sub1_1.method2854(Static177.anInt2973) + "|";
-      local5 = local5 + "8)" + Static323.aClass50_Sub1_1.method2850(Static177.anInt2973) + "|";
-      local5 = local5 + "9)" + Static323.aClass50_Sub1_1.aBoolean294 + "|";
-      local5 = local5 + "10)" + Static323.aClass50_Sub1_1.aBoolean307 + "|";
-      local5 = local5 + "11)" + Static323.aClass50_Sub1_1.aBoolean300 + "|";
-      local5 = local5 + "12)" + Static323.aClass50_Sub1_1.method2861(Static177.anInt2973) + "|";
+      local5 = local5 + "7)" + ClientPreferences.preferences.method2854(Static177.anInt2973) + "|";
+      local5 = local5 + "8)" + ClientPreferences.preferences.method2850(Static177.anInt2973) + "|";
+      local5 = local5 + "9)" + ClientPreferences.preferences.aBoolean294 + "|";
+      local5 = local5 + "10)" + ClientPreferences.preferences.aBoolean307 + "|";
+      local5 = local5 + "11)" + ClientPreferences.preferences.aBoolean300 + "|";
+      local5 = local5 + "12)" + ClientPreferences.preferences.method2861(Static177.anInt2973) + "|";
       local5 = local5 + "13)" + Static70.anInt1503 + "|";
       try {
         local5 = local5 + "|15)" + jagmisc.getTotalPhysicalMemory();
@@ -5205,7 +5208,7 @@ public final class client extends GameShell {
       Static392.aByteArrayArray28 = new byte[50][];
     }
 
-    Static323.aClass50_Sub1_1 = new Class50_Sub1(GameShell.signLink);
+    ClientPreferences.preferences = new PreferencesImpl(GameShell.signLink);
 
     if (ClientSettings.modewhere.isLive()) {
       Static13.host = this.getCodeBase().getHost();
@@ -5358,11 +5361,11 @@ public final class client extends GameShell {
 
   @OriginalMember(owner = "client!client", name = "p", descriptor = "(I)V")
   private void loadClientAssets() {
-    if (!Static323.aClass50_Sub1_1.aBoolean297) {
+    if (!ClientPreferences.preferences.aBoolean297) {
       for (int i = 0; i < Static190.anInt3602; i++) {
         if (Static164.aClass30Array4[i].method749() == 's'
             || Static164.aClass30Array4[i].method749() == 'S') {
-          Static323.aClass50_Sub1_1.aBoolean297 = true;
+          ClientPreferences.preferences.aBoolean297 = true;
           break;
         }
       }
@@ -5536,16 +5539,16 @@ public final class client extends GameShell {
       Static247.anInt4590 = 50;
       anInt5 = 95;
     } else if (anInt5 == 95) {
-      if (Static323.aClass50_Sub1_1.aBoolean297) {
-        Static323.aClass50_Sub1_1.anInt3442 = 0;
-        Static323.aClass50_Sub1_1.anInt3447 = 1;
-        Static323.aClass50_Sub1_1.anInt3440 = 0;
-        Static323.aClass50_Sub1_1.anInt3445 = 0;
-        Static323.aClass50_Sub1_1.anInt3434 = 0;
+      if (ClientPreferences.preferences.aBoolean297) {
+        ClientPreferences.preferences.anInt3442 = 0;
+        ClientPreferences.preferences.anInt3447 = 1;
+        ClientPreferences.preferences.anInt3440 = 0;
+        ClientPreferences.preferences.anInt3445 = 0;
+        ClientPreferences.preferences.anInt3434 = 0;
       }
-      Static323.aClass50_Sub1_1.aBoolean297 = true;
-      Static323.aClass50_Sub1_1.method2856(GameShell.signLink);
-      Static440.method5561(false, Static323.aClass50_Sub1_1.anInt3445);
+      ClientPreferences.preferences.aBoolean297 = true;
+      ClientPreferences.preferences.method2856(GameShell.signLink);
+      Static440.method5561(false, ClientPreferences.preferences.anInt3445);
       Static24.currentLoadingBoxText = Messages.started3dLibrary.getString(ClientSettings.langID);
       Static247.anInt4590 = 55;
       anInt5 = 100;
@@ -5686,7 +5689,7 @@ public final class client extends GameShell {
         Static247.anInt4590 = 65;
         Static38.method673();
         Static267.aClass262_2.method5562(
-            !Static323.aClass50_Sub1_1.method2861(Static177.anInt2973));
+            !ClientPreferences.preferences.method2861(Static177.anInt2973));
         Static257.aClass114_1 = new Class114();
         Static119.method2149();
         Static378.method3227(Static417.archive27);
@@ -5810,7 +5813,7 @@ public final class client extends GameShell {
         Static165.anIntArray210[i] = -1;
       }
       Static228.method2068();
-      Static254.anInt4755 = Static256.archive3.getGroupId("loginscreen");
+      Static254.loginScreenGroupId = Static256.archive3.getGroupId("loginscreen");
       Static49.archive5.method2128(false);
       Static46.archive6.method2128(true);
       Static293.archive8.method2128(true);
@@ -5825,7 +5828,7 @@ public final class client extends GameShell {
       Static391.archive19.anInt2476 = 2;
       Static388.archive20.anInt2476 = 2;
       Static55.archive21.anInt2476 = 2;
-      Static188.method4107(Static323.aClass50_Sub1_1.anInt3447, -1, -1, false);
+      Static188.method4107(ClientPreferences.preferences.anInt3447, -1, -1, false);
       Static24.currentLoadingBoxText =
           Messages.loadedClientVariableData.getString(ClientSettings.langID);
       Static247.anInt4590 = 95;

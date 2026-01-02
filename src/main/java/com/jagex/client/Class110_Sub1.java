@@ -1,5 +1,6 @@
 package com.jagex.client;
 
+import com.jagex.client.graphics.RenderMath;
 import jaggl.OpenGL;
 import jaggl.memory.NativeStream;
 import org.openrs2.deob.annotation.OriginalArg;
@@ -1263,8 +1264,8 @@ public final class Class110_Sub1 extends Class110 {
               this.anIntArray216[local53] -= Static185.anInt3541;
               this.anIntArray213[local53] -= Static213.anInt3954;
               if (arg4 != 0) {
-                local59 = Class50_Sub1.anIntArray225[arg4];
-                local282 = Class50_Sub1.anIntArray224[arg4];
+                local59 = RenderMath.SINE_TABLE[arg4];
+                local282 = RenderMath.COSINE_TABLE[arg4];
                 local301 =
                     local282 * this.anIntArray212[local53]
                             + this.anIntArray216[local53] * local59
@@ -1278,8 +1279,8 @@ public final class Class110_Sub1 extends Class110 {
                 this.anIntArray212[local53] = local301;
               }
               if (arg2 != 0) {
-                local59 = Class50_Sub1.anIntArray225[arg2];
-                local282 = Class50_Sub1.anIntArray224[arg2];
+                local59 = RenderMath.SINE_TABLE[arg2];
+                local282 = RenderMath.COSINE_TABLE[arg2];
                 local301 =
                     this.anIntArray216[local53] * local282
                             + 32767
@@ -1293,8 +1294,8 @@ public final class Class110_Sub1 extends Class110 {
                 this.anIntArray216[local53] = local301;
               }
               if (arg3 != 0) {
-                local59 = Class50_Sub1.anIntArray225[arg3];
-                local282 = Class50_Sub1.anIntArray224[arg3];
+                local59 = RenderMath.SINE_TABLE[arg3];
+                local282 = RenderMath.COSINE_TABLE[arg3];
                 local301 =
                     this.anIntArray212[local53] * local282
                             + local59 * this.anIntArray213[local53]
@@ -1318,8 +1319,8 @@ public final class Class110_Sub1 extends Class110 {
               this.anIntArray216[local53] -= Static185.anInt3541;
               this.anIntArray213[local53] -= Static213.anInt3954;
               if (arg2 != 0) {
-                local59 = Class50_Sub1.anIntArray225[arg2];
-                local282 = Class50_Sub1.anIntArray224[arg2];
+                local59 = RenderMath.SINE_TABLE[arg2];
+                local282 = RenderMath.COSINE_TABLE[arg2];
                 local301 =
                     local282 * this.anIntArray216[local53]
                             + 32767
@@ -1333,8 +1334,8 @@ public final class Class110_Sub1 extends Class110 {
                 this.anIntArray216[local53] = local301;
               }
               if (arg4 != 0) {
-                local59 = Class50_Sub1.anIntArray225[arg4];
-                local282 = Class50_Sub1.anIntArray224[arg4];
+                local59 = RenderMath.SINE_TABLE[arg4];
+                local282 = RenderMath.COSINE_TABLE[arg4];
                 local301 =
                     local59 * this.anIntArray216[local53]
                             + this.anIntArray212[local53] * local282
@@ -1348,8 +1349,8 @@ public final class Class110_Sub1 extends Class110 {
                 this.anIntArray212[local53] = local301;
               }
               if (arg3 != 0) {
-                local59 = Class50_Sub1.anIntArray225[arg3];
-                local282 = Class50_Sub1.anIntArray224[arg3];
+                local59 = RenderMath.SINE_TABLE[arg3];
+                local282 = RenderMath.COSINE_TABLE[arg3];
                 local301 =
                     this.anIntArray212[local53] * local282
                             + this.anIntArray213[local53] * local59
@@ -1391,8 +1392,8 @@ public final class Class110_Sub1 extends Class110 {
                 @Pc(801)
                 int local801;
                 if (arg4 != 0) {
-                  local778 = Class50_Sub1.anIntArray225[arg4];
-                  local782 = Class50_Sub1.anIntArray224[arg4];
+                  local778 = RenderMath.SINE_TABLE[arg4];
+                  local782 = RenderMath.COSINE_TABLE[arg4];
                   local801 =
                       local778 * this.aShortArray101[local766]
                               + local782 * this.aShortArray103[local766]
@@ -1407,8 +1408,8 @@ public final class Class110_Sub1 extends Class110 {
                   this.aShortArray103[local766] = (short) local801;
                 }
                 if (arg2 != 0) {
-                  local778 = Class50_Sub1.anIntArray225[arg2];
-                  local782 = Class50_Sub1.anIntArray224[arg2];
+                  local778 = RenderMath.SINE_TABLE[arg2];
+                  local782 = RenderMath.COSINE_TABLE[arg2];
                   local801 =
                       this.aShortArray101[local766] * local782
                               + 32767
@@ -1423,8 +1424,8 @@ public final class Class110_Sub1 extends Class110 {
                   this.aShortArray101[local766] = (short) local801;
                 }
                 if (arg3 != 0) {
-                  local778 = Class50_Sub1.anIntArray225[arg3];
-                  local782 = Class50_Sub1.anIntArray224[arg3];
+                  local778 = RenderMath.SINE_TABLE[arg3];
+                  local782 = RenderMath.COSINE_TABLE[arg3];
                   local801 =
                       local778 * this.aShortArray102[local766]
                               + this.aShortArray103[local766] * local782
@@ -1641,8 +1642,8 @@ public final class Class110_Sub1 extends Class110 {
           this.anIntArray216[local9] -= Static185.anInt3541;
           this.anIntArray213[local9] -= Static213.anInt3954;
           if (arg3 != 0) {
-            local17 = Class50_Sub1.anIntArray225[arg3];
-            local172 = Class50_Sub1.anIntArray224[arg3];
+            local17 = RenderMath.SINE_TABLE[arg3];
+            local172 = RenderMath.COSINE_TABLE[arg3];
             local190 =
                 local17 * this.anIntArray216[local9] + local172 * this.anIntArray212[local9] + 32767
                     >> 15;
@@ -1652,8 +1653,8 @@ public final class Class110_Sub1 extends Class110 {
             this.anIntArray212[local9] = local190;
           }
           if (arg1 != 0) {
-            local17 = Class50_Sub1.anIntArray225[arg1];
-            local172 = Class50_Sub1.anIntArray224[arg1];
+            local17 = RenderMath.SINE_TABLE[arg1];
+            local172 = RenderMath.COSINE_TABLE[arg1];
             local190 =
                 local172 * this.anIntArray216[local9] + 32767 - local17 * this.anIntArray213[local9]
                     >> 15;
@@ -1663,8 +1664,8 @@ public final class Class110_Sub1 extends Class110 {
             this.anIntArray216[local9] = local190;
           }
           if (arg2 != 0) {
-            local17 = Class50_Sub1.anIntArray225[arg2];
-            local172 = Class50_Sub1.anIntArray224[arg2];
+            local17 = RenderMath.SINE_TABLE[arg2];
+            local172 = RenderMath.COSINE_TABLE[arg2];
             local190 =
                 this.anIntArray213[local9] * local17 + this.anIntArray212[local9] * local172 + 32767
                     >> 15;
@@ -2227,9 +2228,9 @@ public final class Class110_Sub1 extends Class110 {
   @Override
   public void c(@OriginalArg(0) int arg0) {
     @Pc(9)
-    int local9 = Class50_Sub1.anIntArray225[arg0];
+    int local9 = RenderMath.SINE_TABLE[arg0];
     @Pc(13)
-    int local13 = Class50_Sub1.anIntArray224[arg0];
+    int local13 = RenderMath.COSINE_TABLE[arg0];
     @Pc(33)
     int local33;
     for (@Pc(15) int local15 = 0; local15 < this.anInt3350; local15++) {
@@ -2294,9 +2295,9 @@ public final class Class110_Sub1 extends Class110 {
   @Override
   public void Z(@OriginalArg(0) int arg0) {
     @Pc(9)
-    int local9 = Class50_Sub1.anIntArray225[arg0];
+    int local9 = RenderMath.SINE_TABLE[arg0];
     @Pc(13)
-    int local13 = Class50_Sub1.anIntArray224[arg0];
+    int local13 = RenderMath.COSINE_TABLE[arg0];
     for (@Pc(15) int local15 = 0; local15 < this.anInt3350; local15++) {
       @Pc(34)
       int local34 =
@@ -4087,8 +4088,8 @@ public final class Class110_Sub1 extends Class110 {
                 this.anIntArray216[local57] -= Static185.anInt3541;
                 this.anIntArray213[local57] -= Static213.anInt3954;
                 if (arg4 != 0) {
-                  local63 = Class50_Sub1.anIntArray225[arg4];
-                  local370 = Class50_Sub1.anIntArray224[arg4];
+                  local63 = RenderMath.SINE_TABLE[arg4];
+                  local370 = RenderMath.COSINE_TABLE[arg4];
                   local392 =
                       this.anIntArray216[local57] * local63
                               + this.anIntArray212[local57] * local370
@@ -4102,8 +4103,8 @@ public final class Class110_Sub1 extends Class110 {
                   this.anIntArray212[local57] = local392;
                 }
                 if (arg2 != 0) {
-                  local63 = Class50_Sub1.anIntArray225[arg2];
-                  local370 = Class50_Sub1.anIntArray224[arg2];
+                  local63 = RenderMath.SINE_TABLE[arg2];
+                  local370 = RenderMath.COSINE_TABLE[arg2];
                   local392 =
                       local370 * this.anIntArray216[local57]
                               + 32767
@@ -4117,8 +4118,8 @@ public final class Class110_Sub1 extends Class110 {
                   this.anIntArray216[local57] = local392;
                 }
                 if (arg3 != 0) {
-                  local63 = Class50_Sub1.anIntArray225[arg3];
-                  local370 = Class50_Sub1.anIntArray224[arg3];
+                  local63 = RenderMath.SINE_TABLE[arg3];
+                  local370 = RenderMath.COSINE_TABLE[arg3];
                   local392 =
                       local63 * this.anIntArray213[local57]
                               + this.anIntArray212[local57] * local370
@@ -4154,8 +4155,8 @@ public final class Class110_Sub1 extends Class110 {
                       break;
                     }
                     if (arg4 != 0) {
-                      local453 = Class50_Sub1.anIntArray225[arg4];
-                      local457 = Class50_Sub1.anIntArray224[arg4];
+                      local453 = RenderMath.SINE_TABLE[arg4];
+                      local457 = RenderMath.COSINE_TABLE[arg4];
                       local461 =
                           this.aShortArray103[local449] * local457
                                   + local453 * this.aShortArray101[local449]
@@ -4170,8 +4171,8 @@ public final class Class110_Sub1 extends Class110 {
                       this.aShortArray103[local449] = (short) local461;
                     }
                     if (arg2 != 0) {
-                      local453 = Class50_Sub1.anIntArray225[arg2];
-                      local457 = Class50_Sub1.anIntArray224[arg2];
+                      local453 = RenderMath.SINE_TABLE[arg2];
+                      local457 = RenderMath.COSINE_TABLE[arg2];
                       local461 =
                           local457 * this.aShortArray101[local449]
                                   + 32767
@@ -4186,8 +4187,8 @@ public final class Class110_Sub1 extends Class110 {
                       this.aShortArray101[local449] = (short) local461;
                     }
                     if (arg3 != 0) {
-                      local453 = Class50_Sub1.anIntArray225[arg3];
-                      local457 = Class50_Sub1.anIntArray224[arg3];
+                      local453 = RenderMath.SINE_TABLE[arg3];
+                      local457 = RenderMath.COSINE_TABLE[arg3];
                       local461 =
                           local457 * this.aShortArray103[local449]
                                   + this.aShortArray102[local449] * local453
@@ -4249,12 +4250,12 @@ public final class Class110_Sub1 extends Class110 {
         }
         @Pc(437)
         int[] local437 = new int[9];
-        local392 = Class50_Sub1.anIntArray224[arg2];
-        local422 = Class50_Sub1.anIntArray225[arg2];
-        local449 = Class50_Sub1.anIntArray224[arg3];
-        local453 = Class50_Sub1.anIntArray225[arg3];
-        local457 = Class50_Sub1.anIntArray224[arg4];
-        local461 = Class50_Sub1.anIntArray225[arg4];
+        local392 = RenderMath.COSINE_TABLE[arg2];
+        local422 = RenderMath.SINE_TABLE[arg2];
+        local449 = RenderMath.COSINE_TABLE[arg3];
+        local453 = RenderMath.SINE_TABLE[arg3];
+        local457 = RenderMath.COSINE_TABLE[arg4];
+        local461 = RenderMath.SINE_TABLE[arg4];
         local469 = local457 * local422 + 16384 >> 15;
         local477 = local461 * local422 + 16384 >> 15;
         local437[3] = local461 * local392 + 16384 >> 15;
@@ -4661,9 +4662,9 @@ public final class Class110_Sub1 extends Class110 {
   @Override
   public void Q(@OriginalArg(0) int arg0) {
     @Pc(9)
-    int local9 = Class50_Sub1.anIntArray225[arg0];
+    int local9 = RenderMath.SINE_TABLE[arg0];
     @Pc(13)
-    int local13 = Class50_Sub1.anIntArray224[arg0];
+    int local13 = RenderMath.COSINE_TABLE[arg0];
     for (@Pc(15) int local15 = 0; local15 < this.anInt3350; local15++) {
       @Pc(34)
       int local34 =
@@ -4711,9 +4712,9 @@ public final class Class110_Sub1 extends Class110 {
   @Override
   public void R(@OriginalArg(0) int arg0) {
     @Pc(9)
-    int local9 = Class50_Sub1.anIntArray225[arg0];
+    int local9 = RenderMath.SINE_TABLE[arg0];
     @Pc(13)
-    int local13 = Class50_Sub1.anIntArray224[arg0];
+    int local13 = RenderMath.COSINE_TABLE[arg0];
     for (@Pc(15) int local15 = 0; local15 < this.anInt3350; local15++) {
       @Pc(33)
       int local33 =

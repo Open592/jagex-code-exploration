@@ -1,5 +1,6 @@
 package com.jagex.client;
 
+import com.jagex.client.graphics.RenderMath;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalClass;
 import org.openrs2.deob.annotation.OriginalMember;
@@ -113,7 +114,7 @@ public final class Class191 {
       @Pc(31)
       int local31 = this.anInt5567;
       if (local31 == 1) {
-        local14 = (Class50_Sub1.anIntArray225[local28 << 3] >> 5) + 1024;
+        local14 = (RenderMath.SINE_TABLE[local28 << 3] >> 5) + 1024;
       } else if (local31 == 3) {
         local14 = Static119.anIntArray169[local28] >> 1;
       } else if (local31 == 4) {

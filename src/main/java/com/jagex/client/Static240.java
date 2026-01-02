@@ -2,6 +2,7 @@ package com.jagex.client;
 
 import com.jagex.client.display.FullScreenWindow;
 import com.jagex.client.display.GraphicsDeviceDisplayMode;
+import com.jagex.client.preferences.ClientPreferences;
 import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;
 
@@ -62,7 +63,7 @@ public final class Static240 {
 
   @OriginalMember(owner = "client!md", name = "b", descriptor = "(I)V")
   public static void method5677() {
-    if (Static323.aClass50_Sub1_1.method2858(Static177.anInt2973) != 2) {
+    if (ClientPreferences.preferences.method2858(Static177.anInt2973) != 2) {
       return;
     }
     @Pc(27)

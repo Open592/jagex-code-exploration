@@ -1,5 +1,6 @@
 package com.jagex.client;
 
+import com.jagex.client.preferences.ClientPreferences;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;
@@ -70,8 +71,8 @@ public final class Static353 {
     if (local6 == arg0) {
       return false;
     } else {
-      Static323.aClass50_Sub1_1.aBoolean300 = arg0;
-      Static323.aClass50_Sub1_1.method2856(GameShell.signLink);
+      ClientPreferences.preferences.aBoolean300 = arg0;
+      ClientPreferences.preferences.method2856(GameShell.signLink);
       return true;
     }
   }

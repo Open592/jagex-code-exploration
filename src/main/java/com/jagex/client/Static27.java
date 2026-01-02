@@ -1,6 +1,7 @@
 package com.jagex.client;
 
 import com.jagex.client.ds.LinkedList;
+import com.jagex.client.preferences.ClientPreferences;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;
@@ -54,7 +55,7 @@ public final class Static27 {
     if (arg0 < 3 && Static378.method3229(arg1, arg6)) {
       local32 = arg0 + 1;
     }
-    if (!Static323.aClass50_Sub1_1.method2861(Static177.anInt2973)
+    if (!ClientPreferences.preferences.method2861(Static177.anInt2973)
         && !Static310.method4164(arg1, Static317.anInt5523, local32, arg6)) {
       return;
     }
@@ -67,8 +68,8 @@ public final class Static27 {
       return;
     }
     @Pc(73)
-    boolean local73 = Static323.aClass50_Sub1_1.aBoolean305;
-    Static323.aClass50_Sub1_1.aBoolean305 = true;
+    boolean local73 = ClientPreferences.preferences.aBoolean305;
+    ClientPreferences.preferences.aBoolean305 = true;
     Static67.aClass266_Sub1_1.method5649(
         arg1,
         arg0,
@@ -80,7 +81,7 @@ public final class Static27 {
         arg6,
         local32,
         Static175.aClass213Array1[arg0]);
-    Static323.aClass50_Sub1_1.aBoolean305 = local73;
+    ClientPreferences.preferences.aBoolean305 = local73;
     return;
   }
 }

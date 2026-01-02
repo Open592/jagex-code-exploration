@@ -1,6 +1,7 @@
 package com.jagex.client;
 
 import com.jagex.client.locale.LocalizedString;
+import com.jagex.client.preferences.ClientPreferences;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalClass;
 import org.openrs2.deob.annotation.OriginalMember;
@@ -74,7 +75,7 @@ public final class Class155 {
   public Class155(@OriginalArg(0) Packet arg0) {
     @Pc(16)
     int local16 = arg0.g1();
-    if (Static323.aClass50_Sub1_1.method2854(Static177.anInt2973)
+    if (ClientPreferences.preferences.method2854(Static177.anInt2973)
         && Static57.aClass19_7.method4260() > 0) {
       if ((local16 & 0x1) == 0) {
         this.anInt4773 = Static65.anInt1369;

@@ -1,5 +1,6 @@
 package com.jagex.client;
 
+import com.jagex.client.graphics.RenderMath;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalClass;
 import org.openrs2.deob.annotation.OriginalMember;
@@ -107,16 +108,16 @@ public final class Class5 {
     int local99;
     if (this.anInt33 != 0) {
       local81 = -this.anInt33 & 0x3FFF;
-      local85 = Class50_Sub1.anIntArray225[local81];
-      local89 = Class50_Sub1.anIntArray224[local81];
+      local85 = RenderMath.SINE_TABLE[local81];
+      local89 = RenderMath.COSINE_TABLE[local81];
       local99 = local34 * local89 - local36 * local85 >> 15;
       local36 = local34 * local85 + local36 * local89 >> 15;
       local34 = local99;
     }
     if (this.anInt39 != 0) {
       local81 = -this.anInt39 & 0x3FFF;
-      local85 = Class50_Sub1.anIntArray225[local81];
-      local89 = Class50_Sub1.anIntArray224[local81];
+      local85 = RenderMath.SINE_TABLE[local81];
+      local89 = RenderMath.COSINE_TABLE[local81];
       local99 = local36 * local85 + local32 * local89 >> 15;
       local36 = local36 * local89 - local32 * local85 >> 15;
       local32 = local99;
@@ -269,15 +270,15 @@ public final class Class5 {
     @Pc(94)
     int local94;
     if (this.anInt33 != 0) {
-      local79 = Class50_Sub1.anIntArray225[this.anInt33];
-      local84 = Class50_Sub1.anIntArray224[this.anInt33];
+      local79 = RenderMath.SINE_TABLE[this.anInt33];
+      local84 = RenderMath.COSINE_TABLE[this.anInt33];
       local94 = local33 * local84 - local35 * local79 >> 15;
       local35 = local33 * local79 + local35 * local84 >> 15;
       local33 = local94;
     }
     if (this.anInt39 != 0) {
-      local79 = Class50_Sub1.anIntArray225[this.anInt39];
-      local84 = Class50_Sub1.anIntArray224[this.anInt39];
+      local79 = RenderMath.SINE_TABLE[this.anInt39];
+      local84 = RenderMath.COSINE_TABLE[this.anInt39];
       local94 = local35 * local79 + local31 * local84 >> 15;
       local35 = local35 * local84 - local31 * local79 >> 15;
       local31 = local94;

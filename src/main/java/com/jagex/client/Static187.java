@@ -1,6 +1,7 @@
 package com.jagex.client;
 
 import com.jagex.client.locale.LocalizedString;
+import com.jagex.client.preferences.ClientPreferences;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;
@@ -78,11 +79,11 @@ public final class Static187 {
     if (local135 != local148) {
       if (local135) {
         Static62.anInt1117 = Static414.anInt6866;
-        if (Static323.aClass50_Sub1_1.anInt3439 == 0) {
+        if (ClientPreferences.preferences.anInt3439 == 0) {
           Static397.method724();
         } else {
           Static408.method5258(
-              Static323.aClass50_Sub1_1.anInt3439, Static46.archive6, Static414.anInt6866);
+              ClientPreferences.preferences.anInt3439, Static46.archive6, Static414.anInt6866);
         }
         client.js5NetQueue.informUserAuthenticationStatus(false);
       } else {
@@ -102,7 +103,7 @@ public final class Static187 {
       @OriginalArg(2) int arg1,
       @OriginalArg(3) int arg2,
       @OriginalArg(4) int arg3) {
-    if (Static323.aClass50_Sub1_1.anInt3448 != 0
+    if (ClientPreferences.preferences.anInt3448 != 0
         && arg1 != 0
         && Static109.anInt6886 < 50
         && arg0 != -1) {

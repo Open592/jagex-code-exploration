@@ -1,6 +1,7 @@
 package com.jagex.client;
 
 import com.jagex.client.display.FullScreenWindow;
+import com.jagex.client.preferences.ClientPreferences;
 import com.jagex.client.utilities.ThreadingUtilities;
 import com.jagex.signlink.Message;
 import com.jagex.signlink.MonotonicClock;
@@ -612,21 +613,21 @@ public abstract class GameShell extends Applet implements Runnable, FocusListene
       @OriginalArg(5) int arg4) {
     if (fullScreenFrame != null
         && (arg0 != 3
-            || arg2 != Static323.aClass50_Sub1_1.anInt3431
-            || Static323.aClass50_Sub1_1.anInt3450 != arg4)) {
+            || arg2 != ClientPreferences.preferences.anInt3431
+            || ClientPreferences.preferences.anInt3450 != arg4)) {
       FullScreenWindow.exitFullScreenMode(signLink, fullScreenFrame);
       fullScreenFrame = null;
     }
     if (arg0 == 3 && fullScreenFrame == null) {
       fullScreenFrame = FullScreenWindow.enterFullScreenMode(arg2, signLink, arg4, 0);
       if (fullScreenFrame != null) {
-        Static323.aClass50_Sub1_1.anInt3431 = arg2;
-        Static323.aClass50_Sub1_1.anInt3450 = arg4;
-        Static323.aClass50_Sub1_1.method2856(signLink);
+        ClientPreferences.preferences.anInt3431 = arg2;
+        ClientPreferences.preferences.anInt3450 = arg4;
+        ClientPreferences.preferences.method2856(signLink);
       }
     }
     if (arg0 == 3 && fullScreenFrame == null) {
-      method4020(Static323.aClass50_Sub1_1.anInt3447, arg1, -1, true, -1);
+      method4020(ClientPreferences.preferences.anInt3447, arg1, -1, true, -1);
       return;
     }
     @Pc(78)

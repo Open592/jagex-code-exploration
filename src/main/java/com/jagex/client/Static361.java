@@ -1,5 +1,6 @@
 package com.jagex.client;
 
+import com.jagex.client.preferences.ClientPreferences;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;
@@ -71,7 +72,7 @@ public final class Static361 {
             @Pc(110)
             Class202 local110 = Static267.aClass262_2.method5560(local14);
             if (local73 != 22
-                || Static323.aClass50_Sub1_1.aBoolean305
+                || ClientPreferences.preferences.aBoolean305
                 || local110.anInt5813 != 0
                 || local110.anInt5851 == 1
                 || local110.aBoolean539) {

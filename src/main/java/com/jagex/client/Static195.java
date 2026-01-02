@@ -1,5 +1,6 @@
 package com.jagex.client;
 
+import com.jagex.client.graphics.RenderMath;
 import com.jagex.client.js5.Js5;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalMember;
@@ -50,12 +51,12 @@ public final class Static195 {
     @Pc(59)
     int local59 = local39;
     if (local46 != 0) {
-      local57 = -local39 * Class50_Sub1.anIntArray225[local46] >> 15;
-      local59 = Class50_Sub1.anIntArray224[local46] * local39 >> 15;
+      local57 = -local39 * RenderMath.SINE_TABLE[local46] >> 15;
+      local59 = RenderMath.COSINE_TABLE[local46] * local39 >> 15;
     }
     if (local53 != 0) {
-      local55 = local59 * Class50_Sub1.anIntArray225[local53] >> 15;
-      local59 = Class50_Sub1.anIntArray224[local53] * local59 >> 15;
+      local55 = local59 * RenderMath.SINE_TABLE[local53] >> 15;
+      local59 = RenderMath.COSINE_TABLE[local53] * local59 >> 15;
     }
     Static431.anInt7074 = arg6;
     Static163.anInt3197 = arg0 - local55;

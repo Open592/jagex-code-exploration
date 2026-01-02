@@ -1,5 +1,6 @@
 package com.jagex.client;
 
+import com.jagex.client.graphics.RenderMath;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalClass;
 import org.openrs2.deob.annotation.OriginalMember;
@@ -426,10 +427,8 @@ public final class Class211 {
     local340.ja(this.anInt6122 << 3);
     local340.o(
         this.anInt6152,
-        (Class50_Sub1.anIntArray225[this.anInt6133 << 3] * local290 >> 15)
-            + this.lb
-            - local211.MA() / 2,
-        (local290 * Class50_Sub1.anIntArray224[this.anInt6133 << 3] >> 15) + this.lb);
+        (RenderMath.SINE_TABLE[this.anInt6133 << 3] * local290 >> 15) + this.lb - local211.MA() / 2,
+        (local290 * RenderMath.COSINE_TABLE[this.anInt6133 << 3] >> 15) + this.lb);
     local340.ka(this.anInt6133 << 3);
     @Pc(398)
     int local398 = arg8.a();

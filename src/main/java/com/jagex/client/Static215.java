@@ -1,5 +1,6 @@
 package com.jagex.client;
 
+import com.jagex.client.preferences.ClientPreferences;
 import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;
 
@@ -27,7 +28,7 @@ public final class Static215 {
   @OriginalMember(owner = "client!kr", name = "b", descriptor = "(I)V")
   public static void method3238() {
     @Pc(10)
-    int local10 = Static323.aClass50_Sub1_1.method2858(Static177.anInt2973);
+    int local10 = ClientPreferences.preferences.method2858(Static177.anInt2973);
     if (local10 == 0) {
       Static12.aByteArrayArrayArray1 = null;
       Static185.method2924(0);

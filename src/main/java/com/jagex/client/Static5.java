@@ -1,5 +1,6 @@
 package com.jagex.client;
 
+import com.jagex.client.graphics.RenderMath;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;
@@ -32,9 +33,9 @@ public final class Static5 {
       @Pc(44)
       int local44 = local37 * 8192 / 24;
       @Pc(48)
-      int local48 = Class50_Sub1.anIntArray225[local44];
+      int local48 = RenderMath.SINE_TABLE[local44];
       @Pc(52)
-      int local52 = Class50_Sub1.anIntArray224[local44];
+      int local52 = RenderMath.COSINE_TABLE[local44];
       @Pc(61)
       int local61;
       @Pc(67)
@@ -45,9 +46,9 @@ public final class Static5 {
       int local83;
       for (@Pc(54) int local54 = 1; local54 < 24; local54++) {
         local61 = local54 * 8192 / 24;
-        local67 = Class50_Sub1.anIntArray224[local61] >> 8;
-        local75 = Class50_Sub1.anIntArray225[local61] * local48 >> 23;
-        local83 = Class50_Sub1.anIntArray225[local61] * local52 >> 23;
+        local67 = RenderMath.COSINE_TABLE[local61] >> 8;
+        local75 = RenderMath.SINE_TABLE[local61] * local48 >> 23;
+        local83 = RenderMath.SINE_TABLE[local61] * local52 >> 23;
         local8.method3040(-local75, local67, local83);
       }
       if (local37 > 0) {

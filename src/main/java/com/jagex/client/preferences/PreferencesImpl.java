@@ -1,42 +1,20 @@
-package com.jagex.client;
+package com.jagex.client.preferences;
 
+import com.jagex.client.*;
 import com.jagex.client.utilities.ThreadingUtilities;
 import com.jagex.signlink.FileOnDisk;
 import com.jagex.signlink.Message;
 import com.jagex.signlink.SignLink;
 import jagex3.jagmisc.jagmisc;
 import java.io.IOException;
-import org.openrs2.deob.annotation.OriginalArg;
-import org.openrs2.deob.annotation.OriginalClass;
-import org.openrs2.deob.annotation.OriginalMember;
-import org.openrs2.deob.annotation.Pc;
 
-@OriginalClass("client!jb")
-public final class Class50_Sub1 extends Class50 {
+public final class PreferencesImpl extends Preferences {
 
-  @OriginalMember(owner = "client!jb", name = "fb", descriptor = "[I")
-  public static final int[] anIntArray225 = new int[16384];
-
-  @OriginalMember(owner = "client!jb", name = "W", descriptor = "[I")
-  public static final int[] anIntArray224 = new int[16384];
-
-  @OriginalMember(owner = "client!jb", name = "V", descriptor = "Z")
   public boolean aBoolean308 = false;
 
-  @OriginalMember(owner = "client!jb", name = "cb", descriptor = "Z")
   public boolean aBoolean309 = false;
 
-  static {
-    @Pc(9)
-    double local9 = 3.834951969714103E-4D;
-    for (@Pc(11) int local11 = 0; local11 < 16384; local11++) {
-      anIntArray225[local11] = (int) (Math.sin(local9 * (double) local11) * 32768.0D);
-      anIntArray224[local11] = (int) (Math.cos((double) local11 * local9) * 32768.0D);
-    }
-  }
-
-  @OriginalMember(owner = "client!jb", name = "<init>", descriptor = "(Lclient!et;)V")
-  public Class50_Sub1(@OriginalArg(0) SignLink arg0) {
+  public PreferencesImpl(SignLink arg0) {
     super.anInt3436 = 3;
     this.method2859(true);
     super.aBoolean295 = true;
@@ -61,9 +39,9 @@ public final class Class50_Sub1 extends Class50 {
     super.aBoolean302 = true;
     super.anInt3433 = 1;
     if (Static70.anInt1503 >= 96) {
-      Static157.method2673(2);
+      Static157.setParticles(2);
     } else {
-      Static157.method2673(0);
+      Static157.setParticles(0);
     }
     super.anInt3434 = 0;
     super.aBoolean303 = false;
@@ -75,21 +53,17 @@ public final class Class50_Sub1 extends Class50 {
     super.anInt3437 = Static249.anInt4622 == 1 ? 2 : 4;
     super.anInt3428 = 0;
     super.aBoolean300 = false;
-    @Pc(129)
     FileOnDisk local129 = null;
     try {
-      @Pc(134)
       Message local134 = arg0.emitResolvePreferencesFileLocationMessage("");
       while (local134.status == 0) {
         ThreadingUtilities.sleepFor(1L);
       }
       if (local134.status == 1) {
         local129 = (FileOnDisk) local134.output;
-        @Pc(156)
         byte[] local156 = new byte[(int) local129.bufferLength()];
-        @Pc(171)
         int local171;
-        for (@Pc(158) int local158 = 0; local158 < local156.length; local158 += local171) {
+        for (int local158 = 0; local158 < local156.length; local158 += local171) {
           local171 = local129.read(local158, local156.length - local158, local156);
           if (local171 == -1) {
             throw new IOException("EOF");
@@ -97,57 +71,43 @@ public final class Class50_Sub1 extends Class50 {
         }
         this.method2862(new Packet(local156));
       }
-    } catch (
-        @Pc(196)
-        Exception local196) {
+    } catch (Exception local196) {
     }
     try {
       if (local129 != null) {
         local129.close();
       }
-    } catch (
-        @Pc(203)
-        Exception local203) {
+    } catch (Exception local203) {
     }
   }
 
-  @OriginalMember(owner = "client!jb", name = "a", descriptor = "(Lclient!et;B)V")
-  public void method2856(@OriginalArg(0) SignLink arg0) {
-    @Pc(7)
+  public void method2856(SignLink arg0) {
     FileOnDisk local7 = null;
     try {
-      @Pc(20)
       Message local20 = arg0.emitResolvePreferencesFileLocationMessage("");
       while (local20.status == 0) {
         ThreadingUtilities.sleepFor(1L);
       }
       if (local20.status == 1) {
         local7 = (FileOnDisk) local20.output;
-        @Pc(40)
         Packet local40 = this.method2863();
         local7.write(0, local40.pos, local40.data);
       }
-    } catch (
-        @Pc(50)
-        Exception local50) {
+    } catch (Exception local50) {
     }
     try {
       if (local7 != null) {
         local7.close();
       }
-    } catch (
-        @Pc(57)
-        Exception local57) {
+    } catch (Exception local57) {
     }
   }
 
-  @OriginalMember(owner = "client!jb", name = "b", descriptor = "(II)Z")
-  public boolean method2857(@OriginalArg(1) int arg0) {
+  public boolean method2857(int arg0) {
     return arg0 == 0 ? super.aBoolean290 : true;
   }
 
-  @OriginalMember(owner = "client!jb", name = "c", descriptor = "(II)I")
-  public int method2858(@OriginalArg(0) int arg0) {
+  public int method2858(int arg0) {
     if (this.aBoolean309) {
       return 0;
     } else if (this.method2861(arg0)) {
@@ -157,30 +117,25 @@ public final class Class50_Sub1 extends Class50 {
     }
   }
 
-  @OriginalMember(owner = "client!jb", name = "a", descriptor = "(IZ)V")
-  public void method2859(@OriginalArg(1) boolean arg0) {
+  public void method2859(boolean arg0) {
     super.aBoolean290 = arg0;
     if (Static267.aClass262_2 != null) {
       Static267.aClass262_2.method5562(!this.method2861(Static177.anInt2973));
     }
   }
 
-  @OriginalMember(owner = "client!jb", name = "d", descriptor = "(II)Z")
-  public boolean method2861(@OriginalArg(0) int arg0) {
+  public boolean method2861(int arg0) {
     return arg0 == 0 && !this.aBoolean308 ? super.aBoolean290 : true;
   }
 
-  @OriginalMember(owner = "client!jb", name = "a", descriptor = "(Lclient!iv;I)V")
-  private void method2862(@OriginalArg(0) Packet arg0) {
+  private void method2862(Packet arg0) {
     if (arg0.data.length - arg0.pos < 1) {
       return;
     }
-    @Pc(21)
     int local21 = arg0.g1();
     if (local21 < 0 || local21 > 17) {
       return;
     }
-    @Pc(42)
     byte local42;
     if (local21 == 17) {
       local42 = 40;
@@ -276,7 +231,6 @@ public final class Class50_Sub1 extends Class50 {
     if (local21 >= 3 && local21 < 6) {
       arg0.g1();
     }
-    @Pc(474)
     int local474;
     if (local21 >= 4) {
       local474 = arg0.g1();
@@ -286,7 +240,7 @@ public final class Class50_Sub1 extends Class50 {
       if (Static70.anInt1503 < 96) {
         local474 = 0;
       }
-      Static157.method2673(local474);
+      Static157.setParticles(local474);
     }
     if (local21 >= 5) {
       super.anInt3428 = arg0.g4();
@@ -347,9 +301,7 @@ public final class Class50_Sub1 extends Class50 {
         if (jagmisc.getTotalPhysicalMemory() <= 268435456L) {
           super.aBoolean307 = false;
         }
-      } catch (
-          @Pc(736)
-          Throwable local736) {
+      } catch (Throwable local736) {
       }
     }
     if (local21 < 17 && super.anInt3445 == 0) {
@@ -357,9 +309,7 @@ public final class Class50_Sub1 extends Class50 {
     }
   }
 
-  @OriginalMember(owner = "client!jb", name = "a", descriptor = "(I)Lclient!iv;")
   public Packet method2863() {
-    @Pc(8)
     Packet local8 = new Packet(41);
     local8.p1(17);
     local8.p1(super.anInt3436);
@@ -384,7 +334,7 @@ public final class Class50_Sub1 extends Class50 {
     local8.p1(super.anInt3449);
     local8.p2(super.anInt3431);
     local8.p2(super.anInt3450);
-    local8.p1(Static218.method3279());
+    local8.p1(Static218.getParticles());
     local8.p4(super.anInt3428);
     local8.p1(super.anInt3447);
     local8.p1(super.aBoolean297 ? 1 : 0);

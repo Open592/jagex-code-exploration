@@ -17,7 +17,7 @@ public final class Static216 {
   public static final Class215 aClass215_43 = new Class215(45, 3);
 
   @OriginalMember(owner = "client!kt", name = "L", descriptor = "I")
-  public static int anInt4008 = 2;
+  public static int particles = 2;
 
   @OriginalMember(owner = "client!kt", name = "S", descriptor = "I")
   public static int anInt4014 = 0;

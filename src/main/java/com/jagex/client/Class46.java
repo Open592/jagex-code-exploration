@@ -326,7 +326,7 @@ public abstract class Class46 {
                   }
                   local17++;
                   @Pc(152)
-                  int local152 = Static198.method3113(local63.substring(4));
+                  int local152 = Static198.parseStringToInt(local63.substring(4));
                   @Pc(156)
                   Class57 local156 = arg5[local152];
                   @Pc(165)
@@ -618,7 +618,7 @@ public abstract class Class46 {
               if (local61.startsWith("img=")) {
                 try {
                   @Pc(127)
-                  int local127 = Static198.method3113(local61.substring(4));
+                  int local127 = Static198.parseStringToInt(local61.substring(4));
                   @Pc(131)
                   Class57 local131 = arg4[local127];
                   @Pc(140)

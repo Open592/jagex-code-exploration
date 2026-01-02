@@ -220,7 +220,7 @@ public final class Class89 {
           } else if (local103.startsWith("img=") && arg0 != null) {
             try {
               @Pc(284)
-              int local284 = Static198.method3113(local103.substring(4));
+              int local284 = Static198.parseStringToInt(local103.substring(4));
               local31 = -1;
               local50 = arg0[local284].j();
             } catch (
@@ -329,7 +329,7 @@ public final class Class89 {
               if (local54.startsWith("img=") && arg1 != null) {
                 try {
                   @Pc(116)
-                  int local116 = Static198.method3113(local54.substring(4));
+                  int local116 = Static198.parseStringToInt(local54.substring(4));
                   local13 = -1;
                   local15 += arg1[local116].j();
                 } catch (
@@ -423,7 +423,7 @@ public final class Class89 {
               if (local68.startsWith("img=") && arg0 != null) {
                 try {
                   @Pc(138)
-                  int local138 = Static198.method3113(local68.substring(4));
+                  int local138 = Static198.parseStringToInt(local68.substring(4));
                   local32 += arg0[local138].j();
                   local30 = -1;
                   if (local26 < local32) {

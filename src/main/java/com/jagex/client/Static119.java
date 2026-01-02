@@ -1,6 +1,7 @@
 package com.jagex.client;
 
 import com.jagex.client.js5.Js5NetResourceProvider;
+import com.jagex.client.preferences.ClientPreferences;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;
@@ -85,10 +86,10 @@ public final class Static119 {
   public static void method2149() {
     @Pc(5)
     int local5 = 0;
-    if (Static323.aClass50_Sub1_1.method2854(Static177.anInt2973)) {
+    if (ClientPreferences.preferences.method2854(Static177.anInt2973)) {
       local5 = 55;
     }
-    if (!Static323.aClass50_Sub1_1.aBoolean307) {
+    if (!ClientPreferences.preferences.aBoolean307) {
       local5 |= 0x40;
     }
     Static6.method51(local5);

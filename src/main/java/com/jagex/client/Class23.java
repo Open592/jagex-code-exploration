@@ -1,5 +1,6 @@
 package com.jagex.client;
 
+import com.jagex.client.preferences.ClientPreferences;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalClass;
 import org.openrs2.deob.annotation.OriginalMember;
@@ -130,7 +131,7 @@ public final class Class23 {
     this.method585(arg0, arg3);
     @Pc(72)
     boolean local72 =
-        arg1 & this.aBoolean55 & Static323.aClass50_Sub1_1.method2850(Static177.anInt2973) != 0;
+        arg1 & this.aBoolean55 & ClientPreferences.preferences.method2850(Static177.anInt2973) != 0;
     @Pc(110)
     boolean local110 =
         local72
@@ -139,7 +140,7 @@ public final class Class23 {
                         || this.aClass138_1 != null
                             && (this.aClass138_1.aBoolean404 || Static127.aBoolean244)
                             && this.anInt538 != this.anInt552)
-                    && Static323.aClass50_Sub1_1.method2850(Static177.anInt2973) >= 2);
+                    && ClientPreferences.preferences.method2850(Static177.anInt2973) >= 2);
     if (arg5 && !local110) {
       this.anInt537 = this.anInt538;
       this.anInt539 = local11.anInt5823;

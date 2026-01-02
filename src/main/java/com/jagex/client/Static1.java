@@ -1,5 +1,6 @@
 package com.jagex.client;
 
+import com.jagex.client.preferences.ClientPreferences;
 import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;
 
@@ -149,6 +150,6 @@ public final class Static1 {
     Static3.aClass4_Sub12_Sub1_5.p1(Static450.method5664());
     Static3.aClass4_Sub12_Sub1_5.p2(Static141.width);
     Static3.aClass4_Sub12_Sub1_5.p2(Static302.height);
-    Static3.aClass4_Sub12_Sub1_5.p1(Static323.aClass50_Sub1_1.anInt3440);
+    Static3.aClass4_Sub12_Sub1_5.p1(ClientPreferences.preferences.anInt3440);
   }
 }

@@ -51,8 +51,8 @@ public final class Static218 {
   }
 
   @OriginalMember(owner = "client!kv", name = "a", descriptor = "(I)I")
-  public static int method3279() {
-    return Static216.anInt4008;
+  public static int getParticles() {
+    return Static216.particles;
   }
 
   @OriginalMember(owner = "client!kv", name = "a", descriptor = "(IC)Z")

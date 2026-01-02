@@ -1,5 +1,6 @@
 package com.jagex.client;
 
+import com.jagex.client.preferences.ClientPreferences;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;
@@ -19,7 +20,7 @@ public final class Static255 {
 
   @OriginalMember(owner = "client!mt", name = "a", descriptor = "(Z)V")
   public static void method3687() {
-    if (Static323.aClass50_Sub1_1.method2861(Static177.anInt2973)
+    if (ClientPreferences.preferences.method2861(Static177.anInt2973)
         || Static317.anInt5523 == Static263.anInt4963) {
       Static71.method5372(Static122.aClass19_16);
       if (Static263.anInt4963 != Static333.anInt5744) {
