@@ -2,6 +2,7 @@ package com.jagex.client;
 
 import com.jagex.client.graphics.RenderMath;
 import com.jagex.client.preferences.ClientPreferences;
+import com.jagex.client.social.Chat;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;
@@ -767,7 +768,7 @@ public final class Static53 {
                   }
                   local6.anInt6820 = Static346.anInt5948;
                 }
-                if (Static296.anInt5303 > local6.anInt6824 && local6.anObjectArray11 != null) {
+                if (Chat.anInt5303 > local6.anInt6824 && local6.anObjectArray11 != null) {
                   local515 = new Node_Sub34();
                   local515.aClass247_15 = local6;
                   local515.anObjectArray4 = local6.anObjectArray11;

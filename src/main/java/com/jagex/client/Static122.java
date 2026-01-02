@@ -18,9 +18,6 @@ public final class Static122 {
   @OriginalMember(owner = "client!gd", name = "q", descriptor = "Lclient!sl;")
   public static final Class215 aClass215_33 = new Class215(18, 6);
 
-  @OriginalMember(owner = "client!gd", name = "s", descriptor = "[Ljava/lang/String;")
-  public static final String[] aStringArray9 = new String[100];
-
   @OriginalMember(owner = "client!gd", name = "a", descriptor = "(ZI[Lclient!uu;)V")
   public static void method2212(@OriginalArg(1) int arg0, @OriginalArg(2) Class247[] arg1) {
     for (@Pc(12) int local12 = 0; local12 < arg1.length; local12++) {

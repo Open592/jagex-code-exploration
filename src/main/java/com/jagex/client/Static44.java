@@ -76,28 +76,4 @@ public final class Static44 {
     Static447.method5628(arg1, local7, local9, local217);
     Static371.method4959(arg1);
   }
-
-  @OriginalMember(owner = "client!ca", name = "a", descriptor = "(IJ)Ljava/lang/String;")
-  public static String method763(@OriginalArg(1) long arg0) {
-    if (arg0 <= 0L || arg0 >= 6582952005840035281L) {
-      return null;
-    } else if (arg0 % 37L == 0L) {
-      return null;
-    } else {
-      @Pc(34)
-      int local34 = 0;
-      for (@Pc(36) long local36 = arg0; local36 != 0L; local36 /= 37L) {
-        local34++;
-      }
-      @Pc(52)
-      StringBuffer local52 = new StringBuffer(local34);
-      while (arg0 != 0L) {
-        @Pc(56)
-        long local56 = arg0;
-        arg0 /= 37L;
-        local52.append(Static20.aCharArray1[(int) (local56 - arg0 * 37L)]);
-      }
-      return local52.reverse().toString();
-    }
-  }
 }

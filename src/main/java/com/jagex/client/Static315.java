@@ -11,9 +11,6 @@ public final class Static315 {
   @OriginalMember(owner = "client!pt", name = "y", descriptor = "I")
   public static int anInt5487;
 
-  @OriginalMember(owner = "client!pt", name = "J", descriptor = "[Ljava/lang/String;")
-  public static final String[] aStringArray26 = new String[100];
-
   @OriginalMember(owner = "client!pt", name = "a", descriptor = "(IILclient!ga;Lclient!ya;IBI)V")
   public static void method4208(
       @OriginalArg(0) int arg0,

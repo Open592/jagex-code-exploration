@@ -10,9 +10,6 @@ public final class Static353 {
   @OriginalMember(owner = "client!ru", name = "a", descriptor = "[I")
   public static final int[] anIntArray434 = new int[2];
 
-  @OriginalMember(owner = "client!ru", name = "b", descriptor = "[Ljava/lang/String;")
-  public static final String[] aStringArray32 = new String[100];
-
   @OriginalMember(owner = "client!ru", name = "a", descriptor = "(IIIFLclient!ge;FF[BIIFIFZ)V")
   public static void method4771(
       @OriginalArg(3) float arg0,

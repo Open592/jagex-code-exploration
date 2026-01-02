@@ -13,9 +13,6 @@ public final class Static194 {
   @OriginalMember(owner = "client!jq", name = "Y", descriptor = "I")
   public static int anInt3688 = 0;
 
-  @OriginalMember(owner = "client!jq", name = "gb", descriptor = "[Ljava/lang/String;")
-  public static final String[] aStringArray14 = new String[200];
-
   @OriginalMember(owner = "client!jq", name = "a", descriptor = "(I)V")
   public static void method3044() {
     @Pc(16)

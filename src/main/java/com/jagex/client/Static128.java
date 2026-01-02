@@ -1,5 +1,6 @@
 package com.jagex.client;
 
+import com.jagex.client.social.Chat;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalMember;
 
@@ -18,6 +19,6 @@ public final class Static128 {
       @OriginalArg(2) String arg2,
       @OriginalArg(3) String arg3,
       @OriginalArg(4) String arg4) {
-    Static426.method5438(-1, arg4, arg2, null, arg0, arg3, arg1);
+    Chat.add(-1, arg4, arg2, null, arg0, arg3, arg1);
   }
 }

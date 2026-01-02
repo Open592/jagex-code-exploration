@@ -16,7 +16,7 @@ public final class Static297 {
     Static380.aOpCode_294 = null;
     Static316.aOpCode_257 = null;
     Static188.anInt5353 = 0;
-    Static300.aOpCode_246 = null;
+    Protocol.currentOpcode = null;
     Static35.aOpCode_42 = null;
     Static146.aClass4_Sub12_Sub1_3.pos = 0;
     Static454.anInt4075 = 0;

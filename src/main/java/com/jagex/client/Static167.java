@@ -2,6 +2,8 @@ package com.jagex.client;
 
 import com.jagex.client.ds.LinkedList;
 import com.jagex.client.preferences.ClientPreferences;
+import com.jagex.client.social.Chat;
+import com.jagex.client.social.FriendsList;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;
@@ -24,7 +26,7 @@ public final class Static167 {
     Static3.aClass4_Sub12_Sub1_5.pos = 0;
     Static316.aOpCode_257 = null;
     Static410.anInt6735 = 0;
-    Static300.aOpCode_246 = null;
+    Protocol.currentOpcode = null;
     Static146.aClass4_Sub12_Sub1_3.pos = 0;
     Static95.anInt1910 = 0;
     Static35.aOpCode_42 = null;
@@ -34,10 +36,10 @@ public final class Static167 {
       Static306.aClass38Array1[local5586] = null;
     }
     for (@Pc(5608) int local5608 = 0; local5608 < 100; local5608++) {
-      Static15.aStringArray2[local5608] = null;
+      Chat.aStringArray2[local5608] = null;
     }
     Static341.aBoolean599 = false;
-    Static401.anInt6639 = 0;
+    Chat.anInt6639 = 0;
     Static147.method2462();
     Static273.anInt5119 = (int) (Math.random() * 80.0D) - 40;
     Static368.aFloat192 = (int) (Math.random() * 160.0D) - 80 & 0x3FFF;
@@ -58,7 +60,7 @@ public final class Static167 {
     GameShell.aClass84_4.method2310();
     Static440.aHashMap_40.clear();
     Static115.aLinkedList_15 = new LinkedList();
-    Static49.anInt2346 = 0;
+    FriendsList.size = 0;
     Static376.anInt6277 = 0;
     Static257.aClass114_1.method2829();
     Static423.method5405();

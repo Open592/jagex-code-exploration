@@ -1,6 +1,5 @@
 package com.jagex.client;
 
-import com.jagex.client.locale.LocalizedString;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;
@@ -12,14 +11,6 @@ public final class Static188 {
 
   @OriginalMember(owner = "client!jj", name = "l", descriptor = "I")
   public static int anInt5355;
-
-  @OriginalMember(owner = "client!jj", name = "f", descriptor = "Lclient!gk;")
-  public static final LocalizedString A_LOCALIZED_STRING___113 =
-      new LocalizedString(
-          " is already on your ignore list.",
-          " steht bereits auf deiner Ignorieren-Liste!",
-          " est déjà dans votre liste noire.",
-          " já está na sua lista de ignorados.");
 
   @OriginalMember(owner = "client!jj", name = "i", descriptor = "I")
   public static int anInt5353 = 0;

@@ -10,9 +10,6 @@ public final class Static15 {
   @OriginalMember(owner = "client!an", name = "D", descriptor = "[[S")
   public static short[][] aShortArrayArray1;
 
-  @OriginalMember(owner = "client!an", name = "y", descriptor = "[Ljava/lang/String;")
-  public static final String[] aStringArray2 = new String[100];
-
   @OriginalMember(owner = "client!an", name = "B", descriptor = "[I")
   public static final int[] anIntArray12 = new int[] {16, 32, 64, 128};
 

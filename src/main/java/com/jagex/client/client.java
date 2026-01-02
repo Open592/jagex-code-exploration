@@ -1217,7 +1217,7 @@ public final class client extends GameShell {
             Static125.aServerConnection_5.readBytesFromServer(
                 Static146.aClass4_Sub12_Sub1_3.pos + 2, 1, Static146.aClass4_Sub12_Sub1_3.data);
           }
-          Static300.aOpCode_246 =
+          Protocol.currentOpcode =
               Protocol.getOpcodes()[Static146.aClass4_Sub12_Sub1_3.readOpcode()];
           Static454.anInt4075 = Static146.aClass4_Sub12_Sub1_3.g2();
           Static238.anInt4506 = 9;
@@ -1240,7 +1240,7 @@ public final class client extends GameShell {
               throw new RuntimeException(
                   "lswp pos:" + Static146.aClass4_Sub12_Sub1_3.pos + " psize:" + local970);
             }
-            Static300.aOpCode_246 = null;
+            Protocol.currentOpcode = null;
           }
         } else if (Static238.anInt4506 == 12) {
           if (Static454.anInt4075 == -2) {
@@ -1265,7 +1265,7 @@ public final class client extends GameShell {
               throw new RuntimeException(
                   "lswpr pos:" + Static146.aClass4_Sub12_Sub1_3.pos + " psize:" + local970);
             }
-            Static300.aOpCode_246 = null;
+            Protocol.currentOpcode = null;
           }
         }
       } else if (Static125.aServerConnection_5.getEstimatedBytesAvailable() >= 1) {
@@ -1660,7 +1660,7 @@ public final class client extends GameShell {
             0, Static206.aStringArray16.length * 8, Static146.aClass4_Sub12_Sub1_3.data);
         for (local120 = 0; local120 < Static206.aStringArray16.length; local120++) {
           Static206.aStringArray16[local120] =
-              Static44.method763(Static146.aClass4_Sub12_Sub1_3.g8());
+              Base37.decodeLower(Static146.aClass4_Sub12_Sub1_3.g8());
         }
         Static249.anInt4623 = 21;
         Static354.anInt6183 = 0;

@@ -13,9 +13,6 @@ public final class Static413 {
   @OriginalMember(owner = "client!uu", name = "qb", descriptor = "Lclient!pk;")
   public static final LinkedList A_LINKED_LIST___47 = new LinkedList();
 
-  @OriginalMember(owner = "client!uu", name = "Qb", descriptor = "I")
-  public static int anInt6823 = 0;
-
   @OriginalMember(owner = "client!uu", name = "Yc", descriptor = "Lclient!sl;")
   private static final Class215 aClass215_91 = new Class215(70, 8);
 

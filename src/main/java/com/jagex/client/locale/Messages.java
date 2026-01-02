@@ -193,4 +193,31 @@ public final class Messages {
           "Client-Variablen geladen",
           "Variables du client chargées",
           "As variáveis do sistema foram carregadas");
+  public static final LocalizedString userIsAlreadyOnIgnoreList =
+      new LocalizedString(
+          " is already on your ignore list.",
+          " steht bereits auf deiner Ignorieren-Liste!",
+          " est déjà dans votre liste noire.",
+          " já está na sua lista de ignorados.");
+  public static final LocalizedString pleaseRemoveFromFriendsList1 =
+      new LocalizedString(
+          "Please remove ", "Bitte entferne ", "Veuillez commencer par supprimer ", "Remova ");
+  public static final LocalizedString pleaseRemoveFromFriendsList2 =
+      new LocalizedString(
+          " from your friend list first.",
+          " zuerst von deiner Freunde-Liste!",
+          " de votre liste d'amis.",
+          " da sua lista de amigos primeiro.");
+  public static final LocalizedString yourIgnoreListIsFull =
+      new LocalizedString(
+          "Your ignore list is full, max of 100.",
+          "Deine Ignorieren-Liste ist voll, du kannst nur 100 Spieler darauf eintragen.",
+          "Votre liste noire est pleine (100 noms maximum).",
+          "Sua lista de ignorados está cheia. O máx. é 100.");
+  public static final LocalizedString cantAddSelfToIgnoreList =
+      new LocalizedString(
+          "You can't add yourself to your own ignore list.",
+          "Du kannst dich nicht auf deine eigene Ignorieren-Liste setzen!",
+          "Vous ne pouvez pas ajouter votre nom à votre liste noire.",
+          "Você não pode adicionar a si próprio à sua lista de ignorados.");
 }

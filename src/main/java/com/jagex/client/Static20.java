@@ -9,14 +9,6 @@ public final class Static20 {
   @OriginalMember(owner = "client!at", name = "a", descriptor = "[I")
   public static final int[] anIntArray13 = new int[8];
 
-  @OriginalMember(owner = "client!at", name = "d", descriptor = "[C")
-  public static final char[] aCharArray1 =
-      new char[] {
-        '_', 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q',
-        'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', '0', '1', '2', '3', '4', '5', '6', '7', '8',
-        '9'
-      };
-
   @OriginalMember(owner = "client!at", name = "e", descriptor = "[I")
   public static final int[] anIntArray14 =
       new int[] {

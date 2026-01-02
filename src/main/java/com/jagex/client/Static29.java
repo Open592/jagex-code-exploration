@@ -1,5 +1,6 @@
 package com.jagex.client;
 
+import com.jagex.client.social.FriendsList;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;
@@ -14,8 +15,8 @@ public final class Static29 {
     if (arg0 == null) {
       return -1;
     }
-    for (@Pc(16) int local16 = 0; local16 < Static49.anInt2346; local16++) {
-      if (arg0.equalsIgnoreCase(Static194.aStringArray14[local16])) {
+    for (@Pc(16) int local16 = 0; local16 < FriendsList.size; local16++) {
+      if (arg0.equalsIgnoreCase(FriendsList.aStringArray14[local16])) {
         return local16;
       }
     }

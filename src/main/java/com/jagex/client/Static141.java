@@ -9,9 +9,6 @@ public final class Static141 {
   @OriginalMember(owner = "client!hc", name = "C", descriptor = "I")
   public static int width;
 
-  @OriginalMember(owner = "client!hc", name = "D", descriptor = "[Ljava/lang/String;")
-  public static final String[] aStringArray11 = new String[100];
-
   @OriginalMember(owner = "client!hc", name = "a", descriptor = "(BLclient!r;)I")
   public static int method2424(@OriginalArg(1) Class16_Sub1_Sub5 arg0) {
     if (arg0.anInt6080 == 0) {

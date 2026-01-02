@@ -52,38 +52,4 @@ public final class Static45 {
         Static1.aClass16_Sub1_Sub5_Sub1_1.aByte82);
     Static176.anInt3414 = 0;
   }
-
-  @OriginalMember(owner = "client!cb", name = "b", descriptor = "(JI)Ljava/lang/String;")
-  public static String method766(@OriginalArg(0) long arg0) {
-    if (arg0 <= 0L || arg0 >= 6582952005840035281L) {
-      return null;
-    } else if (arg0 % 37L == 0L) {
-      return null;
-    } else {
-      @Pc(29)
-      int local29 = 0;
-      for (@Pc(36) long local36 = arg0; local36 != 0L; local36 /= 37L) {
-        local29++;
-      }
-      @Pc(52)
-      StringBuffer local52 = new StringBuffer(local29);
-      while (arg0 != 0L) {
-        @Pc(56)
-        long local56 = arg0;
-        arg0 /= 37L;
-        @Pc(70)
-        char local70 = Static20.aCharArray1[(int) (local56 - arg0 * 37L)];
-        if (local70 == '_') {
-          @Pc(80)
-          int local80 = local52.length() - 1;
-          local70 = ' ';
-          local52.setCharAt(local80, Character.toUpperCase(local52.charAt(local80)));
-        }
-        local52.append(local70);
-      }
-      local52.reverse();
-      local52.setCharAt(0, Character.toUpperCase(local52.charAt(0)));
-      return local52.toString();
-    }
-  }
 }

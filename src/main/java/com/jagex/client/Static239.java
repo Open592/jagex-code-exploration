@@ -210,22 +210,6 @@ public final class Static239 {
     }
   }
 
-  @OriginalMember(owner = "client!mc", name = "a", descriptor = "(Ljava/lang/String;Z)Z")
-  public static boolean method3549(@OriginalArg(0) String arg0) {
-    if (arg0 == null) {
-      return false;
-    }
-    for (@Pc(16) int local16 = 0; local16 < Static413.anInt6823; local16++) {
-      if (arg0.equalsIgnoreCase(Static102.aStringArray7[local16])) {
-        return true;
-      }
-      if (arg0.equalsIgnoreCase(Static141.aStringArray11[local16])) {
-        return true;
-      }
-    }
-    return false;
-  }
-
   @OriginalMember(owner = "client!mc", name = "a", descriptor = "(IB)V")
   public static void method3551(@OriginalArg(0) int arg0) {
     Static50.method813();

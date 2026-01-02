@@ -9,9 +9,6 @@ public final class Static200 {
   @OriginalMember(owner = "client!kc", name = "B", descriptor = "Lclient!fa;")
   public static final Class68 aClass68_22 = new Class68(4);
 
-  @OriginalMember(owner = "client!kc", name = "G", descriptor = "[Ljava/lang/String;")
-  public static final String[] aStringArray15 = new String[100];
-
   @OriginalMember(owner = "client!kc", name = "J", descriptor = "I")
   public static int anInt3873 = 0;
 

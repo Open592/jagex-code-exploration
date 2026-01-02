@@ -1,5 +1,7 @@
 package com.jagex.client;
 
+import com.jagex.client.social.Chat;
+import com.jagex.client.social.IgnoreList;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;
@@ -161,7 +163,7 @@ public final class Static41 {
           if (!local435
               && (Static109.aBoolean628 && !Static396.aBoolean443 || Static308.aBoolean486)) {
             local443 = true;
-          } else if (Static239.method3549(arg3.aString44)) {
+          } else if (IgnoreList.isPlayerIgnored(arg3.aString44)) {
             local443 = true;
           }
         }
@@ -194,7 +196,7 @@ public final class Static41 {
             local549 = local435 ? 17 : 2;
           }
           if (local363 == 2) {
-            Static426.method5438(
+            Chat.add(
                 local489,
                 "<img=1>" + arg3.method3432(),
                 local508,
@@ -203,7 +205,7 @@ public final class Static41 {
                 "<img=1>" + arg3.method3428(),
                 local549);
           } else if (local363 == 1) {
-            Static426.method5438(
+            Chat.add(
                 local489,
                 "<img=0>" + arg3.method3432(),
                 local508,
@@ -212,8 +214,7 @@ public final class Static41 {
                 "<img=0>" + arg3.method3428(),
                 local549);
           } else {
-            Static426.method5438(
-                local489, arg3.method3432(), local508, null, 0, arg3.method3428(), local549);
+            Chat.add(local489, arg3.method3432(), local508, null, 0, arg3.method3428(), local549);
           }
         }
       }

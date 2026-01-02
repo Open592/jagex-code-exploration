@@ -5,6 +5,9 @@ import com.jagex.client.encoding.Base37;
 import com.jagex.client.env.ModeWhat;
 import com.jagex.client.preferences.ClientPreferences;
 import com.jagex.client.preferences.Preferences;
+import com.jagex.client.social.Chat;
+import com.jagex.client.social.FriendsList;
+import com.jagex.client.social.IgnoreList;
 import com.jagex.signlink.MonotonicClock;
 import com.jagex.signlink.SignLink;
 import jagex3.jagmisc.jagmisc;
@@ -1548,13 +1551,13 @@ public final class Static271 {
                       anIntArray330[anInt5095++] = -1;
                       return;
                     }
-                    anIntArray330[anInt5095++] = Static49.anInt2346;
+                    anIntArray330[anInt5095++] = FriendsList.size;
                     return;
                   }
                   if (arg0 == 3601) {
                     local13 = anIntArray330[--anInt5095];
-                    if (Static376.anInt6277 == 2 && local13 < Static49.anInt2346) {
-                      aStringArray21[anInt5092++] = Static194.aStringArray14[local13];
+                    if (Static376.anInt6277 == 2 && local13 < FriendsList.size) {
+                      aStringArray21[anInt5092++] = FriendsList.aStringArray14[local13];
                       if (Static57.aStringArray6[local13] != null) {
                         aStringArray21[anInt5092++] = Static57.aStringArray6[local13];
                         return;
@@ -1568,7 +1571,7 @@ public final class Static271 {
                   }
                   if (arg0 == 3602) {
                     local13 = anIntArray330[--anInt5095];
-                    if (Static376.anInt6277 == 2 && local13 < Static49.anInt2346) {
+                    if (Static376.anInt6277 == 2 && local13 < FriendsList.size) {
                       anIntArray330[anInt5095++] = Static71.anIntArray536[local13];
                       return;
                     }
@@ -1577,7 +1580,7 @@ public final class Static271 {
                   }
                   if (arg0 == 3603) {
                     local13 = anIntArray330[--anInt5095];
-                    if (Static376.anInt6277 == 2 && local13 < Static49.anInt2346) {
+                    if (Static376.anInt6277 == 2 && local13 < FriendsList.size) {
                       anIntArray330[anInt5095++] = Static280.anIntArray339[local13];
                       return;
                     }
@@ -1597,12 +1600,12 @@ public final class Static271 {
                   }
                   if (arg0 == 3606) {
                     local3888 = aStringArray21[--anInt5092];
-                    Static383.method5070(local3888);
+                    FriendsList.method5070(local3888);
                     return;
                   }
                   if (arg0 == 3607) {
                     local3888 = aStringArray21[--anInt5092];
-                    Static338.method4595(false, local3888);
+                    IgnoreList.addPlayer(false, local3888);
                     return;
                   }
                   if (arg0 == 3608) {
@@ -1620,7 +1623,7 @@ public final class Static271 {
                   }
                   if (arg0 == 3610) {
                     local13 = anIntArray330[--anInt5095];
-                    if (Static376.anInt6277 == 2 && local13 < Static49.anInt2346) {
+                    if (Static376.anInt6277 == 2 && local13 < FriendsList.size) {
                       aStringArray21[anInt5092++] = Static433.aStringArray38[local13];
                       return;
                     }
@@ -1697,15 +1700,15 @@ public final class Static271 {
                       anIntArray330[anInt5095++] = -1;
                       return;
                     }
-                    anIntArray330[anInt5095++] = Static413.anInt6823;
+                    anIntArray330[anInt5095++] = IgnoreList.size;
                     return;
                   }
                   if (arg0 == 3622) {
                     local13 = anIntArray330[--anInt5095];
-                    if (Static376.anInt6277 != 0 && local13 < Static413.anInt6823) {
-                      aStringArray21[anInt5092++] = Static326.aStringArray27[local13];
-                      if (Static315.aStringArray26[local13] != null) {
-                        aStringArray21[anInt5092++] = Static315.aStringArray26[local13];
+                    if (Static376.anInt6277 != 0 && local13 < IgnoreList.size) {
+                      aStringArray21[anInt5092++] = IgnoreList.aStringArray27[local13];
+                      if (IgnoreList.aStringArray26[local13] != null) {
+                        aStringArray21[anInt5092++] = IgnoreList.aStringArray26[local13];
                         return;
                       }
                       aStringArray21[anInt5092++] = "";
@@ -1720,7 +1723,7 @@ public final class Static271 {
                     if (local3888.startsWith("<img=0>") || local3888.startsWith("<img=1>")) {
                       local3888 = local3888.substring(7);
                     }
-                    anIntArray330[anInt5095++] = Static239.method3549(local3888) ? 1 : 0;
+                    anIntArray330[anInt5095++] = IgnoreList.isPlayerIgnored(local3888) ? 1 : 0;
                     return;
                   }
                   if (arg0 == 3624) {
@@ -1754,7 +1757,7 @@ public final class Static271 {
                   }
                   if (arg0 == 3627) {
                     local13 = anIntArray330[--anInt5095];
-                    if (Static376.anInt6277 == 2 && local13 >= 0 && local13 < Static49.anInt2346) {
+                    if (Static376.anInt6277 == 2 && local13 >= 0 && local13 < FriendsList.size) {
                       anIntArray330[anInt5095++] = Static424.aBooleanArray23[local13] ? 1 : 0;
                       return;
                     }
@@ -1775,7 +1778,7 @@ public final class Static271 {
                   }
                   if (arg0 == 3630) {
                     local3888 = aStringArray21[--anInt5092];
-                    Static338.method4595(true, local3888);
+                    IgnoreList.addPlayer(true, local3888);
                     return;
                   }
                   if (arg0 == 3631) {
@@ -1794,8 +1797,8 @@ public final class Static271 {
                   }
                   if (arg0 == 3633) {
                     local13 = anIntArray330[--anInt5095];
-                    if (Static376.anInt6277 != 0 && local13 < Static413.anInt6823) {
-                      aStringArray21[anInt5092++] = Static102.aStringArray7[local13];
+                    if (Static376.anInt6277 != 0 && local13 < IgnoreList.size) {
+                      aStringArray21[anInt5092++] = IgnoreList.aStringArray7[local13];
                       return;
                     }
                     aStringArray21[anInt5092++] = "";
@@ -3253,7 +3256,7 @@ public final class Static271 {
         local157 = anIntArray330[--anInt5095];
         local81 = null;
         if (local157 < 100) {
-          local81 = Static15.aStringArray2[local157];
+          local81 = Chat.aStringArray2[local157];
         }
         if (local81 == null) {
           local81 = "";
@@ -3264,8 +3267,8 @@ public final class Static271 {
       if (arg0 == 5004) {
         local157 = anIntArray330[--anInt5095];
         local192 = -1;
-        if (local157 < 100 && Static15.aStringArray2[local157] != null) {
-          local192 = Static340.anIntArray411[local157];
+        if (local157 < 100 && Chat.aStringArray2[local157] != null) {
+          local192 = Chat.anIntArray411[local157];
         }
         anIntArray330[anInt5095++] = local192;
         return;
@@ -3303,7 +3306,7 @@ public final class Static271 {
         local157 = anIntArray330[--anInt5095];
         local81 = null;
         if (local157 < 100) {
-          local81 = Static353.aStringArray32[local157];
+          local81 = Chat.aStringArray32[local157];
         }
         if (local81 == null) {
           local81 = "";
@@ -3315,7 +3318,7 @@ public final class Static271 {
         local157 = anIntArray330[--anInt5095];
         local81 = null;
         if (local157 < 100) {
-          local81 = Static200.aStringArray15[local157];
+          local81 = Chat.aStringArray15[local157];
         }
         if (local81 == null) {
           local81 = "";
@@ -3327,7 +3330,7 @@ public final class Static271 {
         local157 = anIntArray330[--anInt5095];
         local192 = -1;
         if (local157 < 100) {
-          local192 = Static227.anIntArray294[local157];
+          local192 = Chat.anIntArray294[local157];
         }
         anIntArray330[anInt5095++] = local192;
         return;
@@ -3347,14 +3350,14 @@ public final class Static271 {
         return;
       }
       if (arg0 == 5017) {
-        anIntArray330[anInt5095++] = Static401.anInt6639;
+        anIntArray330[anInt5095++] = Chat.anInt6639;
         return;
       }
       if (arg0 == 5018) {
         local157 = anIntArray330[--anInt5095];
         local192 = 0;
-        if (local157 < 100 && Static15.aStringArray2[local157] != null) {
-          local192 = Static340.anIntArray411[local157];
+        if (local157 < 100 && Chat.aStringArray2[local157] != null) {
+          local192 = Chat.anIntArray411[local157];
         }
         anIntArray330[anInt5095++] = local192;
         return;
@@ -3363,7 +3366,7 @@ public final class Static271 {
         local157 = anIntArray330[--anInt5095];
         local81 = null;
         if (local157 < 100) {
-          local81 = Static122.aStringArray9[local157];
+          local81 = Chat.aStringArray9[local157];
         }
         if (local81 == null) {
           local81 = "";

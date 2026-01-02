@@ -2,6 +2,7 @@ package com.jagex.client;
 
 import com.jagex.client.graphics.RenderMath;
 import com.jagex.client.locale.LocalizedString;
+import com.jagex.client.social.FriendsList;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;
@@ -24,8 +25,8 @@ public final class Static147 {
     if (arg0 == null) {
       return false;
     }
-    for (@Pc(11) int local11 = 0; local11 < Static49.anInt2346; local11++) {
-      if (arg0.equalsIgnoreCase(Static194.aStringArray14[local11])) {
+    for (@Pc(11) int local11 = 0; local11 < FriendsList.size; local11++) {
+      if (arg0.equalsIgnoreCase(FriendsList.aStringArray14[local11])) {
         return true;
       }
     }

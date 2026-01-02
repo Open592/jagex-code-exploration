@@ -1,5 +1,7 @@
 package com.jagex.client;
 
+import com.jagex.client.social.FriendsList;
+import com.jagex.client.social.IgnoreList;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;
@@ -11,7 +13,7 @@ public final class Static233 {
     if (arg0 == null) {
       return;
     }
-    if (Static49.anInt2346 >= 100 && !ClientSettings.aBoolean423 || Static49.anInt2346 >= 200) {
+    if (FriendsList.size >= 100 && !ClientSettings.aBoolean423 || FriendsList.size >= 200) {
       Static415.method5323(Static386.A_LOCALIZED_STRING___80.getString(ClientSettings.langID));
       return;
     }
@@ -22,9 +24,9 @@ public final class Static233 {
     }
     @Pc(75)
     String local75;
-    for (@Pc(37) int local37 = 0; local37 < Static49.anInt2346; local37++) {
+    for (@Pc(37) int local37 = 0; local37 < FriendsList.size; local37++) {
       @Pc(45)
-      String local45 = Static123.method4868(Static194.aStringArray14[local37]);
+      String local45 = Static123.method4868(FriendsList.aStringArray14[local37]);
       if (local45 != null && local45.equals(local27)) {
         Static415.method5323(
             arg0 + Static294.A_LOCALIZED_STRING___17.getString(ClientSettings.langID));
@@ -39,8 +41,8 @@ public final class Static233 {
         }
       }
     }
-    for (@Pc(105) int local105 = 0; local105 < Static413.anInt6823; local105++) {
-      local75 = Static123.method4868(Static326.aStringArray27[local105]);
+    for (@Pc(105) int local105 = 0; local105 < IgnoreList.size; local105++) {
+      local75 = Static123.method4868(IgnoreList.aStringArray27[local105]);
       if (local75 != null && local75.equals(local27)) {
         Static415.method5323(
             Static368.A_LOCALIZED_STRING___124.getString(ClientSettings.langID)
@@ -48,9 +50,9 @@ public final class Static233 {
                 + Static422.A_LOCALIZED_STRING___144.getString(ClientSettings.langID));
         return;
       }
-      if (Static315.aStringArray26[local105] != null) {
+      if (IgnoreList.aStringArray26[local105] != null) {
         @Pc(152)
-        String local152 = Static123.method4868(Static315.aStringArray26[local105]);
+        String local152 = Static123.method4868(IgnoreList.aStringArray26[local105]);
         if (local152 != null && local152.equals(local27)) {
           Static415.method5323(
               Static368.A_LOCALIZED_STRING___124.getString(ClientSettings.langID)

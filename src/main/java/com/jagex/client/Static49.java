@@ -12,9 +12,6 @@ public final class Static49 {
   @OriginalMember(owner = "client!cg", name = "r", descriptor = "Ljava/lang/String;")
   public static String aString28 = null;
 
-  @OriginalMember(owner = "client!cg", name = "w", descriptor = "I")
-  public static int anInt2346 = 0;
-
   @OriginalMember(owner = "client!cg", name = "a", descriptor = "(III)Z")
   public static boolean method1997(@OriginalArg(0) int arg0, @OriginalArg(1) int arg1) {
     return Static190.method2975(arg0, arg1) | (arg0 & 0x70000) != 0

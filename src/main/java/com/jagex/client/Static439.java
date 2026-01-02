@@ -2,6 +2,7 @@ package com.jagex.client;
 
 import com.jagex.client.js5.Js5;
 import com.jagex.client.locale.LocalizedString;
+import com.jagex.client.social.IgnoreList;
 import com.jagex.signlink.MonotonicClock;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalMember;
@@ -79,20 +80,20 @@ public final class Static439 {
     if (local20 == null) {
       return;
     }
-    for (@Pc(25) int local25 = 0; local25 < Static413.anInt6823; local25++) {
+    for (@Pc(25) int local25 = 0; local25 < IgnoreList.size; local25++) {
       @Pc(31)
-      String local31 = Static326.aStringArray27[local25];
+      String local31 = IgnoreList.aStringArray27[local25];
       if (local31.startsWith("*")) {
         local31 = local31.substring(1);
       }
       local31 = Static123.method4868(local31);
       if (local31 != null && local31.equals(local20)) {
-        Static413.anInt6823--;
-        for (@Pc(55) int local55 = local25; local55 < Static413.anInt6823; local55++) {
-          Static326.aStringArray27[local55] = Static326.aStringArray27[local55 + 1];
-          Static102.aStringArray7[local55] = Static102.aStringArray7[local55 + 1];
-          Static315.aStringArray26[local55] = Static315.aStringArray26[local55 + 1];
-          Static141.aStringArray11[local55] = Static141.aStringArray11[local55 + 1];
+        IgnoreList.size--;
+        for (@Pc(55) int local55 = local25; local55 < IgnoreList.size; local55++) {
+          IgnoreList.aStringArray27[local55] = IgnoreList.aStringArray27[local55 + 1];
+          IgnoreList.aStringArray7[local55] = IgnoreList.aStringArray7[local55 + 1];
+          IgnoreList.aStringArray26[local55] = IgnoreList.aStringArray26[local55 + 1];
+          IgnoreList.aStringArray11[local55] = IgnoreList.aStringArray11[local55 + 1];
           Static414.aBooleanArray20[local55] = Static414.aBooleanArray20[local55 + 1];
         }
         Static244.anInt3027 = Static325.anInt5640;
