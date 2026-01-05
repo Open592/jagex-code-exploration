@@ -1,5 +1,6 @@
 package com.jagex.client;
 
+import com.jagex.client.encoding.Cp1252;
 import com.jagex.client.js5.Js5;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalMember;
@@ -27,7 +28,7 @@ public final class Static356 {
       @Pc(19)
       byte[] local19 = new byte[local7];
       arg0.pos += Static339.aClass119_1.method2933(arg0.data, 0, local19, local7, arg0.pos);
-      return CP1252StringTools.CP1252ToUTF8(local19, local7, 0);
+      return Cp1252.decode(local19, local7, 0);
     } catch (
         @Pc(45)
         Exception local45) {

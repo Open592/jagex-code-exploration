@@ -69,7 +69,7 @@ public final class Static271 {
   private static final int[] anIntArray332 = new int[3];
 
   @OriginalMember(owner = "client!nr", name = "B", descriptor = "[Ljava/lang/String;")
-  private static final String[] aStringArray23 =
+  private static final String[] monthsOfTheYear =
       new String[] {
         "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"
       };
@@ -139,18 +139,13 @@ public final class Static271 {
     method3896(local12, arg1);
   }
 
-  @OriginalMember(owner = "client!nr", name = "a", descriptor = "(I)Ljava/lang/String;")
   private static String method3887(@OriginalArg(0) int arg0) {
-    @Pc(6)
     long local6 = ((long) arg0 + 11745L) * 86400000L;
     aCalendar2.setTime(new Date(local6));
-    @Pc(16)
-    int local16 = aCalendar2.get(5);
-    @Pc(20)
-    int local20 = aCalendar2.get(2);
-    @Pc(24)
-    int local24 = aCalendar2.get(1);
-    return local16 + "-" + aStringArray23[local20] + "-" + local24;
+    int date = aCalendar2.get(Calendar.DATE);
+    int month = aCalendar2.get(Calendar.MONTH);
+    int year = aCalendar2.get(Calendar.YEAR);
+    return date + "-" + monthsOfTheYear[month] + "-" + year;
   }
 
   @OriginalMember(owner = "client!nr", name = "a", descriptor = "(IZ)V")
@@ -2218,8 +2213,7 @@ public final class Static271 {
                 } else if (arg0 < 4300) {
                   if (arg0 == 4200) {
                     local13 = anIntArray330[--anInt5095];
-                    aStringArray21[anInt5092++] =
-                        Static444.aClass206_3.method4703(local13).aString61;
+                    aStringArray21[anInt5092++] = Static444.aClass206_3.method4703(local13).name;
                     return;
                   }
                   @Pc(8272)
@@ -2229,10 +2223,8 @@ public final class Static271 {
                     local13 = anIntArray330[anInt5095];
                     local19 = anIntArray330[anInt5095 + 1];
                     local8272 = Static444.aClass206_3.method4703(local13);
-                    if (local19 >= 1
-                        && local19 <= 5
-                        && local8272.aStringArray34[local19 - 1] != null) {
-                      aStringArray21[anInt5092++] = local8272.aStringArray34[local19 - 1];
+                    if (local19 >= 1 && local19 <= 5 && local8272.ops[local19 - 1] != null) {
+                      aStringArray21[anInt5092++] = local8272.ops[local19 - 1];
                       return;
                     }
                     aStringArray21[anInt5092++] = "";
@@ -2245,8 +2237,8 @@ public final class Static271 {
                     local8272 = Static444.aClass206_3.method4703(local13);
                     if (local19 >= 1
                         && local19 <= 5
-                        && local8272.aStringArray33[local19 - 1] != null) {
-                      aStringArray21[anInt5092++] = local8272.aStringArray33[local19 - 1];
+                        && local8272.inventoryOps[local19 - 1] != null) {
+                      aStringArray21[anInt5092++] = local8272.inventoryOps[local19 - 1];
                       return;
                     }
                     aStringArray21[anInt5092++] = "";
@@ -2254,8 +2246,7 @@ public final class Static271 {
                   }
                   if (arg0 == 4203) {
                     local13 = anIntArray330[--anInt5095];
-                    anIntArray330[anInt5095++] =
-                        Static444.aClass206_3.method4703(local13).anInt6165;
+                    anIntArray330[anInt5095++] = Static444.aClass206_3.method4703(local13).value;
                     return;
                   }
                   if (arg0 == 4204) {
@@ -2289,7 +2280,7 @@ public final class Static271 {
                   if (arg0 == 4207) {
                     local13 = anIntArray330[--anInt5095];
                     anIntArray330[anInt5095++] =
-                        Static444.aClass206_3.method4703(local13).aBoolean565 ? 1 : 0;
+                        Static444.aClass206_3.method4703(local13).isMembers ? 1 : 0;
                     return;
                   }
                   if (arg0 == 4208) {

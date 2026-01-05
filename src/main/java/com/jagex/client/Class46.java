@@ -1,5 +1,6 @@
 package com.jagex.client;
 
+import com.jagex.client.encoding.Cp1252;
 import java.util.Random;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalClass;
@@ -284,7 +285,7 @@ public abstract class Class46 {
     int local20 = arg3.length();
     for (@Pc(28) int local28 = 0; local28 < local20; local28++) {
       @Pc(39)
-      char local39 = (char) (Static153.method2605(arg3.charAt(local28)) & 0xFF);
+      char local39 = (char) (Cp1252.encodeChar(arg3.charAt(local28)) & 0xFF);
       if (local39 == '<') {
         local13 = local28;
       } else {
@@ -591,7 +592,7 @@ public abstract class Class46 {
     int local18 = arg0.length();
     for (@Pc(28) int local28 = 0; local28 < local18; local28++) {
       @Pc(39)
-      char local39 = (char) (Static153.method2605(arg0.charAt(local28)) & 0xFF);
+      char local39 = (char) (Cp1252.encodeChar(arg0.charAt(local28)) & 0xFF);
       if (local39 == '<') {
         local13 = local28;
       } else {

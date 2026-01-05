@@ -1,5 +1,6 @@
 package com.jagex.client;
 
+import com.jagex.client.encoding.Cp1252;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalClass;
 import org.openrs2.deob.annotation.OriginalMember;
@@ -84,7 +85,7 @@ public final class SecondaryNode_Sub1_Sub16 extends SecondaryNode {
       for (local23 = 0; local23 < local13; local23++) {
         this.anIntArray326[local23] = arg0.g2();
         local36 = arg0.g1s();
-        this.aCharArray3[local23] = local36 == 0 ? 0 : CP1252StringTools.CP1252ToUTF8(local36);
+        this.aCharArray3[local23] = local36 == 0 ? 0 : Cp1252.decodeChar(local36);
       }
     } else if (arg1 == 3) {
       local13 = arg0.g1();
@@ -93,7 +94,7 @@ public final class SecondaryNode_Sub1_Sub16 extends SecondaryNode {
       for (local23 = 0; local23 < local13; local23++) {
         this.anIntArray325[local23] = arg0.g2();
         local36 = arg0.g1s();
-        this.aCharArray4[local23] = local36 == 0 ? 0 : CP1252StringTools.CP1252ToUTF8(local36);
+        this.aCharArray4[local23] = local36 == 0 ? 0 : Cp1252.decodeChar(local36);
       }
     }
   }

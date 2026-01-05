@@ -1,5 +1,6 @@
 package com.jagex.client;
 
+import com.jagex.client.encoding.Cp1252;
 import com.jagex.client.locale.LocalizedString;
 import java.math.BigInteger;
 import org.openrs2.deob.annotation.OriginalArg;
@@ -459,9 +460,7 @@ public class Packet extends Node {
     @Pc(31)
     int startingPosition = this.pos - position - 1;
 
-    return startingPosition == 0
-        ? ""
-        : CP1252StringTools.CP1252ToUTF8(this.data, startingPosition, position);
+    return startingPosition == 0 ? "" : Cp1252.decode(this.data, startingPosition, position);
   }
 
   @OriginalMember(owner = "client!iv", name = "k", descriptor = "(I)Ljava/lang/String;")
@@ -491,7 +490,7 @@ public class Packet extends Node {
     @Pc(58)
     int length = this.pos - endPos - 1;
 
-    return length == 0 ? "" : CP1252StringTools.CP1252ToUTF8(this.data, length, endPos);
+    return length == 0 ? "" : Cp1252.decode(this.data, length, endPos);
   }
 
   @OriginalMember(owner = "client!iv", name = "a", descriptor = "(ILjava/lang/String;)V")
@@ -504,7 +503,7 @@ public class Packet extends Node {
           "NUL character at " + nullCharLocation + " - cannot pjstr");
     }
 
-    this.pos += CP1252StringTools.UTF8ToCP1252(value, value.length(), this.pos, this.data);
+    this.pos += Cp1252.encode(value, value.length(), this.pos, this.data);
     this.data[this.pos++] = 0;
   }
 

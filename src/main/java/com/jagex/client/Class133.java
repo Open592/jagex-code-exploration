@@ -1,5 +1,6 @@
 package com.jagex.client;
 
+import com.jagex.client.encoding.Cp1252;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalClass;
 import org.openrs2.deob.annotation.OriginalMember;
@@ -28,7 +29,7 @@ public final class Class133 {
   @OriginalMember(owner = "client!lg", name = "a", descriptor = "(ILclient!iv;I)V")
   private void method3352(@OriginalArg(1) Packet arg0, @OriginalArg(2) int arg1) {
     if (arg1 == 1) {
-      this.aChar2 = CP1252StringTools.CP1252ToUTF8(arg0.g1s());
+      this.aChar2 = Cp1252.decodeChar(arg0.g1s());
     } else if (arg1 == 2) {
       this.anInt4123 = arg0.g4();
     } else if (arg1 == 4) {

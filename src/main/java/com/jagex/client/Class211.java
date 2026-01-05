@@ -19,7 +19,7 @@ public final class Class211 {
   public int[] anIntArray435;
 
   @OriginalMember(owner = "client!rv", name = "v", descriptor = "[Ljava/lang/String;")
-  public String[] aStringArray33;
+  public String[] inventoryOps;
 
   @OriginalMember(owner = "client!rv", name = "y", descriptor = "[I")
   public int[] anIntArray436;
@@ -28,7 +28,7 @@ public final class Class211 {
   private short[] aShortArray212;
 
   @OriginalMember(owner = "client!rv", name = "M", descriptor = "[Ljava/lang/String;")
-  public String[] aStringArray34;
+  public String[] ops;
 
   @OriginalMember(owner = "client!rv", name = "N", descriptor = "[S")
   private short[] aShortArray213;
@@ -43,7 +43,7 @@ public final class Class211 {
   public Class206 aClass206_1;
 
   @OriginalMember(owner = "client!rv", name = "pb", descriptor = "I")
-  public int anInt6171;
+  public int id;
 
   @OriginalMember(owner = "client!rv", name = "wb", descriptor = "I")
   private int anInt6178;
@@ -85,7 +85,7 @@ public final class Class211 {
   private int anInt6145 = 0;
 
   @OriginalMember(owner = "client!rv", name = "K", descriptor = "Z")
-  public boolean aBoolean565 = false;
+  public boolean isMembers = false;
 
   @OriginalMember(owner = "client!rv", name = "s", descriptor = "I")
   public int anInt6133 = 0;
@@ -109,7 +109,7 @@ public final class Class211 {
   public int anInt6151 = 0;
 
   @OriginalMember(owner = "client!rv", name = "fb", descriptor = "I")
-  public int anInt6165 = 1;
+  public int value = 1;
 
   @OriginalMember(owner = "client!rv", name = "lb", descriptor = "I")
   public int lb = 0;
@@ -133,7 +133,7 @@ public final class Class211 {
   private int anInt6146 = 0;
 
   @OriginalMember(owner = "client!rv", name = "u", descriptor = "Ljava/lang/String;")
-  public String aString61 = "null";
+  public String name = "null";
 
   @OriginalMember(owner = "client!rv", name = "D", descriptor = "I")
   private int anInt6140 = 0;
@@ -228,8 +228,7 @@ public final class Class211 {
     synchronized (this.aClass206_1.aClass68_41) {
       local104 =
           (Class110)
-              this.aClass206_1.aClass68_41.method1787(
-                  (long) (this.anInt6171 | arg7.anInt5532 << 29));
+              this.aClass206_1.aClass68_41.method1787((long) (this.id | arg7.anInt5532 << 29));
     }
     if (local104 == null || arg7.method4269(local104.P(), local18) != 0) {
       if (local104 != null) {
@@ -306,8 +305,7 @@ public final class Class211 {
       @Pc(365)
       Class68 local365 = this.aClass206_1.aClass68_41;
       synchronized (this.aClass206_1.aClass68_41) {
-        this.aClass206_1.aClass68_41.method1779(
-            (long) (arg7.anInt5532 << 29 | this.anInt6171), local104);
+        this.aClass206_1.aClass68_41.method1779((long) (arg7.anInt5532 << 29 | this.id), local104);
       }
     }
     if (arg2 != null) {
@@ -547,10 +545,10 @@ public final class Class211 {
     this.anInt6132 = arg0.anInt6132;
     this.anInt6145 = arg0.anInt6145;
     this.anInt6170 = arg0.anInt6170;
-    this.anInt6165 = 0;
-    this.aStringArray34 = arg0.aStringArray34;
+    this.value = 0;
+    this.ops = arg0.ops;
     this.anInt6125 = arg0.anInt6125;
-    this.aString61 = arg0.aString61;
+    this.name = arg0.name;
     this.anInt6137 = arg1.anInt6137;
     this.anInt6133 = arg1.anInt6133;
     this.anInt6147 = arg0.anInt6147;
@@ -568,20 +566,20 @@ public final class Class211 {
     this.anInt6181 = arg0.anInt6181;
     this.aShortArray212 = arg0.aShortArray212;
     this.aHashMap_36 = arg0.aHashMap_36;
-    this.aBoolean565 = arg0.aBoolean565;
+    this.isMembers = arg0.isMembers;
     this.anInt6122 = arg1.anInt6122;
     this.anInt6134 = arg0.anInt6134;
     this.anInt6140 = arg0.anInt6140;
     this.anInt6157 = arg0.anInt6157;
     this.anInt6178 = arg1.anInt6178;
     this.anInt6159 = arg0.anInt6159;
-    this.aStringArray33 = new String[5];
-    if (arg0.aStringArray33 != null) {
+    this.inventoryOps = new String[5];
+    if (arg0.inventoryOps != null) {
       for (@Pc(149) int local149 = 0; local149 < 4; local149++) {
-        this.aStringArray33[local149] = arg0.aStringArray33[local149];
+        this.inventoryOps[local149] = arg0.inventoryOps[local149];
       }
     }
-    this.aStringArray33[4] = Static38.A_LOCALIZED_STRING___19.getString(this.aClass206_1.anInt5988);
+    this.inventoryOps[4] = Static38.A_LOCALIZED_STRING___19.getString(this.aClass206_1.anInt5988);
   }
 
   @OriginalMember(owner = "client!rv", name = "a", descriptor = "(ILclient!iv;I)V")
@@ -589,7 +587,7 @@ public final class Class211 {
     if (arg0 == 1) {
       this.anInt6178 = arg1.g2();
     } else if (arg0 == 2) {
-      this.aString61 = arg1.gStringCP1252ToUTF8();
+      this.name = arg1.gStringCP1252ToUTF8();
     } else if (arg0 == 4) {
       this.anInt6137 = arg1.g2();
     } else if (arg0 == 5) {
@@ -611,9 +609,9 @@ public final class Class211 {
     } else if (arg0 == 11) {
       this.anInt6164 = 1;
     } else if (arg0 == 12) {
-      this.anInt6165 = arg1.g4();
+      this.value = arg1.g4();
     } else if (arg0 == 16) {
-      this.aBoolean565 = true;
+      this.isMembers = true;
     } else if (arg0 == 23) {
       this.anInt6157 = arg1.g2();
     } else if (arg0 == 24) {
@@ -623,9 +621,9 @@ public final class Class211 {
     } else if (arg0 == 26) {
       this.anInt6150 = arg1.g2();
     } else if (arg0 >= 30 && arg0 < 35) {
-      this.aStringArray34[arg0 - 30] = arg1.gStringCP1252ToUTF8();
+      this.ops[arg0 - 30] = arg1.gStringCP1252ToUTF8();
     } else if (arg0 >= 35 && arg0 < 40) {
-      this.aStringArray33[arg0 - 35] = arg1.gStringCP1252ToUTF8();
+      this.inventoryOps[arg0 - 35] = arg1.gStringCP1252ToUTF8();
     } else {
       @Pc(147)
       int local147;
@@ -874,18 +872,18 @@ public final class Class211 {
     this.anInt6135 = arg1.anInt6135;
     this.aShortArray211 = arg1.aShortArray211;
     this.aShortArray214 = arg1.aShortArray214;
-    this.aString61 = arg0.aString61;
+    this.name = arg0.name;
     this.lb = arg1.lb;
     this.anInt6137 = arg1.anInt6137;
     this.anInt6133 = arg1.anInt6133;
     this.aShortArray213 = arg1.aShortArray213;
     this.anInt6122 = arg1.anInt6122;
-    this.aBoolean565 = arg0.aBoolean565;
+    this.isMembers = arg0.isMembers;
     this.aByteArray85 = arg1.aByteArray85;
     this.aShortArray212 = arg1.aShortArray212;
     this.anInt6164 = 1;
     this.anInt6178 = arg1.anInt6178;
-    this.anInt6165 = arg0.anInt6165;
+    this.value = arg0.value;
     this.anInt6152 = arg1.anInt6152;
   }
 

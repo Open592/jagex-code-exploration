@@ -457,7 +457,7 @@ public final class Static147 {
                   if (local23.anInt6779 != -1) {
                     @Pc(986)
                     Class211 local986 = Static444.aClass206_3.method4703(local23.anInt6779);
-                    local975 = local986.aString61;
+                    local975 = local986.name;
                     if (local975 == null) {
                       local975 = "null";
                     }

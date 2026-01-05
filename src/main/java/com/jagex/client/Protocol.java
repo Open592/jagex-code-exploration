@@ -1,6 +1,7 @@
 package com.jagex.client;
 
 import com.jagex.client.encoding.Base37;
+import com.jagex.client.encoding.Cp1252;
 import com.jagex.client.graphics.RenderMath;
 import com.jagex.client.preferences.ClientPreferences;
 import com.jagex.client.protocol.OpCode;
@@ -609,7 +610,7 @@ public final class Protocol {
             }
             byte[] buffer = new byte[Static454.anInt4075];
             Static146.aClass4_Sub12_Sub1_3.readEncryptedBytes(buffer, Static454.anInt4075);
-            local210 = CP1252StringTools.CP1252ToUTF8(buffer, Static454.anInt4075, 0);
+            local210 = Cp1252.decode(buffer, Static454.anInt4075, 0);
             Static275.method3929(GameShell.signLink, local210, Static177.anInt2973 == 1, true);
             currentOpcode = null;
             return true;

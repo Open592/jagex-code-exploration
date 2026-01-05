@@ -3,7 +3,6 @@ package com.jagex.client.js5;
 import com.jagex.client.CRC32Checksum;
 import com.jagex.client.Class235;
 import com.jagex.client.Packet;
-import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalClass;
 import org.openrs2.deob.annotation.OriginalMember;
 
@@ -14,7 +13,7 @@ public final class Js5Index {
   public int[] anIntArray428;
 
   @OriginalMember(owner = "client!rt", name = "c", descriptor = "I")
-  public int anInt6109;
+  public int size;
 
   @OriginalMember(owner = "client!rt", name = "d", descriptor = "[I")
   public int[] anIntArray429;
@@ -29,13 +28,13 @@ public final class Js5Index {
   public int[][] anIntArrayArray47;
 
   @OriginalMember(owner = "client!rt", name = "j", descriptor = "[I")
-  public int[] anIntArray431;
+  public int[] groupIds;
 
   @OriginalMember(owner = "client!rt", name = "l", descriptor = "Lclient!ud;")
   public Class235 aClass235_1;
 
   @OriginalMember(owner = "client!rt", name = "m", descriptor = "I")
-  public int anInt6112;
+  public int capacity;
 
   @OriginalMember(owner = "client!rt", name = "n", descriptor = "I")
   public int version;
@@ -60,69 +59,68 @@ public final class Js5Index {
       throw new RuntimeException();
     }
 
-    this.method4767(buffer);
+    this.decode(buffer);
   }
 
-  @OriginalMember(owner = "client!rt", name = "a", descriptor = "([BI)V")
-  private void method4767(@OriginalArg(0) byte[] arg0) {
-    Packet packet = new Packet(Js5Compression.uncompress(arg0));
-    int local16 = packet.g1();
+  private void decode(byte[] bytes) {
+    Packet packet = new Packet(Js5Compression.uncompress(bytes));
+    int protocol = packet.g1();
 
-    if (local16 != 5 && local16 != 6) {
+    if (protocol != 5 && protocol != 6) {
       throw new RuntimeException();
     }
 
-    if (local16 >= 6) {
+    if (protocol == 6) {
       this.version = packet.g4();
     } else {
       this.version = 0;
     }
 
-    int local45 = packet.g1();
-    this.anInt6109 = packet.g2();
-    int local52 = 0;
-    this.anIntArray431 = new int[this.anInt6109];
-    int local59 = -1;
+    int flags = packet.g1();
+    this.size = packet.g2();
+    int prevGroupId = 0;
+    this.groupIds = new int[this.size];
+    int maxGroupId = -1;
 
-    for (int i = 0; i < this.anInt6109; i++) {
-      this.anIntArray431[i] = local52 += packet.g2();
+    for (int i = 0; i < this.size; i++) {
+      this.groupIds[i] = prevGroupId += packet.g2();
 
-      if (local59 < this.anIntArray431[i]) {
-        local59 = this.anIntArray431[i];
+      if (maxGroupId < this.groupIds[i]) {
+        maxGroupId = this.groupIds[i];
       }
     }
 
-    this.anInt6112 = local59 + 1;
-    this.anIntArray429 = new int[this.anInt6112];
-    this.anIntArray433 = new int[this.anInt6112];
-    this.anIntArray430 = new int[this.anInt6112];
-    this.anIntArray428 = new int[this.anInt6112];
-    this.anIntArrayArray46 = new int[this.anInt6112][];
+    this.capacity = maxGroupId + 1;
+    this.anIntArray429 = new int[this.capacity];
+    this.anIntArray433 = new int[this.capacity];
+    this.anIntArray430 = new int[this.capacity];
+    this.anIntArray428 = new int[this.capacity];
+    this.anIntArrayArray46 = new int[this.capacity][];
 
-    if (local45 != 0) {
-      this.anIntArray432 = new int[this.anInt6112];
+    if (flags != 0) {
+      this.anIntArray432 = new int[this.capacity];
 
-      for (int i = 0; i < this.anInt6112; i++) {
+      for (int i = 0; i < this.capacity; i++) {
         this.anIntArray432[i] = -1;
       }
 
-      for (int i = 0; i < this.anInt6109; i++) {
-        this.anIntArray432[this.anIntArray431[i]] = packet.g4();
+      for (int i = 0; i < this.size; i++) {
+        this.anIntArray432[this.groupIds[i]] = packet.g4();
       }
 
       this.aClass235_1 = new Class235(this.anIntArray432);
     }
 
-    for (int i = 0; i < this.anInt6109; i++) {
-      this.anIntArray430[this.anIntArray431[i]] = packet.g4();
+    for (int i = 0; i < this.size; i++) {
+      this.anIntArray430[this.groupIds[i]] = packet.g4();
     }
 
-    for (int i = 0; i < this.anInt6109; i++) {
-      this.anIntArray429[this.anIntArray431[i]] = packet.g4();
+    for (int i = 0; i < this.size; i++) {
+      this.anIntArray429[this.groupIds[i]] = packet.g4();
     }
 
-    for (int i = 0; i < this.anInt6109; i++) {
-      this.anIntArray428[this.anIntArray431[i]] = packet.g2();
+    for (int i = 0; i < this.size; i++) {
+      this.anIntArray428[this.groupIds[i]] = packet.g2();
     }
 
     int local249;
@@ -130,16 +128,16 @@ public final class Js5Index {
     int local258;
     int local283;
 
-    for (int i = 0; i < this.anInt6109; i++) {
-      local249 = this.anIntArray431[i];
-      local52 = 0;
+    for (int i = 0; i < this.size; i++) {
+      local249 = this.groupIds[i];
+      prevGroupId = 0;
       local256 = this.anIntArray428[local249];
       local258 = -1;
 
       this.anIntArrayArray46[local249] = new int[local256];
 
       for (int j = 0; j < local256; j++) {
-        local283 = this.anIntArrayArray46[local249][j] = local52 += packet.g2();
+        local283 = this.anIntArrayArray46[local249][j] = prevGroupId += packet.g2();
 
         if (local258 < local283) {
           local258 = local283;
@@ -153,15 +151,15 @@ public final class Js5Index {
       }
     }
 
-    if (local45 == 0) {
+    if (flags == 0) {
       return;
     }
 
-    this.aClass235Array1 = new Class235[local59 + 1];
-    this.anIntArrayArray47 = new int[local59 + 1][];
+    this.aClass235Array1 = new Class235[maxGroupId + 1];
+    this.anIntArrayArray47 = new int[maxGroupId + 1][];
 
-    for (int i = 0; i < this.anInt6109; i++) {
-      local256 = this.anIntArray431[i];
+    for (int i = 0; i < this.size; i++) {
+      local256 = this.groupIds[i];
       local258 = this.anIntArray428[local256];
 
       this.anIntArrayArray47[local256] = new int[this.anIntArray433[local256]];

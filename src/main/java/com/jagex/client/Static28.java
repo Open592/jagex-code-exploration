@@ -49,7 +49,7 @@ public final class Static28 {
     @Pc(49)
     Class211 local49 = Static444.aClass206_3.method4703(arg0.anInt7355);
     @Pc(52)
-    int local52 = local49.anInt6165;
+    int local52 = local49.value;
     if (local49.anInt6164 == 1) {
       local52 *= arg0.anInt7356 + 1;
     }
@@ -58,7 +58,7 @@ public final class Static28 {
         local71 = (Node_Sub45) local26.aLinkedList_14.previous()) {
       local49 = Static444.aClass206_3.method4703(local71.anInt7355);
       @Pc(82)
-      int local82 = local49.anInt6165;
+      int local82 = local49.value;
       if (local49.anInt6164 == 1) {
         local82 *= local71.anInt7356 + 1;
       }

@@ -2833,7 +2833,7 @@ public final class client extends GameShell {
         Static247.anInt4590 = 20;
       }
     } else if (anInt5 == 40) {
-      if (Static19.archive28.method2116()) {
+      if (Static19.archive28.fetchAll()) {
         this.method908(Static19.archive28.method2122(1));
         Static24.currentLoadingBoxText = Messages.loadedDefaults.getString(ClientSettings.langID);
         Static247.anInt4590 = 25;
@@ -2882,7 +2882,7 @@ public final class client extends GameShell {
         Static247.anInt4590 = 40;
       }
     } else if (anInt5 == 80) {
-      if (Static24.archive26.method2116()) {
+      if (Static24.archive26.fetchAll()) {
         Static80.anInterface7_3 =
             new Class91(Static24.archive26, Static196.archive9, Static293.archive8);
         Static24.currentLoadingBoxText = Messages.loadedTextures.getString(ClientSettings.langID);
@@ -2920,29 +2920,29 @@ public final class client extends GameShell {
       Static187.method2932(5);
       anInt5 = 110;
     } else if (anInt5 == 110) {
-      Static74.archive2.method2116();
+      Static74.archive2.fetchAll();
       int local10 = Static74.archive2.method2112();
-      Static424.archive16.method2116();
+      Static424.archive16.fetchAll();
       local10 += Static424.archive16.method2112();
-      Static208.archive17.method2116();
+      Static208.archive17.fetchAll();
       local10 += Static208.archive17.method2112();
-      Static381.archive18.method2116();
+      Static381.archive18.fetchAll();
       local10 += Static381.archive18.method2112();
-      Static391.archive19.method2116();
+      Static391.archive19.fetchAll();
       local10 += Static391.archive19.method2112();
-      Static388.archive20.method2116();
+      Static388.archive20.fetchAll();
       local10 += Static388.archive20.method2112();
-      Static55.archive21.method2116();
+      Static55.archive21.fetchAll();
       local10 += Static55.archive21.method2112();
-      Static64.archive22.method2116();
+      Static64.archive22.fetchAll();
       local10 += Static64.archive22.method2112();
-      Static66.archive24.method2116();
+      Static66.archive24.fetchAll();
       local10 += Static66.archive24.method2112();
-      Static154.archive25.method2116();
+      Static154.archive25.fetchAll();
       local10 += Static154.archive25.method2112();
-      Static417.archive27.method2116();
+      Static417.archive27.fetchAll();
       local10 += Static417.archive27.method2112();
-      Static366.archive29.method2116();
+      Static366.archive29.fetchAll();
       local10 += Static366.archive29.method2112();
       if (local10 < 1200) {
         Static24.currentLoadingBoxText =
@@ -3087,7 +3087,7 @@ public final class client extends GameShell {
         Static247.anInt4590 = 75;
       }
     } else if (anInt5 == 140) {
-      if (Static256.archive3.method2116()) {
+      if (Static256.archive3.fetchAll()) {
         Static24.currentLoadingBoxText = Messages.loadedInterfaces.getString(ClientSettings.langID);
         anInt5 = 150;
         Static247.anInt4590 = 80;
@@ -3099,7 +3099,7 @@ public final class client extends GameShell {
         Static247.anInt4590 = 80;
       }
     } else if (anInt5 == 150) {
-      if (Static197.archive12.method2116()) {
+      if (Static197.archive12.fetchAll()) {
         Static24.currentLoadingBoxText =
             Messages.loadedInterfaceScripts.getString(ClientSettings.langID);
         anInt5 = 160;
@@ -3112,7 +3112,7 @@ public final class client extends GameShell {
         Static247.anInt4590 = 82;
       }
     } else if (anInt5 == 160) {
-      if (Static209.archive13.method2116()) {
+      if (Static209.archive13.fetchAll()) {
         Static24.currentLoadingBoxText =
             Messages.loadingAdditionalFonts.getString(ClientSettings.langID);
         anInt5 = 170;
@@ -3145,23 +3145,10 @@ public final class client extends GameShell {
         Static247.anInt4590 = 87;
       }
     } else if (anInt5 == 180) {
-      int local10 = Static112.method2035();
-      if (local10 == -1) {
-        Static24.currentLoadingBoxText =
-            Messages.loadingWorldListData.getString(ClientSettings.langID);
-        Static247.anInt4590 = 90;
-      } else if (local10 == 7 || local10 == 9) {
-        this.handleGameError("worldlistfull");
-        Static187.method2932(1000);
-      } else if (Static94.aBoolean176) {
-        Static24.currentLoadingBoxText =
-            Messages.loadedWorldListData.getString(ClientSettings.langID);
-        anInt5 = 190;
-        Static247.anInt4590 = 90;
-      } else {
-        this.handleGameError("worldlistio_" + local10);
-        Static187.method2932(1000);
-      }
+      Static24.currentLoadingBoxText =
+          Messages.loadedWorldListData.getString(ClientSettings.langID);
+      anInt5 = 190;
+      Static247.anInt4590 = 90;
     } else if (anInt5 == 190) {
       Static265.aStringArray20 = new String[Static186.aClass197_1.anInt5738];
       Static22.aBooleanArray3 = new boolean[Static43.aClass93_4.anInt2890];

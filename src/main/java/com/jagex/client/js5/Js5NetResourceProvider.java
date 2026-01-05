@@ -108,7 +108,7 @@ public final class Js5NetResourceProvider extends Js5ResourceProvider {
 
   @OriginalMember(owner = "client!lv", name = "b", descriptor = "(B)I")
   public int method3517() {
-    return this.index == null ? 0 : this.index.anInt6109;
+    return this.index == null ? 0 : this.index.size;
   }
 
   @OriginalMember(owner = "client!lv", name = "a", descriptor = "(III)Lclient!ec;")
@@ -413,7 +413,7 @@ public final class Js5NetResourceProvider extends Js5ResourceProvider {
 
       return local25 == null ? 0 : (int) local25.hashKey;
     } else {
-      return this.index.anInt6109;
+      return this.index.size;
     }
   }
 
@@ -436,9 +436,7 @@ public final class Js5NetResourceProvider extends Js5ResourceProvider {
         local23 = this.aLinkedList_30.previous()) {
       int local29 = (int) local23.hashKey;
 
-      if (local29 < 0
-          || local29 >= this.index.anInt6112
-          || this.index.anIntArray428[local29] == 0) {
+      if (local29 < 0 || local29 >= this.index.capacity || this.index.anIntArray428[local29] == 0) {
         local23.popSelf();
       } else {
         if (this.aByteArray56[local29] == 0) {
@@ -572,7 +570,7 @@ public final class Js5NetResourceProvider extends Js5ResourceProvider {
     this.request = null;
 
     if (this.aCache_3 != null) {
-      this.aByteArray56 = new byte[this.index.anInt6112];
+      this.aByteArray56 = new byte[this.index.capacity];
       this.anInt4482 = 0;
     }
 

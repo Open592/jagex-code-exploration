@@ -44,10 +44,10 @@ public final class Class206 {
   public final int anInt5987;
 
   @OriginalMember(owner = "client!ro", name = "D", descriptor = "[Ljava/lang/String;")
-  private final String[] aStringArray31;
+  private final String[] ops;
 
   @OriginalMember(owner = "client!ro", name = "z", descriptor = "[Ljava/lang/String;")
-  private final String[] aStringArray30;
+  private final String[] inventoryOps;
 
   @OriginalMember(
       owner = "client!ro",
@@ -72,11 +72,11 @@ public final class Class206 {
       int local49 = this.aJs5_78.method2100() - 1;
       this.anInt5987 = this.aJs5_78.method2108(local49) + local49 * 256;
     }
-    this.aStringArray31 =
+    this.ops =
         new String[] {
           null, null, Static147.A_LOCALIZED_STRING___57.getString(this.anInt5988), null, null
         };
-    this.aStringArray30 =
+    this.inventoryOps =
         new String[] {
           null, null, null, null, Static374.A_LOCALIZED_STRING___128.getString(this.anInt5988)
         };
@@ -193,55 +193,52 @@ public final class Class206 {
     }
   }
 
-  @OriginalMember(owner = "client!ro", name = "a", descriptor = "(II)Lclient!rv;")
-  public Class211 method4703(@OriginalArg(1) int arg0) {
-    @Pc(8)
+  public Class211 method4703(int arg0) {
     Class68 local8 = this.aClass68_40;
-    @Pc(18)
-    Class211 local18;
+    Class211 object;
+
     synchronized (this.aClass68_40) {
-      local18 = (Class211) this.aClass68_40.method1787((long) arg0);
+      object = (Class211) this.aClass68_40.method1787((long) arg0);
     }
-    if (local18 != null) {
-      return local18;
+
+    if (object != null) {
+      return object;
     }
-    @Pc(41)
+
     byte[] local41 = this.aJs5_78.method2104(Static24.method4082(arg0), Static379.method5009(arg0));
-    local18 = new Class211();
-    local18.anInt6171 = arg0;
-    local18.aClass206_1 = this;
-    local18.aStringArray34 =
+    object = new Class211();
+    object.id = arg0;
+    object.aClass206_1 = this;
+    object.ops =
         new String[] {
           null, null, Static147.A_LOCALIZED_STRING___57.getString(this.anInt5988), null, null
         };
-    local18.aStringArray33 =
+    object.inventoryOps =
         new String[] {
           null, null, null, null, Static374.A_LOCALIZED_STRING___128.getString(this.anInt5988)
         };
     if (local41 != null) {
-      local18.method4790(new Packet(local41));
+      object.method4790(new Packet(local41));
     }
-    local18.method4791();
-    if (local18.anInt6175 != -1) {
-      local18.method4787(this.method4703(local18.anInt6162), this.method4703(local18.anInt6175));
+    object.method4791();
+    if (object.anInt6175 != -1) {
+      object.method4787(this.method4703(object.anInt6162), this.method4703(object.anInt6175));
     }
-    if (local18.anInt6185 != -1) {
-      local18.method4779(this.method4703(local18.anInt6138), this.method4703(local18.anInt6185));
+    if (object.anInt6185 != -1) {
+      object.method4779(this.method4703(object.anInt6138), this.method4703(object.anInt6185));
     }
-    if (!this.aBoolean555 && local18.aBoolean565) {
-      local18.aString61 = Static397.A_LOCALIZED_STRING___21.getString(this.anInt5988);
-      local18.anInt6181 = 0;
-      local18.aStringArray34 = this.aStringArray31;
-      local18.anIntArray435 = null;
-      local18.aBoolean564 = false;
-      local18.aStringArray33 = this.aStringArray30;
-      if (local18.aHashMap_36 != null) {
-        @Pc(200)
+    if (!this.aBoolean555 && object.isMembers) {
+      object.name = Static397.A_LOCALIZED_STRING___21.getString(this.anInt5988);
+      object.anInt6181 = 0;
+      object.ops = this.ops;
+      object.anIntArray435 = null;
+      object.aBoolean564 = false;
+      object.inventoryOps = this.inventoryOps;
+      if (object.aHashMap_36 != null) {
         boolean local200 = false;
-        for (@Pc(205) Node local205 = local18.aHashMap_36.head();
+        for (Node local205 = object.aHashMap_36.head();
             local205 != null;
-            local205 = local18.aHashMap_36.next()) {
-          @Pc(215)
+            local205 = object.aHashMap_36.next()) {
           Class133 local215 = this.aClass180_2.method4121((int) local205.hashKey);
           if (local215.aBoolean385) {
             local205.popSelf();
@@ -250,15 +247,14 @@ public final class Class206 {
           }
         }
         if (!local200) {
-          local18.aHashMap_36 = null;
+          object.aHashMap_36 = null;
         }
       }
     }
-    @Pc(240)
     Class68 local240 = this.aClass68_40;
     synchronized (this.aClass68_40) {
-      this.aClass68_40.method1779((long) arg0, local18);
-      return local18;
+      this.aClass68_40.method1779((long) arg0, object);
+      return object;
     }
   }
 

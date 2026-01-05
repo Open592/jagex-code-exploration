@@ -303,7 +303,7 @@ public final class Static184 {
               if (!Static341.aBoolean599) {
                 if (Static1.aClass16_Sub1_Sub5_Sub1_1.aByte82 == local373.anInt2381) {
                   @Pc(1153)
-                  String[] local1153 = local1081.aStringArray34;
+                  String[] local1153 = local1081.ops;
                   for (local93 = 4; local93 >= 0; local93--) {
                     if (local1153 != null && local1153[local93] != null) {
                       @Pc(1165)
@@ -335,7 +335,7 @@ public final class Static184 {
                           false,
                           (long) local1071.anInt7355,
                           local373.anInt2384,
-                          "<col=ff9040>" + local1081.aString61,
+                          "<col=ff9040>" + local1081.name,
                           true,
                           local1153[local93],
                           local373.anInt2383,
@@ -349,7 +349,7 @@ public final class Static184 {
                     Static1.aClass16_Sub1_Sub5_Sub1_1.aByte82 != local373.anInt2381,
                     (long) local1071.anInt7355,
                     local373.anInt2384,
-                    "<col=ff9040>" + local1081.aString61,
+                    "<col=ff9040>" + local1081.name,
                     true,
                     Static21.A_LOCALIZED_STRING___12.getString(ClientSettings.langID),
                     local373.anInt2383,
@@ -370,7 +370,7 @@ public final class Static184 {
                       false,
                       (long) local1071.anInt7355,
                       local373.anInt2384,
-                      Static49.aString28 + " -> <col=ff9040>" + local1081.aString61,
+                      Static49.aString28 + " -> <col=ff9040>" + local1081.name,
                       true,
                       Static388.aString62,
                       local373.anInt2383,

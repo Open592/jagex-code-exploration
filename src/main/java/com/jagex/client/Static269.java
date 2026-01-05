@@ -20,18 +20,6 @@ public final class Static269 {
     }
   }
 
-  @OriginalMember(owner = "client!no", name = "a", descriptor = "(ZLjava/lang/String;)I")
-  public static int method3854(@OriginalArg(1) String arg0) {
-    @Pc(8)
-    int local8 = arg0.length();
-    @Pc(10)
-    int local10 = 0;
-    for (@Pc(12) int local12 = 0; local12 < local8; local12++) {
-      local10 = Static153.method2605(arg0.charAt(local12)) + (local10 << 5) - local10;
-    }
-    return local10;
-  }
-
   @OriginalMember(owner = "client!no", name = "b", descriptor = "(I)V")
   public static void method3855() {
     if (Static164.aFloat142 < 1024.0F) {

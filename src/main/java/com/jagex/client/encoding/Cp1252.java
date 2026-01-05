@@ -1,12 +1,7 @@
-package com.jagex.client;
+package com.jagex.client.encoding;
 
-import org.openrs2.deob.annotation.OriginalArg;
-import org.openrs2.deob.annotation.OriginalMember;
-import org.openrs2.deob.annotation.Pc;
-
-public final class CP1252StringTools {
+public final class Cp1252 {
   /** Given a code unit offset by 128 return the corresponding CP1252 character. */
-  @OriginalMember(owner = "client!ve", name = "o", descriptor = "[C")
   private static final char[] CP1252_LOOKUP_TABLE =
       new char[] {
         '€', '\u0000', '‚', 'ƒ', '„', '…', '†', '‡', 'ˆ', '‰', 'Š', '‹', 'Œ', '\u0000', 'Ž',
@@ -14,8 +9,7 @@ public final class CP1252StringTools {
         'ž', 'Ÿ'
       };
 
-  @OriginalMember(owner = "client!be", name = "a", descriptor = "(ZC)Z")
-  public static boolean isValidCP1252Character(@OriginalArg(1) char input) {
+  public static boolean isRepresentable(char input) {
     if (input > '\u0000' && input < '\u0080' || !(input < ' ' || input > 'ÿ')) {
       return true;
     }
@@ -31,15 +25,11 @@ public final class CP1252StringTools {
     return false;
   }
 
-  @OriginalMember(owner = "client!oh", name = "a", descriptor = "(Ljava/lang/String;I)[B")
-  public static byte[] UTF8ToCP1252(@OriginalArg(0) String input) {
-    @Pc(8)
+  public static byte[] encode(String input) {
     int length = input.length();
-    @Pc(11)
     byte[] outputBuffer = new byte[length];
 
-    for (@Pc(13) int i = 0; i < length; i++) {
-      @Pc(22)
+    for (int i = 0; i < length; i++) {
       char codeUnit = input.charAt(i);
 
       if (codeUnit > '\u0000' && codeUnit < '\u0080' || !(codeUnit < ' ' || codeUnit > 'ÿ')) {
@@ -105,14 +95,8 @@ public final class CP1252StringTools {
     return outputBuffer;
   }
 
-  @OriginalMember(owner = "client!j", name = "a", descriptor = "(Ljava/lang/String;IIII[B)I")
-  public static int UTF8ToCP1252(
-      @OriginalArg(0) String value,
-      @OriginalArg(2) int length,
-      @OriginalArg(3) int currentPosition,
-      @OriginalArg(5) byte[] buffer) {
-    for (@Pc(12) int i = 0; i < length; i++) {
-      @Pc(20)
+  public static int encode(String value, int length, int currentPosition, byte[] buffer) {
+    for (int i = 0; i < length; i++) {
       char ch = value.charAt(i);
 
       if (ch > '\u0000' && ch < '\u0080' || !(ch < ' ' || ch > 'ÿ')) {
@@ -179,21 +163,15 @@ public final class CP1252StringTools {
     return length;
   }
 
-  @OriginalMember(owner = "client!ut", name = "a", descriptor = "(I[BII)Ljava/lang/String;")
-  public static String CP1252ToUTF8(
-      @OriginalArg(1) byte[] input, @OriginalArg(2) int length, @OriginalArg(3) int offset) {
-    @Pc(8)
+  public static String decode(byte[] input, int length, int offset) {
     char[] resultBuffer = new char[length];
-    @Pc(10)
     int resultLength = 0;
 
-    for (@Pc(12) int i = 0; i < length; i++) {
-      @Pc(22)
+    for (int i = 0; i < length; i++) {
       int codeUnit = input[i + offset] & 0xFF;
 
       if (codeUnit != 0) {
         if (codeUnit >= 128 && codeUnit < 160) {
-          @Pc(38)
           char cp1252CodeUnit = CP1252_LOOKUP_TABLE[codeUnit - 128];
 
           if (cp1252CodeUnit == '\u0000') {
@@ -210,9 +188,7 @@ public final class CP1252StringTools {
     return new String(resultBuffer, 0, resultLength);
   }
 
-  @OriginalMember(owner = "client!ne", name = "a", descriptor = "(IB)C")
-  public static char CP1252ToUTF8(@OriginalArg(1) byte input) {
-    @Pc(7)
+  public static char decodeChar(byte input) {
     int codeUnit = input & 0xFF;
 
     if (codeUnit == 0) {
@@ -221,7 +197,6 @@ public final class CP1252StringTools {
     }
 
     if (codeUnit >= 128 && codeUnit < 160) {
-      @Pc(41)
       char local41 = CP1252_LOOKUP_TABLE[codeUnit - 128];
 
       if (local41 == '\u0000') {
@@ -232,5 +207,79 @@ public final class CP1252StringTools {
     }
 
     return (char) codeUnit;
+  }
+
+  public static byte encodeChar(char input) {
+    byte res;
+    if (input > '\u0000' && input < '\u0080' || input >= ' ' && input <= 'ÿ') {
+      res = (byte) input;
+    } else if (input == '€') {
+      res = -128;
+    } else if (input == '‚') {
+      res = -126;
+    } else if (input == 'ƒ') {
+      res = -125;
+    } else if (input == '„') {
+      res = -124;
+    } else if (input == '…') {
+      res = -123;
+    } else if (input == '†') {
+      res = -122;
+    } else if (input == '‡') {
+      res = -121;
+    } else if (input == 'ˆ') {
+      res = -120;
+    } else if (input == '‰') {
+      res = -119;
+    } else if (input == 'Š') {
+      res = -118;
+    } else if (input == '‹') {
+      res = -117;
+    } else if (input == 'Œ') {
+      res = -116;
+    } else if (input == 'Ž') {
+      res = -114;
+    } else if (input == '‘') {
+      res = -111;
+    } else if (input == '’') {
+      res = -110;
+    } else if (input == '“') {
+      res = -109;
+    } else if (input == '”') {
+      res = -108;
+    } else if (input == '•') {
+      res = -107;
+    } else if (input == '–') {
+      res = -106;
+    } else if (input == '—') {
+      res = -105;
+    } else if (input == '˜') {
+      res = -104;
+    } else if (input == '™') {
+      res = -103;
+    } else if (input == 'š') {
+      res = -102;
+    } else if (input == '›') {
+      res = -101;
+    } else if (input == 'œ') {
+      res = -100;
+    } else if (input == 'ž') {
+      res = -98;
+    } else if (input == 'Ÿ') {
+      res = -97;
+    } else {
+      res = 63;
+    }
+
+    return res;
+  }
+
+  public static int hashCode(String input) {
+    int len = input.length();
+    int res = 0;
+    for (int i = 0; i < len; i++) {
+      res = encodeChar(input.charAt(i)) + (res << 5) - res;
+    }
+    return res;
   }
 }

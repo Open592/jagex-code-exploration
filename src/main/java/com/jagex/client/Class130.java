@@ -31,7 +31,7 @@ public final class Class130 implements Interface8 {
     } else if (Static446.aClass98_18 == arg2 || arg2 == Static340.aClass98_15) {
       @Pc(40)
       Class211 local40 = Static444.aClass206_3.method4703((int) arg0);
-      return local40.aString61;
+      return local40.name;
     } else if (arg2 == Static46.aClass98_11
         || Static370.aClass98_16 == arg2
         || arg2 == Static41.aClass98_3) {

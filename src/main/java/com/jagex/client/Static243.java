@@ -38,7 +38,7 @@ public final class Static243 {
           && local27.anInt6175 == -1
           && local27.anInt6185 == -1
           && local27.anInt6151 == 0
-          && local27.aString61.toLowerCase().indexOf(local11) != -1) {
+          && local27.name.toLowerCase().indexOf(local11) != -1) {
         if (local16 >= 250) {
           Static191.aShortArray66 = null;
           Static406.anInt6702 = -1;
@@ -61,7 +61,7 @@ public final class Static243 {
     @Pc(114)
     String[] local114 = new String[Static406.anInt6702];
     for (@Pc(116) int local116 = 0; local116 < Static406.anInt6702; local116++) {
-      local114[local116] = Static444.aClass206_3.method4703(local14[local116]).aString61;
+      local114[local116] = Static444.aClass206_3.method4703(local14[local116]).name;
     }
     Static67.method1278(local114, Static191.aShortArray66);
     Static391.archive19.method2118();
