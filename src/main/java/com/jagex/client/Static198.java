@@ -8,9 +8,6 @@ public final class Static198 {
   @OriginalMember(owner = "client!jv", name = "v", descriptor = "Lclient!qm;")
   public static Node_Sub39 aClass4_Sub39_1;
 
-  @OriginalMember(owner = "client!jv", name = "S", descriptor = "[I")
-  public static final int[] anIntArray258 = new int[25];
-
   @OriginalMember(owner = "client!jv", name = "Y", descriptor = "Z")
   public static volatile boolean isFocused = true;
 

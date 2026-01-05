@@ -9,13 +9,6 @@ public final class Static117 {
   @OriginalMember(owner = "client!fr", name = "n", descriptor = "Lclient!sb;")
   public static Class212 aClass212_4;
 
-  @OriginalMember(owner = "client!fr", name = "l", descriptor = "[I")
-  public static final int[] anIntArray167 =
-      new int[] {
-        99, 99, 99, 99, 99, 99, 99, 99, 99, 99, 99, 99, 99, 99, 99, 99, 99, 99, 99, 99, 99, 99, 99,
-        99, 99
-      };
-
   @OriginalMember(owner = "client!fr", name = "o", descriptor = "Ljava/lang/String;")
   public static String aString29 = "";
 

@@ -37,6 +37,29 @@ public final class Js5 {
     this.resourceProvider = resourceProvider;
   }
 
+  public static Js5 create(boolean arg0, int archiveIndex, boolean arg2) {
+    Cache cache = null;
+
+    if (Static88.cacheDataFile != null) {
+      cache =
+          new Cache(
+              archiveIndex,
+              Static88.cacheDataFile,
+              Static86.cacheIndexFiles[archiveIndex],
+              1000000);
+    }
+
+    Static119.archiveDataResourceProviders[archiveIndex] =
+        client.masterIndexProvider.getArchiveDataResourceProvider(
+            Static225.aCache_2, cache, archiveIndex);
+
+    if (arg2) {
+      Static119.archiveDataResourceProviders[archiveIndex].method3526();
+    }
+
+    return new Js5(Static119.archiveDataResourceProviders[archiveIndex], arg0, 1);
+  }
+
   @OriginalMember(owner = "client!fs", name = "a", descriptor = "(Z)Z")
   private boolean isIndexAvailable() {
     if (this.index == null) {

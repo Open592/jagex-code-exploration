@@ -1305,7 +1305,7 @@ public final class Static271 {
                   }
                   if (arg0 == 3306) {
                     local13 = anIntArray330[--anInt5095];
-                    anIntArray330[anInt5095++] = Static198.anIntArray258[local13];
+                    anIntArray330[anInt5095++] = Skills.levels[local13];
                     return;
                   }
                   if (arg0 == 3307) {

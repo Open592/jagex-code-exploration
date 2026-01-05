@@ -20,7 +20,7 @@ public final class Static165 {
   @OriginalMember(owner = "client!ij", name = "e", descriptor = "(B)V")
   public static void method2731() {
     if (Static95.anInt1910 > 0) {
-      Static251.method3639();
+      Static251.logout();
     } else {
       Static169.aServerConnection_6 = Static125.aServerConnection_5;
       Static125.aServerConnection_5 = null;

@@ -109,7 +109,7 @@ public final class Static325 {
       return;
     }
     @Pc(34)
-    String local34 = local16.aString70;
+    String local34 = local16.name;
     if (local16.lb != 0) {
       @Pc(50)
       String local50 =
@@ -127,7 +127,7 @@ public final class Static325 {
     if (!Static341.aBoolean599) {
       if (!arg0) {
         @Pc(84)
-        String[] local84 = local16.aStringArray41;
+        String[] local84 = local16.ops;
         if (Static420.aBoolean646) {
           local84 = Static124.method2247(local84);
         }

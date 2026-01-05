@@ -1719,30 +1719,6 @@ public final class client extends GameShell {
     return aFrameTimer_1.method2252();
   }
 
-  @OriginalMember(owner = "client!nj", name = "a", descriptor = "(ZIZII)Lclient!fs;")
-  public static Js5 loadArchive(boolean arg0, int archiveIndex, boolean arg2) {
-    Cache local5 = null;
-
-    if (Static88.cacheDataFile != null) {
-      local5 =
-          new Cache(
-              archiveIndex,
-              Static88.cacheDataFile,
-              Static86.cacheIndexFiles[archiveIndex],
-              1000000);
-    }
-
-    Static119.archiveDataResourceProviders[archiveIndex] =
-        masterIndexProvider.getArchiveDataResourceProvider(
-            Static225.aCache_2, local5, archiveIndex);
-
-    if (arg2) {
-      Static119.archiveDataResourceProviders[archiveIndex].method3526();
-    }
-
-    return new Js5(Static119.archiveDataResourceProviders[archiveIndex], arg0, 1);
-  }
-
   @OriginalMember(owner = "client!client", name = "i", descriptor = "(I)V")
   private void js5connect() {
     if (js5NetQueue.connectionFailures > previousJS5ConnectionAttepts) {
@@ -2423,7 +2399,7 @@ public final class client extends GameShell {
     } else if (Static403.anInt6667 == 40) {
       method5430();
       if (Static296.anInt5302 != -3 && Static296.anInt5302 != 2 && Static296.anInt5302 != 15) {
-        Static251.method3639();
+        Static251.logout();
       }
     }
     Static79.method1400(Static122.aClass19_16);
@@ -2769,36 +2745,36 @@ public final class client extends GameShell {
         masterIndexProvider = new Js5MasterIndexProvider(js5NetQueue, aJs5DiskCache_3);
       }
       if (masterIndexProvider.isReady()) {
-        Static395.archive0 = loadArchive(false, 0, true);
-        Static324.archive1 = loadArchive(false, 1, true);
-        Static74.archive2 = loadArchive(false, 2, true);
-        Static256.archive3 = loadArchive(false, 3, true);
-        Static67.archive4 = loadArchive(false, 4, true);
-        Static49.archive5 = loadArchive(true, 5, true);
-        Static46.archive6 = loadArchive(true, 6, false);
-        Static357.archive7 = loadArchive(false, 7, true);
-        Static293.archive8 = loadArchive(false, 8, true);
-        Static196.archive9 = loadArchive(false, 9, true);
-        Static88.archive10 = loadArchive(false, 10, true);
-        Static284.archive11 = loadArchive(false, 11, true);
-        Static197.archive12 = loadArchive(false, 12, true);
-        Static209.archive13 = loadArchive(false, 13, true);
-        Static312.archive14 = loadArchive(false, 14, false);
-        Static350.archive15 = loadArchive(false, 15, true);
-        Static424.archive16 = loadArchive(false, 16, true);
-        Static208.archive17 = loadArchive(false, 17, true);
-        Static381.archive18 = loadArchive(false, 18, true);
-        Static391.archive19 = loadArchive(false, 19, true);
-        Static388.archive20 = loadArchive(false, 20, true);
-        Static55.archive21 = loadArchive(false, 21, true);
-        Static64.archive22 = loadArchive(false, 22, true);
-        Static163.archive23 = loadArchive(true, 23, true);
-        Static66.archive24 = loadArchive(false, 24, true);
-        Static154.archive25 = loadArchive(false, 25, true);
-        Static24.archive26 = loadArchive(true, 26, true);
-        Static417.archive27 = loadArchive(false, 27, true);
-        Static19.archive28 = loadArchive(true, 28, true);
-        Static366.archive29 = loadArchive(false, 29, true);
+        Static395.archive0 = Js5.create(false, 0, true);
+        Static324.archive1 = Js5.create(false, 1, true);
+        Static74.archive2 = Js5.create(false, 2, true);
+        Static256.archive3 = Js5.create(false, 3, true);
+        Static67.archive4 = Js5.create(false, 4, true);
+        Static49.archive5 = Js5.create(true, 5, true);
+        Static46.archive6 = Js5.create(true, 6, false);
+        Static357.archive7 = Js5.create(false, 7, true);
+        Static293.archive8 = Js5.create(false, 8, true);
+        Static196.archive9 = Js5.create(false, 9, true);
+        Static88.archive10 = Js5.create(false, 10, true);
+        Static284.archive11 = Js5.create(false, 11, true);
+        Static197.archive12 = Js5.create(false, 12, true);
+        Static209.archive13 = Js5.create(false, 13, true);
+        Static312.archive14 = Js5.create(false, 14, false);
+        Static350.archive15 = Js5.create(false, 15, true);
+        Static424.archive16 = Js5.create(false, 16, true);
+        Static208.archive17 = Js5.create(false, 17, true);
+        Static381.archive18 = Js5.create(false, 18, true);
+        Static391.archive19 = Js5.create(false, 19, true);
+        Static388.archive20 = Js5.create(false, 20, true);
+        Static55.archive21 = Js5.create(false, 21, true);
+        Static64.archive22 = Js5.create(false, 22, true);
+        Static163.archive23 = Js5.create(true, 23, true);
+        Static66.archive24 = Js5.create(false, 24, true);
+        Static154.archive25 = Js5.create(false, 25, true);
+        Static24.archive26 = Js5.create(true, 26, true);
+        Static417.archive27 = Js5.create(false, 27, true);
+        Static19.archive28 = Js5.create(true, 28, true);
+        Static366.archive29 = Js5.create(false, 29, true);
         Static24.currentLoadingBoxText =
             Messages.connectedToUpdateServer.getString(ClientSettings.langID);
         Static247.anInt4590 = 15;

@@ -28,15 +28,14 @@ public final class Static251 {
     }
   }
 
-  @OriginalMember(owner = "client!mp", name = "a", descriptor = "(I)V")
-  public static void method3639() {
+  public static void logout() {
     if (Static125.aServerConnection_5 != null) {
       Static125.aServerConnection_5.shutdown();
       Static125.aServerConnection_5 = null;
     }
     Static409.method5485();
     Static85.method1541();
-    for (@Pc(17) int local17 = 0; local17 < 4; local17++) {
+    for (int local17 = 0; local17 < 4; local17++) {
       Static175.aClass213Array1[local17].method4851();
     }
     Static33.method633(false);
@@ -50,15 +49,15 @@ public final class Static251 {
     Static169.anInt3265 = 0;
     Static180.anInt3453 = 0;
     Static86.anInt1771 = 0;
-    for (@Pc(64) int local64 = 0; local64 < Static306.aClass38Array1.length; local64++) {
+    for (int local64 = 0; local64 < Static306.aClass38Array1.length; local64++) {
       Static306.aClass38Array1[local64] = null;
     }
     Static106.method1983();
-    for (@Pc(83) int local83 = 0; local83 < 2048; local83++) {
+    for (int local83 = 0; local83 < 2048; local83++) {
       Static267.aClass16_Sub1_Sub5_Sub1Array1[local83] = null;
     }
     Static12.anInt163 = 0;
-    for (@Pc(97) int local97 = 0; local97 < 32768; local97++) {
+    for (int local97 = 0; local97 < 32768; local97++) {
       Static143.aClass16_Sub1_Sub5_Sub2Array1[local97] = null;
     }
     Static440.aHashMap_40.clear();
@@ -70,9 +69,7 @@ public final class Static251 {
     Static374.method4994(true);
     try {
       Static458.callJavaScriptMethod(GameShell.signLink.hostApplet, "loggedout");
-    } catch (
-        @Pc(136)
-        Throwable local136) {
+    } catch (Throwable ignored) {
     }
     Static178.aClass4_Sub42_2 = null;
     Static419.aLong212 = 0L;

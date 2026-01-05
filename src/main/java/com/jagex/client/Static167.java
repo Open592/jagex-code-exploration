@@ -115,7 +115,7 @@ public final class Static167 {
     }
     for (@Pc(5878) int local5878 = 0; local5878 < 25; local5878++) {
       Static395.anIntArray502[local5878] = 0;
-      Static198.anIntArray258[local5878] = 0;
+      Skills.levels[local5878] = 0;
       Static160.anIntArray207[local5878] = 0;
     }
     Static222.method3355();

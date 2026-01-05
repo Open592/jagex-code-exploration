@@ -153,7 +153,7 @@ public final class Protocol {
       }
 
       Static94.handleClientError(local19, local77);
-      Static251.method3639();
+      Static251.logout();
 
       return true;
     }
@@ -447,7 +447,7 @@ public final class Protocol {
           currentOpcode = null;
           return true;
         } else if (A_OP_CODE___98 == currentOpcode) {
-          Static251.method3639();
+          Static251.logout();
           currentOpcode = null;
           return false;
         } else if (A_OP_CODE___218 == currentOpcode) {
@@ -466,11 +466,11 @@ public final class Protocol {
           local335 = Static146.aClass4_Sub12_Sub1_3.g1_alt3();
           Static160.anIntArray207[opcodeIndex] = local327;
           Static395.anIntArray502[opcodeIndex] = local335;
-          Static198.anIntArray258[opcodeIndex] = 1;
-          local224 = Static117.anIntArray167[opcodeIndex] - 1;
+          Skills.levels[opcodeIndex] = 1;
+          local224 = Skills.MAX_LEVEL_FOR_SKILL[opcodeIndex] - 1;
           for (local228 = 0; local228 < local224; local228++) {
-            if (local327 >= Class126.anIntArray260[local228]) {
-              Static198.anIntArray258[opcodeIndex] = local228 + 2;
+            if (local327 >= Skills.LEVEL_TO_XP_TABLE[local228]) {
+              Skills.levels[opcodeIndex] = local228 + 2;
             }
           }
           Static39.anIntArray40[Static346.anInt5948++ & 0x1F] = opcodeIndex;
@@ -2171,7 +2171,7 @@ public final class Protocol {
                                       : Static316.aOpCode_257.method527())
                                   + " - "
                                   + Static454.anInt4075);
-                          Static251.method3639();
+                          Static251.logout();
                           return true;
                         }
                       }
@@ -2657,7 +2657,7 @@ public final class Protocol {
         }
       } else {
         Static94.handleClientError(null, "T3 - " + arg0);
-        Static251.method3639();
+        Static251.logout();
       }
     }
   }
