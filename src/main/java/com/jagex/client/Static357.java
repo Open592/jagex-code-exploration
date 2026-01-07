@@ -17,11 +17,11 @@ public final class Static357 {
     @Pc(5)
     Class68 local5 = Static442.aClass68_58;
     synchronized (Static442.aClass68_58) {
-      Static442.aClass68_58.method1777();
+      Static442.aClass68_58.clear();
     }
     local5 = Static190.aClass68_20;
     synchronized (Static190.aClass68_20) {
-      Static190.aClass68_20.method1777();
+      Static190.aClass68_20.clear();
     }
   }
 }

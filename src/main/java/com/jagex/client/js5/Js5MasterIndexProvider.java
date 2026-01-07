@@ -9,7 +9,7 @@ import org.openrs2.deob.annotation.OriginalMember;
 public final class Js5MasterIndexProvider {
 
   @OriginalMember(owner = "client!nj", name = "g", descriptor = "[Lclient!lv;")
-  private Js5NetResourceProvider[] masterIndexArchiveData;
+  private Js5CachedResourceProvider[] masterIndexArchiveData;
 
   @OriginalMember(owner = "client!nj", name = "k", descriptor = "Lclient!iv;")
   private Packet masterIndexResponsePacket;
@@ -53,7 +53,7 @@ public final class Js5MasterIndexProvider {
     } else {
       this.masterIndexResponsePacket = new Packet(this.masterIndexRequest.getResponseData());
       this.masterIndexArchiveData =
-          new Js5NetResourceProvider[(this.masterIndexResponsePacket.data.length - 5) / 8];
+          new Js5CachedResourceProvider[(this.masterIndexResponsePacket.data.length - 5) / 8];
 
       return true;
     }
@@ -63,7 +63,7 @@ public final class Js5MasterIndexProvider {
       owner = "client!nj",
       name = "a",
       descriptor = "(Lclient!st;Lclient!st;II)Lclient!lv;")
-  public Js5NetResourceProvider getArchiveDataResourceProvider(
+  public Js5CachedResourceProvider getArchiveDataResourceProvider(
       @OriginalArg(0) Cache arg0, @OriginalArg(1) Cache arg1, @OriginalArg(3) int archive) {
     return this.getArchiveDataResourceProvider(arg1, archive, arg0);
   }
@@ -74,13 +74,13 @@ public final class Js5MasterIndexProvider {
       return;
     }
 
-    for (Js5NetResourceProvider class143_sub1 : this.masterIndexArchiveData) {
+    for (Js5CachedResourceProvider class143_sub1 : this.masterIndexArchiveData) {
       if (class143_sub1 != null) {
         class143_sub1.method3522();
       }
     }
 
-    for (Js5NetResourceProvider class143Sub1 : this.masterIndexArchiveData) {
+    for (Js5CachedResourceProvider class143Sub1 : this.masterIndexArchiveData) {
       if (class143Sub1 != null) {
         class143Sub1.method3520();
       }
@@ -91,7 +91,7 @@ public final class Js5MasterIndexProvider {
       owner = "client!nj",
       name = "a",
       descriptor = "(Lclient!st;ZBILclient!st;)Lclient!lv;")
-  private Js5NetResourceProvider getArchiveDataResourceProvider(
+  private Js5CachedResourceProvider getArchiveDataResourceProvider(
       Cache arg0, int archive, Cache arg2) {
     if (this.masterIndexResponsePacket == null) {
       throw new RuntimeException();
@@ -104,8 +104,8 @@ public final class Js5MasterIndexProvider {
     } else if (this.masterIndexArchiveData[archive] == null) {
       int checksum = this.masterIndexResponsePacket.g4();
       int version = this.masterIndexResponsePacket.g4();
-      Js5NetResourceProvider resourceProvider =
-          new Js5NetResourceProvider(
+      Js5CachedResourceProvider resourceProvider =
+          new Js5CachedResourceProvider(
               archive, arg0, arg2, this.netQueue, this.diskQueue, checksum, version, true);
 
       this.masterIndexArchiveData[archive] = resourceProvider;

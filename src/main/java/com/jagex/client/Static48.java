@@ -11,7 +11,7 @@ public final class Static48 {
 
   @OriginalMember(owner = "client!cf", name = "f", descriptor = "(I)V")
   public static void method789() {
-    Static172.aClass68_18.method1777();
+    Static172.aClass68_18.clear();
   }
 
   @OriginalMember(owner = "client!cf", name = "a", descriptor = "(II[Lclient!uu;)V")

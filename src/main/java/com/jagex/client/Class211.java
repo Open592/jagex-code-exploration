@@ -79,7 +79,7 @@ public final class Class211 {
   public int anInt6135 = 0;
 
   @OriginalMember(owner = "client!rv", name = "q", descriptor = "Z")
-  public boolean aBoolean564 = false;
+  public boolean isTradeable = false;
 
   @OriginalMember(owner = "client!rv", name = "I", descriptor = "I")
   private int anInt6145 = 0;
@@ -652,7 +652,7 @@ public final class Class211 {
           this.aByteArray85[local157] = arg1.g1s();
         }
       } else if (arg0 == 65) {
-        this.aBoolean564 = true;
+        this.isTradeable = true;
       } else if (arg0 == 78) {
         this.anInt6170 = arg1.g2();
       } else if (arg0 == 79) {

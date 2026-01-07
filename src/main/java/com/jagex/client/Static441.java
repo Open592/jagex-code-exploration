@@ -142,10 +142,10 @@ public final class Static441 {
 
   @OriginalMember(owner = "client!wg", name = "a", descriptor = "(B)V")
   public static void method5571() {
-    Static259.aClass68_26.method1777();
-    Static232.aClass68_25.method1777();
-    Static384.aClass68_47.method1777();
-    Static52.aClass68_4.method1777();
-    Static158.aClass68_16.method1777();
+    Static259.aClass68_26.clear();
+    Static232.aClass68_25.clear();
+    Static384.aClass68_47.clear();
+    Static52.aClass68_4.clear();
+    Static158.aClass68_16.clear();
   }
 }

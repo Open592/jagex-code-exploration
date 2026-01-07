@@ -32,7 +32,7 @@ public final class Static146 {
 
   @OriginalMember(owner = "client!hh", name = "a", descriptor = "(I)V")
   public static void method210() {
-    Static406.aClass68_51.method1777();
+    Static406.aClass68_51.clear();
   }
 
   @OriginalMember(owner = "client!hh", name = "a", descriptor = "([Ljava/lang/Object;[IZ)V")

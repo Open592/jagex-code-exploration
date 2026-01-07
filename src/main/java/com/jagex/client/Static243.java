@@ -34,7 +34,7 @@ public final class Static243 {
     for (@Pc(18) int local18 = 0; local18 < Static444.aClass206_3.anInt5987; local18++) {
       @Pc(27)
       Class211 local27 = Static444.aClass206_3.method4703(local18);
-      if ((!arg1 || local27.aBoolean564)
+      if ((!arg1 || local27.isTradeable)
           && local27.anInt6175 == -1
           && local27.anInt6185 == -1
           && local27.anInt6151 == 0

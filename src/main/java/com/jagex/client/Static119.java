@@ -1,6 +1,6 @@
 package com.jagex.client;
 
-import com.jagex.client.js5.Js5NetResourceProvider;
+import com.jagex.client.js5.Js5CachedResourceProvider;
 import com.jagex.client.preferences.ClientPreferences;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalMember;
@@ -18,8 +18,8 @@ public final class Static119 {
   public static int anInt2524 = 0;
 
   @OriginalMember(owner = "client!ft", name = "I", descriptor = "[Lclient!lv;")
-  public static final Js5NetResourceProvider[] archiveDataResourceProviders =
-      new Js5NetResourceProvider[30];
+  public static final Js5CachedResourceProvider[] archiveDataResourceProviders =
+      new Js5CachedResourceProvider[30];
 
   @OriginalMember(owner = "client!ft", name = "O", descriptor = "I")
   public static int anInt2527 = 0;

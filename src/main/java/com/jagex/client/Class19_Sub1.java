@@ -2081,7 +2081,7 @@ public final class Class19_Sub1 extends Class19 {
   @OriginalMember(owner = "client!bc", name = "D", descriptor = "()V")
   @Override
   public void method4311() {
-    this.aClass68_2.method1777();
+    this.aClass68_2.clear();
   }
 
   @OriginalMember(owner = "client!bc", name = "OA", descriptor = "(IIII)V")
@@ -2315,7 +2315,7 @@ public final class Class19_Sub1 extends Class19 {
   @Override
   public void method4237(@OriginalArg(0) boolean arg0) {
     this.aBoolean45 = arg0;
-    this.aClass68_2.method1777();
+    this.aClass68_2.clear();
   }
 
   @OriginalMember(owner = "client!bc", name = "a", descriptor = "(II[[I[[IIII)Lclient!ta;")

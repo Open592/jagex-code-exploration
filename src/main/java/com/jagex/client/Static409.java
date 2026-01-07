@@ -105,7 +105,7 @@ public final class Static409 {
     Static91.method985();
     Static174.method2817();
     Static451.method5011();
-    Static271.aClass68_29.method1777();
+    Static271.aClass68_29.clear();
     Static122.aClass19_16.method4311();
     Static48.aClass142_1.method3484();
     Static103.method1813();
@@ -139,10 +139,10 @@ public final class Static409 {
     Static417.archive27.method2118();
     Static19.archive28.method2118();
     Static366.archive29.method2118();
-    Static261.aClass68_27.method1777();
-    Static200.aClass68_22.method1777();
-    Static386.aClass68_23.method1777();
-    Static105.aClass68_9.method1777();
+    Static261.aClass68_27.clear();
+    Static200.aClass68_22.clear();
+    Static386.aClass68_23.clear();
+    Static105.aClass68_9.clear();
   }
 
   @OriginalMember(owner = "client!up", name = "a", descriptor = "(Lclient!cw;II)Z")

@@ -232,7 +232,7 @@ public final class Class206 {
       object.anInt6181 = 0;
       object.ops = this.ops;
       object.anIntArray435 = null;
-      object.aBoolean564 = false;
+      object.isTradeable = false;
       object.inventoryOps = this.inventoryOps;
       if (object.aHashMap_36 != null) {
         boolean local200 = false;
@@ -289,11 +289,11 @@ public final class Class206 {
     @Pc(2)
     Class68 local2 = this.aClass68_40;
     synchronized (this.aClass68_40) {
-      this.aClass68_40.method1777();
+      this.aClass68_40.clear();
     }
     local2 = this.aClass68_41;
     synchronized (this.aClass68_41) {
-      this.aClass68_41.method1777();
+      this.aClass68_41.clear();
     }
     @Pc(42)
     Class220 local42 = this.aClass220_1;
@@ -307,7 +307,7 @@ public final class Class206 {
     @Pc(2)
     Class68 local2 = this.aClass68_41;
     synchronized (this.aClass68_41) {
-      this.aClass68_41.method1777();
+      this.aClass68_41.clear();
     }
   }
 
@@ -317,7 +317,7 @@ public final class Class206 {
     @Pc(13)
     Class68 local13 = this.aClass68_41;
     synchronized (this.aClass68_41) {
-      this.aClass68_41.method1777();
+      this.aClass68_41.clear();
     }
   }
 }

@@ -361,6 +361,6 @@ public final class Static6 {
   @OriginalMember(owner = "client!ae", name = "b", descriptor = "(II)V")
   public static void method51(@OriginalArg(0) int arg0) {
     Static259.anInt4879 = arg0;
-    Static232.aClass68_25.method1777();
+    Static232.aClass68_25.clear();
   }
 }

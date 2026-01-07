@@ -96,6 +96,6 @@ public final class Class59 {
 
   @OriginalMember(owner = "client!ee", name = "a", descriptor = "(I)V")
   public void method1550() {
-    this.aClass68_7.method1777();
+    this.aClass68_7.clear();
   }
 }

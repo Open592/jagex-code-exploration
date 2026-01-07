@@ -47,7 +47,7 @@ public final class Class194 {
     @Pc(9)
     Class68 local9 = this.aClass68_37;
     synchronized (this.aClass68_37) {
-      this.aClass68_37.method1777();
+      this.aClass68_37.clear();
     }
   }
 
@@ -111,11 +111,11 @@ public final class Class194 {
     @Pc(6)
     Class68 local6 = this.aClass68_36;
     synchronized (this.aClass68_36) {
-      this.aClass68_36.method1777();
+      this.aClass68_36.clear();
     }
     local6 = this.aClass68_37;
     synchronized (this.aClass68_37) {
-      this.aClass68_37.method1777();
+      this.aClass68_37.clear();
     }
   }
 }

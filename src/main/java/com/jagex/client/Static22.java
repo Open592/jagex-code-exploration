@@ -221,7 +221,7 @@ public final class Static22 {
   @OriginalMember(owner = "client!av", name = "a", descriptor = "(II)V")
   public static void method296(@OriginalArg(1) int arg0) {
     Static349.anInt5986 = arg0;
-    Static172.aClass68_18.method1777();
+    Static172.aClass68_18.clear();
   }
 
   @OriginalMember(

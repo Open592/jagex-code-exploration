@@ -16,7 +16,7 @@ public final class Static91 {
     @Pc(6)
     Class68 local6 = Static221.aClass68_24;
     synchronized (Static221.aClass68_24) {
-      Static221.aClass68_24.method1777();
+      Static221.aClass68_24.clear();
     }
   }
 }

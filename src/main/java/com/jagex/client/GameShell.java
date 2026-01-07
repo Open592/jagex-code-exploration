@@ -289,7 +289,7 @@ public abstract class GameShell extends Applet implements Runnable, FocusListene
   @OriginalMember(owner = "client!o", name = "a", descriptor = "(IB)V")
   public static void method889(@OriginalArg(0) int arg0) {
     Static314.anInt5475 = arg0;
-    Static182.aClass68_19.method1777();
+    Static182.aClass68_19.clear();
   }
 
   @OriginalMember(owner = "client!mg", name = "a", descriptor = "(IIIIIIII)V")

@@ -54,7 +54,7 @@ public final class Js5 {
             Static225.aCache_2, cache, archiveIndex);
 
     if (arg2) {
-      Static119.archiveDataResourceProviders[archiveIndex].method3526();
+      Static119.archiveDataResourceProviders[archiveIndex].prefetchAll();
     }
 
     return new Js5(Static119.archiveDataResourceProviders[archiveIndex], arg0, 1);

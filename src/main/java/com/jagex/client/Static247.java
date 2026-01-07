@@ -29,7 +29,7 @@ public final class Static247 {
 
   @OriginalMember(owner = "client!ml", name = "e", descriptor = "(I)V")
   public static void method3609() {
-    Static182.aClass68_19.method1777();
+    Static182.aClass68_19.clear();
   }
 
   @OriginalMember(owner = "client!ml", name = "a", descriptor = "(ILclient!qm;IZ)V")

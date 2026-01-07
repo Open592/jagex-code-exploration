@@ -31,7 +31,7 @@ public final class Class68 {
   }
 
   @OriginalMember(owner = "client!fa", name = "a", descriptor = "(Z)V")
-  public void method1777() {
+  public void clear() {
     this.aSecondaryLinkedList_2.clear();
     this.aHashMap_10.clear();
     this.anInt2034 = this.anInt2029;

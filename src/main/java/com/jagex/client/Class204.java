@@ -28,7 +28,7 @@ public final class Class204 {
     @Pc(6)
     Class68 local6 = this.aClass68_39;
     synchronized (this.aClass68_39) {
-      this.aClass68_39.method1777();
+      this.aClass68_39.clear();
     }
   }
 

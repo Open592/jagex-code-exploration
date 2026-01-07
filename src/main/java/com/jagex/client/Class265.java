@@ -41,11 +41,11 @@ public final class Class265 {
     @Pc(2)
     Class68 local2 = this.aClass68_59;
     synchronized (this.aClass68_59) {
-      this.aClass68_59.method1777();
+      this.aClass68_59.clear();
     }
     local2 = this.aClass68_60;
     synchronized (this.aClass68_60) {
-      this.aClass68_60.method1777();
+      this.aClass68_60.clear();
     }
   }
 

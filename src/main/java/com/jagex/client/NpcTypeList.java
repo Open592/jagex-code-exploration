@@ -82,11 +82,11 @@ public final class Class240 {
     @Pc(6)
     Class68 local6 = this.aClass68_49;
     synchronized (this.aClass68_49) {
-      this.aClass68_49.method1777();
+      this.aClass68_49.clear();
     }
     local6 = this.aClass68_50;
     synchronized (this.aClass68_50) {
-      this.aClass68_50.method1777();
+      this.aClass68_50.clear();
     }
   }
 
@@ -96,11 +96,11 @@ public final class Class240 {
     @Pc(9)
     Class68 local9 = this.aClass68_49;
     synchronized (this.aClass68_49) {
-      this.aClass68_49.method1777();
+      this.aClass68_49.clear();
     }
     local9 = this.aClass68_50;
     synchronized (this.aClass68_50) {
-      this.aClass68_50.method1777();
+      this.aClass68_50.clear();
     }
   }
 
@@ -109,15 +109,15 @@ public final class Class240 {
     @Pc(6)
     Class68 local6 = this.aClass68_48;
     synchronized (this.aClass68_48) {
-      this.aClass68_48.method1777();
+      this.aClass68_48.clear();
     }
     local6 = this.aClass68_49;
     synchronized (this.aClass68_49) {
-      this.aClass68_49.method1777();
+      this.aClass68_49.clear();
     }
     local6 = this.aClass68_50;
     synchronized (this.aClass68_50) {
-      this.aClass68_50.method1777();
+      this.aClass68_50.clear();
     }
   }
 

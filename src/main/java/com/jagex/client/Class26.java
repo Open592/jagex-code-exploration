@@ -32,7 +32,7 @@ public final class Class26 {
     @Pc(6)
     Class68 local6 = this.aClass68_3;
     synchronized (this.aClass68_3) {
-      this.aClass68_3.method1777();
+      this.aClass68_3.clear();
     }
   }
 
@@ -50,7 +50,7 @@ public final class Class26 {
     @Pc(6)
     Class68 local6 = this.aClass68_3;
     synchronized (this.aClass68_3) {
-      this.aClass68_3.method1777();
+      this.aClass68_3.clear();
       this.aClass68_3 = new Class68(arg0);
     }
   }

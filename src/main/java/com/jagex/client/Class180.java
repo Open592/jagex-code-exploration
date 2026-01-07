@@ -30,7 +30,7 @@ public final class Class180 {
     @Pc(14)
     Class68 local14 = this.aClass68_32;
     synchronized (this.aClass68_32) {
-      this.aClass68_32.method1777();
+      this.aClass68_32.clear();
     }
   }
 

@@ -10,7 +10,7 @@ public final class Static174 {
 
   @OriginalMember(owner = "client!is", name = "b", descriptor = "(I)V")
   public static void method2817() {
-    Static356.aClass68_43.method1777();
+    Static356.aClass68_43.clear();
   }
 
   @OriginalMember(owner = "client!is", name = "a", descriptor = "(BI)I")
