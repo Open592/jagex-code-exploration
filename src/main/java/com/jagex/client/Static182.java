@@ -23,7 +23,8 @@ public final class Static182 {
   @OriginalMember(owner = "client!jd", name = "e", descriptor = "(B)Lclient!wa;")
   public static Class174 method2891() {
     try {
-      return (Class174) Class.forName("Class174_Sub1").getDeclaredConstructor().newInstance();
+      return (Class174)
+          Class.forName("com.jagex.client.Class174_Sub1").getDeclaredConstructor().newInstance();
     } catch (
         @Pc(14)
         Throwable local14) {

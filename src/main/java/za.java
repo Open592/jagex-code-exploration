@@ -1,5 +1,4 @@
-package com.jagex.client;
-
+import com.jagex.client.*;
 import java.awt.Canvas;
 import java.awt.Dimension;
 import org.openrs2.deob.annotation.OriginalArg;

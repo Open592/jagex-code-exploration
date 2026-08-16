@@ -153,7 +153,7 @@ public final class Static164 {
   public static Node_Sub22 method3584(@OriginalArg(0) Canvas arg0) {
     try {
       @Pc(6)
-      Class local6 = Class.forName("Class4_Sub22_Sub1");
+      Class local6 = Class.forName("com.jagex.client.Node_Sub22_Sub1");
       @Pc(10)
       Node_Sub22 local10 = (Node_Sub22) local6.getDeclaredConstructor().newInstance();
       local10.method4606(arg0);

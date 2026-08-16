@@ -31,7 +31,10 @@ public final class Static380 {
     try {
       @Pc(49)
       Class49 local49 =
-          (Class49) Class.forName("Class49_Sub1").getDeclaredConstructor().newInstance();
+          (Class49)
+              Class.forName("com.jagex.client.Class49_Sub1")
+                  .getDeclaredConstructor()
+                  .newInstance();
       local49.anInt2446 = arg2;
       local49.anIntArray162 = new int[(Static422.aBoolean649 ? 2 : 1) * 256];
       local49.method2066(arg3);

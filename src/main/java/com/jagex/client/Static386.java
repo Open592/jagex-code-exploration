@@ -3,6 +3,7 @@ package com.jagex.client;
 import com.jagex.client.locale.LocalizedString;
 import com.jagex.signlink.SignLink;
 import java.awt.Canvas;
+import java.lang.reflect.InvocationTargetException;
 import org.openrs2.deob.annotation.OriginalArg;
 import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;
@@ -59,7 +60,23 @@ public final class Static386 {
       @OriginalArg(2) int arg1,
       @OriginalArg(3) SignLink arg2,
       @OriginalArg(4) Interface7 arg3) {
-    return new qa(arg1, arg0, arg3, arg2);
+    // Originally `new qa(...)`: qa lives in the default package (sw3d.dll
+    // binds its JNI symbols there), which named packages can only reach
+    // through reflection.
+    try {
+      return (Class19)
+          Class.forName("qa")
+              .getDeclaredConstructor(
+                  Integer.TYPE, Canvas.class, Interface7.class, SignLink.class)
+              .newInstance(arg1, arg0, arg3, arg2);
+    } catch (InvocationTargetException exception) {
+      if (exception.getCause() instanceof RuntimeException) {
+        throw (RuntimeException) exception.getCause();
+      }
+      throw new RuntimeException(exception);
+    } catch (ReflectiveOperationException exception) {
+      throw new RuntimeException(exception);
+    }
   }
 
   @OriginalMember(owner = "client!tm", name = "a", descriptor = "(ILclient!iv;)Lclient!ob;")

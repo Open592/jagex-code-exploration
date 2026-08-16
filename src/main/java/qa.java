@@ -1,5 +1,4 @@
-package com.jagex.client;
-
+import com.jagex.client.*;
 import com.jagex.client.ds.LinkedList;
 import com.jagex.client.utilities.ThreadingUtilities;
 import com.jagex.signlink.SignLink;
@@ -12,6 +11,10 @@ import org.openrs2.deob.annotation.OriginalClass;
 import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;
 
+// The sw3d family (da ha i ia k ka n na p qa ra s sa za) must stay in the
+// default package under these exact names: sw3d.dll statically exports its
+// JNI symbols as Java_<class>_<method> with no package prefix, and resolves
+// this class at runtime with FindClass("qa").
 @OriginalClass("client!qa")
 public final class qa extends Class19 implements Interface4 {
 
@@ -992,13 +995,15 @@ public final class qa extends Class19 implements Interface4 {
     }
   }
 
+  // SA, ha, R and sa below are not native, but sw3d.dll resolves them by these
+  // exact names via GetMethodID at runtime — they must keep their original names.
   @OriginalMember(owner = "client!qa", name = "SA", descriptor = "()Ljava/lang/Object;")
-  private Object method4314() {
+  private Object SA() {
     return new p();
   }
 
   @OriginalMember(owner = "client!qa", name = "ha", descriptor = "()V")
-  private void method4315() {
+  private void ha() {
     System.gc();
     System.runFinalization();
     Static404.method5219();
@@ -1032,7 +1037,7 @@ public final class qa extends Class19 implements Interface4 {
       @OriginalArg(3) int arg3);
 
   @OriginalMember(owner = "client!qa", name = "R", descriptor = "(S)Z")
-  private boolean method4316(@OriginalArg(0) short arg0) {
+  private boolean R(@OriginalArg(0) short arg0) {
     synchronized (this) {
       @Pc(9)
       Class251 local9 = super.anInterface7_6.method2396(arg0);
@@ -1205,7 +1210,7 @@ public final class qa extends Class19 implements Interface4 {
   public native int w();
 
   @OriginalMember(owner = "client!qa", name = "sa", descriptor = "(S)Z")
-  private boolean method4318(@OriginalArg(0) short arg0) {
+  private boolean sa(@OriginalArg(0) short arg0) {
     @Pc(2)
     Interface7 local2 = super.anInterface7_6;
     synchronized (super.anInterface7_6) {

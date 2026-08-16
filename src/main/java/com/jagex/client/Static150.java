@@ -31,7 +31,8 @@ public final class Static150 {
   @OriginalMember(owner = "client!hl", name = "g", descriptor = "(B)Lclient!ie;")
   public static Class105 method2575() {
     try {
-      return (Class105) Class.forName("Class105_Sub1").getDeclaredConstructor().newInstance();
+      return (Class105)
+          Class.forName("com.jagex.client.Class105_Sub1").getDeclaredConstructor().newInstance();
     } catch (
         @Pc(14)
         Throwable local14) {
