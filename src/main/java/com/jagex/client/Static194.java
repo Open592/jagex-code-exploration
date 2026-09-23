@@ -55,7 +55,7 @@ public final class Static194 {
           int local135 =
               (Static308.anIntArray372[local18] & 0xFF) * 64 + local108 - Static86.anInt1771;
           @Pc(142)
-          Class264 local142 = Static329.aClass240_1.method5229(local67.g2());
+          NpcType local142 = Static329.aNpcTypeList_1.method5229(local67.g2());
           if (Static143.aClass16_Sub1_Sub5_Sub2Array1[local90] == null
               && (local142.aByte99 & 0x1) > 0
               && local98 == Static317.anInt5523
@@ -70,12 +70,12 @@ public final class Static194 {
             Static342.anIntArray412[Static12.anInt163++] = local90;
             local188.anInt6015 = client.gameLogicStepCount;
             local188.method4766(local142);
-            local188.method4754(local188.aClass264_1.anInt7201);
-            local188.anInt6080 = local188.aClass264_1.anInt7221 << 3;
+            local188.method4754(local188.aNpc_Type_1.anInt7201);
+            local188.anInt6080 = local188.aNpc_Type_1.anInt7221 << 3;
             if (local188.anInt6080 == 0) {
               local188.method4745(0);
             } else {
-              local188.method4745((local188.aClass264_1.aByte101 + 4 & 0x5E600007) << 11);
+              local188.method4745((local188.aNpc_Type_1.aByte101 + 4 & 0x5E600007) << 11);
             }
             local188.method4760(local98, local121, local188.method4751(), true, local135);
           }

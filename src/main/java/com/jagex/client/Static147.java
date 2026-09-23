@@ -676,7 +676,7 @@ public final class Static147 {
                                 null,
                                 2048,
                                 null,
-                                Static329.aClass240_1,
+                                Static329.aNpcTypeList_1,
                                 local23.anInt6783,
                                 local23.anInt6815,
                                 local1698,
@@ -716,7 +716,7 @@ public final class Static147 {
                         local23.method5307(
                             Static444.aClass206_3,
                             Static122.aClass19_16,
-                            Static329.aClass240_1,
+                            Static329.aNpcTypeList_1,
                             Static1.aClass16_Sub1_Sub5_Sub1_1.aClass37_1,
                             Static182.aClass55_1,
                             2048,
@@ -737,7 +737,7 @@ public final class Static147 {
                         local23.method5307(
                             Static444.aClass206_3,
                             Static122.aClass19_16,
-                            Static329.aClass240_1,
+                            Static329.aNpcTypeList_1,
                             Static1.aClass16_Sub1_Sub5_Sub1_1.aClass37_1,
                             Static182.aClass55_1,
                             2048,

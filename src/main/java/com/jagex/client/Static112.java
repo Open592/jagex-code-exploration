@@ -97,7 +97,7 @@ public final class Static112 {
     if (arg0 instanceof Class16_Sub1_Sub5_Sub2) {
       @Pc(24)
       Class16_Sub1_Sub5_Sub2 local24 = (Class16_Sub1_Sub5_Sub2) arg0;
-      if (local24.aClass264_1 != null) {
+      if (local24.aNpc_Type_1 != null) {
         Static325.method4396(local24.aByte82 != Static1.aClass16_Sub1_Sub5_Sub1_1.aByte82, local24);
       }
     } else if (arg0 instanceof Class16_Sub1_Sub5_Sub1) {

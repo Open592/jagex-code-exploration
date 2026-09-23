@@ -209,7 +209,7 @@ public final class Static305 {
             Static143.aClass16_Sub1_Sub5_Sub2Array1[(int) local444.aLong192];
         if (local578 != null) {
           @Pc(583)
-          Class264 local583 = local578.aClass264_1;
+          NpcType local583 = local578.aNpc_Type_1;
           if (local583.anIntArray544 != null) {
             local583 = local583.method5574(Static257.aClass114_1);
           }

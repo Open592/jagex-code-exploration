@@ -92,7 +92,7 @@ public final class Static119 {
     Static6.method51(local5);
     Static267.aClass262_2.method5558(local5);
     Static444.aClass206_3.method4712(local5);
-    Static329.aClass240_1.method5225(local5);
+    Static329.aNpcTypeList_1.method5225(local5);
     Static352.aClass194_2.method4417(local5);
     GameShell.method889(local5);
     Static150.method2574(local5);

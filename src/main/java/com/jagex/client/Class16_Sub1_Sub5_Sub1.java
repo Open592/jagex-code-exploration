@@ -338,7 +338,7 @@ public final class Class16_Sub1_Sub5_Sub1 extends Class16_Sub1_Sub5 {
       Class151 local54 = this.method4757();
       if (local54.aBoolean428
           && (this.aClass37_1.anInt871 == -1
-              || Static329.aClass240_1.method5229(this.aClass37_1.anInt871).aBoolean684)) {
+              || Static329.aNpcTypeList_1.method5229(this.aClass37_1.anInt871).aBoolean684)) {
         @Pc(85)
         Class138 local85 =
             super.anInt6021 != -1 && super.anInt6046 == 0
@@ -614,7 +614,7 @@ public final class Class16_Sub1_Sub5_Sub1 extends Class16_Sub1_Sub5 {
   public int method4751() {
     return this.aClass37_1 == null || this.aClass37_1.anInt871 == -1
         ? super.method4751()
-        : Static329.aClass240_1.method5229(this.aClass37_1.anInt871).anInt7201;
+        : Static329.aNpcTypeList_1.method5229(this.aClass37_1.anInt871).anInt7201;
   }
 
   @OriginalMember(owner = "client!lh", name = "a", descriptor = "(ZLclient!ya;I)Z")
@@ -657,7 +657,7 @@ public final class Class16_Sub1_Sub5_Sub1 extends Class16_Sub1_Sub5 {
                 local50,
                 arg1,
                 super.aClass165Array3,
-                Static329.aClass240_1,
+                Static329.aNpcTypeList_1,
                 super.anInt6058,
                 super.anInt6060,
                 local30,

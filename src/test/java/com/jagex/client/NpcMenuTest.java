@@ -24,12 +24,12 @@ class NpcMenuTest {
   }
 
   private Class16_Sub1_Sub5_Sub2 npc(String name, int level, int slot) {
-    Class264 type = new Class264();
+    NpcType type = new NpcType();
     type.name = name;
     type.lb = level;
     type.ops[1] = "Attack";
     Class16_Sub1_Sub5_Sub2 npc = new Class16_Sub1_Sub5_Sub2();
-    npc.aClass264_1 = type;
+    npc.aNpc_Type_1 = type;
     npc.anInt6037 = slot;
     return npc;
   }
@@ -61,7 +61,7 @@ class NpcMenuTest {
   @Test
   void strongerNpcRetainsRightClickAttackPriorityAndOtherOptions() {
     Class16_Sub1_Sub5_Sub2 npc = npc("Black Knight", 33, 101);
-    npc.aClass264_1.ops[0] = "Talk-to";
+    npc.aNpc_Type_1.ops[0] = "Talk-to";
     Static1.aClass16_Sub1_Sub5_Sub1_1.anInt4345 = 3;
     Static325.method4396(false, npc);
     assertEquals(1, entries("Attack").size());

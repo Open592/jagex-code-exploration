@@ -9,7 +9,7 @@ import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;
 
 @OriginalClass("client!uk")
-public final class Class240 {
+public final class NpcTypeList {
 
   @OriginalMember(owner = "client!uk", name = "s", descriptor = "I")
   public int anInt6683;
@@ -44,7 +44,7 @@ public final class Class240 {
       owner = "client!uk",
       name = "<init>",
       descriptor = "(Lclient!jk;IZLclient!fs;Lclient!fs;)V")
-  public Class240(
+  public NpcTypeList(
       @OriginalArg(0) ModeGame arg0,
       @OriginalArg(1) int arg1,
       @OriginalArg(2) boolean arg2,
@@ -122,13 +122,13 @@ public final class Class240 {
   }
 
   @OriginalMember(owner = "client!uk", name = "d", descriptor = "(II)Lclient!wh;")
-  public Class264 method5229(@OriginalArg(0) int arg0) {
+  public NpcType method5229(@OriginalArg(0) int arg0) {
     @Pc(6)
     Class68 local6 = this.aClass68_48;
     @Pc(16)
-    Class264 local16;
+    NpcType local16;
     synchronized (this.aClass68_48) {
-      local16 = (Class264) this.aClass68_48.method1787((long) arg0);
+      local16 = (NpcType) this.aClass68_48.method1787((long) arg0);
     }
     if (local16 != null) {
       return local16;
@@ -136,9 +136,9 @@ public final class Class240 {
     @Pc(37)
     byte[] local37 =
         this.aJs5_93.method2104(Static174.method2820(arg0), Static354.method4785(arg0));
-    local16 = new Class264();
+    local16 = new NpcType();
     local16.anInt7211 = arg0;
-    local16.aClass240_2 = this;
+    local16.aNpcTypeList_2 = this;
     if (local37 != null) {
       local16.method5581(new Packet(local37));
     }

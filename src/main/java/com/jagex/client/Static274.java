@@ -49,15 +49,15 @@ public final class Static274 {
   }
 
   @OriginalMember(owner = "client!nu", name = "a", descriptor = "(II)Lclient!jv;")
-  public static Class123 method3927(@OriginalArg(1) int arg0) {
+  public static ParticleEmitterType method3927(@OriginalArg(1) int arg0) {
     @Pc(10)
-    Class123 local10 = (Class123) Static356.aClass68_43.method1787((long) arg0);
+    ParticleEmitterType local10 = (ParticleEmitterType) Static356.aClass68_43.method1787((long) arg0);
     if (local10 != null) {
       return local10;
     }
     @Pc(20)
     byte[] local20 = Static146.aJs5_4.method2104(arg0, 0);
-    local10 = new Class123();
+    local10 = new ParticleEmitterType();
     if (local20 != null) {
       local10.method3114(new Packet(local20));
     }

@@ -92,7 +92,7 @@ public final class Node_Sub8 extends Node {
       if (local8 != local42) {
         this.anInt616 = local42;
         @Pc(52)
-        Class264 local52 = this.aClass16_Sub1_Sub5_Sub2_1.aClass264_1;
+        NpcType local52 = this.aClass16_Sub1_Sub5_Sub2_1.aNpc_Type_1;
         if (local52.anIntArray544 != null) {
           local52 = local52.method5574(Static257.aClass114_1);
         }

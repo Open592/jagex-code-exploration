@@ -20,7 +20,7 @@ public final class Static385 {
     Static234.aClass192_2.method4343();
     Static420.aClass109_2.method2760();
     Static267.aClass262_2.method5557();
-    Static329.aClass240_1.method5221();
+    Static329.aNpcTypeList_1.method5221();
     Static444.aClass206_3.method4702();
     Static182.aClass55_1.method1392();
     Static352.aClass194_2.method4419();

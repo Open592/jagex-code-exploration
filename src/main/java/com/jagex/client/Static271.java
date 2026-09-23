@@ -2346,13 +2346,13 @@ public final class Static271 {
                     local3017 = Static153.aClass180_1.method4121(local19);
                     if (local3017.method3350()) {
                       aStringArray21[anInt5092++] =
-                          Static329.aClass240_1
+                          Static329.aNpcTypeList_1
                               .method5229(local13)
                               .method5579(local3017.aString40, local19);
                       return;
                     }
                     anIntArray330[anInt5095++] =
-                        Static329.aClass240_1
+                        Static329.aNpcTypeList_1
                             .method5229(local13)
                             .method5582(local3017.anInt4123, local19);
                     return;
@@ -4054,7 +4054,7 @@ public final class Static271 {
                 (short) Static266.method3825(anIntArray330[anInt5095 + 1]);
             Static444.aClass206_3.method4710();
             Static444.aClass206_3.method4701();
-            Static329.aClass240_1.method5223();
+            Static329.aNpcTypeList_1.method5223();
             Static369.method4940();
             return;
           }

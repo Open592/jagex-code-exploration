@@ -24,7 +24,7 @@ public final class Static198 {
     Static234.aClass192_2.method4339();
     Static420.aClass109_2.method2759();
     Static267.aClass262_2.method5556();
-    Static329.aClass240_1.method5232();
+    Static329.aNpcTypeList_1.method5232();
     Static444.aClass206_3.method4706();
     Static182.aClass55_1.method1394();
     Static352.aClass194_2.method4418();

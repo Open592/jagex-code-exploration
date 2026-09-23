@@ -1105,7 +1105,7 @@ public final class Static53 {
       @Pc(123)
       Class16_Sub1_Sub5_Sub2 local123 =
           Static143.aClass16_Sub1_Sub5_Sub2Array1[Static342.anIntArray412[local116]];
-      if (local123.method4762() && local123.aClass264_1.method5572(Static257.aClass114_1)) {
+      if (local123.method4762() && local123.aNpc_Type_1.method5572(Static257.aClass114_1)) {
         local123.method5346();
         if (local123.aShort94 >= 0
             && local123.aShort96 >= 0
@@ -1121,21 +1121,21 @@ public final class Static53 {
           }
           local160 += 5 - local123.method4751() << 2;
           if (Static268.anInt4991 == 0) {
-            if (local123.aClass264_1.aBoolean685) {
+            if (local123.aNpc_Type_1.aBoolean685) {
               local160 += 64;
             } else {
               local160 += 128;
             }
           } else if (Static268.anInt4991 == 1) {
-            if (local123.aClass264_1.aBoolean685) {
+            if (local123.aNpc_Type_1.aBoolean685) {
               local160 += 32;
             } else {
               local160 += 64;
             }
           }
-          if (local123.aClass264_1.aBoolean681) {
+          if (local123.aNpc_Type_1.aBoolean681) {
             local160 += 1024;
-          } else if (!local123.aClass264_1.aBoolean680) {
+          } else if (!local123.aNpc_Type_1.aBoolean680) {
             local160 += 256;
           }
           local123.anInt6025 = local160 + 1;

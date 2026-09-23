@@ -173,13 +173,13 @@ public final class Static184 {
               if (local480 != null
                   && client.gameLogicStepCount != local480.anInt6048
                   && local480.aBoolean561) {
-                local503 = local480.anInt6893 - (local480.aClass264_1.anInt7201 - 1 << 6);
-                local515 = local480.anInt6892 - (local480.aClass264_1.anInt7201 - 1 << 6);
+                local503 = local480.anInt6893 - (local480.aNpc_Type_1.anInt7201 - 1 << 6);
+                local515 = local480.anInt6892 - (local480.aNpc_Type_1.anInt7201 - 1 << 6);
                 if (local503 >= local81
-                    && local480.aClass264_1.anInt7201
+                    && local480.aNpc_Type_1.anInt7201
                         <= local399.method4751() - (local503 - local81 >> 7)
                     && local515 >= local84
-                    && local480.aClass264_1.anInt7201
+                    && local480.aNpc_Type_1.anInt7201
                         <= local399.method4751() - (local515 - local84 >> 7)) {
                   Static325.method4396(
                       local373.anInt2381 != Static1.aClass16_Sub1_Sub5_Sub1_1.aByte82, local480);
@@ -220,15 +220,15 @@ public final class Static184 {
         if (local373.aClass16_1 instanceof Class16_Sub1_Sub5_Sub2) {
           @Pc(721)
           Class16_Sub1_Sub5_Sub2 local721 = (Class16_Sub1_Sub5_Sub2) local373.aClass16_1;
-          if (local721.aClass264_1 != null) {
-            if ((local721.aClass264_1.anInt7201 & 0x1) == 0
+          if (local721.aNpc_Type_1 != null) {
+            if ((local721.aNpc_Type_1.anInt7201 & 0x1) == 0
                     && (local721.anInt6893 & 0x7F) == 0
                     && (local721.anInt6892 & 0x7F) == 0
-                || (local721.aClass264_1.anInt7201 & 0x1) == 1
+                || (local721.aNpc_Type_1.anInt7201 & 0x1) == 1
                     && (local721.anInt6893 & 0x7F) == 64
                     && (local721.anInt6892 & 0x7F) == 64) {
-              local72 = local721.anInt6893 - (local721.aClass264_1.anInt7201 - 1 << 6);
-              local81 = local721.anInt6892 - (local721.aClass264_1.anInt7201 - 1 << 6);
+              local72 = local721.anInt6893 - (local721.aNpc_Type_1.anInt7201 - 1 << 6);
+              local81 = local721.anInt6892 - (local721.aNpc_Type_1.anInt7201 - 1 << 6);
               for (local84 = 0; local84 < Static12.anInt163; local84++) {
                 @Pc(798)
                 Class16_Sub1_Sub5_Sub2 local798 =
@@ -237,14 +237,14 @@ public final class Static184 {
                     && client.gameLogicStepCount != local798.anInt6048
                     && local798 != local721
                     && local798.aBoolean561) {
-                  local101 = local798.anInt6893 - (local798.aClass264_1.anInt7201 - 1 << 6);
-                  local503 = local798.anInt6892 - (local798.aClass264_1.anInt7201 - 1 << 6);
+                  local101 = local798.anInt6893 - (local798.aNpc_Type_1.anInt7201 - 1 << 6);
+                  local503 = local798.anInt6892 - (local798.aNpc_Type_1.anInt7201 - 1 << 6);
                   if (local101 >= local72
-                      && local798.aClass264_1.anInt7201
-                          <= local721.aClass264_1.anInt7201 - (local101 - local72 >> 7)
+                      && local798.aNpc_Type_1.anInt7201
+                          <= local721.aNpc_Type_1.anInt7201 - (local101 - local72 >> 7)
                       && local81 <= local503
-                      && local798.aClass264_1.anInt7201
-                          <= local721.aClass264_1.anInt7201 - (local503 - local81 >> 7)) {
+                      && local798.aNpc_Type_1.anInt7201
+                          <= local721.aNpc_Type_1.anInt7201 - (local503 - local81 >> 7)) {
                     Static325.method4396(
                         Static1.aClass16_Sub1_Sub5_Sub1_1.aByte82 != local373.anInt2381, local798);
                     local798.anInt6048 = client.gameLogicStepCount;
@@ -266,10 +266,10 @@ public final class Static184 {
                   local147 = local924.anInt6892 - (local924.method4751() - 1 << 6);
                   if (local946 >= local72
                       && local924.method4751()
-                          <= local721.aClass264_1.anInt7201 - (local946 - local72 >> 7)
+                          <= local721.aNpc_Type_1.anInt7201 - (local946 - local72 >> 7)
                       && local81 <= local147
                       && local924.method4751()
-                          <= local721.aClass264_1.anInt7201 - (local147 - local81 >> 7)) {
+                          <= local721.aNpc_Type_1.anInt7201 - (local147 - local81 >> 7)) {
                     Static377.method4026(
                         local373.anInt2381 != Static1.aClass16_Sub1_Sub5_Sub1_1.aByte82, local924);
                     local924.anInt6048 = client.gameLogicStepCount;

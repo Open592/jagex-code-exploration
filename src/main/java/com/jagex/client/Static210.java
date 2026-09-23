@@ -30,7 +30,7 @@ public final class Static210 {
       Class16_Sub1_Sub5_Sub2 local90 = Static143.aClass16_Sub1_Sub5_Sub2Array1[(int) arg0.aLong192];
       if (local90 != null) {
         @Pc(95)
-        Class264 local95 = local90.aClass264_1;
+        NpcType local95 = local90.aNpc_Type_1;
         if (local95.anIntArray544 != null) {
           local95 = local95.method5574(Static257.aClass114_1);
         }

@@ -122,7 +122,7 @@ public final class Static450 {
           && local370.method4762()
           && local370.aByte82 == Static1.aClass16_Sub1_Sub5_Sub1_1.aByte82) {
         @Pc(384)
-        Class264 local384 = local370.aClass264_1;
+        NpcType local384 = local370.aNpc_Type_1;
         if (local384 != null && local384.anIntArray544 != null) {
           local384 = local384.method5574(Static257.aClass114_1);
         }
