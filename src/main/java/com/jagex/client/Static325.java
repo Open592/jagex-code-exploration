@@ -136,7 +136,7 @@ public final class Static325 {
         if (local84 != null) {
           for (local94 = 4; local94 >= 0; local94--) {
             if (local84[local94] != null
-                && (ClientSettings.modeGame.isRunescape()
+                && (!ClientSettings.modeGame.isRunescape()
                     || !local84[local94].equalsIgnoreCase(
                         Static81.A_LOCALIZED_STRING___33.getString(ClientSettings.langID)))) {
               @Pc(114)
