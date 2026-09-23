@@ -97,7 +97,7 @@ public final class Class29 {
   }
 
   @OriginalMember(owner = "client!bu", name = "b", descriptor = "(B)Lclient!jv;")
-  public Class123 method695() {
+  public ParticleEmitterType method695() {
     return Static274.method3927(this.anInt714);
   }
 }

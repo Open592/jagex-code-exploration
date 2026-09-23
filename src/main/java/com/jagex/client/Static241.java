@@ -40,13 +40,13 @@ public final class Static241 {
         Static259.method3758(local50, local17, local47, local53);
       }
       if ((local21 & 0x10) != 0) {
-        if (local17.aClass264_1.method5578()) {
+        if (local17.aNpc_Type_1.method5578()) {
           Static425.method5429(local17);
         }
-        local17.method4766(Static329.aClass240_1.method5229(Static146.aClass4_Sub12_Sub1_3.g2()));
-        local17.method4754(local17.aClass264_1.anInt7201);
-        local17.anInt6080 = local17.aClass264_1.anInt7221 << 3;
-        if (local17.aClass264_1.method5578()) {
+        local17.method4766(Static329.aNpcTypeList_1.method5229(Static146.aClass4_Sub12_Sub1_3.g2()));
+        local17.method4754(local17.aNpc_Type_1.anInt7201);
+        local17.anInt6080 = local17.aNpc_Type_1.anInt7221 << 3;
+        if (local17.aNpc_Type_1.method5578()) {
           Static126.method2264(
               local17.anIntArray426[0],
               local17,

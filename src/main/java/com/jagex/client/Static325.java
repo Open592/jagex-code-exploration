@@ -32,7 +32,7 @@ public final class Static325 {
   @OriginalMember(owner = "client!qh", name = "a", descriptor = "(BLclient!rs;)I")
   public static int method4392(@OriginalArg(1) Class16_Sub1_Sub5_Sub2 arg0) {
     @Pc(8)
-    Class264 local8 = arg0.aClass264_1;
+    NpcType local8 = arg0.aNpc_Type_1;
     if (local8.anIntArray544 != null) {
       local8 = local8.method5574(Static257.aClass114_1);
       if (local8 == null) {
@@ -98,7 +98,7 @@ public final class Static325 {
       return;
     }
     @Pc(16)
-    Class264 local16 = arg1.aClass264_1;
+    NpcType local16 = arg1.aNpc_Type_1;
     if (local16.anIntArray544 != null) {
       local16 = local16.method5574(Static257.aClass114_1);
       if (local16 == null) {

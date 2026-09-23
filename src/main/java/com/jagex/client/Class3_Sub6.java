@@ -89,7 +89,7 @@ public final class Class3_Sub6 extends Class3 {
   public final Class29 aClass29_2;
 
   @OriginalMember(owner = "client!mo", name = "K", descriptor = "Lclient!jv;")
-  public Class123 aClass123_1;
+  public ParticleEmitterType aParticleEmitterType_1;
 
   @OriginalMember(owner = "client!mo", name = "s", descriptor = "Lclient!gn;")
   public final Class84 aClass84_6;
@@ -106,9 +106,9 @@ public final class Class3_Sub6 extends Class3 {
     this.aClass3_Sub2_6 = arg2;
     this.aLong154 = arg3;
     this.aClass29_2 = arg1;
-    this.aClass123_1 = this.aClass29_2.method695();
-    if (!arg0.method4279() && this.aClass123_1.anInt3807 != -1) {
-      this.aClass123_1 = Static274.method3927(this.aClass123_1.anInt3807);
+    this.aParticleEmitterType_1 = this.aClass29_2.method695();
+    if (!arg0.method4279() && this.aParticleEmitterType_1.anInt3807 != -1) {
+      this.aParticleEmitterType_1 = Static274.method3927(this.aParticleEmitterType_1.anInt3807);
     }
     this.aClass84_6 = new Class84();
     this.anInt4642 = (int) ((double) this.anInt4642 + Math.random() * 64.0D);
@@ -187,7 +187,7 @@ public final class Class3_Sub6 extends Class3 {
     this.anInt4628 = this.anInt4628 * 32767 / local317;
     this.anInt4655 = this.anInt4655 * 32767 / local317;
     this.anInt4648 = this.anInt4648 * 32767 / local317;
-    if (this.aClass123_1.aShort41 <= 0 && this.aClass123_1.aShort44 <= 0) {
+    if (this.aParticleEmitterType_1.aShort41 <= 0 && this.aParticleEmitterType_1.aShort44 <= 0) {
       return;
     }
     @Pc(370)
@@ -202,10 +202,10 @@ public final class Class3_Sub6 extends Class3 {
                         (double)
                             (this.anInt4648 * this.anInt4648 + this.anInt4655 * this.anInt4655)))
                 * 2607.5945876176133D);
-    this.anInt4643 = this.aClass123_1.aShort41 - this.aClass123_1.aShort42;
-    this.anInt4641 = this.aClass123_1.aShort44 - this.aClass123_1.aShort43;
-    this.anInt4632 = local370 + this.aClass123_1.aShort42 - (this.anInt4643 >> 1);
-    this.anInt4647 = local392 + this.aClass123_1.aShort43 - (this.anInt4641 >> 1);
+    this.anInt4643 = this.aParticleEmitterType_1.aShort41 - this.aParticleEmitterType_1.aShort42;
+    this.anInt4641 = this.aParticleEmitterType_1.aShort44 - this.aParticleEmitterType_1.aShort43;
+    this.anInt4632 = local370 + this.aParticleEmitterType_1.aShort42 - (this.anInt4643 >> 1);
+    this.anInt4647 = local392 + this.aParticleEmitterType_1.aShort43 - (this.anInt4641 >> 1);
   }
 
   @OriginalMember(owner = "client!mo", name = "a", descriptor = "(IIJZLclient!ya;)V")
@@ -218,32 +218,32 @@ public final class Class3_Sub6 extends Class3 {
     int local40;
     if (this.aBoolean427) {
       arg2 = false;
-    } else if (this.aClass123_1.anInt3798 > Preferences.particles) {
+    } else if (this.aParticleEmitterType_1.anInt3798 > Preferences.particles) {
       arg2 = false;
     } else if (Static272.anInt5116 > Static70.anIntArray113[Preferences.particles]) {
       arg2 = false;
     } else if (this.aBoolean426) {
       arg2 = false;
-    } else if (this.aClass123_1.anInt3810 != -1) {
+    } else if (this.aParticleEmitterType_1.anInt3810 != -1) {
       local40 = (int) (arg1 - this.aLong154);
-      if (this.aClass123_1.aBoolean353 || local40 <= this.aClass123_1.anInt3810) {
-        local40 %= this.aClass123_1.anInt3810;
+      if (this.aParticleEmitterType_1.aBoolean353 || local40 <= this.aParticleEmitterType_1.anInt3810) {
+        local40 %= this.aParticleEmitterType_1.anInt3810;
       } else {
         arg2 = false;
       }
-      if (!this.aClass123_1.aBoolean355 && this.aClass123_1.lb > local40) {
+      if (!this.aParticleEmitterType_1.aBoolean355 && this.aParticleEmitterType_1.lb > local40) {
         arg2 = false;
       }
-      if (this.aClass123_1.aBoolean355 && this.aClass123_1.lb <= local40) {
+      if (this.aParticleEmitterType_1.aBoolean355 && this.aParticleEmitterType_1.lb <= local40) {
         arg2 = false;
       }
     }
     if (arg2) {
       this.anInt4642 +=
           (int)
-              (((double) this.aClass123_1.anInt3818
+              (((double) this.aParticleEmitterType_1.anInt3818
                       + Math.random()
-                          * (double) (this.aClass123_1.anInt3773 - this.aClass123_1.anInt3818))
+                          * (double) (this.aParticleEmitterType_1.anInt3773 - this.aParticleEmitterType_1.anInt3818))
                   * (double) arg0);
       if (this.anInt4642 > 63) {
         local40 = this.anInt4642 >> 6;
@@ -267,7 +267,7 @@ public final class Class3_Sub6 extends Class3 {
           int local218;
           @Pc(222)
           int local222;
-          if (this.aClass123_1.aShort41 <= 0 && this.aClass123_1.aShort44 <= 0) {
+          if (this.aParticleEmitterType_1.aShort41 <= 0 && this.aParticleEmitterType_1.aShort44 <= 0) {
             local170 = this.anInt4628;
             local173 = this.anInt4648;
             local176 = this.anInt4655;
@@ -305,63 +305,63 @@ public final class Class3_Sub6 extends Class3 {
           @Pc(344)
           int local344 =
               (int)
-                      ((double) (this.aClass123_1.anInt3800 - this.aClass123_1.anInt3804)
+                      ((double) (this.aParticleEmitterType_1.anInt3800 - this.aParticleEmitterType_1.anInt3804)
                           * Math.random())
-                  + this.aClass123_1.anInt3804;
+                  + this.aParticleEmitterType_1.anInt3804;
           @Pc(362)
           int local362 =
-              this.aClass123_1.anInt3775
+              this.aParticleEmitterType_1.anInt3775
                   + (int)
-                      ((double) (this.aClass123_1.anInt3780 - this.aClass123_1.anInt3775)
+                      ((double) (this.aParticleEmitterType_1.anInt3780 - this.aParticleEmitterType_1.anInt3775)
                           * Math.random());
           @Pc(379)
           int local379 =
               (int)
                       (Math.random()
-                          * (double) (this.aClass123_1.anInt3816 - this.aClass123_1.anInt3788))
-                  + this.aClass123_1.anInt3788;
+                          * (double) (this.aParticleEmitterType_1.anInt3816 - this.aParticleEmitterType_1.anInt3788))
+                  + this.aParticleEmitterType_1.anInt3788;
           @Pc(441)
           int local441;
-          if (this.aClass123_1.aBoolean360) {
+          if (this.aParticleEmitterType_1.aBoolean360) {
             @Pc(445)
             double local445 = Math.random();
             local441 =
                 (int)
-                            (Math.random() * (double) this.aClass123_1.anInt3820
-                                + (double) this.aClass123_1.anInt3801)
+                            (Math.random() * (double) this.aParticleEmitterType_1.anInt3820
+                                + (double) this.aParticleEmitterType_1.anInt3801)
                         << 24
                     | (int)
-                            ((double) this.aClass123_1.anInt3783
-                                + local445 * (double) this.aClass123_1.anInt3799)
+                            ((double) this.aParticleEmitterType_1.anInt3783
+                                + local445 * (double) this.aParticleEmitterType_1.anInt3799)
                         << 16
                     | (int)
-                            (local445 * (double) this.aClass123_1.anInt3774
-                                + (double) this.aClass123_1.anInt3786)
+                            (local445 * (double) this.aParticleEmitterType_1.anInt3774
+                                + (double) this.aParticleEmitterType_1.anInt3786)
                         << 8
                     | (int)
-                        (local445 * (double) this.aClass123_1.anInt3785
-                            + (double) this.aClass123_1.anInt3821);
+                        (local445 * (double) this.aParticleEmitterType_1.anInt3785
+                            + (double) this.aParticleEmitterType_1.anInt3821);
           } else {
             local441 =
                 (int)
-                            ((double) this.aClass123_1.anInt3801
-                                + Math.random() * (double) this.aClass123_1.anInt3820)
+                            ((double) this.aParticleEmitterType_1.anInt3801
+                                + Math.random() * (double) this.aParticleEmitterType_1.anInt3820)
                         << 24
                     | (int)
-                            (Math.random() * (double) this.aClass123_1.anInt3799
-                                + (double) this.aClass123_1.anInt3783)
+                            (Math.random() * (double) this.aParticleEmitterType_1.anInt3799
+                                + (double) this.aParticleEmitterType_1.anInt3783)
                         << 16
                     | (int)
-                            ((double) this.aClass123_1.anInt3786
-                                + Math.random() * (double) this.aClass123_1.anInt3774)
+                            ((double) this.aParticleEmitterType_1.anInt3786
+                                + Math.random() * (double) this.aParticleEmitterType_1.anInt3774)
                         << 8
                     | (int)
-                        (Math.random() * (double) this.aClass123_1.anInt3785
-                            + (double) this.aClass123_1.anInt3821);
+                        (Math.random() * (double) this.aParticleEmitterType_1.anInt3785
+                            + (double) this.aParticleEmitterType_1.anInt3821);
           }
           @Pc(507)
-          int local507 = this.aClass123_1.anInt3777;
-          if (!arg3.method4279() && !this.aClass123_1.aBoolean358) {
+          int local507 = this.aParticleEmitterType_1.anInt3777;
+          if (!arg3.method4279() && !this.aParticleEmitterType_1.aBoolean358) {
             local507 = -1;
           }
           if (Static305.anInt5385 == Static357.anInt6240) {
@@ -378,8 +378,8 @@ public final class Class3_Sub6 extends Class3 {
                 local441,
                 local379,
                 local507,
-                this.aClass123_1.aBoolean357,
-                this.aClass123_1.aBoolean354);
+                this.aParticleEmitterType_1.aBoolean357,
+                this.aParticleEmitterType_1.aBoolean354);
           } else {
             @Pc(547)
             Class3_Sub1_Sub1_Sub1 local547 =
@@ -398,8 +398,8 @@ public final class Class3_Sub6 extends Class3 {
                 local441,
                 local379,
                 local507,
-                this.aClass123_1.aBoolean357,
-                this.aClass123_1.aBoolean354);
+                this.aParticleEmitterType_1.aBoolean357,
+                this.aParticleEmitterType_1.aBoolean354);
           }
         }
       }

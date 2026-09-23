@@ -153,7 +153,7 @@ public final class Class3_Sub2 extends Class3 {
       for (local36 = (Class3_Sub6) this.aClass84_1.method2312();
           local36 != null;
           local36 = (Class3_Sub6) this.aClass84_1.method2309()) {
-        for (@Pc(39) int local39 = 0; local39 < local36.aClass123_1.anInt3789; local39++) {
+        for (@Pc(39) int local39 = 0; local39 < local36.aParticleEmitterType_1.anInt3789; local39++) {
           local36.method3632(1, arg1, !this.aBoolean23, arg0);
         }
       }

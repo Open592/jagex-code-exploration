@@ -6,7 +6,7 @@ import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;
 
 @OriginalClass("client!jv")
-public final class Class123 {
+public final class ParticleEmitterType {
 
   @OriginalMember(owner = "client!jv", name = "a", descriptor = "I")
   private int anInt3771;

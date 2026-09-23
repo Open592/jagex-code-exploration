@@ -50,7 +50,7 @@ public final class Class37 {
   public Class110 method830(
       @OriginalArg(0) int arg0,
       @OriginalArg(1) int arg1,
-      @OriginalArg(3) Class240 arg2,
+      @OriginalArg(3) NpcTypeList arg2,
       @OriginalArg(4) Class206 arg3,
       @OriginalArg(5) Interface12 arg4,
       @OriginalArg(6) int arg5,
@@ -228,7 +228,7 @@ public final class Class37 {
       @OriginalArg(2) Class138 arg2,
       @OriginalArg(3) int arg3,
       @OriginalArg(4) Class165[] arg4,
-      @OriginalArg(5) Class240 arg5,
+      @OriginalArg(5) NpcTypeList arg5,
       @OriginalArg(6) int arg6,
       @OriginalArg(7) int arg7,
       @OriginalArg(8) Class138 arg8,

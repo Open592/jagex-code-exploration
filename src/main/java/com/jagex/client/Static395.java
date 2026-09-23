@@ -150,7 +150,7 @@ public final class Static395 {
     @Pc(423)
     boolean local423 = true;
     if (arg1 instanceof Class16_Sub1_Sub5_Sub2) {
-      local423 = ((Class16_Sub1_Sub5_Sub2) arg1).aClass264_1.aBoolean683;
+      local423 = ((Class16_Sub1_Sub5_Sub2) arg1).aNpc_Type_1.aBoolean683;
     }
     @Pc(441)
     int local441;

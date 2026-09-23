@@ -8,7 +8,7 @@ import org.openrs2.deob.annotation.OriginalMember;
 import org.openrs2.deob.annotation.Pc;
 
 @OriginalClass("client!wh")
-public final class Class264 {
+public final class NpcType {
 
   @OriginalMember(owner = "client!wh", name = "a", descriptor = "[B")
   private byte[] aByteArray105;
@@ -59,7 +59,7 @@ public final class Class264 {
   private byte aByte102;
 
   @OriginalMember(owner = "client!wh", name = "xb", descriptor = "Lclient!uk;")
-  public Class240 aClass240_2;
+  public NpcTypeList aNpcTypeList_2;
 
   @OriginalMember(owner = "client!wh", name = "o", descriptor = "B")
   private byte aByte95 = 0;
@@ -214,7 +214,7 @@ public final class Class264 {
   }
 
   @OriginalMember(owner = "client!wh", name = "a", descriptor = "(ZLclient!vs;)Lclient!wh;")
-  public Class264 method5574(@OriginalArg(1) Interface12 arg0) {
+  public NpcType method5574(@OriginalArg(1) Interface12 arg0) {
     @Pc(20)
     int local20 = -1;
     if (this.anInt7213 != -1) {
@@ -227,9 +227,9 @@ public final class Class264 {
         || this.anIntArray544[local20] == -1) {
       @Pc(71)
       int local71 = this.anIntArray544[this.anIntArray544.length - 1];
-      return local71 == -1 ? null : this.aClass240_2.method5229(local71);
+      return local71 == -1 ? null : this.aNpcTypeList_2.method5229(local71);
     } else {
-      return this.aClass240_2.method5229(this.anIntArray544[local20]);
+      return this.aNpcTypeList_2.method5229(this.anIntArray544[local20]);
     }
   }
 
@@ -255,7 +255,7 @@ public final class Class264 {
       @OriginalArg(14) Class249 arg13) {
     if (this.anIntArray544 != null) {
       @Pc(13)
-      Class264 local13 = this.method5574(arg2);
+      NpcType local13 = this.method5574(arg2);
       return local13 == null
           ? null
           : local13.method5575(
@@ -431,13 +431,13 @@ public final class Class264 {
       }
     }
     @Pc(583)
-    Class68 local583 = this.aClass240_2.aClass68_49;
+    Class68 local583 = this.aNpcTypeList_2.aClass68_49;
     @Pc(600)
     Class110 local600;
-    synchronized (this.aClass240_2.aClass68_49) {
+    synchronized (this.aNpcTypeList_2.aClass68_49) {
       local600 =
           (Class110)
-              this.aClass240_2.aClass68_49.method1787(
+              this.aNpcTypeList_2.aClass68_49.method1787(
                   (long) (arg7.anInt5532 << 16 | this.anInt7211));
     }
     @Pc(633)
@@ -450,15 +450,15 @@ public final class Class264 {
       @Pc(625)
       boolean local625 = false;
       @Pc(629)
-      Js5 local629 = this.aClass240_2.aJs5_94;
-      synchronized (this.aClass240_2.aJs5_94) {
+      Js5 local629 = this.aNpcTypeList_2.aJs5_94;
+      synchronized (this.aNpcTypeList_2.aJs5_94) {
         local633 = 0;
         while (true) {
           if (local633 >= this.anIntArray545.length) {
             break;
           }
           if (this.anIntArray545[local633] != -1
-              && !this.aClass240_2.aJs5_94.method2098(0, this.anIntArray545[local633])) {
+              && !this.aNpcTypeList_2.aJs5_94.method2098(0, this.anIntArray545[local633])) {
             local625 = true;
           }
           local633++;
@@ -472,10 +472,10 @@ public final class Class264 {
       for (local633 = 0; local633 < this.anIntArray545.length; local633++) {
         if (this.anIntArray545[local633] != -1) {
           @Pc(690)
-          Js5 local690 = this.aClass240_2.aJs5_94;
-          synchronized (this.aClass240_2.aJs5_94) {
+          Js5 local690 = this.aNpcTypeList_2.aJs5_94;
+          synchronized (this.aNpcTypeList_2.aJs5_94) {
             local676[local633] =
-                Static370.method4948(this.aClass240_2.aJs5_94, this.anIntArray545[local633]);
+                Static370.method4948(this.aNpcTypeList_2.aJs5_94, this.anIntArray545[local633]);
           }
           if (local676[local633] != null) {
             if (local676[local633].anInt3681 < 13) {
@@ -603,7 +603,7 @@ public final class Class264 {
           arg7.method4254(
               local1208,
               local387,
-              this.aClass240_2.anInt6683,
+              this.aNpcTypeList_2.anInt6683,
               this.anInt7228 + 64,
               this.anInt7232 + 850);
       if (this.aShortArray248 != null) {
@@ -627,9 +627,9 @@ public final class Class264 {
       }
       local600.UA(local37);
       @Pc(1360)
-      Class68 local1360 = this.aClass240_2.aClass68_49;
-      synchronized (this.aClass240_2.aClass68_49) {
-        this.aClass240_2.aClass68_49.method1779(
+      Class68 local1360 = this.aNpcTypeList_2.aClass68_49;
+      synchronized (this.aNpcTypeList_2.aClass68_49) {
+        this.aNpcTypeList_2.aClass68_49.method1779(
             (long) (arg7.anInt5532 << 16 | this.anInt7211), local600);
       }
     }
@@ -708,7 +708,7 @@ public final class Class264 {
     for (@Pc(34) int local34 = 0; local34 < this.anIntArray544.length; local34++) {
       if (this.anIntArray544[local34] != -1) {
         @Pc(52)
-        Class264 local52 = this.aClass240_2.method5229(this.anIntArray544[local34]);
+        NpcType local52 = this.aNpcTypeList_2.method5229(this.anIntArray544[local34]);
         if (local52.anInt7210 != -1 || local52.anInt7202 != -1 || local52.anInt7212 != -1) {
           return true;
         }
@@ -904,7 +904,7 @@ public final class Class264 {
         this.aBoolean680 = true;
       } else if (arg1 >= 150 && arg1 < 155) {
         this.ops[arg1 - 150] = arg0.gStringCP1252ToUTF8();
-        if (!this.aClass240_2.aBoolean604) {
+        if (!this.aNpcTypeList_2.aBoolean604) {
           this.ops[arg1 - 150] = null;
         }
       } else if (arg1 == 155) {
@@ -979,7 +979,7 @@ public final class Class264 {
       @OriginalArg(8) Class55 arg6) {
     if (this.anIntArray544 != null) {
       @Pc(19)
-      Class264 local19 = this.method5574(arg4);
+      NpcType local19 = this.method5574(arg4);
       return local19 == null ? null : local19.method5584(arg0, arg1, arg2, arg3, arg4, arg5, arg6);
     } else if (this.anIntArray546 == null) {
       return null;
@@ -990,13 +990,13 @@ public final class Class264 {
         local42 = arg2.method3457(arg3, arg0, true) | 0x800;
       }
       @Pc(61)
-      Class68 local61 = this.aClass240_2.aClass68_50;
+      Class68 local61 = this.aNpcTypeList_2.aClass68_50;
       @Pc(78)
       Class110 local78;
-      synchronized (this.aClass240_2.aClass68_50) {
+      synchronized (this.aNpcTypeList_2.aClass68_50) {
         local78 =
             (Class110)
-                this.aClass240_2.aClass68_50.method1787(
+                this.aNpcTypeList_2.aClass68_50.method1787(
                     (long) (this.anInt7211 | arg5.anInt5532 << 16));
       }
       if (local78 == null || (local42 & local78.P()) != local42) {
@@ -1008,15 +1008,15 @@ public final class Class264 {
         @Pc(107)
         boolean local107 = false;
         @Pc(111)
-        Js5 local111 = this.aClass240_2.aJs5_94;
-        synchronized (this.aClass240_2.aJs5_94) {
+        Js5 local111 = this.aNpcTypeList_2.aJs5_94;
+        synchronized (this.aNpcTypeList_2.aJs5_94) {
           @Pc(115)
           int local115 = 0;
           while (true) {
             if (local115 >= this.anIntArray546.length) {
               break;
             }
-            if (!this.aClass240_2.aJs5_94.method2098(0, this.anIntArray546[local115])) {
+            if (!this.aNpcTypeList_2.aJs5_94.method2098(0, this.anIntArray546[local115])) {
               local107 = true;
             }
             local115++;
@@ -1028,13 +1028,13 @@ public final class Class264 {
         @Pc(151)
         Class122[] local151 = new Class122[this.anIntArray546.length];
         @Pc(155)
-        Js5 local155 = this.aClass240_2.aJs5_94;
+        Js5 local155 = this.aNpcTypeList_2.aJs5_94;
         @Pc(159)
         int local159;
-        synchronized (this.aClass240_2.aJs5_94) {
+        synchronized (this.aNpcTypeList_2.aJs5_94) {
           for (local159 = 0; local159 < this.anIntArray546.length; local159++) {
             local151[local159] =
-                Static370.method4948(this.aClass240_2.aJs5_94, this.anIntArray546[local159]);
+                Static370.method4948(this.aNpcTypeList_2.aJs5_94, this.anIntArray546[local159]);
           }
         }
         for (@Pc(192) int local192 = 0; local192 < this.anIntArray546.length; local192++) {
@@ -1058,7 +1058,7 @@ public final class Class264 {
         if (this.aByte95 != 0) {
           local105 |= 0x80000;
         }
-        local78 = arg5.method4254(local231, local105, this.aClass240_2.anInt6683, 64, 768);
+        local78 = arg5.method4254(local231, local105, this.aNpcTypeList_2.anInt6683, 64, 768);
         if (this.aShortArray248 != null) {
           for (local159 = 0; local159 < this.aShortArray248.length; local159++) {
             if (this.aByteArray105 == null || local159 >= this.aByteArray105.length) {
@@ -1080,9 +1080,9 @@ public final class Class264 {
         }
         local78.UA(local42);
         @Pc(377)
-        Class68 local377 = this.aClass240_2.aClass68_50;
-        synchronized (this.aClass240_2.aClass68_50) {
-          this.aClass240_2.aClass68_50.method1779(
+        Class68 local377 = this.aNpcTypeList_2.aClass68_50;
+        synchronized (this.aNpcTypeList_2.aClass68_50) {
+          this.aNpcTypeList_2.aClass68_50.method1779(
               (long) (this.anInt7211 | arg5.anInt5532 << 16), local78);
         }
       }

@@ -190,7 +190,7 @@ public final class Static377 {
     int local560;
     for (@Pc(13) int local13 = 0; local13 < Static12.anInt163 + local7; local13++) {
       @Pc(17)
-      Class264 local17 = null;
+      NpcType local17 = null;
       @Pc(30)
       Class16_Sub1_Sub5 local30;
       if (local7 > local13) {
@@ -198,7 +198,7 @@ public final class Static377 {
       } else {
         local30 =
             Static143.aClass16_Sub1_Sub5_Sub2Array1[Static342.anIntArray412[local13 - local7]];
-        local17 = ((Class16_Sub1_Sub5_Sub2) local30).aClass264_1;
+        local17 = ((Class16_Sub1_Sub5_Sub2) local30).aNpc_Type_1;
         if (local17.anIntArray544 != null) {
           local17 = local17.method5574(Static257.aClass114_1);
           if (local17 == null) {

@@ -860,7 +860,7 @@ public final class Class247 {
   public Class110 method5307(
       @OriginalArg(0) Class206 arg0,
       @OriginalArg(1) Class19 arg1,
-      @OriginalArg(2) Class240 arg2,
+      @OriginalArg(2) NpcTypeList arg2,
       @OriginalArg(3) Class37 arg3,
       @OriginalArg(4) Class55 arg4,
       @OriginalArg(5) int arg5,

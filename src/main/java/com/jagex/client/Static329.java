@@ -12,7 +12,7 @@ import org.openrs2.deob.annotation.Pc;
 public final class Static329 {
 
   @OriginalMember(owner = "client!ql", name = "m", descriptor = "Lclient!uk;")
-  public static Class240 aClass240_1;
+  public static NpcTypeList aNpcTypeList_1;
 
   @OriginalMember(owner = "client!ql", name = "g", descriptor = "I")
   public static int anInt5685 = 0;

@@ -97,7 +97,7 @@ public final class Class3_Sub1_Sub1_Sub1 extends Class3_Sub1_Sub1 {
     @Pc(40)
     Class3_Sub2 local40 = this.aClass3_Sub6_1.aClass3_Sub2_6;
     @Pc(44)
-    Class123 local44 = this.aClass3_Sub6_1.aClass123_1;
+    ParticleEmitterType local44 = this.aClass3_Sub6_1.aParticleEmitterType_1;
     @Pc(46)
     Class65[] local46 = Static417.aClass65Array4;
     @Pc(54)
@@ -247,7 +247,7 @@ public final class Class3_Sub1_Sub1_Sub1 extends Class3_Sub1_Sub1 {
     @Pc(31)
     Class3_Sub2 local31 = this.aClass3_Sub6_1.aClass3_Sub2_6;
     @Pc(35)
-    Class123 local35 = this.aClass3_Sub6_1.aClass123_1;
+    ParticleEmitterType local35 = this.aClass3_Sub6_1.aParticleEmitterType_1;
     @Pc(65)
     int local65;
     @Pc(82)

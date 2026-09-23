@@ -1172,7 +1172,7 @@ public final class client extends GameShell {
           Static325.aBoolean506 = Static146.aClass4_Sub12_Sub1_3.g1() == 1;
           Static267.aClass262_2.method5564(Static325.aBoolean506);
           Static444.aClass206_3.method4704(Static325.aBoolean506);
-          Static329.aClass240_1.method5230(Static325.aBoolean506);
+          Static329.aNpcTypeList_1.method5230(Static325.aBoolean506);
           if (Static109.aBoolean628 && !Static436.aBoolean668 || ClientSettings.aBoolean423) {
             try {
               Static458.callJavaScriptMethod(GameShell.signLink.hostApplet, "zap");
@@ -2162,7 +2162,7 @@ public final class client extends GameShell {
       Class16_Sub1_Sub5_Sub2 local37 = Static143.aClass16_Sub1_Sub5_Sub2Array1[local31];
       if (local37 != null) {
         @Pc(43)
-        byte local43 = local37.aClass264_1.aByte99;
+        byte local43 = local37.aNpc_Type_1.aByte99;
         if ((local43 & 0x1) != 0) {
           @Pc(51)
           int local51 = local37.method4751();
@@ -2970,8 +2970,8 @@ public final class client extends GameShell {
                 ClientSettings.langID,
                 Static74.archive2,
                 Static293.archive8);
-        Static329.aClass240_1 =
-            new Class240(
+        Static329.aNpcTypeList_1 =
+            new NpcTypeList(
                 ClientSettings.modeGame,
                 ClientSettings.langID,
                 true,

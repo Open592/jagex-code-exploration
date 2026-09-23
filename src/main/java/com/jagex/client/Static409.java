@@ -75,7 +75,7 @@ public final class Static409 {
     Static234.aClass192_2.method4342();
     Static420.aClass109_2.method2756();
     Static267.aClass262_2.method5555();
-    Static329.aClass240_1.method5226();
+    Static329.aNpcTypeList_1.method5226();
     Static444.aClass206_3.method4707();
     Static182.aClass55_1.method1396();
     Static352.aClass194_2.method4423();

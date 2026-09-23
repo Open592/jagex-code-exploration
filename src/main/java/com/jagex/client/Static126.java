@@ -84,7 +84,7 @@ public final class Static126 {
     if (arg1 != null) {
       local7.aClass16_Sub1_Sub5_Sub2_1 = arg1;
       @Pc(42)
-      Class264 local42 = arg1.aClass264_1;
+      NpcType local42 = arg1.aNpc_Type_1;
       if (local42.anIntArray544 != null) {
         local7.aBoolean66 = true;
         local42 = local42.method5574(Static257.aClass114_1);

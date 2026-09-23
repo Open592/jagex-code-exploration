@@ -281,7 +281,7 @@ public abstract class GameShell extends Applet implements Runnable, FocusListene
       @Pc(21)
       Class16_Sub1_Sub5_Sub2 local21 = Static143.aClass16_Sub1_Sub5_Sub2Array1[local17];
       if (local21 != null) {
-        Static44.method761(local21.aClass264_1.anInt7201, local21);
+        Static44.method761(local21.aNpc_Type_1.anInt7201, local21);
       }
     }
   }

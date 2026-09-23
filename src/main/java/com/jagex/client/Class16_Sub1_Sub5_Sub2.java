@@ -10,7 +10,7 @@ import org.openrs2.deob.annotation.Pc;
 public final class Class16_Sub1_Sub5_Sub2 extends Class16_Sub1_Sub5 {
 
   @OriginalMember(owner = "client!rs", name = "Pc", descriptor = "Lclient!wh;")
-  public Class264 aClass264_1;
+  public NpcType aNpc_Type_1;
 
   @OriginalMember(owner = "client!rs", name = "vc", descriptor = "I")
   public int anInt6089 = -1;
@@ -21,14 +21,14 @@ public final class Class16_Sub1_Sub5_Sub2 extends Class16_Sub1_Sub5 {
   @OriginalMember(owner = "client!rs", name = "a", descriptor = "(B)I")
   @Override
   protected int method4749() {
-    if (this.aClass264_1.anIntArray544 != null) {
+    if (this.aNpc_Type_1.anIntArray544 != null) {
       @Pc(20)
-      Class264 local20 = this.aClass264_1.method5574(Static257.aClass114_1);
+      NpcType local20 = this.aNpc_Type_1.method5574(Static257.aClass114_1);
       if (local20 != null && local20.anInt7241 != -1) {
         return local20.anInt7241;
       }
     }
-    return this.aClass264_1.anInt7241;
+    return this.aNpc_Type_1.anInt7241;
   }
 
   @OriginalMember(owner = "client!rs", name = "d", descriptor = "(B)Z")
@@ -113,14 +113,14 @@ public final class Class16_Sub1_Sub5_Sub2 extends Class16_Sub1_Sub5 {
   @OriginalMember(owner = "client!rs", name = "b", descriptor = "(I)I")
   @Override
   public int method4755() {
-    if (this.aClass264_1.anIntArray544 != null) {
+    if (this.aNpc_Type_1.anIntArray544 != null) {
       @Pc(17)
-      Class264 local17 = this.aClass264_1.method5574(Static257.aClass114_1);
+      NpcType local17 = this.aNpc_Type_1.method5574(Static257.aClass114_1);
       if (local17 != null && local17.anInt7234 != -1) {
         return local17.anInt7234;
       }
     }
-    return this.aClass264_1.anInt7234 == -1 ? super.method4755() : this.aClass264_1.anInt7234;
+    return this.aNpc_Type_1.anInt7234 == -1 ? super.method4755() : this.aNpc_Type_1.anInt7234;
   }
 
   @OriginalMember(owner = "client!rs", name = "e", descriptor = "(I)I")
@@ -138,7 +138,7 @@ public final class Class16_Sub1_Sub5_Sub2 extends Class16_Sub1_Sub5 {
   @OriginalMember(owner = "client!rs", name = "c", descriptor = "(Lclient!ya;I)Lclient!fk;")
   @Override
   public Class3_Sub3 method5339(@OriginalArg(0) Class19 arg0) {
-    if (this.aClass264_1 == null || !this.method4764(arg0, 2048)) {
+    if (this.aNpc_Type_1 == null || !this.method4764(arg0, 2048)) {
       return null;
     }
     @Pc(22)
@@ -150,10 +150,10 @@ public final class Class16_Sub1_Sub5_Sub2 extends Class16_Sub1_Sub5 {
     @Pc(42)
     Class151 local42 = this.method4757();
     @Pc(55)
-    Class264 local55 =
-        this.aClass264_1.anIntArray544 == null
-            ? this.aClass264_1
-            : this.aClass264_1.method5574(Static257.aClass114_1);
+    NpcType local55 =
+        this.aNpc_Type_1.anIntArray544 == null
+            ? this.aNpc_Type_1
+            : this.aNpc_Type_1.method5574(Static257.aClass114_1);
     if (ClientPreferences.preferences.aBoolean302 && local55.aBoolean684 && local42.aBoolean428) {
       @Pc(80)
       Class138 local80 =
@@ -171,17 +171,17 @@ public final class Class16_Sub1_Sub5_Sub2 extends Class16_Sub1_Sub5 {
               super.anInt6042,
               super.anInt6070,
               super.aClass110Array3[0],
-              this.aClass264_1.aShort102 & 0xFFFF,
+              this.aNpc_Type_1.aShort102 & 0xFFFF,
               super.anInt6040,
-              this.aClass264_1.aShort101 & 0xFFFF,
+              this.aNpc_Type_1.aShort101 & 0xFFFF,
               arg0,
-              this.aClass264_1.aByte98 & 0xFF,
-              this.aClass264_1.anInt7201,
+              this.aNpc_Type_1.aByte98 & 0xFF,
+              this.aNpc_Type_1.anInt7201,
               local27,
               local97 == null ? super.anInt6060 : super.anInt6016,
               super.aBoolean560,
               local97 == null ? local80 : local97,
-              this.aClass264_1.aByte100 & 0xFF);
+              this.aNpc_Type_1.aByte100 & 0xFF);
       if (local149 != null) {
         @Pc(154)
         float local154 = arg0.W();
@@ -230,27 +230,27 @@ public final class Class16_Sub1_Sub5_Sub2 extends Class16_Sub1_Sub5 {
 
   @OriginalMember(owner = "client!rs", name = "j", descriptor = "(I)Z")
   public boolean method4762() {
-    return this.aClass264_1 != null;
+    return this.aNpc_Type_1 != null;
   }
 
   @OriginalMember(owner = "client!rs", name = "f", descriptor = "(B)I")
   @Override
   public int method4756() {
-    if (this.aClass264_1.anIntArray544 != null) {
+    if (this.aNpc_Type_1.anIntArray544 != null) {
       @Pc(18)
-      Class264 local18 = this.aClass264_1.method5574(Static257.aClass114_1);
+      NpcType local18 = this.aNpc_Type_1.method5574(Static257.aClass114_1);
       if (local18 != null && local18.anInt7209 != -1) {
         return local18.anInt7209;
       }
     }
-    return this.aClass264_1.anInt7209;
+    return this.aNpc_Type_1.anInt7209;
   }
 
   @OriginalMember(owner = "client!rs", name = "a", descriptor = "(IILclient!ya;I)Z")
   @Override
   public boolean method5341(
       @OriginalArg(0) int arg0, @OriginalArg(2) Class19 arg1, @OriginalArg(3) int arg2) {
-    if (this.aClass264_1 == null || !this.method4764(arg1, 131072)) {
+    if (this.aNpc_Type_1 == null || !this.method4764(arg1, 131072)) {
       return false;
     }
     @Pc(19)
@@ -264,7 +264,7 @@ public final class Class16_Sub1_Sub5_Sub2 extends Class16_Sub1_Sub5 {
     for (@Pc(39) int local39 = 0; local39 < super.aClass110Array3.length; local39++) {
       if (super.aClass110Array3[local39] != null
           && super.aClass110Array3[local39].method4894(
-              arg2, arg0, local19, this.aClass264_1.anInt7201 == 1)) {
+              arg2, arg0, local19, this.aNpc_Type_1.anInt7201 == 1)) {
         local37 = true;
         break;
       }
@@ -345,7 +345,7 @@ public final class Class16_Sub1_Sub5_Sub2 extends Class16_Sub1_Sub5 {
   @OriginalMember(owner = "client!rs", name = "b", descriptor = "(Lclient!ya;I)V")
   @Override
   public void method5335(@OriginalArg(0) Class19 arg0) {
-    if (this.aClass264_1 != null && (super.aBoolean563 || this.method4764(arg0, 0))) {
+    if (this.aNpc_Type_1 != null && (super.aBoolean563 || this.method4764(arg0, 0))) {
       this.method4741(super.aBoolean563, super.aClass110Array3, arg0);
       super.aClass110Array3[0] =
           super.aClass110Array3[1] = super.aClass110Array3[2] = super.aClass110Array3[3] = null;
@@ -386,7 +386,7 @@ public final class Class16_Sub1_Sub5_Sub2 extends Class16_Sub1_Sub5 {
     @Pc(135)
     Class110 local135 =
         super.aClass110Array3[0] =
-            this.aClass264_1.method5575(
+            this.aNpc_Type_1.method5575(
                 super.anInt6065,
                 local26,
                 Static257.aClass114_1,
@@ -547,12 +547,12 @@ public final class Class16_Sub1_Sub5_Sub2 extends Class16_Sub1_Sub5 {
 
   @OriginalMember(owner = "client!rs", name = "k", descriptor = "(I)Z")
   private boolean method4765() {
-    return this.aClass264_1.aBoolean682;
+    return this.aNpc_Type_1.aBoolean682;
   }
 
   @OriginalMember(owner = "client!rs", name = "a", descriptor = "(BLclient!wh;)V")
-  public void method4766(@OriginalArg(1) Class264 arg0) {
-    this.aClass264_1 = arg0;
+  public void method4766(@OriginalArg(1) NpcType arg0) {
+    this.aNpc_Type_1 = arg0;
     if (super.aClass3_Sub2_7 != null) {
       super.aClass3_Sub2_7.method164();
     }
