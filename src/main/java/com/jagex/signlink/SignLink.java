@@ -70,7 +70,16 @@ public final class SignLink implements Runnable {
 
   public static Hashtable<String, File> resolvedCacheFilePaths = new Hashtable<>(16);
 
-  public static final int anInt1987 = 3;
+  // client!et.r — the signlink trust mode, a compile-time constant baked per
+  // delivery channel. Both shipped 592 artifacts (runescape.jar and the
+  // pack200 gamepack) hard-code 3 = the unsigned web/loader flow. Observed
+  // consumers: CS2 op 5420 reports "you are using the unsigned client" when
+  // it is 3; op 6133 offers custom cursors only when it is 1 (signed applet)
+  // or 4 (trusted standalone); mode 2 caps the heap guess at 96MB; world
+  // switching uses a browser redirect when 3 and stays in-client otherwise.
+  // Overridable so a test bed can run the trusted flow this corpus never
+  // shipped; the default reproduces the shipped artifacts.
+  public static final int anInt1987 = Integer.getInteger("com.open592.signlink.mode", 3);
 
   public static volatile long refuseConnectionsUntilTimestamp = 0L;
 
@@ -840,8 +849,14 @@ public final class SignLink implements Runnable {
     }
   }
 
-  // TODO: Hmm, is this correct? Maybe we are missing something here?
+  // client!et.e()Z compiles to a bare `return false` in both shipped 592
+  // artifacts — the unsigned flow (anInt1987 == 3) has fullscreen disabled
+  // at build time, which is why the display-mode list is empty and the
+  // graphics settings row reads N/A. No trusted-flow artifact survives in
+  // the corpus, so trusted behavior is reconstructed as capability
+  // presence: the machinery (FullScreenManager, the enter/exit/list
+  // messages, CS2 ops 5300-5308) is complete and functional.
   public boolean isFullScreenModeSupported() {
-    return false;
+    return anInt1987 != 3 && fullScreenManager != null;
   }
 }
