@@ -579,8 +579,8 @@ public class Packet extends Node {
       int remainingRounds = 32;
 
       while (remainingRounds-- > 0) {
-        sum += delta;
         v0 += key[sum & 0x3] + sum ^ v1 + (v1 << 4 ^ v1 >>> 5);
+        sum += delta;
         v1 += key[sum >>> 11 & 0xCB000003] + sum ^ v0 + (v0 << 4 ^ v0 >>> 5);
       }
 
@@ -606,8 +606,8 @@ public class Packet extends Node {
 
       while (remainingRounds-- > 0) {
         v1 -= (v0 >>> 5 ^ v0 << 4) + v0 ^ sum + key[sum >>> 11 & 0x4C600003];
-        v0 -= v1 + (v1 << 4 ^ v1 >>> 5) ^ key[sum & 0x3] + sum;
         sum -= delta;
+        v0 -= v1 + (v1 << 4 ^ v1 >>> 5) ^ key[sum & 0x3] + sum;
       }
 
       this.pos -= 8;
